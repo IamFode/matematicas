@@ -1,0 +1,1058 @@
+\section{Propiedades, definiciones y Teoremas}
+\begin{tcolorbox}[colback=white]
+%propiedad 1
+\begin{prop}[Ley asociativa para la suma] 
+$$a+(b+c) = (a+b)+c$$
+\end{prop}
+%propiedad 2
+\begin{prop}[Existencia de una identidad] 
+$$a+0 = 0+a = a$$
+\end{prop}
+%propiedad 3
+\begin{prop}[Existencia de inversos para la suma]
+$$a+(-a) = (-a) + a = 0$$
+\end{prop}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+%definición 1.1
+\begin{def.}
+Conviene considerar la resta como una operación derivada de la suma: consideremos $a-b$ como una abreviación de $a+(-b)$\\
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.1
+\begin{teo}
+Si un número $x$ satisface $a+x=a$ para cierto número $a$, entonces es $x=0$ (y en consecuencia esta ecuación se satisface también para cualquier $a$)\\\\
+Demostración.- \; Si $a+x=a$ entonces $(-a)+(a+x)=(-a)+a=0$ de donde $\left[ (-a) + a \right] + x = 0$, por lo tanto $x=0$\\\\ 
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+
+%propiedad 4
+\begin{prop}[Ley conmutativa para la suma]
+$$a+b = b+a$$
+\end{prop}
+
+%propiedad 5
+\begin{prop}[Ley asociativa para la multiplicación]
+$$a\cdot (b \cdot c) = (a \cdot b) \cdot c$$
+\end{prop}
+
+%propiedad 6
+\begin{prop}[Existencia de una identidad para la multiplicación]
+$$a \cdot 1 = 1 \cdot a = a; \; 1 \neq 0$$
+\end{prop}
+
+%propiedad 7
+\begin{prop}[Existencia de inversos para la multiplicación]
+$$a\cdot a^{-1} = a^{-1} \cdot a = 1; \; para \; a\neq 0$$
+\end{prop}
+\end{tcolorbox}
+
+%teorema 1.2
+\begin{teo}
+Si es $a\cdot b = a \cdot c$ y $a\neq 0$, entonces $b=c$\\\\
+Demostración.- \; Si $a\cdot b = a\cdot c$ y $a\neq 0$ entonces $a^{-1} \cdot (a \cdot b) = a^{-1} \cdot (a \cdot c)$ de donde $(a^{-1} \cdot a) \cdot b = (a^{-1} \cdot a) \cdot c$, por lo tanto $b=c$\\\\
+\end{teo}
+
+%teorema 1.3
+\begin{teo}
+Si $a\cdot b =0$ entonces $a=0$ ó $b=0$\\\\
+Demostración.- \; Si $a\neq 0$ entonces $a^{-1} \cdot (a\cdot b) = 0$ de donde  $(a^{-1} \cdot a) \cdot b =0$ por lo tanto $b=0$\\
+(Puede ocurrir que sea a la vez $a=0$ y $b=0$;) esta posibilidad no se excluye cuando decimos $a=0$ y $b=0$. \\\\
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+%definición 1.2
+\begin{def.}
+Se define a la división en función de la multiplicación: el símbolo $a/b$ significa $a\cdot b^{-1}$. Puesto que $0^{-1}$ no tiene sentido, tampoco lo tiene $a/0;$la división por $0$ es siempre indefinida. 
+\end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+%propiedad 8
+\begin{prop}[Ley conmutativa para la multiplicación] 
+$$a\cdot b = b\cdot a$$
+\end{prop}
+
+%propiedad 9
+\begin{prop}[Ley distributiva]
+$$a\cdot (b+c) = a \cdot b + a \cdot c$$
+\end{prop}
+\end{tcolorbox}
+
+%teorema 1.4
+\begin{teo}
+Determinar cuando es $a-b=b-a$\\\\
+Demostración.- \; Si $a-b=b-a$ entonces $(a-b) + b = (b-a) + b = b+ (b-a)$ de donde $a=b+b-a$, luego $a+a = =(b+b-a)+a=b+b$, en consecuencia $a\cdot (1+1)=b\cdot (1+1)$ y por lo tanto $a=b$\\\\
+\end{teo}
+
+%teorema 1.5
+\begin{teo}
+Demostrar que $a\cdot 0 = 0$\\\\
+Demostración.- \; Sea $0 + 0 = 0$ entones $a \cdot (0+0) =0 \cdot a$ de donde $a\cdot 0 = 0$\\\\ 
+\end{teo}
+
+%teorema 1.6
+\begin{teo}
+Demostrar que $(-a)\cdot b = -(a\cdot b)$\\\\
+Demostración.- \; Notemos que $(-a)\cdot b = \left[ (-a)+a\right] \cdot b = 0\cdot b = 0$, por lo tanto  $(-a)\cdot b =0$. Se sigue inmediatamente [sumando $-(a\cdot b)$ a ambos miembros] que $(-a)\cdot b = -(a\cdot b)$\\\\
+\end{teo}
+
+%teorema 1.7
+\begin{teo}
+Demostrar que $(-a) \dot (-b)=a\cdot b$\\\\
+Demostración.- \; Notemos que  $(-a)\cdot (-b) + \left[ - (a \cdot b)\right] = (-a) \cdot (-b) + (-a) \cdot b = (-a)\cdot \left[ (-b)+b\right] = (-a)\cdot 0 =0$. En consecuencia sumando $(a \cdot b)$ a ambos lados se obtiene $(-a) \cdot (-b)=a \cdot b$\\\\
+\end{teo}
+
+%ejercicio 1.1
+\begin{ej}
+Resolver $x^2-3x+2 = (x-1)(x-2)$\\
+\begin{center}
+\begin{tabular}{rcl}
+$(x-1)\cdot (x-2)$&$=$&$x\cdot (x-2)+ (-1) \cdot (x-2)$\\
+&$=$&$x\cdot x + x\cdot (-2) + (-1) \cdot x + (-1) \cdot (-2)$\\
+&$=$&$x^2+ x \left[(-2) + (-1)\right] + 2$\\
+&$=$&$x^2 - 2x + 2$\\\\
+\end{tabular}
+\end{center}
+\end{ej}
+
+\begin{tcolorbox}[colback=white]
+%definición 1.3
+\begin{def.} Para los números $a$ que satisfagan:
+\begin{itemize}
+\item $a>0$, se llaman \textbf{positivos}
+\item $a<0$ se llaman \textbf{negativos}\\
+\end{itemize}
+\end{def.}
+
+%definición 1.4
+\begin{def.}
+$a<b$ puede interpretarse como $b-a>0$ \\
+\end{def.}
+Conviene considerar el conjunto de todos los números positivos, representados por $P$\\
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+%propiedad 10
+\begin{prop}[Ley de tricotomía] Para todo número $a$ se cumple una y sólo una de las siguientes igualdades:
+\begin{enumerate}[\bfseries i)]
+\item $a=0$
+\item $a$ pertenece al conjunto $P$
+\item $-a$ pertenece al conjunto $P$
+\end{enumerate}
+\end{prop}
+%propiedad 11
+\begin{prop}[La suma cerrada] Si $a$ y $b$ pertenecen a $P$, entonces $a+b$ pertenecen a $P$.
+\end{prop}
+
+%propiedad 12
+\begin{prop}[La multiplicación es cerrada] Si $a$ y $b$ pertenecen a $P$, entonces $a\cdot b$ pertenece a $P$
+\end{prop}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+%definición 1.5
+\begin{def.} Estas tres propiedades deben complementarse con las siguientes definiciones.
+\begin{center}
+\begin{tabular}{r c l}
+$a>b$&si&$a-b$ pertenece a $P$\\
+$a<b$&si&$b>a$\\
+$a\geq b $&si&$a>b$ ó $a=b$\\
+$a\leq b$&si&$a<b$ ó $a=b$\\
+\end{tabular}
+Nótese en particular que $a>0$ si y sólo si $a$ pertenece a $P$.\\
+\end{center}
+\end{def.}
+
+%definición 1.6
+\begin{def.}
+Si $a$ y $b$ son dos números cualesquiera, entonces se cumple una y sólo una de las siguientes igualdades:
+\begin{enumerate}[\bfseries i)]
+\item $a-b=0,$
+\item $a-b$ pertence al conjunto $p,$
+\item $-(a-b) = b-a$ pertenece al conjunto $p,$
+\end{enumerate}
+De las definiciones dadas se cumple una y sólo una de las sigueintes igualdades:
+\begin{enumerate}[\bfseries i)]
+\item $a=b,$
+\item  $a>b,$
+\item $b>a.$
+\end{enumerate}
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.8
+\begin{teo}
+Si $a<b$ y $b<c$ si y sólo si  $a<c$\\\\
+Demostración.- \; Si $a<b$ de modo que $b-a$ pertenece a $P$, entonces evidentemente $(b+c)+(a+c)$ pertenece a $P$; así si $a<b$ entonces $a+c<b+c$. Igualmente, supongamos $a<b$ y $b<c$. Entonces $b-a$ y $c-b$ están en $P$ así que $(c-b)+(b-a)=c-a$ está en $P$.\\\\
+\end{teo}
+
+%teorema 1.9
+\begin{teo}
+Si $a<0$ y $b<0$, entonces $ab>0$\\\\
+Demostración.- \; Por definición $0>a$ lo cual significa que $0-a=-a$ esta en $P$. Del mismo modo, $-b$ pertenece a $P$ y, en consecuencia por P12, $(-a)(-b)=ab$ está en $P$. Así pues $ab>0$  \\\\
+\end{teo}
+
+%teorema 1.10
+\begin{teo}
+Si $a\neq0$ es $a^2>0$\\\\
+Demostremos por casos..- \;
+Si $a>0$, entonces  \; $a\cdot a >0$ \; y \; $a^2>0$. Por otro lado, si $a<0$, entonces $0-a>0$ de modo que $(-a)(-a)>0$ \; y por lo tanto \; $a^2>0$\\\\
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+%definición 1.7
+\begin{def.}[Valor absoluto] Se define como:
+\begin{center}
+$|a| = \left\lbrace
+\begin{array}{rr}
+a, & a\geq 0\\
+-a, & a \leq 0
+\end{array}
+\right.$\\
+\end{center}
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.11
+\begin{teo}
+Para todos los números $a$ y $b$ se tiene $$|a+b|\leq |a| + |b|$$\\\\
+Demostración.- \; Demostración.- \; Vamos a considerar cuatro casos:
+\begin{center}
+\begin{tabular}{c r r}
+$(1)$&$a\geq 0$&$b\geq 0$\\
+$(2)$&$a\geq $&$b\leq 0$\\
+$(4)$&$a\leq $&$b \geq 0$\\
+$(5)$&$a\leq 0$&$b \leq 0$\\
+\end{tabular}
+\end{center}
+En el caso ($1)$ tenemos también $a+b\geq 0$, esto es evidente; en efecto por definición $$|a+b|=a+b=|a|+|b|$$ de modo que en este caso se cumple la igualdad.\\
+En el caso $(4)$ se tiene $a+b\leq 0$ y de nuevo se cumple la igualdad: $$|a+b|=-(a+b)=(-a)+(-b)=|a|+|b|$$
+En el caso $(2)$, cuando $a\geq 0$ y $b\leq 0$, debemos demostrar que $$|a+b|\leq a - b$$ Este caso puede dividirse en dos subcasos. Si $a+b\geq 0$, entonces tenemos que demostrar que $$a+b \leq a-b$$ es decir, $$b\leq -b,$$  lo cual se cumple ciertamente puesto que $b$ es negativo y $-b$ positivo. Por otra parte, si $a+b\leq 0$ debemos demostrar que $$-a-b\leq a-b$$ es decir $$-a\leq a,$$ lo cual es verdad puesto que $a$ es positivo y \; $-a$ negativo.\\
+Nótese finalmente que el caso $(3)$ puede despacharse sin ningún trabajo adicional aplicando el caso $(2)$ con $a$ \; y \; $b$ intercambiados.\\\\ 
+Se puede dar una demostración mas corta dado que $$|a|=\sqrt{a^2} \; ó \; |a|^2=a^2$$. Sea $(|a+b|)^2=(a+b)$ Entonces 
+\begin{center}
+\begin{tabular}{r c r c l}
+$(|a+b|)^2$&$=$&$(a+b)^2$&$=$&$a^2+2ab+b^2$\\\\
+&&&$\leq$&$a^2+2|a|\dot |b|+b^2$\\\\
+&&&$=$&$|a|^22|a|\dot |b|+|b|^2$\\\\
+&&&$=$&$(|a|+|b|)^2$\\\\
+\end{tabular}
+\end{center}
+De esto podemos concluir que $|a+b|\leq |a|+|b|$ porque $x^2<y^2$ implica $x<y$\\\\
+Hay una tercera forma de probar que es utilizando el teorema anterior.\\
+Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogamente $-|y| \leq y \leq |y|$. Sumando ambas desigualdades se tiene: $$-(|x|+|y|)\leq x+y \leq |x|+|y|$$ y por tanto en virtud del teorema 4.2 se concluye que: $|x+y|\leq |x|+|y|$\\\\
+\end{teo}
+
+%problemas capítulo 1
+\section{Problemas}
+\begin{enumerate}[\bfseries \Large 1.]
+
+%----------------------------------1-------------------------------------
+\item Demostrar lo siguiente:
+\begin{enumerate}[\bfseries i)]
+%i)
+\item Si $ax=a$ para algún número $a\neq 0$, entonces $x=1$\\\\
+Demostración.- \; Sea $a\neq 0$ entonces $(a^{-1}\cdot a)x=a\cdot a^{-1}$ por lo tanto $\cdot x = 1$\\\\
+
+ 
+%ii)
+\item $x^2-y^2=(x-y)(x+y)$\\\\
+Demostración.- \; Partamos de $(x-y)(x+y)$ donde por la propiedad distributiva tenemos $(x-y)x+(x-y)y$, luego $x^2-xy+xy-y^2$, por lo tanto por las propiedades de inverso y  neutro $x^2-y^2$\\\\
+
+
+%iii)
+\item Si $x^2=y^2$, entonces $x=y$ o $x=-y$\\\\
+Demostración.- \; Dada la hipótesis entonces $x^2+\left[ - (y^2) \right]=y+\left[ - (y^2) \right]$ y por propiedades de neutro y definición $x^2-y^2=0$, luego $(x-y)(x+y)$ y en virtud del teorema $ab=0$ entonces $a=0$ o $b=0$ no queda $x-y=0$ ó $x+y=0$, por lo tanto $x=y$ ó $x=-y$ \\\\ 
+
+%iv)
+\item $(x^3-y^3)=(x-y)(x^2+xy+y^2)$\\\\
+Demostración.- \; Dado $(x-y)(x^2+xy+y^2)$ entonces por la propiedad distributiva $(x-y)x^2+(x-y)xy+(x-y)y^2 = x^3 -x^2y +x^2y-xy^2+xy^2-y^3$ por lo tanto en virtud de las propiedades de inverso y neutro $x^3-y^3$.\\\\
+
+%v)
+\item $x^n-y^n=(x+y)(x^{n-1}+x^{n-2} y + ... + xy^{n-2}+y^{n-1})$\\\\
+Demostración.- \; 
+\begin{center}
+\begin{tabular}{r c l}
+&&$(x-y)(x^{n-1}+x^{n-2}y+...+xy^{n-2}+y^{n-1})$\\
+&=&$x(x^{n-1}+x^{n-2}y+...+xy^{n-2}+y^{n-1})-y(x^{n-1}+x^{n-2}y+...+xy^{n-2}+y^{n-1}$\\
+&=&$x^n+x^{n-1}y+...+x^2y^{n-2}+xy^{n-1}-(x^{n-1}y+x^{n-2}y^2+...+xy^{n-1}+y^n)$\\
+&=&$x^n-y^n$\\\\	
+\end{tabular}
+\end{center}
+
+%vi)
+\item $x^3+y^3=(x+y)(x^2-xy+y^2)$\\\\
+Demostración.- \; Sea $(x+y)(x^2-xy+y^2)$ entonces por la propiedad distributiva $x^3 -x^2y + xy^2 + x^2y - xy^2 + y^2$, por lo tanto $x^3+y^3$\\\\
+\end{enumerate}
+
+%---------------------------------2----------------------------------
+\item ¿Donde está el fallo en la siguiente demostración? Sea $x=y$. Entonces 
+\begin{center}
+\begin{tabular}{rcl}
+$x^2$&$=$&$xy$\\
+$x^2 + y^2$&$=$&$xy-y^2$\\
+$(x+y)(x-y)$&$=$&$y(x-y)$\\
+$x+y$&$=$&$y$\\
+$2$&$=$&$1$\\
+\end{tabular}
+\end{center}
+El fallo esta en que no se puede dividir un número por $0$ sabiendo que $x=y$\\\\
+
+%--------------------------------3-----------------------------------
+\item Demostrar lo siguiente:
+\begin{enumerate}[\bfseries i)]
+%1
+\item $\dfrac{a}{b} = \dfrac{ac}{bc},\; si \; b, c\neq 0$\\\\
+Demostración.- \;
+Por definición tenemos que $\displaystyle\frac{a}{b}=ab^{-1}$, como $b, \; c \neq 0$ entonces $(ab)(c\cdot c^{-1})$, por  las propiedades asociativa y conmutativa, $(ac)(b^{-1}c^{-1})$ por lo tanto $\displaystyle\frac{ac}{bc}$ \\\\ 
+%2
+\item $\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad+bc}{bd}, \; si \; b,d \neq 0$\\\\
+Demostración.- \; 
+%3
+\item $(ab)^{1} = a^{-1} b^{-1}$, si $a,b \neq 0$ (Para hacer esto hace falta tener presente cómo se ha definido $(ab)^{-1}$)\\\\
+Demostración.- \; Demostremos que  $a^{-1} b^{-1} (ab) = 1$, Sea $a^{-1} b^{-1} (ab) = \left( a^{-1} a \right)\left( b^{-1} b \right) = 1$\\\\
+%4
+\item $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{db},$ si $b,d \neq 0$\\\\
+Demostración.- \; Sea por definición $ab^{-1} \cdot cd^{-1}$ entonces  por la propiedad conmutativa $ac \cdot b^{-1}d^{-1}$, por lo tanto $\dfrac{ac}{bd}$ si $b,d \neq 0$\\\\
+%corolario 1
+\begin{col.}
+Si $c\neq 0$ y $d\neq 0$ entonces $(cd^{-1})^{-1}=c^{-1}d$\\\\
+Demostración.- \;
+Por definición de $a^{-1}$ tenemos que $(cd^{-1})^{-1}=\displaystyle\frac{1}{cd^{-1}}$, por el teorema de posibilidad de la división $1=(c^{-1}d)(cd^{-1})$ y en virtud de los axiomas de conmutatividad y asociatividad $1=(c^{1}c)(dd^{-1})$, luego $1=1$. quedando demostrado el corolario.\\\\
+\end{col.}
+%5
+\item $\dfrac{a}{b} / \dfrac{c}{d} = \dfrac{ad}{bc}$ si $b,c,d \neq 0$\\\\
+Demostración.- \; Si $ab^{-1} \cdot \left( cd^{-1}\right)^{-1}$ en virtud del anterior corolario se tiene $ab^{-1}\cdot c^{-1}d$ y por lo tanto $\dfrac{ad}{bc}$ \\\\
+%6
+\item Si $b,\; c \neq 0$, entonces $\displaystyle\frac{a}{b}=\frac{c}{d}$ si sólo si $ad=bc$, Determinar también cuando es $\displaystyle\frac{a}{b}=\frac{b}{a}$\\\\
+Demostración.- \; Sea $b,\; c \neq 0$ si sólo si $ab^{-1}=cd^{-1}$ entonces $(ab^{-1})b=cd^{-1}b$, por propiedades asociativa y conmutativa $a(b\cdot b^{-1})=(bc)d^{-1}$, $a=(bc)d^{-1}$ luego $ad=bc(d\cdot d^{-1})$, por lo tanto $ad=bc$.\\
+Por otro lado, si $ab^{-1} = b^{-1}$ entonces  $a^2=b^2$,por lo tanto determinamos que $a=b$ ó $a=-b$ \\\\
+\end{enumerate}
+
+%--------------------------------4-------------------------------------
+\item Encontrar todos los números $x$ para los que
+\begin{enumerate}[\bfseries i)]
+%i)
+\item $4-x<3-2x$
+\begin{center}
+\begin{tabular}{c r c l l}
+$\Rightarrow$&$4-x+2x$&$<$&$3-2x+2x$&\\
+$\Rightarrow$&$x+4$&$<$&$3$&Axiomas\\
+$\Rightarrow$&$4+(-4)x$&$<$&$3+(-4)$&\\
+$\Rightarrow$&$x$&$<$&$-1$&propiedades\\\\
+\end{tabular}
+\end{center}
+%ii)
+\item $5-x^2<8$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$(-5)+5-x^2+(-8)$&$<$&$(-8)+8+(-5)$&\\
+$\Rightarrow$&$-x^2-8$&$<$&$-5$&\\
+$\Rightarrow$&$-x^2-3$&$<$&$0$&\\
+$\Rightarrow$&$-(-x^2-3)$&$>$&$-0$&\\
+$\Rightarrow$&$x^2+3$&$>$&$0$&\\\\
+\end{tabular}
+\end{center}
+Sea $x \neq 0$ entonces por teorema \; $x^2>0$ y por propiedad se cumple que $x^2+3$ siempre es positivo, y como $3>0$ entonces el valor de $x$ son todos los números reales.\\\\
+%iii)
+\item $5-x^2<-2$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$(-5)+5-x^2$&$<$&$-2+(-5)$&\\
+$\Rightarrow$&$-x^2$&$<$&$-7$&\\
+$\Rightarrow$&$x^2$&$>$&$7$&\\
+$\Rightarrow$&$x>\sqrt{7}$&$ó$&$x<-\sqrt{7}$&\\\\
+\end{tabular}
+\end{center}
+
+%iv)
+\item $(x-1)(x-3)>0$
+\begin{center}
+\begin{tabular}{crcll} 
+$\Rightarrow$&$x-1>0$&$y$&$x-3>0$&\\
+&&$ó$&&\\
+&$x-1<0$&$y$&$x-3<0$&\\\\
+$\Rightarrow$&$x>1$&$y$&$x>3$&\\
+&&$ó$&&\\
+&$x<1$&$y$&$x<3$&\\\\
+$\Rightarrow$&$x>3$&$ó$&$x<1$&\\\\
+\end{tabular}
+\end{center}
+%v)
+\item $x^2-2x+2>0$\\\\
+Completando cuadrados obtenemos que $x^2-2x+1^2 -1^2 +2 > 0$, después $(x-1)^2+1^2>0$, luego $x^2>0$, y en virtud de teorema nos queda que la desigualdad dada satisface a todos los números reales.\\\\ 
+%vi)
+\item $x^2+x+1>2$\\\\
+Aplicando el teorema se tiene $x=\dfrac{-1 \pm \sqrt{2^2-4(-1)}}{2}$. luego $$\left( x>\dfrac{-1-\sqrt{5}}{2} \; \; \; y \; \; \; x>\dfrac{-1+\sqrt{5}}{2} \right) ó \left( x<\dfrac{-1-\sqrt{5}}{2}\; \; \; y \; \; \; x < \dfrac{-1+\sqrt{5}}{2} \right),$$ por lo tanto, $$x<\dfrac{-1-\sqrt{5}}{2}\; \cup \; x>\dfrac{-1+\sqrt{5}}{2} $$ \\\\
+%vii)
+\item $x^2-x+10>16$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$x^2-x-6$&$>$&$0$&\\
+$\Rightarrow$&$(x-3)(x+2)$&$>$&$0$&\\\\
+$\Rightarrow$&$x>3$&$y$&$x>-2$&\\
+&$$&$ó$&$$&\\
+&$x<3$&$y$&$x<-2$&\\\\
+$\Rightarrow$&$x>3$&$ó$&$x<-2$&\\\\
+\end{tabular}
+\end{center}
+%viii)
+\item $x^2+x+1>0$\\\\
+Sabemos que $x^2>0, \; para \; x\neq 0$, luego será verdad para $x^2+x+1>0$, entonces la inecuación se cumple para todo $x \in \mathbb{R}$\\\\
+%ix)
+\item $(x-\pi)(x+5)(x-3)>0$ por la propiedad asociativa $(x-\pi)\left[ (x+5)(x-3) \right]>0$
+\begin{center}
+\begin{tabular}{crcll}\\
+$\Rightarrow$&$x>\pi$&$\land$&$\left[(x>-5\land x>3) \lor (x<-5 \land x<3) \right]$&\\
+&&$\lor$&\\
+&$x< \pi $&$\lor$&$\left[ (x<-5 \land x>3) \lor (x>-5 \land x<3) \right]$&\\\\
+$\Rightarrow$&$x > \pi $&$\land$&$(x>3 \lor x<-5)$&\\
+&&$\lor$&&\\
+&$x<\pi$&$\land$&$-5<x-3$&\\\\
+$\Rightarrow$&$x<\pi$&$\lor$&$-5<x-3$&\\\\
+\end{tabular}
+\end{center}
+%x)
+\item $(x-\sqrt[3]{2})(x-\sqrt{2})>0$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$x>\sqrt[3]{2}$&$y$&$x>\sqrt{2}$&\\
+&&$ó$&&\\
+&$x<\sqrt[3]{2}$&$y$&$x<\sqrt{2}$&\\\\
+$\Rightarrow$&$x>\sqrt{2}$&$ó$&$x<\sqrt[3]{2}$&\\\\
+\end{tabular}
+\end{center}
+%xi)
+\item $2^x<8$\\\\
+Podemos reescribir como $2^x<2^3$ y por propiedad de logaritmos que se vera mas adelante se tiene que $x<3$\\\\
+%xii)
+\item $x+3^x <4$\\\\
+Visualizando, está claro que si $x=1$ entonces $1+3^2=4$, luego cualquier número menor a $1$ debería ser menor a $4$, por lo tanto $x<1$\\\\
+%xiii)
+\item $\displaystyle\frac{1}{x} + \frac{1}{1-x}>0$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$\displaystyle\frac{1}{x(1-x)}$&$>$&$0$&\\\\
+$\Rightarrow$&$\displaystyle\frac{1\cdot \left[ x(1-x)\right]^2}{x(1-x)}$&$>$&$0\cdot \left[ x(1-x)\right] ^2$&\\\\
+$\Rightarrow$&$x(1-x)$&$>$&$0$&\\\\
+$\Rightarrow$&$x>0$&$y$&$x<1$&\\
+&&$ó$&&\\
+&$x<0$&$y$&$x>1$&\\\\
+$\Rightarrow$&$0\; \; <$&$x$&$<\; \; 1$&\\\\
+\end{tabular}
+\end{center}
+%xiv)
+\item $\displaystyle\frac{x-1}{x+1}>0$
+\begin{center}
+\begin{tabular}{crcll}
+$\Rightarrow$&$\displaystyle\frac{(x-1)(x+1)^2}{>}$&$>$&$0(x+1)^2$&\\\\
+$\rightarrow$&$(x-1)(x+1)$&$>$&$0$&\\\\
+$\Rightarrow$&$x>1$&$y$&$x>-1$&\\
+&&$ó$&&\\
+&$x<1$&$y$&$x<-1$&\\\\
+$\Rightarrow$&$x>1$&$ó$&$x<-1$&\\\\
+\end{tabular}
+\end{center} 
+\end{enumerate}
+
+%--------------------------------------5-------------------------------------
+\item Demostrar lo siguiente:
+\begin{enumerate}[\bfseries i)]
+%i)
+\item Si $a<b,$ y $c<d$, entonces $a+c<b+d$\\\\
+Demostración.- \; Por hipótesis y propiedad de los números reales se tiene $b-a>0$ y $d-c>0$, luego $(b-a)+(d-c)>0$, así $a+c<b+d$\\\\
+
+%ii)
+\item Si $a<b$, entonce $-b<-a$\\\\
+Demostración.- \; Sea $-1<0$, por teorema  \; $-1(a)>-1(b)$, luego por existencia de elementos neutros $-a>-b$ por lo tanto $-b<-a$\\\\
+
+%iii)
+\item Si $a<b$ y $c>d$, entonces $a-c<b-d$\\\\
+Demostración.- \;
+Si $a<b = b-a>0$ \; y  \; $c>d=d<c=c-d>0$, por propiedad de números reales \; $(b-a)+(c-d)>0$, luego $(b-d)+(-a+c)>0$ y en virtud del teorema 1.19 y definición \; $(b-d)-(a-c)>0$, por lo tanto $a-c<b-d$\\\\
+
+%iv)
+\item Si $a<b$ y $c>0$, entonces $ac<bc$\\\\
+Demostración.- \; Por propiedad de números reales $c(b-a)>0$, luego $bc-ac>0$, así $ac<bc$\\\\
+
+%v)
+\item Si $a<b$ y $c<0$, entonces $ac>bc$\\\\
+Demostración.- \; Sea $b-a>0$ y $0-c>0$, entonces $-c(b-a)>0$, luego $ac - bc >0$, así $ac>bc$\\\\
+
+%vi)
+\item Si $a>1$ entonces $a^2>a$\\\\
+Demostración.- \; Sea $1<a$ y $a-1>0$, por propiedad $a(a-1)>0=a^2-a>0$, luego $a<a^2$ y $a^2>a$\\\\
+
+%vii)
+\item Si $0<a<1$, entonces $a^2<a$\\\\
+Demostración.- \;
+La demostración es similar al teorema 2.14. Por definición $0<a$ y $a<1$ por lo tanto $1-a>0$ y $a(1-a)>0$,\; $a^2<a$.\\\\
+
+%viii)
+\item Si $a\leq a < b$ \; y \; $0 \leq c < d$, entonces $ac<bd$\\\\
+Demostración.- \;Tenemos que $a\geq 0$, $c\geq 0$, $a<d$ y $a<b$, en virtud de  teorema $ac\leq bc$ y $ac \leq ad$ ( cabe recalcar que por hipótesis podría dar el caso de $0 \leq 0$  por ello el símbolo $" \leq "$) por lo tanto $bc-ac \geq 0$ \; y \; $ad-ac \geq 0$. luego $ac-ac \leq ad+bc$ y $-ad-bc\leq -2ac$. \\ 
+Por otro lado sea $b-a>0$ \; y \; $d-c>0$ entonces $(b-a)(d-c)>0$ \; y \; $db-ad-bc+ac>0$.\\
+Si $-ad-bc\leq -2ac$ entonces $db -2ac +ac>0$ \; así \; $ac < bd$.\\\\
+
+%ix)
+\item Si $0\leq a < b$, entonces $a^2<b^2.$\\\\
+Demostración.- \;
+Por el problema anterior si $0\leq a < b$ entonces $a\cdot a < b\cdot b$\; y \; $a^2<b^2$\\\\
+
+%x)
+\item Si $a, \; b \geq 0$ y $a^2<b^2$, entonces $a<b$\\\\
+Demostración.- \;
+Si $b^2-a^2>0$, por teorema  $(b-a)(b+a)>0$, luego $( b-a>0 \; \land \; b+a>0 ) \; \lor \; ( b-a<0 \; \land \; b+a<0 ) $. Sea $a,\; b\geq 0$ queda $(b-a>0 \; \land \; b+a>0)$ por lo tanto $a<b$.\\\\
+  
+\end{enumerate}
+
+%-------------------------------------6-------------------------------------
+\item 
+\begin{enumerate}[\bfseries a)]
+%a)
+\item Demostrar que si $0 \leq x<y $ entonces $x^n<y^n$\\\\
+Demostración.- \; Sea $ac<bd$, $x^2=a$, $y^2=b$ y $c=x$, $d=x$ entonces  $x\cdot x \cdot x < y \cdot y \cdot y$. Si aplicamos $n$ veces dicho teorema $x\cdot x \cdot x \cdot ... \cdot x < y \cdot y \cdot y \cdot ... \cdot y $ se tiene $x^n<y^n$\\\\
+
+%b)
+\item Demostrar que si $x<y$ y $n$ es impar, entonces $x^n<y^n$\\\\
+Demostración.- \; Si consideramos  $x\geq 0$ ya quedo demostrado anteriormente. Ahora consideremos el caso donde $x<y\leq 0$, por lo tanto $0\leq -y<-x$, así por la parte a) $-y^n < -x^n$, que significa que $n$ es impar, y por lo tanto $x^n < y^n$. Finalmente si $x<0\geq y$ entonces $x^n < 0 \leq y^n,$ ya que $n$ es impar.Así queda demostrado la proposición dada.\\\\
+
+%c)
+\item Demostrar que si $x^n=  ^n$ y $n$ es impar, entonces $x=y$\\\\
+Demostración.- \;
+Sea $n=2k-1$ y $x^n=y^n$ entonces $x^{2k-1}-y^{2k-1}=0$ y por teorema \; $(x^{2k-1}-y^{2k-1})(x^{(2k-1)-1}+x^{(2k-1)-2}y^{2k-1}+...+x^{2k-1}y^{(2k-1)-2}+y^{(2k-1)-1})=0.$ Sea $x, \; y \neq 0$ entonces por la propiedad de existencia de reciproco o inverso \, $x-y=0$ por lo tanto $x=y$\\\\
+
+%d)
+\item Demostrar que si $x^n=y^n$ y $n$ es par, entonces $x=y$ ó $x=-y$\\\\
+Demostración.- \; Si $n$ es par, entonces $x,y\geq 0$ y $x^n=y^n$,luego $x=y$. Además, si $x,y\leq 0$ y $x^n=y^n$, entonces $-x,-y\geq 0$ y $(-x)^n=(-y)^n$, por lo tanto $x=y$. La única posibilidad es que $x$ e $y$ sea positivo y el otro negativo. En este caso, $x$ e $-y$ son ambos positivos o negativos. Además $x^n=(-y)^n,$ dado que $n$ es par se sigue de los casos anteriores que $x=-y$.\\\\
+\end{enumerate}
+
+%-----------------------------------------7-------------------------------
+\item Demostrar que si $0<a < b$, entonces
+$$a<\sqrt{ab}<\dfrac{a+b}{2} < b$$\\
+Demostración.- \;
+\begin{enumerate}[1.]
+\item $a<\sqrt{ab}$\\\\
+Si \; $4a<b$ entonces $a^2<ab$ y por raíz cuadrada dado que $a,\;b>0$ entonces $a<\sqrt{ab}$\\
+\item $\sqrt{ab}<\displaystyle\frac{a+b}{2}$\\\\
+En vista de que $a, \; b > 0$ y $a<b$ entonces $a-b>0$, \; $(a-b)^2>0$ por lo tanto, $a^2-2ab+b^2>0 \Rightarrow 2ab< a^2+b^2 \Rightarrow 2ab-2ab+2ab<a^2+b^2 \Rightarrow 4ab < a^2+2ab +b^2 \Rightarrow 4ab < (a+b^)2 \Rightarrow ab < \displaystyle \left( \frac{a+b}{2} \right) ^2 \Rightarrow \sqrt{ab}<\frac{a+b}{2} $ \\
+\item $\displaystyle\frac{a+b}{2}<b$\\\\
+Si $a<b$ entonces $a+b<2b$ por lo tanto $\displaystyle\frac{a+b}{2}<b$\\
+\end{enumerate}
+Y por la propiedad transitiva queda demostrado.\\\\
+ 
+%----------------------------8----------------------------------
+\item Aunque las propiedades básicas de las desigualdades fueron enunciadas en términos del conjunto $P$ de los números positivos, y $<$ fue definido en términos de $P$ este proceso puede ser invertido. Supóngase que las propiedades 10 al 13 se sustituyen por:\\
+
+\textbf{P-10} Cualquier que sean los números $a$ y $b$, se cumple una y sólo una de las relaciones siguientes
+\begin{itemize}
+\item $a=b$
+\item $a<b$
+\item $b<a$\\
+\end{itemize}
+\textbf{P-11} Cualquiera que sean $a$, $b$ y $c$, si $a<b$ y $b<c$, entonces $a<c$.\\\\
+\textbf{P-12} Cualquiera que sean $a$, $b$ y $c$, si $a<b,$ entonces $a+c<b+c.$\\\\
+\textbf{P-13} Cualquiera que sean $a$, $b$ y $c$, si $a<b$, y $0<c$, entonces $ac<bc.$\\\\
+Demostrar que las propiedades 10 al 13 se pueden deducir entonces como teoremas.\\\\
+Demostración.- \; Con respecto a \textbf{P-11} se tiene  $b-a>0$ y $c-b>0$ de modo que $c-a>0$, por lo tanto $a<c$. Luego para \textbf{P-12} se tiene $b-a>0$, por propiedad de neutro aditivo $b-a+c-c>0$, en consecuencia $a+c<b+c$. Después para \textbf{P-13} tenemos $c(b-a)>0$ por lo tanto $ac<bc$. Por último si $a<0$ entonces $-a>0$; ya que si $-a<0$ se cumpliese, se tendría $0=a+(-a)<0$ el cual es un absurdo. En consecuencia, cualquier número $a$ satisface una de las condiciones $a=0$, $a>0$ ó $-a>0.$ Con esto queda demostrado \textbf{P-10.}\\\\
+
+%-----------------------------9---------------------------------
+\item Dese una expresión equivalente de cada una de las siguientes utilizando como mínimo una vez menos el signo de valor absoluto.\\
+\begin{center}
+\begin{tabular}{r r c l}
+%i
+$(i)$&$|\sqrt{2}+\sqrt{3}-\sqrt{5}+\sqrt{7}|$&$\Rightarrow$&$\sqrt{2}+\sqrt{3}-\sqrt{5}+\sqrt{7}$\\\\
+%ii
+$(ii)$&$||a+b|-|a|-|b||$&$\Rightarrow$&$|a+b|-|a|-|b|$\\\\
+%iii
+$(iii)$&$|\left( |a+b|+|c|-|a+b+c| \right)|$&$\Rightarrow$&$|a+b|+|c|-|a+b+c|$\\\\
+%iv
+$(iv)$&$|x^2-2xy+y2|$&$\Rightarrow$&$x^2-2xy+y2$\\\\
+%v
+$(v)$&$|\left(  |\sqrt{2}+ \sqrt{3}|-|\sqrt{5}-\sqrt{7}|  \right)|$&$\Rightarrow$&$\sqrt{2}+ \sqrt{3}|-|\sqrt{5}-\sqrt{7}$\\\\
+\end{tabular}
+\end{center}
+
+%--------------------------10----------------------------------
+\item Expresar lo siguiente prescindiendo de signos de valor absoluto, tratando por separado distintos casos cuando sea necesario.
+\begin{enumerate}[\bfseries (i)]
+%(i)
+\item $|a+b|-|b|$
+\begin{center}
+\begin{tabular}{rcrclcrcl}
+$a$&si&$a$&$\geq$&$-b$&y&$b$&$\geq$&$0$\\
+$-a$&si&$a$&$\leq$&$-b$&y&$b$&$\leq$&$0$\\
+$a+2b$&si&$a$&$\geq$&$-b$&y&$b$&$\leq$&$0$\\
+$-a-2b$&si&$a$&$\leq$&$-b$&y&$b$&$\geq$&$0$\\
+\end{tabular}
+\end{center}
+%(ii)
+\item $|x|-|x^2|$
+\begin{center}
+\begin{tabular}{r c r c l}
+$x-x^2$&si&$x$&$\geq$&$0$\\
+$-x-x^2$&si&$x$&$\leq$&$0$\\\\
+\end{tabular}
+\end{center}
+%(iii)
+\item $|x|-|x^2|$
+\begin{center}
+\begin{tabular}{rcl}
+$x-x^2$&$si$&$x\leq 0$\\
+$-x-x^2$&$si$&$x\geq 0$\\
+\end{tabular}
+\end{center}
+%(iv)
+\item $a-|(a-|a|)|$ 
+\begin{center}
+\begin{tabular}{r c l}
+$a$&$si$&$a\leq 0$\\
+$3a$&$si$&$a\geq 0$\\
+\end{tabular}
+\end{center} 
+\end{enumerate}
+
+%-------------------------------------11--------------------------------------
+\item Encontrar todos los números $x$ para los que se cumple
+\begin{enumerate}[\bfseries (i)]
+%(i)
+\item $|x-3|=8$
+\begin{center}
+\begin{tabular}{rcccll}
+$-8$&$=$&$x-3$&$=$&$8$&teorema 4.1\\
+$-5$&$=$&$x$&$=$&$11$&\\\\
+\end{tabular}
+\end{center}
+%(ii)
+\item $|x-3|<8$
+\begin{center}
+\begin{tabular}{rcccll}
+$-8$&$<$&$x-3$&$<$&$8$&teorema \\
+$-5$&$<$&$x$&$<$&$11$&\\\\
+\end{tabular}
+\end{center}
+%(iii)
+\item $|x+4|<2$
+\begin{center}
+\begin{tabular}{rcccll}
+$-2$&$<$&$x+4$&$<$&$-2$&teorema \\
+$-6$&$<$&$x$&$<$&$-2$&\\\\
+\end{tabular}
+\end{center}
+%(iv)
+\item $|x-1|+|x-2|>1$\\\\
+Por definición:
+\begin{equation}
+|x-1| = \left\lbrace
+\begin{array}{rcr}
+  x-1& si & x\geq 1\\
+ 1-x& si & x \leq 1\\\\
+\end{array}
+\right.
+\end{equation}
+\begin{equation}
+|x-2| = \left\lbrace
+\begin{array}{rcr}
+  x-2& si & x\geq 2\\
+ 2-x& si & x \leq 2\\
+\end{array}
+\right.
+\end{equation}
+Por lo tanto queda comprobar:\\
+\begin{center}
+\begin{tabular}{c c c r c l}
+Si&$x\leq 1$&$\Rightarrow$&$(1-x)+(2-x)>1$&$\Rightarrow$&$x<1$\\\\
+Si&$1\leq x\leq 2$&$\Rightarrow$&$(x-1)+(2-x)>1$&$\Rightarrow$&$1>1$\\\\
+Si&$x\geq 2$&$\Rightarrow$&$(x-1)+(x-2)>1$&$\Rightarrow$&$x>2$\\\\
+\end{tabular}
+\end{center}
+Así: $x<1 \; \lor \; x>2$\\\\
+%(v)
+\item $|x-1|+|x+1|<2$\\\\
+Por definición:
+\begin{equation}
+|x-1| = \left\lbrace
+\begin{array}{rcr}
+  x-1& si & x\geq 1\\
+ 1-x& si & x \leq 1\\\\
+\end{array}
+\right.
+\end{equation}
+\begin{equation}
+|x+1| = \left\lbrace
+\begin{array}{rcr}
+  x+1& si & x\geq -1\\
+ -1-x& si & x \leq -1\\
+\end{array}
+\right.
+\end{equation}
+Por lo tanto queda comprobar:\\
+\begin{center}
+\begin{tabular}{c c c r c l}
+Si&$x\leq -1$&$\Rightarrow$&$(1-x)+(1-x)<2$&$\Rightarrow$&$x>-1$\\\\
+Si&$-1\leq x \leq 1$&$\Rightarrow$&$(1-x)+(x+1)<2$&$\Rightarrow$&$2<2$\\\\
+Si&$x\geq 1$&$\Rightarrow$&$(x-1)+(x+1)<2$&$\Rightarrow$&$x<1$\\\\
+\end{tabular}
+\end{center}
+Pero es falso que $x$ satisface a $-1\leq x \leq 1$, y contradice a que $x$ satisface a todos los reales, por lo tanto no existe solución\\\\ 
+%(vi)
+\item $|x-1|+|x+1|<1$ \\\\ De la misma manera que el anterior ejercicio no tiene solución para ningún $x$.\\\\
+%(vii)
+\item $|x-1|\cdot |x+1|=0$\\\\
+Por definición:
+\begin{equation}
+|x-1| = \left\lbrace
+\begin{array}{rcr}
+  x-1& si & x\geq 1\\
+ 1-x& si & x \leq 1\\\\
+\end{array}
+\right.
+\end{equation}
+\begin{equation}
+|x+1| = \left\lbrace
+\begin{array}{rcr}
+  x+1& si & x\geq -1\\
+ -1-x& si & x \leq -1\\
+\end{array}
+\right.
+\end{equation}
+queda comprobar:\\
+\begin{center}
+\begin{tabular}{c c c r c l}
+Si&$x\leq -1$&$\Rightarrow$&$(1-x)+(-1-x)=0$&$\Rightarrow$&$x\leq-1 \, \cup \, x = 1 \, \cup \, x=-1 $\\\\
+Si&$-1\leq x \leq 1$&$\Rightarrow$&$(1-x)\dot (x+1)=0$&$\Rightarrow$&$-1\leq x \leq 1 \; \cup \; x=1 \; \cup \; x=-1$\\\\
+Si&$x\geq 1$&$\Rightarrow$&$(x-1)\dot (x+1)=0$&$\Rightarrow $&$x \notin \mathbb{R}$\\\\
+\end{tabular}
+\end{center}
+Por lo tanto $x=1$ \; ó \; $x=-1$\\\\
+%(viii)
+\item $|x-1|\cdot |x+2|= 3$\\\\
+Si $x>1$ ó $x<-2$, entonces la condición se convierte en $(x-1)(x+2)=3$ ó $x^2+x-5=0$, cuyas soluciones son según la formula general son $\dfrac{-1+\sqrt{21}}{2}$ y $\dfrac{-1-\sqrt{21}}{2}$. Puesto que el primer valor es $x>1$ y el segundo es $x<-2$, ambos son soluciones de $|x-1||x+2|=3.$ Para $-2<x<1,$ la condición se convierte en $(1-x)(x+2)=3$ ó $x^2+x+1=0$, la cual carece de soluciones.\\\\
+\end{enumerate}
+
+%--------------------------------12-----------------------------------------
+\item Demostrar lo siguiente:
+\begin{enumerate}[\bfseries (i)]
+%(i)
+\item $|xy|=|x|\cdot |y|$\\\\
+Demostración.- \; Si $|xy|$ Por teorema  \; $\sqrt{(xy)^2}$ luego por propiedad \; $\sqrt{x^2 \cdot y^2}$, así $\sqrt{x^2}\cdot \sqrt{y^2}$ \; y \;  $|x|\cdot |y|$\\\\
+
+%(ii)
+\item $\left| \dfrac{1}{x} \right|=\dfrac{1}{|x|}$\\\\
+Demostración.- \; Si $\left| \dfrac{1}{x} \right|$ por definición $\sqrt{(x^{-1})^2}$, después $\left( \dfrac{1}{x}\right) ^{2/2}$, por propiedad  \; $\dfrac{\sqrt{1^2}}{\sqrt{x^2}}$, luego $\dfrac{1}{|x|}$  \\\\ 
+
+%(iii)
+\item $\dfrac{|x|}{|y|}=\left| \dfrac{x}{y} \right|$ si $y\neq 0$\\\\
+Demostración.- $$ \dfrac{|x|}{|y|} = \dfrac{\sqrt{x^2}}{\sqrt{y^2}}=\dfrac{x^{2/2}}{y^{2/2}}=\left( \dfrac{x}{y} \right)^{2/2} = \sqrt{\left( \dfrac{x}{y} \right)^2}=\left| \dfrac{x}{y} \right| $$ \\\\
+
+%(iv)
+\item $|x-y|\leq |x|+|y|$\\\\
+Demostración.- \; Sea $(|x-y|)^2\leq( |x|+|y| )^2$, entonces:
+\begin{center}
+\begin{tabular}{r c l l}
+$(|x-y|)^2$&$=$&$(x-y)^2$&\\\\
+&$=$&$x^2-2xy+y^2$&\\\\
+&$\leq$&$|x|^2+|-2xy|+|y|^2$&Ya que $-2xy\leq |-2xy|$\\\\
+&$=$&$|x|^2+|-2||x||y|+|y|^2$&Por teorema\\\\
+&$=$&$|x|^2+2|x||y|+|y|^2$&\\\\
+&$=$&$(|x|+|y|)^2$&\\\\
+\end{tabular}
+\end{center}
+luego por teorema \; $|x-y|\leq |x|+|y|$\\\\
+
+%(v)
+\item $|x|-|y|\leq |x-y|$\\\\
+Demostración.- \; Su demostración es parecida al anterior teorema, 
+\begin{center}
+\begin{tabular}{r c l l}
+$(|x|-|y|)^2$&$=$&$|x|^2-2|x||y|+|y|^2$&\\\\
+&$\leq$&$x^2-2xy+y^2$& por el contrareciproco de $|2xy|\geq 2xy$\\\\
+&$=$&$(x-y)^2$&\\\\
+&$=$&$|x-y|^2$&\\\\
+\end{tabular}
+\end{center}
+Por lo tanto $|x|-|y|\leq |x-y|$\\\\
+
+%(vi)
+\item $\left| |x|-|y| \right| \leq |x-y|$ (¿ Por qué se sigue esto inmediatamente del anterior teorema ?)\\\\
+Demostración.- \;  Sea $\sqrt{(|x|-|y|)^2}$ entonces, $$\sqrt{(|x|-|y|)^2}=\sqrt{(x^2-2|x||y|+y^2}\leq \sqrt{x^2-2xy+y^2}$$ y por definición se tiene $|x-y|$\\\\
+
+%(vii)
+\item $|x+y+z| \leq |x|+|y|+|z|$\\\\
+Demostración.- \: Sea $\sqrt{(x+y+9)^2}$ entonces,  $$\sqrt{x^2+z^2++y^2+2xy+2xz+2yz} \leq \sqrt{|x|^2+|z|^2++|y|^2+2|x||y|+2|x||z|+2|y||z|}$$ por lo tanto $\sqrt{(|x|+|y|+|z|)^2}$. La igualdad se prueba si $\forall x,y,z \geq 0$ ó $\forall x,y,z \leq 0$\\\\
+\end{enumerate}
+
+%------------------------------13-------------------------------------
+\item El máximo de dos números $x$ e $y$ se denota por $max(x,y)$. Así $max(-1,3)=max(3,3)$ y $max(-1,-4)=max(-4,-1=-1)$. El mínimo de $x$ e $y$ se denota por $min(x,y)$. Demostrar que:
+\begin{enumerate}[\bfseries 1.]
+\item $max(x,y)=\dfrac{x+y+|y-x|}{2}$
+\item $min(x,y)=\dfrac{x+y-|y-x|}{2}$
+\end{enumerate}
+Derivar una fórmula para $max(x,y,z)$ y $min(x,y,z),$ utilizando. por ejemplo, $max(x,y,z)=max(x,max(x,y))$ \\\\
+Demostración.- \; Por definición de valor absoluto se tiene:
+\begin{equation}
+|x-y| = \left\lbrace
+\begin{array}{crr}
+x-y& si, & x\geq y\\
+y-x& si, & x \leq y
+\end{array}
+\right.
+\end{equation}
+Por lo tanto 
+\begin{itemize}
+\item $max(x,y) = \dfrac{x+y+|x-y|}{2}= \dfrac{x+y+x-y}{2} =\dfrac{2x}{2}=x$\\
+\item $max(x,y) = \dfrac{x+y+|x-y|}{2}= \dfrac{x+y+y-x}{2} =\dfrac{2y}{2}=y$
+\end{itemize} 
+La demostración es parecido para para $min(x,y)$\\
+Se deriva una formula para $mas(x,y,z)=max(x,max(y,z))$ de la siguiente manera\\
+$$max(x,max(y,z))=\dfrac{x+\dfrac{y+z+|y-z|}{2} + \left| x - \dfrac{y+z+|y-z|}{2} \right|}{2}$$\\\\ 
+
+%----------------------------------14---------------------------------
+\item Demostrar:
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item Demostrar que $|a|=|-a|$\\\\
+Demostración.- \; Si $a\geq 0$, para $|a|^2$ entonces $a^2$, luego $(-a)^2=|-a|^2$, así se demuestra que $|a|=|-a|$. Luego es evidente para $a \leq 0.$\\\\ 
+
+%(b)
+\item Demostrar que $-b \leq a \leq b$ si y sólo si $|a|\leq b.$ En particular se sigue que $-|a|\leq a \leq |a|.$\\\\
+Demostración.- \; Sea $-a\leq b \land a\leq b$ entonces por definición de valor absoluto $|a|=a\leq b$ si $a\geq 0.$ Y $|a|=-a\leq b$ si $a\leq 0.$\\
+Por otro lado si $|a|\leq b,$ entonces es claro que $b\geq 0$. Pero $|a|\leq b$ significa que $a\leq b$ si $a\leq 0$ como también $a\leq b$ si $a\leq 0$. Análogamente $|a|\leq b$ significa que $-a\leq b,$ y en consecuencia $-b\leq a$, si $a\leq 0$ y $-b\leq a,$ si $a\geq 0$, por lo tanto $-b\leq a \leq b$\\\\
+
+%(c)
+\item Utilizar este hecho para dar una nueva demostración de $|a+b| \leq |a|+|b|$\\\\
+Demostración.- \; Sea $-|a| \leq a \leq |a|$ y $-|b|\leq b \leq |b|$ entonces $-(|a|+|b|) \leq a+b \leq |a|+|b|$, de donde $|a+b| \leq |a|+|b|.$\\\\
+\end{enumerate}
+
+%-----------------------------15------------------------------
+\item Demostrar que si $x$ e $y$ son $0$ los dos, entonces:\\
+\begin{itemize}
+\item $x^2+xy+y^2>0$\\\\
+Demostración.- \;Sea $(x-y)^2>0$ entonces $x^2+y^2>xy$. Por otro lado  si $x,y \neq 0$ por teorema  \; $x^2+y^2>0$, dado que $x^2+y^2>xy$ entonces se cumple $x^2+y^2+xy>0$.\\\\
+\item $x^4+x^3y+x^2y^2+xy^3+y^4$ \\\\
+Demostración.- \; Sea $(x^5-y^5)^2>0$, por teorema $\left[ (x-y)(x^4+x^3y+x^2y^2+xy^3+y^4) \right]^2>0$, así $(x-y)^2(x^4+x^3y+x^2y^2+xy^3+y^4)^2>0$, \; $(x^4+x^3y+x^2y^2+xy^3+y^4)^2>0$, por lo tanto $(x^4+x^3y+x^2y^2+xy^3+y^4)>0$ \\\\
+\end{itemize}
+
+%---------------------------16-------------------------------
+\item 
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item $(x+y)^2=x^2+y^2$ solamente cuando $x=0$ ó $y=0$\\\\
+Demostración.- \; Sea $x=0$ \; y \; $x^2+xy+y^2$ por teorema $0\cdot y = 0$ entonces $x^2+y^2$. Se demuestra de la misma manera para $y=0$\\\\
+\item $(x+y)^3=x^3+y^3$ solamente cuando $x=0$ ó $y=0$ ó $x=-y$\\\\
+Demostración.- \; Es evidente para $x=0$ é $y=0$. Solo faltaría demostrar para $x=-y$. \\ Si $(x+y)^3=x^3+3x^2y+3xy^2+y^3$ entonces $(x+y)^3=x^3 +3(-y)^2 y+3(-y)y^2 +y^3=x^3+3y^3+3(-y)^3+y^3$, por lo tanto $x^3+y^3$.\\\\ 
+
+%(b)
+\item Haciendo uso del hecho que $$x^2+2xy+y^2=(x+y)^2 \geq 0$$
+demostrar que el supuesto $4x^2 +6xy+4y^2<0$ lleva una contradicción.\\\\
+Demostración.- \; 
+\begin{center}
+\begin{tabular}{r c l}
+$4^2+8xy+4y^2$&$<$&$2xy$\\
+$4(x^2+2xy+y^2)$&$<$&$2xy$\\
+$x^2+2xy+y^2$&$<$&$xy/2$\\
+\end{tabular}
+\end{center}
+Dado que $2xy<xy/2$ es falso, concluimos que $4x^2 +6xy+4y^2<0$ también es falso y así llegamos a una contradicción.\\\\
+
+%(c)
+\item Utilizando la parte $(b)$ decir cuando es $(x+y)^4=x^4+y^4$\\\\
+Demostración.- \; Se tiene $(x+y)^2(x+y)^2$, por lo tanto se cumple que $x^4+y^4$, si $x=0$ ó $y=0$\\\\
+
+%(d)
+\item Hallar cuando es $(x+y)^5=x^5+y^5$. Ayuda: Partiendo del supuesto $(x+y)^5?x^5+y^5$ tiene que ser posible deducir la ecuación $x^3+2x^2y+y^3=0$, si $xy\neq 0$. Esto implica que $(x+y)^3=x^2y+xy^2=xu(x+y)$.\\
+El lector tendría que ser ahora capaz de intuir cuando $(x+y)^n=x^n+y^n$.\\\\
+Demostración.- \; Si $x^5+y^5=(x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5$, entonces $0=5x^4y+10x^3y^2+10x^2y^3+5xy^4$ $0=5xy(x^3+2x^2+y+2xy^2+y^3)$. Así $x^3+2x^2+y+2xy^2+y^3=0$.\\
+restando esta ecuación de $(x+y)^3=x^3+2x^2y+2xy^2+y^3$ obtenemos, $(x+y)^3=x^2y+xy^2=xy(x+y)$. Así pues, ó bien $x+y=0$ ó $(x+y)^2=xy;$ la última condición implica que $x^2+xy+y^2=0$, con lo que $x=0$ ó $y=0$. por lo tanto $x=0$ ó $y=0$ ó $x=-y$.\\\\
+\end{enumerate}
+
+%----------------------------17--------------------------------
+\item 
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item El valor mínimo de $2x^2-2x+4$\\\\
+Para poder hallar el valor mínimo debemos llevar la ecuación a su forma canónica es decir, 
+\begin{center}
+\begin{tabular}{r c l}
+$2x^2-3x+4$&=&$2\left( x^2-\dfrac{3}{2}x \right) +4$\\\\
+&=&$2\left[ \left( x-\dfrac{3}{4} \right)^2 -\left(\dfrac{3}{4} \right)^2 \right]+4$\\\\
+&=&$2\left( x-\dfrac{3}{4} \right)^2-2\left( \dfrac{3}{4} \right)^2+4$\\
+\end{tabular}
+\end{center}
+El mínimo valor posible es $\dfrac{23}{8}$, cuando $\left(x-\dfrac{3}{4}\right)^2=0$ ó $x=\dfrac{3}{4}$\\\\
+
+%(b)
+\item El valor mínimo de $x^2-3x+2y^2+4y+2$\\\\
+$$x^2-3x+2y^2+4y+2=\left( x- \dfrac{3}{2} \right)^2+2(y+1)^2-\dfrac{9}{4}$$
+así el valor mínimo es $-\dfrac{9}{4}$, cuando $x=\dfrac{3}{2}$ y $y=-1$\\\\
+
+%(c)
+\item Hallar el valor mínimo de $x^2+4xy+5y^2-4x-6y+7$\\
+\begin{center}
+\begin{tabular}{r c l}
+$x^2+4xy+5y^2-4x-6y+7$&=&$x^2+4(y-1)x+5y^2-6y+7$\\
+&=&$[x+2(y-1)]^2+5y^2-6y+7-4(y-1)^2$\\
+&=&$[x+2(y-19]^2+(y+1)^2+2$\\
+\end{tabular}
+\end{center}
+Así el valor mínimo es 2, cuando $y=-1$ y $x=-2(y-1)=4$\\\\
+\end{enumerate}
+
+%---------------------------------18---------------------------------
+\item
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item Supóngase que $b^2-4c\geq 0$. Demostrar que los números
+$$\dfrac{-b+\sqrt{b^2-4c}}{2}, \; \; \; \dfrac{-b- \sqrt{b^2-4c}}{2}$$
+satisfacen ambos la ecuación $x^2+bx+c	=0$\\\\
+Demostración.- \; Para probar que satisfaga a la ecuación dada, podemos empezar a completar al cuadrado de la siguiente manera: $x^2+bx+\left(\dfrac{b}{2}\right)^2=-c+\left(\dfrac{b}{2}\right)^2$, así $\left( x^2+\dfrac{b}{2} \right)^2=-c+\dfrac{b^2}{4}$. Por existencia de raíz cuadrada de los números reales no negativos $x+\dfrac{b}{2} = \pm \sqrt{\dfrac{b^2-4c}{4}}$, luego $x=\dfrac{-b \pm \sqrt{b^2-4c}}{2}$.\\\\ 
+
+%(b)
+\item Supóngase que $b^2-4c<0$. Demostrar que no existe ningún número $x$ que satisfaga $x^2+bx+c=0$; de hecho es $x^2+bx+c>0$ para todo $x$.\\\\
+Demostración.- \: Tenemos $$x^2+bx+c=\left( x+\dfrac{b}{2}\right)^2+c-\dfrac{b^2}{4}\geq c- \dfrac{b^2}{4}$$ pero por hipótesis $c-\dfrac{b^2}{4}>0$, así $x^2+bx+c>0$ para todo $x$. \\\\
+
+%(c)
+\item Utilizar este hecho para dar otra demostración de que si $x$ e $y$ no son ambos $0$, entonces $x^2+xy+y^2>0$\\\\
+Demostración.- Aplicando la parte $b$ con $y$ para $b$ e $y^2$ para $c$, tenemos $b^2-4c=y^2-4y^2<0$ para $x \neq 0$, entonces $x^2+xy+y^2>0$ para todo $x$.\\\\ 
+\item ¿Para qué número $\alpha$ se cumple que $x^2+\alpha xy + y^2>0$ siempre que $x$ e $y$ no sean ambos $0$?\\\\
+Demostración.- \; $\alpha$ debe satisfacer $(\alpha y)^2-4y^2<0,$ o $\alpha^2<4$, o $|\alpha|<2$\\\\
+
+%(d)
+\item Hállese el valor mínimo posible de $x^2+bx+c$ y de $ax^2+bx+c,$ para $a>0$\\\\
+Demostración.- \; Por ser $$x^2+bx+c=\left( x+\dfrac{b}{2} \right)^2+ c-\dfrac{b^2}{4}\geq c- \dfrac{b^2}{4},$$ y puesto que $x^2+bx+c$ tiene el valor $c- \dfrac{b^2}{4}$ cuando $x=-\dfrac{b}{2}$, el valor mínimo es $c-\dfrac{b^2}{4}$.\\ Después $$ax^2+bx+c= a \left( x^2+\dfrac{b}{a}x+\dfrac{c}{a} \right),$$ el mínimo es $$a\left( \dfrac{c}{a} - \dfrac{b^2}{4a^2} \right) = c - \dfrac{b^2}{4a}$$\\\\
+\end{enumerate}
+
+%----------------------------------19---------------------------------
+\item  El hecho de que $a^2 \geq 0$ para todo número $a$, por elemental que pueda parecer, es sin embargo la idea fundamental en que se basan en último instancia la mayor parte de las desigualdades. La primerísima de todas las desigualdades es la desigualdad de Schwarz: $$x_1y_1 + x_2y_2 \leq \sqrt{x_1^2 +x_2^2}\sqrt{y_1^2+y_2^2}.$$ Las tres demostraciones de la desigualdad de Schwarz que se esbozan más abajo tienen solamente una cosa en común: el estar basadas en el hecho de ser $a^2\geq 0$ para todo $a$.
+\begin{enumerate}[\bfseries (a)]
+
+%(a)
+\item Demostrar que si $x_1=\lambda y_1$ \; y \; y $x_2=\lambda y_2$ para algún número $\lambda$, entonces vale el signo igual en la desigualdad de Schwarz. Demuéstrese lo mismo en el supuesto $y_1=y_2=0$: supóngase ahora que $y_1$ e $y_2$ no son ambos $0$ y que no existe ningún número $\lambda$ tal que $x_1=\lambda y_1$ \; y \; $x_2=\lambda y_2.$ Entonces
+\begin{center}
+\begin{tabular}{r c l}
+$0$&$<$&$(\lambda y_1-x_1)^2+(\lambda y_2 -x_2)^2$\\\\
+&$=$&$\lambda^2(y_1^2+y_2^2)-2\lambda(x_1 y_1 + x_2 y_2)+(x_1^2 +x_2^2)$\\
+\end{tabular}
+\end{center}
+Utilizando el teorema anterior, completar la demostración de la desigualdad de Schwarz.\\\\
+Demostración.- \; Primero, Si $x_1=\lambda y_1$ \; y \; $x_2=\lambda y_2.$, entonces remplazando en la desigualdad de Schwarz, $\lambda \cdot (y_1)^2 + \lambda \cdot (y_2)^2=\sqrt{(\lambda y_1)^2+(\lambda y_2)^2}\sqrt{y_1^2+y_2^2}$ luego por propiedades de raíz se cumple  $$\lambda(y_1^2+y_2^2) = \sqrt{\left[\lambda(y_1^2+y_2^2)\right]^2}$$
+Vemos que también se cumple la igualdad para $y_1=y_2=0$ .\\
+Por último Si un tal $\lambda$ no existe, entonces la ecuación carece de solución en $\lambda$, de modo que por el teorema 1.25 tenemos, $$\left[ \dfrac{2(x_1 y_1 + x_2 y_2)}{y_1^2 + y_2^2}  \right]^2 - \dfrac{4(x_1^2 +y_1^2)}{y_1^2 + y_2^2}<0$$ lo cual proporciona la desigualdad de Schwartz.\\\\
+
+%(b)
+\item Demostrar la desigualdad de Schwarz haciendo uso de $2xy\leq x^2+y^2$(¿Cómo se deduce esto?) con $$x=\dfrac{x_i}{\sqrt{x_1^2 + x_2^2}}, \; \; \; y = \dfrac{y_i}{\sqrt{y_1^2+y_2^2}}$$ primero para $i=1$ y después para $i=2$.\\\\
+Demostración.- \;  En vista de que $(x-y)^2\geq 0$, tenemos $2xy\leq x^2+y^2$. Realizando el respectivo remplazo tenemos:
+\begin{enumerate}[\bfseries 1)]
+\item $$2\dfrac{x_1}{\sqrt{x_1^2 + x_2^2}}\cdot \dfrac{y_1}{\sqrt{y_1^2+y_2^2}}\leq \dfrac{x_1^2}{\sqrt{x_1^2 + x_2^2}} + \dfrac{y_1^2}{\sqrt{y_1^2+y_2^2}}$$
+\item $$2\dfrac{x_2}{\sqrt{x_1^2 + x_2^2}}\cdot \dfrac{y_2}{\sqrt{y_1^2+y_2^2}}\leq \dfrac{x_2^2}{\sqrt{x_2^2 + x_2^2}} + \dfrac{y_1^2}{\sqrt{y_1^2+y_2^2}}$$
+\end{enumerate}
+Luego sumando $1)$ y $2)$ $$2\dfrac{x_1}{\sqrt{x_1^2 + x_2^2}}\cdot \dfrac{y_1}{\sqrt{y_1^2+y_2^2}}+2\dfrac{x_2}{\sqrt{x_1^2 + x_2^2}}\cdot \dfrac{y_2}{\sqrt{y_1^2+y_2^2}}\leq \dfrac{x_1^2}{\sqrt{x_1^2 + x_2^2}} + \dfrac{y_1^2}{\sqrt{y_1^2+y_2^2}}+\dfrac{x_2^2}{\sqrt{x_2^2 + x_2^2}} + \dfrac{y_1^2}{\sqrt{y_1^2+y_2^2}}$$ nos queda $$\dfrac{2(x_1y_1+x_2y_2)}{\sqrt{x_1^2+x_2^2}\sqrt{x_2^2+y_2^2}}\leq 2$$\\\\
+
+%(c)
+\item Demostrar la desigualdad de Schwarz demostrando primero que $$(x_1^2 + x_2^2)(y_1^2 + y_2^2)=(x_1 y_1 + x_2 y_2)^2 + (x_1 y_2 - x_2 y_1)^2$$
+Demostración.- \; Es fácil ver que la igualdad se cumple, $$(x_1^2 + x_2^2)(y_1^2 + y_2^2)=(x_1 y_1)^2 +2x_1 y_1 x_2 y_2 + (x_2 y_2 ) ^2 + (x_1 y_2)^2 -2x_1 y_1 x_2 y_2 + (x_2 y_1)^2=(x_1 y_1 + x_2 y_2)^2 + (x_1 y_2 - x_2 y_1)^2$$
+Ya que $(x_1 y_2 - x_2 y_1)^2\geq 0$ entonces, $$(x_1^2 + x_2^2)(y_1^2 + y_2^2)\geq (x_1 y_1 + x_2 y_2)^2$$\\\\
+
+%(d)
+\item Deducir de cada una de estas tres demostraciones que la igualdad se cumple solamente cuando $y_1 = y_2 = 0$ ó cuando existe un número $\lambda$ tal que $x_1=\lambda y_1$\; y \; $x_2= \lambda y_2$\\\\
+Demostración.- \; La parte $a)$ ya prueba el resultado deseado.\\
+En la parte $b)$ la igualdad se mantiene sólo si se cumple en $(1)$ y $(2)$. Sea $2xy=x^2+y^2$ sólo cuando $(x-y)^2=0$ es decir $x=y$ esto significa $$\dfrac{x_i}{\sqrt{x_1^2 + x_2^2}}= \dfrac{y_i}{\sqrt{y_1^2+y_2^2}} \; ; \; para \; x=1,2$$ para que podamos elegir $\lambda = \sqrt{x_1^2 + x_2^2} / \sqrt{y_1^2 + y_2^2}$.\\
+En la parte $(c)$, la igualdad se cumple solamente cuando $(x_1 y_2 - x_2 y_1)^2 \geq 0$. Una posibilidad es $y_1 = y_2 = 0$. Si $y\leq 0$, entonces $x_l = (x_1 y_1)y_1$ \; y también $x_2 = (x_1 / y_1)y_1$ análogamente, si $y_2\leq 0$, entonces $\lambda = x2/y2$.\\\\
+\end{enumerate}
+
+%-------------------------------------20----------------------------------------
+\item Demostrar que si $$|x - x_0|<\dfrac{\epsilon}{2} \hspace{0.5cm} y \hspace{0.5cm} |y - y_0|<\dfrac{e}{2}$$ entonces $$|(x+y)-(x_o + y_0)|<\epsilon,$$ $$|(x-y)-(x_o - y_0)|<\epsilon.$$\\
+Demostración.- \; primeramente si $|(x+y)-(x_o + y_0)|= |(x-x_0)+(y-y_0)|$, por desigualdad triangular e hipótesis, $$ |(x-x_0)+(y-y_0)|\leq |x - x_0| + |y - y_0| <\frac{\epsilon}{2} + \frac{\epsilon}{2} =\epsilon$$
+Demostramos de similar manera y por teorema 1.7, $$|(x-y)-(x_o - y_0)| = |(x - x_0)-(y - y_0)| \leq |x - x_0| + |y - y_0|< \frac{\epsilon}{2} + \frac{\epsilon}{2}=\epsilon$$\\
+
+%---------------------------------------21---------------------------------------
+\item Demostrar que si $$|x-x_0|< min \left( 1,\dfrac{\epsilon}{2(|y_0|+1)} \right) \hspace{0.5cm} y \hspace{0.5cm} |y-y_0|< \dfrac{\epsilon}{2(x_0+1)}$$ entonces $|xy - x_0 y_0 |< \epsilon.$\\\\
+La primera igualdad de la hipótesis significa precisamente que: $$|x-x_0|<1 \hspace{0.5cm} y \hspace{0.5cm} |x - x_0| \dfrac{\epsilon}{2(|y_0|+1)}$$\\\\
+Demostración.- \; puesto que $|x-x_0| < 1$ se tiene $$|x|-|x_0| \leq |x-x_0| < 1$$ de modo que $$|x| < 1 + |x_0|$$ Así pues 
+\begin{center}
+\begin{tabular}{r c l l}
+$|xy - x_0 y_0|$&=&$| xy -xy_0 + xy_0 -x_0 y_0 |$&\\\\
+&=&$|x(y - y_0) + y_0(x - x_0)|$&\\\\
+&$\leq$&$|x| \cdot |y - y_0| + |y_0| \cdot |x - x_0|$&\\\\
+&$<$&$(1+|x_0|) \cdot \dfrac{\epsilon}{2(|x_0|+1|)} +  |y_0| \cdot \dfrac{\epsilon}{2(|y_0|+1|)}$&ya que $ |y_0|\dfrac{\epsilon}{2(|y_0|+ 1|)} < |y_0| \dfrac{\epsilon}{2|y_0|}$ para $|y_0|\neq 0$\\\\
+&$\leq$&$\dfrac{\epsilon}{2} + \dfrac{\epsilon}{2}$& ó $|y_0|\dfrac{\epsilon}{2(|y_0|+ 1|)} = \dfrac{\epsilon}{2}$ si $|y_0|=0$ \\\\
+&$=$&$\epsilon$&\\\\
+\end{tabular}
+\end{center}
+
+%---------------------------------------22-------------------------------------
+\item Demostrar que si $y_0 \neq 0$ y $$|y - y_0|< min\left( \dfrac{|y_0|}{2}, \dfrac{\epsilon |y_0|^2}{2} \right),$$ 
+entonces $y \neq 0$ y $$\left| \dfrac{1}{y} - \dfrac{1}{|y_0|} \right|$$\\\\
+Demostración.- \; Se tiene $$|y_0| - |y| < |y - y_0| < \dfrac{y_0}{2},$$ de modo que $|y|<\dfrac{|y_0|}{2}$. En particular, $y \neq 0,$ y $$\dfrac{1}{|y|} < \dfrac{2}{y_0}.$$ Así pues $$\left| \dfrac{1}{y} - \dfrac{1}{y_0} \right| = \dfrac{|y_0 - y|}{|y| \cdot |y_0|} < \dfrac{2}{y_0} \cdot \dfrac{1}{|y_0|} \cdot \dfrac{\epsilon |y_o|^2}{2} = \epsilon$$\\\\
+
+%--------------------------------------23-----------------------------------------
+\item Sustituir los interrogantes del siguiente enunciado por expresiones que encierren $\epsilon, \; x_0 \; e \; y_0$ de tal manera que la conclusión sea válida:\\
+Si $y_0$ y $$|y - y_0|< ? \hspace{0.5cm} y \hspace{0.5cm} |x - x_0|< ?$$ entonces $y \neq 0$ y $$\left| \dfrac{x}{y} - \dfrac{x_0}{y_0} \right|< \epsilon$$ \\
+Sea $|x \dfrac{1}{y} - x_0 \dfrac{1}{y_0}|< \epsilon$ entonce $|x \cdot y^{-1} - x_o \cdot y_0^{-1}| < \epsilon$ por teorema 4.14 $$|x- x_0| < min \left( 1, \dfrac{\epsilon}{2(|y_0^{-1}|+1)} \right) \hspace{0.5cm} y \hspace{0.5cm} |y^{-1} - y_0^{-1}| < \dfrac{\epsilon}{2(|x_0|+1)}  $$ luego por teorema 4.15 $$|y - y_0| < min \left( \dfrac{\dfrac{\epsilon}{2 (|x_o|)+1} \cdot |y_0|^2}{2} \right) = \min \left( \dfrac{\epsilon \cdot |y_0|^2}{4(|x_o|+1)} \right)$$ \\\\
+
+%--------------------------------------24-------------------------------------------
+\item Este problema hace ver que la colocación de los paréntesis en una suma es irrelevante. Las demostraciones utilizan la $"$La inducción matemática$"$; si no se está familiarizado con este tipo de demostraciones, pero a pesar de todo se quiere tratar este problema, se puede esperar hasta haber visto el capítulo 2, en el que se explican las demostraciones por inducción. Convengamos, para fijar ideas que $a_1 + ... + a_n$ denota $$a_1 + (a_2(a_3+...+(a_{n-2}+(a_{n-1}+ a_n)))...)$$
+Así $a_1+a_2+a_3$ denota $a_1(a_2+a_3)$, y $a_1+a_2+a_3+a_4$ denota $a_1(a_2+(a_3+a_4)),$ etc.
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item Demostrar que $$(a_1+...+a_k)+a_{k+1}=a_1+...+a_{k+1}$$\\
+Demostración.- \; Sea $k=1$ entonces $a_1+a_2=a_1+a_2$. Si la ecuación se cumple para $k$ entonces 
+\begin{center}
+\begin{tabular}{r c l}
+$(a_1+...+a_{k+1})+a_{k+2}$&$=$&$[(a_1+...+a_k)+a_{k+1}]+a_{k+2}$\\
+&$=$&$(a_1+...+a_k)+(a_{k+1}+a_{k+2})$\\
+&$=$&$a_1+...+a_k + (a_{k+1}+a_{k+2})$\\
+&$=$&$a_1+...+a_{k+2}$\\\\
+\end{tabular}
+\end{center}
+
+%(b)
+\item Demostrar que si $n\geq k,$ entonces $$(a_1+...+a_k) + (a_{k+1} + ... + a_n) = a_1 + ... + a_n$$
+Demostración.- \; Para $k=1$ la ecuación se reduce a la definición de $a_1+...+a_k$. Si la ecuación se cumple para $k<n$ entonces,
+\begin{center}
+\begin{tabular}{r c l l}
+$(a_1+...+a_{k+1})+(a_{k+2}+...+a_n)$&$=$&$([a_1+...+a_k]+a_{k+1}) + (a_{k+2}+...+a_n)$&parte $(a)$\\
+&$=$&$(a_1+...+a_k)+(a_{k+1}+(a_{k+2}+...+a_n))$&por propiedad \\
+&$=$&$(a_1+...+a_k)+(a_{k+1}+...+a_n)$&por definición\\
+&$=$&$a_1+...+a_n$&hipótesis\\\\
+\end{tabular}
+\end{center}
+
+%(c)
+\item Sea $s(a_1,...,a_k)$ una suma formada con $a_1,...,a_k$. Demostrar que $$s(a_1,...,a_k) = a_1+...+a_k$$\\
+Demostración.-\; El aserto es claro para $k=1$. Supóngase que se cumple para todo $l<k$, entonces
+\begin{center}
+\begin{tabular}{rcll}
+$s(a_1,...,a_k)$&$=$&$s^{'}(a_1,...,a_l)+ s^{''}(a_{l+1},...,a_k)$&\\
+&$=$&$(a_1+...+a_l)+(a_{l+1})+(a_{l+1}+...+a_k)$&hipótesis\\
+&$=$&$a_1+...+a_k$&parte $(b)$\\\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+%------------------------------------------25-----------------------------------------
+\item Supóngase que por número se entiende sólo el $0$ ó el $1$ y que $+$ y $\cdot$ son las operaciones definidas mediante las siguiente tablas.
+\begin{multicols}{2}
+\begin{center}
+\begin{tabular}{c c c }
++&0&1\\
+0&0&1\\
+1&1&0\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c c c }
+&0&1\\
+0&0&0\\
+1&0&1\\
+\end{tabular}
+\end{center}  
+\end{multicols}
+Comprobar que se cumplen las propiedades P1-P2, aunque 1+1=0\\\\
+P2, P3, P4, P5, P6, P7, P8 resultan evidentes sin más que observar las tablas. Se presentan ocho casos para $P1$ y este número puede incluso reducirse: al cumplirse P2, resulta claro que $a+(n/b+c)=(a+b)+c$ si $a,b$ ó $c$ es $0,$ de modo que bastará comprobar el caso $a=b=c=1$. Una observación análoga puede hacerse para $P5$. Finalmente, P9 se cumple para $a=0$, ya que $0\cdot b = 0$ para todo $b,$ y para $a=1,$ ya que $1\cdot b = b$ para todo $b$.\\\\
+\end{enumerate}

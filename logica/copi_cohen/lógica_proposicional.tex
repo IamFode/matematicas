@@ -1,0 +1,1281 @@
+\documentclass[10pt]{book} 						%Tipo de texto
+\usepackage[text=15cm,centering,headsep=20pt, top=2cm, bottom = 2cm,letterpaper,showframe = false]{geometry} 								%configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts}	%(símbolos de la AMS).7
+\parindent = 0cm 								%sangria
+\usepackage{lmodern}							% tipos de letras
+\usepackage[T1]{fontenc}						%acentos en español
+					%acentos en español
+\usepackage[spanish]{babel}						%español capitulos y secciones
+\usepackage{graphicx}						%gráficos y figuras.
+\pagestyle{empty}								%elimina numeración de página
+%-----------------------------------------%
+\usepackage{wrapfig} %Figuras al lado de texto
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						% diseño de cajas
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}%
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}								% cajas y entornos para teoremas etc
+\usepackage{pstricks}							%cambiar color de letra
+\usepackage[Bjornstrup]{fncychap}				%diseño de portada de capitulos
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\counterwithout{footnote}{chapter}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										%notas en el margen
+%------------------------------------------
+\newtheorem{teo}{\textbf{Teorema}}[chapter] 				%entorno para teoremas
+\newtheorem{ejemplo}{{\it\textbf{ Ejemplo}}}[chapter] 		%entorno para ejemplos
+\newtheorem{def.}{\textbf{Definición}}[chapter] 			%entorno para definiciones
+\newtheorem{Post.}{\textbf{Postulado}}[chapter]				%entorno de postulados
+%---------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+%------------------------------------------
+\begin{document}
+\normalfont
+\input xy
+\xyoption{all}
+\author{Apuntes por Fode}
+\title{Introducción a la lógica. \\ \vspace{0.5cm} \small Irving M. Copi, Carl Cohen}
+\date{II/2019}
+\maketitle
+\let\cleardoublepage\clearpage
+\tableofcontents 								%indice
+
+%------------------------------------------
+
+
+\let\cleardoublepage\clearpage
+\chapter{Lógica}
+\section{conceptos básicos de lógica}
+\subsection{Qué es la lógica}
+Es el estudio de los métodos y principios empleados para distinguir el razonamiento correcto del incorrecto. 
+\subsection{Proposiciones} 
+Proposición es toda oración respecto de la cual puede decirse si es verdad o falsa.\footnote{Armando Rojo. Álgebra I}  \\ 
+Una afirmación de que algo es (o no es) el caso; todas las proposiciones son o verdaderas o falsas.(Introducción a la lógica). \footnote{Irving, Copi, Carl Cohen. Introducción a la lógica}\\
+\subsubsection{Enunciado}
+Es el significado de una oración declarativa en un momento particular; en lógica a veces se emplea la palabra (enunciado) en logar de la palabra proposición.\\
+Ejemplo: Bolivia tuvo Salida al Mar. 
+\subsubsection{Proposición simple}
+Una proposición que solo hace una aseveración.
+\subsubsection{Proposición compuesta}
+Proposición que contiene dos o más proposiciones simples
+\subsection{Argumentos}
+\subsubsection{Proposición hipotética (o condicional)}
+Un tipo de proposición compuesta; es falsa sólo cuando el antecedente es verdadero  y el consecuente falso.
+\subsubsection{Inferencia}
+Proceso en el que se relacionan proposiciones afirmando una proposición con bases en otra u otras proposiciones.
+\subsubsection{Argumento}
+Conjunto estructurado de proposiciones que refleja una inferencia.\\
+Un argumento es un grupo de proposiciones del cual se dice que una de ellas se sigue de las otras, consideradas como base o fundamento para la verdad de éste.
+\subsubsection{Premisa}
+Proposición utilizada en un argumento para dar soporte a alguna otra proposición.
+\subsubsection{Conclusión}
+Es la proposición a la que las otras proposiciones, las premisas, dan soporte en un argumento.
+
+\subsection{Argumentos deductivos e inductivos}
+\subsubsection{Argumento deductivo}
+Establece su conclusión de manera concluyente, una de las dos clases de argumento.
+\subsubsection{Argumento inductivo}
+Establece su conclusión sólo con algún grado de probabilidad. Puede juzgarse como peor o mejor y no como válido o invalido.
+\subsubsection{Argumento válido}
+Si todas las premisas son verdaderas, debe ser verdadera, aplica solo para argumentos deductivos.
+\subsubsection{Argumento invalido}
+La conclusión no es necesariamente verdadera, aun cuando todas las premisas sean verdaderas, aplica sólo para argumentos deductivos.
+\subsection{Validez y verdad}
+La verdad o falsedad son atributos de las proposiciones o enunciado, la validez o invalidez son atributos de los argumentos.\\
+UN argumento puede ser válido aun cuando su conclusión y una o más de sus premisas sean falsas.
+\subsubsection{Contundente}
+Argumento que es válido y sólo contiene premisas verdaderas.
+\subsubsection{Características de argumentos deductivos con sólo dos premisas}
+\begin{enumerate}
+\item Argumento válido con una premisa verdadera, una premisa falsa y conclusión falsa.
+\item Argumento válido con una premisa verdadera, una premisa falsa y conclusión verdadera.
+\item Argumento inválido con dos premisas verdaderas y conclusión falsa.
+\item Argumento inválido con dos premisas verdaderas y conclusión verdadera.
+\item Argumento válido con dos premisas falsas y conclusión verdadera.
+\item Argumento válido con dos premisas falsas y conclusión verdadera.
+\item Argumento inválido con una premisa verdadera. premisa falsa y una conclusión verdadera.
+\item Un argumento válido con dos premisas verdaderas y conclusión verdadera.
+\end{enumerate}
+
+\section{Análisis de argumentos}
+\subsection{Parafraseo y diagramas}
+\subsubsection{Parafraseo}
+Parafrasear puede evidenciar aquello que se supuso en un argumento, pero que no se enunció por completo o con claridad.
+\paragraph{Ejemplo}
+' Arquímedes aún será recordado cuando Esquilo haya sido olvidado, pues las lenguas mueren y las ideas matemáticas no '\\
+Este argumento se parafrasea separando sus afirmaciones:
+\begin{enumerate}
+\item Las lenguas mueren.
+\item Las obras de Esquilo están en una lengua.
+\item De modo que las obras de Esquilo perecerán en algún momento.
+\item Las ideas matemáticas son permanentes, por lo tanto, nunca mueren.
+\item La obra de Arquímedes está compuesta de ideas matemáticas.
+\item Por lo que la obra de Arquímedes no morirá.
+\item Por lo tanto, Arquímedes será recordado cuando Esquilo haya sido olvidado.
+\end{enumerate}
+\subsubsection{Diagramas}
+En el plano bidimensional, la conclusión se coloca en el espacio abajo de las premisas; las premisas coordinadas se colocan al mismo nivel, en horizontal.
+\paragraph{Ejemplo}
+' 1) Las cimas de las montañas del desierto son buenos sitios para observatorios astronómicos. 2) Al ser elevadas, se encuentran por encima de una parte de la atmósfera, permitiendo que la luz de las estrellas alcance al telescopio sin tener que atravesar toda la profundidad de la atmósfera. 3) Al ser seco, el desierto también está relativamente libre de nubes. 4) El mínimo halo de bruma o de nubes puede resultar en un cielo inapropiado para realizar muchas mediciones astronómicas. '
+\begin{center}
+
+\end{center}
+\subsubsection{Argumentos entrelazados}
+Combinación de diagramas y parafraseo.
+
+\subsection{Reconocimiento de argumentos}
+\subsubsection{Indicadores de conclusión}
+Palabra o frase que regularmente introduce la conclusión de un argumento.
+\begin{center}
+\begin{tabular}{|l|l}
+por lo tanto & por estas razones \\
+de ahí que & se sigue que \\
+así, así que & concluyo que \\
+por consiguiente & lo que muestra que \\
+en consecuencia &  lo que quiere decir que\\
+consecuentemente & lo que conlleva a \\
+prueba que & lo que implica que  \\
+Como resultado & lo que permite inferir que  \\
+por esta razón & lo que lleva a la conclusión de que  \\
+de este modo & podemos inferir que \\
+\end{tabular}
+\end{center}
+\subsubsection{Argumentos de premisas}
+Palabra o frase que regularmente introduce una premisa en un argumento
+\begin{center}
+\begin{tabular}{|l|l}
+ puesto que & como lo indica tal o cual  \\
+porque & la razón es que \\
+ya que & por la razón de que  \\
+como & puede inferirse de \\
+se sigue de  & puede derivarse de \\
+como la muestra & puede deducirse de \\
+dado que  & en vista del hecho de que 
+\end{tabular}
+\end{center}
+\subsubsection{Argumento en contexto}
+Muchos argumentos no llevan argumentos de conclusión o de premisa, para ello se muestra que a menudo el argumento se esclarece por su contexto. 
+\subsubsection{Premisas en forma no declarativa}
+\paragraph{Pregunta retórica}
+Pregunta cuya respuesta se asume que es obvia.
+\subsubsection{Proposiciones no enunciadas}
+\paragraph{Entimemas}
+Argumento que contiene una proposición no enunciada.
+\subsection{Argumento y explicaciones}
+Debemos distinguir entre una explicación y un argumento.
+\paragraph{Explicaciones}
+Grupo de enunciados que pretenden dar cuenta de por qué algo es como es; una explicación no es un argumento.
+\subsection{Pasajes con argumentos complejos}
+\textcolor{green}{La práctica de estas habilidades lógicas le ayuda a uno a leer más cuidadosamente y alcanzar así mejor comprensión}\\
+Puede haber distintas formas de argumentos, por ejemplo:
+\begin{itemize}
+\item De una premisa, dos conclusiones.
+\item De dos premisas dependientes, dos conclusiones.
+\item De dos premisas independientes, dos premisas independientes. pero en un mismo tema.
+\item La conclusión de un argumento es la premisa de otro.
+\end{itemize}
+
+\section{Falacias}
+\subsection{¿ Què es la falacia  ?}
+Tipo de argumento que puede parecer correcto, pero que contiene un error de razonamiento. En el sentido más estrecho, cada falacia es un tipo de argumento incorrecto.
+\subsection{clasificación de falacias}
+\subsubsection{Falacias de relevancia}
+Son errores simples, que tienen ausencia en la conexión real entre las premisas y la conclusión.\\
+Las falacias son irrelevantes para la conclusión.
+\paragraph{La apelación a las emociones (argumento ad populum)}
+Falacia en la que el argumento depende de la emoción más que de la razón.
+\paragraph{La pista falsa}
+Es un argumento falaz cuya eficiencia radica en la distracción porque se desvía la atención.
+\paragraph{El hombre de paja}
+Si al oponernos a un punto de vista exponemos la posición de nuestro adversario como una fácil de destruir, el argumento es desde luego falaz.
+\paragraph{Apelación a la fuerza (Argumento ad baculum)}
+Falacia en la que en el argumento se recurre a amenazar con la fuerza; la amenaza puede estar velada.
+\paragraph{El argumento contra la persona (argumento ad hominem)}
+\subparagraph{Ofensivo}
+Falacia informal en la que se dirige un ataque hacia una característica de un oponente más que a los méritos de su postura.
+\subparagraph{Circunstancial}
+Falacia informal que se comete en la que se dirige un ataque a las circunstancias especiales de un oponente más que a los méritos de su postura.
+
+\paragraph{Conclusión irrelevante(ignoratio alenchi)}
+Falacia informal que se comete cuando las premisas de un argumento propuestas para  establecer una conclusión en realidad están dirigidas hacia otra conclusión.
+\subsubsection{Falacias de inducción deficiente}
+Son aquellas en donde la equivocación surge por el hecho de que las premisas del argumento, aunque son relevantes para la conclusión, son tan débiles e ineficaces. 
+\paragraph{El argumento por ignorancia (Argumento ad ignorantiam)}
+Falacia informal en la que las conclusiones se apoya en una apelación ilegitima a la ignorancia , como cuando se supone que algo es probable que sea verdadero porque no podemos probar que es falso.
+\paragraph{La apelación inapropiada a la autoridad (ad verecundiam)}
+Falacia informal en la que la apelación a la autoridad es ilegítima porque la autoridad a la que se apela no tiene legitimidad especifica como experto en el tema en cuestión.
+\paragraph{Causa falsa}
+Falacia informal en la que el error surge de aceptar como causa de algo, algo que en realidad no lo es.
+\paragraph{Generalización precipitada}
+Falacia informal en la que un principio que es un verdadero para un caso particular se aplica, por descuido o deliberadamente, al grueso de los casos.
+
+\subsubsection{Falacias de presuposición}
+Son las equivocaciones que surgen porque se asume demasiado en las premisas.
+\paragraph{Accidente}
+Falacia informal en la que se aplica una generalización a casos individuales que ésta no regula.
+\paragraph{Pregunta compleja}
+Falacia informal en la que se hace un pregunta de forma que se supone la verdad de alguna proposición oculta en la pregunta.
+\paragraph{Petición de principio (Petitio principii)}
+Falacia informal en la que la conclusión de un argumento se enuncia o asume en una de las premisas.
+
+\subsubsection{Falacias de ambigüedad}
+Surgen por el uso equívoco de las palabras o frases en las premisas o en la conclusión de un argumento.
+\paragraph{Equivocación}
+Falacia informal en la que se han confundido dos o más significados de la misma palabra o frase.
+\paragraph{Anfibología}
+Falacia informal que surge de la manera imprecisa, torpe o equívoca en la que se combinan las palabras, conduciendo a posibles significados alternativos de un enunciado.
+\paragraph{Acento}
+Falacia informal cometida cuando un término o frase tiene un significado en la conclusión de un argumento diferencia del significado que tienen en una de las premisas, la diferencia surge principalmente de un cambio en el énfasis dado a las palabras utilizadas.
+\paragraph{Composición}
+Falacia informal en la que erróneamente se extrae una conclusión de los atributos de las partes de la totalidad a partir de los atributos de la totalidad misma.
+\paragraph{División}
+Falacia informal en la que se extrae una conclusión errónea a partir de los atributos de la totalidad a los atributos de las partes como un todo.
+
+\chapter{Lógica clásica o lógica aristotélica}
+\section{Proposiciones categóricas}
+\subsection{Teoría de la deducción}
+\subsubsection{Argumento deductivo}
+Argumento que pretende establecer su conclusión de manera concluyente; una de las dos clases de argumento.
+
+\subsubsection{Argumento válido}
+Argumento deductivo en el que, si todas las premisas son verdaderas, su conclusión debe ser verdadera.
+
+\subsection{Clases y proposiciones categóricas}
+\subsubsection{Clase}
+La colección de todos los objetos que tienen alguna característica especifica en común.
+\subsubsection{Proposición categórica}
+Proposición utilizada en los argumentos deductivos que afirman una relación entre una categoría y otra categoría.
+\subsection{Los cuatro tipos de proposiciones categóricas}
+ejemplo:
+\begin{itemize}
+\item Todos los políticos son mentirosos.
+\item Ningún político.
+\item Algún político es mentiroso.
+\item Algún político no es mentiroso.
+\end{itemize}
+
+\subsubsection{Proposiciones universales afirmativas (proposición A)}
+Proposiciones que aseveran que todos los miembros de una clase están incluidos o contenidos en otra clase.
+$$ Todo \; S \; es \, P $$
+S = Sujeto \\
+P = Predicado
+
+\subsubsection{Proposiciones universales negativas (proposición E)}
+Proposiciones que aseveran que cualquier miembro de una clases está incluido completamente de otra clase.
+$$ \mbox{nungún S es P} $$
+Se afirma que la clase sujeto, está excluida completamente de la clases predicado.
+
+\subsubsection{Proposiciones particulares afirmativas (Proposición I)}
+Proposiciones que afirman que dos clases tienen algún miembro o algunos miembros en común.
+$$ \mbox{Algún S es P} $$
+algún = "al menos uno".
+
+\subsubsection{Proposiciones particulares negativas (proposiciones O)}
+Proposiciones que afirman que al menos un miembro de una clases está excluido de toda otra clases.
+$$ \mbox{Algún S no es P} $$
+
+\subsection{Cualidad, cantidad y distribución}
+\subsubsection{Cualidad}
+Atributo de toda proposición categórica determinado por el hecho de que una proposición afirme o niegue alguna forma de inclusión de clase.
+
+\subsubsection{Cantidad}
+Atributo de toda proposición categórica, determinado por el hecho de que una proposición se refiera a todos los miembros (universal) o sólo a algunos (particular) de la clase del sujeto.\\
+entonces existen:
+\begin{itemize}
+\item Universal afirmativa (A).
+\item Particular afirmativa (I).
+\item Universal negativa (E).
+\item Particular negativa (O).
+\end{itemize}
+
+\subsubsection{Esquema general de las proposiciones categóricas de forma estándar}
+Entre el sujeto y predicado de toda proposición categórica de forma estándar aparece alguna forma de verbo SER, que sirve para conectar los términos sujeto y predicado y se llama cúpula.\\
+Todo S es P, algún S no es P.\\
+El esquema general de una proposición categórica viene dado por:\\
+\begin{center}
+Cuantificador, Término sujeto, cópula, Término predicado.
+\end{center}
+
+\subsubsection{Distribución}
+Forma de caracterizar el hecho de que los términos de una proposición categórica se refieren a todos los miembros de una clase designada por ese término.
+\begin{itemize}
+\item Las proposiciones tanto afirmativas como negativas distribuyen su término sujeto. 
+\item Las proposiciones particulares, ya sean afirmativas o negativas, no distribuyen su término sujeto.
+\item Las proposiciones afirmativas, ya sean universales o particulares no distribuyen su termino predicado.
+\item Las proposiciones negativas, tanto universales como particulares, sí distribuyen su termino predicado.
+\end{itemize}
+\begin{table}
+\centering
+\caption{Cantidad, cualidad y distribución}
+\begin{tabular}{c c c c c}
+\textbf{Proposición} & \textbf{Nombre literal} & \textbf{Cantidad} & \textbf{Cualidad} & \textbf{Distribución} \\
+\hline
+Todo S es P& A & universal & afirmativa & sólo P \\
+ Ningún S es P & E & universal & negativa & S y P \\
+Algún S es P& I & particular & afirmativa & ninguna \\
+ Algún S no es P & O & particular & negativa & sólo P \\
+\end{tabular}
+\end{table}
+\subsection{El cuadro de oposición tradicional}
+\subsubsection{Contradictorias}
+Dos proposiciones son contradictorias si una es la negación de la otra. Esto es, si ambas no pueden ser ciertas y falsas a la vez. Dos proposiciones categóricas de forma estándar que tienen los mismos términos sujeto y predicado, pero difieren una de otra tanto en cantidad como en cualidad son contradictorias.
+\subsubsection{Contrarias}
+Se dice que dos proposiciones son contrarias si no pueden ser ambas verdaderas. Si una es verdadera, la otra debe ser falsa, pero ambas pueden ser falsas.\\
+Dos proposiciones universales (A y E) que tienen los mismos términos sujeto y predicado, pero difieren en cualidad (Una afirmando y la otra negando)serán contrarias.
+\subsubsection{Subcontrarias}
+Se dice que dos proposiciones son subcontrarias si no pueden ser ambas falsas, aunque las dos pueden ser verdaderas.
+\subsubsection{Subalternas}
+La oposición entre una proposición universal, (la superalterna) y su proposición particular correspondiente (la subalterna). En la proposición universal implica la verdad de su proposición particular correspondiente.
+\subsubsection{Cuadro de oposición}
+$$
+\xymatrix{{\overbrace{A}^{\mbox{Todo S es P}}} \ar[d] & \ar[l] contrarias \ar[r]   & {\overbrace{E}^{\mbox{Ningún S es P}}} \ar[d] \\ subalternación \ar[d]  & contradictorias \ar[ul] \ar[ur] \ar[dl] \ar[dr] & subalternación  \ar[d] \\ {\underbrace{I}_{\mbox{Algún S es P}}} & \ar[l] subcontrarias \ar[r] & {\underbrace{O}_{\mbox{Algún S no es P}}}}
+$$
+\paragraph{Inferencia inmediatas}
+Inferencia obtenida directamente de una solo premisa
+\paragraph{inferencia mediatas}
+Inferencia obtenida de más de una premisa; la conclusión se extrae de la primera premisa a través de la mediación de la segunda.\\
+concluimos que:\\
+\begin{itemize}
+\item Siendo A verdadera: E es falsa; I es verdadera: O es falsa.
+\item Siendo E verdadera: A es falsa; I es falsa; O es verdadera.
+\item Siendo I verdadera: E es falsa; A y O son indeterminadas.
+\item Siendo O verdadera: A es falsa; A e I son indeterminadas.
+\item Siendo A falsa: O es verdadera; E e I Son indeterminadas.
+\item Siendo E falsa: I es verdadera; A y O son indeterminadas.
+\item Siendo I falsa: A es falsa; E es verdadera; O es verdadera.
+\item Siendo O falsa: A es verdadera; E es falsa; I es verdadera.
+\end{itemize}
+
+\subsection{Otras inferencias inmediatas}
+Estas no se asocian directamente en el cuadro de oposición.
+\subsubsection{Conversión}
+Inferencia que resulta de intercambiar los términos sujeto y predicado de una proposición categórica. No todas las 
+\begin{table}
+\centering
+\caption{Conversiones Válidas}
+\begin{tabular}{l l}
+Convertiente & Conversa\\
+\hline
+\textbf{A:} Todo S es P & \textbf{I:} Algún P es S (por limitación)\\
+\textbf{E:} Nungún S es P & \textbf{E:} Ningún P es S.\\
+\textbf{I:} Algún S es P & \textbf{I:} Algún P es S\\
+\textbf{Algún S no es P} & conversión no válida \\
+\end{tabular}
+\end{table}
+\subsubsection{Clases y complementos de clase}
+Colección de todas las cosas que no pertenecen a la clase original.
+\subparagraph{Nota}
+Debemos tener cuidado de no confundir los términos contrarios en lugar de los términos complementarios.\\
+Cobarde y héroe son contrarios pues ninguna persona puede ser cobarde y héroe a la vez. y no se puede identificar a los no cobardes con héroes.
+El complemento del término ganador es no ganador pues todo es ganador o no ganador.  
+\subsection{Obversión}
+Inferencia formada al cambiar la cualidad de una proposición y reemplazar el término predicado por su complemento. La observación es valida para cualquier proposición categórica estándar.\\
+Ejemplo:\\
+\begin{itemize}
+\item 
+A: Todos los residentes son votantes\\
+B: Ningún residente es no votante\\
+\item I: Ningún árbitro es parcial\\
+O: Todos los árbitros son imparciales\\
+\item I: Algunos metales son conductores\\
+O: Algunos metales no son no conductores\\
+\item O: Algunas naciones no eran beligentes\\
+I: Algunas naciones eran no beligentes.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{l l}
+Obvertiente & Obversa \\
+\hline
+\textbf{A:} Todo S es P & \textbf{E:} Ningún S es no P\\
+\textbf{E:} Ningún S es P & \textbf{A:} Todo S es no P\\
+\textbf{I:} Algún S es P & \textbf{O:} Algún S no es no P\\
+\textbf{O.} Algún S es no P & \textbf{I:} Algún S es no P\\
+\end{tabular}
+\end{center}
+\subsection{Contraposición}
+Inferencia que se forma reemplazando el término sujeto con el complemento de su término predicado y el término predicado por el complemento del término sujeto: No toda contraposición es válida.
+\begin{center}
+\begin{tabular}{l l }
+\textbf{Premisa} & \textbf{Contrapositiva}\\
+\hline
+\textbf{A:} Todo S es P & \textbf{A:} Todo no P es no S\\
+\textbf{E:} Ningún S es P & \textbf{O:} Algún no p es no S (por limitación)\\
+\textbf{I:} Algún S es P & (contraposición no valida)\\
+\textbf{O:} Algún S no es P & \textbf{O:} Algún no P no es no S\\
+\end{tabular}
+\end{center}
+
+\subsection{Contenido existencial e interpretación de las proposiciones categóricas}
+Se dice que una proposición tiene contenido existencial si se emplea típicamente para aseverar la existencia de objetos de algún tipo.
+\subparagraph{Nota}
+En la lógica clásica o Aristotélica
+el cuadro de oposición sera siempre verdad si sólo si se presupone que nunca se refieren a clases vacías.\\
+vale la pena hacer la presuposición general de que todas las clases designadas por nuestros términos (y los complementos de estas clases) tienen miembros, es decir que no son vacías.
+
+\subsection{Simbolismo y diagramas de proposiciones categóricas}
+\begin{center}
+\begin{tabular}{c l c l}
+\textbf{Forma}&\textbf{Proposición}&\textbf{Representación simbólica}&\textbf{Explicación}\\
+\textbf{A}& Todo S es P & S$\overline{P}$ = 0 & La clase de cosas que son  \\
+&&&tanto S como no P está vacía\\
+\textbf{E}&Ningún S es P& SP = 0 & La clase de cosas que son \\
+&&&tanto S como P está vacía\\
+\textbf{I}&Algún S es P & $SP \neq 0$ & La clase de cosas que son tanto de S como P\\
+&&&no está vacía (SP tiene al menos un miembro)\\
+\textbf{O}&Algún S no es P& $S\overline{P} \neq 0$ & La clase de cosas que son tanto S como no P \\
+&&&no está vacía (SP tiene al menos un miembro)\\
+\end{tabular}
+\end{center}
+\section{Silogismos categóricos}
+\subsection{Silogismo categórico de forma estándar}
+\subparagraph{Silogismo}
+Cualquier argumento deductivo en el que la conclusión se infiere de dos premisas.
+\subparagraph{Silogismo categórico}
+Argumento deductivo que consiste en tres proposiciones categóricas que juntas contiene exactamente tres términos, cada uno de los cuales está presente en exactamente dos de las proposiciones constituyentes.\\
+Ejemplo:\\
+Ningún héroe es cobarde.\\
+Algunos soldados son cobardes.\\
+Por lo tanto, algunos soldados no son héroes.\\
+\subparagraph{Silogismo categórico de forma estándar}
+Silogismo categórico en el cual las premisas y la conclusión son proposiciones categóricas de forma estándar (A, E, I ,O) y esta ordenadas con la premisa mayor primero, luego la premisa menor y al final la conclusión.
+\subsubsection{Términos de los silogismo: mayor, menor y medio}
+\subparagraph{Término mayor/premisa mayor}
+El término mayor es el término que aparece como predicado de la conclusión en un silogismo categórico de forma estándar. La premisa que contiene el término mayor.
+\subparagraph{Término menor/premisa menor}
+El término menor es el término que parece como sujeto de la conclusión en un silogismo categórico. La premisa menor es la premisa que contiene al término menor.
+\subparagraph{Término medio}
+El término que aparece en las dos premisas, pero nunca en la conclusión, de un silogismo de forma estándar.
+\subsubsection{El modo del silogismo}
+Lo explicaremos con un ejemplo:\\
+La premisa mayor ("Ningún héroe es cobarde") es una proposición E; la premisa menor ("Algunos soldados son héroes") rd una proposición I; la conclusión ("Algunos soldados no son héroes") es una proposición O. Por lo tanto el modo del silogismo es EIO.
+\subsubsection{La figura del silogismo}
+Los silogismos pueden tener solo cuatro figuras diferentes.
+\begin{enumerate}
+\item El término medio puede ser el término sujeto de la premisa mayor y el término predicado de la premisa menor.
+\item El término medio puede ser el término predicado de las dos premisas.
+\item El término medio puede ser el término sujeto de las dos premisas.
+\item El término medio puede ser el término predicado de la premisa mayor y el término sujeto de la premisa menor.
+\end{enumerate}
+\begin{center}
+\begin{tabular}{c c c c}
+M - P & P - M & M - P & P - M\\
+S - M & S - M & M - S & M - S\\
+\hline
+$\therefore$ S - P & $\therefore$ S -P & $\therefore$ S - P & S - P\\
+\end{tabular}
+\end{center}
+
+Se nombran 64 modos diferentes, y 256 formas distintas que pueden asumir los silogismos categóricos de forma estándar. pero pocas son formas validas.
+\subsection{La naturaleza formal del argumento silogístico}
+No todos los silogismos son validos, ya dependerá mucho del contexto del que se habla.
+\subsection{La técnica de Venn para la evaluación de silogismos}
+\begin{center}
+\begin{venndiagram3sets}[labelA=\(S\),labelB=\(P\),labelC=\(M\),labelOnlyA=$S\overline{P} \overline{M}$,labelOnlyB=$ \overline{S} P \overline{M} $,labelOnlyC=$ \overline{S} \overline{P} M $,labelABC=SPM,labelOnlyAB=$ SP\overline{M}$,labelOnlyBC=$ \overline{S}PM $,labelOnlyAC=$ S\overline{P}M $,labelNotABC=$\overline{S}\overline{P} \overline{M}$,tikzoptions={scale=2},radius=0.9cm]
+\end{venndiagram3sets}
+\end{center}
+
+\subsection{Reglas y falacias de los silogismos}
+\begin{enumerate}[regla 1.]
+\item Evite cuatro términos.\\
+Un silogismo categórico de forma estándar debe contener exactamente tres términos, cada uno de los cuales se utiliza en el mismo sentido en todo el argumento. Si contiene cuatro términos, la falacia cometida se denomina la falacia de los cuatro términos. 
+\item El término medio debe estar distribuido en al menos una de las premisas.\\
+Un término esta distribuido en una proposición cuando la proposición se refiere a todos los miembros de la clases designada por ese término. Si el término medio no está distribuido en al menos una premisa, no puede establecerse la conexión requerida por la conclusión. Se lo denomina la falacia del término medio no distribuido.
+\item  Cualquier término distribuido en la conclusión debe estar distribuido en las premisas se denomina falacia del proceso ilícito.
+\item Evite dos premisas negativas.\\
+Cualquier proposición negativa (E u O) niega conclusión de clase, Asevera que algún o todos los miembros de una clase están excluidos de otra clase completa. Pero dos premisas que aseveran tal conclusión no pueden establecer la conexión de lo que se asevera en la conclusión, y por tanto no pueden llevar a un argumento válido, el error se denomina la \textbf{Falacia de las premisas exclusivas.}
+\item Si una de las premisas es negativa, la conclusión debe ser negativa.\\
+Si la conclusión, es afirmativa, esto es, si asevera que una de las dos clases, S o P, está completa o parcialmente contenida en la otra, únicamente puede inferirse de las premisas que aseveran la existencia de una tercera clase que contiene a la primera y que ella misma está contenida en la segunda. Pero la inclusión de clase sólo puede establecerse por proposiciones afirmativas. Pro lo tanto, una conclusión  afirmativa puede seguirse válidamente sólo de dos premisas afirmativas. EL error aquí se denomina \textbf{falacia de extraer una conclusión afirmativa de una premisa negativa.}
+\item DE dos premisas universales no se puede extraer ninguna conclusión particular.\\
+En la interpretación booleana de las proposiciones categóricas las proposiciones (A y E) no tienen contenido existencial, pero las proposiciones particulares (I y O) sí tienen dicho contenido existencial. Si la interpretación booleana se presupone, como en este libro, se necesita una regla que descarte el paso de premisas que no tienen contenido existencial a una conclusión que sí tenga tal contenido.
+\end{enumerate}
+\subsection{Exposición de las 15 formas válidas de los silogismos categóricos}
+\begin{center}
+\begin{tabular}{c | c | c | c | c}
+& \textbf{Primera figura}&\textbf{Segunda figura}& \textbf{Tercera figura} & \textbf{Cuarta figura}\\
+Representación & M - P & P - M & M -P & P - M\\
+esquemática & S - P & S - M & M - S & M - S\\
+& $\therefore$ S - P & $\therefore$ S - P & $\therefore$ S -P & $\therefore$ S - P\\
+Descripción & El término medio & EL término medio & El término medio &  El término medio\\
+& es el sujeto de la & es el predicado & es el sujeto de la & es el predicado\\ 
+& premisa mayor y & de la premisa & premisa mayor y & de la premisa\\
+& el predicado & mayor y de la & de la premisa & mayo y el sujeto\\
+&la premisa & premisa menor & menor. & de la premisa\\
+& menor & & & menor.\\
+\hline
+& AAA-1 Bárbara & AEE-2 Camestres & AII-3 Datisi & AEE-4 Camenes\\
+& EAE-1 Celarent & EAE-2 Cesare & IAI-3 Disamis & IAI-4 Dimaris\\
+& AII-1 Darii & AOO-2 Baroco & EIO-3 Ferison & EIO-4 Fresison\\
+& EIO-1 Ferio & EIO-2 Festino & OAO-3 Bocardo &\\
+\end{tabular}
+\end{center}
+
+\section{Silogismos en el lenguaje ordinario}
+\subsection{Argumento silogístico}
+Argumento que es un silogismo categórico estándar, o que puede reformularse como un silogismo categórico de forma estándar sin ningún cambio en el significado.
+\paragraph{Reducción a la forma estándar}
+Reformulación de un argumento silogístico a la forma estándar.
+\subsection{Reducción del número de términos a tres}
+Una forma de reducción es por eliminación de los sinónimos.\\
+ejemplo:\\
+Ninguna persona acudalada es vagabunda\\
+Todos los abogados son gente rica.\\
+Por lo tanto, ningún jurisconsulto es mendigo.\\
+Pero $"$ acaudalado $"$ y $"$ rico $"$ son sinónimos, como lo son $"$ abogado $"$ y $"$ jurisconsulto $"$, y también $"$ vagabundo $"$ y $"$ mendigo  $"$. Si se eliminan los sinónimos, el argumento se traduce a:
+Ninguna persona acaudala es vagabunda.\\
+Todos los abogados son gente acaudalada.\\
+Por lo tanto, ningún abogado es vagabundo\\
+
+\subsection{Traducción de proposiciones categóricas a la forma estándar}
+\begin{enumerate}[i)]
+\item \textbf{Proposiciones singulares.}\\
+Estas proposiciones no afirman o niegan la inclusión de una clase en otra.
+\item \textbf{Proposiciones categóricas que tienen adjetivos o frases adjetivales como predicados, más que sustantivos o términos de clase}\\
+Cada atributo determina una clase.
+\item \textbf{Proposiciones categóricas cuyo verbo principal es otro más que la cópula de forma estándar $"ser/estar"$}\\
+Ejemplos:
+\begin{itemize}
+\item Todas las personas buscan reconocimiento $\Rightarrow$ Todas las personas son buscadoras de reconocimiento.
+\item Algunas personas beben vino griego $\Rightarrow$ Algunas personas son bebedoras de vino griego.
+\end{itemize}
+\item \textbf{Enunciados en los que todos los ingredientes de forma estándar están presentes, pero no están organizados en un orden estándar}\\
+Ejemplos:
+\begin{itemize}
+\item Los caballos de carrera son todos pura sangre $\Rightarrow$ Todos los caballos de carrera son pura sangre.
+\item Lo que está bien termina bien $\Rightarrow $ Todas las cosas que terminan bien están bien.
+\end{itemize}
+\item \textbf{Proposiciones categóricas cuyas cantidades están por otras palabras distintas a los cuantificadores de forma estándar (todos), (ninguno) y (Algunos)}\\
+Ejemplos:\\
+Enunciados que comienzan con:
+\begin{itemize}
+\item \textbf{Cada, cualquiera.}
+\begin{itemize}
+\item Cada perro tiene su día $\Rightarrow$ Todos los perros son criaturas que tienen sus días. 
+\item Cualquier contribución será apreciada $\Rightarrow$ Todas las contribuciones son cosas que se aprecian. 
+\end{itemize}
+\item \textbf{un, una}
+\begin{itemize}
+\item Un murciélago es un mamífero $\Rightarrow$ Todos los murciélagos son mamíferos. 
+\item Un elefante es un paquidermo $\Rightarrow$ Todos los elefantes son paquidermos.
+\item Un murciélago llegó a la ventana $\Rightarrow$ Algunos murciélagos son criaturas que llegan a la ventana. 
+\item Algunos elefante escapó $\Rightarrow$ Algunos elefantes son criaturas que escapan.
+\end{itemize}
+\item \textbf{el, la}
+\begin{itemize}
+\item La Ballena es un mamífero $\Rightarrow$ Todas las ballenas son mamíferos. 
+\end{itemize}
+\end{itemize}
+\item \textbf{Proposiciones exclusivas}
+Palabras que comienzan con:
+\begin{itemize}
+\item \textbf{Solo, nada , nadie a salvo}
+\begin{itemize}
+\item Solo los ciudadanos pueden votar $\Rightarrow$ Todos aquellos que pueden votar son ciudadanos. 
+\item Nadie salvo el valiente merece lo justo $\Rightarrow$ Todos aquellos que merecen lo justo son aquellos que son valientes. 
+\end{itemize}
+\end{itemize}
+\item \textbf{Proposiciones categóricas que no contienen palabras para indicar cantidad.}\\
+Ejemplos:
+\begin{itemize}
+\item Los perros son carnívoros $\Rightarrow$ Todos los perros son carnívoros.
+\item Hay niños presentes $\Rightarrow$ Algunos niños son seres que están presentes.
+\end{itemize}
+\item \textbf{Proposiciones que no se parecen a las proposiciones categóricas de forma estándar en absoluto, pero que pueden traducirse a la forma estándar}\\
+Ejemplos:
+\begin{itemize}
+\item No todos los niños creen en papá Noé $\Rightarrow$ Algunos niños no son creyentes de papá Noé.
+\item Existen elefantes blancos $\Rightarrow$ Algunos elefantes son cosas blancas.
+\item No existen elefantes rosa $\Rightarrow$ Ningún elefante es una cosa rosa.
+\item Nada es redondo y cuadrado $\Rightarrow$ Ningún objeto redondo es un objeto cuadrado.
+\end{itemize}
+\item \textbf{Proposiciones de excepción}\\
+Una proposiciones que hace dos afirmaciones: que todos los miembros de alguna clase, excepto los miembros de una de sus subclases, son miembros de alguna otra clase.
+\end{enumerate}
+\subsection{Traducción uniforme}
+Considera la proposición $"$ Siempre tendrás a los pobres contigo $"$ Es evidente que no afirma que todos o algunos  pobres están siempre están contigo.\\
+La palabra clave $"$siempre$"$ quiere decir $"$Todas la veces $"$ y sugiere la proposición categórica de forma estándar: $"$ Todas las veces son veces que tú tienes a los pobres contigo $"$. La palabra $"$veces$"$, que aparece en los términos sujeto y predicado, puede considerarse un parámetro, un símbolo auxiliar que es útil para expresar la afirmación original en forma estándar.
+\subsection{Entimemas}
+Es un argumento que contiene una proposición no enunciada.\\
+Son comunes en discursos cotidianos e incluso en la ciencia.
+\subsubsection{Entimema de primer orden}
+Es aquel en el que la premisa mayor del silogismo no se enuncia.
+\subsubsection{Entimema de segundo orden}
+Es aquel en el que sólo se enuncian la premisa mayor y la conclusión, la premisa menor es suprimida.
+\subsubsection{Entimema de tercer orden}
+Es aquel en que ambas premisas se anuncian, pero la conclusión no se expresa.
+\subsection{Sorites}
+Argumento en el que se infiere la conclusión a partir de cualquier número de premisas a través de una cadena de inferencias silogísticas.
+\subsection{Silogismos disyuntivos y silogismos hipotéticos}
+Una forma de argumento en la que una premisa es una disyunción y la conclusión sostiene la verdad de uno de los disyuntos. Sólo algunos silogismos disjuntos son válidos.
+\subsubsection{Modus ponens}
+Del latín, ponere, que significa $"$Afirmar$"$\\
+Un silogismos hipotético válido en el que la premisa categórica afirma el antecedente de la premisa condicional y la conclusión afirma su consecuente.
+\paragraph{Falacia de afirmación del consecuente} Una falacia formal en un silogismo hipotético en el que la premisa categórica afirma al consecuente, en lugar del antecedente, de la premisa condicional.
+\subsubsection{Modus tollens}
+Un silogismo hipotético válido en el que la premisa categórica niega el consecuente de la premisa condicional y la conclusión niega su antecedente.
+\paragraph{Falacia de negación del antecedente} Una falacia formal en un silogismo hipotético en el que la premisa categórica niega el antecedente, en lugar del consecuente, de a premisa condicional.
+\subsection{Principales tipos de silogismos}
+\begin{enumerate}
+\item \textbf{Silogismos categóricos}\\
+Que contiene únicamente proposiciones categóricas que afirman o niegan la inclusión o exclusión de categorías. Por ejemplo:\\
+Todos los M son P\\
+Todos los S son M\\
+Por lo tanto, todos los S son P
+\item \textbf{Silogismos disyuntivos}\\
+Que contienen una premisa compuesta disyuntiva (o alternativa), que afirman la verdad de al menos una de dos alternativas y una premisa que afirma la falsedad de una de las alternativas. Por ejemplo:\\
+O bien p es verdad o bien Q es verdad.\\
+P no es verdad.\\
+Por lo tanto, Q es verdad.
+\item \textbf{Silogismos hipotéticos}\\
+Que contienen una o más proposiciones compuestas hipotéticas (o condicionales), que afirman que su uno de los componentes (el antecedente) es verdad, entonces el otro componente (el consecuente) es verdad, Se distinguen dos subtipos:\\
+\begin{enumerate}[A)]
+\item Silogismos hipotéticos puros .- que contienen únicamente proposiciones condicionales. Por ejemplo:\\
+Si P es verdad, entonces Q es verdad.\\
+Si Q es verdad, entonces R es verdad.\\
+por lo tanto, si P es verdad entonces R es verdad.
+\item Silogismos hipotéticos mixtos.- Que contienen una premisa condicional y una premisa categórica.\\
+Si la premisa categórica afirma la verdad del antecedente de la premisa condicional y el consecuente de esa premisa condicional es la conclusión del argumento, la forma es válida y se llama $Modus \; ponens.$ Por ejemplo:\\
+Si P es verdad, entonces Q es verdad\\
+P es verdad.\\
+Por lo tanto, Q es verdad.\\
+Si la premisa categórica afirma la falsedad del consecuente de la premisa condicional y la falsedad del antecedente de esa premisa condicional es la conclusión del argumento, la forma es válida y se llama $Modus \; tollens$. He aquí un ejemplo:\\
+S P es verdad, entonces Q es verdad.\\
+Q es falsa.\\
+Por lo tanto, P es falsa.\\
+\end{enumerate}
+\end{enumerate} 
+
+\subsection{EL dilema}
+Una forma común de argumento en el lenguaje cotidiano en la que se sostiene que se tiene que elegir entre dos alternativas (normalmente malas)
+Ejemplo:
+\begin{itemize}
+\item Si a los estudiantes les gusta aprender, no necesitan estímulos, y si les disgusta aprender, ningún estímulo será de ningún provecho. Pero a cualquier estudiante o bien le gusta aprender o bien le disgusta. por lo tanto, un estímulo o es innecesario o no será de ningún provecho.
+\item Si dices lo que es justo, los hombres te odiarán, y si dices lo que es injusto, los dioses te odiarán; pero debes decir lo uno o lo oro; por lo tanto, será odiado.\\
+Refutación:\\
+Si digo lo que es justo los diosos me amarán; y si digo lo que es injusto, los hombres me amarán, debo decir lo uno o lo otro. Por lo tanto, seré amado.
+\end{itemize}
+Estas conclusiones representan solamente diferentes formas de ver los mismos hechos; no constituyen un desacuerdo sobre lo que son los hechos.
+
+
+\chapter{Lógica simbólica o lógica moderna}
+\section{Lógica moderna y su lenguaje simbólico}
+El sistema de la lógica moderna que comenzamos a explorar ahora es de alguna manera menos elegante que la silogística analítica, pero es más poderoso. 
+\subsection{Enunciado simple}
+un enunciado que no contiene ningún otr enunciado como componente.
+\subsection{Enunciado compuesto}
+Un enunciado que contiene otro enunciado como componente.
+\section{Operaciones proposicionales}
+\subsection{Negación}
+\paragraph{Definición}
+Negación de la proposición p es la proposición $\sim$ p, cuya tabla de valores de verdad es:
+\begin{table}[htbp]
+  \centering
+  \caption{Negación}
+    \begin{tabular}{l|l}
+   p &  $\sim$ p   \\
+    \midrule
+    V     & F      \\
+    F     & V     \\
+
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\subsection{Conjunción}
+\paragraph{Definición}
+Conjunción de las proposiciones p y q es la proposición $p \land q$, cuya tabla de valores de verdad es:
+% Table generated by Excel2LaTeX from sheet 'conectivos'
+\begin{table}[htbp]
+  \centering
+  \caption{Conjunción}
+    \begin{tabular}{l|l|rlr}
+    p     & q     & \multicolumn{1}{l}{p} & $\land$     & \multicolumn{1}{l}{q} \\
+    \midrule
+    V     & V     &       & V     &  \\
+    V     & F     &       & F     &  \\
+    F     & V     &       & F     &  \\
+    F     & F     &       & F     &  \\
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+Observe que las palabras en español:
+\begin{itemize}
+\item Pero.
+\item Aún.
+\item También.
+\item Todavía.
+\item Aunque.
+\item Sin embargo.
+\item Además.
+\item No obstante.
+\item Coma.
+\item Punto y como
+\end{itemize} 
+ también pueden utilizarse para conjuntar dos enunciados, en un enunciado compuesto.
+\subsection{Disyunción}
+\paragraph{Definición}
+Disyunción de las proposiciones p y q es la proposición p $\lor$ q cuya tabla de valores de verdad es:
+% Table generated by Excel2LaTeX from sheet 'conectivos'
+\begin{table}[htbp]
+  \centering
+  \caption{Disyunción}
+    \begin{tabular}{l|l|rlr}
+    p     & q     & \multicolumn{1}{l}{p} & $\lor$     & \multicolumn{1}{l}{q} \\
+    \midrule
+    V     & V     &       & V     &  \\
+    V     & F     &       & v     &  \\
+    F     & V     &       & v     &  \\
+    F     & F     &       & F     &  \\
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\subparagraph{A menos que} A menudo se usa el conector a menos que ($\lor$). Ejemplo:\\
+Saldrás mal en el examen a menos que estudies.
+\paragraph{vel} La palabra en latín vel indica la disyunción débil o inclusiva. Se representa con la primera letra de la palabra $\lor$.  
+\paragraph{aut} La palabra en latín aut representa a la palabra $"$o$"$ en su sentido fuerte o excluyente. $\veebar$
+\subsection{Puntuación}
+Para evitar la ambigüedad y aclarar el significado, los signos de puntuación en matemáticas aparecen en forma de paréntesis, corchetes y llaves.\\
+Ejemplo:
+El enunciado:\\
+$$ \mbox{Estudiaré mucho y aprobaré el examen o reprobaré} $$
+Es ambiguo. Podría significar, $"$ Estudiaré mucho y aprobaré el examen o reprobaré en el examen $"$ o $"$ Estudiaré mucho y o bien aprobaré el examen o bien reprobaré $"$
+$$ E \; \land  \; A \; \lor  \; R $$
+es igualmente ambigua. El paréntesis resuelve la ambigüedad. En vez de: $"$Estudiaré mucho y aprobaré el examen o fallaré en el examen,$"$ se tiene:
+$$ (E \; \land  \; A)\;\lor \; R $$
+y en lugar de $"$Estudiaré mucho y o bien aprobaré el examen o bien fallaré,$"$ se tiene:
+$$ E \; \land \; (A \; \lor \; R) $$
+\subsection{Implicación o condicional}
+\paragraph{Definición}
+Implicación de las proposiciones p y q es la proposición p $\Rightarrow$ q, si p entonces q cuya tabla de valores de verdad es:
+% Table generated by Excel2LaTeX from sheet 'conectivos'
+\begin{table}[htbp]
+  \centering
+  \caption{Implicación}
+    \begin{tabular}{l|l|rlr}
+    p     & q     & \multicolumn{1}{l}{p} & $\Rightarrow$     & \multicolumn{1}{l}{q} \\
+    \midrule
+    V     & V     &       & V     &  \\
+    V     & F     &       & F     &  \\
+    F     & V     &       & V     &  \\
+    F     & F     &       & V     &  \\
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\vspace{2cm}
+\subparagraph{Nota}
+Se llama \textbf{implicación material} a la relación veritatívo funcional simbolizada por la herradura $(\supset)$ que puede conectar dos enunciados, $"$P implica materialmente que Q$"$ es verdadero cuando p es falso o q es verdadero. 
+\subsection{Doble implicación o bicondicional}
+\paragraph{Definición}
+Doble implicación de las proposiciones p y q es la proposición p $\Leftrightarrow$ (p si y solo si q), cuya tabla de verdad es:
+% Table generated by Excel2LaTeX from sheet 'conectivos'
+\begin{table}[htbp]
+  \centering
+  \caption{Doble implicación}
+    \begin{tabular}{l|l|rlr}
+    p     & q     & \multicolumn{1}{l}{p} & $\leftrightarrow$     & \multicolumn{1}{l}{q} \\
+    \midrule
+    V     & V     &       & V     &  \\
+    V     & F     &       & F     &  \\
+    F     & V     &       & F     &  \\
+    F     & F     &       & V     &  \\
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+
+\subsection{Disyunción exclusiva}
+\paragraph{Definición}
+Diferencia simétrica o disyunción excluyente de las proposiciones p y q es la proposición p $\veebar$ q (p o q, en sentido excluyente), cuya tabla de valores de verdad es:
+% Table generated by Excel2LaTeX from sheet 'conectivos'
+\begin{table}[htbp]
+  \centering
+  \caption{Disyunción exclusiva}
+    \begin{tabular}{l|l|rlr}
+    p     & q     & \multicolumn{1}{l}{p} & $\veebar$     & \multicolumn{1}{l}{q} \\
+    \midrule
+    V     & V     &       & F     &  \\
+    V     & F     &       & V     &  \\
+    F     & V     &       & V     &  \\
+    F     & F     &       & F     &  \\
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\subsection{Formas de argumento y refutación por analogía lógica}
+\subsubsection{Refutación por analogía lógica}
+Mostrar la falta de un argumento presentando otro argumento con la misma forma cuyas premisas se sabe son verdaderas y cuya conclusión se sabe que es falsa.
+\paragraph{variable enunciada}
+Letra minúscula con la que se puede sustituir un enunciado.
+\paragraph{Variable argumental} 
+Arreglo de símbolos que muestran la estructura lógica de un argumento, contiene variable enunciadas, pero no enunciados.
+\subsection{El significado de válido e inválido}
+\subsubsection{Forma argumental inválida}
+Forma argumental que tiene al menos una instancia de sustitución con premisas verdaderas y conclusión falsa.
+\subsubsection{Forma argumental válida}
+Forma argumental que no tiene instancias de sustitución con premisas verdaderas y conclusión falsa.
+\subsection{Cómo probar la validez de un argumento con tablas de verdad}
+Para someter a prueba la forma de un argumento, se examinan todas las posibles instancias de sustitución de éste para ver si alguna de ellas tiene premisas verdaderas y conclusión falsa.\\
+ejemplo:\\
+$p \Rightarrow q$\\
+$q$\\
+$\therefore \; p$
+\begin{center}
+\begin{tabular}{c c c}
+p & q & $p \Rightarrow q$\\
+\hline
+V&V&V\\
+V&F&F\\
+F&V&V\\
+F&F&V\\
+\end{tabular}
+\end{center}
+\subparagraph{nota}
+Para construir correctamente la tabla de verdad tiene que existir una columna guía para cada variable enunciada en la forma argumental p, q,r, etc. El arreglo tiene que mostrar todas las combinaciones posibles de verdad y falsedad de todas esas variables.\\
+De contener:\\
+\begin{itemize}
+\item Cuatro reglones si hay dos variables.
+\item ocho reglones su hay tres variables.
+\item Es decir $2^n$.
+\end{itemize}
+\subsection{Algunas formas argumentales comunes}
+\subsubsection{Formas válidas comunes}
+\paragraph{Silogismo disyuntivo}
+\begin{center}
+\begin{tabular}{r r r}
+p&$\lor$&q\\
+&&$\sim p$\\
+\hline
+&$\therefore $&q\\
+\end{tabular}
+\end{center}
+Forma de argumento válida en la que la premisa es una disyunción, la otra premisa es la negación de uno de los dos disyuntos y la conclusión es la verdad del otro disyunto.
+
+\paragraph{Modus ponens}
+\begin{center}
+\begin{tabular}{r r r}
+p & $\Rightarrow$ & q\\
+&&p\\
+\hline
+&$\therefore$&q\\
+\end{tabular}
+\end{center}
+se demuestra por la siguiente tabla de verdad.
+\begin{center}
+\begin{tabular}{r r c}
+p&q&$p \Rightarrow q$\\
+\hline
+V&V&V\\
+V&F&F\\
+F&V&V\\
+F&F&V\\
+\end{tabular}
+\end{center}
+
+\paragraph{Modus tollens}
+\begin{center}
+\begin{tabular}{r r r}
+p & $\Rightarrow$ & q\\
+&&$\sim q$\\
+\hline
+&$\therefore$&$\sim p$\\
+\end{tabular}
+\end{center}
+Puede demostrarse mediante la siguiente tabla:
+\begin{center}
+\begin{tabular}{c c c c c}
+p & q &$p \Rightarrow q$&$\sim q$&$\sim p$\\
+\hline
+V&V&V&F&F\\
+V&F&F&V&F\\
+F&V&V&F&V\\
+F&F&V&V&V\\
+\end{tabular}
+\end{center}
+
+\paragraph{Silogismo hipotético}
+\begin{center}
+\begin{tabular}{r r r r}
+&p & $\Rightarrow$ & q\\
+&q&$\Rightarrow$&r\\
+\hline
+$\therefore$&p&$\Rightarrow$&q\\
+\end{tabular}
+\end{center}
+La tabla es como se muestra a continuación.
+\begin{center}
+\begin{tabular}{c c c c c c}
+p  & q & r & $p\Rightarrow q$ & $q \Rightarrow r$ & $p\Rightarrow r$\\
+\hline
+V&V&V&V&V&V\\
+V&V&F&B&F&F\\
+V&F&V&F&V&V\\
+V&F&F&F&V&F\\
+F&V&V&V&V&V\\
+F&V&F&V&F&V\\
+F&F&V&V&V&V\\
+F&F&F&V&V&V\\
+\end{tabular}
+\end{center}
+\subsubsection{Formas inválidas comunes}
+\paragraph{Falacia de afirmación del consecuente}
+\begin{center}
+\begin{tabular}{r r r}
+p & $\Rightarrow$ & q\\
+&& q \\
+\hline
+&$\therefore$&p\\
+\end{tabular}
+\end{center}
+Falacia formal en la que la segunda premisa de un argumento afirma el consecuente de la premisa condicional y la conclusión de su argumento afirma el antecedente.
+
+\paragraph{Falacia de negación del antecedente}
+\begin{center}
+\begin{tabular}{r r r}
+p & $\Rightarrow$ & q\\
+&& $\sim p$ \\
+\hline
+&$\therefore$&$\sim q$\\
+\end{tabular}
+\end{center}
+Falacia formal en la que la segunda premisa de un argumento niega el antecedente de una premisa condicional y la conclusión del argumento niega el consecuente.
+
+\subsection{Instancias de sustitución y formas especificas}
+\subsubsection{Formas enunciativas y enunciados}
+Arreglo de símbolos que muestran la estructura lógica de un enunciado; contiene variables enunciativas, pero no enunciadas.
+\paragraph{Instancia de sustitución de una forma enunciativa}
+Cualquier enunciado que resulte de las sustituciones consistente de enunciados en una forma enunciativa.
+\paragraph{Forma especifica de un enunciado}
+Forma de enunciado de la que resulta el enunciado dado cuando se sustituye consistentemente un enunciado simple diferente por cada variable enunciativa diferente.
+\subsubsection{Formas enunciativas tautológicas, contradictorias y contingentes.}
+\paragraph{Forma enunciativa tautológica} Forma enunciativa que tiene únicamente instancias de sustitución verdaderas.\\
+Ejemplo:
+\begin{center}
+\begin{tabular}{c c c}
+$p$&$\sim p$&$p \; \lor \sim p$\\
+\hline
+V&F&V\\
+F&V&V\\
+\end{tabular}
+\end{center}
+
+\paragraph{Forma enunciativa autocontradictoria o una contradición}
+Forma enunciativa que tiene únicamente instancias de sustitución falsa.\\
+Ejemplo:
+$$ p \; \land \sim p $$
+\paragraph{Forma enunciativa contingente}
+Forma enunciativa que tiene a la vez instancias de sustitución verdaderas e instancias de sustitución falsas.(ley de Peirce)
+\subparagraph{Ley de peirce}
+Enunciado tautológico de la forma $[(p \Rightarrow q)\Rightarrow p]\Rightarrow p$
+\subsubsection{Equivalencias materiales}
+Relación veritativo-funcional que afirma que dos enunciados conectados por el signo de tres barras $(\equiv)$
+tienen el mismo valor de verdad.
+\begin{center}
+\begin{tabular}{c c c}
+$p$&$q$&$p \equiv q$\\
+\hline
+V&V&V\\
+V&F&F\\
+F&V&F\\
+F&F&V\\
+\end{tabular}
+\end{center}
+Se puede leer $(\equiv)$ como $"$si sólo si$"$
+\paragraph{Enunciado bicondicional}
+Enunciado compuesto que afirma que sus dos componentes se implican en uno al otro y, por lo tanto, son materialmente equivalentes.
+\subsubsection{Argumentos, enunciados condicionales y tautologías}
+Las tablas de verdad son instrumentos poderosos para la evaluación de argumentos. Una forma argumental es válida si y sólo si su tabla de verdad tiene una V bajo la conclusión en cada reglón en el que existen V's bajo todas las premisas.\\
+Una forma argumental es válida si, y sólo si , su expresión en forma de un enunciado condicional es una tautología.
+
+\subsection{Equivalencia lógica}
+Dos enunciados en los que el enunciado de su equivalencia material es una tautología; Son equivalentes y pueden reemplazarse uno al otro.
+\begin{center}
+\begin{tabular}{c c c c}
+$p$&$\sim p$&$\sim \sim p$&$p \equiv \sim \sim p$\\
+\hline
+V&F&V&V\\
+F&V&F&V
+\end{tabular}
+\end{center}
+\subsubsection{Teorema de De Morgan}
+El teorema de De Morgan puede formularse en español de este modo:
+\begin{itemize}
+\item La negación de la disyunción de dos enunciados es lógicamente equivalente a la conjunción de las negaciones de los dos enunciados.
+$$\sim (p \lor q)\equiv (\sim p \; \land \sim q)$$
+\item La negación de la conjunción de dos enunciados es lógicamente equivalente a la disyunción de las negaciones de los dos enunciados.
+$$ \sim (p \land q)\equiv(\sim p \; \lor \sim q) $$
+\end{itemize}
+\subsubsection{Definiens original de la herradura}
+$$ (p \Rightarrow q)\equiv(\sim p \lor q) $$
+$$ (\sim p \lor q)\equiv \; \sim (p  \; \land \sim q ) $$
+entonces por ley distributiva:
+$$ (p \Rightarrow q)\equiv(p  \; \land \sim q) $$
+
+\subsection{Las tres leyes del pensamiento}
+\begin{itemize}
+\item \textbf{Principio de identidad} Establece que su algún enunciado es verdad, entonces es verdadero. Utilizando la notación es posible parafrasearlo diciendo que e principio de identidad afirma que todo enunciado de la forma $p \Rightarrow q$ tiene que ser verdadero, que todo enunciado de ese tipo es una tautología.
+\item \textbf{Principio de no contradicción} Establece que ningún enunciado puede ser verdadero y falso. Utilizando la notación es posible parafrasearlo diciendo que el principio de no contradicción afirma que todo enunciado de la forma $p \; \land \sim p$ tiene que ser falso, que todo enunciado de este tipo es autocontradictorio.
+\item \textbf{Principio del tercero excluido} Establece que todo enunciado es verdadero o falso. utilizando la notación es posible parafrasearlo diciendo que el principio del tercero excluido afirma que todo enunciado de la forma $p \; \lor \sim p$ tiene que ser verdadero, que todo enunciado de ese tipo es una tautología.
+\end{itemize}
+
+Estos principios de utilizan para las tablas de verdad. Es ñas columnas de cada reglón de la tabla se coloca una V o una F, guiados por el principio del tercero excluido. ningún reglón se coloca una V y una F juntas, esto guiándonos por el principio de no contradicción. Y una vez que se a colocado una V bajo un símbolo de cierto reglón, entonces (guiándonos por el principio de identidad)cuando encontramos ese símbolo en otras columnas de ese reglón se considera que aún se le asigna una V. 
+
+\section{Métodos de deducción}
+\subsection{Prueba forma de validez}
+\subsubsection{Reglas de inferencia}
+Reglas que permiten inferencias válidas a partir de enunciados asumidos como premisas.
+\subsubsection{Deducción natural}
+Método para demostrar la validez de un argumento deductivo utilizando las reglas de inferencia.
+Ejemplo:
+\begin{center}
+\begin{tabular}{r | l r}
+1.&$A \Rightarrow B$&\\
+2.&$B \Rightarrow C$&\\
+3.&$C \Rightarrow D$&\\
+4.&$\sim D$&\\
+5.&$A \Rightarrow E$&\\
+&$\therefore E $&\\
+6.&$A \Rightarrow C$&1, 2, S.H.\\
+7.&$A \Rightarrow D$&6, 3, S.H.\\
+8:&$\sim A$&5, 8, S.D.\\
+9.&$E$&5,8, S.D.\\
+\end{tabular}
+\end{center}
+\subsubsection{Prueba formal de validez}
+Secuencia de enunciados; cada cual es una premisa de cierto argumento o se deduce utilizando las reglas de inferencia, a parir de los enunciados anteriores en esa secuencia, de tal forma que el último enunciado en la última secuencia es la conclusión del argumento cuya validez se está demostrando.
+\subsubsection{Argumento válido elemental}
+Cualquier argumento de un conjunto de argumentos deductivos especificados que sirve como regla de inferencia y puede utilizarse para construir una prueba formal de validez.
+\begin{center}
+\begin{tabular}{l}
+$(A \land B) \; \Rightarrow \;[ C \Leftrightarrow(D \lor E)]$\\
+$A \land B$\\
+\hline
+$\therefore C \Leftrightarrow (D \lor E)$\\
+\end{tabular}
+\end{center}
+\subsection{Las formas de argumento válidas elementales}
+
+\begin{center}
+\begin{tabular}{r l c l}
+&NOMBRE &ABREVIACIÖN & FORMA\\
+\hline
+1. & Modus Ponens & M.P. & \begin{tabular}{l}
+$p \Rightarrow q$\\
+$p$\\
+\hline
+$\therefore q$
+\end{tabular}\\\\
+2. & Modus Tollens & M.T. & \begin{tabular}{l}
+$p \Rightarrow q$\\
+$\sim q$\\
+\hline
+$\therefore \; \sim p$\\
+\end{tabular}\\\\
+3. & Silogismo Hipotético (S.H.) & S.H. & \begin{tabular}{l}
+$p \Rightarrow q$\\
+$q \Rightarrow r$\\
+\hline
+$\therefore p \Rightarrow r$\\
+\end{tabular}\\\\
+4. & Silogismo Disyuntivo & S.D. & \begin{tabular}{l}
+$p \lor q$\\
+$\sim p$\\
+\hline
+$\therefore q$\\
+\end{tabular}\\\\
+5. & Dilema Constructivo & D.C. & \begin{tabular}{l}
+$(p \Rightarrow q)\; \land \;(r \Rightarrow s)$\\
+$p \lor r$\\
+\hline
+$\therefore q \lor s$\\
+\end{tabular}\\\\
+6. & Absorción & Abs. & 
+\begin{tabular}{l}
+$p \Rightarrow q$\\
+\hline
+$\therefore p \Rightarrow (p \land q)$\\
+\end{tabular}\\\\
+7. & Simplificación & Simp. & 
+\begin{tabular}{l}
+$p \land q $\\
+\hline
+$\therefore p $\\
+\end{tabular}\\\\
+8. & Conjunción & Conj. & 
+\begin{tabular}{l}
+$p$\\
+$q$\\
+\hline
+$\therefore p \land q$\\
+\end{tabular}\\\\
+9. & Adición & Ad. & 
+\begin{tabular}{l}
+$p$\\
+\hline
+$\therefore p \lor q$\\
+\end{tabular}
+\end{tabular}
+\end{center}
+
+\subsection{Pruebas formales de validez}
+Ejemplo:
+\begin{center}
+\begin{tabular}{c r l}
+1.&$A \land B$&\\
+2.&$(A \lor C)\Rightarrow D$&\\
+$\therefore$&$ \; A \land D$&\\
+3.&$A$&1, Simp.\\
+4.&$A \lor C$&3, Ad.\\
+5.&$D$&2,4, P.M.\\
+\hline
+6.&$A \land D$&3,5, Conj.\\
+\end{tabular}
+\end{center}
+\subsection{La construcción de pruebas formales de validez}
+\begin{center}
+\begin{tabular}{c r l}
+1.& $A$ & \\
+2.& $B$ & \\
+$\therefore$ & $(A \lor C)\land B$ & \\
+3.& $A \lor C$&1. y Ad.\\
+\hline
+4.& $(A \lor C)\land B$ & 2. y 3. Conj.\\
+\end{tabular}
+\end{center}
+
+\subsection{Ampliando las reglas de inferencia: las reglas de remplazo}
+\subsubsection{Regla de remplazo}
+Regla que permite que expresiones lógicamente equivalentes puedan reemplazarse entre si.
+
+\begin{center}
+\begin{tabular}{c l l l}
+&NOMBRE & ABREVIACIÓN & FORMA\\
+\hline\\
+10.&Teorema de De Morgan&De M.&$\sim (p \land q) \equiv (\sim p \; \lor \; \sim q)$\\
+&&&$\sim (p \lor q) \equiv (\sim p \; \; \land  \; \sim q)$\\\\
+
+11.&Conmutación&Conm.&$(p\lor q)\equiv (q \lor p)$\\ 
+&&&$(p\land q) \equiv (q \land p)$\\\\
+
+12.&Asociación&Asoc.&$\left[p \lor ( q \lor r)\right] \equiv \left[(p \lor q)\lor r\right]$\\
+&&&$p \land (q \land r) \equiv (p \land q) \land r$\\\\
+
+13.&Distribución&Dist.&$p \land (q \lor r) \equiv  p \land q) \lor (p \land r)$\\
+&&&$p \lor (q \land r)\equiv (p \lor q)\land (p \lor r)$\\\\
+14.&Doble negación&D.N.&$p \equiv \sim \sim p$\\\\
+15.&Transposición&Trans.&$p \rightarrow q \equiv \sim q \; \rightarrow \; \sim p$\\\\
+16.&Implicación material&Impl.&$p \rightarrow q \equiv \sim p \lor q$\\\\
+
+16.1.&Negación de no implicación&Neg de no imp.&$\sim (p \rightarrow q) \equiv p \; \land \; \sim q$\\\\
+
+
+17.&Equivalencia material&Equiv.&$p \leftrightarrow q \equiv (p \rightarrow q)\land (q \rightarrow p$\\
+
+&&&$(p \equiv q) \equiv \left[(p \rightarrow q) \lor (q \rightarrow p)\right]$\\\\
+
+18.&Exportación&Exp.&$(p \land  q)\rightarrow r \equiv p \rightarrow (q \rightarrow r) $\\\\
+19.&tautología&Taut.&$p \equiv p \lor p$\\
+&&&$p \equiv p \land p$\\\\
+
+20.&División de casos&Div. casos&$(p \lor q ) \rightarrow r \equiv (p \rightarrow r)\land(q \rightarrow r) $\\\\
+
+21.&Identidad o Neutro&Idet.&$p \land V \equiv p$\\
+&&&$p \lor F \equiv p$\\\\
+
+22.&Inversos&Invs.&$p \; \land \; \sim p \equiv F $\\
+&&&$p \; \lor \; \sim p \equiv V$\\\\
+
+23.&Dominación&Dom.&$p \lor V \equiv V$\\
+&&&$p \land F \equiv F$\\\\ 
+
+\end{tabular}
+\end{center}
+
+\subsection{El sistema de la deducción natural}
+las primeras nueve reglas de inferencia pueden ser usadas únicamente con reglones completos de una demostración que sirvan como premisas.
+
+\subsection{Inconsistencia}
+Esta relacionado con la contradicción $s \; \lor \; \sim s$
+
+\subsection{Prueba indirecta de validez}
+Dos enunciados contradictorios no pueden ser ambos verdaderos. Esto da lugar a otro método para demostrar la validez. Suponga que asume la negación de lo que va a demostrar. Y suponga que utilizando ee supuesto, se puede derivar una contradicción. Esa contradicción mostrará que cuando negamos lo que se quiere demostrar, llegamos al absurdo. Habremos establecido indirectamente la conclusión deseada con una prueba por $reductio \; ad \; absurdum$
+\paragraph{Ejemplo}
+\begin{center}
+\begin{tabular}{c r r}
+1.&$a \rightarrow (b\land c)$&\\
+2.&$(b \lor d)\rightarrow e$&\\
+3.&$d \lor a$&\\
+$\therefore$&$e$&\\
+4.&$\sim e$&Prueba indirecta\\
+5.&$\sim(b \lor d)$&4, M.T.\\
+6.&$\sim b \; \land \; d$&5, De M.\\
+7.&$\sim d \; \land \; \sim b$&6, Conm.\\
+8.&$\sim d$&7, Simp\\
+9.&$a$&3, 8, S.D.\\
+10.&$b \land c $&1,9, M.P.\\
+11.&$B$&10, Simp.\\
+12.&$\sim b$&6, Simp\\
+13.&$b \; \land \; \sim b $&11, 12, Conj.\\
+\end{tabular}
+\end{center}
+
+\chapter{Teoría de la cuantificación}
+\section{La necesidad de cuantificación}
+La cunatificación es un avance del siglo XX que ha enriquecido enormemente la teoría moderna de la deducción.\\
+\paragraph{Ejemplo}
+Todos los humanos son mortales\\
+Marco es humano.\\
+Por lo tanto, Marco es mortal.\\
+Únicamente se podria simbolizar como: 
+A\\
+H\\
+$\therefore$ M\\
+Se necesita un método con el que los enunciados no compuestos puedan describirse y simbolizarse de tal manera que sea revelada su estructura interna lógica. La teoría de la cuantificación proporciona este método. Los cuantificadores nos capacitan para interpretar premisas no compuestas como enunciados compuestos, sin perder significado.
+\section{Proposiciones singular}
+\subsection{Proposición singular afirmativa}
+Proposición que afirma que un individuo particular tiene un atributo especifico.\\
+Utilizaremos letras minúsculas para denotar individuos como por ejemplo Marco = m, Ruth = r, etc.\\
+Para simbolizar atributos que puedan tener los individuos se utiliza letras mayúsculas, como H para humano, M moratal, S sabia, etc.\\
+Entonces Marco es humano lo podemos simbolizar como: Hs.\\
+Pero para cada uno de los casos utilizaremos Hx donde x se conoce como variable individual.
+\subsection{función proposicional}
+Expresión que contiene una variable individual y se convierte en un enunciado cuando es sustituida por la variable individual.\\
+Un predicado simple es na función proposicional que posee algunas instancias de sustitución verdaderas y algunas falses, cada una de las cuales es una proposición singular afirmativa.
+\section{Cuantificadores universales y existenciales}
+Podríamos querer decir que $"$Todo es mortal$"$ o que $"$Algo es bello$"$. En este contexto diremos que $(x)$ se llamará \textbf{Cuantificador universal.} que significara $"$ Dada cualquier $x$ $"$
+$$(x) Mx$$ que dice con gran agudeza: $"$Todo es mortal$"$ (En otros contexto se simboliza con $\forall$.)\\
+ Ahora consideremos la segunda proposición general que habíamos contemplado $"$Algo es bello$"$ también se puede expresar como: 
+ $$\mbox{Existe por lo menos una cosa que es bella}$$
+Así podemos simbolizarlo como: $$(\exists x) Bx$$
+que dice con gran grandeza $"$Algo es bello$"$\\
+Si la cuantificación universal de una función proposicional es verdadera, entonces la cuantificación existencial de ésta debe ser también verdadera.\\
+Ahora se podría negar que Sócrates es mortal diciendo, $\sim Ms$ $"$Sócrates no es mortal$"$\\
+$"$Todo es mortal$"$ es negada por la proposición general existencial $"$Algo no es mortal$"$ Utilizando símbolos se diría que $\forall Mx$ es negada por $\exists x \sim Mx$
+$$\sim (x) Mx \equiv (\exists x) \sim Mx$$
+Segundo. $"$Todo es mortal$"$ expresa exactamente lo que se expresa mediante $"$No existe nada que no sea mortal$"$, $$(\forall)Mx \equiv \sim (\exists x)\sim Mx $$
+Tercero, es claro que la proposición general $"$Nada es mortal$"$ es negada por la proposición general existencial $"$Algo es mortal$"$. En símbolos se diría que: $\forall \sim Mx$ es negada por $(\exists x) Mx$ ó,  $$\sim \forall \sim Mx \equiv (\exists x) Mx$$
+Y cuarto $"$Todo es mortal$"$ expresa exactamente lo que se expresa con $"$No existe nada que sea mortal$"$, ó $$\forall \sim Mx \equiv \sim (\exists x) Mx$$
+\section{Proposición sujeto-predicado tradicionales}
+
+
+
+
+
+
+
+
+
+
+\end{document}
