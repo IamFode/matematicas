@@ -1,0 +1,660 @@
+\chapter{Introducción}
+\section{Axiomas de cuerpo}
+%axioma1
+\begin{tcolorbox}[colback=white]
+\begin{axioma}[Propiedad conmutativa] $x+y=y+x, \; xy=yx$\\
+\end{axioma}
+
+%aximoa2
+\begin{axioma}[Propiedad asociativa] $x+(y+z)=(x+y)+z, \; x(yz)=(xy)z$ \\
+\end{axioma}
+
+%axioma3
+\begin{axioma}[Propiedad distributiva] $x(y+z)=xy+xz$ \\
+\end{axioma}
+
+%axioma4
+\begin{axioma}[Existencia de elementos neutros] Existen dos números reales distintos que se indican por $0$ y $1$ tales que para cada número real $x$ se tiene:
+$0+x=x+0=x \;$ y $1\cdot x = x\cdot 1 = 1$ \\
+\end{axioma}
+
+%axioma5
+\begin{axioma}[Existencia de negativos] Para cada número real $x$ existe un número real y tal que $x+y=y+x=0$ \\
+\end{axioma}
+
+%axioma6
+\begin{axioma}[Existena del recíproco] Para cada número real $x\neq 0$ existe un número real y tal que $xy=yx=1$ \\
+\end{axioma}
+\end{tcolorbox}
+
+%teorema 1.1
+\begin{teo}[Ley de simplificación para la suma]
+Si $a+b=a+c$ entonces $b=c$ (En particular esto prueba que el número 0 del axioma 4 es único)\\\\
+Demostración.- \;
+Dado a+b=a+c. En virtud de la existencia de negativos, se puede elegir y de manera que $y+a=0$, con lo cual $y+(a+b)=y+(a+c)$ y aplicando la propiedad asociativa tenemos $(y+a)+b=(y+a)+c$ entonces, $0+b=0+c$. En virtud de la existencia de elementos neutros, se tiene $b=c$.\\
+por otro lado este teorema demuestra que existe un solo número real que tiene la propiedad del 0 en el axioma 4. En efecto, si $0$ y $0^{'}$ tuvieran ambos esta propiedad, entonces $0+0^{'}=0$ y $0+0=0$; por lo tanto, $0+0^{'}=0+0$ y por la ley de simplificación para la suma $0=0^{'}$\\\\
+\end{teo}
+
+%teorema 1.2
+\begin{teo}[Posibilidad de la sustracción]
+Dado $a$ y $b$ existe uno y sólo un $x$ tal que $a+x=b$. Este $x$ se designa por $b-a$. En particular $0-a$ se escribe simplemente $-a$ y se denomina el negativo de $a$\\\\
+Demostración.- \;
+Dados $a$ y $b$ por el axioma 5 se tiene $y$ de manera que $a + y = 0$ ó $y=-a$, por hipótesis y teorema tenemos que $x=b-a$ sustituyendo $y$ tenemos $x=b+y$ y propiedad conmutativa $x=y+b$, entonces $a+x=a+(y+b)=(a+y)+b=0+b=b$ esto por sustitución, propiedad asociativa y propiedad de neutro, Por lo tanto hay por lo menos un $x$ tal que $a+x=b$. Pero en virtud del teorema 1.1, hay a lo sumo una. Luego hay una y sólo una $x$ en estas condiciones.\\\\ 
+\end{teo}
+
+%teorema 1.3
+\begin{teo}
+$b-a=b+(-a)$\\\\
+Demostración.- \; Sea $x=b-a$ y sea $y=b+(-a)$. Se probará que $x=y$. por definición de $b-a$, $x+a=b$ y $y+a=\left[ b+(-a)\right]+a=b+\left[ (-a)+a \right]=b+0=b$, por lo tanto, $x+a=y+a$ y en virtud de teorema 1.1 $x=y$\\\\
+\end{teo}
+
+%teorema 1.4
+\begin{teo}
+$-(-a)=a$\\\\
+Demostración.- \;
+Se tiene $a+(-a)=0$ por definición de $-a$ incluido en el teorema 1.1. Pero esta igualdad dice que $a$ es el opuesto de $-a$, es decir, que si $a+(-a)=0$ entonces $a=0-(-a)=a=-(-a)$\\\\
+\end{teo}
+
+\section{Ejercicios (I 3.3)}
+\begin{enumerate}[\bfseries \Large 1.]
+
+%----------------------------------1--------------------------
+\item Demostrar los teoremas del 1.5 al 1.15, utilizando los axiomas 1 al 6 y los teoremas I.1 al I.4\\\\
+
+%teorema 1.5
+\begin{teo}
+$a(b-c)=ab-ac$\\\\
+Demostración.- \;
+Sea $a(b-c)$ por teorema 1.3 tenemos que $a\left[ b+(-c)\right]$  y por la propiedad distributiva $\left[ ab + a(-c) \right]$, y en virtud de los teorema 1.12 y 1.3 nos queda $ ab - ac $ \\\\
+\end{teo}
+
+%teorema 1.6
+\begin{teo}
+$0\cdot a = a\cdot 0 =0$\\\\
+Demostración.- \;
+Sea $0\cdot a$ por la propiedad conmutativa $a\cdot 0$, $a\cdot 0 + 0$ y $a\cdot 0 + \left[a+(-a) \right]$ y en virtud la propiedad asociativa y distributiva $a(0 + 1)+(-a)$ después $1(a)+(-a)$, luego por elemento neutro y existencia de negativos tenemos $0$, Así queda demostrado que cualquier número multiplicado por cero es cero.\\\\ 
+\end{teo}
+
+%teorema 1.7
+\begin{teo}[Ley de simplificación para la multiplicación] Si $ab=ac$ y $a \neq 0$, entonces $b=c$. (En particular esto demuestra que el número 1 del axioma 4 es único)\\\\
+Demostración.- \;
+Sea $b$, $a\neq 0$, y por el existencia del recíproco tenemos $a\cdot a^{'}=1 $  luego,  $b=b\cdot 1=b\left[a(a^{'})\right]=(ab)(a^{'})=(ac)(a^{'})=c(a\cdot a^{'})=c\cdot 1=c$ por lo tanto queda demostrado la ley de simplificación.\\\\
+\end{teo}
+
+%teorema 1.8
+\begin{teo}[Posibilidad de la división] Dados $a$ y $b$ con $a\neq 0$, existe uno y sólo un $x$ tal que $ax=b$. La $x$ se designa por $b/a$ ó $\displaystyle\frac{b}{a}$ y se denomina cociente de $b$ y $a$. En particular $1/a$ se escribe también $a^{-1}$ y se designa recíproco de $a$\\\\
+Demostración .- \;
+Sea $a$ y $b$ por axióma 6 se tiene un $y$ de manera que $a\cdot y = 1$ ó $y = a^{-1}$. Por hipótesis y teorema se tiene $x=b\cdot a^{-1}$, sustituyendo tenemos $x=y\cdot b$ entonces $ax=a(y\cdot b)=(a\cdot y)b=1\cdot b = b$  por lo tanto hay por lo menos un $x$ tal que $ax=b$ pero en virtud del teorema 1.7 hay por lo mucho uno, luego hay una y sólo una $x$ en estas condiciones.\\\\ 
+\end{teo}
+
+%teorema 1.9
+\begin{teo}
+Si $a\neq 0$, entonces $b/a=b\cdot a^{-1}$\\\\
+Demostración.- \;
+Sea $x =b/a$ y sea $y=b\cdot a^{-1}$ se probará que $x=y$, por definición de $b/a$, $ax=b$ y $ya=(b\cdot a^{-1})a=b(a^{-1}a)=b\cdot 1 = 1$, entonces $ya=xa$ y por la ley de simplificación para la multiplicación $y=x$ \\\\
+\end{teo}
+
+%teorema 1.10
+\begin{teo}
+Si $a\neq 0$, entonces $(a^{-1})^{-1}=a$\\\\
+Demostración.- \;
+Si $a\neq 0$ entonces  $(a^{-1})^{-1} = 1\cdot (a^{-1})^{-1} = \displaystyle\frac{1}{a^{-1}}=a$ esto por axioma de neutro, definición de $a^{-1}$ y teorema 1.9, así concluimos que $(a^{-1})^{-1}=a $ \\\\
+\end{teo}
+
+%teorema 1.11
+\begin{teo}
+Si $ab = 0$, entonces ó $a=0$ ó $b=0$\\\\
+Demostración.- \;
+Veamos dos casos, cuando $x\neq 0$ y cuando $x=0$\\
+Si $x\neq 0$ y  $ab = 0$ entonces  $b=b\cdot 1 = b (a\cdot a^{-1}) = (ab)a^{-1}=0a^{-1}=0$, ahora si $a=0$ y virtud del teorema 1.6 nos queda demostrado que la multiplicación de dos números cualesquiera es igual a cero si $a=0$ ó $b=0$  \\\\
+\end{teo}
+
+%teorema 1.12
+\begin{teo}
+$(-a)b=-(ab) \; y \; (-a)(-b) = ab$\\\\
+Demostración.- \;
+Empecemos demostrando la primera proposición, Por la ley de simplificación para la suma podemos escribir como $(-a)b+ab=0$ entonces por la propiedad distributiva $b\left[ (-a)+a \right]$ por lo tanto $b\cdot 0$, luego por el teorema 1.6 queda demostrado la primera proposición.\\
+Para demostrar la segunda proposición acudimos a la primera proposición, $(-a)(-b)=-\left[ a(-b)\right]$ y luego, \\ $-\left[ a(-b)+b+(-b)\right]=-\left[ (-b)(a+1)+b\right]=-\left[ (-b)(a+1)-1(-b)\right]=-\left[( -b)(a+1-1)\\\right]=-\left[ (-b)a\right]=-\left[ -(ab)\right]$ y en virtud  del el teorema 1.4 $(-a)(-b)=ab$ así queda demostrado la proposición.  \\\\
+\end{teo}
+
+%teorema 1.13
+\begin{teo}
+$\left(a/b \right) + \left(c/d \right) = \left( ad+bc  \right) / \left( bd \right) $ si $b\neq 0$ y $d\neq 0$.\\\\
+Demostración.- \;
+Si $\left(a/b \right) + \left(c/d \right)$ entonces por definición de $a/b$, $a\cdot b^{-1}+c\cdot d^{-1}=(a\cdot b^{-1})\cdot 1+(c\cdot d^{-1})\cdot 1=(a\cdot b^{-1})\cdot 1+(c\cdot d^{-1})\cdot 1=(a\cdot b^{-1})\cdot dd^{-1}+(c\cdot d^{-1})\cdot bb^{-1}$ por las propiedades asociativa  conmutativa y distributiva, $(b^{-1}d^{-1})(ad)+(b^{-1}d^{-1})(cb)=(b^{-1}d^{-1})(ad+cb)$, por lo tanto $(ad+bc)/bd$ esto por definición.\\\\
+\end{teo}
+
+%teorema 1.14
+\begin{teo}
+$(a/b)(c/d)=(ac)/(bd)$ si $b\neq 0$ y $d\neq 0$\\\\
+Demostración.- \;
+Por definición, $(ab^{-1})(cd^{-1})$, propiedades conmutativa y asociativa $(ac)(b^{-1}d^{-1})$, y por definición queda demostrado la proposición.\\\\
+\end{teo}
+
+%corolario 1.1
+\begin{col.}
+Si $c\neq 0$ y $d\neq 0$ entonces $(cd^{-1})=c^{-1}d$\\\\
+Demostración.- \;
+Por definición de $a^{-1}$ tenemos que $(cd^{-1})^{-1}=\displaystyle\frac{1}{cd^{-1}}$, por el teorema de posibilidad de la división $1=(c^{-1}d)(cd^{-1})$ y en virtud de los axiomas de conmutatividad y asociatividad $1=(c^{1}c)(dd^{-1})$, luego $1=1$. quedando demostrado el corolario.\\\\
+\end{col.}
+
+%teorema 1.15 
+\begin{teo}
+$(a/b)/(c/d)=(ad)/(bc)$ si $b\neq 0$,  $c\neq 0$ y $d\neq 0$\\\\
+Demostración.- \;
+Sea $(a/b)/(c/d)$ entonces por definición $(ab^{-1})(cd^{-1})^{-1}$, en virtud del corolario 1 se tiene que $(ab^{-1})(c^{-1}d)$, y luego por axioma conmutativa y asociativa $(ad)(c^{-1}b^{-1})$, así por definición concluimos que $(ad)/(cd)$\\\\
+\end{teo}
+
+%-------------------------------2--------------------------------------
+\item $-0=0$\\\\
+Demostración.- \;
+Sabemos que por el axioma 5 $a+(-a)=0$, $- \left[ a+(-a) \right] = 0$ y $-a+-(-a)=0$ en virtud de teorema 1.12 y propiedad conmutativa $a+(-a)=0$, por lo tanto $0=0$.\\\\ 
+
+
+%---------------------------------3-------------------------------
+\item 
+$1^{-1}=1$\\\\
+Demostración.- \;
+Por la existencia de elementos nuestros tenemos $1^{-1}\cdot 1$ y por axioma de existencia de reciproco $1=1$\\\\
+
+%-------------------------------4-----------------------------
+\item El cero no tiene reciproco\\\\
+Demostración.- \;
+Supongamos que el cero tiene reciproco es decir $0\cdot 0^{-1}=1$ pero por el teorema 1.6 se tiene que $0\cdot 0^{-1}=0$ y $0=1$ esto no es verdad, por lo tanto el cero no tiene reciproco.\\\\
+
+%-----------------------------------5---------------------------------
+\item $-(a+b)=-a-b$\\\\
+Demostración.- \;
+Por existencia de reciproco $-\left[1(a+b)\right]$ y teorema 1.12 $(-1)(a+b)$ luego por la propiedad distributiva $\left[ (-1)b \right] + \left[ (-1)b \right]$, una vez mas por el teorema 1.12 $-(1a)+ \left[-(1b)\right]$, en virtud del axioma 4 $-a+(-b)$, y teorema 1.3, $-a-b$ \\\\ 
+
+%------------------------------------6----------------------------
+\item $-(-a-b)=a+b$\\\\
+Demostración\\\\
+Si $-(-a-b)$ entonces por axioma $-\left[1(-a-b)\right]$, luego $(-1)(-a-b)=(-1)(-a)-\left[(-1)b\right])= (1\cdot a)-\left[-(1\cdot b)\right]$ y por axioma $a - \left[ - (b)\right]$, así por teorema $a+b$.\\\\
+
+%------------------------------------7--------------------------
+\item $(a-b)+(b-c)=a-c$\\\\
+Demostración.- \;
+Por definición tenemos $\left[ a+(-b) \right]+\left[ b+(-c) \right]$, y axiomas de asociatividad y conmutatividad $\left[ a+(-c) \right]+\left[ b+(-b) \right]$, luego por existencia de negativos  $\left[ a+(-c) \right] + 0$,, así $a+(-c)$ y $a-c$. \\\\
+
+%-----------------------------------8--------------------------------
+\item Si $a\neq 0$ y $b\neq 0$, entonces $(ab)^{-1} = a^{-1} b^{-1}$\\\\
+Demostración.- \; Por hipótesis $\dfrac{1}{a} \dfrac{1}{b}$ luego $\dfrac{1}{ab}$ por lo tanto $(ab)^{-1}$\\\\
+
+%------------------------------------9--------------------------------
+\item $-(a/b)=(-a/b)=a/(-b)$ si $b\neq 0$\\\\
+Demostración.- \;
+Primero demostremos que $-(a/b)=(-a/b)$, Sea $b\neq 0$, en virtud de definición de la división y teorema 1.12 no queda que $-(a/b)=(-a)\cdot b^{-1}=-a/b$.\\
+Ahora demostramos que $-(a/b)=(-a/b)=a/(-b)$, sea $b\neq0$, luego $-(b^{-1}\cdot a)=\left[-(b^-1)\right]\cdot a = a/-b$. \\\\
+
+%------------------------------------10---------------------------------
+\item $(a/b)-(c/d)=(ad-bc)/(bd)$ si $b\neq 0$ y $d\neq 0$\\\\
+Demostración.- \;
+Sea $b\neq 0$ y $d\neq 0$ y por definición $ab^{-1}-cd^{-1}$, luego por axiomas $(ab^{-1})(d\cdot d^{-1})-(cd^{-1})(b\cdot b^{-1})$, y en virtud del teorema 1.5 y propiedad asociativa $b^{-1}\cdot d^{-1}(ad-bc)$ y $(ad-bc)/bd$\\\\
+\end{enumerate}
+
+\section{Axiomas de orden}
+\begin{tcolorbox}[colback=white]
+\begin{axioma}Si $x$ e $y$ pertenecen a $\mathbb{R}^+$, lo mismo ocurre a $x+y$ y $xy$\\
+\end{axioma}
+\begin{axioma}
+Para todo real $x\neq 0$, ó $x \in \mathbb{R}^+$ ó $-x \in \mathbb{R}^+$, pero no ambos.\\
+\end{axioma}
+\begin{axioma}
+$0 \not\subset \mathbb{R}^+$\\
+\end{axioma}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+\begin{def.}
+$x<y $ significa que $y-x$ es positivo. \\
+\end{def.}
+\begin{def.}
+$y>x$ significa que $x<y$\\
+\end{def.}
+\begin{def.}
+$x \geq y$ significa que ó $x<y$ ó $x=y$\\
+\end{def.}
+\begin{def.}
+$y \leq x$ significa que $x \leq y$ 
+\end{def.}
+\end{tcolorbox}
+
+\section{Ejercicios (I 3.5)}
+\begin{enumerate}[\bfseries \Large 1.]
+%-------------------------1----------------------------
+\item Demostrar los teoremas 1.22 al 1.25 utilizando los teoremas anteriores y los axiomas del 1 al 9
+%teorema 1.16
+\begin{teo}[Propiedad de Tricotomía]
+Para $a$ y $b$ números reales cualesquiera se verifica se verifica una y sólo una de las tres relaciones $a<b$, $b<a$, $a=b$\\\\
+demostración.- \;
+Sea $x=b-a$. Si $x=0$, entonces $x=a-b=b-a$, por axioma 9, $0\notin \mathbb{R}^+$ es decir:
+$$a<b, \; \; b-a \in \mathbb{R}^+$$
+$$b<a, \; \;  a-b \in \mathbb{R}^+$$
+pero como $a-b=b-a=0$ entonces no ser $a<b$ ni $b<a$\\
+Si $x0\neq 0,$ el axioma 8 afirma que ó $x>0$ ó $ x<0$, pero no ambos, por consiguiente, ó es $a<b$ ó es $b<a$, pero no ambos. Pro tanto se verifica una y sólo una de las tres relaciones $a=b,$ $a<b,$ $b<a$.\\\\
+\end{teo}
+
+%teorema 1.17
+\begin{teo}[Propiedad Transitiva]
+Si $a<b$ y $b<c$, es $a<c$\\\\
+Demostración.- \;
+Si $a<b$ y $b<c$, entonces por definición $b-a>0$ y $c-b>0$. En virtud de axioma  $(b-a)+(c-b)>0$, es decir, $c-a>0,$ y por lo tanto $a<c$.\\\\
+\end{teo}
+
+%teorema 1.18
+\begin{teo}
+Si $a<b$ es $a+c<b+c$\\\\
+Demostración.- \;
+Sea $x=a+c$
+\end{teo}
+
+%teorema 1.19
+\begin{teo}
+Si $a<b$ y $c>0$ es $ac<bc$\\\\
+Demostración.- \;
+Si $a<b$ por definición $b-a>0$, dado que  $c>0$ y por el axioma  $(b-a)c>0$ y $bc-ac>0$, por lo tanto $ac<bc$\\\\
+\end{teo}
+
+%teorema 1.20
+\begin{teo}
+Si $a\neq0$ es $a^2>0$\\\\
+Demostremos por casos..- \;
+Si $a>0$, entonces por axioma   \; $a\cdot a >0$ \; y \; $a^2>0$. Si $a<0$, entonces por axioma   \; $(-a)(-a)>0$ \; y  \; $a^2>0$\\\\
+\end{teo}
+
+%teorema 1.21
+\begin{teo}
+1>0\\\\
+Demostración.- \;
+Por el anterior teorema, si $1>0$ ó $1<0$ entonces $1^2>0$, y $1^2=1$, por lo tanto que $1>0$\\\\
+\end{teo}
+
+%teorema 1.22
+\begin{teo}
+Si $a<b$ y $c<0$, es $ac>bc$\\\\
+Demostración.- \;
+Si $c<0$, por definición $-c>0$, en virtud del axioma  $-c(b-a)>0$, y $ac-cb>0$, por lo tanto $ab<ac=ac>bc$\\\\
+\end{teo}
+
+%teorema 1.23
+\begin{teo}
+Si $a<b$, es $-a>-b$. En particular si $a<0$, es $-a>0$\\\\
+Demostración.- \;
+Si $1>0$, por la existencia de negativos $-1<0$ y por teorema  tenemos que $-1a>-1b$ por lo tanto $-a>-b$ \\\\
+\end{teo}
+
+%teorema 1.24
+\begin{teo}
+Si $ab>0$ entonces $a$ y $b$ son o ambos positivos o ambos negativos\\\\
+Demostración.- \;
+Sea $a>0$ y $b>0$, por axioma  \;  $ab>0$, y sea $a<0$ y $b<0$, por definición $-a>0$ y $-b>0$, por lo tanto $(-a)(-b)>0$ y por teorema 1.12 \; $ab>0$.\\\\
+\end{teo}
+
+%teorema 1.25
+\begin{teo}
+Si $a<c$ y $b<d,$ entonces $a+b<c+d$\\\\
+Demostración.- \;
+Si $a<c$ \; y \; $b<d$ por definición $c-a>0$ \; y \; $d-b>0$, en virtud del axioma 6:
+$$(c-a)+(d-b)>0 \Rightarrow c-a+d-b>0 \Rightarrow (c+d)-(a+b)>0$$ 
+por lo tanto $a+b<c+d$.\\\\ 
+\end{teo}
+
+%---------------------------------2---------------------------
+\item No existe ningún número real tal que $x^2+1=0$\\\\
+Demostración.- \; Sea $Y=x^2+1=0$ de acuerdo con la propiedad de tricotomía:
+\begin{itemize}
+\item Si $x>0$ entonces por teorema 2.5 \; $x^2>0$ y por axioma 7 \; $x^2+1>0$ esto es $Y > 0$ y no satisface $Y=0$ para $x>0$.
+\item Si $x=0$ entonces $x^2=0$ y $x^2+1=1$ esto es $Y=1$ pero no satisface a $Y=1$ para $x=0$.
+\item Si $x<0$ entonces $-x>0$ y $x^2+1>0$, esto es $Y=0$ pero tampoco satisface a $y=0$ para $x<0$.\\\\ 
+\end{itemize}
+
+%------------------------------3--------------------------
+\item La suma de dos números negativos es un número negativo.\\\\
+Demostración.- \;   Si $a<0$ y $b<0$ entonces $-a>0$ y $-b>0$ por axioma 7 \; $(-a)+(-b)>0$ y en virtud del teorema 1.19 \; $-(a+b)>0$ es decir $a+b<0$\\
+
+%-------------------------------4--------------------------
+\item Si $a>0$, también $1/a>0;$ Si $a<0$ entonces $1/a<0$\\\\
+Demostración.- \;
+\begin{itemize}
+\item Si $a>0$ entonces $(2a)^{-1}\cdot a > 0 \cdot (2a)^{-1}$ por lo tanto $1/a>0$
+\item Si $a<0$ entonces $-a>0$ y $(-2a)^{-1}\cdot (-a)>0\cdot (-2a)^{-1}$ por lo tanto $1/a>0$ y $-1/a<0$\\\\
+\end{itemize}
+
+%-------------------------------5--------------------------
+\item 
+Si $0<a<b,$ entonces, $0<b^{-1}<a^{-1}$\\\\
+Demostración.- \; Si $b>0$ entonces por el teorema anterior  $b^{-1}>0$ ó $0<b^{-1}$.\\
+Si $a>0$ entonces $a^{-1}>0$, dado que $a<b$ y por teorema  \; $a\cdot a^{-1}< a^{-1}b$ así $1<a^{-1}b$, luego $b{-1}<a^{-1}\cdot bb^{-1}$, por lo tanto $b^{-1}<a^{-1}$. Y por la propiedad transitiva queda demostrado que $0<b^{-1}<a^{-1}$.\\\\
+
+%--------------------------6----------------------------
+\item Si $a \leq b $ y $b \leq c$ es $a\leq c$\\\\
+Demostración.- \; Si $a<b$ ó $a=b$ y $b<c$ ó $b=c$ demostremos por casos: Si $a<b$ y $b<c$ por la propiedad transitiva $a<c$, después si $a<b$ y $b=c$ entonces $a<c$, luego si $a=b$ y $b<c$ entonces $a<c$,  por último si $a=b$ y $b=c$ entonce $a=c$, por lo tanto $a\leq c$\\\\
+
+%corolario 
+\begin{col.}
+Si $c\leq b$ y $b \leq c$ entonces $c=b$\\\\
+Demostración .- \; Si $b-c>0$ y $c-b>0$ entonces $(b-c)+(c-b)>0$ y $0<0$ es Falso, entonces queda que $c=b$ (Usted puede comprobar para cada uno de los casos que se suscita parecido al teorema anterior.)\\\\
+\end{col.}
+
+%---------------------------7----------------------------
+\item Si $a\leq b$ y $b \leq c$ y $a=c$ entonces $b=c$\\\\
+Demostración.- \; Si $a\leq b$\;  y \; $a=c$ entonces $c\leq b$. Sea $c\leq b$ \; y \; $b\leq c$ y por corolario anterior \; $b=c$.\\\\
+
+%----------------------------8-------------------------
+\item Para números reales $a$ y $b$ cualquiera, se tiene $a^2+b^2\leq 0$. Si $ab\geq 0$, entonces es $a^2+b^2>0$.\\\\
+Demostración.- \; Si $ab>0$ por teorema  ($a>0$ y $b>0$ ) ó ($a<0$ y $b<0$) luego por teorema  $a^2>0$ y $b^2>0$ por lo tanto por axioma 7 y ley de tricotomía $a^2+b^2>0$.\\\\ 
+
+%-------------------------9------------------------------
+\item No existe ningún número real $a$ tal que $x\leq a$ para todo real $x$\\\\
+Demostración.- \; Supongamos que existe un número real $" a "$ tal que $y \leq a$. Sea $n\in \mathbb{R}$ \; y \; $x=y+n$ entonces por teorema 1.18 \; $y+n \leq a+n$ \; y \; $x\leq a+n$ esto contradice que existe un número real $a$ tal que $y\leq a$, por lo tanto no existe ningún número real tal que para todo x, $x\leq a$.\\\\
+
+%--------------------------10-----------------------------
+\item Si $x$ tiene la propiedad que $0\leq x < h$ para cada número real positivo $h$, entonces $x=0$\\\\
+Demostración .- \;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Por el teorema anterior ni $0<x$ ni $x<h$ satisfacen la proposición por lo tanto queda $x=0$\\\\
+
+
+%teorema 2.11
+\begin{teo}
+Para $b\geq 0$ $a^2>b$ $\Rightarrow$ $a>\sqrt{b}$ ó $a<-\sqrt{b}$\\\\
+Demostración.- \;
+Por hipótesis $a^2>b$ y $a^2-b>0$, luego \; $(a-\sqrt{b})(a+\sqrt{b})>0$, y por teorema  \; $a-\sqrt{b}>0$ \; y \; $a+\sqrt{b}<0$ \; ó \; $a-\sqrt{b}<0$ \; y \; $a+\sqrt{b}<0$, por lo tanto $a-\sqrt{b}<0$ \; ó \; $a<-\sqrt{b}$\\\\
+\end{teo}
+\end{enumerate}
+
+\section{Números enteros y racionales}
+\begin{tcolorbox}[colback=white]
+%definición de conjunto inductivo
+\begin{def.}[Definción de conjunto inductivo]
+Un conjunto de números reales se denomina conjunto inductivo si tiene las propiedades siguientes:
+\begin{enumerate}[\bfseries a)]
+\item El número $1$ pertenece al conjunto.
+\item Para todo $x$ en el conjunto, el número $x+1$ pertenece también al conjunto.
+\end{enumerate}
+\end{def.}
+\begin{def.}[Definición de enteros positivos]
+Un número real se llama entero positivo si pertenece a todo conjunto inductivo.
+\end{def.}
+\end{tcolorbox}
+
+\section{Cota superior de un conjunto, elemento máximo, extremo superior}
+\begin{tcolorbox}[colback=white]
+\begin{def.}[definición de extremo superior]
+Un número $B$ se denomina extremo superior de un conjunto no vacío $S$ si $B$ tiene las dos propiedades siguientes:
+\begin{enumerate}[\bfseries a)]
+\item $B$ es una cota superior de $S$.
+\item Ningún número menor que $B$ es cota superior para $S$.
+\end{enumerate}
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.26
+\begin{teo}
+Dos números distintos no pueden ser extremos superiores para el mismo conjunto.\\\\
+Demostración.- \; Sean $B$ y $C$ dos extremos superiores para un conjunto $S$. La propiedad $b)$ de la definición 3.1 implica que $C\geq B$ puesto que $B$ es extremo superior; análogamente, $B \geq C$ ya que $C$ es extremo superior. Luego $B = C$ \\\\
+\end{teo}
+
+\section{Axioma del extremo superior (axioma de completitud)}
+
+\begin{tcolorbox}[colback=white]
+%axioma 10
+\begin{axioma}
+Todo conjunto no vacío $S$ de números reales acotado superiormente posee extremo superior; esto es, existe un número real $B$ tal que $B=sup S$
+\end{axioma}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+%definición de extremo inferior
+\begin{def.}[Definición de extremo inferior (Ínfimo)]
+Un número $L$ se llama extremo inferior (o ínfimo) de $S$ si:
+\begin{enumerate}[\bfseries a)]
+\item $L$ es una cota inferior para $S$,
+$$L\leq x, \, \, \forall x \in S$$
+\item Ningún número mayor que $L$ es cota inferior para $S$.
+$$Si \; t\leq x, \, \; \forall x \in S, \, \, entonces \, t\leq L $$
+\end{enumerate}
+El extremo inferior de $S$, cuando existe, es único y se designa por $infS$. Si $S$ posee mínimo, entonces $minS=infS$\\
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.27
+\begin{teo}
+Todo conjunto no vacío $S$ acotado inferiormente posee extremo inferior  o ínfimo; esto es, existe un número real $L$ tal que $L=infS$.\\\\
+Demostración.- \; Sea $-S$ el conjunto de los números opuestos de los de $S$. Entonces $-S$ es no vacío y acotado superiormente. El axioma 10 nos dice que existe un número $B$ que es extremo superior de $-S$. Es fácil ver que $-B=infS$.\\\\
+\end{teo}
+
+\section{La propiedad Arquimediana del sistema de los números reales}
+%teorema 1.28
+\begin{teo}
+El conjunto $P$ de los enteros positivos 1,2,3,... no está acotado superiormente.\\\\
+Demostración.- \; Supóngase $P$ acotado superiormente. Demostraremos que esto nos conduce a una contradicción. Puesto que P no es vacío, el axioma 10 nos dice que $P$ tiene supremo, sea este $b$. El número $b-1$, siendo menor que $b$, no puede ser cota superior de $P$. Por b) de la definición 3.1 existe $n>b-1$ es decir $b-1 \in P, \; b-1<b \; \; \exists n \in P:\; b-1<n$. Para este $n$ tenemos $n+1>b$. Puesto que $n+1$ pertenece a $P$, esto contradice el que $b$ sea una cota superior para $P$. \\\\
+\end{teo}
+
+%teorema 1.29
+\begin{teo}
+Para cada real $x$ existe un entero positivo $n$ tal que $n>x$\\\\
+Demostración.- \; Si no fuera así, $x$ sería una cota superior de $P$, en contradicción con el teorema 3.3.\\\\
+\end{teo}
+
+%teorema 1.30
+\begin{teo}
+Si $x>0$ e $y$ es un número real arbitrario, existe un entero positivo $n$ tal que $nx>y$\\\\
+Demostración.- \; Aplicar teorema 3.4 cambiando $x$ por $y/x$.\\\\
+\end{teo}
+
+%teorema 1.31
+\begin{teo}
+Si tres números reales $a$, $x$, e $y$ satisfacen las desigualdades $a\leq x \leq a+\displaystyle\frac{y}{n}$ para todo entero $n \geq 1$, entonces $x=a$\\\\
+Demostración.- \; Si $x>a$, el teorema 3.5 nos menciona que existe un entero positivo que satisface $n(x-a)>y$, en contradicción de la hipótesis, luego $x>a$ no satisface para todo número real $x$ y $a$, con lo que deberá ser $x=a$.\\\\
+\end{teo} 
+
+\section*{Propiedades fundamentales del extremo superior ó supremo}
+%teorema 1.32
+\begin{teo}
+Sea $h$ un número positivo dado y $S$ un conjunto de números reales.
+\begin{enumerate}[\bfseries a)]
+\item Si $S$ tiene extremo superior o supremo, para un cierto $x$ de $S$ se tiene 
+$$x>supS-h$$
+Demostración.- \; Si es $x\leq supS -h$ para todo $x$ de $S$, entonces $supS-h$ sería una cota superior de $S$ menor que su supremo. Por consiguiente debe ser $x>supS-h$ por lo menos para un $x$ de $S$.
+\item Si $S$ tiene extremo inferior o ínfimo, para un cierto $x$ de $S$ se tiene 
+$$x<infS+h$$
+Demostración.- \; Si es $x \geq supS+h$ para todo $x$ de $S$, entonces $supS+h$ sería una cota inferior de $S$ mayor que su ínfimo. Por consiguiente debe ser $x<supS+h$ por lo menos para un $x$ de $S$.
+\end{enumerate}
+\end{teo}
+
+%teorema 1.33
+\begin{teo}[Propiedad aditiva]
+Dados dos subconjuntos no vacíos $A$ y $B$ de $\mathbb{R}$, sea $C$ el conjunto
+$$C=\lbrace a+b / a\in A, \; b \in B   \rbrace$$
+\begin{enumerate}[\bfseries a)]
+\item Si $A$ y $B$ poseen supremo, entonces $C$ tiene supremo, y 
+$$supC= supA + supB$$
+Demostración.- \; Supongamos que $A$ y $B$ tengan supremo. Si $c \in C$, entonces $c=a+b$, donde $a\in A$ y $b\in B.$ Por consiguiente $c \leq supA +supB$; de modo que $supA + supB$ es una cota superior de $C$. esto demuestra por el axioma 10 que $C$ tiene supremo y que 
+$$supC \leq supA + supB$$
+Sea ahora $n$ un entero positivo cualquiera. Según el teorema 3.7 $\left( con \; h=1/n \right)$ existen un $a$ en $A$ y un $b$ en $B$ tales que:
+$$a>supA - \displaystyle\frac{1}{n} \; y \; b>supB -\frac{1}{n}$$
+Sumando estas desigualdades, se obtiene 
+$$a+b>supA +supB -\displaystyle\frac{2}{n}, \; \; ó  \; \; supA + supB < a+b+\frac{2}{n} \leq supC +\frac{2}{n}$$
+puesto que $a+b \leq supC.$ Por consiguiente hemos demostrado que
+$$supC \leq supA + supB < supC + \displaystyle\frac{2}{n}$$
+para todo entero $n \geq 1.$ En virtud del teorema 3.6, debe ser $supC = supA+supB.$ Esto demuestra $a)$\\
+\item Si $A$ y $B$ tienen ínfimo, entonces $C$ tiene ínfimo, e
+$$infC = infA+ infB$$ 
+Demostración.- \; Supongamos que $A$ y $B$ tengan ínfimo. Si $c \in C$, entonces $c=a+b$, donde $a\in A$ y $b\in B.$ Por consiguiente $c \geq infA +infB$; de modo que $infA + infB$ es una cota inferior de $C$. esto demuestra por el axioma 10 que $C$ tiene ínfimo y que 
+$$infC \geq infA + infB$$
+Sea ahora $n$ un entero positivo cualquiera. Según el teorema 3.7 $\left( con \; h=1/n \right)$ existen un $a$ en $A$ y un $b$ en $B$ tales que:
+$$a<infA + \displaystyle\frac{1}{n} \;\;  y \; \; b<infB + \frac{1}{n}$$
+Sumando estas desigualdades, se obtiene 
+$$a+b<infA +infB +\displaystyle\frac{2}{n}, \; \; ó \; \;  infA+infB \leq infC \leq a+b < infA+infB + \displaystyle\frac{2}{n} $$
+puesto que $a+b \geq infC$ Por consiguiente hemos demostrado que
+$$infA+ infB \leq infC <infA + infB + \displaystyle\frac{2}{n}$$
+para todo entero $n \geq 1.$ En virtud del teorema 3.6, debe ser $supA+supB = infC.$ Esto demuestra $b)$\\\\
+\end{enumerate}
+\end{teo}
+
+%teorema 1.34
+\begin{teo}
+Dados dos subconjuntos no vacíos $S$ y $T$ de $\mathbb{R}$ tales que $$s\leq t$$ para todo $s$ en $S$ y todo $t$ en $T$. Entonces $S$ tiene supremo, $T$ ínfimo, y se verifica $$supS\leq infT$$\\\\
+Demostración.- \; Cada $t$ de $T$ es corta superior para $S$. Por consiguiente $S$ tiene supremo que satisface la desigualdad $supS\leq T$ para todo $t$ de $S$. Luego $supS$ es una cota inferior de $T$, con lo cual $T$ tiene ínfimo que no puede ser menor que $supS$. Dicho de otro modo, se tiene $supS\leq infT$, como se afirmó.\\\\
+\end{teo}
+
+\section{Ejercicios (I 3.12)}
+\begin{enumerate}[\bfseries \Large 1.]
+%-----------------------1-----------------------------
+\item Si $x$ e $y$ son números reales cualesquiera, $x<y$, demostrar que existe por lo menos un número real $z$ tal que $x<z<y$\\\\
+Demostración.- \; Sea $S$ un conjunto no vacío de $\mathbb{R}$, por axioma 10 se tiene un supremo llamemosle $z$, por definición $x\leq z$ para todo $x\in S$, ahora si $y\in \mathbb{R}$ \; que cumple $x\leq y$, para todo $x\in S$, entonces $z\leq y$, por lo tanto $x\leq z \leq y$ esto  nos muestra que existe por lo menos un número real que cumple la condición $x<z<y$. \\\\
+
+%----------------------------2------------------------------
+\item Si x es un número real arbitrario, probar que existen enteros $m$ y $n$ tales que $m<x<n$\\\\
+Demostración.- \;  Sea $n\in \mathbb{Z}^+$ en virtud del axioma 5 se verifica $n+m=0$, donde $m$ es el opuesto de $n$, esto nos dice que $m<n$ y por teorema anterior se tiene $m<x<n$.\\\\
+
+%-----------------------------3---------------------
+\item Si $x>0$, demuestre que existe un entero positivo $n$ tal que $1/n<x$\\\\
+Demostración.- \; Sea $y=1$ entonces por teorema 3.5 \; $nx>1$, por lo tanto $1/n<x$ \\\\
+
+%-----------------------------4------------------------------
+\item Si $x$ es un número real arbitrario, demostrar que existe un entero $n$ único que verifica las desigualdades $n\leq x < n+1$. Este $n$ se denomina la parte entera de $x$, se delega por $[x]$. Por ejemplo, $[5]=5,\; \left[ \frac{5}{2}\right] =2, \; \left[ -\frac{8}{2} \right]=-3$\\\\
+Demostración.-\; Primero probemos la existencia de $n$,
+\begin{itemize}
+\item  Sea $1\leq a $  \; y  \; $\; S=\lbrace m \in \mathbb{N}/\; m \leq a \rbrace$\\ 
+Vemos que $S$ es no vacío pues contiene a 1, y \; $a$ \; es un cota superior de $S$, luego por axioma del supremo, existe un número $s=supS$, entonces por teorema 3.7 \; con $h=1$ resulta:
+$$n>s-1 \; \; ó \; \; s<n+1, \; \; para \; algún n \; de \; S \; \; \; (1) $$
+Como $z \in S$, se cumple $z\leq a$ y solo falta probar que $a<z+1$. En efecto, si fuese $z+1\leq a$, entonces $n+1 \in S$ y por la propiedad a), se tendría $n+1\leq s$, en contradicción con (1).   \\
+Por tanto, el número entero positivo $n$ cumple con $n\leq a < n+1$
+\item $0\leq a < 1$\\
+En este caso, el entero $n=0$ cumple con la propiedad requerida.
+\item $a<0$
+Entonces $-a>0$ \; y por los dos casos anteriores, existe un entero u tal que $u\leq a< u+1$ de donde $-u-1<a\leq -u$.\\
+Definiendo $n$ por  
+\begin{equation}
+n = \left\lbrace
+\begin{array}{lcr}
+-u-1 & si & a<-u\\
+\textup{si } & x\leq 5 & a=-u
+\end{array}        
+\right.
+\end{equation}
+se prueba fácilmente que $z\leq a < z+1$
+\end{itemize}
+Luego demostramos la unicidad. Sea $w$ y $z$ dos números enteros tal que, $w\leq a < w + 1$ y $z \leq a < z + 1$ debemos probar que $w=z$. Si fuesen distintos, podemos suponer que $z<w$. Entonces $w-z\geq 1$, esto es $z+1\leq w$, y de $a<z+1\leq w \leq a$ resulta una contradicción ya que $a<a$ luego se cumple que $w=z$. \\\\ 
+
+%---------------------------5------------------------------
+\item Si $x$ es un número real arbitrario, $x<y$, probar que existe un entero único $n$ que satisface la desigualdad $n \geq x < n+1$\\\\
+Demostración.- \; 
+
+%---------------------------6-------------------------------
+\item Si $a$ y $b$ son números reales arbitrarios, $a<b$, probar que existe por lo menos un número racional $r$ tal que $a<r<b$ y deducir de ello que existen infinitos. Esta propiedad se expresa diciendo que el conjunto de los números racionales es denso en el sistema de los números reales.\\\\
+Demostración.- \, Por la propiedad arquimediana, para el número $\displaystyle\frac{1}{b-a}$ existe un número natural $d$ tal que $\displaystyle\frac{1}{b-a}$, de donde 
+$$db-da>1 \; \; ó \; \, da+1<da \; \, \, (1)$$
+y también si $z$=parte entera de $da$
+$$z\leq da < z+1 \, \, \, (2)$$
+Sea $q=\displaystyle\frac{n}{d}$, con $n=z+1$. Entonces $q$ es un número racional y cumple $x<q<y$ pues:
+$$a= d\displaystyle\frac{a}{d} < \frac{z+1}{d}<q=\frac{z+1}{d}\leq \frac{da+1}{d}<d\frac{b}{d}=b$$. y por ser $\displaystyle\frac{z+1}{d}$ deducimos que existen infinitos números racionales entre $a$ e $b$\\\\
+
+%----------------------------7----------------------------------
+\item Si $x$ es racional, $x\neq 0$, e $y$ es irracional, demostrar que $x+y$, $x-y$, $xy$, $x/y$, son todos irracionales.
+\begin{itemize}
+\item $x+y$, \, $x-y$\\
+Supongamos que la suma nos da un racional, es decir $\displaystyle\frac{q}{p}+y=\frac{s}{t}\; para \; s,t\neq 0$, por lo tanto $y = \displaystyle\frac{qt+sp}{tp}$, así llegamos a una contradicción, en virtud del axioma 7 (la suma y multiplicación de dos racionales nos da otros racionales).\\
+$x-y$ Se puede comprobar de similar manera a la anterior demostración.\\
+\item $xy$, \, $x/y$, \; $y/x$\\
+Supongamos que el producto nos da un número racional, por lo tanto $\frac{p}{q}\cdot y = \displaystyle\frac{t}{s}$ para $q,s \neq 0$ y $ \displaystyle y = \frac{sq}{pt}$ en contradicción con la hipótesis. De igual manera se comprueba que $x/y$ es irracional.\\\\
+\end{itemize}
+
+%-----------------------------8----------------------------
+\item ¿La suma o el producto de dos números irracionales es siempre irracional?\\\\
+Demostración.- \, No siempre se cumple la proposición, veamos dos contra ejemplos.\\
+Sea $a$ un número irracional entonces por teorema anterior $1-a$ es irracional, así $a+(1-a)=1$, sabiendo que $1\in \mathbb{R}$. Por otro lado sabemos que $\displaystyle\frac{1}{a}$ es irracional, por lo tanto $1\in \mathbb{R}$.\\\\
+
+%------------------------------9-----------------------------
+\item Si $x$ e $y$ son números reales cualesquiera, $x<y$, demostrar que existe por lo menos un número irracional $z$ tal que $x<z<y$ y deducir que existen infinitos\\\\
+Demostración.- \; Sea $0<x<y$ e $i$ un número irracional, por propiedad arquimediana  $y-x>\displaystyle\frac{i}{n}$ \; ó \; $\displaystyle x+ \frac{i}{n}<y$. \\\\
+por teorema 3.15 \; se tiene que $\dfrac{i}{n}$ es irracional llamemosle $z$ por lo tanto  $x+z>x$, luego existe $x<z<y$. Y de $\dfrac{i}{n}$  deducimos que existen infinitos números irracionales que cumplen la condición.\\\\
+
+%-------------------------------10----------------------------
+\item Un entero $n$ se llama par si $n=2m$ para un cierto entero $m$, e impar si $n+1$ es par demostrar las afirmaciones siguientes:
+\begin{enumerate}[\bfseries a)]
+\item Un entero no puede ser a la vez par e impar.\\\\
+Demostración.- \; Sean $2k$ y $2i+1$ dos enteros par e impar a la vez  entonces $2k=2i+1$ ó  $(k-i)=\dfrac{1}{2}$  lo cual no es cierto, ya que la resta de dos números pares siempre da par, por lo tanto es par o es impar pero no los dos al mismo tiempo.\\
+\item Todo entero es par o es impar.\\\\
+Demostración.- \; Por inciso a) \; $2k\neq 2k-1$ para $k\in \mathbb{Z}$, por la tricotomía ó $2k < 2k-1$ ó $2k > 2k-1$ lo cual se cumple pero no ambos a la vez.\\  
+\item La suma o el producto de dos enteros pares es par. ¿ Qué se puede decir acerca de la suma o del producto de dos enteros impares ?\\\\
+Demostración.- \; Sea $k\in \mathbb{R}$ entonces $2k+2k=4k=2(2k)$. Luego para el producto $2k\cdot 2k = 4k^2=2(2k^2)$\\
+Por otra parte $(2k-1)+(2k-1)=4k-2=2(2k-1)$. No pasa lo mismo para el producto ya que  $(2k-1)(2k-1)=2k^2-4k+1=2(2k^2-2k)+1$\\\\
+\item Si $n^2$ es par, también lo es $n$. Si $a^2=2b^2$, siendo $a$ y $b$ enteros, entonces $a$ y $b$ son ambos pares.\\\\
+Demostración.- \;  Si $n$ es impar entonces $n^2$ es impar, reciprocamente hablando, entonces sea $n^2=(2k-1)^2$ para $k\in \mathbb{R}$, por lo tanto $2(2k^2+4k)-1$ es impar.\\
+Por otro lado, sea $a=2k$, $b=2k-1$ '; y \; $k\in \mathbb{Z}$ entonces $(2k)^2=2(2k-1)^2$, por lo tanto $k=\dfrac{1}{2}$, esto contradice $k\in \mathbb{Z}$.\\
+\item Todo número racional puede expresarse en la forma $a/b$, donde $a$ y $b$ enteros, uno de los cuales por lo menos es impar.\\\\
+demostración.- \; Sea $r$ un número racional con $r=\dfrac{a}{b}$. Si $a$\; y \; $b$ son ambos pares, entonces tenemos $$a=2c \; y \; b=2d \,\; \Rightarrow \,\; \dfrac{a}{b}=\dfrac{2c}{2d}=\dfrac{c}{d},$$ con $c<a$ \; y \; $d<b$. ahora, si $c$ \; y \; d ambos son pares, repita el proceso. Esto dará una secuencia estrictamente decreciente de enteros positivos, por lo que el proceso debe terminar por el principio de buen orden. Por lo tanto debemos tener algunos enteros $r$ \; y \; $s$, no ambos con $n=\dfrac{a}{b}=\dfrac{r}{s}$.
+\end{enumerate}
+
+%-----------------------------11------------------------
+\item Demostrar que no existe número racional cuyo cuadrado sea 2.\\\\
+Demostración.- \; Utilizaremos el método de reducción al absurdo. Supongamos que n es impar, es decir, $n=2k+1\; k \in \mathbb{Z}$, ahora operando:
+$$n^2=(2k+1)^2 \Rightarrow  n^2 = 4k^2 +4k + 1 \Rightarrow n^2=2(2k^2+2k)+1$$
+Sabemos que $2k^2+2k$ es un número entero cualquiera, por lo tanto podemos realizar un cambio de variable, $2k^2+2k = k^{'}$, entonces:
+$$n^2=2k^{'} +1$$
+Se tiene una contradicción ya por teorema anterior se de dijo que $n^2$ es par, por lo tanto queda demostrado la proposición.  
+Ahora si estamos con la facultad de demostrar que  $\sqrt{2}$ es irracional.\\
+Supongamos que $\sqrt{2}$ es racional, es decir, existen números enteros tales que:
+$$\displaystyle\frac{p}{q}=\sqrt{2}$$
+Supongamos también que $p$ y $q$ no tienen divisor común mas que el 1. Se tiene:
+$$p^2=2q^2$$
+Esto nos muestra que $p^2$ es par y  por la previa demostración tenemos que $p$ es par. En otras palabras $p = 2k, \; \forall k \in \mathbb{Z}$, entonces:
+$$(2k)^2 = 2q^2 \Rightarrow 4k^2 = 2q2 \Rightarrow 2k^2 = q^2 $$
+Esto demuestra que $q^2$ es par y en consecuencia que $q$ es par. Así pues, son pares tanto $p$ como $q$ en contradicción con el hecho de que $p$ y $q$ no tienen divisores comunes. Esta contradicción completa la demostración.\\\\
+
+%-----------------------------11--------------------------
+\item La propiedad arquimediana del sistema de números reales se dedujo como consecuencia del axioma del supremo. Demostrar que el conjunto de los números racionales satisface la propiedad arquimediana pero no la del supremo. Esto demuestra que la propiedad arquimediana no implica el axioma del supremo.\\\\
+Demostración.- \; Está claro que que el conjunto de los racionales satisface la propiedad arquimediana ya que si $x=\dfrac{p}{q}$ e $y=\dfrac{s}{t}$ para $q,\; t \neq 0$ entonces $\dfrac{p}{q}\cdot n>\dfrac{s}{t}$.\\
+Por otra parte sea $S$ el conjunto de todos los racionales y supongase que esta acotado superiormente, por axioma 10 se tiene supremo, llamemosle $B$, entonces $x\leq B, \; \; x \in S$, luego existe $t\in \mathbb{R}$ tal que $B\leq t$, así por teorema 3.14 \; $B<x<t$,  esto contradice que $B$ sea supremo.\\\\ 
+
+   
+\section{Existencia de raíces cuadradas de los números reales no negativos}
+\paragraph{Nota}
+Los números negativos no pueden tener raíces cuadradas, pues si $x^2=a$, al ser $a$ un cuadrado ha de ser no negativo (en virtud del teorema 2.5). Además, si $a=0$, $x=0$ es la única raíz cuadrada (por el teorema 1.11). Supóngase, pues $a>0$. Si $x^2=a$ entonces $x\leq 0$ y $(-x)^2=a$, por lo tanto, $x$ y su opuesto son ambos raíces cuadradas. Pero a lo sumo tiene dos, porque si $x^2=a$ e $y^2=a$, entonces $x^2=y^2$ \; y \; $(x+y)(x-y)=0$, en virtud del teorema 1.11, \; ó $x=y$ ó $x=-y$. Por lo tanto, si $a$ tiene raíces cuadradas, tiene exactamente dos.
+\begin{tcolorbox}[colback=white]
+\begin{def.}
+Si $a\geq 0$, su raíz cuadrada no negativa se indicará por $a^{1/2}$ o por $\sqrt{a}$. Si $a>0$, la raíz cuadrada negativa es $-a^{1/2}$ ó $-\sqrt{a}$
+\end{def.}
+\end{tcolorbox}
+%teorema 1.35
+\begin{teo}
+Cada número real no negativo $a$ tiene una raíz cuadrada no negativa única.\\\\
+Demostración.- \; Si $a=0$, entonces $0$ es la única raíz cuadrada. Supóngase pues que $a>0$. Sea $S$ el conjunto de todos los números reales positivos $x$ tales que $x^2\leq a$. Puesto que $(1+a)^2>a$, el número $(a+1)$ es una cota superior de $S$. Pero, $S$ es no vacío, pues $a/(1+a)$ pertenece a $S$; en efecto $a^2\leq a(1+a)^2$ y por lo tanto $a^2/(1+a)^2\leq a$. En virtud del axioma 10, $S$ tiene un supremo que se designa por $b$. Nótese que $b\geq a/(1+a)$ y por lo tanto $b>0$. Existen sólo tres posibilidades: $b^2>a$, $b^2<a$, $b^2=a$.\\
+Supóngase $b^2>a$ y sea $c=b-(b^2-a)/(2b)/(2b)=\dfrac{1}{2}(b+a/b)$. Entonces $a<c<b$ \; y \; $c^2=b^2-(b^2-a)+(b^2-a)^2/4b^2=a+(b^2-a)^2/(4b^2)>a$. Por lo tanto, $c^2>x^2$ para todo $x \in S$, es decir, $c>x$ para cada $x \in S$; luego $c$ es una cota superior de $S$, y puesto que $c<b$ se tiene una contradicción con el hecho de ser $b$ el extremo superior de $S$. Por tanto, la desigualdad $b^2>a$ es imposible.\\
+Supóngase $b^2<a$. Puesto que $b>0$ se puede elegir un número positivo $c$ tal que $c<b$ y tal que $c<(a-b^2)7(3b). Se tiene entonecs$ $$(b+c)^2=b^2+c(2b+c)< b^2 +3bc < b^2 + (a-b^2)=a$$ es decir, $b+c$ pertenece a $S$. Como $b+c>b,$ esta desigualdad está en contradicción con que $b$ sea una cota superior de $S$. Por lo tanto, la desigualdad $b^2<a$ es imposible y sólo queda como posible $b^2=a$\\\\
+\end{teo}
+\end{enumerate}
+ 
+\section{Raíces de orden superior. Potencias racionales}
+El axioma del extremo superior se puede utilizar también para probar la existencia de raíces de orden superior. Por ejemplo, si $n$ es un entero positivo impar, para cada real $x$ existe un número real $y$, y uno sólo tal que $x^n=x$. Esta $y$ se denomina raíz n-sima de $x$ y se indica por:
+\begin{tcolorbox}[colback=white]
+\begin{def.}
+$$y=x^{\frac{1}{n}} \; \; ó \; \; y=\sqrt[n]{x}$$
+\end{def.}
+\end{tcolorbox}
+Si $n$ es par, la situación es un poco distinta. En este caso, si $x$ es negativo, no existe un número real $y$ tal que $y^n = x$, puesto que $y^n\geq 0$ para cada número real $y$. Sin embargo, si $x$ es positivo, se puede probar que existe un número positivo y sólo uno tal que $y^n = x$. Este $y$ se denomina la raíz n-sima positiva de $x$ y se indica por los símbolos anteriormente mencionados. Puesto que $n$ es par, $(-y)^n = y^n$ y, por tanto, cada $x > 0$ tiene dos raíces n-simas reales, $y$ e $-y$. Sin embargo, los símbolos $x^{\frac{1}{n}}$ y $\sqrt[n]{x}$; se reservan para la raíz n-sima positiva.\\
+\begin{tcolorbox}[colback=white]
+\begin{def.}
+Si $r$ es un número racional positivo, sea $r = m/n$, donde $m$ y $n$ son enteros positivos, se define como: $$x^r= x^{m/n }=(x^m)^{\frac{1}{n}},$$ es decir como raíz n-sima de $x^m$, siempre que ésta exista.\\ 
+\end{def.}
+\begin{def.}  
+Si $x\neq 0$, se define $$x^{-r} = \dfrac{1}{x^r},$$ con tal que $x^r$ esté definida.
+\end{def.}
+\end{tcolorbox}
+ Partiendo de esas definiciones, es fácil comprobar que las leyes usuales de los exponentes son válidas para exponentes racionales: 
+\begin{tcolorbox}[colback=white]
+\begin{prop} Propiedades de potencia.\\
+\begin{center}
+\begin{enumerate}[\bfseries 1.]
+\item $x^r \cdot x^s =  x^{r+s}$
+\item $(x^r)^s=x^{rs}$
+\item $(xy)^r=x^r \cdot y^r$
+\item $\left( \dfrac{x}{y} \right)^r=\dfrac{x^r}{y^r}$
+\end{enumerate}
+\end{center}
+\end{prop}
+\end{tcolorbox}
+
+\section{El principio de la inducción matemática}
