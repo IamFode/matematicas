@@ -64,8 +64,7 @@ Se tiene $a+(-a)=0$ por definición de $-a$ incluido en el teorema 1.1. Pero est
 %teorema 1.5
 \begin{teo}
 $a(b-c)=ab-ac$\\\\
-Demostración.- \;
-Sea $a(b-c)$ por teorema 1.3 tenemos que $a\left[ b+(-c)\right]$  y por la propiedad distributiva $\left[ ab + a(-c) \right]$, y en virtud de los teorema 1.12 y 1.3 nos queda $ ab - ac $ \\\\
+Demostración.- \; Sea $a(b-c)$ por teorema tenemos que $a\left[ b+(-c)\right]$  y por la propiedad distributiva $\left[ ab + a(-c) \right]$, y en virtud de anteriores teoremas nos queda $ ab - ac $ \\\\
 \end{teo}
 
 %teorema 1.6
@@ -354,12 +353,12 @@ Demostración.- \; Supongamos que existe un número real $" a "$ tal que $y \leq
 Demostración .- \;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Por el teorema anterior ni $0<x$ ni $x<h$ satisfacen la proposición por lo tanto queda $x=0$\\\\
 
 
-%teorema 2.11
-\begin{teo}
+%lema 1.1
+\begin{lema}
 Para $b\geq 0$ $a^2>b$ $\Rightarrow$ $a>\sqrt{b}$ ó $a<-\sqrt{b}$\\\\
 Demostración.- \;
 Por hipótesis $a^2>b$ y $a^2-b>0$, luego \; $(a-\sqrt{b})(a+\sqrt{b})>0$, y por teorema  \; $a-\sqrt{b}>0$ \; y \; $a+\sqrt{b}<0$ \; ó \; $a-\sqrt{b}<0$ \; y \; $a+\sqrt{b}<0$, por lo tanto $a-\sqrt{b}<0$ \; ó \; $a<-\sqrt{b}$\\\\
-\end{teo}
+\end{lema}
 \end{enumerate}
 
 \section{Números enteros y racionales}
@@ -658,3 +657,501 @@ Si $x\neq 0$, se define $$x^{-r} = \dfrac{1}{x^r},$$ con tal que $x^r$ esté def
 \end{tcolorbox}
 
 \section{El principio de la inducción matemática}
+\begin{tcolorbox}[colback=white]
+\paragraph{Método de demostración por inducción}Sea $A(n)$ una afirmación que contiene el entero $n$. Se puede concluir que $A(n)$ es verdadero para cada $n\geq n_1$ si es posible:
+\begin{enumerate}[\bfseries a)]
+\item Probar que $A(n_1)$ es cierta.
+\item Probar, que supuesta $A(k)$ verdadera, siendo $k$ un entero arbitrario pero fijado $\geq n_1$, que $A(k+1)$ es verdadera.\\
+\end{enumerate}
+En la práctica, $n_1$ es generalmente igual a $1$.
+\end{tcolorbox}
+
+%teorema 1.36
+\begin{teo}[Principio de inducción matemática]
+Sea $S$ un conjunto de enteros positivos que tienen las dos propiedades siguientes:
+\begin{enumerate}[\bfseries a)]
+\item El número 1 pertenece al conjunto $S$.
+\item Si un entero $k$ pertenece al conjunto $S$, también $k+1$ pertenece a $S$.
+\end{enumerate}
+Entonces todo entero positivo pertenece al conjunto $S$.\\\\
+Demostración.- \; Las propiedades $a)$ y $b)$ nos dicen que $S$ es un conjunto inductivo. Por consiguiente $S$ tiene cualquier entero positivo.\\\\ 
+\end{teo}
+
+%teorema 1.37
+\begin{teo}[principio de buena ordenación]
+Todo conjunto no vacío de enteros positivos contiene uno que es el menor \\\\
+Demostración.- \; Sea $T$ una colección no vacía de enteros positivos. Queremos demostrar que $t_0$ tiene un número que es el menor, esto es, que hay en T un entero positivo t.; tal que $t_0\leq t$ para todo $t$ de $T$.\\
+Supongamos que no fuera así. Demostraremos que esto nos conduce a una contradicción. El entero $1$ no puede pertenecer a $T$ (de otro modo él sería el menor número de $T$). Designemos con $S$ la colección de todos los enteros positivos $n$ tales que $n<t$ para todo $t$ de $T$. Por tanto $1$ pertenece a $S$ porque $1 < t$ para todo $t$ de $T$. Seguidamente, sea $k$ un entero positivo de $S$. Entonces $k < t$ para todo $t$ de $T$. Demostraremos que $k + 1$ también es de $S$. Si no fuera así, entonces para un cierto $t$, de $T$ tendríamos $t_1 \leq k+1$. Puesto que $T$ no posee número mínimo, hay un entero $t_2$ en $T$ tal que $t_2 < t_1$ Y por tanto $t_2 < k + 1$. Pero esto significa que $t_2 \leq k$, en contradicción con el hecho de que $k < t$ para todo $t$ de $T$. Por tanto $k + 1$ pertenece a $S$. Según el principio de inducción, $S$ contiene todos los enteros positivos. Puesto que $T$ es no vacío, existe un entero positivo $t$ en $T$. Pero este $t$ debe ser también de $S$ (ya que $S$ contiene todos los enteros positivos). De la definición de $S$ resulta que $t < t$, lo cual es absurdo. Por consiguiente, la hipótesis de que $T$ no posee un número mínimo nos lleva a una contradicción. Resulta pues que $T$ debe tener un número mínimo, y a su vez esto prueba que el principio de buena ordenación es una consecuencia del de inducción.\\\\
+\end{teo}
+
+\section{Ejercicios (I 4.4)}
+\begin{enumerate}[\bfseries \Large 1.]
+%----------------------------1----------------------------
+\item Demostrar por inducción las fórmulas siguientes:
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item $1+2+3+...+n=n(b+1)/2$\\\\
+Demostración.- \; Sea $n=k$ entonces $1+2+3+...+k=k(k+1)/2$.\\
+Para $k=1$ se tiene $1=1(1+1)/2$. \\ 
+Por ultimo si  $k=k+1$ nos queda probar que  $1+2+3+...+k+(k+1)=\dfrac{(k+1)(k+2)}{2}$, luego $\dfrac{k(k+1)}{2}+(k+1)=\dfrac{k(k+1)+2(k+1)}{2}$. Así $\dfrac{k^2+3k+2}{2}$ \; y \; $\dfrac{(x+1)(x+2)}{2}$\\\\
+%(b)
+\item $1+3+5+...+(2n-1)=n^2$\\\\
+Demostración.- \; Sea $n=k$ entonces $1+3+5+...+(2k-1)=k^2$.\\
+Para $k=1$ se tiene $[2(1)-1]=1^2$, así $1=1$\\
+Luego, si $k=k+1$ entonces $1+3+5+...+[2(k+1)-1]=(k+1)^2$. Por lo tanto $k^2+2k+1=(k+1)^2$.\\\\
+%(c)
+\item $1^3+2^3+3^3+...+n^3=(1+2+3+...+n)^2$\\\\
+Demostración.- \; Sea $n=k$ entonces, $$1^3+2^3+3^3+...+k^3=(1+2+3+...+k)^2$$
+Para $k=1$ $$1=1,$$
+Luego $k=k+1$, $$1^3+2^3+3^3+...+k^3+(k+1)^3=(1+2+3+...+k)^2,$$
+Así,
+\begin{center}
+\begin{tabular}{r c l}
+$\left(\dfrac{k(k+1)}{2} \right)^2+(k+1)^3=$&=&$\left( \dfrac{k(k+1)}{2}+(k+1)\right) ^2$\\\\
+$\dfrac{k^2(k+1)^2}{4}+(k+1)^3$&=&$\dfrac{k^2(k+1)^2}{4}+k(k+1)^2+(k+1)^2$\\\\
+$\dfrac{k^2(k+1)^2+4(k+1)^3}{4}$&=&$\dfrac{k^2(k+1)^2+4k(k+1)^2+4(k+1)^2}{4}$\\\\
+$\dfrac{(k+1)^2 (k^2+4k+4)}{4}$&=&$\dfrac{(k+1)^2 (k^2 + 4k +4)}{4}$\\\\
+\end{tabular}   
+\end{center}
+%(d)
+\item $1^3+2^3+...+(n-1)^3<n^4/4<1^3+2^3+...+n^3$\\\\
+Demostración.- \; Sea $n=k$ entonces $$1^3+2^3+...+(k-1)^3<k^4/4 \; \; \; (1)$$ 
+Para $k=1$, \; $0<1/4$ se observa que se cumple.\\
+Después, para $k=k+1$, $$1^3+2^3+...+k^3<(k+1)^4/4,$$ sumando $k^3$ a $(1)$, 
+$$1^3+2^3+...+k^3<k^4/4+k^3$$ y para deducir como consecuencia de $k+1$, basta demostrar, $$k^4/4+k^3<(k+1)^4/4$$, Pero esto es consecuencia inmediata de la igualdad $$(k+1)^4/4=(k^4+4k^3+6k^2+4k+1)/4=k^4/4+k^3+(3k^2)/2+k+1$$ Por tanto se demostró que $k+1$ es consecuencia de $k$\\\\
+\end{enumerate}
+
+%-----------------------------2---------------------------------
+\item Obsérvese que: 
+\begin{center}
+\begin{tabular}{r c l}
+$1$&$=$&$1$\\
+$1-4$&$=$&$-(1+2)$\\
+$1-4+9$&$=$&$1+2+3$\\
+$1-4+9-16$&$=$&$-(1+2+3+4)$\\
+\end{tabular}
+\end{center}
+Indúzcase la ley general y demuéstrese por inducción\\\\
+Demostración.- \: Verificando tenemos que la ley general es $1-4+9-16+...+(-1)^{n+1}\cdot n^2=(-1)^{n+1}(1+2+3+...+n)$. \\
+Ahora pasemos a demostrarlo. Sea $n=k$ entonces, $$1-4+9-16+...+(-1)^{k+1}\cdot k^2=(-1)^{k+1}(1+2+3+...+k)$$ Si $k=1$, se sigue, $(-1)^2 \cdot 1^2 = (-1)^2\cdot 1$, vemos que satisface para $k=1.$
+Luego $k=k+1$,  $$1-4+9-16+...+(-1)^{k+2}\cdot (k+1)^2=(-1)^{k+2}\left[\dfrac{(k+1)(k+2)}{2}\right]$$.\\
+Sumando $(-1)^{k+2}\cdot (k+1)^2$  a la segunda igualdad dada, se tiene,
+$$1-4+9-16+...+ (-1)^{k+2}\cdot (k+1)^2 = (-1)^{k+1}\left(\dfrac{k(k+1)}{2}\right) + (-1)^{k+2}\cdot (k+1)^2$$ Por lo tanto, basta demostrar que $(-1)^{k+1}\left(\dfrac{k(k+1)}{2}\right) + (-1)^{k+2}\cdot (k+1)^2=(-1)^{k+2}\left[\dfrac{(k+1)(k+2)}{2}\right]$\\
+\begin{center}
+\begin{tabular}{r c l}
+$(-1)^{k+1}\left(\dfrac{k(k+1)}{2}\right) + (-1)^{k+2}\cdot (k+1)^2$&$=$&$(-1)^{k+2}\left\lbrace \dfrac{[(-1)(k+1)k]+2(k^2+2k+1)}{2} \right\rbrace$\\\\
+&$=$&$(-1)^{k+2} \left( \dfrac{-k^2 -k +2k^2 +4k +2}{2} \right)$\\\\
+&$=$&$(-1)^{k+2} \left( \dfrac{k^2+3k+2}{2} \right)$\\\\
+&$=$&$(-1)^{k+2} \left[ \dfrac{(x+1)(x+2)}{2} \right]$\\\\
+\end{tabular}
+\end{center}
+%-------------------------------3--------------------------------
+\item Obsérvese que: 
+\begin{center}
+\begin{tabular}{r c l}
+$1+\frac{1}{2}$&=&$2-\frac{1}{2}$\\\\
+$1+\frac{1}{2}+\frac{1}{4}$&=&$2-\frac{1}{4}$\\\\
+$1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}$&=&$2-\frac{1}{8}$\\\\
+\end{tabular}
+\end{center}
+Demostración.- \; Se verifica que $1+\frac{1}{2}+\frac{1}{4}+...+\dfrac{1}{2^n}=2-\dfrac{1}{2^n}$.\\\\
+Para $n=k$ $$1+\frac{1}{2}+\frac{1}{4}+...+\dfrac{1}{2^k}=2-\dfrac{1}{2^k}$$\\
+$k=1$ $$1+\dfrac{1}{2^1}=2-\dfrac{1}{2^1}$$\\
+Luego $k=k+1$ $$1+\frac{1}{2}+\frac{1}{4}+...+\dfrac{1}{2^{k+1}}=2-\dfrac{1}{2^{k+1}}$$\\
+Así solo falta demostrar que, $$2-\dfrac{1}{2^k}+\dfrac{1}{2^{k+1}}=2-\dfrac{1}{2^{k+1}}$$
+\begin{center}
+\begin{tabular}{r c l}
+$2-\dfrac{1}{2^k}+\dfrac{1}{2^{k+1}}$&=&$2+\dfrac{-2+1}{2^{k+1}}$\\\\
+&=&$2-\dfrac{1}{2^{k+1}}$\\\\
+\end{tabular}
+\end{center}
+
+%-----------------------------4-----------------------------
+\item Obsérvese que:
+\begin{center}
+\begin{tabular}{r c l}
+$1-\frac{1}{2}$&=&$\frac{1}{2}$\\\\
+$(1-\frac{1}{2})(1-\frac{1}{3})$&=&$\frac{1}{3}$\\\\
+$(1-\frac{1}{2})(1-\frac{1}{3})(1-\frac{1}{4})$&=&$\frac{1}{4}$\\\\
+\end{tabular}
+\end{center}
+Indúzcase la ley general y demuéstrese por inducción.\\\\
+Demostración.- \; Se induce que $\left( 1-\dfrac{1}{2} \right)\left( 1-\dfrac{1}{3} \right)...\left(1- \dfrac{1}{n} \right)=\dfrac{1}{n}$ para todo $n>1$.\\
+Sea $n=k$, entonces $\left( 1-\dfrac{1}{2} \right)\left( 1-\dfrac{1}{3} \right)...\left(1- \dfrac{1}{k} \right)=\dfrac{1}{k}$. Después para $k=2$, \; $1-\dfrac{1}{2}=\dfrac{1}{2}$. Si $k=k+1$ tenemos $\left( 1-\dfrac{1}{2} \right) \left( 1-\dfrac{1}{3} \right)...\left(1- \dfrac{1}{k+1} \right)=\dfrac{1}{k+1}$. Luego es fácil comprobar que 
+$\dfrac{1}{k}\left(1 - \dfrac{1}{k+1} \right)=\dfrac{1}{k+1}$. \\\\
+
+%----------------------------5--------------------------------
+\item Hallar la ley general que simplifica al producto $$\left( 1-\dfrac{1}{4} \right)\left( 1-\dfrac{1}{9} \right)\left( 1- \dfrac{1}{16} \right)..\left( 1- \dfrac{1}{n^2} \right)$$ y demuéstrese por inducción.\\\\
+Demostración.- \; Inducimos que $\left( 1-\dfrac{1}{4} \right)\left( 1-\dfrac{1}{9} \right)\left( 1- \dfrac{1}{16} \right)..\left( 1- \dfrac{1}{n^2} \right)=\dfrac{n+1}{2n}$,para todo $n>1$. Después $n=k=1$, $$1-\dfrac{1}{2^2}=\dfrac{2+1}{2\dot 2} \Rightarrow \dfrac{3}{4}=\dfrac{3}{4}$$ 
+Luego $k+1$, $$\left( 1-\dfrac{1}{4} \right)\left( 1-\dfrac{1}{9} \right)\left( 1- \dfrac{1}{16} \right)..\left( 1- \dfrac{1}{(k+1)^2} \right)=\dfrac{(k+1)+1}{2(k+1)}$$
+Así,
+\begin{center}
+\begin{tabular}{r c l}
+$\left( \dfrac{k+1}{2k}\right) \left( 1- \dfrac{1}{(k+1)^2} \right)$&=&$\dfrac{(k+1)+1}{2(k+1)}$\\\\
+$\left( \dfrac{k+1}{2k} - \dfrac{1}{2k(k+1)} \right)$&=&$\dfrac{k+2}{2k+2}$\\\\
+$\dfrac{(k+1)^2-1}{2k(k+1)}$&=&$\dfrac{k+2}{2k+2}$\\\\
+$\dfrac{k+2}{2k+2}$&=&$\dfrac{k+2}{2k+2}$\\\\
+\end{tabular}
+\end{center}
+
+%--------------------------6-------------------------------
+\item Sea $A(n)$ la proporción: $1+2+...+n=\dfrac{1}{8} (2n+1)^2$.
+\begin{enumerate}[\bfseries a)]
+%(a)
+\item Probar que si $A(k)$, $A(k+1)$ también es cierta.\\\\
+Demostración.- \; Para $A(k+1)$, 
+\begin{center}
+\begin{tabular}{r c l}
+$\dfrac{1}{8}(2k+1)^2+(k+1)$&=&$\dfrac{1}{8}\left[2(k+1)+1\right]^2$\\\\
+$\dfrac{4k^2+12k+9}{8}$&=&$\dfrac{4k^2+12k+9}{8}$\\\\
+\end{tabular}
+\end{center}
+%(b)
+\item Critíquese la proposición $"$de la inducción se sigue que $A(n)$ es cierta para todo $n$ $"$.\\\\
+Se ve que no se cumple para ningún entero $A(n)$ pero si para $A(n+1)$.\\\\ 
+%(c)
+\item Transfórmese $A(n)$ cambiando la igualdad por una desigualdad que es cierta para todo entero positivo $n$\\\\
+Primero comprobemos para $A(1)$, \; $1<\dfrac{9}{8}$.\\
+Luego para $A(k),$ $$1+2+...+(k+1)<\dfrac{1}{8}(2k+1)^2$$
+Después para $A(k+1)$ $$1+2+...+(k+1)<\dfrac{1}{8}(2k+1)^2$$
+Remplazando $(k+1)$ a $A(k)$ $$1+2+...+(k+1)<\dfrac{1}{8}(2k+1)^2+(k+1)$$
+por último solo nos queda demostrar $$\dfrac{1}{8}(2k+1)^2<\dfrac{1}{8}(2k+1)^2+(k+1)$$
+Así $\dfrac{4k^2+12k+9}{8}<\dfrac{4k^2+12k+9}{8} +(k+1)$, vemos que la inecuación se cumple para cualquier número natural.\\\\ 
+\end{enumerate} 
+
+%--------------------------7-------------------------------
+\item Sea $n_1$ el menor entero positivo $n$ para el que la desigualdad $(1+x)^n>1+nx+nx^2$ es cierta para todo $x>0$. Calcular $n_1$, y demostrar que la desigualdad es cierta para todos los enteros $n\geq n_1$\\\\
+Demostración.- \; vemos que la proposición es validad para $n_1=3$, $$(1+x)^3>1+3x+3x^2,$$ y no así para $n=1$ \; y \;$n=2$ entonces $A(n)=A(k)\geq 3$, $(1+x)^k>1+kx+kx^2.$ Después para un $A(k+1)$, $(1+x)^{k+1}>1+(k+1)x+(k+1)x^2,$ así \; $(1+kx+kx^2)(1+k)>1+(k+1)x+(k+1)x^2,$ luego se cumple la desigualdad $x(kx^2)+x^2+kx+x+1+x^2>kx^2+x^2+kx+x+1$.\\\\
+
+%----------------------------8-------------------------------
+\item Dados números reales positivos $a_1,a_2,a_3,...,$ tales que $a_n\leq ca_{a-1}$ para todo $n\geq 2$. Donde $c$ es un número positivo fijo, aplíquese el método de inducción para demostrar que $a_n \leq a_1 c^{n-1}$ para cada $n \geq 1$\\\\
+Demostración.- \; Primero, para el caso $n=1$, tenemos $a_1c^0=a_1$, por lo tanto la desigualdad es validad. Ahora supongamos que la desigualdad es válida para algún número entero $k$: $a_k\leq a_1c^{k-1}$, luego multiplicamos por $c$, $ca_k\leq a_1c^k$, pero dado que se asume por hipótesis $a_{k+1} \leq ca_k$, entonces $a_{k+1}\leq a_1c^k$, por lo tanto, la declaración es válida para todo $n$.\\\\
+
+%-------------------------------9----------------------------
+\item Demuéstrese por inducción la proposición siguiente: Dado un segmento de longitud unidad, el segmento de longitud $\sqrt{n}$ se puede construir con regla y compás para cada entero positivo $n$.\\\\
+Demostración.- \; Dada una línea de longitud 1, podemos construir una línea de longitud $\sqrt{2}$ tomando la hipotenusa del triángulo rectángulo con patas de longitud 1.\\
+Ahora, supongamos que tenemos una línea de longitud 1 y una línea de longitud $\sqrt{k}$ para algún número entero $k$. Luego podemos formar un triángulo rectángulo con patas de longitud 1 y longitud $\sqrt{k}$. La hipotenusa de este triángulo es $\sqrt{k+1}$. Por lo tanto, si podemos construir una línea de longitud $\sqrt{k}$, entonces podemos construir una línea de longitud $\sqrt{k+1}$. Como podemos construir una línea de longitud $\sqrt{2}$ en el caso base, podemos construir una línea de longitud $\sqrt{n}$ para todos los enteros $n$.\\\\
+
+%------------------------------10------------------------------
+\item Sea $b$ un entero positivo. Demostrar por inducción la proposición siguiente: Para cada entero $n\geq 0$ existen enteros no negativos $q$ \; y \; $r$ tales que:
+$$n=qb+r, \; \; \; 0\leq r < b$$ \\
+Demostración.- \; Sea $b$ ser un entero positivo fijo. Si $n=0$ , luego $q=r=0$, la afirmación es verdadera (ya que $0=0b+0$).\\
+Ahora suponga que la afirmación es cierta para algunos $k \in \mathbb{N}$. Por hipótesis de inducción sabemos que existen enteros no negativos $q$ \; y \; $r$ tales que $$k=qb+r, \; \; \; 0\leq r < b,$$ Por lo tanto, sumando 1 a ambos lados tenemos, $$k+1=qb+(r+1).$$ Pues $0\leq r < b$ entonces sabemos que $0\leq r \leq (b-1)$. Si $0\leq r < b-1,$ entonces $0\leq r+1<b,$ y la declaración aún se mantiene con la misma elección $q$ \; y \; $r+1$ en lugar de $r$.\\
+Por otro lado, si $r=b-1,$ entonces $r+1=b$ y tenemos, $$k+1=qb+b=(q+1)b+0$$
+Por lo tanto, la declaración se mantiene de nuevo, pero con $q+1$ en lugar de $q$ \; y con $r=0$ (que es válido ya que si $r=0$ tenemos $a\leq r < b$). Por ende, si el algoritmo de división es válido para $k$, entonces también es válido para $k+1.$ Entonces, es válido para todos $n \in \mathbb{N}$.\\\\
+
+%-------------------------------11-------------------------------
+\item Sea $n$ \; y \; $d$ enteros. Se dice que $d$ es un divisor de $n$ si $n=cd$ para algún entero $c$. Un entero $n$ se denomina primo si $n>1$ y los únicos divisores de $n$ son $1$ \; y \; $n$. Demostrar por inducción que cada entero $n>1$ es o primo o producto de primos.\\\\
+Demostración.- \; LA prueba se hará por inducción. Si $n=2$ ó $n=3$ entonces $n$ es primo, entonces la proposición es verdadera.\\
+Ahora supongamos que la afirmación es verdadera para todos los enteros desde $2$ hasta $k$. Se debe demostrar que esto implica $k+1$ es primo o un producto de primos. Si $k+1$ es primo, entonces no hay nada que demostrar. Por otro lado, si $k+1$ no es primo, entonces sabemos que hay enteros $c$ \; y \; $d$ tal que $1<c,$ $d<k+1$ en otras palabras decimos que $n$ es divisible por números disntintos de $1$ y de sí mismo.\\
+Por hipótesis de inducción, sabemos que $2\leq c$, $d\leq k$ entonces $c$ \; y \; $d$ son primos o son producto de primos.\\
+Por lo tanto, si la declaración es verdadera para todos los enteros mayores que $1$ hasta $k$ entonces, también es verdadera para $k+1$, así es cierto para todo $n\in \mathbb{Z}^+$\\\\
+
+%--------------------------12------------------------------
+\item Explíquese el error en la siguiente demostración por inducción.\\
+Proposición.- Dado un conjunto de n niñas rubias, si por 10 menos una de las niñas tiene ojos azules, entonces las n niñas tienen ojos azules.\\
+Demostración.-\; La proposición es evidentemente cierta si $n = 1$. El paso de $k$ a $k + 1$ se puede ilustrar pasando de $n = 3$ a $n = 4$. Supóngase para ello que la proposición es cierta para $n=3$ Y sean $G_1, G_2, G_3, G_4$ cuatro niñas rubias tales que una de ellas, por lo menos, tenga ojos azules, por ejemplo, la $G_1$, Tomando $G_1,G_2, G_3,$ conjuntamente y haciendo uso de la proposición cierta para $n =3$, resulta que también $G_2$ y $G_3$ tienen ojos azules. Repitiendo el proceso con $G_1, G_2$ y $G_4,$ se encuentra igualmente que $G_4$ tiene ojos azules. Es decir, las cuatro tienen ojos azules. Un razonamiento análogo permite el paso de $k$ a $k + 1$ en general.\\
+\textbf{Corolario.} Todas las niñas rubias tienen ojos azules.\\
+Demostración.- \; Puesto que efectivamente existe una niña rubia con ojos azules, se puede aplicar el resultado precedente al conjunto formado por todas las niñas rubias.\\\\
+Esta prueba supone que la afirmación es cierta n = 3, es decir, supone que si hay tres chicas rubias, una de las cuales tiene ojos azules, entonces todas tienen ojos azules. Claramente, esta es una suposición falsa.\\\\
+\end{enumerate}
+
+\section{Ejercicios (I 4.7)}
+\begin{enumerate}[\bfseries \Large 1.]
+%---------------------------1---------------------------------
+\item Hallar los valores numéricos de las sumas siguientes:
+\begin{enumerate}[\bfseries a)]
+%(a)
+\item $\displaystyle\sum_{k=1}^{4} k = 1 + 2 + 3 + 4 = 10$\\\\
+%(b)
+\item $\displaystyle\sum_{n=2}^{5} 2^{n-2} = 2^{0} + 2^{1} + 2^{2} + 2^{3} = 15$\\\\
+%(c)
+\item $\displaystyle\sum_{r=0}^{3} 2^{2r+1} = 2^{1} + 2^{3} +  2^{5} + 2^{7} = 2 + 8 + 32 + 128 = 170$ \\\\
+%(d)
+\item $\displaystyle\sum_{n=1}^{4} n^n = 1^1 + 2^2 + 3^3 + 4^4 = 1 + 4 + 27 + 256= 288$ \\\\
+%(e)
+\item $\displaystyle\sum_{i=0}^{5} (2i + 1) = 1 + 3 + 5 + 7 + 9 + 11 = 36$ \\\\
+%(f)
+\item $\displaystyle\sum_{k=1}^{5} \dfrac{1}{k(k+1)} = \dfrac{1}{2} + \dfrac{1}{6} + \dfrac{1}{12} + \dfrac{1}{20} + \dfrac{1}{30} = 0,83333.....$ \\\\
+\end{enumerate}
+
+%-------------------------------2---------------------------
+\item Establecer las siguientes propiedades del símbolo sumatorio. 
+\begin{enumerate}[\bfseries a)]
+%(a)
+\item $\displaystyle\sum_{k=1}^{n}(a_k + b_k) = \sum_{k=1}^n a_k + \sum_{k=1}^{n} b_k$ (propiedad aditiva)
+\begin{center}
+\begin{tabular}{r c l l}
+$\displaystyle\sum_{k=1}^{n}(a_k + b_k)$&$=$&$(a_1 + b_1) + (a_2 + b_2) + ... + (a_n + b_n)$&\\\\
+&$=$&$(a_1 + a_2 + ... + a_n) + (b_1 + b_2 + ... + b_n)$&Asociatividad y conmutatividad\\\\
+&$=$&$\displaystyle\sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k$&\\\\
+\end{tabular}
+\end{center}
+%(b)
+\item $\displaystyle\sum_{k=1}^{n} (ca_k) = c \sum_{k=1}^{n} a_k$ (Prpiedad homogénea)
+\begin{center}
+\begin{tabular}{r c l l}
+$\displaystyle\sum_{k=1}^{n} (ca_k)$&$=$&$ca_1 + ca_2 + ... + ca_n$&\\\\
+&$=$&$c(a_1 + a_2 +...+a_n)$&distributividad\\\\
+&$=$&$ c \displaystyle\sum_{k=1}^{n} a$&\\\\
+\end{tabular}
+\end{center}
+%(c)
+\item $\displaystyle\sum_{k=1}^{n} (a_k - a_{k-1}) = a_n - a_0$ (Propiedad telescópica)
+\begin{center}
+\begin{tabular}{r c l l}
+$\displaystyle\sum_{k=1}^{n} (a_k - a_{k-1})$&$=$&$(a_1-a_0)+(a_2-a_1)+...+(a_n-a_{n-1})$&\\
+&$=$&$(a_1+a_2+...+a_{n-1})-(a_0+a_1+...+a_{n-1})+a_n$&\\\\
+&$=$&$a_n + \displaystyle\sum_{k=1}^{n-1} a_k - \sum_{k=0}^{n-1} a_k$&Reindexando la 2da suma\\\\
+&$=$&$a_n + \displaystyle\sum_{k=1}^{n-1} a_k - a_0 - \sum_{k=1}^{n-1} a_k$&\\\\
+&$=$&$a_n - a_0$&\\\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+%--------------------------3-------------------------------
+\item $\displaystyle\sum_{k=1}^{n} 1 = n$ (El sentido de esta suma es $\displaystyle\sum_{k=1}^{n} a_k$, cuando $a_k=1$)\\\\
+Demostración.- \; Probemos por inducción, Si $n=1$, entonces la proposición es verdadera ya que $\displaystyle\sum_{k=1}^{1} 1 = 1.$ Ahora supongamos que el enunciado es verdadero para $n=m \in \mathbb{Z}^+.$ Luego, $$\displaystyle\sum_{k=1}^m 1 = m \Rightarrow \left( \sum_{k=1}^m 1 = m \right) + 1 = m + 1 \Rightarrow \sum_{k=1}^{m+1} 1 = m+1$$\\\\
+
+%---------------------------4---------------------------------
+\item $\displaystyle\sum_{k=1}^{n} (2k - 1) = n^2$ $[Indicación, \; 2k-1 = k^2 - (k-1)^2]$\\\\
+Demostración.- \; Sea $2k-1 = k^2 - (k^2 - 2k + 1) = k^2 - (k-1)^2$ entonces  por la propiedad telescópica se tiene $\sum\limits_{k=1}^n (2k-1)= \sum\limits_{k=1}^{n} (k^2 - (k-1)^2) = n^2 + 0 = n^2$\\\\
+
+%------------------------------5--------------------------
+\item $\displaystyle\sum_{k=1}^{n} k = \dfrac{n^2}{2} + \dfrac{n}{2} $ \; \; [indicación. \; Úsese el ejercicio 3 y el 4.]\\\\
+Demostración.- \;Por aditividad y homogeneidad se tiene $\sum\limits_{k=1}^{n}(2k-1) = 2\sum\limits_{k=1}^{n} k - \sum\limits_{k=1}^{n} 1 = n^2$ entonces $ 2 \sum\limits_{k=1}^{n} k - n =n^2$ ya que $\sum\limits_{k=1}^{n} 1 = n$, luego $\sum\limits_{k=1}^{n} k = \dfrac{n^2}{2} + \dfrac{n}{2}$\\\\
+
+%------------------------------6----------------------------
+\item $\displaystyle\sum_{k=1}^{n} k^2 = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6}$ $[Indicación. \; k^3 - (k-1)^3 = 3k^2 - 2k + 1]$\\\\
+Demostración.- \;  Por la propiedad telescópica se tiene $\sum\limits_{k=1}^n k^3 - (k-1)^3 = n^3$, luego 
+\begin{center}
+\begin{tabular}{r c l l}
+$n^3 = \sum\limits_{k=1}^n 3k^2-3k+1$&$\Rightarrow$&$n^3 = \sum\limits_{k=1}^n k^2 - 3 \sum\limits_{k=1}^n k + \sum\limits_{k=1}^n 1$&propiedad aditiva\\\\
+&$\Rightarrow$&$\sum\limits_{k=1}^n k^2 = \dfrac{n^3}{3} + \sum\limits_{k=1}^n k - \dfrac{1}{3} \sum\limits_{k=1}^n 1$&\\\\
+&$\Rightarrow$&$\sum\limits_{k=1}^n k^2 = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{2} - \dfrac{n}{3}$&por los anteriores ejercicios\\\\
+&$\Rightarrow$&$\sum\limits_{k=1}^n k^2 = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6}$&\\\\
+\end{tabular}
+\end{center}
+
+%----------------------------7--------------------------------
+\item $\displaystyle\sum_{k=1}^n k^3 = \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4}$\\\\
+Demostración.- \; Sea $k^4 - (k-1)^4 = 4k^3 - 6k^2 + 4k -1$ entonces  
+\begin{center}
+\begin{tabular}{r c l}
+$n^4 = 4 \sum\limits_{k=1}^n k^3 - 6 \sum\limits_{k=1}^n k^2 + 4 \sum\limits_{k=1}^n k - \sum\limits_{k=1}^n 1$&$\Rightarrow$&$n^4 = 4 \sum\limits_{k=1}^n k^3 - 6 \left( \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6} \right) + 4 \left( \dfrac{n^2}{2} + \dfrac{n}{2} \right) - n$\\\\
+&$\Rightarrow$&$4 \sum\limits_{k=1}^n k^3 = n^4 + 2n^3 + 3n^2 - 2n^2$\\\\
+&$\Rightarrow$&$\sum\limits_{k=1}^n k^3 = \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4}$\\\\
+\end{tabular}
+\end{center}
+
+%----------------------------8------------------------------------
+\item 
+\begin{enumerate}[\bfseries a)]
+%a)
+\item $\displaystyle\sum_{k=0}^n x^k = \dfrac{1 - x^{n+1}}{1-x}$ si $x\neq 1$. Nota: Por definición $x^0 = 1$ [Indicación. Aplíquese el ejercicio 2 a $(1-x) \sum\limits_{k=0}^n x^k.$]\\\\
+Demostración.- Por propiedades  aditiva y telescópica, 
+$$(1-x) \sum\limits_{k=0}^n x^k =\sum\limits_{k=0}^n (x^k - x^{k+1}) = - \sum\limits_{k=0}^n (x^{k+1} - x^k)=-(x^{n+1}-1) = 1-x^{n+1}$$ 
+pro lo tanto, $$\sum\limits_{k=0}^n x^k = \dfrac{1 - x^{n+1}}{1-x}$$\\
+
+%b)
+\item ¿Cuál es la suma cuando $x=1$?\\\\
+Respuesta.- \; 	Si $x=1$ por la parte 3 y el hecho de que $1^k=1$ para $k=0,...,n$ tenemos $$\sum\limits_{k=0}^n x^k = \sum\limits_{k=0}^n 1 = n+1$$\\ 
+\end{enumerate}
+
+%----------------------------9-----------------------------
+\item Demostrar por inducción, que la suma $\sum\limits_{k=1}^{2n} (-1)^k (2k+1)$ es proporcional a $n$, y hallar la constante de proporcionalidad.\\\\
+Demostración.- \; Sea $n=1$ entonces $\sum\limits_{k=1}^2 (-1)^k (2k+1) = 2$. Así vemos que es valida para este caso. Observemos que  $2n=2$, lo mismo pasa para $n=2$ donde $2n=4.$
+Luego supongamos que la fórmula es válida para $n=m \in \mathbb{Z}^+$, es decir $$\sum\limits_{k=0}^2m (-1)^k (2k+1) = 2m,$$ entonces
+\begin{center}
+\begin{tabular}{r c l}
+$\sum\limits_{k=1}^{2(m+1)} (-1)^k(2k+1)$&$=$&$(-1)(2k+1)$\\\\
+&$=$&$2m-[2(2m+1)+1] + [2(2m+2)+1]$\\\\
+&$=$&$2m-4m-3+4m+5$\\\\
+&$=$&$2(m+1)$\\\\
+\end{tabular}
+\end{center}
+
+%---------------------------10-----------------------------
+\item 
+\begin{enumerate}[\bfseries a)]
+%a)
+\item Dar una definición razonable del símbolo $\sum\limits_{k=m}^{m+n} a_k$\\\\
+$$\sum\limits_{k=m}^{m+n} a_k = a_m + a_{m+1} + ... + a_{m+n}$$\\
+
+%b)
+\item Demostrar por inducción que para $n\geq 1$ se tiene
+$$\displaystyle\sum_{k=n+1}^{2n} \dfrac{1}{k} = \sum_{m=1}{2n}\dfrac{(-1)^{m+1}}{m}$$\\\\
+Demostración.- \; Sea $n=1$ se tiene,
+$$\sum\limits_{k=n+1}^{2n} \dfrac{1}{k} = \sum\limits_{k=2}^{2} \dfrac{1}{k} = \dfrac{1}{2}$$
+luego, $$\sum\limits_{m=1}^{2n} \dfrac{(-1)^{m+1}}{m} = \sum\limits_{m=1}^{2} \dfrac{(-1)^{m+1}}{m} = 1 - \dfrac{1}{2} = \dfrac{1}{2}$$
+Ahora supongamos que se cumple para $n=j \in \mathbb{Z}^+$ entonces,
+\begin{center}
+\begin{tabular}{r c l}
+$\sum\limits_{k=n+1}^{2n} \dfrac{1}{k} = \sum\limits_{m=1}^{2n}\dfrac{(-1)^{m+1}}{m}$&$\Rightarrow$&$\left( \sum\limits_{k=j+1}^{2j} \dfrac{1}{k} \right) + \dfrac{1}{2j+1} + \dfrac{1}{2j+2} = \left( \sum\limits_{m=1}^{2j} \dfrac{(1)^{m+1}}{m} \right) + \dfrac{1}{2j+1} + \dfrac{1}{2j+2}$\\\\
+&$\Rightarrow$&$\left( \sum\limits_{k=j+1}^{2(j+1)} \dfrac{1}{k} \right)  = \left( \sum\limits_{m=1}^{2j} \dfrac{(1)^{m+1}}{m} \right) + \dfrac{1}{2j+1} + \dfrac{1}{2j+2}$\\\\
+&$\Rightarrow$&$\dfrac{1}{j+1} + \left( \sum\limits_{k=j+2}^{2(j+1)} \dfrac{1}{k} \right) = \left( \sum\limits_{m=1}^{2j} \dfrac{(1)^{m+1}}{m} \right) + \dfrac{1}{2j+1} + \dfrac{1}{2j+2}$\\\\
+&$\Rightarrow$&$\sum\limits_{k=j+2}^{2(j+1)} \dfrac{1}{k} = \left( \sum\limits_{m=1}^{2j} \dfrac{(1)^{m+1}}{m} \right) + \dfrac{1}{2j+1} + \dfrac{1}{2j+2} - \dfrac{1}{j+1}$\\\\
+&$\Rightarrow$&$\sum\limits_{k=j+2}^{2(j+1)} \dfrac{1}{k} = \left( \sum\limits_{m=1}^{2j} \dfrac{(1)^{m+1}}{m} \right)  - \dfrac{1}{2(j+1)}$\\\\
+&$\Rightarrow$&$\sum\limits_{k=j+2}^{2(j+1)} \dfrac{1}{k} = \left( \sum\limits_{m=1}^{2(j+1)} \dfrac{(1)^{m+1}}{m} \right)$\\\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+%----------------------------11---------------------------
+\item Determinar si cada una de las igualdades siguientes es cierta o falsa. En cada caso razonar la decisión.
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item $\displaystyle\sum_{n=0}^{100} n^4= \sum_{n=1}^{100} n^4$\\\\
+Razonamiento.- \; Dado que se se evalúa para $n=0$ entonces se tiene que $0^4 = 0$ entonces la desigualdad es cierta.\\\\
+
+%(b)
+\item $\displaystyle\sum_{j=0}^{100} 2 = 200$\\\\
+Razonamiento.- \; En vista que de si se evalúa para $n=0$ el resultado es $2$ entonces para $n=100$ será $202$, por lo tanto la igualdad es falsa\\\\
+
+%(c)
+\item $\displaystyle\sum_{k=0}^{100} (2+k) = 2 + \sum_{k=0}^{100} k$\\\\
+Razonamiento.- \; La igualdad es falsa debido a que el lado derecho de la igualdad se añade el $2$ solo una vez, a diferencia de la igualdad de la izquierda que se añade a cada iteración de la suma.\\\\
+
+%(d)
+\item $\displaystyle\sum_{i=1}^{100} (i+1)^2 = \sum_{i=0}^{99} i^2$\\\\
+Razonamiento.- \; La igualdad es falsa ya que al cuadrado de la serie de la izquierda se añade en $1$ a cada iteración, contemplando que $n=100$\\\\ 
+
+%(e)
+\item $\displaystyle\sum_{k=1}^{100} k^3 = \left( \sum_{k=1}^{100} k \right)\cdot \left(  \sum_{k=1}^{100} k^2 \right)$\\\\
+Razonamiento.- \; La igualdad es falsa, ya que anteriormente se dijo que $$\sum\limits_{k=1}^{n} \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4},$$ mientras que $$\left( \sum\limits_{k=1}^{n} k \right)\left( \sum\limits_{k=1}^{n} k^2 \right)$$ \\\\
+
+%(f)
+\item $\displaystyle\sum_{k=0}^{100} k^3 = \left( \sum_{k=0}^{100} k \right) ^3$\\\\
+Razonamiento.- \; Similar a  la parte $(e)$ se tiene $$\sum\limits_{k=1}^{n} \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4},$$ mientras que $$\left( \sum\limits_{k=0}^{n} k \right)^3 = \left( \dfrac{n^2}{2} + \dfrac{n}{2}\right)^3$$\\\\
+\end{enumerate} 
+
+%------------------------------12-------------------------------------
+\item Inducir y demostrar una regla general que simplifique la suma $$\displaystyle\sum_{k=1}^{n} \dfrac{1}{k(k+1)}$$\\\\
+Demostración.- \; Esta claro ver que $\sum\limits_{k=1}^{n} \dfrac{1}{k(k+1)} = \dfrac{k}{k+1}$ ya que si sumamos para $n=2$ el resultado es $\dfrac{2}{3}$, para $n=3$ $\dfrac{3}{4}$ y así sucesivamente.\\
+Luego efectivamente se cumple para $n=1$,  $\dfrac{1}{1(1+1)} = \dfrac{1}{2} = \dfrac{1}{1+1} = \dfrac{1}{2}$. 
+Así asumimos que se cumple para un entero fijo $n=m$,
+$$\sum\limits_{k=1}^{m} \dfrac{1}{k(k+1)} = \dfrac{k}{k+1}$$
+Ahora supongamos que se cumple para $m+1$ por lo tanto $$\sum\limits_{k=1}^{m+1} \dfrac{1}{k(k+1)} = \sum\limits_{k=1}^{m} \dfrac{1}{k(k+1)} + \dfrac{1}{(k+1)(k+2)} = \dfrac{k+1}{k+2}$$
+Por último solo falta demostrar que $ \dfrac{k}{k+1} + \dfrac{1}{(k+1)(k+2)} = \dfrac{k+1}{k+2}$.\\\\
+$$\dfrac{k(k+2)+1}{(k+1)(k+2)} = \dfrac{k^2 + 2k +1}{(k+1)(k+2)} = \dfrac{(k+1)(k+1)}{(k+1)(k+2)} = \dfrac{k+1}{k+2}$$\\\\
+
+%------------------------------13----------------------------------
+\item Demostrar que $2(\sqrt{n+1} - \sqrt{n}) < \dfrac{1}{\sqrt{n}}< 2(\sqrt{n} - \sqrt{n-1})$ si $n\geq 1.$ Utilizar luego este resultado para demostrar que
+$$2\sqrt{m} - 2 < \sum\limits_{n=1}^m \dfrac{1}{\sqrt{n}} < 2 \sqrt{m} - 1$$
+si $m \geq 2.$ En particular, cuando $m=10^6$, la suma está comprendida entre $1998$ y $1999.$\\\\
+Demostración.- \; Sea  $0<1$  entonces 
+\begin{center}
+\begin{tabular}{r c l}
+$0$&$<$&$1$\\
+$4n^2 + 4n$&$<$&$4n^2 + 4n + 1$\\
+$4n(n+1)$&$<$&$4n^2 + 4n + 1$\\
+$2\sqrt{n} \sqrt{n+1}$&$<$&$2n+1$\\
+$2\sqrt{n+1} - 2\sqrt{n}$&$<$&$\dfrac{1}{\sqrt{n}}$\\
+$2(\sqrt{n+1} - \sqrt{n})$&$<$&$\dfrac{1}{\sqrt{n}}$\\\\
+\end{tabular}
+\end{center} 
+Análogamente se puede demostrar para $\dfrac{1}{\sqrt{n}} < 2(\sqrt{n} - \sqrt{n-1})$\\\\
+Ahora demostramos la segunda parte del enunciado. Consideremos la desigualdad de la izquierda. Para $m=2$ tenemos,
+$$2\sqrt{2} -2 ; \; \; 1 + \dfrac{1}{\sqrt{2}}$$ 
+\begin{center}
+\begin{tabular}{r c l l}
+$2\sqrt{2} - 2 $&$<$&$2 \sqrt{2} - \sqrt{2}$& ya que $2 > \sqrt{2}$\\
+&$=$&$\sqrt{2}$&\\
+&$=$&$\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{2}}$&ya que $\sqrt{2} = 2\sqrt{2}$\\
+&$<$&$1 + \dfrac{1}{\sqrt{2}}$&\\
+\end{tabular}
+\end{center} 
+donde la inecuación se cumple. Luego asumimos que la inecuación se cumple para algún $k \in \mathbb{Z}$ para $k\geq 2,$ entonces sea
+\begin{center}
+\begin{tabular}{r c l l}
+$2\sqrt{2} -2 < \sum\limits_{n=1}^k \dfrac{1}{n}$&$\Rightarrow$&$2\sqrt{2} -2 + \dfrac{1}{\sqrt{k+1}}< \sum\limits_{n=1}^{k+1} \dfrac{1}{n}$&\\\\
+&$\Rightarrow$&$2\sqrt{2} - 2 + 2(\sqrt{k+2} - \sqrt{k+1}) < \sum\limits_{n=1}^{k+1} \dfrac{1}{\sqrt{n}}$& por la parte 1 y $\sum\limits_{n=1}^{k+1} \dfrac{1}{n}<\sum\limits_{n=1}^{k+1} \dfrac{1}{\sqrt{n}}$\\\\
+&$\Rightarrow$&$2(\sqrt{k+1} - \sqrt{k+1} + 2\sqrt{k} -2) < \sum\limits_{n=1}^{k+1} \dfrac{1}{\sqrt{n}}$&usando la parte 1\\\\
+&$\Rightarrow$&$2\sqrt{k+1} - 2 < \sum_{n=1}^{k+1} \dfrac{1}{\sqrt{n}}$&\\\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+Por lo tanto la inecuación es verdadera para todo $m \in \mathbb{Z}$, $k\geq 2.$\\
+Ahora veamos la inecuación de la derecha. Para el caso de $m=2$ tenemos,
+$$+1\dfrac{1}{\sqrt{2}}; \; \; 2\sqrt{2} - 1$$
+luego como $\sqrt{2} = \dfrac{2\sqrt{2}}{2}< \dfrac{3}{2}$ tenemos,
+\begin{center}
+\begin{tabular}{rcll}
+$\sqrt{2}< \dfrac{3}{2}$&$\Rightarrow$&$2\sqrt{2}<3$&\\
+&$\Rightarrow$&$2\sqrt{2} + 1 < 4$&\\
+&$\Rightarrow$&$2 + \dfrac{1}{\sqrt{2}}< 2\sqrt{2}$&\\
+&$\Rightarrow$&$1 + \dfrac{1}{\sqrt{2}}<2 \sqrt{2} -1$&\\\\
+\end{tabular}
+\end{center} 
+por lo tanto la desigualdad es cierta. Asumamos entonces que es cierto para algunos $m = k \in \mathbb{Z}, \; k\geq 2$, luego
+\begin{center}
+\begin{tabular}{rcll}
+$\sum\limits_{n=1}^k \dfrac{1}{\sqrt{n}} < 2\sqrt{k} - 1$&$\Rightarrow$&$\left( \sum\limits_{n=1}^k \dfrac{1}{\sqrt{n}} + \dfrac{1}{\sqrt{k+1}} < 2 \sqrt{2} -1 + \dfrac{1}{\sqrt{k+1}}\right)$&\\\\
+&$\Rightarrow$&$\sum\limits_{n=1}^{k+1} \dfrac{1}{\sqrt{n}} < 2\sqrt{k} - 1 + 2(\sqrt{k+1} - \sqrt{k})$&parte 1\\\\
+&$\Rightarrow$&$\sum\limits_{n=1}^{k+1} \dfrac{1}{\sqrt{n}} < 2\sqrt{k+1} - 1$&parte 1 \\\\
+\end{tabular}
+\end{center}
+Por lo tanto la desigualdad correcta se aplica a todo $m \in \mathbb{Z} k \geq 2$.
+\textbf{Cabe recalcar que el libro menciona que $m\geq 2$} pero este último solo se cumple para los extremos de la desigualdad y no así para $\sum\limits_{n=1}^m \dfrac{1}{\sqrt{2}}$\\\\
+
+\section{Valor absoluto y desigualdad triangular}
+\begin{tcolorbox}[colback=white]
+%definición valor absoluto
+\begin{def.}
+$$|x| = \left\lbrace
+\begin{array}{crr}
+\textup{si } & x, & x\geq 0\\
+\textup{si }& -x, & x \leq 0
+\end{array}
+\right.$$
+\end{def.}
+\end{tcolorbox}
+
+%teorema 1.38
+\begin{teo}
+Si $a\geq 0$, es \; $|x|\leq a$ \; si y sólo si \; $-a\leq x \leq a$\\\\
+Demostración.- \; Debemos probar dos cuestiones: primero, que la desiguadad $|x|\leq a$ implica las dos desigualdades $-a \leq x \leq a$ y recíprocamente, que $-a \leq x \leq a$ implica $|x|\leq a$.\\ 
+Ya supuesto $|x|\leq a$ se tiene también $-a \leq - |x|$. Pero ó \; $x=|x|$ \; ó \; $x = -|x|$ y, por lo tanto, $x\leq a$ \; y \; $-a \leq x$, lo cual prueba la primera parte del teorema.\\
+Para probar el recíproco, supóngase $-a\leq x \leq a$. Si $x\leq 0$ se tiene $|x|=x\leq a$; si por el contrario es $x\leq 0$ , entonces $|x|=-x \leq a$. En ambos casos se tiene $|x|\leq a$, lo que demuestra el teorema.\\\\   
+\end{teo}
+
+%teorema 1.39
+\begin{teo}[Desigualdad triangular]
+Para $x$ e $y$ números reales cualesquiera se tiene $$|x+y| \leq |x| + |y|$$\\\\
+Demostración.- \; Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogamente $-|y| \leq y \leq |y|$. Sumando ambas desigualdades se tiene: $$-(|x|+|y|)\leq x+y \leq |x|+|y|$$ y por tanto en virtud del teorema anterior  se concluye que: $|x+y|\leq |x|+|y|$\\\\  
+\end{teo}
+
+%teorema 1.40
+\begin{teo}
+Si $a_1, a_2, ..., a_n$ son números reales cualesquiera $$\left|\displaystyle\sum_{k=1}^n a_k\right| \leq \sum_{k=1}^n |a_k|$$\\\\
+Demostración.- \; Para $n=1$ la desigualdad es trivial y para $n=2$ es la desigualdad triangular. Supuesta cierta para $n$ números reales, para $n+1$ números reales $a_1,a_2,...,a_{n+1}$ se tiene:
+$$\left| \sum\limits_{k=1}^{n+1} a_k \right|= \left| \sum\limits_{k=1}^n + a_{n+1}\right| \leq \left| \sum\limits_{k=1}^n  \right| + |a_{n+1}| \leq \sum\limits_{k=1}^n |a_k| + |a_{n+1}| = \sum\limits_{k=1}^{n+1} |a_k|$$
+Por tanto, el teorema es cierto para $n+1$ números si lo es para $n;$ luego, en virtud deñ principio de inducción, es cierto para todo número positivo $n.$\\\\
+\end{teo}
+
+%teorema 1.41
+\begin{teo}[Desigualdad de Cauchy-Schwarz]
+Si $a_1,...,a_n$ y $b_1,...,b_n$ son números reales cualesquiera, se tiene
+$$\left( \displaystyle\sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+El signo de igualdad es válido si y sólo si hay un npumero real $x$ tal que $a_k x + b_k = 0$ ára cada vañpr de $k=1,2,...,n$\\\\
+Demostración.- \; Para $\forall x \in \mathbb{R}$ se tiene $\sum\limits_{k=1}^n (a_kx + b_k)^2 \geq 0$. Esto se puede poner en la forma $$Ax^2 + 2Bx + C \geq 0,$$ donde $$A=\sum\limits_{k=1}^n a_k^2 , \; \; B=\sum\limits_{k=1}^n a_k b_k, \; \; C = \sum\limits_{k=1}^n b_k^2.$$ Queremos demostrar que $B^2 \leq AC.$ Si $A=0$ cada $a_k=0$, con lo que $B=0$ y el resultado es trivial. Si $A \neq 0,$ podemos completar el cuadrado y escribir $$Ax^2 + 2Bx + C = A \left( x + \dfrac{B}{A} \right)^2 + \dfrac{AC - B^2}{A}$$
+El segundo miembro alcanza su valor mínimo cuando $x=-\dfrac{B}{A}$. Poniendo $x=- \dfrac{B}{A}$ en la primera ecuación, obtenemos $B^2 \leq AC.$ Esto demuestra la desigualdad dada.\\\\
+\end{teo}
+
+\section{Ejercicios (I 4.9)}
+\begin{enumerate}[\Large \bfseries 1.]
+%----------------------------1.---------------------------------
+\item Probar cada una de las siguientes propiedades del valor absoluto.\\
+\begin{enumerate}[\bfseries (a)]
+%(a)
+\item $|x|=0$ si y sólo si $x=0$\\\\
+Demostración.- \; 
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
