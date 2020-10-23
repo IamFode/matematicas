@@ -1,4 +1,7 @@
-\chapter{Introducción}
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+\setcounter{chapter}{3}
+\setcounter{section}{1}
 \section{Axiomas de cuerpo}
 %axioma1
 \begin{tcolorbox}[colback=white]
@@ -55,7 +58,7 @@ Demostración.- \;
 Se tiene $a+(-a)=0$ por definición de $-a$ incluido en el teorema 1.1. Pero esta igualdad dice que $a$ es el opuesto de $-a$, es decir, que si $a+(-a)=0$ entonces $a=0-(-a)=a=-(-a)$\\\\
 \end{teo}
 
-\section{Ejercicios (I 3.3)}
+\section{Ejercicios}
 \begin{enumerate}[\bfseries \Large 1.]
 
 %----------------------------------1--------------------------
@@ -219,7 +222,7 @@ $y \leq x$ significa que $x \leq y$
 \end{def.}
 \end{tcolorbox}
 
-\section{Ejercicios (I 3.5)}
+\section{Ejercicios}
 \begin{enumerate}[\bfseries \Large 1.]
 %-------------------------1----------------------------
 \item Demostrar los teoremas 1.22 al 1.25 utilizando los teoremas anteriores y los axiomas del 1 al 9
@@ -376,6 +379,7 @@ Un número real se llama entero positivo si pertenece a todo conjunto inductivo.
 \end{def.}
 \end{tcolorbox}
 
+\setcounter{section}{7}
 \section{Cota superior de un conjunto, elemento máximo, extremo superior}
 \begin{tcolorbox}[colback=white]
 \begin{def.}[definición de extremo superior]
@@ -446,7 +450,7 @@ Demostración.- \; Aplicar teorema 3.4 cambiando $x$ por $y/x$.\\\\
 Si tres números reales $a$, $x$, e $y$ satisfacen las desigualdades $a\leq x \leq a+\displaystyle\frac{y}{n}$ para todo entero $n \geq 1$, entonces $x=a$\\\\
 Demostración.- \; Si $x>a$, el teorema 3.5 nos menciona que existe un entero positivo que satisface $n(x-a)>y$, en contradicción de la hipótesis, luego $x>a$ no satisface para todo número real $x$ y $a$, con lo que deberá ser $x=a$.\\\\
 \end{teo} 
-
+\setcounter{section}{11}
 \section*{Propiedades fundamentales del extremo superior ó supremo}
 %teorema 1.32
 \begin{teo}
@@ -497,7 +501,7 @@ Dados dos subconjuntos no vacíos $S$ y $T$ de $\mathbb{R}$ tales que $$s\leq t$
 Demostración.- \; Cada $t$ de $T$ es corta superior para $S$. Por consiguiente $S$ tiene supremo que satisface la desigualdad $supS\leq T$ para todo $t$ de $S$. Luego $supS$ es una cota inferior de $T$, con lo cual $T$ tiene ínfimo que no puede ser menor que $supS$. Dicho de otro modo, se tiene $supS\leq infT$, como se afirmó.\\\\
 \end{teo}
 
-\section{Ejercicios (I 3.12)}
+\section{Ejercicios}
 \begin{enumerate}[\bfseries \Large 1.]
 %-----------------------1-----------------------------
 \item Si $x$ e $y$ son números reales cualesquiera, $x<y$, demostrar que existe por lo menos un número real $z$ tal que $x<z<y$\\\\
@@ -656,6 +660,8 @@ Si $x\neq 0$, se define $$x^{-r} = \dfrac{1}{x^r},$$ con tal que $x^r$ esté def
 \end{prop}
 \end{tcolorbox}
 
+\setcounter{chapter}{4}
+\setcounter{section}{2}
 \section{El principio de la inducción matemática}
 \begin{tcolorbox}[colback=white]
 \paragraph{Método de demostración por inducción}Sea $A(n)$ una afirmación que contiene el entero $n$. Se puede concluir que $A(n)$ es verdadero para cada $n\geq n_1$ si es posible:
@@ -684,7 +690,7 @@ Demostración.- \; Sea $T$ una colección no vacía de enteros positivos. Querem
 Supongamos que no fuera así. Demostraremos que esto nos conduce a una contradicción. El entero $1$ no puede pertenecer a $T$ (de otro modo él sería el menor número de $T$). Designemos con $S$ la colección de todos los enteros positivos $n$ tales que $n<t$ para todo $t$ de $T$. Por tanto $1$ pertenece a $S$ porque $1 < t$ para todo $t$ de $T$. Seguidamente, sea $k$ un entero positivo de $S$. Entonces $k < t$ para todo $t$ de $T$. Demostraremos que $k + 1$ también es de $S$. Si no fuera así, entonces para un cierto $t$, de $T$ tendríamos $t_1 \leq k+1$. Puesto que $T$ no posee número mínimo, hay un entero $t_2$ en $T$ tal que $t_2 < t_1$ Y por tanto $t_2 < k + 1$. Pero esto significa que $t_2 \leq k$, en contradicción con el hecho de que $k < t$ para todo $t$ de $T$. Por tanto $k + 1$ pertenece a $S$. Según el principio de inducción, $S$ contiene todos los enteros positivos. Puesto que $T$ es no vacío, existe un entero positivo $t$ en $T$. Pero este $t$ debe ser también de $S$ (ya que $S$ contiene todos los enteros positivos). De la definición de $S$ resulta que $t < t$, lo cual es absurdo. Por consiguiente, la hipótesis de que $T$ no posee un número mínimo nos lleva a una contradicción. Resulta pues que $T$ debe tener un número mínimo, y a su vez esto prueba que el principio de buena ordenación es una consecuencia del de inducción.\\\\
 \end{teo}
 
-\section{Ejercicios (I 4.4)}
+\section{Ejercicios}
 \begin{enumerate}[\bfseries \Large 1.]
 %----------------------------1----------------------------
 \item Demostrar por inducción las fórmulas siguientes:
@@ -856,7 +862,8 @@ Demostración.- \; Puesto que efectivamente existe una niña rubia con ojos azul
 Esta prueba supone que la afirmación es cierta n = 3, es decir, supone que si hay tres chicas rubias, una de las cuales tiene ojos azules, entonces todas tienen ojos azules. Claramente, esta es una suposición falsa.\\\\
 \end{enumerate}
 
-\section{Ejercicios (I 4.7)}
+\setcounter{section}{6}
+\section{Ejercicios}
 \begin{enumerate}[\bfseries \Large 1.]
 %---------------------------1---------------------------------
 \item Hallar los valores numéricos de las sumas siguientes:
@@ -1138,17 +1145,146 @@ Demostración.- \; Para $\forall x \in \mathbb{R}$ se tiene $\sum\limits_{k=1}^n
 El segundo miembro alcanza su valor mínimo cuando $x=-\dfrac{B}{A}$. Poniendo $x=- \dfrac{B}{A}$ en la primera ecuación, obtenemos $B^2 \leq AC.$ Esto demuestra la desigualdad dada.\\\\
 \end{teo}
 
-\section{Ejercicios (I 4.9)}
+\section{Ejercicios}
 \begin{enumerate}[\Large \bfseries 1.]
 %----------------------------1.---------------------------------
 \item Probar cada una de las siguientes propiedades del valor absoluto.\\
 \begin{enumerate}[\bfseries (a)]
 %(a)
 \item $|x|=0$ si y sólo si $x=0$\\\\
-Demostración.- \; 
-\end{enumerate}
+Demostración.- \; Si $|x|=0$, por definición $x=0$. Luego, si $x=0$, entonces por teorema $\sqrt{x^2}=\sqrt{0^2}=0$\\\\
+
+%(b)
+\item $|-x|=|x|$\\\\
+Demostración.- \; Por definición $|-x|=-(-x)$ si $x\leq 0$ y $|-x|=x$ si $x\geq 0$ por lo tanto $|-x|=x$\\\\ 
+
+%(c)
+\item $|x-y|=|y-x|$\\\\
+Demostración.- \; Por teorema $|x-y|=\sqrt{(x-y)^2}=\sqrt{x^2-2xy+y^2}=\sqrt{y^2-2yx+x^2}=\sqrt{(y-x)^2}=|y-x|$\\\\ 
+
+%(d)
+\item $|x|^2=x^2$\\\\
+Demostración.- \; Si $|x|^2$, por teorema $\left( \sqrt{x^2} \right)^2$, por propiedad de potencia $x^2$\\\\
+
+%(e)
+\item $|x|=\sqrt{x^2}$\\\\
+Demostración.- \; Sea $x^2\geq 0$ entonces por teorema $\sqrt{x^2}$, luego $(x^2)^{\frac{1}{2}}$, por lo tanto por definición de valor absoluto $x=|x|$.\\\\ 
+
+%(f)
+\item $|xy|=|x||y|$\\\\
+Demostración.- \; Por el teorema anterior $|xy|=\sqrt{(xy)^2}=\sqrt{x^2} \sqrt{y^2} = |x||y|$\\\\ 
+
+%(g)
+\item $|x/y|=|x|/|y|$ si $y \neq 0$\\\\
+Demostración.- \; Similar al anterior problema se tiene $|x/y|=\sqrt{(x/y)^2}$, luego por propiedades de  potencia y raíces $\sqrt{x^2}/\sqrt{y^2}$, así nos queda $|x|/|y|$ si $y \neq 0$\\\\
+
+%(h)
+\item $|x-y|\leq |x|+|y|$\\\\
+Demostración.- \; Por la desigualdad triangular y la parte $(b)$ se tiene $|x-y| = |x+(-y)| = |x|+ |-y| = |x|+|y|$\\\\
+
+%(i)
+\item $|x|-|y| \leq |x-y|$\\\\
+Demostración.- \; Por la desigualdad triangular tenemos  que $|x|= |(x-y)+y| \leq |x-y|+|y|$ entonces $|x|-|y| \leq |x-y|$\\\\
+
+%(j)
+\item $\left| |x| - |y| \right| \leq |x-y|$\\\\
+Demostración.- \; Parecido al anterior ejercicio se tiene $|y|=|x+(y-x)| \leq |x|+|y-x|$ entonces $|y|-|x| \leq |x-y|$ y por lo tanto $|x|-|y|\geq |x-y|$. Luego por el inciso (i) y teorema $-|x-y|\leq |x|-|y| \leq |x-y| \Rightarrow \left||x|-|y|\right| \leq |x-y|$\\\\ 
+
 \end{enumerate}
 
+%---------------------------------------------2----------------------------------------------
+\item Cada desigualdad $(a_i)$, de las escritas a continuación, equivale exactamente a una desigualdad $(b_j)$. Por ejemplo, $|x|<3$ si y sólo si $-3<x<3$ y por tanto $(a_1)$ es equivalente a $(b_2)$. Determinar todos los pares equivalentes.\\
+\begin{center}
+\begin{tabular}{l c l}
+$|x|<3$&$\longrightarrow$&$-3<x<3$\\\\
+$|x-1|<3$&$\longrightarrow$&$-2<x<4$\\\\
+$|3-2x|<1$&$\longrightarrow$&$1<x<2$\\\\
+$|1+2x|\leq 1$&$\longrightarrow$&$-1\leq x \leq 0$\\\\
+$|x-1|>2$&$\longrightarrow$&$x>4 \; \lor \; x<-1$\\\\
+$|x+2| \geq 5$&$\longrightarrow$&$x\geq 3 \; \lor \; x\leq -7$\\\\
+$|5-x^{-1}|<1 $&$\longrightarrow$&$4<x<6$\\\\
+$|x-5|<|x+1|$&$\longrightarrow$&$x>2$\\\\
+$|x^2-2|\leq 1$&$\longrightarrow$&$-\sqrt{3} \leq x \leq -1 \; ó \; 1\leq x \leq \sqrt{3}$\\\\
+$x<x^2-12<4x$&$\longrightarrow$&$\dfrac{1}{6}<x<\dfrac{1}{4}$\\\\
+\end{tabular}
+\end{center}
+
+%---------------------------------------3----------------------------------------
+\item Decidir si cada una de las siguientes afirmaciones es cierta o falsa. En cada caso razonar la decisión.
+\begin{enumerate}[\bfseries (a)]
+\item $x<5$ implica $|x|<5$\\\\
+Es falso ya que $|-6|<5$ entonces $6>5$.\\\\
+\item $|x-5|<2$ implica $3<x<7$\\\\
+Es verdad ya que por teorema $-2 < x-5 < 2$ entonces $3<x<7$.\\\\
+\item $|1 + 3x| \leq 1$ implica $x > - \dfrac{2}{3}$ \\\\
+es verdad ya que $-1\leq 1 + 3x \leq 1$ entonces $-\dfrac{2}{3} \leq x \leq 0$.\\\\
+\item No existe número real $x$ para el que $|x-1|= |x-2|$\\\\
+Es falso ya que se cumple para $\dfrac{3}{2}$.\\\\
+\item Para todo $x>0$ existe un $y>0$ tal que $|2x + y|=5$\\\\
+Es falso ya que si tomas $x=3$ será $y<0$\\\\
+\end{enumerate}
+
+%---------------------------------------4----------------------------------------------
+\item Demostrar que el signo de igualdad es válido en la desigualdad de Cauchy-Schwarz si y sólo si existe un número real tal que $a_k x + b_k = 0$ para todo $k=1,2,...,n$\\\\
+Demostración.- $(\Rightarrow)$ \; Si $a_k=0$ para todo $k$ entonces la igualdad es verdadera así asumimos que $a_k\neq 0$ para al menos un $k$, $$\left( \displaystyle\sum_{k=1}^n a_k b_k \right)^2 = \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$, Luego, sea $\sum\limits_{k=1}^n (a_k x + b_k)^2 \geq 0$, entonces $$A=\sum\limits_{k=1}^n a_k^2, \; \; B=\sum\limits_{k=1}^n b_k a_k, \; \; C= \sum\limits_{k=1}^n b_k^2$$, así se tiene $$Ax^2+2b^x + C \geq 0 \Rightarrow x= \dfrac{-2B \pm \sqrt{4B^2 - 4AC}}{2A} = \dfrac{-B \pm \sqrt{B^2 - AC}}{A}$$ pero sabemos por suposición que $B^2=AC$, donde $x=- \dfrac{B}{A}$ el cual esta en $\mathbb{R}$ ya que $A\neq 0$ y por lo tanto $a_k \neq 0$ para algún $k$ y $a_k^2$ es no negativo. asís que la suma es estrictamente positivo como se vio en la desigualdad de Cauchy-Schwarz.\\\\
+$(\Leftarrow)$ Supongamos que existe $x\in \mathbb{R}$ tal que $a_k x + b_k=0$ para cada $k=1,...,n.$ Luego $a_k x + b_k = 0 \Rightarrow b_k =(-x)a_k.$ Entonces,
+\begin{center}
+\begin{tabular}{r c l}
+$\left( \sum\limits_{k=1}^n a_k b_k \right)$&$=$&$\left[ -x \left( \sum\limits_{k=1}^n a_k^2 \right)\right]^2$\\\\
+&$=$&$x^2 \left( \sum\limits_{k=1}^n a_k^2 \right)\left( \sum\limits_{k=1}^n a_k^2 \right)$\\\\
+&$=$&$\left( \sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n x^2 a_k^2 \right)$\\\\
+&$=$&$\left( \sum\limits_{k=1}^n a_k^2\right) \left( \sum\limits_{k=1}^n  (-xa_k)^2\right)$\\\\
+&$=$&$\left( \sum\limits_{k=1}^n a_k^2 \right)\left( \sum\limits_{k=1}^n b_k^2\right)$\\\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+\section{Ejercicios varios referntes al método de inducción}
+%definición coeficiente factorial y binomial
+\begin{tcolorbox}[colback=white]
+\begin{def.}[Coeficiente factorial y binomial]
+El símbolo $n!$ (que se lee $n$ factorial) se puede definir por inducción como sigue: $0!=1, \; n!=(n-1!n$ si $n\geq 1$\\
+Obsérvese que $n!=1\cdot 2 \cdot 3 \cdot \cdot \cdot n.$\\
+Si $0\leq k \leq n$ el coeficiente binomial ${n \choose k}$ se define por 
+$${n \choose k} = \dfrac{n!}{k!(n-k)!}$$
+\end{def.}
+\end{tcolorbox}
+\begin{enumerate}[\Large \bfseries 1.]
+
+%------------------------------------------1--------------------------------------
+\item Calcúlese los valores de los siguientes coeficientes binomiales:
+\begin{enumerate}[\bfseries (a)]
+%------------------a---------------------
+\item ${5 \choose 3} = \dfrac{5!}{3!(5-3)!} = \dfrac{4\cdot 5}{2\cdot 1} = 10$\\\\
+
+%------------------b---------------------
+\item ${ 7 \choose 0 } = \dfrac{7!}{0!(7-0)!} = \dfrac{7!}{7!} = 1$\\\\
+
+%------------------c---------------------
+\item ${ 7 \choose 1 } = \dfrac{7!}{1!(7-1)!} = \dfrac{7!}{6!} = 7$\\\\
+
+%------------------d---------------------
+\item ${ 7 \choose 2 } = \dfrac{7!}{2!(7-2)!} = \dfrac{6\cdot 7}{2} = 21$\\\\
+
+%------------------e---------------------
+\item ${ 17 \choose 14 } = \dfrac{17!}{14!(17-14)!} = \dfrac{15 \cdot 16 \cdot 17}{3\cdot 2 \cdot 1} = 680$\\\\
+
+%------------------f---------------------
+\item ${ 0 \choose 0 } = \dfrac{0!}{0!(0-0)!} = 1$\\\\
+\end{enumerate}
+
+%--------------------------------2---------------------------------------------
+\item 
+\begin{enumerate}[\bfseries (a)]
+%-------------------(a)-----------------------------
+\item Demostrar que: ${n \choose k} = {n \choose n-k}$\\\\
+Demostración.- \; Sea $\dfrac{n!}{(n-k)!\left[ n - (n-k) \right]!}$ entonces $\dfrac{n!}{(n-k)!k}$ por lo tanto ${n \choose k}$\\\\
+
+%-------------------(b)-----------------------------
+\item Sabiendo que ${n \choose 10} = {n \choose 7}$ calcular $n$\\\\
+Respuesta.- \;  
+\end{enumerate}
+\end{enumerate}
 
 
 
