@@ -1,4 +1,33 @@
 \chapter{Distintas clases de números}
-
-%problemas capitulo 2
 \section{Problemas}
+\begin{enumerate}[\bfseries \Large 1.]
+%----------------------------------1-------------------------------------
+\item Demostrar por inducción las siguientes fórmulas: 
+%------------------------(a)-----------------------------
+\begin{enumerate}[\bfseries (i)]
+\item $1^2+...+n^2=\dfrac{n(n+1)(2n+1)}{6}$\\\\
+Demostración.- \; Sea $n=k$: $$1^2+...+k^2=\dfrac{k(k+1)(2k+1)}{6},$$ Para $k=1$, $$1^2=\dfrac{1(1+2)(2+1)}{6}$$ por lo tanto se cumple para $k=1$, Luego para $k=k+1$, $$1^2+...+(k+1)^2=\dfrac{(k+1)(k+2)(2k+3)}{6},$$ así cabe demostrar que:
+\begin{center}
+\begin{tabular}{r c l}
+$\dfrac{k(k+1)(2k+1)}{6}+(k+1)^2$&=&$\dfrac{(k+1)(k+2)(2k+3)}{6}$\\\\
+$\dfrac{2k^3+k^2+2k^2+k+6k^2+12k+6}{6}$&=&$\dfrac{2k^3+3k^2+6k^2+9k+4k+6}{6}$\\\\
+$\dfrac{2k^3+9k^2+13k+6}{6}$&=&$\dfrac{2k^3+9k^2+13k+6}{6}$\\\\
+\end{tabular}
+\end{center}
+
+%-----------------------(b)---------------------------------
+\item $1^3 + ... + n^3 = (1+...+n)^2$\\\\
+Demostración.- \; Sea $n=1$ entonces la igualdad es verdadera ya que $1^3 = 1^2$.Supongamos que se cumple para algún número $k \in \mathbb{Z}^+$,
+$$1^3 + ... + k^3 = (1+...+k)^2,$$ Luego suponemos que se cumple para $k+1$, $$1^3 + ... + k^3 + (k+1)^3 = (1+...+(k+1))^2$$
+Así solo falta demostrar que 
+\begin{center}
+\begin{tabular}{rcl}
+$(1+...+(k+1))^2$&$=$&$(1+...+k)^2 + 2(1+...+k)(k+1) + (k+1)^2$\\\\
+&$=$&$(1^2 + ... + k)^2 + 2\dfrac{k(k+1)}{2} (k+1) + (k+1)^2$\\\\
+&$=$&$1^3 + ... + k^3 + (k^3 + 2k^2 + k) + (k^2 + 2k +1)$\\\\
+&$=$&$1^3 + ... + k^3 + (k+1)^3$\\\\
+\end{tabular}
+\end{center}
+Por lo tanto es válido para cualquier $n \in \mathbb{Z}^+$\\\\
+\end{enumerate}
+\end{enumerate}

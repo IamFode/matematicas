@@ -1586,17 +1586,111 @@ Por lo tanto la desigualdad es válida para el caso $m+1$ y en consecuencia es c
 $$a_1=1, \; \; a_2=2, \; \; a_{n+1} = a_n + a_{n-1}, \; \; si \; n \geq 2.$$
 Demostrar que $$a_n < \left( \dfrac{1 + \sqrt{5}}{2} \right)^n$$
 para cada $n \geq 1.$\\\\
-Demostración.- \; 
+Demostración.- \; Para el caso de $n=1$ tenemos $$1 < \dfrac{1+\sqrt{5}}{2}$$ ya que $\sqrt{5}>2$ se cumple la desigualdad para $n=1$. Ahora supongamos que es verdad para algún $n= k \in \mathbb{Z}_{\geq 1}$, luego 
+\begin{center}
+\begin{tabular}{crcll}
+&$a_k + a_{k-1}$&$<$&$ \left( \dfrac{1+\sqrt{5}}{2} \right)^k +  \left( \dfrac{1+\sqrt{5}}{2} \right)^{k-1}$&\\\\
+$\Rightarrow$&$a_{k+1}$&$<$&$\left( \dfrac{1 + \sqrt{5}}{2} \right)^{k-1} \cdot \left( \dfrac{1 + \sqrt{5}}{2} + 1 \right)$&\\\\ 
+&&$=$&$\left( \dfrac{1 + \sqrt{5}}{2} \right)^{k-1} \cdot \left( \dfrac{3 + \sqrt{5}}{2} \right)$&\\\\
+&&$=$&$\left( \dfrac{1 + \sqrt{5}}{2} \right)^{k-1} \cdot \left( \dfrac{1 + \sqrt{5}}{2} \right)^2$&ya que $\left( \dfrac{3 + \sqrt{5}}{2} \right) = \left( \dfrac{1+\sqrt{5}}{2}\right)^2$\\\\
+&&$=$&$\left( \dfrac{1 + \sqrt{5}}{2} \right)^{k-1}$&\\\\
+\end{tabular}
+ 
+\end{center}
+Por lo tanto la desigualdad es válida para $n \in \mathbb{Z}_{\geq 1}$\\\\
 
 \begin{tcolorbox}[colback=white]
 \begin{def.}[Desigualdades que relacionan distintos tipos de promedios]
-Sean $x_1,x_2,...,x_n$ $n$ númreos reales positivos. Si $p$ es un entero no nulo, la media de potencias p-énesimas $M_p$ se define como sigue.
+Sean $x_1,x_2,...,x_n$ $n$ números reales positivos. Si $p$ es un entero no nulo, la media de potencias p-énesimas $M_p$ se define como sigue.
 $$M_p = \left( \dfrac{x_1^{p} + ... + x_{n}^{p}}{n} \right)^{1/p}$$
 El número $M_1$ se denomina media aritmética, $M_2$ media cuadrática y $M_{-1}$ media armónica.\\
 \end{def.}
 \end{tcolorbox}
+\vspace{1cm}
+%---------------------------------17------------------------------------
+\item Si $p>0$ demostrar que $M_p< M_{2p}$ cuando $x_1,x_2,...,x_n$ no son todos iguales.\\\\
+Demostración.- \; Sea $a_k=x^p_k$ y $b_k=1$ entonces por la desigualdad de Cauchy-Schwarz, $$\left( \sum\limits_{k=1}^n x_k^p \cdot 1 \right)^2 \leq \left( \sum\limits_{k=1}^n a_k^{2p} \right) \left( \sum\limits_{k=1}^n 1^2 \right) $$ luego, vemos que la desigualdad es estricta ya que si se sostuviera la igualdad existiría alguna $y\in \mathbb{R}$ tal que $x_k^p \cdot y + 1 = 0, \; \forall k$, pero esto implicaría que $x_k = \left( -\dfrac{1}{y} \right)^{1/p}, \; \forall k,$ contradiciendo nuestro supuesto de que $x_k$ no todos son iguales. Luego sabemos que $\sum\limits_{k=1}^n 1 = n$ entonces
+\begin{center}
+\begin{tabular}{rcll}
+$\sum\limits_{k=1}^n x_k^p$&$<$&$\left( \sum\limits_{k=1}^n a_k^{2p} \right)^{1/2} \cdot n^{1/2}$&\\\\
+$\left( \sum\limits_{k=1}^n x_k^p \right)^{1/p}$&$<$&$ \left( \sum\limits_{k=1}^n a_k^{2p} \right)^{1/2p} \left( \dfrac{1}{n}\right)^{1/2p}$&elevado por $1^{1/p}$\\\\
+$\left( \dfrac{1}{p} \right)^{1/p} \left( \sum\limits_{k=1}^n x_k^p \right)^{1/p}$&$<$&$\left( \sum\limits_{k=1}^n a_k^{2p}\right)^{1/2p}  \left( \dfrac{1}{n}\right)^{1/2p}$&por $\left( \dfrac{1}{n}\right)^{1/2}$\\\\
+$\left( \dfrac{\sum\limits_{k=1}^n x_k^p}{n} \right)^{1/p}$&$<$&$\left( \dfrac{\sum\limits_{k=1}^{2p} x_k^{2p}}{n} \right)^{1/2p}$&\\\\
+\end{tabular}
+\end{center}
 
+%-------------------------------------18------------------------------------
+\item Aplíquese	el resultado del Ejercicio 17 para demostrar que
+$$a^4 + b^4 + c^4 \geq \dfrac{64}{3}$$ si $a^2 + b^2 +c^2 = 8$ y $a, \; b, \;c>0.$\\\\
+Demostración.- \; Sea $a + b + c \in \mathbb{R}$ distintos entre si, aplicamos el problema 17 con $p=2$, 
+\begin{center}
+\begin{tabular}{rcl}
+$\left( \dfrac{a^2 + b^2 + c^2}{3} \right)^{1/2}< \left( \dfrac{a^2 + b^2 + c^2}{3} \right)^{1/4}$&$\Rightarrow$&$\left(\dfrac{8}{3}\right)^2 < \dfrac{a^4 + b^4 + c^4}{3}$\\\\
+&$\Rightarrow$&$a^4+b^4+c^4 > \dfrac{64}{3}$\\\\
+\end{tabular}
+\end{center} 
+Luego si $a=b=c,$ entonces 
+\begin{center}
+\begin{tabular}{rcl}
+$a^2+b^2+c^2$&$\Rightarrow$&$3a^2=8$\\\\
+&$\Rightarrow$&$a^2=b^2=c^2=\dfrac{8}{3}$\\\\
+&$\Rightarrow$&$a^4=b^4=c^4 = \dfrac{64}{9}$\\\\
+&$\Rightarrow$&$a^4+b^4+c^4 = \dfrac{64}{3}$\\\\
+\end{tabular}
+\end{center}
+Por lo tanto la desigualdad se cumple para cualquier $a,b,c \in \mathbb{R}$\\\\
 
+%---------------------------------19-----------------------------------
+\item Sean $a_1,...,a_n$  $n$ números reales positivos cuyo producto es igual a $1$. Demostrar que $a_1,...,a_n \geq n$ y que el signo de igualdad se presenta sólo cuando cada $a_k =1$\\\\
+Demostración.- \; Consideremos dos casos:
+\begin{enumerate}[C1]
+\item Si $a_1=...=a_n=1,$ entonces 
+$$\sum\limits_{k=1}^n = \sum\limits_{k=1}^n 1 = n \geq \prod\limits_{k=1}^n a_n = \prod\limits_{k=1}^n 1 = 1 $$
+Por lo tanto la desigualdad se cumple.
+\item Sea $a_k \neq 1$ y $n=2$ por inducción vemos que no se cumple la desigualdad $$a_1 \cdot a_2 \neq 1$$. Si uno de ellos no es uno tampoco lo es el siguiente es decir,
+\begin{center}
+\begin{tabular}{rcl}
+$a_1 \cdot a_2 = 1$&$\Rightarrow$&$a_2 = \dfrac{1}{a_1}$\\\\
+&$\Rightarrow$&$a_1 + a_2 = a_1 + \dfrac{1}{a_1}$\\\\
+&$\Rightarrow$&$a_1 + a_2=\dfrac{a_1^2 + 1}{a_1}$\\\\
+&$\Rightarrow$&$a_1 + a_2=\dfrac{a_1^2 - 2a_1 + 1 +2a_1}{a_1}$\\\\
+&$\Rightarrow$&$a_1 + a_2=\dfrac{(a_1 - 1)^2}{a_1} + 2$\\\\
+&$\Rightarrow$&$a_1 + a_2 > 2$\\\\
+\end{tabular}
+\end{center}
+Donde la desigualdad final sigue desde $\dfrac{(a_1-1)^2}{a_1}$ para $a_1>0,$ por lo tanto la desigualdad es válida para el caso $n=2$\\
+Supongamos que la desigualdad se cumple para $n=k \in \mathbb{Z}^+$. Luego $a_1,...,a_{k+1} \in \mathbb{R}^+$ con $a_i \neq 1$ para al menos un $i=1,...,k+1.$ Si $a_i < 1$, entonces debe haber algún $j\neq i$ tal que $a_j > 0$ porque de lo contrario si $a_j \leq 1$ para  todo $j\neq i$, entonces $a_1 \cdot \cdot \cdot a_{k+1}<1.$ De manera similar, si $a_i>1,$ entonces hay algún $j\neq i$ tal que $a_j <1.$ Por lo tanto tenemos un par $a_i, \; a_j$ con un miembro del par mayor que $1$ y el otro menor que $1$. Sea este par $a_1$ y $a_{k+1}$ entonces definamos $a_1 \cdot a_{k+1}$, entonces,
+$$b\cdot a_2 \cdot \cdot \cdot a_k = 1 \Rightarrow b_1 + a_2 + ... - a_k \geq k$$
+Además, dado que $(1-a_i)(1-a_{k+1})<0$ (dado que uno de $a_1, a_{k+1}$ es mayor que $1$ y el otro es menor que $1$, uno de $(1-a_1), (1-a_{k+1})$ es positivo y el otro es negativo, luego $$1-a_1-a_{k+1}+a_1a_{k+1}<0 \Rightarrow b<a_1 + a_{k+1}-1,$$
+Así
+$$b+a_2+...+a_k\geq k \Rightarrow a_1 + a_2 +...+a_k + a_{k+1} \geq k+1$$
+Por lo tanto, la desigualdad es válida para $k+1$ y en consecuencia es verdadera para $n\in \mathbb{Z}^+$\\\\
+\end{enumerate}
+
+%-------------------------------20-----------------------------------
+\item 
+\begin{tcolorbox}[colback = white]
+\begin{def.}
+La media geométrica $G$ de $n$ números reales positivos $x_1,...,x_n$ está definida por la fórmula $G=(x_1 x_2 \cdot \cdot \cdot x_n)^{1/n}$
+\end{def.}
+\end{tcolorbox}
+\begin{enumerate}[\bfseries (a)]
+\item Desígnese con $M_p$ la media de potencias p-ésimas. Demostrar que $G \leq M_1$ y que $G=M_1$ solo cuando $x_1 = x_2 = \cdot \cdot \cdot = x_n.$
+\item Sean $p$ y $q$ enteros, $q<0<p$. A partir de $(a)$ deducir que $M_q< G < M_p$ si $x_1,x_2,...,x_n$ no son todos iguales.\\\\
+Demostración.- \; 
+\end{enumerate}
+
+%---------------------------------21-----------------------------------
+\item Aplíquese los resultados del Ejercicio 20 para probar la siguiente proposición: Si $a,b$ y $c$ son números reales y positivos tales que $abc=8$, entonces $a+b+c \geq 6$ y $ab +ac +bc \geq 12.$\\\\
+Demostración.- \;
+
+%---------------------------------22------------------------------------
+\item Si $x_1,...,x_n$ son números positivos y si $y_k = 1/x_k,$ demostrar que $$\displaystyle \left( \sum_{k=1}^n x_k \right) \left( \sum_{k=1}^n y_k \right) \geq n^2.$$\\\\
+Demostración.- \; 
+
+%--------------------------------23------------------------------------
+\item Si $a,b$ y $c$ son positivos y si $a+b+c =1$, demostrar que $(1-a)(1-b)(1-c)\geq 8abc$\\\\
+Demostración.- \; 
 \end{enumerate}
 
 
