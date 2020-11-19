@@ -1641,7 +1641,7 @@ $a^2+b^2+c^2$&$\Rightarrow$&$3a^2=8$\\\\
 Por lo tanto la desigualdad se cumple para cualquier $a,b,c \in \mathbb{R}$\\\\
 
 %---------------------------------19-----------------------------------
-\item Sean $a_1,...,a_n$  $n$ números reales positivos cuyo producto es igual a $1$. Demostrar que $a_1,...,a_n \geq n$ y que el signo de igualdad se presenta sólo cuando cada $a_k =1$\\\\
+\item Sean $a_1,...,a_n$  $n$ números reales positivos cuyo producto es igual a $1$. Demostrar que $a_1+...+a_n \geq n$ y que el signo de igualdad se presenta sólo cuando cada $a_k =1$\\\\
 Demostración.- \; Consideremos dos casos:
 \begin{enumerate}[C1]
 \item Si $a_1=...=a_n=1,$ entonces 
@@ -1667,30 +1667,97 @@ $$b+a_2+...+a_k\geq k \Rightarrow a_1 + a_2 +...+a_k + a_{k+1} \geq k+1$$
 Por lo tanto, la desigualdad es válida para $k+1$ y en consecuencia es verdadera para $n\in \mathbb{Z}^+$\\\\
 \end{enumerate}
 
-%-------------------------------20-----------------------------------
-\item 
 \begin{tcolorbox}[colback = white]
 \begin{def.}
 La media geométrica $G$ de $n$ números reales positivos $x_1,...,x_n$ está definida por la fórmula $G=(x_1 x_2 \cdot \cdot \cdot x_n)^{1/n}$
 \end{def.}
 \end{tcolorbox}
+%----------------------------------20-----------------------------------
+\item 
 \begin{enumerate}[\bfseries (a)]
-\item Desígnese con $M_p$ la media de potencias p-ésimas. Demostrar que $G \leq M_1$ y que $G=M_1$ solo cuando $x_1 = x_2 = \cdot \cdot \cdot = x_n.$
+\item Desígnese con $M_p$ la media de potencias p-ésimas. Demostrar que $G \leq M_1$ y que $G=M_1$ solo cuando $x_1 = x_2 = \cdot \cdot \cdot = x_n.$\\\
+Demostración.- \; Si $x_1, ... ,x_n$ no todos iguales, entonces $$G_n = \left[ (x_1 \cdot \cdot \cdot x_n)^{1/n} \right]^n = x_1 \cdot \cdot \cdot x_n,$$ así, 
+\begin{center}
+\begin{tabular}{rcll}
+$\left( \dfrac{1}{G_n} \right)(x_1\cdot \cdot \cdot x_n)$&$=$&$1$&\\\\
+$\left( \dfrac{x_1}{G} \right) \left( \dfrac{x_2}{G} \right) \cdot \cdot \cdot \left( \dfrac{x_n}{G} \right)$&$=$&$1$&\\\\
+$\dfrac{x_1}{G} + \dfrac{x_2}{G} + ... + \dfrac{x_n}{G}$&$>$&$n$& por problema anterior\\\\
+$x_1+x_2+...+x_n$&$>$&$n \cdot G$\\\\
+$M_1$&$>$&$G$\\\\
+\end{tabular}
+\end{center}
+luego si $x_1,...x_n$ son todos iguales , entonces, $$G=(x_1\cdot \cdot \cdot x_n)^{1/n} = (x_1^n)^{1/n}=x_1 =  \dfrac{n x_1}{n} = \dfrac{x_1 + ... + x_n}{n} = M_1$$\\
 \item Sean $p$ y $q$ enteros, $q<0<p$. A partir de $(a)$ deducir que $M_q< G < M_p$ si $x_1,x_2,...,x_n$ no son todos iguales.\\\\
-Demostración.- \; 
+Demostración.- \; Probemos primero que $G < M_p$. Para ello primero veamos que si $x_1,...,x_n$ son números reales positivos, no todos iguales entonces $x_P,...,x_n^P$ también son números reales positivos también no todos iguales. A partir de la definición de $M_p$ y dejando $M_p(x_1^p,...,x_n^p)$ denotar la p-enésima potencia media de los números $x_i^p,...,x_n^p$ tenemos,
+\begin{center}
+\begin{tabular}{rcl}
+$M_1(x_1^p,...,x_n^p)$&$=$&$\dfrac{x_1^p + ... + x_n^p}{n}$\\\\
+&$=$&$\left[ \left( \dfrac{x_1^p + ... + x_n^p}{n} \right)^{1/p} \right]^p$\\\\
+&$=$&$[M_p(x_1,...,x_n)]^p$\\\\
+\end{tabular}
+\end{center}
+así se observa que $[M_p(x_1,...,x_n)]^p = M_1(x_i^p,...,x_n^p)$ luego por la parte $(a)$,
+\begin{center}
+\begin{tabular}{rcl}
+$G(x_1,...,x_n)$&$=$&$(x_1\cdot \cdot \cdot x_n)^{p/n}$\\
+&$=$&$(x_i^p \cdot \cdot \cdot x_n^p)^{1/n}$\\
+&$=$&$G(x_1^p,...,x_n^p)$\\
+&$<$&$M_1(x_1^p,...,x-n^p)$\\
+&$=$&$[M_p(x_1,...,x_n)]^p$\\
+\end{tabular}
+\end{center}
+Por lo tanto implica que  $G<M_p$\\
+ahora debemos  $M_q<G$ para $q<0$, visto de otra forma $-q>0$ entonces $G<M_{-q}$ y por la desigualadad que demostramos se tiene, $$G^{-q}<(M_{-q})^{-q} \Rightarrow G^q > M_q^q \Rightarrow G > M_q$$\\\\
 \end{enumerate}
 
 %---------------------------------21-----------------------------------
 \item Aplíquese los resultados del Ejercicio 20 para probar la siguiente proposición: Si $a,b$ y $c$ son números reales y positivos tales que $abc=8$, entonces $a+b+c \geq 6$ y $ab +ac +bc \geq 12.$\\\\
-Demostración.- \;
-
+Demostración.- \; Sea $a,b \in \mathbb{R}^+$ tenemos 
+\begin{center}
+\begin{tabular}{rcl}
+$(a\cdot b \cdot c)^{1/3}$&$\leq$&$ \dfrac{a+b+c}{3} $\\\\
+$8$&$\leq$&$\dfrac{(a+b+c)^3}{3^3}$\\\\
+$2^3 \cdot 3^3$&$\leq$&$(a+b+c)^3$\\\\
+$a+b+c$&$\geq$&$6$\\\\
+\end{tabular}
+\end{center}
+Luego para la segunda desigualdad utilizamos la parte $(b)$ del anterior problema,
+\begin{center}
+\begin{tabular}{rcl}
+$\left( \dfrac{a^{-1} + b^{-1} + c^{-1}}{3} \right)^{-1}$&$\leq$&$(a \cdot b \cdot c)^{1/3}$\\\\
+$\left[ \dfrac{3^3}{\left( \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c} \right)^3} \right] ^3$&$\leq$&$2^3$\\\\
+$\left( \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c} \right)^3$&$\geq $&$\dfrac{3^3}{2^3}$\\\\
+$\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$&$\geq$&$\dfrac{3}{2}$\\\\
+$\dfrac{bc + ac + ab}{abc}$&$\geq$&$\dfrac{3}{2}$\\\\
+$\dfrac{bc + ac + ab}{8}$&$\geq$&$\dfrac{3}{2}$\\\\
+$ab+ac+bc$&$\geq$&$12$\\\\
+\end{tabular}
+\end{center}
 %---------------------------------22------------------------------------
 \item Si $x_1,...,x_n$ son números positivos y si $y_k = 1/x_k,$ demostrar que $$\displaystyle \left( \sum_{k=1}^n x_k \right) \left( \sum_{k=1}^n y_k \right) \geq n^2.$$\\\\
-Demostración.- \; 
+Demostración.- \; Sea $\sqrt{x_k} \sqrt{y_k} = 1$ ya que $y_k = \dfrac{1}{x_k}$ entonces por la desigualdad de Cauchy-Schwarz tenemos,
+\begin{center}
+\begin{tabular}{rcl}
+$\left( \sum\limits_{k=1}^n a_k b_k \right)^2$&$\leq$&$\left( \sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n  b_k^2 \right)$\\\\
+$\left( \sum\limits_{k=1}^n \sqrt{x_k} \sqrt{y_k} \right)^2$&$\leq$&$\left( \sum\limits_{k=1}^n \sqrt{x_k}^2 \right)\left( \sum\limits_{k=1}^n \sqrt{y_k}^2 \right)$\\\\
+$\left( \sum\limits_{k=1}^n 1 \right)^2$&$\leq$&$\left(\sum\limits_{k=1}^n x_k \right)\left( \sum\limits_{k=1}^n  y_k\right)$\\\\
+$\left(\sum\limits_{k=1}^n x_k \right)\left( \sum\limits_{k=1}^n  y_k\right)$&$\geq$&$n^2$\\\\
+\end{tabular}
+\end{center}
 
 %--------------------------------23------------------------------------
-\item Si $a,b$ y $c$ son positivos y si $a+b+c =1$, demostrar que $(1-a)(1-b)(1-c)\geq 8abc$\\\\
-Demostración.- \; 
+\item Si $a,b$ y $c$ son números positivos y si $a+b+c =1$, demostrar que $(1-a)(1-b)(1-c)\geq 8abc$\\\\
+Demostración.- \; Sea $M_{-1}(a,b,c) \leq M_1(a,b,c)$ entonces $$\left( \dfrac{a_{-1} + b_{-1} + c_{-1}}{3}\right)^{-1} \leq \dfrac{a+b+c}{3}$$ por lo tanto,
+\begin{center}
+\begin{tabular}{rcl}
+$\dfrac{3}{\dfrac{1}{a}+ \dfrac{1}{b} + \dfrac{1}{c}}$&$\leq$&$\dfrac{1}{3}$\\\\
+$9$&$\leq$&$\dfrac{1}{a}+ \dfrac{1}{b} + \dfrac{1}{c}$\\\\
+$9abc$&$\leq$&$bc+ac+ab$\\\\
+$8abc$&$\leq$&$bc+ac+ab-abc$\\\\
+$8abc$&$\leq$&$1-(a+b+c)+ab+ac+bc-abc$\\\\
+\end{tabular}
+\end{center}
+ya que $1=a+b+c$, luego $1-(a+b+c)+ab+ac+bc-abc = (1-a)(1-b)(1-c)$ así nos queda $$8abc\leq (1-a)(1-b)(1-c)$$\\\\
 \end{enumerate}
 
 
