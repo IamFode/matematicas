@@ -1,0 +1,200 @@
+\documentclass[10pt]{book}
+\usepackage[text=17cm,left=4cm,right=4cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+
+%---------------FORMATO de letra--------------------%
+
+\usepackage{lmodern} % tipos de letras
+\usepackage{titlesec} %formato de títulos
+\usepackage[backref=page]{hyperref} %hipervinculos
+\usepackage{multicol} %columnas
+\usepackage{tcolorbox, empheq} %cajas
+\usepackage{enumerate} %indice enumerado
+\usepackage{marginnote}%notas en el margen
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage[Bjornstrup]{fncychap}%diseño de portada de capitulos
+\usepackage[all]{xy}%flechas
+\counterwithout{footnote}{chapter}
+\usepackage{xcolor}
+\usepackage[htt]{hyphenat}
+%--------------------GRÀFICOS--------------------------
+
+\usepackage{tkz-fct}
+
+%---------------------------------
+
+\titleformat*{\section}{\LARGE\bfseries\rmfamily}
+\titleformat*{\subsection}{\Large\bfseries\rmfamily}
+\titleformat*{\subsubsection}{\large\bfseries\rmfamily}
+\titleformat*{\paragraph}{\normalsize\bfseries\rmfamily}
+\titleformat*{\subparagraph}{\small\bfseries\rmfamily}
+
+%------------------------------------------
+
+\renewcommand{\labelenumi}{\Roman{enumi}.}%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$}%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$}%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}%cuarto piso (punto)
+
+%----------Formato título de capítulos-------------
+
+\usepackage{titlesec}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\titleformat{\chapter}[display]
+{\titlerule[2pt]
+\vspace{4ex}\bfseries\sffamily\huge}
+{\filleft\Huge\thechapter}
+{2ex}
+{\filleft}
+
+\begin{document}
+
+\normalfont
+\input xy
+\xyoption{all}
+\author{\Large Apuntes por FODE}
+\title{\small Roger D. Peng y Elizabeth Matsui \\ \vspace{1cm} \large The art of data science}
+\date{}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\let\cleardoublepage\clearpage
+\tableofcontents								%indice
+
+
+%------------------------------------------
+ 
+\let\cleardoublepage\clearpage
+\chapter{Data Analysis es arte}
+Imagina que le preguntas a un compositor cómo escribe sus canciones. Hay muchas herramientas a las que puede recurrir. Tenemos una comprensión general de cómo debe estructurarse una buena canción: cuánto tiempo debe ser, cuántos versos, tal vez haya un verso seguido de un coro, etc. En otras palabras, existe un marco abstracto para las canciones en general. De manera similar, tenemos la teoría musical que nos dice que ciertas combinaciones de notas y acordes funcionan bien juntas y otras combinaciones no suenan bien. Por muy buenas que puedan ser estas herramientas, en última instancia, el conocimiento de la estructura de la canción y la teoría musical por sí solo no es una buena canción. Se necesita algo más.\\
+\textbf{Todo es arte, por ende es importante darse cuenta de que el análisis de datos es un arte.}\\
+Los analistas de datos tienen muchas herramientas a su disposición, desde regresión lineal hasta árboles de clasificación e incluso aprendizaje profundo, y todas estas herramientas se han enseñado cuidadosamente a las computadoras. Pero, en última instancia, un analista de datos debe encontrar una manera de reunir todas las herramientas y aplicarlas a los datos para responder una pregunta relevante, una pregunta de interés para las personas.\\
+En 1991, Daryl Pregibon, un destacado estadístico anteriormente de AT\& T Research y ahora de Google, dijo en referencia al proceso de análisis de datos2 que $“$los estadísticos tienen un proceso que adoptan pero que no comprenden completamente$”$.\\
+\textbf{Lo que nos hemos propuesto hacer en este libro es escribir el proceso de análisis de datos. Lo que describimos no es una "fórmula" específica para el análisis de datos, algo como "aplicar este método y luego ejecutar esa prueba", sino que es un proceso general que se puede aplicar en una variedad de situaciones.}\\
+\chapter{Epiciclos del análisis}
+\textbf{En realidad, el análisis de datos es un proceso altamente iterativo y no lineal, mejor reflejado por una serie de epiciclos, en los cuales se aprende información en cada paso, que luego informa si (y cómo) refinar y rehacer, el paso que se acaba de realizar, o si (y cómo) continuar con el siguiente paso. Un epiciclo es un círculo pequeño cuyo centro se mueve alrededor de la circunferencia de un círculo más grande.}\\
+\begin{enumerate}[\bfseries 1.]
+\item Las expectativas se desarrollan.
+\item Recolectar Datos.
+\item expectativas matemáticas con datos
+\end{enumerate}
+Estos $"$pasos$"$ se engranan con este otro epiciclo siguiente
+\begin{enumerate}[\bfseries 1.-]
+\item Planteando la pregunta.
+\item Análisis exploratorio de datos.
+\item Análisis exploratorio de datos.
+\item Interpretar.
+\item Comunicar.
+\end{enumerate}
+\section{Preparando la escena}
+Dado que un análisis de datos supone que los datos ya se han recopilado, incluye el desarrollo y el refinamiento de una pregunta y el proceso de análisis e interpretación de los datos. Es importante señalar que, aunque un análisis de datos a menudo se realiza sin realizar un estudio, también se puede realizar como un componente de un estudio.\\
+\section{epiciclo de análisis}
+Hay 5 actividades centrales del análisis de datos:
+\begin{enumerate}[\bfseries 1.]
+\item Formular y refinar la pregunta.
+\item Explorar los datos.
+\item Construir modelos estadísticos formales.
+\item Interpretar los resultados.
+\item Comunicar los resultados.
+\end{enumerate} 
+Estas 5 actividades pueden ocurrir en diferentes escalas de tiempo: por ejemplo, puede pasar por los 5 en el transcurso de un día, pero también tratar con cada uno, para un proyecto grande, en el transcurso de muchos meses.\\\\
+Para cada una de las cinco actividades principales, es fundamental que participe en los siguientes pasos:
+\begin{enumerate}[\bfseries a)]
+\item Establecer expectativas.
+\item Recopilar información (datos), comparar los datos con sus expectativas y si las expectativas no coinciden.
+\item Revisar sus expectativas o corregir los datos para que sus datos y sus expectativas coincidan. 
+\end{enumerate}
+La iteración a través de este proceso de 3 pasos es lo que llamamos el $"$epiciclo del análisis de datos$"$.\\
+
+\begin{center}
+\begin{tabular}{|m{2.6cm}| m{3cm} | m{3cm}| m{3cm} | }
+\hline
+&\textbf{Establecer expectativas}&\textbf{Recopilar información}&\textbf{Revisar expectativas}\\
+\hline
+\textbf{Pregunta}&pregunta de interés para la audiencia&búsqueda de literatura / expertos&agudizar la pregunta\\
+\hline
+\textbf{Explorar datos}&los datos son apropiados para preguntas&hacer gráficos exploratorios de datos&refinar la pregunta o llamar más datos\\
+\hline
+\textbf{Modelo formal}&modelo primario responde a la pregunta&ajustar modelos secundarios, análisis de sensibilidad&revisar el modelo formal para incluir más predictores\\
+\hline
+\textbf{Interpretación}&La interpretación de los análisis proporciona una respuesta específica y significativa a la pregunta.&interpretar la totalidad de los análisis centrándose en los tamaños del efecto y la incertidumbre&revisar EDA y / o modelos para proporcionar una respuesta específica e interpretable\\
+\hline
+\textbf{Comunicación}&El proceso y los resultados del análisis son entendidos, completos y significativos para la audiencia.&Buscar retroalimentación&revisar análisis o enfoque de presentación\\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Estableciendo expectativas}
+Desarrollar expectativas es el proceso de pensar deliberadamente en lo que espera antes de hacer algo, como inspeccionar sus datos, realizar un procedimiento o ingresar un comando. Por ejemplo averiguar el costo de una comida en un restaurant de lujo puede ser una expectativa.
+
+\section{Recopilando información}
+Los resultados de esa operación son los datos que necesita recopilar y luego determina si los datos que recopiló coinciden con sus expectativas. Para extender la metáfora del restaurante, cuando vas al restaurante, obtener el cheque es recopilar los datos.
+
+\section{omparación de expectativas con datos}
+Un indicador clave de qué tan bien va su análisis de datos es lo fácil o difícil que es hacer coincidir los datos que recopiló con sus expectativas originales.
+
+\section{Aplicación del proceso de Epicyle of Analysis}
+Antes de analizar un par de ejemplos, repasemos los tres pasos que se deben utilizar para cada actividad de análisis de datos básicos. Estos son: 
+\begin{enumerate}[\bfseries 1.]
+\item Establecer expectativas.
+\item Recopilar información (datos), comparar los datos con sus expectativas y, si las expectativas no coinciden.
+\item Revisar sus expectativas o corregir los datos para que sus expectativas y los datos coincidan.
+\end{enumerate}
+Los modelos estadísticos sirven para producir una formulación precisa de su pregunta para que pueda ver exactamente cómo desea usar sus datos, ya sea para estimar un parámetro específico o para hacer una predicción.\\
+\textbf{argumentaríamos que un buen análisis de datos requiere comunicación, retroalimentación y luego acciones en respuesta. Su análisis de datos trajo preguntas adicionales al frente, ya que esta es una característica de un análisis de datos exitoso.}
+
+\chapter{Formular y perfeccionar la pregunta}
+\textbf{Hacer análisis de datos requiere pensar bastante y creemos que cuando ha completado un buen análisis de datos, ha pasado más tiempo pensando que haciendo.}
+
+\section{Tipos de preguntas}
+Los seis tipos de preguntas son:
+\begin{enumerate}[\bfseries 1.]
+\item Descriptivo.
+\item Exploratorio.
+\item Inferencial.
+\item Predictivo.
+\item Causal.
+\item Mecanismo.
+\end{enumerate}
+\textbf{Una pregunta descriptiva} es aquella que busca resumir una característica de un conjunto de datos. Los ejemplos incluyen determinar la proporción de hombres, el número medio de porciones de frutas y verduras frescas por día o la frecuencia de enfermedades virales en un conjunto de datos recopilados de un grupo de personas. No hay interpretación del resultado en sí, ya que el resultado es un hecho, un atributo del conjunto de datos con el que está trabajando. \\
+\textbf{Una pregunta exploratoria} es aquella en la que analiza los datos para ver si existen patrones, tendencias o relaciones entre las variables. Estos tipos de análisis también se denominan análisis de $“$generación de hipótesis$”$ porque en lugar de probar una hipótesis como se haría con una pregunta inferencial, causal o mecanicista, se buscan patrones que respalden la propuesta de una hipótesis. Si tuviera la idea general de que la dieta estaba relacionada de alguna manera con enfermedades virales, podría explorar esta idea examinando las relaciones entre una variedad de factores dietéticos y enfermedades virales. Usted encuentra en su análisis exploratorio que los individuos que consumían una dieta alta en ciertos alimentos tenían menos enfermedades virales que aquellos cuya dieta no estaba enriquecida con estos alimentos, por lo que propone la hipótesis de que entre los adultos, comer al menos 5 porciones al día de fruta fresca y las verduras se asocia con menos enfermedades virales por año.\\
+\textbf{Una pregunta inferencial} sería una reafirmación de esta hipótesis propuesta como una pregunta y se respondería analizando un conjunto diferente de datos, que en este ejemplo, es una muestra representativa de adultos en los EE. UU. Al analizar este conjunto diferente de datos, ambos están determinando si la asociación que observó en su análisis exploratorio se mantiene en una muestra diferente y si se mantiene en una muestra que es representativa de la población adulta de EE. UU., Lo que sugeriría que la asociación es aplicable a todos los adultos en los Estados Unidos. En otras palabras, podrá inferir lo que es cierto, en promedio, para la población adulta en los EE. UU. A partir del análisis que realice en la muestra representativa.\\
+\textbf{Una pregunta predictiva} sería aquella en la que se pregunta qué tipos de personas consumirán una dieta rica en frutas y verduras frescas durante el próximo año. En este tipo de preguntas, usted está menos interesado en lo que hace que alguien coma una dieta determinada, solo en lo que predice si alguien comerá esta dieta determinada. Por ejemplo, un ingreso más alto puede ser uno de los últimos factores de predicción, y es posible que no sepa (o ni siquiera le importe) por qué las personas con ingresos más altos tienen más probabilidades de comer una dieta rica en frutas y verduras frescas, pero lo más importante es que los ingresos son un factor que predice este comportamiento. Aunque una pregunta inferencial podría decirnos que las personas que consumen cierto tipo de alimentos tienden a tener menos enfermedades virales, la respuesta a esta pregunta no nos dice si comer estos alimentos provoca una reducción en el número de enfermedades virales, que sería la caso de una pregunta causal.\\
+\textbf{Una pregunta causal} se refiere a si cambiar un factor cambiará otro factor, en promedio, en una población. A veces, el diseño subyacente de la recopilación de datos, de forma predeterminada, permite que la pregunta que hace sea causal. Un ejemplo de esto serían los datos recopilados en el contexto de un ensayo aleatorizado, en el que las personas fueron asignadas al azar a comer una dieta rica en frutas y verduras frescas o una que era bajo en frutas y verduras frescas. En otros casos, incluso si sus datos no son de un ensayo aleatorio, puede adoptar un enfoque analítico diseñado para responder una pregunta causal.\\
+Finalmente, ninguna de las preguntas descritas hasta ahora conducirá a una respuesta que nos diga, si la dieta, efectivamente, causa una reducción en el número de enfermedades virales, cómo la dieta conduce a una reducción en el número de enfermedades virales. Una pregunta que pregunta cómo una dieta rica en frutas y verduras frescas conduce a una reducción en el número de enfermedades virales sería \textbf{una pregunta mecanicista}.\\
+si un análisis de datos tiene como objetivo responder una pregunta inferencial, las preguntas descriptivas y exploratorias también deben responderse durante el proceso de respuesta a la pregunta inferencial. Para continuar con nuestro ejemplo de dieta y enfermedades virales, no saltaría directamente a un modelo estadístico de la relación entre una dieta alta en frutas y verduras frescas y el número de enfermedades virales sin haber determinado la frecuencia de este tipo de dieta y enfermedades virales. y su relación entre sí en esta muestra. Un segundo punto es que el tipo de pregunta que hace está determinado en parte por los datos disponibles (a menos que planee realizar un estudio y recopilar los datos necesarios para realizar el análisis). Por ejemplo, es posible que desee hacer una pregunta causal sobre la dieta y las enfermedades virales para saber si una dieta rica en frutas y verduras frescas provoca una disminución en el número de enfermedades virales, y el mejor tipo de datos para responder a esta pregunta causal es una en la que las dietas de las personas cambian de una rica en frutas y verduras frescas a una que no lo es, o viceversa. Si este tipo de conjunto de datos no existe, lo mejor que puede hacer es aplicar métodos de análisis a los datos de observación o, en cambio, responder a una pregunta inferencial sobre la dieta y las enfermedades virales.
+
+\section{Aplicar el epiciclo para formular y perfeccionar su pregunta}
+Ahora puede usar la información sobre los tipos de preguntas y las características de las buenas preguntas como guía para refinar su pregunta. Para lograr esto, puede iterar a través de los 3 pasos de:
+\begin{enumerate}[\bfseries 1.]
+\item Establecer expectativas.
+\item Recopilar información (datos), comparar los datos con sus expectativas y, si las expectativas no coinciden.
+\item Revisar sus expectativas o corregir los datos para que sus expectativas y los datos coincidan.
+\end{enumerate}
+Los modelos estadísticos sirven para producir una formulación precisa de su pregunta para que pueda ver exactamente cómo desea usar sus datos, ya sea para estimar un parámetro específico o para hacer una predicción.\\
+\textbf{argumentaríamos que un buen análisis de datos requiere comunicación, retroalimentación y luego acciones en respuesta. Su análisis de datos trajo preguntas adicionales al frente, ya que esta es una característica de un análisis de datos exitoso.}
+
+\section{Caracteristicas de una buena pregunta}
+Para empezar, la pregunta debe ser de interés para su audiencia, cuya identidad dependerá del contexto y el entorno en el que esté trabajando con los datos. Si está en el mundo académico, la audiencia puede ser sus colaboradores, la comunidad científica, los reguladores gubernamentales, sus patrocinadores de Establecimiento y perfeccionamiento de la Pregunta 21 y / o el público. Si está trabajando en una startup, su audiencia es su jefe, el liderazgo de la empresa y los inversores.\\
+Puede asegurarse de que su pregunta se basa en un marco plausible utilizando su propio conocimiento del área temática y haciendo un poco de investigación, que juntos pueden ser de gran ayuda en términos de ayudarlo a resolver si su pregunta se basa en un marco plausible .\\
+La especificidad también es una característica importante de una buena pregunta. Un ejemplo de una pregunta general es: ¿Es mejor para usted llevar una dieta más saludable? Trabajar hacia la especificidad refinará su pregunta e informará directamente qué pasos tomar cuando comience a buscar datos. El proceso de aumento de la especificidad debería conducir a una pregunta final y refinada como: $"$¿Comer al menos 5 porciones al día de frutas y verduras frescas provoca menos infecciones del tracto respiratorio superior (resfriados)?$"$\\
+
+\section{Traducir una pregunta en un problema de datos}
+A medida que refina su pregunta, dedique algún tiempo a identificar los posibles factores de confusión y a pensar si su conjunto de datos incluye información sobre estos posibles factores de confusión.\\
+Otro tipo de problema que puede ocurrir cuando se utilizan datos inapropiados es que el resultado no es interpretable porque la forma subyacente en la que se recopilaron los datos conduce a un resultado sesgado.\\\\
+Las dos tareas principales que se debe abordar son: 
+\begin{enumerate}[\bfseries 1.]
+\item pensar en cómo su pregunta cumple o no con las características de una buena pregunta y 
+\item determinar qué tipo de pregunta está haciendo para que tenga una buena idea. 
+\end{enumerate}
+buena comprensión de qué tipo de conclusiones se pueden (y no se pueden) sacar una vez finalizado el análisis de datos.\\
+
+
+
+\chapter{Análisis exploratorio de datos}
+
+\end{document}
