@@ -1,0 +1,185 @@
+\documentclass[10pt]{book}
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+
+%---------------FORMATO de letra--------------------%
+
+\usepackage{lmodern} % tipos de letras
+\usepackage{titlesec} %formato de títulos
+\usepackage[backref=page]{hyperref} %hipervinculos
+\usepackage{multicol} %columnas
+\usepackage{tcolorbox, empheq} %cajas
+\usepackage{enumerate} %indice enumerado
+\usepackage{marginnote}%notas en el margen
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage[Bjornstrup]{fncychap}%diseño de portada de capitulos
+\usepackage[all]{xy}%flechas
+\counterwithout{footnote}{chapter}
+\usepackage{xcolor}
+
+
+%------------------------------------------
+
+\newtheorem{axioma}{\large\textbf{Axioma}}[part]
+\newtheorem{teo}{\textbf{TEOREMA}}[chapter]%entorno para teoremas
+\newtheorem{ejem}{{\textbf{EJEMPLO}}}[chapter]%entorno para ejemplos
+\newtheorem{def.}{\textbf{Definición}}[chapter]%entorno para definiciones
+\newtheorem{post}{\large\textbf{Postulado}}[chapter]%entorno de postulados
+\newtheorem{col.}{\textbf{Corolario}}[chapter]
+\newtheorem{ej}{\textbf{Ejercicio}}[chapter]
+\newtheorem{prop}{\large\textbf{Propiedad}}[part]
+\newtheorem{lema}{\textbf{LEMA}}[chapter]
+\newtheorem{prob}{\textbf{problema}}[chapter]
+
+%--------------------GRÀFICOS--------------------------
+
+\usepackage{tkz-fct}
+
+%---------------------------------
+
+\titleformat*{\section}{\LARGE\bfseries\rmfamily}
+\titleformat*{\subsection}{\Large\bfseries\rmfamily}
+\titleformat*{\subsubsection}{\large\bfseries\rmfamily}
+\titleformat*{\paragraph}{\normalsize\bfseries\rmfamily}
+\titleformat*{\subparagraph}{\small\bfseries\rmfamily}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+%------------------------------------------
+
+\renewcommand{\labelenumi}{\Roman{enumi}.}%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$}%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$}%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}%cuarto piso (punto)
+
+%----------Formato título de capítulos-------------
+
+\usepackage{titlesec}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\titleformat{\chapter}[display]
+{\titlerule[2pt]
+\vspace{4ex}\bfseries\sffamily\huge}
+{\filleft\Huge\thechapter}
+{2ex}
+{\filleft}
+\usepackage[htt]{hyphenat}
+
+
+\begin{document}
+\normalfont
+\input xy
+\xyoption{all}
+\author{\Large Christian Limbert Paredes Aguilera}
+\title{Matemática Aplicada }
+\date{}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\let\cleardoublepage\clearpage
+\tableofcontents								%indice
+
+
+%------------------------------------------
+ 
+\let\cleardoublepage\clearpage
+
+\chapter{Números Complejos}
+\section{Definición}
+%definición 1.1
+\begin{tcolorbox}[colback = white]
+Los números complejos $z$ se pueden definir como pares ordenados de números reales
+\begin{equation}
+z=(x,y)
+\end{equation}
+\begin{itemize}
+\item Los pares $(x,0)$ se identifican como números reales.
+\item Los números cmplejos de la forma $(0,y)$ se llaman números imaginarios.
+\end{itemize}
+\begin{equation}
+Re z = x, \; Im z = y
+\end{equation}
+\end{tcolorbox}
+
+%Definición 1.2
+\begin{tcolorbox}[colback = white]
+\begin{def.}
+Dos números complejos $(x_1,y_1)$ y $x_2,y_2$ se dicen iguales si tienen iguales las partes real e imaginaria.
+\begin{equation}
+(x_1,y_1) = (x_2,y_2) \; \mbox{si y sólo si} \; x_1=x_2 \; e \; y_1=y_2
+\end{equation}
+\end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = white]
+\begin{def.}
+La suma $z_1+z_2$ y el producto $z_1 \cdot z_2$ de dos números complejos $<z_1 = (x_1,y_1)$ y $z_2 = (x_2,y_2)$ se definen por las ecuaciones:
+\begin{equation}
+(x_1,y_1) + (x_2,y_2) = (x_1+x_2, y_1+y_2),
+\end{equation}
+\begin{equation}
+(x_1,y_1)(x_2,y_2) = (x_1 x_2 - y_1 y_2, y_1 x_2 + x_1 y_2)
+\end{equation}
+\end{def.}
+\end{tcolorbox}
+
+En particular, $(x,0) + (0,y) = (x,y)$ y $(0,1)(y,0) = (0,y)$ luego 
+\begin{equation}
+(x,y) = (x,0) + (0,1)(y,0)
+\end{equation}
+Debemos notar que las ecuaciones definidas en $1.4$ y $1.5$ son las usuales cuando se restringen a los números reales.
+$$(x_1,0)+(x_2,0) = (x_1+x_2,0),$$
+$$(x_1,0)(x_2,0) = (x_1 x_2,0)$$  
+
+Pensando en un número real como $x$ o como $(x,0)$, y denotando por $i$ el número imaginario puro $(0,1)$, podemos reescribir la Ecuación $1.6$ así,
+\begin{equation}
+(x,y)=x+iy
+\end{equation}
+con el convenio $z^2=zz$, $z^3=zz^2$ hallamos que $$i^2 = (0,1)(0,1) = (0\ cdot 0 - 1\cdot 1,1\cdot 0, 0 \cdot 1) =(-1,0)= -1$$
+A la vista de la expresión $1.7$, las ecuaciones $1.6$ y $1.7$ se convierten en
+\begin{equation}
+(x_1+iy_1)+(x_2+iy_2) = (x_1+x_2)+i(y_1+y_2)
+\end{equation}
+\begin{equation}
+(x_1+iy_2)(x_2+iy_2)=(x_1 x_2 - y_1 - y_1 y_2)+i(y_1 x_2 + x_1 +y_2)
+\end{equation}
+
+\section{propiedades algebraicas}
+\begin{tcolorbox}[colback = white]
+\begin{prop}[Las leyes conmutativas]
+$$z_1 + z_2 = z_2 + z_1 $$  
+Demostración.- \; Sea $z_1=(x_1,y_1)$ y $z_2=(x_2,y_2)$ entonces $$z_1 + z_2 = (x_1+x_2,y_1+y_2) = (x_2+x_1,y_2+y_1) = (x_2,x_1)+(y_2,y_1) = z_2+z_1$$\\
+$$ z_1 z_2=z_2 z_1$$
+Demostración.- \; Sea $z_1=(x_1,y_1)$ y $z_2=(x_2,y_2)$ entonces
+$$z_1 z_2 = (x_1,y_1)(x_2,y_2) = (x_1x_2 - y_1y_2,y_1x_2 + x_1y_2) = (x_2x_1 - y_2y_1,y_2x_1 + x_2y_1) = (x_2,y_2)(x_1,y_1) = z_2 z_1$$\\
+\end{prop}
+\begin{prop}[Las leyes asociativas]
+$$(z_1+z_2)+z_3 = (z_2 + z_3), \; \; (z_1 z_2)z_3 = z_1(z_2 z_3)$$
+La demostración son similares a la anterior propiedad.
+\end{prop}
+\begin{prop}[Ley distributiva]
+$$z(z_1+z_2) = zz_1 + zz_2$$
+\end{prop}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = white]
+\begin{def.}[Identidad aditiva y multiplicativa]
+$$z+0=z \; y \; z\cdot 1 = z$$
+\end{def.}
+\end{tcolorbox}
+
+\begin{teo}[Unicidad de 0]
+Supongamos que $u,v$ es una identidad aditiva, y escribimos $$(x,y)+(u,v) = (x,y)$$ donde $(x,y)$ es cualquier número complejo. Se deduce que $$x+u=x \, é \; v=y;$$ o sea $u=0$ y $v=0$. El número complejo $0=(0,0)$ es, por tanto, la única identidad aditiva. 
+\end{teo}
+
+\begin{tcolorbox}[colback = white]
+\begin{def.}[Inverso aditivo]
+$$-z=(-x,-y)$$ Que satisface la ecuación $z+(-z) =0$. Además, hay un sólo inverso aditivo para cada $z$, pues la ecuación $(x,y)+(u,v)=(0,0)$ implica que $u=-x$ y $v=-y$.\\
+Luego si $z_1 = (x_1,y_1)$ y $z_2=(x_2,y_2)$, entonces 
+$$z_1 - z_2 = (x_1-x_2,y_1-y_2) = (x_1-x_2)+i(y_1-y_2)$$
+\end{def.}
+\end{tcolorbox}
+\end{document}
