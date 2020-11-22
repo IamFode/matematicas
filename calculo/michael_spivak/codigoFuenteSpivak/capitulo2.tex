@@ -104,30 +104,32 @@ modo que el número de conjuntos será $n(n — 1) \cdot ... \cdot (n - k + l)/k
 
 %------------------------(d)---------------------------
 \item Demostrar el \textbf{TEOREMA DEL BINOMIO}: Si $a$ \; y \; $b$ son números cualesquiera, entonces
-$(a+b)^n = a^n + {n \choose 1} a^{n-1} b + {n \choose 2} a^{n-2} b^2 + ... + {n \choose n-1} a b^{n-1} + b^n = \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j.$\\\\
-El teorema del binomio resulta claro para $n=1.$ Supónganse que $$(a+b)^n = \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j.$$
-Entonces 
+$$(a+b)^n = a^n + {n \choose 1} a^{n-1} b + {n \choose 2} a^{n-2} b^2 + ... + {n \choose n-1} a b^{n-1} + b^n = \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j.$$\\\\
+El teorema del binomio resulta claro para $n=1.$ Sea algún número $k \in \mathbb{Z}^+$  
+$$(a+b)^k =  \sum\limits_{j=0}^n {n \choose j} a^{n-j} b^j.$$
+de donde  suponemos que se cumple  para $k+1$ por lo tanto $$(a+b)^k =  \sum\limits_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j.$$
+entonces,
 \begin{center}
 \begin{tabular}{r c l l}
 $(a+b)^{n+1}$&=&$(a+b)(a+b)^n$&\\\\
 &=&$(a+b) \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j$&\\\\
 &=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n} {n \choose j} a^{n-j} b^{j+1}$&\\\\
-&=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n+1} {n \choose j-1} a^{n+1-j} b^{j}$&sustituimos $j$ por $j-1$ en la $2^{da}$ suma\\\\
-&=&$\displaystyle \sum_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j$& por la parte $b)$\\\\
+&=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n+1} {n \choose j-1} a^{n+1-j} b^{j}$&\\\\
+&=&$\displaystyle \sum_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j$& por la parte $(a)$\\\\
 \end{tabular}
 \end{center}
-Según la parte $a)$, con lo que el teorema del binomio es válido para $n+1.$\\\\
+con lo que el teorema del binomio es válido para $n+1.$ y por lo tanto para $n \in  \mathbb{Z}^+$\\\\
 
 %------------------------(e)---------------------------
 \item Demostrar que 
 \begin{enumerate}[\bfseries (i)]
-%---------------(i)-----------------
-\item $\displaystyle\sum_{j=0}^{n} {n \choose j} = {n \choose 0} + ... + {n \choose n} = 2^n$\\\\
-Demostración.- \; Por el teorema del binomio $2^n=(1+1)^n = \displaystyle\sum_{j=0}^n {n \choose j}(1^j)(1^{n-j})=\sum_{j=0}^n {n \choose j}$\\\\
+  %---------------(i)-----------------
+  \item $\displaystyle\sum_{j=0}^{n} {n \choose j} = {n \choose 0} + ... + {n \choose n} = 2^n$\\\\
+  Demostración.- \; Por el teorema del binomio $2^n=(1+1)^n = \sum\limits_{j=0}^n {n \choose j}(1^j)(1^{n-j})=\sum_{j=0}^n {n \choose j}$\\\\
 
 %---------------(ii)-----------------
 \item $\displaystyle\sum_{j=0}^n (-1)^j {n \choose j} = {n \choose 0}- {n \choose 1}+...\pm {n \choose n} =0$\\\\
-Demostración.- \;  De igual manera por el teorema del binomio $0=(1+(-1))^n = \displaystyle\sum_{j=0}^n(-1)^j {n \choose j}$\\\\ 
+Demostración.- \;  De igual manera por el teorema del binomio $0=(1+(-1))^n = \sum\limits_{j=0}^n(-1)^j {n \choose j}$\\\\ 
 
 %---------------(iii)-----------------
 \item $\displaystyle\sum_{l \; impar} {n \choose l} = {n \choose 1} + {n \choose 3}+ ... = 2^{n-1}$\\\\
