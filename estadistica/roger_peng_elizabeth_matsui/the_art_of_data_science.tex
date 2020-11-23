@@ -193,8 +193,67 @@ Las dos tareas principales que se debe abordar son:
 \end{enumerate}
 buena comprensión de qué tipo de conclusiones se pueden (y no se pueden) sacar una vez finalizado el análisis de datos.\\
 
-
-
 \chapter{Análisis exploratorio de datos}
+El análisis de datos exploratorio más confiable consiste en visualizar datos utilizando una representación gráfica de los datos.\\
+Hay varios objetivos del análisis de datos exploratorios, que son: 
+\begin{enumerate}[\bfseries 1.]
+    \item Para determinar si hay algún problema con su conjunto de datos. 
+    \item Para determinar si la pregunta que está haciendo puede ser respondida por los datos que tiene.
+    \item Desarrollar un bosquejo de la respuesta a su pregunta.
+\end{enumerate}
+\textbf{Explorará los datos para determinar si hay problemas con el conjunto de datos y para determinar si puede responder a su pregunta con este conjunto de datos.}\\
+Es importante notar que aquí, nuevamente, se aplica el concepto de epiciclo de análisis. Debe tener una expectativa de cómo se verá su conjunto de datos y si su pregunta puede ser respondida por los datos que tiene. Si el contenido y la estructura del conjunto de datos no coinciden con sus expectativas, entonces deberá volver atrás y averiguar si sus expectativas eran correctas (pero hubo un problema con los datos) o, alternativamente, sus expectativas eran incorrectas, por lo que no puede usar el conjunto de datos para responder la pregunta y necesitará encontrar otro conjunto de datos. También debe tener alguna expectativa de cuáles serán los niveles de ozono, así como si el ozono de una región debe ser más alto (o más bajo) que el de otra.\\
 
+    \section{Lista de verificación de análisis de datos exploratorios: un estudio de caso}
+    En esta sección repasaremos una “lista de verificación” informal de cosas que hacer al embarcarse en un análisis de datos exploratorio. Como ejemplo continuo, usaré un conjunto de datos sobre los niveles de ozono por hora en los Estados Unidos para el año 2014. Los elementos de la lista de verificación son:
+    \begin{enumerate}[\bfseries 1.]
+        \item Formule su pregunta
+        \item Lea sus datos. 
+        \item Verifique el empaquetado. 
+        \item Mire la parte superior e inferior de sus datos. 
+        \item Verifique sus “n” s. 
+        \item Valide con al menos una fuente de datos externa. 
+        \item Haga una gráfica. 
+        \item Pruebe primero la solución fácil.
+        \item Haga un seguimiento.
+    \end{enumerate}
+
+        \subsection{Formule su pregunta}
+        En particular, una pregunta o hipótesis aguda puede servir como una herramienta de reducción de dimensión que puede eliminar variables que no son inmediatamente relevantes para la pregunta. \\
+        \textbf{ Por lo general, es una buena idea dedicar unos minutos a averiguar cuál es la pregunta que realmente le interesa y reducirla para que sea lo más específica posible}\\
+        una de las preguntas más importantes que puede responder con un análisis exploratorio de datos es "¿Tengo los datos correctos para responder esta pregunta?" A menudo, esta pregunta es difícil de responder al principio, pero puede volverse más clara a medida que revisamos y examinamos los datos.
+
+        \subsection{Leer en sus datos}
+        ¿Alguna vez recibió un regalo antes del momento en que se le permitió abrirlo? Seguro, todos lo hemos hecho. El problema es que el presente está envuelto, pero deseas desesperadamente saber qué hay dentro. ¿Qué debe hacer una persona en esas circunstancias? Bueno, puede agitar un poco la caja, tal vez golpearla con los nudillos para ver si hace un sonido hueco, o incluso pesarla para ver qué tan pesado es. Así es como debe pensar en su conjunto de datos antes de comenzar a analizarlo de verdad. \\
+        Más importante aún, puede examinar las clases de cada una de las columnas para asegurarse de que estén correctamente especificadas (es decir, las letras numéricas son numéricas y las cadenas de caracteres, etc.)
+
+        \subsection{Mire la parte superior e inferior de sus datos}
+        A menudo, es útil mirar el $"$principio$"$ y el $"$final$"$ de un conjunto de datos inmediatamente después de comprobar el paquete. Esto le permite saber si los datos se leyeron correctamente, si las cosas están formateadas correctamente y si todo está ahí. Si sus datos son datos de series de tiempo, asegúrese de que las fechas al principio y al final del conjunto de datos coincidan con lo que espera que sean el período inicial y final.\\
+
+        \subsection{ABC: Siempre revise sus "n" s}
+        En general, contar cosas suele ser una buena forma de averiguar si algo está mal o no. En el caso más simple, si espera que haya 1,000 observaciones y resulta que solo hay 20, sabe que algo debe haber salido mal en alguna parte. Pero hay otras áreas que puede verificar según su aplicación.
+
+        \subsection{Validar con al menos una fuente de datos externa}
+        Es muy importante asegurarse de que sus datos coincidan con algo fuera del conjunto de datos. Le permite asegurarse de que las mediciones estén aproximadamente en línea con lo que deberían ser y sirve como una verificación de qué otras cosas podrían estar mal en su conjunto de datos.\\
+
+        \subsection{Haga un gráfica}
+        Hacer un diagrama para visualizar sus datos es una buena manera de comprender mejor su pregunta y sus datos. El trazado puede ocurrir en diferentes etapas de un análisis de datos. Para el trazado puede ocurrir en la fase exploratoria o más adelante en la fase de presentación / comunicación. Hay dos razones clave para realizar un gráfico de sus datos. Están creando expectativas y comprobando las desviaciones de las expectativas. En las primeras etapas del análisis, puede estar equipado con una pregunta / hipótesis, pero es posible que tenga poca idea de lo que está sucediendo en los datos. Es posible que haya echado un vistazo a algunos de ellos para hacer algunas comprobaciones de cordura, pero si su conjunto de datos es lo suficientemente grande, será difícil simplemente mirar todos los datos. Entonces, hacer algún tipo de gráfico, que sirva como resumen, será una herramienta útil para establecer expectativas sobre cómo deberían verse los datos. Una vez que tenga una buena comprensión de los datos, una buena pregunta / hipótesis y un conjunto de expectativas sobre lo que los datos deberían decir en relación con su pregunta, hacer un gráfico puede ser una herramienta útil para ver qué tan bien los datos coinciden con sus expectativas. . Los gráficos son particularmente buenos para permitirle ver desviaciones de lo que podría esperar. Por lo general, las tablas son buenas para resumir datos al presentar elementos como medias, medianas u otras estadísticas. Los gráficos, sin embargo, pueden mostrarle esas cosas, así como mostrarle cosas que están lejos de la media o la mediana, para que pueda verificar si se supone que algo está tan lejos. A menudo, lo que es obvio en una trama se puede ocultar en una tabla.\\
+
+        \subsection{Pruebe primero la solución fácil}
+        Es importante destacar que si no encuentra evidencia de una señal en los datos usando solo una gráfica o análisis simple, entonces a menudo es poco probable que encuentre algo usando un análisis más sofisticado.\\
+
+            \subsubsection{Pon a prueba tu solución}
+            Siempre debe pensar en formas de desafiar los resultados, especialmente si esos resultados concuerdan con sus expectativas anteriores. Recuerde que anteriormente notamos que tres estados tenían algunos valores inusualmente altos de ozono. No sabemos si estos valores son reales o no (por ahora, supongamos que son reales), pero podría ser interesante ver si el mismo patrón de este / oeste se mantiene si eliminamos estos estados que tienen actividad inusual.\\
+
+        \subsection{Preguntas de seguimiento}
+        En este punto, es útil considerar algunas preguntas de seguimiento.
+        \begin{enumerate}[ \bfseries 1.]
+            \item \textbf{¿Tienes los datos correctos?} A veces, al final de un análisis de datos exploratorio, la conclusión es que el conjunto de datos no es realmente apropiado para esta pregunta de Análisis de datos exploratorios.
+            \item \textbf{¿Necesitas otros datos?} Si bien los datos parecían adecuados para responder la pregunta planteada, vale la pena señalar que el conjunto de datos solo cubrió un año (2014). Puede valer la pena examinar si el patrón este / oeste se mantiene durante otros años, en cuyo caso tendríamos que salir y obtener otros datos.
+            \item \textbf{¿Tienes la pregunta correcta?} En este caso, no está claro que la pregunta que intentamos responder tenga relevancia inmediata, y los datos realmente no indicaron nada para aumentar la relevancia de la pregunta.
+        \end{enumerate}
+        \textbf{El objetivo del análisis exploratorio de datos es hacer que piense en sus datos y razone sobre su pregunta. En este punto, podemos refinar nuestra pregunta o recopilar nuevos datos, todo en un proceso iterativo para llegar a la verdad}
+
+    \section{Uso de modelos para explorar sus datos}
+    
 \end{document}
