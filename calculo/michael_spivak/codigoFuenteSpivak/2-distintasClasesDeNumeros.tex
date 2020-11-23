@@ -1,419 +1,412 @@
 \chapter{Distintas clases de números}
-\section{Problemas}
-\begin{enumerate}[\bfseries \Large 1.]
-%----------------------------------1-------------------------------------
-\item Demostrar por inducción las siguientes fórmulas: 
-%------------------------(a)-----------------------------
-\begin{enumerate}[\bfseries (i)]
-\item $1^2+...+n^2=\dfrac{n(n+1)(2n+1)}{6}$\\\\
-Demostración.- \; Sea $n=k$: $$1^2+...+k^2=\dfrac{k(k+1)(2k+1)}{6},$$ Para $k=1$, $$1^2=\dfrac{1(1+2)(2+1)}{6}$$ por lo tanto se cumple para $k=1$, Luego para $k=k+1$, $$1^2+...+(k+1)^2=\dfrac{(k+1)(k+2)(2k+3)}{6},$$ así cabe demostrar que:
-\begin{center}
-\begin{tabular}{r c l}
-$\dfrac{k(k+1)(2k+1)}{6}+(k+1)^2$&=&$\dfrac{(k+1)(k+2)(2k+3)}{6}$\\\\
-$\dfrac{2k^3+k^2+2k^2+k+6k^2+12k+6}{6}$&=&$\dfrac{2k^3+3k^2+6k^2+9k+4k+6}{6}$\\\\
-$\dfrac{2k^3+9k^2+13k+6}{6}$&=&$\dfrac{2k^3+9k^2+13k+6}{6}$\\\\
-\end{tabular}
-\end{center}
+  \section{Problemas}
+    \begin{enumerate}[\bfseries \Large 1.]
+      %----------------------------------1-------------------------------------
+      \item Demostrar por inducción las siguientes fórmulas: 
+        %------------------------(a)-----------------------------
+        \begin{enumerate}[\bfseries (i)]
+          \item $1^2+...+n^2=\dfrac{n(n+1)(2n+1)}{6}$\\\\
+          Demostración.- \; Sea $n=k$: $$1^2+...+k^2=\dfrac{k(k+1)(2k+1)}{6},$$ Para $k=1$, $$1^2=\dfrac{1(1+2)(2+1)}{6}$$ por lo tanto se cumple para $k=1$, Luego para $k=k+1$, $$1^2+...+(k+1)^2=\dfrac{(k+1)(k+2)(2k+3)}{6},$$ así cabe demostrar que:
+            \begin{center}
+              \begin{tabular}{r c l}
+              $\dfrac{k(k+1)(2k+1)}{6}+(k+1)^2$&=&$\dfrac{(k+1)(k+2)(2k+3)}{6}$\\\\
+              $\dfrac{2k^3+k^2+2k^2+k+6k^2+12k+6}{6}$&=&$\dfrac{2k^3+3k^2+6k^2+9k+4k+6}{6}$\\\\
+              $\dfrac{2k^3+9k^2+13k+6}{6}$&=&$\dfrac{2k^3+9k^2+13k+6}{6}$\\\\
+              \end{tabular}
+            \end{center}
 
-%-----------------------(b)---------------------------------
-\item $1^3 + ... + n^3 = (1+...+n)^2$\\\\
-Demostración.- \; Sea $n=1$ entonces la igualdad es verdadera ya que $1^3 = 1^2$.Supongamos que se cumple para algún número $k \in \mathbb{Z}^+$,
-$$1^3 + ... + k^3 = (1+...+k)^2,$$ Luego suponemos que se cumple para $k+1$, $$1^3 + ... + k^3 + (k+1)^3 = (1+...+(k+1))^2$$
-Así solo falta demostrar que 
-\begin{center}
-\begin{tabular}{rcl}
-$(1+...+(k+1))^2$&$=$&$(1+...+k)^2 + 2(1+...+k)(k+1) + (k+1)^2$\\\\
-&$=$&$(1^2 + ... + k)^2 + 2\dfrac{k(k+1)}{2} (k+1) + (k+1)^2$\\\\
-&$=$&$1^3 + ... + k^3 + (k^3 + 2k^2 + k) + (k^2 + 2k +1)$\\\\
-&$=$&$1^3 + ... + k^3 + (k+1)^3$\\\\
-\end{tabular}
-\end{center}
-Por lo tanto es válido para cualquier $n \in \mathbb{Z}^+$\\\\
-\end{enumerate}
+          %-----------------------(b)---------------------------------
+          \item $1^3 + ... + n^3 = (1+...+n)^2$\\\\
+          Demostración.- \; Sea $n=1$ entonces la igualdad es verdadera ya que $1^3 = 1^2$.Supongamos que se cumple para algún número $k \in \mathbb{Z}^+$,
+          $$1^3 + ... + k^3 = (1+...+k)^2,$$ Luego suponemos que se cumple para $k+1$, $$1^3 + ... + k^3 + (k+1)^3 = (1+...+(k+1))^2$$
+          Así solo falta demostrar que 
+            \begin{center}
+              \begin{tabular}{rcl}
+              $(1+...+(k+1))^2$&$=$&$(1+...+k)^2 + 2(1+...+k)(k+1) + (k+1)^2$\\\\
+              &$=$&$(1^2 + ... + k)^2 + 2\dfrac{k(k+1)}{2} (k+1) + (k+1)^2$\\\\
+              &$=$&$1^3 + ... + k^3 + (k^3 + 2k^2 + k) + (k^2 + 2k +1)$\\\\
+              &$=$&$1^3 + ... + k^3 + (k+1)^3$\\\\
+              \end{tabular}
+            \end{center}
+          Por lo tanto es válido para cualquier $n \in \mathbb{Z}^+$\\\\
+        \end{enumerate}
 
-%-----------------------------------------2-----------------------------------------
-\item Encontrar una fórmula para 
-\begin{enumerate}[\bfseries (i)]
+      %-----------------------------------------2-----------------------------------------
+      \item Encontrar una fórmula para 
+        \begin{enumerate}[\bfseries (i)]
+          %------------------------(i)---------------------------
+          \item  $ \displaystyle\sum_{i=1}^{n} (2i-1) = 1 +3 +5 + ... + (2n-1)$\\
+            \begin{center}
+              \begin{tabular}{r c c c l}
+              1&=&1&=&$1^2$\\
+              1+3&=&4&=&$2^2$\\
+              1+3+5&=&9&=&$3^2$\\
+              1+3+5+7&=&16&=&$4^2$\\
+              1+3+5+7+9&=&25&=&$5^2$\\
+              \end{tabular}
+            \end{center}
+          Por lo tanto $ \displaystyle\sum_{i=1}^{n} (2i-1) = 1 +3 +5 + ... + (2n-1) = n^2$\\\\
 
-%------------------------(i)---------------------------
-\item  $ \displaystyle\sum_{i=1}^{n} (2i-1) = 1 +3 +5 + ... + (2n-1)$\\
-\begin{center}
-\begin{tabular}{r c c c l}
-1&=&1&=&$1^2$\\
-1+3&=&4&=&$2^2$\\
-1+3+5&=&9&=&$3^2$\\
-1+3+5+7&=&16&=&$4^2$\\
-1+3+5+7+9&=&25&=&$5^2$\\
-\end{tabular}
-\end{center}
-Por lo tanto $ \displaystyle\sum_{i=1}^{n} (2i-1) = 1 +3 +5 + ... + (2n-1) = n^2$\\\\
+          %------------------------(ii)---------------------------
+          \item $\displaystyle\sum_{i=1}^{n} (2i-1)^2 = 1^2 + 3^2 + 5^2 + ... + (2n-1)^2$
+            \begin{center}
+              \begin{tabular}{r c l l}
+              $1^2 + 3^2 + 5^2 + ... + (2n-1)^2$&$=$&$\left[ 1^2 +2^2 +...+(2n)^2 \right] - \left[ 2^2 + 4^2 +6^2 +...+ (2n)^2\right]$&\\\\
+              &$=$&$\left[ 1^2 + 2^2 + ...+ (2n)^2 \right] - 4\left[ 1^2 + 2^2 +3^2 + ... + n^2 \right]$&\\\\
+              &$=$&$\dfrac{2n(2n+1)(4n+1)}{6} -\dfrac{4n(n+1)(2n+1)}{6}$&\\\\
+              &$=$&$\dfrac{2n(2n+1)\left[ 4n+1 -2 (n+1) \right]}{6}$&\\\\
+              &$=$&$\dfrac{2n(2n+1)(2n-1)}{6}$&\\\\ 
+              &$=$&$\dfrac{n(2n+1)(2n-1)}{3}$&\\\\
+              \end{tabular}
+            \end{center}
+        \end{enumerate}
 
-%------------------------(ii)---------------------------
-\item $\displaystyle\sum_{i=1}^{n} (2i-1)^2 = 1^2 + 3^2 + 5^2 + ... + (2n-1)^2$
-\begin{center}
-\begin{tabular}{r c l l}
-$1^2 + 3^2 + 5^2 + ... + (2n-1)^2$&$=$&$\left[ 1^2 +2^2 +...+(2n)^2 \right] - \left[ 2^2 + 4^2 +6^2 +...+ (2n)^2\right]$&\\\\
-&$=$&$\left[ 1^2 + 2^2 + ...+ (2n)^2 \right] - 4\left[ 1^2 + 2^2 +3^2 + ... + n^2 \right]$&\\\\
-&$=$&$\dfrac{2n(2n+1)(4n+1)}{6} -\dfrac{4n(n+1)(2n+1)}{6}$&\\\\
-&$=$&$\dfrac{2n(2n+1)\left[ 4n+1 -2 (n+1) \right]}{6}$&\\\\
-&$=$&$\dfrac{2n(2n+1)(2n-1)}{6}$&\\\\ 
-&$=$&$\dfrac{n(2n+1)(2n-1)}{3}$&\\\\
-\end{tabular}
-\end{center}
-\end{enumerate}
+      %---------------------------------------------3------------------------------------------
+      \begin{tcolorbox}[colback=white]
+        \begin{def.}[Coeficiente Binomial]
+          Si $0 \leq k \leq n,$ se define el coeficiente binomial $ {n \choose k} $ por $${n \choose k} = \dfrac{n!}{k!(n-k)!}=\dfrac{n(n-1)...(n - k + 1)}{k!}, \; si \; k \neq 0, \; n$$ $${n \choose 0} = {n \choose n} = 1.$$ Esto se convierte en un caso particular de la primera fórmula si se define $0! = 1.$
+        \end{def.}
+      \end{tcolorbox}
 
-%---------------------------------------------3------------------------------------------
-\begin{tcolorbox}[colback=white]
-\begin{def.}[Coeficiente Binomial]
-Si $0 \leq k \leq n,$ se define el coeficiente binomial $ {n \choose k} $ por $${n \choose k} = \dfrac{n!}{k!(n-k)!}=\dfrac{n(n-1)...(n - k + 1)}{k!}, \; si \; k \neq 0, \; n$$ $${n \choose 0} = {n \choose n} = 1.$$ Esto se convierte en un caso particular de la primera fórmula si se define $0! = 1.$
-\end{def.}
-\end{tcolorbox}
+      \item 
+        \begin{enumerate}[\bfseries (a)]
+          %------------------------(a)---------------------------
+          \item Demostrar que $${n +1 \choose k} = {n \choose k - 1} + {n \choose k}$$ Esta relación de lugar a la siguiente configuración, conocida por triángulo de Pascal: Todo número que no esté sobre uno de los lados es la suma de los dos números que tiene encima: El coeficiente binomial ${n \choose k}$ es el número k-ésimo de la fila $(n+1)$.
+            \begin{center}
+              \begin{tabular}{ccccccccccc}
+                &    &    &    &    &  1 &    &    &    &    &   \\
+                &    &    &    &  1 &    &  1 &    &    &    &   \\
+                &    &    &  1 &    &  2 &    &  1 &    &    &   \\
+                &    &  1 &    &  3 &    &  3 &    &  1 &    &   \\
+                &  1 &    &  4 &    &  6 &    &  4 &    &  1 &   \\
+              1 &    &  5 &    & 10 &    & 10 &    &  5 &    & 1 \\\\
+              \end{tabular}
+            \end{center}
+          Demostración.- \; \\
+            \begin{center}
+              \begin{tabular}{r c l}
+                $ {n \choose k-1}  +  {n \choose k} $&$=$&$\dfrac{n!}{(k-1)(n-k+1)!}+ \dfrac{n!}{k!(n-k)!}$\\\\
+                &$=$&$\dfrac{kn!}{k!(n+1-k)!} + \dfrac{(n+1-k)n!}{k!(n+1-k)!}$\\\\
+                &$=$&$\dfrac{(n+1)n!}{k!(n+1-k)!}$\\\\
+                &$=$&$ {n+1 \choose k} $\\\\
+              \end{tabular}
+            \end{center}
 
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Demostrar que $${n +1 \choose k} = {n \choose k - 1} + {n \choose k}$$ Esta relación de lugar a la siguiente configuración, conocida por triángulo de Pascal: Todo número que no esté sobre uno de los lados es la suma de los dos números que tiene encima: El coeficiente binomial ${n \choose k}$ es el número k-ésimo de la fila $(n+1)$.
-\begin{center}
-\begin{tabular}{ccccccccccc}
-  &    &    &    &    &  1 &    &    &    &    &   \\
-  &    &    &    &  1 &    &  1 &    &    &    &   \\
-  &    &    &  1 &    &  2 &    &  1 &    &    &   \\
-  &    &  1 &    &  3 &    &  3 &    &  1 &    &   \\
-  &  1 &    &  4 &    &  6 &    &  4 &    &  1 &   \\
-1 &    &  5 &    & 10 &    & 10 &    &  5 &    & 1 \\\\
-\end{tabular}
-\end{center}
-Demostración.- \; \\
-\begin{center}
-\begin{tabular}{r c l}
-$ {n \choose k-1}  +  {n \choose k} $&$=$&$\dfrac{n!}{(k-1)(n-k+1)!}+ \dfrac{n!}{k!(n-k)!}$\\\\
-&$=$&$\dfrac{kn!}{k!(n+1-k)!} + \dfrac{(n+1-k)n!}{k!(n+1-k)!}$\\\\
-&$=$&$\dfrac{(n+1)n!}{k!(n+1-k)!}$\\\\
-&$=$&$ {n+1 \choose k} $\\\\
-\end{tabular}
-\end{center}
+          %------------------------(b)---------------------------
+          \item Obsérvese que todos los números del triángulo de Pascal son números naturales. Utilícese la parte $(a)$ para demostrar por inducción que $ {n \choose k}$ es siempre un número natural.\\\\
+          Demostración.- \; Se ve claramente que ${1 \choose 1}$ es un número natural. Supóngase que ${n \choose p}$ es un número natural para todo $p \leq n$. Al ser: $${ n+1 \choose p } = {n \choose p-1} + {n \choose p} \; para \; p \leq n,$$ se sigue que ${n+1 \choose p}$ es un número natural para todo $p \leq n,$ mientras que ${n+1 \choose n+1}$ es también un número natural. Así pues, ${n+1 \choose p}$ es un número natural para todo $p \leq n+1$\\\\
 
-%------------------------(b)---------------------------
-\item Obsérvese que todos los números del triángulo de Pascal son números naturales. Utilícese la parte $(a)$ para demostrar por inducción que $ {n \choose k}$ es siempre un número natural.\\\\
-Demostración.- \; Se ve claramente que ${1 \choose 1}$ es un número natural. Supóngase que ${n \choose p}$ es un número natural para todo $p \leq n$. Al ser: $${ n+1 \choose p } = {n \choose p-1} + {n \choose p} \; para \; p \leq n,$$ se sigue que ${n+1 \choose p}$ es un número natural para todo $p \leq n,$ mientras que ${n+1 \choose n+1}$ es también un número natural. Así pues, ${n+1 \choose p}$ es un número natural para todo $p \leq n+1$\\\\
+          %------------------------(c)---------------------------
+          \item Dése otra demostración de que ${n \choose k}$ es un número natural, demostrando que ${n \choose k}$ es el número de conjuntos de exactamente $k$ enteros elegidos cada uno entre $1,...,n$.\\\\
+          Demostración.- \; Existen $n(n -1) \cdot ... \cdot (n - k + 1)$ k-tuplas de enteros distintos elegidos entre $1, ..., n$, ya que el primero puede ser elegido de n maneras, el segundo de $n - 1$ maneras, etc. Ahora bien, cada conjunto formado exactamente por $k$ enteros distintos, da lugar a $k!$ k-tuplas, de
+          modo que el número de conjuntos será $n(n — 1) \cdot ... \cdot (n - k + l)/k! = {n\choose k}$\\\\ 
 
-%------------------------(c)---------------------------
-\item Dése otra demostración de que ${n \choose k}$ es un número natural, demostrando que ${n \choose k}$ es el número de conjuntos de exactamente $k$ enteros elegidos cada uno entre $1,...,n$.\\\\
-Demostración.- \; Existen $n(n -1) \cdot ... \cdot (n - k + 1)$ k-tuplas de enteros distintos elegidos entre $1, ..., n$, ya que el primero puede ser elegido de n maneras, el segundo de $n - 1$ maneras, etc. Ahora bien, cada conjunto formado exactamente por $k$ enteros distintos, da lugar a $k!$ k-tuplas, de
-modo que el número de conjuntos será $n(n — 1) \cdot ... \cdot (n - k + l)/k! = {n\choose k}$\\\\ 
+          %------------------------(d)---------------------------
+          \item Demostrar el \textbf{TEOREMA DEL BINOMIO}: Si $a$ \; y \; $b$ son números cualesquiera, entonces
+          $$(a+b)^n = a^n + {n \choose 1} a^{n-1} b + {n \choose 2} a^{n-2} b^2 + ... + {n \choose n-1} a b^{n-1} + b^n = \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j.$$\\\\
+          El teorema del binomio resulta claro para $n=1.$ Sea algún número $k \in \mathbb{Z}^+$  
+          $$(a+b)^k =  \sum\limits_{j=0}^n {n \choose j} a^{n-j} b^j.$$
+          de donde  suponemos que se cumple  para $k+1$ por lo tanto $$(a+b)^k =  \sum\limits_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j.$$
+          entonces,
+            \begin{center}
+              \begin{tabular}{r c l l}
+                $(a+b)^{n+1}$&=&$(a+b)(a+b)^n$&\\\\
+                &=&$(a+b) \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j$&\\\\
+                &=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n} {n \choose j} a^{n-j} b^{j+1}$&\\\\
+                &=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n+1} {n \choose j-1} a^{n+1-j} b^{j}$&\\\\
+                &=&$\displaystyle \sum_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j$& por la parte $(a)$\\\\
+              \end{tabular}
+            \end{center}
+          con lo que el teorema del binomio es válido para $n+1.$ y por lo tanto para $n \in  \mathbb{Z}^+$\\\\
 
-%------------------------(d)---------------------------
-\item Demostrar el \textbf{TEOREMA DEL BINOMIO}: Si $a$ \; y \; $b$ son números cualesquiera, entonces
-$$(a+b)^n = a^n + {n \choose 1} a^{n-1} b + {n \choose 2} a^{n-2} b^2 + ... + {n \choose n-1} a b^{n-1} + b^n = \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j.$$\\\\
-El teorema del binomio resulta claro para $n=1.$ Sea algún número $k \in \mathbb{Z}^+$  
-$$(a+b)^k =  \sum\limits_{j=0}^n {n \choose j} a^{n-j} b^j.$$
-de donde  suponemos que se cumple  para $k+1$ por lo tanto $$(a+b)^k =  \sum\limits_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j.$$
-entonces,
-\begin{center}
-\begin{tabular}{r c l l}
-$(a+b)^{n+1}$&=&$(a+b)(a+b)^n$&\\\\
-&=&$(a+b) \displaystyle \sum_{j=0}^n {n \choose j} a^{n-j} b^j$&\\\\
-&=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n} {n \choose j} a^{n-j} b^{j+1}$&\\\\
-&=&$\displaystyle \sum_{j=0}^n {n \choose j} a^{n+1-j} b^j + \sum_{j=0}^{n+1} {n \choose j-1} a^{n+1-j} b^{j}$&\\\\
-&=&$\displaystyle \sum_{j=0}^{n+1} {n+1 \choose j} a^{n+1-j} b^j$& por la parte $(a)$\\\\
-\end{tabular}
-\end{center}
-con lo que el teorema del binomio es válido para $n+1.$ y por lo tanto para $n \in  \mathbb{Z}^+$\\\\
+          %------------------------(e)---------------------------
+          \item Demostrar que 
+          \begin{enumerate}[\bfseries (i)]
+            %---------------(i)-----------------
+            \item $\displaystyle\sum_{j=0}^{n} {n \choose j} = {n \choose 0} + ... + {n \choose n} = 2^n$\\\\
+            Demostración.- \; Por el teorema del binomio $2^n=(1+1)^n = \sum\limits_{j=0}^n {n \choose j}(1^j)(1^{n-j})=\sum_{j=0}^n {n \choose j}$\\\\
 
-%------------------------(e)---------------------------
-\item Demostrar que 
-\begin{enumerate}[\bfseries (i)]
-  %---------------(i)-----------------
-  \item $\displaystyle\sum_{j=0}^{n} {n \choose j} = {n \choose 0} + ... + {n \choose n} = 2^n$\\\\
-  Demostración.- \; Por el teorema del binomio $2^n=(1+1)^n = \sum\limits_{j=0}^n {n \choose j}(1^j)(1^{n-j})=\sum_{j=0}^n {n \choose j}$\\\\
+            %---------------(ii)-----------------
+            \item $\displaystyle\sum_{j=0}^n (-1)^j {n \choose j} = {n \choose 0}- {n \choose 1}+...\pm {n \choose n} =0$\\\\
+            Demostración.- \;  De igual manera por el teorema del binomio $0=(1+(-1))^n = \sum\limits_{j=0}^n(-1)^j {n \choose j}$\\\\ 
 
-%---------------(ii)-----------------
-\item $\displaystyle\sum_{j=0}^n (-1)^j {n \choose j} = {n \choose 0}- {n \choose 1}+...\pm {n \choose n} =0$\\\\
-Demostración.- \;  De igual manera por el teorema del binomio $0=(1+(-1))^n = \sum\limits_{j=0}^n(-1)^j {n \choose j}$\\\\ 
+            %---------------(iii)-----------------
+            \item $\displaystyle\sum_{l \; impar} {n \choose l} = {n \choose 1} + {n \choose 3}+ ... = 2^{n-1}$\\\\
+            Demostración.- \;  Restando $(ii)$ de $(i)$ se tiene que,
+              \begin{center}
+                \begin{tabular}{rcl}
+                  $2 {n \choose 0} + 2 {n \choose 2} + ... + 2{n \choose n}$&$=$&$2^n - 0$\\\\
+                  $2\sum\limits_{j \; impar}^n {n \choose j} $&$=$&$2^n$\\\\ 
+                  $\sum\limits_{j \; impar}^n {n \choose j}$&$=$&$2^n \cdot 2^{-1}$\\\\ 
+                  $\sum\limits_{j \; impar}^n {n \choose j}$&$=$&$2^{n-1}$\\\\
+                \end{tabular}
+              \end{center}
 
-%---------------(iii)-----------------
-\item $\displaystyle\sum_{l \; impar} {n \choose l} = {n \choose 1} + {n \choose 3}+ ... = 2^{n-1}$\\\\
-Demostración.- \;  Restando $(ii)$ de $(i)$ se tiene que,
-\begin{center}
-  \begin{tabular}{rcl}
-    $2 {n \choose 0} + 2 {n \choose 2} + ... + 2{n \choose n}$&$=$&$2^n - 0$\\\\
-    $2\sum\limits_{j \; impar}^n {n \choose j} $&$=$&$2^n$\\\\ 
-    $\sum\limits_{j \; impar}^n {n \choose j}$&$=$&$2^n \cdot 2^{-1}$\\\\ 
-    $\sum\limits_{j \; impar}^n {n \choose j}$&$=$&$2^{n-1}$\\\\
-	\end{tabular}
-\end{center}
+            %---------------(iv)-----------------
+            \item $\displaystyle\sum_{l \; par} {n \choose l} = {n \choose 0} + {n \choose 2} + ...  = 2^{n-1}$\\\\
+            Demostración.- \; La demostración es similar al problema anterior pero esta vez sumamos $(i)$ en $(ii)$ \\\\ 
+            \end{enumerate}
+          \end{enumerate}
 
-%---------------(iv)-----------------
-\item $\displaystyle\sum_{l \; par} {n \choose l} = {n \choose 0} + {n \choose 2} + ...  = 2^{n-1}$\\\\
-Demostración.- \; La demostración es similar al problema anterior pero esta vez sumamos $(i)$ en $(ii)$ \\\\ 
-\end{enumerate}
-\end{enumerate}
+      %---------------------------------------------4------------------------------------------
+      \item 
+        \begin{enumerate}[\bfseries (a)]
+        %------------------------(a)---------------------------
+        \item Demostrar que $$\displaystyle\sum_{k=0}^{l} {n \choose k} {m \choose l-k} = {n+m \choose l}$$\\\\
+        Demostración.- \; La multiplicación de series formales de potencias se realiza recolectando los términos con las mismas potencias de $x$: 
+        $$\left( \sum\limits_{a_K}^{\infty} a_k x^k \right) \left( \sum\limits_{a_K}^{\infty} b_k x^k \right) = \sum\limits_{k=0}^{\infty} \left(\sum\limits_{j=0}^{k} a_j x^j b_{k-j} x^{k-j}  \right) = \sum\limits_{k=0}^{\infty} \left(\sum\limits_{j=0}^{k} a_j  b_{k-j}   \right) x^k$$
+        Tenga en cuenta que los subíndices en la suma interna suman $k$, la potencia de $x$ en la suma externa.
+        Luego aplicando la multiplicación de series de potencias a $(1+x)^m = \sum\limits_{k=0}^{\infty} {m \choose k}x^k$ y $(1+x)^n = \sum\limits_{k=0}^{\infty} {n \choose k}x^k$ de donde $$(1+x)^{m+n} = \sum\limits_{k=0}^{\infty} {m+n \choose k }x^k$$
+        (Los índices en las sumas a $\infty$ ya que para $k>n$, ${n  \choose k} =0$), Se tiene:
+        $$(1+x)^m (1+x)^n = \sum\limits_{k=0}^{\infty} \left[ \sum\limits_{j=0}^{k} {m \choose j} {n \choose k-j} \right]x^k$$
+        ya que $(1+x)^m (1+x)^n = (1+x)^{m+n}$ entonces $${m+n \choose k} = \sum\limits_{j=0}^{k} {m \choose j} {n \choose k-j}$$\\ 
+        
 
-%---------------------------------------------4------------------------------------------
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Demostrar que $$\displaystyle\sum_{k=0}^{l} {n \choose k} {m \choose l-k} = {n+m \choose l}$$\\\\
-Demostración.- \; Aclaremos la proposición primeramente con un ejemplo.\\
-Tenemos $n$ hombres y $m$ mujeres, y queremos formar un conjunto de combinaciones $l$ de personas de la forma $n+m$. Claramente hay ${n+m \choose l}$ caminos para formar dichas combinaciones.\\
-Contemos el número de combinaciones de otra manera. Tenemos $0$ hombres y $l$ mujeres. Tal combinación se pueden formar en ${n \choose 0 } {m \choose l}$ caminos, o también:
-\begin{itemize}
-\item Podemos tener $1$ hombre y $l-1$ mujeres. Tal combinación se puede formar como ${n \choose l}{m \choose l-1}$ maneras.
-\item Ó podemos tener $2$ hombre y $l-2$ mujeres. Tal combinación se puede formar como ${n \choose 2}{m \choose l-2}$ maneras.
-\end{itemize}
-Así las combinaciones totales serian $$\displaystyle\sum_{k=0}^l {n \choose k}{m \choose l -k}$$
-Pero ya vimos que el número de combinaciones es ${n+m \choose l}$ siempre y cuando se cumpla la condición ${a \choose b} = 0$ si $b>a$\\
-Ahora si pasemos a demostrar. Sea por producto de Cauchy de dos series infinitas:
-$$\left( \displaystyle\sum_{k=0}^{\infty} a_k x^k \right) \left( \displaystyle\sum_{k=0}^{\infty} b_k x^k \right) = \sum_{k=0}^{\infty} \left( \displaystyle\sum_{j=0}^{k} a_j x^j b_{k-j} x^{k-j}\right) = \sum_{k=0}^{\infty} \left( \displaystyle\sum_{j=0}^{k} a_j b_{k-j} \right) x^k$$ entonces $(1+x)^m = \displaystyle\sum_{k=0}^{\infty} {m \choose k}x^k$ y $(1+x)^n \displaystyle\sum_{k=0}^{\infty} {m \choose k}x^k$ entonces queda:
-$$(1+x)^{m+n} = \sum_{k=0}^{\infty} {m+n \choose k} x^k$$
-Se extiende los índices en las sumas a $\infty$  ya que $k>n$, ${n \choose k} = 0 $. Luego 
-$$(1+x)^m (1+x)^n = \displaystyle\sum_{k=0}^{\infty} \left( \sum_{j=0}^k {m \choose j} {n \choose k-j} \right) x^k$$ Así 
-$${m+n \choose k} = \displaystyle\sum_{j=0}^k {j \choose m}{n \choose k-j}$$\\\\
+        %------------------------(b)---------------------------
+        \item demostrar que $$\displaystyle\sum_{k=0}^{n} {n \choose k}^2 = {2n \choose n}$$\\\\
+        Demostración.- \; Sea $m=n$, $l=n$ en la parte $(a)$ y notar que ${n \choose k} = {n \choose n-k}.$ de donde se tiene que $$ \sum\limits_{k=0}^{n} {n \choose k} \cdot  {n \choose k} = {n+n \choose n}$$ y por lo tanto $$\sum\limits_{k=0}^{n} {n \choose k}^2 = {2n \choose n}$$\\\\  
+        
+        \end{enumerate}
 
-%------------------------(b)---------------------------
-\item demostrar que $$\displaystyle\sum_{k=0}^{n} {n \choose k}^2 = {2n \choose n}$$\\\\
-Demostración.- \; Sea $m$, $l=n$ en la parte $a)$ y notar que ${n \choose k} = {n \choose n-k}.$ \\\\ {\color{green}completar demostración xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}
-\end{enumerate}
+      %---------------------------------------------5------------------------------------------
+      \item 
+      \begin{enumerate}[\bfseries (a)]
+      %------------------------(a)---------------------------
+      \item Demostrar por inducción sobre $n$ que $$1 + r +r^2 + ... + r^n = \dfrac{1 - r^{n+1}}{1-r}$$ si $r\neq 1$ (Si es $r=1$, el cálculo de la suma no presenta problema alguno).\\\\
+      Demostración.- \; Sea $n=1$ entonces $$1+r = \dfrac{1- r^2}{1-r}$$ el cual vemos que se cumple.\\
+      Luego
+      \begin{center}
+      \begin{tabular}{r c l}
+      $1+r+r^2 + ... + r^n + r^{n+1}$&$=$&$\dfrac{1- r^{r+1}}{1-r} + r^{r+1}$\\\\
+      &$=$&$\dfrac{1 - r^{n+1} + r^{n+1} (1-r)}{1-r}$\\\\
+      &$=$&$\dfrac{1 - r^{n+1}}{1-r}$\\\\
+      \end{tabular}
+      \end{center} 
 
-%---------------------------------------------5------------------------------------------
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Demostrar por inducción sobre $n$ que $$1 + r +r^2 + ... + r^n = \dfrac{1 - r^{n+1}}{1-r}$$ si $r\neq 1$ (Si es $r=1$, el cálculo de la suma no presenta problema alguno).\\\\
-Demostración.- \; Sea $n=1$ entonces $$1+r = \dfrac{1- r^2}{1-r}$$ el cual vemos que se cumple.\\
-Luego
-\begin{center}
-\begin{tabular}{r c l}
-$1+r+r^2 + ... + r^n + r^{n+1}$&$=$&$\dfrac{1- r^{r+1}}{1-r} + r^{r+1}$\\\\
-&$=$&$\dfrac{1 - r^{n+1} + r^{n+1} (1-r)}{1-r}$\\\\
-&$=$&$\dfrac{1 - r^{n+1}}{1-r}$\\\\
-\end{tabular}
-\end{center} 
+      %------------------------(b)----------------------------
+      \item Deducir este resultado poniendo $S=1+r+...+r^n$, multiplicando esta ecuación por $r$ y despejando $S$ entre las dos ecuaciones.\\\\
+      Tenemos $r\cdot S = r + .... + r^n + r^{n+1}$ luego $S - rS = S(1-r) = 1-r^{n+1}$ por lo tanto $S = \dfrac{1-r^{n+1}}{1-r}$\\\\
+      \end{enumerate}
 
-%------------------------(b)----------------------------
-\item Deducir este resultado poniendo $S=1+r+...+r^n$, multiplicando esta ecuación por $r$ y despejando $S$ entre las dos ecuaciones.\\\\
-Tenemos $r\cdot S = r + .... + r^n + r^{n+1}$ luego $S - rS = S(1-r) = 1-r^{n+1}$ por lo tanto $S = \dfrac{1-r^{n+1}}{1-r}$\\\\
-\end{enumerate}
+      %---------------------------------------------6------------------------------------------
+      \item 
+      La fórmula para $1^2 + 2^2 + ... + n^2$ se puede obtener como sigue: Empezamos con la fórmula $$(k+1)^3 - k^3 = 3k^2 + 3k +1$$
+      particularmente esta fórmula para $k=1,...,n$ \; y sumando, obtenemos \begin{center}
+      \begin{tabular}{r c l}
+      $2^3 - 1^3$&=&$3\cdot +1$\\
+      $3^3 + 2^3$&=&$2^2 + 3\cdot 2 +1 $\\
+      $.$&=&\\
+      $.$&=&\\
+      $.$&=&\\
+      $(n+1)^3 - n^3$&=&$n^2 + 3 \cdot n + 1$\\
+      \hline
+      $(n+1)^3 - 1$&=&$3 \left[ 1^2 + ... + n^2 \right] + 3 \left[ 1 + .... + n \right] + n$\\
+      \end{tabular}
+      \end{center}
+      De este modo podemos obtener $\displaystyle\sum_{k=1}^n k^2$ una vez conocido $\displaystyle\sum_{k=1}^n k $ (lo cual puede obtenerse mediante un procedimiento análogo). Aplíquese este método para obtener.
+      \begin{enumerate}[\bfseries (i)]
+      %-------------------------(i)--------------------------
+      \item $1^3 + ... n^3$\\\\
+      Sea $(k+1)^4 - k^4 = 4k^3 + 6k^2 +4k + 1, \; \; para \; k=1,...,n $ por hipótesis tenemos $(n+1)^4 - 1 = 4 \displaystyle\sum_{k=1}^n k^2 + 6 \sum_{k=1}^n k^2 + 4 \sum_{k=1}^n k + n,$ de modo que $$\displaystyle\sum_{k=1}^n k^3 = \dfrac{ (n+1)^4 -1 - 6 \dfrac{n(n+1)(2n+1)}{6} - 4 \dfrac{n(n+1)}{2} - n}{4} = \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4}$$\\\\
 
-%---------------------------------------------6------------------------------------------
-\item 
-La fórmula para $1^2 + 2^2 + ... + n^2$ se puede obtener como sigue: Empezamos con la fórmula $$(k+1)^3 - k^3 = 3k^2 + 3k +1$$
-particularmente esta fórmula para $k=1,...,n$ \; y sumando, obtenemos \begin{center}
-\begin{tabular}{r c l}
-$2^3 - 1^3$&=&$3\cdot +1$\\
-$3^3 + 2^3$&=&$2^2 + 3\cdot 2 +1 $\\
-$.$&=&\\
-$.$&=&\\
-$.$&=&\\
-$(n+1)^3 - n^3$&=&$n^2 + 3 \cdot n + 1$\\
-\hline
-$(n+1)^3 - 1$&=&$3 \left[ 1^2 + ... + n^2 \right] + 3 \left[ 1 + .... + n \right] + n$\\
-\end{tabular}
-\end{center}
-De este modo podemos obtener $\displaystyle\sum_{k=1}^n k^2$ una vez conocido $\displaystyle\sum_{k=1}^n k $ (lo cual puede obtenerse mediante un procedimiento análogo). Aplíquese este método para obtener.
-\begin{enumerate}[\bfseries (i)]
-%-------------------------(i)--------------------------
-\item $1^3 + ... n^3$\\\\
-Sea $(k+1)^4 - k^4 = 4k^3 + 6k^2 +4k + 1, \; \; para \; k=1,...,n $ por hipótesis tenemos $(n+1)^4 - 1 = 4 \displaystyle\sum_{k=1}^n k^2 + 6 \sum_{k=1}^n k^2 + 4 \sum_{k=1}^n k + n,$ de modo que $$\displaystyle\sum_{k=1}^n k^3 = \dfrac{ (n+1)^4 -1 - 6 \dfrac{n(n+1)(2n+1)}{6} - 4 \dfrac{n(n+1)}{2} - n}{4} = \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4}$$\\\\
+      %------------------------(ii)---------------------------
+      \item $1^4 + ... + n^4$\\\\
+      Similar al anterior ejercicio partimos de $(k+1)^5 - k^5 = 5k^4 + 10k^3 + 10k^2 + 5k + 1 \; \; \; k=1,...,n$ para obtener $(k+1)^5 - k^5 = 5 \left( \displaystyle\sum_{k=1}^n k^4 \right) + 10 \left( \sum_{k=1}^n k^3 \right) + 10 \left( \sum_{k=1}^n k^2 \right) + 5 \left( \sum_{k=1}^n k \right) + n,$ así $$\displaystyle\sum_{k=1}^n k^4 = \dfrac{(n+1)^5 - 1 - 10\left( \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4} - 10 \dfrac{n(n+1)(n+2)}{6} - 5 \dfrac{n(n+1)(n+2)}{2} -n \right)}{5} = $$ $$\dfrac{n^5}{5} + \dfrac{n^4}{2} + \dfrac{n^3}{3} - \dfrac{n}{30}$$\\\\
 
-%------------------------(ii)---------------------------
-\item $1^4 + ... + n^4$\\\\
-Similar al anterior ejercicio partimos de $(k+1)^5 - k^5 = 5k^4 + 10k^3 + 10k^2 + 5k + 1 \; \; \; k=1,...,n$ para obtener $(k+1)^5 - k^5 = 5 \left( \displaystyle\sum_{k=1}^n k^4 \right) + 10 \left( \sum_{k=1}^n k^3 \right) + 10 \left( \sum_{k=1}^n k^2 \right) + 5 \left( \sum_{k=1}^n k \right) + n,$ así $$\displaystyle\sum_{k=1}^n k^4 = \dfrac{(n+1)^5 - 1 - 10\left( \dfrac{n^4}{4} + \dfrac{n^3}{2} + \dfrac{n^2}{4} - 10 \dfrac{n(n+1)(n+2)}{6} - 5 \dfrac{n(n+1)(n+2)}{2} -n \right)}{5} = $$ $$\dfrac{n^5}{5} + \dfrac{n^4}{2} + \dfrac{n^3}{3} - \dfrac{n}{30}$$\\\\
+      %------------------------(iii)---------------------------
+      \item $\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + ... + \dfrac{1}{n(n+1)}$\\\\ 
+      A partir de $$\dfrac{1}{k} - \dfrac{1}{k+1} = \dfrac{1}{k(k+1)}, \; \; \; k=1,...,n$$ obtenemos $$1-\dfrac{1}{n+1} = \displaystyle\sum_{k=1}^n \dfrac{1}{k(k+1)}$$ {\color{green} completarlo xxxxxxxxxxxxxxxxxx}\\\\
 
-%------------------------(iii)---------------------------
-\item $\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + ... + \dfrac{1}{n(n+1)}$\\\\ 
-A partir de $$\dfrac{1}{k} - \dfrac{1}{k+1} = \dfrac{1}{k(k+1)}, \; \; \; k=1,...,n$$ obtenemos $$1-\dfrac{1}{n+1} = \displaystyle\sum_{k=1}^n \dfrac{1}{k(k+1)}$$ {\color{green} completarlo xxxxxxxxxxxxxxxxxx}\\\\
+      %------------------------(iv)---------------------------
+      \item $\dfrac{3}{1^2 \cdot 2^2} + \dfrac{5}{2^2 \cdot 3^2} + ... + \dfrac{2n +1}{n^2 (n+1)^2}$\\\\
+      De $$\dfrac{1}{k^2} - \dfrac{1}{(k+1)^2} = \dfrac{2k+1}{k^2(k+1)^2}, \; \; \; k=1,...,n$$ obtenemos $$1-\dfrac{1}{(n+1)^2} = \displaystyle\sum_{k=1}^n \dfrac{2k+1}{k^2(k+1)^2}$$ {\color{green} completarlo xxxxxxxxxxxxxxxxxx} \\\\
+      \end{enumerate}
 
-%------------------------(iv)---------------------------
-\item $\dfrac{3}{1^2 \cdot 2^2} + \dfrac{5}{2^2 \cdot 3^2} + ... + \dfrac{2n +1}{n^2 (n+1)^2}$\\\\
-De $$\dfrac{1}{k^2} - \dfrac{1}{(k+1)^2} = \dfrac{2k+1}{k^2(k+1)^2}, \; \; \; k=1,...,n$$ obtenemos $$1-\dfrac{1}{(n+1)^2} = \displaystyle\sum_{k=1}^n \dfrac{2k+1}{k^2(k+1)^2}$$ {\color{green} completarlo xxxxxxxxxxxxxxxxxx} \\\\
-\end{enumerate}
+      %---------------------------------------------7-------------------------------------------
+      \item Utilizar el método del problema 6 para demostrar que $\displaystyle\sum_{k=1}^n k^p$ puede escribirse siempre en la forma $$\dfrac{n^{p+1}}{p+1} + An^p + Bn^{p-1} + Cn^{p-2} + ...$$
+      Las diez primeras de estas expresiones son
+      \begin{center}
+      \begin{tabular}{r c l}
+      $\displaystyle\sum_{k=1}^n k$&=&$\dfrac{1}{2}n^2 + \dfrac{1}{2}n$\\\\
+      $\displaystyle\sum_{k=1}^n k^2$&=&$\dfrac{1}{3} n^3 + \dfrac{1}{2}n^2 + \dfrac{1}{6}n$\\\\
+      $\displaystyle\sum_{k=1}^n k^3$&=&$\dfrac{1}{4}n^4 + \dfrac{1}{2} n^3 + \dfrac{1}{4} n^2$\\\\
+      $\displaystyle\sum_{k=1}^n k^4$&=&$\dfrac{1}{5} n^6 + \dfrac{1}{2} n^4 + \dfrac{1}{3} n^3 - \dfrac{1}{30}n$\\\\
+      $\displaystyle\sum_{k=1}^n k^5$&=&$\dfrac{1}{6}n^6 + \dfrac{1}{2} n^5 + \dfrac{5}{12}n^4 - \dfrac{1}{12}n^2$\\\\
+      $\displaystyle\sum_{k=1}^n k^6$&=&$\dfrac{1}{7}n^7 + \dfrac{1}{2}n^6 + \dfrac{1}{2}n^5 - \dfrac{1}{6}n^3 + \dfrac{1}{42}n$\\\\
+      $\displaystyle\sum_{k=1}^n k^7$&=&$\dfrac{1}{8}n^8 + \dfrac{1}{2}n^7 + \dfrac{7}{12}n^6 - \dfrac{7}{24}n^4 + \dfrac{1}{12}n^2$\\\\
+      $\displaystyle\sum_{k=1}^n k^8$&=&$\dfrac{1}{9}n^9 + \dfrac{1}{2}n^8 + \dfrac{2}{3}n^7 - \dfrac{7}{15}n^5 + \dfrac{2}{9}n^3 - \dfrac{1}{30}n$\\\\
+      $\displaystyle\sum_{k=1}^n k^9$&=&$\dfrac{1}{10}n^{10} + \dfrac{1}{2} n^9 + \dfrac{3}{4}n^8 - \dfrac{7}{10}n^6 + \dfrac{1}{2}n^4 - \dfrac{3}{20} n^2$\\\\
+      $\displaystyle\sum_{k=1}^n k^10$&=&$\dfrac{1}{11}n^{11} + \dfrac{1}{2}n^{10} + \dfrac{5}{6}n^9 - 1n^7 + 1n5 - \dfrac{1}{2}n^3 + \dfrac{5}{66}n$\\\\
+      \end{tabular}
+      \end{center}
+      Obsérvese que los coeficientes de la segunda columna son siempre $\dfrac{1}{2}$ y que después de la tercera columna las potencias de $n$ de coeficiente no nulo van decreciendo de dos en dos hasta llegar a $n^2$ o a $n$. Los coeficientes de todas las columnas, salvo las dos primeras, parecen bastante fortuitos, pero en realidad obedecen a cierta regla; encontrarla puede considerarse como una prueba de superspicacia. Para descifrar todo el asunto, véase el problema 26-17)\\\\
+      Demostración.- \; La prueba se hará por inducción en $p$. La afirmación es verdadera para $p=1$, ya que $$\displaystyle\sum_{k=1}^n k = \dfrac{n(n+1)}{2} = \dfrac{n^2}{2} + n.$$
+      Suponemos que la afirmación es verdadera para todos los números naturales $\leq p$. Por el teorema binomial, tenemos la ecuación, $$(k+1)^{p+1} - k^{p+1} = (p+1)k^p + \mbox{terminos que implican las potencias inferiores a k}$$
+      Agregando para $k=1,...,n$ obtenemos,
+      $$\dfrac{(n+1)^{p+1}}{p+1} = \displaystyle\sum_{k=1}^n k^p + \mbox{terminos que involucran} \; \sum_{k=1}^n k^r \; para \; r<p$$
+      por suposición, tenemos que escribir cada $\displaystyle\sum_{k=1}^n k^r$ como una expresión que involucra las potencias de $n^s$ con $s\leq p$. Se sigue que $$\displaystyle\sum_{k=1}^n k^p = \dfrac{(n+1)^{p+1}}{p+1} + \; \mbox{terminos que involucran las potencias de n menos } \; p+1$$
 
-%---------------------------------------------7-------------------------------------------
-\item Utilizar el método del problema 6 para demostrar que $\displaystyle\sum_{k=1}^n k^p$ puede escribirse siempre en la forma $$\dfrac{n^{p+1}}{p+1} + An^p + Bn^{p-1} + Cn^{p-2} + ...$$
-Las diez primeras de estas expresiones son
-\begin{center}
-\begin{tabular}{r c l}
-$\displaystyle\sum_{k=1}^n k$&=&$\dfrac{1}{2}n^2 + \dfrac{1}{2}n$\\\\
-$\displaystyle\sum_{k=1}^n k^2$&=&$\dfrac{1}{3} n^3 + \dfrac{1}{2}n^2 + \dfrac{1}{6}n$\\\\
-$\displaystyle\sum_{k=1}^n k^3$&=&$\dfrac{1}{4}n^4 + \dfrac{1}{2} n^3 + \dfrac{1}{4} n^2$\\\\
-$\displaystyle\sum_{k=1}^n k^4$&=&$\dfrac{1}{5} n^6 + \dfrac{1}{2} n^4 + \dfrac{1}{3} n^3 - \dfrac{1}{30}n$\\\\
-$\displaystyle\sum_{k=1}^n k^5$&=&$\dfrac{1}{6}n^6 + \dfrac{1}{2} n^5 + \dfrac{5}{12}n^4 - \dfrac{1}{12}n^2$\\\\
-$\displaystyle\sum_{k=1}^n k^6$&=&$\dfrac{1}{7}n^7 + \dfrac{1}{2}n^6 + \dfrac{1}{2}n^5 - \dfrac{1}{6}n^3 + \dfrac{1}{42}n$\\\\
-$\displaystyle\sum_{k=1}^n k^7$&=&$\dfrac{1}{8}n^8 + \dfrac{1}{2}n^7 + \dfrac{7}{12}n^6 - \dfrac{7}{24}n^4 + \dfrac{1}{12}n^2$\\\\
-$\displaystyle\sum_{k=1}^n k^8$&=&$\dfrac{1}{9}n^9 + \dfrac{1}{2}n^8 + \dfrac{2}{3}n^7 - \dfrac{7}{15}n^5 + \dfrac{2}{9}n^3 - \dfrac{1}{30}n$\\\\
-$\displaystyle\sum_{k=1}^n k^9$&=&$\dfrac{1}{10}n^{10} + \dfrac{1}{2} n^9 + \dfrac{3}{4}n^8 - \dfrac{7}{10}n^6 + \dfrac{1}{2}n^4 - \dfrac{3}{20} n^2$\\\\
-$\displaystyle\sum_{k=1}^n k^10$&=&$\dfrac{1}{11}n^{11} + \dfrac{1}{2}n^{10} + \dfrac{5}{6}n^9 - 1n^7 + 1n5 - \dfrac{1}{2}n^3 + \dfrac{5}{66}n$\\\\
-\end{tabular}
-\end{center}
-Obsérvese que los coeficientes de la segunda columna son siempre $\dfrac{1}{2}$ y que después de la tercera columna las potencias de $n$ de coeficiente no nulo van decreciendo de dos en dos hasta llegar a $n^2$ o a $n$. Los coeficientes de todas las columnas, salvo las dos primeras, parecen bastante fortuitos, pero en realidad obedecen a cierta regla; encontrarla puede considerarse como una prueba de superspicacia. Para descifrar todo el asunto, véase el problema 26-17)\\\\
-Demostración.- \; La prueba se hará por inducción en $p$. La afirmación es verdadera para $p=1$, ya que $$\displaystyle\sum_{k=1}^n k = \dfrac{n(n+1)}{2} = \dfrac{n^2}{2} + n.$$
-Suponemos que la afirmación es verdadera para todos los números naturales $\leq p$. Por el teorema binomial, tenemos la ecuación, $$(k+1)^{p+1} - k^{p+1} = (p+1)k^p + \mbox{terminos que implican las potencias inferiores a k}$$
-Agregando para $k=1,...,n$ obtenemos,
-$$\dfrac{(n+1)^{p+1}}{p+1} = \displaystyle\sum_{k=1}^n k^p + \mbox{terminos que involucran} \; \sum_{k=1}^n k^r \; para \; r<p$$
-por suposición, tenemos que escribir cada $\displaystyle\sum_{k=1}^n k^r$ como una expresión que involucra las potencias de $n^s$ con $s\leq p$. Se sigue que $$\displaystyle\sum_{k=1}^n k^p = \dfrac{(n+1)^{p+1}}{p+1} + \; \mbox{terminos que involucran las potencias de n menos } \; p+1$$
+      %---------------------------------------------8-------------------------------------------
+      \item Demostrar que todo número natural es o par o impar.\\\\
+      demostración.- \;
 
-%---------------------------------------------8-------------------------------------------
-\item Demostrar que todo número natural es o par o impar.\\\\
-demostración.- \;
+      %---------------------------------------------9-------------------------------------------
+      \item Demostrar que si un conjunto $A$ de números naturales contiene $n_0$ y contiene $k+1$ siempre que contenga $k$, entonces $A$ contiene todos los números naturales $\geq n_0$.\\\\
+      Demostración.- \; Sea $1 \in A$ y que $n, \; n+1 \in A$. Si $A$ no contiene a todos lo números naturales, entonces el conjunto $B$ de números naturales que no están en $A$ es distinto de $\emptyset$. Por lo tanto $B$ tiene un elemento mínimo $n_o$. Ahora bien, $n_o \neq 1$, ya que $1 \in A$, de modo que podemos poner $n_o = (n_o -1) + 1$ donde $n_o - 1$ es un número natural. Pero $n_o-1$ no está en $B$ y por lo tanto $n_o -1$ está en $A$. Por hipótesis, $n_o$, tiene que estar en $A$, con lo que $n_o$ no está en $B$, contrario a lo supuesto.\\\\
 
-%---------------------------------------------9-------------------------------------------
-\item Demostrar que si un conjunto $A$ de números naturales contiene $n_0$ y contiene $k+1$ siempre que contenga $k$, entonces $A$ contiene todos los números naturales $\geq n_0$.\\\\
-Demostración.- \; Sea $1 \in A$ y que $n, \; n+1 \in A$. Si $A$ no contiene a todos lo números naturales, entonces el conjunto $B$ de números naturales que no están en $A$ es distinto de $\emptyset$. Por lo tanto $B$ tiene un elemento mínimo $n_o$. Ahora bien, $n_o \neq 1$, ya que $1 \in A$, de modo que podemos poner $n_o = (n_o -1) + 1$ donde $n_o - 1$ es un número natural. Pero $n_o-1$ no está en $B$ y por lo tanto $n_o -1$ está en $A$. Por hipótesis, $n_o$, tiene que estar en $A$, con lo que $n_o$ no está en $B$, contrario a lo supuesto.\\\\
+      %---------------------------------------------10-------------------------------------------
+      \item Demostrar el principio de inducción completa a partir del principio de buena ordenación.\\\\
+      Se sabe que $1$ está en $B$.Luego si $k$ está en $B$, entonces $1,...,k$ están todos en $A$, de modo que $k+1$ está en $A$ y así $1,...,k+1$ están en $A$, con lo que $k+1$ está en $B$. Por inducción, $B=N$, así que también $A=N$.\\\\
 
-%---------------------------------------------10-------------------------------------------
-\item Demostrar el principio de inducción completa a partir del principio de buena ordenación.\\\\
-Se sabe que $1$ está en $B$.Luego si $k$ está en $B$, entonces $1,...,k$ están todos en $A$, de modo que $k+1$ está en $A$ y así $1,...,k+1$ están en $A$, con lo que $k+1$ está en $B$. Por inducción, $B=N$, así que también $A=N$.\\\\
+      %---------------------------------------------11-------------------------------------------
+      \item Demostrar el principio de inducción completa a partir del principio de inducción ordinario.\\\\
+      demostración.- \; 
 
-%---------------------------------------------11-------------------------------------------
-\item Demostrar el principio de inducción completa a partir del principio de inducción ordinario.\\\\
-demostración.- \; 
+      %---------------------------------------------12--------------------------------------------
+      \item 
+      \begin{enumerate}[\bfseries (a)]
+      %------------------------(a)---------------------------
+      \item Si $a$ es racional y \; $b$ es irracional ¿es $a+b$ necesariamente irracional? ¿Y si $a$ \; y \; $b$ es irracional? \\\\
+      Demostración.- \; 
 
-%---------------------------------------------12--------------------------------------------
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Si $a$ es racional y \; $b$ es irracional ¿es $a+b$ necesariamente irracional? ¿Y si $a$ \; y \; $b$ es irracional? \\\\
-Demostración.- \; 
+      %------------------------(b)---------------------------
+      \item Si $a$ es racional y \; $b$ es irracional, ¿es $ab$ necesariamente irracional?\\\\
+      Demostración.- \; 
 
-%------------------------(b)---------------------------
-\item Si $a$ es racional y \; $b$ es irracional, ¿es $ab$ necesariamente irracional?\\\\
-Demostración.- \; 
+      %------------------------(c)---------------------------
+      \item ¿Existe algún número $a$ tal que $a^2$ es irracional pero $a^4$ racional?\\\\
+      Si existe por ejemplo $\sqrt[4]{2}$\\\\
 
-%------------------------(c)---------------------------
-\item ¿Existe algún número $a$ tal que $a^2$ es irracional pero $a^4$ racional?\\\\
-Si existe por ejemplo $\sqrt[4]{2}$\\\\
+      %------------------------(d)---------------------------
+      \item ¿Existen dos números iracionales tales que sean racionales tanto su suma como su producto?\\\\
+      Si existen por ejemplo $\sqrt{2}$ y $- \sqrt{2}$\\\\
+      \end{enumerate}
 
-%------------------------(d)---------------------------
-\item ¿Existen dos números iracionales tales que sean racionales tanto su suma como su producto?\\\\
-Si existen por ejemplo $\sqrt{2}$ y $- \sqrt{2}$\\\\
-\end{enumerate}
+      %---------------------------------------------13--------------------------------------------
+      \item 
+      \begin{enumerate}[\bfseries a)]
+      %------------------------(a)---------------------------
+      \item Demostrar que $\sqrt{3}$, $\sqrt{5}$ y $\sqrt{6}$ son irracionales. Indicación: Para tratar $\sqrt{3},$ por ejemplo, aplíquese el hecho de que todo entero es de la forma $3n$ ó $3n+1$ ó $3n+2$ ¿Por qué no es aplicable esta demostración para $\sqrt{4}$?\\\\
+      Demostración.- \; Puesto que:
+      \begin{center}
+      \begin{tabular}{r c l c l}
+      $(3n+1)^2$&=&$9n^2 + 6n + 1$&=&$3(3n^2+2n) + 1$\\
+      $(3n+2)^2$&=&$9n^2+12n + 4$&=&$3(3n^2 + 4n + 1) + 1$\\
+      \end{tabular}
+      \end{center}
+      queda demostrado que un número no es múltiplo de $3$ si es de la forma $3n+1$ ó $3n+2$.\\
+      se sigue que $k^2$ es divisible por $3$, entones $k$ debe ser también divisible por $3$. Supóngase ahora que $\sqrt{3}$ fuese racional, y sea $\sqrt{3} = p/q$, donde $p$ \; y \; $q$ no tienen factores comunes. Entonces $p^2=3q^2,$ de modo que $p^2$ es divisible por $3$, así que también lo debe ser $p$. de este modo, $p=3p^{'}$ para algún número natural $p^{'}$, y en consecuencia $(3p^{'})^2 = 3q^2$ ó $(3p^{'})^2 = q^2.$ Así pues, $q$ es tambien divisible por $3$, lo cual es una contradicción.\\
+      Las mismas demostraciones valen para $\sqrt{5}$ y $\sqrt{6}$, ya que las ecuaciones,
+      \begin{center}
+      \begin{tabular}{rclcl}
+      $(5n+1)^2$&=&$25n^2 + 10n + 1$&=&$5(5n^2 + 2n)+1$\\
+      $(5n+2)^2$&=&$25n^2 + 20n + 4$&=&$5(5n^2 + 4n)+4$\\
+      $(5n+3)^2$&=&$25n^2 + 30n + 9$&=&$5(5n^2 + 6n + 1)+4$\\
+      $(5n+4)^2$&=&$25n^2 + 40n + 16$&=&$5(5n^2+8n+3)+1$\\
+      \end{tabular}
+      \end{center}
+      la ecuación correspondiente para los números de la forma $6n+m$ demuestran que si $k^2$ es divisible por $5$ ó $6$, entones también lo debe ser $k$. La demostración falla para $\sqrt{4}$, porque $(4n+2)^2$ es divisible por $4$.\\\\
 
-%---------------------------------------------13--------------------------------------------
-\item 
-\begin{enumerate}[\bfseries a)]
-%------------------------(a)---------------------------
-\item Demostrar que $\sqrt{3}$, $\sqrt{5}$ y $\sqrt{6}$ son irracionales. Indicación: Para tratar $\sqrt{3},$ por ejemplo, aplíquese el hecho de que todo entero es de la forma $3n$ ó $3n+1$ ó $3n+2$ ¿Por qué no es aplicable esta demostración para $\sqrt{4}$?\\\\
-Demostración.- \; Puesto que:
-\begin{center}
-\begin{tabular}{r c l c l}
-$(3n+1)^2$&=&$9n^2 + 6n + 1$&=&$3(3n^2+2n) + 1$\\
-$(3n+2)^2$&=&$9n^2+12n + 4$&=&$3(3n^2 + 4n + 1) + 1$\\
-\end{tabular}
-\end{center}
-queda demostrado que un número no es múltiplo de $3$ si es de la forma $3n+1$ ó $3n+2$.\\
-se sigue que $k^2$ es divisible por $3$, entones $k$ debe ser también divisible por $3$. Supóngase ahora que $\sqrt{3}$ fuese racional, y sea $\sqrt{3} = p/q$, donde $p$ \; y \; $q$ no tienen factores comunes. Entonces $p^2=3q^2,$ de modo que $p^2$ es divisible por $3$, así que también lo debe ser $p$. de este modo, $p=3p^{'}$ para algún número natural $p^{'}$, y en consecuencia $(3p^{'})^2 = 3q^2$ ó $(3p^{'})^2 = q^2.$ Así pues, $q$ es tambien divisible por $3$, lo cual es una contradicción.\\
-Las mismas demostraciones valen para $\sqrt{5}$ y $\sqrt{6}$, ya que las ecuaciones,
-\begin{center}
-\begin{tabular}{rclcl}
-$(5n+1)^2$&=&$25n^2 + 10n + 1$&=&$5(5n^2 + 2n)+1$\\
-$(5n+2)^2$&=&$25n^2 + 20n + 4$&=&$5(5n^2 + 4n)+4$\\
-$(5n+3)^2$&=&$25n^2 + 30n + 9$&=&$5(5n^2 + 6n + 1)+4$\\
-$(5n+4)^2$&=&$25n^2 + 40n + 16$&=&$5(5n^2+8n+3)+1$\\
-\end{tabular}
-\end{center}
-la ecuación correspondiente para los números de la forma $6n+m$ demuestran que si $k^2$ es divisible por $5$ ó $6$, entones también lo debe ser $k$. La demostración falla para $\sqrt{4}$, porque $(4n+2)^2$ es divisible por $4$.\\\\
+      %------------------------(b)---------------------------
+      \item Demostrar que $\sqrt[3]{2}$ y $\sqrt[3]{3}$ son irracionales.\\\\
+      Demostración.- \; Puesto que,
+      $$(2n+1)^3 = 8n^3 + 12n^2 + 6n + 1 = 2(4n^3 + 6n^2 + 3n) + 1,$$
+      se sigue que si $k^3$ es par, entonces $k$ es par. Si $\sqrt[3]{2} = p/q,$ donde $p$ \; y \; $q$ no tienen factores comunes, entonces $p^3 = 2q^3,$ de modo que $p^3$ es divisible por $2,$ por lo que también lo debe ser $p.$ Así pues, $p=2p^{'}$ para algún número natural $p^{'}$ y en consecuencia $(2p^{'})^3 = 2q^3,$ ó $4(p^{'})^3 = q^3.$ Por lo tanto, $q$ es también par, lo cual es una contradicción.\\
+      La demostración para $\sqrt[3]{3}$ es análogo, utilizando las ecuaciones.
+      $$(3n+1)^3 = 27n^3 + 27n^3 + 27n^2 + 9n +1 = 3(9n^3 + 9n^2 + 3n) + 1,$$
+      $$(3n+2)^3 = 27n^3 + 54n^2 + 36n + 8 = 3(9n^2 + 18n^2 + 12n + 2) + 2.$$\\\\
+      \end{enumerate}
 
-%------------------------(b)---------------------------
-\item Demostrar que $\sqrt[3]{2}$ y $\sqrt[3]{3}$ son irracionales.\\\\
-Demostración.- \; Puesto que,
-$$(2n+1)^3 = 8n^3 + 12n^2 + 6n + 1 = 2(4n^3 + 6n^2 + 3n) + 1,$$
-se sigue que si $k^3$ es par, entonces $k$ es par. Si $\sqrt[3]{2} = p/q,$ donde $p$ \; y \; $q$ no tienen factores comunes, entonces $p^3 = 2q^3,$ de modo que $p^3$ es divisible por $2,$ por lo que también lo debe ser $p.$ Así pues, $p=2p^{'}$ para algún número natural $p^{'}$ y en consecuencia $(2p^{'})^3 = 2q^3,$ ó $4(p^{'})^3 = q^3.$ Por lo tanto, $q$ es también par, lo cual es una contradicción.\\
-La demostración para $\sqrt[3]{3}$ es análogo, utilizando las ecuaciones.
-$$(3n+1)^3 = 27n^3 + 27n^3 + 27n^2 + 9n +1 = 3(9n^3 + 9n^2 + 3n) + 1,$$
-$$(3n+2)^3 = 27n^3 + 54n^2 + 36n + 8 = 3(9n^2 + 18n^2 + 12n + 2) + 2.$$\\\\
-\end{enumerate}
+      %---------------------------------------------14--------------------------------------------
+      \item Demostrar que:
+      \begin{enumerate}[\bfseries (a)]
+      %------------------------(a)---------------------------
+      \item $\sqrt{2} + \sqrt{3}$ es irracional.\\\\
+      Demostración.- \; Sea $\sqrt{2} + \sqrt{3}$ racional, entonces $\left( \sqrt{2} + \sqrt{3} \right)^2$ sería racional, luego $$5 + 2 \sqrt{6}$$ y en consecuencia $\sqrt{6}$ sería racional lo cual es falso.\\\\
 
-%---------------------------------------------14--------------------------------------------
-\item Demostrar que:
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item $\sqrt{2} + \sqrt{3}$ es irracional.\\\\
-Demostración.- \; Sea $\sqrt{2} + \sqrt{3}$ racional, entonces $\left( \sqrt{2} + \sqrt{3} \right)^2$ sería racional, luego $$5 + 2 \sqrt{6}$$ y en consecuencia $\sqrt{6}$ sería racional lo cual es falso.\\\\
+      %------------------------(b)---------------------------
+      \item $\sqrt{6} - \sqrt{2} - \sqrt{3}$ es irracional.\\\\
+      Demostración.- \;  Sea $\sqrt{6} - \sqrt{2} - \sqrt{3}$ racional, entonces 
+      \begin{center}
+      \begin{tabular}{rcl}
+      $\left[ \sqrt{6} + \left( \sqrt{2} + \sqrt{3} \right) \right]^2$&=&$6 + \left( \sqrt{2} + \sqrt{3} \right)^2 - 2 \sqrt{6} \left( \sqrt{2} + \sqrt{3} \right)$\\
+      &=&$11 + 2\sqrt{6} \left[ 2 - \left( \sqrt{2} + \sqrt{3} \right) \right]$\\
+      \end{tabular}
+      \end{center}
+      Así, $\sqrt{6} \left[ 2 - \left( \sqrt{2} + \sqrt{3} \right) \right]$ sería racional, con lo que de igual manera sería,
+      \begin{center}
+      \begin{tabular}{r c l}
+      $\lbrace \sqrt{6} \left[ 1 - \left( \sqrt{2} + \sqrt{3} \right) \right] \rbrace ^2$&=&$6 \left[ 1 - \left( \sqrt{2} + \sqrt{3} \right) \right]^2$\\
+      &=&$11 + 2\sqrt{6} \left[1 - \left( \sqrt{2} + \sqrt{3} \right) \right]$\\
+      \end{tabular}
+      \end{center}
+      De este modo $\sqrt{6} - (\sqrt{2} + \sqrt{3})$ y $\sqrt{6} - 2 \left( \sqrt{2} + \sqrt{3} \right)$ serían racionales, lo que implicaría que $\sqrt{2} + \sqrt{3}$ fuese racional, en contradicción de la parte $a)$.\\\\
+      \end{enumerate}
 
-%------------------------(b)---------------------------
-\item $\sqrt{6} - \sqrt{2} - \sqrt{3}$ es irracional.\\\\
-Demostración.- \;  Sea $\sqrt{6} - \sqrt{2} - \sqrt{3}$ racional, entonces 
-\begin{center}
-\begin{tabular}{rcl}
-$\left[ \sqrt{6} + \left( \sqrt{2} + \sqrt{3} \right) \right]^2$&=&$6 + \left( \sqrt{2} + \sqrt{3} \right)^2 - 2 \sqrt{6} \left( \sqrt{2} + \sqrt{3} \right)$\\
-&=&$11 + 2\sqrt{6} \left[ 2 - \left( \sqrt{2} + \sqrt{3} \right) \right]$\\
-\end{tabular}
-\end{center}
-Así, $\sqrt{6} \left[ 2 - \left( \sqrt{2} + \sqrt{3} \right) \right]$ sería racional, con lo que de igual manera sería,
-\begin{center}
-\begin{tabular}{r c l}
-$\lbrace \sqrt{6} \left[ 1 - \left( \sqrt{2} + \sqrt{3} \right) \right] \rbrace ^2$&=&$6 \left[ 1 - \left( \sqrt{2} + \sqrt{3} \right) \right]^2$\\
-&=&$11 + 2\sqrt{6} \left[1 - \left( \sqrt{2} + \sqrt{3} \right) \right]$\\
-\end{tabular}
-\end{center}
-De este modo $\sqrt{6} - (\sqrt{2} + \sqrt{3})$ y $\sqrt{6} - 2 \left( \sqrt{2} + \sqrt{3} \right)$ serían racionales, lo que implicaría que $\sqrt{2} + \sqrt{3}$ fuese racional, en contradicción de la parte $a)$.\\\\
-\end{enumerate}
+      %---------------------------------------------15--------------------------------------------
+      \item 
+      \begin{enumerate}[\bfseries (a)]
+      %------------------------(a)---------------------------
+      \item Demostrar que si $x=p+ \sqrt{q}$, donde $p$ \; y \; $q$ son racionales, y \; $m$ es un número natural, entonces $x^m = a + b \sqrt{q}$ siendo $a$ \; y \; $b$ números racionales.\\\\
+      Demostración.- \; Sea $m=1$ entonces $(p + \sqrt{q})^1 = a + b\sqrt{q}$. Supongamos que se cumple para $m$, entonces $$(p+\sqrt{q})^{m+1} = (a + b\sqrt{q})(p + \sqrt{q}) = (ap+bq)+(a+pb)\sqrt{q}$$ donde $ap+bq$ y $a+bp$ son racionales.\\\\
 
-%---------------------------------------------15--------------------------------------------
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Demostrar que si $x=p+ \sqrt{q}$, donde $p$ \; y \; $q$ son racionales, y \; $m$ es un número natural, entonces $x^m = a + b \sqrt{q}$ siendo $a$ \; y \; $b$ números racionales.\\\\
-Demostración.- \; Sea $m=1$ entonces $(p + \sqrt{q})^1 = a + b\sqrt{q}$. Supongamos que se cumple para $m$, entonces $$(p+\sqrt{q})^{m+1} = (a + b\sqrt{q})(p + \sqrt{q}) = (ap+bq)+(a+pb)\sqrt{q}$$ donde $ap+bq$ y $a+bp$ son racionales.\\\\
+      %------------------------(b)---------------------------
+      \item Demostrar también que $(p - \sqrt{q})^m = a - b\sqrt{q}$\\\\
+      Demostración.- \; Similar a la parte $a)$, se cumple para $m=1$. Si es verdad para $m$, entonces $$(p-\sqrt{q})^{m+1} = (a - b\sqrt{q})(p - \sqrt{q}) = (ap+bq)-(a+pb)\sqrt{q}$$.\\\\
+      \end{enumerate}
 
-%------------------------(b)---------------------------
-\item Demostrar también que $(p - \sqrt{q})^m = a - b\sqrt{q}$\\\\
-Demostración.- \; Similar a la parte $a)$, se cumple para $m=1$. Si es verdad para $m$, entonces $$(p-\sqrt{q})^{m+1} = (a - b\sqrt{q})(p - \sqrt{q}) = (ap+bq)-(a+pb)\sqrt{q}$$.\\\\
-\end{enumerate}
+      %---------------------------------------------15--------------------------------------------
+      \item 
+      \begin{enumerate}[\bfseries (a)]
+      %------------------------(a)---------------------------
+      \item Demostrar que si $m$ \; y \; $n$ son números naturales y $m^2/n^2 < 2$, entonces $\left( m+2n \right)^2 / \left( m + 2 \right)^2 > 2;$ demostrar, además que $$\dfrac{\left( m + 2n \right)^2}{\left( m + n \right)^2} - 2 < 2 - \dfrac{m^2}{n^2}$$\\\\
+      Demostración.- \; Si $m^2/n^2 < 2$ entonces $m^2 < 2 n^2$, sumando $m^2$, $4mn$ y $2n^2$ tenemos $2m^2 + 4mn + 2n^2 < 4n^2 + m^2 + 4mn$, luego $2(m+n)^2 < (m+2n)^2$, así nos queda $(m + 2n)^2 / (m+n)^2 > 2$\\
+      Para la segunda parte podemos partir de $m^2 - 2n^2<0$, entonces:
+      \begin{center}
+      \begin{tabular}{r c l l}
+      $m^2 - 2n^2$&$<$&$0$&\\\\
+      $m^3 - 2mn^2$&$<$&$0$&multiplicando por $m$\\\\
+      $mn^2 + m^3 + mn^2 - 4mn^2$&$<$&$0$&escribiendo $mn^2$ de otra manera\\\\
+      $mn^2 + 2n^3 + m^3 + m^2 n + mn^2 -2m^2 n - 4mn^2 -2n^3$&$<$&$0$&sumando $2n^3$ y $2m^2 n$\\\\
+      $n^2 (m+2n) + \left[ (m^2 + 2mn + n^2)(m-2n) \right]$&$<$&$0$&\\\\
+      $ n^2(m+2n)^2  +  \left[ (m+n)^2 (m+2n)(m-2n) \right]$&$<$&$0$&multiplicando por $m+2n$\\\\
+      $n^2(m+2n)^2  +  \left[ (m+n)^2 (m^2 - 4n^2) \right]$&$<$&$0$&\\\\
+      $\dfrac{n^2(m+2n)^2 - 4n^2(m+n)^2 + m^2(m+n)^2}{n^2(m+n)^2}$&$<$&$0$&dividimos por $n^2(m+n)^2$\\\\
+      $\dfrac{(m+2n)^2 - 2(m+2)^2 - 2n^2(m+2)^2}{n^2(m+n)^2}$&$<$&$- \dfrac{m^2}{n^2}$&\\\\
+      $\dfrac{(m+2n)^2}{(m+n)^2} - 2$&$<$&$2 - \dfrac{m^2}{n^2}$&\\\\
+      \end{tabular}
+      \end{center}
 
-%---------------------------------------------15--------------------------------------------
-\item 
-\begin{enumerate}[\bfseries (a)]
-%------------------------(a)---------------------------
-\item Demostrar que si $m$ \; y \; $n$ son números naturales y $m^2/n^2 < 2$, entonces $\left( m+2n \right)^2 / \left( m + 2 \right)^2 > 2;$ demostrar, además que $$\dfrac{\left( m + 2n \right)^2}{\left( m + n \right)^2} - 2 < 2 - \dfrac{m^2}{n^2}$$\\\\
-Demostración.- \; Si $m^2/n^2 < 2$ entonces $m^2 < 2 n^2$, sumando $m^2$, $4mn$ y $2n^2$ tenemos $2m^2 + 4mn + 2n^2 < 4n^2 + m^2 + 4mn$, luego $2(m+n)^2 < (m+2n)^2$, así nos queda $(m + 2n)^2 / (m+n)^2 > 2$\\
-Para la segunda parte podemos partir de $m^2 - 2n^2<0$, entonces:
-\begin{center}
-\begin{tabular}{r c l l}
-$m^2 - 2n^2$&$<$&$0$&\\\\
-$m^3 - 2mn^2$&$<$&$0$&multiplicando por $m$\\\\
-$mn^2 + m^3 + mn^2 - 4mn^2$&$<$&$0$&escribiendo $mn^2$ de otra manera\\\\
-$mn^2 + 2n^3 + m^3 + m^2 n + mn^2 -2m^2 n - 4mn^2 -2n^3$&$<$&$0$&sumando $2n^3$ y $2m^2 n$\\\\
-$n^2 (m+2n) + \left[ (m^2 + 2mn + n^2)(m-2n) \right]$&$<$&$0$&\\\\
-$ n^2(m+2n)^2  +  \left[ (m+n)^2 (m+2n)(m-2n) \right]$&$<$&$0$&multiplicando por $m+2n$\\\\
-$n^2(m+2n)^2  +  \left[ (m+n)^2 (m^2 - 4n^2) \right]$&$<$&$0$&\\\\
-$\dfrac{n^2(m+2n)^2 - 4n^2(m+n)^2 + m^2(m+n)^2}{n^2(m+n)^2}$&$<$&$0$&dividimos por $n^2(m+n)^2$\\\\
-$\dfrac{(m+2n)^2 - 2(m+2)^2 - 2n^2(m+2)^2}{n^2(m+n)^2}$&$<$&$- \dfrac{m^2}{n^2}$&\\\\
-$\dfrac{(m+2n)^2}{(m+n)^2} - 2$&$<$&$2 - \dfrac{m^2}{n^2}$&\\\\
-\end{tabular}
-\end{center}
+      %------------------------(b)---------------------------
+      \item Demostrar los mismos resultados con todos los signos de desigualdad invertidos. \\\\
+      Demostración.- \; Quedará de la siguiente forma, Si $m^2/n^2>2$, entonces $\left( m+2n \right)^2 / \left( m + 2 \right)^2 < 2$, luego demostrar que $$\dfrac{\left( m + 2n \right)^2}{\left( m + n \right)^2} - 2 > 2 - \dfrac{m^2}{n^2}$$
+      Similar a la parte $a)$ tendremos $m^2 > 2n^2$, luego $2m^2 + 4mn + 2n^2 > 4n^2 + m^2 + 4mn$, así $ (m+2n)^2 > 2(m + n)^2 $\\
+      Después se puede demostrar la segunda parte con facilidad siguiendo el ejemplo $a)$ pero invirtiendo la desigualdad ya que $n$ \; y \; $m$ son números natural.\\\\
 
-%------------------------(b)---------------------------
-\item Demostrar los mismos resultados con todos los signos de desigualdad invertidos. \\\\
-Demostración.- \; Quedará de la siguiente forma, Si $m^2/n^2>2$, entonces $\left( m+2n \right)^2 / \left( m + 2 \right)^2 < 2$, luego demostrar que $$\dfrac{\left( m + 2n \right)^2}{\left( m + n \right)^2} - 2 > 2 - \dfrac{m^2}{n^2}$$
-Similar a la parte $a)$ tendremos $m^2 > 2n^2$, luego $2m^2 + 4mn + 2n^2 > 4n^2 + m^2 + 4mn$, así $ (m+2n)^2 > 2(m + n)^2 $\\
-Después se puede demostrar la segunda parte con facilidad siguiendo el ejemplo $a)$ pero invirtiendo la desigualdad ya que $n$ \; y \; $m$ son números natural.\\\\
+      %------------------------(c)---------------------------
+      \item Demostrar que si $m/n < \sqrt{2}$, entonces existe otro número racional $m^2 / n^2$ con $m/n < m^{'} / n^{'} < \sqrt{2}$\\\\
+      Demostración.- \; 
+      \end{enumerate}
 
-%------------------------(c)---------------------------
-\item Demostrar que si $m/n < \sqrt{2}$, entonces existe otro número racional $m^2 / n^2$ con $m/n < m^{'} / n^{'} < \sqrt{2}$\\\\
-Demostración.- \; 
-\end{enumerate}
+      %---------------------------------------------17----------------------------------------------
+      \item Parece normal que $\sqrt{n}$ tenga que ser irracional siempre que el número natural $n$ no sea el cuadrado de otro número natural. Aunque puede usarse en realidad el método del problema 13 del capitulo 2 de Michael Spivak para tratar cualquier caso particular, no está claro, sin más, que este método tenga que dar necesariamente resultados, y para una demostración del caso general se necesita más información. Un número natural $p$ se dice que es un número primo si es imposible escribir $p=ab$; por conveniencia se considera que $1$ no es un número primo. Los primeros números primos son $2,3,5,7,11,13,17,19.$ Si $n>1$ no es primo, entonces $n=ab,$ con $a$ \; y \; $b$ ambos $<n;$ si uno de los dos $a$ \; o \; $b$ no es primo, puede ser factorizado de manera parecido; continuando de esta manera se demuestra que se puede escribir $n$ como producto de números primos. Por ejemplo, $28=2\cdot 2\cdot 7.$\\
+      \begin{enumerate}[\bfseries a)]
+      %------------------------(a)---------------------------
+      \item Conviértase este argumento en una demostración riguroso por inducción completa. (En realidad, cualquier matemático razonable aceptaría este argumento informal, pero ello se debería en parte a que para él estaría claro cómo formularla rigurosamente.)\\
+      Un teorema fundamental acerca de enteros, que no demostraremos aquí, afirma que esta factorización es única, salvo en lo que respeta al orden de los factores. Así, por ejemplo, $28$ no puede escribirse nunca como producto de números primos uno de los cuales sea $3$, ni puede ser escrito de manera que $2$ aparezca una sola vez (ahora debería verse clara la razón de no admitir a $1$ como número primo.)\\\\
+      demostración.- \; Supóngase que para todo número $<n$ puede ser escrito  como un producto de primos. Si $n>1$ no es primo, entonces $n=ab$, para $a,b<n$. Pero $a$ \; y \; $b$ son ambos producto de primos, así que $n=ab$ lo es también.\\\\
 
-%---------------------------------------------17----------------------------------------------
-\item Parece normal que $\sqrt{n}$ tenga que ser irracional siempre que el número natural $n$ no sea el cuadrado de otro número natural. Aunque puede usarse en realidad el método del problema 13 del capitulo 2 de Michael Spivak para tratar cualquier caso particular, no está claro, sin más, que este método tenga que dar necesariamente resultados, y para una demostración del caso general se necesita más información. Un número natural $p$ se dice que es un número primo si es imposible escribir $p=ab$; por conveniencia se considera que $1$ no es un número primo. Los primeros números primos son $2,3,5,7,11,13,17,19.$ Si $n>1$ no es primo, entonces $n=ab,$ con $a$ \; y \; $b$ ambos $<n;$ si uno de los dos $a$ \; o \; $b$ no es primo, puede ser factorizado de manera parecido; continuando de esta manera se demuestra que se puede escribir $n$ como producto de números primos. Por ejemplo, $28=2\cdot 2\cdot 7.$\\
-\begin{enumerate}[\bfseries a)]
-%------------------------(a)---------------------------
-\item Conviértase este argumento en una demostración riguroso por inducción completa. (En realidad, cualquier matemático razonable aceptaría este argumento informal, pero ello se debería en parte a que para él estaría claro cómo formularla rigurosamente.)\\
-Un teorema fundamental acerca de enteros, que no demostraremos aquí, afirma que esta factorización es única, salvo en lo que respeta al orden de los factores. Así, por ejemplo, $28$ no puede escribirse nunca como producto de números primos uno de los cuales sea $3$, ni puede ser escrito de manera que $2$ aparezca una sola vez (ahora debería verse clara la razón de no admitir a $1$ como número primo.)\\\\
-demostración.- \; Supóngase que para todo número $<n$ puede ser escrito  como un producto de primos. Si $n>1$ no es primo, entonces $n=ab$, para $a,b<n$. Pero $a$ \; y \; $b$ son ambos producto de primos, así que $n=ab$ lo es también.\\\\
+      %------------------------(b)---------------------------
+      \item Utilizando este hecho, demostrar que $\sqrt{n}$ es irracional a no ser que $n=m^2$ para algún número natural $m.$\\\\
+      Demostración.- \; Sea $\sqrt{n} = \dfrac{p}{q}$, entonces $nb^2 = a^2,$  luego si descomponemos en producto de factores primos, $nb^2$ y $a^2$ deberían coincidir. Ahora según lo explicado anteriormente, cada número primo debe aparecer un número par de veces en $a^2$ y $b^2$, y por lo tanto deberá ocurrir lo mismo con $n.$ Esto implica que $n$ es un cuadrado perfecto.\\\\
 
-%------------------------(b)---------------------------
-\item Utilizando este hecho, demostrar que $\sqrt{n}$ es irracional a no ser que $n=m^2$ para algún número natural $m.$\\\\
-Demostración.- \; Sea $\sqrt{n} = \dfrac{p}{q}$, entonces $nb^2 = a^2,$  luego si descomponemos en producto de factores primos, $nb^2$ y $a^2$ deberían coincidir. Ahora según lo explicado anteriormente, cada número primo debe aparecer un número par de veces en $a^2$ y $b^2$, y por lo tanto deberá ocurrir lo mismo con $n.$ Esto implica que $n$ es un cuadrado perfecto.\\\\
+      %------------------------(c)---------------------------
+      \item Demostrar que $\sqrt[k]{n}$ es irracional a no ser que $n=m^k$\\\\
+      Demostración.- \; 
 
-%------------------------(c)---------------------------
-\item Demostrar que $\sqrt[k]{n}$ es irracional a no ser que $n=m^k$\\\\
-Demostración.- \; 
+      %------------------------(d)---------------------------
+      \item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
+      Demostración.- \;  
+      \end{enumerate}
 
-%------------------------(d)---------------------------
-\item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
-Demostración.- \;  
-\end{enumerate}
-
-\end{enumerate}
+    \end{enumerate}
