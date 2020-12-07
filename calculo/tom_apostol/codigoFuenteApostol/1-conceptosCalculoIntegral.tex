@@ -128,7 +128,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
 
         %--------------------5.--------------------
         \item Sea $g(x) = \sqrt{4-x^2}$ para $|x| \leq 2$. Comprobar cada una de las fórmulas siguientes e indicar para qué valores de $x, \; y, s$ y $t$ son válidas.
-            \begin{enumerate}[\bfseries a)]
+            \begin{enumerate}[\bfseries (a)]
                 %----------(a)----------
                 \item $g(-x) = g(x)$\\\\
                 Se tiene $g(-x)=\sqrt{2-(-x)^2} = \sqrt{2-(x)^2} = g(x), \; \; para \; |x| \leq 2$\\\\
@@ -136,19 +136,19 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 \item $g(2y) = 2\sqrt{1-y^2}$\\\\
                 $g(2y)=\sqrt{4-(2y)^2}= \sqrt{4(1-y^2)} = 2 \sqrt{1-y^2}, \; \; para \; |y|\leq 1$ Se obtiene $|y| \leq 1$  de $\sqrt{1-y^2}$ es decir $1-y^2 \geq 0$ entonces $\sqrt{y^2} \leq \sqrt{1}$ \; y \; $|y|\leq 1$\\\\
                 %----------(c)----------
-                \item $g\left( \dfrac{1}{t} \right) = \dfrac{\sqrt{4t^2}-1}{|t|}$\\\\
+                \item $g\left( \dfrac{1}{t} \right) = \dfrac{\sqrt{4t^2-1}}{|t|}$\\\\
                 $g\left( \dfrac{1}{t} \right) = \sqrt{4 - \left( \dfrac{1}{t} \right)^2} = \sqrt{\dfrac{4t^2 - 1}{t^2}} =\dfrac{\sqrt{4t^2 - 1}}{|t|}, \; \; para \; |t| \geq \dfrac{1}{2}$\\\\
-                Para hallar los valores correspondientes debemos analizar $\sqrt{4t^2 - 1}$\\\\
+                Para hallar los valores correspondientes debemos analizar $\sqrt{4t^2 - 1}$. Es decir $$4t^2-1 \geq 0 \Rightarrow 4t^2 \geq 1 \Rightarrow t^2 \geq \dfrac{1}{2^2} \Rightarrow |t| \geq \dfrac{1}{2}$$\\
                 %----------(d)----------
                 \item $g(a-2) = \sqrt{4a-a^2}$\\\\
-                $g(a-2) = \sqrt{4 - x^2} = \sqrt{4 - (a-2)^2} = \sqrt{4a - a^2}, \; \; para \; 0\leq a \leq 4$\\\\
+                $g(a-2) = \sqrt{4 - x^2} = \sqrt{4 - (a-2)^2} = \sqrt{4a - a^2}, \; \; para \; 0\leq a \leq 4.$ Basta probar  $4a-a^2 \geq 0$\\\\
                 %----------(e)----------
                 \item $g \left( \dfrac{s}{2} \right) = \dfrac{1}{2} \sqrt{16 - s^2}$\\\\
-                $s\left( \dfrac{s}{2} \right) = \sqrt{4 - \left( \dfrac{s}{2} \right)^2} = \dfrac{\sqrt{16 - s^2}}{2}, \; \; para \; |s| \leq 4$\\\\
+                $s\left( \dfrac{s}{2} \right) = \sqrt{4 - \left( \dfrac{s}{2} \right)^2} = \dfrac{\sqrt{16 - s^2}}{2}, \; \; para \; |s| \leq 4$. ya que solo basta comprobar que $\sqrt{16 - s^2} \geq 0$\\\\
                 %----------(f)----------
                 \item $\dfrac{1}{2 +g(x)} = \dfrac{2-g(x)}{x^2}$\\\\ 
-                $\dfrac{1}{2 +g(x)} = \dfrac{1}{2+ \sqrt{4-x^2}} \cdot \dfrac{2 - \sqrt{4-x^2}}{2 - \sqrt{4-x^2}} = \dfrac{2 - g(x)}{x^2}\; para \; \; 0 < |x| \leq 2 $\\\\ 
-                Evaluemos $\sqrt{4-x^2}$. Sea $4-x^2 \geq 0$ entonce $\sqrt{x^2} \leq 2$. Por otro lado tenemos que la función no puede ser $0$ por $\dfrac{1}{x^2}$, por lo tanto debe ser $x^2\leq 0$.\\\\ 
+                $\dfrac{1}{2 +g(x)} = \dfrac{1}{2+ \sqrt{4-x^2}} \cdot \dfrac{2 - \sqrt{4-x^2}}{2 - \sqrt{4-x^2}} = \dfrac{2 - g(x)}{x^2}\; para \; \; |x| \leq 2 \; y \; x \neq 0$\\\\ 
+                Evaluemos $\sqrt{4-x^2}$. Sea $4-x^2 \geq 0$ entonce $\sqrt{x^2} \leq 2$. Por otro lado tenemos que la función no puede ser $0$ por $\dfrac{1}{x^2}$, por lo tanto debe ser $x^2\neq 0$.\\\\ 
             \end{enumerate}
 
         %--------------------6.-------------------
@@ -420,3 +420,4 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
             \end{enumerate}
 
     \end{enumerate}
+

@@ -134,7 +134,7 @@ Desarrollar expectativas es el proceso de pensar deliberadamente en lo que esper
 \section{Recopilando información}
 Los resultados de esa operación son los datos que necesita recopilar y luego determina si los datos que recopiló coinciden con sus expectativas. Para extender la metáfora del restaurante, cuando vas al restaurante, obtener el cheque es recopilar los datos.
 
-\section{omparación de expectativas con datos}
+\section{Comparación de expectativas con datos}
 Un indicador clave de qué tan bien va su análisis de datos es lo fácil o difícil que es hacer coincidir los datos que recopiló con sus expectativas originales.
 
 \section{Aplicación del proceso de Epicyle of Analysis}
@@ -254,6 +254,74 @@ Es importante notar que aquí, nuevamente, se aplica el concepto de epiciclo de 
         \end{enumerate}
         \textbf{El objetivo del análisis exploratorio de datos es hacer que piense en sus datos y razone sobre su pregunta. En este punto, podemos refinar nuestra pregunta o recopilar nuevos datos, todo en un proceso iterativo para llegar a la verdad}
 
-    \section{Uso de modelos para explorar sus datos}
-    
+\chapter{Uso de modelos para explorar sus datos}
+La construcción de modelos, como todo el proceso de análisis de datos en sí, es un proceso iterativo. Los modelos se utilizan para proporcionar reducción de datos y para darle una idea de la población sobre la que está tratando de hacer inferencias. Es importante establecer primero sus expectativas sobre cómo un modelo debe caracterizar un conjunto de datos antes de aplicar un modelo a los datos. Luego, puede verificar si su modelo se ajusta a sus expectativas. A menudo, habrá características del conjunto de datos que no se ajustan a su modelo y tendrá que refinar su modelo o examinar el proceso de recopilación de datos.
+ 
+\chapter{Lo primero, inferencia}
+En general, el objetivo de la inferencia es poder hacer una declaración sobre algo que no se observa e idealmente poder caracterizar cualquier incertidumbre que tenga sobre esa declaración. La inferencia es difícil debido a la diferencia entre lo que puede observar y lo que en última instancia desea saber.
+
+    \section{Identificar la población}
+    Identificar la población es la tarea más importante. Si no puede identificar o describir coherentemente la población, entonces no puede hacer una inferencia. Solo para. Una vez que haya averiguado cuál es la población y sobre qué característica de la población desea hacer una declaración (por ejemplo, la media), luego puede traducir eso en una declaración más específica utilizando una estadística formal.\\ 
+    \section{Describe el proceso de muestreo}
+    ¿Cómo llegaron los datos de la población a su computadora? Ser capaz de describir este proceso es importante para determinar si los datos son útiles para hacer inferencias sobre las características de la población. Describir el proceso de muestreo depende de su capacidad para describir coherentemente la población.
+    \section{Describe un modelo para la población}
+    Necesitamos tener una representación abstracta de cómo los elementos de la población se relacionan entre sí. Por lo general, esto viene en forma de un modelo estadístico que podemos representar usando notación matemática. Sin embargo, en situaciones más complejas, podemos recurrir a representaciones algorítmicas que no se pueden escribir claramente en papel (muchos enfoques de aprendizaje automático deben describirse de esta manera).
+    \textbf{no debe obsesionarse con desarrollar un modelo correcto; en su lugar, debe identificar un modelo que le sea útil y que cuente una historia sobre los datos y los procesos subyacentes que está tratando de estudiar.}\\
+    Las tres cosas que debemos hacer para hacer una inferencia son:
+    \begin{enumerate}[\bfseries 1.]
+	\item \textbf{Define la población.} 
+	\item \textbf{Describe el proceso de muestro.}
+	\item \textbf{Describe un modelo para la población.}
+    \end{enumerate}
+    \section{Factores que afectan la calidad de la inferencia}
+    Los factores clave que afectan la calidad de una inferencia que podría hacer se relacionan con violaciones en nuestro pensamiento sobre el proceso de muestreo y el modelo para la población.\\
+    si no podemos definir coherentemente la población, entonces cualquier inferencia que hagamos a la población se definirá de manera similar de manera vaga.
+    \textbf{Este fenómeno a veces se denomina sesgo de selección porque las cantidades que estima están sesgadas hacia la selección de la población que muestreó.}
+    \section{Las poblaciones se presentan en muchas formas}
+	\subsection{Series de tiempo}
+	Independientemente de lo que elija, es importante dejar claro a qué población se refiere antes de intentar hacer inferencias a partir de los datos.
+	\subsection{Procesos naturales}
+	es posible que tengamos datos de que solo se mide en el espacio. Por ejemplo, podemos tener un mapa de los epicentros de todos los terremotos que han ocurrido en un área. Entonces, ¿cuál es la población? Un enfoque común es decir que existe un proceso estocástico no observado que arroja terremotos al azar en el área y que nuestros datos representan una muestra aleatoria de este proceso. En ese caso, estamos utilizando los datos para intentar obtener más información sobre este proceso no observado.
+	\subsection{Datos como población}	
+	Una técnica que siempre es posible, pero que no se usa comúnmente, es tratar el conjunto de datos como una población. En este caso, no hay inferencia porque no hay muestreo. Debido a que su conjunto de datos es la población, no hay incertidumbre sobre ninguna característica de la población. Puede que esto no suene como una estrategia útil, pero hay circunstancias en las que se puede utilizar para responder preguntas importantes. En particular, hay momentos en los que no nos preocupan las cosas fuera del conjunto de datos. Por ejemplo, es común en las organizaciones analizar los datos salariales para asegurarse de que a las mujeres no se les paga menos que a los hombres por un trabajo comparable o que no existen grandes desequilibrios entre empleados de diferentes grupos étnicos. En este escenario, las diferencias en los salarios entre los diferentes grupos se pueden calcular en el conjunto de datos y se puede ver si las diferencias son lo suficientemente grandes como para ser motivo de preocupación. La cuestión es que los datos responden directamente a una pregunta de interés.
+
+\chapter{Modelado formal}
+Escribir un modelo estadístico usando notación matemática, a diferencia del lenguaje natural, lo obliga a ser preciso en su descripción del modelo y en su declaración de lo que está tratando de lograr, como estimar un parámetro.
+    \section{¿Cuáles son los objetivos del modelado formal?}
+    Un objetivo clave del modelado formal es desarrollar una especificación precisa de su pregunta y cómo se pueden utilizar sus datos para responder a esa pregunta. Los modelos formales le permiten identificar claramente lo que está tratando de inferir a partir de los datos y qué forma adoptan las relaciones entre las características de la población.
+    \section{Marco general}
+    \begin{enumerate}[\bfseries 1.]
+	\item \textbf{Establecer expectativas} Establecer expectativas viene en forma de desarrollar un modelo primario que representa su mejor sentido de lo que proporciona la respuesta a su pregunta. Este modelo se elige en función de la información que tenga actualmente disponible. 
+	\item \textbf{Recopilación de información} Una vez que se establece el modelo primario, querremos crear un conjunto de modelos secundarios que desafíen al modelo primario de alguna manera. 
+	\item \textbf{Revisión de expectativas} Si nuestros modelos secundarios tienen éxito en desafiar nuestro modelo primario y ponen en duda las conclusiones del modelo primario, entonces es posible que debamos ajustar o modificar el modelo primario para reflejar mejor lo que hemos aprendido de los modelos secundarios.
+    \end{enumerate}
+	\subsection{Modelo primario}
+	A menudo es útil comenzar con un modelo principal. Es probable que este modelo se derive de cualquier análisis exploratorio que ya haya realizado y servirá como candidato principal para algo que resuma sucintamente sus resultados y coincida con sus expectativas. Es importante darse cuenta de que en un momento dado de un análisis de datos, el modelo principal no es necesariamente el modelo final. Es simplemente el modelo con el que comparará otros modelos secundarios. El proceso de comparar su modelo con otros modelos secundarios a menudo se conoce como análisis de sensibilidad, porque le interesa ver qué tan sensible es su modelo a los cambios, como agregar o eliminar predictores o eliminar valores atípicos en los datos.
+	\subsection{Modelos secundarios}
+	Una vez que se haya decidido por un modelo principal, normalmente desarrollará una serie de modelos secundarios. El propósito de estos modelos es probar la legitimidad y solidez de su modelo principal y potencialmente generar evidencia contra su modelo principal. Si los modelos secundarios logran generar evidencia que refuta las conclusiones de su modelo primario, es posible que deba volver a examinar el modelo primario y determinar si sus conclusiones siguen siendo razonables.
+    \section{Análisis asociativos}
+    Los análisis asociativos son aquellos en los que buscamos una asociación entre dos o más características en presencia de otros factores potencialmente confusos. Hay tres clases de variables en las que es importante pensar en un análisis asociativo:
+    \begin{enumerate}[\bfseries 1.]
+	\item \textbf{Resultado} El resultado es la característica de su conjunto de datos que se cree que cambiará junto con su predictor clave. Incluso si no está haciendo una pregunta causal o mecanicista, por lo que no cree necesariamente que el resultado responda a los cambios en el predictor clave, todavía es necesario definir un resultado para la mayoría de los enfoques formales de modelado.
+	\item \textbf{Predictor clave} Queremos saber cómo cambia el resultado con este predictor clave.
+	\item \textbf{Posibles factores de confusión} Ésta es una gran clase de predictores que están relacionados tanto con el predictor clave como con el resultado. Es importante comprender bien qué son y si están disponibles en su conjunto de datos.
+    \end{enumerate}
+    Una vez que haya identificado estas tres clases de variables en su conjunto de datos, puede comenzar a pensar en el modelado formal en un entorno asociativo.\\
+    A menudo es preferible elegir el modelo que sea más simple. Hay dos razones para esto. Primero, con un modelo más simple puede ser más fácil contar una historia sobre lo que está sucediendo en los datos a través de los diversos parámetros del modelo. Por ejemplo, es más fácil explicar una tendencia lineal que explicar una tendencia exponencial. En segundo lugar, los modelos más simples, desde una perspectiva estadística, son más “eficientes”, por lo que hacen un mejor uso de los datos por parámetro que se está estimando.
+    \section{Análisis de predicción}
+    Los análisis de predicción a menudo dejarán al algoritmo de predicción determinar la importancia de cada predictor y determinar la forma funcional del modelo. Para muchos análisis de predicción, no es posible escribir literalmente el modelo que se está utilizando para predecir porque no se puede representar utilizando la notación matemática estándar. Muchas rutinas modernas de predicción están estructuradas como algoritmos o procedimientos que toman entradas y las transforman en salidas. El camino que toman las entradas para transformarse en salidas puede ser muy no lineal y los predictores pueden interactuar con otros predictores en el camino. Normalmente, no hay parámetros de interés que tratemos de estimar; de hecho, muchos procedimientos algorítmicos no tienen ningún parámetro estimable en absoluto. La clave para recordar con los análisis de predicción es que generalmente no nos importan los detalles específicos del modelo.
+	\subsection{Expectativas}
+	¿Cuál es el escenario ideal en un problema de predicción? Generalmente, lo que queremos es un predictor, o un conjunto de predictores, para producir una buena separación en el resultado. El objetivo de la mayoría de los problemas de predicción es identificar un conjunto de predictores que minimice el tamaño.
+	\subsection{Evaluación}
+	Para problemas de predicción, decidir el siguiente paso después del ajuste inicial del modelo puede depender de algunos factores.
+	\begin{enumerate}[\bfseries 1.]
+	    \item \textbf{Calidad de la predicción} ¿La precisión del modelo es lo suficientemente buena para sus propósitos? Esto depende del objetivo final y los riesgos asociados con las acciones posteriores.
+	    \item \textbf{Ajuste de modelo} Un sello distintivo de los algoritmos de predicción son sus numerosos parámetros de ajuste. A veces, estos parámetros pueden tener grandes efectos en la calidad de la predicción si se modifican, por lo que es importante estar informado del impacto de los parámetros de ajuste para cualquier algoritmo que utilice. No existe un algoritmo de predicción para el que un solo conjunto de parámetros de ajuste funcione bien para todos los problemas.
+	    \item \textbf{Disponibilidad de otros datos} Muchos algoritmos de predicción son bastante buenos para explorar la estructura de conjuntos de datos grandes y complejos e identificar una estructura que pueda predecir mejor su resultado. Si encuentra que su modelo no está funcionando bien, incluso después de algunos ajustes de los parámetros de ajuste, es probable que necesite datos adicionales para mejorar su predicción.
+	\end{enumerate}
+    \section{Resumen}
+    El modelado formal es típicamente el aspecto más técnico del análisis de datos, y su propósito es establecer con precisión cuál es el objetivo del análisis y proporcionar un marco riguroso para desafiar sus hallazgos y probar sus suposiciones. El enfoque que adopte puede variar dependiendo principalmente de si su pregunta se trata fundamentalmente de estimar una asociación que desarrolla una buena predicción.
+
+\chapter{Inferencia frente a predicción: implicaciones para la estrategia de modelado}
+
 \end{document}
