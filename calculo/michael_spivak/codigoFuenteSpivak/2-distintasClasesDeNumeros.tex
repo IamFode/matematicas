@@ -294,23 +294,25 @@
 
       %---------------------------------------------12--------------------------------------------
       \item 
-      \begin{enumerate}[\bfseries (a)]
-      %------------------------(a)---------------------------
-      \item Si $a$ es racional y \; $b$ es irracional ¿es $a+b$ necesariamente irracional? ¿Y si $a$ \; y \; $b$ es irracional? \\\\
-      Respuesta.- \; Si, puesto que si $a+b$ fuese racional, entonces $b=(a+b) -a$ seria racional. Luego si $a$ y $b$ son irracionales, entonces $a+b$ podría ser racional, ya que $b$ podría ser $r-a$ para algún número racional $a$.\\\\          
+	 \begin{enumerate}[\bfseries (a)]
 
-      %------------------------( b )---------------------------
-      \item Si $a$ es racional y \; $b$ es irracional, ¿es $ab$ necesariamente irracional?\\\\
-      Respuesta.- \; Si $a=0$, entonces $ab$ es racional. Pero si $a\neq 0$ entonces $ab$ no podría ser racional, ya que entonces $b=(ab) \cdot a^{-1}$ sería racional.\\\\     
+	 %------------------------(a)---------------------------
+	 \item Si $a$ es racional y \; $b$ es irracional ¿es $a+b$ necesariamente irracional? ¿Y si $a$ \; y \; $b$ es irracional? \\\\
+	 Respuesta.- \; Si, puesto que si $a+b$ fuese racional, entonces $b=(a+b) -a$ seria racional. Luego si $a$ y $b$ son irracionales, entonces $a+b$ podría ser racional, ya que $b$ podría ser $r-a$ para algún número racional $a$.\\\\          
 
-      %------------------------(c)---------------------------
-      \item ¿Existe algún número $a$ tal que $a^2$ es irracional pero $a^4$ racional?\\\\
-      Si existe por ejemplo $\sqrt[4]{2}$\\\\
+	 %------------------------(b)---------------------------
+	 \item Si $a$ es racional y \; $b$ es irracional, ¿es $ab$ necesariamente irracional?\\\\
+	 Respuesta.- \; Si $a=0$, entonces $ab$ es racional. Pero si $a\neq 0$ entonces $ab$ no podría ser racional, ya que entonces $b=(ab) \cdot a^{-1}$ sería racional.\\\\     
 
-      %------------------------(d)---------------------------
-      \item ¿Existen dos números irracionales tales que sean racionales tanto su suma como su producto?\\\\
-      Si existen por ejemplo $\sqrt{2}$ y $- \sqrt{2}$\\\\
+	 %------------------------(c)---------------------------
+	 \item ¿Existe algún número $a$ tal que $a^2$ es irracional pero $a^4$ racional?\\\\
+	 Si existe por ejemplo $\sqrt[4]{2}$\\\\
+
+	 %------------------------(d)---------------------------
+	 \item ¿Existen dos números irracionales tales que sean racionales tanto su suma como su producto?\\\\
+	 Si existen por ejemplo $\sqrt{2}$ y $- \sqrt{2}$\\\\
       \end{enumerate}
+
 
       %---------------------------------------------13--------------------------------------------
       \item 
@@ -415,9 +417,15 @@
 
       %------------------------(c)---------------------------
       \item Demostrar que si $m/n < \sqrt{2}$, entonces existe otro número racional $m^2 / n^2$ con $m/n < m^{'} / n^{'} < \sqrt{2}$\\\\
-      Demostración.- \; 
+      Demostración.- \; Sea $m_1=m+2n$ y $n_1=m+n$, luego elegimos y remplazamos en,  
+   \begin{tabular}{rclcr}
+      $m^{'}$&$=$&$m_1+2n_1$&$=$&$3m+4n$\\
+      $n^{'}$&$m_1+n_1$&$=$&$2m+3n$\\
+      \end{tabular}
       \end{enumerate}
-
+      De donde $\dfrac{m}{n}<h$ si y sólo si $0<m^{'} - mn^{'}=(3m+4n)n - (2m + 3n)m=2(2n^2 - m^2)$. Es claro para $\dfrac{m}{n} < \sqrt{2}$ que $2n^2 - m^2 >0$\\
+      Por otro lado tenemos $\dfrac{m^{'}}{n^{'}}$ si y sólo si $0<2n^{'^{2}} - m^{'^{2}}=2(2m+3n)^2-(3m+4n)^2=2n^2 - m^2.$ Como antes, $2n^2-m^2>0$ se sigue de $\dfrac{m}{n}<\sqrt{2}$\\\\
+ 
       %---------------------------------------------17----------------------------------------------
       \item Parece normal que $\sqrt{n}$ tenga que ser irracional siempre que el número natural $n$ no sea el cuadrado de otro número natural. Aunque puede usarse en realidad el método del problema 13 del capitulo 2 de Michael Spivak para tratar cualquier caso particular, no está claro, sin más, que este método tenga que dar necesariamente resultados, y para una demostración del caso general se necesita más información. Un número natural $p$ se dice que es un número primo si es imposible escribir $p=ab$; por conveniencia se considera que $1$ no es un número primo. Los primeros números primos son $2,3,5,7,11,13,17,19.$ Si $n>1$ no es primo, entonces $n=ab,$ con $a$ \; y \; $b$ ambos $<n;$ si uno de los dos $a$ \; o \; $b$ no es primo, puede ser factorizado de manera parecido; continuando de esta manera se demuestra que se puede escribir $n$ como producto de números primos. Por ejemplo, $28=2\cdot 2\cdot 7.$\\
       \begin{enumerate}[\bfseries a)]

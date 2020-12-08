@@ -138,7 +138,7 @@ Pensando en un número real como $x$ o como $(x,0)$, y denotando por $i$ el núm
 \begin{equation}
 (x,y)=x+iy
 \end{equation}
-con el convenio $z^2=zz$, $z^3=zz^2$ hallamos que $$i^2 = (0,1)(0,1) = (0\ cdot 0 - 1\cdot 1,1\cdot 0, 0 \cdot 1) =(-1,0)= -1$$
+con el convenio $z^2=zz$, $z^3=zz^2$ hallamos que $$i^2 = (0,1)(0,1) = (0\cdot 0 - 1\cdot 1,1\cdot 0, 0 \cdot 1) =(-1,0)= -1$$
 A la vista de la expresión $1.7$, las ecuaciones $1.6$ y $1.7$ se convierten en
 \begin{equation}
 (x_1+iy_1)+(x_2+iy_2) = (x_1+x_2)+i(y_1+y_2)
@@ -182,4 +182,37 @@ Luego si $z_1 = (x_1,y_1)$ y $z_2=(x_2,y_2)$, entonces
 $$z_1 - z_2 = (x_1-x_2,y_1-y_2) = (x_1-x_2)+i(y_1-y_2)$$
 \end{def.}
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Inverso multiplicativo]
+	Para todo número complejo $z=(x,y)$ no nulo, existe un número complejo $z^{-1}$ tal que $zz^{-1}$\\\\
+	Sea números reales $u$, $v$ expresados en términos de $x$ e $y$, tales que 
+	$$(x,y)(u,v)=(1,0)$$
+	Según la ecuación $1.5$ que define el producto de dos números complejos, $u$ y $v$ han de satisfacer el par 
+	$$xu-yv=1, \;\;\; yu+xv=0$$
+	de ecuación linealea simultáneas; y un sencillo cálculo proporciona la única solución 
+	$$u=\dfrac{x}{x^2 + y^2},\; \; \; v=\dfrac{-y}{x^2+y^2}$$
+	De modo que el inverso multiplicativo de $z=(x,y)$ es 
+	$$z^{-1}=\left( \dfrac{x}{x^2+y^2}, \dfrac{-y}{x^2+y^2}  \right)\; \; z\neq 0$$
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Si un producto $z_1 z_2$ es cero, entonces al menos uno de los factores, $z_1$ ó $z_2$, es cero.\\\\
+    Demostración.- \; Supongamos que $z_1 z_2 = 0$ y que  $z_1 \neq 0$. El inverso multiplicativo $z_1^{-1}$ existe y, según la definición de la multiplicación todo número complejo por cevo da cero. Luego 
+    $$z_2=1\cdot z_2 = (z_1^{-1} z_1)z_2 = z_1^{-1}(z_1 z_2) = z_1^{-1}\cdot 0 = 0 $$
+    Esto es, si $z_1 z_2 = 0$, o bien $z_1=0$ ó $z_2=0$, o quizá ambos.\\\\
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}
+	La división por un número complejo no nulo se define mediante: 
+	$$\dfrac{z_1}{z_2}=z_1 z_2^{-1} \; \; \; z_2\neq 0$$
+	Si $z_1=(x_1,y_1)$ y $z_2=(x_2,y_2)$ entonces 
+	$$\dfrac{z_1}{z_2}=\left( \dfrac{x_1 x_2 + y_1 y_2}{x_2^2 + y_2^2}, \dfrac{y_1 x_2 - x_1 y_2}{x_2^2 + y_2^2} \right)= \left( \dfrac{x_1 x_2 + y_1 y_2}{x_2^2 + y_2^2}  \right) + i \left( \dfrac{y_1 x_2 - x_1 y_2}{x_2^2 + y_2^2} \right) \;\;\; z_2 \neq 0$$
+    \end{def.}
+\end{tcolorbox}
+
+\section{Ejercicios}
+\section{Ejercicios}
 \end{document}
