@@ -441,12 +441,42 @@
 
       %------------------------(c)---------------------------
       \item Demostrar que $\sqrt[k]{n}$ es irracional a no ser que $n=m^k$\\\\
-      Demostración.- \; 
+      Demostración.- \; La Demostración es parecida a la parte $b$ pero haciendo uso del hecho de que cada número primo entra en $a^k$ y en $b^k$ un número de veces que es múltiplo de $k$\\\\   
 
       %------------------------(d)---------------------------
       \item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
-      Demostración.- \;  
+      Demostración.- \; Si $p_1,...,p_n$ fuesen los únicos números primos, entonces $p_1 \cdot p_2 \cdot ... \cdot p_n + 1$ no podría ser primo, ya que es mayor que cada uno de ellos, de modo que tiene que ser divisible por un número primo. Pero es claro que este número primo no es ninguno de los $p_1,...,p_n$, lo cual constituye una contradicción. Para poder explicarlo mejor si $p_1,...,p_n$ son los $n$ primeros números primos, entonces el primo que ocupa el lugar $n+1$ es $\leq p_1 \cdot p_2 \cdot ... \cdot p_n+1$. Sin embargo, $p_1\cdot p_2 \cdot ...\cdot p_n + 1$ no tiene que ser necesariamente primo.\\\\       
+      
+      %----------------------------------18.---------------------------------------
+      \item
+	 \begin{enumerate}[\bfseries (a)]
+	    %--------------------(a)-------------------------
+	    \item Demostrar que si $x$ satisface
+	       $$x_n + a_{n-1}x^{n-1} + ... + a_0 = 0$$
+	       para algunos enteros $a_{n-1},...,a_n$ entonces $x$ es irracional si no es entero. (¿Por qué es esto una generalización del problema 17?)\\\\
+	       Demostración.- \; Supóngase que es $x=p/q$ donde $p$ y $q$ son números naturales primos entre si. Entonces $$\dfrac{p^n}{q^n} + a_{n-1} \dfrac{p^{n-1}}{q^{n-1}} + ... + a_0 = 0,$$
+	       con lo que 
+	       $$p^n + a_{n-1} p ^{n-1}q + ... + a_0 q^n = 0$$
+	       Ahora bien, si $q \neq \pm 1,$ entonces $q$ tiene por lo menos un divisor primo. Este divisor primo divide a cada uno de los términos que siguen a $p^n$, con lo que también deberá dividir a $p^n$. Dividirá por lo tanto a $p$, lo cual es una contradicción. Así pues, $q= \pm 1,$ lo que significa que $x$ es entero.\\\\
+	    %--------------------(b)--------------------------
+	    \item Demostrar que $\sqrt{2} + \sqrt[3]{2}$ es irracional.\\\\ 
+	       Demostración.- \; Sea $a=\sqrt{2} + 2^{1/3}$. Se demostrará por contradicción. Supongamos que $a$ es racional, entones,
+	       \begin{center}
+		  \begin{tabular}{crl}
+		     $2$ & $=$ & $(2^{1/3})^3$ \\
+			 & $=$ & $(a- \sqrt{2})^3$ \\
+			 & $=$ & $a^3 - 3a^2 \sqrt{2} + 3a \cdot 2 - 2^{3/2}$ \\
+			 & $=$ & $a^3 + 6a - \sqrt{2}(3a^2+2)$ \\
+		  \end{tabular}
+	       \end{center}
+	       por lo tanto, $$\sqrt{2}=\dfrac{a^3 + 6a -2}{3a^2 + 2} \in \mathbb{Q}$$
+	       es bien sabido que $\sqrt{2}$ es irracional. De ahí llegamos a una contradicción.\\\\
       \end{enumerate}
 
+      %------------------------------------------19.----------------------------------------------
+   \item Demostrar la desigualdad de Bernoulli: Si $h>-1$, entonces
+      $$(1+h)^n \geq 1 + nh$$
+      ¿Por qué es esto trivial si $h>0$?\\\\
+      Demostración.-\; 
     \end{enumerate}
     
