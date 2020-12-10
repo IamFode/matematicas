@@ -446,7 +446,8 @@
       %------------------------(d)---------------------------
       \item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
       Demostración.- \; Si $p_1,...,p_n$ fuesen los únicos números primos, entonces $p_1 \cdot p_2 \cdot ... \cdot p_n + 1$ no podría ser primo, ya que es mayor que cada uno de ellos, de modo que tiene que ser divisible por un número primo. Pero es claro que este número primo no es ninguno de los $p_1,...,p_n$, lo cual constituye una contradicción. Para poder explicarlo mejor si $p_1,...,p_n$ son los $n$ primeros números primos, entonces el primo que ocupa el lugar $n+1$ es $\leq p_1 \cdot p_2 \cdot ... \cdot p_n+1$. Sin embargo, $p_1\cdot p_2 \cdot ...\cdot p_n + 1$ no tiene que ser necesariamente primo.\\\\       
-      
+      \end{enumerate} 
+
       %----------------------------------18.---------------------------------------
       \item
 	 \begin{enumerate}[\bfseries (a)]
@@ -474,9 +475,37 @@
       \end{enumerate}
 
       %------------------------------------------19.----------------------------------------------
-   \item Demostrar la desigualdad de Bernoulli: Si $h>-1$, entonces
-      $$(1+h)^n \geq 1 + nh$$
+   \item Demostrar la desigualdad de Bernoulli: Si $h>-1$, entonces $$(1+h)^n \geq 1 + nh$$
       ¿Por qué es esto trivial si $h>0$?\\\\
+      Demostración.-\; Si $n=1$, entonces $(1+h)^n=1+nh$. Supóngase que $(1+h)^n \geq 1+nh.$ Entonces $(1+h)^n+1=(1+h)(1+h)^n \geq (1+h)(1+nh)$, ya que $1+h>0$ luego $1+(n+1)h+nh^2\geq 1+(n+1)h$\\
+      Para $h>0$, la igualdad se sigue directamente del teorema del binomio, ya que todos los demás términos que aparecer en el desarrollo de $(1+h)^n$ son positivos.\\\\
+      
+      %------------------------------------------20.--------------------------------------------------
+   \item La sucesión de Fibonacci $a_1,a_2,a_3,...$ se define como sigue:
+      \begin{center}
+	 \begin{tabular}{rcll}
+	    $a_1$ & $=$ & $1,$ & \\
+	    $a_2$ & $=$ & $1,$ & \\
+	    $a_n$ & $=$ & $a_{n-1} + a_{n-2}$ & para $n \geq 3$\\
+	 \end{tabular}
+      \end{center}
+      Esta sucesión, cuyos primeros términos son $1,1,2,3,5,8,...,$ fue descubierta por Fibonacci (1175-1250, aprox.) en relación con un problema de conejos. Fibonacci supuso que una pareja de conejos criaba una nueva pareja cada mes y que después de dos meses cada nueva pareja se comportaba del mismo modo. El número $a_n$ de parejas nacidas en el n-ésimo mes es $n_{n-1} + a_{n-2}$, puesto que nace una pareja por cada pareja nacida en el mes anterior, y además, cad pareja nacida hace dos meses produce ahora una nueva pareja. Es verdaderamente asombroso el número de resultados interesantes relacionados con esta sucesión, hasta el punto de existir una Asociación de Fibonacci que publica una revista, the Fibonacci Quarterly.\\
+      Demostrar que $$a_n = \dfrac{\left( \dfrac{1+\sqrt{5}}{2} \right)^n - \left( \dfrac{1-\sqrt{5}}{2} \right)^n}{\sqrt{5}}$$\\
+      Demostración.- \; Al ser $$\dfrac{\left( \dfrac{1+\sqrt{5}}{2} \right)^1 - \left( \dfrac{1-\sqrt{5}}{2} \right)^1}{\sqrt{5}}=\dfrac{\sqrt{5}}{\sqrt{5}}=1$$
+      La fórmula es válida para $n=1$ y también se cumple para $n=1$. Supóngase que es válida para todo $k<n,$ donde $n\geq 3.$ En tal caso es válida en particular para $n-1$ y para $n-2$, luego por hipótesis
+      \begin{center}
+	 \begin{tabular}{rcl}
+	    $a_n$ & $=$ & $a_{n-1} + a_{n-2}$\\\\
+		  & $=$ & $\dfrac{\left( \dfrac{1+\sqrt{5}}{2} \right)^{n-2} - \left( \dfrac{1-\sqrt{5}}{2} \right)^{n-2} + \left( \dfrac{1+\sqrt{5}}{2} \right)^{n-1} - \left( \dfrac{1-\sqrt{5}}{2} \right)^{n-1}}{\sqrt{5}}$\\\\
+		  & $=$ & $\dfrac{\left( \dfrac{1+\sqrt{5}}{2}\right)^{n-2} \left( \dfrac{1+\sqrt{5}}{2} \right) - \left( 1 - \dfrac{1-\sqrt{5}}{2} \right)^{n-2} \left( 1 - \dfrac{1- \sqrt{5}}{2} \right)}{\sqrt{5}}$\\\\
+		  & $=$ & $\dfrac{\left( \dfrac{1+\sqrt{5}}{2} \right)^{n-2} \left( \dfrac{1+\sqrt{5}}{2}\right)^2 - \left( 1 - \dfrac{1-\sqrt{5}}{2} \right)^{n-2} \left( 1 - \dfrac{1-\sqrt{5}}{2} \right)^2}{\sqrt{5}}$\\\\
+	       & $=$ & $\dfrac{\left( \dfrac{1+\sqrt{5}}{2} \right)^n - \left( \dfrac{1-\sqrt{5}}{2} \right)^n}{\sqrt{5}}$\\\\
+	 \end{tabular}
+      \end{center}
+
+      %-------------------------------------------------21.------------------------------------------------
+   \item La desigualdad de Schwarz (problema 1-19) tiene en realidad una forma más general: $$\displaystyle\sum_{i=1}^n x_1 y_1 \leq \sqrt{\sum_{i=1}^n x_i^2} \sqrt{\sum_{i=1}^n y_i^2}$$
+      Dar de esto tres demostraciones, análogas a las tres demostraciones del problema 1-19\\\\
       Demostración.-\; 
     \end{enumerate}
     
