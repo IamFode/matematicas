@@ -323,5 +323,90 @@ Escribir un modelo estadístico usando notación matemática, a diferencia del l
     El modelado formal es típicamente el aspecto más técnico del análisis de datos, y su propósito es establecer con precisión cuál es el objetivo del análisis y proporcionar un marco riguroso para desafiar sus hallazgos y probar sus suposiciones. El enfoque que adopte puede variar dependiendo principalmente de si su pregunta se trata fundamentalmente de estimar una asociación que desarrolla una buena predicción.
 
 \chapter{Inferencia frente a predicción: implicaciones para la estrategia de modelado}
-
+Comprender si está respondiendo una pregunta inferencial o una pregunta de predicción es un concepto importante porque el tipo de pregunta que está respondiendo puede influir en gran medida en la estrategia de modelado que siga. Las cosas clave para recordar son:
+\begin{enumerate}[\bfseries 1.]
+    \item \textbf{Para las preguntas inferencial,} el objetivo es típicamente estimar una asociación entre un predictor de interés y el resultado. Por lo general, solo hay un puñado de predictores de interés (o incluso solo uno), sin embargo, generalmente hay muchas variables de confusión potenciales a considerar. \textbf{El objetivo clave del modelado es estimar una asociación y, al mismo tiempo, asegurarse de que se ajusta adecuadamente a los posibles factores de confusión}. A menudo, se realizan análisis de sensibilidad para ver si las asociaciones de interés son sólidas para diferentes conjuntos de factores de confusión.
+    \item \textbf{Para las preguntas de predicción,} el objetivo es identificar un modelo que prediga mejor el resultado. \textbf{El objetivo clave es desarrollar un modelo con buena habilidad de predicción y estimar una tasa de error razonable a partir de los datos.}
+\end{enumerate}
+    \section{Resumen}
+    En cualquier análisis de datos, debe preguntarse a sí mismo $"$¿Estoy haciendo una pregunta inferencial o una pregunta de predicción?$"$ Esto debe aclararse antes de analizar cualquier dato, ya que la respuesta a la pregunta puede guiar toda la estrategia de modelado. Enmarcar correctamente la pregunta y aplicar la estrategia de modelado adecuada, puede desempeñar un papel importante en los tipos de conclusiones que extrae de los datos.
+\chapter{Interpretando tus resultados}
+    \section{Principios de interpretación}
+    \begin{enumerate}[\bfseries 1.]
+	\item Revise su pregunta original. La naturaleza del resultado incluye tres características: su direccionalidad, magnitud e incertidumbre. La incertidumbre es una evaluación de la probabilidad de que el resultado se haya obtenido por casualidad.
+	\item Empiece con el modelo estadístico primario para orientarse y centrarse en la naturaleza del resultado en lugar de en una evaluación binaria del resultado.
+	\item Desarrolle una interpretación general basada en:
+	    \begin{enumerate}[\bfseries (a)]
+		\item La totalidad de su análisis.
+		\item El contexto de lo que se conoce sobre el tema.
+	    \end{enumerate}
+	\item Considere las implicaciones, que lo guiarán a la hora de determinar qué acción (es), si corresponde, se debe tomar como resultado de la respuesta a su pregunta. Es importante señalar que el epiciclo del análisis también se aplica a la interpretación.
+    \end{enumerate}
+    Aunque puede estar en uno de los últimos pasos del análisis de datos cuando está interpretando formalmente sus resultados, es posible que deba volver al análisis de datos exploratorios o al modelado para hacer coincidir las expectativas con los datos.
+	\subsection{repase su pregunta}
+	Esto puede parecer una declaración frívola, pero no es raro que las personas se pierdan a medida que avanzan en el proceso de análisis exploratorio y modelado formal. Esto suele ocurrir cuando un analista de datos se desvía demasiado de su curso en busca de un hallazgo incidental que aparece en el proceso de análisis exploratorio de datos o modelado formal. Luego, el modelo o modelos finales proporcionan una respuesta a otra pregunta que surgió durante los análisis en lugar de la pregunta original. \textbf{Recuerde que el sesgo es un problema sistemático con la recopilación o el análisis de los datos que da como resultado una respuesta incorrecta a su pregunta.} La manera de poder encontrar algún sesgo a una pregunta es suponer que está sesgada. \textbf{El punto es que hacer una pausa para realizar un experimento mental deliberado sobre las fuentes de sesgo es de vital importancia, ya que en realidad es la única forma de evaluar el potencial de un resultado sesgado. Este experimento mental también debe realizarse cuando está formulando y refinando su pregunta y también cuando está realizando análisis exploratorios y modelado.}
+	\subsection{Comience con el modelo primario y evalúe la direccionalidad, la magnitud y la incertidumbre del resultado.}
+	El segundo principio es comenzar con un solo modelo y enfocarse en el continuo completo del resultado, incluida su direccionalidad y magnitud, y el grado de certeza (o incertidumbre) que existe sobre si el resultado de la muestra que analizó refleja el resultado real. No pierda mucho tiempo preocupándose por qué modelo individual empezar, porque al final considerará todos sus resultados y este ejercicio de interpretación inicial sirve para orientarlo y proporcionar un marco para su interpretación final.
+	    \subsubsection{Direccionalidad}
+	    ¿La direccionalidad positiva del resultado coincide con sus expectativas que se han desarrollado a partir del análisis de datos exploratorios? Si es así, está en buena forma y puede pasar a la siguiente actividad de interpretación. Si no, hay un par de posibles explicaciones. Primero, es posible que sus expectativas no sean correctas porque el análisis exploratorio se realizó incorrectamente o su interpretación de los análisis exploratorios no fue correcta. En segundo lugar, el análisis exploratorio y su interpretación del mismo pueden ser correctos, pero el modelado formal puede haberse realizado incorrectamente.
+	    \subsubsection{Magnitud}
+	    una parte clave de la interpretación de la magnitud del resultado es comprender cómo se compara la magnitud del resultado con lo que sabe acerca de este tipo de información en la población que le interesa.
+	    \subsubsection{Incertidumbre}
+	    Recuerde que su modelo se ha construido para ajustarse a los datos recopilados de una muestra de la población en general. Para evaluar si el resultado de la muestra es simplemente "ruido" aleatorio, utilizamos medidas de incertidumbre. La probabilidad de que su muestra refleje la respuesta para la población general varía dependiendo de qué tan cerca (o lejos) esté el resultado de su muestra del resultado verdadero para la población general. \\
+	    Una herramienta que proporciona una medida de incertidumbre más continua es el \textbf{intervalo de confianza.} Un intervalo de confianza es un rango de valores que contiene el resultado de su muestra y usted tiene cierta confianza en que también contiene el resultado verdadero para la población general. Es importante darse cuenta de que debido a que el intervalo de confianza se construye a partir de los datos, el intervalo en sí es aleatorio. Por lo tanto, si tuviéramos que recopilar nuevos datos, el intervalo que construiríamos sería ligeramente diferente. Sin embargo, la verdad, es decir, el valor poblacional del parámetro, siempre permanecería igual. \\
+	    Otra herramienta para medir la incertidumbre es, por supuesto, el valor p, que simplemente es la probabilidad de obtener el resultado de la muestra de 0,28 kg / m2 (o más extremo) cuando la verdadera relación entre el consumo de refrescos no dietéticos y el IMC en la población general es 0.  Centrarse principalmente en el valor p es un enfoque arriesgado para interpretar la incertidumbre porque puede llevar a ignorar información más importante necesaria para una interpretación cuidadosa y precisa de sus resultados. 
+	\subsection{Desarrolle una interpretación general considerando la totalidad de sus análisis e información externa}
+	Ahora que ha dedicado una buena cantidad de esfuerzo a interpretar los resultados de su modelo primario, el siguiente paso es desarrollar una interpretación general de sus resultados considerando tanto la totalidad de sus análisis como la información externa a sus análisis.  La interpretación de los resultados de su modelo primario sirve para establecer la expectativa de su interpretación general cuando considera todos sus análisis. \textbf{No existe un solo modelo que por sí solo proporcione la respuesta a su pregunta. En cambio, existen modelos adicionales que sirven para cuestionar el resultado obtenido en el modelo primario.} Un tipo común de modelo secundario es el modelo que se construye para determinar qué tan sensibles son los resultados en su modelo primario a los cambios en los datos. Un ejemplo clásico es la eliminación de valores atípicos para evaluar el grado en que cambia el resultado del modelo primario. Un segundo ejemplo es evaluar el efecto de posibles factores de confusión en los resultados del modelo primario. Aunque el modelo primario ya debería contener factores de confusión clave, normalmente existen otros posibles factores de confusión que deberían evaluarse. \\
+	¿cómo interpreta cómo estos resultados del modelo secundario afectan su resultado primario? Puede recurrir al paradigma de: direccionalidad, magnitud e incertidumbre.\\
+	La información externa es tanto el conocimiento general que usted o los miembros de su equipo tienen sobre el tema, como los resultados de análisis similares e información sobre la población objetivo. 
+    \section{Trascendencia}
+    Ahora que ha interpretado sus resultados y tiene conclusiones en la mano, querrá pensar en las implicaciones de sus conclusiones. Después de todo, el objetivo de hacer un análisis suele ser informar una decisión o emprender una acción. A veces las implicaciones son sencillas, pero otras veces las implicaciones requieren un poco de reflexión.
+\chapter{Comunicación}
+    Nos centraremos en:
+    \begin{enumerate}[\bfseries 1.]
+	\item Cómo utilizar la comunicación de rutina como una de las herramientas necesarias para realizar un buen análisis de datos.
+	\item Cómo transmitir los puntos clave de su análisis de datos cuando se comunica de manera informal y formal.
+    \end{enumerate}
+    \section{Comunicación de rutina}
+    El propósito principal de la comunicación de rutina es recopilar datos, que es parte del proceso epicicloidal para cada actividad central. Usted recopila datos comunicando sus resultados y las respuestas que recibe de su audiencia deben informar los próximos pasos en su análisis de datos. Los tipos de respuestas que recibe incluyen no solo respuestas a preguntas específicas, sino también comentarios y preguntas que su audiencia tiene en respuesta a su informe. \\
+    Hay tres tipos principales de comunicación informal y se clasifican en función de los objetivos que tiene para la comunicación:
+    \begin{enumerate}[\bfseries 1.]
+	\item  Responder a una pregunta muy enfocada, que a menudo es una pregunta técnica o una pregunta destinada a recopilar un hecho.
+	\item Para ayudarlo a trabajar con algunos resultados que son desconcertantes o que no son exactamente lo que esperaba.
+	\item Para obtener impresiones generales y comentarios como un medio para identificar problemas que no se le habían ocurrido para que pueda refinar su análisis de datos.
+    \end{enumerate}
+    Centrarse en algunos conceptos básicos le ayudará a alcanzar sus objetivos al planificar la comunicación de rutina. Estos conceptos son:
+    \begin{enumerate}[\bfseries 1.]
+	\item \textbf{Audiencia:} conozca a su audiencia y cuando tenga control sobre quién es la audiencia, seleccione la audiencia adecuada para el tipo de retroalimentación que está buscando.
+	\item \textbf{Contenido:} Sea concentrado y conciso, pero proporcione suficiente información para que la audiencia comprenda la información que presenta y las preguntas que hace.
+	\item \textbf{Estilo:} Evite la jerga. A menos que esté comunicando sobre un tema altamente técnico enfocado a una audiencia altamente técnica, es mejor usar un lenguaje y figuras y tablas que puedan ser entendidas por una audiencia más general.
+	\item \textbf{Actitud:} tenga una actitud abierta y colaborativa para que esté listo para participar plenamente en un diálogo y para que su audiencia reciba el mensaje de que su objetivo no es $"$defender$"$ su pregunta o trabajo, sino más bien obtener su opinión.
+    \end{enumerate}
+    \section{La audiencia}
+    Para muchos tipos de comunicación de rutina, tendrá la capacidad de seleccionar su audiencia, pero en algunos casos, como cuando entrega un informe provisional a su jefe o su equipo, la audiencia puede estar predeterminada. Su audiencia puede estar compuesta por otros analistas de datos, las personas que iniciaron la pregunta, su jefe y / u otros gerentes o miembros del equipo ejecutivo, analistas que no son expertos en contenido y / o alguien que represente al público en general. \\
+    Si tiene una pregunta sobre cómo se recopilaron los datos de una variable en el conjunto de datos, puede dirigirse a una persona que recopiló los datos o una persona que haya trabajado con el conjunto de datos anteriormente o que fue responsable de compilar los datos. Si la pregunta es sobre el comando que se debe usar en un lenguaje de programación estadística para ejecutar un determinado tipo de prueba estadística, esta información a menudo se encuentra fácilmente mediante una búsqueda en Internet. Pero si esto falla, sería apropiado consultar a una persona que usa el lenguaje de programación en particular. Para el segundo tipo de comunicación de rutina, en la que tiene algunos resultados y no está seguro de si son los que esperaba o no son los que esperaba, probablemente se beneficiará más si involucra a más de una persona y representan una variedad de perspectivas. Las reuniones más productivas y útiles suelen incluir personas con experiencia en análisis de datos y áreas de contenido. Como regla general, cuantos más tipos de partes interesadas se comuniquen mientras realiza su proyecto de análisis de datos, mejor será su producto final. 
+    \section{Contenido}
+    Después de pensar un poco en sus objetivos para la comunicación, se establece en dos objetivos principales: 
+    \begin{enumerate}[\bfseries 1.]
+	\item Comprender si existe un mejor enfoque para manejar la no linealidad de la relación y, de ser así, cómo determinar cuál es el mejor.
+	\item Para comprender más acerca de la relación no lineal que observa, incluso si esto es esperado y / o conocido y si es importante capturar la no linealidad en sus análisis. Para lograr sus objetivos, deberá proporcionar a su audiencia algo de contexto y antecedentes, pero proporcionar un trasfondo completo para el proyecto de análisis de datos y la revisión de todos los pasos que ha tomado hasta ahora es innecesario y probablemente absorberá tiempo y esfuerzo.
+    \end{enumerate}
+    El contenido final de su presentación, entonces, incluiría una declaración de los objetivos para la discusión, una breve descripción general del proyecto de análisis de datos, cómo el problema específico que enfrenta encaja en el proyecto general de análisis de datos, y Comunicación. 
+    \section{Estilo}
+    Aunque el estilo de comunicación aumenta en formalidad desde el primer al tercer tipo de comunicación de rutina, todas estas comunicaciones deben ser en gran medida informales y, excepto quizás por la comunicación enfocada sobre un pequeño problema técnico, se debe evitar la jerga. \textbf{Debido a que el propósito principal de la comunicación de rutina es obtener retroalimentación, su estilo de comunicación debe fomentar la discusión.} 
+    \section{Actitud}
+    Una actitud defensiva o desagradable puede sabotear todo el trabajo que ha realizado para seleccionar cuidadosamente a la audiencia, identificar cuidadosamente sus objetivos y preparar su contenido, y declarar que está buscando discusión. Su audiencia será reacia a ofrecer comentarios constructivos si sienten que sus comentarios no serán bien recibidos y usted saldrá de la reunión sin lograr sus objetivos y no estará preparado para hacer mejoras o adiciones a su análisis de datos.
+\chapter{Pensamientos concluyentes}
+Mientras trabaja en el desarrollo de su pregunta, explorando sus datos, modelando sus datos, interpretando sus resultados y comunicando sus resultados, recuerde siempre establecer expectativas y luego comparar el resultado de su acción con sus expectativas. Si no coinciden, identifique si el problema está en el resultado de su acción o en sus expectativas y solucione el problema para que coincidan. Si no puede identificar el problema, busque la opinión de otros y luego, cuando haya solucionado el problema, continúe con la siguiente acción. Además del marco del epiciclo, también hay actividades de análisis de datos que discutimos a lo largo del libro. Aunque todas las actividades de análisis son importantes, si tuviéramos que identificar las que son más importantes para asegurar que su análisis de datos proporcione una respuesta válida, significativa e interpretable a su pregunta, incluiríamos lo siguiente:
+\begin{enumerate}[\bfseries 1.]
+    \item Sea reflexivo sobre desarrollar su pregunta y utilizar la pregunta para guiarlo a lo largo de todos los pasos del análisis.
+    \item Sigue el ABCs:
+	\begin{enumerate}[\bfseries a)]
+	    \item Siempre estar revisando.
+	    \item Sea siempre desafiante.
+	    \item Estar siempre comunicado.
+	\end{enumerate}
+\end{enumerate}
+\textbf{La mejor manera para que el marco del epiciclo y estas actividades se conviertan en una segunda naturaleza es hacer mucho análisis de datos, por lo que le recomendamos que aproveche las oportunidades de análisis de datos que se le presenten. Aunque con la práctica, muchos de estos principios se convertirán en algo natural para usted, hemos descubierto que revisar estos principios nos ha ayudado a resolver una serie de problemas que enfrentamos en nuestros propios análisis.}
 \end{document}
+
