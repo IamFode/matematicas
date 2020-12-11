@@ -430,23 +430,23 @@
       %---------------------------------------------17----------------------------------------------
       \item Parece normal que $\sqrt{n}$ tenga que ser irracional siempre que el número natural $n$ no sea el cuadrado de otro número natural. Aunque puede usarse en realidad el método del problema 13 del capitulo 2 de Michael Spivak para tratar cualquier caso particular, no está claro, sin más, que este método tenga que dar necesariamente resultados, y para una demostración del caso general se necesita más información. Un número natural $p$ se dice que es un número primo si es imposible escribir $p=ab$; por conveniencia se considera que $1$ no es un número primo. Los primeros números primos son $2,3,5,7,11,13,17,19.$ Si $n>1$ no es primo, entonces $n=ab,$ con $a$ \; y \; $b$ ambos $<n;$ si uno de los dos $a$ \; o \; $b$ no es primo, puede ser factorizado de manera parecido; continuando de esta manera se demuestra que se puede escribir $n$ como producto de números primos. Por ejemplo, $28=2\cdot 2\cdot 7.$\\
       \begin{enumerate}[\bfseries a)]
-      %------------------------(a)---------------------------
-      \item Conviértase este argumento en una demostración riguroso por inducción completa. (En realidad, cualquier matemático razonable aceptaría este argumento informal, pero ello se debería en parte a que para él estaría claro cómo formularla rigurosamente.)\\
-      Un teorema fundamental acerca de enteros, que no demostraremos aquí, afirma que esta factorización es única, salvo en lo que respeta al orden de los factores. Así, por ejemplo, $28$ no puede escribirse nunca como producto de números primos uno de los cuales sea $3$, ni puede ser escrito de manera que $2$ aparezca una sola vez (ahora debería verse clara la razón de no admitir a $1$ como número primo.)\\\\
-      demostración.- \; Supóngase que para todo número $<n$ puede ser escrito  como un producto de primos. Si $n>1$ no es primo, entonces $n=ab$, para $a,b<n$. Pero $a$ \; y \; $b$ son ambos producto de primos, así que $n=ab$ lo es también.\\\\
+         %------------------------(a)---------------------------
+         \item Conviértase este argumento en una demostración riguroso por inducción completa. (En realidad, cualquier matemático razonable aceptaría este argumento informal, pero ello se debería en parte a que para él estaría claro cómo formularla rigurosamente.)\\
+         Un teorema fundamental acerca de enteros, que no demostraremos aquí, afirma que esta factorización es única, salvo en lo que respeta al orden de los factores. Así, por ejemplo, $28$ no puede escribirse nunca como producto de números primos uno de los cuales sea $3$, ni puede ser escrito de manera que $2$ aparezca una sola vez (ahora debería verse clara la razón de no admitir a $1$ como número primo.)\\\\
+         demostración.- \; Supóngase que para todo número $<n$ puede ser escrito  como un producto de primos. Si $n>1$ no es primo, entonces $n=ab$, para $a,b<n$. Pero $a$ \; y \; $b$ son ambos producto de primos, así que $n=ab$ lo es también.\\\\
 
-      %------------------------(b)---------------------------
-      \item Utilizando este hecho, demostrar que $\sqrt{n}$ es irracional a no ser que $n=m^2$ para algún número natural $m.$\\\\
-      Demostración.- \; Sea $\sqrt{n} = \dfrac{p}{q}$, entonces $nb^2 = a^2,$  luego si descomponemos en producto de factores primos, $nb^2$ y $a^2$ deberían coincidir. Ahora según lo explicado anteriormente, cada número primo debe aparecer un número par de veces en $a^2$ y $b^2$, y por lo tanto deberá ocurrir lo mismo con $n.$ Esto implica que $n$ es un cuadrado perfecto.\\\\
+         %------------------------(b)---------------------------
+         \item Utilizando este hecho, demostrar que $\sqrt{n}$ es irracional a no ser que $n=m^2$ para algún número natural $m.$\\\\
+         Demostración.- \; Sea $\sqrt{n} = \dfrac{p}{q}$, entonces $nb^2 = a^2,$  luego si descomponemos en producto de factores primos, $nb^2$ y $a^2$ deberían coincidir. Ahora según lo explicado anteriormente, cada número primo debe aparecer un número par de veces en $a^2$ y $b^2$, y por lo tanto deberá ocurrir lo mismo con $n.$ Esto implica que $n$ es un cuadrado perfecto.\\\\
 
-      %------------------------(c)---------------------------
-      \item Demostrar que $\sqrt[k]{n}$ es irracional a no ser que $n=m^k$\\\\
-      Demostración.- \; La Demostración es parecida a la parte $b$ pero haciendo uso del hecho de que cada número primo entra en $a^k$ y en $b^k$ un número de veces que es múltiplo de $k$\\\\   
+         %------------------------(c)---------------------------
+         \item Demostrar que $\sqrt[k]{n}$ es irracional a no ser que $n=m^k$\\\\
+         Demostración.- \; La Demostración es parecida a la parte $b$ pero haciendo uso del hecho de que cada número primo entra en $a^k$ y en $b^k$ un número de veces que es múltiplo de $k$\\\\   
 
-      %------------------------(d)---------------------------
-      \item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
-      Demostración.- \; Si $p_1,...,p_n$ fuesen los únicos números primos, entonces $p_1 \cdot p_2 \cdot ... \cdot p_n + 1$ no podría ser primo, ya que es mayor que cada uno de ellos, de modo que tiene que ser divisible por un número primo. Pero es claro que este número primo no es ninguno de los $p_1,...,p_n$, lo cual constituye una contradicción. Para poder explicarlo mejor si $p_1,...,p_n$ son los $n$ primeros números primos, entonces el primo que ocupa el lugar $n+1$ es $\leq p_1 \cdot p_2 \cdot ... \cdot p_n+1$. Sin embargo, $p_1\cdot p_2 \cdot ...\cdot p_n + 1$ no tiene que ser necesariamente primo.\\\\       
-      \end{enumerate} 
+         %------------------------(d)---------------------------
+         \item Al tratar de números primos no se puede omitir la hermosa demostración de Euclides de que existe un número infinito de ellos. Demuestre que no puede haber sólo un número finito de números primos $p_1, p_2, p_3,...,p_n$ considerando $p_1\cdot p_2 \cdot ... \cdot p_k + 1$\\\\
+         Demostración.- \; Si $p_1,...,p_n$ fuesen los únicos números primos, entonces $p_1 \cdot p_2 \cdot ... \cdot p_n + 1$ no podría ser primo, ya que es mayor que cada uno de ellos, de modo que tiene que ser divisible por un número primo. Pero es claro que este número primo no es ninguno de los $p_1,...,p_n$, lo cual constituye una contradicción. Para poder explicarlo mejor si $p_1,...,p_n$ son los $n$ primeros números primos, entonces el primo que ocupa el lugar $n+1$ es $\leq p_1 \cdot p_2 \cdot ... \cdot p_n+1$. Sin embargo, $p_1\cdot p_2 \cdot ...\cdot p_n + 1$ no tiene que ser necesariamente primo.\\\\       
+         \end{enumerate} 
 
       %----------------------------------18.---------------------------------------
       \item
@@ -507,5 +507,134 @@
    \item La desigualdad de Schwarz (problema 1-19) tiene en realidad una forma más general: $$\displaystyle\sum_{i=1}^n x_1 y_1 \leq \sqrt{\sum_{i=1}^n x_i^2} \sqrt{\sum_{i=1}^n y_i^2}$$
       Dar de esto tres demostraciones, análogas a las tres demostraciones del problema 1-19\\\\
       Demostración.-\; 
+      \begin{enumerate}[\bfseries i)]
+	 \item Como antes, la demostración es trivial si para todo $y_i=0$ o si hay algún numero $\lambda$ con $x_i=\lambda y_i$ para todo $i$. Es decir, 
+	    \begin{center} 
+	       \begin{tabular}{rcl}
+		  $0$ & $<$ & $\sum\limits_{i=1}n (\lambda y_i - x_i)^2$\\\\
+		   & $=$ & $\lambda \left( \sum\limits_{i=1}^n y_i^2 \right) -2 \lambda \left( \sum\limits_{i=1}^n x_i y_i\right) + \sum\limits_{i=1}^n x_i^2$\\\\
+	       \end{tabular}
+	       así por el problema 1-18 queda demostrado. 
+	    \end{center}
+	 \item Usando $2xy \leq x^2 + y^2$ con 
+            $$x=\dfrac{x_i}{\sqrt{\sum\limits_{i=1}^n x_i^2}}, \,\,\,\, y=\dfrac{y_i}{\sqrt{\sum\limits_{i=1}^n y_i^2}}$$
+            obtenemos, 
+            $$\dfrac{2x_iy_1}{\sqrt{\sum\limits_{i=1}^n x_i^2} \sqrt{\sum\limits_{i=1}^n y_i^2}} \leq \dfrac{x_i^2}{\sum\limits_{i=1}^n x_i^2} + \dfrac{y_i^2}{\sum\limits_{i=1}^n y_i^2} \,\,\,\, (1)$$
+            luego
+            $$\dfrac{\sum\limits_{i=1}^n 2x_iy_i}{\sqrt{\sum\limits_{i=1}^n x_i^2} \sqrt{\sum\limits_{i=1}^n y_i^2}} \leq \dfrac{\sum\limits_{i=1}^n x_i^2}{\sum\limits_{i=1}^n x_i^2} + \dfrac{\sum\limits_{i=1}^n y_i^2}{\sum\limits_{i=1}^n y_i^2}=2$$
+            Nuevamente, la igualdad se cumple solo si se cumple en $(1)$ para todo $i$, lo que significa que, 
+            $$\dfrac{x_i}{\sqrt{\sum\limits_{i=1}^n x_i^2}} = \dfrac{y_i}{\sqrt{\sum\limits_{i=1}^n y_i^2}}$$
+            para todo $i$. Si todo $y_i$ es distinto de $0$. Esto significa que $x_i=\lambda y_i$ para 
+            $$\lambda = \dfrac{\sqrt{\sum\limits_{i=1}^n x_i^2}}{\sqrt{\sum\limits_{i=1}^n y_i^2}}$$
+         \item La demostración depende de la siguiente igualdad:
+            $$\sum\limits_{i=1}^n x_i^2 \cdot \sum\limits_{i=1}^n y_i^2 = \left( \sum\limits_{i=1}^n x_iy_i \right)^n + \sum\limits_{i<j} (x_i y_j -x_j y_i)^2$$
+            al verificar esta igualdad notamos que,
+            $$\sum\limits_{i=1}x_i^2 \cdot \sum\limits_{i=1}^n y_i^2 = \sum\limits_{i=1}^n x_i^2 y_i^2 + \sum\limits_{i\neq j} x_i2 y_j^2$$
+             y por lo tanto,
+             $$\left( \sum\limits_{i=1}^n x_i y_i \right)^2 = \sum\limits_{i=1}^n (x_i y_i)^2 + \sum\limits_{i\neq j} x_i y_i x_j y_j$$
+             La diferencia es
+             \begin{center} 
+                \begin{tabular}{rlc}
+                   $\sum\limits_{i \neq j} (x_i^2 y_j^2 - x_i y_i x_j y_j)$ & $=$ & $2 \sum\limits_{i<j} (2_i^2 y_j^2 + x_j^2 y_i^2 - x_i y_i x_j y_j)$\\\\
+                      & $=$ & $2 \sum\limits_{i<j} (x_i y_j - x_j y_i)^2$\\\\
+                \end{tabular}
+             \end{center}
+             Si la igualdad se cumple en la desigualdad de Schwarz, para todo $x_iy_j = x_j y_i$. Si algún $y_i \neq 0$ y $y_i \neq 0$, luego $x_i=\dfrac{x_1}{y_1}y_i$ para todo $i$, así tenemos que $\lambda = \dfrac{x_1}{y_1}$\\\\
+      \end{enumerate}
+
+      %--------------------------------------------------22.-----------------------------------
+       \item El resultado del problema 1-7 tiene una generalización importante:\\
+          Si $a_i,...,a_n \geq 0,$ entonces la \textbf{media aritmética} 
+          $$A_n=\dfrac{a_1+...+a_n}{n}$$
+          y la \textbf{media geométrica}
+          $$G_n=\sqrt[n]{a_1\cdot \cdot \cdot a_n}$$
+          satisfacen
+          $$G_n \leq A_n$$
+          \begin{enumerate}[\bfseries (a)]
+             %--------------------(a)-----------------------------
+             \item Supóngase que $a_i<A_n.$ Entonces algún $a_i$ tiene que satisfacer $a_i>A_n$, pongamos que sea $a_2>A_n$. Sea $\bar{a}_1 = A_n$ y sea $\bar{a}_2=a_1+a_2 - \bar{a}_1$. Demostrar que $$\bar{a}_1 \bar{a}_2 \geq a_1 a_2$$ 
+                ¿Por qué la repetición de este proceso un suficiente número de veces demuestra que $G_n \leq A_n$? (He aquí otra ocasión en que resulta ser un buen ejercicio establecer una demostración formal por inducción, al tiempo que se da una explicación informal.)¿Cuándo se cumple la igualdad en la fórmula $G_n A_n$?\\\\
+                Demostración.-\;
+               %------------------(b)------------------------
+             \item Haciendo uso del hecho de ser $G_n \leq A_n$ cuando $n=2$, demostrar por inducción sobre $k$, que $G_n \leq A_n$ para $n=2_k$\\\\
+                Demostración.- \;
+                %------------------(c)---------------------------
+             \item Para un $n$ general, sea $2_m>n.$ Aplíquese la parte $(b)$ a los $2_m$ números 
+                $$a_1,\cdot \cdot \cdot , a_n,\,\,\,\, \underbrace{A_n,\cdot \cdot \cdot A_n}_{{2^{m}-n \;veces}}$$
+                para demostrar que $G_n \leq A_n$\\\\
+                Demostrar.- \;
+          \end{enumerate}
+      %----------------------------------------------23.----------------------------------------
+       \item Lo que sigue es una definición recursiva de $a_n:$\\
+          \begin{center}
+             \begin{tabular}{rcl}
+                $a_1$&$=$&$a$\\
+                $a_{n+1}$&$=$&$a_n \cdot a$\\
+             \end{tabular}
+          \end{center}
+          Demostrar por inducción que
+          \begin{center}
+             \begin{tabular}{rcl}
+                $a_{n+m}$&$=$&$a_n \cdot a_m$\\
+                $(a^n)^n$&$=$&$a^{nm}$\\
+             \end{tabular}
+          \end{center}
+          Demostración.-\;
+
+      %--------------------------------------------24.--------------------------------------
+       \item Supóngase que conocemos las propiedades P1 y P4 de los números naturales, pero que no se ha hablado de multiplicación. Entonces se puede dar la siguiente definición recursiva de multiplicación: $$1\cdot b=b\,\,\,\,\,\,\,\,\, (a+1)\cdot b =a\cdot +b$$
+          Demostrar lo siguiente (¡en el orden indicado!)
+          \begin{center}
+             \begin{tabular}{rcll}
+                $a\cdot (a+c)$&$=$&$a\cdot b + a\cdot c$&Utilizar inducción sobre $a$\\
+                $a_cdot 1$&$=$&$a$&\\
+                $a \cdot b$&$=$&$b\cdot a$&lo anterior era el caso $b=1$\\\\
+             \end{tabular}
+          \end{center}
+          Demostración.-\;
+
+      %------------------------------------------25.------------------------------------------------
+       \item En este capítulo hemos empezado con los números naturales y gradualmente hemos ido ampliando hasta los reales. Un estudio completamente riguroso de este proceso requiere de por sí un pequeño libro. Nadie ha encontrado la manera de llegar a los números reales como dados, entonces los números naturales pueden ser definidos como los números naturales de la forma $1,1+1,1+1+1$, etc. Todo el objeto de este problema consiste en hacer ver que existe una manera matemática riguroso de decir \textbf{etc.} 
+          \begin{enumerate}[\bfseries (a)]
+             %--------------------(a)---------------------
+             \item Se dice que un conjunto $A$ de números reales es \textbf{inductivo} si
+                \begin{enumerate}[\bfseries (i)]
+                   \item $\mathbb{R}$ es inductivo.\\\\
+                      Demostración.-\;
+                   \item El conjunto de los números reales positivos es inductivo.\\\\
+                      Demostración.-\;
+                   \item El conjunto de los números reales positivos distintos de $\dfrac{1}{2}$ es inductivo.\\\\
+                      Demostración.-\;
+                   \item El conjunto de los números reales positivos distintos de $5$ no es inductivo.\\\\
+                      Demostración.-\;
+                   \item Si $A$ y $B$ son inductivos, entonces el conjunto $C$ de los números reales que están a la vez en $A$ y en $B$ es también inductivo.\\\\
+                      Demostración.-\;
+                \end{enumerate}
+            %--------------------(b)------------------------
+             \item Un número real $n$ será llamado \textbf{número natural} si $n$ está en todo conjunto inductivo.
+                \begin{enumerate}[\bfseries (i)]
+                   \item Demostrar que $1$ es un número natural.\\\\
+                      Demostración.-\;
+                   \item Demostrar que $k+1$ es un  número natural si $k$ es un número natural.\\\\
+                      Demostración.-\;
+                \end{enumerate}
+          \end{enumerate}
+
+          %----------------------------------26.------------------------------------------
+       \item Un rompecabezas consiste en disponer de tres vástagos cilíndricos, el primero de los cuales lleva engastados $n$ anillos concéntricos de diámetro decreciente. Se puede quitar el anillo superior de un vástago para engastarlo sobre otro vástago siempre que al hacer esto último el anillo desplazado no venga a caer sobre otro de diámetro inferior. Por ejemplo, si el anillo más pequeño se pasa al vástago 2 y el que le sigue pasar también al vástago 3 encima del que le sigue en tamaño. Demostrar que la pila completa se puede pasar al vástago 3 en $2_n+1$ pasos  y no en menos.\\\\
+          Demostración.-\;
+
+          %.-------------------------------27.------------------------------------------
+       \item Hubo un tiempo en que la universidad $B$ se preciaba de tener $17$ profesores numerarios de matemáticas. La tradición obligaba a que el almuerzo comunitario semanal, al que concurrían fielmente los $17$, todo miembro que hubiese descubierto un error en una de sus publicaciones tenia que hacer público este hecho y a continuación dimitir. Una declaración de este tipo no se había producido nunca porque ninguno de los profesores era consciente de la existencia de un error en su propio trabajo. Lo cual, sin embargo, mo quiere decir que no existieran errores. De hecho, en el transcurso de los años, por lo menos un error había sido descubierto en el trabajo de cada uno de los miembros por otro de entro ellos.La existencia de este error había sido comunicada a todos los demás miembros del departamento salvo al responsable, con objeto de evitar dimisiones.\\
+          Llegó un fatídico año en que el departamento aumentó el número de sus miembros con un visitante de otra universidad, un Profesor $X$ que venía con la esperanza de que se le ofreciera un puesto permanente al final del año académico. Una vez que vio frustrada su esperanza, el Profesor $X$ tomó su venganza en el último almuerzo comunitario del año diciendo: Me ha sido muy grata mi estancia entre ustedes, pero hay una cosa que creo que es mi deber comunicarles. Por lo menos uno de entre ustedes tiene publicado un resultado incorrecto, lo cual ha sido descubierto por otro del departamento. ¿Qué ocurrió al año siguiente?\\\\
+          Respuesta.-\;
+
+          %-------------------------------------28--------------------------------------------
+       \item Después de imaginarse, o de consultar, la solución del problema 27, considere lo siguiente: Cada uno de los miembros del departamento era ya sabedor de lo que el Profesor $X$ afirmaba. ¿Cómo pudo pues su afirmación cambiar las cosas?\\\\
+          Respuesta.-\;
+
+          
+
     \end{enumerate}
+    
     
