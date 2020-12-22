@@ -1,0 +1,113 @@
+ """""""""""""" sangria""""""""""""""" 
+set autoindent		"Las lineas nuevas heredan de las lineas anteriores
+set smartindent
+set ruler
+set hlsearch		"Habilita el resaltado de busqueda
+syntax enable 		"Habilita el resaldo de sintaxis
+set wrap		"habilita el ajuste de linea
+set wildmenu		"muestra las opciones completas de la pestaña de la linea de comnado como un menu
+set number		"muestra los números de linea en la barra lateral
+set mouse=a		"habilita el mause para desplazarse y cambiar el tamaño
+set title 		"Establece el titulo de la ventana reflejado en el archivo que se esta editadando actualmente$
+"set noshowmode          " No mostrar el modo actual (ya lo muestra la barra de estado)
+set noswapfile         	
+set splitbelow		"abre pantalla abajo" 
+set cursorline		
+set numberwidth=1
+set clipboard=unnamed 	"opciones de copiado externos e internos
+set showcmd		"me muestra los comandos que estoy ejecutando"
+set encoding=utf-8	"caracteres internacionales
+set showmatch		"me muestra el parentesis que esta cerrandor"
+set sw=4		"distancia de tab"
+set laststatus		"status visibles" 
+set undofile		"luego de cerrar la cesión para luego abrirlo de nuevo puedo deshacer lo que hizo la anterior vez"
+set ignorecase		"ignora mayúsculas 
+"set shell=powershell
+set spell spelllang=es,en
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+set omnifunc=javascriptcomplete#CompleteJS
+set helplang=es		"idioma para la ayuda y mensajes
+set paste
+set formatoptions-=t
+"""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""Plugins""""""""""""""""""""
+
+call plug#begin()
+	Plug 'scrooloose/nerdtree'		"explorador de sistema de archivos para el editor Vim
+	Plug 'morhetz/gruvbox'			"tema
+	Plug 'easymotion/vim-easymotion' 	"nos desplazamos más rápido
+	Plug 'tpope/vim-fugitive'		"Git para vim
+        Plug 'vim-airline/vim-airline'		"barra de estado	 
+	Plug 'lervag/vimtex'			"latex
+	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+	Plug 'jiangmiao/auto-pairs'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'zchee/deoplete-jedi'		"completado para python
+	Plug 'vim-python/python-syntax'		"sintaxis de python
+	Plug 'douglascrockford/jslint'		"sintaxis de JavaScripts
+	Plug 'mattn/emmet-vim'
+	Plug 'turbio/bracey.vim'
+
+""""""""""""""R""""""""""""""""""""
+	Plug 'ncm2/ncm2'			"complementos de R
+	Plug 'roxma/nvim-yarp'
+	Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}		"R
+	Plug 'gaalcaras/ncm-R'
+"""""""""""""""""""""""""""""""""""
+
+	Plug 'christoomey/vim-tmux-navigator'	"abrir paneles
+	Plug 'vim-scripts/c.vim'
+	Plug 'vim-pandoc/vim-rmarkdown'
+	Plug 'vim-pandoc/vim-pandoc-syntax'
+call plug#end() 
+
+"""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""gruvbox""""""""""""
+let g:gruvbox_guisp_fallback='bg'		"activa el marcado de errores ortográficos
+let g:gruvbox_contrast_dark='hard'		"contraste oscuro
+colorscheme gruvbox
+let g:gruvbox_italic=1				"cursiva		
+""""""""""""""""""""""""""""""
+
+
+let NERDTreeQuitOnOpen=1
+let mapleader= " "				" comando para habilitar shortcuts
+
+nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>nt :NERDTreeFind<CR>
+
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo	
+
+nnoremap / /a<DEL>
+
+vnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
+nnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
+
+"deoplete-jedi configuración
+let g:deoplete#sources#jedi#show_docstring=1
+let g:deoplete#sources#jedi#ignore_errors=1
+
+"terminal configuración
+vnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR> 
+nnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
+
+nnoremap / /a<DEL>			    		
+
+""""""""""""""""""""""salvar folders""""""""""""""""""""""
+augroup AutoSaveFolds
+autocmd!
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+augroup END
+
+"habilitar ncm2 para todos los buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+
+autocmd FileType r if string(g:SendCmdToR) == "function('SendCmdToR_fake')" | call StartR("R") | endif
+autocmd FileType rmd if string(g:SendCmdToR) == "function('SendCmdToR_fake')" | call StartR("R") | endif

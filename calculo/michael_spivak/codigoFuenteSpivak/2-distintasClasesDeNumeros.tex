@@ -459,6 +459,7 @@
 	       con lo que 
 	       $$p^n + a_{n-1} p ^{n-1}q + ... + a_0 q^n = 0$$
 	       Ahora bien, si $q \neq \pm 1,$ entonces $q$ tiene por lo menos un divisor primo. Este divisor primo divide a cada uno de los términos que siguen a $p^n$, con lo que también deberá dividir a $p^n$. Dividirá por lo tanto a $p$, lo cual es una contradicción. Así pues, $q= \pm 1,$ lo que significa que $x$ es entero.\\\\
+
 	    %--------------------(b)--------------------------
 	    \item Demostrar que $\sqrt{2} + \sqrt[3]{2}$ es irracional.\\\\ 
 	       Demostración.- \; Sea $a=\sqrt{2} + 2^{1/3}$. Se demostrará por contradicción. Supongamos que $a$ es racional, entones,
@@ -552,18 +553,41 @@
           $$G_n \leq A_n$$
           \begin{enumerate}[\bfseries (a)]
              %--------------------(a)-----------------------------
-             \item Supóngase que $a_i<A_n.$ Entonces algún $a_i$ tiene que satisfacer $a_i>A_n$, pongamos que sea $a_2>A_n$. Sea $\bar{a}_1 = A_n$ y sea $\bar{a}_2=a_1+a_2 - \bar{a}_1$. Demostrar que $$\bar{a}_1 \bar{a}_2 \geq a_1 a_2$$ 
+             \item Supóngase que $a_1<A_n.$ Entonces algún $a_i$ tiene que satisfacer $a_i>A_n$, pongamos que sea $a_2>A_n$. Sea $\bar{a}_1 = A_n$ y sea $\bar{a}_2=a_1+a_2 - \bar{a}_1$. Demostrar que $$\bar{a}_1 \bar{a}_2 \geq a_1 a_2$$ 
                 ¿Por qué la repetición de este proceso un suficiente número de veces demuestra que $G_n \leq A_n$? (He aquí otra ocasión en que resulta ser un buen ejercicio establecer una demostración formal por inducción, al tiempo que se da una explicación informal.)¿Cuándo se cumple la igualdad en la fórmula $G_n A_n$?\\\\
-                Demostración.-\;
+		  Demostración.-\; Tenemos que probar que $$A_n (a_1+a_2-A_n)\geq a_1 a_2$$ 
+		  Vemos que es lo mismo demostrar que $A_n^2 - (a_1 + a_2)A_n + a_1 a_2 \leq 0$ de donde $(A_n - a_1)(A_n-a_2)\leq 0$, el cual sabemos que es verdad porque $(A_n -a_1)>0$ y $(A_n - a_2)<0$\\\\
+
                %------------------(b)------------------------
              \item Haciendo uso del hecho de ser $G_n \leq A_n$ cuando $n=2$, demostrar por inducción sobre $k$, que $G_n \leq A_n$ para $n=2_k$\\\\
-                Demostración.- \;
+		 Demostración.- \; Sabemos que $G_n \leq A_n$ cuando $n=2^1$. Supóngase que $G_n \leq A_n$ para $n=2^k$ para luego $m=2^{k+1}=2n$, entonces,
+		  \begin{center}
+		      \begin{tabular}{rcll}
+			  $G_m$&$=$&$\sqrt[m]{a_1 \cdot \cdot \cdot a_m}$&\\\\
+			  &$=$&$\sqrt{\sqrt[n]{a_1 \cdot \cdot \cdot a_n} \sqrt[n]{a_{n+1}\cdot \cdot \cdot a_m}}$&\\\\
+			  &$\leq$&$\dfrac{\sqrt[n]{a_1 \cdot \cdot \cdot a_n} + \sqrt[n]{a_{n+1}\cdot \cdot \cdot a_m}}{2}$& ya que $G_2 \leq A_2$\\\\
+			  &$\leq$&$\dfrac{\dfrac{a_1 + ... + a_n}{n} + \dfrac{a_{n+1} + ... + a_m}{n}}{2}$&\\\\
+			  &$=$&$\dfrac{a_1 + ... + a_m}{2n}$&\\\\
+			  &$=$&$A_m$&\\\\
+		      \end{tabular}
+		  \end{center}
+
                 %------------------(c)---------------------------
              \item Para un $n$ general, sea $2_m>n.$ Aplíquese la parte $(b)$ a los $2_m$ números 
                 $$a_1,\cdot \cdot \cdot , a_n,\,\,\,\, \underbrace{A_n,\cdot \cdot \cdot A_n}_{{2^{m}-n \;veces}}$$
                 para demostrar que $G_n \leq A_n$\\\\
-                Demostrar.- \;
+		  Demostrar.- \; Aplicando la parte $(b)$  a los $2^m$ números, para $k=2^m-n$
+		  \begin{center}
+		      \begin{tabular}{rcl}
+			  $(a_1 \cdot \cdot \cdot a_n)(A_n)^k$&$\leq$&$\left[\dfrac{a_1 + ... + a_n + k A_n}{2^m}\right]^{2^m}$\\\\
+			  &$=$&$\left[\dfrac{n A_n + k A_n}{2^m}\right]^{2^m}$\\\\
+			  &$=$&$(A_n)^{2^m}$\\\\
+		      \end{tabular}
+		  \end{center}
+		  así,
+		  $$a_1\cdot \cdot \cdot a_n \leq (A_n)^{2^m - k} = (A_n)^n$$\\\\
           \end{enumerate}
+
       %----------------------------------------------23.----------------------------------------
        \item Lo que sigue es una definición recursiva de $a_n:$\\
           \begin{center}
@@ -576,22 +600,71 @@
           \begin{center}
              \begin{tabular}{rcl}
                 $a_{n+m}$&$=$&$a_n \cdot a_m$\\
-                $(a^n)^n$&$=$&$a^{nm}$\\
+                $(a^n)^m$&$=$&$a^{nm}$\\
              \end{tabular}
           \end{center}
-          Demostración.-\;
+	  Demostración.-\; La primera ecuación es verdad para $m=1$ ya que $a^{n+1}=a^n \cdot a^1$. Supongamos que $a^{n+m}=a^n \cdot a^m$, entonces 
+	  \begin{center}
+	      \begin{tabular}{rcl}
+		  $a^{n+(n+1)}$&$=$&$a^{(n+1)+1} \cdot a$\\
+		  &$=$&$(a^n \cdot a^m)\cdot a$\\
+		  &$=$&$a^n \cdot (a^m \cdot a)$\\
+		  &$=$&$a^n \cdot a^{m+1}$\\
+	      \end{tabular}
+	  \end{center}
+	  por lo tanto la primera ecuación es verdad para $m+1$\\\\
+	  La segunda ecuación es verdad para $m=1$ ya que $(a^n)^1=a^{n\cdot 1}$. Supóngase que $(a^n)^m=a^{nm}$, entonces, 
+	  \begin{center}
+	      \begin{tabular}{rcl}
+		  $$&$=$&$$\\
+		  &$=$&$(a^n \cdot a^m)\cdot a$\\
+		  &$=$&$a^n \cdot (a^m \cdot a)$\\
+		  &$=$&$a^n \cdot a^{m+1}$\\\\
+	      \end{tabular}
+	  \end{center}
 
       %--------------------------------------------24.--------------------------------------
-       \item Supóngase que conocemos las propiedades P1 y P4 de los números naturales, pero que no se ha hablado de multiplicación. Entonces se puede dar la siguiente definición recursiva de multiplicación: $$1\cdot b=b\,\,\,\,\,\,\,\,\, (a+1)\cdot b =a\cdot +b$$
+       \item Supóngase que conocemos las propiedades P1 y P4 de los números naturales, pero que no se ha hablado de multiplicación. Entonces se puede dar la siguiente definición recursiva de multiplicación: $$1\cdot b=b\,\,\,\,\,\,\,\,\, (a+1)\cdot b =a\cdot b +b$$
           Demostrar lo siguiente (¡en el orden indicado!)
           \begin{center}
              \begin{tabular}{rcll}
                 $a\cdot (a+c)$&$=$&$a\cdot b + a\cdot c$&Utilizar inducción sobre $a$\\
-                $a_cdot 1$&$=$&$a$&\\
+                $a \cdot 1$&$=$&$a$&\\
                 $a \cdot b$&$=$&$b\cdot a$&lo anterior era el caso $b=1$\\\\
              \end{tabular}
           \end{center}
-          Demostración.-\;
+          Demostración.-\; Al ser 
+	  \begin{center}
+	      \begin{tabular}{rcll}
+		  $1\cdot (b+c)$&$=$&$b+c$&\\
+		  &$=$&$1\cdot b + 1 \cdot c$&por definición,\\
+	      \end{tabular}
+	  \end{center}
+	  el primer resultado es válido para $a=1$. Supóngase que $a\cdot(b+c)=a\cdot b + a\cdot c$ para todo $b$ y $c$. Entonces,
+	  \begin{center}
+	      \begin{tabular}{rcl}
+		  $(a+1)\cdot (b+c)$&$=$&$a\cdot (b+c)+(b+c)$\\
+		  &$=$&$(a\cdot b + a\cdot c)+(b+c)$\\
+		  &$=$&$(a\cdot b + b) + (a\cdot c + c)$\\
+		  &$=$&$(a+1)\cdot b + (a+1)\cdot c$\\
+	      \end{tabular}
+	  \end{center}
+	  La ecuación $a\cdot 1 = a$ vale para $a=1$ por definición. Supóngase que $a\cdot 1 = a$. Entonces
+	  \begin{center}
+	      \begin{tabular}{rcl}
+		  $(a+1)\cdot 1$&$=$&$a\cdot 1 + 1 \cdot 1$\\
+		  &$=$&$a+1$\\
+	      \end{tabular}
+	  \end{center}
+	  Para $b=1$, la ecuación $a\cdot b=b\cdot a$ es consecuencia de $a\cdot 1=a$, que acaba de ser demostrada, y de $1\cdot a = a$, que vale por definición. Supóngase que $a\cdot b=b\cdot a$, entonces,
+	  \begin{center}
+	      \begin{tabular}{rcl}
+		  $a\cdot (b+1)$&$=$&$a\cdot b + a\cdot 1$\\
+		  &$=$&$a\cdot b + a$\\
+		  &$=$&$b\cdot a + a$\\
+		  &$=$&$(b+1)\cdot a$\\\\
+	      \end{tabular}
+	  \end{center}
 
       %------------------------------------------25.------------------------------------------------
        \item En este capítulo hemos empezado con los números naturales y gradualmente hemos ido ampliando hasta los reales. Un estudio completamente riguroso de este proceso requiere de por sí un pequeño libro. Nadie ha encontrado la manera de llegar a los números reales como dados, entonces los números naturales pueden ser definidos como los números naturales de la forma $1,1+1,1+1+1$, etc. Todo el objeto de este problema consiste en hacer ver que existe una manera matemática riguroso de decir \textbf{etc.} 
@@ -599,42 +672,57 @@
              %--------------------(a)---------------------
              \item Se dice que un conjunto $A$ de números reales es \textbf{inductivo} si
                 \begin{enumerate}[\bfseries (i)]
+		    %----------(i)----------
                    \item $\mathbb{R}$ es inductivo.\\\\
-                      Demostración.-\;
+                      Demostración.-\;  Está claro según la definición.\\\\
+		    %----------(ii)----------
                    \item El conjunto de los números reales positivos es inductivo.\\\\
-                      Demostración.-\;
+                      Demostración.-\; Esto está claro, ya que $1$ es positivo, y si $k$ es positivo, entonces por definición $k+1$ es positivo.\\\\
+		    %---------(iii)---------
                    \item El conjunto de los números reales positivos distintos de $\dfrac{1}{2}$ es inductivo.\\\\
-                      Demostración.-\;
+                      Demostración.-\; Está claro que $1$ pertenece a este conjunto. Si para el mismo no se cumpliera la condición $2$, existiría entonces en el conjunto algún $k$ con $k+1=1/2$. Pero esto es falso, ya que $k=-1/2$ no es positivo.\\\\
+		    %----------(iv)----------
                    \item El conjunto de los números reales positivos distintos de $5$ no es inductivo.\\\\
-                      Demostración.-\;
+                      Demostración.-\; Este conjunto contiene $4$, pero no $4+1$.\\\\
+		    %----------(v)----------
                    \item Si $A$ y $B$ son inductivos, entonces el conjunto $C$ de los números reales que están a la vez en $A$ y en $B$ es también inductivo.\\\\
-                      Demostración.-\;
+                      Demostración.-\; Al estar $1$ en $A$ y en $B$, también está en $C$. Si $k$ está en $C$, entonces $k$ está a la vez en $A$ y en $B$, con lo que $k+1$ está en $A$ y en $B$, de modo que $k+1$ está en $C$.\\\\
                 \end{enumerate}
+
             %--------------------(b)------------------------
              \item Un número real $n$ será llamado \textbf{número natural} si $n$ está en todo conjunto inductivo.
                 \begin{enumerate}[\bfseries (i)]
+		    %----------(i)----------
                    \item Demostrar que $1$ es un número natural.\\\\
-                      Demostración.-\;
+                      Demostración.-\; $1$ es un número natural, puesto que $1$ está en todo conjunto inductivo, por la misma definición de conjunto inductivo.\\\\
+
+	 	    %----------(ii)---------
                    \item Demostrar que $k+1$ es un  número natural si $k$ es un número natural.\\\\
-                      Demostración.-\;
+                      Demostración.-\; Si $k$ es un número natural, entonces $k$ está en todo conjunto inductivo. Así pues, $k+1$ está en todo conjunto inductivo. Por lo tanto, $k+1$ es un número natural.\\\\
                 \end{enumerate}
           \end{enumerate}
 
           %----------------------------------26.------------------------------------------
        \item Un rompecabezas consiste en disponer de tres vástagos cilíndricos, el primero de los cuales lleva engastados $n$ anillos concéntricos de diámetro decreciente. Se puede quitar el anillo superior de un vástago para engastarlo sobre otro vástago siempre que al hacer esto último el anillo desplazado no venga a caer sobre otro de diámetro inferior. Por ejemplo, si el anillo más pequeño se pasa al vástago 2 y el que le sigue pasar también al vástago 3 encima del que le sigue en tamaño. Demostrar que la pila completa se puede pasar al vástago 3 en $2_n+1$ pasos  y no en menos.\\\\
-          Demostración.-\;
+          Demostración.-\; Si hay solo $n=1$ anillos, claramente se puede mover al eje $3$ en $1=2^1 - 1$ movimientos. Suponiendo el resultado para $k$ anillos, luego dados $k+1$ anillos,
+	  \begin{enumerate}[\bfseries (a)]
+	  	\item Mueve los anillos elevados a la $k$ al eje 2 en $2k-1$ movimientos,
+		\item mueva el anillo inferior al eje 3,
+		\item mueva los $k$ anillos superiores de nuevo al eje $3$ en movimientos $2k-1$.
+	  \end{enumerate}
+	Esto toma $2(2k - 1) + 1 = 2k + 1 - 1$ se mueve. Si $2k - 1$ movimientos es el mínimo posible para $k$ anillos, luego $2k + 1- 1$ es el mínimo para $k + 1$ anillos, ya que la parte inferior El anillo no se puede mover en absoluto hasta que los primeros $k$ anillos se muevan a algún lugar, tomando al menos $2k - 1$ se mueve, el anillo inferior debe moverse al eje $3$, tomando al menos $1$ movimiento, y luego los otros anillos deben colocarse encima, tomando al menos otros movimientos $2^k  - 1$.\\\\
 
           %.-------------------------------27.------------------------------------------
        \item Hubo un tiempo en que la universidad $B$ se preciaba de tener $17$ profesores numerarios de matemáticas. La tradición obligaba a que el almuerzo comunitario semanal, al que concurrían fielmente los $17$, todo miembro que hubiese descubierto un error en una de sus publicaciones tenia que hacer público este hecho y a continuación dimitir. Una declaración de este tipo no se había producido nunca porque ninguno de los profesores era consciente de la existencia de un error en su propio trabajo. Lo cual, sin embargo, mo quiere decir que no existieran errores. De hecho, en el transcurso de los años, por lo menos un error había sido descubierto en el trabajo de cada uno de los miembros por otro de entro ellos.La existencia de este error había sido comunicada a todos los demás miembros del departamento salvo al responsable, con objeto de evitar dimisiones.\\
           Llegó un fatídico año en que el departamento aumentó el número de sus miembros con un visitante de otra universidad, un Profesor $X$ que venía con la esperanza de que se le ofreciera un puesto permanente al final del año académico. Una vez que vio frustrada su esperanza, el Profesor $X$ tomó su venganza en el último almuerzo comunitario del año diciendo: Me ha sido muy grata mi estancia entre ustedes, pero hay una cosa que creo que es mi deber comunicarles. Por lo menos uno de entre ustedes tiene publicado un resultado incorrecto, lo cual ha sido descubierto por otro del departamento. ¿Qué ocurrió al año siguiente?\\\\
-          Respuesta.-\;
+          Respuesta.-\; Primero Suponga que solo hay $2$ profesores $A$ y $B$, cada uno consciente del error en el trabajo del otro, pero sin darse cuenta de cualquier error en el suyo. Entonces ninguno se sorprende por la declaración del profesor $X$, pero cada uno espera que el otro sea sorprendido, y dimitir en el primer almuerzo del próximo año. Cuando esto no suceda, cada uno se da cuenta que esto solo puede ser porque él también ha cometido un error. Entonces, el la próxima reunión, ambos renunciaran.\\
+	  A continuación, considere el caso de 3 profesores, $A$, $B$ y $C$. El profesor $C$ sabe que el profesor $A$ es consciente de un error en el trabajo del profesor $B$, ya sea porque el profesor $A$ encontró el error e informó, o porque encontró el error e informó al profesor $A$. Del mismo modo, él sabe que el profesor $B$ sabe que hay un error en el trabajo del profesor $A$. Pero el profesor $C$ piensa que no a cometido errores, por lo que a el respecta, la situación frente a los profesores $A$ y $B$ es precisamente el analizado en el párrafo anterior. El profesor $C$ está asumiendo, de que nadie cree que exista un error cuando uno no lo hace. Entonces el profesor $C$ espera tanto al profesor $A$ como al profesor $B$ renunciar en la segunda reunión. Por supuesto de manera similar los profesores $A$ y $B$ esperan que los otros dos renuncien en la segunda reunión. Cuando nadie renuncia todos se dan cuenta de que ha cometido un error, por lo que todos renuncian en la tercera reunión. Podría ser demostrado por inducción.\\\\ 
 
           %-------------------------------------28--------------------------------------------
        \item Después de imaginarse, o de consultar, la solución del problema 27, considere lo siguiente: Cada uno de los miembros del departamento era ya sabedor de lo que el Profesor $X$ afirmaba. ¿Cómo pudo pues su afirmación cambiar las cosas?\\\\
-          Respuesta.-\;
+          Respuesta.-\; Ganar es una buena idea comenzar con el caso en el que el departamento consta solo de Profesores $A$ y $B$. Ahora, por supuesto, ambos profesores saben que alguien ha publicado un resultado incorrecto, pero el Profesor $A$ piensa que el Profesor $B$ no lo sabe, y viceversa. Una vez que el Profesor $X$ hace su anuncio, el Profesor $A$ sabe que el Profesor $B$ lo sabe. Y por eso espera que el Profesor $B$ renuncie en la próxima reunión. En el caso de tres profesores, la situación es más complicada. Cada uno sabe que alguien ha cometido un error, y además cada uno sabe que los demás saben Por ejemplo, el Profesor $C$ sabe que el Profesor $A$ lo sabe, ya que él y el Profesor $A$ han discutido el error en el trabajo del Profesor $B$, y él sabe de manera similar que el Profesor $B$ lo sabe. Pero el Profesor $C$ no cree que el Profesor $A$ sepa que el Profesor $B$ lo sabe. Así que el anuncio del Profesor $X$ cambia las cosas: ahora el Profesor $C$ sabe que el Profesor $A$ sabe que el Profesor $B$ sabe. Bueno, puedes ver lo que pasa en general. Esto parece probar que las declaraciones como $A$ sabía que $B$ sabía que $C$ sabía que realmente tiene sentido.\\\\
 
-          
 
     \end{enumerate}
     
-    
+
