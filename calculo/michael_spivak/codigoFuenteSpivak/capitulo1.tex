@@ -5,10 +5,12 @@
 \begin{prop}[Ley asociativa para la suma] 
 $$a+(b+c) = (a+b)+c$$
 \end{prop}
+
 %propiedad 2
 \begin{prop}[Existencia de una identidad] 
 $$a+0 = 0+a = a$$
 \end{prop}
+
 %propiedad 3
 \begin{prop}[Existencia de inversos para la suma]
 $$a+(-a) = (-a) + a = 0$$
@@ -145,6 +147,7 @@ Conviene considerar el conjunto de todos los números positivos, representados p
 \item $-a$ pertenece al conjunto $P$
 \end{enumerate}
 \end{prop}
+
 %propiedad 11
 \begin{prop}[La suma cerrada] Si $a$ y $b$ pertenecen a $P$, entonces $a+b$ pertenecen a $P$.
 \end{prop}
@@ -258,12 +261,10 @@ Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogame
 %i)
 \item Si $ax=a$ para algún número $a\neq 0$, entonces $x=1$\\\\
 Demostración.- \; Sea $a\neq 0$ entonces $(a^{-1}\cdot a)x=a\cdot a^{-1}$ por lo tanto $\cdot x = 1$\\\\
-
  
 %ii)
 \item $x^2-y^2=(x-y)(x+y)$\\\\
 Demostración.- \; Partamos de $(x-y)(x+y)$ donde por la propiedad distributiva tenemos $(x-y)x+(x-y)y$, luego $x^2-xy+xy-y^2$, por lo tanto por las propiedades de inverso y  neutro $x^2-y^2$\\\\
-
 
 %iii)
 \item Si $x^2=y^2$, entonces $x=y$ o $x=-y$\\\\
@@ -310,12 +311,15 @@ El fallo esta en que no se puede dividir un número por $0$ sabiendo que $x=y$\\
 \item $\dfrac{a}{b} = \dfrac{ac}{bc},\; si \; b, c\neq 0$\\\\
 Demostración.- \;
 Por definición tenemos que $\displaystyle\frac{a}{b}=ab^{-1}$, como $b, \; c \neq 0$ entonces $(ab)(c\cdot c^{-1})$, por  las propiedades asociativa y conmutativa, $(ac)(b^{-1}c^{-1})$ por lo tanto $\displaystyle\frac{ac}{bc}$ \\\\ 
+
 %2
 \item $\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad+bc}{bd}, \; si \; b,d \neq 0$\\\\
-Demostración.- \; 
+    Demostración.- \; $(ad+bc)/(bd)=(ad+bc)(bd)^{-1}=(ad + bc)(b^{-1}d^{-1})=ab^{-1} + cd^{-1}=a/d + c/d$\\\\
+
 %3
 \item $(ab)^{1} = a^{-1} b^{-1}$, si $a,b \neq 0$ (Para hacer esto hace falta tener presente cómo se ha definido $(ab)^{-1}$)\\\\
 Demostración.- \; Demostremos que  $a^{-1} b^{-1} (ab) = 1$, Sea $a^{-1} b^{-1} (ab) = \left( a^{-1} a \right)\left( b^{-1} b \right) = 1$\\\\
+
 %4
 \item $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{db},$ si $b,d \neq 0$\\\\
 Demostración.- \; Sea por definición $ab^{-1} \cdot cd^{-1}$ entonces  por la propiedad conmutativa $ac \cdot b^{-1}d^{-1}$, por lo tanto $\dfrac{ac}{bd}$ si $b,d \neq 0$\\\\
@@ -325,9 +329,11 @@ Si $c\neq 0$ y $d\neq 0$ entonces $(cd^{-1})^{-1}=c^{-1}d$\\\\
 Demostración.- \;
 Por definición de $a^{-1}$ tenemos que $(cd^{-1})^{-1}=\displaystyle\frac{1}{cd^{-1}}$, por el teorema de posibilidad de la división $1=(c^{-1}d)(cd^{-1})$ y en virtud de los axiomas de conmutatividad y asociatividad $1=(c^{1}c)(dd^{-1})$, luego $1=1$. quedando demostrado el corolario.\\\\
 \end{col.}
+
 %5
 \item $\dfrac{a}{b} / \dfrac{c}{d} = \dfrac{ad}{bc}$ si $b,c,d \neq 0$\\\\
 Demostración.- \; Si $ab^{-1} \cdot \left( cd^{-1}\right)^{-1}$ en virtud del anterior corolario se tiene $ab^{-1}\cdot c^{-1}d$ y por lo tanto $\dfrac{ad}{bc}$ \\\\
+
 %6
 \item Si $b,\; c \neq 0$, entonces $\displaystyle\frac{a}{b}=\frac{c}{d}$ si sólo si $ad=bc$, Determinar también cuando es $\displaystyle\frac{a}{b}=\frac{b}{a}$\\\\
 Demostración.- \; Sea $b,\; c \neq 0$ si sólo si $ab^{-1}=cd^{-1}$ entonces $(ab^{-1})b=cd^{-1}b$, por propiedades asociativa y conmutativa $a(b\cdot b^{-1})=(bc)d^{-1}$, $a=(bc)d^{-1}$ luego $ad=bc(d\cdot d^{-1})$, por lo tanto $ad=bc$.\\
@@ -347,6 +353,7 @@ $\Rightarrow$&$4+(-4)x$&$<$&$3+(-4)$&\\
 $\Rightarrow$&$x$&$<$&$-1$&propiedades\\\\
 \end{tabular}
 \end{center}
+
 %ii)
 \item $5-x^2<8$
 \begin{center}
@@ -359,6 +366,7 @@ $\Rightarrow$&$x^2+3$&$>$&$0$&\\\\
 \end{tabular}
 \end{center}
 Sea $x \neq 0$ entonces por teorema \; $x^2>0$ y por propiedad se cumple que $x^2+3$ siempre es positivo, y como $3>0$ entonces el valor de $x$ son todos los números reales.\\\\
+
 %iii)
 \item $5-x^2<-2$
 \begin{center}
@@ -383,12 +391,15 @@ $\Rightarrow$&$x>1$&$y$&$x>3$&\\
 $\Rightarrow$&$x>3$&$ó$&$x<1$&\\\\
 \end{tabular}
 \end{center}
+
 %v)
 \item $x^2-2x+2>0$\\\\
 Completando cuadrados obtenemos que $x^2-2x+1^2 -1^2 +2 > 0$, después $(x-1)^2+1^2>0$, luego $x^2>0$, y en virtud de teorema nos queda que la desigualdad dada satisface a todos los números reales.\\\\ 
+
 %vi)
 \item $x^2+x+1>2$\\\\
 Aplicando el teorema se tiene $x=\dfrac{-1 \pm \sqrt{2^2-4(-1)}}{2}$. luego $$\left( x>\dfrac{-1-\sqrt{5}}{2} \; \; \; y \; \; \; x>\dfrac{-1+\sqrt{5}}{2} \right) ó \left( x<\dfrac{-1-\sqrt{5}}{2}\; \; \; y \; \; \; x < \dfrac{-1+\sqrt{5}}{2} \right),$$ por lo tanto, $$x<\dfrac{-1-\sqrt{5}}{2}\; \cup \; x>\dfrac{-1+\sqrt{5}}{2} $$ \\\\
+
 %vii)
 \item $x^2-x+10>16$
 \begin{center}
@@ -401,9 +412,11 @@ $\Rightarrow$&$x>3$&$y$&$x>-2$&\\
 $\Rightarrow$&$x>3$&$ó$&$x<-2$&\\\\
 \end{tabular}
 \end{center}
+
 %viii)
 \item $x^2+x+1>0$\\\\
 Sabemos que $x^2>0, \; para \; x\neq 0$, luego será verdad para $x^2+x+1>0$, entonces la inecuación se cumple para todo $x \in \mathbb{R}$\\\\
+
 %ix)
 \item $(x-\pi)(x+5)(x-3)>0$ por la propiedad asociativa $(x-\pi)\left[ (x+5)(x-3) \right]>0$
 \begin{center}
@@ -417,6 +430,7 @@ $\Rightarrow$&$x > \pi $&$\land$&$(x>3 \lor x<-5)$&\\
 $\Rightarrow$&$x<\pi$&$\lor$&$-5<x-3$&\\\\
 \end{tabular}
 \end{center}
+
 %x)
 \item $(x-\sqrt[3]{2})(x-\sqrt{2})>0$
 \begin{center}
@@ -427,12 +441,15 @@ $\Rightarrow$&$x>\sqrt[3]{2}$&$y$&$x>\sqrt{2}$&\\
 $\Rightarrow$&$x>\sqrt{2}$&$ó$&$x<\sqrt[3]{2}$&\\\\
 \end{tabular}
 \end{center}
+
 %xi)
 \item $2^x<8$\\\\
 Podemos reescribir como $2^x<2^3$ y por propiedad de logaritmos que se vera mas adelante se tiene que $x<3$\\\\
+
 %xii)
 \item $x+3^x <4$\\\\
 Visualizando, está claro que si $x=1$ entonces $1+3^2=4$, luego cualquier número menor a $1$ debería ser menor a $4$, por lo tanto $x<1$\\\\
+
 %xiii)
 \item $\displaystyle\frac{1}{x} + \frac{1}{1-x}>0$
 \begin{center}
@@ -446,6 +463,7 @@ $\Rightarrow$&$x>0$&$y$&$x<1$&\\
 $\Rightarrow$&$0\; \; <$&$x$&$<\; \; 1$&\\\\
 \end{tabular}
 \end{center}
+
 %xiv)
 \item $\displaystyle\frac{x-1}{x+1}>0$
 \begin{center}
@@ -567,12 +585,16 @@ Demostración.- \; Con respecto a \textbf{P-11} se tiene  $b-a>0$ y $c-b>0$ de m
 \begin{tabular}{r r c l}
 %i
 $(i)$&$|\sqrt{2}+\sqrt{3}-\sqrt{5}+\sqrt{7}|$&$\Rightarrow$&$\sqrt{2}+\sqrt{3}-\sqrt{5}+\sqrt{7}$\\\\
+
 %ii
 $(ii)$&$||a+b|-|a|-|b||$&$\Rightarrow$&$|a+b|-|a|-|b|$\\\\
+
 %iii
 $(iii)$&$|\left( |a+b|+|c|-|a+b+c| \right)|$&$\Rightarrow$&$|a+b|+|c|-|a+b+c|$\\\\
+
 %iv
 $(iv)$&$|x^2-2xy+y2|$&$\Rightarrow$&$x^2-2xy+y2$\\\\
+
 %v
 $(v)$&$|\left(  |\sqrt{2}+ \sqrt{3}|-|\sqrt{5}-\sqrt{7}|  \right)|$&$\Rightarrow$&$\sqrt{2}+ \sqrt{3}|-|\sqrt{5}-\sqrt{7}$\\\\
 \end{tabular}
@@ -591,6 +613,7 @@ $a+2b$&si&$a$&$\geq$&$-b$&y&$b$&$\leq$&$0$\\
 $-a-2b$&si&$a$&$\leq$&$-b$&y&$b$&$\geq$&$0$\\
 \end{tabular}
 \end{center}
+
 %(ii)
 \item $|x|-|x^2|$
 \begin{center}
@@ -599,6 +622,7 @@ $x-x^2$&si&$x$&$\geq$&$0$\\
 $-x-x^2$&si&$x$&$\leq$&$0$\\\\
 \end{tabular}
 \end{center}
+
 %(iii)
 \item $|x|-|x^2|$
 \begin{center}
@@ -607,6 +631,7 @@ $x-x^2$&$si$&$x\leq 0$\\
 $-x-x^2$&$si$&$x\geq 0$\\
 \end{tabular}
 \end{center}
+
 %(iv)
 \item $a-|(a-|a|)|$ 
 \begin{center}
@@ -628,6 +653,7 @@ $-8$&$=$&$x-3$&$=$&$8$&teorema 4.1\\
 $-5$&$=$&$x$&$=$&$11$&\\\\
 \end{tabular}
 \end{center}
+
 %(ii)
 \item $|x-3|<8$
 \begin{center}
@@ -636,6 +662,7 @@ $-8$&$<$&$x-3$&$<$&$8$&teorema \\
 $-5$&$<$&$x$&$<$&$11$&\\\\
 \end{tabular}
 \end{center}
+
 %(iii)
 \item $|x+4|<2$
 \begin{center}
@@ -644,6 +671,7 @@ $-2$&$<$&$x+4$&$<$&$-2$&teorema \\
 $-6$&$<$&$x$&$<$&$-2$&\\\\
 \end{tabular}
 \end{center}
+
 %(iv)
 \item $|x-1|+|x-2|>1$\\\\
 Por definición:
@@ -672,6 +700,7 @@ Si&$x\geq 2$&$\Rightarrow$&$(x-1)+(x-2)>1$&$\Rightarrow$&$x>2$\\\\
 \end{tabular}
 \end{center}
 Así: $x<1 \; \lor \; x>2$\\\\
+
 %(v)
 \item $|x-1|+|x+1|<2$\\\\
 Por definición:
@@ -700,8 +729,10 @@ Si&$x\geq 1$&$\Rightarrow$&$(x-1)+(x+1)<2$&$\Rightarrow$&$x<1$\\\\
 \end{tabular}
 \end{center}
 Pero es falso que $x$ satisface a $-1\leq x \leq 1$, y contradice a que $x$ satisface a todos los reales, por lo tanto no existe solución\\\\ 
+
 %(vi)
 \item $|x-1|+|x+1|<1$ \\\\ De la misma manera que el anterior ejercicio no tiene solución para ningún $x$.\\\\
+
 %(vii)
 \item $|x-1|\cdot |x+1|=0$\\\\
 Por definición:
@@ -730,6 +761,7 @@ Si&$x\geq 1$&$\Rightarrow$&$(x-1)\dot (x+1)=0$&$\Rightarrow $&$x \notin \mathbb{
 \end{tabular}
 \end{center}
 Por lo tanto $x=1$ \; ó \; $x=-1$\\\\
+
 %(viii)
 \item $|x-1|\cdot |x+2|= 3$\\\\
 Si $x>1$ ó $x<-2$, entonces la condición se convierte en $(x-1)(x+2)=3$ ó $x^2+x-5=0$, cuyas soluciones son según la formula general son $\dfrac{-1+\sqrt{21}}{2}$ y $\dfrac{-1-\sqrt{21}}{2}$. Puesto que el primer valor es $x>1$ y el segundo es $x<-2$, ambos son soluciones de $|x-1||x+2|=3.$ Para $-2<x<1,$ la condición se convierte en $(1-x)(x+2)=3$ ó $x^2+x+1=0$, la cual carece de soluciones.\\\\
@@ -1056,4 +1088,5 @@ $s(a_1,...,a_k)$&$=$&$s^{'}(a_1,...,a_l)+ s^{''}(a_{l+1},...,a_k)$&\\
 \end{multicols}
 Comprobar que se cumplen las propiedades P1-P2, aunque 1+1=0\\\\
 P2, P3, P4, P5, P6, P7, P8 resultan evidentes sin más que observar las tablas. Se presentan ocho casos para $P1$ y este número puede incluso reducirse: al cumplirse P2, resulta claro que $a+(n/b+c)=(a+b)+c$ si $a,b$ ó $c$ es $0,$ de modo que bastará comprobar el caso $a=b=c=1$. Una observación análoga puede hacerse para $P5$. Finalmente, P9 se cumple para $a=0$, ya que $0\cdot b = 0$ para todo $b,$ y para $a=1,$ ya que $1\cdot b = b$ para todo $b$.\\\\
+
 \end{enumerate}
