@@ -1,0 +1,99 @@
+# Introducción a la estadística y al análisis de datos
+
+## Media de la muestra
+Suponga que las observaciones en una muestra son $x_1 ,x_2 ,...,x_n$. La media de la muestra que se denota con $\overline{x}$ es 
+$$\overline{x} = \displaystyle\sum_{i=1}^n \dfrac{x_i}{n} = \dfrac{x_1 + x_2 + ... + x_n}{n}$$
+La media es simplemente un promedio numérico.
+
+## Mediana de la muestra
+Dado que las observaciones en una muestra son $x_1 ,x_2 ,...,x_n$, acomodadas en \textbf{orden de magnitud creciente}, la mediana de la muestra es
+$$ \tilde{x} = \left\{ 
+                \begin{tabular}{cc}
+                    $x_{n+1/2}$ & si $n$ es impar\\
+                    $\dfrac{1}{2} (x_{n/2} + x_{n/2+1})$ & si $n$ es par\\
+                \end{tabular}
+                \right. $$
+El  propósito  de  la mediana de la muestra es reflejar la tendencia central de la muestra de manera que no sea influida por los valores extremos.
+
+## Ejercicios
+
+### 1.1 
+
+```{r}
+secado <- c(3.4,2.5,4.8,2.9,3.6,2.8,3.3,5.6,3.7,2.8,4.4,4.0,5.2,3.0,4.8)
+```
+
+#### a)
+
+```{r}
+length(secado)
+```
+
+#### b)
+$$\overline{x}=\dfrac{3.4 + 2.5 + 4.8 + 2.9 + 3.6 + 2.8 + 3.3 + 5.6 + 3.7 + 2.8 + 4.4 + 4.0 + 5.2 + 3.0 + 4.8}{15}$$
+
+```{r}
+mean(secado)
+```
+
+#### c)
+```{r}
+median(secado)
+```
+
+#### d)
+```{r}
+plot(secado, xlab="", ylab="horas",xaxt="n")
+```
+
+#### e)
+```{r}
+mean(secado,trim=20/100)
+```
+
+#### e)
+Efectivamente
+
+
+### 1.2
+```{r}
+fibra<-c(18.71,21.41,20.72,21.81,19.29,22.43,20.17,23.71,19.44,20.50,18.92,20.33,23.00,22.85,19.25,21.77,22.11,19.77,18.04,21.12)
+```
+
+#### a)
+```{r}
+mean(fibra)
+median(fibra)
+```
+
+#### b)
+```{r}
+mean(fibra,trim=10/100)
+```
+
+#### c)
+```{r}
+plot(fibra, ylab="absorción",xlab="",xaxt="n")
+```
+
+#### d)
+No hay evidencia.
+
+
+### 1.3
+```{r}
+sin<-c(227,222,218,217,225,218,216,229,228,221)
+con<-c(219,214,215,211,209,218,203,204,201,205) 
+```
+
+#### a)
+```{r}
+plot(sin,xlab="",ylab="",main="Sin envejecimiento",xaxt="n")
+plot(con,xlab="",ylab="",main="Con envejecimiento",xaxt="n")
+```
+
+#### b)
+```{r}
+
+```
+
