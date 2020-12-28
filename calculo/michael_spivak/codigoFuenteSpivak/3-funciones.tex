@@ -1,6 +1,207 @@
 \chapter{Funciones}
+
+
+    %definición 1.1
 \begin{tcolorbox}[colframe=white]
     \begin{def.}
 	El conjunto de los números a los cuales se aplica una función recibe el nombre de \textbf{dominio} de la función.
     \end{def.}
 \end{tcolorbox}
+
+    %definición 1.2
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Si $f$ \; y \; $g$ son dos funciones cualesquiera, podemos definir una nueva función $f+g$ denominada \textbf{suma} de $f+g$ mediante la ecuación:
+	$$(f+g)(x)=f(x)+g(x)$$
+	Para el conjunto de todos los $x$ que están a la vez en el dominio de $f$ y en el dominio de $g$, es decir: $$dominio \; (f+g)=dominio \; f \; \cap \; dominio \; g$$\\
+    \end{def.}
+\end{tcolorbox}
+
+    %definición 1.3
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	El dominio de $f \cdot g$ es $dominio \; f \cap \; dominio \; g$ $$(f \cdot g)(x)=f(x)\cdot g(x)$$\\
+    \end{def.}
+\end{tcolorbox}
+
+    %definición 1.4 
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Se expresa por dominio $f$ $\cap$ dominio $g$ $\cap$ $\lbrace x:g(x)\neq 0 \rbrace$
+	$$\left( \dfrac{f}{g}\right) (x)=\dfrac{f(x)}{g(x)}$$ \\
+    \end{def.}
+\end{tcolorbox}
+
+    %definición 1.5
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Función constante]
+	$$(c \cdot g)(x)=c \cdot g(x)$$\\
+    \end{def.}
+\end{tcolorbox}
+
+%teorema 1.1
+\begin{teo}
+    $(f+g)+h=f+(g+h)$\\\\
+    Demostración.- \; \textbf{La demostración es característica de casi todas las demostraciones que prueban que dos funciones son iguales: se debe hacer ver que las dos funciones tienen el mismo dominio y el mismo valor para cualquier número del dominio.} Obsérvese que al interpretar la definición de cada lado se obtiene:
+    \begin{center}
+	\begin{tabular}{r c l}
+	    $\left[ (f+g) + h \right](x)$&=&$(f+g)(x)+h(x)$\\
+	    &=&$\left[ f(x) +g(x) \right] +h(x)$\\\\
+	    &y&\\\\
+	    $\left[ f+(g+h) \right](x)$&=&$f(x)+(g+h)(x)$\\
+	    &=&$f(x)+\left[ g(x)+h(x) \right]$\\\\
+	\end{tabular}
+    \end{center}
+    Es esta demostración no se ha mencionado la igualdad de los dos dominios porque esta igualdad parece obvia desde el momento en que empezamos a escribir estas ecuaciones: el dominio de $(f+g)+h$ y el de $f+(g+h)$ es evidentemente dominio $f$ $\cap$ dominio $g$ $\cap$ dominio $h$. Nosotros escribimos, naturalmente $f+g+h$ por $(f+g)+h=f+(g+h)$\\\\
+\end{teo}
+
+%teorema 1.2
+\begin{teo}
+    Es igual fácil demostrar que $(f\cdot g)\cdot g=f\cdot (g \cdot h)$ y ésta función se designa por $f \cdot g \cdot h$. Las ecuaciones $f+g=g+f$ \; y \; $f\cdot g=g \cdot f$ no deben presentar ninguna dificultad.\\\\
+\end{teo}
+
+%definición 1.6
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Composición de función]
+	$$(f \circ g)(x)=f(g(x))$$
+	El dominio de $f\circ g$ es $\lbrace $ $x$ : $x$ está en el dominio de $g$ \: y \; $g(x)$ está en el dominio de $f$ $\rbrace$
+	$$D_{f \circ g}= \lbrace x \; / \; x \in D_g \; \land \; g(x)\in D_f \rbrace$$
+    \end{def.}
+\end{tcolorbox}
+
+    %propiedad 1.1
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}
+    $(f \circ g) \circ h = f \circ (g \circ h)$   La demostración es una trivalidad.
+    \end{prop}
+\end{tcolorbox}
+
+%definición  1.7 
+\begin{tcolorbox}
+    \begin{def.} 
+	Una \textbf{función} es una colección de pares de números con la siguiente propiedad: Si $(a,b)$ \; y \; $(a,c)$ pertenecen ambos a la colección, entonces $b=c$; en otras palabras, la colección no debe contener dos pares distintos con el mismo primer elemento.\\
+    \end{def.}
+\end{tcolorbox}
+
+%definición 1.8
+\begin{tcolorbox}
+    \begin{def.} 
+	Si $f$ es una función, el \textbf{dominio} de $f$ es el conjunto de todos los $a$ para los que existe algún $b$ tal que $(a,b)$ está en $f$. Si $a$ está en el dominio de $f$, se sigue de la definición de función que existe, en efecto, un número $b$ único tal que $(a,b)$ está en $f$. Este $b$ único se designa por $f(a)$.\\  
+    \end{def.}
+\end{tcolorbox}
+
+
+\section{Problemas}
+
+    \begin{enumerate}[\Large \bfseries 1.]
+
+	%--------------------1.
+	\item Sea $f(x)=1/(1+x)$. Interpretar lo siguiente:
+	    \begin{enumerate}[\bfseries (i)]
+
+		%----------(i)
+		\item $f(f(x))$ (¿Para que $x$ tiene sentido?)\\\\
+		Respuesta.- \; Sea $f\left( \dfrac{1}{1+x} \right)$ entonces $\dfrac{1}{1 + \dfrac{1}{1+x}}$, por lo tanto $\dfrac{1-x}{x+2}$ de donde llegamos a la conclusión de que $x$ se cumple para todo número real de $1$ y $-2$\\\\
+
+		%----------(ii)
+		\item $f\left( \dfrac{1}{x} \right)$\\\\
+		Respuesta.- \; $\dfrac{1}{1 + \dfrac{1}{x}}=\dfrac{1}{\dfrac{x+1}{x}}=\dfrac{x}{x+1}$ por lo tanto se cumple para todo $x\neq -1, 0$\\\\
+
+		%----------(iii)
+		\item $f(cx)$\\\\
+		Respuesta.- \; $\dfrac{1}{1+cx}$ donde se cumple para todo $x\neq -1$ si $c\neq 0$\\\\
+
+		%----------(iv)
+		\item $f(x+y)$\\\\
+		Respuesta.- \; $\dfrac{1}{1+x+y}$ donde se cumple para todo $x+y\neq-1$\\\\
+
+		%----------(v)
+		\item $f(x) + f(y)$\\\\
+		Respuesta.- \; $\dfrac{1}{1+x} + \dfrac{1}{1+y}=\dfrac{x+y+2}{(1+x)(1+y)}$ siempre y cuando $x\neq-1$ y $y \neq -1$\\\\
+
+		%----------(vi)
+		\item ¿Para que números $c$ existe un número $x$ tal que $f(cx)=f(x)$?\\\\
+		Respuesta.- \; Para todo $c$ ya que $f(c\cdot 0)=f(0)$\\\\
+
+		%----------(vii)
+		\item ¿Para que números $c$ se cumple que $f(cx)=f(x)$ para dos números distintos $x$?\\\\
+		Respuesta.- \;  Solamente $c=1$ ya que $f(x)=f(cx)$ implica que $x=cx$, y esto debe cumplirse por lo menos para un $x \geq 1$\\\\
+
+	    \end{enumerate}
+
+	%--------------------2.
+	\item Sea $g(x)=x^2$ y sea 
+	\begin{equation*}
+	    h(x) = \left\lbrace
+		\begin{array}{rl}
+		    0, & x \; racional\\
+		    1, & x \; irracional
+		\end{array}
+	    \right.
+	\end{equation*}
+
+	\begin{enumerate}[\bfseries (i)]
+
+	    %----------(i)
+	    \item ¿Para cuáles $y$ es $h(y) \leq y$?\\\\
+	    Respuesta-. \; Se cumple para $y\geq 0$ si $y$ es racional, o para todo $y\geq 1$\\\\
+
+	    %----------(ii)
+	    \item ¿Para cuáles $y$ es $h(y) \leq g(y)$?\\\\
+	    Respuesta-. \; Para $-1\leq y \leq 1$ siempre que $y$ sea racional y para todo $y$ tal que $|y|\leq1$\\\\
+
+	    %----------(iii)
+	    \item ¿Qué es $g(h(z)) - h(z)$?\\\\
+	    Respuesta-. \; 
+	    \begin{equation*}
+		g(h(z)) = \left\lbrace
+		    \begin{array}{rl}
+			0, & z^2 \; racional\\
+			1, & z^2 \; irracional
+		    \end{array}
+		\right.
+	    \end{equation*}
+
+	    Por lo tanto el resultado es $0$\\\\
+
+	    %----------(iv)
+	    \item ¿Para cuáles $w$ es $g(w)\leq w $?\\\\
+	    Respuesta-. \; Para todo $w$ tal que $0\leq w\leq 1$\\\\
+
+	    %----------(v)
+	    \item ¿Para cuáles $\epsilon$ es $g(g(\epsilon)) = g(\epsilon)$?\\\\
+	    Respuesta-. \; Para $-1,0,1$\\\\ 
+
+	\end{enumerate}
+
+	%--------------------3.
+	\item encontrar el dominio de las funciones definidas por las siguientes fórmulas:
+
+	    \begin{enumerate}[\bfseries (i)]
+
+	    %----------(i)
+	    \item $f(x)=\sqrt{1-x^2}$\\\\
+	    Respuesta.- \; Por la propiedad de raíz cuadrada, se tiene  $1-x^2 \geq 0$ entonces $x^2 \leq 1$ por lo tanto el dominio son todos los $x$ tal que $|x| \leq 1$\\\\
+
+	    %-----------(ii)
+	    \item $f(x)=\sqrt{1-\sqrt{1-x^2}}$\\\\
+	    Respuesta.- \; Se observa claramente que el dominio es $-1\leq x \leq 1$\\\\
+
+	    %-----------(iii)
+	    \item $f(x)=\dfrac{1}{x-1} + \dfrac{1}{x-2}$\\\\
+	    Respuesta.- \; Operando un poco tenemos $$f(x) = \dfrac{2x-3}{(x-1)(x-2)},$$ sabemos que el denominador no puede ser $0$ por lo tanto el $D_{f} = \lbrace x\; / \; x \neq 1, \; x\neq  2 \rbrace$\\\\ 
+    
+	    %-----------(iv)
+	    \item $f(x)=\sqrt{1-x^2} + \sqrt{x^2-1}$\\\\
+	    Respuesta.- \; Claramente notamos que el dominio de $f$ es $[-1,1]$ ya que si se tomara un número mayor a este daría un número imaginario.\\\\
+
+	    %-----------(v)
+	    \item $f(x)=\sqrt{1-x}+\sqrt{x-2}$\\\\
+	    Respuesta.- \; Notamos que no cumple para ningún $x$ ya que si $0\leq x \leq 1$ entonces no se cumple para $\sqrt{x-2} $ y si $x\geq 2$ no se cumple para $\sqrt{1-x}$\\\\ 
+
+	    \end{enumerate}
+
+	%--------------------4.
+	\item 
+
+    \end{enumerate}
