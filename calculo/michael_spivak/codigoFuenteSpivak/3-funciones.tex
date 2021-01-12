@@ -32,7 +32,7 @@
     \end{def.}
 \end{tcolorbox}
 
-    %definición 1.5
+%definición 1.5
 \begin{tcolorbox}[colframe=white]
     \begin{def.}[Función constante]
 	$$(c \cdot g)(x)=c \cdot g(x)$$\\
@@ -129,7 +129,7 @@
 
 	    \end{enumerate}
 
-	%--------------------2.
+	%--------------------2.  
 	\item Sea $g(x)=x^2$ y sea 
 	\begin{equation*}
 	    h(x) = \left\lbrace
@@ -175,8 +175,7 @@
 	\end{enumerate}
 
 	%--------------------3.
-	\item encontrar el dominio de las funciones definidas por las siguientes fórmulas:
-
+	\item Encontrar el dominio de las funciones definidas por las siguientes fórmulas:
 	    \begin{enumerate}[\bfseries (i)]
 
 	    %----------(i)
@@ -193,15 +192,80 @@
     
 	    %-----------(iv)
 	    \item $f(x)=\sqrt{1-x^2} + \sqrt{x^2-1}$\\\\
-	    Respuesta.- \; Claramente notamos que el dominio de $f$ es $[-1,1]$ ya que si se tomara un número mayor a este daría un número imaginario.\\\\
+	    Respuesta.- \; Claramente notamos que el dominio de $f$ son $-1$ y $1$ ya que si se toma otros números daría un número imaginario.\\\\
 
 	    %-----------(v)
 	    \item $f(x)=\sqrt{1-x}+\sqrt{x-2}$\\\\
-	    Respuesta.- \; Notamos que no cumple para ningún $x$ ya que si $0\leq x \leq 1$ entonces no se cumple para $\sqrt{x-2} $ y si $x\geq 2$ no se cumple para $\sqrt{1-x}$\\\\ 
+	    Respuesta.- \; Notamos que no se cumple para ningún $x$ ya que si $0\leq x \leq 1$ entonces no se cumple para $\sqrt{x-2} $ y si $x\geq 2$ no se cumple para $\sqrt{1-x}$\\\\ 
 
 	    \end{enumerate}
 
 	%--------------------4.
-	\item 
+	\item Sean $S(x)=x^2,$ $P(x)=2^x$ y $s(x)=sen x$. Determinar los siguientes valores. En cada caso la solución debe ser un número.\\\\
 
-    \end{enumerate}
+	\begin{enumerate}[\bfseries (i)]
+
+	    %----------(i)
+	    \item $(S \circ P)(y)$\\\\
+	    Respuesta.- \; Por definición se tiene que $(S \circ P)(y)=S(P(y))$ entonces $S(2^y)=2^{2y}$ siempre y cuando $D_{S \circ P}=\lbrace y / y \in D_P \land P(y) \in D_S\rbrace$\\\\
+	    
+	    %----------(ii)
+	    \item $(S \circ s)(y)$\\\\
+	    Respuesta.- \; Por definición tenemos que $(S \circ s)(y)=S(s(y))$ entonces $S(\sen y)=\sen^2 y$ siempre y cuando $D_{S \circ s}=\lbrace y / y \in D_s \land S(y) \in D_S \rbrace$\\\\
+
+	    %----------(iii)
+	    \item $(S \circ P \circ s)(t)+(s \circ P)(t)$\\\\
+	    Respuesta.- \; $(S \circ P \circ s)(t)+(s \circ P)(t) = S((P \circ s)(t))+s(P(t)) = S(P(s(t))) + s(P(t))=S(P(\sen t)) + s(2^t)=S(2^{\sen t}) +  \sen 2^t = 2^{2 \sen t} +\sen 2^t$\\\\  
+
+	    %----------(iv)
+	    \item $s(t^3)$\\\\
+	    Respuesta.- \; $s(t^3)=\sen t^3$\\\\
+
+	\end{enumerate}
+
+	    %-------------------5.
+	\item Expresar cada una de las siguientes funciones en términos de $S,P,s$ usando solamente $+,\cdot , \circ$\\\\
+	\begin{enumerate}[\bfseries (i)]
+	    
+	    %----------(i)
+	    \item $f(x)=2^{\sen x}$\\\\
+	    Respuesta.- \; Claramente vemos que $P \circ s$\\\\ 
+
+	    %----------(ii)
+	    \item $f(x) = \sen 2^x$\\\\
+	    Respuesta.- \; $s \circ P$\\\\
+
+	    %----------(iii)
+	    \item $f(x) = \sen x^2$\\\\
+	    Respuesta.- \; $s \circ S$\\\\
+
+	    %----------(iv)
+	    \item $f(x) = \sen x$\\\\
+	    Respuesta.- \; $S \circ s$\\\\
+
+	    %----------(v)
+	    \item $f(t) = 2^{2t}$\\\\
+	    Respuesta.- \; $P \circ P$\\\\
+
+	    %----------(vi)
+	    \item $f(u)=\sen (2^u + 2^{u^2})$\\\\
+	    Respuesta.- \; $s \circ (P + P \circ S)$\\\\
+
+	    %----------(vii)
+	    \item $f(y) = \sen (\sen (\sen (2^{2^{2^{\sen y}}})))$\\\\
+	    Respuesta.- \; $s \circ s \circ s \circ P \circ P \circ P \circ s$\\\\
+
+	    %----------(viii)
+	    \item $f(a)= 2^{\sen^2 a} +  \sen(a^2) + 2^{sen(a^2 + \sen a)}$\\\\
+	    Respuesta.- \; $P \circ S \circ s  + s \circ S + P \circ s \circ (S + s)$\\\\
+
+	\end{enumerate}
+
+	%--------------------6.
+	\item 
+	\begin{enumerate}[\bfseries (a)]
+	    \item Si $x_1, ... , x_n$ son números distintos, encontrar una función polinómica $f_i$ de grado $n-1$ que tome el valor $1$ en $x_i$ y $0$ en $x_j$ para $j \neq i.$ Indicación: El producto de todos los $(x-x_j)$ para $j \neq i$ es $0$ en $x_j$ si $j \neq i.$ Este producto es designado generalmente por $$\prod\limits_{j=1_{j \neq i}}^n (x-x_j)$$ donde el símbolo $\prod$ (pi mayúscula) desempeña para productos el mismo papel que $\sum$ para sumas.\\\\
+
+	\end{enumerate}
+
+	\end{enumerate}

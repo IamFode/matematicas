@@ -11,3 +11,6 @@
 *.fls
 *.json
 .Rproj.user
+.dvi
+.RData
+.Rhistory
