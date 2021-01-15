@@ -264,8 +264,28 @@
 	%--------------------6.
 	\item 
 	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
 	    \item Si $x_1, ... , x_n$ son números distintos, encontrar una función polinómica $f_i$ de grado $n-1$ que tome el valor $1$ en $x_i$ y $0$ en $x_j$ para $j \neq i.$ Indicación: El producto de todos los $(x-x_j)$ para $j \neq i$ es $0$ en $x_j$ si $j \neq i.$ Este producto es designado generalmente por $$\prod\limits_{j=1_{j \neq i}}^n (x-x_j)$$ donde el símbolo $\prod$ (pi mayúscula) desempeña para productos el mismo papel que $\sum$ para sumas.\\\\
 
-	\end{enumerate}
+	Respuesta.- \; Una forma de pensar sobre esta pregunta es considerar una solución fija $n$ y elegir un conjunto de distintas $x_1, x_2, ..., x_n$. Por ejemplo supongamos que elegimos $n=3$ $x_1=1$, $x_2=2$, $x_3 = 3.$ Entonces supongamos que queremos encontrar un polinomio $f_i(x_1)=f_1(1)=1,$ pero $f_1(x_2)=f_1(2)=f_1(3)=0.$ Es decir, $F_1$ es un cuadrático que tiene ceros en $x=2$ \; y\; $x=3$, pero es igual a $1$ en $x=1.$ Naturalmente, esto sugiere mirar un polinomio de la forma $$a(x-2)(x-3),$$ para que la igualdad sea igual a $1$ por alguna constante $a.$ Pero, ¿Qué es esta constante? Bueno, si nos conectamos con $x=1$, debemos tener $$f_1(1)=1=a(x-2)(x-3)=2a,$$ por lo tanto $a=1/2$ y la solución deseada es $$f_1(x)=\dfrac{1}{2}(x-2)(x-3).$$ Del mismo modo, si tratamos de encontrar un polinomio $f_2(x)$ tal que $f_2(2)=1$ con raíces en $x=1,3$ tendríamos que resolver la ecuación $1=a(2-1)(2-3),$ lo que da $a=-1$ por lo tanto $f_2(x)=-(x-1)(x-3)$\\
+	    Ahora veamos el caso general. El polinomio $f_i(x)$ satisface $f_i(x_i)$ \; y \; $f_i(x_j)=0$ para todo $j \neq i$, entonces debe tomar la forma 
+	    \[ f_i(x)=a \prod_{j \neq i} (x-x_j)  \]
+	    Para alguna constante $a$. Para encontrar esta constante, aplicamos $x=x_1$:
+	    \[ f_i(x_i)=1=a\prod_{j \neq i} (x_i-x_j), \]
+	    por lo tanto:
+	    \[ a= \dfrac{1}{\displaystyle\prod_{j \neq i} (x_i-x_j)}  \]  
+	    Así queda
+	    \[ f_i(x)= \prod_{j \neq i} \dfrac{(x-x_j)}{(x_i-x_j)} \]\\\\
+
+	    %----------(b)
+	    \item Encontrar ahora una función polinómica de grado $n-1$ tal que $f(x_1)=a_1,$ donde $a_1,...,a_n$ son números dados. (Utilícense las Funciones $f_1$ de la parte $(a)$.) La fórmula que se obtenga es la llamada \textbf{Fórmula de interpolación de Lagrange}\\\\
+
+	    Respuesta.- \;Sea \[ f(x) = \sum_{j=1} a_i f_i(x) \] entonces  \[ f(x) = \sum_{j=1} a_i \prod_{j \neq i} \dfrac{(x-x_j)}{(x_i-x_j)} \]\\\\ 
 
 	\end{enumerate}
+
+	%--------------------7.
+	\item 
+
+    \end{enumerate}
