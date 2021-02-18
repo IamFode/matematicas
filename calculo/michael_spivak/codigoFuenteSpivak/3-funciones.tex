@@ -286,6 +286,64 @@
 	\end{enumerate}
 
 	%--------------------7.
+	\item
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Demostrar que para cualquier función polinómica $f$ y cualquier número $a$ existe función polinómica $g$ y un número $b$ tales que $f(x)=(x-a)g(x)+b$ para todo $x$. (La idea es esencialmente dividir $f(x)$ por $(x-a)$ mediante la división larga hasta encontrar un resto constante.)\\\\
+	    Demostración.- \; 
+
+	    %----------(b)
+	    \item Demostrar que si $f(a)=0$, entonces $f(x)=(x-a)g(x)$ para alguna función polinómica $g$. (La reciproca es evidente)\\\\
+	    Demostración.- \;
+
+	    %----------(c)
+	    \item Demostrar que si $f$ es una función polinómica de grado $n$, entonces $f$ tiene a lo sumo $n$ raíces, es decir, existen a lo sumo $n$ números $a$ tales que $f(a)=0$\\\\
+	    Demostración.- \; 
+
+	    %----------(d)
+	    \item Demostrar que para todo $n$ existe una función polinómica de grado $n$ con raíces. Si $n$ es par, encontrar una función polinómica de grado $n$ sin raíces, y si $n$ es impar, encontrar una con una sola raíz\\\\
+	    Demostración.- \;
+
+	\end{enumerate}
+
+	%--------------------8.
+	\item ¿Para qué números $a,b,c$ y $d$ la función 
+	$$f(x)=\dfrac{ax+d}{cx+b}$$ 
+	satisface $f(f(x))=x$ para todo $x$?\\\\
+	Respuesta.-\;
+
+	%---------------------9.
 	\item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Si $A$ es un conjunto cualquiera de números reales, defínase una función $C_A$ como sigue:  
+		   $$C_A(x) = \left\lbrace
+			\begin{array}{c l}
+			    $1$,&si \; $x$ \; está \; en \;$A$\\
+			    $0$,&si \; $x$\; no\; está \; en \;  $A$
+			\end{array}
+			    \right.$$
+		    Encuéntrese expresiones para $C_{A\cap B}, \; C_{A \cup B}$ y $C_{\mathbb{R}-A}$, en términos de $C_A$ y $C_B$. \\\\
+	    Respuesta.-\; Según la definición de teoría de conjunto tenemos,
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $C_{A\cap B}$&$=$&$C_A \cdot C_B$\\
+		    $C_{A\cup B}$&$=$&$C_A + C_B - C_A \cdot C_B$\\
+		    $C_{\mathbb{R} - A}$&$=$&$1 - C_A$\\\\
+		\end{tabular}
+	    \end{center}
+	    
+	    %----------(b)
+	    \item Supóngase que $f$ es una función tal que $f(x)=0$ o $1$ para todo $x$. Demostrar que existe un conjunto $A$ tal que $f=C_A$\\\\
+	    Demostración.-\; Sea $A=\lbrace x\in \mathbb{R}: f(x)=1\rbrace$ , entonces $f=C_A$.\\\\
+
+	    %----------(c)
+	    \item Demostrar que $f=f^2$ si y sólo si $f=C_A$ para algún conjunto $A$\\\\
+	    Demostración.-\; Sea $f=f^2$, entonces para cada real $x$, $f(x)=f[f(x)]^2$, así $f(x)=0$ó $f(x)=1$, luego por la parte $b)$, $f=C_A$ para algún $A$.\\
+	    Por otro lado sea $f=C_A$ para algún $A$. Entonces si $x\in A$, $f(x)=1=1^2=f(x)^2$, mientras si $x\notin A,$ $f(x)=0=0^2=f(x)^2$, así en cualquier caso $f(x)=[f(x)]^2$ y $f=f^2$\\\\
+
+	\end{enumerate}
 
     \end{enumerate}
