@@ -56,7 +56,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
 \setcounter{section}{4}
 \section{Ejercicios}
     \begin{enumerate}[\Large \bfseries 1.]
-        %---------------------1.-------------------
+        %--------------------1.-------------------
         \item Sea $f(x)=x+1$ para todo real $x$. Calcular:
             \begin{itemize}
                 \item $f(2) = 2+1 = 3$\\\\
@@ -102,19 +102,21 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
             \end{center}
             Por lo tanto  $t=1$\\\\
 
-
         %--------------------4.-------------------
         \item Sea $f(x)=x^2$  para todo real $x$. Calcular cada una de las fórmulas siguientes. En cada caso precisar los conjuntos de números erales $x, \; y \; t,$ etc., para los que la fórmula dada es válida.
             \begin{enumerate}[\bfseries (a)]
                 %----------(a)----------
                 \item $f(-x)=f(x)$ \\\\
                 Demostración.- \; Se tiene $f(-x) = (-x)^2 = x^2 = f(x) \; \forall x \in \mathbb{R}$\\\\
+
                 %----------(b)----------
                 \item $f(y)-f(x)=(y-x)(y+x)$\\\\
                 Demostración.- \; $f(y)-f(x)= y^2 - x^2 = (x-y)(x+y), \; \forall x, \; y \in \mathbb{R}$\\\\
+
                 %----------(c)----------
                 \item $f(x+h) - f(x) = 2xh + h^2$\\\\
                 Demostración.- \; $f(x+h) - f(x) = (x+h)^2 -x^2 = x^2 + 2xh +h^2 - x^2 = 2xh + h^2, \; \forall x \in \mathbb{R}$\\\\
+
                 %----------(d)----------
                 \item $f(2y) = 4f(y)$\\\\
                 Demostración.- \; $f(2y) = (2y)^2 = 4y^2 = 4 f(y), \; \forall y \in \mathbb{R}$\\\\
@@ -132,19 +134,24 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 %----------(a)----------
                 \item $g(-x) = g(x)$\\\\
                 Se tiene $g(-x)=\sqrt{2-(-x)^2} = \sqrt{2-(x)^2} = g(x), \; \; para \; |x| \leq 2$\\\\
+
                 %----------(b)----------
                 \item $g(2y) = 2\sqrt{1-y^2}$\\\\
                 $g(2y)=\sqrt{4-(2y)^2}= \sqrt{4(1-y^2)} = 2 \sqrt{1-y^2}, \; \; para \; |y|\leq 1$ Se obtiene $|y| \leq 1$  de $\sqrt{1-y^2}$ es decir $1-y^2 \geq 0$ entonces $\sqrt{y^2} \leq \sqrt{1}$ \; y \; $|y|\leq 1$\\\\
+
                 %----------(c)----------
                 \item $g\left( \dfrac{1}{t} \right) = \dfrac{\sqrt{4t^2-1}}{|t|}$\\\\
                 $g\left( \dfrac{1}{t} \right) = \sqrt{4 - \left( \dfrac{1}{t} \right)^2} = \sqrt{\dfrac{4t^2 - 1}{t^2}} =\dfrac{\sqrt{4t^2 - 1}}{|t|}, \; \; para \; |t| \geq \dfrac{1}{2}$\\\\
                 Para hallar los valores correspondientes debemos analizar $\sqrt{4t^2 - 1}$. Es decir $$4t^2-1 \geq 0 \Rightarrow 4t^2 \geq 1 \Rightarrow t^2 \geq \dfrac{1}{2^2} \Rightarrow |t| \geq \dfrac{1}{2}$$\\
+
                 %----------(d)----------
                 \item $g(a-2) = \sqrt{4a-a^2}$\\\\
                 $g(a-2) = \sqrt{4 - x^2} = \sqrt{4 - (a-2)^2} = \sqrt{4a - a^2}, \; \; para \; 0\leq a \leq 4.$ Basta probar  $4a-a^2 \geq 0$\\\\
+
                 %----------(e)----------
                 \item $g \left( \dfrac{s}{2} \right) = \dfrac{1}{2} \sqrt{16 - s^2}$\\\\
                 $s\left( \dfrac{s}{2} \right) = \sqrt{4 - \left( \dfrac{s}{2} \right)^2} = \dfrac{\sqrt{16 - s^2}}{2}, \; \; para \; |s| \leq 4$. ya que solo basta comprobar que $\sqrt{16 - s^2} \geq 0$\\\\
+
                 %----------(f)----------
                 \item $\dfrac{1}{2 +g(x)} = \dfrac{2-g(x)}{x^2}$\\\\ 
                 $\dfrac{1}{2 +g(x)} = \dfrac{1}{2+ \sqrt{4-x^2}} \cdot \dfrac{2 - \sqrt{4-x^2}}{2 - \sqrt{4-x^2}} = \dfrac{2 - g(x)}{x^2}\; para \; \; |x| \leq 2 \; y \; x \neq 0$\\\\ 
@@ -176,6 +183,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                             \draw[fill=black] (2,2) circle (1.5pt);
                         \end{tikzpicture}
                     \end{center}
+
                 %----------(b)----------
                 \item Poner $g(x) = f(2x).$ Describir el dominio de $g$ y dibujar su gráfica.
                     \begin{center}
@@ -200,6 +208,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                         \end{tikzpicture}
                     \end{center}
                 Debido a que $1\leq 2x \leq 1$ \; y \; $1 < 2x \leq 2$ el dominio de $g(x)$ es $0\leq x \leq 1$\\\\ 
+
                 %----------(c)----------
                 \item Poner $h(x) = f(x-2).$ Describir el dominio de $k$ \; y dibujar su gráfica.
                     \begin{center}
@@ -223,6 +232,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                         \end{tikzpicture}
                     \end{center}
                 Debido a que $1\leq x-2 \leq 1$ \; y \; $1 < x-2 \leq 2$ el dominio de $h(x)$ es $2\leq x \leq 4$\\\\ 
+
                 %----------(d)----------
                 \item Poner $k(x) = f(2x) + f(x-2).$ Describir el dominio de $k$ \; y dibujar su gráfica.\\\\
                 El dominio está vacío ya $f(2x)$ que solo está definido para $0 \leq x \leq 1$ \; y \;  $f(x-2)$ solo está definido para $2 \leq x \leq 4$. Por lo tanto no hay ninguno $x$ que satisfaga ambas condiciones. \\\\
@@ -274,6 +284,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 Demostración.- \; Sabemos que $$f(0) = c_n \cdot 0^n + c_{n-1} \cdot 0^{n-1} + ... + c_1 \cdot 0 + c_0 =c_0,$$ como $f(0)=0$ se concluye que $c_0=0$. Así tenemos $$f(x)=\displaystyle\sum_{k=1}^{n} c_k x^k.$$ Ahora crearemos una función $g(x).$ Dada la función $f(x)$ como la anterior, definamos, $$f(x)=\displaystyle\sum_{k=0}^{n} c_k x^{k-1} = \sum_{k=1}^{n} c_k x^{k-1}$$ 
                 Ahora crearé una función $g(x)$. Dada una función $f(x)$ como la anterior, definamos  $$g(x) = \displaystyle\sum_{k=1}^{n} c_k x^{k-1}$$
                 donde $c_k$ son los mismos que los dados por la función $f(x)$. Primero notemos que el grado de $g(x)$ es $n-1$. Finalmente, tenemos que $$ xg(x) = x \displaystyle\sum_{k=1}^{n} c_k x^{k-1} = \sum_{k=1}^{n} c_k x^k = f(x).$$ \\\\
+
                 %----------(b)----------
                 \item Para cada real $a$, la función $p$ dada por $p(x)=f(x+a)$ es un polinomio de grado $n.$\\\\
                 Demostración.- \; Usando el teorema del binomio,
@@ -288,10 +299,12 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                         \end{tabular}
                     \end{center}
                 En la linea final reescribimos los coeficientes como sumas para verlos de manera más concisa. De cualquier manera, dado que todos los $c_i$ son constantes, tenemos $\displaystyle\sum_{j=k}^n {j \choose j-k} c_j a^{j-k}$ es alguna constante para cada $k,$ de $d_k$ y tenemos, $$p(x) = \displaystyle\sum_{k=0}^n d_k x^k$$\\\\
+
                 %----------(c)----------
                 \item Si $n \geq 1$ \; y \; $f(a)=0$ para un cierto valor real $a$, entonces $f(x) = (x-a) \, h(x),$ siendo $h$ un polinomio de grado $n-1$. (considérese $p(x)=f(x+a).$)\\\\
                 Demostración.- \; Por la parte $b)$ se sabe que $f(x)$ es un polinomio de grado $n$, entonces $p(x)=f(x+a)$ también es un polinomio del mismo grado. Ahora si $f(a)=0$ entonces por hipótesis $p(0)=f(a)=0$. Luego por la parte $a)$, tenemos $$p(x)=x \cdot g(x)$$ donde $g(x)$ es un polinomio de grado $n-1$. Así,
                 $$p(x-a)=f(x)= f(x) = (x-a) \cdot g(x-a)$$ ya que $p(x)=f(x+a)$. Pero, si $g(x)$ es un polinomio de grado $n-1$, entonces por la parte $b)$ nuevamente, también lo es $h(x)=g(x+(-a)) = g(x-a)$. Por lo tanto, $$f(x)=(x-a) \cdot h(x)$$ para $h$ un grado $n-1$ polinomial, según lo solicitado.\\\\\
+
                 %----------(d)----------
                 \item Si $f(x)=0$ para $n+1$ valores reales de $x$ distintos, todos los coeficientes $c_k$ son cero y $f(x)=0$ para todo real de $x$\\\\
                 Demostración.- \;  La prueba se realizara por inducción. Sea $n=1$, entonces $f(x)=c_o + c_1 x$. Dado que la hipótesis es que existen $n+1$ distintos  $x$ de tal manera que $f(x)=0$, sabemos que existen $a_1$, $a_2$ $\in \mathbb{R}$ tal que $$f(a_1)=f(a_2)=0, \; \; \; a_1 \neq a_2,$$ Así, 
@@ -313,10 +326,12 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                         \end{tabular}
                     \end{center}
                 Pero dado que todos los coeficientes de $h(x)$ son cero y $f(x) = 0$ para todo $x \in \mathbb{R}$. Por lo tanto, la afirmación es verdadera para el caso $k+1$ y para todo $n \in \mathbb{Z}^+$\\\\
+
                 %----------(e)----------
                 \item Sea $g(x) = \displaystyle\sum_{k=0}^m b_k x^k$ un polinomio de grado $m$, siendo $m \geq n.$ Si $g(x)=f(x),$ para $m+1$ valores reales de $x$ distintos, entonces $m=n$, $b_k =c_k$ para cada valor de $k$, y $g(x)=f(x)$ para todo real $x$\\\\
                 Demostración.- \; Sea $$p(x)=g(x)-f(x) = \displaystyle\sum_{k=0}^m b_k x^k - \sum_{k=0}^n c_k x^k = \sum_{k=0}^m (b_k - c_k)x^k$$ donde $c_k=0$ para $n< k \leq m$, cabe recordar que tenemos $m \geq n$.\\
                 Entonces, hay $m+1$ distintos reales $x$ para los cuales $p(x)=0$. Dado que hay $m+1$ valores reales distintos para lo cuál $g(x)=f(x),$ así en cada uno de estos valores $p(x)=g(x)-f(x)=0$. Por lo tanto, por la parte $d)$, $b_k-c_k =0$ para $k=0,...,m$ y $p(x)=0$ para todo $x \in \mathbb{R}$. Es decir $$b_k - c_k =0 \; \; \; \Rightarrow \; \; \; b_k=c_k \; \; \; para \; k=0,...,m$$ y $$p(x)=0 \; \; \; \Rightarrow \; \; \; g(x)-f(x)=0 \; \; \; \Rightarrow \; \; \; f(x)=g(x),$$ para todo $x \in \mathbb{R}$. Ademas desde $b_k -c_k =0$ para $k=0,..., m$ y por supuesto $c_k=0$ para $k=n+1, ... , m,$ tenemos $b_k=0$ para $k= n+1, ... , m.$ Pero entonces, $$g(x)=\displaystyle\sum_{k=0}^n b_k x^k + \sum_{k=n+1}^m 0 \cdot x^k = \sum_{k=0}^n b^k x^k$$ significa que $g(x)$ es un polinomio de grado $n$ también.\\\\
+
             \end{enumerate}
 
         %--------------------10.-------------------
@@ -329,15 +344,19 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 \item $p(x) = p(1-x)$\\\\
                 Sea $f(x) = p(x) -1$, entonces $f$ es de grado como máximo $2$ por la parte $d)$ del problema $9$ tenemos que  todos los coeficientes de $f$ son $0$ \; y \; $f(x)=0$ para todo $x \in \mathbb{R}$, así,
                 $$p(x)-1 = 0 \; \; \Rightarrow \; \; p(x)=1 \; \; \forall x \in \mathbb{R}$$\\\\ 
+
                 %----------(b)-----------
                 \item $p(x) = p(1+x)$\\\\
                 Tenemos $p(0)=1 \Rightarrow c=1$ luego, $p(1)=1 \Rightarrow a+b=0 \Rightarrow b=-a$ y finalmente, con $c=1$ \; y \; $b=-a$, tenemos: $p(2)=2 \Rightarrow 4a-2a=1 \Rightarrow a=\dfrac{1}{2}, \; b=-\dfrac{1}{2}$. por lo tanto $$p(x)=\dfrac{1}{2}x^2 - \dfrac{1}{2}x + 1 = \dfrac{1}{2}x(x-1) + 1$$\\\\
+
                 %----------(c)-----------
                 \item $p(x) = p(0) = p(1) =1$\\\\
                 Una vez mas, desde $p(0)=1$ tenemos: $a+b=0 \Rightarrow b=-a$ así, $p(x) = ax^2 - ax + 1 = ax(x-1) + 1$\\\\
+
                 %----------(d)-----------
                 \item $p(0) = p(1)$\\\\
                 Simplemente sustituyendo estos valores que tenemos, $p(0)=p(1) \Rightarrow c=a+b+c \Rightarrow b=-a$ entonces, $$p(x) = ax^2 -ax + c = ax(x-1) + c$$\\\\
+
             \end{enumerate}
             
         %--------------------11.-------------------
@@ -349,16 +368,20 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 \item $p(x) = p(1-x)$\\\\
                 Sustituyendo se tiene $p(x) = p(1-x) = ax^2 + bx + c = a(1-x)^2 + b(1-x) + c \Rightarrow a - 2ax + ax^2 + b - bx + c$ por lo tanto $$ax^2 + (-2a-b)x + (a+b+c)$$
                 Así para $a=a$, $b = -2a - b \Rightarrow a=-b$, $c=a+b+c$ entonces $$p(x) = -bx^2 + bx + c = bx(1-x)+c$$\\\\
+
                 %----------(b)----------
                 \item $p(x) = p(x) = p(1+x)$\\\\
                 Una vez más sustituyendo, $p(x) = p(1+x) \Rightarrow ax^2 + bx + c = a(1+x)^2 + b(1+x) + c = ax^2 + (2a+b)x + (a+b+c)$. Luego, igualando como potencias de $x$, $a=a$, $b=2a+b \Rightarrow a = 0$, $c=a+b+c \Rightarrow b=0$. Por lo tanto $p(x) = c$ donde $c$ es una constante arbitraria.\\\\
+
                 %----------(c)----------
                 \item $p(2x) = 2p(x)$\\\\
                 Sustituyendo, $p(2x) = 2p(x) \Rightarrow 4ax^2 + 2bx + c = 2ax^2 + 2bx +2c.$. Igualando a las potencias de $x$, $4a=2a \Rightarrow a=0,$ $2b=2b \Rightarrow  b \; arbitrario,$ $c=2c \Rightarrow c=0$.\\
                 Así $$p(x)bx, \; b \; arbitrario$$\\\\
+
                 %----------(d)----------
                 \item $p(2x) = p(x+3)$\\\\
                 Sustituyendo $p(3x) = p(x+3) \Rightarrow 9ax^2 + 3bx + c = ax^2 + (6a+b)x + (9a+3b+c)$. Igualando como potencias de $x,$ $9a=a \Rightarrow a=0,$ $3b = 6a+b \Rightarrow b=0,$ $c=9a + 3b + c = c \Rightarrow c \; arbitrario$. Por lo tanto $$p(x)=c \mbox{para c constante arbitrario.}$$\\\\
+
             \end{enumerate}
 
         %--------------------corolario 1.1-----------------------
@@ -393,6 +416,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                 %----------(a)----------
                 \item $(1+x)^{2n}$\\\\
                 Demostración.- \; Usando el teorema binomial $(1+x)^{2n} = \displaystyle\sum_{k=0}^2n {2n \choose k} x^k$, sea $m=2n$ entonces $\displaystyle\sum_{k=0}^m {m \choose n} x^k$, por lo tanto $\displaystyle\sum_{k=0}^m c_k x^k$ si $c_k = {m \choose k} $ para cada $k$.\\\\
+
                 %----------(b)----------
                 \item $\dfrac{1- x^{n+1}}{1-x}, \; x \neq 1$\\\\
                 Demostración.- \; Por el corolario anterior 
@@ -403,6 +427,7 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                             &=&$\displaystyle\sum_{k=0}^n 1 \cdot x^k$\\\\
                         \end{tabular}
                     \end{center}
+
                 %----------(c)----------
                 \item $\displaystyle\prod_{k=0}^n (1+x^{2^k})$\\\\
                 Demostración.- \; Por le corolario anterior,
@@ -417,8 +442,57 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
                             &=&$\displaystyle\sum_{k=0}^{m} 1 \cdot x^k$ si $m = 2^{n+1} - 1$\\\\
                         \end{tabular}
                     \end{center}
+
             \end{enumerate}
+
+    \end{enumerate}
+
+    %-------------------axioma .1
+    \begin{tcolorbox}[colframe=white]
+	\begin{axioma}[Definición axiomática de área]
+	    Supongamos que existe una clase $M$ de conjuntos del plano medibles y una función de conjunto $a$, cuyo dominio es $M$, con las propiedades siguientes:
+	    \begin{enumerate}[\bfseries 1.]
+		\item \textbf{Propiedad de no negatividad}. Para cada conjunto $S$ de $M$, se tiene $a(S)\geq 0$
+		\item \textbf{Propiedad aditiva}. Si $S$ y $T$ pertenecen a $M$, también pertenecen a $M$, $S \cup T$ y $S \cap T,$ y se tiene $$a(S \cup T)=a(S)+a(T)-a(S\cap T)$$
+		\item \textbf{Propiedad de la diferencia}. Si $S$ y $T$ pertenecen a $M$ siendo $S \subseteq T$ entonces $T - S$ está en $M$, y se tiene $a(T-S)=a(T)-a(S)$ 
+		\item \textbf{Invariancia por congruencia}. Si un conjunto $S$ pertenece a $M$ y $T$ es congruente a $S$, también $T$ pertenece a $M$ y tenemos $a(S)=a(T)$
+		\item \textbf{Elección de escala} Todo rectángulo $R$ pertenece a $M$. Si los lados de $R$ tienen longitudes $h$ y $k$, entonces $a(R)=hk$
+		\item \textbf{Propiedad de exhaución}. Sea $Q$ un conjunto que puede encerrarse entre dos regiones $S$ y $T$ de modo que $$S\subseteq Q \subseteq T.$$ Si existe uno y sólo un número $c$ que satisface las desigualdades $$a(S)\leq c \leq a(T)$$ para todas la regiones escalonadas $S$ y $T$ que satisfacen $S\subseteq Q \subseteq T$, entonces $Q$ es medible y $a(Q)=c$
+
+	    \end{enumerate}
+
+	\end{axioma}
+    \end{tcolorbox}
+    
+
+\setcounter{section}{6}
+\section{Ejercicios}
+
+    \begin{enumerate}[\Large \bfseries 1.]
+
+	%--------------------1.
+	\item Demostrar que cada uno de los siguientes conjuntos es medible y tiene área nula:
+
+	    \begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Un conjunto que consta de un solo punto.\\\\
+	    Demostración.-\; Un sólo punto se puede medir con un área $0$, ya que un punto es un rectángulo con $h=k=0$\\\\
+
+	    %----------(b)
+	    \item El conjunto de un número finito de puntos.\\\\
+		Demostración.-\; Demostraremos por inducción en $n$, el número de puntos. Para el caso de $n=1$ ya quedo demostrado en el anterior inciso. Supongamos que es cierto para algunos $n=k\in \mathbf{Z}^+$. Entonces, tenemos un conjunto $S \in M$ de $k$ puntos en el plano y $a(S)=0$. Sea $T$ un punto en el plano. Por $(a)$ $T \in M$ y $a(T)=0$, por tanto por la propiedad aditiva, $$S\cup T \in M \;\; y \;\; a(S\cup T)=a(S)+a(T) - a(S\cap T).$$ pero $S\cap T \subseteq S,$ entonces $$a(S \cap T)\leq a(S) \Rightarrow a(S \cap T)\leq 0 \Rightarrow a(S \cap T)=0.$$\\ El axioma 1 nos garantiza que $a(S \cap T)$ no puede ser negativo. Por lo tanto, $a(S \Cup T)=0,$ Por tanto, el enunciado es verdadero para $k+1$ puntos en un plano y, por tanto, para todo $n \in Z_{>0}$\\\\
+
+	    %----------(c)
+	    \item La reunión de una colección finita de segmentos de recta en un plano.\\\\
+	    Demostración.-\; Por inducción, sea $n$ el número de segmentos en un plano. Para $n=1$, dejamos $S$ ser un conjunto con una línea en un plano. Dado que una línea es un rectángulo y todos los rectángulos son medibles, tenemos $S\in M$ ademas, $a(S)=0$ ya que una línea es un rectángulo con $h=0$ ó $k=0$, y así en cualquier caso $hk=0$. Por lo tanto, el enunciado es verdadero para una sola línea en el plano, el caso $n=1$.\\
+		    Asuma entonces que es cierto para $n=k \in \mathbf{Z}^+$. Sea $S$ un conjunto de rectas en el plano. Luego, por la hipótesis de inducción, $S\in M$ y $a(S)=0$. Sea $T$ una sola línea en el plano. Por el caso $n=1$ en $T\in M$ y $a(T)=0$. Por lo tanto $S\cup T \in M$ y $a(S\cup T)=0$ (ya que $a(S)=a(T)a(S\cap T)=0$). Por tanto, la afirmación es verdadera para $k+1$ líneas en un plano, y así para todos $n\in \mathbf{Z}^+$\\\\
+
+	    \end{enumerate}
+
+	%--------------------2.
+	\item Toda región en forma de triángulo rectángulo es medible pues puede obtenerse como intersección de dos rectángulos. Demostrar que toda región triangular es medible y que su área es la mitad del producto de su base por su altura.\\\\
+	Demostración.-\; 
 
 
     \end{enumerate}
-christian
