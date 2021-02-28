@@ -125,7 +125,19 @@ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
 
     %--------------------5.
     \item Muestre, dando un contraejemplo, que la unión de convexos puede no ser un conjunto convexo.\\\\
-    Demostración.-\; Los cuatro rectángulos (en gris) a continuación son figuras convexas y sus formas de unión una figura con una cavidad (parte en blanco) y por lo tanto cóncava.
+    Demostración.-\; Los cuatro rectángulos en gris son figuras convexas y su unión forma una figura con una cavidad, parte en blanco y por lo tanto cóncava.
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \draw[fill=gray](0,0) rectangle (3,2);
+	    \draw[fill=gray](3,-2) rectangle (6,0);
+	    \draw[fill=gray](0,-4) rectangle (3,-2);
+	    \draw[fill=gray](-3,-2) rectangle (0,0);
+	    \filldraw[black](0,2) circle(2pt) node[left]{$A$};
+	    \filldraw[black](3,2) circle(2pt) node[right]{$B$};
+	    \filldraw[black](0,-4) circle(2pt) node[below]{$C$};
+	    \filldraw[black](3,-4) circle(2pt) node[below]{$D$};
+	\end{tikzpicture}
+    \end{center}
 
     %--------------------6.
     \item Tres puntos no colineales determinan tres rectas. ¿Cuántas rectas son determinadas por cuatro puntos tal que cualesquier tres de ellos no son colineales.?\\\\
@@ -159,15 +171,35 @@ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
 
     %--------------------10.
     \item Si $C$ pertenece a $S_{AB}$ y $C\neq A,$ muestre que: $S_{AB}=S_{AC}, BC \subset S_{AB}$ y que $A \notin BC.$\\\\
-    Demostración-.\;
+    Demostración-.\; Dada una semirecta $S_{AB}$ a través de los puntos $A$ y $B$ determinamos la semirrecta $S_{BA}$ donde por la proposición $S_{AB} \cup S_{BA}$ esta contenido en la recta $m$. Luego por definición $S_{AB}$  es el conjunto de puntos en el segmento $AB$ más el conjunto de puntos $X$ tales que $A-B-X$.\\
+    Como $C\in S_{AB}$ por hipótesis ocurre una de las tres posibilidades:
+    \begin{enumerate}[\bfseries 1.]
+	\item $C=B$ en este caso la demostración es trivial.
+	\item $A-B-C$ En este caso, por definición de semi-recta $S_{AB}=S_{AC}$ siendo $BC=S:{bC} \cap S_{CA}$ y como $A\notin S_{BC}$ entonces $A\notin BC$.
+	\item $A-C-B$ se demuestra análogamente al caso anterior.\\\\
+    \end{enumerate}
 
     %--------------------11.
     \item Muestre que un triángulo separa el plano en dos regiones, una de las cuales es convexa.\\\\
-    Demostración.-\;
+    Demostración.-\; Tracemos tres rectas $m,n$ y $o$ que se intersecan en los puntos $A,B$ y $C$ de la manera siguiente:
+    \begin{center}
+	\begin{tikzpicture}[scale=0.5]
+	    \draw[<->](-2,0)--(12,0)node[above]{$n$};
+	    \draw[<->](-1,-2)--(6,6)node[right]{$o$};
+	    \draw[<->](10,-2)--(4,6)node[left]{$m$};
+	    \filldraw[black](.8,0) circle(2pt) node[below right]{$C$};
+	    \filldraw[black](8.5,0) circle(2pt) node[below left]{$B$};
+	    \filldraw[black](4.9,4.8) circle(2pt) node[right]{$A$};
+	    \filldraw[black](5.2,2.6) circle(2pt) node[below]{$X$};
+	    \filldraw[black](3,1.3) circle(2pt) node[below]{$Y$};
+	    \filldraw[black](4.9,4.2) node[below]{$\alpha$};
+	\end{tikzpicture}
+    \end{center}
+    Así formamos el triángulo $ABC$, que a su vez separa el plano en dos regiones. La región convexa es la región que forma el interior del triángulo. Para probar esto, considere los puntos $X$ e $Y$ que pertenecen al semiplano llamemosle $\alpha$ generado por las tres rectas. Dado que $X$ e $Y$ están en el mismo semiplano generado por la recta $m$, entonces el segmento $XY$ no interseca a la recta $m$. De manera similar, $XY$ no puede interceptar las líneas $n$ y $o$. Esto implica que $XY$ pertenece al semiplano $\alpha$ formado por el triángulo $ABC$, que por tanto es una región convexa.\\\\
 
     %--------------------12.
     \item ¿Puede existir dos segmentos distintos con dos puntos en común?¿Y, teniendo exactamente dos puntos en común?\\\\
-    Respuesta.-\;
+    Respuesta.-\; Dados los puntos $A, B, C$ y $D$ de modo que $ABCD$ entonces los segmentos $AC$ y $BD$ tendrán el segmento $BC$ en común ya que en un segmento hay puntos infinitos por lo que $AC$ y $BD$ tienen dos puntos en común pero nunca solo tendrán dos puntos.\\\\
 
 \end{enumerate}
 \end{document}
