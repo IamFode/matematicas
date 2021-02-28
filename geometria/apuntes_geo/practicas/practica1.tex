@@ -1,0 +1,173 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica III}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & I.\\ 
+Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+
+
+\begin{enumerate}[\Large\bfseries 1.]
+
+    %------------------1.
+    \item Sobre una recta marque cuatro puntos $A,B,C$ y $D$ en orden, de izquierda a derecha. Determine:\\
+
+	    \begin{center}
+	    \begin{tikzpicture}
+		\draw[<->] (0,0)--(10,0);
+		\filldraw[black] (2,0) circle (1pt) node[below]{$A$};
+		\filldraw[black] (4,0) circle (1pt) node[below]{$B$};
+		\filldraw[black] (6,0) circle (1pt) node[below]{$C$};
+		\filldraw[black] (8,0) circle (1pt) node[below]{$D$};
+	    \end{tikzpicture}
+	    \end{center}
+
+	\begin{enumerate}[\bfseries (a)]
+	\begin{multicols}{2}
+
+	    %----------(a)
+	    \item $AB \cup BC$\\\\
+	    Respuesta.-\; AC\\\\
+
+	    %----------(b)
+	    \item $AB \cap BC$\\\\
+	    Respuesta.-\; B \\\\
+
+	    %----------(c)
+	    \item $AC \cap BD$\\\\
+	    Respuesta.-\; BC\\\\
+
+	    %----------(d)
+	    \item $AB \cap CD$\\\\ 
+	    Respuesta.-\; $\empty$\\\\
+
+	    %----------(e)
+	    \item $S_{AB} \cap S_{BC}$\\\\
+	    Respuesta.-\; $S_{BC}$ \\\\
+
+	    %----------(f)
+	    \item $S_{AB} \cap S_{AD}$\\\\
+	    Respuesta.-\; $S_{AB}$\\\\
+
+	    %----------(g)
+	    \item $S_{CB} \cap S_{BC}$\\\\
+	    Respuesta.-\; BC \\\\
+
+	    %----------(h)
+	    \item $S_{AB} \cup S_{BC}$\\\\
+	    Respuesta.-\; $S_{AB}$\\\\
+	\end{multicols}
+	\end{enumerate}
+
+    %--------------------2.
+    \item Pruebe que en un segmento existen infinitos puntos.\\\\
+    Demostración.-\; Sea una recta $m$ con puntos distintos $A$ y $B$, supongamos que entre $A$ y $B$ hay puntos finitos, entonces por definición un conjunto es finito cuando puede ser colocado en correspondencia biunívoca en un conjunto $\mathbf{N}$. Luego $AB$ es un conjunto con $n$ elementos $AB=\lbrace P_1,P_2,...,P_n \rbrace$\\\\
+
+    %--------------------3.
+    \item Sean $P=\lbrace a,b,c \rbrace$, $m_1=\lbrace a,b \rbrace$, $m_2=\lbrace a,c \rbrace$ y $m_3=\lbrace b,c \rbrace$. Llame a $P$ el plano y a $m_1,m_2$ y $m_3$ rectas. Verifique en esta $"$geometría$"$ si es cierto el axioma $I_2$.\\\\
+    Demostración.-\; Observemos que todas las combinaciones posibles entre los puntos del plano $P$, tomadas de dos en dos pertenecen a una de las tres líneas rectas de esa geometría. Es decir $ab,ac,ba,bc,ca,cb$. Debemos fijarnos que solo la línea $m_1$ pasa por $ab$. Del mismo modo para los otros pares de puntos, pasan sólo una de las líneas mencionadas $m_1,m_2,m_3$. Esto muestra que en ésta geometría vale el axioma $I_2$\\\\
+
+    %--------------------4.
+    \item Un subconjunto del plano se dice convexo si el segmento que un dos puntos cualesquiera de sus puntos está totalmente contenido en él. Los ejemplos más simples de conjuntos convexos son el propio plano y cualquier semiplano. Muestre que la intersección de dos semiplanos es un conjunto convexo.\\\\
+    Demostración.-\; Supongamos los semiplanos $S_1,S_2$ y $S_3$ tal que $S_3 = S_1 \cap S_2$ tomando dos puntos $A, B \in S_3$ entonces: $$A,B \in S_1,S_2$$ Sean $S_1$ y $S_2$ convexos entonces $A,B \in S_1,S-2$ y por lo tanto pertenecen  a la intersección, luego $S_3$ es convexo.\\\\
+
+
+    %--------------------5.
+    \item Muestre, dando un contraejemplo, que la unión de convexos puede no ser un conjunto convexo.\\\\
+    Demostración.-\; Los cuatro rectángulos (en gris) a continuación son figuras convexas y sus formas de unión una figura con una cavidad (parte en blanco) y por lo tanto cóncava.
+
+    %--------------------6.
+    \item Tres puntos no colineales determinan tres rectas. ¿Cuántas rectas son determinadas por cuatro puntos tal que cualesquier tres de ellos no son colineales.?\\\\
+    Respuesta.-\; Veamos la siguiente tabla, donde $r_{ij}$ y la linea determinada por los puntos $P_i$ y $P_j$
+    \begin{center}
+	\begin{tabular}{cccc}
+	    &$P_1$&$P_2$&$P_3$\\
+	    $P_1$&$-$&$r_{12}$&$r_{13}$\\
+	    $P_2$&$r_{21}$&$-$&$r_{23}$\\
+	    $P_3$&$r_{31}$&$r_{32}$&$-$\\
+	\end{tabular}
+    \end{center}
+    El número de líneas será $\dfrac{3(3-1)}{2}=3$ y por $n$ puntos $\dfrac{n(n-1)}{2}$\\\\
+
+    %--------------------7.
+    \item Repita el ejercicio anterior para el caso de $6$ puntos.\\\\
+    Respuesta.-\; $\dfrac{6(6-1)}{2}=15$\\\\
+
+    %--------------------8.
+    \item Pruebe que, si una recta interseca un lado de un triángulo y no pasa por ninguno de sus vértices, entonces ella intersecta también uno de los otros dos lados.\\\\
+    Demostración.-\; Dado un triángulo $ABC$ y una recta $m$, si $m$ interseca el segemento $AB$, entonces $A$ está en el lado puesto de $B$ con respecto a la recta $m$. Como por hipótesis $m$ no pasa por $C$, entones $C$ está del lado de $A$ ó $B$.\\
+    Si $C$ está del lado de $A$, entonces $C$ es opuesto a $B$ y luego $m$ interseca a $BC$.\\
+    Si $C$ está del lado de $B$, entonces es contrario a $A$ y $m$ interceca $AC$.\\
+    Entonces siempre interseca un lado.\\\\
+
+    %--------------------9.
+    \item Muestre que no existe una $"$geometría$"$ con $6$ puntos, donde sean válidos los axiomas $I_1$ y $I_2$ y que todas las rectas tengan exactamente $3$ puntos.\\\\   
+    Demostración.-\; Sea una recta $m=\lbrace P_1,P_2 \rbrace$ por hipótesis existe un $Q_1 \in P$ diferente de $P_1$ y $P_2$.\\
+    Luego sea $Q_2 \in P$ y diferente de $P_1,P_2$ y $Q_1$, por hipótesis, tenemos que $Q_2 \notin m$ porque $m$ ya tiene 3 puntos. Por tanto, hay una línea recta $n=\lbrace P_1,Q_2 \rbrace$ y que contiene un punto $Q_3\in P$ con $Q_3\neq P_1,P_2,Q_1,Q_2$\\
+    Ahora tome $Q_4 \in P$ con $Q_4 \neq P_1,P_2,Q_1, Q_2,Q_3$. Nuevamente por hipótesis $Q_4 \notin m,n$ porque ambos ya tienen tres puntos. Entonces debe haber una línea $t=\lbrace P_1,Q_4 \rbrace$ que debe contener por hipótesis, un tercer punto $Q5$. Entonces tenemos $Q_5 \neq P_1$ y $Q_5 \neq Q_4$, luego $Q_5 \neq Q_1$ y $Q_5\neq P_2$ porque $m\neq t$, $Q_5\neq Q_2$ y $Q_5\neq Q_3$ ya que $n\neq t$. Esto nos lleva a una contradicción porque $Q_5$ sería el séptimo punto de la geometría dada.\\\\
+
+    %--------------------10.
+    \item Si $C$ pertenece a $S_{AB}$ y $C\neq A,$ muestre que: $S_{AB}=S_{AC}, BC \subset S_{AB}$ y que $A \notin BC.$\\\\
+    Demostración-.\;
+
+    %--------------------11.
+    \item Muestre que un triángulo separa el plano en dos regiones, una de las cuales es convexa.\\\\
+    Demostración.-\;
+
+    %--------------------12.
+    \item ¿Puede existir dos segmentos distintos con dos puntos en común?¿Y, teniendo exactamente dos puntos en común?\\\\
+    Respuesta.-\;
+
+\end{enumerate}
+\end{document}
