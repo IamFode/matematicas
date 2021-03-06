@@ -1,0 +1,212 @@
+\documentclass[10pt]{article}				
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}		
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica III}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & II.\\ 
+Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+
+    \begin{enumerate}[\large \bfseries 1.]
+
+	%--------------------1.
+	\item Sean $A,B$ y $C$ puntos de una recta. Haga un diseño representándolos, sabiendo que $\overline{AB}=3$, $\overline{AC}=2$ y $\overline{BC}=5$\\\\
+	Respuesta.-\;
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw[<->](-2,0)--(7,0);
+	    \filldraw[black](3,0) circle(2pt) node[below]{$A$};
+	    \filldraw[black](0,0) circle(2pt) node[below]{$B$};
+	    \filldraw[black](5,0) circle(2pt) node[below]{$C$};
+	\end{tikzpicture}
+    \end{center}
+
+	%--------------------2.
+	\item Repita el ejercicio anterior, sabiendo que $C$ está entre $A$ y $B$ y que $\overline{AB}=7$ y $\overline{AC}=5.$\\\\
+	Respuesta.-\;
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw[<->](-2,0)--(9,0);
+	    \filldraw[black](0,0) circle(2pt) node[below]{$A$};
+	    \filldraw[black](7,0) circle(2pt) node[below]{$B$};
+	    \filldraw[black](5,0) circle(2pt) node[below]{$C$};
+	\end{tikzpicture}
+    \end{center}
+
+	%--------------------3.
+	\item Diseñe una recta y sobre ella marque dos puntos $A$ y $B$. Suponga que la coordenada del punto $A$ sea cero y la del punto $B$ sea $1$. Marque ahora puntos cuyas coordenadas son $3,5,5/2,1/3,3/2,2,-1,-2,-5,-1/3,-5/3$\\\\
+	Respuesta.-\;
+    \begin{center}
+	\begin{tikzpicture}[scale=1.3]
+	    \draw[<->](-6,0)--(6,0);
+	    \filldraw[red](0,0) circle(1.5pt) node[below]{$A$} node[above]{$0$};
+	    \filldraw[red](1,0) circle(1.5pt) node[below]{$B$} node[above]{$1$};
+	    \filldraw[black](3,0) circle(1pt) node[below]{$p_1$} node[above]{\tiny$3$};
+	    \filldraw[black](5,0) circle(1pt) node[below]{$p_2$} node[above]{\tiny$5$};
+	    \filldraw[black](5/2,0) circle(1pt) node[below]{$p_3$} node[above]{\tiny$5/2$};
+	    \filldraw[black](1/3,0) circle(1pt) node[below]{$p_4$} node[above]{\tiny$1/3$};
+	    \filldraw[black](3/2,0) circle(1pt) node[below]{$p_5$} node[above]{\tiny$3/2$};
+	    \filldraw[black](2,0) circle(1pt) node[below]{$p_6$} node[above]{\tiny$2$};
+	    \filldraw[black](-1,0) circle(1pt) node[below]{$p_7$} node[above]{\tiny$-1$};
+	    \filldraw[black](-2,0) circle(1pt) node[below]{$p_8$} node[above]{\tiny$-2$};
+	    \filldraw[black](-5,0) circle(1pt) node[below]{$p_9$} node[above]{\tiny$-5$};
+	    \filldraw[black](-1/3,0) circle(1pt) node[below]{$p_{10}$} node[above]{\tiny$-1/3$};
+	    \filldraw[black](-5/3,0) circle(1pt) node[below]{$p_{11}$}  node[above]{\tiny$-5/2$};
+	\end{tikzpicture}
+    \end{center}
+
+	%--------------------4.
+	\item Sean $A_1$ y $A_2$ puntos de coordenadas $1$ y $2$. De la coordenada del punto medio $A_3$ del segmento $A_1 A_2$. De la coordenada del punto medio $A_4$ del segmento $A_2A_3$. De la coordenada del punto medio $A_5$ del segmento $A_3A_4$.\\\\
+	Respuesta.-\; Dado que $A_3$ es el punto medio del segmento $A_1 A_2$, la coordenada $A_3$ será la media aritmética.
+	$$A_3=\dfrac{A_1 + A_2}{2}=\dfrac{1+2}{2}=\dfrac{3}{2}$$
+	Luego calculamos análogamente para los otros puntos.
+	$$A_4=\dfrac{\dfrac{3}{2}+2}{2}=\dfrac{7}{4}$$
+	$$A_5=\dfrac{\dfrac{3}{2}+\dfrac{7}{4}}{2}=\dfrac{13}{8}$$\\\\
+
+	%--------------------5.
+	\item Sean $a,b,c,d$ números reales distintos de cero. Pruebe que, si $\dfrac{a}{b}=\dfrac{c}{d}$ entonces
+	\begin{enumerate}[\bfseries a)]
+	    %----------a)
+	    \item $\dfrac{a}{c}=\dfrac{b}{d}$ y $\dfrac{d}{b}=\dfrac{c}{a}$\\\\
+	    Demostración.-\; Sea $\dfrac{a}{b}=\dfrac{c}{d}$ entonces por hipótesis $\dfrac{a}{b}\cdot \dfrac{b}{c}=\dfrac{c}{d} \cdot \dfrac{b}{c}$ luego $\dfrac{a}{c}=\dfrac{b}{d}$\\\\ 
+
+	    %----------b)
+	    \item $\dfrac{a+c}{a}=\dfrac{c+d}{c}$ y $\dfrac{a-c}{a}=\dfrac{c-d}{c}$\\\\
+	    Demostración.-\; Sea $\dfrac{a}{b}=\dfrac{c}{d}$ entonces $\dfrac{db}{ac}\cdot \dfrac{a}{b}$ luego $1+\dfrac{d}{c}=1+\dfrac{b}{a}$, de donde $\dfrac{c}{c}\cdot \dfrac{d}{c}=\dfrac{a}{a}\cdot \dfrac{b}{a}$ y por lo tanto $\dfrac{c+d}{c}=\dfrac{b+a}{a}$\\\\
+
+	    %----------c)
+	    \item $\dfrac{a+b}{b}=\dfrac{c+d}{d}$ y $\dfrac{a-b}{b}=\dfrac{c-d}{d}$\\\\
+	    Demostración.-\; Sea $\dfrac{a}{b}=\dfrac{c}{d}$ entonces $\dfrac{a}{b}\cdot \dfrac{bd}{ac}=\dfrac{c}{d}\cdot \dfrac{db}{ac}$ luego similar al ejercicio anterior tenemos $-1 \cdot \dfrac{d}{c}=-1 \cdot \dfrac{b}{a}$ y por lo tanto $\dfrac{c-d}{c}=\dfrac{a-b}{a}$\\\\
+
+	\end{enumerate}
+
+	%-------------------6.
+	\item Si $P$ es el punto de intersección de los círculos de radio $r$ y centros en $A$ y $B$, muestre que $\overline{PA}=\overline{PB}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw(0,0) circle(1cm);
+		\draw(2,0) circle(1cm);
+		\filldraw[black](1,0) circle(1pt) node[below left]{\tiny$P$};
+		\filldraw[black](0,0) circle(1pt) node[left]{\tiny$A$};
+		\filldraw[black](2,0) circle(1pt) node[ right]{\tiny$B$};
+		\draw(0,0)--(1,0)node[above left ]{\tiny$\overline{PA}$};
+		\draw(1,0)--(2,0)node[above left]{\tiny$\overline{PB}$};
+	    \end{tikzpicture}
+	\end{center}
+	Demostración.-\; Como el punto $P$ está en la intersección de los dos círculos. Entonces $P$ pertenece al círculo con centro $A$ y radio $r$, y por definición de círculo, $PA = r$, igualmente $P$ pertenece al círculo con centro $B$ y radio $r$, por definición de círculo, $PB = r$, lo que implica que $PA = PB$.\\\\
+
+	%--------------------7.
+	\item Usando regla y compás (regla no numerada), describa un método para la construcción de un triángulo con dos lados de misma longitud. (Un triángulo así, es llamado triángulo isósceles).\\\\
+	Respuesta.-\; Considere un segmento $AB$. Con una brújula centrada en $A$, dibuja una circunferencia de radio $AB$. Ahora con el centro en $B$, dibuja un círculo de radio $BA$. La intersección entre los dos círculos generará los puntos $C$ y $D$. Haciendo el triángulo $CAD$ tendremos un triángulo isósceles con base $CD$ y lados $AC$, luego $AD = AB$.\\\\
+
+	%-------------------8.
+	\item Describa un método para construir un triángulo con sus tres lado de misma longitud.( Un triángulo así, es llamado triángulo equilátero ).\\\\
+	Respuesta.-\;
+
+	%--------------------9.
+	\item Muestre que, si $a<b$ entonces $a<\dfrac{a+b}{2}$ y $b>\dfrac{a+b}{2}$\\\\
+	Demostración.-\;
+
+	%--------------------10.
+	\item ¿Es posible construir un triángulo con lados de longitud $3,8$ y $5$?\\\\
+	Respuesta.-\;
+
+	%--------------------11.
+	\item El círculo de radio $r_1$ centrado en $A$ intersecta al círculo de radio $r_2$ centrado en $B$ en exactamente dos puntos. ¿Qué se puede afirmar sobre $\overline{AB}$?\\\\
+	Respuesta.-\;
+
+	%--------------------12.
+	\item Considere un círculo de radio $r$ y centro $A$. Sean $B$ y $C$ puntos de este círculo. ¿Qué se puede afirmar sobre el triángulo $ABC$?\\\\
+	Respuesta.-\;
+
+	%--------------------13.
+	\item Considere un círculo de radio $r$ y centro $O$. Sea $A$ un punto de este círculo y sea $B$ un punto tal que el triángulo $OAB$ es equilátero. ¿Cuál es la posición del punto $B$ en relación al círculo?\\\\
+	Respuesta.-\;
+
+	%--------------------14.
+	\item Dos círculos de mismo radio y centro $A$ y $B$ se intersectan en dos puntos $C$ y $D$. ¿Qué se puede afirmar sobre los triángulos $ABC$ y $ACD$? ¿Y, sobre el cuadrilátero $ACBD$?\\\\
+	Respuesta.-\;
+
+	%--------------------15.
+	\item Dado un segmento $AB$ muestre que existe y es único, un punto $C$ entre $A$ y $B$ tal que $$\dfrac{\overline{AC}}{\overline{BC}}=a,$$ donde $a$ es cualquier número real positivo.\\\\
+	Demostración.-\;
+
+	%--------------------16.
+	\item Pruebe que un segmento de recta que une un punto del círculo, con un punto dentro del mismo, tiene un punto en común con el círculo.\\\\
+	Demostración.-\;
+
+	%--------------------17.
+	\item Dados los puntos $A$ y $B$ y un número real $r$ mayor que $\overline{AB}$, el conjunto de los puntos $C$ que satisfacen $\overline{CA}+\overline{CB}=r$ es llamado elipse. Establezca los conceptos de región interior y de región exterior a un elipse.\\\\
+	Respuesta.-\;
+
+	%--------------------18.
+	\item Un conjunto $M$ de puntos del plano es acotado si existe un círculo $C$ tal que todos los puntos de $M$ están dentro de $C$. Pruebe que cualquier conjunto finito de puntos es acotado. Pruebe también que los segmentos son acotados. Concluya el mismo resultado para los triángulos.\\\\
+	Demostración.-\;
+
+	%--------------------19.
+	\item Pruebe que la unión de una cantidad finita de conjuntos acotados es también un conjunto acotado.\\\\
+	Demostración.-\;
+
+	%--------------------20.
+	\item Muestre que dado un punto $P$ y un conjunto acotado $M$, existe un círculo $C$ con centro en $P$ tal que todos los puntos de $M$ están dentro de $C.$\\\\
+	Demostración.-\;
+
+	%--------------------21.
+	\item Pruebe que las rectas son conjuntos no acotados.\\\\
+	Demostración.-\;
+
+
+
+    \end{enumerate}
+
+
+\end{document}
