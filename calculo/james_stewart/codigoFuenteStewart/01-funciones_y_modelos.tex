@@ -143,12 +143,53 @@
 
 	    %----------(a)
 	    \item ¿Cuál es el rango de la función de ancho de anillo?\\\\
-		Respuesta.-\; 
+		Respuesta.-\; El rango es de $0.1$ a $1.41$ aproximadamente.\\\\
 
 	    %----------(b)
 	    \item ¿Qué dice la gráfica acerca de la temperatura de la tierra? ¿La gráfica refleja las erupciones volcánicas de la mitad del siglo $XIX$?\\\\
-		Respuesta.-\;
+		Respuesta.-\; La temperatura cada vez es más cálida mientras pasa los años. \\
+		Se ve un pequeño realce entre $1800-1890$ donde podría haber existido algunas erupciones volcánicas.\\\\
 
 	\end{enumerate}
+
+    %--------------------13.
+    \item Se ponen unos cubitos de hielo en un vaso, se llena el vaso con agua fría y luego se coloca sobre una mesa. Describa cómo cambia la temperatura del agua conforme transcurre el tiempo. Luego trace una gráfica de la temperatura del agua como una función del tiempo transcurrido.\\\\
+    Respuesta.-\; La temperatura va disminuyendo constantemente en función a la temperatura ambiente y del tiempo.
+
+            \begin{center}
+                \begin{tikzpicture}[scale=0.9, draw opacity = .6]
+                    % abscisa y ordenada
+                    \tkzInit[xmax= 3,xmin=-2,ymax=3,ymin=-2]
+                    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+                    % label x, f(x)
+                    \tkzDrawX[opacity= .6,label=x,right=0.3]
+                    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+                    %dominio y función
+                    \draw [domain=-2:3,thick] plot(\x,{\x}); 
+                \end{tikzpicture}
+            \end{center}  
+
+    %--------------------14.
+    \item Tres corredores compiten en una carrera de $100$ metros. La gráfica muestra la distancia recorrida como una función del tiempo de cada corredor. Describa en palabras lo que la gráfica indica acerca de esta carrera. ¿Quién ganó la carrera? ¿Cada corredor terminó la carrera?\\\\
+    Respuesta.-\; Gano la carrera el competidor $A$. Efectivamente cada competidor acabo la carrera.\\\\ 
+
+    %--------------------15.
+    \item La gráfica muestra el consumo de energía para un día de septiembre en San Francisco. ($P$ se mide en megawatts: $t$ se registra en horas a partir de la medianoche).
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item ¿Cual fue el consumo de potencia a las $6:00$? ¿A las $18:00$?\\\\
+	    Respuesta.-\; Para las $6:00$ el consumo de potencia es $500$ megawatts. y para las $18:00$ es $720$ megawatts.\\\\
+
+	    %----------(b)
+	    \item ¿Cuándo fue el consumo de energía más bajo? ¿Cuándo fue el más alto? ¿Estos tiempos parecen razonables?\\\\
+	    Respuesta.-\; El más bajo fue a hrs. $4:00$ y el mas alto fue en a hrs. $12:00$. Los tiempos son razonables por la actividad que se puede realizar a esas horas.\\\\
+
+	\end{enumerate}
+
+    %--------------------16.
+    \item Trace una gráfica aproximada del número de horas de luz en función de la época del año.\\\\
+    Respuesta.-\;
 
     \end{enumerate}
