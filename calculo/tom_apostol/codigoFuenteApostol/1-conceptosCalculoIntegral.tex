@@ -498,6 +498,34 @@ En cálculo elemental tiene interés considerar en primer lugar, aquellas funcio
 
 	%--------------------3.
 	\item Demostrar que todo trapezoide y todo paralelogramo es medible y deducir las fórmulas usuales para calcular su área.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Todo trapecio es medible ya que, la unión de un rectángulo y dos triángulos rectángulos (disjuntos por pares y cada uno de los cuales es medible ppor los axiomas y el ejercicio anterior.)\\
+	    Luego su área es la suma de las áreas de los triángulos rectángulos y el rectángulo (dado que están separados por pares, su intersección tiene un área cero). Para calcular esta área, especificamos las longitudes de los dos lados desiguales del trapezoide para que sean $b_1$ y $b_2$. La altura está indicada por $a$. Entonces, el área del rectángulo es de $1$. El área de los triángulos es $\dfrac{1}{2} a \cdot b_3$ y $\frac{1}{2} a \cdot b_4$ dónde $b_1 + b_3 + b_4 = b_2$. Entonces, denotando el trapezoide por $T$, tenemos $$a(T)=ab_1+\dfrac{1}{2}ab_3 + \dfrac{1}{2}ab_4=\dfrac{1}{2}ab_1 + \dfrac{1}{2}a(b_1 + b_3 + b_3)=\dfrac{1}{2}a(b_1+b_2)$$ A continuación, un paralelogramo es solo un caso especial de un trapezoide, en el que $b_1 = b_2$; por lo tanto, por la fórmula anterior, y denotando el paralelogramo por $P$, $$a(P)=\dfrac{1}{2}a(2b)=ab$$\\\\
+
+	%--------------------4.
+	\item Un punto $(x,y)$ en el plano se dice que es un punto de una red, si ambas coordenadas $x$ e $y$ son enteras. Sea $P$ un polígono cuyos vértices son puntos de una red. El área de $P$ es $I+\dfrac{1}{2} B - 1$ donde $I$ es el número de puntos de la red interiores a $P$, y $B$ el de los de la frontera.\\\\
+
+	    \begin{enumerate}[\bfseries (a)]
+
+		%----------(a)
+		\item Probar que esta fórmula es correcta para rectángulos de lados paralelos a los ejes coordenados.\\\\
+		Demostración.-\; Sea $R$ un $h \times k$ rectángulo con lados paralelos a los ejes de coordenadas. Entonces, $R$ es medible (ya que es un rectángulo) y $a(R) = hk.$
+A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h + 1) + 2 (k + 1) - 4$ y $I = (h-1) (k-1)$. Por lo tanto,
+		\begin{center}
+		    \begin{tabular}{rcl}
+		    $I+\dfrac{1}{2}B-1$ & $=$ & $(h-1)(k-1)+\dfrac{1}{2}\left[2(h+1)+2(k+1)-4\right]-1$ \\\\
+		     & $=$ & $hk-h-k+1+h+1+k+1-2-1$ \\\\
+		     & $=$ & $hk$ \\\\
+		    \end{tabular}
+		\end{center}
+
+		%----------(b)
+		\item Probar que la fórmula es correcta para triángulos rectángulos y paralelogramos.\\\\
+		Demostración.-\;
+
+		%----------(c)
+		\item Emplear la inducción sobre el número de lados para construir una demostración para polígonos en general.\\\\
+		Respuesta.-\;
+
+	    \end{enumerate}
 
     \end{enumerate}

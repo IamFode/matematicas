@@ -146,51 +146,130 @@ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
 
 	%--------------------7.
 	\item Usando regla y compás (regla no numerada), describa un método para la construcción de un triángulo con dos lados de misma longitud. (Un triángulo así, es llamado triángulo isósceles).\\\\
-	Respuesta.-\; Considere un segmento $AB$. Con una brújula centrada en $A$, dibuja una circunferencia de radio $AB$. Ahora con el centro en $B$, dibuja un círculo de radio $BA$. La intersección entre los dos círculos generará los puntos $C$ y $D$. Haciendo el triángulo $CAD$ tendremos un triángulo isósceles con base $CD$ y lados $AC$, luego $AD = AB$.\\\\
+	Respuesta.-\; Considere un segmento $AB$. Con un compás centrada en $A$, dibuja una circunferencia de radio $AB$. Ahora con el centro en $B$, dibuja un círculo de radio $BA$. La intersección entre los dos círculos generará los puntos $C$ y $D$. Haciendo el triángulo $CAD$ tendremos un triángulo isósceles con base $CD$ y lados $CA,AD$.
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw[gray](0,0)--(1,0);
+		\draw[red](0,0)--(0.5,.85);
+		\draw[red](0,0)--(.5,-.85);
+		\draw[red](.5,-.85)--(.5,.85);
+		\draw(0,0) circle(1cm);
+		\filldraw[black](0,0) circle(1pt) node[below left]{\tiny$A$};
+		\draw(1,0) circle(1cm);
+		\filldraw[black](1,0) circle(1pt) node[below right]{\tiny$B$};
+		\filldraw[black](0.5,.85) circle(1pt) node[above]{\tiny$D$};
+		\filldraw[black](0.5,-.85) circle(1pt) node[below]{\tiny$C$};
 
-	%-------------------8.
+	    \end{tikzpicture}
+	\end{center}
+
+	%--------------------8.
 	\item Describa un método para construir un triángulo con sus tres lado de misma longitud.( Un triángulo así, es llamado triángulo equilátero ).\\\\
-	Respuesta.-\;
+	Respuesta.-\; Se traza una recta y se marca dos puntos $A$ y $B$ en ella. Con el centro en $A$ y luego en $B$, se generan dos circunferencias de radio $r$ generando el punto $C$, después trazamos los segmentos $AC, AB$ y $BC$ que generará $\triangle ABC$ con lados iguales a $r$.
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw[red](0,0)--(1,0);
+		\draw[red](0,0)--(0.5,.85);
+		\draw[red](1,0)--(.5,.85);
+		\draw(0,0) circle(1cm);
+		\filldraw[black](0,0) circle(1pt) node[below left]{\tiny$A$};
+		\draw(1,0) circle(1cm);
+		\filldraw[black](1,0) circle(1pt) node[below right]{\tiny$B$};
+		\filldraw[black](0.5,.85) circle(1pt) node[above]{\tiny$C$};
+	    \end{tikzpicture}
+	\end{center}
 
 	%--------------------9.
 	\item Muestre que, si $a<b$ entonces $a<\dfrac{a+b}{2}$ y $b>\dfrac{a+b}{2}$\\\\
-	Demostración.-\;
+	Demostración.-\; Daremos una demostración que va mas allá del ejercicio en si planteado para entender de mejor manera esta proposición.\\\\
+	Demostrar que si $0<a < b$, entonces $$a<\sqrt{ab}<\dfrac{a+b}{2} < b$$\\
+	\begin{enumerate}[1.]
+	    \item $a<\sqrt{ab}$\\\\
+Si \; $4a<b$ entonces $a^2<ab$ y por raíz cuadrada dado que $a,\;b>0$ entonces $a<\sqrt{ab}$\\
+	    \item $\sqrt{ab}<\dfrac{a+b}{2}$\\\\
+En vista de que $a, \; b > 0$ y $a<b$ entonces $a-b>0$, \; $(a-b)^2>0$ por lo tanto, $a^2-2ab+b^2>0 \Rightarrow 2ab< a^2+b^2 \Rightarrow 2ab-2ab+2ab<a^2+b^2 \Rightarrow 4ab < a^2+2ab +b^2 \Rightarrow 4ab < (a+b^)2 \Rightarrow ab < \displaystyle \left( \frac{a+b}{2} \right) ^2 \Rightarrow \sqrt{ab}<\frac{a+b}{2} $ \\
+	    \item $\displaystyle\frac{a+b}{2}<b$\\\\
+Si $a<b$ entonces $a+b<2b$ por lo tanto $\displaystyle\frac{a+b}{2}<b$\\\\
+	\end{enumerate}
 
 	%--------------------10.
 	\item ¿Es posible construir un triángulo con lados de longitud $3,8$ y $5$?\\\\
-	Respuesta.-\;
+	Respuesta.-\; No, ya que la desigualdad triangular establece que la suma de dos lados cualesquiera de un triángulo es mayor que el tercer lado, es decir, si tomamos las medidas de los lados $5$ y $3$, tendremos $8$ que será igual a la tercera medida.\\\\
 
 	%--------------------11.
 	\item El círculo de radio $r_1$ centrado en $A$ intersecta al círculo de radio $r_2$ centrado en $B$ en exactamente dos puntos. ¿Qué se puede afirmar sobre $\overline{AB}$?\\\\
-	Respuesta.-\;
+	Respuesta.-\; Considere el círculo de radio $r_2$ con centro en $A$ y el círculo de radio $r_1$ con centro en $B$ y cuyo segmento $AB$ forma los puntos $C$ y $D$. Note que $AB = AD + CB - CD$ y también que $AD = r_2, CB = r_1$ y que $CD$ es un segmento no nulo. Luego observe que  $AB = r_2 + r_1 - CD$, lo que implica que $AB <r_2 + r_1$\\
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw[red](-.25,0)--(1.25,0);
+		\draw[red](-.25,0)--(-.5,1);
+		\draw[red](1.25,0)--(1.6,-1);
+		\draw(-.25,0) circle(1cm);
+		\draw(1.25,0) circle(1cm);
+		\filldraw[black](-.25,0) circle(1pt) node[below left]{\tiny$A$};
+		\filldraw[black](1.25,0) circle(1pt) node[below right]{\tiny$B$};
+		\filldraw[black](0.25,0) circle(1pt) node[above left]{\tiny$C$};
+		\filldraw[black](0.75,0) circle(1pt) node[above right]{\tiny$D$};
+		\filldraw[black](1.6,-1) circle(1pt) node[below]{\tiny$r_1$};
+		\filldraw[black](-.5,1) circle(1pt) node[above]{\tiny$r_2$};
+	    \end{tikzpicture}
+	\end{center}
 
 	%--------------------12.
 	\item Considere un círculo de radio $r$ y centro $A$. Sean $B$ y $C$ puntos de este círculo. ¿Qué se puede afirmar sobre el triángulo $ABC$?\\\\
-	Respuesta.-\;
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw(0,0)--(.7,.7)node[above]{\tiny$r$};
+		\draw[red](0,0)--(-.7,-.7);
+		\draw[red](0,0)--(.7,-.7);
+		\draw[red](-.7,-.7)--(.7,-.7);
+		\draw(0,0) circle(1cm);
+		\filldraw[black](0,0) circle(1pt) node[above]{\tiny$A$};
+		\filldraw[black](-.7,-.7) circle(1pt) node[below]{\tiny$B$};
+		\filldraw[black](.7,-.7) circle(1pt) node[below]{\tiny$C$};
+	    \end{tikzpicture}
+	\end{center}
+	Respuesta.-\; Si los puntos $B$ y $C$ pertenecen a la circunferencia que forma el círculo entonces $AB = AC = r$ por lo tanto el triángulo es isósceles con base $AB$.\\\\
 
 	%--------------------13.
 	\item Considere un círculo de radio $r$ y centro $O$. Sea $A$ un punto de este círculo y sea $B$ un punto tal que el triángulo $OAB$ es equilátero. ¿Cuál es la posición del punto $B$ en relación al círculo?\\\\
-	Respuesta.-\;
+	Respuesta.-\; Dado que el triángulo es equilátero y uno de sus lados es el segmento $OA$ de tamaño $r$, entonces $OB = r$, luego el punto $B$ está a una distancia $r$ del centro del círculo, es decir, $B$ pertenece a la circunferencia.\\\\
 
 	%--------------------14.
 	\item Dos círculos de mismo radio y centro $A$ y $B$ se intersectan en dos puntos $C$ y $D$. ¿Qué se puede afirmar sobre los triángulos $ABC$ y $ACD$? ¿Y, sobre el cuadrilátero $ACBD$?\\\\
-	Respuesta.-\;
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw[red](0,0)--(.5,.85)--(1,0)--(.5,-.85)--(0,0)--(1,0);
+		\draw[red](.5,.85)--(.5,-.85);
+		\draw(0,0) circle(1cm);
+		\draw(1,0) circle(1cm);
+		\filldraw[black](0,0) circle(1pt) node[below left]{\tiny$A$};
+		\filldraw[black](1,0) circle(1pt) node[below right]{\tiny$B$};
+		\filldraw[black](.5,.85) circle(1pt) node[above]{\tiny$C$};
+		\filldraw[black](.5,-.85) circle(1pt) node[below]{\tiny$D$};
+	    \end{tikzpicture}
+	\end{center}
+	Los triángulos $ABC$ y $ACD$ son isósceles porque $AC, BC = r $ y $AD = r$  así también $BD = r$. Como el paralelogramo ACBD está formado por la unión de $\triangle ABC$ y $\triangle ADB$, sus lados serían los segmentos que forman el triángulo,  luego $AC = BC = AD = BD = r$. Entonces el polígono es un cuadrilátero de lados iguales y los triángulos son isósceles.\\\\
 
 	%--------------------15.
 	\item Dado un segmento $AB$ muestre que existe y es único, un punto $C$ entre $A$ y $B$ tal que $$\dfrac{\overline{AC}}{\overline{BC}}=a,$$ donde $a$ es cualquier número real positivo.\\\\
-	Demostración.-\;
+	Demostración.-\; Sean $x, b$ y $c$ las coordenadas de los puntos $A, B$ y $C$. Podemos suponer que $a <b <c$. Luego para el caso de $x> b> c$, se resuelve de forma totalmente análoga. Entonces, por el axioma $III_2$ el problema a demostrar pasa por la existencia de un solo punto $B$ entre $A$ y $C$ tal que $\dfrac{m(AC)}{m(BC)}=a$, equivale a mostrar que existe un único número real $b$ tal que $x<b<c$ y $\dfrac{b-x}{c-b}=a$.\\
+	Resolviendo en $b$ obtenemos que la única solución es $b=\dfrac{x+ca}{1+a}$. Finalmente, queda demostrar que este $b$ encontrado satisfaga a $x<b<c$. Es decir,
+	$$x=\dfrac{x+ax}{1+a}<\dfrac{x+ca}{1+a}<\dfrac{c+ca}{1+a}$$
+	La unicidad del punto $B$ también es una consecuencia del axioma $III_2$.\\\\
 
 	%--------------------16.
 	\item Pruebe que un segmento de recta que une un punto del círculo, con un punto dentro del mismo, tiene un punto en común con el círculo.\\\\
-	Demostración.-\;
+	Demostración.-\; Sea $C$ cualquier punto fuera de un círculo de centro $O$, entonces $OC> r$ donde $r$ es el radio del círculo. Entonces, hay un punto $D \in OC$ tal que $\overline{OD} = r$. Dado que el círculo está formado por todos los puntos en el plano que están a una distancia $r$ del punto $O$, entonces el punto $D$ pertenece a la intersección del segmento $OC$ con la circunferencia.\\\\
 
 	%--------------------17.
 	\item Dados los puntos $A$ y $B$ y un número real $r$ mayor que $\overline{AB}$, el conjunto de los puntos $C$ que satisfacen $\overline{CA}+\overline{CB}=r$ es llamado elipse. Establezca los conceptos de región interior y de región exterior a un elipse.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Si $\overline{CA} + \overline{CB}> r$, entonces el conjunto de puntos es externo. Si $\overline{CA} + \overline{CB} <r$, entonces el conjunto de puntos será interno.\\\\
 
 	%--------------------18.
 	\item Un conjunto $M$ de puntos del plano es acotado si existe un círculo $C$ tal que todos los puntos de $M$ están dentro de $C$. Pruebe que cualquier conjunto finito de puntos es acotado. Pruebe también que los segmentos son acotados. Concluya el mismo resultado para los triángulos.\\\\
-	Demostración.-\;
+	Demostración.-\; Dado el conjunto de puntos $P_1, P_2, ..., P_n$ tome un solo punto $P_i$ que usaremos para el centro de la circunferencia, para cada punto $P_j$ con $i\neq j$ y $j$ variando de $1$ a $n$ quitando el propio $i$, pasará a un segmento diferente. Deje que $P_i P_j$ sea el más grande de todos los segmentos, por lo que se marca a sí mismo un punto $Q (P_1 - P_j - Q)$ en la línea que pasa por el segmento de modo que por $P_1 Q$ definimos un círculo de radio $r = P_1 Q$ que contendrá todos los demás, ya que el segmento que establece su radio con relación al centro $P_1$ es mayor que los demás definidos por todos los demás puntos.\\\\
 
 	%--------------------19.
 	\item Pruebe que la unión de una cantidad finita de conjuntos acotados es también un conjunto acotado.\\\\

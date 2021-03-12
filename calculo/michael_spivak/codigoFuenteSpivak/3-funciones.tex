@@ -307,7 +307,7 @@
 
 	\end{enumerate}
 
-	%--------------------8.
+	%------------------8.
 	\item ¿Para qué números $a,b,c$ y $d$ la función 
 	$$f(x)=\dfrac{ax+d}{cx+b}$$ 
 	satisface $f(f(x))=x$ para todo $x$?\\\\
@@ -354,25 +354,141 @@
 
 	\end{enumerate}
 
-	%-------------------10.
+	%--------------------10.
 	\item 
 	\begin{enumerate}[\bfseries (a)]
 
 	    %----------(a)
 	    \item ¿Para qué funciones $f$ existe una función $g$ tal que $f=g^2$?\\\\
-	    Respuesta.-\;
+	    Respuesta.-\; Debido a que algún número elevado al cuadrado siempre será no negativo podemos afirmar que las funciones $f$ satisfacen a todo $x$ tal que $f(x)\geq 0$\\\\
 
 	    %----------(b)
 	    \item ¿Para qué función $f$ existe una función $g$ tal que $f=1/g$?\\\\
-	    Respuesta.-\; 
+	    Respuesta.-\; Dado a que un número divido entre cero es indeterminado se ve claramente que satisfacen a todo $x$ tal que $f(x)\neq 0$\\\\
 
 	    %----------(c)
 	    \item ¿Para qué funciones $b$ y $c$ podemos encontrar una función $x$ tal que $$(x(t))^2 + b(t)x(t)+c(t)=0$$ para todos los números $t$?\\\\
-	    Respuesta.-\;
+	    Respuesta.-\; Por teorema se observa que para las funciones $b$ \; y \; $c$ que satisfacen $(b(t))^2 - 4c(t) \geq 0$ para todo $t$\\\\ 
 
 	    %----------(d)
 	    \item ¿Qué condiciones deben satisfacer las funciones $a$ y $b$ si ha de existir una función $x$ tal que $$a(t)x(t)+b(t)=0$$ para todos los números $t$? ¿Cuántas funciones $x$ de éstas existirán?\\\\
-	    Respuesta.-\;
+	    Respuesta.-\; Es facil notar que $b(t)$ tiene que ser igual a $0$ siempre que $a(t) = 0$. Si $a(t) \neq 0$ para todo $t$, entonces existe una función única con esta condición, que es $x(t) = a(t)/b(t)$. Si $a(t)=0$ para algún $t$, entonces puede elegirse arbitrariamente $x(t)$, de modo que existen infinitas funciones que satisfacen la condición.\\\\
+
+	\end{enumerate}
+
+	%--------------------11.
+	\item 
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Supóngase que $H$ es una función $e$ y un número tal que $H(H(y))=y$. ¿Cuál es el valor de $$H(H(H...(H(y))))?$$\\\\
+	    Respuesta.-\; Si aplicamos la hipótesis, tendremos que aplicar $78$ veces la función, luego $76$ y así, hasta llegar a $2$, donde la función sera $H(H(y))$, y una vez más por hipótesis tenemos como resultado $y$.\\\\
+
+	    %----------(b)
+	    \item La misma pregunta sustituyendo $80$ por $81$\\\\
+	    Respuesta.-\; Sea $H(H(y))$ la $78ava$ vez de la función, entonces la $81ava$ vez será $H(H(H(y))$, por lo tanto queda como resultado $H(y)$.\\\\ 
+
+	    %----------(c)
+	    \item La misma pregunta si $H(H(y))=H(y)$\\\\
+	    Respuesta.-\; Análogamente a la parte $a)$ si la $80ava$ vez es $y$ entonces por hipótesis nos queda $H(y)$.\\\\ 
+
+	    %----------(d)
+	    \item Encuéntrese una función $H$ tal que $H(H(x))=H(x)$ para todos los números $x$ y tal que $H(1)=36$, $H(2)=\dfrac{\pi}{3}$, $H(13)=47$, $H(36)36$, $H(\pi / 3)\dfrac{\pi}{3}$, $H(47)=47$\\\\
+	    Respuesta.-\; Dar a $H(l)$, $H(2)$, $H(13)$, $H(36)$, $H(\pi /3)$, y $H(47)$ los valores especificados y hágase $H(x) = 0$ para $x \neq 1, 2, 13, 36, \pi /3, 47.$ Al ser, en particular, $H(0) = 0$, la condición $H(H(x)) = H(x)$ se cumple para todo $x$.\\\\
+
+	    %----------(e)
+	    \item Encontrar una función $H$ tal que $H(H(x))=H(x)$ para todo $x$ y tal que $H(1)=7$, $H(17)=18$\\\\
+	    Respuesta.-\; Hágase $H(1) = 7$, $H(7) = 7$, $H(17) = 18$, $H(18) = 18$, y $H(x) = 0$ para $x \neq l , 7, 17, 18$.\\\\
+
+	\end{enumerate}
+
+	%--------------------12.
+	\item Una función $f$ es par si $f(x)=f(-x),$ e impar si $f(x)=-f(-x)$. Por ejemplo, $f$ es par si $f(x)=x^2$ ó $f(x)=|x|$ ó $f(x)=\cos x$, mientras que $f$ es impar si $f(x)=x$ ó $f(x)=\sen x$.
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Determinar si $f+g$ es par, impar o no necesariamente ninguna de las dos cosas, en los cuatro casos obtenidos al tomar $f$ par o impar y $g$ par o impar. (Las soluciones pueden ser convenientemente dispuestas en una tabla $2$ x $2$)\\\\
+	    Respuesta.-\; Sea $f(x)=x^2$ y $g(x)=|x|$ entonces $f(-x)+g(-x)=(-x)^2 + |-x| = x^2 + |x| = f(x) + g(x)$ por lo tanto par y par es par.\\
+	    Sea $f(x) = x$ y $g(x)=x$ entonces $-f(-x) + (-g(-x)) = -(-x) + [-x(-x)] = x + x = f(x) + g(x)$, por lo tanto impar e impar es impar.\\
+	    Los otros dos últimos se prueba fácilmente y se llega a la conclusión de que ni uno ni lo otro.
+	    \begin{center}
+		\begin{tabular}{c|cc}
+		    &\textbf{Par}&\textbf{Par}\\
+		    \hline\\
+		    \textbf{Par}&Par&Ninguno\\\\
+		    \textbf{Par}&Ninguno&Par\\
+		\end{tabular}
+	    \end{center}
+	    \vspace{1cm}
+
+	    %----------(b)
+	    \item Hágase lo mismo para $f\cdot g$\\\\
+	    Respuesta.-\; Sea $f(x)=x^2$ \; y \; $g(x)=|x|$, entonces $f(-x) \cdot g(-x) = x^2 \cdot |x| = f(x) \cdot g(x)$, por lo tanto se cumple para par y par.\\
+	    Sea $f(x)=x$ \; y \; $g(x)=x$, entonces $-f(-x) \cdot -g(-x) = -(-x) \cdot -(-x) = x \cdot x = f(x) \cdot g(x)$, por lo tanto impar impar da impar\\
+	    Sea $f(x)=x^2$ \; y \; $g(x)=x$, podemos crear otra función llamada $h$ que contiene a $x^2 \cdot x$ por lo tanto $h(x)=x^3 = -(-x)^2$ y así demostramos que par e impar es impar.\\
+	    De igual forma al anterior se puede probar que impar y par es impar.
+	    \begin{center}
+		\begin{tabular}{c|cc}
+		    &\textbf{Par}&\textbf{Par}\\
+		    \hline\\
+		    \textbf{Par}&Par&Impar\\\\
+		    \textbf{Par}&Impar&Par\\\\
+		\end{tabular}
+	    \end{center}
+	    \vspace{1cm}
+
+	    %----------(c)
+	    \item Hágase lo mismo para $f\circ g$\\\\
+	    Respuesta.-\; Sea $f(x)=x$ \; y \; $g(x)=x$, luego $h(x)=(f \circ g)(x)$ entonces $h(x) = x$ luego $-f(-x) = x$, por lo tanto impar e impar da impar.\\
+	    De similar manera se puede encontrar para los demás problemas y queda:
+	    \begin{center}
+		\begin{tabular}{c|cc}
+		    &\textbf{Par}&\textbf{Par}\\
+		    \hline\\
+		    \textbf{Par}&Par&Par\\\\
+		    \textbf{Par}&Par&Impar\\\\
+		\end{tabular}
+	    \end{center}
+	    \vspace{1cm}
+
+	    %----------(d)
+	    \item Demostrar que para toda función par $f$ puede escribirse $f(x)=g(|x|)$, para una infinidad de funciones $g$.\\\\
+	    Demostración.-\; Sea $g(x)=f(x)$ sabemos que $f$ es par si $f(x)=f(-x)$, de donde $g(x)=f(-x)$, luego  por definición de valor absoluto se tiene $g(|x|)=f(|-x|)$, y por lo tanto $f(x)=g(|x|)$\\\\
+
+	\end{enumerate}
+
+	%--------------------13.
+	\item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Demostrar que para toda función $f$ con dominio $\mathbf{R}$ puede ser puesta en la forma $f=E+O,$ con $E$ par y $O$ impar.\\\\
+	    Demostración.-\; Por la parte $(b)$ y resolviendo en $E(x)$ y $O(x)$ se tiene $$E(x)\dfrac{f(x)+f(-x)}{2}, \;\;\; O(x)\dfrac{f(x)-f(-x)}{2}$$\\\\
+
+	    %----------(b)
+	    \item Demuéstrese que esta manera de expresar $f$ es única. (Si se intenta resolver primero la parte $(b)$ despejando $E$ y $O$, se encontrará probablemente la solución a la parte $(a)$)\\\\
+	    Demostración.-\; Si $f=E+O$, siendo $E$ par y $O$ impar, entonces $$f(x)=E(x)+O(x)$$ $$f(-x)=E(x)-O(x)$$\\\\
+
+	\end{enumerate}
+
+	%--------------------14.
+	\item Si $f$ es una función cualquiera, definir una nueva función $|f|$ mediante $|f|(x)=|f(x)|$. Si $f$ y $g$ son funciones, definir dos nuevas funciones, $max(f,g)$ y $min(f,g)$ mediante $$max(f,g)(x)=max(f(x),g(x)),$$ $$min(f,g)(x)=min(f(x),g(x))$$ Encontrar una expresión para $max(f,g)$ y $min(f,g)$ en términos de $| |$.\\\\
+	Respuesta.-\; Por problema $1.13$ se tiene que $$max(f,g)=\dfrac{f+g+|f-g|}{2};$$ $$min(f,g)=\dfrac{f+g-|f-g|}{2}$$\\\\
+
+	%--------------------15.
+	\item 
+
+	\begin{enumerate}[\bfseries (a)]
+	    
+	    %----------(a)
+	    \item Demostrar que $f=max(f,0)+min(f,0)$. Esta manera particular de escribir $f$ es bastante usada; las funciones $max(f,0)$ y $min(f,0)$ se llaman respectivamente parte positiva y parte negativa de $f$\\\\
+	    Demostración.-\;
+
+	    %----------(b)
+	    \item Una función $f$ se dice que es no negativa si $f(x)\geq 0$ para todo $x$. Demostrar que para cualquier función $f$ puede ponerse $f=g-h$ de infinitas maneras con $g$ y $h$ no negativas. (La manera corriente es $g=max(f,0)$ y $h=-min(f,0)$. Cualquier número puede ciertamente expresarse de infinitas maneras como diferencia de dos números no negativos.)\\\\
+	    Demostración.-\;
 
 	\end{enumerate}
 

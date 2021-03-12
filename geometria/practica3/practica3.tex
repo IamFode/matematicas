@@ -1,0 +1,141 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica III}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & III.\\ 
+Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+
+
+    \begin{enumerate}[\Large\bfseries 1.]
+
+	%--------------------1.
+	\item Muestre que si un ángulo y su suplemento tienen la misma medida entonces el ángulo es recto.\\\\
+	Demostración.-\;
+
+	%--------------------2.
+	\item Un ángulo es llamado agudo si mide menos de $90^{\circ}$, y es llamado obtuso si mide más de $90^{\circ}$. Muestre que el suplemento de un ángulo es siempre obtuso.\\\\
+	Demostración.-\;
+
+	%--------------------3.
+	\item Dos ángulos se dicen complementarios si su suma es un ángulo recto. Dos ángulos son complementarios y el suplemento de un de ellos mide tanto como el suplemento del segundo más $30^{\circ}$. ¿Cuánto miden los dos ángulos?\\\\
+	Demostración.-\;
+
+	%--------------------4.
+	\item Una poligonal es una figura formada por una sucesión de puntos $A_1,A_2,...,A_n$ y por los segmentos $A_1A_2,A_2A_3,...,A_{n-1}A_n$. Los puntos son los vértices de la poligonal y los segmentos son sus lados. Diseñe una poligonal $ABCD$ sabiendo que; $AB=BC=CD=2cm$, $ABC=120$ y $BCD=100$.\\\\
+	Respuesta.-\;
+
+	%--------------------5.
+	\item Un polígono es una poligonal que satisface las siguientes tres condiciones.
+	    \begin{enumerate}[\bfseries a)]
+
+		%----------a)
+		\item $A_n=A_1$
+
+		%----------b)
+		\item los lados de la poligonal se intersectan solamente en sus extremos y, 
+
+		%----------c)
+		\item dos lados con un mismo extremo no pertenecen a una misma recta. 
+	    \end{enumerate}
+	de las 4 figuras siguientes, apenas dos son polígonos. Determine cuales son.
+
+	    \begin{multicols}{2}
+		\begin{center}
+		    \begin{tikzpicture}
+			\draw(.2,0)node[below]{\tiny$A$}--(1.8,.8)node[below]{\tiny$B$}--(1,1.9)node[above]{\tiny$C$}--(-.6,2.3)node[above]{\tiny$D$}--(-1.6,1.1)node[left]{\tiny$E$}--(.2,0);
+		    \end{tikzpicture}
+		    
+		    \begin{tikzpicture}
+			\draw(0,0)node[left]{\tiny$A$}--(1.5,0)node[below]{\tiny$E$}--(2.5,0)node[right]{\tiny$D$}--(2.8,1.8)node[above]{\tiny$C$}--(0,0);
+		    \end{tikzpicture}
+
+		    \begin{tikzpicture}
+			\draw(.4,0)node[below]{\tiny $E$}--(.4,1.7)node[above]{\tiny $A$}--(3.5,0)node[below]{\tiny $B$}--(4.6,0.85)node[right]{\tiny $C$}--(3.5,1.7)node[above]{\tiny $D$}--(.4,0);
+		    \end{tikzpicture}
+
+		    \begin{tikzpicture}
+			\draw(0,0)node[above]{\tiny $A$}--(4,0.2)node[right]{\tiny $B$}--(2.2,-.5)node[left]{\tiny $C$}--(4.3,-1.2)node[right]{\tiny $D$}--(.6,-1.5)node[left]{\tiny $E$}--(0,0);
+		    \end{tikzpicture}
+		\end{center}
+	    \end{multicols}
+	    Un polígono de vértices $A_1,A_2,...,A_{n+1}=A_1$, se denotará por $A_1,A_2...A_n$; él tiene $n$ lados y $n$ ángulos.\\\\
+	    Respuesta.-\;
+ 
+	%--------------------6.
+	\item Diseñe un polígono de 4 lados $ABCD$ tal que $AB=BC=CD=DA=2cm$, con $ABC=ADC=100$ y con $BCD=BAD=80$.\\\\
+	Respuesta.-\;
+
+	%--------------------7.
+	\item El segmento que une dos vértices no consecutivos de un polígono es llamado una diagonal del polígono. Haga un diseño de un polígono de seis lados, luego diseñe todas las diagonales. ¿Cuántas diagonales tendrá un polígono de $20$ lados? ¿Y, de $n$ lados?\\\\
+	Respuesta.-\;
+
+	%--------------------8.
+    \item Un polígono es convexo si siempre está contenido en uno de los semiplanos determinados por las rectas que contienen a sus lados. En la figura siguiente el polígono a) es convexo y el b) no es convexo. Justifique
+
+	%--------------------
+	\item 
+
+	%--------------------
+	\item 
+
+	%--------------------
+	\item 
+
+	%--------------------
+	\item 
+
+    \end{enumerate}
+
+\end{document}

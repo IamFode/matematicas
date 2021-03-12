@@ -190,6 +190,58 @@
 
     %--------------------16.
     \item Trace una gráfica aproximada del número de horas de luz en función de la época del año.\\\\
-    Respuesta.-\;
+
+    %--------------------17.
+    \item Trace una gráfica de la temperatura exterior en función del tiempo, durante un día típico de primavera.\\\\
+
+    %--------------------18.
+    \item Trace una gráfica aproximada del valor de mercado de un nuevo automóvil en función del tiempo, durante un periodo de $20$ años. Suponga que el automóvil se mantiene en buen estado.\\\\
+
+    %--------------------19.
+    \item Trace la gráfica de la cantidad de una determinada marca de café vendido por una tienda en función del precio del café.\\\\
+
+    %--------------------20.
+    \item Coloque una tarta congelada en un horno y caliéntela durante una hora. Luego sáquela y déjela enfriar antes de comerla. Describa cómo cambia la temperatura de la tarda conforme pasa el tiempo. Luego trace una gráfica de la temperatura de la tarta en función del tiempo.\\\\
+
+    %--------------------21.
+    \item El propietario de una casa poda el césped cada miércoles por la tarde. Trace una gráfica de la altura del césped como una función del tiempo, en el transcurso de un periodo de cuatro semanas.
+
+            \begin{center}
+                \begin{tikzpicture}[scale=0.9, draw opacity = .6]
+                    % abscisa y ordenada
+                    \tkzInit[xmax= 3,xmin=-1,ymax=1,ymin=-1]
+                    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+                    % label x, f(x)
+                    \tkzDrawX[opacity= .8,label=tiempo,right=0.3]
+                    \tkzDrawY[opacity= .6,label=Tamaño cesped,below = -0.6]
+                    %dominio y función
+                    \draw [domain=0:3,thick] plot(\x,{.2*\x}); 
+                \end{tikzpicture}
+            \end{center}  
+
+    %--------------------22.
+	\item  Un avión despega desde un aeropuerto y aterriza una hora más tarde en otro aeropuerto a $400$ km de distancia. Si $t$ representa el tiempo en minutos desde que el avión ha dejado la terminal. $x(t)$ es la distancia horizontal recorrida y $y(t)$ la altitud del avión, trace
+	    \begin{enumerate}[\bfseries (a)]
+
+		    %----------(a)
+		\item Una posible gráfica de $x(t)$\\
+		Respuesta.-\;
+
+		    %----------(b)
+		\item Una posible gráfica de $y(t)$\\\\
+		Respuesta.-\;
+
+		    %----------(c)
+		\item Una posible gráfica de la rapidez respecto al suelo.\\\\
+		Respuesta.-\; 
+
+		    %----------(d)
+		\item Una posible gráfica de la velocidad vertical.\\\\
+		Respuesta.-\;
+
+	    \end{enumerate}
+
+
+
 
     \end{enumerate}
