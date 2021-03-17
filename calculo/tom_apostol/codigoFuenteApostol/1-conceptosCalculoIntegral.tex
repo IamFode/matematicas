@@ -520,12 +520,81 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 		%----------(b)
 		\item Probar que la fórmula es correcta para triángulos rectángulos y paralelogramos.\\\\
-		Demostración.-\;
+		Demostración.-\; Sabemos que cualquier triángulo rectángulo puede encerrarse en un rectángulo con bordes cuyas longitudes sean iguales a las longitudes de los catetos del triángulo rectángulo. Además, este rectángulo está compuesto por dos triángulos rectángulos congruentes unidos a lo largo de su diagonal. Cada uno de estos triángulos rectángulos tiene un área la mitad de la del rectángulo y se cruzan a lo largo de la diagonal (que tiene un área cero (1.7, problema 1) ya que es una línea en el plano). Dado un triángulo rectángulo $T$, $R$ sea tal rectángulo, y $S$ sea el triángulo rectángulo que forma la otra mitad de $R$, entonces $S\cup T = R$.\\ 
+		Dado que $R$ es un rectángulo, sabemos por la parte $(a)$ que $$a(R)=I_R + \dfrac{1}{2} B_R-1.$$
+		Además, cualquier punto interior $R$ será un punto interior de cualquiera $S$ o $T$, o se acuesta sobre su frontera compartida. Por lo tanto, $$I_R = I_S + I_T + H_P$$ donde $H_P$ denota los puntos en la hipotenusa (compartida) de los dos triángulos rectángulos. Entonces, también tenemos para los puntos límite, $$B_R = B_S + B_T - 2 - 2H_P. $$  Finalmente, dado que $S$ y $T$ son congruentes, conocemos $B_S = B_T$ y $I_S = I_T.$ Entonces, poniendo todo esto junto, tenemos,
+		\begin{center}	    
+		    \begin{tabular}{rcl}
+			$a(R)$ & $=$ & $I_R + \dfrac{1}{2} B_R -1$ \\\\
+			& $=$ & $2I_S + H_P + \dfrac{1}{2} (2B_S - 2 - 2H_P) - 1 $ \\\\ 
+			& $=$ & $2 (I_S + \dfrac{1}{2} B_S - 1)$\\\\
+		    \end{tabular}
+		\end{center}
+		ó, $$I_S + \dfrac{1}{2} B_S - 1 = \dfrac{1}{2} a(R).$$
+		Pero, sabemos que $\dfrac{1}{2} a(R) = a (S)$; por lo tanto, $$a(S)= I_S + \dfrac{1}{2} B_S -1.$$
+		Esto prueba el resultado para triángulos rectángulos con vértices en puntos de una red.\\\\
 
 		%----------(c)
 		\item Emplear la inducción sobre el número de lados para construir una demostración para polígonos en general.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Ya tenemos esto de la parte $(b)$ ya que podemos realizar cualquier polígono simple como la unión de un número finito de triángulos rectángulos (es decir, cada polígono simple es triangularizable)\\\\
 
 	    \end{enumerate}
 
+	%--------------------5.
+	\item Demostrar que un triángulo cuyos vértices son puntos de una red no puede ser equilátero.\\\\
+	Demostración.-\; Supongamos que existe tal triángulo equilátero $T$. Entonces, $$T = A \ cup B$$ 
+	Para dos triángulos rectángulos congruentes y disjuntos $A$, $B$. Dado que los vértices de $T$ están en puntos de una red, sabemos que la altitud desde el vértice hasta la base debe pasar por $h$ puntos de red (donde $h$ es la altura de $T$). Por lo tanto, al denotar los puntos de red en esta altitud por $V_B = h + 1$, tenemos
+	$$B_T = B_A + B_B -V_B + 2, \qquad I_T = I_A + I_B + V_B - 2.$$ 
+	Dado que $T$ es un polígono con vértices de puntos de red, sabemos por el ejercicio anterior que $a(T) = I_T + \dfrac{1}{2} B_T -1$. Además, por el problema $2$, sabemos que $a(T) = \dfrac{1}{2} bh$. Así que,
+	\begin{center}
+	    \begin{tabular}{crclr}
+		& $I_T + \dfrac{1}{\2} B_T - 1$ & $=$ & $(I_A + I_B + V_B - 2) + \dfrac{1}{2}(B_A + B_B - V_B + 2)$ &\\\\
+		$\Rightarrow$ & $I_T + \dfrac{1}{2} B_T - 1$ & $=$ & $2I_A + B_A - 2 + \dfrac{1}{2} V_B$ & $(B_A=B_B, \,\, I_A=I_B)$\\\\
+		$\Rightarrow$ & $I_T + \dfrac{1}{2} B_T - 1$ & $=$ & $2I_A + B_A - 2 + \dfrac{1}{2}(h+1)$ & $(V_B = h + 1)$\\\\
+		$\Rightarrow$ & $I_T + \dfrac{1}{2} B_T - 1$ & $=$ & $2(a(A)) + \dfrac{1}{2}(h+1)$ &\\\\
+	    \end{tabular}
+	\end{center}
+	Pero, $\dfrac{1}{2} a(T)=a(A)=a(B)$ así,
+	$$I_T + \dfrac{1}{2} B_T - 1 = a(T) + \dfrac{1}{2}(h+1) \qquad \Rightarrow \qquad a(T)=a(T) + \dfrac{1}{2}(h+1)$$
+	Pero, $h > 0$ entonces esto es una contradicción. Por lo tanto,$T$ no puede tener sus vértices en puntos de red y ser equilátero.\\\\
+
+	%--------------------6.
+	\item Sean $A=\lbrace 1,2,3,4,5 \rbrace$ y $M$ la clase de todos los subconjuntos de $A$. (Son en número de $32$ contando el mismo $A$ y el conjunto vacio $\emptyset$.) Para cada conjunto $S$ de $M$, representemos con $n(S)$ el número de elemento distintos de $S$. Si $S=\lbrace 1,2,3,4 \rbrace$ y $T=\lbrace 3,4,5 \rbrace$, calcular $n(S \cup T)$, $n(S\cup T)$, $n(S-T)$ y $n(T_S)$. Demostrar que la función de conjunto $n$ satisface los tres primeros axiomas del área.\\\\
+	Demostración.-\; Calculemos,
+	\begin{center}
+	    \begin{tabular}{rcrcl}
+		$n(S \cup T)$ & $=$ & $n\left(\lbrace 1,2,3,4,5\rbrace \right)$ & $=$ & $5$\\
+		$n(S \cap T)$ & $=$ & $n\left( \lbrace 3,4 \rbrace \right)$ & $=$ & $2$\\
+		$$ & $=$ & $n\left(\lbrace 1,2 \rbrace\right)$ & $=$ & $2$\\
+		$$ & $=$ & $n\left(\lbrace 5 \rbrace\right)$ & $=$ & $1$\\
+	    \end{tabular}
+	\end{center}
+	Ahora demostremos que esto satisface los primeros tres axiomas de área.\\
+	\textbf{Axioma 1}. (Propiedad no negativa) Esto se satisface para cualquier conjunto, $S$ ya que el número de elementos distintos en un conjunto no es negativo. Entonces, $n(S) \geq 0$ para todos $S$.\\
+\textbf{Axioma 2}. (Propiedad aditiva) Primero, si $S$, $T \in \ mathcal{M}$, luego $S \subseteq A$, $T \subseteq A$ por definición de $\mathcal{M}$. Entonces, para cualquiera $x \in S$ que tengamos $x \in A$ y para cualquiera $y \in T$, tenemos $y \in A$.\\
+	Así, si $x \in S \cup T$, entonces $x \in A$; por lo tanto $S \cup T \subseteq A$, entonces $S \cup T \in \mathcal{M}$.\\
+	Entonces, $S \cap T \subseteq S$ implica $S \cap T \subseteq A$ (desde $S \subseteq A$). Por lo tanto, $S \cap T \in \mathcal{M}.$\\
+	Entonces, para cualquiera $S, T \in \mathcal{M}$ que tengamos $S \cup T \in \mathcal{M},$  $S \cap T \in \mathcal{M}$.\\
+	Luego, debemos mostrar $n(S \cup T) = n(S) + n(T) - n(S \cap T)$. Para cualquier $x \in S \cup T$ tenemos $x \in S$, $x \in T$, ó $x \in S$ y $T$. Entonces, esto significa $x \in (S - T)$, ó $x \in (T - S)$ ó $x \in (S \cap T)$. Por lo tanto,
+	$$n(S\cup T)=n(S-T) + n(T-S) + n(S \cap T)$$
+	Del mismo modo observamos,
+	\begin{center}
+	    \begin{tabular}{r c l}
+		$n(S) = (S-T) + n(S\cap T)$ & $\Rightarrow$ & $n(S-T) = n(S) -s(S\cap T)$\\
+		$n(T) = n(T-S) + n(T\cap S)$ & $\Rightarrow$ & $n(T-S)=n(T) - n(S\cap T)$\\
+	    \end{tabular}
+	\end{center}
+	Así que, 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$n(S\cup T)$ & $=$ & $n(S) -n(S\cap T) + n(T) -n(S\cap T) +n(S\cap T)$\\
+		 & $=$ & $n(S) +n(T) -n(S\cap T)$\\
+	    \end{tabular}
+	\end{center}
+	\textbf{Axioma 3} (Propiedades de la diferencia). Si $S,T \in \mathcal{M}$ y $S\subseteq T$, entonces desde arriba tenemos $$n(T-S)=n(T) -n(T\cap S)$$
+	Pero porque $S\subseteq T$ sabemos $T\cap S = S,$ entonces,
+	$$n(T-S)=n(T)-n(S)$$\\\\
+
     \end{enumerate}
+
+

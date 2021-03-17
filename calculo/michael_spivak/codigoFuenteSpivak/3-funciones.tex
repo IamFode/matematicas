@@ -307,7 +307,7 @@
 
 	\end{enumerate}
 
-	%------------------8.
+	%-----------------8.
 	\item ¿Para qué números $a,b,c$ y $d$ la función 
 	$$f(x)=\dfrac{ax+d}{cx+b}$$ 
 	satisface $f(f(x))=x$ para todo $x$?\\\\
@@ -484,12 +484,45 @@
 	    
 	    %----------(a)
 	    \item Demostrar que $f=max(f,0)+min(f,0)$. Esta manera particular de escribir $f$ es bastante usada; las funciones $max(f,0)$ y $min(f,0)$ se llaman respectivamente parte positiva y parte negativa de $f$\\\\
-	    Demostración.-\;
+	    Demostración.-\; Esta proposición mostrará que se puede dividir una función en sus partes no negativas y no positivas. Es decir para todo los elementos $x$ de algún dominio, es cierto que el valor de la función $f$ en un punto $x$ es igual a la suma dada, que consiste en la parte no negativa de $max(f(x),0)$ y la parte no positiva de $f$, $min(f(x),0)$.\\
+	    Para probarlo, lo dividiremos en dos casos. Sabemos que ó $f(x)\geq 0$ ó $f(x)\leq 0$. Si $f(x)\geq 0$ entonces $max(f(x),0)=f(x)$ y $min(f(x),0)=0$ por lo que nuestra ecuación se reduce a $f(x)=f(x)+0$. Por otro lado si $f(x)\leq 0,$ entonces $max(f(x),0)=0$ y $min(f(x),0)=f(x)$, por lo que nuestra ecuación se reduce a $f(x)=0+f(x)$.\\
+	    En cualquier caso, nuestro lado derecho se reduce a $f(x)$ y sabemos que al menos uno de estos dos casos es verdadero; por lo tanto concluimos que $\forall x, f(x)= max(f(x),0)+min(f(x),0)$ ó $f=max (f,0)+min(f,0)$\\\\
 
 	    %----------(b)
 	    \item Una función $f$ se dice que es no negativa si $f(x)\geq 0$ para todo $x$. Demostrar que para cualquier función $f$ puede ponerse $f=g-h$ de infinitas maneras con $g$ y $h$ no negativas. (La manera corriente es $g=max(f,0)$ y $h=-min(f,0)$. Cualquier número puede ciertamente expresarse de infinitas maneras como diferencia de dos números no negativos.)\\\\
-	    Demostración.-\;
+	    Demostración.-\; Comenzamos con la observación de que, para cualquier número real no negativo $r$, hay infinitos números reales no negativos $s, t$ tales que $$r=s-t$$ De hecho, para cada $n \in \mathbb{N}$, tomamos $s_n = 2r + n$ y $t_n = r + n$. Entonces, dado que $r\geq 0$, tanto $s_n$ como $t_n$ son no negativos. Además, $$s_n=t_n=2r+n-r-n=r$$ Ahora, para cada número real $x$, tenemos que $f(x)\geq  0$. Por lo tanto, a partir de la observación anterior, vemos que hay infinitos números reales no negativos $s_x$ y $t_x$ tales que $$f(x)=s_x-t_x$$ para cada $x \in \mathbb{R}$. Así que definimos funciones no negativas $g$ y $h$ como sigue $$g(x)=s_x\;\; y \;\; h(x)=t_x$$. Entonces hemos demostrado que hay infinitas opciones de tales funciones. Además, tenemos que $$f(x)=g(x)-h(x)$$. Por lo tanto, hemos demostrado que hay infinitas funciones no negativas $g$ y $h$ tales que $$f = g-h$$\\\\
 
 	\end{enumerate}
+
+	%--------------------16.
+	\item Supongase que $f$ satisface $f(x+y)=f(x)+f(y)$ para todo $x$ e $y$. 
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Demostrar que $f(x_1,+...+x_n)=f(x_1)+...+f(x_n)$\\\\
+	    Demostración.-\; El resultado se cumple para $n=1$, $f(x_1)=f(x_1)$. Luego si $f(x_1 + .... + x_n)=f(x_1)+ ... + f(x_n)$ para todo $x_1,...,x_n$, entonces
+	    \begin{center}
+		\begin{tabular}{rcll}
+		    $f(x_1 + ... + x_{n+1})$ & $=$ & $f(\left[x_1 + ... + x_n\right]+x_{n+1})$&\\
+		       & $=$ & $f(x_1 + ... + x_n) + f(x_{n+1})$&por hipótesis\\
+		       & $=$ & $f(x_1)+...+f(n)+f(x_{n+1})$&\\\\
+		\end{tabular}
+	    \end{center}
+
+	    %----------(b)
+	    \item Demostrar que existe algún número $c$ tal que $f(x)=cx$ para todos los números racionales $x$ (en este punto no intentamos decir nada acerca de $f(x)$ cuando $x$ es irracional). Indicación: Piénsese primero en cómo debe ser $c$. Demostrar luego que $f(x)=cx$, primero cuando $x$ es un entero, después cuando $x$ es el reciproco de un entero, y finalmente para todo racional $x$.\\\\
+	    Demostración.-\; Sea $c=f(1)$. Luego para cualquier número natural $n$ y el inciso $(a)$,  $$f(n)=f(1+...+1)=f(1)+...+f(1)=n\cdot f(1)=cn \,\,\,\, (1)$$ 
+	    Al ser $$f(x)+f(0)=f(x+0)=f(x),$$, entonces $f(0)=0$. Ahora, puesto que $$f(x)+f(-x)=f(x+(-x))=f(0)=0,$$ 
+	    resulta que $f(-x)=-f(x)$. En particular, para cualquier número natural $n$ y por $(1)$, $$f(-n)=-f(n)=-cn=c\cdot (-n)$$
+	    Además $$f\left(\dfrac{1}{n}\right) + ... + f\left(\dfrac{1}{n}\right)=f\left(\dfrac{1}{n} + ... + \dfrac{1}{n}\right)=f\left( \dfrac{n}{n}\right)=f(1)=c$$ de modo que, $$f\left(\dfrac{1}{n}\right)=c\cdot \dfrac{1}{n},$$
+	    y en consecuencia $$f\left(\dfrac{1}{-n}\right)=f\left(- \dfrac{1}{n}\right)=-f\left(\dfrac{1}{n}\right)=-c \cdot \dfrac{1}{n} = c \left(\dfrac{1}{n}\right)$$
+	    Por último, cualquier número racional puede escribirse en la forma $m/n$, siendo $m$ un número natural y $n$ un entero;
+	    $$f\left(\dfrac{m}{n}\right)=f\left(\dfrac{1}{n} + ... + \dfrac{1}{n}\right)=f\left(\dfrac{1}{n}\right) + ... + f\left(\dfrac{1}{n}\right)=mc\cdot \dfrac{1}{n}=c\cdot \dfrac{m}{n}$$\\\\
+
+	\end{enumerate}
+
+	%--------------------17
+	\item 
 
     \end{enumerate}
