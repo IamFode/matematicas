@@ -513,7 +513,7 @@
 	    %----------(b)
 	    \item Demostrar que existe algún número $c$ tal que $f(x)=cx$ para todos los números racionales $x$ (en este punto no intentamos decir nada acerca de $f(x)$ cuando $x$ es irracional). Indicación: Piénsese primero en cómo debe ser $c$. Demostrar luego que $f(x)=cx$, primero cuando $x$ es un entero, después cuando $x$ es el reciproco de un entero, y finalmente para todo racional $x$.\\\\
 	    Demostración.-\; Sea $c=f(1)$. Luego para cualquier número natural $n$ y el inciso $(a)$,  $$f(n)=f(1+...+1)=f(1)+...+f(1)=n\cdot f(1)=cn \,\,\,\, (1)$$ 
-	    Al ser $$f(x)+f(0)=f(x+0)=f(x),$$ entonces $f(0)=0$. Ahora, puesto que $$f(x)+f(-x)=f(x+(-x))=f(0)=0,$$ 
+	    Al ser $$f(x)+f(0)=f(x+0)=f(x),$$, entonces $f(0)=0$. Ahora, puesto que $$f(x)+f(-x)=f(x+(-x))=f(0)=0,$$ 
 	    resulta que $f(-x)=-f(x)$. En particular, para cualquier número natural $n$ y por $(1)$, $$f(-n)=-f(n)=-cn=c\cdot (-n)$$
 	    Además $$f\left(\dfrac{1}{n}\right) + ... + f\left(\dfrac{1}{n}\right)=f\left(\dfrac{1}{n} + ... + \dfrac{1}{n}\right)=f\left( \dfrac{n}{n}\right)=f(1)=c$$ de modo que, $$f\left(\dfrac{1}{n}\right)=c\cdot \dfrac{1}{n},$$
 	    y en consecuencia $$f\left(\dfrac{1}{-n}\right)=f\left(- \dfrac{1}{n}\right)=-f\left(\dfrac{1}{n}\right)=-c \cdot \dfrac{1}{n} = c \left(\dfrac{1}{n}\right)$$
@@ -523,9 +523,8 @@
 	\end{enumerate}
 
 	%--------------------17
-	\item Si $f(x)=0$ para todo $x$, entonces $f$ satisface $f(x+y)=f(x) + f(y)$ para todo $x$ e $y$ también $f(x\cdot y)=f(x)\cdot f(y)$ para todo $x$ e $y$. Supóngase ahora que $f$ satisface estas dos propiedades, pero que $f(x)$ no es siempre $0$. Demostrar que 
-
-	\begin{enumerate}[\bfseries (a)]
+	\item Si $f(x)=0$ para todo $x$, entonces $f$ satisface $f(x+y)=f(x) + f(y)$ para todo $x$ e $y$ también $f(x\cdot y)=f(x)\cdot f(y)$ para todo $x$ e $y$. Supóngase ahora que $f$ satisace estas dos propiedades, pero que $f(x)$ no es siempre $0$. Demostrar que 
+	\begin{enumerate}
 
 	    %----------(a)
 	    \item Demostrar que $f(1)=1$\\\\
@@ -533,7 +532,7 @@
 
 	    %----------(b)
 	    \item Demostrar que $f(x)=x$ si $x$ es racional \\\\
-		Demostración.-\; Por el problema 16, $f(x)=f(1)\cdot x = x$ para todo número racional $x$. \\\\ 
+	    Demostración.-\; 
 
 	    %----------(c)
 	    \item Demostrar que $f(x)>0$ si $x>0$. (Esta parte es artificiosa, pero habiendo puesto atención a las observaciones filosóficas que van con los problemas de los dos últimos capítulos, se sabrá lo que hacer.)\\\\
@@ -541,41 +540,11 @@
 
 	    %----------(d)
 	    \item Demostrar que $f(x)>f(y)$ si $x>y$\\\\
-		Demostración.-\; Si $x>y$, entonces $x-y>0$, luego por la parte $(c)$ tenemos que $f(x)-f(y)>0$. \\\\ 
+	    Demostración.-\; 
 
 	    %----------(e)
 	    \item Demostrar que $f(x)=x$ para todo $x$. Indicación: Hágase uso del hecho de que entre dos números calesquiera existe un número racional\\\\
-		Demostración.-\; Sea $f(x)>x$ para algún $x$. Elíjase un número racional $r$ con $x<r<f(x)$. Entonces, según las partes $(b)$ y $(d)$, $$f(x)<f(r)=r<f(x),$$ 
-		lo cual constituye una contradicción. Análogamente, es imposible que $f(x)<x$ ya que si $f(x)<r<x$ entonces $$f(x)<r=f(r)<f(x).$$\\\\
-
-	\end{enumerate}
-
-	%--------------------18.
-	\item  ¿Qué condiciones precisas deben satisfacer $f,g,h$ y $k$ para que $f(x)g(y)=h(x)k(y)$ para todo $x \; e \; y$? \\\\
-	    Respuesta.-\; Se satisface la ecuación si $f=0$ ó $g=0$ y $h=0$ ó $k=0$. De no ocurrir esto, existirá algún $x$ con $f(x)\neq 0$ y algún $y$ con $g(y)\neq 0$, entonces $0 \neq ff(x)g(y) = h(x)k(y)$, de modo que también se tendrá $h(x) \neq 0$ y $k(y)\neq 0$. Haciendo $\alpha = h(x)/f(x)$, tenemos también $h(x^{'} = \alpha f(x^{'}$ para todo $x^{'}$ para todo $x^{'}$. Tenemos pues. que $g=\alpha k$ y $h=\alpha f$ para cierto número $\alpha=0$. \\\\
-	
-	%--------------------19.
-	\item 
-
-	\begin{enumerate}[\bfseries (a)]
-
-	    %----------(a)
-	    \item Demostrar que no eisten funciones $f$ y $g$ con alguna de las propiedades siguientes:
-
-		\begin{enumerate}[\bfseries (i)]
-
-		    %-----(i)
-		    \item $f(x)+g(y)=xy$ para todo $x$ e $y$.
-
-		    %-----(ii)
-		    \item $f(x) \cdot g(y) = x+y$ para todo $x$ e $y$.\\
-
-		\end{enumerate}
 	    Demostración.-\;
-
-	    %----------(b)
-	    \item Hallar funciones $f$ y $g$ tales que $f(x+y) = g(xy)$ para todo $x$ e $y$. \\\\
-		Respuesta.-\;
 
 	\end{enumerate}
 

@@ -303,10 +303,102 @@
     \item $f(x)=\dfrac{x+3}{x+1}, \qquad \dfrac{f(x)-f(1)}{x-1}$\\\\
 	Respuesta.-\; $$\dfrac{\dfrac{x+3}{x+1}-2}{x-1} = \dfrac{\dfrac{x+3 - 2(x+1)}{x+1}}{x-1}=\dfrac{\dfrac{-x-1}{x+1}}{x-1}=\dfrac{-(x+1)}{(x+1)(x-1)}=\dfrac{-1}{x-1}$$\\\\
 
-    $31-37$ Encuentre el dominio de cada una de las funciones siguientes.
+    $31-37$ Encuentre el dominio de cada una de las funciones siguientes.\\
 
     %--------------------31.
     \item $f(x)=\dfrac{x+4}{x^2 - 9}$\\\\
+	Respuesta.-\; Debemos tomar en cuenta que no podemos dividir por $0$. Por lo tanto igualamos el denominador a $0$. $$x^2-9=0 \Rightarrow (x-3)(x+3)=0$$ entonces el dominio esta dado por todo $x - \lbrace -3,3\rbrace$\\\\  
+
+    %--------------------32
+    \item $f(x)=\dfrac{2x^3-5}{x^2+x-6}$\\\\
+	Respuesta.-\; Ponemos a prueba $$x^2+x-6,$$ entonces $(x+2)(x-3)=0$ por lo tanto El dominio esta dado para todo $x - \lbrace -2,3\rbrace$\\\\
+
+    %--------------------33
+    \item $f(t)=\sqrt[3]{2t-1}$ \\\\
+	Respuesta.-\: El dominio es dado para todo $x$, ya que la raíz cubica puede ser evaluada para número no positivos.\\\\
+
+    %--------------------34
+    \item $g(t)=\sqrt{3-y}-\sqrt{2+t}$ \\\\
+	Respuesta.-\: Evaluamos raíces cuadradas para números no negativos por lo tanto, $3-t\geq 0; \quad 2+t\geq 0$ entonces el dominio de la función esta dado por  $-2\leq t\leq 3$.\\\\
+
+    %--------------------35
+    \item $h(x)=\dfrac{1}{\sqrt[4]{x^2-5x}}$ \\\\
+	Respuesta.-\: Sea $x^2-5x \geq 0$, de donde $x(x-5)\geq 0$, así, $x\geq 0 \land x-5\geq 0 \, \lor \, x\leq 0 \land x-5\leq 0$, por lo tanto el dominio esta dado por $x\leq 0 \lor x\geq 5$.\\\\ 
+
+    %--------------------36
+    \item $f(u)=\dfrac{u+1}{1+\dfrac{1}{u+1}}$ \\\\
+	Respuesta.-\: Primeramente evaluamos $u+1=0$, entonces $u=-1$, luego evaluamos $1+\dfrac{1}{u+1}=0$, de donde $u=-2$, por lo tanto $\lbrace x/x\neq =-1,-2\rbrace$\\\\
+
+    %--------------------37
+    \item $F(p)=\sqrt{2 - \sqrt{p}}$ \\\\
+	Respuesta.-\: Evaluamos primero $\sqrt{p}$ de donde  $p\geq 0$ luego evaluamos $\sqrt{2 - \sqrt{p}}\geq 0$, así $p\leq 4$ por lo tanto el dominio esta dado por $0\leq x \leq 4$\\\\
+
+    %--------------------38
+    \item Encuentre el dominio y el rango, y dibuje la gráfica de la función $h(x)=\sqrt{4-x^2}$\\\\
+	Respuesta.-\; Evaluamos el dominio de la función, $$4-x^2 \geq 0 \Rightarrow -(x^2-4) \geq 0 \Rightarrow x^2 -4  \leq 0 \Rightarrow (x-2)(x+2) \leq 0$$ por lo tanto el dominio esta dado por  $\lbrace x / -2 \leq x \leq 2 \rbrace$.\\ 
+	Luego es fácil evaluar el rango, $\lbrace f(x) / 0\leq f(x) \leq 2 \rbrace$
+
+	\begin{center}
+	    \begin{tikzpicture}
+		% abscisa y ordenada
+		\tkzInit[xmax= 3,xmin=-3,ymax=3,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=x,right=0.3]
+		\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:2,thick] plot(\x,{(4-\x*\x)*(1/2}); 
+	    \end{tikzpicture}
+	\end{center}
+
+    $39-40$ Encuentre el dominio y grafique cada una de las funciones siguientes:\\\\
+
+    %--------------------39.
+    \item $f(x)=1.6x-2.4$\\\\
+	Respuesta.-\; El dominio viene dado por todos los reales.
+
+	\begin{center}
+	    \begin{tikzpicture}
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-3,ymax=1,ymin=-5]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=x,right=0.3]
+		\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:3,thick] plot(\x,{1.6*\x -2.4}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    %--------------------40.
+    \item $g(t)=\dfrac{t^2-1}{t+1}$\\\\
+	Respuesta.-\; El dominio esta dado por $\lbrace x / x \neq -1\rbrace$
+
+	\begin{center}
+	    \begin{tikzpicture}
+		% abscisa y ordenada
+		\tkzInit[xmax= 3,xmin=-1,ymax=2,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=x,right=0.3]
+		\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-0.99:3,thick] plot(\x,{(\x*\x -1)/(\x + 1)}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    $41-44$ Evalúe $f(-3), f(0)$ y $f(2)$ para la función definida por partes. Luego trace la gráfica de la función.\\\\
+
+    %--------------------41.
+    \item $f(x)= \left\{ \begin{array}{lcc}
+             5 &   si  & x \leq 2 \\
+             \\ x^2-6x+10 &  si & 2 < x < 5 \\
+             \\ 4x-15 &  si  & x \geq 5
+             \end{array}
+	   \right.$ \\\\
 	Respuesta.-\;
+
 
     \end{enumerate}
