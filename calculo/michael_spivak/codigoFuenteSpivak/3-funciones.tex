@@ -560,23 +560,63 @@
 	\begin{enumerate}[\bfseries (a)]
 
 	    %----------(a)
-	    \item Demostrar que no existen funciones $f$ y $g$ con alguna de las propiedades siguientes:
+	    \item Demostrar que no existen funciones $f$ y $g$ con alguna de las propiedades siguientes:\\\\
 
 	    \begin{enumerate}[\bfseries (i)]
 
 		%-----(i)
 		\item $f(x)+g(y)=xy$ para todo $x$ e $y$.\\\\
-		Demostración.-\; Si $f(x)+g(y)=xy \; \forall x,y$ entonces para $y=0$ tenemos $f(x)+g(0)=0 \; \forall x.$, de donde $f(x)=-g(0)$, e implica que $f$ es una función constante. Luego $$xy=f(x)+g(y)=-g(0) +g(y)  \; \forall y$$ porque $f(x)$ es constante para cualquier $x$. Por otro lado sabemos que  $g(0)$ es una constante y $g(y)$  no depende de $x$, sin embargo su diferencia está dada por $g(y) - g(0) = xy$. Y finalmente sea $x=0$ entonces $g(y)=g(0) \; \forall y$,  por lo tanto se concluye que $$xy=f(x)+g(x) = -g(0) + g(0) = 0 \; \forall x,y$$  ya que si tomamos $x=y=1$ implica que $1=0$ donde llegamos a un absurdo.\\\\  
+		    Demostración.-\; Si $f(x)+g(y)=xy \; \forall x,y$ entonces para $y=0$ tenemos $f(x)+g(0)=0 \; \forall x.$, de donde $f(x)=-g(0)$, e implica que $f$ es una función constante. Luego $$xy=f(x)+g(y)=-g(0) +g(y)  \; \forall y$$ porque $f(x)$ es constante para cualquier $x$. Por otro lado sabemos que  $g(0)$ es una constante y $g(y)$  no depende de $x$, sin embargo su diferencia está dada por $g(y) - g(0) = xy$. Y finalmente sea $x=0$ entonces $g(y)=g(0) \; \forall y$,  por lo tanto se concluye que $$xy=f(x)+g(x) = -g(0) + g(0) = 0 \; \forall x,y$$  ya que si tomamos $x=y=1$ implica que $1=0$ donde llegamos a un absurdo.\\\\  
 
 		%-----(ii)
-		\item $f(x) \cdot g(y) = x+y$ para todo $x$ e $y$.\\
+		\item $f(x) \cdot g(y) = x+y$ para todo $x$ e $y$.\\\\
+		    Demostración.-\; Sea $y=0$, obtenemos $f(x)=x/g(0)$. De la misma forma si $x=0$, entonces $g(y)=y/f(0)$. Por lo tanto $$  f(x) \cdot g(y) = x+y \Longrightarrow \dfrac{x}{g(0)}\cdot \dfrac{y}{f(0)}=x+y \qquad \forall x, \; e \; \forall y$$ Supongamos que $y=0$, entonces $\dfrac{x}{g(0)}\cdot \dfrac{0}{f(0)}=x \quad \forall x \Longrightarrow 0=x \quad \forall x$, lo cual es absurdo.\\\\
 
 	    \end{enumerate}
 
 	    %----------(b)
 	    \item Hallar funciones $f$ y $g$ tales que $f(x+y) = g(xy)$ para todo $x$ e $y$. \\\\
-		Respuesta.-\;
+		Respuesta.-\; Sean $f$ y $g$ la misma función constante. Argumentos similares a los utilizados en la parte $(a)$ muestran que estas son las únicas opciones posibles. \\\\ 
 
 	\end{enumerate}
+
+	%--------------------20.
+	\item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Hallar una función $f$ que no sea constante y tal que $|f(y) - f(x)| \leq |y-x|$.\\\\
+		Respuesta.-\; Podemos ver que la función $f(x)=x$ satisface la condición $|f(y) - f(x)| \leq |y-x|$\\\\
+
+	    %----------(b)
+	    \item Supóngase que $f(y) - f(x) \leq (y-x)^2$ para todo $x$ e $y.$ (¿ Por qué esto implica $|f(y) - f(x)| \leq (y-x)^2$?) Demostrar que $f$ es una constante. Indicación: Divídase el intervalo $[x,y]$ en $n$ partes iguales.\\\\
+		Demostración.-\; Supongamos, que puede probar que la siguiente desigualdad es cierta para todos $x , y \in \mathbb{R}$, y $n \in \mathbb{N}$: $$|f(y) - f(x)| \leq \dfrac{(y-x)^2}{n}$$ Ahora mantengamos los valores de $x$ e $y$ constantes. Podemos suponer $x\neq y$ (porque si $x=y$ entonces $f(x)=f(y)$ y así terminaríamos la demostración). Entonces, en el lado derecho, el numerador $(y-x)^2$ es distinto de $0$, y mayor a cero. Por lo tanto, podemos dividir por $(y-x)^2$, de donde: $$\dfrac{|f(y) - f(x)|}{(y-x)^2} \leq \dfrac{1}{n}$$ En el lado izquierdo tenemos un número no negativo que es constante (ya que $x$ e $y$ se mantienen constantes, el numerador no es negativo y el denominador es positivo). Este número es menor que cada fracción $\dfrac{1}{n}$ para todos los números naturales $n\geq 1$. Esto implica que el lado izquierdo es igual a cero:
+		$$\dfrac{|f(y) - f(x)|}{(y-x)^2} = 0$$ una vez mas multiplicamos por $(y-x)^2$ entonces $$|f(y)-f(x)|=0,$$ de donde $$|f(y)-f(x)|=0 \Longrightarrow f(y)=f(x)$$
+		Dado que esto es cierto para todos los valores $x$, $y$  terminamos la demostración.\\\\
+
+	\end{enumerate}
+
+	%--------------------21.
+	\item  Demostrar o dar un contraejemplo de las siguientes proposiciones:
+
+	    \begin{enumerate}[\bfseries (a)]
+
+		%----------(a)
+		\item $f \circ (g+h) = f \circ g + f \circ h.$\\\\
+		    Demostración.-\; 
+
+		%----------(b)
+		\item $(g+h) \circ f = g\circ f + h \circ f.$\\\\
+		    Demostración.-\; 
+
+		%----------(c)
+		\item $\dfrac{1}{f\circ g} = \dfrac{1}{f} \circ g.$\\\\
+		    Demostración.-\;
+
+		%----------(d)
+		\item $\dfrac{1}{f \circ g} = f \circ \left( \dfrac{1}{g}\right).$\\\\
+		    Demostración.-\;
+
+	    \end{enumerate}
 
     \end{enumerate}
