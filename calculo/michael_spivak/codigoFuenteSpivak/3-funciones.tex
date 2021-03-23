@@ -603,20 +603,46 @@
 
 		%----------(a)
 		\item $f \circ (g+h) = f \circ g + f \circ h.$\\\\
-		    Demostración.-\; 
+		    Demostración.-\; Esto es falso en general ya que si designamos a $g$ y $h$ la función identidad y  $f$ sea $x^2$ entonces $$\left[ f \circ (g+h) \right](x) = f\left(  g + h\right)(x)=f \left[ g(x) +  h(x) \right] = f(x+x)= f(2x) = 4x^2.$$ 
+		    luego por la parte derecha de la ecuación se tendra:
+		    $$\left[ \left( f\circ g \right) + \left( f \circ h \right)\right]\left(x \right) = \left(f \circ g \right) \left(x\right) + \left( f \circ h \right)\left(x\right) = f\left[g\left(x\right)\right] + f\left[h \left(x\right)\right] = f\left(x\right) + g\left(x\right) = x^2 + x$$
+		    De donde $4x^2 \neq x^2 + x$\\\\
 
 		%----------(b)
 		\item $(g+h) \circ f = g\circ f + h \circ f.$\\\\
-		    Demostración.-\; 
+		    Demostración.-\; Por definición de composición de función tenemos 
+		    \begin{center}
+			\begin{tabular}{rcll}
+			    $\left[ \left( g+ h\right) \circ f \right] \left(x\right)$ & $=$ & $\left(g+h\right)\left[f(x)\right]$ & \\ 
+			    & $=$ & $g\left[ f(x)\right] + h\left[f(x)\right]$ & por definición\\
+			    & $=$ & $\left(g\circ f\right)(x) + \left(h \circ f\right)(x)$ & \\
+			    & $=$ & $\left[ \left(g\circ f\right)  + \left(h \circ f\right)\right](x)$ &\\\\
+			\end{tabular} 
+		    \end{center}
+		    Así  $(g+h)\circ f = (g\circ f)+(h \circ f)$\\\\
 
 		%----------(c)
 		\item $\dfrac{1}{f\circ g} = \dfrac{1}{f} \circ g.$\\\\
-		    Demostración.-\;
+		    Demostración.-\; Por definición se tiene,
+		    \begin{center}
+			\begin{tabular}{rcl}
+			    $\left( \dfrac{1}{f\circ g}\right)(x)$ & $=$ & $\dfrac{1}{(f\circ g)(x)}$\\\\
+			    & $=$ & $\dfrac{1}{f\left[ g(x)\right] }$\\\\
+			    & $=$ & $\left( \dfrac{1}{f}\right) \left[ g(x)\right]$\\\\
+			    & $=$ & $\left( \dfrac{1}{f} \circ g\right)(x)$\\\\
+			\end{tabular}
+		    \end{center}
+		    Así, $1/(f\circ g)=(1/f)\circ g$\\\\
 
 		%----------(d)
 		\item $\dfrac{1}{f \circ g} = f \circ \left( \dfrac{1}{g}\right).$\\\\
-		    Demostración.-\;
+		    Demostración.-\;  Esto es falso ya que si consideramos $f(x)=x+1$ y $g(x)=x^2$, entonces 
+		    $$\left( \dfrac{1}{f \circ g}\right) (x) = \dfrac{1}{(f\circ g)(x)} = \dfrac{1}{f\left[ g(x) \right]} = \dfrac{1}{f(x^2)} = \dfrac{1}{x^2+1}$$ y por otro lado 
+		    $$\left[f\circ \left( \dfrac{1}{g}\right)\right](x)  = f\left[ \left( \dfrac{1}{g}\right) (x)\right] = f\left( \dfrac{1}{g(x)}\right) = f \left( \dfrac{1}{x^2}\right)= \dfrac{1}{x^2} + 1$$ 
+		    de  donde $\dfrac{1}{x^2 + 1} \neq \dfrac{1}{x^2} + 1$\\\\
 
 	    \end{enumerate}
 
+	%--------------------22.
+	\item 
     \end{enumerate}
