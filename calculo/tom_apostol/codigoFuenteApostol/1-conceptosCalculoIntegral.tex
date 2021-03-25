@@ -1145,17 +1145,99 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	    %-----------(c)
 	    \item $[x+y] = [x] + [y]$ ó $[x] + [y] + 1$\\\\
 		Demostración.-\; Sea $[x]=m$ y $[y]=n$, luego,
-		$$m\leq x < m+1 \qquad y \qquad n\leq y < n+1$$ Entonces, sumando obtenemos $$m+n \leq x+y < m+n+2$$  por lo tanto $$[x+y]=m+n=[x]+[y] \qquad o \qquad [x+y] = m+n+1=[x]+[y]+1$$\\\\ 
+		$$m\leq x < m+1 \qquad y \qquad n\leq y < n+1$$ Entonces, sumando obtenemos $$m+n \leq x+y < m+n+2$$  por lo tanto $$[x+y]=m+n=[x]+[y] \qquad o \qquad [x+y] = m+n+1=[x]+[y]+1$$ Esto ya que si $x+y$ está entre $m+n$ y $m+n+1$ entonces $[x+y]=[x] + [y] + 1$ y cuando $x+y$ está entre $m+n+1$ y $m+n+2$ entonces $[x+y] = [x] + [y] + 1.$\\\\ 
 
 	    %-----------(d)
 	    \item  $[2x] = [x] + [x + \frac{1}{2}$\\\\
-		Demostración.-\; 
+		Demostración.-\; Por la parte $(c)$  $$[2x]=[x+x] = [x] + [x] \qquad ó \qquad [x]+[x]+1$$ \\
+		Para $[2x] = [x] + [x]$, sea $[x]=n$, entonces 
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$[2x]=2n$&$\Longrightarrow$&$2n\leq 2x \leq 2n+1$\\\\
+			&$\Longrightarrow$&$n\leq x < n + \dfrac{1}{2}$\\\\
+			&$\Longrightarrow$&$n \leq x + \dfrac{1}{2}<n+1$\\\\
+			&$\Longrightarrow$&$\left[x + \dfrac{1}{2}\right] = n$\\\\
+		    \end{tabular}
+		\end{center}
+		de donde, $[2x]=2n=n+n=[x]+\left[x + \dfrac{1}{2}\right]$\\\\
+
+		Por otro lado, para $[2x] = [x] + [x] + 1,$ sea $[x]=n$, entonces:
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$[2x]=2n+1$&$\Longrightarrow$&$2n+1 \leq 2n + 2$\\\\
+			&$\Longrightarrow$&$n+\dfrac{1}{2}\leq x < n+1$\\\\
+			&$\Longrightarrow$&$n+1 \leq x+\dfrac{1}{2} < n+2$\\\\
+			&$\Longrightarrow$&$\left[x+ \dfrac{1}{2}\right]$= n+1\\\\
+		    \end{tabular}
+		\end{center}
+		de donde $[2x]=n+n+1=[x]+\left[x+\dfrac{1}{2}\right]$\\\\
 
 	    %-----------(e)
 	    \item $[3x] = [x] + [x + \frac{1}{2}] + [x + \frac{2}{3}]$\\\\
-		Demostración.-\;
+		Demostración.-\; Por la parte $(c)$ tenemos $$[3x]=[x+x+x]=[x+x]+[x] \qquad ó \qquad [x+x] + [x] + 1 \qquad y \qquad [x+x]=[x]+[x] \qquad ó \qquad [x]+[x]+1$$   
+		de donde al juntarlos obtenemos:
+		$$[3x]=[x]+[x]+[x] \qquad ó \qquad [x]+[x]+[X]+1 \qquad ó \qquad [x]+[x]+[x]+2$$ 
+		Para $3x=[x]+[x]+[x]$ sea $[x]=n$ entonces
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$3n\leq 3x<3x+1$&$\Longrightarrow$&$n\leq x<n+\dfrac{1}{3}$\\\\
+			&$\Longrightarrow$&$n\leq x+\dfrac{1}{3} < n+1 \qquad y \qquad n \leq x+\dfrac{2}{3} < n+1$\\\\
+			&$\Longrightarrow$&$[x]=\left[x+\dfrac{1}{3}\right] = \left[x+\dfrac{2}{3}\right] = n$\\\\
+		    \end{tabular}
+		\end{center}
+		Por lo tanto, $[x]=3n=[x]+\left[x+\dfrac{1}{3}\right] + \left[x +\dfrac{2}{3} \right]$\\\\
+		Luego para $[3x]=[x]+[x]+[x] + 1$ sea $[x]=n$ entonces,
+
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$3n+1 \leq 3x < 3n + 1$&$\Longrightarrow$&$n+\dfrac{1}{3} \leq x < n + \dfrac{2}{3}$\\\\
+			&$\Longrightarrow$&$n+\dfrac{1}{3} \leq x+\dfrac{1}{3} < n+1 \quad \Rightarrow \quad \left[x + \dfrac{1}{3} \right] = n$\\\\
+			y&$\Longrightarrow$&$n+1\leq x + \dfrac{2}{3} < n+2 \quad \Rightarrow \quad \left[x+\dfrac{2}{3}\quad \right]= n+1$\\\\
+		    \end{tabular}
+		\end{center}
+		Por lo tanto $[3x]=3n+1 \quad \Longrightarrow \quad [3x]=[x] + \left[x+\dfrac{1}{3}\right] + \left[x+\dfrac{2}{3}\right]$\\\\
+
+		Finalmente, para $[3x]=[x]+[x]+[x]+2$ sea $[x]=n$ entonces
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$3x+2\leq 3x < 3x+3$&$\Longrightarrow$&$n+\dfrac{2}{3} \leq x < n+1$\\\\
+			&$\Longrightarrow$&$n+1 \leq x +\dfrac{1}{3}<n+2 \qquad y \qquad n+1\leq x+\dfrac{2}{3}<n+2$\\\\
+		    \end{tabular}
+		\end{center}
+		Así que $[3x]=3n+2=[x]+\left[x+\dfrac{1}{3}\right]+\left[x+\dfrac{2}{3}\right]$\\\\
 
 	\end{enumerate}
+
+	%--------------------5.
+    \item  Las fórmulas de los Ejercicios $4(d)$ y $4(c)$ sugieren una generalización para $[nx]$. Establecer y demostrar una  generalización.\\\\
+	Demostración.-\; Se puede afirmar que: $$[nx] =\sum\limits_{k=0}^{n-1} \left[ x + \dfrac{k}{n}\right],$$ luego sea $[x]=m,$ entonces $$m\leq x < m+1 \quad \Longrightarrow \quad nm \leq nx < nm+n$$ Por lo tanto existen algunos $j \in \mathbf{Z}$ con $0\leq j < n$ tales que $$nm+j\leq nx < nm + j + 1$$ ya que sabemos que para cualquier número $nx$ está entre $k$ y $k+1$ para un entero. Pero como $nm\leq nx$ es un número entero $k$ donde está en algún lugar entre $nm$ y $nx$, lo que significa que es $nm+j$ para algún número entero $j$. Entonces tenemos que $nx$ está entre $nm+j$ y $nm+j+1$: Básicamente, solo decimos que conocemos $k\leq nx<k+1$ para algún entero $k$. Pero es mas conveniente escribirlo como $nm+j\leq nx>nm+j+1$.\\
+	Luego, $[nx]=nm+j$. y por lo tanto, $$m+\dfrac{j}{n}\leq x < m + \dfrac{j+1}{n}$$ 
+	para cada $k\in \mathbf{Z}$ con $0\leq k <n-j$ tenemos
+	\begin{center}
+	    \begin{tabular}{cll}
+		& $m+\dfrac{k+k}{n} \leq x + \dfrac{k}{n} < m + \dfrac{j+k+1}{n}$ & sumando $\dfrac{k}{n}$ \\\\
+		 $\Longrightarrow$ & $m\leq x+\dfrac{k}{n}< m+1$ & $\dfrac{j+k}{n} <  1$ ya que $k<n-j$\\\\
+		 $\Longrightarrow$ & $\left[x+\dfrac{k}{n}=m=[x]\right]$ & para $0\leq k < n-j$ \\\\
+	    \end{tabular}
+	\end{center}
+	por otro lado $n-j\leq k < n,$ entonces
+	\begin{center}
+	    \begin{tabular}{cll}
+		& $m+\dfrac{k+k}{n} \leq x + \dfrac{k}{n} < m + \dfrac{j+k+1}{n}$ & \\\\
+		 $\Longrightarrow$ & $m+1\leq x+\dfrac{k}{n}< m+2$ & $\dfrac{j+k}{n} \geq  1$ ya que $n-j\leq k$\\\\
+		 $\Longrightarrow$ & $\left[x+\dfrac{k}{n}=m+1=[x]+1\right]$ & para $n-j \leq k < n$ \\\\
+	    \end{tabular}
+	\end{center}
+	Así que 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$\sum\limits_{k=0}^{n-1} \left[x+\dfrac{k}{n}\right]$ & $=$ & $\sum\limits_{k=0}^{n-j-1} \left[x+\dfrac{k}{n}\right] + \sum\limits_{k=n-j}^{n-1} \left[x+\dfrac{k}{n}\right]$\\\\
+		& $=$ & $(n-j)[x]+j([x]+1)$\\\\
+		& $=$ & $n[x]+j$\\\\
+		& $=$ & $nm+j$\\\\
+		& $=$ & $[nx]$\\\\
+	    \end{tabular}
+	\end{center}
 
 	
 
