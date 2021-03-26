@@ -1239,6 +1239,30 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	    \end{tabular}
 	\end{center}
 
+	%--------------------6.
+	\item Recuérdese que un punto de red $(x,y)$ en el plano es aquel cuyas coordenadas son enteras. Sea $f$ una función no negativa cuyo dominio es el intervalo $[a,b]$, donde $a$ y $b$ son enteros, $a<b$. Sea $S$ el conjunto de puntos $(x,y)$ que satisfacen $a\leq x\leq b$, $a\leq y \leq f(x)$. Demostrar que el número de puntos de la red pertenecientes a $S$ es igual a la suma $$\sum\limits_{n=a}^{b} \left[f(n)\right]$$\\\\
+	    Demostración.-\; Sea $n\in \mathbb{Z}$ con $a\leq n < b$: Sabemos que tal $n$ existe desde $a,b \in \mathbb{Z}$ con $a<b$. Entonces, el número de puntos de red $S$ con el primer elemento $n$ es el número de enteros $y$ tales que $0<y\leq f(n)$. Pero, por definición, esto es $[f(n)]$ Sumando todos los números enteros $n$. $a\leq n\leq b$ tenemos, $$S=\sum\limits_{n=a}^{b} \left[f(n)\right]$$
+
+	%--------------------7.
+	\item Si $a$ y $b$ son enteros positivos primos entre sí, se tiene la fórmula $$\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right] = \dfrac{(a-1)(b-1)}{2}.$$ Se supone que para $b=1$ la suma del primer miembro es $0$.\\\\
+	
+	    \begin{enumerate}[\bfseries (a)]
+
+		%----------(a)
+		\item Dedúzcase este resultado analíticamente contando los puntos de la red en un triángulo rectángulo.\\\\
+		    Respuesta.-\; Sabemos por el ejercicio anterior que $$\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]$$ (puntos de red de un triángulo rectángulo con base $b$ y altura $a$). Ademas del ejercicio $1.7 n 4$ sabemos que $$a(T)=I_t + \dfrac{1}{2}B_T - 1$$ donde $I_T$ es el número de puntos de red interior y $B_T$ es el número de puntos de red límite. También sabemos por la fórmula del área de un triángulo rectángulo que $$a(T)=\dfrac{1}{2}(ab)$$ por lo tanto tenemos $$I=\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]=\dfrac{1}{2}(ab)-\dfrac{1}{2}B_T + 1$$
+		    Luego para calcular $B_T$ notamos que no hay puntos límite en la hipotenusa de nuestro triángulo rectángulo ya que $a$ y $b$ no tienen un factor común. Esto se deduce ya que si no fuera tal punto a continuación, $\dfrac{na}{b} \in \mathbb{Z}$ para algunos $n<b,$ tendríamos que $a$ divide a $b$, lo que contradice que no tienen ningún factor común. Por lo tanto $B_T=a+b+1$, de donde,
+		    \begin{center}
+			\begin{tabular}{rcl}
+			    $\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right]$&$=$&$\dfrac{1}{2}(ab) - \dfrac{1}{2}(a+b+1) + 1$\\\\
+			    &$=$&$\dfrac{1}{2} (ab-a-b+1)$\\\\
+			    &$=$&$\dfrac{1}{2}(a-1)(b-1)$\\\\
+			\end{tabular}
+		    \end{center}
+
+		\item Dedúzcase este resultado analíticamente de la manera siguiente. Cambiando el índice de sumación, obsérvese que $\sum\limits_{a=1}^{b-1}[na/b]=\sum\limits_{n=1}^{b-1}[a(b-n)/b]$. Aplíquese luego los ejercicios $4(a)$ y $(b)$  al corchete de la derecha.\\\\
+	    \end{enumerate} 
+
 	
 
     \end{enumerate}
