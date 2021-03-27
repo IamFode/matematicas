@@ -1246,22 +1246,36 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	%--------------------7.
 	\item Si $a$ y $b$ son enteros positivos primos entre sí, se tiene la fórmula $$\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right] = \dfrac{(a-1)(b-1)}{2}.$$ Se supone que para $b=1$ la suma del primer miembro es $0$.\\\\
 	
-	    \begin{enumerate}[\bfseries (a)]
+	\begin{enumerate}[\bfseries (a)]
 
-		%----------(a)
-		\item Dedúzcase este resultado analíticamente contando los puntos de la red en un triángulo rectángulo.\\\\
-		    Respuesta.-\; Sabemos por el ejercicio anterior que $$\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]$$ (puntos de red de un triángulo rectángulo con base $b$ y altura $a$). Ademas del ejercicio $1.7 n 4$ sabemos que $$a(T)=I_t + \dfrac{1}{2}B_T - 1$$ donde $I_T$ es el número de puntos de red interior y $B_T$ es el número de puntos de red límite. También sabemos por la fórmula del área de un triángulo rectángulo que $$a(T)=\dfrac{1}{2}(ab)$$ por lo tanto tenemos $$I=\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]=\dfrac{1}{2}(ab)-\dfrac{1}{2}B_T + 1$$
-		    Luego para calcular $B_T$ notamos que no hay puntos límite en la hipotenusa de nuestro triángulo rectángulo ya que $a$ y $b$ no tienen un factor común. Esto se deduce ya que si no fuera tal punto a continuación, $\dfrac{na}{b} \in \mathbb{Z}$ para algunos $n<b,$ tendríamos que $a$ divide a $b$, lo que contradice que no tienen ningún factor común. Por lo tanto $B_T=a+b+1$, de donde,
-		    \begin{center}
-			\begin{tabular}{rcl}
-			    $\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right]$&$=$&$\dfrac{1}{2}(ab) - \dfrac{1}{2}(a+b+1) + 1$\\\\
-			    &$=$&$\dfrac{1}{2} (ab-a-b+1)$\\\\
-			    &$=$&$\dfrac{1}{2}(a-1)(b-1)$\\\\
-			\end{tabular}
-		    \end{center}
+	    %----------(a)
+	    \item Dedúzcase este resultado analíticamente contando los puntos de la red en un triángulo rectángulo.\\\\
+		Respuesta.-\; Sabemos por el ejercicio anterior que $$\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]$$ (puntos de red de un triángulo rectángulo con base $b$ y altura $a$). Ademas del ejercicio $1.7 n 4$ sabemos que $$a(T)=I_t + \dfrac{1}{2}B_T - 1$$ donde $I_T$ es el número de puntos de red interior y $B_T$ es el número de puntos de red límite. También sabemos por la fórmula del área de un triángulo rectángulo que $$a(T)=\dfrac{1}{2}(ab)$$ por lo tanto tenemos $$I=\sum\limits_{n=1}^{b-1}\left[\dfrac{na}{b}\right]=\dfrac{1}{2}(ab)-\dfrac{1}{2}B_T + 1$$
+		Luego para calcular $B_T$ notamos que no hay puntos límite en la hipotenusa de nuestro triángulo rectángulo ya que $a$ y $b$ no tienen un factor común. Esto se deduce ya que si no fuera tal punto a continuación, $\dfrac{na}{b} \in \mathbb{Z}$ para algunos $n<b,$ tendríamos que $a$ divide a $b$, lo que contradice que no tienen ningún factor común. Por lo tanto $B_T=a+b+1$, de donde,
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right]$&$=$&$\dfrac{1}{2}(ab) - \dfrac{1}{2}(a+b+1) + 1$\\\\
+			&$=$&$\dfrac{1}{2} (ab-a-b+1)$\\\\
+			&$=$&$\dfrac{1}{2}(a-1)(b-1)$\\\\
+		    \end{tabular}
+		\end{center}
 
-		\item Dedúzcase este resultado analíticamente de la manera siguiente. Cambiando el índice de sumación, obsérvese que $\sum\limits_{a=1}^{b-1}[na/b]=\sum\limits_{n=1}^{b-1}[a(b-n)/b]$. Aplíquese luego los ejercicios $4(a)$ y $(b)$  al corchete de la derecha.\\\\
-	    \end{enumerate} 
+	    \item Dedúzcase este resultado analíticamente de la manera siguiente. Cambiando el índice de sumación, obsérvese que $\sum\limits_{a=1}^{b-1}[na/b]=\sum\limits_{n=1}^{b-1}[a(b-n)/b]$. Aplíquese luego los ejercicios $4(a)$ y $(b)$  al corchete de la derecha.\\\\
+		Respuesta.-\; Sea $$ \sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right] =  \sum\limits_{n=1}^{b-1} \left[\dfrac{a(b-n}{b}\right] $$
+		entonces,
+		\begin{center}
+		    \begin{tabular}{crcl}
+			&$\sum\limits_{n=1}^{b-1} \left[\dfrac{a(b-n)}{b}\right]$&$=$&$\sum\limits_{n=1}^{b-1} \left[a\right] - \sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right] - \sum\limits_{n=1}^{b-1} 1$\\\\
+			$\Longrightarrow$&$2\sum\limits_{n=1}^{b-1} \left[\dfrac{a(b-n}{b}\right]$&$=$&$\sum\limits_{n=1}^{b-1} - \sum\limits_{n=1}^{b-1} = (b-1)a - (b-1)$\\\\
+			&$\sum\limits_{n=1}^{b-1} \left[\dfrac{na}{b}\right]$&$=$&$\dfrac{1}{2}(a-1)(b-1)$\\\\
+		    \end{tabular}
+		\end{center}
+
+	\end{enumerate} 
+
+	%--------------------8.
+    \item Sea $S$ un conjunto de puntos en la recta real. La función característica de $S$ es, por definición, la función $Xs(x)=1$ para todo $x$ de $S$ y $Xs(x)=0$ para aquellos puntos que o pertenecen a $S$. Sea $f$ una función escalonada que toma el valor constante $c_k$ en el k-simo subintervalo $I_k$ de una cierta partición de un intervalo $[a,b]$. Demostrar que para cada $x$ de la reunión $I_1 \cup I_2 \cup ... \cup I_n$ se tiene $$f(x)=\sum\limits_{k=1}^{n} c_k X_{I_k} (x)$$ Esta propiedad se expresa diciendo que toda función escalonada es una combinación lineal de funciones características del intervalos.\\\\
+	    Demostración.-\;
 
 	
 
