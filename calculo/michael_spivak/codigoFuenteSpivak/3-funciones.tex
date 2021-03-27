@@ -689,6 +689,18 @@
 
 	%--------------------25.
 	\item Hallar una función $f$ tal que $g\circ f=I$ para alguna función $g$, pero tal que no exista ninguna función $h$ con $f\circ h = I$\\\\
-	    Respuesta.-\;
+	    Respuesta.-\; Basta hallar una función $f$ tal que $f(x)\neq f(y)$ si $x\neq y$, pero tal que no todo número sea de la forma $f(x)$, pues entonces según el problema $24(a)$ existirá una función $g$ con $g\circ f=I$, y según el problema $23(b)$ no existiría ninguna función $g$ con $f\circ g=I$. Una función que reúne estas condiciones es:
+	    $$f(x) = \left\{ \begin{array}{lc} 
+		x,&x\leq 0\\
+		\\ x+1,& x>0\\
+	    \end{array}\right.$$
+	    ningún número  de los comprendidos entre $0$ y $1$ es de la forma $f(x)$.\\\\
+
+	%--------------------26.
+	\item Supóngase $f\circ g = I$ y $h\circ f = I$. Demostrar que $g=h$. Indicación: Aplíquese el hecho de que la composición es asociativa.\\\\
+	    Demostración.-\; Sea $h\circ f\circ g$ entonces $h\circ (f \circ g)=h\circ I = h,$ como también $h\circ f \circ g = (h \circ f) \circ g = I \circ g = g.$\\\\ 
+
+	%--------------------27.
+	\item 
 
     \end{enumerate}
