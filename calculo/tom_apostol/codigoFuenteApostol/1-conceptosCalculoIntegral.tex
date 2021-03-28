@@ -1275,9 +1275,20 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 	%--------------------8.
     \item Sea $S$ un conjunto de puntos en la recta real. La función característica de $S$ es, por definición, la función $Xs(x)=1$ para todo $x$ de $S$ y $Xs(x)=0$ para aquellos puntos que o pertenecen a $S$. Sea $f$ una función escalonada que toma el valor constante $c_k$ en el k-simo subintervalo $I_k$ de una cierta partición de un intervalo $[a,b]$. Demostrar que para cada $x$ de la reunión $I_1 \cup I_2 \cup ... \cup I_n$ se tiene $$f(x)=\sum\limits_{k=1}^{n} c_k X_{I_k} (x)$$ Esta propiedad se expresa diciendo que toda función escalonada es una combinación lineal de funciones características del intervalos.\\\\
-	    Demostración.-\;
-
-	
+	Demostración.-\; Definimos una función característica, $Xs$, en un conjunto $S$ de puntos en $\mathbf{R}$ por 
+	$$Xs(x)=\left\{\begin{array}{c c c} 
+	    1&si&x\in S\\ 
+	    \\0&si&x \notin S \\
+	\end{array}\right.$$
+	Primero, observemos que los subintervalos abiertos de alguna partición de $[a,b]$ son necesariamente disjuntos desde $P=\lbrace x_0,x_1,...,x_n \rbrace \quad \Longrightarrow \quad x_0<x_1<...<x_n$. Por lo tanto si $x\in I_1 \cup ... \cup I_n$ entonces $x \in I_j$ exactamente por uno $j, 1\leq j \leq n$. Por lo tanto,
+	$$XIs(x)=\left\{\begin{array}{c c c} 
+	    1&si&xj=k\\ 
+	    \\0&si&j\neq k \\
+	\end{array}\right.$$
+	para todos $1\leq k\leq n$ y para cualquiera $x$. Además, por definición de $f$, sabemos $f(x)=c_k$ si $x\in I_k,$. Así que, 
+	$$\sum\limits_{k=1}^{n} c_k XI_k(x) = c_1\cdot 0 + c_2 \cdot 0 + ... + c_k\cdot 1 + ... + c_n\cdot 0 = c_k = f(x)$$
+	para cada $x\in I_i \cup ... \cup I_n$\\\\
 
     \end{enumerate}
-    
+   
+
