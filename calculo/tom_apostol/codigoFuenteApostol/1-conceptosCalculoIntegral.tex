@@ -1291,4 +1291,21 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
     \end{enumerate}
    
+\section{Definición de integral para funciones escalonadas}
 
+    %--------------------definición de intergal de funciones escalonadas
+    \begin{tcolorbox}[colframe = white]
+	\begin{def.}[Definición de integral de funciones escalonadas]
+	    La integral de $s$ de $a$ a $b$, que se designa por el símbolo $\int_{a}^{b} s(x) dx$, se define mediante la siguiente fórmula: $$\int_{a}^{b} s(x) dx = \sum\limits_{k=1}^{n} s_k \cdot (x_k - x_{k-1})$$
+	    Es decir, para obtener el valor de la integra, se multiplica cada valor $s_k$ constante, por la longitud de intervalo $k-simo$ correspondiente, formando el producto $s_k\cdot (x_k - x_{k-1})$ y se suman luego todos los productos obtenidos.
+	\end{def.}
+    \end{tcolorbox}
+
+    %-------------------- definición 1.11
+    \begin{tcolorbox}[colframe = white]
+	\begin{def.}
+	    Si $x$ es constante en el intervalo abierto $(a,b)$, es decir, $s(x)=c$ si $a<x<b,$ se tiene entonces: $$\int_{a}^{b} s(x) dx = c \sum\limits_{k=1}^{n} (x_k - x_{k-1}) = c(b-a)$$
+	\end{def.}
+    \end{tcolorbox}
+
+\section{Propiedades de la integral de una función escalonada}
