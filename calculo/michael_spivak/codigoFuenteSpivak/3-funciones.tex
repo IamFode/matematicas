@@ -724,24 +724,45 @@
 
 	    %----------(a)
 	    \item Sea $F$ el conjunto de todas las funciones cuyo dominio es $\mathbb{R}$. Demuéstrese que con las definiciones de $+$ y $\cdot $ dadas en este capítulo, se cumplen todas las propiedades $P1-P9$, excepto $P7$, siempre que $0$ y $1$ se interpreten como funciones constantes.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Se comprueba fácilmente.\\\\
 
 	    %----------(b)
 	    \item Demostrar que $P7$ no se cumple.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $f$ una función con $f(x)=0$ para algún $x$, pero no para todo $x$. Entonces $f\neq 0$, pero claramente no existe ninguna función $g$ con $f(x)\cdot g(x) = 1$ para todo $x$.\\\\
 
 	    %----------(c)
 	    \item Demostrar que no pueden cumplirse $P10-P12.$ En otros términos, demostrar que no existe ninguna colección $P$ de funciones en $F$, tales que $P10-P12$ se cumplen para $P$. (Es suficiente, y esto simplificará las cosas, considere sólo funciones que sean $0$, excepto en dos puntos $x_0$ y $x_1$).\\\\
-		Demostración.-\;
+		Demostración.-\; Sean $f$ y $g$ dos funciones cuyos valores son todos $0$ excepto en $x_0$ y $x_1$, siendo $f(x_0)=1$, $f(x_1)=0$, $gx_0 = 0$, $g(x_1)=1.$ Ninguna de ellas es $0$, de modo que o bien $f$ o bien $-f$ tendría que estar en $P$ y lo mismo podría decirse de $g$ o $-g$. Pero $(\pm f)(\pm g) = 0$, en contradicción con $P12$.\\\\
 
 	    %----------(d)
 	    \item Supóngase que se ha definido $f<g$ en el sentido de que $f(x)<g(x)$ para todo $x$. ¿Cuáles de las propiedades $P^{'}-P^{'}13$ (del problema $1-8$)? se cumplen ahora?\\\\
-		Respuesta.-\;
+		Respuesta.-\; $P^{'} 11, P^{'} 12$ y $P^{'}13$ se cumplen. $P^{'}10$ es falso; si bien se cumple a lo sumo una de las condiciones, o es necesariamente cierto que se tenga que cumplir por lo menos una de ellas. Por ejemplo, si $f(x)>0$ para algún $x$ y $y<0$ para otro $x$, entonces ninguna de las condiciones $f=0,$ $f<0$ ó $f>0$ para todo $x$.\\\\
 
 	    %----------(e)
 	    \item si $f<g$, ¿Se cumple $h\circ f < h \circ g$? ¿Es $f\circ h<g\circ h$?\\\\
-		Respuesta.-\;
+		Respuesta.-\; No para el primer ejemplo; si $h(x)=-x,$ entonces $f<g$ implica, en realidad , que $h\circ f > h \circ g$. Si para el segundo, ya que $f(h(x)<g(h(x)$ para todo $x$.\\\\
 
 	\end{enumerate}
 
     \end{enumerate}
+
+\section{Pares ordenados}
+    
+    %--------------------definición 1.9
+    \begin{tcolorbox}[colframe = white]
+	\begin{def.}
+	    $(a,b) = \lbrace {a},{a,b} \rbrace$\\
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------teorema 
+    \begin{teo}
+	Si $(a,b) = (c,d)$ entonces $a=c$ y $b=d$\\\\
+	    
+	    Demostración.-\; La hipótesis significa que $$\lbrace {a},{a,b} \rbrace \lbrace {c},{a,d}\rbrace,$$
+	    Ahora bien, $\lbrace {a},{a,b} \rbrace$ contiene justamente dos elementos ${a}$ y ${a,b}$ y $a$ es el único elemento común a estos dos elementos de $\lbrace{a},{a,b}\rbrace$. Por lo tanto, $a=c$. Así pues tenemos $$\lbrace {a},{a,b}\rbrace = \lbrace {a},{a,d} \rbrace,$$ y solamente queda por demostrar $b=d.$ Conviene distinguir dos casos.\\
+	    \textbf{Caso 1 $b=a$.} En este caso, ${a,b}={a}$, de modo que el conjunto $\lbrace {a},{a,b}\rbrace$ tiene en realidad un solo elemento que es ${a}$. Lo mismo vale para $\lbrace {a},{a,b}\rbrace$, de modo que ${a,d}={a},$ lo cual implica $d=a=b.$\\
+	    \textbf{Caso 2. $b\neq a$}. En este caso, $b$ pertenece a uno de los elementos de $\lbrace {a}, {a,b}\rbrace$, pero no al otro. Debe, por lo tanto cumplirse que $b$ pertenece a uno de los elementos de $\lbrace {a},{a,b}\rbrace$, pero no al otro. Esto solamente puede ocurrir si $b$ pertenece a ${a,d}$, pero no a ${a}$; así pues, $b=a$ o $b=d$, pero $b\neq a$, con lo que $b=d$.\\\\
+
+    \end{teo}
+
