@@ -708,8 +708,63 @@
 	\end{array}\right. \]
 
     %--------------------67.
+    \item En un determinado país, el impuesto sobre la renta se calculo como sigue. No hay impuesto sobre la renta para ingresos de hasta $\$ 10000$. Los ingresos de más de $\$ 10000$ se gravan con una tasa de $10 \%$, hasta un ingreso de $\$ 20000$. Los ingresos superiores a $\$ 20000$ se gravan en $15 \%$.
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Trace la gráfica de la tasa de impuestos $R$ en función del ingreso $I$.\\\\
+	    Respuesta.-\; 
+	\begin{center}
+	    \begin{tikzpicture}[scale=0.4]
+		% abscisa y ordenada
+		\tkzInit[xmax= 32,xmin=0,ymax=15,ymin=0]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=I,right=0.3]
+		\tkzDrawY[opacity= .6,label=R,below = -0.6]
+		%dominio y función
+		\draw [domain=0:10,thick] plot(\x,{0}); 
+		\draw [domain=10:20,thick] plot(\x,{10}); 
+		\draw [domain=20:30,thick] plot(\x,{15}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+	%----------(b)
+	\item ¿Qué impuesto corresponde a un ingreso de $\$ 14000$?\\\\
+	    Respuesta-.\; Le corresponde un impuesto de $0.1\cdot 14000 = \$ 1400$.\\\\
+
+	%----------(c)
+	\item Trace la gráfica del impuesto $T$ en función del ingreso $I$.\\\\
+	    Respuesta.-\; 
+	\begin{center}
+	    \begin{tikzpicture}[scale=0.4]
+		% abscisa y ordenada
+		\tkzInit[xmax= 32,xmin=0,ymax=5,ymin=0]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=I,right=0.3]
+		\tkzDrawY[opacity= .6,label=R,below = -0.6]
+		%dominio y función
+		\draw [domain=0:10,thick] plot(\x,{0}); 
+		\draw [domain=10:20,thick] plot(\x,{\x * 0.1}); 
+		\draw [domain=20:30,thick] plot(\x,{\x * 0.15}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \end{enumerate}
+
+    %--------------------68.
+    \item Las funciones del ejemplo $10$ y el ejercicio $67$ se llaman funciones escalón porque sus gráficas parecen escaleras. Sugiera dos ejemplos de funciones escalón que surgen en la vida cotidiana.\\\\
+	Respuesta.-\; Cualquier ejemplo donde sea constantemente en los subintervalos.\\\\
+
+$69-70$ Se muestran las gráficas de $f$ y $g$. Determine si cada función es par, impar o ninguna de las dos. Explique su razonamiento.\\\\
+
+    %--------------------69.
     \item 
 
-
+    %--------------------70.
+    \item 
 
     \end{enumerate}
