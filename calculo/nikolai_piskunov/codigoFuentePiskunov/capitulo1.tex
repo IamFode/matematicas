@@ -266,7 +266,212 @@
 	
     \end{enumerate}
 
+    Construir las gráficas de las funciones:\\\\
+
     %--------------------10.
-    \item 
+    \item $f(x)=-3x+5$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 3,xmin=-2,ymax=5,ymin=-2]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-1:2,thick] plot(\x,{-3*\x + 5}); 
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=-3x+5$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------11.
+    \item $f(x)=\dfrac{1}{2} x^2 + 1$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 3,xmin=-3,ymax=6,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-3:3,thick] plot(\x,{(1/2)*\x*\x + 1}); 
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\dfrac{1}{2} x^2 + 1$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{1cm}
+
+    %--------------------12.
+    \item $f(x)=3-2x^2$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 3,xmin=-3,ymax=3,ymin=-2]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-1.5:1.5,thick] plot(\x,{3-2*\x*\x}); 
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=3-2x^2$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
  
+    %--------------------13.
+    \item $f(x)=x^2 + 2x - 1$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 2,xmin=-4,ymax=4,ymin=-2]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-3.5:1.5,thick] plot(\x,{\x*\x + 2*\x - 1}); 
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=x^2 + 2x - 1$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------14.
+    \item $f(x)=\dfrac{1}{x-1}$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 3,xmin=-4,ymax=5,ymin=-5]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-3:0.8,thick] plot(\x,{1/(\x-1)}); 
+	    \draw [domain=1.2:3,thick] plot(\x,{1/(\x - 1)}); 
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\dfrac{1}{x-1}$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------15.
+    \item $f(x)=\sin 2x$
+    \begin{center}
+	\begin{tikzpicture}[xscale=0.08, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 175,xmin=-4,ymax=1,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.3,step=10, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=0:175,samples=100] plot(\x, {sin(2*\x)});
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\sin 2x$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------16.
+    \item $f(x)=\cos 3x$
+    \begin{center}
+	\begin{tikzpicture}[xscale=0.1, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 146,xmin=-4,ymax=1,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.3,step=10, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=0:146,samples=100] plot(\x, {cos(3*\x)});
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\cos 3x$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------17.
+    \item $f(x)=x^2-4x+6$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 4,xmin=-1,ymax=7,ymin=0]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-.5:4.5,thick] plot(\x,{\x*\x -4*\x + 6}); 
+	    \tkzText[above,opacity=0.6](5,3){\tiny $f(x)=x^2 - 4x + 6$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------18.
+    \item $f(x)=\dfrac{1}{1-x^2}$\\\\
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 2,xmin=-2,ymax=6,ymin=0]
+	    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=-.9:.9,thick] plot(\x,{1/(1-\x*\x)}); 
+	    \tkzText[above,opacity=0.6](4,3){\tiny $f(x)=x^2 - 4x + 6$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------19.
+    \item $f(x)=\sin\left(x + \dfrac{\pi}{4} \right)$\\\\
+    \begin{center}
+	\begin{tikzpicture}[xscale=0.08, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 175,xmin=-4,ymax=1,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.3,step=10, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=0:175,samples=100] plot(\x, {sin(\x + (pi/4))});
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\sin\left(x + \dfrac{\pi}{4} \right)$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------20.
+    \item $f(x)=\cos \left( x - \dfrac{\pi}{3} \right)$\\\\
+    \begin{center}
+	\begin{tikzpicture}[xscale=0.08, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 175,xmin=-4,ymax=1,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.3,step=10, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=0:175,samples=100] plot(\x, {cos(\x - (pi/3))});
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\cos \left( x - \dfrac{\pi}{3} \right)$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+    %--------------------21.
+    \item $f(x) = \tan \dfrac{1}{2} x$\\\\
+    \begin{center}
+	\begin{tikzpicture}[xscale=0.08, draw opacity = .6]
+	    % abscisa y ordenada
+	    \tkzInit[xmax= 75,xmin=-4,ymax=1,ymin=-1]
+	    \tiny\tkzLabelXY[opacity=0.3,step=10, orig=false]
+	    % label x, f(x)
+	    \tkzDrawX[opacity= .6,label=x,right=0.3]
+	    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+	    %dominio y función
+	    \draw [domain=0:70,samples=100] plot(\x, {tan(\x - (pi/3))});
+	    \tkzText[above,opacity=0.6](3.3,3){\tiny $f(x)=\tan \dfrac{1}{2} x$}
+	\end{tikzpicture}
+    \end{center} 
+    \vspace{.5cm}
+
+
 \end{enumerate}
