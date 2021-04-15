@@ -379,8 +379,8 @@
 
 	%----------b.
 	\item Está definida por $$f(x)=\left\{\begin{array}{rcl} 
-				    2&si&0\leq x < 1 \; o \; 2 \leq x < 3\\
-				    \\  0&si& 1\leq x < 2 \; ó \; 3\leq x \leq 4\\
+				    2&si&0\leq x < 1 \; y \; 2 \leq x < 3\\
+				    \\  0&si& 1\leq x < 2 \; y \; 3\leq x \leq 4\\
 				    \end{array}\right.$$\\\\
 
     \end{enumerate}
@@ -389,13 +389,13 @@
     \item 
     \begin{enumerate}[\bfseries a.]
 
-	%----------(a)
+	%----------a.
 	\item Similar al ejercicio anterior se tiene que la formula 
 	$$f(x)= \left\{ \begin{array}{rcl}
 		x+2&si& 0 \leq x \leq 2 \\
-		\\ 1/2x+5/7&si& 0\leq 2 \leq 5 \\ \end{array}\right.$$\\\\
+		\\ 1/2x+5/7&si& 0\leq x \leq 2 \\ \end{array}\right.$$\\\\
 
-	%----------(b)
+	%----------b.
 	\item Se tiene 
 	$$f(x)=\left\{\begin{array}{rcl} 
 		-3x - 3&si&-1\leq x \leq 0\\
@@ -404,6 +404,329 @@
     \end{enumerate}
 
     %--------------------31.
+    \item 
+    \begin{enumerate}[\bfseries a.]
+
+	%----------a.
+	\item  
+	$$f(x)= \left\{ \begin{array}{rcl}
+		x+2&si& -1 \leq x < 0 \\
+		\\ 1&si& 0 < x \leq 1 \\ 
+		\\ -2x + 2&si&1 \leq x \leq 3\\
+		\end{array}\right.$$\\\\
+	
+	%----------b.
+	\item Sea $(a,b)$ y $(c,d)$ por lo tanto por capitulo $4$ de spivak $f(x)=\dfrac{d-b}{c-a}(x-a)+b$ entonces $(-2,-1)$ y $(0,0)$ así $f(x)=\dfrac{0-1}{0+2}(x+2) + 0 \quad \Longrightarrow \quad f(x) = -\dfrac{1}{2}x - 2$ \\\\
+	Luego $f(x)=-2x+2$ y finalmente $f(x)=-1$ de donde,
+	$$f(x)= \left\{ \begin{array}{rcl}
+		- \dfrac{1}{2}x -2&si& -2 \leq x \leq 0 \\
+		\\ 2x+2&si& 0 < x \leq 1 \\ 
+		\\ -1&si&1 < x \leq 3\\
+		\end{array}\right.$$\\\\
+    \end{enumerate}
+
+    %--------------------32.
+    \item 
+    \begin{enumerate}[\bfseries a.]
+
+	%----------a.
+	\item 
+	$$f(x)= \left\{ \begin{array}{rcl}
+		0&si& 0 \leq x \leq \dfrac{T}{2} \\\\
+		\\ \dfrac{2x}{T} - 1&si& \dfrac{T}{2}< x \leq T \\\\ 
+		\end{array}\right.$$\\\\
+
+	%----------b.
+	\item  
+	$$f(x)= \left\{ \begin{array}{rcl}
+		A&si& \dfrac{T}{2} \leq x < T \quad y \quad T \leq x < \dfrac{3T}{2}\\\\
+		\\ -A&si&\dfrac{T}{2} \leq x < T \quad y \quad \dfrac{3T}{2} \leq x \leq 2T \\\\
+		\end{array}\right.$$\\\\
+
+    \end{enumerate}
+
+Las funciones mayor entero y menor entero.\\\\
+
+    %--------------------33.
+    \item Para qué valores de $x$ es 
+    \begin{enumerate}[\bfseries a.]
+	\item $[x]=0$\\\\
+	    respuesta.-\; Para $0\leq x < 1$\\\\
+	\item $[x] =0$\\\\
+	    Respuesta.-\; Para $-1 < x \leq 0$\\\\
+    \end{enumerate}
+
+    %--------------------34.
+    \item ¿Cuáles valores $x$ de números reales satisfacen la ecuación $[x] = [x]$?\\\\
+	Respuesta.-\; Sólo el $0$.\\\\
+
+    %--------------------35.
+    \item ¿Es cierto que $[-x] = -[x]$ para todo número real $x$? Justifique su respuesta.\\\\
+	Respuesta.-\; Es cierto siempre y cuando sea $x$ un entero. Ya que si $x\in \mathbb{Z}$ entonces $x=n$ para algunos $n\in \mathbb{Z}$, por lo tanto $[x]=n$ y $-x=-n \Longrightarrow [-x] = n \Longrightarrow [-x] = -[x]$. Por otro lado sea $x \notin \mathbb{Z}$ y $[x]=n$ entonces  $n\leq x < n+1 \Longrightarrow -n-1<-x<-n \Longrightarrow [-x] = -n-1 = -[x] - 1$\\\\
+
+    %--------------------36.
+	\item Grafique la función 
+		$$f(x) = \left\{\begin{array}{cl}
+			[x],&x\leq 0\\
+			 x,&x<0\\
+			\end{array}\right.$$ 
+	    ¿Por qué $f(x)$ se donomina parte entera de $x$?\\\\
+	    Respuesta.-\; Se denomia porque hace corresponder el número inmediato anterior.\\\\
+
+    Funciones crecientes y funciones decrecientes.\\\\
+    Grafique las funciones en los ejercicios 37 a 46. Si tiene simetrías, ¿Qué tipo de simetría tienen? Especifique los intervalos en os que la función es creciente y los intervalos donde la función es decreciente.\\\\ 
+
+    %--------------------37
+    \item $y=-x^3$
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-2,ymax=2,ymin=-2.2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-1.3:1.3,thick,gray] plot(\x,{-\x^3});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; Tiene simetría impar y el intervalo donde decrece esta dado por $(-\infty,\infty)$\\\\
+
+    %--------------------38.
+    \item $y=-\dfrac{1}{x^2}$\\\\
+	Respuesta.-\; Tiene simetría par y esta dado por lo el intervalo decreciente de $-\infty<x<0$ y por el intervalo creciente $0<x<\infty$
+
+    %--------------------39.
+    \item $y=-\dfrac{1}{x}$\\\\
+	Respuesta.-\; Tiene simetría impar y viene dado por los intervalos crecientes $-\infty < x < 0$  y $0<x<\infty$\\\\
+
+    %--------------------40.
+    \item $y=\dfrac{1}{|x|}$\\\\
+	Respuesta.-\; Tiene simetría par y viene dado por el intervalo creciente $-\infty<x<0$ y el intervalo decreciente $0<x<\infty$\\\\
+
+    %--------------------41.
+    \item $y=\sqrt{|x|}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-2,ymax=2,ymin=0]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:2,thick,gray] plot(\x,{sqrt(abs(\x))});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; Tiene simetría par y esta dado por el intervalo  decreciente  $-\infty < x \leq 0$ y el intervalo creciente $0\leq x < \infty$\\\\
+
+    %--------------------42.
+    \item $y=\sqrt{-x}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-2,ymax=2,ymin=0]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:0,thick,gray] plot(\x,{sqrt(-\x)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.- No es ni par ni impar y viene dado por el intervalo decreciente $-\infty < x \leq 0$\\\\
+
+    %-------------------43.
+    \item $y=x^3/8$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 3,xmin=-3,ymax=2,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2.5:2.5,thick,gray] plot(\x,{\x^3/8});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; Tiene simetría impar y viene dado por el intervalo creciente $-\infty < x < \infty$\\\\
+
+    %---------------------44.
+    \item $y=-4\sqrt{x}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=1,ymin=-4]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:1,thick,gray] plot(\x,{-4*sqrt(\x)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; No es ni par ni impar y viene dado por el intervalo $0\leq x < \infty$\\\\
+
+    %--------------------45.
+    \item $y=-x^{3/2}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=1,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-1:1,thick,gray] plot(\x,{-(\x^(3/2))});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; Tiene simetría impar y viene dado por el intervalo decreciente $-\infty < x < \infty$\\\\
+
+    %---------------------46.
+    \item $y=(-x)^{2/3}$\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=1,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-1:1,thick,gray] plot(\x,{\x^(2/3)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Respuesta.-\; La simetría es impar y viene dado por el intervalo creciente $-\infty < x < \infty$\\\\
+
+    Funciones pares y funciones impares \\\\
+    En los ejercicios $47$ a $58$, indique si la función es par, impar o de ninguno de estos tipos. Justifique su respuesta.\\\\
+
+    %--------------------47.
+    \item $f(x)=3$\\\\
+	Respuesta.-\; Sea $f(-x)=3=f(x)$ entonces decimos que la función es par.\\\\
+
+    %--------------------48.
+    \item $f(x)=x^{-5}$\\\\
+	Respuesta.-\; Sea $f(-x)=(-x)^{-5} = -\left(x^{-5}\right)=-f(x)$, por lo tanto la función es impar.\\\\
+
+    %--------------------49.
+    \item $f(x)=x^2 + 1$\\\\
+	Respuesta.-\; Sea $f(-x)=(-x)^2 + 1 = x^2 + 1 = f(x)$, de donde se tiene que la función es par.\\\\
+
+    %--------------------50.
+    \item $f(x)=x^2 + x$\\\\
+	Respuesta.-\; Sea $f(-x)=(-x)^2 + (-x) = x^2 - x$ de donde la función no es par ni impar.\\\\
+
+    %--------------------51.
+    \item $g(x)=x^3  + x$\\\\
+	Respuesta.-\; Sea $f(-x) = (-x)^3 + (-x) = -(x^3 + x) = -f(x)$ por lo tanto la función es impar.\\\\
+
+    %--------------------52.
+    \item $g(x)=x^4 + 3x^2 - 1$\\\\
+	Respuesta.-\; Sea $g(-x) = (-x)^4 + 3(-x)^2 - 1 = g(x)$ por lo tanto la función es par.\\\\
+
+    %--------------------53.
+    \item $g(x)=\dfrac{1}{x^2-1}$\\\\
+	Respuesta.-\; Sea $g(-x)=\dfrac{1}{(-x)^2 - 1} = g(x)$ por lo tanto la función es par.\\\\
+
+    %--------------------54.
+    \item $g(x)=\dfrac{x}{x^2 - 1}$\\\\
+	Respuesta.-\; Sea $g(-x)=\dfrac{-x}{(-x)^2 - 1} = - \dfrac{x}{x^2 - 1} = -g(x)$ de donde la función es impar.\\\\
+
+    %--------------------55.
+    \item $h(t)=\dfrac{1}{t-1}$\\\\
+	Respuesta.-\; Sea $h(-t)=\dfrac{1}{-t-1}$ entonces la función no es par ni impar.\\\\
+
+    %--------------------56.
+    \item $h(t)=|t^3|$\\\\
+	Respuesta.-\; Sea $h(-t)=|(-t)^3| = |t^3| = h(t)$ por lo tanto la función es par.\\\\
+
+    %--------------------57.
+    \item $h(t)=2t+1$\\\\
+	Respuesta.-\; Sea $h(-t) = 2(-t) + 1$ entonces la función no es ni par ni impar.\\\\
+
+    %--------------------58.
+    \item $h(t)=2|t|+1$\\\\
+	Respuesta.-\; Sea $h(-t)=2|-t| + 1 = 2t + 1 = h(t)$ entonces la función es par.\\\\
+
+    Teoría y ejemplos\\\\
+
+    %--------------------59.
+    \item La variable $s$ es proporcional a $t$, y $s=25$ cuando $t=75$. Determine $t$ cuando $s=60.$\\\\
+	Respuesta.-\; Sea $\dfrac{s}{r}$ entonces $\dfrac{25}{75}=\dfrac{60}{x} \quad \Rightarrow \quad \dfrac{1}{3} = \dfrac{60}{x} \quad \Rightarrow \quad x=180$\\\\ 
+
+    %--------------------60.
+    \item Energía cinética. La energía cinética $K$ de una masa es proprocional al cuadrado de su velocidad $v$. Si $K=12,960$ joules, cuando $v=18$ m/s, ¿Cuál es el valor de $K$ cuando $v=10$ m/s?.\\\\
+	Respuesta.-\; Similar al anterior ejercicio se tiene $\dfrac{K}{v^2} = \dfrac{12,960}{18^2} = \dfrac{K}{10^2}$ entonces $K=4000$.\\\\
+
+    %--------------------61.
+    \item Las variables $r$ y $s$ son inversamente proporcional, mientras que $r=6$ cuando $s=4$. Determine $s$ cuando $r=10$.\\\\
+	Respuesta.-\; Tenemos que $6\cdot 4 = s \cdot 10$ entonces queda que $s = 2.4$.\\\\
+
+    %--------------------62.
+    \item Ley de Boyle. La ley de Boyle establece que el volumen $V$ de un gas, a temperatura constante, aumenta cuando la presión $P$ disminuye, de manera que $V$ y $P$ son inversamente proporcionales. Si $P = 14.7 lb/in^2$ cuando $V = 1000 in^3$, entonces ¿cuál es el valor de $V$ cuando $P = 23.4 lbs/in^2$?.\\\\
+	Respuesta.-\; Sea $V\cdot P = V^{'} \cdot P^{'}$ entonces $14.7 \cdot 1000 = V \cdot 23.4$ y por lo tanto $V=628.2 in^3$.\\\\
+
+    %--------------------63.
+    \item Una caja sin tapa se construye a partir de una pieza rectangular de cartón, cuyas dimensiones son $14$ por $22$ pulgadas (in). A la pieza de cartón se le cortan cuadrados de lado $x$ en cada esquina y luego se doblan hacia arriba los lados, como en la figura. Exprese el volumen $V$ de la caja como una función de $x$.\\\\
+	Respuesta.-\; El volumen es dado por $V=L\cdot a\cdot h$ luego $h=x,\qquad a=14-2x, \qquad L=22-2x$ por lo tanto $$V(x)=(22-2x)(14-2x)\cdot x \quad \Longrightarrow \quad V(x)=4x^3 - 72x^2 + 308x$$\\\\
+
+    %--------------------64.
+    \item La siguiente figura muestra un rectángulo inscrito en un triángulo rectángulo isósceles, cuya hipotenusa tiene una longitud de dos unidades.
+    \begin{enumerate}[\bfseries a.]
+	
+	%----------a.
+	\item Exprese la coordenada de $P$ en términos de $x$. (Podría iniciar escribiendo una ecuación para la recta $AB$).\\\\
+	    Respuesta.-\; Sea $y=mx+b$ luego en el punto $B$, se tiene la intersección de ambas rectas que forman un ángulo de $90^{°}$, así que, el ángulo que tiene que tener el punto $A$ es de $45^{°}$ o bien $m=-1$ por lo tanto $y=-x+b$ o bien m=-1 ya que la recta va hacia abajo.\\\\
+
+	%----------b.
+	\item Exprese el área del rectángulo en términos de $x$.\\\\
+	    Respuesta.-\; El área de un rectángulo es $b\cdot a$ de donde $area = 2x \cdot y = 2x(b-x)$.\\\\
+
+    \end{enumerate}
+
+    En los ejercicios 65 y 66 relacione cada ecuación con su gráfica. No utilice un dispositivo para graficar y dé razones que justifiquen su respuesta.\\\\
+
+    %--------------------65.
+    \item  
+    \begin{enumerate}[\bfseries a.]
+	
+	%----------a.
+	\item $y=x^4 \quad \Rightarrow \quad h$\\\\
+
+	%----------b.
+	\item $y=x^7 \quad  \Rightarrow \quad f$\\\\
+
+	%----------c.
+	\item $y=x^10 \quad \Rightarrow \quad g$\\\\
+
+    \end{enumerate}
+
+    %--------------------66.
+    \item
+    \begin{enumerate}[\bfseries a.]
+	
+	%----------a.
+	\item $y=5x \quad \Rightarrow \quad f$.\\\\
+
+	%----------b.
+	\item $y=5x \quad \Rightarrow \quad f$.\\\\
+
+	%----------c.
+	\item $y=x^5 \quad \Rightarrow \quad h$.\\\\
+
+    \end{enumerate}
+
+    %--------------------67.
     \item 
 
 \end{enumerate}
