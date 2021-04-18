@@ -1,0 +1,152 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica IV}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & IV.\\ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+\section*{\center Soluciones}
+
+\begin{enumerate}[\Large\bfseries 1.]
+    
+%-------------------1.
+\item Sea el triángulo $ABC$, como sigue 
+
+\begin{center}
+    \begin{tikzpicture}
+	\draw(0,0)--(6,0); 
+	\draw(1,0)node[below]{$A$}--(3,3)node[above]{$C$}--(5,0)node[below]{$B$}; 
+	\draw [color=black](40:.8cm) node[rotate=0] {$\widehat{e}$};
+	\draw [red!50!black,very thick](0:.6cm) arc (180:50:.4cm);
+	\draw [color=black](8:5.3cm) node[rotate=0] {$\widehat{f}$};
+	\draw [red!50!black,very thick](4:4.8cm) arc (115:0:.4cm);
+    \end{tikzpicture}
+\end{center}
+
+    Como $\widehat{e}$ y $C\widehat{A}B$ son adyacentes y están bajo el mismo semirecta entonces: $$\widehat{e} + C\widehat{A}B = 180^{\circ},$$ de igual forma se concluye que $$C\widehat{B}A + \widehat{f} = 180^{\circ}$$ o que implica que $\widehat{e} + C\widehat{A}B = C\widehat{B}A + \widehat{f} \qquad (1)$, luego por hipótesis $\widehat{e} = \widehat{f}$ entonces por $(1)$ tenemos que $$C\widehat{A}B = C\widehat{B}A$$ Por lo tanto, el triángulo $ABC$ es isosceles de base $AB$\\\\
+
+%--------------------2.
+\item 
+\begin{enumerate}[\bfseries a)]
+    
+    %----------a)
+    \item $5,8,3,10$\\\\
+
+    %----------b)
+    \item $7,6,4,2,9,1$\\\\
+
+    %----------c)
+    \item $1,2,3,5,6,7,8,9,10$\\\\
+
+\end{enumerate}
+
+%--------------------3.
+\item Por $TAE$ es necesario: $$A\widehat{C}E > B\widehat{A}C, A\widehat{B}C$$ Como por hipótesis $$A\widehat{B}C < A\widehat{C}E < A \widehat{B}D$$ Que implica que $A\widehat{B}C< A\widehat{B}D$\\\\ 
+
+%--------------------4.
+\item Dado el triángulo $ABC$ 
+\begin{center}
+    \begin{tikzpicture}
+	\draw(0,0)node[below]{$A$}--(2,0)node[below]{$B$}--(2,2)node[above]{$C$}--(0,0);
+    \end{tikzpicture}
+\end{center}
+Sea $\widehat{A}+\widehat{B}+\widehat{C} = 180^{\circ}$. Como $\widehat{B} = 90^{\circ}$, entonces $widehat{A},\widehat{C} < 90^{\circ}$. Luego el ángulo externo a $\widehat{A}$ y $\widehat{C} > 90^{\circ}$ ya que son suplementarios.\\\\
+
+%--------------------5.
+\item Notemos que $A\widehat{D}E$ es un ángulo externo al triángulo $DBC$ y por $TAE$ se tiene: $$A\widehat{D}E > D\widehat{B}C, D\widehat{C}B \qquad (1)$$ De la misma manera, $A\widehat{E}C$ es externo a $\triangle ADE$ y una vez más por $TAE$:
+$$A\widehat{E}C = A\widehat{D}E \qquad (2),$$ luego por $(2)$ y $(1)$ se tiene que $A\widehat{E}C > D\widehat{B}C$.\\\\ 
+
+%--------------------6.
+\item El ángulo $E\widehat{C}D > \widehat{B}, \widehat{A}$ por $TAE$. Como $\triangle ABC = \triangle ECD$ así $E\widehat{C}D=B\widehat{C}A,$ entonces $\overline{AC} = \overline{EC}$ por el teorema de desigualdad triangular tenemos que: $$\overline{AC} + \overline{CB} \geq \overline{AB},$$ como $\overline{AC} = \overline{EC}$ y $\overline{CB} = \overline{CD}$ entonces $$\overline{EC} + \overline{CD} > \overline{AB},$$ luego $\overline{AD} = \overline{AC} + \overline{CD}$ se tiene $$\overline{AD} = \overline{EC} + \overline{CD} > \overline{AB}$$ que implica que $\overline{AD} > \overline{AB}$\\\\
+
+%--------------------7.
+\item Simplemente debemos trazar el segmento $AC$ e introducirlo en  $\triangle ADC = \triangle ABC$ según el criterio del catéto de hipotenusa que implica que $AD = BC$.\\\\
+
+%--------------------8.
+\item Los triángulos serán congruentes con el caso del caso LAA o con el cateto opuesto.\\\\
+
+%--------------------9.
+\item 
+\begin{enumerate}[\bfseries a)]
+    
+    %----------a)
+    \item Si son congruentes ya que los ángulos lo son.\\\\ 
+
+    %----------b)
+    \item El lado $AB$.\\\\
+
+    %----------c)
+    \item El lado $AC$\\\\
+
+\end{enumerate}
+
+%--------------------10.
+\item 
+\begin{enumerate}[\bfseries a)]
+    
+    %----------a)
+    \item No son congruentes.\\\\
+
+    %----------b)
+    \item El lado $AB$.\\\\
+
+    %----------c)
+    \item El lado $AC$\\\\
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+\end{document}

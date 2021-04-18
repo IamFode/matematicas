@@ -1404,11 +1404,20 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     %--------------------2.
     \item Dar un ejemplo de función escalonada $s$ definida en el intervalo cerrado $[0,5]$, que tenga las siguientes propiedades $\displaystyle\int_{0}^{2} s(x) dx = 5,\; \int_{0}^{5}s(x) dx = 2$\\\\
 	Respuesta.-\; Existen infinitas funciones escalonadas que deben cumplir lo siguiente: 
-	$$\displaystyle\int_{2}^{5} s(x) dx = \int_{0}^{5} s(x) dx - \int_{0}^{2} s(x) dx=-3$$
+	$$\displaystyle\int_{2}^{5} s(x) dx = \int_{0}^{5} s(x) dx - \int_{0}^{2} s(x) dx=-3$$\\\\
 
     %--------------------3.
-    \item Probar que $\displaystyle\int_{a}^{b} [x] dx + \int_{a}^{b}[-x] dx = a - b$\\\\
-	Demostración.-\;
+    \item Probar que $\displaystyle\int_{a}^{b} [x] \; dx + \int_{a}^{b}[-x] \; dx = a - b$\\\\
+	Demostración.-\; Por propiedad de parte entera se tiene que $[-x]=-[x]-1$ si $x$ no es entero. Entonces $\displaystyle\int_{a}^{b} [x] \; dx + \int_{a}^{b} -[x]-1 \; dx$ luego por la propiedad aditiva $\displaystyle\int_{a}^{b} -1 \; dx$, de donde por la propiedad dilatación $\displaystyle\int_{b}^{a} 1 \; dx$ y por lo tanto $a-b$.\\\\ 
 
+    %--------------------4.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Si $n$ es un entero positivo, demostrar que $\displaystyle\int_{0}^{n} [t] \; dt = n(n-1)/2$.\\\\
+	    Demostración.-\; Según la definición de la función de número entero mayor, $[t]$ es constante en los subintervalos abiertos, por lo que $[t]=k-1$ si $k-1<t<k$ entonces  $$\displaystyle\int_{0}^{n} = \sum_{k=1}^{n} (k-1)(k-(k-1)) = \sum_{k=1}^{n} (k-1)$$ Luego sabemos que $\sum\limits_{k=1}^{n} k = \dfrac{n^2}{2}+\dfrac{n}{2}$ por lo tanto $\displaystyle\int_{0}^{n}=\dfrac{n(n-1)}{2}$.\\\\
+
+    \end{enumerate}
 
 \end{enumerate}

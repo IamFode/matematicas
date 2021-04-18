@@ -1,1 +1,135 @@
 \chapter{Gráficas}
+
+\textbf{NOTA:} Siempre que se habla de un intervalo $(a,b)$, el número $a$ es menor que el $b.$\\\\
+
+    %--------------------ejemplo
+    \begin{ejem}
+	Hallar la función $f$ cuya gráfica pasa por $(a,b)$ y $(c,d)$. Esto equivale a decir que $f(a)=b$ y $f(c)=d.$\\\\
+	    Respuesta.-\; Si $f$ ha de ser de la forma $f(x)=\alpha x + \beta$, entonces se debe tener $$\alpha a + \beta = b,$$ $$\alpha c + \beta = d$$
+	    por lo tanto, $\alpha = (d-b)/(c-a)$ y $\beta = b - \left[()d-b/c-a\right]a$, de manera que:
+	    $$f(x)=\dfrac{d-b}{c-a}x + b - \dfrac{d-b}{c-a}a = \dfrac{d-b}{c-a}(x-a) +b, \qquad si \; a\neq c$$\\
+     \end{ejem}
+
+\section{Problemas}
+
+\begin{enumerate}[\large\bfseries 1.]
+
+    %--------------------1.
+    \item Indíquse sobre una recta el conjunto de todas las $x$ que satisfacen las siguientes condiciones. Dar también un nombre a cada conjunto, utilizando la notación para los intervalos ( en algunos casos será necesario también el signo $\cup$).\\\\
+    \begin{enumerate}[\bfseries (i)]
+	
+	%----------(i)
+	\item $|x-3| < 1$\\\\
+	    Respuesta.-\; $-1< x-3 <1 \quad \Longrightarrow \quad 2 < x < 4$\\
+
+	%----------(ii)
+	\item $|x-3|\leq 1$\\\\
+	    Respuesta.-\; $2 \leq x \leq 4$\\
+
+	%----------(iii)
+	\item $|x-a| < \epsilon$\\\\
+	    Respuesta.-\; $a-\epsilon < x < a+e$\\\\
+	
+	%----------(iv)
+	\item $|x^2 - 1| < \dfrac{1}{2}$\\\\
+	    Respuesta.-\; $\pm\sqrt{\dfrac{1}{2}} < x < \pm \sqrt{\dfrac{3}{2}}$\\\\
+
+	%----------(v)
+	\item $\dfrac{1}{1+x^2} \geq \dfrac{1}{5}$\\\\
+	    Respuesta.-\; $x^2-4\geq 0 \quad \Longrightarrow \quad x\geq 2 \lor x\leq -2$\\\\
+
+	%----------(vi)
+	\item $\dfrac{1}{1+x^2} \leq a$\\\\
+	    Respuesta.-\; $|x| \geq \pm \sqrt{\frac{1}{a}-1}$\\\\
+
+	%----------(vii)
+	\item $x^2+1 \geq 2$\\\\
+	    Respuesta.-\; $x\geq \pm 1$\\\\
+
+	%----------(viii)
+	\item $(x+1)(x-1)(x-2)>0$\\\\
+	    Respuesta.-\; $x+1\geq 0 > \land x-1 > 0  \land x-2>0 \quad \Longrightarrow \quad -1<x<1 \cup x>2$\\\\
+
+    \end{enumerate}
+
+    %--------------------2.
+    \item Existe un procedimiento muy útil para descubrir los puntos del intervalo cerrado $[a,b]$ (Suponiendo como siempre que es $a<b$)
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a).
+	\item Consideremos en primer lugar el intervalo $[0,b]$, para $b>0$. Demostrar que si $x$ está en $[0,b]$,entonces $x=tb$ para cierto $t$ con $0\leq t \leq 1$ ¿Cómo se puede interpretar el número $t$? ¿Cuál es el punto medio del intervalo $[0,b]$?\\\\
+	    Demostración.-\; Sea $0\leq x \leq b$ entonces $0\leq \dfrac{x}{b} \leq 1$, luego sabemos que $0\leq t \leq 1$ por lo tanto $x=\dfrac{x}{b}\cdot b$. Ya que $t=\dfrac{x}{b}$, $t$ representa la razón en la que $x$ divide el intervalo $[0,b]$. Por último el punto medio del intervalo viene dado por $b/2$.\\\\
+
+	%----------(b).
+	\item Demostrar ahora que si $x$ está en $[a,b]$, entonces $x=(1-t)a+tb$ para un cierto $t$ con $0\leq t \leq 1.$ Ayuda: esta expresión se puede poner también en la forma $a+t(b-a).$ ¿Cuál es el punto medio del intervalo $[a,b]$? ¿Cuál es el punto que está a $1/3$ de camino de $a$ a $b$?\\\\
+	    Demostración.-\; Sea $a\leq x \leq b$ entonces $0\leq x-a \leq b-a$, por la parte $(a)$ se tiene  $x-a=t(b-a)$ de donde $x=a+t(b-a)$\\
+	    Luego el punto media del intervalor viene dado por $a+\dfrac{b-a}{2}=\dfrac{a+b}{2}$ y la tercera parte viene dado por $a+\dfrac{b-a}{2}=\dfrac{2}{3}a + \dfrac{1}{3}b.$\\\\
+
+	%----------(c)
+	\item Demostrar a la inversa que si $0\leq t \leq 1$, entonces $x=(1-t)a+tb$ esta en $[a,b]$\\\\
+	    Demostración.-\; Sea $0\leq t \leq 1$ entonces $a\leq bt\leq b$ y $0\leq at\leq a$ entonces $0\leq bt-at\leq b-a$ de donde $a\leq bt-at+a \leq b$ así queda demostrado que $a\leq (1-t)a + tb \leq b$.\\\\
+
+	%----------(d)
+	\item Los puntos del intervalo abierto $(a,b)$, entonces $x=(1-t)a + tb$ para $0<t<1.$\\\\
+	    Demostración.-\; la demostración es similar al inciso $(b)$.\\\\
+
+    \end{enumerate}
+    
+    %--------------------3.
+    \item Dibujar el conjunto de todos los puntos $(x,y)$ que satisface las siguientes condiciones. (En la mayor parte de los casos la imagen será una parte apreciable del plano y no simplemente una recta o una curva.)\\\\
+
+    %--------------------4.
+    \item Dibujar el conjunto de los puntos $(x,y)$ que satisfacen las siguientes condiciones:\\\\
+
+    %--------------------5.
+    \item Dibujar el conjunto de los puntos $(x,y)$ que satisfacen las siguientes condiciones:\\\\
+
+    %--------------------6.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Demostrar que la recta que pasa por $(a,b)$ y de pendiente $m$ es la gráfica de la función $f(x)=m(x-a)+b.$ Esta fórmula, conocida como forma punto-pendiente, es mucho más conveniente que la expresión equivalente $f(x)=mx+(b-ma)$; con la formula punto-pendiente queda inmediatamente claro que la pendiente es $m$ y que el valor de $f$ en $a$ es $b$.\\\\
+	    Demostración.-\; Obsérvese simplemente que la gráfica de $f(x)=m(x-a)+b=mx+(b-ma)$ es una recta de pendiente $m$, que pasa por el punto $(a,b)$.\\\\
+
+	%----------(b)
+	\item Para $a\neq c$, demostrar que la recta que pasa por $(a,b)$ y $(c,d)$ es la gráfica de la función $$f(x)=\dfrac{d-b}{c-a}(x-a)+b$$
+	    Demostración.-\; Se sabe que la pendiente esta dado por $\dfrac{d-b}{c-a}$  ya que $a\neq c$ y por la parte $(a)$ queda demostrado la proposición.\\\\
+	
+	%----------(c)
+	\item ¿Cuáles son las condiciones para que las gráficas de $f(x)=mx+b$ y $g(x)=m^{'} x + b^{'}$ sean rectas paralelas?\\\\
+	    Respuesta.-\; Cuando $m=m^{'}$ y $b\neq b^{'}$.\\\\
+
+    \end{enumerate}
+
+    %--------------------7.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Si $A$, $B$ y $C$, siendo $A$ y $B$ distintos de $0$, son números cualesquiera, demostrar que el conjunto de todos los $(x,y)$ que satisfacen $Ax+By+C=0$ es una recta (que puede ser vertical). Indicación: Aclarar primero cuándo se tiene una recta vertical.\\\\
+	    Demostración.-\; Si $B=0$ y $A\neq 0$, entonces el conjunto es la recta vertical formada por todos los puntos $(x,y)$ con $x=-\dfrac{C}{A}$. Si $B\neq 0$, el conjunto es la gráfica de $f(x)=(-A/B)x + (-C/B)$.\\\\ 
+
+	%----------(b)
+	\item Demostrar la inversa que toda recta, incluyendo las verticales, puede ser descrita como el conjunto de todos los $(x,y)$ que satisfacen $Ax + By + C =0$.\\\\
+	    Demostración.-\; Los puntos $(x,y)$ de la vertical con $x=a$ son precisamente los que satisfacen $I\cdot x + 0\cdot y + (-a) = 0$. Los puntos $(x,y)$ de la gráfica de $f(x)=mx+b$ son precisamente los que satisfacen $(-m)x + 1\cdot y + (-b)=0$.\\\\
+    \end{enumerate}
+
+    %--------------------8.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Demostrar que las gráficas de las funciones $$f(x)=mx+b$$ $$g(x)=nx+c,$$ son perpendiculares si $mn=-1$, calculando los cuadrados de las longitudes de los lados del triángulo de la figura 29. (¿Por qué no se restringe la generalidad al considerar este caso especial en que las rectas se cortan en el origen?).\\\\
+	    Demostración.-\; Sea $\sqrt{(1-1)^2+(n-m)^2} = \sqrt{(0-1)^2+(0-m)^2} + \sqrt{(1-0)^2+(n-0)^2}$ entonces $-2mn=2 \quad \Rightarrow \quad mn=-1$. Esto demuestra el resultado cuando $b=c=0$. El caso general se deduce de este caso particualar, ya que la perpendicular depende sólo de la pendiente.\\\\
+
+	%----------(b)
+	\item Demostrar que las dos rectas que consisten en todos los puntos $(x,y)$ que satisfacen las condiciones $$Ax +By +C=0$$ $$A^{'}x + B^{'} y + C^{'} = 0,$$ son perpendiculares si y sólo si $AA^{'} + BB^{'} = 0$.\\\\
+	    Demostración.-\; Si $B\neq 0$ y $B^{'} \neq 0,$ estas rectas son las gráficas de $$f(x)=(-A/B)x - C/B$$ $$f(x)=(-A^{'}/B^{'})x - C/B$$ de modo que, según la parte $(a)$, las rectas son perpendiculares si y sólo si $$\left(\dfrac{A}{B}\right)\cdot \left(\dfrac{A^{'}}{B^{'}}\right)=-1$$ por lo tanto $AA^{'}+BB^{'}=0$. Si $B=0$ y $A\neq 0$, entonces la primera recta es vertical, de modo que la segunda le es perpendicular si y sólo si $A^{'}=0,$ lo cual ocurre exactamente cuando $AA^{'} + BB^{´}=0$ Análogamente para el caso $B^{'}$.\\\\
+
+    \end{enumerate}
+    
+    %--------------------9.
+    \item 
+
+\end{enumerate}

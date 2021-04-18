@@ -1,62 +1,84 @@
-\documentclass[10pt]{article} 						
-\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
-\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
-\parindent = 0cm  %sangria
-\usepackage[T1]{fontenc} %acentos en español
-\usepackage[spanish]{babel} %español capitulos y secciones
-\usepackage{graphicx} %gráficos y figuras.
-%-----------------------------------------%
-\usepackage{multicol}
-\usepackage{titlesec}
-\usepackage[rflt]{floatflt}
-\usepackage{wrapfig} 
-\usepackage{tikz}\usetikzlibrary{shapes.misc}
-\usepackage{tikz,tkz-tab}						
-\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
-calc, shapes, tikzmark}
-\usepackage{tcolorbox, empheq}
-\tcbuselibrary{skins,breakable,listings,theorems}
-\usepackage{xparse}							
-\usepackage{pstricks}							
-\usepackage[Bjornstrup]{fncychap}			
-\usepackage{rotating}
-\usepackage{enumerate}
-\usepackage{booktabs}
-\usepackage{synttree} 
-\usepackage{chngcntr}
-\usepackage{venndiagram}
-\usepackage[all]{xy}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usetikzlibrary{datavisualization.formats.functions}
-\usepackage{marginnote}										
-\usepackage{fancyhdr}
+\chapter{Axiomas de incidencia y orden}
 
-%------------------------------------------
-\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
-\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
-\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
-\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+%----------axioma 1
+\begin{tcolorbox}[colframe=white]
+    \begin{axioma}
+	Cualquiera que sea la recta existen puntos que pertenecen a la recta y puntos que no pertenecen a la recta.
+    \end{axioma}
+\end{tcolorbox}
 
+%----------axioma 2 
+\begin{tcolorbox}[colframe=white]
+    \begin{axioma}
+	Dados dos puntos distintos existe una única recta que los contiene.
+    \end{axioma}
+\end{tcolorbox}
 
-\pagestyle{fancy}
-\fancyhead[R]{Geometría I}
-\fancyhead[L]{Práctica III}
+    %----------proposición 1.1.
+    \begin{proposicion}
+	Dos rectas distintas o no se intersectan o se intersectan en un único punto.\\\\
+	    Demostración.-\; Sean $m,n$ dos rectas distintas, supongamos que $m,n$ se intersectan. Si $P,Q$ son puntos distintos donde $m,n$ se intersectan entonces por axioma 2, existe una única recta que contiene a $P$ y $Q$. Luego $m=n$ contrariamente a lo que supusimos a un principio, por lo tanto $P=Q$.\\\\
+    \end{proposicion}
 
-\begin{document}
-\begin{tabular}{r l }
-Universidad: & \textbf{Mayor de San Ándres.}\\
-Asignatura: & \textbf{Geometría I.}\\
- Práctica: & I.\\ 
-Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
-\end{tabular}
-\begin{flushleft}
-\begin{tikzpicture}
-\draw(0,1)--(16.5,1);
-\end{tikzpicture}
-\end{flushleft}
+%----------axioma 3
+\begin{tcolorbox}[colframe=white]
+    \begin{axioma}
+	Dados tres puntos de una recta, uno y sólo uno de ellos se localiza entre los otros dos.
+    \end{axioma}
+\end{tcolorbox}
 
+%----------definición 1.1.
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Segmento AB]
+	Dados los puntos $A$ y $B$, el segmento $AB$ es el conjunto de puntos que están entre $A$ y $B$, y los puntos $A$ y $B$. Los puntos $A$ y $B$ se dicen extremos del segmento. Se denota con $\overline{AB}$.	
+    \end{def.}
+\end{tcolorbox}
 
+%----------definición 1.2.
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Si $A$ y $B$ son puntos distintos, el conjunto que consiste en los puntos del segmento $AB$ y todos los puntos $C$ tales que $B$ está entre $A$ y $C$, se llama semi-recta de origen $A$ que contiene a $B$, y está representado por $S_{AB}$. El punto A se llama entonces el origen de la semi-recta $S_{AB}$.
+    \end{def.}
+\end{tcolorbox}
+
+    %----------proposición 1.2
+    \begin{proposicion}
+	\begin{enumerate}[\bfseries a)]
+	    \item $S_{AB} \cup S_{BA}$ es la recta $AB$\\\\
+		Demostración.-\; Sea $m$ la recta $AB$, Es claro que $S_{AB} \subset m, \; S_{BA} \subset m;$ luego, $S_{AB} \cup S_{BA} \subset m$\\\\
+	    \item $S_{AB} \cap S_{BA}= \overline{AB}$\\\\
+		Demostración.-\; Por otro lado, si $C \in m$ entonces por axioma $3$, existen 3 posibilidades:
+		\begin{enumerate}[1)]
+		    \item $C$ está entre $A$ y $B$ entonces $C \in \overline{AB} \Rightarrow C\in S_{AB} \Rightarrow S\in S_{AB} \cup S_{BA}$.
+		    \item $A$ está entre $C$ y $B$ entonces $C \in S_{BA} \Rightarrow C \in S_{AB} \cup S_{BA}$.
+		    \item $B$ está entre $A$ y $C$ entonces $C \in S_{AB} \Rightarrow C \in S_{AB} \cup S_{BA}$.
+		\end{enumerate}
+	\end{enumerate}
+	Por lo tanto, $m \subset S_{AB} \cup S_{BA}$. En conclusión de $1$ y $2$, $m=s_{AB} \cup S_{BA}$\\\\
+    \end{proposicion}
+
+%----------axioma 4
+\begin{tcolorbox}[colframe=white]
+    \begin{axioma}
+	Dados dos puntos $A$ y $B$, siempre existen, un punto $C$ entre $A$ y $B$ y un punto $D$ tal que $B$ está entre $A$ y $D$.
+    \end{axioma}
+\end{tcolorbox}
+
+%----------definición 1.3
+\begin{tcolorbox}[colframe=white]
+\begin{def.}
+    Sea $m$ una recta y $A$ un punto tal que $A\notin m.$ El conjunto formado por los puntos de $m$ y por todos los puntos $B$ tales que $A$ y $B$ están en un mismo lado de la recta $m$ es llamado semi-plano determinado por $m$ y conteniendo a $A$.
+\end{def.}
+\end{tcolorbox}
+
+%----------axioma 5 
+\begin{tcolorbox}[colframe=white]
+    \begin{axioma}
+	Una recta $m$ determina exactamente dos semi-planos distintos cuya intersección es la recta $m$.
+    \end{axioma}
+\end{tcolorbox}
+
+\section{Ejercicios}
 
 \begin{enumerate}[\Large\bfseries 1.]
 
@@ -202,4 +224,4 @@ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
     Respuesta.-\; Dados los puntos $A, B, C$ y $D$ de modo que $ABCD$ entonces los segmentos $AC$ y $BD$ tendrán el segmento $BC$ en común ya que en un segmento hay puntos infinitos por lo que $AC$ y $BD$ tienen dos puntos en común pero nunca solo tendrán dos puntos.\\\\
 
 \end{enumerate}
-\end{document}
+

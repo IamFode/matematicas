@@ -24,16 +24,17 @@
 
 %------------------------------------------
 
-\newtheorem{axioma}{\large\textbf{Axioma}}
-\newtheorem{teo}{\textbf{TEOREMA}}[chapter]%entorno para teoremas
-\newtheorem{ejem}{{\textbf{Ejemplo}}}[chapter]%entorno para ejemplos
+\newtheorem{axioma}{\large\textbf{Axioma}}[chapter]
+\newtheorem{teo}{\textbf{Teorema}}[chapter]%entorno para teoremas
+\newtheorem{ejem}{{\textbf{EJEMPLO}}}[chapter]%entorno para ejemplos
 \newtheorem{def.}{\textbf{Definición}}[chapter]%entorno para definiciones
-\newtheorem{post}{\large\textbf{POSTULADO}}[chapter]%entorno de postulados
+\newtheorem{post}{\large\textbf{Postulado}}[chapter]%entorno de postulados
 \newtheorem{col.}{\textbf{Corolario}}[chapter]
-\newtheorem{ej}{\textbf{EJERCICIO}}[chapter]
-\newtheorem{prop}{\textbf{Propiedad}}[chapter]
+\newtheorem{ej}{\textbf{Ejercicio}}[chapter]
+\newtheorem{prop}{\large\textbf{Propiedad}}[part]
 \newtheorem{lema}{\textbf{LEMA}}[chapter]
-\newtheorem{prob}{\textbf{PROBLEMA}}[chapter]
+\newtheorem{prob}{\textbf{problema}}[chapter]
+\newtheorem{proposicion}{\textbf{Proposición}}[chapter]
 
 %--------------------GRÀFICOS--------------------------
 
@@ -47,6 +48,8 @@
 \titleformat*{\paragraph}{\normalsize\bfseries\rmfamily}
 \titleformat*{\subparagraph}{\small\bfseries\rmfamily}
 
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 %------------------------------------------
 
 \renewcommand{\labelenumi}{\Roman{enumi}.}%primer piso II) enumerate

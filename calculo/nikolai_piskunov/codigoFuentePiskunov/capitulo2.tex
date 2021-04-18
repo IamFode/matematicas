@@ -24,4 +24,57 @@
     \end{tcolorbox}
 
 \section{Limite de la función}
+    
+    %-------------------definición 2.3
+    \begin{tcolorbox}[colframe = white]
+	\begin{def.}
+	    Supongamos que la función $y=f(x)$ está definida en determinada vecindad del punto $a$ en ciertos puntos de la misma.\\
+	    La función $y=f(x)$ tiende al límite $b$ $(y\rightarrow b)$ cuando $x$ tienda a $a$ $(x\rightarrow a)$, si para cada número positivo $\epsilon$, por pequeño que éste sea, es posible indicar un número positivo $\delta$ tal que para todos los valores $x$, diferentes de $a$, que satisfacen la desigualdad: $|x-a|<\delta$ , se verificará la desigualdad: $$|f(x)-b|< \epsilon$$ Si $b$ es el límite de la función $f(x)$, cuando $x\rightarrow a$, su notación es: $$\lim_{x \to a} f(x)$$ o bien $f(x)\rightarrow b,$ cuando $x\rightarrow a.$\\
+	    Si la variable $y=f(x)$ tiende a un límite $b$, cuando $x$ tiende a $a$, escribimos: $$\lim_{x to a} f(x) = b$$
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------definición 2.4
+    \begin{tcolorbox}[colframe = white]
+	\begin{def.}
+	    La función $f(x)$ tiende al límite $b$ cuando $x\rightarrow \infty$, si para cualquier número positivo $\epsilon$ arbitrariamente pequeño existe un número positivo $N$ tal que para todos los valores de $x$ que satisfacen la desigualdad $|x| > N$, se cumpla la desigualdad $$|f(x) - b| < \epsilon.$$
+	\end{def.}
+    \end{tcolorbox}
+
+\section{Función que tiende al infinito. Funciones acotadas}
+
+    %--------------------definición 2.5
+    \begin{tcolorbox}[colframe=white]
+	\begin{def.}
+	    La función $f(x)$ tiende al infinito cuando $x \rightarrow a,$ es decir, es una magnitud infinitamente grande cuando $x\rightarrow a,$ si para cualquier número positivo $M$, por grande que sea, existe un valor $\delta > 0$ tal que para todos los valores de $x$ diferentes de $a$ y que satisfacen la condición $|x-a|< \delta$, se cumpla la desigualdad $|f(x)|>M$.\\
+	    Si $f(x)$ tiende al infinito cuando $x \rightarrow a,$ se escribe $$\lim_{x \to a} f(x) = \infty$$
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------definición 2.5
+    \begin{tcolorbox}[colframe=white]
+	\begin{def.}
+	    La función $y=f(x)$ se denomina acotada en el dominio dado de variación del argumento $x$, si existe un número positivo $M$ tal que para todos los valores de $x$ pertenecientes al dominio considerado se cumpla la desigualdad $|f(x)|\leq M.$ Si el número $M$ no existe, se dice que la función $f(x)$ no está acotada en el dominio dado.
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------definición 2.6
+    \begin{tcolorbox}[colframe=white]
+	\begin{def.}
+	    La función $f(x)$ se denomina acotada, cuando $x \to a,$ si existe una vecindad con centro en el punto $a$ en la cual dicha función está acotada.
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------definición 2.7
+    \begin{tcolorbox}[colframe=white]
+	\begin{def.}
+	    La función $y=f(x)$ se denomina acotada, cuando $x \to \infty$, si existe un número $N>0$ tal que para todos los valores de $x$ que satisfacen la desigualdad $|x| > N$, la función $f(x)$ esté acotada.
+	\end{def.}
+    \end{tcolorbox}
+
+    %--------------------teorema 2.2
+    \begin{teo}
+	Si $\displaystyle\lim_{x \to a} f(x) = b,$ siendo $b$ un número finito, la función $f(x)$ está acotada cuando $x\to a$.\\\\
+	    Demostración.-\; Por definición de límite se deduce que para $\epsilon > 0$ existe un número $\delta$ tal que $a-\delta<x<a+\delta$ se cumple la desigualdad $$|f(x) - b| < \epsilon$$ es decir $$|f(x)|<|b|+\epsilon$$.\\\\
+    \end{teo}
 
