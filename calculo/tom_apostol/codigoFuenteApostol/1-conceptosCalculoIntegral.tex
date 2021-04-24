@@ -1381,7 +1381,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 		\\ 2&si&2 \leq x + 1/2 < 3&\Longrightarrow&3/2 \leq x < 5/2\\
 		\\ 3&si &3 \leq x + 1/2 < 4&\Longrightarrow&5/2 \leq x < 7/2 \\
 	    \end{array}\right.$$
-	     entonces por definición $\displaystyle\int_{-1}^{3} \left[x + \dfrac{1}{2}\right] dx = -1\left(-\dfrac{1}{2} + 1\right) + 0 \left( \dfrac{1}{2} + \dfrac{1}{2}\right) + 1\left(\dfrac{3}{2} - \dfrac{1}{2}\right) + 2\left( \dfrac{5}{2} - \dfrac{3}{2}\right) + 3\left( 3 - \dfrac{3}{2}\right) = -1\cdot \dfrac{1}{2} + 0\cdot 1 + 1\cdot 1 + 2\cdot 1 + 3\cdot \dfrac{1}{2} = 4$\\\\
+	     entonces por definición $\displaystyle\int_{-1}^{3} \left[x + \dfrac{1}{2}\right] dx = -1\left(-\dfrac{1}{2} + 1\right) + 0 \left( \dfrac{1}{2} + \dfrac{1}{2}\right) + 1\left(\dfrac{3}{2} - \dfrac{1}{2}\right) + 2\left( \dfrac{5}{2} - \dfrac{3}{2}\right) + 3\left( 3 - \dfrac{5}{2}\right) = -1\cdot \dfrac{1}{2} + 0\cdot 1 + 1\cdot 1 + 2\cdot 1 + 3\cdot \dfrac{1}{2} = 4$\\\\
 	%----------(c)
 	 \item $\displaystyle\int_{-1}^{3} \left([x] + [x + 1/2]\right)$\\\\
 	     Respuesta.-\; Por la propiedad aditiva se tiene $\displaystyle\int_{-1}^{3} [x] dx + \int_{-1}^{3} \left[x + \dfrac{1}{2}\right] dx = 2+4=6$.\\\\  
@@ -1416,7 +1416,109 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	
 	%----------(a)
 	\item Si $n$ es un entero positivo, demostrar que $\displaystyle\int_{0}^{n} [t] \; dt = n(n-1)/2$.\\\\
-	    Demostración.-\; Según la definición de la función de número entero mayor, $[t]$ es constante en los subintervalos abiertos, por lo que $[t]=k-1$ si $k-1<t<k$ entonces  $$\displaystyle\int_{0}^{n} = \sum_{k=1}^{n} (k-1)(k-(k-1)) = \sum_{k=1}^{n} (k-1)$$ Luego sabemos que $\sum\limits_{k=1}^{n} k = \dfrac{n^2}{2}+\dfrac{n}{2}$ por lo tanto $\displaystyle\int_{0}^{n}=\dfrac{n(n-1)}{2}$.\\\\
+	    Demostración.-\; Según la definición de la función de número entero mayor, $[t]$ es constante en los subintervalos abiertos, por lo que $[t]=k-1$ si $k-1<t<k$ entonces  $$\displaystyle\int_{0}^{n} = \sum_{k=1}^{n} (k-1)(k-(k-1)) = \sum_{k=1}^{n} (k-1)$$ Luego sabemos que $\sum\limits_{k=1}^{n} k = \dfrac{n^2}{2}+\dfrac{n}{2}$ por lo tanto $\displaystyle\int_{0}^{n}=\dfrac{n(n-1)}{2}$. \\\\
+	    También se podría demostrar de la siguiente manera.
+	    $$\displaystyle\int_{0}^{n} [t] \; dt = 0\cdot (1-0) + 1\cdot (2-1) + ... + (n-1)\cdot (n-(n-1))=1+2+...+(n-1)=\dfrac{n(n-1)}{2}$$\\\\
+
+	%----------(b)
+	\item Si $f(x)=\displaystyle\int_{0}^{x} [t] \; dt$ para $x\geq 0,$ dibujar la gráfica de $f$ sobre el intervalo $[0,4]$.\\\\
+	    Respuesta.-\; Ya que $x \in \mathbf{R}^+$ la gráfica será continua, pero por motivos prácticos dibujemos puntos en los números enteros del intervalo $[0,4]$
+	    \begin{itemize}
+		\item $f(0)=\displaystyle\int_{0}^{0} [t] \; dt = 0(0-0)=0$
+		\item $f(1)=\displaystyle\int_{0}^{1} [t] \; dt = 0(1-0)=0$
+		\item $f(2)=\displaystyle\int_{0}^{2} [t] \; dt = 0(1-0) + 1(2-1)=1$
+		\item $f(3)=\displaystyle\int_{0}^{3} [t] \; dt = 0(1-0) + 1(2-1) + 2(3-2) = 3$
+		\item $f(4)=\displaystyle\int_{0}^{4} [t] \; dt = 0(1-0) + 1(2-1) + 2(3-2) + 3(4-3) = 6$\\\\
+	    \end{itemize}
+		\begin{center}
+		    \begin{tikzpicture}
+			% abscisa y ordenada
+			\tkzInit[xmax= 4,xmin=0,ymax=6,ymin=0]
+			\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+			% label x, f(x)
+			\tkzDrawX[opacity= .6,label=x,right=0.3]
+			\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+			%funciones
+			\draw(0,0)--(1,0);
+			\draw(1,0)--(2,1);
+			\draw(2,1)--(3,3);
+			\draw(3,3)--(4,6);
+		    \end{tikzpicture}
+		\end{center}
+		\vspace{1cm}
+
+    \end{enumerate}
+
+    %--------------------5.
+    \item
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Demostrar que $\displaystyle\int_{0}^{2} [t^2] \; dt = 5 - \sqrt{2} - \sqrt{3}.$\\\\
+	    Demostración.-\; 
+	    $$\left[t^2\right]=\left\{\begin{array}{rclcl}
+		  0&si&0\leq t^2 < 1&\Rightarrow&0\leq t < 1\\
+		\\1&si&1\leq t^2 < 2&\Rightarrow&1\leq t < \sqrt{2}\\
+		\\2&si&2\leq t^2 < 3&\Rightarrow&\sqrt{2}\leq t < \sqrt{3}\\
+		\\3&si&3\leq t^2 < 4&\Rightarrow&\sqrt{3} \leq t<2\\\\
+	    \end{array}\right.$$
+	    Vemos que la partición esta dada por $P=\lbrace 0,1,\sqrt{2},\sqrt{3},2 \rbrace$ y por lo tanto:
+	    $$\displaystyle\int_{0}^{2} \left[t^2\right] \; dt = \sum\limits_{k=1}^{5} s_k \cdot (x_k - x_{k-1}) = 0(1-0)+1(\sqrt{2}-1) + 2(\sqrt{3}-\sqrt{2}) + 3(2-\sqrt{3})=5 - \sqrt{2} - \sqrt{3}$$\\\\
+	
+	%----------(b)
+	\item Calcular $\displaystyle\int_{-3}^{3} \left[ t^2 \right] \; dt$\\\\
+	    Respuesta.-\; Sea $\displaystyle\int_{-3}^{3} [t^{2}] \ dx = \int_{0}^{3} [t^{2}] \ dx + \int_{-3}^{0} [t^{2}] \ dx = \int_{0}^{3} [t^{2}] \ dx + \int_{0}^{3} [(-t)^{2}] \ dx = 2 \int_{0}^{3} [t^{2}] \ dx$ entonces:\\
+
+	    \begin{tabular}{rcl}
+		$\displaystyle\int_{-3}^{3} \left[t^2\right] \ dt$&$=$&$ \displaystyle2\cdot \int_{0}^{3} \left[t^2\right] \ dt$\\\\
+		&$=$&$\displaystyle2\cdot \left( \int_{0}^{2} \left[t^2\right] \ dt + \int_{2}^{3} \left[t^2\right] \ dt\right)$\\\\
+		&$=$&$ 2\cdot \left(5 - \sqrt{2} - \sqrt{3} + 4(\sqrt{5}-2) + 5(\sqrt{6}-\sqrt{5}) + 6(\sqrt{7} - \sqrt{6}) + 7(\sqrt{8} - \sqrt{7}) + 8(3 - \sqrt{8})\right)$\\\\
+		&$=$&$2\left(21 - 3\sqrt{2} - \sqrt{3} - \sqrt{5} \sqrt{6} - \sqrt{7}\right)$\\\\
+	    \end{tabular}
+
+    \end{enumerate}
+
+    %-------------------6.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%-----------(a)
+	\item Si $n$ es un entero positivo demostrar que $\displaystyle\int_{0}^{n} [t]^2 /; dt = \dfrac{n(n-1)(2n-1)}{6}$\\\\
+	    Demostración.-\; Sea $P=\lbrace 0,1,...,n \rbrace$. Entonces $P$ es una partición de $[0,n]$ y $[t]^2$ es constante en los subintervalos abiertos de $P$. Ademas, $[t]^2=(k-1)^2$ para $k-1<t<k$, entonces 
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\displaystyle\int_{0}^{n} [t]^2 \; dt$&$=$&$\sum\limits_{k=1}^{n}()^2 \cdot (k-(k-1))$\\\\
+		    &$=$&$\sum\limits_{k=1}^{n} (k-1)^2$\\\\
+		    &$=$&$\sum\limits_{n-1}^{k=0} k^2$\\\\
+		    &$=$&$\dfrac{n^3}{3}-\dfrac{n^2}{2}+\dfrac{n}{6}$\\\\
+		    &$=$&$\dfrac{n(n-1)(2n-1)}{6}$\\\\
+		\end{tabular}
+	    \end{center}
+
+	%----------(b)
+	\item Si $f(x)=\displaystyle\int_{0}^{x} [t]^2 \; dt$ para $x\geq 0$, dibujar la gráfica de $f$ en el intervalo $[0,3]$.\\\\
+	    Respuesta.-\; 
+	    \begin{center}
+		\begin{tikzpicture}
+		    % abscisa y ordenada
+		    \tkzInit[xmax= 4,xmin=0,ymax=6,ymin=0]
+		    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		    % label x, f(x)
+		    \tkzDrawX[opacity= .6,label=x,right=0.3]
+		    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		    %funciones
+		    \draw(0,0)--(1,0);
+		    \draw(1,0)--(2,1);
+		    \draw(2,1)--(3,5);
+		\end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	%----------(c)
+	\item Hallar todos los valores de $x>0$ para los que $\displaystyle\int_{0}^{x} [t]^2 \; dt=2(x-1)$\\\\
+	    Respuesta.-\;
+
+
 
     \end{enumerate}
 
