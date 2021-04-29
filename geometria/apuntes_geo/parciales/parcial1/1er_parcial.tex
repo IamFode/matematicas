@@ -1,0 +1,134 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}\usetikzlibrary{shapes.misc}
+\usepackage{tikz,tkz-tab}						
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica III}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Parcial: & I.\\ 
+Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+
+
+    \begin{enumerate}[\Large\bfseries 1.]
+
+	%----------1.
+	\item Muestre que la intersección de $3$ semiplanos es un conjunto convexo.\\\\
+	Demostración.-\; Imagine los semiplanos $S_1$, $S_2$,  $S_3$ y $S_4$ tales que $S_4 = S_1 \cap S_2 \cap S_3$, tomando tres puntos $P_1, P_2$ y $P_3$ pertenecientes a $S_4$ entonces: $P_1, P_2, P_3 \in S_1, S_2, S_3$ Sea $S_1,S_2$ y $S_2$ convexos entonces $P_1, P_2, P_3 in S_1, S_2, S_3$ y por lo tanto pertenece a la intersección, entonces $S_4$ también es convexo.\\\\
+
+	%----------2.
+	\item Dado un segmento $AB$ muestre que existe, y es único, un punto $C$ entre $A$ y $B$ tal que $$\dfrac{\overline{AC}}{\overline{BC}}=5$$\\\\
+	Demostración.-\; Supongamos que  $C$ está entre $A$ y $B$. Entonces probemos la existencia del punto $C$.\\
+	Por el axioma $III_2$ existe $x$, $b$ y $c$ en los reales que representan las coordenadas de los puntos A, B y C respectivamente, y por lo tanto, $$\dfrac{m(AC)}{m(BC)}=\dfrac{c-x}{b-c}$$ pero como $\dfrac{m(AC)}{m(BC)}=5$ entonces $$\dfrac{c-x}{b-c}=5$$ lo que implica que $$c=\dfrac{5b+x}{1+5}\,\,\, (1)$$
+	De donde vemos que $c$ existe para cualquier valor de $x$ y $b$ por lo tanto verificamos la existencia del punto $C$.\\
+	Para probar la unicidad de $C$ supondremos que hay una $C^{'}$ entonces, $$\dfrac{m(AC^{'})}{m(BC^{'})}=5 \,\, y \, por \, lo \, tanto \dfrac{c^{'}-x}{b-c^{'}}=5$$ así nos queda, $$c^{'}=\dfrac{5b+x}{1+5}\,\,\, (2)$$ 
+	Por el axioma $III_2$ en $(1)$ y $(2)$, podemos decir que los puntos $C$ y $C^{'}$ tienen una distancia igual a cero lo que por el axioma $III_1$, concluimos que $C$ y $C^{'}$ son el mismo punto, de donde tenemos una contradicción.\\\\ 
+
+	%----------3.
+	\item Muestre que las bisectrices de un ángulo y de su suplemento son perpendiculares.\\\\
+	Demostración.-\; Sea
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw[<->](0,0)--(4,0);
+		\draw[->](2,0)node[below]{$O$}--(4,2);
+		\draw[->](2,0)--(2.5,2.5);
+		\draw[->](2,0)--(0.4,2.2);
+		\filldraw[black](.5,0) circle(1.5pt) node[above]{$C$};
+		\filldraw[black](3.5,0) circle(1.5pt) node[above]{$A$};
+		\filldraw[black](3.5,1.5) circle(1.5pt) node[left]{$D$};
+		\filldraw[black](2.4,2) circle(1.5pt) node[left]{$B$};
+		\filldraw[black](.7,1.8) circle(1.5pt) node[left]{$E$};
+	    \end{tikzpicture}
+	\end{center}
+
+	Sea $A\widehat{O}B$ un ángulo y $B\widehat{O}C$ su suplemento, entonces: $$A\widehat{O}B + B\widehat{O}C = 180^{\circ}\,\,\, (1)$$
+	Demostremos que $B\widehat{O}D + B\widehat{O}E = 90^{\circ}$ para esto, tenga en cuenta que $B\widehat{O}D = \dfrac{A\widehat{O}B}{2},$ por lo tanto, $S_{OD}$ es la bisectriz de $A\widehat{O}B$ y $B\widehat{O}E = \dfrac{B\widehat{O}C}{2}$ luego, $B\widehat{O}E + B\widehat{O}D = \dfrac{A\widehat{O}B}{2} + \dfrac{B\widehat{O}C}{2}$ de donde
+	$$2(B\widehat{O}E + B\widehat{O}D) = A\widehat{O}B + B\widehat{O}C \,\,\, (2)$$ 
+	Igualando $(1)$ y $(2)$, 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$2(B\widehat{O}E + B\widehat{O}D)$ & $=$  & $180^{\circ}$\\
+		$B\widehat{O}E + B\widehat{O}D$ & $=$ & $90^{\circ}$\\ 
+	    \end{tabular}
+	\end{center}
+
+	Lo que implica que $S_{OE} \perp S_{OD}$ como queríamos demostrar.\\\\
+
+	%----------4.
+	\item En la figura, se tiene $AD=DE$, $\widehat{A}=D\widehat{E}C$ y $A\widehat{D}E=B\widehat{D}C$. Muestre que los triángulos $ADB$ y $EDC$ son congruentes.
+	
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw(0,0)node[below]{$A$}--(4,0)node[below]{$B$}--(5.5,3)node[above]{$C$}--(1.5,3)node[above]{$D$}--(3,0)node[below]{$E$}--(5.5,3);
+		\draw(4,0)--(1.5,3)--(0,0);
+	    \end{tikzpicture}
+	\end{center}
+
+	Demostración.-\;
+
+	\begin{center}
+	    \begin{tabular}{crc}
+		&$\overline{AD}\cong \overline{DE}$&\\
+		&$D\widehat{A}B \cong D\widehat{E}C$&\\		
+		$(a)$&$A\widehat{D}E \cong C\widehat{D}B$&\\	
+		&$\triangle ABD \cong \triangle EDC$&\\
+		$(I)$&$A\widehat{D}B=A\widehat{D}E + E\widehat{D}B \, y \, C\widehat{D}E=C\widehat{D}B+B\widehat{D}E$&\\
+		$(II)$&$A\widehat{D}B =A\widehat{D}E + E\widehat{D}B=C\widehat{D}B + B\widehat{D}E=C\widehat{D}E \Rightarrow A\widehat{D}B \cong C\widehat{D}E$&Por $(a)$ y $(I)$ \\
+		$(A)$&$D\widehat{A}B \cong D\widehat{E}C$&\\
+		$(L)$&$\overline{AD}\cong \overline{DE}$&\\
+		$(A)$&$ A\widehat{D}B \cong C\widehat{D}E$&De $(I)$ y $(II)$\\\\
+	    \end{tabular}
+	\end{center}
+	Luego por $ALA$ tenemos $\triangle ABD \cong \triangle EDC$\\\\
+
+    \end{enumerate}
+
+\end{document}
