@@ -1,0 +1,91 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{decorations.markings,arrows}
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Parcial II}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Parcial: & II.\\ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+\section*{\center Soluciones}
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+%--------------------1.
+\item Sabemos por el teorema de ángulo externo que $E\widehat{C}D > \widehat{B}, \widehat{A}.$ Luego como $\triangle ABC$ por lo tanto $E\widehat{C}D=B\widehat{C}A$ de donde $\overline{AC}=\overline{EC}$ y por el teorema de desigualdad triangular se tiene que:
+$$\overline{AC}+\overline{CB}\geq \overline{AB}$$ como $\overline{AC}=\overline{EC}$ y $\overline{CB}=\overline{CD}$ entonces $$\overline{EC} + \overline{CD} > \overline{AB}$$ luego $\overline{AD}=\overline{AC} + \overline{CD}$ así tenemos que:  $$\overline{AD}=\overline{EC} + \overline{CD} > \overline{AB}$$ que implica $\overline{AD}>\overline{AB}$\\\\
+
+%--------------------2.
+\item Consideremos un cuadrilátero de vértices $A, B, C$ y $D$, con $A, C$ y $B, D$ opuestos. Ahora trazamos  la diagonal $BD$, para obtener los triángulos $ABD$ y $BCD$.  Sean $M$ y $N$ los puntos medios de los lados $AB$ y $AD$, respectivamente. Luego trazamos el segmento $MN$. Tengamos en cuenta que es la base promedio del triángulo $ABD$ y, por lo tanto, debe ser paralelo a $BD$: $$MN \parallel BD$$
+Ahora tracemos los segmentos $P$ y $Q$, siendo $P$ y $Q$ los respectivos puntos medios de $BC$ y $CD$. Tengamos en cuenta que $PQ$ es la base promedio en el triángulo $BCD$, lo que implica que es paralelo a la base:
+$$PQ \parallel BD$$
+Luego por  transitividad del paralelismo de recta, si dos rectas son paralelas a una tercera, entonces son paralelas entre sí. De donde: $$MN \parallel BD; \; PQ \parallel BD \quad \Rightarrow \quad MN \parallel PQ$$
+Tengamos en cuenta que $MNPQ$ es el cuadrilátero con vértices en los puntos medios a los lados del cuadrilátero original. \\
+Ya hemos probado que dos de los lados opuestos son paralelos. Si probamos que los otros dos también lo son, entonces, por definición, $MNPQ$ es un paralelogramo. Tal prueba es análogo a la demostración dada, considerando la diagonal $AC$.\\\\
+
+%--------------------3.
+\item La gráfica se verá de la siguiente manera:\\
+\begin{center}
+    \begin{tikzpicture}
+	\draw(0,0)node[below]{$A$}--(3,0)node[below]{$C$}--(5,3)node[right]{$P$}--(0,0);	
+	\draw(3,0)--(2.5,1.5)node[above]{$B$}--(2,0)node[below]{$D$};
+    \end{tikzpicture}
+\end{center}
+Siendo $BD$ la bisectriz interna de $\widehat{B}$, tracemos una paralela que pase por el vértice $C$ la bisectriz $BD$, donde se encontrará una extensión de $BA$ en un punto $P$. Luego por el axioma de los paralelos, el triángulo $BPC$ es isosceles es decir que uno de sus ángulos alterna internamente con una de las mitades del ángulo $B$ y el otro correspondiente a la otra mitad. Por tanto según el teorema de Tales se sigue que $\dfrac{AD}{DC}=\dfrac{AB}{AP}$, como $BC=AP$ tenemos que $$\dfrac{AD}{DC}=\dfrac{AB}{BC}$$\\\\
+
+
+%--------------------4.
+\item 
+
+\end{enumerate}
+
+\end{document}

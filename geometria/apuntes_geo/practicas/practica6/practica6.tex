@@ -1,0 +1,135 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{decorations.markings,arrows}
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica IV}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & IV.\\ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+\section*{\center Soluciones}
+
+\begin{enumerate}[\Large\bfseries 1.]
+    
+%-------------------1.
+\item En la figura, $O$ es el punto de $AD$ y $\widehat{B}=\widehat{C}$, $O$ y $C$ son colineales, concluya que los triángulos $ABO$ y $DOC$ son congruentes.\\\\
+    Demostración.-\; Por hipótesis $AO=OD$ y $\widehat{B}=\widehat{C}$, entonces demostraremos que $\triangle AOB = \triangle COD$, por proposición $AB$ es paralelo a $CD$, de donde $\widehat{A}=\widehat{D}$ ya que son correspondientes, luego como $C\widehat{O}D=A\widehat{O}B$opuestos por le vértice, entonces por el caso $ALA$ concluimos que $\triangle AOB=\triangle COD$.\\\\
+
+%--------------------2.
+\item Pruebe que la suma de las medidas de los ángulos agudos de un triángulo rectángulo es $90^{\circ}$\\\\
+\begin{center}
+    \begin{tikzpicture}
+	\draw(0,0)node[left]{$A$}--(3,0)node[right]{$C$}--(3,2)node[above]{$B$}--(0,0);
+	\draw [black,very thick](0:.8cm) arc (0:32:.8cm);
+	\draw [black,very thick](33:3cm) arc (230:262:1cm);	
+    \end{tikzpicture}
+\end{center}
+    Demostración.-\; Por teorema 6.5 $\widehat{A} + \widehat{B} + \widehat{C} = 180^{\circ}.$ Sea $\widehat{C}=90^{\circ}$ entonces $\widehat{A}+\widehat{B}=180^{\circ} - \widehat{C}$ que implica $\widehat{A}+\widehat{B}=90^{\circ}$.\\\\
+
+%-------------------3.
+\item Pruebe que cada ángulo de un triángulo equilátero mide $60^{\circ}$.\\\\
+    Demostración.-\; Sea $ABC$  un triángulo equilátero entonces: $$\widehat{A}+\widehat{B}+\widehat{C}=180^{\circ} \qquad (1)$$ Luego por ser isósceles $\widehat{A}=\widehat{C}=\widehat{B}$ tenemos: $$3\cdot \widehat{B}=180^{\circ}$$ por lo tanto $\widehat{B}=60^{\circ}$  y esto implica que $\widehat{A}=\widehat{C}=\widehat{B}=60^{\circ}$.\\\\
+
+%--------------------4.
+\item Pruebe que la medida de un ángulo externo de un triángulo es igual a la suma de las medidas de los ángulos internos no adyacentes a él.\\\\
+    Demostración.-\; Sea $\triangle ABC$ se sabe que $widehat{A}+\widehat{B}+\widehat{C}=180^{\circ}$ y $\widehat{B}+\widehat{\alpha}$ por lo tanto $\widehat{A}+\widehat{B}+\widehat{C}=\widehat{B}+\widehat{\alpha} \quad \Rightarrow \quad \widehat{\alpha}=\widehat{A}+\widehat{B}$.\\\\
+
+%--------------------5.
+\item Un segmento que une dos puntos de un círculo y que pasa por su centro se llama diámetro. En la figura, $O$ es el centro del círculo, $AB$ es un diámetro y $C$ es otro punto del círculo. Muestre que $\widehat{2} = 2 · \widehat{1}$.\\\\
+    Demostración.-\; Como el anterior ejercicio $\widehat{2}=\widehat{1}+\widehat{c}$. Para mostrar que $\widehat{2}=2\cdot \widehat{1}$ basta demostrar que $\widehat{c}=\widehat{1}$. Sabemos que $AD=r$ y $OC=r$ entonces $AO=OC$ de donde $\triangle AOC$ es isósceles de base $AC$ y ángulos $\widehat{1}=\widehat{C}$.\\\\
+
+%--------------------6.
+\item Pruebe que si $m$ y $n$ son rectas equidistantes (esto es, rectas tales que todos los puntos de $m$ están a la misma distancia de $n$) entonces $m$ y $n$ son paralelas o coincidentes.\\\\
+    Demostración.-\; Sean $m$ y $n$ dos rectas distintas que se cruzan en el punto $P$. Marque el punto $A$ en la recta $m$ a través del cual la recta $n$ en el punto $A^{'}$ perpendicularmente. Como las rectas son equidistantes, entonces $AP = A^{'}P$ y $\triangle AA^{'}P$ son isósceles de base $AA^{'}$ lo cual es absurdo ya que la suma de sus ángulos internos sería mayor que $180^{\circ}$, luego o $m$ es paralelo a $n$ o $m=n$, es decir, coincidentes.\\\\
+
+%--------------------7.
+\item Sea $ABC$ un triángulo isósceles con base $AB$. Sean $M$ y $N$ los puntos medios de los lados $CA$ y $CB$, respectivamente. Muestre que el reflejo del punto $C$ relativo a la recta $MN$ es exactamente el punto medio de $AB$.\\\\
+    Demostración.-\; Sea $\triangle ABC$, $CM=CN$, ya que el triángulo es isósceles, y $M,N$ es el punto medio. Sea $F_{(MN)}(C)=C^{'}$ entonces $CC^{'}$ intercepta $MN$ perpendicularmente. Así por el criterio de hipotenusa y cateto $\triangle CMF=\triangle NFN$ y por lo tanto $CC^{'}$ intercepta $MN$ en su punto medio.\\\\
+
+%--------------------8.
+\item Un rectángulo es un cuadrilátero que tiene to- dos sus ángulos rectos. Muestre que todo rectángulo es un paralelogramo.\\\\
+    Demostración.-\; Sabemos que $AB$ es paralelo a $DC$ luego marcamos una recta $r$. Los ángulos $B\widehat{A}C=A\widehat{C}D$ y como la suma de los ángulos internos de un triángulo es 180 grados, entonces: $$A\widehat{C}B=D\widehat{A}C$$, luego por $LAL$ $$\triangle ADC = \triangle ABC$$ Así los segmentos $AD = BC$  ambos son perpendiculares a $AB$, $DC$ entonces los cuatro lados son congruentes y paralelos.\\\\
+
+%--------------------9.
+\item Muestre que las diagonales de un rectángulo son congruentes.\\\\
+    Demostración.-\; Se sabe que si dos rectas son interceptadas por una tercera perpendicular a ellas entonces son paralelas, entonces dado el rectángulo $ABCD$ se tiene: $$AB//DC \; y AD//BC$$ por tanto el rectángulo es un paralelogramo y $AB = DC$ y $AD = BC.$ Dadas las rectas $DB$ y $AC$, diagonal de $ABCD$, probamos que son congruentes.\\
+    Dados los puntos $ABC$ tenemos $\triangle ABC$, y de manera análoga construimos $\triangle ADC$ ya que ambos son rectos y $AD = BC$, $AB = DC$ en el caso de que $LAL$ sean congruentes y $DB = AC$.\\\\
+
+%--------------------10.
+\item  Un rombo es un cuadrilátero que tiene todos sus lados congruentes, luego es un paralelogramo. Muestre que las diagonales de un rombo  se cortan en un ángulo recto y son bisectrices de sus ángulos.\\\\
+    Demostración.-\; Sea $AC$ y $BD$ y sean diagonales del rombo $ABCD$ que se interseca en $F$, luego a través de los puntos $AB$ y $C$ construimos el triángulo $ABC$ de manera análoga construimos el triángulo $DAB$. Como $BA = BC$ y $DA = AB$ entonces $\triangle ABC$ y $\triangle DAB$ son isósceles tales que: $$\triangle ABC = \triangle ABF \cup \triangle BFC$$ $$\triangle DAB = \triangle DAF \cup \triangle FAB$$ y $\triangle ABF=\triangle BFC,$ $\triangle DAF = \triangle FAB$ por el caso $LLL$. Por lo tanto $BD$ intercepta $AC$ en $90^{\circ}$ y como se cruzan en sus puntos medios y las diagonales son la base del triángulo isósceles entonces son bisectrices.\\\\
+
+%--------------------11.
+\item  Un cuadrado es un rectángulo que también es un rombo. Muestre que, si las diagonales de un cuadrilátero son congruentes y se cortan en un punto que es punto medio de ambas, entonces el cuadrilátero es un rectángulo. Si además, las diagonales son perpendiculares una con otra, entonces el cuadrilátero es un cuadrado.\\\\
+    Demostración.-\; Por el caso $LLL$ se tiene $\triangle AOC = \triangle BOD; \; \triangle AOB = \triangle COD$. Como $AB=BC$ por hipótesis y $O$ es el punto medio de ambos, de donde $$BO=OD=OC=AO \qquad (1)$$ $$\triangle AOC = \triangle BOD; \triangle AOB; \triangle COD$$ Para el caso $LLL$. Así como los ángulos $A\widehat{O}B$ y $B\widehat{O}C$ están bajo el mismo semirecto y son complementarios, además de congruentes, nos queda $$A\widehat{O}B=B\widehat{O}D=90^{\circ}$$
+    Análogamente para $A\widehat{O}C=C\widehat{O}D=90^{\circ}.$ Luego por $(1)$ los triángulos contenidos en $ABCD$ son isósceles entonces $O\widehat{B}D=O\widehat{D}B=O\widehat{B}A=B\widehat{A}D=D\widehat{A}C=A\widehat{C}D=O\widehat{D}C=45^{\circ}$, debido a que la suma e sus ángulos internos debe ser $180^{\circ}$ uno de los ángulos es recto y dos de la base son congruentes, entonces los ángulos $A\widehat{B}D=B\widehat{A}C=C\widehat{D}B=A\widehat{B}D=90^{\circ}$ satisfaciendo la definición de rectángulo.\\\\
+
+%--------------------12.
+\item Un trapecio es un cuadrilátero que tiene un par de lados opuestos que son paralelos. Los lados paralelos de un trapecio son llamados bases y  los otros dos son llamados laterales. Un trapecio se dice isósceles si sus laterales son congruentes. Sea $ABCD$ un trapecio donde $AB$ es  una base; si él es isósceles, muestre que $\widehat{A} = \widehat{B}$ y $\widehat{C} = \widehat{D}$.\\\\
+    Demostración.-\;
+
+%---------------------13.
+\item Muestre que las diagonales de un trapecio isósceles son congruentes.\\\\
+    Demostración.-\; Dado $ABCD$ un trapezoide y $\overline{AD}=\overline{BC}$ entonces $\overline{AC}=\overline{BD}$. Dado $\overline{AD}=\overline{BC}$ entonces los ángulos de la base de un trapezoide isósceles son congruentes es decir $\angle ADC = \angle BCD$, de donde por la propiedad reflexiva $\overline{DC}=\overline{DC}$, luego $\triangle ADC = \triangle BCD$, por lo tanto $\overline{AC}=\overline{BD}$ ya que las partes correspondientes de triángulos congruentes son también congruentes.\\\\
+
+%--------------------14.
+\item Muestre que los casos de congruencia especiales para triángulos rectángulos, propuestos en el teorema $5.14$ del capítulo $5$, después del axioma de las paralelas, tiene demostración sencilla.\\\\
+    Demostración.-\;
+
+%--------------------15.
+\item Muestre que, si dos ángulos y el lado opuesto a uno de ellos, en un triángulo, son iguales a las partes correspondientes de otro triángulo, entonces los triángulos son congruentes. \\\\
+    Demostración.-\; 
+
+
+\end{enumerate}
+
+\end{document}

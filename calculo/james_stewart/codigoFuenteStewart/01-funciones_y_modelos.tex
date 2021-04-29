@@ -962,8 +962,111 @@ $3–4$ Relacione cada una de las siguientes ecuaciones con su gráfica. Expliqu
 	Para $g$ sea $f(x)=ax^2 + bx +c$  entonces por el punto $(0,1)$ se tiene $c=1$, luego remplazamos el punto $(1,-2.5)$ en la ecuación general de donde tenemos $-2.5=a+b+c$. De la misma forma para el punto $(-2,2)$ donde nos queda $2=4a-2b+c$. Luego sumando estas dos ecuaciones nos queda que $a=-1$, y $b=-2.5$, por lo tanto nos queda $f(x)=-x^2 + 2.5x + 1$.\\\\
 
     %--------------------11.
-    \item 
+    \item Encuentre una expresión para un función cúbica $f$ si $f(1)=6$ y $f(-1)=f(0)=f(2)=0$\\\\
+	Respuesta.-\; Sea $f(1)=6 \quad \Rightarrow \quad (1,6)$ y $(-1,0), (0,0), (2,0)$ donde se identifica sus raíces y por lo tanto $y=a(x+1)(x-0)(x--2) \quad \Rightarrow \quad y=ax(x+1)(x-2)$, luego para encontrar el valor de $a$ remplazamos $(1,6)$ en la ecuación encontrado de donde $6=a(1)(1+1)(1-2) \quad \Rightarrow \quad a=-3$, entonces $$f(x)=-3x(x+1)(x-2) \quad \Rightarrow \quad f(x)=-3x^3+3x^2+6x$$\\\\
 
+    %--------------------12.
+    \item Estudios recientes indican que la temperatura promedio de la superficie de la Tierra ha estado aumentando. Algunos científicos han modelado la temperatura con la función lineal $T =0.02t+8.50$, donde $T$ es la temperatura en $^{\circ}C$ y $t$ representa años desde $1900$.
+    \begin{enumerate}[(a)]
+	
+	%----------(a)
+	\item ¿Qué representan la pendiente y la intersección con el eje $T$?\\\\
+	    Respuesta.-\; La pendiente representa la variación que tiene la temperatura con el tiempo. Y la intersección con el eje $T$ significa que en 1900, $T=0$ y la temperatura fue de $8,5$.\\\\
+	
+	%----------(b)
+	\item Utilice la ecuación para predecir la temperatura para la superficie global en $2100$.\\\\
+	    Respuesta.-\; Sea $2100-1990=110$ entonces $T=0.02\cdot 110 + 8.5 = 10.7 ^{\circ}C$\\\\
+
+    \end{enumerate}
+
+    %--------------------13.
+    \item  Si $D$ (en mg) es la dosis de un medicamento recomendada para adultos, entonces, para determinar la dosis apropiada $c$ para un niño de edad $a$, el farmacéutico utiliza la ecuación $c = 0.0417 D (a + 1)$. Suponga que la dosis para un adulto es de $200$ mg. 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Encuentre la pendiente de la gráfica de $c$. ¿Qué representa?.\\\\
+	    Respuesta.-\; Dado que $c=0.0417\cdot 200 (a+1)$ entonces la pendiente es $8.34$, que representa la variación de la dosis apropiada con respecto a la edad.\\\\
+
+	%----------(b)
+	\item ¿Cuál es la dosis para un recién nacido?.\\\\
+	    Respuesta.-\; Sea $a=0$ entonces la dosis es $8.34$\\\\
+
+    \end{enumerate}
+
+    %--------------------14.
+    \item El administrador de un bazar de fi de semana sabe por experiencia que, si cobra $x$ dólares por el alquiler de un espacio en el bazar, entonces el número $y$ de espacios que puede alquilar está dado por la ecuación $y=200-4x$.
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Trace la gráfica de esta función lineal. (Recuerde que la renta por el espacio y el número de espacios alquilados no pueden ser cantidades negativas.)\\
+	\begin{center}
+	    \begin{tikzpicture}
+		% abscisa y ordenada
+		\tkzInit[xmax=150,xstep = 50, xmin=0,ymax=250,ystep=50,ymin=0]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=dólares,right=0.3]
+		\tkzDrawY[opacity= .6,label=espacios,below = -0.6]
+		%dominio y función
+		\draw[domain=0:50,thick, scale=0.02] plot(\x,{200 - 4*\x}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{0.5cm}
+
+	%----------(b)
+	\item ¿Qué representan la pendiente, la intersección con el eje $y$ y la intersección con el eje $x$ de la gráfica?\\\\
+	    Respuesta.-\; La pendiente representa la relación de los espacios a ocuparse con respecto a los el precio en dolares del mismo, luego la intersección con el eje $x$ e $y$ representan la demanda de espacios en función al precio.\\\\ 
+	    
+    \end{enumerate}
+	
+    %--------------------15.
+    \item La relación entre las escalas de temperatura Fahrenheit $(F)$ y Celsius $(C)$ está dada por la función lineal $F=\frac{9}{5}C+32$. 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Trace la gráfica de esta función.\\\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=.5]
+		% abscisa y ordenada
+		\tkzInit[xmax=12,xstep=2,xmin=-18,ymax=33,ymin=0,ystep=2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=C,right=0.3]
+		\tkzDrawY[opacity= .6,label=F,below = -0.6]
+		%dominio y función
+		\draw[domain=-17.7:5,thick, scale=.5] plot(\x,{(9/5)*\x + 32}); 
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{0.5cm}
+
+	%----------(b)
+	\item ¿Cuál es la pendiente de la gráfica y que representa? ¿Cuál es la intersección con el eje $F$ y qué representa?.\\\\
+	    Respuesta.-\; La pendiente es dado por $\frac{9}{5}$ y representa la relación entre la temperatura Fahrenheit con respecto a los grados Celsius.\\
+	    La intersección con el eje $F$ representa la temperatura en Fahrenheit cuando la temperatura en Celsius es $0$.\\\\ 
+
+    \end{enumerate}
+
+    %--------------------16.
+    \item Kelly sale de Winnipeg a las $14:00$ y conduce a rapidez constante hacia el oeste a lo largo de la carretera TransCanadá. Pasa por Brandon, a $210$ km de Winnipeg, a las $16:00$.
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Exprese la distancia recorrida en términos del tiempo transcurrido.\\\\
+	    Respuesta.-\; Sea $t=2$ y $d=210$ entonces la función estará dada por $d(t)=105t$ ya que la relación que existe entre la distancia con respecto a tiempo  es $\dfrac{210}{2} =105$.\\\\
+
+	%----------(b)
+	\item Dibuje la gráfica de la ecuación del inciso (a).\\\\
+	    Respuesta.-\; El dibujo es una función lineal.\\\\
+
+	%----------(c) 
+	\item ¿Cuál es la pendiente de esta recta? ¿Qué representa?\\\\
+	    Respuesta.-\; La pendiente es $105$ y representa la relación de la distancia con respecto al tiempo.\\\\
+    
+    \end{enumerate}
+
+    %--------------------17.
+    \item
 
 
 

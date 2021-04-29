@@ -728,5 +728,108 @@ Las funciones mayor entero y menor entero.\\\\
 
     %--------------------67.
     \item 
+    \begin{enumerate}[\bfseries a.]
 
+	%----------a.
+	\item Grafique juntas las funciones $f(x)=x/2$ y $g(x)=1+(4/x)$ para identificar los valores de $x$ que satisfacen $$\dfrac{x}{2} > 1 + \dfrac{4}{x}$$\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 6,xmin=-4.5,ymax=3,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-3:6,thick,gray] plot(\x,{\x/2});
+		\draw [domain=2:6,thick,gray] plot(\x,{1+(4/\x)});
+		\draw [domain=-4:-1.5,thick,gray] plot(\x,{1+(4/\x)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+	%----------b.
+	\item Confirme algebraicamente los hallazgos del inciso $a)$\\\\
+	    Respuesta.-\; Resolviendo la ecuación nos queda $x^2-2x-8>0$ donde se cumple para $x>4$ ó $x<-2$\\\\
+
+    \end{enumerate}
+
+    %--------------------68.
+    \item 
+    \begin{enumerate}[\bfseries a.]
+	
+	%----------a.
+	\item Grafique juntas las funciones $f(x) = 3/(x-1)$ y $g(x)=2/(x+1)$ para identificar los valores de $x$ que satisfacen $$\dfrac{3}{x-1}<\dfrac{2}{x+1}$$\\
+	\begin{center}
+	    \begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 1,xmin=-12,ymax=1,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-11:-3,thick,gray] plot(\x,{3/(\x-1)});
+		\draw [domain=-11:-3,thick,gray] plot(\x,{2/(\x+1)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+	%----------b.
+	\item Confirme algebraicamente los hallazgos del inicio $a)$.\\\\
+	    Respuesta.-\; Sea $\dfrac{3}{x-1}<\dfrac{2}{x+1} \quad \Rightarrow \quad x<-5$\\\\
+
+    \end{enumerate}
+
+    %-------------------69.
+    \item Para que una curva sea simétrica con respecto al eje $x$, el punto $(x, y)$ debe estar en la curva si y sólo si el punto $(x, -y)$ está en la curva. Explique por qué una curva que es simétrica con respecto al eje $x$ no es la gráfica de una función a menos que la función sea $y = 0$.\\\\
+	Respuesta.-\; Esto se debe a que contradice a la definición de función. Es decir, a cada elemento $x$ se asigna un solo o único elemento $f(x)$. Si $y=0$ entonces $(x,y)=(x,-y)$ y por lo tanto se cumple la definición de función\\\\
+
+    %--------------------70.
+    \item Trescientos libros se venden en $\$ 40$ cada uno, lo que da por resultado un ingreso de $300\cdot \$ 40 $ = $\$12,000$. Por cada aumento de $\$ 5$ en el precio, se venden $25$ libros menos. Exprese el ingreso $R$ como una función del número $x$ de incrementos de $\$5$.\\\\
+	Respuesta.-\; Veamos algunos ejemplos particulares:
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$300\cdot 40$&$=$&$12000$\\
+		$(300 - 25)(40 + 5)$&$=$&$12375$\\
+		$(300 - 50)(40 + 10)$&$=$&$12500$\\
+		$(300 - 75)(40 + 15)$&$=$&$12375$\\
+		$(300 - 100)(40 + 20)$&$=$&$12000$\\
+	    \end{tabular}
+	\end{center}
+	Por lo tanto $R(x)=(300-5x)(40+x)=-125x^2 + 500x + 12000$\\\\
+
+    %--------------------71.
+    \item Se va a construir un corral con la forma de un triángulo rectángulo isósceles con catetos de longitud de $x$ pies (ft) e hipotenusa de longitud $h$ ft. Si los costos de la cerca son de $\$ 5 / ft$ para los catetos y $\$ lO/ft$ para la hipotenusa, escriba el costo total $C$ de la construcción como una función de $h$.\\\\
+	Respuesta.-\; Sea $c^2+c^2=h^2 \quad \Rightarrow \quad h=c \sqrt{2} \quad \Rightarrow \quad c=h \sqrt{2}$, luego $C=2\cdot c \cdot 5 + h \cdot 10$ por lo tanto $C=10\cdot h \dfrac{1}{\sqrt{2}} + 1$\\\\
+
+    %--------------------72.
+    \item Costos industriales: Una central eléctrica se encuentra cerca de un río, donde éste tiene un ancho de 800 ft. Tender un cable de la planta a un lugar en la ciudad, 2 millas (mi) río abajo en el lado opuesto, tiene un costo de $180 por ft que cruce el río y $100 por ft en tierra a lo largo de la orilla del río.
+    \begin{enumerate}[\bfseries a.]
+
+	%----------a.
+	\item Suponga que el cable va de la planta al punto $Q$, en el lado opuesto, lugar que se encuentra a $x$ ft del punto $P$, directamente opuesto a la planta. Escriba una función $C(x)$ que indique el costo de tender el cable en términos de la distancia $x$.\\\\
+	    Respuesta.-\; Por el teorema de Pitágoras podemos establecer la función $C(x)$ como sigue: $$C(x)=\sqrt{x^2 + 800^2} \cdot 180 + (10560-x)\cdot 100$$
+
+	%----------b.
+	\item Genere una tabla de valores para determinar si la ubicación más barata para el punto $Q$ es menor a $2000$ ft o mayor a $2000$ ft del punto $P$.\\\\
+	    Respuesta.-\;
+	    \begin{center}
+		\begin{tabular}{rclcl}
+		    $C(x)$&$=$&$\sqrt{1900^2+800^2} + (10560-1900)\cdot 100$&$=$&$1270599.7$\\
+		    $C(x)$&$=$&$\sqrt{2100^2+800^2} + (10560-2100)\cdot 100$&$=$&$1217079.5$\\\\
+		\end{tabular}
+	    \end{center}
+	    Por lo tanto es mas barato ubicar el punto $Q$ a una distancia mayor a $2000$ ft.\\\\
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\section{Ejercicios}
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+%--------------------1.
+\item
 \end{enumerate}

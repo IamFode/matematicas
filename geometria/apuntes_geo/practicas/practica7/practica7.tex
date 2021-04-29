@@ -1,0 +1,156 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{decorations.markings,arrows}
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica IV}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & IV.\\ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+\section*{\center Soluciones}
+
+\begin{enumerate}[\Large\bfseries 1.]
+    
+%-------------------1.
+\item Cuánto mide la altura de un triángulo equilátero cuyos lados miden un centímetro.\\\\
+    Respuesta.-\; Para encontrar la altura, debemos usar el teorema de Pitágoras $A^2=B^2+C^2$. Sabemos que la hipotenusa ($A$) es el lado más grande que será $1$ cm, y un lado será $0.5$ de altura $h$ ya que dividiremos el triángulo, transformando el triángulo equilátero en un triángulo rectángulo y la altura estará dado por: $$1^2=0.5^2+h2 \quad \Rightarrow \quad h=0.86$$\\\\
+
+%-------------------2.
+\item En el triángulo $ABC$, $\overline{AB} = 5$, $\overline{BC} = 12$ y $\overline{CA} = 13$. ¿Cuál es la medida del ángulo en $\widehat{B}$.\\\\
+    Respuesta.-\; Sea $CA^2 = BC^2 + AB^2$ entonces $169=169$ por lo tanto el ángulo con vértice en $B$ mide $90^{\circ}$ ya que el segmento $CA$ es opuesto a $B$.\\\\ 
+
+%--------------------3.
+\item Muestre que los triángulos equiláteros siempre son semejantes.\\\\
+    Demostración.-\; Sean $\triangle ABC$ y $\triangle DEF$ dos triángulos equiláteros, las medidas de los ángulos $\widehat{A}, \widehat{B}$ y $\widehat{C}$ son iguales a $60^{\circ}$, de la misma forma para los ángulos de triangulo $DEF$, entonces $$\widehat{A}=\widehat{D} \qquad \widehat{B}=\widehat{E} \qquad \widehat{C}=\widehat{F}$$ Luego por la razón de semejanza se tiene que $\dfrac{\overline{AB}}{\overline{DE}}=\dfrac{\overline{AC}}{\overline{DF}}=\dfrac{\overline{BC}}{\overline{EF}}=\alpha$ donde $\alpha$ es una constante. Por lo tanto Dos triángulos equiláteros son siempre semejantes.\\\\
+
+%-------------------4.
+\item Muestre que son semejantes dos triángulos isósceles que tienen iguales los ángulos opuestos a su base.\\\\
+    Demostración.-\; Los ángulos $A\widehat{C}E=A\widehat{B}D$ son ángulos inscritos en la circunferencia con respecto a $AD$, por lo tanto $A\widehat{C}D=A\widehat{B}D$ Sea $G$ el punto de intersección del segmento $AC$ y la recta perpendicular al segmento $AC$ que pasa por $E$. Entonces, el triángulo $CEG$ y el rectángulo con ángulo recto en el vértice $G$. Como $C, D$ y $E$ son colineales y $A$ $C$ e $G$ son colineales, por lo que $G\widehat{C}E = ACD$. Como CEG y rectángulo en ángulo recto en el vértice $G$ y $G\widehat{C}E = A\widehat{C}D$, 
+    entonces $C\widehat{E}G=90^{\circ} - G\widehat{C}E = 90^{\circ} - A\widehat{C}D$. Luego $C\widehat{E}G + C\widehat{E}B + B\widehat{E}F = 180^{\circ}$, $C\widehat{E}G=90^{\circ}$ y $C\widehat{E}G=90^{\circ}-A\widehat{C}D,$
+    de donde $B\widehat{E}F=A\widehat{C}D$. Luego $B\widehat{E}F=A\widehat{C}D$ y $A\widehat{C}D=A\widehat{B}D$, entonces $B\widehat{E}F=A\widehat{B}D$. Sea $A,B$ y $E$ colineales como también $B,D$ y $F$, entonces $E\widehat{B}F=A\widehat{B}D$. 
+    Por último $B\widehat{E}F=A\widehat{B}D$ y $E\widehat{B}F=A\widehat{B}D$, entonces $B\widehat{E}F=E\widehat{B}F$ y luego el triángulo $BEF$ es isosceles  siendo los lados $BF$ y $EF$ congruentes. Los ángulos $B\widehat{A}C=B\widehat{D}C$  son ángulos inscritos en la circunferencia con respecto a $BC$, por lo tanto $B\widehat{A}C=B\widehat{D}C$. \\
+    Procediendo de manera completamente análoga lo que se hizo anteriormente, concluimos que $D\widehat{E}F=E\widehat{D}F$ y luego el triángulo $DEF$ es isosceles, como los lados $DF$ y $EF$ siendo congruentes. Así los segmentos de la recta $BF$ y $EF$ son congruentes y los segmentos de la recta $DF$ y $EF$ también son congruentes. Entonces las rectas $BF$ y $DF$ son congruentes, luego $F$ y el punto medio del segmento de la recta $BD$.\\\\
+
+%--------------------5.
+\item Pruebe que las alturas correspondientes en triángulos semejantes están en la misma razón que los lados correspondientes.\\\\
+    Demostración.-\;
+    \begin{multicols}{2}
+    \begin{center}
+	\begin{tikzpicture}[scale=0.9]
+	   \draw(0,0)node[below]{$B$}--(4,0)node[below]{$C$}--(1.5,2.5)node[above]{$A$}--(0,0); 
+	   \draw(1.5,2.5)--(1.5,0)node[below]{$M$};
+	   \draw(2.5,0)node[below]{$a$};
+	   \draw(2.8,1.5)node[right]{$b$};
+	   \draw(1.5,1.2)node[left]{$h$};
+	\end{tikzpicture}
+    \end{center}
+
+    \begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	   \draw(0,0)node[below]{$B^{'}$}--(4,0)node[below]{$C^{'}$}--(1.5,2.5)node[above]{$A^{'}$}--(0,0); 
+	   \draw(1.5,2.5)--(1.5,0)node[below]{$M^{'}$};
+	   \draw(2.5,0)node[below]{$a^{'}$};
+	   \draw(2.8,1.5)node[right]{$b^{'}$};
+	   \draw(1.5,1.2)node[left]{$h^{'}$};
+	\end{tikzpicture}
+    \end{center}
+
+    Considerando dos triángulos rectángulos $AMC$ y $A^{'} M^{'}C^{'}$ que tienen $\widehat{M}  = \widehat{M^{'}}$ y $\widehat{C}=\widehat{C^{'}}$ ya que $\triangle ABC$ es semejante a $\triangle A^{'}B^{'}C^{'}$. Resulta $\triangle AMC \sim \triangle A^{'}M^{'}C^{'}$, luego por definición de semejanza de triángulos $\dfrac{h}{h^{'}}=\dfrac{b}{b^{'}}$ y como $\dfrac{a}{a^{'}}=\dfrac{b}{b^{'}}=\dfrac{c}{c^{'}}$ por ser $\triangle ABC \sim \triangle A^{'}B^{'}C^{'}$ se tiene $\dfrac{h}{h^{'}}=\dfrac{a}{a^{'}}$. Análogamente se demuestra que $\dfrac{h}{h^{'}}= \dfrac{b}{b^{'}}$ y $\dfrac{h}{h^{'}}=\dfrac{c}{c^{'}}$ 
+
+    \end{multicols}
+
+%--------------------6.
+\item  Pruebe que, si un triángulo rectángulo tiene sus ángulos agudos de $30^{\circ}$ y $60^{\circ}$, entonces su menor cateto mide la mitad de la longitud de la hipotenusa.\\\\
+    Demostración-.\; Sea $ABC$ un triángulo rectángulo con hipotenusa $BC$ y angulos agudos $\widehat{C}=30^{\circ}$ y $\widehat{B}=60^{\circ}$. El Cateto más pequeño es $AB$, opuesto al ángulo interno más pequeño $\widehat{C}$. Luego sea $D \in S_{BA}$, tal que $\overline{DA}=\overline{AB}$, así trazamos un segmento $DC$. Como $DA=BA$, entonces por ángulos suplementarios $C\widehat{A}D=90^{\circ}=C\widehat{A}B$ y $AC=AC$, por $LAL$ queda $ADC=ABC$. En particular, $A\widehat{D}C=A\widehat{B}C=60^{'}, \; D\widehat{C}A=B\widehat{C}A=30^{\circ}$, esto es $D\widehat{C}B=60^{\circ}$ y el triángulo $DBC$ es equilátero. Luego $$\overline{AB}=\dfrac{\overline{BD}}{2} = \overline{CB}$$\\\\
+
+%--------------------7.
+\item En la figura, $D$ es el punto medio de $AB$ y $E$ el punto medio de $AC$. Muestre que los triángulos $ADE$ y $ABC$ son semejantes.\\\\
+
+%--------------------8.
+\item En la figura se tiene que $BDA \sim ABC$. Muestre que el triángulo $BDA$ es isósceles.\\\\
+
+%--------------------9.
+\item Muestre que todo triángulo de lados $p^2 - q^2$, $2pq$ y $p^2 + q^2$ es un triángulo rectángulo. Aquí, $p$ y $q$ son números enteros positivos arbitrarios tal que $p > q$.\\\\
+    Demostración.-\; Si el triángulo es un rectángulo, debe valer el teorema de Pitágoras; de lo contrario, el triángulo no sería rectángulo. Demostraremos que este teorema es válido.
+    $$(p^2 + q^2)^2 = (2pq)^2 + (p^2 - q^2)^2$$ $$(p^2+q^2)^2=4p^2q^2 + p^4 + q^4 - 2p^2q^2$$ 
+    $$(p^2+q^2)^2=p^4 + 2p^2q^2 + q^4$$ $$(p^2 + q^2)^2=(p^2 + q^2)^2$$\\\\
+
+%--------------------10.
+\item Todos los triángulos indicados en la figura son rectángulos. Determine $a, b, c, d$ y $e$.\\\\
+
+%--------------------11.
+\item  Pruebe que la bisectriz de un ángulo de un triángulo divide al lado opuesto en segmentos proporcionales a los otros dos lados. Esto es, si $ABC$ es un triángulo y $BD$ es la bisectriz del ángulo $\widehat{B}$ siendo $D$ un punto del lado $AC$, entonces $$\dfrac{AD}{DC}=\dfrac{AB}{BC}$$
+    Demostración.-\; La gráfica se verá de la siguiente manera:\\
+\begin{center}
+    \begin{tikzpicture}
+	\draw(0,0)node[below]{$A$}--(3,0)node[below]{$C$}--(5,3)node[right]{$P$}--(0,0);	
+	\draw(3,0)--(2.5,1.5)node[above]{$B$}--(2,0)node[below]{$D$};
+    \end{tikzpicture}
+\end{center}
+Siendo $BD$ la bisectriz interna de $\widehat{B}$, tracemos una paralela que pase por el vértice $C$ la bisectriz $BD$, donde se encontrará una extensión de $BA$ en un punto $P$. Luego por el axioma de los paralelos, el triángulo $BPC$ es isosceles es decir que uno de sus ángulos alterna internamente con una de las mitades del ángulo $B$ y el otro correspondiente a la otra mitad. Por tanto según el teorema de Tales se sigue que $\dfrac{AD}{DC}=\dfrac{AB}{AP}$, como $BC=AP$ tenemos que $$\dfrac{AD}{DC}=\dfrac{AB}{BC}$$\\\\
+
+%--------------------12.
+\item Enuncie y pruebe la recíproca del ejercicio anterior.\\\\
+
+%--------------------13.
+\item 
+    Demostración.-\; Sea $x$ el cateto más pequeño y $y, z$ los ángulos agudos y la medida de la hipotenusa. Tenemos $x = h / 2.$ Sabemos que en un triángulo la suma de los ángulos internos resulta en $180^{\circ}. Entonces:
+$$$90^{\circ} + y + z = 180^{\circ} \quad \Rightarrow \quad y + z = 90^{\circ} \quad \Rightarrow \quad y = 90^{circ} -z$$
+Suponga la medida del otro lado. Según el Teorema de Pitágoras, tenemos: $h^2 = (h / 2)^2 + t^2 \quad \Rightarrow \quad h^2 = h^2 / 4 + t^2 \quad \Rightarrow \quad 4h^2 = h^2 + 4t^2 \quad \Rightarrow \quad t = (h\sqrt{3}) / 2$
+Suponga $t$ es lado opuesto de $y$. Entonces:
+$sen (y) = ( (h\sqrt{3}) / 2) / h = \sqrt{3}/2 \quad \Rightarrow \quad y = 60^{\circ}$
+Luego hallar $z$:
+$y = 90^{\circ} -z \quad \Rightarrow \quad z = 90^{\circ} -60^{\circ} = 30^{\circ}$ 
+Para $x$ lado opuesto de $y$, encuentre $y = 30^2$ y $z = 60^{\circ}.$\\\\
+
+\end{enumerate}
+\end{document}

@@ -78,3 +78,44 @@
 	    Demostración.-\; Por definición de límite se deduce que para $\epsilon > 0$ existe un número $\delta$ tal que $a-\delta<x<a+\delta$ se cumple la desigualdad $$|f(x) - b| < \epsilon$$ es decir $$|f(x)|<|b|+\epsilon$$.\\\\
     \end{teo}
 
+    %--------------------teorema 2.3
+    \begin{teo}
+	Si $\lim\limits_{x \to a} f(x) - b \neq 0$, la función $y=\dfrac{1}{f(x)}$ está acotada, cuando ${x \to a}$.\\\\
+	    Demostración.-\; De la hipótesis del teorema se deduce que para cualquier $\epsilon > 0$ arbitrario, en cierta vecindad del punto $x=a$ tendremos: $|f(x)-b|<\epsilon$, ó $||f(x)|-|b||<\epsilon$, ó $-\epsilon < |f(x)|-|b|< \epsilon$ ó $|b|-\epsilon < |f(x)| < |b|+\epsilon.$ De las últimas desigualdades se deduce: $$\dfrac{1}{|b|-\epsilon}>\dfrac{1}{|f(x)|}>\dfrac{1}{|b|+\epsilon}$$
+	    Al tomar, por ejemplo, $\epsilon = \dfrac{1}{10} |b|$ tenemos $$\dfrac{10}{9|b|}>\dfrac{1}{|f(x)|}>\dfrac{10}{11|b|}.$$
+	    lo que significa que la función $\dfrac{1}{f(x)}$ está acotada.\\\\
+    \end{teo}
+
+\section{Infinitesimales y sus principales propiedades}
+
+%--------------------definición 2.8
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	La función $\alpha = \alpha(x)$ se denomina infinitamente pequeña (infinitesimal), cuando ${x \to a}$ o cuando ${x \to \infty}$, si $\lim\limits_{x \to a} \alpha(x) = 0$ ó $\lim\limits_{x \to \infty} \alpha(x)=0$
+    \end{def.}
+\end{tcolorbox}
+
+    %--------------------teorema2.4
+    \begin{teo}
+	Si la función $y=f(x)$ puede ser representada como suma del número constante $b$ y la magnitud infinitamente pequeña $\alpha$: $$y=b+\alpha$$ se tiene que $$\lim y = b \;(cuando \; {x \to a} \; ó \; {x \to \infty})$$ Recíprocamente, si $\lim y = b$, se puede escribir $y=b+\alpha$, de donde $\alpha$ es una magnitud infinitamente pequeña.\\\\
+	    Demostración.-\; De la igualdad se deduce que $|y-b|=|\alpha|$. Pero cuando $epsilon$ es arbitrario todos los valores de $\alpha$, a partir de uno de ellos, satisfacen la desigualdad $|\alpha|<\epsilon$; entonces, para todos los valores de $y$, a partir de alguno de ellos, se cumplirá la desigualdad $|y-b|<\epsilon$, lo que significa que $\lim y = b$.\\
+	    Recíprocamente: si $\lim y=b$, entonces para $epsilon$ arbitrario para todos los valores de $y$, a partir de uno de ellos, se verificará la desigualdad $|y-b|<\epsilon$. Pero, si designamos $y-b=\alpha$, entonces para todos los valores de $\alpha$, a partir de alguno de ellos, tendremos $|\alpha|<\epsilon$, de lo que significa que $\alpha$ es una magnitud infinitamente pequeña.\\\\
+    \end{teo}
+
+    %--------------------teorema2.5
+    \begin{teo}
+	Si $\alpha = \alpha(x)$ tiende a cero, cuando ${x \to a}$ (o cuando ${x \to \infty}$), sin reducirse a cero, se tendrá que $y=\dfrac{1}{\alpha}$  tiende a infinito.\\\\
+	    Demostración.-\; Por grande que sea $M>0$ se cumplirá la desigualdad $\dfrac{1}{|\alpha|}>M$, siempre que se cumpla $|\alpha|>\dfrac{1}{M}$. La última desigualdad se cumplirá para todos los valores de $\alpha$, a partir de algunos de ellos, puesto que $\alpha(x) \to 0.$\\\\
+    \end{teo}
+
+    %-------------------- teorema 2.6
+    \begin{teo}
+	La suma algebraica de dos, tres o un número determinado de infinitesimales es una función infinitamente pequeña.\\\\
+	    Demostración.-\; Nos limitaremos a dos sumando ya que la demostración es análoga para cualquier número de ellos.\\
+	    Supongamos que $u(x)=\alpha(x) + \beta(x)$, donde $\lim\limits_{x \to a} \alpha(x)=0$ y $\lim\limits_{x \to a} \beta(x)=0$. Demostraremos que para cualquier $\epsilon >0$ tan pequeño como se quiera, se encontrará $\delta >0$ tal que, al satisfacer la desigualdad $|x-a|<\delta$, se verifica $|u|<\epsilon$. Puesto que $\alpha (x)$ es una magnitud infinitamente pequeña se encontrará $\delta$ tal que en la vecindad de radio $\delta_1$ y centro ubicado en el punto $a$, se verificará, también $|\alpha(x)|<\dfrac{\epsilon}{2}$.\\
+	    Luego puesto que $\beta (x)$ es una magnitud infinitamente pequeña, en la vecindad del punto $a$ de radio $\delta_2$ tendremos $|\beta(x)|<\dfrac{\epsilon}{2}$.\\
+	    Tomemos $\delta$ igual a la menor de las magnitudes $\delta_1$ y $\delta_2$. Entonces, en la vecindad del punto $a$ de radio $\delta$ se cumplirán las desigualdades $|\alpha|<\dfrac{\epsilon}{2}; \; |\beta|<\dfrac{\epsilon}{2}$. Por tanto, en esta vecindad tendremos: $$|u|=|\alpha (x) + \beta (x)|\leq |\alpha (x)| + |\beta (x)| < \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} = \epsilon$$ es decir, $|u|<\epsilon$, lo que se trataba de demostrar.\\
+	    De modo análogo se demuestra el caso: $$\lim\limits_{x \to \infty} \alpha (x)=0, \qquad \lim\limits_{x \to \infty} \beta (x) =0$$\\\\
+    \end{teo}
+
+
