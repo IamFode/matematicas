@@ -353,6 +353,127 @@
 	\vspace{0.5cm}
 
     %--------------------16.
-    \item
+    \item Supóngase que $A$ y $C$ no son cero a la vez. Demostrar que el conjunto de todos los $(x,y)$ que satisfacen $$Ax^2 + Bx + Cy^2 +Dy + E = 0$$ es o bien una parábola, una elipse o una hipérbola (o posiblemente $\theta$). El caso $C=0$ es en esencia el problema $15$ y el caso $A=0$ no es más que una variante. Considerar por separado los casos en que $A$ y $B$ son a la vez positivos o negativos y en que uno de ellos es positivo y el otro negativo.\\\\
+	Demostración.-\; Supongamos que $C=0$,  donde se tiene la ecuación $$Ax^2 + Bx + Dy + E = 0$$ para todo $(x,y).$ Si $D\neq 0$ entonces $$y=-\dfrac{A}{D}x^2 - \dfrac{B}{D}x -\dfrac{E}{D}$$ por lo que el conjunto de todos $(x, y)$ que satisfacen esta ecuación es el mismo que la gráfica de $f(x)=(-A/D)x^2 - (B/D)x -(E/D)$, el cual es una parábola, como se ve en el ejercicio 15.\\
+	Si $D=0$, tenemos la ecuación $Ax^2+Bx+E=0, \; (A\neq 0)$, que puede tener cero, una o dos soluciones para $x$; en este caso, el conjunto de todos $(x, y)$ que satisfacen la ecuación es $\emptyset$, una línea recta o dos líneas rectas paralelas. Similarmente, si $A=0$ entonces tenemos una parábola nuevamente.  Cuando $A,C\neq 0$ podemos escribir la ecuación como: $$A\left(x + \dfrac{B}{2A}\right)^2 + C\left( y + \dfrac{D}{2C} \right)^2=F$$ para algún $F$.\\
+	Cuando $A=C > 0$ tenemos un circulo, a menos que $F=0$, en cuyo caso tenemos un punto es decir un circulo de radio $0$, o $F<0$, en cuyo caso tenemos $0$ en general. Cuando $A,C>0$ tenemos una elipse no necesariamente centrada en el origen. No es necesario considerar por separado el caso $A,C<0$ ya que tenemos la misma situación, remplazando $F$ por $-F$.\\
+	Cuando $A$ y $C$ tienen signos diferentes, tenemos una hipérbola para $F \neq 0$, donde hacia donde apunte depende del signo de $A,C$ y $F$. Para $F=0$ tenemos la ecuación $$x+\dfrac{B}{2A} = \pm \sqrt{\dfrac{-C}{A}}\left(y + \dfrac{D}{2C}\right)$$ lo que da dos líneas intersectadas es decir una hipérbola degenerada.\\\\
+
+    %--------------------17.
+    \item Por $[x]$ se designa el mayor entero que es $\leq x$. Así, $[2.1]=[2]=2$ y $[-0.9]=[-1.2]=-1$
+    \begin{enumerate}[\bfseries (i)]
+	
+	%----------(i)
+	\item $f(x)=[x]$\\\\
+	    \begin{center}
+		\begin{tikzpicture}[scale=0.5]
+		    \tkzInit[xmin = -5, xmax = 5, ymin = -5, ymax = 5]
+		    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		    % label x, f(x)
+		    \tkzDrawX[opacity= .6,label=x,right=0.3]
+		    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		    \foreach \a in {-5,...,5}{
+		    \draw (\a, \a) -- (\a + 1, \a);
+		    \node [circle, draw, fill=none, line width = .5pt, inner sep = 0pt, minimum size = 3pt] (ca) at (\a + 1, \a) {};
+		    \node [circle, draw, fill, line width = .5pt, inner sep = 0pt, minimum size = 3pt] (ca) at (\a, \a) {};
+    }
+		\end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	%----------(ii)
+	\item  $f(x)=x-[x]$ \\\\
+	    \begin{center}
+		\begin{tikzpicture}
+		    % abscisa y ordenada
+		    \tkzInit[xmax= 2,xmin=-2,ymax=1,ymin=-1]
+		    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		    % label x, f(x)
+		    \tkzDrawX[opacity= .6,label=x,right=0.3]
+		    \tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		    %funciones
+		    \draw(-2,0)--(-.97,1);
+		    \draw(-1,0)--(-0.03,1);
+		    \draw(0,0)--(0.97,1);
+		    \draw(1,0)--(1.97,1);
+		    %puntos
+		    \filldraw[black](-2,0) circle(1pt);
+		    \draw(-1,1)node[]{$\circ$};
+		    \filldraw[black](-1,0) circle(1pt);
+		    \draw(0,1)node[]{$\circ$};
+		    \filldraw[black](0,0) circle(1pt);
+		    \draw(1,1)node[]{$\circ$};
+		    \filldraw[black](1,0) circle(1pt);
+		    \draw(2,1)node[]{$\circ$};
+		\end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	%----------(iii)
+	\item $f(x)=\sqrt{x - [x]}$\\\\
+
+	%----------(iv)
+	\item $f(x)=[x] + \sqrt{x - [x]}$\\\\
+
+	%----------(v)
+	\item $f(x)=\left[\dfrac{1}{x}\right]$\\\\
+
+	%----------(vi)
+	\item $f(x)=\dfrac{1}{\left[\dfrac{1}{x}\right]}$\\\\
+
+    \end{enumerate}
+
+    %--------------------18.
+    \item Trazar la gráfica de las funciones siguientes:
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(i)
+	\item $f(x)={x},$ donde ${x}$ es la distancia de $x$ al entero más próximo\\\\
+	
+	%----------(ii)
+	\item $f(x)={2x}$\\\\
+	
+	%----------(iii)
+	\item $f(x)={x}+\frac{1}{2}{2x}$\\\\
+	
+	%----------(iv)
+	\item $f(x)={4x}$\\\\
+	
+	%----------(v)
+	\item ${x} + \frac{1}{2}{2x} + \frac{1}{4}{4x}$\\\\
+
+    \end{enumerate}
+
+    %--------------------19.
+    \item Describir lo mejor que se pueda las gráficas de las funciones siguientes.\\\\
+    \begin{enumerate}[\bfseries (i)]
+	
+	%----------(i)
+	\item $f(x)=$ el primer número del desarrollo decimal de $x$.\\\\
+
+	%----------(ii)
+	\item $f(x)=$ el segundo número del desarrollo decimal de $x$.\\\\
+
+	%----------(iii)
+	\item $ff(x)=$ el número de sietes del desarrollo decimal de $x$ si este número es finito, y $0$ en el caso contrario.\\\\
+
+	%----------(iv)
+	\item $f(x)=0$ si el número de sietes del desarrollo decimal de $x$ es finito y $1$ en el caso contrario.\\\\
+
+	%----------(v)
+	\item $f(x)=$ el número obtenido sustituyendo todas las cifras del desarrollo decimal de $x$ que vienen después del primer $7$ si la hay por $0$.\\\\
+
+	%----------(vi)
+	\item $f(x)=0$ si $1$ no aparece en el desarrollo decimal de $x$, y $n$ si $1$ aparece por primera vez en el n-ésimo lugar.\\\\
+    \end{enumerate}
+
+    %--------------------20.
+    \item Sea $$f(x)=\left\{ \begin{array}{rl}
+	0,&x \; irracional\\
+	\\ \frac{1}{q},& x=\frac{p}{q} \mbox{racional en forma irreducible}\\\\
+    \end{array}\right.$$
+
+    %--------------------21.
+    \item 
 
 \end{enumerate}

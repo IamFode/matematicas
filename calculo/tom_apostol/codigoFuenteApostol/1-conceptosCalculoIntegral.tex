@@ -1487,7 +1487,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	    Demostración.-\; Sea $P=\lbrace 0,1,...,n \rbrace$. Entonces $P$ es una partición de $[0,n]$ y $[t]^2$ es constante en los subintervalos abiertos de $P$. Ademas, $[t]^2=(k-1)^2$ para $k-1<t<k$, entonces 
 	    \begin{center}
 		\begin{tabular}{rcl}
-		    $\displaystyle\int_{0}^{n} [t]^2 \; dt$&$=$&$\sum\limits_{k=1}^{n}()^2 \cdot (k-(k-1))$\\\\
+		    $\displaystyle\int_{0}^{n} [t]^2 \; dt$&$=$&$\sum\limits_{k=1}^{n}(k-1)^2 \cdot (k-(k-1))$\\\\
 		    &$=$&$\sum\limits_{k=1}^{n} (k-1)^2$\\\\
 		    &$=$&$\sum\limits_{n-1}^{k=0} k^2$\\\\
 		    &$=$&$\dfrac{n^3}{3}-\dfrac{n^2}{2}+\dfrac{n}{6}$\\\\
@@ -1516,10 +1516,48 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 	%----------(c)
 	\item Hallar todos los valores de $x>0$ para los que $\displaystyle\int_{0}^{x} [t]^2 \; dt=2(x-1)$\\\\
-	    Respuesta.-\;
-
-
+	    Respuesta.-\; Los valores son $x=1,\frac{5}{2}$ ya que son los que se intersectan con $2(x-1)$.\\\\ 
 
     \end{enumerate}
+
+    %---------------------7.
+    \item 
+	\begin{enumerate}[\bfseries (a)]
+		
+	    %----------(a)
+	    \item Calcular $\displaystyle\int_{0}^{9} [\sqrt{t}] \; dt$.\\\\
+		Respuesta.-\;
+		$$[\sqrt{t}] = \left\{ \begin{array}{c c l c r}
+		    0 & si & 0\leq \sqrt{t}<1 & \Rightarrow & 0\leq t < 1\\
+		    \\1 & si & 1 \leq \sqrt{t} < 2 & \Rightarrow & 1 \leq t < 4\\
+		    \\2 & si & 2 \leq \sqrt{t}<3 & \Rightarrow & 4\leq t < 9\\\\
+		\end{array}\right.$$
+		    $\displaystyle\int_{0}^{9} \left[\sqrt{t}\right]\; dt = 0\cdot(1-0) + 1\cdot (4-1) + 2(9-4)=13$\\\\
+
+	    %----------(b)
+		\item Si $n$ es un entero positivo, demostrar que $\displaystyle\int_{0}^{n^2} \left[ \sqrt{t}\right] \; dt = \dfrac{n(n-1)(4n+1)}{6}$\\\\
+		    Demostración.-\; Sea $P=\lbrace 0,1,3,9,...,n^2\rbrace$. Entonces $P$ es una partición de $\left[0,n^2\right]$ y $\left[\sqrt{t}\right]$ es constante en los subintervalos abiertos de $P$. Además, porque $(k-1)^2 < t < k^2$ tenemos $\left[\sqrt{t}\right]=(k-1)$. Por lo tanto, se tiene:
+		    \begin{center}
+			\begin{tabular}{rcl}
+			    $\displaystyle\int_{0}^{n^2} \left[\sqrt{t}\right]\; dt$&$=$&$\sum\limits_{k=1}^{n} (k-1)(k^2-(k-1)^2)$\\\\
+			    &$=$&$\sum\limits_{k=1}^{n}(k-1)(2k-1)$\\\\
+			    &$=$&$\sum\limits_{k=1}^{n} (2k^2 - 3k + 1)$\\\\
+			    &$=$&$2\sum\limits_{k=1}^{n} k^2 - 3\sum\limits_{k=1}^{n} k + \sum\limits_{k=1}^{n} 1$\\\\
+			    &$=$&$\dfrac{2n^3}{3} + n^2 + \dfrac{n}{3} - \dfrac{3n^2}{2} - \dfrac{3n}{2} + n$\\\\
+			    &$=$&$\dfrac{n(n-1)(4n+1)}{6}$\\\\
+			\end{tabular}
+		    \end{center}
+	\end{enumerate}
+
+    %--------------------8.
+    \item Pruébese que la propiedad de traslación (teorema 1.7) se puede expresar en la forma siguiente. $$\displaystyle\int_{a+c}^{b+c}f(x) \; dx = \int_{a}^{b}f(x+c)\; dx$$\\\\
+	Demostración.-\; Sea $d=a+c$ y $e=b+c$ entonces por el teorema de invariancia frente a una traslación $$\displaystyle\int_{d}^{e} f(x) \; dx = \int_{e+(-c)}^{d+(-c)} f(x-(-c)) \; dx$$ para $-c \in \mathbb{R}$. Luego, $a=d-c$ y $b=c-e$ por lo tanto $$\displaystyle\int_{b+c}^{a+c} f(x) \; dx = \int_{a}^{b} f(x+c) \; dx$$\\\\
+
+    %--------------------9.
+    \item Probar que la propiedad siguiente es equivalente al teorema 1.8 $$\displaystyle\int_{ka}^{kb} f(x) \; dx = k \int_{a}^{b} f(kx) \; dx$$\\\\
+	Demostración.-\; Sea $\displaystyle\int_{a}^{b} f\left(\dfrac{x}{j}\right) \; dx$, por el teorema tenemos que para cualquier $j>0$ se tiene $$\displaystyle\int_{b/j}^{a/j}f\left(j\dfrac{x}{j}\right)\; dx = \dfrac{1}{j} \int_{a}^{b} f \left(\dfrac{x}{j}\right) \; dx \quad \Rightarrow \quad j\int_{a/j}^{b/j} f(x) \; dx = \int_{a}^{b} f\left(\dfrac{x}{j} \right) \; dx$$ Luego, si $j \in \mathbb{R}^+$ entonces $\dfrac{1}{j}\in \mathbb{R}^+$, de donde podemos aplicar el teorema como $k=\dfrac{1}{j}$: $$\dfrac{1}{k}\displaystyle\int_{ka}^{kb} f(x)\; dx = \int_{a}^{b} \quad \Rightarrow \quad k \int_{a}^{b} f(kx) \; dx = \int_{ka}^{kb} f(x) \; dx$$\\\\
+
+    %--------------------10.
+    \item 
 
 \end{enumerate}
