@@ -1148,7 +1148,7 @@ $3–4$ Relacione cada una de las siguientes ecuaciones con su gráfica. Expliqu
     \begin{enumerate}[\bfseries (a)]
 
 	%----------(a)
-	\item  Respuesta.-\; Elijo $f(x) = \sin x + c$ ya que el rango esta determinado por $-1 \leq \cos x + c \leq 1$ y porque es una función par.\\\\
+	\item  Respuesta.-\; Elijo $f(x) = \cos x + c$ ya que el rango esta determinado por $-1 \leq \cos x + c \leq 1$ y porque es una función par.\\\\
 
 	%----------(b)
 	\item Respuesta.-\; Elijo una función lineal pero inversamente proporcional es decir con su pendiente negativa. $f(x)=-mx + b$\\\\
@@ -1163,12 +1163,61 @@ $3–4$ Relacione cada una de las siguientes ecuaciones con su gráfica. Expliqu
 	\item Respuesta.-\; Tal vez podría servir una función exponencial o una función cuadrática pero con el dominio mayor a $0$.\\\\
 
 	%----------(b)
-	\item Respuesta.-\; Elijo una función cuadrática de la forma $ax^2 - bx + c$ con dominio acotado.\\\\
+	\item Respuesta.-\; Elijo una función exponencial de la forma $f(x)=\dfrac{p}{q} \cdot b^x$.\\\\
 
     \end{enumerate}
 
     %--------------------23.
+    \item La tabla muestra la tasa de úlcera péptica (de por vida) por cada 100 habitantes en relación con el ingreso familiar como lo informa la Encuesta Nacional de Entrevista de Salud.\\\\
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a).
+	\item Trace una gráfica de dispersión con estos datos y decida si es apropiado un modelo lineal.\\\\
+	    Respuesta.-\; Viendo la gráfica en python se verifica que es apropiado un modelo lineal.\\\\
+
+	%----------(b).
+	\item Encuentre y grafique un modelo lineal utilizando el primero y el último punto de datos.\\\\
+	    Respuesta.-\; $$m=\dfrac{8.2 - 14.1}{60000-4000} = -\dfrac{5.9}{56000}$$, luego $$14.1 =-\dfrac{5.9}{56000}\cdot 4000 + b \quad \Rightarrow \quad b = \dfrac{2033}{140}$$ por lo tanto $$T = -\dfrac{5.9}{56000}I + \dfrac{2033}{140}$$\\
+
+	%----------(c).
+	\item Encuentre y grafique la recta de regresión por mínimos cuadrados.\\\\
+	    Respuesta.-\; $$T = -9.979\cdot 10^{-5} I + 13.9508$$\\
+
+	%----------(d).
+	\item Utilice el modelo lineal del inciso $(c)$ para estimar la tasa de úlcera para un ingreso de $ \$ 25000$.\\\\
+	    Respuesta.-\; $T=-9.979\cdot 10^{-5} \cdot 25000 + 13.9508 \quad \Rightarrow \quad T=11.45605$\\\\ 
+
+	%----------(e).
+	\item De acuerdo con el modelo, ¿qué tan probable es que alguien que tiene un ingreso de $ \$ 80000$ sufra de úlcera péptica?\\\\
+	    Respuesta.-\; Mientras más sea el ingreso menos la probabilidad de que sufra úlcera péptica.\\\\
+
+	%----------(f).
+	\item ¿Cree que sería razonable aplicar el modelo a alguien con un ingreso $\$ 200000$?\\\\
+	    Respuesta.-\; No sería razonable ya que la taza es negativa.\\\\
+
+    \end{enumerate}
+
+    %-------------------24.
+    \item Los biólogos han observado que la tasa de chirridos de grillos de una determinada especie, parece estar relacionada con la temperatura. La tabla muestra la cantidad de chirridos para distintas temperaturas. \\
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a).
+	\item Haga una gráfica de dispersión de los datos.\\\\
+	    Respuesta.- Se encuentra en el apartado python.\\\\
+	
+	%----------(b).
+	\item Encuentre y grafique la recta de regresión.\\\\
+	    Respuesta.- La gráfica e encuentra en el apartado python. Luego $$m=\dfrac{233-113}{36-20} = 7.5$$ $$113 = 7.5\cdot 20 + b \quad \Rightarrow \quad b = - 37$$ $$C = 7.5 T - 37$$\\\\
+	
+	%----------(c).
+	\item Utilice el modelo lineal del inciso (b) para estimar la tasa chirridos a $40 ^\circ C.$\\\\
+	    Respuesta.-\; $C = 7.4\cdot 40 - 37 = 263 \; chirridos/min$\\\\
+
+    \end{enumerate}
+
+    %--------------------25.
     \item 
+
 
 
 \end{enumerate}
