@@ -1,0 +1,248 @@
+\documentclass[10pt]{article} 						
+\usepackage[text=17cm,left=2.5cm,right=2.5cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,amssymb,amsfonts} %(símbolos de la AMS).7
+\parindent = 0cm  %sangria
+\usepackage[T1]{fontenc} %acentos en español
+\usepackage[spanish]{babel} %español capitulos y secciones
+\usepackage{graphicx} %gráficos y figuras.
+%-----------------------------------------%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage[rflt]{floatflt}
+\usepackage{wrapfig} 
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{decorations.markings,arrows}
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq}
+\tcbuselibrary{skins,breakable,listings,theorems}
+\usepackage{xparse}							
+\usepackage{pstricks}							
+\usepackage[Bjornstrup]{fncychap}			
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{synttree} 
+\usepackage{chngcntr}
+\usepackage{venndiagram}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{marginnote}										
+\usepackage{fancyhdr}
+
+%------------------------------------------
+\renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
+\renewcommand{\labelenumii}{\arabic{enumii}$)$ }%segundo piso 2)
+\renewcommand{\labelenumiii}{\alph{enumiii}$)$ }%tercer piso a)
+\renewcommand{\labelenumiv}{$\bullet$}			%cuarto piso (punto)
+
+
+\pagestyle{fancy}
+\fancyhead[R]{Geometría I}
+\fancyhead[L]{Práctica IV}
+
+\begin{document}
+\begin{tabular}{r l }
+Universidad: & \textbf{Mayor de San Ándres.}\\
+Asignatura: & \textbf{Geometría I.}\\
+ Práctica: & IV.\\ Alumno: & \textbf{PAREDES AGUILERA CHRISTIAN LIMBERT.}
+\end{tabular}
+\begin{flushleft}
+\begin{tikzpicture}
+\draw(0,1)--(16.5,1);
+\end{tikzpicture}
+\end{flushleft}
+
+
+\begin{enumerate}[\Large\bfseries 1.]
+    
+%-------------------1.
+\item Pruebe que, en un mismo círculo o en círculos de mismo radio, cuerdas congruentes son equidistantes del centro.\\\\
+    Demostración.-\;
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw (0,0)node[right]{$O$} circle (1cm);
+	    \draw (-.6,.8)node[above]{$A$}--(.6,.8)node[above]{$B$}--(-.6,-.8)node[below]{$C$}--(.6,-.8)node[below]{$D$}--(-.6,.8);
+	    \draw(0,.8)node[above]{$E$}--(0,-.8)node[below]{$F$};
+	\end{tikzpicture}
+    \end{center}
+    Construyamos una circunferencia de centro $O$ con segmentos  $AB = CD$. Por $O$ trazamos los segmentos $OA = OB = OC = OD = \; Radio$. Entonces $\triangle ABO$ es isosceles, lo mismo para $\triangle COD$. Como $A\widehat{O}B = C\widehat{O}D$, ya que están opuestos por el vértice, entonces $\triangle ABO = \triangle COD$ por el caso $LAL$. Trazando los segmentos $OE$ y $OF$ de manera que $OE$ y $EF$ son alturas de los triángulos, por lo tanto perpendiculares a $AB$ y $CD$ respectivamente. Como $\triangle AOB = \triangle COD$ entonces $EO = OF$ por lo tanto $AB$ y $CD$ son equidistantes.\\\\
+
+%--------------------2.
+\item Pruebe que, en un mismo círculo o en círculos de mismo radio, cuerdas equidistantes del centro son congruentes.\\\\
+    Demostración.-\; 
+    \begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	    \draw (0,0)node[left]{$O$} circle (2cm);
+	    \draw (-.9,-1.8)node[below]{$C$}--(0,0)--(.6,1.9)node[above]{$A$}--(1.8,.8)node[above right]{$B$}--(0,0)--(.8,-1.8)node[below]{$D$}--(-.9,-1.8);
+	    \draw(0,-1.8)node[below]{$F$}--(0,0)--(1.2,1.3)node[above]{$E$};
+	\end{tikzpicture}
+    \end{center}
+    Sabemos por el problema anterior que si dos arcos son equidistantes, entonces hay una perpendicular a cada arco que es congruente, es decir: $OE=OF$ por hipótesis tenemos que $OE$, $OF \perp AB,$ $CD$ respectivamente. Así mismo $\triangle OBE = \triangle OCF =\triangle OFD$ por el caso cateto hipotenusa. Por lo tanto $AE=EB=CF=FD$ así, $$AE+EB=CF+FD$$ $$AB=CD.$$\\\\
+
+%--------------------3.
+\item Pruebe que, en un mismo círculo o en círculos de mismo radio, si dos cuerdas tienen longitudes diferentes, la más corta es la más alejada del centro.\\\\
+    Demostración.-\; 
+    \begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	    \draw (0,0)node[left]{$O$} circle (2cm);
+	    \draw (-1.8,-1)node[below]{$C$}--(0,0)--(.6,1.9)node[above]{$A$}--(1.8,.8)node[above right]{$B$}--(0,0)--(1.8,-.9)node[below]{$D$}--(-1.8,-1);
+	    \draw(0,-.9)node[below]{$F$}--(0,0)--(1.2,1.3)node[above]{$E$};
+	\end{tikzpicture}
+    \end{center}
+    Como $A,B,C$ y $D$ pertenece al circulo entonces: $$OC=OD=OA=OB=Radio$$ Luego $\triangle COD, \triangle AOB$ son isosceles.\\
+    Los segmentos $OE$ y $OF$ para tener $\triangle AOB=\triangle COD$ ambos rectángulos. Entonces por el teorema de Pitágoras: $$OA^2 = OF^2 + AF^2 \quad o \quad OC^2 = OE^2 = CE^2$$ Luego como $OA=OC=Radio$ $$OF^2 + AF^2 = OE^2 + CE^2 \quad (1)$$
+    Como $AB<CD$ por hipótesis o $F$ o $E$ son puntos medios de $AB$ y $CD$ respectivamente, debido a que $\triangle AOB, \triangle COD$ son isosceles, entonces $AF<CE$ que obliga a la desigualdad $OF> OE$ a mantener la igualdad en $(1)$.\\\\
+
+%--------------------4.
+\item Muestre que la mediatriz de una cuerda pasa por el centro del círculo.\\\\
+    Demostración.-\; Dada una cuerda $AB$ y una mediatriz $m$ que corta a $AB$ en el punto $E$ de manera que $AE = EB$ y $m\perp AB$, como se ve a continuación:
+    \begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	    \draw (0,0)node[below left]{$O$} circle (2cm);
+	    \draw (0,0)--(-.8,1.8)node[above]{$A$}--(1.7,1)node[above]{$B$}--(0,0);
+	    \draw[gray](-.5,-2)--(.7,2.3)node[above]{$m$};
+	\end{tikzpicture}
+    \end{center}
+    Luego $AO=OB=Radio$ como también $\triangle AOB$ es isosceles de base $AB$.\\
+    Sea $OE$ la mediana relativa a la base $AB$ del $\triangle AOB$ entonces, $OE \perp AB$. Cuando un punto pasa por una sola línea perpendicular, entonces $OE$ es la propia mediana que pasa por el punto $O$.\\\\
+
+%--------------------5.
+\item Explique porque el reflejo de un círculo relativo a una recta que pasa por su centro es el mismo círculo.\\\\
+    Demostración.-\; Recordando las propiedades de reflexión tenemos: $$F_m (A) = A \; si \; A\in m,$$luego 
+    \begin{center}
+	\begin{tikzpicture}[scale=.6]
+	    \draw (0,0)node[left]{$O$} circle (2cm);
+	    \draw (.7,-1.9)node[below]{$A{'}$}--(.7,1.9)node[above]{$A$}--(0,0)--(.7,-1.9);
+	    \draw (-2.3,0)--(2,0)node[right]{$m$};
+	    \draw (.7,0)node[below right]{$E$};
+	\end{tikzpicture}
+    \end{center}
+    Al dibujar una línea recta $m$ que pasa por el centro del círculo, la reflexión del centro es el centro mismo. Sea $A$ cualquier punto que pertenezca al círculo, entonces hay un segmento $AA^{'}$ que se cruza con $m$ en el punto $E$ tal que $AE = A^{'}E$ y $AA^{'} \perp  m$. Luego trazamos $\triangle AOE = \triangle EOA^{'}$ que son congruentes en el caso $LAL$. Entonces $OA = OA^{'}$ y por lo tanto la reflexión de $A$ también pertenece al círculo.\\\\
+
+%--------------------6.
+\item En la figura, existen tres rectas que son tangentes simultaneamente a los dos círculos. Estas rectas se dicen tangentes comunes a los círculos. Diga si se puede diseñar dos círculos que tengan:
+
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0) circle (1.1cm);
+	    \draw(.3,-2) circle (.9cm);
+	    \draw[<->] (-1.3,.9)--(-.4,-3.2);
+	    \draw[<->] (-1.6,-1.2)--(2,-1);
+	    \draw[<->] (1.05,1)--(1.3,-3.2);
+	\end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}[\bfseries a)]
+	
+	%----------a)
+	\item Cuatro tangentes comunes,\\\\
+	    Respuesta.-\; Se puede diseñar 4 tangentes comunes si dos las cruzamos por en medio de los circulos.\\\\
+
+	%----------b)
+	\item Exactamente dos tangentes comunes,\\\\
+	    Respuesta.-\; Se puede diseñar sobreponiendo un circulo con el otro.\\\\
+
+	%----------c)
+	\item Solamente una tangente común,\\\\
+	    Respuesta.-\; Se puede graficar solamente una tangente si hacemos que el circulo este contenido en el otro.\\\\
+
+	%----------d)
+	\item ninguna tangente en común,\\\\
+	    Respuesta.-\; Se podría siempre y cuando uno de los círculos fuese más pequeño y no tocara con la circunferencia del otro.\\\\  
+
+	%----------e)
+	\item más de cuatro tangentes en común.\\\\
+	    Respuesta.-\; No se puede graficar mas de 4 tangentes en común.\\\\
+
+    \end{enumerate}
+
+
+%--------------------7.
+\item En la figura $AE$ es tangente común y $JS$ une los centros de los círculos. Los puntos $E$ y $A$ son puntos de tangencia y $M$ es el punto de intersección de los segmentos $JS$ y $AE$. Pruebe que $\widehat{J} = \widehat{S}.$\\\\
+    Respuesta.-\; 
+
+%--------------------8.
+\item En la figura siguiente a izquierda, $M$ es el centro de los dos círculos y $AK$ es tangente al círculo menor en el punto $R$. Muestre que $AR = RK$.\\\\
+    Demostración.-\;
+
+%--------------------9.
+\item En la figura anterior a derecha, $L$ es el centro del círculo, $UK$ es tangente al círculo en el punto $U$ y $UE = LU$. Muestre que $LE = EK.$\\\\
+    Demostración.-\;
+
+%--------------------10.
+\item En la figura siguiente a izquierda, $MO = IX$. Pruebe que $MI = OX$.\\
+Dos puntos en un círculo determinan dos arcos. Si los puntos son $A$ y $B$ denotamos por $AB$ al arco menor determinado por estos dos puntos. Si $P$ también pertenece al círculo usaremos la notación $APB$ para representar al arco que contiene al punto $P$.\\\\
+    Demostración.-\;
+
+%--------------------11.
+\item 
+
+%--------------------12.
+\item 
+
+%--------------------13.
+\item 
+
+%--------------------14.
+\item 
+
+%--------------------15.
+\item 
+
+%--------------------16.
+\item 
+
+%--------------------17.
+\item 
+
+%--------------------18.
+\item 
+
+%--------------------19.
+\item 
+
+%--------------------20.
+\item 
+
+%--------------------21.
+\item 
+
+%--------------------22.
+\item 
+
+%--------------------23.
+\item 
+
+%--------------------24.
+\item 
+
+%--------------------25.
+\item 
+
+%--------------------26.
+\item 
+
+%--------------------27.
+\item 
+
+%--------------------28.
+\item 
+
+%--------------------29.
+\item 
+
+%--------------------30.
+\item 
+
+%--------------------31.
+\item 
+
+%--------------------32.
+\item 
+
+\end{enumerate}
+\end{document}
