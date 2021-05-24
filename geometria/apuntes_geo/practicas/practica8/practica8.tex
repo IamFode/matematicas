@@ -32,6 +32,7 @@ calc, shapes, tikzmark}
 \usetikzlibrary{datavisualization.formats.functions}
 \usepackage{marginnote}										
 \usepackage{fancyhdr}
+\usepackage{yhmath}
 
 %------------------------------------------
 \renewcommand{\labelenumi}{\Roman{enumi}.}		%primer piso II) enumerate
@@ -164,85 +165,145 @@ Asignatura: & \textbf{Geometría I.}\\
 %--------------------7.
 \item En la figura $AE$ es tangente común y $JS$ une los centros de los círculos. Los puntos $E$ y $A$ son puntos de tangencia y $M$ es el punto de intersección de los segmentos $JS$ y $AE$. Pruebe que $\widehat{J} = \widehat{S}.$\\\\
     Respuesta.-\; 
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw[<->](0,0)--(3,-3.5);
+	    \draw(1.45,-.2) circle (1cm);
+	    \draw(1.4,-2.7) circle (.7cm);
+	    \draw(1.9,-2.2)node[right]{$A$}--(1.4,-2.7)node[below]{$J$}--(1.45,-.2)node[above]{$S$}--(.7,-.8)node[left]{$E$};
+	    \draw(1.4,-1.5)node[right]{$M$};
+	\end{tikzpicture}
+    \end{center}
+    Si un radio tiene una línea tangente, la circunferencia en su extremo es entonces perpendicular a la línea tangente.\\
+    Según el teorema $\triangle ESB$ y $\triangle JBA$ son rectángulos y $E\widehat{B}S = J\widehat{B}A$, ya que están colocados por el vértice. Como $\triangle ESB$ y $\triangle JBA$ tienen dos ángulos congruentes, entonces son similares y por lo tanto $\widehat{S} = \widehat{J}$.\\\\
 
 %--------------------8.
 \item En la figura siguiente a izquierda, $M$ es el centro de los dos círculos y $AK$ es tangente al círculo menor en el punto $R$. Muestre que $AR = RK$.\\\\
     Demostración.-\;
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0)node[above]{$M$} circle (.8cm);
+	    \draw(0,0) circle (1.7cm);
+	    \draw(0,0)--(-1.5,-.8)node[left]{$A$}--(1.5,-.8)node[right]{$K$}--(0,0)--(0,-.8);
+	    \draw(0,-.8)node[below]{$R$};
+	\end{tikzpicture}
+    \end{center}
+    Construyamos $\triangle MAR$ y $\triangle MRK$ tal que $AM=MK=Radio$\\
+    Con $m$ trazamos una línea que interseca a $AK$ en el punto $R$. Ahora bien, si un rayo corta a una línea en su punto de tangencia, es perpendicular a la línea. En base a esto tendremos $A\widehat{R}M = M\widehat{R}K = 90^{\circ}$. Por lo tanto, $\triangle AMR y \triangle MRK$son rectángulos y por el criterio de hipotenusa de los triángulos rectangulares $\triangle MRK = \triangle AMR$. Luego $AR = RK$.\\\\
 
 %--------------------9.
 \item En la figura anterior a derecha, $L$ es el centro del círculo, $UK$ es tangente al círculo en el punto $U$ y $UE = LU$. Muestre que $LE = EK.$\\\\
-    Demostración.-\;
+    Demostración.-\; 
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \draw(0,0) circle (1.6cm);
+	    \draw(0,0)node[left]{$L$}--(0,-1.6)node[below]{$U$}--(3,-1.6)node[right]{$K$}--(0,0);
+	    \draw(0,-1.6)--(1.4,-.75)node[right]{$E$};
+	\end{tikzpicture}
+    \end{center}
+    Si $UK$ es tangente al círculo en el punto $U$, entonces $UK \perp LU$ entonces $L\widehat{U}K = 90^{\circ}$. Por hipótesis $UE = LU$ y como $LE$ es radio, $LE = LU = UE$. Entonces, $\triangle LUE$  es equilátero y $L\widehat{E}U = L\widehat{U}E = U\widehat{L}E = 60^{\circ}$. Como $L\widehat{E}U$ es el ángulo externo $\triangle EUK$, entonces: $$L\widehat{E}U = E\widehat{K}U + E\widehat{U}K$$
+    Sin embargo como $L\widehat{U}K = L\widehat{U}E + E\widehat{U}K$ entonces $L\widehat{U}E + E\widehat{U}K = 90^{\circ} \qquad (1)$\\
+    Como $L\widehat{U}E = 60^{\circ}$ por $(1)$ $E\widehat{U}K=30^{\circ}$\\
+    Así $L\widehat{E}U = E\widehat{U}K + E\widehat{K}U$ implica que: $$60^{\circ} = 30^{\circ} + E\widehat{K}U$$ $$E\widehat{K}U = 30^{\circ}$$ Luego $\triangle E\widehat{U}K$ es isosceles de base $UK$, porque tienen dos ángulos de $30^{\circ}$, por lo que $EK = EU \qquad (2)$. Como $UE=LU=LE \qquad (3)$. \\
+    Por $(2)$ y $(3)$ tenemos $LE=EK$.\\\\
 
 %--------------------10.
 \item En la figura siguiente a izquierda, $MO = IX$. Pruebe que $MI = OX$.\\
 Dos puntos en un círculo determinan dos arcos. Si los puntos son $A$ y $B$ denotamos por $AB$ al arco menor determinado por estos dos puntos. Si $P$ también pertenece al círculo usaremos la notación $APB$ para representar al arco que contiene al punto $P$.\\\\
-    Demostración.-\;
+    Demostración.-\; Trazando una cuerda $MX$ es posible notar que $M\widehat{O}X = M\widehat{I}X$, porque ambos tienen la misma cuerda.
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0)node[]{$B$} circle (1cm);
+	    \draw(-.9,.5)node[left]{$M$}--(.85,.5)node[right]{$X$}--(-.4,-0.9)node[left]{$O$}--(-.9,.5)--(.4,-.9)node[right]{$I$}--(.85,.5);
+	\end{tikzpicture}
+    \end{center}
+    Como $\triangle MOB$ y $\triangle BXI$ tienen dos ángulos congruentes estos son similares por lo tanto: $$\dfrac{MO}{XI}=\dfrac{OB}{BI}$$
+    Como $MO=XI$ por hipótesis: $$\dfrac{OB}{BI} = 1 \quad \Rightarrow \quad OB=BI$$
+    Así $\triangle MOB = \triangle BXI$ por el caso $LAL$ y $MB=BX$, por tanto:
+    $$MB+BI=BX+OB$$ $$MI=XO$$\\
 
 %--------------------11.
-\item 
+\item En la figura anterior a derecha, $H$ es el centro del círculo y $CI$ es un diámetro. Si $CA$ y $HN$ son paralelos, muestre que $\wideparen{AN}$ y $\wideparen{IN}$ tienen la misma medida.\\\\
+    Demostración.-\; 
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0)node[above]{$H$} circle (1cm);
+	    \draw(1,0)node[right]{$I$}--(-1,0)node[left]{$C$}--(.4,.9)node[above]{$A$}--(0,0)--(.9,.4)node[right]{$N$};
+	\end{tikzpicture}
+    \end{center}
+    Tenemos $AH$ de donde $\widehat{C}=0.5 (A\widehat{H}I) \qquad (1)$\\
+    Notese que $CA=HA=HN=HI=Radio$ por el paralelismo entre $CA$ y $HN$. También podemos ver que $C\widehat{A}H=A\widehat{H}N$, por los ángulos alternos internos.\\
+    Como $\triangle ACH$ es equilátero $AH=CA=CH=Radio$ entonces $\widehat{C}=C\widehat{A}H = A\widehat{H}N$.\\
+    Luego de $(1)$ vemos: $$\widehat{C} = 0.5 A\widehat{H}I = 0.5(A\widehat{H}N + N\widehat{H}I)$$ $$\widehat{C} = 0.5(A\widehat{H}N + N\widehat{H}I)$$
+    Como $A\widehat{H}N=\widehat{C}$ $$\widehat{C} - 0.5 \widehat{C}=0.5N\widehat{H}I$$ $$0.5\widehat{C} = 0.5N\widehat{H}I$$
+    $$N\widehat{H}I=\widehat{C}=A\widehat{H}N$$ Concluyendo que $N\widehat{H}I=A\widehat{H}N$. Como ángulos centrales iguales dan como resultado cuerdas congruentes, completamos la demostración concluyendo que $\wideparen{AN} = \wideparen{IN}$\\\\
 
 %--------------------12.
-\item 
+\item  En la figura siguiente a izquierda, $O$ es el centro del círculo y $TA$ es un diámetro. Si $PA = AZ$, muestre que los triángulos $PAT$ y $ZAT$ son congruentes.
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0)node[below]{$O$} circle (1cm);
+	    \draw(.95,.3)node[right]{$T$}--(-.95,.4)node[left]{$P$}--(-.8,-.5)node[left]{$A$}--(0,-.95)node[below]{$Z$}--(.95,.3)--(-.8,-.5);
+	\end{tikzpicture}
+    \end{center}
+    Notemos que $T\widehat{P}A$ y $T\widehat{Z}A$ ambos se refieren a arcos formados por semicírculos de modo que $$T\widehat{P}A=T\widehat{Z}A=90^{\circ}$$ 
+    Luego los triángulos $PAT$ y $ZAT$ son congruentes por el caso $PA=AZ$ y $TA$.\\\\
 
 %--------------------13.
-\item 
+\item En la figura anterior a derecha, se sabe que $Y$ es el centro del círculo y que $BL = ER$. Muestre que $BE$ es paralelo a $LR$.\\\\
 
 %--------------------14.
-\item 
+\item En la figura siguiente, el cuadrilátero $DIAN$ es un paralelogramo y son colineales los puntos $I$, $A$ y $M$. Muestre que $DI = DM$.\\\\
+    Demostración.-\; Tenemos $D\widehat{N}A=D\widehat{M}A,$ porque se someten al mismo arco  $\wideparen{DA}$. Como $DIAN$ es un paralelogramo, $D\widehat{N}A = D\widehat{I}A$, así: $$D\widehat{M}A=D\widehat{I}A$$ 
+    Como $I,A$ y $M$ son colineales y $\triangle DMI$ es isosceles de base $MI$ que implica que $DM=DI$.\\\\
 
 %--------------------15.
-\item 
+\item En la figura siguiente, ¿cuál de los dos arcos,  $AH$ o $MY$ tiene mayor medida en grados? Se sabe que los dos círculos son concéntricos.\\\\
+    Respuesta.-\; 
+    \begin{center}
+	\begin{tikzpicture}
+	    \draw(0,0)node[right]{$o$} circle (.7cm);
+	    \draw(0,0) circle (1.5cm);
+	\end{tikzpicture}
+    \end{center}
+    Note que $A\widehat{O}H$ es un ángulo central de la misma circunferencia que $A\widehat{T}H$ está inscrita y por tanto:
+    $$A\widehat{T}H=\dfrac{A\widehat{O}H}{2}$$ 
+    Como $A\widehat{T}H$ relativo al arco $\wideparen{AH}$ y $M\widehat{O}Y$ relativo al arco $\wideparen{MY}$.\\
+    Como $M\widehat{O}Y>A\widehat{O}H$ que implica directamente que $\wideparen{MY}=\wideparen{AH}$\\\\
 
 %--------------------16.
-\item 
 
 %--------------------17.
-\item 
 
 %--------------------18.
-\item 
 
 %--------------------19.
-\item 
 
 %--------------------20.
-\item 
 
 %--------------------21.
-\item 
 
 %--------------------22.
-\item 
 
 %--------------------23.
-\item 
 
 %--------------------24.
-\item 
 
 %--------------------25.
-\item 
 
 %--------------------26.
-\item 
 
 %--------------------27.
-\item 
 
 %--------------------28.
-\item 
 
 %--------------------29.
-\item 
 
 %--------------------30.
-\item 
 
 %--------------------31.
-\item 
 
 %--------------------32.
-\item 
 
 \end{enumerate}
 \end{document}
