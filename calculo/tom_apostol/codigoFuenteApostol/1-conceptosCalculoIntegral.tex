@@ -1558,6 +1558,62 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	Demostración.-\; Sea $\displaystyle\int_{a}^{b} f\left(\dfrac{x}{j}\right) \; dx$, por el teorema tenemos que para cualquier $j>0$ se tiene $$\displaystyle\int_{b/j}^{a/j}f\left(j\dfrac{x}{j}\right)\; dx = \dfrac{1}{j} \int_{a}^{b} f \left(\dfrac{x}{j}\right) \; dx \quad \Rightarrow \quad j\int_{a/j}^{b/j} f(x) \; dx = \int_{a}^{b} f\left(\dfrac{x}{j} \right) \; dx$$ Luego, si $j \in \mathbb{R}^+$ entonces $\dfrac{1}{j}\in \mathbb{R}^+$, de donde podemos aplicar el teorema como $k=\dfrac{1}{j}$: $$\dfrac{1}{k}\displaystyle\int_{ka}^{kb} f(x)\; dx = \int_{a}^{b} \quad \Rightarrow \quad k \int_{a}^{b} f(kx) \; dx = \int_{ka}^{kb} f(x) \; dx$$\\\\
 
     %--------------------10.
-    \item 
+    \item Dado un entero positivo $p$. Una función escalonada $s$ está definida en el intervalo $[0,p]$ como sigue $s(x)=(-1)^n n$ si $x$ está en el intervalo $n\leq x < n+1$ siendo $n=0,1,2,...,p-1$; $s(p)=0$. Póngase $f(p)=\displaystyle\int_{0}^{p} s(x)\; dx.$\\\\
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Calcular $f(3), f(4)$ y $f(f(3))$.\\\\
+	    Respuesta.-\; Sea $$s(x) = \left\{ \begin{array}{lcl}
+		(-1)^n n&si&n\leq x < n+1, \; n=0,1,...p-1\\
+		\\0& si &x=p\\
+	    \end{array}\right.$$
+	    Entonces calculamos para $f(x)=\displaystyle\int_{0}^{p} s(x)\; dx$:
+	    \begin{center}
+	    \begin{tabular}{rclcrcr}
+		$f(3)$ & $=$ & $\displaystyle\int_{0}^{3} s(x) \; dx$ & $=$ & $(-1)^0 0 (1-0) + (-1)\cdot 1\cdot(2-1) + (-1)^2 2 (3-2)$ & $=$ & $1$\\\\
+		$f(4)$ & $=$ & $\displaystyle\int_{0}^{4} s(x) \; dx$ &$=$ & $\displaystyle\int_{0}^{3} s(x) \;dx + \int_{3}^{4} s(x) \; dx = 1 + (-1)^3 3 (4-3)$&$=$&$-2$\\\\
+		$f(f(3))$&$=$&$f(1)$&$=$&$\displaystyle\int_{0}^{1} s(x) \; dx = (-1)^0 0 (1-0)$&$=$&$0$\\\\
+	    \end{tabular}
+	    \end{center}
+
+	%----------(b)
+	\item ¿Para qué valor o valores de $p$ es $|f(p)|=7$?\\\\
+	    Respuesta.-\; Luego de completarlo por un bucle llegamos a la conclusión de que los números que cumplen la condición dada son $14,15$.\\\\
+
+    \end{enumerate}
+
+    %--------------------11.
+    \item  Si en lugar de definir la integral de una función escalonada utilizando la fórmula $(1.3)$ se tomara como definición: $$\displaystyle\int_{a}^{b} s(x)\; dx = \sum\limits_{k=1}^{n} s_k^3 \cdot (x_k - x^{k-1})$$ se tendría una nueva teoría de la integración distinta de la dada. ¿Cuáles de las siguientes propiedades seguirán siendo válidas en la nueva teoría?
+
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a).
+	\item $\displaystyle\int_{a}^{b} s + \int_{b}^{c} s = \int_{a}^{c} s.$\\\\
+	    Respuesta.-\; Sea $P_1 =\lbrace x_0,...,x_m\rbrace$ una partición de $[a,b]$ y $P_2 = \lbrace y_0,...,y_n \rbrace$ sea una partición de $[b,c]$ tal que $s(x)$ sea constante en los intervalos abiertos de $P_1$ y $P_2$, entonces, $P=P_1\cup P_2 =\lbrace x_0,...,x_m,x_{m+1},...,x{m+n} \rbrace$ de donde $x_m = y_0, \; x_{m+1} = y_1, \; x_{m+n} = y_n$, así $P$ es una partición de $[a,c]$ y $s(x)$ es constante en los intervalos abiertos de $P$. Luego,
+	    \begin{center}
+		\begin{tabular}{rcll}
+		    $\displaystyle\int_{a}^{c} \; dx + \int_{c}^{b} s(x) \; dx$&$=$&$\sum\limits_{k=1}^{m} s_k^3 (x_k - x_{k-1}) + \sum\limits_{k=1}^{n} s_k^3 (y_k - y_{k-1})$&$def \; de \displaystyle\int_{a}^{b} s$\\\\
+		    &$=$&$\sum\limits_{k=1}^{m} s_k^3 (x_k - x_{k-1}) + \sum\limits_{k=m+1}^{n+m} s_k^3 (x_k - x_{k-1})$&\\\\
+		    &$=$&$\sum\limits_{k=1}^{m+n} s_k^3(x_k - x_{k-1})$&\\\\
+		    &$=$&$\displaystyle\int_{a}^{c} s(x) \; dx$&\\\\
+		\end{tabular}
+	    \end{center}
+
+	%----------(b).
+	\item $\displaystyle\int_{a}^{b} (s+t) = \int_{a}^{b}s + \int_{a}^{b} t$\\\\
+	    Respuesta.-\; Sea $\displaystyle\int_{0}^{1} \left( s(x) + t(x) \right) \; dx = 2^3(1-0) = 8$, por otro lado $$\displaystyle\int_{0}^{1} s(x) \; dx = \int_{0}^{1} t(x) \; dx = 1(1-1) + 1(1-1) = 2$$ por lo tanto no se cumple la definición para esta propiedad.\\\\
+
+	%----------(c).
+	\item $\displaystyle\int_{a}^{b} c\cdot s = c\int_{a}^{b} s$\\\\
+	    Respuesta.-\; Sea $s(x)=1$ para todo $x \in [0,1]$ y $c=2$ entonces $$\displaystyleîn_{0}^{1} s(x) \; dx = 2^3 = 2$$, por otro lado $$c\cdot \displaystyle\int_{0}^{1} s(x) \; dx = 2\cdot 1 = 2$$ por lo tanto es falso para esta propiedad.\\\\
+
+	%----------(d)
+	\item $\displaystyle\int_{a+c}^{b+c} s(x) \; dx = \int_{a}^{b} s(x+c) \; dx$\\\\
+	    Respuesta.-\; 
+
+
+    \end{enumerate}
+
 
 \end{enumerate}
