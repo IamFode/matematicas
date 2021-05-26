@@ -474,6 +474,73 @@
     \end{array}\right.$$
 
     %--------------------21.
+    \item
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Los puntos de la gráfica de $f(x)=x^2$ son los de la forma $(x,x^2)$. Demostrar que cada uno de tales puntos equidista del punto $(0,\frac{1}{4})$ y de la gráfica de $g(x)=-\frac{1}{4}$.\\\\
+	    Demostrar.-\; Supongamos que la distancia $d_1 = d_2$ siendo $d_1$ la distancia entre $(x,x^2)$ y $(0,\frac{1}{4})$ y $d_2$ la distancia entre $(x.x^2)$ y $(x,-\frac{1}{4})$ entonces $$(x-0)^2+\left(x^2-\frac{1}{4}\right)^2 = (x-x)^2 + \left(x^2+\frac{1}{4}\right)^2 \quad \Rightarrow \quad \left(x^2 + \frac{1}{4}\right)^2 = \left(x^2 + \frac{1}{4}\right)^2$$ por lo tanto queda demostrada la proposición.\\\\
+
+	%----------(b)
+	\item Dado un punto $P=(\alpha,\beta)$ y una recta horizontal $L,$ gráfica de la función $g(x)=\gamma$, demostrar que el conjunto de todos los puntos $(x,y)$ que equidistan de $P$ y $L$ es la gráfica de una función de la forma $f(x)=ax^2 + bx + c$.\\\\
+	Demostración.-\; El punto $(x,y)$ satisface esta condición si y sólo si $$(x-\alpha)^2 + (y-\beta)^2 = (y-\gamma)^2$$ es decir $$y=\left(\dfrac{1}{2\beta - 2 \gamma}\right)x^2 + \left(\dfrac{\alpha}{\gamma - \beta}\right) x + \left(\dfrac{\alpha^2 + \beta^2 - \gamma^2}{2\beta - 2\gamma}\right)$$ siempre que $\beta \neq \gamma$.\\\\
+
+    \end{enumerate}
+
+    %--------------------22.
     \item 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Demostrar que el cuadrado de la distancia de $(c,d)$ a $(x,mx)$ es $$x^2(m^2+1)+x(-2md-2c)+d^2+c^2$$ Utilizando el problema $1-18$ para encontrar el mínimo de estos números demostrar que la distancia de $(c,d)$ a la gráfica $f(x)=mx$ es $$|cm-d|/\sqrt{m^2+1}$$\\\\
+	    Demostración.-\; La demostrar de la primera parte es sencilla si tomamos $(x-c)^2+(mx-d)^2$.\\
+	    Luego según $1-18$ el mínimo de dos números se encuentra mediante $c-\dfrac{b^2}{4a}$ se tiene $d^2 + c^2 - \dfrac{(-2md-2c)^2}{4(m^2+1)}$ resolviendo nos queda $\dfrac{(cm-d)^2}{m^2+1}$.\\\\
+
+	%----------(b)
+	\item Hallar la distancia de $(c,d)$ a la gráfica de $f(x)=x+b$. Reducir este caso a la parte $(a)$.\\\\
+	    Respuesta.-\; La distancia de $(c,d)$ a la gráfica de $f$ es la misma que la distancia de $(c,d-b)$ a la gráfica de $g(x)=mx$. Entones por la parte $(a)$, nos queda $$\dfrac{|cm-d+b|}{m^2+1}$$.\\\\
+    \end{enumerate}
+
+    %--------------------23.
+    \item 
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item Utilizando el problema $22$, demostrar que los número $x^{'}$ e $y^{'}$ indicados en la figura $31$ vienen dados por $$x^{'} = \dfrac{1}{\sqrt{2}}x + \dfrac{1}{\sqrt{2}}y,$$ $$y^{'}= - \dfrac{1}{\sqrt{2}}x + \dfrac{1}{\sqrt{2}}y$$\\\\
+	    Demostración.-\; Debido a que el todos los ángulos que forman estas rectas son $45^{\circ}$ se tiene $f(x)=-x$ y $g(x)=x$ entonces por el problema anterior nos queda $$x^{'}=\dfrac{|-x-y|}{\sqrt{2}} = |-1|\cdot \left| \dfrac{x}{\sqrt{2}} + \dfrac{y}{\sqrt{2}}\right|,$$ $$y^{'} = \dfrac{|x-y|}{\sqrt{2}}= \left|\dfrac{x}{\sqrt{2}} - \dfrac{y}{\sqrt{2}}\right|$$\\\\
+
+	%----------(b)
+	\item Demostrar que el conjunto de todos los $(x,y)$ con $(x^{'} / \sqrt{2})^2 - (y^{'}/\sqrt{2})^2 = 1$ es lo mismo que el conjunto de todos los $(x,y)$ con $xy=1$.\\\\
+	    Demostración.-\; Al ser $$\dfrac{x^{'}}{\sqrt{2}} = \dfrac{x}{2} + \dfrac{y}{2},$$ $$\dfrac{y^{'}}{\sqrt{2}}=-\dfrac{x}{2}+\dfrac{y}{2}$$ luego 
+	    \begin{center}
+		\begin{tabular}{ccl}
+		    $1$&$=$&$\left( \dfrac{x}{2} + \dfrac{y}{2} \right)^2 - \left( - \dfrac{x}{2} + \dfrac{y}{2} \right)^2$\\\\
+		    &$=$&$\dfrac{x^2}{4} + \dfrac{y^2}{4} + \dfrac{xy}{2} - \left( \dfrac{x^2}{4} + \dfrac{y^2}{4} - \dfrac{xy}{2} \right)$\\\\
+		    &$=$&$xy$\\\\
+		\end{tabular}
+	    \end{center}
+	    
+    \end{enumerate}
+
+\end{enumerate}
+
+\section{Problemas}
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+    %--------------------1.
+    \item Demostrar que si dos puntos tienen por coordenadas polares $(r_1,\theta_1)$ y $(r_2,\theta_2)$, la distancia $d$ entre ellos viene dada por $$d^2 = r_1^2 + r_2^2 - 2r_1 r_2 \cos(\theta_1 - \theta_2).$$\\
+	Demostración.-\; 
+	\begin{center}
+	    \begin{tikzpicture}
+		\draw(0,0)--(3,1)node[right]{$(r_2,\theta_2)$}--(.5,1.5)node[above]{$(r_1,\theta_2)$}--(0,0);
+		\draw(.5,1.5)--(.9,.3);
+		\draw(1.5,1.5)node[right]{$d$};
+		\draw(.9,.6)node[above]{$h$};
+		\draw(.4,.1)node[below]{$c$};
+		\draw(2,.7)node[below]{$a$};
+	    \end{tikzpicture}
+	\end{center}
+	Por el teorema de Pitágoras se tiene $d^2 = a^2 + h^2$ y $r_1^2 = h^2 + c^2$ entonces $d^2 = a^2 + r_1^2 + c^2$. Luego $r_2 = c+a$ y por lo tanto $d^2 =  (r_2 - c)^2 + r_1^2 - c^2 \quad  \Rightarrow \quad d^2 = r_1^2 + r_2^2 - 2r_2c$. Nótese que $c=r_1\cos(\theta_1-\theta_2)$ y por lo tanto $$d^2 = r_1^2 + r_2^2 - 2r_1 r_2 \cos(\theta_1 - \theta_2)$$\\
 
 \end{enumerate}
