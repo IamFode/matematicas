@@ -954,7 +954,398 @@ Composición de funciones.\\\\
 En los ejercicios $7$ a $10$, escriba una fórmula para $f\circ g \circ h$\\\\
 
 %--------------------7.
-\item 
+\item $f(x)=x+1, \quad g(x)=3x, \quad h(x)=4-x$\\\\
+    Respuesta.-\; Se tiene $f(g(h(x))) = f(g(4-x)) = f(12-3x) = 12-3x + 1 = 13 - 3x \quad $ para $\quad D_{f\circ g\circ h} = \lbrace \forall \; x \in D_h / h(x) \in D_g \land g(h(x)) \in D_f\rbrace$\\\\
 
+%--------------------8.
+\item $f(x)=3x+4, \quad g(x)=2x-1, \quad h(x)=x^2$\\\\
+    Respuesta.-\; Se tiene $f(g(h(x))) = f(g(x^2)) = f(2x^2-1) = 3(2x^2-1) + 4 = 6x^2 +1 $ para $D_{f\circ g\circ h}= \lbrace \forall x \in D_h / h(x) \in D_g \land g(h(x)) \in D_f \rbrace$\\\\
+
+%--------------------9.
+\item $f(x)=\sqrt{x+1},\quad \dfrac{1}{x+4}, \quad h(x)=\dfrac{1}{x}$\\\\ 
+    Respuesta.-\; $f(g(h(x))) = f\left(g \left(\dfrac{1}{x}\right) \right) = f\left(\dfrac{1}{\dfrac{1}{x} + 4}\right) = \sqrt{\dfrac{1}{\dfrac{1}{x} + 4} + 1} = \sqrt{\dfrac{5x+1}{4x+1}}$ para $ x \neq 0, -\dfrac{1}{4}$.\\\\
+
+%--------------------10.
+\item $f(x)=\dfrac{x+2}{3-x}, \quad g(x)=\dfrac{x^2}{x^2+1}, \quad h(x)=\sqrt{2-x}$\\\\
+    Respuesta.-\; $f\left( g \left( \sqrt{2-x}\right)\right) = f\left( \dfrac{|2-x|}{|2-x|+1}\right) = \dfrac{\dfrac{|2-x|}{|2-x|+1} + 2}{3 - \left(\dfrac{|2-x|}{|2-x|+1}\right)}$\\\\
+
+Sean $f(x)=x-3, \quad g(x)=\sqrt{x}, \quad h(x)=x^3$ y $j(x)=2x$. Exprese cada una de las funciones de los ejercicios $11$ y $12$ como una composición de funciones que incluyan a una o más de $f,g,h$ y $j$.\\\\
+
+%--------------------11.
+\item
+\begin{enumerate}[\bfseries a.]
+    
+    %----------a.
+    \item $y=\sqrt{x}-3 \Rightarrow f(\sqrt{x}) \Rightarrow f(g(x))$\\\\
+
+    %----------b.
+    \item $y=2\sqrt{x} \Rightarrow j(\sqrt{x}) \Rightarrow j(g(x))$\\\\
+
+    %----------c.
+    \item $y=x^{1/4} \Rightarrow g(\sqrt{x}) \Rightarrow g(g(x))$\\\\
+
+    %----------d.
+    \item $y=4x \Rightarrow j(j(x))$\\\\
+
+    %----------e.
+    \item $y=\sqrt{(x-3)^3} \Rightarrow g((x-3)^3) \Rightarrow g(h(x-3)) \Rightarrow g(h(f(x)))$\\\\
+
+    %----------f.
+    \item $y=(2x-6)^3 \Rightarrow h(2x-6) = h(j(x-3)) = h(j(f(x))$.\\\\ 
+
+\end{enumerate}
+
+%--------------------12.
+\item 
+\begin{enumerate}[\bfseries a.]
+    
+    %----------a.
+    \item $y=2x-3 \Rightarrow f(2x) \Rightarrow f(j(x))$\\\\
+    
+    %----------b.
+    \item $y=x^{3/2} \Rightarrow g(x^3) \Rightarrow g(h(x))$\\\\
+    
+    %----------c.
+    \item $y=x^9 \Rightarrow h(x^3) \Rightarrow h(h(x))$\\\\
+    
+    %----------d.
+    \item $y=x-6 \Rightarrow f(f(x))$\\\\
+    
+    %----------e.
+    \item $y=2\sqrt{x-3} \Rightarrow j(\sqrt{x-3}) \Rightarrow j(g(x-3)) \Rightarrow j(g(f(x)))$\\\\
+    
+    %----------f.
+    \item $y=\sqrt{x^3-3} \Rightarrow g(x^3-3) \Rightarrow g(f(x^3)) \Rightarrow g(f(h(x)))$\\\\
+    
+\end{enumerate}
+
+%--------------------13.
+\item Copie complete la siguiente tabla:\\
+\begin{center}
+    \begin{tabular}{c c c c}
+	     & $g(x)$ & $f(x)$ & $(f\circ g)(x)$\\\\
+	\hline \\
+	$a.$ & $x-7$ & $\sqrt{x}$ & $\sqrt{x-7}$\\\\
+	$b.$ & $x+2$ & $2x$ & $3x+6$\\\\
+	$c.$ & $x^2$ & $\sqrt{x-5}$ & $\sqrt{x^2-5}$\\\\
+	$d.$ & $\dfrac{x}{x-1}$ & $\sqrt{x}{x-1}$ & $\dfrac{x}{(x-1)^2}$\\\\
+	$e.$ & $x^3$ & $1+\dfrac{1}{x}$ & $1+\dfrac{1}{x^3}$\\\\
+	$f.$ & $\dfrac{1}{x}$ & $\sqrt{x}$ & $\sqrt{\dfrac{1}{x}}$\\\\
+    \end{tabular}
+\end{center}
+
+%--------------------14.
+\item  Copie y complete la siguiente tabla.
+\begin{center}
+    \begin{tabular}{cccc}
+	&$g(x)$&$f(x)$&$(f\circ g)(x)$\\\\
+	\hline\\
+	$a.$&$\dfrac{1}{x-1}$&$|x|$&$\left| \dfrac{1}{x-1}\right|$\\\\
+	$b.$&$x+2$&$\dfrac{x-1}{x}$&$\dfrac{x}{x+1}$\\\\
+	$c.$&$x^2$&$\sqrt{x}$&$|x|$\\\\
+	$d.$&$\sqrt{x}$&$x^2$&$|x|$\\\\
+    \end{tabular}
+\end{center}
+
+%--------------------15.
+\item Evalúe cada expresión utilizando la siguiente tabla de valores.\\\\
+\begin{enumerate}[\bfseries a.]
+
+    %----------a.
+    \item $f(g(-1)) = f(0) = -2$\\\\
+
+    %----------b.
+    \item $g(f(0)) = g(-2) = 2$\\\\ 
+
+    %----------c.
+    \item $f(f(-1)) = f(0) = -2$\\\\
+
+    %----------d.
+    \item $g(g(2)) = g(0) = 0$\\\\
+
+    %----------e.
+    \item $g(f(-2)) = g(1) = -1$\\\\
+
+    %----------f.
+    \item $f(g(1)) = f(-1) = 0$\\\\
+
+\end{enumerate}
+
+%--------------------16.
+\item Evalúe cada expresión con el uso de las funciones.
+$$f(x) = 2-x, \qquad g(x) = \left\{\begin{array}{lr} -x,& -2\leq x < 0\\ \\x-1, & 0\leq x \leq 2\\ \end{array}\right.$$\\
+\begin{enumerate}[\bfseries a.]
+    
+    %----------a.
+    \item $f(g(0)) = f(0-1) = 2 + 1 = 3$\\\\
+    
+    %----------b.
+    \item $g(f(0)) = g(2) = 1$\\\\
+    
+    %----------c.
+    \item $g(g(-1)) = g(1) = 0$\\\\
+    
+    %----------d.
+    \item $f(f(2)) = f(0) = 2$\\\\
+    
+    %----------e.
+    \item $g(f(0)) = g(2) = 1$\\\\
+    
+    %----------f.
+    \item $f(g(1/2)) = f(-1/2) = 5/2$\\\\
+\end{enumerate}
+
+En los ejercicios 17 y 18, (a) escriba fórmulas para $f\circ g$ y $g\circ f$, luego determine (b) el dominio y (c) el rango de cada una.\\\\
+
+%--------------------17.
+\item $f(x) =\sqrt{x+1}, \quad g(x)=\dfrac{1}{x}$\\\\
+    Respuesta.-\; 
+    Para $f\circ g = f(g(x)) = f\left(\dfrac{1}{x}\right) = \sqrt{\dfrac{1}{x}+1}$ de donde el dominio viene dado por $x>0 \; \land \; x\leq -1$, y el rango viene dado por $f(x)\geq 0$. Luego para $g\circ f = g(f(x)) = g(\sqrt{x+1}) = \dfrac{1}{\sqrt{x+1}}$ de donde el dominio es $x>-1$ y el rango $\forall \; \mathbb{R}, x\neq 0$.\\\\ 
+
+%--------------------18.
+\item $f(x) = x^2, \quad g(x) = 1 - \sqrt{x}$\\\\
+    Respuesta.-\; Para $f(1-\sqrt{x}) = (1-\sqrt{x})^2 = 1 - 2 \sqrt{x} + |x|$ el dominio viene dado por $x\geq 0$ y el rango por $f(g(x)) \geq 0$.\\
+    Luego para $g(x^2) = 1 - \sqrt{x^2} = 1 - |x|$ el dominio viene dado por $x\geq 0$ y el rango $g(f(x)) \geq 1$.\\\\
+
+%-------------------19.
+\item Sea $f(x) = \dfrac{x}{x-2}$. Determine una función $y=g(x)$ de modo que $(f\circ g)(x) = x$.\\\\
+    Respuesta.-\; Sea $f(g(x))=x$ entonces $\dfrac{g(x)}{g(x)-2} = x$ ó $\dfrac{y}{y-2}=x$ por lo tanto $y=g(x)=\dfrac{-2x}{1-x}$.\\\\ 
+
+%--------------------20.
+\item Sea $f(x)=2x^3 - 4$. Determine una función $y=g(x)$ de modo que $(f\circ g)(x)=x+2$.\\\\
+    Respuesta.-\; Similar al anterior ejercicio tenemos que $2y^3 - 4 = x+2$ de donde nos queda $$y=g(x)=\sqrt[3]{\dfrac{x+6}{2}}$$\\
+
+Traslación de gráficas.\\\\
+
+%--------------------21.
+\item La siguiente figura muestra la gráfica de $y=-x^2$ desplazada a dos posiciones nuevas. Escriba las ecuaciones de las gráficas nuevas.\\\\
+    Respuesta.-\; 
+    \begin{enumerate}[a)]
+	\item $y=-(x+7)^2$\\
+	\item $y=-(x-4)^2$\\\\
+    \end{enumerate}
+
+%-------------------22.
+\item La siguiente figura muestra la gráfica de $y=x^2$ desplazada a dos posiciones nuevas. Escriba las ecuaciones de las gráficas nuevas.\\\\
+    Respuesta.-\; 
+    \begin{enumerate}[a)]
+	\item $y=x^2 + 3$\\
+	\item $x^2 - 5$\\\\
+    \end{enumerate}
+
+%--------------------23.
+\item Relacione las ecuaciones listadas en los incisos $a)$ a $d)$ con las gráficas de la figura.\\\\
+    Respuesta.-\;
+    \begin{enumerate}[\bfseries a)]
+
+	%----------a)
+	\item $y=(x-1)^2 - 4 = $ Posición 4.\\\\
+
+	%----------b)
+	\item $y=(x-2)^2 + 2 = $ Posición 1.\\\\
+
+	%----------c)
+	\item $y=(x+2)^2 + 2 = $ Posición 2.\\\\
+
+	%----------d)
+	\item $y=(x+3)^2 - 2 = $ Posición 3.\\\\
+    \end{enumerate}
+
+%--------------------24.
+\item La siguiente figura muestra la gráfica de $y=-x^2$ desplazada a cuatro posiciones nuevas. Escriba una ecuación para cada nueva gráfica.\\\\
+    Respuesta.-\; 
+    \begin{enumerate}[a)]
+	\item $y=-(x-1)^2 + 4$\\
+	\item $y=-(x+2)^2 + 3$\\
+	\item $y=-(x+4)^2 - 1$\\
+	\item $y=-(x-2)^2$\\\\
+    \end{enumerate}
+
+En los ejercicios $25$ a $34$ se establece cuántas unidades y en qué direcciones se trasladarán las gráficas de las ecuaciones dadas. Proporcione una ecuación para la gráfica desplazada: después, en el mismo plano cartesiano, trace la gráfica de la función original y la gráfica de la ecuación desplazada, anotando junto a cada gráfica la ecuación que le corresponda.\\\\
+
+%--------------------25.
+\item $x^2+y^2 = 49$ abajo $3$, izquierda $2$.\\\\ 
+    Respuesta.-\; $$y=\sqrt{49-(x+2)^2} - 3 \quad \Rightarrow \quad (x+2)^2 + (y+3)^2 = 49$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 7,xmin=-7,ymax=7,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-8:4,thick,gray] plot(\x,{(49-(\x+2)^2)^(1/2) - 3});
+		\draw [domain=-6:6,thick,gray] plot(\x,{(49-\x*\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------26.
+\item $x^2 + y^2 = 25$ Arriba $3$, izquierda $4$\\\\
+    Respuesta.-\; $$(x+4)^2 + (y-3)^2 = 25$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 5,xmin=-8,ymax=8,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-8:0,thick,gray] plot(\x,{(25-(\x+4)^2)^(1/2) + 3});
+		\draw [domain=-4:4,thick,gray] plot(\x,{(25-\x*\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------27.
+\item $y=x^3$ Izquierda $1$, abajo $1$.\\\\
+    Respuesta.-\; $$y=(x+1)^3 - 1$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 3,xmin=-3,ymax=8,ymin=-8]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:2,thick,gray] plot(\x,{\x^3});
+		\draw [domain=-2.9:1,thick,gray] plot(\x,{(\x+1)^3 - 1});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------28.
+\item $y = x^{2/3}$ Derecha 1, abajo 1\\\\
+    Respuesta.-\; $$y=(x-1)^{2/3}  - 1$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 5,xmin=-3,ymax=2,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:2,thick,gray] plot(\x,{\x^(2/3)});
+		\draw [domain=1:4,thick,gray] plot(\x,{(\x-1)^(2/3) - 1});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------29
+\item $y = \sqrt{x}$ Izquierda 0.81\\\\
+    Respuesta.-\; $$\sqrt{x+0.81}$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 6,xmin=-2,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:6, thick,gray] plot(\x,{\x^(1/2)});
+		\draw [domain=-.8:5,thick,gray] plot(\x,{(\x+0.81)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------30.
+\item $y = - \sqrt{x}$ Derecha 3 \\\\ 
+    Respuesta.-\; $$y=-\sqrt{x-3}$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 7,xmin=-1,ymax=1,ymin=-3]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:4,thick,gray] plot(\x,{-1*(\x)^(1/2)});
+		\draw [domain=3:6,thick,gray] plot(\x,{-1*(\x-3)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------31.
+\item  $y = 2x - 7$ Arriba 7 \\\\ 
+    Respuesta.-\; $$y=2x$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 4,xmin=-3,ymax=6,ymin=-9]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-1:3,thick,gray] plot(\x,{2*\x - 7});
+		\draw [domain=-1:3,thick,gray] plot(\x,{2*\x});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------32.
+\item $y = \dfrac{1}{2} (x + 1) + 5$ Abajo 5, derecha 1 \\\\ 
+    Respuesta.-\; $$y=\dfrac{1}{2}x$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 5,xmin=-6,ymax=7,ymin=-2]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-5:3,thick,gray] plot(\x,{(1/2)*(\x + 1) + 5});
+		\draw [domain=-4:4,thick,gray] plot(\x,{(1/2)*\x});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------33.
+\item $y=\dfrac{1}{x}$ Arriba 1, derecha 1\\\\ 
+    Respuesta.-\; $$y=\dfrac{1}{x-1}  + 1$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 7,xmin=-1,ymax=4,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=.4:6,thick,gray] plot(\x,{1/\x});
+		\draw [domain=1.4:7,thick,gray] plot(\x,{1/(\x-1) + 1});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+%--------------------34.
+\item $y=\dfrac{1}{x^2}$ Izquierda 2, abajo 1 \\\\ 
+    Respuesta.-\; $$y=\dfrac{1}{(x+2)^2} - 1$$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 8,xmin=-2,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=.8:6,thick,gray] plot(\x,{1/\x^2});
+		\draw [domain=-1.3:5,thick,gray] plot(\x,{(1/(\x+2)^2) - 1});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+Grafique las funciones de los ejercicios $35$ a $54$\\\\
+
+%--------------------35.
+\item 
 
 \end{enumerate}
