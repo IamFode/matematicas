@@ -290,7 +290,7 @@
 	\begin{enumerate}[\bfseries (a)]
 
 	    %----------(a)
-	    \item Demostrar que para cualquier función polinómica $f$ y cualquier número $a$ existe función polinómica $g$ y un número $b$ tales que $f(x)=(x-a)g(x)+b$ para todo $x$. (La idea es esencialmente dividir $f(x)$ por $(x-a)$ mediante la división larga hasta encontrar un resto constante.)\\
+	    \item Demostrar que para cualquier función polinómica $f$ y cualquier número $a$ existe función polinómica $g$ y un número $b$ tales que $f(x)=(x-a)g(x)+b$ para todo $x$. (La idea es esencialmente dividir $f(x)$ por $(x-a)$ mediante la división larga hasta encontrar un resto constante.)\\\\
 	    Demostración.- \; Si el grado de $f$ es $1$, entonces $f$ es de la forma $$f(x)=cx+d=cx+d +ac-ac=c(x-a)+(d+ac)$$ de tal modo que $g(x)=c$ y $b=d+ac$. Por inducción supongamos que el resultado es válido para polinomios de grado $\leq k.$ Si $f$ tiene grado $k+1$, entonces $f$ tiene la forma $$f(x)=a_{k+1}x^{k+1} + ... + a_1x + a_0$$ luego para grados $\leq k$ se tiene $$f(x)-a_{k+1}x^{k+1} =(x-a)g(x)+b$$ así $$f(x) = (x-a)\left[g(x) + a_{k+1}(x-a)^k\right]+b$$\\\\
 
 	    %----------(b)
@@ -415,10 +415,10 @@
 	    Los otros dos últimos se prueba fácilmente y se llega a la conclusión de que ni uno ni lo otro.
 	    \begin{center}
 		\begin{tabular}{c|cc}
-		    &\textbf{Par}&\textbf{Par}\\
+		    &\textbf{Par}&\textbf{Impar}\\
 		    \hline\\
 		    \textbf{Par}&Par&Ninguno\\\\
-		    \textbf{Par}&Ninguno&Par\\
+		    \textbf{Impar}&Ninguno&Par\\
 		\end{tabular}
 	    \end{center}
 	    \vspace{1cm}
@@ -431,10 +431,10 @@
 	    De igual forma al anterior se puede probar que impar y par es impar.
 	    \begin{center}
 		\begin{tabular}{c|cc}
-		    &\textbf{Par}&\textbf{Par}\\
+		    &\textbf{Par}&\textbf{Impar}\\
 		    \hline\\
 		    \textbf{Par}&Par&Impar\\\\
-		    \textbf{Par}&Impar&Par\\\\
+		    \textbf{Impar}&Impar&Par\\\\
 		\end{tabular}
 	    \end{center}
 	    \vspace{1cm}
@@ -445,10 +445,10 @@
 	    De similar manera se puede encontrar para los demás problemas y queda:
 	    \begin{center}
 		\begin{tabular}{c|cc}
-		    &\textbf{Par}&\textbf{Par}\\
+		    &\textbf{Par}&\textbf{Impar}\\
 		    \hline\\
 		    \textbf{Par}&Par&Par\\\\
-		    \textbf{Par}&Par&Impar\\\\
+		    \textbf{Impar}&Par&Impar\\\\
 		\end{tabular}
 	    \end{center}
 	    \vspace{1cm}

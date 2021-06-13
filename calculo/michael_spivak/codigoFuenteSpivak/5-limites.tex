@@ -1,2 +1,178 @@
 \chapter{Limites}
 
+%--------------------definición de límite
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	La función $f$ tiende hacia el límite $l$ en $a$ $\left(\lim\limits_{x \to a} f(x) = l \right)$ significa: para todo $\epsilon > 0$ existe algún $\delta > 0$ tal que, para todo $x$, si $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon$.\\\\
+	Existe algún $\epsilon >0$ tal que para todo $\delta > 0$ existe algún $x$ para el cual es $0<|x-a|<\delta$, pero no $|f(x)-l|<\epsilon$.
+    \end{def.}
+\end{tcolorbox}
+\vspace{.5cm}
+
+%--------------------teorema 1.1
+\begin{teo}
+Una función no puede tender hacia dos límites diferentes en $a$. En otros términos si $f$ tiende hacia $l$ en $a$, y $f$ tiende hacia $m$ en $a$, entonces $l=m$.\\\\
+    Demostración.-\; Puesto que $f$ tiende hacia $l$ en $a$, sabemos que para todo $\epsilon>0$ existe algún número $\delta_1 >0$ tal que, para todo $x$, si $0<|x-a|<\delta_1$, entonces $|f(x)-l|<\epsilon$.\\
+    Sabemos también, puesto que $f$ tiende hacia $m$ en $a$, que existe algún $\delta_2 >0$ tal que, para todo $x$, si $0<|x-a|<\delta_2$, entonces $|f(x)-m|<\epsilon$.\\
+    Hemos empleado dos números $delta_1$ y $\delta_2$, ya que no podemos asegurar que el $\delta$ que va bien en una definición irá bien en la otra. Sin embargo, de hecho, es ahora fácil concluir que para todo $\epsilon>0$ existe algún $\delta >0$ tal que, para todo $x$, $$si \; 0<|x-a|<\delta=\min(\delta_1,\delta_2), \; entonces \; |f(x)-l|<\epsilon \;\; y \;\; |f(x)-m|<\epsilon$$  
+    Para completar la demostración solamente nos queda tomar un $\epsilon>0$ particular para el cual las dos condiciones $|f(x)-l|<\epsilon$ y $|f(x)-m|<\epsilon$ no puedan cumplirse a la vez si $l\neq m$\\
+    Si $l\neq m$, de modo que $|m-l|>0$ podemos tomar como $\epsilon$ a $|l-m|/2$. Se sigue que existe un  $\delta > 0$ tal que, para todo $x$, $$si \; 0<|x-a|<\delta, \; entonces \; |f(x)-l|<\dfrac{|l-m|}{2} \; \; y \; \; |f(x)-m|<\dfrac{|l-m|}{2}$$
+    Esto implica que para $0<|x-a|<\delta$ tenemos $$|l-m| = |l - f(x) + f(x) -m|\leq |l-f(x)| + |f(x)-m|<\dfrac{|l-m|}{2}+\dfrac{|l-m|}{2}=|l-m|$$ El cual es una contradicción.\\\\
+\end{teo}
+\vspace{.5cm}
+
+    %-------------------lema1.1
+    \begin{lema}
+	Si $x$ está cerca de $x_0$ e $y$ está cerca de $y_0$, entonces $x+y$ estará cerca de $x_0 + y_0$, $xy$ estará cerca de $x_0y_0$ y $1/y$ estará cerca de $1/y_0$.\\\\
+	\begin{enumerate}[\bfseries (1)]
+
+	    %----------(1)
+	    \item Si $|x-x_0|<\dfrac{\epsilon}{2}$ y $|y-y_0|<\dfrac{\epsilon}{2}$ \; entonces \; $|(x+y) - (x_0+y_0)|<\epsilon$.\\\\
+		Demostración.-\;$$|(x+y)-(x_0+y_0)| = |(x-x_0)+(y-y_0)| \leq |x-x_0| + |y-y_0| < \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} = \epsilon$$\\\\
+
+	    %----------(2)
+	    \item Si $|x-x_0| < \min\left(1,\dfrac{\epsilon}{2(|y_0|+1)}\right)$ \; y\; $|y-y_0| < \dfrac{\epsilon}{2(|x_0| + 1)}$\; entonces \;$|xy-x_0y_0|<\epsilon$.\\\\
+		Demostración.-\; Puesto que $|x-x_0|<1$ se tiene $$|x| - |x_0| \leq |x-x_0|<1,$$
+		de modo que $$|x| < 1 + |x_0|$$ así pues 
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$|xy-x_0y_0|$&$=$&$|x(y-y_0) + y_0(x-x_0)|$\\\\
+			&$\leq$&$|x|\cdot |y-y_0| + |y_0|\cdot |x-x_0|$\\\\
+			&$<$&$(1+|x_0|)\cdot \dfrac{\epsilon}{2(|x_0|+1)} + |y_0|\cdot \dfrac{\epsilon}{2(|y_0|+1)}$\\\\
+			&$<$&$\dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} = \epsilon$\\\\
+		    \end{tabular}
+		\end{center}
+		Notemos que $\dfrac{|y_0|}{|y_0|-1}<1$, por lo tanto $\dfrac{|y_0|}{|y_0|-1}\cdot \dfrac{\epsilon}{2}< \dfrac{\epsilon}{2}$.\\\\
+		\vspace{.5cm}
+
+	    %----------(3)
+	    \item Si $y_0 \neq 0$ y $|y-y_0| < \min\left(\dfrac{|y_0|}{2},\dfrac{\epsilon|y_0|^2}{2}\right)$ \; entonces \; $y\neq 0$ y $\left| \dfrac{1}{y} - \dfrac{1}{y_0} \right|< \epsilon$.\\\\
+		Demostración.-\; Se tiene $$|y_0|-|y|<|y-y_0|<\dfrac{|y_0|}{2},$$
+		de modo que $-|y|< -\dfrac{|y_0|}{2} \Longrightarrow |y|>|y_0|/2$. En particular. $y\neq 0$, y $$\dfrac{1}{|y|}<\dfrac{2}{|y_0|}$$ Así pues 
+		$$\left|\dfrac{1}{y}-\dfrac{1}{y_0}\right| = \dfrac{|y_0-y|}{|y|\cdot |y_0|} = \dfrac{1}{|y|}\cdot \dfrac{|y_0-y|}{|y_0|} < \dfrac{2}{|y_0|}\cdot \dfrac{1}{|y_0|} \cdot \dfrac{\epsilon |y_0|^2}{2} = \epsilon$$\\\\
+	\end{enumerate}
+    \end{lema}
+\vspace{1cm}
+
+%--------------------teorema 2
+\begin{teo}
+    Si $\lim\limits_{x \to a} f(x) = l$ y $\lim\limits_{x \to a} g(x) = m$, entonces 
+    \begin{enumerate}[\bfseries (1)]
+	\item  $\lim\limits_{x \to a} (f+g)(x) = l+m$
+	\item  $\lim\limits_{x \to a} (f\cdot g)(x) = l\cdot m$\\\\
+	Además, si $m\neq 0$, entonces
+	\item  $\lim\limits_{x \to a} (\dfrac{1}{g})(x) = \dfrac{1}{m}$
+    \end{enumerate}
+	Demostración.-\; La hipótesis significa que para todo $\epsilon > 0$ existen $\delta_1, \delta_2>0$ tales que, para todo $x$, $$si \; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\epsilon$$ 
+	$$y \quad si \; 0<|x-a|<\delta_2, \; entonces \; |g(x)-m < \epsilon|$$
+	Esto significa ( ya que después de todo, $\epsilon/2$ es también un número positivo) que existen $\delta_1,\delta_2>0$ tales que, para todo $x$,
+	$$si \; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\dfrac{\epsilon}{2}$$
+	$$y \quad si \; 0<|x-a|<\delta_2, \; entonces \; |g(x)-m|<\dfrac{\epsilon}{2}$$
+	Sea ahora $\delta = \min(\delta_1,\delta_2)$. Si $0<|x-a|<\delta$, entonces $0<|x-a<\delta_1$ y $0<|x-a|<\delta_2$ se cumplen las dos, de modo que es a la vez $$|f(x)-l|<\dfrac{\epsilon}{2} \quad y \quad |g(x)-m|<\dfrac{\epsilon}{2}$$
+	pero según la parte $(1)$ del lema anterior esto implica que $|(f+g)(x) - (l+m)|< \epsilon$.\\\\
+	Para demostrar $(2)$ procedemos de la misma manera, después de consultar la parte $(2)$ del lema. Si $\epsilon>0$ existen $\delta_1,\delta_2>0$ tales que, para todo $x$ $$si\; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right),$$ $$y\quad si\; 0<|x-a|<\delta_2,\; entonces \; |g(x)-m|<\dfrac{\epsilon}{2(|l|)+1}$$ Pongamos de nuevo $\delta = \min(\delta_1,\delta_2)$. Si $0<|x-a|<\delta,$ entonces $$|f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right) \qquad y \qquad |g(x)-m|<\dfrac{\delta}{2(|l|+1)}$$
+	Así pues, según el lema, $|(f\cdot g)(x)-l\cdot m|<\epsilon$, y esto demuestra $(2)$.\\\\
+	Finalmente, si $\epsilon>0$ existe un $\delta>0$ tal que, para todo $x$, $$si\; 0<|x-a|<\delta, \; entonces \; |g(x)-m|< \min\left(\dfrac{|m|}{2},\dfrac{\epsilon|m|^2}{2}\right)$$
+	Pero según la parte $(3)$ del lema, esto significa, en primer lugar que $g(x)\neq 0$, de modo que $(1/g)(x)$ tiene sentido, y en segundo lugar que $$\left|\left(\dfrac{1}{g}\right)(x)-\dfrac{1}{m}\right|<\epsilon$$
+	Esto demuestra $(3)$.\\\\
+\end{teo}
+
+%--------------------definición 5.2
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	$\lim\limits_{x \to a^+} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<x-a<\delta, \; entonces \; |f(x)-l|<\epsilon$$	
+	La condición $0<x-a<\delta$ es equivalente a $0<|x-a|<\delta$ y $x>a$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 5.3
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	$\lim\limits_{x \to a^-} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<a-x<\delta, \; entonces \; |f(x)-l|<\epsilon$$	
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 5.4
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	$\lim\limits_{x \to \infty} f(x)=l$ significa que para todo $\epsilon>0$, existe un número $N$ grande, que, para todo $x$, $$si \; x>N, \; entonces \; |f(x)-l|<\epsilon$$	
+    \end{def.}
+\end{tcolorbox}
+
+\section{Problemas}
+\begin{enumerate}[\Large \bfseries 1.]
+
+%--------------------1.
+\item Hallar los siguientes limites (Estos limites se obtienen todos, después de algunos cálculos, de las distintas partes del teorema 2; téngase cuidado en averiguar cuáles son las partes que se aplican, pero sin preocuparse de escribirlas.)
+\begin{enumerate}[\bfseries (i)]
+
+    %----------(i)
+    \item $\lim\limits_{x \to 1}\dfrac{x^2-1}{x+1} = \dfrac{1^2 - 1}{1 + 1} = \dfrac{0}{2} = 0$\\\\
+
+    %----------(ii)
+    \item $\lim\limits_{x \to 2} \dfrac{x^2 - 8}{x - 2} = \dfrac{(x-2)(x^2+2x+4)}{x-2} = 2^2+4+4 = 12$\\\\
+
+    %----------(iii)
+    \item $\lim\limits_{x \to 3} \dfrac{x^3-8}{x-2} = \dfrac{3^3-8}{3-2} =19$\\\\
+
+    %----------(iv)
+    \item $\lim\limits_{x\to y}\dfrac{x^n - y^n}{x-y} = \dfrac{(x-y)(x^{n-1}+x^{n-2}y + ... + xy^{n-2}+y^{n-1})}{x-y} = x^{n-1}+x^{n-2}y + ... + xy^{n-2}+y^{n-1}=$ $$= ny^{n-1}$$
+
+    %----------(v)
+    \item $\lim\limits_{y\to x}\dfrac{x^n - y^n}{x-y} = x^{n-1}+x^{n-2}y + ... + xy^{n-2}+y^{n-1}= nx^{n-1}$\\\\
+
+    %----------(vi)
+    \item $\lim\limits_{h\to 0}  = \dfrac{\sqrt{a+h}-\sqrt{a}}{h} = \dfrac{\sqrt{a+h}+\sqrt{a}}{h}\cdot \dfrac{\sqrt{a+h}+\sqrt{a}}{\sqrt{a+h}+\sqrt{a}} = \dfrac{(\sqrt{a+h})^2 - (\sqrt{a})^2}{h(\sqrt{a+h} + \sqrt{a})}=\dfrac{1}{\sqrt{a+h}+\sqrt{a}} = $ $$=\dfrac{1}{2\sqrt{a}}$$\\\\
+    \vspace{1cm}
+
+\end{enumerate}
+
+%--------------------2.
+\item Hallar los límites siguientes:
+\begin{enumerate}[\bfseries (i)]
+    
+    %----------(i)
+    \item $\lim\limits_{x \to 1} \dfrac{1-\sqrt{x}}{1-x} =\lim\limits_{x \to 1} \dfrac{1-\sqrt{x}}{1-x}\cdot \dfrac{1+\sqrt{x}}{1+\sqrt{x}} =\lim\limits_{x \to 1} \dfrac{1^2 - (\sqrt{x})^2}{(1-x)(1+\sqrt{x})} =\lim\limits_{x \to 1} \dfrac{1}{1+\sqrt{x}} = \dfrac{1}{2}$\\\\
+    
+    %----------(i)
+    \item $\lim\limits_{x \to 0} \dfrac{1-\sqrt{1-x^2}}{x} =\lim\limits_{x \to 0} \dfrac{1-\sqrt{1-x^2}}{x} \cdot \dfrac{1+\sqrt{1-x^2}}{1+\sqrt{1-x^2}} =\lim\limits_{x \to 0} \dfrac{x}{1+\sqrt{1-x^2}} = 0$\\\\
+    
+    %----------(i)
+    \item $\lim\limits_{x \to 0} \dfrac{1-\sqrt{1-x^2}}{x^2} = \lim\limits_{x \to 0} \dfrac{1-\sqrt{1-x^2}}{x^2}\cdot \dfrac{1+\sqrt{1-x^2}}{1+\sqrt{1-x^2}} = \lim\limits_{x \to 0} \dfrac{1}{1+\sqrt{1+x^2}} = \dfrac{1}{2}$\\\\
+
+\end{enumerate}
+
+%--------------------3.
+\item En cada uno de los siguientes casos, encontrar un $\delta$ tal que, $|f(x)-l|<\epsilon$ para todo $x$ que satisface $0<|x-a|<\delta$\\
+\begin{enumerate}[\bfseries (i)]
+
+    %----------(i).
+    \item $f(x)=x^4; \; l=a^4$\\\\
+	Respuesta.-\; Por la parte $(2)$ del lema anterior se tiene $$|x^2-a^2| < \min\left(1,\dfrac{\epsilon}{2(|a|^2+1)}\right).$$ Si aplicamos una vez mas la parte $(2)$ del lema obtenemos $$|x-a|<\min\left(1,\dfrac{\min\left(1,\dfrac{\epsilon}{2(|a|^2+1)}\right)}{2(|a|+1)}\right)=\min \left(1,\dfrac{\epsilon}{4(|a|^2 + 1)(|a|+1)}\right)=\delta$$\\
+
+    %----------(ii).
+    \item $f(x) =\dfrac{1}{x}; \; a=1,\; l=1$\\\\
+	Respuesta.-\; Por la parte $(3)$ del lema se tiene $\left|\dfrac{1}{x} - 1\right|<\epsilon$ por lo tanto $|y-1|< \min\left(\dfrac{1}{2},\dfrac{\epsilon}{2}\right)$\\\\
+
+    %----------(iii).
+    \item $f(x)=x^4 + \dfrac{1}{x}; \; a=1, \; l=2$\\\\
+	Respuesta.-\; Por la primera parte del lema se tiene $\left|\left(x^4+\dfrac{1}{x}\right)-(1+1)\right|<\epsilon$ de donde $$|x^4-1|<\dfrac{\epsilon}{2} \quad y \quad \left|\dfrac{1}{x}-1\right|<\dfrac{\epsilon}{2}$$
+	Luego por el inciso $(i)$ y $(ii)$ $$\left|x-1\right|<\min\left(\dfrac{1}{2},\dfrac{\dfrac{\epsilon}{2}}{2}\right) \;\; y \;\; \left|x-1\right|<\min\left(1,\dfrac{1,\min\left(\dfrac{\dfrac{\epsilon}{2}}{2(1+1)}\right)}{2(1+1)}\right) \; \Longrightarrow \;|x-1|<\min\left(\dfrac{1}{2},\dfrac{\epsilon}{4},1,\dfrac{\epsilon}{32}\right)$$
+	y por lo tanto $$|x-1|<\min\left(\dfrac{1}{2},\dfrac{\epsilon}{32}\right)=\delta$$\\
+
+
+    %----------(iv).
+    \item $f(x)=\dfrac{x}{1 + \sen^2 x}; \; a=0, \; l=0$\\\\
+	Respuesta.-\; 
+
+    %----------(v).
+    \item $f(x)=\sqrt{|x|};\; a=0,\; l=0$\\\\
+	Respuesta.-\;
+
+    %----------(vi).
+    \item $f(x)=\sqrt{x};\; a=1,\; l=1$\\\\
+	Respuesta.-\;
+
+\end{enumerate}
+
+\end{enumerate}

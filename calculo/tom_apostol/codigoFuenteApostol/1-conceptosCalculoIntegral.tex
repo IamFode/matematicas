@@ -1316,8 +1316,9 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     \end{teo}
 
     %--------------------teorema 1.3
-    \begin{teo}[Propiedad aditiva]
+    \begin{teo}[Propiedad Homogénea]
 	$\displaystyle\int_{a}^{b} c \cdot s(x) dx = c\int_{a}^{b} s(x) dx$\\\\
+	    Demostración.-\; Sea $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición de $[a,b]$ tal que $s$ es constante en los subintervalos abiertos de $P$. Sea $s(x)=s_k$ si $x_{k-1}<x<x_k$ para $k=1,2,...,n$. Entonces, $c \cdot s(x) = c \cdot s_k$ si $x_{k-1}<x<x_k$, y por tanto en virtud de la definición de integral se tiene $$\displaystyle\int_{a}^{b} c\cdot s(x) \; dx = \sum\limits_{k=1}^n c \cdot s_k (x_k - x_{k-1}) = c \sum\limits_{k=1}^n s_k(x_k - x_{k-1}) = c\cdot \int_{a}^{b} s(x) \; dx$$\\
     \end{teo}
 
     %--------------------teorema 1.4
@@ -1343,6 +1344,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     \begin{teo}[Dilatación o contracción del intervalo de integración]
 	$\displaystyle\int_{ka}^{kb} s\left(\dfrac{x}{k}\right) dx$ para todo $k>0$\\\\
 	Es conveniente considerar integrales con el límite inferior mayor que el superior. Esto se logra definiendo: $$\displaystyle\int_{a}^{b} s(x) dx = - \int_{a}^{b} s(x) dx \qquad a<b$$\\\\
+	    Demostración.-\; Sea $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición del intervalo $[a,b]$ tal que $s$ es constante en los subintervalos abiertos de $P$. Supóngase que $s(x)=s_i$ si $x_{i-1}<x<x_i$. Sea $t(x)=s(x/k)$ si $ka<x<kb$. Entonces $t(x)=s_i$ si $x$ pertenece al intervalo abierto $(kx_{i-1},kx_i)$;, por tanto $P{'}=\lbrace kx_0,kx_1,...,kx_n \rbrace$ es una partición de $[ka,kb]$ y $t$ es constante en los subintervalos abiertos de $P^{'}$. Por tanto $t$ es una función escalonada cuya integral es: $$\displaystyle\int_{ka}^{kb} t(x) \; dx = \sum\limits_{k=1}^{n} s_i \cdot (kx_1 - kx_{i-1}) k\sum\limits_{k=1}^n s_i \cdot (x_i - x_{i-1}) = k \int_{a}^{b} s(x) \; dx$$\\
     \end{teo}
 
     %--------------------teorema 1.9
@@ -1610,10 +1612,353 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 	%----------(d)
 	\item $\displaystyle\int_{a+c}^{b+c} s(x) \; dx = \int_{a}^{b} s(x+c) \; dx$\\\\
-	    Respuesta.-\; 
+	    Respuesta.-\; Sea $P=\lbrace x_0,...,x_n \rbrace$ una partición de $[a,b]$ tal que $s(x))s_k$ en el que $k$ es el subintervalo abierto de $P$. Luego, $$P=\lbrace x_o+c.x_1+c,...,x_n+c \rbrace$$ es una partición de $[a+c,b+c]$ y $s(x-c)=x_k$ sobre $x_{k-1} + c < x < s_k + c$ entonces:
+	    $$\displaystyle\int_{a}^{b} s(x) \; dx = \sum\limits_{k=1}^{n} s_k^3 (x_k - x_{k-1}) \qquad y \qquad \int_{a+c}^{b+c} s(x-c) \; dx = \sum\limits_{k=1}^{n} s_k^3 (x_k- x_{k-1})$$ por lo tanto $$\displaystyle\int_{a}^{b} s(x) \; dx = \int_{a+c}^{b+c} s(x-c) \; dx$$\\
 
+	%----------(e)
+	\item Si $s(x)<t(x)$ para cada $x$ en $[a,b]$, entonces $\displaystyle\int_{a}^{b} s < \int_{a}^{b} t.$\\\\
+	    Respuesta.-\; Como $s(x)<t(x)$ entonces $s(x)^3 < t(x)^3$ de donde el resultado se sigue inmediatamente.\\\\
 
     \end{enumerate}
 
+    %--------------------12.
+\item Resolver el ejercicio $11$ utilizando la definición $$\displaystyle\int_{a}^{b} s(x) \; dx = \sum\limits_{k=1}^{n} s_k \cdot (x_k^2 - x_{k-1}^2)$$\\\\
+    
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item $\displaystyle\int_{a}^{b} s + \int_{b}^{c} s = \int_{a}^{c} s$.\\\\
+	    Respuesta.-\; Sea $P_1=\lbrace x_0,...,x_m \rbrace$ una partición de $[a,b]$ y $P_2=\lbrace y_0,...,y_n \rbrace$ sea una partición de $[b,c]$ tal que $s(x)$ es constante en los subintervalos abiertos de $P_1$ y $P_2$. Entonces $P=P_1 \cup P_2 = \lbrace x_0,..., x_m,x_{m+1},...,x_{m+n} \rbrace$ donde $x_m = y_0, x_{m+1}=y_1, x_{m+n}=y_n$, así $P$ es un partición de $[a,c]$ y $s(x)$ es constante en los subintervalos abiertos de $P$. Luego, 
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\int_{a}^{b} s(x) \; dx + \int_{b}^{a} s(x) \; dx$&$=$&$\sum\limits_{k=1}^{m} s_k (x_k^2 - x_{k-1}^2) + \sum\limits_{k=1}^n s_k (y_k^2 - y_{k-1}^2) $\\\\
+		    &$=$&$\sum\limits_{k=1}^m s_k(s_k^2 - x_{k-1}^2) + \sum\limits_{k=m+1}^{m+n} x_k (x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$\sum\limits_{k=1}^{m+n} x_k(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$\displaystyle\int_{a}^{c} s(x) \; dx$\\\\
+		\end{tabular}
+	    \end{center}
+
+	%----------(b)
+	\item $\displaystyle\int_{a}^{b} (s+t)=\int_{a}^{b} s + \int_{a}^{b} t$\\\\
+	    Respuesta.-\; Sea $P=\lbrace x_0,...,x_n \rbrace$ partición del intervalo $[a,b]$ tal que $s(x)$ es constante en los subintervalos abiertos de $P$. Supongamos que $s(x) + t(x) = s_k + t_k$ si $x_{k-1}<x<x_k$ para $k=1,2,...n$. Luego,
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\displaystyle\int_{a}^{b} s(x) + t(x) \; dx$&$=$&$\sum\limits_{k=1}^n (s_k + t_k)(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$\sum\limits_{k=1}^{n} s_k(x_k^2 - x_{k-1}^2) + t_k(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$\sum\limits_{k=1}^{n} s_k(x_k^2 - x_{k-1}^2) + \sum\limits_{k=1}^{n} t_k(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$\displaystyle\int_{a}^{b} s(x) \; dx + \int_{a}^{b} t(x) \; dx$\\\\
+		\end{tabular}
+	    \end{center}
+
+	%----------(c)
+	\item $\displaystyle\int_{a}^{b} c\cdot s = c\int_{a}^{b} s$\\\\
+	    Respuesta.-\; Sea $P=\lbrace x_0,...x_n \rbrace$ una partición del intervalo $[a,b]$ tal que $s(x)$ es constante en los subintervalos  abiertos de $P$. Suponga que $s(x)=s_k$ si $x_{k-1} < x< s_{k}$ para $k=1,2,...n$, entonces $c\cdot s(x) = c\cdot s_k$ si $x_{k-1}<x<x_k$ de donde 
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\displaystyle\int_{a}^{b} s(x) \; dx$&$=$&$\sum\limits_{k=1}^{n} c\cdot s_k(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$c\cdot \sum\limits_{k=1}^{n} s_k(x_k^2 - x_{k-1}^2)$\\\\
+		    &$=$&$c\cdot \displaystyle\int_{a}^{b} s(x) \; dx$\\\\
+		\end{tabular}
+	    \end{center}
+
+	%----------(d)
+	\item $\displaystyle\int_{a}^{b} c\cdot s = c\int_{a}^{b} s$\\\\
+	    Respuesta.-\; En particular se da un contraejemplo dejando $s(x)=1$ para todo $x\in [1,2]$ y $c=1$ Luego,
+	    \begin{center}
+		\begin{tabular}{rcc}
+		    $\displaystyle\int_{0+1}^{1+1} x(x) \;dx$&$=$&$1\cdot(2^2 - 1^2) = 3$\\\\
+		    $\displaystyle\int_{0}^{1} (s+1) \;dx$&$=$&$1\cdot (1^2 - 0^2) = 1$\\\\
+		\end{tabular}
+	    \end{center}
+	    Por lo que se concluye que es falso para dicha propiedad.\\\\
+
+	%----------(e)
+	\item Si $s(x)<t(x)$ para cada $x$ en $[a,b]$, entonces $\displaystyle\int_{a}^{b} s < \int_{a}^{b} t.$\\\\
+	    Respuesta.-\; Se da un contraejemplo considerando $s(x)=0$ y $t(x)=1$ en el intervalo $[-1,0]$. Luego $s<t$ en el intervalo, pero $$\displaystyle\int_{-1}^{0} s(x) \;dx = 0 \not< \int_{-1}^{0} t(x) \; dx = 1\cdot(0^2 - (-1)^2) = -1$$\\
+
+    \end{enumerate}
+
+    %--------------------13.
+    \item Demostrar el teorema $1.2$ (Propiedad aditiva).\\\\
+	Demostración.-\; Sea $P=\lbrace x_o,...,x_n \rbrace$ una partición del intervalo $[a,b]$, tal que $s(x) + t(x)$ es constante en los intervalos abiertos de $P$. Sea $s(x)+(x)=s_k + t_k$ si $x_{k-1}<x<x_k$ para $k=1,2,...,n$, luego
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$\displaystyle\int_{a}^{b} \left[ s(x) + t(x) \right] \; dx$&$=$&$\sum\limits_{k=1}^n (s_k + t_k)(x_{k-1} - x_k)$\\\\
+		&$=$&$\sum\limits_{k=1}^n s_k(s_k + t_k) + t_k(s_k + t_k)$\\\\
+		&$=$&$\sum\limits_{k=1}^n s_k(s_k + t_k) + \sum\limits_{K=1}^n t_k(s_k + t_k)$\\\\
+		&$=$&$\displaystyle\int_{a}^{b} s(x) \; dx + \int_a^b t(x) \; dx$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %--------------------14.
+    \item Demostrar el teorema $1.4$(Propiedad lineal).\\\\
+	Demostración.-\; Por el teorema $1.2$ y $1.3$ se tiene $$\displaystyle\int_a^b \left[c_1 s(x) + c_2 t(x)\right] \; dx = \int_a^b c_1 s(x) \; dx + \int_a^b c_2 t(x) \; dx = c_1 \int_a^b s(x) \;dx  + c_2 \int_a^b t(x) \; dx$$\\ 
+
+    %--------------------15.
+    \item Demostrar el teorema $1.5$ (teorema de comparación).\\\\
+	Demostración.-\; Sea $P\lbrace x_0,...,x_n \rbrace$ una partición de $[a,b]$ tal que $s(x)$ y $t(x)$ sean constantes en los subintervalos abiertos de $P$. Suponga que $s(x)=s_k$ y $t(x)=t_k$ si $x_{k-1}<x<x_k$ de donde por definición de función escalonada de integrales tenemos:
+	$$\displaystyle\int_a^b s(x) \; dx = \sum\limits_{k=1}^n s_k(x_{k-1} - x_k) \qquad y \qquad \int_a^b t(x) \;dx = \sum\limits_{k=1}^n t_k(x_{k-1} - x_k)$$
+	Luego $s_k<t_k$ para cada $x\in [a,b]$, lo que implica:
+	$$\displaystyle  \sum\limits_{k=1}^n s_k(x_{k-1} - x_k)  < \sum\limits_{k=1}^n t_k(x_{k-1} - x_k) \qquad \Rightarrow \qquad \int_a^b s(x) \; dx < \int_a^b t(x) \;dx$$\\
+
+    %--------------------16.
+    \item Demostrar el teorema $1.6$ aditividad con respecto al intervalo.\\\\
+	Demostración.-\; Sea $P_1=\lbrace x_0,...,x_m\rbrace$ una partición de $[a,b]$ y $P_2=\lbrace y_o,...,y_n \rbrace$ sea una partición de $[c,b]$ tal que $s(x)$ es constante en los subintervalos abiertos de $P_1$ y $P_2$ luego $P=P_1 \cup P_2$ una partición de $[a,b]$ siendo $y_0=x_m$, $y_1=x_{m+1},...,y_n=x_{m+n}$ y $s(x)$ constante en los subintervalos abiertos de $P$, así
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$\displaystyle\int_{a}^{c} s(x) \; dx \int_c^b s(x) \;dx$&$=$&$\sum\limits_{k=1}^{m} s_k (x_k-x_{k-1}) + \sum\limits_{k=1}^n s_k(k_y - y_{k-1})$\\\\
+		&$=$&$\sum\limits_{k=1}^m s_k(x_k - x_{k-1}) + \sum\limits_{k=m+1}^{m+n} s_k(x_k - x_{k-1})$\\\\
+		&$=$&$\sum\limits_{k=1}^m s_k(s_k - x_{k-1})$\\\\
+		&$=$&$\displaystyle\int_{a}^b s(x) \; dx$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %--------------------17.
+    \item Demostrar el teorema $1.7$ invariancia frente a una traslación.\\\\
+	Demostración.-\;  Sea $P=\lbrace x_0,...,x_n \rbrace$ una partición $[a,b]$ tal que $s(x)=s_k$ constante en el subintervalo abierto de la partición. Por otro lado sea $P=\lbrace x_0+c,x_1+c,...,x_n+c \rbrace$ en una partición de $[a+c,b+c]$ y $s(x-c)=s_k$ para $x_{k-1}+c<x<x_k+c$ Entonces,
+	$$\displaystyle\int_a^b s(x) \; dx = \sum\limits_{k=1}^n s_k(x_k-x_{k-1}) = \int_{a+c}^{b+c} s(x-c)\; dx $$\\
+
+\end{enumerate}
+
+\section{La integral de funciones más generales}
+
+%--------------------definición 1.12
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}[Definición de integral de una función acotada] Sea $f$ una función definida y acotada en $[a,b]$. Sean $s$ y $t$ funciones escalonadas arbitrarias definidas en $[a,b]$ tales que $$s(x)\leq f(x) \leq t(x)$$
+	para cada $x$ en $[a,b]$. Si existe un número $I$, y sólo uno, tal que $$\displaystyle\int_a^b s(x)\; dx \leq I \leq \int:a^b t(x) \; dx$$
+	Para cada par de funciones escalonadas $s$ y $t$ que verifiquen $s(x) \leq f(x) \leq t(x)$, entonces este número $I$ se denomina la integral de $f$ desde $a$ hasta $b$ y se indica por el símbolo $\displaystyle\int_a^b f(x) \; dx$. Cuando $I$ existe se dice que $f$ es integrable en $[a,b]$.\\\\
+	Si $a<b$ se define $\displaystyle\int_a^b f(x) \; dx = - \int_b^a f(x) \; dx$ supuesta integrable $f$ en $[a,b]$.\\\\
+	También se define $\displaystyle\int_a^a f(x) \; dx=0$. Si $f$ es integrable en $[a,b]$, se dice que la integral $\displaystyle\int_a^b f(x) \; dx x$ existe.\\\\
+	La función $f$ se denomina integrando, los número $a$ y $b$ los límites de integración, y el intervalo $[a,b]$ el intervalo de integración.
+    \end{def.}
+\end{tcolorbox}
+
+\section{Integral superior e inferior}
+
+%--------------------1.13
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Supongamos la función $f$ acotada en $[a,b]$. Si $s$ y $t$ son funciones escalonadas que satisfacen $s(x)<f(x)<t(x)$ se dice que $s$ es inferior a $f$ y que $t$ es superior a $f$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------teorema 1.10
+\begin{teo}
+    Toda función $f$ acotada en $[a,b]$ tiene una integral inferior $\underbar{I}(f)$ y una integral superior $\bar{I}(f)$ que satisfacen las desigualdades $$\int_a^b s(x) \; dx \leq \underbar{I}(f) \leq \bar{I}(f) \leq \int_a^b t(x) \; dx$$ 
+    para todas las funciones $s$ y $t$ tales que $s\leq f\leq t$. La función $f$ es integrable en $[a,b]$ si y sólo si sus integrables superior e inferior son iguales, en cuyo caso se tiene $$\int_a^b f(x) \; dx = \underbar{I}(f)=\bar{I}(f)$$\\
+    Demostración.-\; Sea $S$ el conjunto de todos los números $\int_a^b s(x)\; dx$ obtenidos al tomar como $s$ todas las funciones escalonadas inferiores a $f$, y sea $T$ el conjunto de todos los números $\int_a^b t(x)\; dx$ al tomar como $t$ todas las funciones escalonadas superiores a $f$. Esto es $$ S=\left\{ \int_a^b s(x)\; dx | s\leq f\right\}, \qquad T=\left\{ \int_a^b t(x)\; dx | f\leq t\right\}$$ 
+    Los dos conjuntos $S$ y $T$ son no vacíos puesto que $f$ es acotada. Asimismo, $\int_a^b s(x)\; dx \leq \int_a^b t(x)\; dx$ si $s\leq f \leq t$, de modo que todo número de $S$ es menor que cualquiera de $T$. Por consiguiente según el teorema I.34, $S$ tiene extremo superior, y $T$ tiene extremo inferior, que satisfacen las desigualdades $$\int_a^b s(x)\; dx \leq \sup S \leq \inf T \leq \int_a^b y(x)\; dx$$
+    para todas las $s$ y $t$ que satisfacen $s\leq f\leq t$. Esto demuestra que tanto $\sup S$ como el $\inf T$ satisfacen $\int_a^b s(x)\; dx \leq I\leq \int_a^b t(x)\; dx$. Por lo tanto $f$ es integrable en $[a,b]$ si y sólo si $\sup S = \inf T$, en cuyo caso se tiene $$\int_a^b f(x)\; dx = \sup S = \inf T.$$
+    El número $\sup S$ se llama integral inferior de $f$ y se presenta por $\underbar{I}(f)$. El número $\inf T$ se llama integral superior de $f$ y se presenta por $\bar{I}(f)$. Así que tenemos 
+    $$\underbar{I}(f)=\sup \left\{\int_a^b s(x) \; dx \; | \; s\leq f\right\}, \qquad \bar{I}(f)=\inf \left\{\int_a^b t(x) \; dx \; | \; f\leq t\right\}$$\\\\
+\end{teo}
+
+\section{El área de un conjunto de ordenadas expresada como una integral}
+
+%--------------------teorema 1.11
+\begin{teo}
+    Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$, y sea $Q$ el conjunto de ordenadas de $f$ sobre $[a,b]$. Entonces $Q$ es medible y su área es igual a la integral $\int_a^b f(x) \; dx$\\\\
+    Demostración.-\; Sea $S$ y $T$ dos regiones escalonadas que satisfacen $S\subseteq Q \subseteq T.$. Existen dos funciones escalonadas $s$ y $t$ que satisfacen $s\leq f\leq t$ en $[a,b]$, tales que $$a(S)=\int_a^b s(x) \; dx \quad y \quad a(T)=\int_a^b t(x) \; dx$$
+    Puesto que $f$ es integrable en $[a,b]$ el número $I=\int_a^b f(x) \; dx$ es el único que satisface las desigualdades $$\int_a^b s(x) \leq I \leq \int_a^b t(x) \; dx$$
+    para todas las funciones escalonadas $s$ y $t$ que cumplen $s\leq f \leq t$. Por consiguiente ése es también el único número que satisface $a(S)\leq I \leq a(T)$ para todas las regiones escalonadas $S$ y $T$ tales que $S\subseteq Q \subseteq T.$ Según la propiedad de exhaución, esto demuestra que $Q$ es medible y que $a(Q)=I$\\\\
+\end{teo}
+
+%--------------------teorema 1.12
+\begin{teo}
+    Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$. La gráfica de $f$, esto es el conjunto $$\lbrace (x,y)/a\leq x \leq b, y=f(x) \rbrace$$ es medible y tiene área igual a $0$.\\\\
+    Demostración.-\; Sean $Q$ el conjunto de ordenadas del teorema 1.11 y $Q^{'}$ el conjunto que queda si se quitan de $Q$ los puntos de la gráfica de $f$. Esto es, $$Q^{'} = \lbrace (x,y)/a\leq x \leq b, 0\leq y \leq f(x)\rbrace$$
+    El razonamiento utilizado para demostrar el teorema 1.11 también demuestra que $Q^{'}$ es medible y que $a(Q^{'}) = a(Q)$. Por consiguiente, según la propiedad de la diferencia relativa al área, el conjunto $Q-Q^{'}$ es medible y $$a(Q-Q^{'})=a(Q)-a(Q^{'})=0$$.\\
+\end{teo}
+
+
+\setcounter{section}{19}
+\section{Funciones monótomas y monótonas a trozos. Definiciones y ejemplos}
+
+%--------------------definición 1.14
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Funciónes crecientes y decreciente]
+	Una función $f$ se dice que es creciente en un conjunto $S$ si $f(x)\leq f(y)$ para cada par de puntos $x$ e $y$ de $S$ con $x<y$. Si se verifica la desigualdad estricta $f(x)<f(y)$ par todo $x<y$ en $S$ se dice que la función es creciente en sentido estricto en $S$.\\\\
+	Una función se dice decreciente en $S$ si $f(x)\geq f(y)$ para todo $x<y$ en $S$. Si $f(x)>f(y)$ para todo $x<y$ en $S$ la función se denomina decreciente en sentido estricto en $S$.
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 1.15
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Función monótona]
+	Una función se denomina monótona en $S$ si es creciente en $S$ o decreciente en $S$. Monótona en sentido estricto significa que $f$ o es estrictamente creciente en $S$ o estrictamente decreciente en $S$. En general el conjunto $S$ es un intervalo abierto o cerrado.
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 1.16
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Función monótona a trozos]
+	Una función $f$ se dice que es monótona a trozos en un intervalo si su gráfica está formada por un número finito de trozos monótonos. Es decir, $f$ es monótona a trozos en $[a,b]$ si existe una partición $P$ de $[a,b]$ tal que $f$ es monótona en cada uno de los subintervalos abiertos de $P$. 
+    \end{def.}
+\end{tcolorbox}
+
+\section{Integrabilidad de funciones monótonas acotadas}
+
+%--------------------teorema 1.13
+\begin{teo} Si $f$ es monótona en un intervalo cerrado $[a,b]$, $f$ es integrable en $[a,b]$\\\\
+    Demostración.-\; Demostraremos el teorema para funciones decrecientes. El razonamiento es análogo para funciones decrecientes. Supongamos pues $f$ decreciente y sean $\underbar{I}(f)$ e $\overline{I}(f)$ sus integrales inferior y superior. Demostraremos que $\underbar{I}(f)=\overline{I}(f)$. \\
+    Sea $n$ un número entero positivo y construyamos dos funciones escalonadas de aproximación $s_n$ y $t_n$ del modo siguiente: $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición de $[a,b]$ en $n$ subintervalos iguales, esto es, subintervalos $[x_{k-1},x_k]$ tales que $x_k-x_{k-1} = (b-a)/n$ para cada valor de $k$. Definamos ahora $s_n$ y $t_n$ por las fórmulas $$s_n(x)=f(x_{k-1}), \quad t_n(x)=f(x_k) \quad si \quad x_{k-1}<x<x_k$$ en los puntos de división, se definen $s_n$ y $t_n$ de modo que se mantengan las relaciones $s(x)\leq f(x) \leq t_n(x)$ en todo $[a,b]$. Con esta elección de funciones escalonadas, tenemos 
+    $$\int_a^b t_n - \int_a^b s_n = \sum\limits_{k=1}^n f(x_k)(x_k-x_{k-1}) - \sum\limits_{k=1}^n f(x_{k-1})(x_k-x_{k-1}) = \dfrac{b-a}{n}\sum\limits_{k=1}^n \left[f(x_{k}) - f(x_{k-1})\right]=$$ $$=\dfrac{(b-a)\left[f(b)-f(a)\right]}{n}$$
+    siendo la última igualdad una consecuencia de la propiedad telescópica de las sumas finitas. Esta última relación tiene una interpretación geométrica muy sencilla. La diferencia $\int_a^n t_n - \int_a^b s_n$ es igual a la suma de las áreas de los rectángulos. Deslizando esos rectángulos hacia la derecha, vemos que completan un rectángulo de base $(b-a)/n$ y altura $f(b)-f(a)$; la suma de las áreas es por tanto, $C/n$, siendo $C=(b-a)\left[f(b)-f(a)\right]$.\\
+    Volvamos a escribir la relación anterior en la forma $$\int_a^b t_n - \int_a^b s_n = \dfrac{C}{n} \qquad (1)$$
+    Las integrales superior e inferior de $f$ satisfacen las desigualdades $$\int_a^b s_n \leq \underbar{I}(f) \leq \int_a^b t_n \quad y \quad \int_a^b s_n \leq \bar{I}(f)\leq \int_a^b t_n$$
+    Multiplicando las primeras igualdades por $(-1)$ y sumando el resultado a las segundas,es decir: $$-\underbar{I}(f)\leq - \int_a^b s_n \;\;\land \;\;  \bar{I}(f) \leq \int_a^b t_n \quad \lor \quad -\bar{I}(f)\leq -\int_a^b s_n \;\;\land\;\; \underbar{I}(f)\leq \int_a^b t_n$$ obtenemos $$\bar{I}(f)-\underbar{I}(f) \leq \int_a^b t_n - \int_a^b s_n$$ 
+    Utilizando $(1)$ y la relación $\underbar{I}(f) \leq \bar{I}(f)$ obtenemos $$0\leq \bar{I}(f) - \bar{I}(f) \leq \dfrac{C}{n}$$
+    para todo entero $n\geq 1$. Por consiguiente, según el teorema I.31 se tiene $$\underbar{I}(f)\leq \bar{I}(f)\leq \underbar{I}(f) + \dfrac{C}{n}$$
+    por lo tanto $\underbar{I}(f)=\bar{I}(f)$. Esto demuestra que $f$ es integrable en $[a,b]$.\\\\ 
+\end{teo}
+
+
+\section{Cálculo de la integral de una función monótona acotada}
+
+%--------------------teorema 1.14
+\begin{teo} Supongamos $f$ creciente en un intervalo cerrado $[a,b]$. Sea $x_k = a + k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n}\sum\limits_{k=0}^{n-1} f(x_k)\leq I \leq \dfrac{b-a}{n}\sum\limits_{k=1}^n f(x_k) \qquad (2)$$
+    para todo entero $n\geq 1$, entonces $I=\int_a^b f(x) \; dx$\\\\
+    Demostración.-\; Sean $s_n$ y $t_n$ las funciones escalonadas de aproximación especial obtenidas por subdivisión del intervalo $[a,b]$ en $n$ partes iguales, como se hizo en la demostración del teorema 1.13. Entonces, las desigualdades (1.9) establecen que $$\int_a^b s_n \leq I \leq \int_a^b t_n$$
+    para $n\geq 1$. Pero la integral $\int_a^b f(x) \; dx$ satisface las mismas desigualdades que $I$. Utilizando la igualdad $(1)$ tenemos $I\leq \int_a^b t_n$ \, como también \, $\int_a^b s_n \leq \int_a^b f(x) \; dx \quad \Longrightarrow\quad  - \int_a^b f(x) \; dx \leq -\int_a^b s_n$ entonces $$I-\int_a^b f(x)\; dx \leq \int_a^b t_n - \int_a^b s_n$$
+    Similarmente usando las inecuaciones $\int_a^b s_n \leq I$ \, y \, $\int_a^b f(x) \; dx \leq \int_a^b t_n$ resulta que $$\int_a^b f(x) \; dx - I \leq \int_a^b t_n - \int_a^b s_n \quad \Longrightarrow \quad I - \int_a^b f(x) \; dx \geq - \left(\int_a^b t_n - \int_a^b s_n\right)$$ 
+    Donde se concluye que $$0\leq \left| I - \int_a^b f(x) \; dx \right| \leq \int_a^b t_n - \int_a^b s_n = \dfrac{C}{n}$$
+    par todo $n\geq 1$. Por consiguiente, según el teorema I.31, tenemos $I=\int_a^b f(x) \; dx$\\\\
+\end{teo}
+
+%--------------------teorema 1.15
+\begin{teo} Supongamos $f$ decreciente en $[a,b]$. Sea $x_k=c+k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n} \sum\limits_{k=1}^n f(x_k) \leq I \leq \dfrac{b-a}{n} \sum\limits_{k=0}^{n-1} f(x_k)$$
+    para todo entero $n\geq 1,$ entonces $I=\int_a^b f(x) \; dx$\\\\
+\end{teo}
+
+
+\section{Cálculo de la integral $\int_0^b x^p \; dx$ siendo $p$ entero positivo}
+
+%--------------------teorema 1.16
+\begin{teo} Si $p$ es un entero positivo y $b>0$, tenemos $$\int_0^b x^p \; dx = \dfrac{b^{p+1}}{p+1}$$\\
+    Demostración.-\; Comencemos con las desigualdades $$\sum\limits_{k=1}^{n-1} k^p < \dfrac{n^{p+1}}{p+1}<\sum\limits_{k=1}^n k^p$$
+    válidas para todo entero $n\geq 1$ y todo entero $p\geq 1$. Estas desigualdades se demostraron anteriormente. La multiplicación de esas desigualdades por $b^{p+1}/n^{p+1}$ nos da $$\dfrac{b}{n} \sum\limits_{k=1}^{n-1} \left(\dfrac{kb}{n}\right)^p<\dfrac{b^{p+1}}{p+1}<\dfrac{b}{n}\sum\limits_{k=1}^{n}\left(\dfrac{kb}{n}\right)^p$$
+    Si ponemos, las desigualdades (2) del teorema 1.14 se satisfacen poniendo $f(x)=x^p, \;a=0$, entonces $I=\dfrac{b^{p+1}}{p+1}$. Resulta pues que $$\int_0^b x^p \; dx=\dfrac{b^{p+1}}{p+1}$$
+\end{teo}
+
+
+\section{Propiedades fundamentales de la integral}
+
+%--------------------1.17
+\begin{teo}[Linealidad respecto al integrando] Si $f$ y $g$ son ambas integrables en $[a,b]$ también lo es $c_1f+c_2g$ para cada par de constantes $c_1$ y $c_2$. Además, se tiene
+    $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
+    Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
+\end{teo}
+
+%--------------------1.18
+\begin{teo}[Aditividad respecto al intervalo de integración] Si existen dos de las tres integrales siguientes, también existe la tercera y se tiene: $$\int_a^b f(x) \; dx + \int_b^c f(x) \; dx = \int_a^c f(x) \; dx$$
+    Nota.- \; En particular, si $f$ es monótona en $[a,b]$ y también en $[b,c]$, existen las dos integrales $\int_a^b f$ e $\int_b^c f,$ con lo que también existe $\int_a^c f$ y es igual a la suma de aquellas.\\\\
+\end{teo}
+
+%--------------------1.19
+\begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
+\end{teo}
+
+%--------------------1.20
+\begin{teo}[Dilatación o contracción del intervalo de integración] Si $f$ es integrable en $[a,b]$ para cada número real $k\neq 0$ se tiene: $$\int_a^b f(x) = \dfrac{1}{k} \int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx$$
+    Nota.-\; En los dos teoremas 1.19 y 1.20 la existencia de una de las integrables implica la existencia de la otra. Cuando $k=-1$, el teorema 1.19 se llama propiedad de reflexión.\\\\
+\end{teo}
+
+%--------------------1.21
+\begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\
+\end{teo}
+
+
+\section{Integración de polinomios}
+Podemos usar el teorema 1.20 para demostrar que (1.11) también es válida para $b$ negativo. Tomemos $k=-1$ en el teorema 1.20 y se obtiene $$\int_0^{-b} = - \int_0^b (-x)^p \; dx = (-1)^{p+1} \int_0^b x^p \; dx = \dfrac{(-b)^{p+1}}{p+1}$$ lo cual prueba la validez de (1.11) para $b$ negativo. La propiedad aditiva $\int_a^b x^p \; dx = \int_0^b x^p \; dx - \int_0^a x^p \;dx$ nos conduce a la formula general: $$\int_a^b x^p \; dx = \dfrac{b^{p+1}-a^{p+1}}{p+1}$$
+válida para todos los valores reales de $a$ y $b$, y todo entero $p\geq 0$.\\
+Algunas veces el símbolo $$P(x)\left.\right|_a^b$$
+se emplea para designar la diferencia $P(b)-P(a)$. De este modo la fórmula anterior puede escribirse así: $$\int_a^b x^p \; dx = \left.\dfrac{x^{p+1}}{p+1}\right|_a^b = \dfrac{b^{p+1}-a^{p+1}}{p+1}$$
+Esta fórmula y la propiedad de linealidad, nos permiten integrar cualquier polinomio.\\
+Con mayor generalidad, para calcular la integral de cualquier polinomio integramos término a término: $$\int_a^b \sum_{k=0}^n c_k x^k \; dx = \sum_{k=0}^n c_k \int_a^b x^k  \; dx = \int_{k=0}^n c_k \dfrac{b^{k+1} - a^{a+1}}{k+1}$$\\
+
+
+\section{Ejercicios}
+Calcular cada una de las integrales siguientes:\\\\
+
+\begin{enumerate}[\Large\bfseries 1.]
+
+    %--------------------1.
+    \item $\displaystyle\int_0^3 x^2 \;dx = \dfrac{3^{3}}{3} = 9$\\\\
+
+    %--------------------2.
+    \item $\displaystyle\int_{-3}^3 x^2 \; dx = \left.\dfrac{x^3}{3}\right|_{-3}^3 = \dfrac{3^3 - (-3)^3}{3} = \dfrac{54}{3} = 18 $\\\\
+
+    %--------------------3.
+    \item $\displaystyle\int_0^2 4x^3 \;dx = 4\dfrac{2^4}{4} = 16$.\\\\
+
+    %--------------------4.
+    \item $\displaystyle\int_{-2}^2 4x^3 \; dx = 4 \left.\dfrac{x^5}{5}\right|_{-2}^{2} = 4 \dfrac{2^4 - (-2)^4}{4} = 0$\\\\ 
+
+    %--------------------5.
+    \item $\displaystyle\int_0^1 5t^4 \; dt = 5\dfrac{1^5}{5} = 1$\\\\
+
+    %--------------------6.
+    \item $\displaystyle\int_{-1}^1 5t^4 \; dt = 5\left.\dfrac{t^5}{5}\right|_{-1}^1 = 5\dfrac{1^5 - (-1)^5}{5} = 5$\\\\
+
+    %--------------------7.
+    \item $\displaystyle\int_0^1 (5x^4 - 4x^3) \; dx = 5\dfrac{1^5}{5} - 4\dfrac{1^4}{4} = 0$\\\\
+
+    %--------------------8.
+    \item $\displaystyle\int_{-1}^1 (5x^4 - 4x^3) \; dx = 5\int_{-1}^1 x^4 \; dx - 4\int_{-1}^1 x^3 \; dx = 5\cdot \left.\dfrac{x^5}{5}\right|_{-1}^1 - 4\cdot \left.\dfrac{x^4}{4}\right|_{-1}^1 = 5\cdot \dfrac{1^5 - (-1)^5}{5} - 4\cdot \dfrac{1^4 - (-1)^4}{4} = 2$\\\\
+
+    %--------------------9.
+    \item $\displaystyle\int_{-1}^2 (t^2 + 1)\; dt = \dfrac{t^3}{3}\bigg|_{-1}^{2} + t\bigg|_{-1}^2 = \dfrac{2^3 - (-1)^3}{3} + 2 - (-1) = 6$\\\\
+
+    %--------------------10.
+    \item $\displaystyle\int_2^3 (3x^2 - 4x + 2) \; dx = 3\cdot \dfrac{x^3}{3}\bigg|_2^3 - 4\cdot \dfrac{x^2}{2}\bigg|_2^3 + 2\cdot t\bigg|_2^3 = 3\dfrac{3^3-2^3}{3} - 4\dfrac{3^2-2^2}{2} + 2(3-2) = 11$\\\\
+
+    %--------------------11.
+    \item $\displaystyle\int_0^{1/2} (8t^3 + 6 t^2 - 2t +5)\; dt  = 8\cdot \dfrac{(1/2)^4}{4} + 6\cdot\dfrac{(1/2)^3}{3} - 2\cdot \dfrac{(1/2)^2}{2} + 5\cdot (1/2) = \dfrac{21}{8} $\\\\
+
+    %--------------------12.
+    \item $\displaystyle\int_{-2}^4 (u-1)(u-2)\; du \quad \Longrightarrow \quad \int_{-1}^4 u^2 - 3u + 2\; dx = \dfrac{u^3}{3}\bigg|_{-2}^4 - 3\cdot \dfrac{u^2}{2}\bigg|_{-2}^4 + 2u\bigg|_{-2}^4 = $ $$=\dfrac{4^3 - (-2)^3}{3}-3\dfrac{4^2 - (-2)^2}{2} + 2[4 - (-2)] = \dfrac{73}{3} - 18 + 12 = 18$$\\\\
+
+    %--------------------13.
+    \item $\displaystyle\int_{-1}^0 (x+1)^2 \; dx \Longrightarrow \int_{-1+1}^{0+1} (x-1+1)^2 \; dx \; \;(traslación)  \Longrightarrow  \int_{1}^0 x^2 \; dx = \dfrac{x^3}{3}\bigg|_0^1 = \dfrac{1^2 - 0^2}{3} =\dfrac{1}{3}$\\\\
+
+    %--------------------14.
+    \item $\displaystyle\int_0^{-1} (x+1)^2\; dx$\\\\
+	Respuesta.-\; Por ser $-1<0$ entonces por el teorema de dilatación o contracción del intervalo de integración se tiene que $$\int_{0}^{-1} (x+1)^2\; dx = -\int_{-1}^0 (x+1)^2 \; dx = - \left( \dfrac{x^3}{3}\bigg|_{-1}^0 + 2\cdot \dfrac{x^2}{2}\bigg|_{-1}^0 + x \bigg|_{-1}^0 \right) = - \left[\dfrac{1}{3} + 1 + (-1)\right]  = - \dfrac{1}{3}$$\\
+
+    %--------------------15.
+    \item $\displaystyle\int_0^2 (x-1)(3x-1) \; dx = 3\cdot \dfrac{2^3}{3} - 4\cdot \dfrac{2^2}{2} + 2 = 2$\\\\
+
+    %--------------------16.
+    \item $\displaystyle\int_0^2 |(x-1)(3x-1)| \; dx$\\\\
+	Respuesta.-\; Se evaluará en intervalos en los que sea siempre sea positiva o siempre negativa, como también evaluar por separado. Examinando el polinomio se tiene ceros en $x=1,\frac{1}{3}$, donde la expresión va a cambiar de signo en estos puntos, entonces:
+	\begin{center}
+	    \begin{tabular}{rcccl}
+		$x<\dfrac{1}{3}$ & $\Longrightarrow$ & $(x-1)(3x-1)>0$ & $\Longrightarrow$ & $|(x-1)(3x-1)| = (x-1)(3x-1)$\\\\
+		$\dfrac{1}{3}<x<1$ & $\Longrightarrow$ & $(x-1)(3x-1)<0$ & $\Longrightarrow$ & $|(x-1)(3x-1)| = -(x-1)(3x-1)$\\\\
+		$x>1$ & $\Longrightarrow$ & $(x-1)(3x-1)>0$ & $\Longrightarrow$ & $|(x-1)(3x-1)| = (x-1)(3x-1)$\\\\
+	    \end{tabular}
+	\end{center}
+	Luego por el teorema  aditivo de integración $$\int_0^2 (x-1)(3x-1)\; dx = \int_0^{1/3}(x-1)(3x-1)\; dx + \int_{1/3}^1 -(x-1)(3x-1)\; dx + \int_1^2 (x-1)(3x-1)\; dx$$
+	Así, nos queda 
+	$$\int_0^2 3x^2 - 4x + 1\; dx = \int_0^{1/3}3x^2 - 4x + 1\; dx + \int_{1/3}^1 -(3x^2 - 4x + 1)\; dx + \int_1^2 3x^2 - 4x + 1\; dx$$
+	por lo tanto
+	$$\left(3\dfrac{x^3}{3}-3\dfrac{x^2}{2}+x\right)\bigg|_0^{1/3} - \left(3\dfrac{x^3}{3}-3\dfrac{x^2}{2} + x\right)\bigg|_{1/3}^1 + \left(3\dfrac{x^3}{3} - 4\dfrac{x^2}{2} + x\right) \bigg|_1^2 = $$
+	$$ = \left(\dfrac{1}{27}-\dfrac{2}{9}+\dfrac{1}{3}\right)-0 - \left[ (1-2+1)-\left(\dfrac{1}{27}-\dfrac{2}{9}+\dfrac{1}{3}\right)\right] = \dfrac{4}{27}+\dfrac{4}{27}+2=\dfrac{62}{27}$$\\
+
+    %--------------------17.
+    \item $\displaystyle\int_0^3 (2x-5)^3 \; dx$\\\\
+	Respuesta.-\; Por el teorema de invariancia frente a una traslación se tiene
+	$$\int_0^3 (2x-5)^3 \; dx \int_{-5/2}^{1/2} \left[2\left(x+\dfrac{5}{2}\right)-5\right]^3 \; dx = \int_{-5/2}^{1/2} (2x)^3 \; dx = 80\dfrac{x^4}{4}\bigg|_{-5/2}^{1/2}\; dx = \dfrac{1}{8}-\dfrac{625}{8}=-78$$\\
+
+    %--------------------18.
+    \item $\displaystyle\int_{-3}^3 (x^2-3)^3 \; dx = \int_{-3}^3 x^6 - 9x^4 + 27x^2 - 27 \; dx = \left(\dfrac{x^7}{7}-9\dfrac{x^5}{5}+27\dfrac{x^3}{3}-27x\right)\bigg|_{-3}^3 =$
+	$$=\left(\dfrac{2187}{7}-\dfrac{2187}{5}+243-81\right)-\left(-\dfrac{2187}{7}+\dfrac{2187}{5}-243+81\right)=\dfrac{2592}{35}$$\\
+
+
+    %--------------------19.
+    \item $\displaystyle\int_0^5 (x-5)^4 \; dx = $\\\\
+
+    %--------------------20.
+    \item $\displaystyle\int_{-2}^{-4} (x + 4)^{10} \; dx$\\\\
 
 \end{enumerate}

@@ -1,4 +1,29 @@
 \chapter*{Introducción}
+
+\setcounter{chapter}{1}
+\setcounter{section}{2}
+\section{El método de exhaución para el área de un segmento de parábola}
+El método consiste simplemente en lo siguiente: se divide la figura en un cierto número de bandas y se obtienen dos aproximaciones de la región, una por defecto y otra por exceso, utilizando dos conjuntos de rectángulos.\\
+Se subdivide la base en $n$ partes iguales, cada una de longitud $b/n$. Los puntso de subdivisión corresponden a los siguientes valores de $x$: $$0,\dfrac{b}{n},\dfrac{2b}{n},\dfrac{3b}{n},...,\dfrac{(n-1)b}{n},\dfrac{nb}{n}=b$$
+La expresión general de un punto de la subdivisión es $x=\frac{kb}{n},$ donde $k$ toma los valores sucesivos $k=0,01,2,3,...,n.$ En cada punto $\frac{kb}{n}$ se construye el rectángulo exterior de altura $(kb/n)^2$. El área de este rectángulo es el producto de la base por la altura y es igual a:
+$$\left(\dfrac{b}{n}\right)\left(\dfrac{kb}{n}\right)^2=\dfrac{b^3}{3}k^3$$
+Si se designa por $S_n$ la suma de las áreas de todos os rectángulos exteriores, puesto que el área del rectángulo k-simo es $(b^3/n^3)k^3$ se tiene la formula. $$S_n=\dfrac{b^3}{n^3}(1^2+2^2+3^2+...+n^2) \qquad (1)$$
+De forma análoga se obtiene la fórmula para la suma $s_n$ de todos los rectángulos interiores:
+$$s_n=\dfrac{b^3}{n^3}[1^2+2^2+3^2+...+(n-1)^2] \qquad (2)$$
+Luego se tiene la identidad $$1^2+2^2+3^2+...+n^2=\dfrac{n^3}{3}+\dfrac{n^2}{2}+\dfrac{6}{n} \qquad (3)$$
+Como también $$1^2+2^2+...+(n-1)^2=\dfrac{n^2}{3}-\dfrac{n^2}{2}+\dfrac{n}{6} \qquad (4)$$
+Las expresiones exactas dadas no son necesarias para el objeto que aquí se persigue, pero sirven para deducir fácilmente las dos desigualdades que interesan $$1^2+2^2+3^2+...+(n-1)^2<\dfrac{n^3}{3}<1^2+2^2+...+n^2$$
+que son válidas para todo entero $n\geq 1$. Multiplicando ambas desigualdades por $b^3/n^3$ y haciendo uso de $(1)$ y $(2)$ se tiene: $$s_n<\dfrac{b^3}{3}<S_n$$
+Probemos que $b^3/3$ es el único número que goza de esta propiedad, es decir, que si $A$ es un número que verifica las desigualdades $$s_n<A<S_n \qquad (7)$$
+para cada entero positivo $n$, ha de ser necesariamente $A=b^3/3$. Por esta razón dedujo Arquímedes que el área del segmento parabólico es $b^3/3$.\\
+Para probar que $A=b^3/3$ se utilizan una vez más las desigualdades $(5)$. Sumando $n^2$ a los dos miembros de la desigualdad de la izquierda en $(5)$ se obtiene $$1^2+2^2+3^2+...+n^2=\dfrac{n^3}{3}+n^2$$
+Multiplicando por $b^3/3$ y utilizando $(1)$ se tiene $$S_n<\dfrac{b^3}{3}+\dfrac{b^3}{n} \qquad (8)$$
+Análogamente, restando $n^2$ de los dos miembros de la desigualdad de la derecha en $(5)$ y multiplicando por $b^3/n^3$ se llega a la desigualdad:
+$$\dfrac{b^3}{3}-\dfrac{b^3}{n}<s_n \qquad (9)$$
+Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfrac{b^3}{3}-\dfrac{b^3}{n}<A<\dfrac{b^3}{3}+\dfrac{b^3}{n} \qquad (10)$$ para cada entero $n\geq 1$. Ahora también, hay sólo tres posibilidad: $$A>\dfrac{b^3}{3}, \quad A<\dfrac{b^3}{3} \quad A=\dfrac{b^3}{3}$$
+ Si se prueba que las dos primeras conducen a una contradicción habrá de ser $A=\frac{b^3}{3}$\\
+ Supongamos que la desigualdad $A>b^3/3$ fuera cierta. De la segunda desigualdad en $(10)$ se obtiene $$A-\dfrac{b^3}{3}<\dfrac{b^3}{n} \qquad (11)$$ para cada entero $n\geq 1$. Puesto que $A-b^3/3$ es positivo, se puede dividir ambos miembros de $(11)$ por $A-b^3/3$ y multiplicando después por $n$ se obtiene la desigualdad $$n<\dfrac{b^3}{A-b^3/3}$$ para cada $n$. Pero esta desigualdad es evidentemente para $n>b^3/(A-b^3/3).$ Por tanto la desigualdad es una contradicción. De forma análoga se demuestra para $A<b^3/3$ de donde concluimos que $A=b^3/3$.\\
+
 \addcontentsline{toc}{chapter}{Introducción}
 \setcounter{chapter}{3}
 \setcounter{section}{1}

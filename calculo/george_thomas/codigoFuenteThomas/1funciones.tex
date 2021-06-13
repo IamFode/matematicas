@@ -1984,32 +1984,278 @@ Combinación de funciones\\\\
     \begin{enumerate}[\bfseries a)]
 
 	%----------a)
-	\item $fg$\\\\
+	\item $fg$, es impar.\\\\
 
 	%----------b)
-	\item $f/g$\\\\
+	\item $f/g$, es impar.\\\\
 
 	%----------c)
-	\item $g/f$\\\\
+	\item $g/f$, es impar.\\\\
 
 	%----------d)
-	\item $f^2 = ff$\\\\
+	\item $f^2 = ff$, es par.\\\\
 
 	%----------e)
-	\item $g^2 = gg$\\\\
+	\item $g^2 = gg$, es par.\\\\
 
 	%----------f)
-	\item $f\circ g$\\\\
+	\item $f\circ g$, es par.\\\\
 
 	%----------g)
-	\item $g\circ f$\\\\
+	\item $g\circ f$, es par.\\\\
 
 	%----------h)
-	\item $f\circ f$\\\\
+	\item $f\circ f$, es par.\\\\
 
 	%----------i)
-	\item $g\circ g$\\\\
+	\item $g\circ g$, es impar.\\\\
 
     \end{enumerate}
+    Esto por Michael Spivak, Calculus I.\\\\
+
+%--------------------78.
+\item ¿Una función puede ser par e impar al mismo tiempo? Justifique su respuesta.\\\\
+    Respuesta.-\;  Se define como función par a $f(x)=f(-x)$ y función impar como $f(-x)=-f(x)$ de donde $f(x) \neq -f(x)$ el cual nos indica que no puede ser par e impar al mismo tiempo ya que son contrarias y no compatibles.\\\\
+
+%--------------------79.
+\item (Continuación del ejemplo 1). Trace las gráficas de las funciones $f(x) = \sqrt{x}$ y $g(x) = \sqrt{1-x}$ junto con a) su suma, b) su producto, c) sus dos restas, d) sus dos cocientes.\\\\
+    Respuesta.-\; 
+    \begin{itemize}
+    \item $\sqrt{x} + \sqrt{1-x}$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:1,thick,gray] plot(\x,{(\x)^(1/2) + (1-\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \item $\sqrt{x}\cdot \sqrt{1-x}$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:1,thick,gray] plot(\x,{(\x)^(1/2) * (1-\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \item $\sqrt{x} - \sqrt{1-x}$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:1,thick,gray] plot(\x,{(\x)^(1/2) - (1-\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \item $\sqrt{1-x} - \sqrt{x}$ 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:1,thick,gray] plot(\x,{(1-\x)^(1/2)-(\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \item $\sqrt{x} / \sqrt{1-x}$
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:.9,thick,gray] plot(\x,{(\x)^(1/2) / (1-\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \item $\sqrt{1-x} / \sqrt{x}$ 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=-1,ymax=2,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0.1:.9,thick,gray] plot(\x,{(1-\x)^(1/2)/(\x)^(1/2)});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \end{itemize}
+
+%--------------------80.
+\item Sean $f(x)=x-7$ y $g(x)=x^2$. Trace las gráficas de $f$ y $g$ junto con $f\circ g$ y $g\circ f$\\\\
+    Respuesta.-\; 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.6, draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 9,xmin=-5,ymax=8,ymin=-10]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=-2:9,thick,gray] plot(\x,{\x-7});
+		\draw [domain=-2.5:2.5,thick,gray] plot(\x,{\x^2});
+		\draw [domain=4:10,thick,gray] plot(\x,{(\x-7)^2});
+		\draw [domain=-2:3,thick,gray] plot(\x,{\x^2-7});
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+\end{enumerate}
+
+\section{Funciones trigonométricas}
+
+%--------------------definición 1.7
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	$$s=r\cdot \theta$$
+	$s$ es el arco subtendido por el ángulo central.\\
+	$r$ es el radio de la circunferencia.\\
+	$\theta$ es el ángulo en radianes.
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 1.8
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Una función $f(x)$ es periódica si existe un número positivo $p$ tal que $f(x+p)=f(x)$ para todo valor de $x$. El menor de los valores posibles de $p$ es el periodo de $f$.
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------propiedad 1
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}
+	$$\cos^2 \theta \sin^2 \theta = 1$$
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------propiedad 2 
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}[Suma de ángulos]
+	$$\cos(A+B)=\cos A \cos B - \sin A \sin B$$
+	$$\sin(A+B) = \sin A \cos B + \cos A \sin B$$
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------propiedad 3 
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}[Doble de un ángulo]
+	$$\cos 2\theta = \cos^2 \theta - \sin^2 \theta$$
+	$$\sin 2\theta = 2\sin \theta \cos \theta$$
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------propiedad 4 
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}[Mitad de un ángulo]
+	$$\cos^2 \theta = \dfrac{1 + \cos 2\theta}{2}$$
+	$$\sin^2 \theta = \dfrac{1 - \cos 2\theta}{2}$$
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------propiedad 5 
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}[Ley de cosenos]
+	$$c^2 = a^2 + b^2 - 2ab \cos \theta$$
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------5.
+\begin{tcolorbox}[colframe=white]
+    \begin{prop}[Desigualdades especiales]
+	$$-|\theta| \leq \sin \theta \leq |\theta| \quad y \quad -|\theta| \leq 1 - \cos \theta \leq |\theta|$$
+    \end{prop}
+\end{tcolorbox}
+
+
+\setcounter{section}{2}
+\section{Ejercicios}
+
+Radianes y grados\\
+\begin{enumerate}[\Large \bfseries 1.]
+
+%--------------------1.
+\item En una circunferencia con radio de $10\; m$, ¿Cuál es la longitud de un arco que subtiende un  ángulo central de $a) \; 4\pi/5$ radianes y $b)\; 110^\circ$?\\\\
+    Respuesta.-\; Para $a)$ se tiene $s=10 \cdot 4\pi/5 = 8\pi$, luego para $b)$ se tiene $s=10\cdot 110^\circ \cdot \dfrac{\pi}{180^\circ} = \dfrac{55}{9}\pi$\\\\
+
+%--------------------2.
+\item Un ángulo central en una circunferencia de radio $8$ está subtendido por un arco cuya longitud es de $10 \pi$. Determine la medida del ángulo en radianes y en grados.\\\\
+    Respuesta.-\; Sea $s=r\cdot \theta$ entonces $\theta = \dfrac{s}{r}$ de donde $\theta = \dfrac{10\pi}{8} = \dfrac{5\pi}{4}$ radianes, luego $\dfrac{5\pi}{4}\cdot \dfrac{180^\circ}{\pi} = 225^\circ$\\\\
+
+%--------------------3.
+\item Se desea construir un ángulo de $80^\circ$ formando un arco en el perímetro de un disco de $12$ pulgadas de diámetro, y dibujando rectas de los extremos del arco al centro del disco. ¿De qué longitud debe ser el arco, redondeando a décimos de pulgada?.\\\\
+    Respuesta.-\; Sea $r=6 \; pulg$ y $\theta = 80^\circ \cdot = \dfrac{\pi}{180^\circ}=\dfrac{4}{9}\pi$ entonces $$s=6\cdot \dfrac{4}{9}\pi = \dfrac{8}{3}\pi = 8.4\; pulg$$\\
+
+%--------------------4.
+\item Si una rueda de $1\;m$ de diámetro se hace rodar hacia adelante $30\; cm$ sobre el suelo, ¿qué ángulo girará? Dé su respuesta en radianes (redondeando al décimo más cercano) y en grados (redondeando al grado más cercano).\\\\
+    Respuesta.-\; Sea $r=50cm$ y $s=30cm$ entonces $$\theta = \dfrac{30\; cm}{50 \; cm} = \dfrac{3}{5}\; rad.$$ Luego convertimos a grado de la siguiente manera $$\theta = \dfrac{3}{5}\cdot \dfrac{180^\circ}{\pi} = 34^{\circ}37^{'}$$ 
+
+Evaluación de funciones trigonométricas\\\\
+
+%--------------------5.
+\item . Complete la siguiente tabla con los valores de la función. Si la función no está definida en el ángulo dado, indíquelo con la leyenda “IND”. No use calculadora ni tablas.
+    \begin{center}
+	\begin{tabular}{cccccc}
+	    \hline\\
+	    $\theta$&$-\pi$&$-\dfrac{2}{3}\pi$&$0$&$\dfrac{\pi}{2}$&$\dfrac{3}{4}\pi$\\\\
+	    \hline\\
+	    $\sen \theta$&$0$&$-\dfrac{\sqrt{3}}{2}$&$0$&$1$&$\dfrac{\sqrt{2}}{2}$\\\\
+	    $\cos \theta$&$-1$&$-\dfrac{1}{2}$&$1$&$0$&$-\dfrac{1}{\sqrt{2}}$\\\\
+	    $\tan \theta$&$0$&$\sqrt{3}$&$0$&$IND$&$-1$\\\\
+	    $\cot \theta$&$IND$&$\dfrac{1}{\sqrt{3}}$&$IND$&$0$&$-1$\\\\
+	    $sec\; \theta$&$-1$&$-2$&$1$&$IND$&$-\sqrt{2}$\\\\
+	    $csc\; \theta$&$IND$&$-\dfrac{2}{\sqrt{3}}$&$IND$&$1$&$\sqrt{2}$\\\\
+	    \hline
+	\end{tabular}
+    \end{center}
+
+%--------------------6.
+\item . Complete la siguiente tabla con los valores de la función. Si la función no está definida en el ángulo dado, indíquelo con la leyenda “IND”. No use calculadora ni tablas.
+    \begin{center}
+	\begin{tabular}{cccccc}
+	    \hline\\
+	    $\theta$&$-3\pi/2$&$-\pi/3$&$-\pi/6$&$\pi/4$&$4\pi/6$\\\\
+	    \hline\\
+	    $\sen \theta$&$-\dfrac{\sqrt{2}}{2}$&$-\dfrac{\sqrt{3}}{2}$&$0$&$1$&$\dfrac{\sqrt{2}}{2}$\\\\
+	    $\cos \theta$&$-1$&$-\dfrac{1}{2}$&$1$&$0$&$-\dfrac{1}{\sqrt{2}}$\\\\
+	    $\tan \theta$&$0$&$\sqrt{3}$&$0$&$IND$&$-1$\\\\
+	    $\cot \theta$&$IND$&$\dfrac{1}{\sqrt{3}}$&$IND$&$0$&$-1$\\\\
+	    $sec\; \theta$&$-1$&$-2$&$1$&$IND$&$-\sqrt{2}$\\\\
+	    $csc\; \theta$&$IND$&$-\dfrac{2}{\sqrt{3}}$&$IND$&$1$&$\sqrt{2}$\\\\
+	    \hline
+	\end{tabular}
+    \end{center}
 
 \end{enumerate}
