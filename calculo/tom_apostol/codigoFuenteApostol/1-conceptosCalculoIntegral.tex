@@ -1956,9 +1956,61 @@ Calcular cada una de las integrales siguientes:\\\\
 
 
     %--------------------19.
-    \item $\displaystyle\int_0^5 (x-5)^4 \; dx = $\\\\
+    \item $\displaystyle\int_0^5 (x-5)^4 \; dx = \int_0^5 x^4 - 20x^3\cdot + 150 x^2\cdot + - 500x + 625 \; dx = \left(\dfrac{5^5}{5} - 3125 + 6250 - 6250 + 3125 \right) = 625$\\\\
 
     %--------------------20.
     \item $\displaystyle\int_{-2}^{-4} (x + 4)^{10} \; dx$\\\\
+	Respuesta.-\; Por la invariancia de la integral se tiene 
+	$$\int_{-2}^{-4} (x+4)^{10} \; dx = \int_2^0 x^{10} \; dx = - \int_0^2 x^{10} \; dx = - \dfrac{2^{11}}{11}$$\\
+
+    %--------------------21.
+    \item Hallar todos los valores de $c$ para los que
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item $\displaystyle\int_0^c x(1-x) \; dx = 0$\\\\
+	    Respuesta.-\; Al integrar tenemos que $\displaystyle\int_0^c x - x^2 \; dx = \dfrac{c^2}{2} - \dfrac{c^3}{3}$ igualando el resultado a $0$ se tiene $3c^2 - 2c^3 = 0$ de donde $$c=0 \quad y \quad c=\dfrac{3}{2}$$.\\\\
+
+	%----------(b)
+	\item $\displaystyle\int_0^c |x(1-x)| \; dx$\\\\
+	    Respuesta.-\; Dado que $|x(1-x)|\geq 0$ para todo $x$, podemos usar el teorema de comparación para ver si $|x(1-x)|>0$ para cualquier $x$, de donde $$\int_0^c |x(1-x)| \; dx > \int_0^c 0 = 0$$
+	    Así, para que la ecuación se mantenga debemos tener $|x(1-x)|=0$ para todo $0\leq x \leq c$ Dado que la expresión será distinta de cero para cualquier $0<x\leq c$, debemos tener $c=0$\\\\\\\\
+    \end{enumerate}
+
+    %-------------------22.
+    \item Calcular cada una de las integrales siguientes. Dibújese la gráfica $f$ en cada caso.
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item $\displaystyle\int_0^2 f(x) \; dx$ donde 
+		$f(x) =  \left\{ \begin{array}{rcl}
+		    x^2&si&0\leq x \leq 1\\
+		    2-x&si&1\leq x\leq 2\\\\
+		\end{array}\right.$
+		Respuesta.-\; Por el teorema de aditividad respecto al intervalo de integración se tiene 
+		\begin{center}
+		    \begin{tabular}{rcl}
+			$\displaystyle\int_0^2 f(x) \; dx$&$=$&$\displaystyle\int_0^1 f(x) \; dx + \int_1^2 f(x) \; dx$\\
+			\\&$=$&$\displaystyle\int_0^1 x^2 \; dx + \int_1^2 (2-x) \; dx$\\
+			\\&$=$&$\dfrac{1^3}{3} + 2x\bigg|_1^2  - \dfrac{x^2}{2}\bigg|_1^2$\\
+			\\&$=$&$\dfrac{1}{3} + (2\cdot 2 - 2\cdot 1) - \dfrac{2^2 - 1^2}{2}$\\
+			\\&$=$&$\dfrac{5}{6}$\\\\
+		    \end{tabular}
+		\end{center}
+
+	    %----------(b)
+	    \item $\displaystyle\int_0^1 f(x)\; dx$ donde 
+		$f(x) = \left\{ \begin{array}{rcl}
+		    x&si&0\leq x \leq c\\
+		    \\c\dfrac{1-x}{1-c}&si&c\leq x \leq 1\\
+		\end{array}\right.$
+		$c$ es un número real fijado, $0<c<1.$\\\\
+		Respuesta.-\; dividimos la integral en $\displaystyle\int_0^c x \; dx  + \int_c^1 \left( \dfrac{c}{1-c} \right) (1-x) \; dx$ \; de donde $$\dfrac{x^2}{2}\bigg|_0^c + \dfrac{c}{1-c} \left(x \bigg|_c^1 - \dfrac{x^2}{2}\bigg|_c^1\right) = \dfrac{c^2}{2} + \dfrac{c}{1-c}(1 - c) - \dfrac{c}{1-c}\left(\dfrac{1^2 - c^2}{2}\right) = \dfrac{c}{2}$$\\
+
+	\end{enumerate}
+
+    %--------------------23.
+    \item 
 
 \end{enumerate}
