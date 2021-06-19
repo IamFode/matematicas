@@ -1345,10 +1345,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 	$\displaystyle\int_{ka}^{kb} s\left(\dfrac{x}{k}\right) dx$ para todo $k>0$\\\\
 	Es conveniente considerar integrales con el límite inferior mayor que el superior. Esto se logra definiendo: $$\displaystyle\int_{a}^{b} s(x) dx = - \int_{a}^{b} s(x) dx \qquad a<b$$\\\\
 	    Demostración.-\; Sea $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición del intervalo $[a,b]$ tal que $s$ es constante en los subintervalos abiertos de $P$. Supóngase que $s(x)=s_i$ si $x_{i-1}<x<x_i$. Sea $t(x)=s(x/k)$ si $ka<x<kb$. Entonces $t(x)=s_i$ si $x$ pertenece al intervalo abierto $(kx_{i-1},kx_i)$;, por tanto $P{'}=\lbrace kx_0,kx_1,...,kx_n \rbrace$ es una partición de $[ka,kb]$ y $t$ es constante en los subintervalos abiertos de $P^{'}$. Por tanto $t$ es una función escalonada cuya integral es: $$\displaystyle\int_{ka}^{kb} t(x) \; dx = \sum\limits_{k=1}^{n} s_i \cdot (kx_1 - kx_{i-1}) k\sum\limits_{k=1}^n s_i \cdot (x_i - x_{i-1}) = k \int_{a}^{b} s(x) \; dx$$\\
-    \end{teo}
-
-    %--------------------teorema 1.9
-    \begin{teo}[Propiedad de reflexión de la integral]
+    \textbf{Propiedad de reflexión de la integral}
 	$\displaystyle\int_{a}^{b} s(x) dx = \int_{-b}^{-a} s(-x) dx$\\\\
     \end{teo}
 
@@ -1742,7 +1739,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     \end{def.}
 \end{tcolorbox}
 
-%--------------------teorema 1.10
+%--------------------teorema 1.9
 \begin{teo}
     Toda función $f$ acotada en $[a,b]$ tiene una integral inferior $\underbar{I}(f)$ y una integral superior $\bar{I}(f)$ que satisfacen las desigualdades $$\int_a^b s(x) \; dx \leq \underbar{I}(f) \leq \bar{I}(f) \leq \int_a^b t(x) \; dx$$ 
     para todas las funciones $s$ y $t$ tales que $s\leq f\leq t$. La función $f$ es integrable en $[a,b]$ si y sólo si sus integrables superior e inferior son iguales, en cuyo caso se tiene $$\int_a^b f(x) \; dx = \underbar{I}(f)=\bar{I}(f)$$\\
@@ -1755,7 +1752,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{El área de un conjunto de ordenadas expresada como una integral}
 
-%--------------------teorema 1.11
+%--------------------teorema 1.10
 \begin{teo}
     Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$, y sea $Q$ el conjunto de ordenadas de $f$ sobre $[a,b]$. Entonces $Q$ es medible y su área es igual a la integral $\int_a^b f(x) \; dx$\\\\
     Demostración.-\; Sea $S$ y $T$ dos regiones escalonadas que satisfacen $S\subseteq Q \subseteq T.$. Existen dos funciones escalonadas $s$ y $t$ que satisfacen $s\leq f\leq t$ en $[a,b]$, tales que $$a(S)=\int_a^b s(x) \; dx \quad y \quad a(T)=\int_a^b t(x) \; dx$$
@@ -1763,7 +1760,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     para todas las funciones escalonadas $s$ y $t$ que cumplen $s\leq f \leq t$. Por consiguiente ése es también el único número que satisface $a(S)\leq I \leq a(T)$ para todas las regiones escalonadas $S$ y $T$ tales que $S\subseteq Q \subseteq T.$ Según la propiedad de exhaución, esto demuestra que $Q$ es medible y que $a(Q)=I$\\\\
 \end{teo}
 
-%--------------------teorema 1.12
+%--------------------teorema 1.11
 \begin{teo}
     Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$. La gráfica de $f$, esto es el conjunto $$\lbrace (x,y)/a\leq x \leq b, y=f(x) \rbrace$$ es medible y tiene área igual a $0$.\\\\
     Demostración.-\; Sean $Q$ el conjunto de ordenadas del teorema 1.11 y $Q^{'}$ el conjunto que queda si se quitan de $Q$ los puntos de la gráfica de $f$. Esto es, $$Q^{'} = \lbrace (x,y)/a\leq x \leq b, 0\leq y \leq f(x)\rbrace$$
@@ -1798,7 +1795,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{Integrabilidad de funciones monótonas acotadas}
 
-%--------------------teorema 1.13
+%--------------------teorema 1.12
 \begin{teo} Si $f$ es monótona en un intervalo cerrado $[a,b]$, $f$ es integrable en $[a,b]$\\\\
     Demostración.-\; Demostraremos el teorema para funciones decrecientes. El razonamiento es análogo para funciones decrecientes. Supongamos pues $f$ decreciente y sean $\underbar{I}(f)$ e $\overline{I}(f)$ sus integrales inferior y superior. Demostraremos que $\underbar{I}(f)=\overline{I}(f)$. \\
     Sea $n$ un número entero positivo y construyamos dos funciones escalonadas de aproximación $s_n$ y $t_n$ del modo siguiente: $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición de $[a,b]$ en $n$ subintervalos iguales, esto es, subintervalos $[x_{k-1},x_k]$ tales que $x_k-x_{k-1} = (b-a)/n$ para cada valor de $k$. Definamos ahora $s_n$ y $t_n$ por las fórmulas $$s_n(x)=f(x_{k-1}), \quad t_n(x)=f(x_k) \quad si \quad x_{k-1}<x<x_k$$ en los puntos de división, se definen $s_n$ y $t_n$ de modo que se mantengan las relaciones $s(x)\leq f(x) \leq t_n(x)$ en todo $[a,b]$. Con esta elección de funciones escalonadas, tenemos 
@@ -1815,7 +1812,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{Cálculo de la integral de una función monótona acotada}
 
-%--------------------teorema 1.14
+%--------------------teorema 1.13
 \begin{teo} Supongamos $f$ creciente en un intervalo cerrado $[a,b]$. Sea $x_k = a + k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n}\sum\limits_{k=0}^{n-1} f(x_k)\leq I \leq \dfrac{b-a}{n}\sum\limits_{k=1}^n f(x_k) \qquad (2)$$
     para todo entero $n\geq 1$, entonces $I=\int_a^b f(x) \; dx$\\\\
     Demostración.-\; Sean $s_n$ y $t_n$ las funciones escalonadas de aproximación especial obtenidas por subdivisión del intervalo $[a,b]$ en $n$ partes iguales, como se hizo en la demostración del teorema 1.13. Entonces, las desigualdades (1.9) establecen que $$\int_a^b s_n \leq I \leq \int_a^b t_n$$
@@ -1825,7 +1822,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     par todo $n\geq 1$. Por consiguiente, según el teorema I.31, tenemos $I=\int_a^b f(x) \; dx$\\\\
 \end{teo}
 
-%--------------------teorema 1.15
+%--------------------teorema 1.14
 \begin{teo} Supongamos $f$ decreciente en $[a,b]$. Sea $x_k=c+k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n} \sum\limits_{k=1}^n f(x_k) \leq I \leq \dfrac{b-a}{n} \sum\limits_{k=0}^{n-1} f(x_k)$$
     para todo entero $n\geq 1,$ entonces $I=\int_a^b f(x) \; dx$\\\\
 \end{teo}
@@ -1833,7 +1830,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{Cálculo de la integral $\int_0^b x^p \; dx$ siendo $p$ entero positivo}
 
-%--------------------teorema 1.16
+%--------------------teorema 1.15
 \begin{teo} Si $p$ es un entero positivo y $b>0$, tenemos $$\int_0^b x^p \; dx = \dfrac{b^{p+1}}{p+1}$$\\
     Demostración.-\; Comencemos con las desigualdades $$\sum\limits_{k=1}^{n-1} k^p < \dfrac{n^{p+1}}{p+1}<\sum\limits_{k=1}^n k^p$$
     válidas para todo entero $n\geq 1$ y todo entero $p\geq 1$. Estas desigualdades se demostraron anteriormente. La multiplicación de esas desigualdades por $b^{p+1}/n^{p+1}$ nos da $$\dfrac{b}{n} \sum\limits_{k=1}^{n-1} \left(\dfrac{kb}{n}\right)^p<\dfrac{b^{p+1}}{p+1}<\dfrac{b}{n}\sum\limits_{k=1}^{n}\left(\dfrac{kb}{n}\right)^p$$
@@ -1843,27 +1840,27 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{Propiedades fundamentales de la integral}
 
-%--------------------1.17
+%--------------------1.16
 \begin{teo}[Linealidad respecto al integrando] Si $f$ y $g$ son ambas integrables en $[a,b]$ también lo es $c_1f+c_2g$ para cada par de constantes $c_1$ y $c_2$. Además, se tiene
     $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
     Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
 \end{teo}
 
-%--------------------1.18
+%--------------------1.17
 \begin{teo}[Aditividad respecto al intervalo de integración] Si existen dos de las tres integrales siguientes, también existe la tercera y se tiene: $$\int_a^b f(x) \; dx + \int_b^c f(x) \; dx = \int_a^c f(x) \; dx$$
     Nota.- \; En particular, si $f$ es monótona en $[a,b]$ y también en $[b,c]$, existen las dos integrales $\int_a^b f$ e $\int_b^c f,$ con lo que también existe $\int_a^c f$ y es igual a la suma de aquellas.\\\\
 \end{teo}
 
-%--------------------1.19
+%--------------------1.18
 \begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
 \end{teo}
 
-%--------------------1.20
+%--------------------1.19
 \begin{teo}[Dilatación o contracción del intervalo de integración] Si $f$ es integrable en $[a,b]$ para cada número real $k\neq 0$ se tiene: $$\int_a^b f(x) = \dfrac{1}{k} \int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx$$
     Nota.-\; En los dos teoremas 1.19 y 1.20 la existencia de una de las integrables implica la existencia de la otra. Cuando $k=-1$, el teorema 1.19 se llama propiedad de reflexión.\\\\
 \end{teo}
 
-%--------------------1.21
+%--------------------1.20
 \begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\
 \end{teo}
 
@@ -2026,5 +2023,29 @@ Calcular cada una de las integrales siguientes:\\\\
 	Por lo tanto $$4x^3 + 9x^2 + 2x$$\\
 
     %--------------------25.
-    \item
+    \item Sea $f$ una función cuyo dominio contiene $-x$ siempre que contiene $x$. Se dice que $f$ es una función par si $f(-x)=f(x)$ y una función impar si $f(-x)=-f(x)$ para todo $x$ en el dominio de $f$. Si $f$ es integrable en $[0,b]$ demostrar que:
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item $\displaystyle\int_{-b}^b f(x)\; dx = 2\int_0^b f(x)\; dx$ si $f$ es par.\\\\
+		Demostración.-\; Por el teorema de adición de una integral tenemos $$\int_{-b}^b f(x) \; dx = \int_{-b}^0 f(x) \; dx + \int_0^b f(x) \; dx$$
+		De la primera integral y por el teorema de dilatación o contracción del intervalo de integración, con $k=-1$, tenemos, $$\int_{-b}^0 f(x) \; dx = -\int_b^0 f(-x)\; dx$$ 
+		Siendo la función par, y el hecho de que $-\int_b^0 = \int_0^b$ entonces  $$-\displaystyle\int_{b}^0 f(-x)\; dx = \int_0^b f(x) \; dx$$
+		Así, nos queda $$\int_{-b}^b f(x) \; dx = \int_0^b f(x) \; dx + \int_0^b f(x) \; dx = 2\int_0^b f(x) \; dx$$\\
+
+	    %----------(b)
+	    \item $\displaystyle\int_a^b f(x) \; dx = 0$ si $f$ es impar.\\\\
+		Demostración.-\; Sabemos que $f$ es impar por lo tanto $\displaystyle\int_0^b f(-x)\; dx = -\int_0^b f(x) \; dx$. Luego Similar a la parte $(a)$ nos queda  
+		$$\int_{-b}^b f(x)\; dx = \int_{-b}^0 f(x) \; dx + \int_0^b f(x) \;dx = \int_0^b f(-x)\; dx + \int_0^b f(x) \; dx = 0$$\\
+
+	\end{enumerate}
+
+    %--------------------26.
+    \item Por medio de los teoremas 1.18 y 1.19 deducir la fórmula $$\int_a^b f(x) \; dx = (b-a)\int_0^1 f[a+(b-a)x] \; dx$$\\
+	Demostración.-\; Por los teoremas mencionados en la hipótesis se tiene $$\int_a^b f(x) \; dx = \int_0^{b-a} f[x-(-a)] \; dx = (b-a) \int_0^1 f[x(b-a)+a] \; dx = \int_0^1 f[a+(b-a)x] \; dx$$\\ 
+
+    %--------------------27.
+    \item Los teoremas 1.18 y 1.19 sugieren una generalización de la integral $\int_a^b f(Ax+B) \; dx$. Obtener esa fórmula y demostrarla con el auxilio de los citados teoremas. Discutir también el caso $A=0$.\\\\
+	Demostración.-\; 
+
 \end{enumerate}
