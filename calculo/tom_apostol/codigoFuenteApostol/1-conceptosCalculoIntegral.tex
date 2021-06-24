@@ -1840,27 +1840,29 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 
 \section{Propiedades fundamentales de la integral}
 
-%--------------------1.16
+%--------------------teorema 1.16
 \begin{teo}[Linealidad respecto al integrando] Si $f$ y $g$ son ambas integrables en $[a,b]$ también lo es $c_1f+c_2g$ para cada par de constantes $c_1$ y $c_2$. Además, se tiene
     $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
     Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
+
+    Demostración.-\;
 \end{teo}
 
-%--------------------1.17
+%--------------------teorema 1.17
 \begin{teo}[Aditividad respecto al intervalo de integración] Si existen dos de las tres integrales siguientes, también existe la tercera y se tiene: $$\int_a^b f(x) \; dx + \int_b^c f(x) \; dx = \int_a^c f(x) \; dx$$
     Nota.- \; En particular, si $f$ es monótona en $[a,b]$ y también en $[b,c]$, existen las dos integrales $\int_a^b f$ e $\int_b^c f,$ con lo que también existe $\int_a^c f$ y es igual a la suma de aquellas.\\\\
 \end{teo}
 
-%--------------------1.18
+%--------------------teorema 1.18
 \begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
 \end{teo}
 
-%--------------------1.19
+%--------------------teorema 1.19
 \begin{teo}[Dilatación o contracción del intervalo de integración] Si $f$ es integrable en $[a,b]$ para cada número real $k\neq 0$ se tiene: $$\int_a^b f(x) = \dfrac{1}{k} \int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx$$
     Nota.-\; En los dos teoremas 1.19 y 1.20 la existencia de una de las integrables implica la existencia de la otra. Cuando $k=-1$, el teorema 1.19 se llama propiedad de reflexión.\\\\
 \end{teo}
 
-%--------------------1.20
+%--------------------teorema 1.20
 \begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\
 \end{teo}
 
@@ -2046,6 +2048,21 @@ Calcular cada una de las integrales siguientes:\\\\
 
     %--------------------27.
     \item Los teoremas 1.18 y 1.19 sugieren una generalización de la integral $\int_a^b f(Ax+B) \; dx$. Obtener esa fórmula y demostrarla con el auxilio de los citados teoremas. Discutir también el caso $A=0$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Sea 
+	$$\int_a^b f(Ax+B)\;dx = \left\{ \begin{array}{rcl} 
+	    \dfrac{1}{A}\displaystyle\int_{Ab+B}^{Aa+B}&si&A\neq 0\\\\
+	    (b-a)f(B)&si&A = 0\\\\
+	\end{array}\right.$$
+	Para el caso $A=0$, tenemos $$\int_a^b f(Ax+B)\; dx = \int_{a}^b f(B)\; dx = f(B)\int_a^b \; dx = (b-a)f(B)$$.
+	Luego para el caso $A\neq 0$ usamos el teorema de expansión o contracción del intervalo de integración, para obtener, 
+	$$\int_a^b f(Ax+B)\; dx = \dfrac{1}{A}\int_{Ab}{Aa} f(x+B)\; dx$$
+	así por la invariancia de la integral concluimos que 
+	$$\dfrac{1}{A}\int_{Aa}^{Ab} f(x+B)\; dx = \dfrac{1}{A}\int_{Aa+b}^{Ab+B} f(x)\; dx$$\\\\
+
+    %-------------------28.
+    \item Mediante los teoremas 1.18 y 1.19 demostrar la fórmula 
+	$$\int_a^b f(c-x)\; dx = \int_{c-a}^{c-b}f(x) \; dx$$\\\\
+	Demostración.-\; Por el teorema de expansión o contracción con $k=-1$ y el teorema de invariancia frente a la traslación, 
+	$$\int_a^b f(c-x)\; dx = - \int_{-a}{-b} f(x+c)\; dx = \int_{-b}^{-a} f(x+c)\; dx = \int_{c-b}^{c-a} f(x) \; dx$$\\\\
 
 \end{enumerate}

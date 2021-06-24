@@ -255,14 +255,32 @@ Una función no puede tender hacia dos límites diferentes en $a$. En otros tér
 \end{enumerate}
 
 %--------------------6.
-\item Supóngase que las funciones $f$ y $g$ tiene n la siguiente propiedad: Para todo $\epsilon>0$ y todo $x$, $$si \; 0<|x-2|<\sen^2\left(\dfrac{\epsilon^2}{9}\right) + \epsilon, \; entonces \; |f(x)-2|<\epsilon,$$ $$si \; 0<|x-2|<\epsilon^2, \; entonces \; |g(x)-4| < \epsilon.$$
+\item Supóngase que las funciones $f$ y $g$ tiene n la siguiente propiedad: Para todo $\epsilon>0$ y todo $x$, $$si \; 0<|x-2|<\sen^2\left(\dfrac{\epsilon^2}{9}\right) + \epsilon, \; entonces \; |f(x)-2|<\epsilon,$$ $$si \; 0<|x-2|<\epsilon^2, \; entonces \; |g(x)-4| < \epsilon.$$\\
 Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \begin{enumerate}[\bfseries (i)]
     
     %----------(i)
     \item Si $0<|x-2|<\delta$, entonces $|f(x)+g(x)-6|<\epsilon$.\\\\
-	Respuesta.-\; Por la primera parte del lema se tiene $|f(x)-2|<\dfrac{\epsilon}{2}$ y $|g(x)-4|<\dfrac{\epsilon}{2}$
+	Respuesta.-\; Por la primera parte del lema se tiene $|f(x)-2|<\dfrac{\epsilon}{2}$ y $|g(x)-4|<\dfrac{\epsilon}{2}$, luego remplazamos $\epsilon$ por $\epsilon/2$ de donde nos queda $$0<|x-2|<\sen^2 \left[\dfrac{\left(\dfrac{\epsilon}{2}\right)^2}{9}\right] \quad y \quad |x-2|<\left(\dfrac{\epsilon}{2}\right)^2$$
+	Por último, solo hace verificar para todo $\epsilon>0$ existe  algún $\delta>0$. En este caso solo hace falta elegir $$0<|x-2|<\min\left[\sen^2 \left(\dfrac{\epsilon^2}{36}\right)+\epsilon,\dfrac{\epsilon^2}{4}\right] = \delta$$\\
+
+    %----------(ii)
+    \item Si $0<|x-2|<\delta$, entonces $|f(x)g(x) - 8|<\epsilon$\\\\\
+	Respuesta.-\; Por la segunda parte del lema demostrado tenemos que $$|f(x)-2|<\min\left(1,\dfrac{\epsilon}{2(|4|+1)}\right) \quad y \quad |g(x)-4|<\dfrac{\epsilon}{2(|2|+1)}$$ ya que $|f(x)g(x)-2\cdot 4|<\epsilon$.\\ 
+	Luego reemplazando en $\epsilon$ a cada parte obteniendo, 
+	$$0<|x-2|<\min\left\{\sen^2 \left[\dfrac{\min\left(\dfrac{\epsilon}{10}\right)^2}{9}\right] + \min\left(1,\dfrac{\epsilon}{10}\right),\left[\min\left(1,\dfrac{\epsilon}{6}\right)\right]^2\right\}=\delta$$\\\\
+
+    %----------(iii)
+    \item Si $0<|x-2|<\delta$, entonces $\left|\dfrac{1}{g(x)}-\dfrac{1}{4}\right|<\epsilon$\\\\
+	Respuesta.-\; Por la tercera parte del lema se tiene que $|g(x) - 4|<\min\left(\dfrac{|4|}{2},\dfrac{\epsilon|4|^2}{2}\right)$, luego remplazando en $\epsilon$ obtenemos $$|x-2|<\left[\min\left(2,8\epsilon \right)\right]^2 = \delta$$.\\
+
+    %----------(iv)
+    \item Si $0<|x-2|<\delta$, entonces $\left|\dfrac{f(x)}{g(x)}-\dfrac{1}{2}\right|<\delta$\\\\
+	Respuesta.-\; Sea $\left|f(x)\dfrac{1}{g(x)}-2dfrac{1}{4}\right|$ entonces $$|f(x)-2|<\min\left(1,\dfrac{\epsilon}{2(|1/4|+1)}\right) \quad y \quad \dfrac{1}{g(x)} - \dfrac{1}{4}<\dfrac{\epsilon}{2(|2|+1)}$$, de donde $$0<|x-2|\min\left\{\sen^2\left[\dfrac{\left(\min(1,2\epsilon/5)\right)^2}{9}\right] + \min(1,2\epsilon/5),\left[\min\left(2,\dfrac{8\epsilon}{2(|2|+1)}\right)\right]^2\right\}=\delta$$\\\\ 
 
 \end{enumerate}
+
+%--------------------7.
+\item 
 
 \end{enumerate}
