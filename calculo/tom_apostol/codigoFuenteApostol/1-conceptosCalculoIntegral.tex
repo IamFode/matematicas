@@ -1,4 +1,6 @@
+\setcounter{chapter}{0}
 \chapter{Los conceptos del Cálculo Integral}
+
 \setcounter{chapter}{1}
 \setcounter{section}{2}
 
@@ -1845,25 +1847,74 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
     Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
 
-    Demostración.-\;
+    Demostración.-\; Descompongamos esa propiedad en dos partes:
+    $$\int_a^b (f+g) = \int_a^b f + \int_a^b g \qquad (A)$$
+    $$\int_a^b cf = c \int_a^b f \qquad (B)$$
+    Para demostrar $(A)$, pongamos $I(f) = \int_a^b f$ e $I(g) = \int_a^b g$. Demostraremos que $\underbar{I}(f+g) = \bar{I}(f+g) = I(f) + I(g).$
+    Sean $s_1$ y $s_2$ funciones escalonadas cualesquiera inferiores a $f$ y $g$, respectivamente. Puesto que $f$ y $g$ son integrables, se tiene $$I(f) = \sup\left\{ \int_a^b s_1 | s_1 \leq f \right\}, \quad I(g) =\sup\left\{ \int_a^b s_2 | s_2 \leq g\right\}$$
+    Por el teorema I.33 aditiva del extremo superior, también se tiene $$I(f) + I(g) = \sup\left\{\int_a^b s_1 + \int_a^b s_2 | s_1 \leq f, s_2\leq g\right\} \qquad (1.11)$$
+    Pero si $s_1\leq f$ y $s_2 \leq g,$ entonces la suma $s=s_1+s_2$ es una función escalonada inferior a $f+g$, y tenemos 
+    $$\int_a^b s_1 + \int_a^b s_2 = \int_a^b s \leq \underbar{I}(f+g)$$
+    Por lo tanto, el número $\underbar{I}(f+g)$ es una cota superior para el conjunto que aparece en el segundo miembro de (1.11). Esta cota superior no puede ser menor que el extremo superior del conjunto de manera que $$I(f) + I(g) \leq \underbar{I}(f+g) \qquad (1.12)$$ 
+    Del mismo modo, si hacemos uso de las relaciones 
+    $$I(f) = \inf\left\{\int_a^b t_1 | f\leq t_1\right\}, \qquad I(g)= \inf\left\{\int_a^b t_2 | g\leq t_2\right\}$$
+    donde $t_1$ y $t_2$ representan funciones escalonadas arbitrarias superiores a $f$ y $g$, respectivamente, obtenemos la desiguald
+    $$\bar{I}(f+g) \leq I(f) + I(g).$$
+    Las desigualdades (1.12) y (1.13) juntas demuestran que $\underbar{I}(f+g) = \bar{I} (f+g) = I(f) + I(g)$. Por consiguiente $f+g$ es integrable y la relación $(A)$ es cierta.\\
+    La relación $(B)$ es trivial si $c=0$. Si $c>0$, observemos que toda función escalonada $s_1=cf$ es de la forma $s_1=cs,$ siendo $s$ una función escalonada inferior a $f$. Análogamente, cualquier función escalonada $t_1$ superior a $cf$ es de la forma $t_1=ct$, siendo $t$ una función escalonada superior a $f$. Por hipótesis se tenemos, 
+    $$\bar{I}(cf) = \sup\left\{ \int_a^b s_1 | s_1 \leq cf\right\} = \sup\left\{c\int_a^b s | s \leq f\right\} = cI(f)$$
+    y 
+    $$\underbar{I}(cf) = \inf\left\{\int_a^b t_1 | cf \leq t_1\right\} = \inf\left\{c\int_a^b t | f \leq t\right\} = cI(f)$$
+    Luego $\underbar{I}(cf)=\bar{I}(cf)=cI(f).$ Aquí hemos utilizado las propiedades siguientes del extremo superior y del extremo inferior:
+    $$\sup{cx | x\in A} = c \sup {x|x\in A}, \quad \inf{cx | x \in A}= c \inf{x|x\in A} \qquad (1.14)$$
+    que son válidas si $c>0$. Esto demuestra $(B)$ si $c>0$.\\
+    Si $c<0$, la demostración de $(B)$ es básicamente la misma, excepto que toda función escalonada $s_1$ inferior a $cf$ es de la forma $s_1=ct$, siendo $t$ una función escalonada superior a $f$ y toda función escalonada $t_1$ superior a $cf$ es de la forma $t_1=cs$, siendo $s$ una función escalonada inferior a $f$. Asimismo, en lugar de (1.14) utilizamos las relaciones 
+    $$\sup{cx | x\in A} = c\inf{x | x \in A}, \quad \inf{cx | x \in A} = c \sup {x | x \in A},$$
+    que son ciertas si $c<0$. Tenemos pues 
+    $$\underbar{I}(cf) = \sup\left\{\int_a^b s_1 | s_1 \leq cf\right\}= \sup \left\{c \int_a^b t | f \leq t\right\} = \inf \left\{\int_a^b t | f \leq t\right\} = cI(f).$$
+    Análogamente, encontramos $\bar{I}(f)=cI(f)$. Por consiguiente $(B)$ es cierta para cualquier valor real de $c$.\\\\
+
 \end{teo}
 
 %--------------------teorema 1.17
 \begin{teo}[Aditividad respecto al intervalo de integración] Si existen dos de las tres integrales siguientes, también existe la tercera y se tiene: $$\int_a^b f(x) \; dx + \int_b^c f(x) \; dx = \int_a^c f(x) \; dx$$
     Nota.- \; En particular, si $f$ es monótona en $[a,b]$ y también en $[b,c]$, existen las dos integrales $\int_a^b f$ e $\int_b^c f,$ con lo que también existe $\int_a^c f$ y es igual a la suma de aquellas.\\\\
+    Demostración.-\; Supongamos que $a<b<c$, y que las dos integrales $\in_a^b f$ e $\int_b^c f$ existen. Designemos con $\underbar{I}(f)$ e $\bar{I}(f)$ las integrales superior e inferior de $f$ en el intervalo $[a,c]$. Demostraremos que $$\underbar{I}(f) = \bar{I}(f) = \int_a^b f + \int_b^c f. \qquad (1.15)$$
+    Si $s$ es una función escalonada cualquiera inferior a $f$ en $[a,c]$, se tiene $$\int_a^c = \int_a^b + \int_b^c s.$$
+    Recíprocamente, si $s_1$ y $s_2$ son funciones escalonadas inferiores a $f$ en $[a,b]$ y $[b,c]$ respectivamente, la función $s$ que coincide con $s_1$ en $[a,b]$ y con $s_2$ en $[b,c]$ es una función escalonada inferior a $f$ para lo que $$\int_a^c = \int_a^b s_1 + \int_b^c s_2.$$
+    Por consiguiente, en virtud de la propiedad aditiva del extremo superior, tenemos 
+    $$\underbar{I}(f) = \sup\left\{\int_a^c s | s\leq f\right\} = \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} + \sup \left\{\int_b^c s_2 | s_2 \leq f\right\} = \int_a^b f + \int_b^c f.$$
+    Análogamente, encontramos $$\bar{I}(f) = \int_a^b f + \int_b^c f,$$
+    lo que demuestra (1.15) cuando $a<b<c$. La demostración es parecida para cualquier otra disposición de los puntos $a,b,c$.\\\\
+
 \end{teo}
 
 %--------------------teorema 1.18
 \begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
+    Demostración.-\; Sea $g$ la función definida en el intervalo $[a+c,b+c]$ por la ecuación $g(x) = f(x-c)$. Designemos por $\underbar{I}(g)$ e $\bar{g}$ las integrales superior e inferior de $g$ en el intervalo $[a+c,b+c]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = \int_a^b f(x) \; dx.$$
+    Sea $s$ cualquier función escalonada inferior a $g$ en el intervalo $[a+c,b+c]$. Entonces la función $s_1$ definida en $[a,b]$ por la ecuación $s_1(x) = s(x+c)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ inferior a $f$ en $[a,b]$ tiene esta forma para un cierta $s$ inferior a $g$. También, por la propiedad de traslación para las integrales de las funciones escalonadas, tenemos $$\int_{a+c}^{b+c} \; dx = \int_a^b s(x+c)\; dx = \int_a^b s_1(x)\; dx. \qquad (1.16)$$
+    Por consiguiente se tiene $$\underbar{I}(g) = \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\} =  \sup \left\}\int_a^b s_1 | s_1 \leq f\right\} = \int_a^b f(x) \; dx.$$
+    Análogamente, encontramos $\underbar{I} = \int_a^b f(x)\; dx$, que prueba (1.16).\\\\ 
+    
 \end{teo}
 
 %--------------------teorema 1.19
 \begin{teo}[Dilatación o contracción del intervalo de integración] Si $f$ es integrable en $[a,b]$ para cada número real $k\neq 0$ se tiene: $$\int_a^b f(x) = \dfrac{1}{k} \int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx$$
     Nota.-\; En los dos teoremas 1.19 y 1.20 la existencia de una de las integrables implica la existencia de la otra. Cuando $k=-1$, el teorema 1.19 se llama propiedad de reflexión.\\\\
+    Demostración.-\; Supongamos $k>0$ y definamos $g$ en el intervalo $[ka,kb]$ para la igualdad $g(x)=f(x/k)$. Designemos por $\underbar{I}(g)$ e $\bar{I}(g)$ las integrales inferiores y superiores de $g$ en $[ka,kb]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = k \int_a^b f(x) \; dx. \qquad (1.17)$$
+    Sea $s$ cualquier función escalonada inferior a $g$ en $[ka,kb]$. Entonces la función definida en $[a,b]$ por la igualdad $s_1(x) = (kx)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ a $f$ en $[a,b]$ tiene esta forma. También, en virtud de la propiedad de dilatación para las integrales de funciones escalonadas, tenemos 
+    $$\int_{ka}^{kb} s(x)\; dx = k \int_a^b s(kx)\; dx = k \int_a^b s_1(x) \; dx.$$
+    Por consiguiente $$\underbar{I}(g) = \sup\left\{\int_{ka}^{kb} s | s\leq g\right\} = \sup\left\{ k \int_a^b s_1 | s_1\leq f\right\} = k \int_a^b f(x) \; dx.$$
+    Análogamente, encontramos $\underbar{I}(g) = k \int_a^b f(x)\; dx$, que demuestra (1.17) si $k>0.$ El mismo tipo de demostración puede utilizarse si $k<0$.\\\\
+
 \end{teo}
 
 %--------------------teorema 1.20
-\begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\
+\begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\\\
+    Demostración.-\; Supongamos $g\leq f$ en el intervalo $[a,b]$. Sea $s$ cualquier función escalonada inferior a $g$, y sea $t$ cualquier función escalonada superior a $f$. Se tiene entonces $\int_a^b s \leq \int_a^b t,$ y por tanto el teorema I.34 nos da 
+    $$\int_a^b = \sup \left\{\int_a^b s | s\leq g \right\} \leq \inf \left\{\int_a^b t | f\leq t\right\} = \int_a^b f.$$
+    Esto demuestra que $\int_a^b g \leq \int_a^b f,$ como deseábamos.\\\\
+
 \end{teo}
 
 
