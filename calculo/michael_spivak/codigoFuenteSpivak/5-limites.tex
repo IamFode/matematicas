@@ -281,6 +281,56 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \end{enumerate}
 
 %--------------------7.
+\item Dese un ejemplo de una función $f$ para la cual la siguiente proposición sea falsa: Si $|f(x)-l|<\epsilon$ cuando $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon/2$ cuando $0<|x-a|<\delta/2$.\\\\
+    Respuesta.-\; Tomemos $a=0$ y $l=0$. Para $\epsilon>0$, se tiene $$|x-0|<\epsilon^2 \quad \Longrightarrow \quad |\sqrt{|x|}-0|<\epsilon$$. Aquí $\delta=\epsilon^2$. Pero si $$0<|x-0|<\dfrac{\epsilon^2}{2} \quad \Longrightarrow \quad |\sqrt{|x|}-0|< \dfrac{\epsilon^2}{4}=\delta.$$\\ El cual no se cumple la proposición buscada.\\\\
+
+%--------------------8.
 \item 
+\begin{enumerate}[\bfseries (a)]
+
+    %----------(a)
+    \item Si no existen los límites $\lim\limits_{x \to a} f(x)$ y $\lim\limits_{x \to a} g(x)$, ¿pueden existir $\lim\limits_{x \to a} [f(x)+g(x)]$ o $\lim\limits_{x \to a} f(x)g(x)$?\\\\
+	Respuesta.-\; Si. Por ejemplo considere $$f(x)=\dfrac{1}{x}, \quad g(x)=1-\dfrac{1}{x}$$ 
+	Luego observe que $\lim\limits_{x \to 0} f(x)$ y $\lim\limits_{x\to 0} g(x)$ no existen, mientras que $f(x)+g(x)=1$ tiene un límite en $x=0$. De similar forma, si tomamos $f(x)=g(x)=\dfrac{|x|}{x}$ entonces $\lim\limits_{x\to 0} f(x)$ no existe, mientras que $f(x)\cdot g(x)=\dfrac{|x|^2}{x^2}$ es $1$ y, por lo tanto, existe el límite en $0$.\\\\
+
+    %----------(b)
+    \item Si existen los límites $\lim\limits_{x\to a} f(x)$ y  $\lim\limits_{x\to a} [f(x) + g(x)]$, ¿debe existir $\lim\limits_{x\to a} g(x)$?\\\\
+	Respuesta.-\; Si, ya que $$g(x)=[f(x)+g(x)]-f(x)$$\\
+
+    %----------(c)
+    \item Si existe el límite $\lim\limits_{x\to a}f(x)$ y no existe el límite $\lim\limits_{x\to a} g(x)$, ¿puede existir $\lim\limits_{x\to a}[f(x)+g(x)]$?\\\\
+	Respuesta.-\; No, ya que es sólo otro modo de enunciar la parte $(b)$.\\\\
+
+    %----------(d)
+    \item Si existe los límites $\lim\limits_{x\to a} f(x)=\lim\limits_{x\to a} f(x)g(x),$ ¿se sigue de ello que existe $\lim\limits_{x\to a} [f(x)+g(x)]$?\\\\
+	Respuesta.-\; No, el razonamiento es análogo a la parte $(b)$, ya que si $g=(f\cdot g)/f$ no será aplicable si $\lim\limits_{x\to a}f(x)=0$.\\\\ 
+
+\end{enumerate}
+
+%--------------------9.
+\item Demostrar que $\lim\limits_{x\to a} f(x) = \lim\limits_{h \to 0}f(a+h).$\\\\
+    Demostración.-\; Sea $\lim\limits_{x\to a} f(x)$ y $g(h) f(a+h)$. Entonces para todo $\epsilon>0$ existe algún $\delta > 0$, tal que, para todo $x$, si $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon$. Ahora bien, si $0<|h-0|<delta$, entonces $|(h+a)-a|<\delta$, de modo que $|f(h+a)-l|<\epsilon$. Esta desigualdad puede escribirse $|g(x)-l|<\epsilon$. Así pues, $\lim\limits_{h\to 0}g(h) = l,$ lo cual puede escribirse también $\lim\limits_{h\to 0} f(a+h) = l$. el mismo razonamiento demuestra que si $\lim_{h\to 0} f(a+h) = m$, entonces $\lim\limits_{x\to a} f(x) = m.$ Así pues, existe uno cualquiera de los dos límites si existe el otro, y en este caso son iguales.\\\\ 
+
+%--------------------10.
+\item 
+\begin{enumerate}[\bfseries (a)]
+
+    %----------(a)
+    \item Demostrar que $\lim\limits_{x\to a} f(x) = l$ si y sólo si $\lim\limits_{x \to a} [f(x)-l] = 0$\\\\
+	Demostración.-\; Por definición vemos que Para todo $\epsilon>0$ existe algún $\delta > 0$ tal que, para todo $x$, si $0<|x-a|<\delta$ entonces $|f(x) - l| < \epsilon$. Esta último desigualdad se puede escribir como $|[f(x)-l]-0| < \epsilon$ de modo que $\lim\limits_{x\to a}[f(x)-l] = 0$. El razonamiento en sentido inverso es igual de simple e intuitivo.\\\\
+
+    %----------(b)
+    \item Demostrar que $\lim\limits_{x\to 0}  =  \lim\limits_{x\to a}f(x-a)$\\\\
+	Demostración.-\; Supóngase que $\lim\limits_{x\to 0} f(x) = m$Queremos mostrar que $\lim\limits_{x\to a} f(x-a) = m$. Para todo $\epsilon>0$ existen algún $\delta > 0$ tal que, para todo $x$ con $0<|x-0|<\delta$, entonces $|f(x)-m|<\epsilon \qquad (1)$. Si $0<|y-a|=|(y-a)-0|<\delta$, entonces por $(1)$ implica que $|f(y-a)-m| < \epsilon$, por lo tanto $\lim\limits_{y\to a} f(y-a) = m$.\\
+	Por el contrario, supóngase $\lim\limits_{x\to a} f(x-a) = m$, donde queremos demostrar $\lim\limits_{x\to 0} f(x) = m$. Sea $\epsilon>0$, entonces existe $\delta > 0$ tal que, para todo $x$ con $0<|x-a|<\delta$, entonces $|f(x-a)-m|<\epsilon \qquad (2)$. Si $0<|y|=|(y+a)-a|<\delta$, luego por $(2)$ implica que $|f(y)-m|=|f[(y+a)-a]-m|<\epsilon$, por lo tanto $\lim\limits_{y\to 0} f(y) = m$.\\\\
+
+    %----------(c)
+    \item Demostrar que $\lim\limits_{x\to 0} f(x) = \lim\limits_{x\to 0} f(x^3)$.\\\\
+	Demostración.-\; Sea $\lim_{x\to 0} f(x) = l.$ Para todo $\epsilon > 0$ existe algún $\delta > 0$, tal que, para todo $x$, si $0<|x|<\delta$ entonces $|f(x)-l|<\epsilon$. Tomemos $0<|x|<\min(1,\delta)$, entonces $0<|x^3|<\delta$, para comprender mejor tomemos un número en particular, por ejemplo $x = 0.9$ donde $0<|0.9|<\min(1,\delta)$ entonces se cumple que $0<|0.9^{3}|<\delta$. Así pues $\lim\limits_{x\to 0} f(x) = l$. Por otro lado, supongamos que $\lim\limits_{x\to 0} f(x^3)$ existe, pongamos $\lim\limits_{x\to 0} f(x^3) = m,$ entonces para todo $\epsilon>0$ existe algún $\delta > 0$ tal que, para todo $x$, si $0<|x|<\delta$, entonces $|f(x^3)-m|<\delta$. Si $0<|x|<\delta^3$, tenemos $0<|\sqrt[3]{x}|<\delta$, de modo que $|f(\sqrt[3]{x^3}^3)-m|<\epsilon$. Por lo tanto, $\lim\limits_{x\to 0} f(x) = m$.\\\\
+
+    %----------(d)
+    \item 
+
+\end{enumerate}
 
 \end{enumerate}
