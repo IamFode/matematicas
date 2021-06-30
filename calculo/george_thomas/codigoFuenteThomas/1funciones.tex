@@ -2632,7 +2632,7 @@ Se aplicará el software python, que se encuentra en el apartado Python.\\\\
 
 \section{Ejercicios de práctica}
 
-\begin{enumerate}[\bfseries 1.]
+\begin{enumerate}[\Large\bfseries 1.]
 
 %--------------------1.
 \item Exprese el área y el perímetro de un círculo como funciones de su radio. Luego, exprese el área del círculo como una función de su perímetro.\\\\
@@ -3084,6 +3084,116 @@ En los ejercicios $61$ a $64$, $ABC$ es un triángulo rectángulo con el ángulo
 
 %--------------------61.
 \item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Determine $a$ y $b$ si $c = 2, \; B = \pi/3$.\\\\
+	Respuesta.-\; Sea $\cos B = \dfrac{a}{c} \quad \Longrightarrow \quad a = c\cdot \dfrac{\pi}{3} \quad \Longrightarrow \quad a = 2\cos \dfrac{\pi}{3} = 1$.\\
+	Luego $b = 2 \sen \dfrac{\pi}{3} = 2\cdot \dfrac{\sqrt{3}}{2} = \sqrt{3}$\\\\ 
+
+    %----------b)
+    \item Determine $a$ y $c$ si $b = 2$, $B = \pi/3$\\\\
+	Respuesta.-\; $\cos \dfrac{\pi}{3} = \dfrac{2}{c} = \quad \Longrightarrow \quad \dfrac{\sqrt{3}}{2} = \dfrac{1}{c} \quad \Longrightarrow \quad c = \dfrac{4\sqrt{3}}{3}$.\\
+	Luego $\dfrac{\pi}{3} = \dfrac{a}{\dfrac{4\sqrt{3}}{3}} \quad \Longrightarrow \quad a = \dfrac{2\sqrt{3}}{3}$.\\\\
 
 \end{enumerate}
 
+%--------------------62.
+\item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Exprese $a$ en términos de $A$ y $c$.\\\\
+	Respuesta.-\; $\sen A = \dfrac{a}{c} \quad \Longrightarrow \quad a = c\sen A$.\\\\
+
+    %----------b)
+    \item Exprese $a$ en términos de $A$ y $b$.\\\\
+	Respuesta.-\; $a = b\tan A$\\\\
+
+\end{enumerate}
+
+%--------------------63.
+\item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Exprese $a$ en términos de $B$ y $b$.\\\\
+	Respuesta.-\; Sea $\cos B = \dfrac{a}{c}$ y $\sen B = \dfrac{b}{c}$ entonces $a = \dfrac{b}{\tan B}$\\\\
+
+    %----------b)
+    \item Exprese $c$ en términos de $A$ y $a$.\\\\
+	Respuesta.-\; $\sen A = \dfrac{a}{c} \quad \Longrightarrow \quad c = \dfrac{a}{\sen A}$.\\\\
+
+\end{enumerate}
+
+%--------------------64.
+\item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Exprese $\sen A$ en términos de $a$ y $c$.\\\\
+	Respuesta.-\; $\sen A = \dfrac{a}{c}$\\\\
+
+    %----------b)
+    \item Exprese $\sen A$ en términos de $b$ y $c$.\\\\ 
+	Respuesta.-\; $\sen A = \dfrac{a}{c}$ y $\cos A = \dfrac{b}{c}$ entonces $\sen A = \dfrac{a}{\dfrac{b}{\cos A}} = \dfrac{a\cos A}{b}$\\\\
+
+\end{enumerate}
+
+%--------------------65.
+\item Altura de un poste. Dos cables van de la parte superior $(T)$ de un poste vertical, a dos puntos $B$ y $C$, colocados en el suelo, donde $C$ está $10\; m$ más cerca de la base del poste que $B$. Si el cable $BT$ forma un ángulo de $35^{\circ}$ con la horizontal, y el cable $CT$ forma un ángulo de $50^{\circ}$ con la horizontal, ¿cuál es la altura del poste?\\\\
+    Respuesta.-\; Sea $cot\; 50^\circ = \dfrac{x}{h}$ y $cot\; 35^\circ = \dfrac{x+10}{h}$ entonces $h = \dfrac{10}{cot\; 35^\circ - cot\; 50^\circ} = 17 \; mts$ aproximadamente.\\\\
+
+%--------------------66.
+\item Altura de un globo meteorológico Dos observadores colocados en las posiciones $A$ y $B$, y separados entre sí $2 \; km$, miden simultáneamente el ángulo de elevación de un globo meteorológico; las medidas que registran son $40^\circ$ y $70^\circ$, respectivamente. Determine la altura del globo, si éste se ubica justo sobre un punto del segmento de recta entre $A$ y $B$.\\\\
+    Respuesta.-\; Primero calculemos $180^\circ - 70^\circ - 40^\circ = 70^\circ$, de donde $\angle CAB = \angle ACB$, podemos concluir $|BC| = |AB| = 2$. Ahora calculemos $h$:\\
+    $\sen \angle ABC = \dfrac{|CD|}{|BC|}$ entonces $\sen 40^\circ = \dfrac{h}{2}$ por lo tanto $h=1.28\; km$.\\\\
+
+%--------------------67.
+\item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Grafíque la función $f(x) = \sen x + \cos (x/2)$\\\\
+	Respuesta.-\; La gráfica viene dado en el apartado python.\\\\
+
+    %----------b)
+    \item ¿Cuál parece ser el periodo de la función?.\\\\
+	Respuesta.-\; Parece ser que es $4\pi$.\\\\
+
+    %----------c)
+    \item Confirme algebraicamente la respuesta que dio en el inicio $b)$\\\\
+	Respuesta.-\; $$f(x+4\pi) = \sen(x+4\pi) + \cos \left(\dfrac{x+4\pi}{2}\right) = \sen(x) + \cos \left(\dfrac{x}{2} + 2\pi\right) = \sen(x) + \cos(x/2) = f(x)$$\\
+
+\end{enumerate}
+
+%--------------------68.
+\item 
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Grafíque la función $f(x) = \sen (1/x)$\\\\ 
+	Respuesta.-\; La gráfica se encuentra en el apartado python.\\\\
+
+    %----------b)
+    \item ¿Cuáles son el dominio y el rango de $f$?\\\\
+	Respuesta.-\; El dominio viene dado para todo número real distinto de $0$ y el rango por $[-1,1]$.\\\\ 
+
+    %----------c)
+    \item ¿Esta función es periódica? Justifique su respuesta.\\\\
+	Respuesta.-\; No, ya que cada vez que $x$ es mas grande la función $\sen$ tiende al infinito.\\\\ 
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\section{Ejercicios adicionales y avanzados}
+ 
+\begin{enumerate}[\Large \bfseries 1.]
+
+    %--------------------1.
+    \item 
+
+\end{enumerate}

@@ -1,2 +1,25 @@
 \chapter{Algunas aplicaciones de la integración}
 
+\setcounter{section}{1}
+\section{El área de una región comprendida entre dos gráficas expresada como una integral}
+
+%--------------------2.1
+\begin{teo} Supongamos que $f$ y $g$ son integrables y que satisfacen $f\leq q$ en $[a,b]$. La región $S$ entre sus gráficas es medible y su área $a(S)$ viene dada por la integral $$a(S) = \int_a^b [g(x)-f(x)] \; dx$$
+    Demostración.- \; 
+	Demostración.- \; Supongamos primero que $f$ y $g$ son no negativas,. Sean $F$ y $G$ los siguientes conjuntos:
+	$$F = {(x,y)|a\leq x \leq b, 0\leq y \leq f(x)}, \quad G = {(x,y) | a\leq x \leq b, 0\leq y \leq g(x)}.$$
+	Esto es, $G$ es el conjunto de ordenadas de $g$, y $F$ el de $f$, menos la gráfica de $f$. La región $S$ es la diferencia $G-F$. Según los teoremas 1.10 y 1.11, $F$ y $G$ son ambos medibles. Puesto que $F \subseteq G$ la diferencia $S = G-F$ es también medible, y se tiene 
+	$$a(S) = a(G) - a(F) = \int_a^b g(x) \; dx = \int_a^b [g(x)-f(x)] \; dx$$
+	Consideremos ahora el caso general cuando $f\leq q$ en $[a,b]$, pero no son necesariamente no negativas. Este caso lo podemos reducir al anterior trasladando la región hacia arriba hasta que quede situada encima del eje $x$. Esto es, elegimos un número positivo $c$ suficientemente grande que asegure que $0 \leq f(x) + c \leq g(x) + c$ para todo $x$ en $[a,b]$. Por lo ya demostrado la nueva región $T$ entre las gráficas de $f+c$ y $g+c$ es medible, y su parea viene dad por la integral
+	$$a(T) = \int_a^b [(g(x)+c) - (f(x)+c)] = \int_[g(x)-f(x)] \; dx$$
+	Pero siendo $T$ congruente a $S$, ésta es también medible y tenemos $$a(S) = a(T) = \int_a^b [g(x) - f(x)]\; dx$$
+	Esto completa la demostración.\\\\
+\end{teo}
+
+%----------nota 2.1
+\begin{tcolorbox}[colframe = white]
+    \begin{nota} En los intervalos $[a,b]$ puede descomponerse en un número de subintervalos en cada uno de los cuales $f\leq g$ o $g\leq f$ la fórmula (2.1) del teorema 2.1 adopta la forma 
+    $$a(S) = \int_a^b |g(x) -f(x)| \; dx$$
+    \end{nota}
+\end{tcolorbox}
+
