@@ -23,3 +23,53 @@
     \end{nota}
 \end{tcolorbox}
 
+    %--------------------lema 2.1
+    \begin{lema}[Área de un disco circular] Demostrar que $A(r) = r^2 A(1)$. Esto es, el área de un disco de radio $r$ es igual al producto del área de un disco unidad (disco de radio $1$) por $r^2$.\\\\
+	Demostración.-\; Ya que $g(x) - f(x) = 2g(x),$ el teorema 2.1 nos da 
+	    $$A(r) = \int_{-r}^r g(x) \; dx = 2 \int_{-r}^r \sqrt{r^2 - x^2} \; dx$$
+	    En particular, cuando $r = 1$, se tiene la fórmula $$A(1) = 2\int_{-1}^1 \sqrt{1 - x^2} \; dx$$
+	    Cambiando la escala en el eje $x$, y utilizando el teorema 1.19 con $k=1/r$, se obtiene
+	    $$A(r) = 2\int_{-r}^r g(x) \; dx = 2r \int_{-1}^1 g(rx) \; dx = 2r\int_{-1}^1 \sqrt{r^2 - (rx)^2} \; dx = 2r^2 \int_{-1}^1 \sqrt{1-x^2} \; dx = r^2 A(1)$$
+	    Esto demuestra que $A(r) = r^2 A(1)$, como se afirmó.\\\\
+    \end{lema}
+
+%---------------------definición 2.1
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Se define el número $\pi$ como el área de un disco unidad.\\\\
+    \end{def.}
+\end{tcolorbox}
+\begin{center}
+    La formula que se acaba de demostrar establece que $A(r) = \pi r^2$\\
+\end{center}
+
+\begin{tcolorbox}[colframe = white]
+Generalizando el anterior lema se tiene 
+\begin{center}
+    $$a(kS) = \int_{ka}^{kb} g(x)\; dx = k \int_{ka}^{kb} f(x/k) \; dx = k^2 \int_a^b f(x) \; dx$$
+\end{center}
+\end{tcolorbox}
+
+%--------------------teorema 2.1
+\begin{teo} Para $a>0$, $b>0$ y $n$ entero positivo, se tiene $$\int_a^b x^{\frac{1}{n}} \; dx = \dfrac{b^{1-1/n} - a^{1-\frac{1}{n}}}{1+\frac{1}{n}}$$\\
+    Demostración.-\; Sea $\int_0^a x^{\frac{1}{n}}$. El rectángulo de base $a$ y altura $a^{\frac{1}{n}}$ consta de dos componentes: el conjuntos de ordenadas de $f(x) = x^{\frac{1}{n}}$ a $a$ y el conjuntos de ordenadas $g(y) = y^n$ a $a^{\frac{1}{n}}$. Por lo tanto,
+    $$a\cdot a^{\frac{1}{n}} = a^{1+\frac{1}{n}} = \int_0^a x^{\frac{1}{n}} \; dx + \int_0^{a^{\frac{1}{n}}} y^n \; dy \; \Longrightarrow \; \int_0^a x^{\frac{1}{n}} \; dx = a^{1+\frac{1}{n}} - \dfrac{y^{n+1}}{n+1}\bigg|_0^{a^{\frac{1}{n}}} = a^{1+\frac{1}{n}} -  \dfrac{a^{1+\frac{1}{n}}}{n+1} = \dfrac{a^{1+\frac{1}{n}}}{1 + 1/n}$$
+    Análogamente se tiene $$\int_0^b x^{\frac{1}{n}}\; dx = \dfrac{b^{1 + \frac{1}{n}}}{1 + 1/n}$$
+    Luego notemos que $$\int_a^b x^{\frac{1}{n}} \; dx = \int_0^b x^{\frac{1}{n}}\; dx - \int_0^a x^{\frac{1}{n}} \;dx$$
+    por lo tanto $$\int_a^b x^{\frac{1}{n}}\; dx = \dfrac{b^{1+\frac{1}{n}} - b^{1 + \frac{1}{n}}}{1 + 1/n}$$\\\\
+\end{teo}
+
+
+
+\setcounter{section}{3}
+\section{Ejercicios}
+
+En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gráficas de $f$ y $g$ para el intervalo $[a,b]$ que en cada caso se especifica. Hacer un dibujo de las dos gráficas y sombrear $S$.\\
+
+\begin{enumerate}[\Large\bfseries 1.]
+
+%--------------------1.
+\item 
+
+\end{enumerate}
+
+
