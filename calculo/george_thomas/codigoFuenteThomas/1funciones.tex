@@ -3191,9 +3191,89 @@ En los ejercicios $61$ a $64$, $ABC$ es un triángulo rectángulo con el ángulo
 
 \section{Ejercicios adicionales y avanzados}
  
+Funciones y gráfica.\\\\
+
 \begin{enumerate}[\Large \bfseries 1.]
 
-    %--------------------1.
+%--------------------1.
+\item ¿Existen dos funciones $f$ y $g$ tales que $f\circ g = g \circ f$? Justifique su respuesta.\\\\
+    Respuesta.-\; Si, por ejemplo $f(x) = 1/x$ y $g(x) = 1/x$ o $f(x) = 2x$ y $g(x) = x/2$.\\\\ 
+
+%--------------------2.
+\item ¿Existen dos funciones $f$ y $g$ con la siguiente propiedad? Las gráficas de $f$ y $g$ no son rectas, pero la gráfica de $f \circ g$ sí lo es. Justifique su respuesta.\\\\
+    Respuesta.-\; Si, por ejemplo $f = \sqrt{x}$ y $g = x^2$.\\\\
+
+%--------------------3.
+\item Si $f(x)$ es impar, ¿se puede decir algo de $g(x) = f(x) - 2$? ¿Qué ocurrirá si $f$ fuera par? Justifique su respuesta.\\\\
+    Respuesta.-\; Si $f$ es impar y definido en $x$, entonces $f(-x) = -f(x).$ de donde $g(-x) = f(-x) - 2 = -f(x) - 2$, por otro lado $-g(x) = -(f(x)-2) = f(x) + 2$. Por lo tanto  $g$ no es impar ya que $g(-x) \neq -g(x)$.\\
+	Si $f(x)$ es par, entonces $g(x) = f(x) - 2$ por lo tanto $g(x)$  es par, ya que $g(-) = f(-x) - 2 = f(x) -2 = g(x)$.\\\\
+
+%--------------------4.
+\item Si $g(x)$ es una función impar definida para todos los valores de $x$, ¿se puede decir algo acerca de $g(0)$? Justifique su respuesta.\\\\
+    Respuesta.-\; Si $g$ es impar y $g(0)$ esta definido, entonces $g(0) = g(-0) = -g(0)$. Por lo tanto $2g(0) = 0 \quad \Longrightarrow \quad g(0) = 0$.\\\\
+
+%--------------------5.
+\item Grafique la ecuación $|x| + |y| = 1+x$.\\\\
+    Respuesta.-\; Gráfica en el apartado de python.\\\\
+
+%--------------------6.
+\item Grafique la ecuación $y + |y| = x + |x|$.\\\\
+    Respuesta.-\; Gráfica en el apartado de python.\\\\
+
+Deducciones y pruebas.\\\\
+
+%--------------------7.
+\item Demuestre las siguientes identidades trigonométricas.
+
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item $\dfrac{1 - \cos x}{\sen x} = \dfrac{\sen x}{1 + \cos x}$.\\\\
+	Demostración.-\; Sea $\sen^2 x + \cos^2 x = 1$ entonces $\sen^2 x = (1-\cos x)(1 + \cos x)$ por lo tanto $\dfrac{\sen x}{1 + \cos x}$.\\\\
+
+    %----------b)
+    \item $\dfrac{1 - \cos x}{1 + \cos x} = \tan^2 \dfrac{x}{2}$\\\\ 
+	Demostración.-\; $\tan^2\left(\dfrac{x}{2}\right) = \dfrac{\sen^2 x/2}{\cos^2 x/2} = \dfrac{\dfrac{1-\cos (2x/2)}{2}}{1 + \cos(2x/2)} = \dfrac{1-\cos x}{1 + \cos x}$\\\\
+
+\end{enumerate}
+
+%--------------------8.
+\item Explique la siguiente $“$prueba sin palabras$”$ de la ley de los cosenos. (Fuente: Kung, Sidney H. $“$Proof Without Words: The Law of Cosines$”$, Mathematics Magazine, vol. 63, núm. 5, diciembre de 1990, p. 342).\\\\
+    Respuesta.-\; Sea $\cos \theta= \dfrac{x}{2a}$ entonces $x = 2a\cos \theta$, luego $(2a\cos \theta -b)b= (a+c)(a-c)$  es igual a la ley de cosenos.\\\\
+
+%--------------------9.
+\item Demuestre que el área del triángulo $ABC$ está dada por $(1/2)ab \sen C = (1/2) bc \sen A = (1/2)ca \sen B$.\\\\
+    Demostración.-\; Sea el área de un triangulo igual a $A_t = \dfrac{c\cdot h}{2}$ y $\sen A = \dfrac{h}{b} \; \Longrightarrow \; h = b\sen A$ entonces $$A_t = \dfrac{cb\sen A}{2}.$$
+	Análogamente podemos hallar el área del triangulo con  $a$ y $b$ como base respectivamente. De donde nos queda $$A_t = \dfrac{ab\sen C}{2} \quad y \quad A_t = \dfrac{ac\sen B}{2}$$
+	Por lo tanto queda demostrado $(1/2)ab \sen C = (1/2) bc \sen A = (1/2)ca \sen B$.\\\\
+
+%--------------------10.
+\item Demuestre que el área del triangulo $ABC$ está dada por $\sqrt{s(s-a)(s-b)(s-c)}$, donde $s = (a+b+c)/2$ es el semiperímetro del triangulo.\\\\
+    Demostración.-\; Sea $A^2 = \dfrac{a^2 + h^2}{4} = \dfrac{1}{4} a^2b^2 \sin^2 C = dfrac{1}{4} a^2 b^2 (1-\cos^2 C)$. Por la ley de cosenos, $c^2 = a^2+b^2-2ab \cos C \; \Longrightarrow \; \cos C = \dfrac{a^2 + b^2 - c^2}{2ab}$. Por lo tanto $$A^2 = \dfrac{1}{4}a^2 b^2 (1-\cos^2 C)= \dfrac{1}{4}a^2b^2\left[1-\left(\dfrac{a^2+b^2-c^2}{2ab}\right)\right] = \dfrac{a^2b^2}{4} \left(1 - \dfrac{(a^2 + b^2 - c^2)^2}{4a^2b^2}\right)$$\\
+	$=\dfrac{1}{16}\left[4a^2 b^2 - (a^2 + b^2 - c^2)^2\right] = \dfrac{1}{16}\left[(2ab + a^2 + b^2 - c^2)(2ab - a^2 - b^2 + c^2))\right]$ \\\\
+	$= \dfrac{1}{16} \lbrace\left[(a+b)^2 -c^2\right]\left[c^2 - (a-b)^2\right] \rbrace = \dfrac{1}{16} \lbrace \left[(a+b)+c\right] \left[(a+b) -c\right] \left[c+ (a-b)\right] \left[c - (a-b)\right] \rbrace$\\\\
+	$=\left[\left(\dfrac{a+b+c}{2}\right) \left(\dfrac{-a+b+c}{2}\right) \left(\dfrac{a+b-c}{2}\right) \left(\dfrac{a+b-c}{2}\right)\right] = s(s-a)(s-b)(s-c)$\\\\
+	Por lo tanto $A = \sqrt{s(s-a)(s-b)(s-c)}$.\\\\
+
+%--------------------11.
+\item Demuestre que si $f$ es tanto par como impar, entonces $f(x)=0$ para toda $x$ en el dominio de $f$.\\\\
+    Demostración.-\; Si $f$ es par e impar al mismo tiempo, entonces $$f(-x) = -f(x) \quad y \quad f(-x) = f(x) \quad \Longrightarrow \quad f(x) = - f(x) \quad \Longrightarrow \quad f(x) = 0$$\\
+
+%--------------------12.
+\item
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Sea $f$ una función cuyo dominio es simétrico con respecto al origen, es decir, $-x$ pertenece al dominio siempre que $x$ también pertenezca a éste. Demuestre que $f$ es la suma de una función par y una función impar $$f(x) = E(x) + O(x)$$.\\
+	Demostración.-\; Sea $E(x) = \dfrac{f(x) + f(-x)}{2}$ entonces $E(-x) = \dfrac{f(-x) + f(x)}{2} = E(x)$ donde vemos que $E(x)$ es una función par. Luego por hipótesis $O(x) = f(x) - E(x) = f(x) - \dfrac{f(x)+f(-x)}{2} = \dfrac{f(x)-f(-x)}{2}$, así $O(-x) = \dfrac{f(-x)-f(x)}{2} = -O(x)$ entonces $O(x)$ es impar. Por lo tanto queda demostrado la proposición.\\\\
+
+    %----------b)
     \item 
+
+\end{enumerate}
+
+%--------------------13.
+\item 
+
 
 \end{enumerate}

@@ -329,8 +329,58 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 	Demostración.-\; Sea $\lim_{x\to 0} f(x) = l.$ Para todo $\epsilon > 0$ existe algún $\delta > 0$, tal que, para todo $x$, si $0<|x|<\delta$ entonces $|f(x)-l|<\epsilon$. Tomemos $0<|x|<\min(1,\delta)$, entonces $0<|x^3|<\delta$, para comprender mejor tomemos un número en particular, por ejemplo $x = 0.9$ donde $0<|0.9|<\min(1,\delta)$ entonces se cumple que $0<|0.9^{3}|<\delta$. Así pues $\lim\limits_{x\to 0} f(x) = l$. Por otro lado, supongamos que $\lim\limits_{x\to 0} f(x^3)$ existe, pongamos $\lim\limits_{x\to 0} f(x^3) = m,$ entonces para todo $\epsilon>0$ existe algún $\delta > 0$ tal que, para todo $x$, si $0<|x|<\delta$, entonces $|f(x^3)-m|<\delta$. Si $0<|x|<\delta^3$, tenemos $0<|\sqrt[3]{x}|<\delta$, de modo que $|f(\sqrt[3]{x^3}^3)-m|<\epsilon$. Por lo tanto, $\lim\limits_{x\to 0} f(x) = m$.\\\\
 
     %----------(d)
-    \item 
+    \item Dar un ejemplo en el que exista $\lim\limits_{x\to 0} f(x^2),$ pero no $\lim\limits_{x\to 0} f(x)$.\\\\
+	Respuesta.-\; Sea $f(x)=1$ para $x\leq 0$ y $f(x) = -1$ para $x<0$. Entonces $\lim\limits_{x\to 0} f(x^2) = 1,$ pero $\lim\limits_{x \to 0} f(x)$ no existe. \\\\
 
 \end{enumerate}
+
+%--------------------11.
+\item Supóngase que existe un $\delta > 0$ tal que $f(x) = g(x)$ cuando $0<|x-a|<\delta$. Demostrar que $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} g(x)$.\\\\
+    Demostración.-\; Asumamos que  $\lim\limits_{x \to a} f(x) = l$. Deseamos demostrar que $\lim\limits_{x \to a} g(x) = l$. Sea $\epsilon > 0$, de donde existe algún $\delta_1 > 0$ tal que si $0<|x-a|<\delta_1$, entonces $|f(x)-l|<\epsilon$. Luego pongamos $\delta^{'} = \min(\delta,\delta_1)$ que complace  $0<|x-a|<\delta^{'}$, en virtud de como se define $\delta^{'}$ sabemos que si $0<|x-a|<\delta_1$ y $0<|x-a|<\delta$ tal que $f(x)=g(x)$ entonces $|f(x)-l|<\epsilon$, de donde concluimos que $|g(x) - l|<\epsilon$.\\\\
+
+%--------------------12.
+\item 
+\begin{enumerate}[\bfseries (a)]
+
+    %----------(a)
+    \item Supóngase que $f(x)\leq g(x)$ para todo $x$. Demostrar que $\lim\limits_{x \to a} = \lim\limits_{x\to a} g(x)$ siempre que estos existan.\\\\
+	Demostración.-\; Demostremos por reducción al absurdo. Supóngase que $l = \lim\limits_{x\to a} f(x) > \lim\limits_{x\to a} g(x) = m$. Luego sea $l-m>0$, existe entonces un $\delta > 0$ tal que, si $0<|x-a|<\delta$, entonces $l-f(x)<\epsilon/2$ y $|m-g(x)|<\epsilon/2$. Así pues, para $0|x-a|<\delta$ tenemos $$g(x)<m+\epsilon/2 = l - \epsilon/2 < f(x),$$ contrario a la hipótesis.\\\\
+
+    %----------(b)
+    \item ¿De qué modo puede obtenerse una hipótesis más débil?.\\\\
+	Respuesta.-\; Basta suponer que $f(x)\leq g(x)$ para todo $x$ que satisfaga $0|x-a|<\delta,$ para algún $\delta>0$.\\\\
+
+    %----------(c)
+    \item Si $f(x)<g(x)$ para todo $x$. ¿Se sigue de ello necesariamente que $\lim\limits_{x\to a}f(x)<\lim\limits_{x\to a}g(x)$?\\\\
+	Respuesta.-\; No necesariamente ya que si $f(x)=0$ y $g(x) =  |x|$ para $x\neq 0$, y $g(0) = 1$ entonces $\lim\limits_{x\to a} f(x) = 0 = \lim\limits_{x\to a}g(x)$.\\\\
+
+\end{enumerate}
+
+%--------------------13.
+\item Supóngase que $f(x)\leq g(x) \leq h(x)$ y que $\lim\limits_{x \to a} f(x) = \lim\limits_{x\to a} g(x)$. Demostrar que existe $\lim\limits_{x\to a} g(x)$ y que $\lim\limits_{x\to a} g(x) = \lim\limits_{x\to a} f(x) = \lim\limits_{x\to a} h(x)$.\\\\
+	Demostración.-\; Intuitivamente vemos que $g(x)$ esta entre $f(x)$ y $h(x)$ donde se aproximan a un mismo número. Sea $\lim\limits_{x\to a} f(x) = l$. Para todo $\epsilon>0$, existe $\delta>0$ tal que si para todo $x$, si $0<|x-a|<\delta$, entonces $|h(x)-l|<\epsilon$, como también para $|f(x) -l|<\epsilon$, así pues, si $0<|x-a|<\delta$, entonces $$l-\epsilon<f(x)\leq g(x) \leq h(x) < l + \epsilon$$ de modo que $|g(x) - l|<\epsilon$.\\\\
+
+%--------------------14.
+\item 
+\begin{enumerate}[\bfseries (a)]
+
+    %----------a)
+    \item Demostrar que si $\lim\limits_{x\to 0} f(x)/x = l$ y $b\neq 0$, entonces $\lim\limits_{x\to 0} f(bx)/x = bl.$\\\\
+	Demostración.-\; Tengamos en cuenta que ${x\to 0}$ implica ${bx\to 0}$ siempre que $b$ sea distinto de $0$. Luego $g(x)=\dfrac{f(x)}{x}$ de donde $\lim\limits_{x\to a} g(x) = l$, así $\lim\limits_{bx\to 0} g(bx) = l$, aclaremos que cuando $g(bx)$ solo ponemos un valor diferente sin alterar la función en si, es decir, sea $bx=y$ y $\lim\limits_{bx\to 0} g(bx) = l$ entonces $\lim\limits_{y \to 0} g(y) = l$ que es igual a nuestra hipótesis $\left(\lim\limits_{x\to 0} g(x) = l\right)$.
+	Por lo tanto tenemos,
+	$$\lim_{x\to 0} \dfrac{f(bx)}{x} = \lim_{x\to 0} b\dfrac{f(bx)}{bx} = b\lim_{y\to 0} \dfrac{f(y)}{y} = bl$$.\\
+
+    %----------b)
+    \item ¿Qué ocurre si $b=0$?\\\\
+	Respuesta.-\; Si $b=0$ entonces $\dfrac{f(bx)}{bx} = \dfrac{f(0)}{0} $ el cual no esta definido, por lo tanto el límite no existe, a menos que $f(0) = 0$.\\\\
+
+    %----------c)
+    \item La parte $(a)$ nos permite hallar $\lim\limits_{x\to 0}(\sen 2x)/x$ en función de $\lim\limits_{x\to 0} (\sen x)/x$. Hallar este límite por otro procedimiento.\\\\
+	Respuesta.-\; $$\lim_{x\to 0} \dfrac{\sen 2x}{x} = \lim_{x\to 0}\dfrac{2(\sen x)(\cos x)}{x} = 2 \lim_{x\to 0} cos x \lim_{x\to 0} \dfrac{\sen x}{x} = 2.$$\\
+
+\end{enumerate}
+
+%--------------------15.
+\item 
 
 \end{enumerate}
