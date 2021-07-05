@@ -3268,9 +3268,12 @@ Deducciones y pruebas.\\\\
 	Demostración.-\; Sea $E(x) = \dfrac{f(x) + f(-x)}{2}$ entonces $E(-x) = \dfrac{f(-x) + f(x)}{2} = E(x)$ donde vemos que $E(x)$ es una función par. Luego por hipótesis $O(x) = f(x) - E(x) = f(x) - \dfrac{f(x)+f(-x)}{2} = \dfrac{f(x)-f(-x)}{2}$, así $O(-x) = \dfrac{f(-x)-f(x)}{2} = -O(x)$ entonces $O(x)$ es impar. Por lo tanto queda demostrado la proposición.\\\\
 
     %----------b)
-    \item 
+    \item Demuestre que existe sólo una manera de escribir $ƒ$ como la suma de una función par y una impar.\\\\
+	Demostración.-\; Sea $f(x)-f(x) = 0 = \left(E_1(x) + O_1(x)\right) - \left(E(x) + O(x)\right)$ entonces $E(x)-E_1(x) = O(x) - O(x)$, luego $(E-E_1)(-x) = E(-x)-E_1(-x) = E(x)-E_1(x) = (E-E_1)(x) = E-E_1 $ ya que $E$ y $E_1$ son ambos pares. Análogamente se tiene que $O_1 - O$ es par. Por lo tanto $E-E_1$ y $O_1-O$ son ambos par e impar, por lo lo que deben ser igual a $0$, de donde por el ejercicio 11 se tiene $E_1=E$ y $O_1=O$, así la descomposición de $f$ encontrada en el inciso a) es única.\\\\
 
 \end{enumerate}
+
+Efectos de parámetros sobre las gráficas.\\\\
 
 %--------------------13.
 \item 
