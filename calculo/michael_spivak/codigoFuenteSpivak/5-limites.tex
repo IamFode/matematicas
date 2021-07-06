@@ -385,20 +385,28 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \begin{enumerate}[\bfseries (i)]
 
     %-----------(i)
-    \item $\lim\limits_{x\to 0} \dfrac{\sen 2x}{x}$\\\\
-	Respuesta.-\; $$\lim_{x\to 0} \dfrac{\sen 2x}{x} = \lim_{x\to 0}\dfrac{2(\sen x)(\cos x)}{x} = 2 \lim_{x\to 0} \cos x \lim_{x\to 0} \dfrac{\sen x}{x} = 2.$$\\\\
+    \item $\lim\limits_{x\to 0} \dfrac{\sen 2x}{x} = \lim\limits_{x\to 0}\dfrac{2(\sen x)(\cos x)}{x} = 2 \lim_{x\to 0} \cos x \lim\limits_{x\to 0} \dfrac{\sen x}{x} = 2.$\\\\
 
     %----------(ii)
-    \item $\lim\limits_{x \to 0} \dfrac{\sen ax}{\sen bx}$.\\\\
-    Respuesta.-\; $$\lim_{x \to 0} \dfrac{\sen ax}{\sen bx}\cdot \dfrac{x}{x} = \lim_{x\to 0} \dfrac{\sen ax}{x} \lim_{x\to 0} \dfrac{x}{\sen bx}  = \lim_{x\to 0} \dfrac{\sen ax}{x} \dfrac{1}{b \cdot \lim_{x\to 0} \frac{\sen x}{x}} = a\alpha \cdot \dfrac{1}{b\alpha} = \dfrac{a}{b}$$\\
+    \item $\lim\limits_{x \to 0} \dfrac{\sen ax}{\sen bx} = \lim\limits_{x \to 0} \dfrac{\sen ax}{\sen bx}\cdot \dfrac{x}{x} = \lim\limits_{x\to 0} \dfrac{\sen ax}{x} \lim\limits_{x\to 0} \dfrac{x}{\sen bx}  = \lim\limits_{x\to 0} \dfrac{\sen ax}{x} \dfrac{1}{b \cdot \lim\limits_{x\to 0} \frac{\sen x}{x}} = a\alpha \cdot \dfrac{1}{b\alpha} = \dfrac{a}{b}$\\\\
 
     %----------(iii)
-    \item $\lim\limits_{x\to 0} \dfrac{\sen^2 2x}{x}$.\\\\
-	Respuesta.-\; $$\lim_{x\to 0} \sen 2x \lim_{x\to 0} \dfrac{\sen x}{x} = 0\cdot 2\alpha = 0 $$\\\\ 
+    \item $\lim\limits_{x\to 0} \dfrac{\sen^2 2x}{x} = \lim\limits_{x\to 0} \sen 2x \lim\limits_{x\to 0} \dfrac{\sen x}{x} = 0\cdot 2\alpha = 0$\\\\ 
 
     %----------(iv)
-    \item $\lim\limits_{x\to 0} \dfrac{\sen^2 2x}{x^2}$\\\\
-	Respuesta.-\; $$\left(\lim_{x\to 0} \dfrac{\sen 2x}{x}\right) = 4\alpha ^2$$\\\\ 
+    \item $\lim\limits_{x\to 0} \dfrac{\sen^2 2x}{x^2} = \left(\lim\limits_{x\to 0} \dfrac{\sen 2x}{x}\right)^2 = 4\alpha ^2$\\\\ 
+
+    %----------(v)
+    \item $\lim\limits_{x\to 0} \dfrac{1 - \cos x}{x^2} = \lim\limits_{x\to 0}\dfrac{1-\cos x}{x^2}\cdot \dfrac{1+\cos x}{1+\cos x} = \lim\limits_{x\to 0} \dfrac{\sen^2 x}{x^2 (1+\cos x)} = \lim\limits_{x\to 0} \dfrac{\sen^2 x}{x^2(1+1)} = \dfrac{\alpha^2}{2}$\\\\
+
+    %----------(vi)
+    \item $\lim\limits_{x\to 0} \dfrac{\tan^2 x + 2x}{x+x^2} = \lim\limits_{x\to 0} \dfrac{\dfrac{\tan^2 x + 2x}{x}}{1+x} = \lim\limits_{x\to 0} \dfrac{\dfrac{\sen^2 x}{x\cos^2 x}+2}{1+x} = \lim\limits_{x\to 0} \dfrac{\left(\dfrac{\sen x}{x}\cdot \dfrac{\sen x}{\cos^2 x} + 2\right)}{1+x} = \alpha \cdot 0 + 2 = 2$\\\\
+
+    %----------(vii)
+    \item $\lim\limits_{x\to 0} \dfrac{x\sen x}{1 - \cos x} = \lim\limits_{x\to 0} \dfrac{x\sen x (1+\cos x)}{(1-\cos x)(1 + \cos x)} = \lim\limits_{x\to 0} \dfrac{x\sen x (1+\cos x)}{\sen^2 x} = \dfrac{2}{\alpha}$\\\\
+
+    %----------(viii)
+    \item 
 
 \end{enumerate}
 
