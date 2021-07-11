@@ -406,7 +406,27 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
     \item $\lim\limits_{x\to 0} \dfrac{x\sen x}{1 - \cos x} = \lim\limits_{x\to 0} \dfrac{x\sen x (1+\cos x)}{(1-\cos x)(1 + \cos x)} = \lim\limits_{x\to 0} \dfrac{x\sen x (1+\cos x)}{\sen^2 x} = \dfrac{2}{\alpha}$\\\\
 
     %----------(viii)
-    \item 
+    \item $\lim\limits_{h\to 0} \dfrac{\sen (x+h)-\sen x}{h} $\\\\ 
+	Respuesta.-\; Se tiene $$\lim\limits_{h\to 0}\dfrac{\sen x\cos h + \cos x \sen h - \sen x}{h} = \lim\limits_{x\to 0}\sen x \dfrac{\cos h - 1}{h} + \cos x \dfrac{\sen h}{h}$$ de donde por $(v)$ concluimos que $\alpha \cos x$.\\\\
+
+    %----------(ix)
+    \item $\lim\limits_{x\to 1}\dfrac{\sen(x^2-1)}{x-1}$\\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{rcll}
+		$\lim\limits_{x\to 1} \dfrac{\sen (x^2 - 1)}{x-1}$ & $=$ & $\lim\limits_{x\to 1} \dfrac{(x+1)\sen(x^2 - 1)}{(x+1)(x-1)}$&\\\\
+		 & $=$ & $\lim\limits_{x\to 1} \dfrac{(x+1)\sen (x^2 -1)}{x^2-1}$&\\\\
+		 & $=$ & $2 \lim\limits_{x\to 1} \dfrac{\sen (x^2-1)}{x^2-1}$&\\\\
+		 & $=$ & $2 \lim\limits_{x\to 1} \dfrac{\sen h}{h}$&Por la misma razón del problema $14(a)$\\\\
+		 & $=$ & $2\alpha$&\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------(x)
+    \item $\lim\limits_{x\to 0} \dfrac{x^2(3+\sen x)}{(x+\sen x)^2} = \lim\limits_{x\to 0} \dfrac{3+\sen x}{\left(1 + \dfrac{\sen x}{x}\right)^2} = \dfrac{3}{(1+\alpha)^2}$\\\\
+
+    %----------(xi)
+    \item $\lim\limits_{x\to 1} (x^2 - 1)^2 \sen \left(\dfrac{1}{x-1}\right)^3 = 0$, ya que $|\sen 1 / (x-1)^3 |\leq 1$ para todo $x\neq 0$\\\\
 
 \end{enumerate}
 
