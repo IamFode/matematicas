@@ -432,5 +432,44 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 
 %--------------------16.
 \item 
+\begin{enumerate}[\bfseries (a)]
+    
+    %----------(a)
+    \item Demostrar que si $\lim\limits_{x\to a} f(x)=l,$ entonces $\lim\limits_{x\to a} |f|(x)=|l|$.\\\\
+    Demostración.-\; Sabemos que $||f(x)|-|l|| \leq |f(x)-l|$ por lo tanto para todo $\epsilon>0$ existe algún $\delta>0$ tal que  si $0<|x-a|<\delta$ entonces $||f(x)|-|l||\leq |f(x)-l|<\epsilon$ de donde $\lim\limits_{x\to a} |f|(x)=|l|$\\\\
+
+    %----------(b)
+    \item Demostrar que si $\lim\limits_{x\to a}f(x) = l$ y $\lim\limits_{x\to a}g(x) = m$, entonces $\lim\limits_{x\to a} \max(f,g)(x) = \max(l,m)$ y lo mismo para el mínimo.\\\\
+	Demostración.-\; ya que  $\lim\limits_{x\to a}(f+g)(x) = \lim\limits_{x\to a}f(x) + \lim\limits_{x\to a}g(x)$ y por $(a)$  entonces, \\\\
+	\begin{center}
+	\begin{tabular}{rcl}
+	    $\lim\limits_{x\to a} \max (f,g)(x)$ & $=$ & $\lim\limits_{x\to a} \dfrac{f(x)+g(x)+|f(x)-g(x)|}{2}$  \\\\
+	    & $=$ & $\dfrac{\lim\limits_{x\to a} f(x) + \lim\limits_{x\to a} g(x) + \lim\limits_{x\to a} |f(x)-g(x)|}{2}$ \\\\
+	    & $=$ & $\dfrac{l+m + |l-m|}{2}$ \\\\
+	    & $=$ & $\max(l,m)$\\\\
+	\end{tabular}
+	\end{center}
+
+	De similar manera, \\
+
+	\begin{center}
+	\begin{tabular}{rcl}
+	    $\lim\limits_{x\to a} \min(f,g)(x)$ & $=$ & $\lim\limits_{x\to a} \dfrac{f(x)+g(x)-|f(x)-g(x)|}{2}$  \\\\
+	    & $=$ & $\dfrac{\lim\limits_{x\to a} f(x) + \lim\limits_{x\to a} g(x) - \lim\limits_{x\to a} |f(x)-g(x)|}{2}$ \\\\
+	    & $=$ & $\dfrac{l+m - |l-m|}{2}$ \\\\
+	    & $=$ & $\min(l,m)$\\\\
+	\end{tabular}
+	\end{center}
+
+\end{enumerate}
+
+%--------------------17.
+\item 
+\begin{enumerate}[\bfseries (a)]
+    
+    %----------(a)
+    \item 
+
+\end{enumerate}
 
 \end{enumerate}
