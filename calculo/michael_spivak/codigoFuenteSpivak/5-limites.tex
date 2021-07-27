@@ -468,8 +468,22 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \begin{enumerate}[\bfseries (a)]
     
     %----------(a)
-    \item 
+    \item Demostrar que $\lim\limits_{x\to 0} 1/x$ no existe, es decir, demostrar que, cualquiera que sea $l$, $\lim\limits_{x\to 0} 1/x = l$ es falso.\\\\ 
+	Demostración.-\; Supongamos que $\lim\limits_{x\to 0} \dfrac{1}{x} = l$ entonces por definción se tiene $$\forall \epsilon>0, \exists \delta >0 \Longleftrightarrow si \; 0<|x-0|<\delta \Longrightarrow |f(x)-l|<\epsilon$$ 
+	de donde $|x| > \dfrac{1}{\epsilon+|l|}$ el cual contradice la suposición de que $x$ tiende a $0$.\\\\ 
+
+    %----------(b)
+    \item Demostrar que $\lim\limits_{x\to 1}\dfrac{1}{x-1}$ no existe.\\\\
+	Demostración.-\; Podemos aplicar el mismo criterio del anterior ejercicio.\\\\
 
 \end{enumerate}
+
+%--------------------18.
+\item Demostrar que si $\lim\limits_{x\to a} f(x)=l$, entonces existe un número $\delta>0$ y un número $M$ tal que $|f(x)|<M$ si $0<|x-a|<\delta$. (¿Cómo puede verse esto gráficamente?).\\\\
+    Demostración.-\; Por definición tenemos que $$\forall \epsilon>0, \exists delta>0 \; / \; si \; 0<|x-a|<\delta \Longrightarrow |f(x)-l|<\epsilon$$
+    Tomemos $\epsilon = 1$ de donde $l-1<f(x)<l+1$ de modo que podemos tomar $M>1+l$ y $-M<1-l$ por lo tanto $|f(x)|<M$.\\\\
+
+%--------------------19.
+\item 
 
 \end{enumerate}
