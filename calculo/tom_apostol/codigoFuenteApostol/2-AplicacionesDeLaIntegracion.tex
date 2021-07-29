@@ -181,7 +181,23 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
 %--------------------14.
 \item $f(x) = |x|+|x-1|, \quad g(x)=0, \quad a=-1,\quad b=2$\\\\
-    Respuesta.-\; 
+    Respuesta.-\; En este problema $f(x)\geq g(x)$ en el intervalo $[-1,2]$, por lo tanto 
+    $$\int_{-1}^2 f(x)-g(x)\; dx = \int_{-1}^2 |x| + |x+1|\; dx = \int_{-1}^2 |x|\; dx + \int_{-1}^2 |x-1| \; dx$$
+    Definimos cada función por separado,
+    $$|x| = \left\{ \begin{array}{rcl} -x & si & x\in [-1,0)\\ x & si & x\in [0,2] \end{array}\right.$$
+    $$|x-1| = \left\{ \begin{array}{rcl} -(x-1) & si & x\in [-1,1)\\ x-1 & si & x\in [1,2] \end{array}\right.$$
+    por lo tanto
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\displaystyle\int_{-1}^2 |x|\; dx + \int_{-1}^2 |x-1|\; dx$&$=$&$\displaystyle\int_{-1}^0 -x \; dx + \int_0^2 x\; dx + \int_{-1}^1 -(x-1)\; dx + \int_1^2 x-1\; dx$\\\\
+	    &$=$&$\left(-\dfrac{x^2}{2}\right)\bigg|_{-1}^0 + \left(\dfrac{x^2}{2}\right)\bigg|_{0}^2 + \left(-\dfrac{x^2}{2}\right)\bigg|_{-1}^1 + \left(x\right)\bigg|_{-1}^1 + \left(\dfrac{x^2}{2}\right)\bigg|_{1}^2 + \left(-x\right)\bigg|_{1}^2$\\\\\
+	    &$=$&$\dfrac{1}{2}+2-\dfrac{1}{2}+\dfrac{1}{2}+1+1+2-\dfrac{1}{2}-2+1$\\\\\
+	    &$=$&$5$\\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------15.
+\item 
 
 \end{enumerate}
 
