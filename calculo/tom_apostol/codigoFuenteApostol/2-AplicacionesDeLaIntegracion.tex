@@ -203,6 +203,38 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     luego $\dfrac{1}{12c^3}=\dfrac{2}{3}$ por lo tanto $c=\dfrac{1}{2}$.\\\\
 
 %--------------------16.
+\item Sea $f(x)=x-x^2$, $g(x) = ax$. Determinar $a$ para que la región situada por encima de la gráfica de $g$ y por debajo de $f$ tenga área $frac{9}{2}$.\\\\
+    Respuesta.-\; Tomaremos los casos cuando $a=0, a>0$ y $a<0$. \\
+    Veamos primero que si $g(x)\leq f(x)$ entonces $$f(x)-g(x)\geq 0 \Longrightarrow x-x^2-ax\geq 0 \Longrightarrow (1-a)x \geq x^2$$
+    de donde si $x=0$ se tiene una igualdad. Luego si $x\neq 0$ entonces $x\leq (1-a)$. Ahora sea $a<0$ por suposición se tendrá $1-a>0$, que nos muestra que el intervalo estará dado por $[0,1-a]$. Análogamente se tiene el intervalo $[1-a,0]$ para $a>0$.\\
+    \begin{enumerate}[\bfseries C 1.]
+	\item Si $a=0$, esto no es posible ya que si $a = 0$ entonces $g(x) = ax = 0$ y entonces el área arriba del gráfico de $g$ y debajo del gráfico de $f$ es igual a
+	    $$\int_0^1 x-x^2\; dx = \left(\dfrac{x^2}{2} - \dfrac{x^3}{3}\right)\bigg|_0^1 = \dfrac{1}{6} \neq \dfrac{9}{2}$$\\
+	
+	\item Si $a<0$, $f(x)\geq g(x)$ para $[0,1-a]$, por lo que tenemos la zona, $a(S)$ de la región entre las dos gráficas dadas por 
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\displaystyle\int_0^{1-a} x-x^2 - ax \; dx$&$=$&$\displaystyle(1-a)\int_0^{1-a} x\; dx - \int_0^{1-a} x^2 \; dx$\\\\
+		    &$=$&$(1-a)\left(\dfrac{(1-a)^2}{2}\right) - \dfrac{(1-a)^3}{3}$\\\\
+		    &$=$&$-\dfrac{(1-a)^3}{6}$\\\\
+		\end{tabular}
+	    \end{center}
+	    así nos queda que $$-\dfrac{(1-a)^3}{6} = \dfrac{9}{2} \Longrightarrow (1-a)^3 = -27 \Longrightarrow a = a$$\\
+
+	\item Sea $a>0$ y  $f(x)\geq g(x)$ entonces $[1-a,0]$ lo que 
+	    \begin{center}
+		\begin{tabular}{rcl}
+		    $\displaystyle\int_{1-a}^0 x-x^2-ax \; dx$&$=$&$\displaystyle(1-a)\int_{1-a}^0 x\; dx  - \int_{1-a}^0 x^2 \; dx$\\\\ 
+		    &$=$&$(1-a)\left(-\dfrac{(1-a)^2}{2} - \dfrac{(1-a)^3}{2}\right)$\\\\
+		    &$=$&$-\dfrac{(1-a)^3}{6}$\\\\
+		\end{tabular}
+	    \end{center}
+	    Así igualando por $\frac{9}{2}$ tenemos 
+	    $$-\dfrac{(1-a)^3}{6} = \dfrac{9}{2} \Longrightarrow (1-a)^3 = -27 \Longrightarrow a=4$$\\
+    \end{enumerate}
+    Por lo tanto los valores posibles para $a$ son $-2$ y $4$.\\\\
+
+%--------------------17.
 \item 
 
 \end{enumerate}
