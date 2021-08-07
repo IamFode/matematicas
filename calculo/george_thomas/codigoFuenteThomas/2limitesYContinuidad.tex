@@ -286,6 +286,162 @@ En los ejercicios 7 a 14, utilice el método del ejemplo 3 para determinar $a)$ 
 
 
 %--------------------19.
-\item 
+\item Sea $g(x)=\sqrt{x}$ para $x\geq 0$\\\\
+\begin{enumerate}[\bfseries a)]
+    
+    %----------a)
+    \item Obtenga la razón promedio de cambio de $g(x)$ con respecto a $x$ en los intervalos $[1,2]$, $[1,1.5]$, $[1,1+h]$\\\\
+	Respuesta.-\; Para $[1,2]$  se tiene $\dfrac{\triangle y}{\triangle x} = \dfrac{\sqrt{2} - 1}{2-1} = \sqrt{2}-1$.\\
+	Para $[1,1.5]$ se tiene $\dfrac{\sqrt{1.5}-1}{1.5-1} = \dfrac{\sqrt{1.5}-1}{0.5}$.\\
+	Para $[1,1+h]$ se tiene $\dfrac{\triangle y}{\triangle x} = \dfrac{\sqrt{1+h}-1}{1+h - 1} = \dfrac{\sqrt{1+h}-1}{h}$.\\\\
+
+    %----------b)
+    \item Elabore una tabla de valores de la razón promedio de cambio de $g$ con respecto a $x$ en el intervalo $[1, 1 + h]$ para algunos valores de $h$ cercanos a cero, digamos, $h = 0.1$, $0.01$, $0.001,$ $0.0001$, $0.00001$ y $0.000001.$\\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c|c|c|c|c}
+		$h$&$0.1$&$0.01$&$0.001$&$0.0001$&$0.00001$&$0.000001$\\
+		\hline
+		$\dfrac{\sqrt{1+h}-1}{h}$&$0.488$&$0.4987$&$0.4998$&$0.49998$&$0.499998$&$0.4999998$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------c)
+    \item De acuerdo con su tabla, ¿cuál es la razón de cambio de $g(x)$ con respecto a $x$ en $x = 1$?\\\\
+	Respuesta.-\; 0.5\\\\
+
+    %----------d)
+    \item Calcule el límite, cuando $h$ se aproxima a cero, de la razón promedio de cambio de $g(x)$ con respecto a $x$ en el intervalo $[1, 1 + h].$\\\\
+
+	Respuesta.-\; 0.5\\\\
+
+\end{enumerate}
+
+%--------------------20.
+\item Sea $f(t)=1/t$ para $t\neq 0$.
+\begin{enumerate}[\bfseries a)]
+    
+    %----------a)
+    \item Obtenga la razón promedio de cambio de $f$ con respecto a $t$ en los intervalos $i.$ de $t = 2$ a $t = 3$, y $ii.$ de $t = 2$ a $t = T$.\\\\
+	Respuesta.-\; Para $i.$ se tiene $\dfrac{\triangle y}{triangle x} = \dfrac{1/3 - 1/2}{3-2} = -\dfrac{1}{6}$. Para $ii.$ se tiene $\dfrac{\triangle y}{\triangle x} = \dfrac{1/T - 1/2}{T-2} = \dfrac{2-T}{2T(T-2)}$\\\\
+
+    %----------b)
+    \item Elabore una tabla de valores de la razón promedio de cambio de $f$ con respecto a $t$ en el intervalo $[2, T]$ para algunos valores de $T$ cercanos a $2$, digamos, $T = 2.1, 2.01, 2.001, 2.0001, 2.00001 y 2.000001.$\\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c|c|c|c}
+		$2.1$&$2.01$&$2.001$&$2.0001$&$2.00001$&$2.000001$\\
+		\hline
+		$-0.238$&$-0.2487$&$-0.2498$&$-0.24998$&$-0.24999$&$-0.25$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------c)
+    \item De acuerdo con su tabla, ¿cuál es la razón de cambio de $f$ con respecto a $t$ en $t = 2$?\\\\
+	Respuesta.-\; -0.25.\\\\
+
+    %----------d)
+    \item Calcule el límite, cuando $T$ se aproxima a $2$, de la razón promedio de cambio de $f$ con respecto a $t$ en el intervalo de $2$ a $T$. Tendrá que hacer algo de álgebra antes de que pueda sustituir $T = 2.$\\\\
+	Respuesta.-\; Por la parte $a), ii.$ tenemos $\dfrac{2-T}{2T(T-2)}$ de donde $-\dfrac{1}{2T}$y por lo tanto $-\dfrac{1}{4}$.\\\\
+
+\end{enumerate}
+    
+%--------------------21.
+\item La siguiente gráfica muestra la distancia total $s$, que recorre un ciclista después de $t$ horas.
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Estime la velocidad promedio del ciclista en los intervalos de tiempo $[0, 1], [1, 2.5] y [2.5, 3.5].$\\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c}
+		$[0,1]$&$[1,2.5]$&$[2.5,3.5]$\\
+		\hline
+		$15$&$3.33$&$10$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------b)
+    \item Estime la velocidad instantánea del ciclista en los tiempos $t = \dfrac{1}{2}, t = 2$ y $t = 3.$
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c}
+		$1/2$&$2$&$3$\\
+		\hline
+		$12$&$0$&$4$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------c)
+    \item Estime la velocidad máxima del ciclista y el tiempo específico en que ésta se registra.\\\\
+	Respuesta.-\; Tenemos la velocidad máxima dada por $\dfrac{30-20}{3.5-3} = 20$ en la hora $3.5$.\\\\
+
+\end{enumerate}
+
+%--------------------22.
+\item La siguiente gráfica muestra la cantidad total de gasolina $A$ en el tanque de un automóvil después de conducirlo $t$ días.
+
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item Estime la razón promedio del consumo de gasolina en los intervalos de tiempo $[0, 3], [0, 5] y [7, 10].$\\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c}
+	     $[0,3]$&$[0,5]$&$[7,10]$\\
+	     \hline
+	     $-5/3$&$-2.24$&$0.5$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------b)
+    \item Estime la razón instantánea de consumo de gasolina en los tiempos $t = 1, t = 4$ y $t = 8$.
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tabular}{c|c|c}
+	     $1$&$4$&$8$\\
+	     \hline
+	     $-1$&$-4$&$-1/2$\\\\
+	    \end{tabular}
+	\end{center}
+
+    %----------c)
+    \item Estime la razón máxima de consumo de gasolina y el tiempo específico en que ésta se registra.\\\\
+	Respuesta.-\; con una razón de $-4$, en el día $4$.\\\\ 
+
+\end{enumerate}
+
+
+\section{Límites de una función y leyes de los límites}
+
+%--------------------teorema 1
+\begin{tcolorbox}[colframe=white]
+\begin{teo} Si $L,M,c$ y $k$ son números reales y $$\lim_{x\to c} f(x) = L \quad y \quad \lim_{x\to c} g(x) = M, \quad entonces$$\\
+\begin{enumerate}[\bfseries 1.]
+    
+    %----------1.
+    \item Regla de la suma: $\displaystyle\lim_{x\to c} \left[f(x)+g(x)\right]=L+M$\\\\
+
+    %----------2.
+    \item Regla de la diferencia: $\displaystyle\lim_{x\to c} \left[f(x)-g(x)\right] = L-M$\\\\
+
+    %----------3.
+    \item Regla del múltiplo constante: $\displaystyle\lim_{x\to c} \left[k\cdot f(x)\right] = k\cdot L$\\\\
+
+    %----------4.
+    \item Regla Regla del producto: $\displaystyle\lim_{x\to c} \left[f(x)\cdot g(x)\right] = L\cdot M$\\\\
+
+    %----------5.
+    \item Regla del cociente: $\displaystyle\lim_{x\to c} = \dfrac{L}{M}, \; M\neq 0$\\\\
+
+    %----------6.
+    \item Regla Regla de la potencia: $\displaystyle\lim_{x\to c} \left[f(x)\right]^n = L^n, \;n$ es un entero positivo\\\\
+
+    %----------7.
+    \item Regla de la raíz: $\displaystyle\lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L} = L^{1/n}, \; n$ es un entero positivo.\\\\
+
+\end{enumerate}
+\end{teo}
+\end{tcolorbox}
 
 \end{enumerate}
