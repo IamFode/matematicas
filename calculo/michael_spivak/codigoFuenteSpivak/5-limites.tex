@@ -510,6 +510,19 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
     Demostración.-\; Si $\lim\limits_{x\to 0} f(x)$ existe, esta claro que $\lim\limits_{x\to 0} \left[f(x)+g(x)\right]$ no existe cuando $\lim\limits_{x\to 0} g(x)$ no existe, esto según el problema $8(b)$ y $(c)$. Por otro lado, supongamos que $\lim\limits_{x\to 0} f(x)$ no existe, elija $g=-f$, entonces $\lim\limits_{x\to 0}$ no existe, pero $\lim\limits_{x\to 0}\left[f(x)+g(x)\right]$ existe.\\\\
 
 %--------------------23.
-\item 
+\item Este problema es el análogo del problema 22 cuando $f+g$ se sustituye por $f\cdot g$. En este caso la situación es considerablemente más compleja y el análisis debe hacerse en varias etapas.
+\begin{enumerate}[\bfseries (a)]
+
+    %----------(a)
+    \item Supóngase que existe $\lim\limits_{x\to 0} f(x)$ y es $\neq 0$. Demostrar que si $\lim\limits_{x\to 0} g(x)$ no existe, entonces tampoco existe $\lim\limits_{x\to 0} f(x)g(x)$.\\\\
+	Demostración.-\; Ya que $\lim\limits_{x\to 0} f(x) \neq 0$ entonces $$\lim_{x\to 0} g(x) = \\lim_{x\to 0} \dfrac{f(x)g(x)}{f(x)} = \lim_{x\to 0} f(x)g(x)\cdot \dfrac{1}{\lim\limits_{x\to 0}f(x)}$$
+	Ponemos $\lim\limits_{x\to 0}f(x)=\alpha$, por lo cual $$\lim_{x\to 0}g(x) = \dfrac{1}{\alpha} \cdot \lim_{x\to 0} f(x)g(x)$$
+	Por lo tanto si $\lim\limits_{x\to 0} g(x)$ no existe, entonces $\lim\limits_{x\to 0} f(x)g(x)$ no existe.\\\\
+
+    %----------(b)
+    \item Demostrar el mismo resultado si $\lim\limits_{x\to 0} |f(x)| = \infty$.\\\\
+	Demostración.-\; 
+
+\end{enumerate}
 
 \end{enumerate}

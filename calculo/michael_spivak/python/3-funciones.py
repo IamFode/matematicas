@@ -1,5 +1,7 @@
 # Problemas 
+
 class Funciones():
+
     def __init__(self): 
     '''problema 1.'''
         pass
@@ -35,4 +37,5 @@ class Funciones():
             return 'no es correcto'
 
 funciones = Funciones()
+
 print(funciones.func1i(2))
