@@ -1,0 +1,65 @@
+\chapter{Álgebra vectorial}
+
+
+\setcounter{section}{1}
+\section{El espacio vectorial de las n-plas de números reales}
+
+%--------------------definición 12.1.
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Dos vectores $A$ y $B$ de $V_n$ son iguales siempre que coinciden sus componentes. Esto es, si $A=(a_1,a_2,...,a_n)$ y $B=(b_1,b_2,...,b_3)$, la ecuación vectorial $A=B$ tiene exactamente el mismo significado que las $n$ ecuaciones escalares $$a_1=b_1, \qquad a_2=b_2, \qquad a_n=b_n$$
+    La suma $A+B$ se define como el vector obtenido sumando los componentes correspondientes: $$A+B = (a_1+b_1,a_2+b_2,...,a_n+b_n)$$
+    La $c$ es un escalar, definimos $cA$ o $Ac$ como el vector obtenido multiplicando cada componente de $A$ por $c$: $$cA=(ca_1,ca_2,...,ca_n)$$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------teorema 12.1
+\begin{teo}
+
+\begin{enumerate}[\bfseries a.]
+    \item La adición de vectores es conmutativa. $$A+B=B+A$$\\
+	Demostración.-\; Sea $V_n$ el espacio vectorial n-plas y $A=(a_1,a_2,...,a_n)$ y $B=(b_1,b_2,...b_n)$, por lo tanto por definición de adición  y propiedad de números reales, tenemos $$A+B = (a_1+b_1,a_2+b_2,...,a_n+b_n) = (b_1+a_1,b_2+a_2,...,b_n+a_n) = B+A$$.\\
+
+    \item y asociativa, $$A+(B+C) = (A+B)+C$$\\
+	Demostración.-\; Sea $V_n$ el espacio vectorial n-plas y $A = (a_1,a_2,...,a_n)$, $B=(b_1,b_2,...,b_n)$ y $C=(c_1,c_2,...,c_n)$ entonces $$A+(B+C) = A + (b_1+c_1,b_2+c_2,...,b_n+c_n) = (a_1+(b_1+c_1),a_2+(b_2+c_2),...,a_1+(b_n+c_n)) = $$
+	$$((a_1+b_1)+c_1,(a_2+b_2)+c_2,...,(a_n+b_n)+c_n) = (a_1+b_1,a_2+b_2,...,b_n+c_n)+C = (A+B)+C$$\\
+
+    \item La multiplicación por escalares es asociativa $$c(dA)=(cd)A$$\\
+	Demostración.-\; Sea $c,d \in \mathbb{R}$ y $A\in V_n$ entonces 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$c(dA)$&$=$&$c(da_1,da_2,...,da_n)$\\
+		&$=$&$((cd)a_1,(cd)a_2,...,(cd)a_3)$\\
+		&$=$&$(cd)A$\\\\
+	    \end{tabular}
+	\end{center}
+
+    \item y satisface las dos leyes distributivas $$c(A+B)=cA+cB,\quad y \quad (c+d)A=cA+dA$$\\
+	Demostración.-\; Las demostraciones son fáciles de realizar siempre y cuando se tomen en cuenta Las definiciones de 12.1.\\\\
+
+    \item El vector con todos los componentes $0$ se llama vector cero y se representa con $O$. Tiene la propiedad.\\\\
+	Demostración.-\; Existencia. Sea $O = (o,o,...,o)$ de donde $A+O = (a_1,a_2,...,a_n)+(o,o,...,o) = (a_1+o,a_2+o,...,a_n+o) = (a_1,a_2,...,a_n) = A$.\\
+	Unicidad. Supongamos que $O,O^{'} \in V_n; O\neq O$ tal que 
+	$$\left\{ \begin{array}{ccc} A+O=A&tomando \; A=O^{'}:&O^{'}+O = O^{'}\\ A+O^{'} = A&tomando \; A=O:&O+O^{'}=O\\ \end{array} \right.$$
+	Por lo tanto $O=O^{'}$.\\\\
+    \item El vector $(-1)A$ que también se representa con $-A$ se llama el apuesto a $A$. También escribimos $A-B$ en lugar de $A+(-B)$ y lo llamamos diferencia de $A$ y $B$. La ecuación $(A+B)-B=A$. Demuestra que la sustracción es la operación inversa de la adición. Obsérvese que $0A=O$ y que $1A=A$.\\\\
+
+\end{enumerate}
+    
+\end{teo}
+
+\section{Interpretación geométrica para $n\leq 3$}
+
+%--------------------definición 12.2
+\begin{tcolorbox}[colframe = white]
+
+    \begin{def.} Dos vectores $A$ y $B$ de $V_n$ tienen la misma dirección si $B=cA$ para un cierto escalar positivo $c$, y la dirección opuesta si $B=cA$ para un cierto $c$ negativo. Se llaman paralelos si $B=cA$ para un cierto $c$ no nulo.
+    \end{def.}
+\end{tcolorbox}
+
+\section{Ejercicios}
+\begin{enumerate}[\large\bfseries 1.]
+
+%--------------------1.
+\item
+
+\end{enumerate}
