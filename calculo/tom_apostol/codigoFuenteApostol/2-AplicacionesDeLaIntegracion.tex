@@ -266,6 +266,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 %--------------------19.
 \item Sea $C$ la circunferencia unidad, cuya ecuación cartesiana es $x^2+y^2 = 1$. Sea $E$ el conjunto de puntos obtenido multiplicando la coordenada $x$ de cada punto $(x,y)$ de $C$ por un factor constante $a>0$ y la coordenada $y$ por un factor constante $b>0$. El conjunto $E$ se denomina elipse. (Cuando $a=b$, la elipse es otra circunferencia.).
 
+
 \begin{enumerate}[\bfseries a)]
 
     %----------a)
@@ -274,17 +275,44 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
     %----------b)
     \item Utilizar las propiedades de la integral para demostrar que la región limitada por esa elipse es medible y que su área es $\pi ab$.\\\\
-	Demostración.-\; 
+	Demostración.-\; De la parte $(a)$ sabemos que $E$ es el conjunto de puntos $(x,y)$ tales que $\left(\dfrac{x}{a}\right)^2 + \left(\dfrac{y}{b}\right)^2 = 1$. Esto implica, $$g(x)=b\sqrt{1-\left(\right)^2}, \quad o \quad f(x)=-b\sqrt{1-\left(\dfrac{x}{a}\right)^2}^2$$
+	Por lo tanto, el área de $E$ es el área cerrada de $-a$, $a$.\\
+	Para demostrar que esta región es medible y tiene área $\pi ab$, comenzamos por mencionar $$\pi = 2\int_{-1}^1 \sqrt{1-x^2}$$ 
+	y por lo tanto 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$\pi b$ & $=$ & $2\displaystyle\int_{-1}^1 b\sqrt{1-x^2}\; dx$\\\\
+		$\pi ab$ & $=$ & $2a\displaystyle\int_{-1}^1 b\sqrt{1-x^2}\; dx$\\\\
+		$\pi ab$ & $=$ & $2\displaystyle\int_{-a}^a \sqrt{1 - \left(\dfrac{1}{a}\right)^2} \; dx$\\\\
+		$\pi ab$ & $=$ & $\displaystyle\int_{-a}^a b\sqrt{1 - \dfrac{x}{a}} - \left(-b\sqrt{1-\left(\dfrac{x}{a}\right)^2}\right) \; dx$\\\\
+	    \end{tabular}
+	\end{center}
+	Por lo tanto, sabemos que la integral de $-a$, $a$ de $g(x)-f(x)$ existe y tiene valor $\pi ab$, concluyendo que $E$ es medible y $a(E)=\pi ab$.\\\\
 
 \end{enumerate}
 
 %--------------------20.
 \item El ejercicio 19 es una generalización del ejemplo 3 de la sección 2.3. Establecer y demostrar una generalización correspondiente al ejemplo 4 de la sección 2.3.\\\\
-    Demostración.-\; 
+    Demostración.-\; Para generalizar esto, procedemos de la siguiente manera. Sea $f$ una función integrable no negativa en $[a, b]$, y $S$ sea el conjunto de ordenadas de $f$. Si aplicamos una transformación bajo la cual multiplicamos la coordinada $x$ de cada punto $(x, y)$ en la gráfica de $f$ por una constante $k> 0$ y cada coordinada $y$ por una constante $j>0$, entonces obtenemos una nueva función $g$ donde un punto $(x, y)$ está en $g$ si  y sólo si $ \left(\dfrac{x}{k}, \dfrac{y}{j}\right)$ está en $f$. Luego,
+    $$\dfrac{y}{j} = f\left(\dfrac{x}{k}\right) \Longrightarrow y = j\cdot f\left(\dfrac{x}{k}\right) \Longrightarrow g(x)=j\cdot j\left(\dfrac{x}{k}\right)$$
+    Sea $jkS$ y denotamos el conjunto ordenado de $g$.
+    $$ a(S) = \int_a^b f(x)\; dx$$
+    entonces 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $a(jsS)$&$=$&$\displaystyle\int_{ka}^{kb} g(x) \; dx$\\\\
+	    &$=$&$j\cdot \displaystyle\int_{ka}^{kb} f\left(\dfrac{x}{k}\right) \; dx$\\\\
+	    &$=$&$jk\cdot \displaystyle\int_{a}^{b} f(x) \; dx$\\\\
+	    &$=$&$\displaystyle\int_{ka}^{kb} jk\cdot a(S) \; dx$\\\\
+
+	\end{tabular}
+    \end{center}
 
 %--------------------21.
 \item Con un razonamiento parecido al del ejemplo 5 de la sección 2.3 demostrar el teorema 2.2.\\\\
     Demostración.-\; Esta demostración ya fue dada junto a la definición del teorema 2.2.\\\\
+
 \end{enumerate}
 
 
+\section{Las funciones trigonométricas}

@@ -523,19 +523,34 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
     \item Demostrar el mismo resultado si $\lim\limits_{x\to 0} |f(x)| = \infty$.\\\\
 	Demostración.-\; Demostraremos que si $\lim\limits_{x\to 0}|f(x)|=\infty$ y $\lim\limits_{x\to 0}f(x)g(x)=l$ entonces $\lim\limits_{x\to 0}g(x)=0$.\\
 	Para entender mejor el problema veamos un ejemplo: Sea $\lim\limits_{x\to 0}\dfrac{1}{x}=\infty$ y $\lim\limits_{x\to 0}\dfrac{1}{x}\cdot x=1$ entonces $\lim\limits_{x\to 0} x = 0$. Ya mas claro el asunto, vayamos a la demostración.\\\\
-	Sea $\lim\limits_{x\to 0} |f(x)|=\infty$, para cualquier $M>0$ existe algún $\delta_M >0$ tal que para todo $x$, \begin{center} $ si\; 0<|x-0|<\delta_M\; entonces \;|f(x)|>M.$ \end{center}
+	Sea $\lim\limits_{x\to 0} |f(x)|=\infty$, para cualquier $M>0$ existe algún $\delta_M >0$ tal que para todo $x$, \begin{center}  si$\; 0<|x-0|<\delta_M\;$ entonces $\;|f(x)|>M.$ \end{center}
 	Luego, para $\lim\limits_{x\to 0} f(x)g(x)=l$  nos dice que para cualquier $\epsilon>0$ existe algún $\delta_l>0$ tal que para todo $x$,
 	\begin{center}
 	si $0<|x-0|<\delta_l$ entonces $|f(x)g(x)-l|<\epsilon$.\\
 	\end{center}
 	Ahora, para cualquier $\epsilon$ podemos establecer $M=\dfrac{\epsilon+|l|}{\epsilon}$ y escogemos $\delta_{min} = \min(\delta_M,\delta_l)$.\\
 	Así, para todo $x$, \begin{center} si $0<|x-a|<\delta_{min}$ tenemos $|f(x)g(x)-l|<\epsilon$ y $|f(x)|>M=\dfrac{\epsilon+|l|}{\epsilon}$, \end{center} luego $|f(x)g(x)|-|l|\leq |f(x)g(x)-l|<\epsilon$, de donde $|f(x)g(x)|<|l|+\epsilon$, así $$|g(x)|<\dfrac{|l|+\epsilon}{|f(x)|}<\dfrac{|l|+\epsilon}{M}=\dfrac{|l|+\epsilon}{M} = \dfrac{|l|+\epsilon}{\frac{|l|+\epsilon}{\epsilon}}=\epsilon$$
-	Por lo tanto, para cualquier $\epsilon>0$ hay un $\delta_{\min}$ tal que para todo $x$ si $$0<|x-0|<\delta_{min}\quad entonces \quad |g(x)|<\epsilon$$ $$o$$ $$\lim_{x\to 0}g(x)=0$$\\
+	Por lo tanto, para cualquier $\epsilon>0$ hay un $\delta_{\min}$ tal que para todo $x$ si \begin{center} $0<|x-0|<\delta_{min}$ entonces $|g(x)|<\epsilon$ \end{center} $$ó$$ $$\lim_{x\to 0}g(x)=0$$\\
 
     %----------(c)
     \item Demostrar que si no se cumple ninguna de estas dos condiciones, entonces existe una función $g$ tal que $\lim\limits_{x\to 0}g(x)$ no existe, pero existe $\lim\limits_{x\to 0}f(x)g(x)$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Demostraremos por casos.
+	\begin{enumerate}[\bfseries 1.]
+
+	    \item Para todo $\epsilon>0$, existe algún $\delta >0$ tal que para todo $x$ si $0<|x|<\delta$, entonces $|f(x)|>\epsilon$. Luego podemos definimos $g(x)$ para $x$ como $g(x)=\dfrac{1}{f(x)}$, aclaremos que para $x$ pequeños el denominador es distinto de $0$, de donde $$\lim_{x\to 0} f(x)g(x)=\lim_{x\to 0} 1 = 1$$
+	    Así que el límite de $f(x)g(x)$ existe. Si $\lim\limits_{x\to 0} g(x)$ existe, entonces $\lim\limits_{x\to 0} g(x) \neq 0$. Pero esto implicaría que $\lim\limits_{x\to 0}f(x)$ existe, con lo que $\lim\limits_{x\to 0} g(x)$ no existe. \\
+	    ¿Cómo sabemos que $\lim\limits_{x\to 0}g(x)\neq 0$ y por tanto se aplica a la parte a?. Supongamos $\lim\limits_{x\to 0} g(x) = 0$, según nuestro definición del caso 1 tenemos $$\lim_{x\to 0} \dfrac{1}{f(x)} = 0$$
+	    Así para cualquier $\epsilon>0$ existe algún $\delta > 0$ tal que para todo $x$ si $$0<|x|<\delta \quad \Longrightarrow \quad \left|\dfrac{1}{f(x)}\right| < \epsilon$$
+	    de donde $|f(x)|>\dfrac{1}{\epsilon}$y por lo tanto $$0<|x|<\delta \quad \Longrightarrow \quad |f(x)|>\dfrac{1}{\epsilon}$$
+	    Esto significa que $\lim\limits_{x\to 0} |f(x)| = \infty$, contrario al inciso b.\\\\
+
+	    \item A diferencia del caso 1, cuando $x$ se acerca a $0$, $f(x)$ se vuelve arbitrariamente pequeña para algún $x$. Es decir para $\epsilon>0$ existe $\delta>0$ tal que para $x$ con $0<|x|<\delta$y $|f(x)|<\epsilon$. Esto se parece mucho a la definición de límite; la diferencia clave es que aquí, $|f(x)|<\epsilon$ solo para algunas de las $x$ en la región $\delta$ especificada, no para todas, y que siempre podemos encontrar tales $x$ no importa lo pequeño que hagamos $\delta$. En otras palabras, algunos valores de $f(x)$ parecen dirigirse hacia $0$ para $x$ muy pequeños y otros valores no. La idea es definir $g(x)$ de modo que $g(x)f(x) = f (x)$  para las $x$ de buen comportamiento, y $0$ para todo lo demás. Vea si puede hacer esto. Una vez que lo haga, verá que para su $g(x)$, $\lim\limits_{x \to 0} g (x)$ no existe. Podría ser útil comenzar considerando un ejemplo concreto: $f(x) = sin (1x)$ Observe que cuando $x \to 0, f (x) $ fluctúa entre $1$ y $-1$. $f(x) = 0$ cuando $x = \dfrac{1}{k\pi}$ donde $k$ es un número entero. A medida que $k$ crece, $x$ se acerca cada vez más a $0$ y $|f(x)| = 0$  una y otra vez. ¿Puedes definir una función $g$ tal que $g(x) f (x)$ enfatiza estos puntos $x = \dfrac{1}{k\pi}$ y suaviza los otros?.\\\\
+
+	\end{enumerate}
 
 \end{enumerate}
+
+%--------------------24.
+\item 
 
 \end{enumerate}
