@@ -316,3 +316,73 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
 
 \section{Las funciones trigonométricas}
+
+%--------------------Propiedades fundamentales del seno y del coseno
+\begin{tcolorbox}[colframe = white]
+    \begin{prop}\; \\
+	\begin{enumerate}[\bfseries 1.]
+	    \item Dominio de definición. Las funciones seno y coseno están definidas en toda la recta real.
+	    \item Valores especiales. Tenemos $\cos 0 = \sen \frac{1}{2}\pi = 1, \cos \pi = -1$.
+	    \item Coseno de una diferencia. Para $x$ e $y$ cualesquiera, tenemos
+		$$\cos(y-x) = \cos y \cos x + \sen y \sen x.$$
+	    \item Desigualdades fundamentales. Para $0<x<\frac{1}{2}\pi$, tenemos
+		$$0<\cos x < \dfrac{\sen x}{x} < \dfrac{1}{\cos x}$$
+	\end{enumerate}
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------teorema 2.3
+\begin{teo} Si dos funciones $\sen$ y $\cos$ satisfacen las propiedades 1 a 4, satisfacen también las siguientes:
+    \begin{enumerate}[\bfseries (a)]
+	
+	%----------(a)
+	\item La identidad pitagórica, $\sen^2x + \cos^2 x = 1$, para todo $x$.\\\\
+	    Demostración.-\; La parte (a) se deduce inmediatamente si tomamos $x=y$ en $$\cos(y-x) = \cos y \cos x + \sen y \sen x$$
+	    y usamos la relación $\cos 0 = 1$.\\\\
+
+	%----------(b)
+	\item Valores especiales, $\sen 0 = \cos \frac{1}{2} \pi = \sen \pi = 0$.\\\\
+	    Demostración.-\; Resulta de (a) tomando $x=0$, $x=\frac{1}{2}\pi$, $x=\pi$ y utilizando la relación $\sen \frac{1}{2}\pi = 1$.\\\\
+
+	%----------(c)
+	\item El coseno es función par y el seno es función impar. Esto es, para todo $x$ tenemos
+	    $$\cos(-x)=\cos x,\qquad \sen(-x) = -\sen x$$\\
+	    Demostración.-\; Que el coseno es par resulta también de $$\cos(y-x) = \cos y \cos x + \sen y \sen x$$ 
+	    haciendo $y=0$. A continuación deducimos la fórmula $$\cos \left(\frac{1}{2}\pi - x \right) = \sen x,$$
+	    haciendo $y=\frac{1}{2}\pi$ en $\cos(y-x) = \cos y \cos x + \sen y \sen x$. Partiendo de esto, encontramos que el seno es impar, puesto que 
+	    $$\sen(-x)=\cos\left(\dfrac{\pi}{2}+x\right) = \cos \left[\pi - \left(\dfrac{\pi}{2} - x\right)\right] = \cos \pi \cos \left(\dfrac{\pi}{2} - x\right) + \sen \pi \sen\left(\dfrac{\pi}{2}-x\right) = -\sen x$$\\
+	
+	%----------(d)
+	\item Co-relaciones. Para todo $x$, se tiene
+	    $$\sen\left(\frac{1}{2} \pi\right) = \cos x, \qquad \sen\left(\frac{1}{2}\pi + x\right) = -\sen x$$\\
+	    Demostración.-\; Para demostrarlo utilizaremos $\cos\left(\frac{1}{2}\pi\right)=\sen x$ reemplazando primero $x$ por $\frac{1}{2} \pi + x$ y luego $x$ por $-x$.\\\\
+
+	%----------(e)
+	\item Periodicidad. Para todo $x$ se tiene $\sen\left(x+2\pi \right) = \sen x, \; \cos(x+2\pi) = \cos x$.\\\\
+	    Demostración.-\; El uso reiterado de (d) nos da entonces las relaciones de periodicidad (e).\\\\
+	
+	%----------(f)
+	\item Fórmulas de adición. Para $x$ e $y$ cualesquiera, se tiene 
+	    $$\cos (x+y) = \cos x \cos y - \sen x \sen y$$
+	    $$\sen (x+y) = \sen x \cos x + \cos x \sen y$$\\
+	    Demostración.-\; Para demostrar basta reemplazar $x$ por $-x$ en  $\cos(y-x) = \cos y \cos x + \sen y \sen x$ y tener en cuenta la paridad o imparidad. Luego utilizando la parte (d) y la fórmula de adición para el coseno se obtiene $$\sen(x+y) = -\cos \left(x+y+\frac{\pi}{2}\right) = =-\cos x \cos \left(y+\dfrac{\pi}{2}\right) + \sen x \sen \left(y + \dfrac{\pi}{2}\right) = \cos x\sen y + \sen x \cos y$$ \\
+
+	%----------(g)
+	\item  Fórmulas de diferencias. Para todo los valores $a$ y $b$, se tiene 
+	    $$\sen a - \sen b = 2\sen \dfrac{a-b}{2} = \cos \dfrac{a+b}{2},$$
+	    $$\cos a - \cos b = -2 \sen \dfrac{a+b}{2} \sen \dfrac{a+b}{2}.$$\\
+	    Demostración.-\; Reemplazaremos primero $y$ por $-y$ en la fórmula de adición para $\sen(x+y)$ obteniendo $$\sen(x-y)=\sen x \cos y - \cos x \sen y$$
+	    Restando ésta de la fórmula para $\sen(x+y)$ y haciendo lo mismo para función coseno, llegamos a
+	    $$\sen(x+y) -\sen(x-y) =  2\sen y \cos x,$$
+	    $$\cos(x+y) - \cos(x-y) = -2\sen y \sen x.$$
+	    Haciendo $x=(a+b)/2$,  $y=(a-b)/2$ encontramos que esas se convierten en las fórmulas de diferencia (g).\\\\
+
+	%----------(h)
+	\item Monotonía. En el intervalo $[0,\frac{1}{2}\pi]$, el seno es estrictamente creciente y el coseno estrictamente decreciente.\\\\
+	    Demostración.-\; La propiedad 4 se usa para demostrar (h). Las desigualdades $0<\cos x < \frac{\sen x}{x}<\frac{1}{\cos x}$ prueban que $cos x$ y $\sen x$ son positivas si $0<x<\frac{1}{2}\pi$. Después de esto, si $0<b<a<\frac{1}{2}\pi$, los números $(a+b)/2$ y $(a-b)/2$ están en el intrevalo $(0,\frac{1}{2}\pi)$, y las fórmulas de diferencias (g) prueban que $\sen a > \sen b$ y $\cos a < \cos b$. Esto completa la demostración.\\\\
+
+    \end{enumerate}
+\end{teo}
+
+
+\section{Fórmulas de integración para el seno y el coseno}
