@@ -386,3 +386,11 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
 
 \section{Fórmulas de integración para el seno y el coseno}
+
+%--------------------teorema 2.4
+\begin{teo} Si $0<a\leq \frac{1}{2}\pi,$ y $n\geq 1,$ tenemos $$\dfrac{a}{n}\sum_{k=1}^n \cos \dfrac{ka}{n}<\sen a < \dfrac{a}{n}\sum_{k=0}^{n-1} \cos \dfrac{ka}{n}.$$
+    Demostración.-\; Las desigualdades anterior serán deducidas de la identidad $$2\sen \dfrac{1}{2} x \sum_{k=1}^n \cos kx = \sen\left(n+\dfrac{1}{2}\right)x-\sen \dfrac{1}{2}x, \qquad \mbox{(2.7)}$$
+    válida para $n\geq 1$ y todo real $x$. Para demostrar, utilizaremos las fórmulas de diferencias (g) del teorema 2.3 para poner $$2\sen\dfrac{1}{2}x\cos kx = \sen \left(k+\dfrac{1}{2}\right)x - \sen\left(k-\dfrac{1}{2}\right)x$$
+    Haciendo $k=1,2,...,n$ y sumando esas igualdades, encontramos que en la suma del segundo miembro se reduce unos términos con otros obteniéndose (2.7).\\
+    Si $\dfrac{1}{2}x$ no es un múltiplo entero de $\pi$ podemos dividir ambos miembros de (2.7) por $2\sen \dfrac{1}{2}x$ resultando $$\sum_{k=1}^n \cos kx = \dfrac{\sen(n+\frac{1}{2}x-\sen \frac{1}{2} x)}{2\sen \frac{1}{2}x}$$ 
+\end{teo}
