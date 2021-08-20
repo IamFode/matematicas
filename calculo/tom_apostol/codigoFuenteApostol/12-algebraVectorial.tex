@@ -331,24 +331,156 @@
 
 %--------------------10.
 \item Dados cuatro vectores no nulos $A,B,C,D$ de $V_n$ tales que $C=A+B$ y $A$ paralelo a $D$. Demostrar que $C$ es paralelo a $D$ si y sólo si $B$ es paralelo a $D$.\\\\
-    Demostración.\; 
+    Demostración.\;  Sea $B=A-C$ de donde $B=cD-c_1D$ así, $B=(c-c_1)D$, (sabemos que $c-c_1\neq 0$, ya que $B$ es distinto de $0$).\\
+    Por el contrario supongamos que $B$ es paralelo a $D$. Dado que ambos $A$ y $B$ son paralelos entre sí, esto por el problema anterior. Entonces, tenemos $A=xB$ siendo $x$ un escalar distinto de $0$. Esto implica $$C=C=xB+B \Longrightarrow C = (1-x)B.$$ Por lo tanto si $C$ es paralelo a $B$ y $B$ paralelo a $D$ entonces $C$ es paralelo a $D$.\\\\ 
 
 %--------------------11.
 \item 
 \begin{enumerate}[\bfseries a)]
     
     %----------a)
-    \item Demostrar, para los vectores $V_n$ las propiedades de la adición y de la multiplicación oor escalares dadas en el teorema 12.1\\\\
-	Demostración.-\; 
+    \item Demostrar, para los vectores $V_n$ las propiedades de la adición y de la multiplicación por escalares dadas en el teorema 12.1\\\\
+	Demostración.-\; Sea $A,B \in V_n$ donde $A=(a_1,a_2,...,a_n)$ y $B=(b_1,b_2,...,b_n)$ entonces para la conmutatividad de adición tenemos $$A+B=(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n) = (a_1+b_1,a_2+b_2,...,a_n+b_n) = (b_1+a_1,b_2+a_1,...,b_n+a_n) = B+A$$
+	Para la asociatividad de adición se tiene,
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$A+(B+C)$&$=$&$(a_1,a_2,...,a_n)+\left[(b_1,b_2,...,b_n)+(c_1,c_2,...,c_n)\right]$\\
+		&$=$&$\left[a_1+(b_1+c_1),a_2+(b_2+b_3),...,a_n+(b_n+c_n)\right]$\\
+		&$=$&$\left[(a_1+b_1)+c_1,(a_2+b_2)+c_3,...,(a_n+b_n)+c_n\right]$\\
+		&$=$&$(A+B)+C$\\
+	    \end{tabular}
+	\end{center}
+	Luego para la asociatividad de la multiplicación escalar tenemos,
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$c(dA)$&$=$&$c\left[d(a_1,a_2,...,a_n)\right]$\\
+		&$=$&$c(da_1,da_2,...,da_n)$\\
+		&$=$&$\left[(cd)a_1,(cd)a_2,...,(cd)a_n\right]$\\
+		&$=$&$(cd)(a_1,a_2,...,a_n)$\\
+		&$=$&$(cd)A$\\
+	    \end{tabular}
+	\end{center}
+	Para la primera ley distributiva se tiene,
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$c(A+B)$&$=$&$c\left[(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n)\right]$\\
+		&$=$&$\left[c(a_1+b_1),c(a_2+b_2),...,c(a_n+b_n)\right]$\\
+		&$=$&$(ca_1+c_b1,ca_2+cb_2,...,ca_n+cb_n)$\\
+		&$=$&$(c_1,ca_2,...,ca_n)+(cb_1,cb_2,...,cb_n)$\\
+		&$=$&$c(a_1,a_2,...,a_n)+c(b_1,b_2,...,b_n)$\\
+		&$=$&$cA+cB$\\
+	    \end{tabular}
+	\end{center}
+	Para la segunda ley distributiva obtenemos,
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$(c+d)A$&$=$&$(c+d)(a_1,a_2,...,a_n)$\\
+		&$=$&$(ca_1+cb_1,ca_2+cb_2,...,ca_n+da_n)$\\
+		&$=$&$(c_1,ca_2,...,ca_n)+(cb_1,cb_2,...,cb_n)$\\
+		&$=$&$c(a_1,a_2,...,a_n)+d(a_1,a_2,...,a_n)$\\
+		&$=$&$cA+dA$\\\\
+	    \end{tabular}
+	\end{center}
 
     %----------b)
     \item Mediante vectores geométricos en el plano, representar el significado geométrico de las dos leyes distributivas $(c+d)A=cA+dA$ y $c(A+B) = cA+cB$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; La ley distributiva $(c + d) A = cA + dA$ significa que el vector $(c + d)$ Ase obtiene sumando la flecha $dA$ al final de la flecha $cA$.\\
+La ley distributiva $c (A + B) = cA + cB$ significa que el vector $c (A + B)$ es el vértice del paralelogramo formado por $cA$ y $cB$.\\\\
 
 \end{enumerate}
 
 %--------------------12.
 \item Si un cuadrilátero $OABC$ de $V_2$ es un paralelogramo que tiene $A$ y $C$ como vértices opuestos, demostrar que $A+\frac{1}{2}(C-A) =\frac{1}{2}B$. ¿Qué teorema relativo a los paralelogramos puede deducirse de esta igualdad?.\\\\
-    Demostración.-\; 
+    Demostración.-\; Dado que este es un paralelogramo, tenemos $B=A+C$. Y por tanto,
+    $$B=A+C\; \Longrightarrow\; \dfrac{1}{2}B=\dfrac{1}{2}(A+C)\; \Longrightarrow\; \dfrac{1}{2}B = A + \dfrac{1}{2}C - \dfrac{1}{2} A \;\Longrightarrow \; \dfrac{1}{2}B = A + \dfrac{1}{2}(C-A)$$\\
 
 \end{enumerate}
+
+
+\section{Producto escalar}
+
+%--------------------definición 12.3
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}[Producto escalar ó interior de dos vectores] Si $A=(a_1,a_2,...,a_n)$ y $B=(b_1,b_2,...,b_n)$ son dos vectores de $V_n$ su producto escalar se representa con $A\cdot B$ y se define con la igualdad $$A\cdot B = \sum_{k=1}^n a_k\cdot b_k$$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------teorema 12.2
+\begin{teo} Para todos los vectores $A,B,C$ de $V_n$ y todos los escalares $c$ se tienen las propiedades siguientes:
+\begin{center}
+\begin{tabular}{cll}
+    
+    %----------(a)
+     \textbf{(a)}&$A\cdot B = B\cdot A$& (ley conmutativa).\\
+
+    %----------(b)
+    \textbf{(b)} & $A\cdot(B+C) = A\cdot B + A\cdot C$ & (ley distributiva) \\
+
+    %----------(c)
+    \textbf{(c)} & $c(A\cdot B) = (cA)\cdot B = A\cdot (cB)$ & (homogeneidad) \\
+
+    %----------(d)
+    \textbf{(d)} & $A\cdot A > 0$ si $A\neq O$ & (positivadad) \\
+
+    %----------(e)
+    \textbf{(e)} & $A\cdot A = 0$ si $A=O$ & \\\\
+
+\end{tabular}    
+\end{center}
+    Demostración.-\; Comencemos demostrando el inciso $(a)$ que es un consecuencia de la definición. $$A\cdot B = \sum_{k=1}^n a_kb_k = (a_1\cdot b_1) + (a_2\cdot b_2) + ... + (a_n\cdot b_n) = (b_n+a_n)+(b_2+a_n)+...+(b_n+a_n) = \sum_{k=1}^n b_k a_k = B\cdot A$$ 
+    Las demostraciones $(b)$ y $(c)$ se demuestran con la definición de producto escalar, la definición de vectores y el teorema 12.1.\\
+    Para demostrar las dos últimas, usamos la relación $A\cdot A = \sum a_k^2$. Puesto que cada térmi es no negativo, la suma es es no negativa. Además, la suma es cero si y sólo si cada término de la suma es cero y esto tan sólo puede ocurrir si $A=O$.\\\\
+
+\end{teo}
+
+%--------------------teorema 12.3
+\begin{teo}[Desigualdad de Cauchy-Schwarz] Si $A$ y $B$ son vectores de $V_n$, tenemos $$(A\cdot B)^2 \leq (A\cdot A)(B\cdot B) \qquad \mbox{12.2}$$.
+Además, el signo de desigualdad es el válido si y sólo si uno de los vectores es el producto de otro por un escalar.\\\\
+    Demostración.-\; Expresando cada uno de los miembros de (12.2) en función de los componentes, obtenemos $$\left(\sum_{k=1}^n a_kb_k\right)^2\leq \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right)$$
+    que es la desigualdad ya demostrada en el teorema I.41.\\\\
+    Presentaremos otra demostración de 12.2 que no utiliza los componentes.\\
+    Tal demostración es interesante porque hace ver que la desigualdad de Cauchy-Schwarz es una consecuencia de las cinco propiedades del producto escalar que se citan en el teorema 12.2 y no depende de la definicón que se utilizó para deducir esas propiedades.\\
+    Para llevar a acabo esta demostración, observemos primero que 12.2 es trivial si $A$ ó $B$ es el vector cero. Por tanto, podemos suponer que $A$ y $B$ son ambos no nulos. Sea $C$ el vector 
+    $$C=xA-yB, \quad \mbox{donde}\; x=B\cdot B \quad \mbox{y} \quad y=A\cdot B$$
+    Las propiedades d) y e) implican que $C\cdot C \geq 0$. Cuando expresamos esto en función de $x$ e $y$, resulta 12.2. Para expresar $C\cdot C$ en función de $x$ e $y$, utilizamos las propiedades a), b) y c) obteniendo $$C\cdot C = (xA-yB)\cdot (xA-yB) = x^2(A\cdot A) - 2xy(A\cdot B) + y^2(B\cdot B).$$
+    Utilizando las definiciones de $x$ e $y$ como también la desigualdad $C\cdot C\leq 0$, se llega a $$(B\cdot B)^2\cdot(A\cdot A) -2(A\cdot B)^2(B\cdot B)+(A\cdot B)^2(B\cdot B)\geq 0$$
+    La propiedad d) implica que $B\cdot B \geq 0$ puesto que $B\neq 0$, con lo que podemos dividir por $(B\cdot B)$ obteniendo $$(B\cdot B)(A\cdot A)-(A\cdot B)^2\geq 0$$
+    que coincide con 12.2. Esto también demuestra que el signo igual es válido en 12.2 si y sólo si $C=0$. Pero $C=0$ si y sólo si $xA=yB$. A su vez, esta igualdad se verifica si y sólo si uno de los vectores es el producto del otro por un escalar.\\\\
+
+\end{teo}
+
+
+\section{Longitud o norma de un vector}
+
+%--------------------definicion 12.4
+\begin{tcolorbox}[colframe=white]
+    \begin{def.} si $A$ es un vector en $V_n$ su longitud o norma se designa con $\|A\|$ y se define mediante la igualdad $$\|A\| = (A\cdot A)^{1/2}$$
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo} Si $A$ es un vector de $V_n$ y $c$ un escalar, tenemos las siguientes propiedades.
+\begin{center}
+    \begin{tabular}{rcl}
+	\textbf{a)}&$\|A\|>0$ si $A\neq 0$&(Positividad)\\	
+	\textbf{b)}&$\|A\|=0$ si $A=0$&\\	
+	\textbf{c)}&$\|cA\|=\left|c\right|\|A\|$&(homogeneidad)\\
+    \end{tabular}
+\end{center}
+
+    Demostración.-\; Las propiedades a) y b) son consecuencia inmediata de las propiedades d) y e) del teorema 12.2. Para demostrar c) utilizamos la propiedad de homogeneidad del producto escalar obteniendo $$\|cA\|=(cA\cdot cA)^{1/2} = (c^2A\cdot A)^{1/2} ) (c^2)^{1/2}(A\cdot A)^{1/2} = |c|\|A\|.$$
+    La desigualdad de Cauchy-Schwarz también se puede expresar en función de la norma. Ella establece que $$(A\cdot B)^2 \leq \|A\|^2 \|B\|^2\qquad \mbox{12.3}$$ $$o$$ $$|A\cdot B| = \|A\|\|B\| \qquad \mbox{12.4}$$\\\\
+
+\end{teo}
+
+%--------------------teorema 12.5
+\begin{teo}[Desigualdad triangular]. Si $A$ y $B$ son vectores de $V_n$, tenemos $$\|A+B\| \leq \|A\|+\|B\|.$$\\
+    Demostración.-\; para evitar las raíces cuadradas, escribimos la desigualdad triangular en la forma equivalente $$\|A\cdot B\|^2 = \left(\|A\|+\|B\|\right)^2\qquad \mbox{12.5}$$
+    El primer miembro de 12.5 es $$\|A+B\|^2 = (A+B)\cdot (A+B) = A\cdot A + 2A\cdot B + B\cdot B = \|A\|^2 + 2A\cdot B + B\cdot B = \|A\|^2 + 2A\cdot B + \|B\|^2$$
+    mientras que el segundo miembro es $$\left(\|A\|+\|B\|\right)^2 = \|A\|^2 + 2\|A\|\|B\|+\|B\|^2$$
+    Comparando esas dos fórmulas, vemos que 12.5 es válida si y sólo si se tiene $$A\cdot B \leq \|A\|\|B\|\qquad 12.6$$
+    Pero $A\cdot B\leq A\cdot B$ con lo que 12.6 resulta de la desigualdad de Cauchy-Schwarz, en la forma 12.4. Esto prueba que la desigualdad triangular es consecuencia de la desigualdad de Cauchy-Schwarz.\\
+    La proposición reciproca también es cierta. Esto es, si la desigualdad triangular es cierta también lo es 12.6 para $A$ y para $-A$, de lo que obtenemos 12.3. Así pues, la desigualdad triangular y la de Cauchy-Schwarz son lógicamente equivalentes. Además, el signo de igualdad vale en una si y sólo si vale en la otra. Con lo que se complementa la demostración del teorema 12.5.\\\\
+
+\end{teo}
+
+\section{Ortogonalidad de vectores}
