@@ -388,9 +388,34 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 \section{Fórmulas de integración para el seno y el coseno}
 
 %--------------------teorema 2.4
-\begin{teo} Si $0<a\leq \frac{1}{2}\pi,$ y $n\geq 1,$ tenemos $$\dfrac{a}{n}\sum_{k=1}^n \cos \dfrac{ka}{n}<\sen a < \dfrac{a}{n}\sum_{k=0}^{n-1} \cos \dfrac{ka}{n}.$$
+\begin{teo} Si $0<a\leq \frac{1}{2}\pi,$ y $n\geq 1,$ tenemos $$\dfrac{a}{n}\sum_{k=1}^n \cos \dfrac{ka}{n}<\sen a < \dfrac{a}{n}\sum_{k=0}^{n-1} \cos \dfrac{ka}{n} \qquad \mbox{(2.6)}.$$
     Demostración.-\; Las desigualdades anterior serán deducidas de la identidad $$2\sen \dfrac{1}{2} x \sum_{k=1}^n \cos kx = \sen\left(n+\dfrac{1}{2}\right)x-\sen \dfrac{1}{2}x, \qquad \mbox{(2.7)}$$
     válida para $n\geq 1$ y todo real $x$. Para demostrar, utilizaremos las fórmulas de diferencias (g) del teorema 2.3 para poner $$2\sen\dfrac{1}{2}x\cos kx = \sen \left(k+\dfrac{1}{2}\right)x - \sen\left(k-\dfrac{1}{2}\right)x$$
     Haciendo $k=1,2,...,n$ y sumando esas igualdades, encontramos que en la suma del segundo miembro se reduce unos términos con otros obteniéndose (2.7).\\
     Si $\dfrac{1}{2}x$ no es un múltiplo entero de $\pi$ podemos dividir ambos miembros de (2.7) por $2\sen \dfrac{1}{2}x$ resultando $$\sum_{k=1}^n \cos kx = \dfrac{\sen(n+\frac{1}{2}x-\sen \frac{1}{2} x)}{2\sen \frac{1}{2}x}$$ 
+    Reemplazando $n$ por $n-1$ y sumando $1$ a ambos miembros también obtenemos 
+    $$\sum_{k=0}^{n-1} \cos kx = \dfrac{\sen\left(n-\frac{1}{2}\right)x + \sen\frac{1}{2}x}{2\sen\frac{1}{2}x}$$
+    Esas dos fórmulas son válidas si $x\neq2m\pi$, siendo $m$ entero. Tomando $x=a/n$, donde $0<a<\frac{1}{2}\pi$ encontramos que el par de desigualdades (2.6) es equivalente al siguiente 
+    $$\dfrac{a}{n}\dfrac{\sen\left(n+\dfrac{1}{2}\right)\dfrac{a}{n} - \sen \left(\dfrac{a}{2n}\right)}{2\sen\left(\dfrac{a}{2n}\right)} < \sen a < \dfrac{a}{n}\dfrac{\sen\left(n-\dfrac{1}{2}\right)\dfrac{a}{b}+\sen\left(\dfrac{a}{2n}\right)}{2\sen\left(\dfrac{a}{2n}\right)}$$
+    Este par, a su vez es equivalente al par
+    $$\sen\left(n+\dfrac{1}{2}\right)\dfrac{a}{n}-\sen\left(\dfrac{a}{2n}\right) < \dfrac{\sen\left(\dfrac{a}{2n}\right)}{\left(\dfrac{a}{2n}\right)} \sen a < \sen\left(n-\dfrac{1}{2}\right)\dfrac{a}{n}+\sen\left(\dfrac{a}{2n}\right) \qquad (\mbox{(2.8)}$$
+    Por consiguiente demostrar (2.6) equivale a demostrar (2.8). Demostraremos que se tiene 
+    $$\sen\left(2n+1\right)\theta -\sen \theta < \dfrac{\sen \theta}{\theta} < \sen(2n-1)\theta +\sen \theta \qquad \mbox{(2.9)}$$
+    para $0<2n\theta\leq \frac{1}{2}\pi$. Cuando $\theta = a/(2n)$ (2.9) se reduce a (2.8).\\
+    Para demostrar la desigualdad de la parte izquierda de (2.9), usamos la fórmula de adición para el seno poniendo $$\sen(2n+1)\theta = \sen 2n\theta \cos \theta + \cos 2n\theta \sen \theta < \sen 2n\theta \dfrac{\sen \theta}{\theta} + \sen \theta,$$
+    habiendo usado también las desigualdades $$\cos \theta < \dfrac{\sen \theta}{\theta}, \quad 0z<\cos 2n\theta \leq 1, \quad \sen \theta > 0, \qquad \mbox{(2.10)}$$
+    siendo todas válidas ya que $0<2n\theta \leq \frac{1}{2}\pi$. La desigualdad (2.10) equivale a la parte izquierda de (2.9).\\
+    Para demostrar la parte derecha de (2.9), utilizamos nuevamente la fórmula de adición para el seno poniendo $$\sen(2n-1)\theta = \sen 2n\theta \cos \theta - \cos 2n\theta \sen \theta$$
+    Sumando $\sen \theta$ ambos miembros, obtenemos $$\sen(2n-1)\theta + \sen \theta = \sen 2n\theta \left(\cos \theta +\sen \theta \dfrac{1-\cos 2n\theta}{\sen 2n\theta}\right) \qquad \mbox{(2.11)}$$
+    Pero ya que tenemos $$\dfrac{1-\cos 2n\theta}{\sen2n\theta}=\dfrac{2\sen^2n\theta}{2\sen n\theta \cos n \theta}=\dfrac{\sen n\theta}{\cos n \theta}$$
+    el segundo miembro de (2.11) es igual a $$\sen 2n\theta \left(\cos \theta + \sen \theta \dfrac{\sen n \theta}{\cos n\theta}\right) = \sen 2 n\theta \dfrac{\cos \theta \cos n\theta + \sen \theta \sen n \theta}{\cos n \theta} = \sen 2n\theta \dfrac{\cos (n-1) \theta}{\cos n \theta}$$
+    Por consiguiente, para completar la demostración de (2.9), necesitamos tan sólo demostrar que 
+    $$\dfrac{\cos(n-1)\theta}{\cos n\theta}>\dfrac{\sen \theta}{\theta} \qquad \mbox{(2.12)}$$
+    Pero tenemos $$\cos n\theta = \cos(n-1)\cos theta - \sen(n-1)\theta \sen \theta < \cos(n-1)\theta \cos \theta < \cos(n-1)\theta \dfrac{\theta}{\sen \theta},$$
+    en donde otra vez hemos utilizado la desigualdad fundamental $\cos \theta < \theta/sen \theta.$ esta último relación implica (2.12), con lo que se completa la demostración del teorema 2.4.\\\\
+
+\end{teo}
+
+%--------------------teorema 2.5
+\begin{teo}
 \end{teo}

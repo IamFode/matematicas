@@ -551,6 +551,37 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \end{enumerate}
 
 %--------------------24.
-\item  
+\item Supóngase que, para todo número natural $n$, $A_n$ es un conjunto finito de número en $[0,1]$, y que $A_n$ y $A_m$ carecen de elementos comunes si $m\neq n$. Defínase $f$ como sigue:
+$$f(x) = \left\{\begin{array}{rcl}
+    1/n,&si&\mbox{está en} \; An\\
+    0,&si&x \;\mbox{no está en}\; A_n \;\mbox{para ningún}\; n \\
+\end{array}\right.$$
+Demostrar que $\lim\limits_{x\to a}f(x)=0$ para todo $a$ de $[0,1]$.\\\\
+    Demostración.-\; Dado $\epsilon>0$, elíjase $n$ con $1/n<\epsilon$ y hágase $\delta$ igual a la distancia mínima desde $a$ a todos los puntos de $A_1,A_2,...,A_n$, excepto a sí mismo en el caso en que $a$ sea uno de estos puntos. Entonces $0<|x-a|<\delta$ implica que $x$ no está en $A_1,a_2,...,A_n$, de modo que $f(x)=0$ o $1/m$ para $m>n$, o sea que $|f(x)|<\delta$.\\\\
+
+%--------------------25.
+\item Explíquese por qué son correctas las siguientes definiciones de $\lim\limits_{x\to a}f(x)=l$: Para todo $\delta>0$ existe un $\epsilon>0$ tal que, para todo $x$,
+\begin{enumerate}[\bfseries (i)]
+
+    %----------(i)
+    \item Si $0<|x-a|<\epsilon,$ entonces $|f(x)-l<\delta$.\\\\
+	Respuesta.-\; Ésta es la definición en si,llamando simplemente a los números $\delta$ como $\epsilon$ y viceversa.\\\\
+
+    %----------(ii)
+    \item Si $0<|x-a|<\epsilon$ entonces $|f(x)-l| \leq \delta$.\\\\
+	Respuesta.-\; Si la condición se cumple para todos los $\delta>0$, entonces se puede aplicar a $\delta/2$, de modo que existe un $\epsilon>0$ tal que si $0<|x-a|<\epsilon$, entonces $|f(x)-l|\leq \delta/2<\delta$.\\\\
+
+    %----------(iii)
+    \item Si $0<|x-a|<\epsilon$ entonces $|f(x)-l| < 5\delta$.\\\\
+	Respuesta.-\; Aplíquese a $5\delta$ para obtener $(i)$.\\\\
+
+    %----------(iv)
+    \item Si $0<|x-a|<\epsilon/10$ entonces $|f(x)-l| < \delta$.\\\\
+	Respuesta.-\; Dice lo mismo que $(i)$, ya que $\epsilon/10>0$, y es solamente la existencia de algún $\delta>0$ lo que está en litigio.\\\\
+
+\end{enumerate}
+
+%--------------------26.
+\item 
 
 \end{enumerate}
