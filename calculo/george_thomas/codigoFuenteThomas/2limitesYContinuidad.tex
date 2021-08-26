@@ -756,6 +756,36 @@ En los ejercicios 11 a 22, encuentre los límites.\\\\
 \end{center}
 
 %--------------------52.
-\item 
+\item Sean $\lim\limits_{x\to 1} h(x) = 5,$ $\lim\limits_{x\to 1}p(x)=1$ y $\lim\limits_{x\to 1}r(x)=2$. Señale cuáles reglas del teorema 1 se emplean para obtener los pasos a), b) y c) del siguiente cálculo. 
+\begin{center}
+    \begin{tabular}{rcll}
+	$\lim\limits_{x\to 1}\dfrac{\sqrt{5h(x)}}{p(x)(4-r(x))}$&$=$&$\dfrac{\lim\limits_{x\to 1} \sqrt{5h(x)}}{\lim\limits_{x\to 1}\lbrace p(x)\left[4-r(x)\right]\rbrace}$&regla del cociente.\\\\
+	&$=$&$\dfrac{\sqrt{\lim\limits_{x\to 1} 5h(x)}}{\left[\lim\limits_{x\to 1}p(x)\right] \left[\lim\limits_{x\to 1} (4-r(x))\right]}$&regla de la raíz y del producto.\\\\
+	&$=$&$\dfrac{\sqrt{5\lim\limits_{x\to 1} h(x)}}{\left[\lim\limits_{x\to 1}p(x)\right] \left[\lim\limits_{x\to 1} 4- \lim\limits_{x\to 1}r(x)\right]}$&regla de la diferencia y múltiplo constante.\\\\
+	&$=$&$\dfrac{\sqrt{5\cdot 5}}{1(4-2)} = \dfrac{5}{2}$&\\\\
+    \end{tabular}
+\end{center}
 
+%--------------------53.
+\item Suponga que $\lim\limits_{x\to c}f(x)=5$ y $\lim\limits_{x\to c}g(x)=-2$. Encuentre 
+
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item $\lim\limits_{x\to c}f(x)g(x) \Longrightarrow \lim\limits_{x\to c}f(x) \lim\limits_{x\to c}g(x) = 5\cdot (-2) = -10$\\\\
+
+    %----------b)
+    \item $\lim\limits_{x\to c} 2f(x)g(x) \Longrightarrow 2\left(\lim\limits_{x\to c}f(x) \lim\limits_{x\to c}g(x)\right) = 2(-10) = -20$\\\\
+
+    %----------c)
+    \item $\lim\limits_{x\to c}\left(f(x)+3g(x)\right) \Longrightarrow \lim\limits_{x\to c}f(x) +  3\lim\limits_{x\to c}g(x) = 5 + 3\cdot(-2) = -1$.\\\\
+
+    %----------d)
+    \item $\lim\limits_{x\to c} \dfrac{f(x)}{f(x)-g(x)} \Longrightarrow \dfrac{\lim\limits_{x\to c} f(x)}{\lim\limits_{x\to c} f(x) - \lim\limits_{x\to c} g(x)} = \dfrac{5}{5+2} = \dfrac{5}{7}$.\\\\
+
+\end{enumerate}
+
+%--------------------54.
+\item 
+    
 \end{enumerate}

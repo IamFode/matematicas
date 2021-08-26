@@ -393,12 +393,12 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     válida para $n\geq 1$ y todo real $x$. Para demostrar, utilizaremos las fórmulas de diferencias (g) del teorema 2.3 para poner $$2\sen\dfrac{1}{2}x\cos kx = \sen \left(k+\dfrac{1}{2}\right)x - \sen\left(k-\dfrac{1}{2}\right)x$$
     Haciendo $k=1,2,...,n$ y sumando esas igualdades, encontramos que en la suma del segundo miembro se reduce unos términos con otros obteniéndose (2.7).\\
     Si $\dfrac{1}{2}x$ no es un múltiplo entero de $\pi$ podemos dividir ambos miembros de (2.7) por $2\sen \dfrac{1}{2}x$ resultando $$\sum_{k=1}^n \cos kx = \dfrac{\sen(n+\frac{1}{2}x-\sen \frac{1}{2} x)}{2\sen \frac{1}{2}x}$$ 
-    Reemplazando $n$ por $n-1$ y sumando $1$ a ambos miembros también obtenemos 
+    Reemplazando $n$ por $n-1$ y sumando $1$ a ambos miembros también obtenemos. (Ya que $\cos 0 = 1$).
     $$\sum_{k=0}^{n-1} \cos kx = \dfrac{\sen\left(n-\frac{1}{2}\right)x + \sen\frac{1}{2}x}{2\sen\frac{1}{2}x}$$
     Esas dos fórmulas son válidas si $x\neq2m\pi$, siendo $m$ entero. Tomando $x=a/n$, donde $0<a<\frac{1}{2}\pi$ encontramos que el par de desigualdades (2.6) es equivalente al siguiente 
     $$\dfrac{a}{n}\dfrac{\sen\left(n+\dfrac{1}{2}\right)\dfrac{a}{n} - \sen \left(\dfrac{a}{2n}\right)}{2\sen\left(\dfrac{a}{2n}\right)} < \sen a < \dfrac{a}{n}\dfrac{\sen\left(n-\dfrac{1}{2}\right)\dfrac{a}{b}+\sen\left(\dfrac{a}{2n}\right)}{2\sen\left(\dfrac{a}{2n}\right)}$$
     Este par, a su vez es equivalente al par
-    $$\sen\left(n+\dfrac{1}{2}\right)\dfrac{a}{n}-\sen\left(\dfrac{a}{2n}\right) < \dfrac{\sen\left(\dfrac{a}{2n}\right)}{\left(\dfrac{a}{2n}\right)} \sen a < \sen\left(n-\dfrac{1}{2}\right)\dfrac{a}{n}+\sen\left(\dfrac{a}{2n}\right) \qquad (\mbox{(2.8)}$$
+    $$\sen\left(n+\dfrac{1}{2}\right)\dfrac{a}{n}-\sen\left(\dfrac{a}{2n}\right) < \dfrac{\sen\left(\dfrac{a}{2n}\right)}{\left(\dfrac{a}{2n}\right)} \sen a < \sen\left(n-\dfrac{1}{2}\right)\dfrac{a}{n}+\sen\left(\dfrac{a}{2n}\right) \qquad \mbox{(2.8)}$$
     Por consiguiente demostrar (2.6) equivale a demostrar (2.8). Demostraremos que se tiene 
     $$\sen\left(2n+1\right)\theta -\sen \theta < \dfrac{\sen \theta}{\theta} < \sen(2n-1)\theta +\sen \theta \qquad \mbox{(2.9)}$$
     para $0<2n\theta\leq \frac{1}{2}\pi$. Cuando $\theta = a/(2n)$ (2.9) se reduce a (2.8).\\
@@ -412,7 +412,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     Por consiguiente, para completar la demostración de (2.9), necesitamos tan sólo demostrar que 
     $$\dfrac{\cos(n-1)\theta}{\cos n\theta}>\dfrac{\sen \theta}{\theta} \qquad \mbox{(2.12)}$$
     Pero tenemos $$\cos n\theta = \cos(n-1)\cos theta - \sen(n-1)\theta \sen \theta < \cos(n-1)\theta \cos \theta < \cos(n-1)\theta \dfrac{\theta}{\sen \theta},$$
-    en donde otra vez hemos utilizado la desigualdad fundamental $\cos \theta < \theta/sen \theta.$ esta último relación implica (2.12), con lo que se completa la demostración del teorema 2.4.\\\\
+    en donde otra vez hemos utilizado la desigualdad fundamental $\cos \theta < \theta/sen \theta.$ ya que $\left(\cos x < \dfrac{x}{\sen x}\right)$, esta último relación implica (2.12), con lo que se completa la demostración del teorema 2.4.\\\\
 
 \end{teo}
 
