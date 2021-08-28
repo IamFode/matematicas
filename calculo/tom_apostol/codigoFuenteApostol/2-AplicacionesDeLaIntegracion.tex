@@ -417,5 +417,44 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 \end{teo}
 
 %--------------------teorema 2.5
-\begin{teo}
+\begin{teo} Si dos funciones $\sen$ y $\cos$ satisfacen las propiedades fundamentales de la 1 a la 4, para todo $a$ real se tiene $$\int_0^a \cos x\; dx = \sen a, \qquad \mbox{(2.13)}$$ $$\int_0^a x\; dx = 1-\cos a. \qquad \mbox{(2.14)}$$\\
+    Demostración.-\; Primero se demuestra (2.13), y luego usamos (2.13) para deducir (2.14). Supongamos que $0<a\leq \frac{1}{2}\pi$. Ya que el coseno es decreciente en $[0,a]$ podemos aplicar el teorema 1.14 y las desigualdades del teorema 2.4 obteniendo (2.13). La fórmula es valida también para $a=0$, ya que ambos miembros son cero. Pueden ahora  utilizarse las propiedades de la integral para ampliar su validez todos los valores reales $a$.\\
+    Por ejemplo, si $-\frac{1}{2}\pi \leq a \leq 0$, entonces $0\leq -a\leq \frac{1}{2}\pi$, y la propiedad de reflexión nos da $$\int_0^a \cos x\; dx = -\int_0^{-a} \cos (-x) \; dx = - \int_0^{-a} \cos x \; dx = -\sen (-a) = \sen a.$$
+    Así, pues, (2.13) es válida en el intervalo $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$. Supongamos ahora que $\frac{1}{2}\pi \leq a \leq \frac{3}{2}\pi$. Entonces $-\frac{1}{2}\pi\leq a-\pi\leq \frac{1}{2}\pi$, de modo que $$\int_0^a \cos x \; dx = \int_{0}^{\pi/2} \cos x \; dx + \int_{\pi/2}^a \cos x \; dx = \sen\frac{1}{2}\pi + \int_{-\pi/2}^{a-\pi} \cos(x+\pi)\; dx = 1-\int_{-\pi/2}^{a-\pi} \cos x \; dx = $$ $$=1 - \sen(a-\pi) + \sen\left(-\frac{1}{2}\pi\right) = \sen a$$
+    Con ellos resulta que (2.13) es válida para todo $a$ en el intervalo $\left[-\frac{1}{2}\pi,\frac{3}{2}\pi\right]$. Pero este intervalo tiene longitud $2\pi$, con lo que la fórmula (2.13) es válida para todo $a$ puesto que ambos miembros son periódicos respecto a $a$ con período $2\pi$\\
+    Seguidamente usamos (2.13) para deducir (2.14). Ante todo demostramos que (2.14) es válida cuando $a=\pi/2$. Aplicando sucesivamente, la propiedad de traslación, la co-relación $\sen\left(x+\frac{1}{2}\pi\right)$, y la propiedad de reflexión, encontramos 
+    $$\int_0^{\pi/2}\sen x\; dx = \int_{-\pi/2}^0 \sen \left(x+\dfrac{\pi}{2}\right)\; dx = \int_{-\pi/2}^0 \cos x \; dx = \int_0^{\pi/2}\cos (-x) \; dx$$
+    Haciendo uso de la relación $\cos(-x)=\cos x$ y la igualdad (2.13), se obtiene $$\int_0^{\pi/2}\sen x\; dx = 1$$
+    Por consiguiente, para cualquier $a$ real, podemos escribir $$\int_0^a \sen x\;dx = \int_0^{\pi/2} \sen x\; dx + \int_{\pi/2}^a \sen x \; dx = 1 + \int_0^{a-\pi/2}\sen \left(x+\dfrac{\pi}{2}\right)\; dx =$$ $$= 1+\int_0^{a-\pi/2} \cos x \; dx = 1+\sen\left(a-\dfrac{\pi}{2}\right) = 1-\cos a$$
+    Esto demuestra que la igualdad (2.13) implica (2.14).\\\\
 \end{teo}
+
+\begin{tcolorbox}[colframe = white,colback=black!2!]
+    \begin{nota} Usando (2.13) y (2.14) junto con la propiedad aditiva $$\int_a^b f(x) \; dx = \int_0^b f(x)\; dx - \int_0^a f(x)\; dx $$
+    llegamos a las fórmulas de integración más generales
+    $$\int_a^b \cos x \; dx = \sen b - \sen a$$
+	y $$\int_a^b \sen x \; dx = (1-\cos b) - (1-\cos a) = -(\cos b - \cos a).$$
+	Si nuevamente utilizamos el símbolo especial $f(x)\left|_a^b\right.$ para indicar la diferencia $f(b)-f(a)$, podemos escribir esas fórmulas de integración en la forma 
+	$$\int_a^b \cos x \;dx = \sen x \bigg|_a^b \qquad y \qquad \int_a^b \sen x\; dx = -\cos x \bigg|_a^b$$
+    \end{nota}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe = white,colback=black!2!]
+    \begin{nota} 
+	Con los resultados del ejemplo 1 y la propiedad de dilatación $$\int_a^b f(x)\; dx = \dfrac{1}{c}\int_{ca}^{cb} f(x/c)\; dx,$$
+	obtenemos las fórmulas siguientes, válidas para $c\neq 0$;
+	$$\int_a^b \cos cx \; dx = \dfrac{1}{c}\int_{ca}^{cb} \cos x \; dx = \dfrac{1}{c}(\sen cb - \sen ca)$$
+	y $$\int_a^b \sen cx \; dx = \dfrac{1}{c} \int_{ca}^{cb} \sen x \; dx = -\dfrac{1}{c}(\cos cb -\cos ca).$$
+    \end{nota}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe = white,colback=black!2!]
+    \begin{nota} 
+	La identidad $\cos 2x = 1-2\sen^2 x$ implica $\sen^2 x = \frac{1}{2}(1-\cos 2x)$ con lo que, a partir del ejemplo 2, obtenemos $$\int_a^b \sen^2 x \; dx = \dfrac{1}{2}\int_0^a (1-\cos 2x)\; dx = \dfrac{a}{2}-\dfrac{1}{4}\sen 2a$$
+	Puesto que $\sen^2 x + \cos^2 x = 1,$ encontramos también $$\int_0^a \cos^2 x \; dx = \int_0^a(1-\sen^2 x)\; dx = a - \int_0^a \sen^2 x\; dx = \dfrac{a}{2}+\dfrac{1}{4}\sen 2a$$
+    \end{nota}
+\end{tcolorbox}
+
+
+\section{Descripción geométrica de las funciones seno y coseno}
+

@@ -1,0 +1,200 @@
+\section*{Introducción}
+Cuando hablamos de integrales, podemos decir que hablamos de cálculo de áreas, pero ¿como llegamos a esta conclusión?, el objetivo de este trabajo es dar un enfoque riguroso, posiblemente no tan extenso como debería ser pero si bien fundamentado. Se recomienda repasar algunos conceptos teóricos que no son tan difíciles de asimilar cuando se dedica el tiempo. \\
+
+Como primer paso conoceremos el método de Arquímedes para la aproximación de efecto y exceso de cálculo de áreas, luego nos introduciremos a las integrales superiores e inferiores, para posterior dar una definición del área de un conjunto de ordenada expresada como una integral. Después entraremos a temas de integrabilidad de funciones monótonas acotadas y su respectivo calculo para luego demostrar las propiedades fundamentales de la integral.\\\\
+
+\begin{multicols}{2}
+\section*{El método de exhaución para el área de un segmento de parábola}
+
+El método consiste simplemente en lo siguiente: se divide la figura en un cierto número de bandas y se obtienen dos aproximaciones de la región, una por defecto y otra por exceso, utilizando dos conjuntos de rectángulos.\\
+Se subdivide la base en $n$ partes iguales, cada una de longitud $b/n$. Los puntos de subdivisión corresponden a los siguientes valores de $x$: $$0,\dfrac{b}{n},\dfrac{2b}{n},\dfrac{3b}{n},...,\dfrac{(n-1)b}{n},\dfrac{nb}{n}=b$$
+La expresión general de un punto de la subdivisión es $x=\frac{kb}{n},$ donde $k$ toma los valores sucesivos $k=0,01,2,3,...,n.$ En cada punto $\frac{kb}{n}$ se construye el rectángulo exterior de altura $(kb/n)^2$. El área de este rectángulo es el producto de la base por la altura y es igual a:
+$$\left(\dfrac{b}{n}\right)\left(\dfrac{kb}{n}\right)^2=\dfrac{b^3}{3}k^3$$
+Si se designa por $S_n$ la suma de las áreas de todos os rectángulos exteriores, puesto que el área del rectángulo k-simo es $(b^3/n^3)k^3$ se tiene la formula. $$S_n=\dfrac{b^3}{n^3}(1^2+2^2+3^2+...+n^2) \qquad (1)$$
+De forma análoga se obtiene la fórmula para la suma $s_n$ de todos los rectángulos interiores:
+$$s_n=\dfrac{b^3}{n^3}[1^2+2^2+3^2+...+(n-1)^2] \qquad (2)$$
+Luego se tiene la identidad $$1^2+2^2+3^2+...+n^2=\dfrac{n^3}{3}+\dfrac{n^2}{2}+\dfrac{6}{n} \qquad (3)$$
+Como también $$1^2+2^2+...+(n-1)^2=\dfrac{n^2}{3}-\dfrac{n^2}{2}+\dfrac{n}{6} \qquad (4)$$
+Las expresiones exactas dadas no son necesarias para el objeto que aquí se persigue, pero sirven para deducir fácilmente las dos desigualdades que interesan $$1^2+2^2+3^2+...+(n-1)^2<\dfrac{n^3}{3}<1^2+2^2+...+n^2$$
+que son válidas para todo entero $n\geq 1$. Multiplicando ambas desigualdades por $b^3/n^3$ y haciendo uso de $(1)$ y $(2)$ se tiene: $$s_n<\dfrac{b^3}{3}<S_n$$
+Probemos que $b^3/3$ es el único número que goza de esta propiedad, es decir, que si $A$ es un número que verifica las desigualdades $$s_n<A<S_n \qquad (7)$$
+para cada entero positivo $n$, ha de ser necesariamente $A=b^3/3$. Por esta razón dedujo Arquímedes que el área del segmento parabólico es $b^3/3$.\\
+Para probar que $A=b^3/3$ se utilizan una vez más las desigualdades $(5)$. Sumando $n^2$ a los dos miembros de la desigualdad de la izquierda en $(5)$ se obtiene $$1^2+2^2+3^2+...+n^2=\dfrac{n^3}{3}+n^2$$
+Multiplicando por $b^3/3$ y utilizando $(1)$ se tiene $$S_n<\dfrac{b^3}{3}+\dfrac{b^3}{n} \qquad (8)$$
+Análogamente, restando $n^2$ de los dos miembros de la desigualdad de la derecha en $(5)$ y multiplicando por $b^3/n^3$ se llega a la desigualdad:
+$$\dfrac{b^3}{3}-\dfrac{b^3}{n}<s_n \qquad (9)$$
+Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfrac{b^3}{3}-\dfrac{b^3}{n}<A<\dfrac{b^3}{3}+\dfrac{b^3}{n} \qquad (10)$$ para cada entero $n\geq 1$. Ahora también, hay sólo tres posibilidad: $$A>\dfrac{b^3}{3}, \quad A<\dfrac{b^3}{3} \quad A=\dfrac{b^3}{3}$$
+ Si se prueba que las dos primeras conducen a una contradicción habrá de ser $A=\frac{b^3}{3}$\\
+ Supongamos que la desigualdad $A>b^3/3$ fuera cierta. De la segunda desigualdad en $(10)$ se obtiene $$A-\dfrac{b^3}{3}<\dfrac{b^3}{n} \qquad (11)$$ para cada entero $n\geq 1$. Puesto que $A-b^3/3$ es positivo, se puede dividir ambos miembros de $(11)$ por $A-b^3/3$ y multiplicando después por $n$ se obtiene la desigualdad $$n<\dfrac{b^3}{A-b^3/3}$$ para cada $n$. Pero esta desigualdad es evidentemente para $n>b^3/(A-b^3/3).$ Por tanto la desigualdad es una contradicción. De forma análoga se demuestra para $A<b^3/3$ de donde concluimos que $A=b^3/3$.
+
+
+\section*{Integral superior e inferior}
+
+%--------------------1.13
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	Supongamos la función $f$ acotada en $[a,b]$. Si $s$ y $t$ son funciones escalonadas que satisfacen $s(x)<f(x)<t(x)$ se dice que $s$ es inferior a $f$ y que $t$ es superior a $f$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------teorema 1.9
+\begin{teo}
+    Toda función $f$ acotada en $[a,b]$ tiene una integral inferior $\underbar{I}(f)$ y una integral superior $\bar{I}(f)$ que satisfacen las desigualdades $$\int_a^b s(x) \; dx \leq \underbar{I}(f) \leq \bar{I}(f) \leq \int_a^b t(x) \; dx$$ 
+    para todas las funciones $s$ y $t$ tales que $s\leq f\leq t$. La función $f$ es integrable en $[a,b]$ si y sólo si sus integrables superior e inferior son iguales, en cuyo caso se tiene $$\int_a^b f(x) \; dx = \underbar{I}(f)=\bar{I}(f)$$\\
+    Demostración.-\; Sea $S$ el conjunto de todos los números $\int_a^b s(x)\; dx$ obtenidos al tomar como $s$ todas las funciones escalonadas inferiores a $f$, y sea $T$ el conjunto de todos los números $\int_a^b t(x)\; dx$ al tomar como $t$ todas las funciones escalonadas superiores a $f$. Esto es $$ S=\left\{ \int_a^b s(x)\; dx | s\leq f\right\}, \qquad T=\left\{ \int_a^b t(x)\; dx | f\leq t\right\}$$ 
+    Los dos conjuntos $S$ y $T$ son no vacíos puesto que $f$ es acotada. Asimismo, $\int_a^b s(x)\; dx \leq \int_a^b t(x)\; dx$ si $s\leq f \leq t$, de modo que todo número de $S$ es menor que cualquiera de $T$. Por consiguiente según el teorema I.34, $S$ tiene extremo superior, y $T$ tiene extremo inferior, que satisfacen las desigualdades $$\int_a^b s(x)\; dx \leq \sup S \leq \inf T \leq \int_a^b y(x)\; dx$$
+    para todas las $s$ y $t$ que satisfacen $s\leq f\leq t$. Esto demuestra que tanto $\sup S$ como el $\inf T$ satisfacen $\int_a^b s(x)\; dx \leq I\leq \int_a^b t(x)\; dx$. Por lo tanto $f$ es integrable en $[a,b]$ si y sólo si $\sup S = \inf T$, en cuyo caso se tiene $$\int_a^b f(x)\; dx = \sup S = \inf T.$$
+    El número $\sup S$ se llama integral inferior de $f$ y se presenta por $\underbar{I}(f)$. El número $\inf T$ se llama integral superior de $f$ y se presenta por $\bar{I}(f)$. Así que tenemos 
+    $$\underbar{I}(f)=\sup \left\{\int_a^b s(x) \; dx \; | \; s\leq f\right\},$$ $$ \bar{I}(f)=\inf \left\{\int_a^b t(x) \; dx \; | \; f\leq t\right\}$$
+\end{teo}
+
+\section*{El área de un conjunto de ordenadas expresada como una integral}
+
+%--------------------teorema 1.10
+\begin{teo}
+    Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$, y sea $Q$ el conjunto de ordenadas de $f$ sobre $[a,b]$. Entonces $Q$ es medible y su área es igual a la integral $\int_a^b f(x) \; dx$\\\\
+    Demostración.-\; Sea $S$ y $T$ dos regiones escalonadas que satisfacen $S\subseteq Q \subseteq T.$. Existen dos funciones escalonadas $s$ y $t$ que satisfacen $s\leq f\leq t$ en $[a,b]$, tales que $$a(S)=\int_a^b s(x) \; dx \quad y \quad a(T)=\int_a^b t(x) \; dx$$
+    Puesto que $f$ es integrable en $[a,b]$ el número $I=\int_a^b f(x) \; dx$ es el único que satisface las desigualdades $$\int_a^b s(x) \leq I \leq \int_a^b t(x) \; dx$$
+    para todas las funciones escalonadas $s$ y $t$ que cumplen $s\leq f \leq t$. Por consiguiente ése es también el único número que satisface $a(S)\leq I \leq a(T)$ para todas las regiones escalonadas $S$ y $T$ tales que $S\subseteq Q \subseteq T.$ Según la propiedad de exhaución, esto demuestra que $Q$ es medible y que $a(Q)=I$\\\\
+\end{teo}
+
+%--------------------teorema 1.11
+\begin{teo}
+    Sea $f$ una función no negativa, integrable en un intervalo $[a,b]$. La gráfica de $f$, esto es el conjunto $$\lbrace (x,y)/a\leq x \leq b, y=f(x) \rbrace$$ es medible y tiene área igual a $0$.\\\\
+    Demostración.-\; Sean $Q$ el conjunto de ordenadas del teorema 1.11 y $Q^{'}$ el conjunto que queda si se quitan de $Q$ los puntos de la gráfica de $f$. Esto es, $$Q^{'} = \lbrace (x,y)/a\leq x \leq b, 0\leq y \leq f(x)\rbrace$$
+    El razonamiento utilizado para demostrar el teorema 1.11 también demuestra que $Q^{'}$ es medible y que $a(Q^{'}) = a(Q)$. Por consiguiente, según la propiedad de la diferencia relativa al área, el conjunto $Q-Q^{'}$ es medible y $$a(Q-Q^{'})=a(Q)-a(Q^{'})=0$$.
+\end{teo}
+
+
+\section*{Integrabilidad de funciones monótonas acotadas}
+
+%--------------------teorema 1.12
+\begin{teo} Si $f$ es monótona en un intervalo cerrado $[a,b]$, $f$ es integrable en $[a,b]$\\\\
+    Demostración.-\; Demostraremos el teorema para funciones decrecientes. El razonamiento es análogo para funciones decrecientes. Supongamos pues $f$ decreciente y sean $\underbar{I}(f)$ e $\overline{I}(f)$ sus integrales inferior y superior. Demostraremos que $\underbar{I}(f)=\overline{I}(f)$. \\
+    Sea $n$ un número entero positivo y construyamos dos funciones escalonadas de aproximación $s_n$ y $t_n$ del modo siguiente: $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición de $[a,b]$ en $n$ subintervalos iguales, esto es, subintervalos $[x_{k-1},x_k]$ tales que $x_k-x_{k-1} = (b-a)/n$ para cada valor de $k$. Definamos ahora $s_n$ y $t_n$ por las fórmulas $$s_n(x)=f(x_{k-1}), \quad t_n(x)=f(x_k) \quad si \quad x_{k-1}<x<x_k$$ en los puntos de división, se definen $s_n$ y $t_n$ de modo que se mantengan las relaciones $s(x)\leq f(x) \leq t_n(x)$ en todo $[a,b]$. Con esta elección de funciones escalonadas, tenemos 
+    $$\int_a^b t_n - \int_a^b s_n = \sum\limits_{k=1}^n f(x_k)(x_k-x_{k-1}) - \sum\limits_{k=1}^n f(x_{k-1})(x_k-x_{k-1})  $$ $$ = \dfrac{b-a}{n}\sum\limits_{k=1}^n \left[f(x_{k}) - f(x_{k-1})\right]=\dfrac{(b-a)\left[f(b)-f(a)\right]}{n}$$
+    siendo la última igualdad una consecuencia de la propiedad telescópica de las sumas finitas. Esta última relación tiene una interpretación geométrica muy sencilla. La diferencia $\int_a^n t_n - \int_a^b s_n$ es igual a la suma de las áreas de los rectángulos. Deslizando esos rectángulos hacia la derecha, vemos que completan un rectángulo de base $(b-a)/n$ y altura $f(b)-f(a)$; la suma de las áreas es por tanto, $C/n$, siendo $C=(b-a)\left[f(b)-f(a)\right]$.\\
+    Volvamos a escribir la relación anterior en la forma $$\int_a^b t_n - \int_a^b s_n = \dfrac{C}{n} \qquad (1)$$
+    Las integrales superior e inferior de $f$ satisfacen las desigualdades $$\int_a^b s_n \leq \underbar{I}(f) \leq \int_a^b t_n \quad y \quad \int_a^b s_n \leq \bar{I}(f)\leq \int_a^b t_n$$
+    Multiplicando las primeras igualdades por $(-1)$ y sumando el resultado a las segundas,es decir: $$-\underbar{I}(f)\leq - \int_a^b s_n\quad \land\quad \bar{I}(f) \leq \int_a^b t_n$$ $$\lor$$ $$-\bar{I}(f)\leq -\int_a^b s_n \quad \land\quad \underbar{I}(f)\leq \int_a^b t_n$$ obtenemos $$\bar{I}(f)-\underbar{I}(f) \leq \int_a^b t_n - \int_a^b s_n$$ 
+    Utilizando $(1)$ y la relación $\underbar{I}(f) \leq \bar{I}(f)$ se tendrá, $$0\leq \bar{I}(f) - \bar{I}(f) \leq \dfrac{C}{n}$$
+    para todo entero $n\geq 1$. Por consiguiente, según el teorema I.31 se tiene $$\underbar{I}(f)\leq \bar{I}(f)\leq \underbar{I}(f) + \dfrac{C}{n}$$
+    por lo tanto $\underbar{I}(f)=\bar{I}(f)$. Esto demuestra que $f$ es integrable en $[a,b]$.
+\end{teo}
+
+
+\section*{Cálculo de la integral de una función monótona acotada}
+
+%--------------------teorema 1.13
+\begin{teo} Supongamos $f$ creciente en un intervalo cerrado $[a,b]$. Sea $x_k = a + k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n}\sum\limits_{k=0}^{n-1} f(x_k)\leq I \leq \dfrac{b-a}{n}\sum\limits_{k=1}^n f(x_k) \qquad (2)$$
+    para todo entero $n\geq 1$, entonces $I=\int_a^b f(x) \; dx$\\\\
+    Demostración.-\; Sean $s_n$ y $t_n$ las funciones escalonadas de aproximación especial obtenidas por subdivisión del intervalo $[a,b]$ en $n$ partes iguales, como se hizo en la demostración del teorema 1.13. Entonces, las desigualdades (1.9) establecen que $$\int_a^b s_n \leq I \leq \int_a^b t_n$$
+    para $n\geq 1$. Pero la integral $\int_a^b f(x) \; dx$ satisface las mismas desigualdades que $I$. Utilizando la igualdad $(1)$ tenemos $I\leq \int_a^b t_n$ \, como también \, $\int_a^b s_n \leq \int_a^b f(x) \; dx \quad \Longrightarrow\quad  - \int_a^b f(x) \; dx \leq -\int_a^b s_n$ entonces $$I-\int_a^b f(x)\; dx \leq \int_a^b t_n - \int_a^b s_n$$
+    Similarmente usando las inecuaciones $\int_a^b s_n \leq I$ \, y \, $\int_a^b f(x) \; dx \leq \int_a^b t_n$ resulta que $$\int_a^b f(x) \; dx - I \leq \int_a^b t_n - \int_a^b s_n $$ $$\big\Downarrow$$ $$  I - \int_a^b f(x) \; dx \geq - \left(\int_a^b t_n - \int_a^b s_n\right)$$ 
+    Donde se concluye que $$0\leq \left| I - \int_a^b f(x) \; dx \right| \leq \int_a^b t_n - \int_a^b s_n = \dfrac{C}{n}$$
+    par todo $n\geq 1$. Por consiguiente, según el teorema I.31, tenemos $I=\int_a^b f(x) \; dx$\\\\
+\end{teo}
+
+%--------------------teorema 1.14
+\begin{teo} Supongamos $f$ decreciente en $[a,b]$. Sea $x_k=c+k(b-a)/n$ para $k=0,1,...,n$. Si $I$ es un número cualquiera que satisface las desigualdades $$\dfrac{b-a}{n} \sum\limits_{k=1}^n f(x_k) \leq I \leq \dfrac{b-a}{n} \sum\limits_{k=0}^{n-1} f(x_k)$$
+    para todo entero $n\geq 1,$ entonces $I=\int_a^b f(x) \; dx$\\\\
+    Demostración.-\; La demostración es análoga al teorema 5.
+\end{teo}
+
+
+\section*{Propiedades fundamentales de la integral}
+
+%--------------------teorema 1.16
+\begin{teo}[Linealidad respecto al integrando] Si $f$ y $g$ son ambas integrables en $[a,b]$ también lo es $c_1f+c_2g$ para cada par de constantes $c_1$ y $c_2$. Además, se tiene
+    $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
+    Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
+
+    Demostración.-\; Descompongamos esa propiedad en dos partes:
+    $$\int_a^b (f+g) = \int_a^b f + \int_a^b g \qquad (A)$$
+    $$\int_a^b cf = c \int_a^b f \qquad (B)$$
+    Para demostrar $(A)$, pongamos $I(f) = \int_a^b f$ e $I(g) = \int_a^b g$. Demostraremos que $\underbar{I}(f+g) = \bar{I}(f+g) = I(f) + I(g).$
+    Sean $s_1$ y $s_2$ funciones escalonadas cualesquiera inferiores a $f$ y $g$, respectivamente. Puesto que $f$ y $g$ son integrables, se tiene $$I(f) = \sup\left\{ \int_a^b s_1 | s_1 \leq f \right\}, \quad I(g) =\sup\left\{ \int_a^b s_2 | s_2 \leq g\right\}$$
+    Por el teorema I.33 aditiva del extremo superior, también se tiene $$I(f) + I(g) = \sup\left\{\int_a^b s_1 + \int_a^b s_2 | s_1 \leq f, s_2\leq g\right\} \qquad (1.11)$$
+    Pero si $s_1\leq f$ y $s_2 \leq g,$ entonces la suma $s=s_1+s_2$ es una función escalonada inferior a $f+g$, y tenemos 
+    $$\int_a^b s_1 + \int_a^b s_2 = \int_a^b s \leq \underbar{I}(f+g)$$
+    Por lo tanto, el número $\underbar{I}(f+g)$ es una cota superior para el conjunto que aparece en el segundo miembro de (1.11). Esta cota superior no puede ser menor que el extremo superior del conjunto de manera que $$I(f) + I(g) \leq \underbar{I}(f+g) \qquad (1.12)$$ 
+    Del mismo modo, si hacemos uso de las relaciones 
+    $$I(f) = \inf\left\{\int_a^b t_1 | f\leq t_1\right\},$$ $$I(g)= \inf\left\{\int_a^b t_2 | g\leq t_2\right\}$$
+    donde $t_1$ y $t_2$ representan funciones escalonadas arbitrarias superiores a $f$ y $g$, respectivamente, obtenemos la desiguald
+    $$\bar{I}(f+g) \leq I(f) + I(g).$$
+    Las desigualdades (1.12) y (1.13) juntas demuestran que $\underbar{I}(f+g) = \bar{I} (f+g) = I(f) + I(g)$. Por consiguiente $f+g$ es integrable y la relación $(A)$ es cierta.\\
+    La relación $(B)$ es trivial si $c=0$. Si $c>0$, observemos que toda función escalonada $s_1=cf$ es de la forma $s_1=cs,$ siendo $s$ una función escalonada inferior a $f$. Análogamente, cualquier función escalonada $t_1$ superior a $cf$ es de la forma $t_1=ct$, siendo $t$ una función escalonada superior a $f$. Por hipótesis se tenemos, 
+    $$\bar{I}(cf) = \sup\left\{ \int_a^b s_1 | s_1 \leq cf\right\} =$$$$ \sup\left\{c\int_a^b s | s \leq f\right\} = cI(f)$$
+    $$\mbox{y}$$ 
+    $$\underbar{I}(cf) = \inf\left\{\int_a^b t_1 | cf \leq t_1\right\} =$$$$ \inf\left\{c\int_a^b t | f \leq t\right\} = cI(f)$$
+    Luego $\underbar{I}(cf)=\bar{I}(cf)=cI(f).$ Aquí hemos utilizado las propiedades siguientes del extremo superior y del extremo inferior:
+    $$\sup \lbrace cx | x\in A \rbrace = c \sup \lbrace x|x\in A \rbrace,$$$$ \inf \lbrace c x | x \in A\rbrace = c \inf\lbrace x|x\in A \rbrace \qquad \mbox{(1.14)}$$
+    que son válidas si $c>0$. Esto demuestra $(B)$ si $c>0$.\\
+    Si $c<0$, la demostración de $(B)$ es básicamente la misma, excepto que toda función escalonada $s_1$ inferior a $cf$ es de la forma $s_1=ct$, siendo $t$ una función escalonada superior a $f$ y toda función escalonada $t_1$ superior a $cf$ es de la forma $t_1=cs$, siendo $s$ una función escalonada inferior a $f$. Asimismo, en lugar de (1.14) utilizamos las relaciones 
+    $$\sup{cx | x\in A} = c\inf{x | x \in A}, \quad \inf{cx | x \in A} = c \sup {x | x \in A},$$
+    que son ciertas si $c<0$. Tenemos pues 
+    $$\underbar{I}(cf) = \sup\left\{\int_a^b s_1 | s_1 \leq cf\right\}= $$$$\sup \left\{c \int_a^b t | f \leq t\right\} = \inf \left\{\int_a^b t | f \leq t\right\} = cI(f).$$
+    Análogamente, encontramos $\bar{I}(f)=cI(f)$. Por consiguiente $(B)$ es cierta para cualquier valor real de $c$.\\\\
+
+\end{teo}
+
+%--------------------teorema 1.17
+\begin{teo}[Aditividad respecto a la integración] Si existen dos de las tres integrales siguientes, también existe la tercera y se tiene: $$\int_a^b f(x) \; dx + \int_b^c f(x) \; dx = \int_a^c f(x) \; dx$$
+    Nota.- \; En particular, si $f$ es monótona en $[a,b]$ y también en $[b,c]$, existen las dos integrales $\int_a^b f$ e $\int_b^c f,$ con lo que también existe $\int_a^c f$ y es igual a la suma de aquellas.\\\\
+    Demostración.-\; Supongamos que $a<b<c$, y que las dos integrales $\in_a^b f$ e $\int_b^c f$ existen. Designemos con $\underbar{I}(f)$ e $\bar{I}(f)$ las integrales superior e inferior de $f$ en el intervalo $[a,c]$. Demostraremos que $$\underbar{I}(f) = \bar{I}(f) = \int_a^b f + \int_b^c f. \qquad (1.15)$$
+    Si $s$ es una función escalonada cualquiera inferior a $f$ en $[a,c]$, se tiene $$\int_a^c = \int_a^b + \int_b^c s.$$
+    Recíprocamente, si $s_1$ y $s_2$ son funciones escalonadas inferiores a $f$ en $[a,b]$ y $[b,c]$ respectivamente, la función $s$ que coincide con $s_1$ en $[a,b]$ y con $s_2$ en $[b,c]$ es una función escalonada inferior a $f$ para lo que $$\int_a^c = \int_a^b s_1 + \int_b^c s_2.$$
+    Por consiguiente, en virtud de la propiedad aditiva del extremo superior, tenemos 
+    $$\underbar{I}(f) = \sup\left\{\int_a^c s | s\leq f\right\} =$$$$ \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} + \sup \left\{\int_b^c s_2 | s_2 \leq f\right\} = \int_a^b f + \int_b^c f.$$
+    Análogamente, encontramos $$\bar{I}(f) = \int_a^b f + \int_b^c f,$$
+    lo que demuestra (1.15) cuando $a<b<c$. La demostración es parecida para cualquier otra disposición de los puntos $a,b,c$.\\\\
+
+\end{teo}
+
+%--------------------teorema 1.18
+\begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
+    Demostración.-\; Sea $g$ la función definida en el intervalo $[a+c,b+c]$ por la ecuación $g(x) = f(x-c)$. Designemos por $\underbar{I}(g)$ e $\bar{g}$ las integrales superior e inferior de $g$ en el intervalo $[a+c,b+c]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = \int_a^b f(x) \; dx.$$
+    Sea $s$ cualquier función escalonada inferior a $g$ en el intervalo $[a+c,b+c]$. Entonces la función $s_1$ definida en $[a,b]$ por la ecuación $s_1(x) = s(x+c)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ inferior a $f$ en $[a,b]$ tiene esta forma para un cierta $s$ inferior a $g$. También, por la propiedad de traslación para las integrales de las funciones escalonadas, tenemos $$\int_{a+c}^{b+c} \; dx = \int_a^b s(x+c)\; dx = \int_a^b s_1(x)\; dx. \qquad (1.16)$$
+    Por consiguiente se tiene $$\underbar{I}(g) = \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\} =  \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} =$$$$ \int_a^b f(x) \; dx.$$
+    Análogamente, encontramos $\underbar{I} = \int_a^b f(x)\; dx$, que prueba (1.16).\\\\ 
+    
+\end{teo}
+
+%--------------------teorema 1.19
+\begin{teo}[Dilatación o contracción] Si $f$ es integrable en $[a,b]$ para cada número real $k\neq 0$ se tiene: $$\int_a^b f(x) = \dfrac{1}{k} \int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx$$
+    Nota.-\; En los dos teoremas 1.19 y 1.20 la existencia de una de las integrables implica la existencia de la otra. Cuando $k=-1$, el teorema 1.19 se llama propiedad de reflexión.\\\\
+    Demostración.-\; Supongamos $k>0$ y definamos $g$ en el intervalo $[ka,kb]$ para la igualdad $g(x)=f(x/k)$. Designemos por $\underbar{I}(g)$ e $\bar{I}(g)$ las integrales inferiores y superiores de $g$ en $[ka,kb]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = k \int_a^b f(x) \; dx. \qquad (1.17)$$
+    Sea $s$ cualquier función escalonada inferior a $g$ en $[ka,kb]$. Entonces la función definida en $[a,b]$ por la igualdad $s_1(x) = (kx)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ a $f$ en $[a,b]$ tiene esta forma. También, en virtud de la propiedad de dilatación para las integrales de funciones escalonadas, tenemos 
+    $$\int_{ka}^{kb} s(x)\; dx = k \int_a^b s(kx)\; dx = k \int_a^b s_1(x) \; dx.$$
+    Por consiguiente $$\underbar{I}(g) = \sup\left\{\int_{ka}^{kb} s | s\leq g\right\} =$$$$ \sup\left\{ k \int_a^b s_1 | s_1\leq f\right\} = k \int_a^b f(x) \; dx.$$
+    Análogamente, encontramos $\underbar{I}(g) = k \int_a^b f(x)\; dx$, que demuestra (1.17) si $k>0.$ El mismo tipo de demostración puede utilizarse si $k<0$.\\\\
+
+\end{teo}
+
+%--------------------teorema 1.20
+\begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\\\
+    Demostración.-\; Supongamos $g\leq f$ en el intervalo $[a,b]$. Sea $s$ cualquier función escalonada inferior a $g$, y sea $t$ cualquier función escalonada superior a $f$. Se tiene entonces $\int_a^b s \leq \int_a^b t,$ y por tanto el teorema I.34 nos da 
+    $$\int_a^b = \sup \left\{\int_a^b s | s\leq g \right\} \leq \inf \left\{\int_a^b t | f\leq t\right\} = \int_a^b f.$$
+    Esto demuestra que $\int_a^b g \leq \int_a^b f,$ como deseábamos.\\\\
+
+\end{teo}
+
+\end{multicols}
+
+\let\cleardoublepage\clearpage
+\begin{thebibliography}{10}
+
+
+%----------sin numeración
+
+    \bibitem{} Tom Apostol, Calculus I. 
+
+    \bibitem{} Michael Spivak, Cálculo Infinitesimal. 
+
+    \bibitem{} George Thomas, Cálculo en una variable.	
+
+    \bibitem{} Nikolai Piskunov, Cálculo diferencial e integral.
+
+    \bibitem{} Juan De Burgos, Cálculo infinitesimal en una variable.
+
+\end{thebibliography}

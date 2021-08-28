@@ -1836,7 +1836,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 \begin{teo} Si $p$ es un entero positivo y $b>0$, tenemos $$\int_0^b x^p \; dx = \dfrac{b^{p+1}}{p+1}$$\\
     Demostración.-\; Comencemos con las desigualdades $$\sum\limits_{k=1}^{n-1} k^p < \dfrac{n^{p+1}}{p+1}<\sum\limits_{k=1}^n k^p$$
     válidas para todo entero $n\geq 1$ y todo entero $p\geq 1$. Estas desigualdades se demostraron anteriormente. La multiplicación de esas desigualdades por $b^{p+1}/n^{p+1}$ nos da $$\dfrac{b}{n} \sum\limits_{k=1}^{n-1} \left(\dfrac{kb}{n}\right)^p<\dfrac{b^{p+1}}{p+1}<\dfrac{b}{n}\sum\limits_{k=1}^{n}\left(\dfrac{kb}{n}\right)^p$$
-    Si ponemos, las desigualdades (2) del teorema 1.14 se satisfacen poniendo $f(x)=x^p, \;a=0$, entonces $I=\dfrac{b^{p+1}}{p+1}$. Resulta pues que $$\int_0^b x^p \; dx=\dfrac{b^{p+1}}{p+1}$$
+    Si ponemos, las desigualdades (2) del teorema 1.14 se satisfacen poniendo $f(x)=x^p, \;a=0$, entonces $I=\dfrac{b^{p+1}}{p+1}$. Resulta pues que $$\int_0^b x^p \; dx=\dfrac{b^{p+1}}{p+1}$$\\\\
 \end{teo}
 
 
@@ -1866,7 +1866,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
     y 
     $$\underbar{I}(cf) = \inf\left\{\int_a^b t_1 | cf \leq t_1\right\} = \inf\left\{c\int_a^b t | f \leq t\right\} = cI(f)$$
     Luego $\underbar{I}(cf)=\bar{I}(cf)=cI(f).$ Aquí hemos utilizado las propiedades siguientes del extremo superior y del extremo inferior:
-    $$\sup{cx | x\in A} = c \sup {x|x\in A}, \quad \inf{cx | x \in A}= c \inf{x|x\in A} \qquad (1.14)$$
+    $$\sup \lbrace cx | x\in A \rbrace = c \sup \lbrace x|x\in A \rbrace,\qquad \inf \lbrace c x | x \in A\rbrace = c \inf\lbrace x|x\in A \rbrace \qquad \mbox{(1.14)}$$
     que son válidas si $c>0$. Esto demuestra $(B)$ si $c>0$.\\
     Si $c<0$, la demostración de $(B)$ es básicamente la misma, excepto que toda función escalonada $s_1$ inferior a $cf$ es de la forma $s_1=ct$, siendo $t$ una función escalonada superior a $f$ y toda función escalonada $t_1$ superior a $cf$ es de la forma $t_1=cs$, siendo $s$ una función escalonada inferior a $f$. Asimismo, en lugar de (1.14) utilizamos las relaciones 
     $$\sup{cx | x\in A} = c\inf{x | x \in A}, \quad \inf{cx | x \in A} = c \sup {x | x \in A},$$
@@ -1893,7 +1893,7 @@ A continuación, dado que los vértices están en puntos de celosía, $B = 2 (h 
 \begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
     Demostración.-\; Sea $g$ la función definida en el intervalo $[a+c,b+c]$ por la ecuación $g(x) = f(x-c)$. Designemos por $\underbar{I}(g)$ e $\bar{g}$ las integrales superior e inferior de $g$ en el intervalo $[a+c,b+c]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = \int_a^b f(x) \; dx.$$
     Sea $s$ cualquier función escalonada inferior a $g$ en el intervalo $[a+c,b+c]$. Entonces la función $s_1$ definida en $[a,b]$ por la ecuación $s_1(x) = s(x+c)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ inferior a $f$ en $[a,b]$ tiene esta forma para un cierta $s$ inferior a $g$. También, por la propiedad de traslación para las integrales de las funciones escalonadas, tenemos $$\int_{a+c}^{b+c} \; dx = \int_a^b s(x+c)\; dx = \int_a^b s_1(x)\; dx. \qquad (1.16)$$
-    Por consiguiente se tiene $$\underbar{I}(g) = \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\} =  \sup \left\}\int_a^b s_1 | s_1 \leq f\right\} = \int_a^b f(x) \; dx.$$
+    Por consiguiente se tiene $$\underbar{I}(g) = \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\} =  \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} = \int_a^b f(x) \; dx.$$
     Análogamente, encontramos $\underbar{I} = \int_a^b f(x)\; dx$, que prueba (1.16).\\\\ 
     
 \end{teo}
