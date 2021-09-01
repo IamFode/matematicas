@@ -657,6 +657,15 @@ Demostrar que $\lim\limits_{x\to a}f(x)=0$ para todo $a$ de $[0,1]$.\\\\
 
 %--------------------29.
 \item Demostrar que $\lim\limits_{x\to a} f(x)$ existe si $\lim\limits_{x\to a^+} f(x) = \lim\limits_{x\to a^-} f(x)$.\\\\
-    Demostración.-\; 
+    Demostración.-\; Si $\lim\limits_{x\to a^-}f(x) = \lim\limits_{x\to a^+} = l$, entonces para todo $\epsilon>0$ existen $\delta_1,\delta_2 >0$ tales que, para todo $x$, $$\mbox{si}\; 0<x-a<\delta_1, \; \mbox{entonces}\; |f(x)-l|<\epsilon$$  $$\mbox{si}\; 0 <a-x<\delta_2, \; \mbox{entonces}\; |f(x)-l|<\epsilon$$
+    de donde 
+    $$\mbox{si}\; a<x<a+\delta_1, \; \mbox{entonces}\; |f(x)-l|<\epsilon$$  $$\mbox{si}\; a-\delta_2 <x<a, \; \mbox{entonces}\; |f(x)-l|<\epsilon$$
+
+    Sea $\delta=\min(\delta_1,\delta_2).$ Si $0<|x-a|<\delta$, entonces o bien $a-\delta_2<a-\delta<x<a,$ o bien $a<x<a+\delta<a+\delta_1$, de modo que $|f(x)-l|<\epsilon$.\\
+    Se puede escribir también como sigue. Sea $\delta=\min(\delta_1,\delta_2).$ Si $0<|x-a|<\delta$, entonces o bien $0<x-a<\delta < \delta_1$ o bien $0<a-x<\delta<\delta_2$, de modo que $|f(x)-l|<\epsilon$.\\\\
+
+
+%--------------------30.
+\item 
 
 \end{enumerate}

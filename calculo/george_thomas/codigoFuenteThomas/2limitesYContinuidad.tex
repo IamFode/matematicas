@@ -786,6 +786,89 @@ En los ejercicios 11 a 22, encuentre los límites.\\\\
 \end{enumerate}
 
 %--------------------54.
-\item 
+\item  Suponga que $\lim\limits_{x\to 4}f(x)=0$ y $\lim\limits_{x\to 4}g(x)=-3$. Encuentre
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item $\lim\limits_{x\to 4}(g(x)+3) \; \Longrightarrow \; \lim\limits_{x\to 4}g(x)+\lim\limits_{x\to 4}3 = -3 + 3 = 0$.\\\\
+
+    %----------b)
+    \item $\lim\limits_{x\to 4}xf(x) \; \Longrightarrow \; \lim\limits_{x\to 4}x \cdot \lim\limits_{x\to 4}f(x) = 4 \cdot 0 = 0$.\\\\
+
+    %----------c)
+    \item $\lim\limits_{x\to 4}(g(x))^2 = (-3)^2 = 9$\\\\
+
+    %----------d)
+    \item $\lim\limits_{x\to 4}\dfrac{g(x)}{f(x)-1} \; \Longrightarrow \; \dfrac{\lim\limits_{x\to 4}g(x)}{\lim\limits_{x\to 4}f(x)-\lim\limits_{x\to 4}1} = \dfrac{-3}{0-1} = 1$.\\\\
+
+\end{enumerate}
     
+%--------------------55.
+\item  Suponga que $\lim\limits_{x\to b}f(x) = 7$ y $\lim\limits_{x\to b}g(x)=-3$. Encuentre
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item $\lim\limits_{x\to b}(f(x) + g(x)) \; \Longrightarrow \; \lim\limits_{x\to b}f(x)+\lim\limits_{g(x)} = 7+(-3) = 4$.\\\\
+
+    %----------b)
+    \item $\lim\limits_{x\to b} f(x)\cdot g(x) \;\Longrightarrow \;\lim\limits_{x\to b}f(x) \cdot \lim\limits_{x\to b}g(x) = 7\cdot (-3) = -21$.\\\\
+
+    %----------c)
+    \item $\lim\limits_{x\to b}4g(x) \; \Longrightarrow \; \lim\limits_{x\to b} 4 \cdot \lim\limits_{x\to b} g(x) = 4\cdot (-3) = -12$\\\\
+
+    %----------d)
+    \item $\lim\limits_{x\to b}f(x)/g(x) \; \Longrightarrow \; \dfrac{\lim\limits_{x\to b}f(x)}{\lim\limits_{x\to b}g(x)} = -\dfrac{7}{3}$.\\\\
+
+\end{enumerate}
+
+%--------------------56.
+\item  Suponga que $\lim\limits_{x\to -2}p(x) = 4$, $\lim\limits_{x\to -2} r(x) = 0$ y $\lim\limits_{x\to -2}s(x)=-3$. Encuentre
+\begin{enumerate}[\bfseries a)]
+
+    %----------a)
+    \item $\lim\limits_{x\to -2}(p(x)+r(x)+s(x)) \; \Longrightarrow \; \lim\limits_{x\to -2} p(x) + \lim\limits_{x\to -2}r(x) + \lim\limits_{x\to -2}s(x) = 4+0+(-3) = 1$.\\\\
+
+    %----------b)
+    \item $\lim\limits_{x\to -2} p(x)\cdot r(x)\cdot s(x)\; \Longrightarrow \; \lim\limits_{x\to -2} p(x) \cdot \lim\limits_{x\to -2}r(x) \cdot \lim\limits_{x\to -2}s(x) = 4\cdot 0 \cdot (-3) = 0$.\\\\
+
+    %----------c)
+    \item $\lim\limits_{x\to -2}(-4p(x)+5r(x))/s(x) \; \Longrightarrow \; \dfrac{-4\cdot \lim\limits_{x\to -2}p(x)+5\lim\limits_{x\to -2}r(x)}{\lim\limits_{x\to -2}s(x)} = \dfrac{-4\cdot 4 + 5 \cdot 0}{-3} = \dfrac{16}{3}$.\\\\
+
+\end{enumerate}
+
+\textbf{Límites de razones promedio de cambio.}\\\\
+Debido a la relación que existe entre rectas secantes, tangentes y razones instantáneas, límites de la forma
+$$\lim\limits_{h\to 0}\dfrac{f(x + h) - f(x)}{h}$$
+aparecen a menudo en cálculo. En los ejercicios 57 a 62, evalúe este
+límite para el valor de $x$ y la función $f$ dados.\\\\
+
+%--------------------57.
+\item $f(x)x^2, \quad x=1$.\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{(x+h)^2-x^2}{h} \Longrightarrow \lim\limits_{h\to 0} \dfrac{(1+h)^2-1^2}{h} \Longrightarrow \lim\limits_{h\to 0} \dfrac{h(2h+h)}{2} = 2$\\\\
+
+%--------------------58.
+\item $f(x) = x^2, \quad x=-2$\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{(h-2)^2 - (-2)^2}{h} \Longrightarrow \lim\limits_{h\to 0} \dfrac{h^2 - 4h + 4 - 4}{h} \Longrightarrow \lim\limits_{h \to 0} \dfrac{h(h-4)}{h} = -4$.\\\\ 
+
+%--------------------59.
+\item $f(x) = 3x-4, \quad x=2$\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{3(x+h)-4 -(3x-4)}{h} \Longrightarrow \lim\limits_{h\to 0} \dfrac{3x+3h - 4 -3x + 4}{h} = 3$.\\\\ 
+
+%--------------------60.
+\item $f(x) = 1/x , \quad x=-2$\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{1/(x+h) - 1/x}{h} \Longrightarrow \lim\limits_{h\to 0} \dfrac{\dfrac{x-x-h}{x(x+h)}}{h} \Longrightarrow \lim\limits_{h\to 0} -\dfrac{1}{x^2+xh} = -\dfrac{1}{4}$.\\\\ 
+
+%--------------------61.
+\item $f(x) = \sqrt{x}, \quad x=7$\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h}  \cdot\dfrac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}} \Longrightarrow \lim\limits_{h\to 0} \dfrac{x+h - x}{h\left(\sqrt{x+h}+\sqrt{x}\right)} = \dfrac{1}{2\sqrt{7}}$.\\\\ 
+
+%--------------------62.
+\item $f(x) = \sqrt{3x+1}, \quad x=0$\\\\
+    Respuesta.-\; $\lim\limits_{h\to 0} \dfrac{\sqrt{3(x+h)+1}-\sqrt{3x+1}}{h} \cdot \dfrac{\sqrt{3(x+h)+1}+\sqrt{3x+1}}{\sqrt{3(x+h)+1}+\sqrt{3x+1}} \Longrightarrow \lim\limits_{h\to 0}\dfrac{3x+3h + 1 - 3x - 1}{h\sqrt{3(x+h)+1}+\sqrt{3x+1}} = \dfrac{3}{2}$.\\\\ 
+
+\textbf{Aplicación del teorema del sándwich}.\\\\
+
+%--------------------63.
+\item 
+
 \end{enumerate}
