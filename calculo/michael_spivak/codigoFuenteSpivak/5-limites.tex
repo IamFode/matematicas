@@ -666,6 +666,33 @@ Demostrar que $\lim\limits_{x\to a}f(x)=0$ para todo $a$ de $[0,1]$.\\\\
 
 
 %--------------------30.
-\item 
+\item Demostrar que 
+\begin{enumerate}[\bfseries (i)]
+
+    %----------(i)
+    \item $\lim\limits_{x\to 0^+}f(x) = \lim\limits_{x\to 0^-} f(-x)$.\\\\
+	Demostración.-\; Para todo $\epsilon > 0,$ existe $\delta >0$ tal que $|f(x)-l|<\epsilon$ para $0<x-0<\delta$, luego si $-\delta <x-0<0$, entonces $0<0-x<\delta$, de modo que $|f(-x)-l|<\epsilon$. Así pues, $\lim\limits_{x\to 0^-}f(-x) = l$. La demostración reciproca es análoga.\\\\ 
+
+    %----------(ii)
+    \item $\lim\limits_{x\to 0}f(|x|) = \lim\limits_{x\to 0^+}f(x)$.\\\\
+	Demostración.-\; Si $\lim\limits_{x\to 0^+} f(x)=l$, entonces para todo $\epsilon>0$ existe $\delta>0$ tal que $|f(x)-l|<\epsilon|$ para $0<x<\delta$. De donde $0<|x|<|\delta|$ pero como $\delta>0$ entonce $0<|x|<\delta$, así $|f(|x|)-l|<\delta$. Por lo tanto $\lim\limits_{x\to 0} f(|x|)=l$.\\\\
+
+    %----------(iii)
+    \item $\lim\limits_{x\to 0} f(x^2) = \lim\limits_{x\to 0^+} f(x)$.\\\\
+	Demostración.-\; Si $\lim\limits_{x\to 0^+}f(x)$, entonces para todo $\epsilon>0$, existe $\delta_1>0$ tal que $|f(x)-l|<\epsilon$ para $0<x<\delta_1$ de donde $0<x^2<\delta_1$, como $|x^2|=x^2$ y $\delta=\delta_1^2$, se tiene $0<|x^2|<\delta$, de modo que $|f(x^2)-l|<\delta$. Por lo tanto $\lim\limits_{x\to 0}f(x^2)=l$.\\\\ 
+
+\end{enumerate}
+
+%--------------------31
+\item Supóngase que $\lim\limits_{x\to a^-}f(x)<\lim\limits_{x\to a^+}f(x).$(Ilústrese esta proposición con un dibujo.) Demostrar que existe algún $\delta > 0$ tal que $f(x)<f(y)$ siempre que $x<a<y,$ $|x-a|<\delta$ e $|y-a|<\delta$. ¿Se cumple la recíproca?.\\\\
+    Demostración.-\; Sea $\lim\limits_{x\to a^-}f(x)=l$ y $\lim\limits_{x\to a^+}f(x)$. Al ser $m-l>0,$ existe un $\delta>0$ tal que 
+    $$|f(x)-l|<\dfrac{m-l}{2}\; \mbox{cuando}\; 0<a-x<\delta$$
+    $$|f(y)-l|<\dfrac{m-l}{2}\; \mbox{cuando}\; 0<y-a<\delta$$
+    Esto implica, $$f(x)<l+\dfrac{m-l}{2}=m-\dfrac{l-m}{2}<f(y).$$
+    la reciproca es falsa como lo demuestra $f(t)=t$ y cualquier $a$. Por ello se concluye que $\lim\limits_{x\to a^-}f(x) \leq \lim\limits_{x\to a^+}f(x)$.\\\\
+
+%--------------------32.
+\item Demostrar que $\lim\limits_{x\to \infty} \left(a_nx^n + ... + a_0\right)/\left(b_mx^m + ... + b_0\right)$ existe si y sólo si $m\geq n.$ ¿Cuál es el límite cuando $m=n$? ¿Y cuándo $m>n$? Indicación: El límite fácil es $\lim\limits_{x\to \infty} 1/x^k = 0$.\\\\
+    Demostración.-\;
 
 \end{enumerate}
