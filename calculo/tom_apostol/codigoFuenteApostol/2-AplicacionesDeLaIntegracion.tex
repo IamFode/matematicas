@@ -467,9 +467,26 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 \begin{enumerate}{\bfseries (a)}
 
     %----------(a)
-    \item
+    \item Demostrar que $\sen n\pi =0$ para todo entero $n$ y que esos son los únicos valores de $x$ para los que $\sen x = 0$.\\\\
+	Demostración.-\; Primero, ya que $\sen x = -\sen x$ implica que si $\sen x = 0$ entonces $\sen(-x)=0,$, lo que es suficiente mostrar que la declaración es válida para todo $n \in \mathbb{Z}^+$. Sabemos que $\sen 0 = \sen \pi = 0$. Por lo tanto, es válida para el caso de $n=0$ y $n=1$. Ahora utilizaremos la inducción dos veces, primero para los enteros pares y luego para los impares.\\
+	Supongamos que la declaración es válida para algunos pares $m\in \mathbb{Z}^+$. Es decir, $\sen(m\pi)=0$. Luego usando la periocidad de la función seno, $$0=\sen(m\pi)=\sen(m\pi + 2\pi)=\sen\left[(m+2)\pi\right].$$  
+	Por lo tanto se cumple para todo par $n\in \mathbb{Z}^+$.\\
+	Luego supongamos que es verdad para algunos impares $m\in \mathbb{Z}^+$, entonces $$0=\sen m\pi = \sen(m\pi+2\pi)=\sen\left[(m+2)\pi\right]$$
+	de donde es verdad para todo impar $n\in \mathbb{Z}^+$. Se sigue que es verdad para todo entero no negativo $n$, y por lo tanto para todo $n\in \mathbb{Z}$.\\
+	Por otro lado debemos demostrar que estos son únicos valores reales el cual el seno es $0$. Por la periocidad del seno, es suficiente mostrar que se cumple para cualquier intervalo $2\pi$. Escogeremos el intervalo $(.\pi,\pi)$ y demostraremos que $\sen x=0 \Longleftrightarrow x=0$ para todo $x\in (-\pi,\pi)$. Por la primera parte conocemos que $\sen 0 = 0$. Entonces por la propiedad fundamental del seno y el coseno, tenemos las inecuaciones $$0<\cos x <\dfrac{\sen x}{x}<\dfrac{1}{\cos x} \qquad x\in \left(0,\dfrac{\pi}{2}\right)$$
+	de donde ambos $\sen x$ y $\cos x$ son positivos en $\left(0,\frac{\pi}{2}\right)$. Pero, de la identidad de correlación, tenemos 
+	$$\sen\left(\dfrac{\pi}{2}+x\right)=\cos x$$
+	así, para $x\in \in (\frac{\pi}{2},\pi)$ $\sen x \neq 0$. Pero también sabemos que $\sen\frac{\pi}{2}=1$ y porque $x\in (0,\pi)$ tenemos $\sen x\neq 0$. Dado que seno es una función impar, $$\sen(-x)=x\sen x \; \Longrightarrow \; \sen(-x)\neq 0 \quad \mbox{para}\; x \in (0,\pi)$$
+	en consecuencia, $\sen x\neq 0$ para $x\in (-\pi,0).$ así, $$\sen x=0 \; \Longrightarrow \; x=0 \quad \mbox{para}\; x\in (-\pi,\pi)$$\\
+
+    %----------(b)
+    \item Hallar todos los valores reales $x$ tales que $\cos x =0$.\\\\\
+	Respuesta.-\; Se tiene que  $\cos x=0$ si y sólo si $x=\frac{pi}{2}+n\pi$. Probando esta proposición se tiene que $x=0\;\Longrightarrow \sen(x+\frac{\pi}{2})=0$, aplicando la parte (a) concluimos que $$x+\dfrac{\pi}{2}=n\pi \quad \Longrightarrow \quad x=\dfrac{\pi}{2}+n\pi.$$.\\
 
 \end{enumerate}
+
+%--------------------2.
+\item 
 
 \end{enumerate}
 
