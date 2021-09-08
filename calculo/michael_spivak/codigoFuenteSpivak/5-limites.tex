@@ -704,9 +704,26 @@ Demostrar que $\lim\limits_{x\to a}f(x)=0$ para todo $a$ de $[0,1]$.\\\\
 \begin{enumerate}[\bfseries (i)]
 
     %----------(i)
+    \item $\lim\limits_{x\to \infty} \dfrac{x+\sen^3 x}{5x+6} \; \Longrightarrow \; \lim\limits_{x\to \infty} \dfrac{\dfrac{x+\sen^3 x}{x}}{\dfrac{5x+6}{x}} = \dfrac{1}{5}$\\\\
+
+    %----------(ii)
     \item 
+	Respuesta.-\; $\lim\limits_{x\to \infty}\dfrac{x\sen x}{x^2+5} \; \Longrightarrow\; \lim\limits_{x\to \infty}\dfrac{1}{x+\dfrac{5}{x}}\cdot \sen x = 0$ \quad ya que $1/\infty$ tiende a $0$ y $|\sen x| \leq 1$\\\\
+
+    %----------(iii)
+    \item $\lim\limits_{x\to \infty} \sqrt{x^2+x}-x \; \Longrightarrow \;\lim\limits_{x\to \infty} \sqrt{x^2+x}-x \cdot \dfrac{\sqrt{x^2+x}+x}{\sqrt{x^2+x}+x} \; \Longrightarrow \; \lim\limits_{x\to \infty} \dfrac{x}{\sqrt{x^2+x}+x} \; \Longrightarrow \;$ $$\lim\limits_{x\to \infty} \dfrac{1}{\sqrt{1+\dfrac{1}{x}}+1} = \dfrac{1}{2}$$\\ 
+
+    %----------(iv)
+    \item $\lim\limits_{x\to \infty} \dfrac{x^2(1+\sen^2 x)}{(x+\sen x)^2}$\\\\
+	Respuesta.-\; El límite no existe ya que $\left(1+\dfrac{\sen x}{x}\right)^2$ se aproxima a $1$, pero $1+\sen^2 x$ no se aproxima a ${x\to \infty}$.\\\\
 
 \end{enumerate}
 
+%--------------------34.
+\item Demostrar que $\lim\limits_{x\to 0^+}f(1/x) = \lim\limits_{x\to \infty}f(x)$.\\\\
+    Demostración.-\; Si $\lim\limits_{x\to \infty} f(x)$, entonces para todo $\epsilon>0$ existe algún $N$ tal que $|f(x)-l|<\epsilon$ para $x>N$, y evidentemente podemos suponer que $N>0$. Ahora bien, si $0<x<1/N$ entonces $1/x>N$ de modo que $|f(x)-l|<\epsilon$. Por tanto, $\lim\limits_{x\to 0^+} = l$. La demostración recíproca es parecida.\\\\
+
+%--------------------35.
+\item 
 
 \end{enumerate}
