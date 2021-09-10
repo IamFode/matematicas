@@ -1,0 +1,67 @@
+\begin{enumerate}
+
+%--------------------A1
+\item [\large\bfseries A1] $\forall \;\vec{u}, \vec{v} \in V_n:\; \vec{u} + \vec{v} \in V_n$.\\\\
+    Demostración.- Sea $\vec{u} = (u_1,u_2,...,u_n)$ y $\vec{v} = (v_1,v_2,...,v_n)$ $\in V_n$ para $u_i ,v_i \in \mathbb{R}, \; i = 1,2,3,...,n$ entonces, $$\vec{u}+\vec{v} = (u_1+v_1,u_2+v_2,...,u_n+v_n)$$
+    de donde por axioma de cerradura de los números reales se tiene $u_i+v_i \in \mathbb{R}$ y por lo tanto $\vec{u}+\vec{v} \in V_n$.\\\\
+
+%--------------------A3
+\item [\large\bfseries A3] $\forall \; \vec{u},\vec{v},\vec{w} \in V_n:\; \vec{u} + (\vec{v}+\vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$\\\\
+    Demostración.-\; Sea $\vec{u} = (u_1,u_2,...,u_n)$, $\vec{v} = (v_1,v_2,...,v_n)$ y $\vec{w} = (w_1,w_2,...,w_n)$ entonces, 
+    \begin{center}
+	\begin{tabular}{rcll}
+	    $\vec{u} + (\vec{v}+\vec{w})$&$=$&$(u_1,u_2,...,u_n) + \left[(v_1,v_2,...,v_n) + (w_1,w_2,...,w_n)\right]$&\\
+	    &$=$&$\left[u_1+(v_1+w_1),u_2+(v_2+w_2),...,u_n+(v_n+w_n)\right]$&D2\\
+	    &$=$&$\left[(u_1+v_1)+w_1,(u_2+v_2)+w_2,...,(u_n+v_n)+w_n\right]$& axioma asociativa en $\mathbb{R}$\\
+	    &$=$&$(\vec{u}+\vec{v})+\vec{w}$&\\
+	\end{tabular}
+    \end{center}
+    Así concluimos demostrando la proposición.\\\\
+
+%--------------------A5
+\item [\large\bfseries A5] $\forall\; \vec{u} \in V_n, \;\exists! \; (-\vec{u}) \in V_n : \; \vec{u} + (-\vec{u}) = \vec{o}$\\\\
+    Demostración.-\;\\\\ \textbf{Existencia}.  Sea $\vec{u} = (u_1,u_2,...,u_n)$ entonces,
+    \begin{center}
+	\begin{tabular}{rcll}
+	    $\vec{u}+(-\vec{u})$&$=$&$(u_1-u_1,u_2-u_2,...,u_n-u_n)$&D2 y definición de sustracción $(-1)\vec{u}$\\
+	    &$=$&$(0,0,...,0)$&\\
+	    &$=$&$\vec{o}$&\\\\
+	\end{tabular}
+    \end{center}
+
+    \textbf{Unicidad}. Supongamos que $\vec{u},\vec{u}^{'} \in V_n$ tal que $\vec{u}\neq \vec{u}^{'}$ entonces $\vec{u}+(-\vec{u}) = \vec{o}\; $ y $\; \vec{u}+(-\vec{u}^{'}) = \vec{o}$ de donde \begin{center} $-\vec{u} = -\vec{u} + \vec{o}\; $ y $\; -\vec{u}^{'} = -\vec{u} + \vec{o}$,\end{center} luego por A4 tenemos \begin{center} $-\vec{u} = -\vec{u}\;$ y $\; -\vec{u} = -\vec{u}^{'}$ \end{center}
+    por lo tanto se comprueba la unicidad de $-\vec{u}$.\\\\ 
+
+%--------------------M1
+\item [\large\bfseries M1] $\forall\; \vec{u} \in V_n:\;  1\cdot \vec{u} = \vec{u}$\\\\
+    Demostración.-\; Sea $\vec{u} = (u_1,u_2,...,u_n)$, entonces $1\cdot \vec{u} = 1\cdot (u_1,u_2,...,u_n)$, luego por D3 se tiene, $$(1\cdot u_1,1\cdot u_2,...,1\cdot u_n)$$
+    luego por existencia de una identidad para la multiplicación en $\mathbb{R}$ obtenemos $(u_1,u_2,...,u_n)$ de donde concluimos $$1\cdot \vec{u} = \vec{u}.$$
+
+%--------------------M3
+\item [\large\bfseries M3] $\forall\; r,s \in \mathbb{R}, \; \forall\; \vec{u} \in V_n:\; r(s \vec{u}) = (rs)\vec{u}$\\\\
+    Demostración.-\; Sea $r,s \in \mathbb{R}$ y $\vec{u}\in V_n$ entonces 
+	\begin{center}
+	    \begin{tabular}{rcll}
+		$r(s\vec{u})$&$=$&$r(sa_1,sa_2,...,sa_n)$&D3\\
+		&$=$&$\left[(cd)a_1,(rs)a_2,...,(rs)a_3\right]$&D3\\
+		&$=$&$(rs)A$&\\
+	    \end{tabular}
+	\end{center}
+	por lo tanto $r(s\vec{u} = (rs)\vec{u}$.\\\\
+
+%--------------------M5
+\item [\large\bfseries M5] $\forall\; \vec{u},\vec{v} \in V_n, \; \forall\; r \in \mathbb{R}:\; r(\vec{u}+\vec{v}) = r\vec{u} + r\vec{v}$\\\\
+    Demostración.-\; 
+    \begin{center}
+	\begin{tabular}{rcll}
+	    $r(\vec{u}+\vec{v})$&$=$&$r\left[(u_1+v_1,u_2+v_2,...,u_n+v_n)\right]$&A2\\
+	    &$=$&$\left[r(u_1+v_1),r(u_2+v_2),...,r(u_n+v_n)\right]$&M3\\
+	    &$=$&$(ru_1+rv_1,ru_2+rv_2,...,ru_n+rv_n)$&Axioma asociativa en $\mathbb{R}$\\
+	    &$=$&$r(u_1+u_2,...,u_n)+r(v_1,v_2,...,v_n)$&D2 y D3\\
+	    &$=$&$r\vec{u} + r\vec{v}$&\\
+	\end{tabular}
+    \end{center}
+    así, la proposición queda demostrado.\\\\
+
+\end{enumerate}
+
