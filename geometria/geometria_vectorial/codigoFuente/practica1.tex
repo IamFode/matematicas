@@ -182,42 +182,58 @@
 
 %----------10. 
 \item Los vectores $\vec{a}$ y $\vec{b}$ forman un ángulo de $60^\circ$ con $\|\vec{a}\|=5,$ $\|\vec{b}\|=8$. Determinar $||\vec{a}-\vec{b}\|$ y $\|\vec{a}+\vec{b}\|$.\\\\
-    Respuesta.-\; Aplicando la ley del coseno se tiene, $$\|a+b\|=\|a\|\|b\| + 2$$  para Sea $|\vec{a}+\vec{b}|^2=|\vec{a}|^2 + 2(\vec{a}\circ \vec{b})$ y $\cos \theta = \dfrac{\vec{a}\circ \vec{b}}{|\vec{a}||\vec{b}|}$ entonces 
-    $$\vec{a}\circ \vec{b}=|\vec{a}|\vec{b}|\cos 60^\circ = 5\circ 8 \circ \dfrac{1}{2}=20$$
-    luego $$|\vec{a}+\vec{b}| = \sqrt{5^2+40+64} = \sqrt{129}$$
+    Respuesta.-\; Sea $$\| \vec{a}\pm\vec{b}\|^2=\|a\|^2\|b\|^2 \pm 2\|\vec{a}\|\|\vec{b}\|\cos \theta$$  
+    entonces se tiene, $$\|a\pm b\|^2 = 5^2 + 8^2 \pm 2\cdot 5\cdot 8 \cos\left(60\cdot\dfrac{\pi}{180}\right)$$
+    por lo tanto $$\|\vec{a}-\vec{b}\| = 7 \qquad y \qquad \|\vec{a}+\vec{b}\| = \sqrt{129}$$\\
 
 %----------11.
-\item 
+\item Los vectores $\vec{a}$ y $\vec{b}$ forman un ángulo de $30^\circ$ con $\|\vec{a}\|=1$, $\|\vec{b}\|=\sqrt{3}$. Calcular el ángulo formado por los vectores $\vec{a}+\vec{b}, \vec{a}-\vec{b}$.\\\\
+    Respuesta.-\; Primero calculemos $$|\vec{a}-\vec{b}|^2 = 1^2 + \sqrt{3}^2 - 2\sqrt{3} \cos 30 = 1$$
+    Luego calculamos el ángulo $\alpha$ asociado a $\vec{a}$ y $\vec{a}-\vec{b}$ de donde nos queda $$\alpha= \arccos \left(\dfrac{1^2+1^2-\sqrt{3}}{2}\right) = \arccos\left(\dfrac{2-\sqrt{3}}{2}\right) = 82\mbox{.}3$$
+    Sea  $a+b$ la diagonal del paralelogramo formado por los lados $\vec{a}$ y $\vec{b}$ de donde el ángulo de $a+b$ será $15^\circ$. Por lo tanto  $a+b$ y  $a-b$ forman un ángulo de, $$180-82\mbox{.}3-15=82\mbox{.}7$$\\
 
 %----------12.
-\item 
-    Respuesta.-\; Si $\vec{a}+\vec{b}+\vec{c}=0 \; \Longrightarrow \; |\\vec{a}+\vec{b}+\vec{c}=|0|=0$
-    $|\vec{a}|^2 + |\vec{b}|^2+|\vec{c}|^2 - 2(\vec{a}\circ \vec{b}+a\circ \vec{c}+\vec{b}\circ \vec{c})=0$
-    $3^2 + 1^2 + 4^2 = 2(a\circ b)$
+\item Dados dos vectores $\vec{a},\vec{b}\vec{c}$ que satisfacen la condición $\vec{a}+\vec{b}+\vec{c} = \vec{0}$ y sabiendo que $\|\vec{a}\|=3, \|\vec{b}\|=1,\|\vec{a}\|=4$. Calcular $\vec{a}\cdot \vec{b}+\vec{b}\cdot \vec{c}+\vec{a}\cdot \vec{c}$\\\\
+    Respuesta.-\; Si $\vec{a}+\vec{b}+\vec{c}=0$ entonces $$0=\|\vec{0}\|^2=\|\vec{a}+\vec{b}+\vec{c}\|^2.$$ Luego $$\|\vec{a}\|^2 + \|\vec{b}\|^2 + \|\vec{c}\|^2 + 2(\vec{a}\cdot \vec{b} + \vec{a}\cdot \vec{c} + \vec{b}\vec{c}) = 0$$
+    de donde se tiene, $$ \vec{a}\cdot \vec{b} + \vec{a}\cdot \vec{c} + \vec{b}\vec{c} = 3^2 + 1^2 + 4^2 = 13.$$\\
 
 %----------13.
-\item
+\item Dados los puntos $P(3,4)$, $Q(1,1)$ y $R(5,2)$, usar métodos vectoriales para encontrar las coordenadas del cuarto vértice del paralelogramo cuyo lados adyacentes son $\vec{PQ}$ y $\vec{QR}$.\\\\
+    Respuesta.-\; 
 
 %----------14.
-\item 
+\item Demostrar que $(4,5,2),(4,7,9),(8,5,-6)$ son los vértices de un triángulo equilátero.\\\\
     Respuesta.-\; Supongamos que las distancias entre $A,B$ y $C$ son iguales, lo que implica que $|A-B|=|B-C|=|B-C|$, de donde 
     \begin{center}
-	\begin{tabular}{rcl} 
-	    $|A-B|$&$=$&$\sqrt{\sqrt{53}}$\\\\
-	    $|A-C|$&$=$&$\sqrt{80}$\\\\
-	    $$&$=$&$$\\\\
+	\begin{tabular}{ccccccc} 
+	    $|A-B|$ & $=$ & $|(0,-2,-7)|$ & $=$ & $\sqrt{0^2+(-2)^2 + (-7)^2}$ & $=$ &$\sqrt{53}$\\\\
+	    $|A-C|$ & $=$ & $|(-4,0,8)|$ & $=$ & $\sqrt{(-4)^2+0^2+8^2}$ & $=$ & $\sqrt{80}$\\\\  
 	\end{tabular}
     \end{center}
-    ya que $|A-B|\neq |A-C|$ se concluye que los puntos dado no son los vertices de un triangulo equilatero.\\\\ 
+    ya que $|A-B|\neq |A-C|$ se concluye que los puntos dado no son los vertices de un triangulo equilátero.\\\\ 
 
 %----------15.
-\item 
 
 %----------16.
-\item 
+\item [\Large\bfseries 16.] Sean $\vec{a},\vec{b}\in \mathbb{R}$. Demuéstrese que $\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=4\vec{a}\cdot \vec{b}$.\\\\
+    Demostración.-\; Se tiene que $$\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=|\vec{a}|^2 + 2\vec{a}\cdot \vec{b} + | \vec{b} |^2 - \left(|\vec{a}|^2 - 2\vec{a} \cdot \vec{b} + |\vec{b}^2|\right)=4\vec{a} \cdot \vec{b}$$\\
+
+%----------17.
+
+%----------18.
+\item [\Large\bfseries 18.] Demostrar que: $\|\vec{a}+\vec{b}\|^2 + \|\vec{a}-\vec{b}\|^2 = 2\|\vec{u}\|^2+2\|\vec{v}\|^2$\\\\
+    Demostración.-\; Análogamente al ejercicio 16 se tiene, 
+    $$\|\vec{a}+\vec{b}\|^2 + \|\vec{a}-\vec{b}\|^2 = |\vec{a}|^2 + 2\vec{a}\cdot \vec{b} + |\vec{b}|^2 + |\vec{a}|^2 - 2\vec{a} \cdot \vec{b} + |\vec{b}^2| = 2|\vec{a}^2 + 2\|\vec{b}|^2$$\\
+
+%----------19.
+
+%----------20.
+\item [\Large\bfseries 20.] Supóngase que $\vec{a}\cdot \vec{b} = \vec{a}\cdot \vec{c}$ y que $\vec{a}\neq 0$. Es posible inferir que $\vec{b}=\vec{c}$?. Explicar la respuesta.\\\\
+    Respuesta.-\; Esta proposición es falsa ya que si $A=(1,1,1)$, $B=(1,-1,0)$ y $C=(0,-1,1)$ entonces $$A\cdot B = 1\cdot 1 + 1\cdot(-1)+1\cdot 0 = 0,$$ $$A\cdot C = 1\cdot 0 + 1\cdot(-1)+1\cdot 1 = 0$$
+    de donde $B\neq C$.\\\\ 
 
 %----------41.
-\item Demostrar vectorialmente la ley de cosenos.\\\\
+\item [\Large\bfseries 41.] Demostrar vectorialmente la ley de cosenos.\\\\
     Demostración.-\; Supongamos que $\vec{a},\vec{b} \in V_n$ y, 
     \begin{center}
 	\begin{tikzpicture}
@@ -231,7 +247,7 @@
 	    \draw(1.3,.3)node[]{$|\vec{b}|\cos \theta$};
 	    \draw(2.3,.9)node[left]{$h$};
 	    \draw(.4,.17)node[]{$\theta$};
-	    \draw + (0:.6cm) arc (0:32:.8cm)
+	    \draw (0:.6cm) arc (0:32:.8cm);
 	\end{tikzpicture}
     \end{center}
     entonces por el teorema de Pitágoras se tiene $$h^2=|\vec{b}|^2 - \left(|\vec{b}|\cos \theta\right)^2 \qquad y \qquad |\vec{b}-\vec{a}|^2 = \left(|\vec{b}|\cos \theta - |\vec{a}|\right)^2+h^2$$
@@ -239,7 +255,6 @@
     por lo tanto, $$|\vec{b}-\vec{a}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2|\vec{a}||\vec{b}|\cos \theta $$\\
 
 %----------42.
-\item 
 
     
 
