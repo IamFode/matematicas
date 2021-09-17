@@ -199,7 +199,15 @@
 
 %----------13.
 \item Dados los puntos $P(3,4)$, $Q(1,1)$ y $R(5,2)$, usar métodos vectoriales para encontrar las coordenadas del cuarto vértice del paralelogramo cuyo lados adyacentes son $\vec{PQ}$ y $\vec{QR}$.\\\\
-    Respuesta.-\; 
+    Respuesta.-\; Sea $S$ vértice a encontrar entonces por ser un paralelogramo se tiene que $\vec{QR}=vec{PS}$, por lo tanto $$(1-1)-(5,2)=(3,4)-S \; \Longrightarrow \; S=(3,4)-(-4,-1)$$
+    $$S=(7,5)$$
+    El gráfico corrobora el resultado.
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \draw(3,4)node[above]{R}--(1,1)node[left]{Q}--(5,2)node[below]{R}--(7,5)node[right]{S}--(3,4);
+	\end{tikzpicture}
+    \end{center}
+    \vspace{.5cm}
 
 %----------14.
 \item Demostrar que $(4,5,2),(4,7,9),(8,5,-6)$ son los vértices de un triángulo equilátero.\\\\
@@ -231,6 +239,11 @@
 \item [\Large\bfseries 20.] Supóngase que $\vec{a}\cdot \vec{b} = \vec{a}\cdot \vec{c}$ y que $\vec{a}\neq 0$. Es posible inferir que $\vec{b}=\vec{c}$?. Explicar la respuesta.\\\\
     Respuesta.-\; Esta proposición es falsa ya que si $A=(1,1,1)$, $B=(1,-1,0)$ y $C=(0,-1,1)$ entonces $$A\cdot B = 1\cdot 1 + 1\cdot(-1)+1\cdot 0 = 0,$$ $$A\cdot C = 1\cdot 0 + 1\cdot(-1)+1\cdot 1 = 0$$
     de donde $B\neq C$.\\\\ 
+
+%----------31.
+\item [\Large\bfseries 31.] Demostrar que $Comp_{\vec{b}}\left(\vec{a_1}+\vec{a_2}\right) = Comp_{\vec{b}}\vec{a_1} + Comp_{\vec{b}}\vec{a_2}$\\\\
+    Demostración.-\; Por definición de la componente, al ser la norma del vector $b$ un escalar y por propiedades del producto escalar se tiene, 
+    $$Comp_{\vec{b}}\left(\vec{a_1}+\vec{a_2}\right) = \dfrac{\left(\vec{a_1}+\vec{a_2}\right)\circ \vec{b}}{|\vec{b}|}=\dfrac{\vec{a_1}\circ \vec{b} + \vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} = \dfrac{\vec{a_1}\circ \vec{b}}{\vec{b}} + \dfrac{\vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} =  Comp_{\vec{b}}\vec{a_1} + Comp_{\vec{b}}\vec{a_2}$$\\
 
 %----------41.
 \item [\Large\bfseries 41.] Demostrar vectorialmente la ley de cosenos.\\\\
