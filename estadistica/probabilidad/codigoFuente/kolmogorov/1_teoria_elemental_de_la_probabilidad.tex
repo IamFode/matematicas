@@ -2,28 +2,67 @@
 
 %-------------------- axioma 1
 \begin{tcolorbox}[colframe=white]
-    \begin{axioma} Sea $E$ una colección de elementos $\xi.\eta,\zeta,\ldots,$ que llamaremos sucesos elementales, y $\mathfrak{F}$ un conjunto de subconjuntos de $E$; los elementos del conjunto $\mathfrak{F}$ se llamarán eventos aleatorios.
+Sea $E$ una colección de elementos $\xi.\eta,\zeta,\ldots,$ que llamaremos sucesos elementales, y $\mathfrak{F}$ un conjunto de subconjuntos de $E$; los elementos del conjunto $\mathfrak{F}$ se llamarán eventos aleatorios.
 
-	\begin{enumerate}[\bfseries I.]
+    %----------I.
+    \begin{axioma}
+	$\mathfrak{F}$ es un campo de conjuntos. (Un sistema de conjuntos se denomina campo si la suma, el producto y la diferencia de dos conjuntos del sistema también pertenecen al mismo sistema).
 
-	    %----------I.
-	    \item $\mathfrak{F}$ es un campo de conjuntos. (Un sistema de conjuntos se denomina campo si la suma, el producto y la diferencia de dos conjuntos del sistema también pertenecen al mismo sistema).
-
-	    %----------II.
-	    \item $\mathfrak{F}$ contiene el conjunto $E$.
-
-	    %----------III.
-	    \item A cada conjunto $A$ en $\mathfrak{F}$ se le asigna un número real no negativo $P(A)$. Este número $P(A)$ se llama probabilidad del evento $A$.
-
-	    %----------IV.
-	    \item $P(E)$ es igual a $1$.
-
-	    %----------V.
-	    \item Si $A$ y $B$ no tienen ningún elemento en común, entonces $$P(A+B)=P(A)+P(B)$$
-
-	\end{enumerate}
     \end{axioma}
+
+    %----------II.
+    \begin{axioma}
+	$\mathfrak{F}$ contiene el conjunto $E$.
+    \end{axioma}
+
+    %----------III.
+    \begin{axioma}
+	A cada conjunto $A$ en $\mathfrak{F}$ se le asigna un número real no negativo $P(A)$. Este número $P(A)$ se llama probabilidad del evento $A$.
+    \end{axioma}
+
+    %----------IV.
+    \begin{axioma}
+	$P(E)$ es igual a $1$.
+    \end{axioma}
+
+    %----------V.
+    \begin{axioma}
+	Si $A$ y $B$ no tienen ningún elemento en común, entonces $$P(A+B)=P(A)+P(B)$$
+    \end{axioma}
+
 \end{tcolorbox}
 
 \setcounter{section}{3}
 \section{Corolarios inmediatos de los axiomas; Probabilidades condicionales; teorema de Bayes}
+De $A+\overline{A}=E$ y los axiomas IV y V se sigue que, 
+\begin{equation}
+    P(A)+P(\overline{A})=1
+\end{equation}
+
+\begin{equation}
+    P(\overline{A} = 1-P(A).
+\end{equation}
+
+Ya que $\overline{E}=0$, en particular se tiene, 
+\begin{equation}
+    P(0)=0.
+\end{equation}
+\vspace{.2cm}
+
+Si $A,B,...,N$ son incompatibles, entonces por el Axioma V se sigue la fórmula (\textbf{teorema de la suma}), 
+\begin{equation}
+    P(A+B+\ldots,+N) = P(A) + P(B) + \ldots + P(N)
+\end{equation}
+\vspace{.2cm}
+
+Si $P(A)>0,$ entonces el cociente 
+\begin{equation}
+    P_A(B)=\dfrac{P(AB}{P(A)}
+\end{equation}
+Es definida como la probabilidad condicional del evento $B$ bajo la condición $A$.\\
+Luego por (.5) se sigue que, 
+\begin{equation}
+    P(AB)=P(A)P_A(B).
+\end{equation}
+
+
