@@ -49,20 +49,82 @@ Ya que $\overline{E}=0$, en particular se tiene,
 \end{equation}
 \vspace{.2cm}
 
+\begin{tcolorbox}[colframe=white]
 Si $A,B,...,N$ son incompatibles, entonces por el Axioma V se sigue la fórmula (\textbf{teorema de la suma}), 
 \begin{equation}
     P(A+B+\ldots,+N) = P(A) + P(B) + \ldots + P(N)
 \end{equation}
-\vspace{.2cm}
+\end{tcolorbox}
 
+\begin{tcolorbox}[colframe=white]
 Si $P(A)>0,$ entonces el cociente 
 \begin{equation}
-    P_A(B)=\dfrac{P(AB}{P(A)}
+    P_A(B)=\dfrac{P(AB)}{P(A)}
 \end{equation}
-Es definida como la probabilidad condicional del evento $B$ bajo la condición $A$.\\
+Es definida como la probabilidad condicional del evento $B$ bajo la condición $A$.
+\end{tcolorbox}
+
 Luego por (.5) se sigue que, 
 \begin{equation}
     P(AB)=P(A)P_A(B).
 \end{equation}
 
+\begin{tcolorbox}[colframe=white]
+Y por inducción obtenemos la fórmula general (\textbf{el teorema de la multiplicación})
+\begin{equation}
+    P(A_1, A_2,\ldots,A_n)=P(A_1) P_{A_1}(A_2) P_{A_1 A_2}(A_3) \ldots P_{A,A_2\ldots A_{n-1}}(A_n)
+\end{equation}
+\end{tcolorbox}
 
+Los siguientes teoremas se siguen fácilmente,
+
+\begin{equation}
+    P_A(B)\geq 0,
+\end{equation}
+
+\begin{equation}
+    P_A(E)=1,
+\end{equation}
+
+\begin{equation}
+    P_A(B+C)=P_A(B)+P_A(C).
+\end{equation}
+
+\begin{equation}
+    P_A(A)=1.
+\end{equation}
+
+Por (.6) y la fórmula análoga $$P(AB)=P(B)P_B(A)$$
+obtenemos la fórmula,
+
+\begin{tcolorbox}[colframe=white]
+    \begin{equation}
+	P_B(A) = \dfrac{P(A)P_A(B)}{P(B)},
+    \end{equation}
+    que contiene el esencia el \textbf{teorema de bayes}
+\end{tcolorbox}
+
+    \begin{teo}[Teorema de la probabilidad total] Sea $A_1+A_2+\ldots + A_n = E$ (Sea asume que los eventos $A_1,A_2,\ldots,A_n$ son mutuamente excluyentes) y sea $X$ arbitrario. Entonces 
+	\begin{equation}
+	    P(X)=P(A_1)P_{A_1}(X) + P(A_2)P_{A_2}(X)+\ldots + P(A_n)P_{A_n}(X);
+	\end{equation}
+	\vspace{.5cm}
+	\textbf{Prueba.-}\; Sea $$X=A_1 X + A_2X + \ldots + A_n X;$$
+Usando (.4) tenemos, $$P(X)=P(A_1X)+P(A_2X)+\ldots + P(A_nX)$$
+y según (.6) tenemos al mismo tiempo
+$$P(A_iX)=P(A_i)P_{A_t}(X)$$\\
+    \end{teo}
+
+    \begin{teo}[Teorema de Bayes]
+	Sea $A_1+A_2+\ldots + A_n = E$ y $X$ sea arbitrario, entonces 
+	\begin{equation}
+	    P_X(A_i) = \dfrac{P(A_i)P_{A_i}(X)}{P(A_1)P_{A_1}(X) + P(A_2)P_{A_2}(X)+\ldots + P(A_n)P_{A_n}(X)}, \; \; para \;\; i=1,2,3,\ldots,n 
+	\end{equation}
+
+	\vspace{.5cm}
+
+	\textbf{Prueba.-}\; De $(.12)$ se tiene, $$P_X(A_i) = \dfrac{P(A_i) P_{A_i}(X)}{P(X)}$$
+	Para obtener la fórmula (.14) solo queda sustituir la probabilidad $P(X)$ por su valor derivado de (.13) aplicando el teorema de la probabilidad total.\\\\
+    \end{teo}
+
+\section{Independencia}
