@@ -569,9 +569,34 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 \end{enumerate}
 
 %--------------------6.
+\item Demostrar que $\tan(x-y)=(\tan x-\tan y)/(1+\tan x\tan y)$ para todo par de valores $x$, $y$ tales que $\tan x \tan y \neq -1$. Obtener las correspondientes fórmulas para $\tan(x+y)$ y $\cot(x+y)$.\\\\
+    Demostración.-\; Por definición de tangente primeramente se tiene que, 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\tan(x-y)=\dfrac{\sen(x-y)}{\cos(x-y)}$&$=$&$\dfrac{\sen x \cos y - \sen x \cos y}{\cos x \cos y + \sen x \sen y}$\\\\
+	    &$=$&$\dfrac{\sen x \cos y - \sen y \cos x}{\cos x \cos y(1+\tan x \tan y)}$\\\\
+	    &$=$&$\dfrac{\tan x- \tan y}{1 + \tan x}$\\\\
+	\end{tabular}
+    \end{center}
+    Luego probemos $\tan (x+y)$ para encontrar una fórmula de la siguiente manera,
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\tan(x+y)=\dfrac{\sen(x+y)}{\cos(x+y)}$&$=$&$\dfrac{\sen x \cos y + \sen x \cos y}{\cos x \cos y - \sen x \sen y}$\\\\
+	    &$=$&$\dfrac{\sen x \cos y + \sen y \cos x}{\cos x \cos y(1-\tan x \tan y)}$\\\\
+	    &$=$&$\dfrac{\tan x + \tan y}{1 - \tan x}$\\\\
+	\end{tabular}
+    \end{center}
+    Por último probemos para la fórmula cotagente,
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\cot(x+y)=\dfrac{\cos(x+y)}{\sen(x+y)}$&$=$&$\dfrac{\cos x \cos y + \sen x \sen y}{\sen x \cos y - \sen x \cos y}$\\\\
+	    &$=$&$\dfrac{\sen x \sen y (\cot x \cot - 1)}{\sen x \cos y + \sen y \cos x)}$\\\\
+	    &$=$&$\dfrac{\cot x + \cot y - 1}{\cot x + \cot y}$\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------7.
 \item 
-
-
 
 
 \end{enumerate}
