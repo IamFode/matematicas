@@ -128,3 +128,20 @@ $$P(A_iX)=P(A_i)P_{A_t}(X)$$\\
     \end{teo}
 
 \section{Independencia}
+
+Pasemos a la definición de la independencia. Dado $n$ experimentos $\mathfrak{U}^{(1)},\mathfrak{U}^{(2)},\ldots,\mathfrak{U}^{(n)},$ es decir, $n$ descomposiciones 
+$$E=A_1^{i} +A_2^{i} + \ldots + A_{r_i}^{i}, \qquad i=1,2,\ldots,n$$
+del conjunto básico $E$. Entonces es posible asignar $r=r_1 r_2 \ldots r_n$ probabilidades (en el caso general).
+$$P_{q_1 q_2 \ldots q_n} = P(A_{q_1}^{1} A_{q_2}^{2} \ldots A_{q_n}^{n}) \geq 0$$
+que son completamente arbitrarios excepto por la condición única que,
+\begin{equation}
+    \sum_{q_1, q_2,\ldots,q_n} P_{q_1 q_2 \ldots q_n} = 1.
+\end{equation}
+
+\begin{tcolorbox}[colframe=white]
+    \begin{def.} $n$ experimentos $\mathfrak{U}^{(1)}, \mathfrak{U}^{(2)},\ldots,\mathfrak{U}^{(n)}$ son llamados mutuamente independientes, si para cualquier $q_1,q_2,\ldots,q_n$ la siguientes ecuación es cierta
+	\begin{equation}
+	    P\left(A_{q_1}^{(1)},A_{q_2}^{(2)}\ldots A_{q_n}^{(n)}\right) = P\left(A_{q_1}^{(1)}\right)P_{q_2}\left(A_{q_2}^{(2)}\right)\ldots P\left(A_{q_n}^{(n)}\right). 
+	\end{equation}
+    \end{def.}
+\end{tcolorbox}
