@@ -161,7 +161,20 @@ que son completamente arbitrarios excepto por la condición única que,
 
 %--------------------definición II
 \begin{tcolorbox}[colframe=white]
-    \begin{def.} $n$
+    \begin{def.} $n$ eventos $A_1,A_2,\ldots A_n$ son mutuamente independientes, si la descomposición
+	$$E=A_k+\overline{A}k \qquad (k=1,2,\ldots , n)$$
+	son independientes.
     \end{def.}
 \end{tcolorbox}
 
+%-------------------- TEOREMA 2
+\begin{teo} Una condición necesaria y suficiente para la independencia de los experimentos $\mathcal{U}^{(1)}, \mathcal{U}^{(2)}, \ldots , \mathcal{U}^{(n)}$ en el caso de probabilidades positivas $P\left(A_q^{(i)}\right)$ es que la probabilidad condicional de los resultados $A_q^{(i)}$ de experimentos $\mathcal{U}^{(i)}$ bajo la hipótesis de que varias otras pruebas $\mathcal{U}^{(i_1)}, \mathcal{U}^(i_2),\ldots, \mathcal{U}^{(i_k)}$ tuvieron resultados definidos $A_{q_1}^{(i_1)},A_{q_2}^{(i_2)},\ldots, A_{q_k}^{(i_k)}$ es igual a la probabilidad absoluta $P(A_q^{(i)})$.\\\\
+\end{teo}
+
+%-------------------- TEOREMA 3
+\begin{teo} Si todas las probabilidades $P(A_k)$ son positivas, entonces una condición necesaria y suficiente para la independencia mutua de los eventos $A_1,A_2, \ldots, A_n$ satisface la ecuación,
+    $$P_{A_{i_1},A_{i_2},\ldots A_{i_k}}(A_i) = P(A_i)$$
+    para cualquier par diferente $i_1,i_2,\ldots. i_k,i$.\\\\
+\end{teo}
+
+\section{Probabilidades condicionales como variables aleatorias, cadenas de Markov}

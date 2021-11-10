@@ -610,7 +610,7 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 %--------------------8.
 \item Demostrar que si $C$ y $\alpha$ son números reales dados, existen dos números reales $A$ y $B$ tal es que $C$ $\sen(x-\alpha)=A \sen x + b \cos x $ para todo $x$.\\\\
     Respuesta.-\;  Para $C$ y $\alpha \in \mathbb{R}$ entonces, 
-    \begn{center}
+    \begin{center}
 	\begin{tabular}{rcl}
 	    $C\sen(x+\alpha)$&$=$&$C(\sen x \cos \alpha + \sen \alpha \cos x)$\\
 			     &$=$&$(C \cos \alpha)\sen x + (C \sen \alpha)\cos x$\\
@@ -620,6 +620,24 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     $$A = C \cos \alpha, \qquad B=C\sen \alpha$$\\
 
 %--------------------9.
+\item Demostrar que si $A$ y $B$ son números reales dados, existen dos números $C$ y $\alpha$ siendo $C\geq 0$ tales que la fórmula del ejercicio 8 es válida.\\\\
+    Respuesta.-\; Sea $$C = \sqrt{A^2+B^2}$$
+    de donde es verdad que $$|A|\leq \left|\sqrt{A^2+B^2}\right|$$
+    y por lo tanto $$\left|\dfrac{A}{C}\leq 1\right|$$
+    así sabemos que existe un $\alpha \in \mathbb{R}$ de manera que $$\cos \alpha = \dfrac{A}{C}.$$
+    Pero si $\cos \alpha = \dfrac{A}{C}$ entonces,
+    \begin{center}
+	\begin{tabular}{rcrcl}
+	    $\cos^2 \alpha = \dfrac{A^2}{C^2}$&$\Longrightarrow$&$1-\sen^2 \alpha$& $=$ & $\dfrac{A^2}{A^2+B^2}$\\\\
+	  &$\Longrightarrow$& $\sen^2 \alpha $ & $=$ & $1-\dfrac{A^2}{A^2 + B^2} = \dfrac{B^2}{A^2+B^2}$\\\\
+	  &$\Longrightarrow$& $\sen \alpha$ & $=$ & $\dfrac{B}{C}$\\\\
+	\end{tabular}
+    \end{center}
+    en consecuencia,
+    $$C\sen(x+\alpha) = C \sen x \cos \alpha + C \sen \alpha \cos x = (A^2+B^2)^{1/2} \dfrac{A}{(A^2+B^2)^{1/2}} \sen x + (A^2 + B^2)^{1/2} \dfrac{B}{(A^2+B^2)^{1/2}} \cos x  $$
+    $$=A\sen x + B\cos x$$\\
+
+%--------------------10.
 \item 
 
 \end{enumerate}
