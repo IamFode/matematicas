@@ -797,16 +797,55 @@ Demostrar que $\lim\limits_{x\to a}f(x)=0$ para todo $a$ de $[0,1]$.\\\\
 	 \item Demostrar que $\lim_{x\to 0^+} \dfrac{1}{x} = \infty$\\\\
 	     Demostración.-\; Dado $N>0$, elegir un $\delta = 1/N$. Si $0<x<\delta$, entonces $1/x >N$.\\\\
 
-	%----------(c)
-	\item 
+	%----------(c)	
+	 \item Si $\lim\limits_{x\to \infty} f(1/x) = \infty$, entonces para todo $N$ existe algún $M$ tal que $f(1/x)<N$ para $x>M$. Escoge $M>0$. Si $0<x<1/M$, entonces $x>M$, así $f(x)>N.$. Por lo tanto $\lim\limits_{x\to 0^+} f(x) = \infty$. La demostración en dirección contraria es similar.\\\\
 
     \end{enumerate}
 
 %--------------------39.
-\item 
+\item Hallar los siguientes límites, si existen
+
+    \begin{enumerate}[\bfseries (i)]
+
+	%----------(i)
+	\item $\lim\limits_{x\to \infty} \dfrac{x^3 + 4x - 7}{7x^2 - x + 1} = \lim\limits_{x\to \infty} \dfrac{x + \dfrac{4}{x} - \dfrac{7}{x^2}}{7-\dfrac{1}{x}+\dfrac{1}{x^2}} = \infty$.\\\\
+
+	%----------(ii)
+	\item $\lim\limits_{x\to \infty} x(1+\sen^2 x)$.\\\\
+	    Respuesta.-\; El límite esta dado desde $1\leq 1 + \sen^2x\leq 2$ para todo $x$.\\\\
+
+	%----------(iii)
+	\item $\lim\limits_{x\to \infty} x\sen^2 x.$\\\\
+	    Respuesta.-\; El límite no existe, ya que $\sen^2 x$ oscila entre 0 y 1.\\\\
+
+	%----------(iv)
+	\item $\lim\limits_{x\to \infty} x^2 \sen \dfrac{1}{x} = \lim\limits_{x\to \infty} x \cdot x\sen\dfrac{1}{x} = \infty$.\\\\
+
+	%----------(v)
+	\item $\lim\limits_{x\to \infty} \sqrt{x^2 + 2x - x} = \lim\limits_{x\to \infty} \dfrac{\left(\sqrt{x^2+2x}-x\right)\left(\sqrt{x^2+2x}+x\right)}{\sqrt{x^2+2x}+x} = \lim\limits_{x\to \infty} \dfrac{2x}{\sqrt{x^2+2x}+x} = \lim\limits_{x\to \infty} \dfrac{2}{\sqrt{1+\dfrac{2}{x}}+1} = 1$.\\\\
+
+	%----------(vi)
+	\item $\lim\limits_{x\to \infty} x(\sqrt{x+2}-\sqrt{x}) = \lim\limits_{x\to \infty} \dfrac{x\left(\sqrt{x+2}-\sqrt{x}\right)\left(\sqrt{x+2}+\sqrt{x}\right)}{\sqrt{x+2}+\sqrt{x}}= \lim\limits_{x\to \infty} \dfrac{2x}{\sqrt{x+2}+\sqrt{x}} = \lim\limits_{x\to \infty} \dfrac{2}{\sqrt{\dfrac{1}{x}+\dfrac{2}{x^2}+\sqrt{1}{x}}} = \infty$ 
+
+	%----------(vii)
+	\item $\lim\limits_{x\to \infty} \dfrac{\sqrt{|x|}}{x} = \lim\limits_{x\to \infty} \dfrac{\sqrt{x}}{x}= \lim\limits_{x\to \infty} \dfrac{1}{\sqrt{x}}=0$.\\\\
+
+    \end{enumerate}
 
 %--------------------40.
 \item
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Hallar el perímetro de un n-ágono regular inscrito en una circunferencia de radio $r$; para las funciones trigonométricas que entren en juego.\\\\
+	    Respuesta.-\; Si trazamos un circulo y un punto central $O$, dos puntos $A$ y $C$ en el perímetro de la circunferencia y un punto medio $B$  entre $A$ y $C$ trazando una linea recta, entonces el angulo $BOC$ es $\pi/n$. Luego $BC = r\sen(\pi/n)$ y $AC=2\pi \sen(\pi/n).$ Así el perímetro es $2rn \sen(\pi/n).$\\\\
+
+	%----------(b)
+	\item ¿A qué valor se aproxima este perímetro cuando $n$ es muy grande?\\\\
+	    Respuesta.-\; A medida que $n$ se vuelve muy grande, esto se aproxima a $$\lim\limits_{x\to \infty} 2rx\sen\left(\dfrac{\pi}{x}\right) = \lim\limits_{x\to \infty}\pi 2r \dfrac{x}{\pi} \sen\left(\dfrac{\pi}{x}\right) = 2\pi r \alpha$$
+	    donde $\alpha = \lim\limits_{x\to \infty}(\sen x)/x$ como el problema 45 ii.\\\\
+
+    \end{enumerate}
 
 %--------------------41.
 \item Una vez ya en la  imprenta el manuscrito de la primera edición de éste libro, se me ocurrió una manera mucho más sencilla de demostrar que $\lim x^2 = a^2$, y $\lim\limits_{x\to a} x^3 = a^3$, sin pasar por todos los pasos de la página 83. Supongamos que queremos demostrar que $\lim\limits_{x\to a} x^2 = a^2,$ siendo $a>0$. Dado $\epsilon > 0$ hacemos simplemente que $\delta$ sea el mínimo de $\sqrt{a^2+\epsilon} - a$  y $a-\sqrt{a^2-\epsilon}$; entonces $|x-a|<\delta$ implica que $\sqrt{a^2-\epsilon } < x < \sqrt{a^2 + \epsilon}$, de modo que $a^2 - \epsilon < x^2 < a^2 + \epsilon$, o $|x^2-a^2|<\epsilon$. Por fortuna no llegué a tiempo para introducir estos cambios, puesto que esta demostración es totalmente falsa.¿Dónde se encuentra el fallo?.\\\\
