@@ -60,8 +60,25 @@ $$s^2 = \sum_{i=1}^n \dfrac{(x_i-\overline{x})^2}{n-1} = \dfrac{\sum \left(x_i^2
 
     \begin{equation}
 	s = \sqrt{\dfrac{\sum\limits_{i=1}^n x_i^2 - \dfrac{\left(\sum\limits_{i=1}^n x_i\right)^2}{n}}{n-1}}
-    \end{equation}
+    \end{equation}\\
+
 Para datos agrupados, puede calcularse el valor aproximado de la varianza mediante el uso de la fórmula
     \begin{equation}
-	s^2
+	s^2 = \dfrac{\sum\limits_{i=1}^k f_i (x_i-\overline{x})^2}{n-1}
     \end{equation}
+ó
+    \begin{equation}
+	s^2 =  \dfrac{\sum\limits_{i=1}^k f_ix_i^2 - \dfrac{\left(\sum\limits_{i=1}^k f_i x_i\right)^2}{n}}{n-1}
+    \end{equation}\\
+La fórmula para la desviación estándar es 
+
+    \begin{equation}
+	s = \sqrt{\sum\limits_{i=1}^k \dfrac{f_i(x_i-\overline{x})^2}{n-1}}
+    \end{equation}
+
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	La desviación media es el promedio de los valores absolutos de las diferencias entre cada observación y la media de las observaciones. La desviación media está dada por
+	$$D.M. = \dfrac{\sum\limits_{i=1}^n|x_i-\overline{x}|}{n}$$
+    \end{def.}
+\end{tcolorbox}
