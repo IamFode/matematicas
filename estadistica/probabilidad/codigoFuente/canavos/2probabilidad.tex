@@ -110,21 +110,46 @@
 \begin{tcolorbox}[colframe = white]
     \begin{def.} Sean $A$ y $B$ cualesquiera dos eventos que se encuentran en un espacio muestral $S$ de manera tal que $P(B)>0$. La probabilidad condicional de $A$ al ocurrir el evento $B$, es el cociente de la probabilidad conjunto de $A$ y $B$ con respecto a la probabilidad marginal de $B$; de esta manera se tiene
 	\begin{equation}
-	    P(A/B) = \dfrac{P(A\cap B)}{P(B)}, \quad P(B)>0.
+	    P(A\backslash B) = \dfrac{P(A\cap B)}{P(B)}, \quad P(B)>0.
 	\end{equation}
 	\begin{equation}
-	    P(A\cap B) = P(B)P(A\/B).
+	    P(A\cap B) = P(B)P(A\backslash B).
 	\end{equation}
     \end{def.}
 \end{tcolorbox}
 
 La definición 2.14 puede extenderse para incluir cualquier número de eventos que se encuentren en el espacio muestral. Por ejemplo, puede demostrarse que para tres eventos $A,B$ y $C$
 \begin{equation}
-    A/B\cap C) = \dfrac{P(A\cap B \cap C)}{P(A\cap C)}, \quad P(B\cap C)>0.
+    A\backslash B\cap C) = \dfrac{P(A\cap B \cap C)}{P(A\cap C)}, \quad P(B\cap C)>0.
 \end{equation}
 
 \begin{equation}
-    P(A\cap B / C) = \dfrac{P(A\cap B \cap C)}{P(C)}, \quad P(C)>0.
+    P(A\cap B \backslash C) = \dfrac{P(A\cap B \cap C)}{P(C)}, \quad P(C)>0.
 \end{equation}
 
 \section{Eventos estadísticamente independientes}
+
+% definición 2.15
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Sean $A$ y $B$ dos eventos cualesquiera de un espacio muestral $S$. Se dice que el evento $A$ es estadísticamente independiente del evento $B$ si $P(A\backslash B) = P(A).$
+	$$P(A \backslash B) = P(A)$$
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.16
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Los eventos $A_1,A_2,\ldots, A_k$ de un espacio muestral $S$ son estadísticamente independientes si y sólo si la probabilidad conjunta de cualquier $2,3,\ldots k$ de ellos es igual al producto de sus respectivas probabilidades marginales.
+	$$P(A\cap B \cap C) = P(A)P(B)P(C)$$
+    \end{def.}
+\end{tcolorbox}
+
+\section{El teorema de Bayes}
+
+% teorema de bayes
+\begin{teo} Si $B_1,B_2,\ldots, B_n$ son $n$ eventos mutuamente excluyentes, de los cuales uno debe ocurrir, es decir $\sum_{i=1}^n P(B_1) = 1$ entonces,
+    \begin{equation}
+	P(B_j \backslash A) = \dfrac{P(B_j)P(A\backslash B_j)}{\sum\limits_{i=1}^n P(B_i)P(A\backslash B_i)}
+    \end{equation}
+\end{teo}
+
+

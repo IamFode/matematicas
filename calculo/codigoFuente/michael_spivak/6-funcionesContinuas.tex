@@ -30,5 +30,50 @@
 \end{teo}
 
 %---------- teorema 2
+\begin{teo} Si $g$ es continua en $a$, y $f$ es continua en $g(a)$, entonces $f\circ g$ es continua en $a$.\\\\
+    Demostración.-\; Sea $\epsilon > 0$. Queremos hallar un $\delta > 0$ tal que para todo $x$, 
+
+    \begin{center}
+	Si $|x-a|<\delta$ entonces $|(f\circ g)(x)-(f\circ g)(a)|<\epsilon$, es decir, $|f(g(x))-f(g(a))|<\epsilon$
+    \end{center}
+
+	Tendremos que aplicar primero la continuidad de $f$ para estimar cómo de cerca tiene que estar $g(x)$ de $g(a)$ para que se cumpla esta desigualdad. Puesto que $f$ es continua en $g(a)$, existe un $\delta^{'} > 0$ tal que para todo $y$,
+
+    \begin{center}
+	Si $|y-g(a)|<\delta^{'}$, entonces $|f(y)-f(g(a))|<\epsilon. \qquad (1)$ 
+    \end{center}
+
+    En particular, esto significa que
+
+    \begin{center}
+	Si $|g(x)-g(a)|<\delta^{'}$, entonces $|f(g(x))-f(g(a))|<\epsilon. \qquad (2)$
+    \end{center}
+    
+    Aplicamos ahora la continuidad de $g$ para estimar cómo de cerca tiene que estar $x$ de $a$ para que se cumpla la desigualdad $|g(x)-g(a)|<\delta^{'}$. El número $\delta^{'}$ es un número positivo como cualquier otro número positivo; podemos, por lo tanto, tomar $\delta^{'}$ como el $epsilon$ de la definición de continuidad de $g$ en $a$. Deducimos que existe un $\delta > 0$ tal que, para todo $x$,
+
+    \begin{center}
+	Si $|x-a|<\delta,$ entonces $|g(x)-g(a)|<\delta^{'}, \qquad (3)$
+     \end{center}
+
+     combinando (2) y (3) vemos que para todo $x$,
+
+    \begin{center}
+	Si $|x-a|<\delta,$ entonces $|f(g(x))-f(g(a))|<\epsilon.$
+     \end{center}
+     \vspace{1cm}
+
+\end{teo}
+
+% definición
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Si $f$ es continua en $x$ para todo $x$ en $(a,b)$, entonces se dice que $f$ es continua en $(a,b)$ si 
+	\begin{center}
+	    $f$ es continua en $x$ para todo $x$ de $(a,b), \qquad (1)$
+	    $\lim\limits_{x\to a^+} f(x) = f(a)$ y $\lim\limits_{x\to b^-}f(x) = f(b). \qquad (2)$
+	\end{center}
+    \end{def.}
+\end{tcolorbox}
+
+%---------- teorema 3
 \begin{teo}
 \end{teo}
