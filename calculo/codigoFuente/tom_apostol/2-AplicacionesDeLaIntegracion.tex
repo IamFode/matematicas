@@ -649,6 +649,52 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     $$\sen \alpha = \cos \alpha = -\dfrac{\sqrt{2}}{2} \; \qquad \; \alpha = \dfrac{5\pi}{4}.$$\\
 
 %--------------------11.
+\item Demostrar que si $A$ y $B$ son números reales dados, existen dos números $C$  y $\alpha$ siendo $C\geq 0$ tales que $C \cos(x+\alpha) = A \sen x + B\cos x.$ Determinar $C$ y $\alpha$ si $A=B=1$.\\\\
+    Demostración.-\; Por el problema 9, sabemos que para $A,B \in \mathbb{R}$, existe $D, \beta \in \mathbb{R}$ tal que 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $D\sen (x+\beta)$&$=$&$A\sen x + B \cos x$\\\\
+	    $D \sen \left[\dfrac{\pi}{2} + x + \left(\beta - \dfrac{\pi}{2}\right)\right]$&$=$&$A \sen x +B \cos x$\\\\
+	    $D\cos \left[x + \left(\beta - \dfrac{\pi}{2}\right)\right]$&$=$&$A\sen x + B \cos x$\\\\
+	\end{tabular}
+    \end{center}
+    entonces, $$C=D, \quad \alpha = \beta -\dfrac{\pi}{2}.$$
+    Por lo tanto, $C$ y $\alpha$ existe si $C\cos(x+\alpha) = A \sen x + B\cos x.$
+    Luego, si $A=B=1$, entonces $C=\sqrt{2}$ y $\alpha = \beta - \dfrac{\pi}{2}$ donde $\sen \beta = \cos \beta = \dfrac{\sqrt{2}}{2} \Longrightarrow \beta = \dfrac{\pi}{4}$. Así,
+    $$C = \sqrt{2}, \quad \alpha = - \dfrac{\pi}{4}.$$\\
+
+%--------------------12.
+\item Hallar todos los números reales $x$ tales que $\sen x = \cos x$.\\\\
+    Respuesta.-\; Sea $\sen x = \cos x$ entonces 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\cos x - \sen x$& $=$ & $0$\\\\
+			    $\cos^2 x - 2\sen x\cos x$&$=$&$0$\\\\
+			    $\sen 2 x$&$=$&$\sen^2x + \cos^2 x$\\\\
+			    $\sen 2x$&$=$&$1$\\\\
+			    $2x$&$=$&$\dfrac{\pi}{2}+2n\pi$\\\\
+			    $x$&$=$&$\dfrac{\pi}{4} + n\pi \quad para\; n \in \mathbb{Z}$\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------13.
+\item Hallar todos los números reales tales que $\sen x - \cos x = 1.$\\\\
+    Respuesta.-\; Por el ejercicio 9 sabemos que existe $C,\alpha$ tal que $$A\sen x +B\cos x = C\sen(x+\alpha),$$
+    para cualquier $A,B \in \mathbb{R}$. También sabemos que,
+    $$C= (A^2 + B^2)^{1/2}, \quad \sen \alpha = \dfrac{A}{(A^2+B^2)^{1/2}} \qquad \dfrac{B}{(A^2+B^2)^{1/2}}$$
+    Así, en este caso tenemos $A=1$, $B=1$ y calculando,
+    $$C=\sqrt{2}, \quad \cos \alpha = - \dfrac{\sqrt{2}}{2}, \sen \alpha = -\dfrac{\sqrt{2}}{2} \Longrightarrow \alpha = \dfrac{\pi}{4}$$
+    luego sabiendo que $\sen x - \cos x = 1$ entonces,
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\sqrt{2} \sen \left(x-\dfrac{\pi}{4}\right)$&$=$&$1$\\\\
+	    $\sen\left(x-\dfrac{\pi}{4}\right)$&$=$&$\dfrac{\sqrt{2}}{2}$\\\\
+	    $x-\dfrac{\pi}{4}$&$=$&$x-\dfrac{\pi}{4}+2n\pi \; o \; x-\dfrac{\pi}{4} = \dfrac{4\pi}{4}+2n\pi$\\\\
+	    $x$&$=$&$\dfrac{\pi}{2}+2n\pi \; o \; x = \pi + 2n\pi$\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------14.
 \item 
 
 \end{enumerate}

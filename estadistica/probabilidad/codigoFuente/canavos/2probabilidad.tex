@@ -1,1 +1,130 @@
 \chapter{Conceptos en probabilidad}
+
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Si un experimento que está sujeto al azar resulta de $n$ formas igualmente probables y mutuamente excluyentes y si $n_A$ de estos resultados tienen un atributo $A$, la probabilidad de $A$ es la proporción de $n_A$ co respecto a $n$.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Si un experimento se repite $n$ veces bajo las mismas condiciones y $n_B$ de los resultados son favorables a un atributo $B$, el límite de $n_B/n$ conforme $n$ se vuelve grande, se define como la probabilidad del atributo $B$.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.3
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} El conjunto de todos los posibles resultados de un experimento aleatorio recibe el nombre de espacio muestral.
+    \end{def.}
+\end{tcolorbox}
+
+\setcounter{section}{4}
+\section{Desarrollo axiomático de la probabilidad}
+
+% definición 2.4
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Se dice que un espacio muestral es discreto si su restado puede ponerse en una correspondencia uno a uno con el conjunto de los enteros positivos.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.5
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Se dice que un espacio muestral es continuo si sus resultados consisten de un intervalo de números reales.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.6
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} un evento del espacio muestral es un grupo de resultados contenidos en éste, cuyos miembros tienen una característica en común.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.7
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} El evento que contiene a ningún resultado del espacio muestral recibe el nombre de evento nulo o vacío.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.8
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} El evento formado por todos los posibles resultados en $E_1$ o $E_2$ o en ambos, recibe el nombre de unión de $E_1$ y $E_2$ y se denota por $E_1 \cup E_2$.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.9
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} El evento formado por todos los resultados comunes tanto a $E_1$ como a $E_2$ recibe el nombre de intersección de $E_1$ y $E_2$ y se denota por $E_1 \cap E_2$.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.10
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Se dice que los eventos $E_1$ y $E_2$ son mutuamente excluyentes o disjuntos si no tienen resultados en común; en otras palabras $E_1 \cap E_2 =\emptyset = $ evento vacío.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.11
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Si cualquier resultado de $E_2$ también es un resultado de $E_1$, se dice que el evento $E_2$ está contenido en $E_1$, y se denota por $E_2 \subset E_1$ 
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.12
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} El complemento de un evento $E$ con respecto al espacio muestral $S$, es aquel que contiene a todos los resultados de $S$ que no se encuentran en $E$, y se denota por $\overline{E}$.
+    \end{def.}
+\end{tcolorbox}
+
+% definición 2.13
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Sean $S$ cualquier espacio muestral y $E$ cualquier evento de éste. Se llamará función de probabilidad sobre el espacio muestral $S$ a $P(E)$ si satisface los siguientes axiomas:
+	\begin{enumerate}[\bfseries 1.]
+	    \item $P(E) \geq 0$.
+	    \item $P(S) = 1$.
+	    \item Si, para los eventos $E_1, E_2, E_3,\ldots$ $E_i \cap E_j = \emptyset$ para todo $i\neq j$ entonces $$P(E_1\cup E_2 \cup \ldots) = P(E_1) + P(E_2) + \ldots$$
+	\end{enumerate}
+    \end{def.}
+\end{tcolorbox}
+
+% teorema 2.1
+\begin{teo} $P(\emptyset) = 0.$\\\\
+    Demostración.-\; $$S\cup \emptyset = S \quad y \quad S \cap \emptyset = \emptyset.$$
+    por el axioma 3, $$P(S\cup \emptyset) = P(S) + P(\emptyset);$$
+    pero por el axioma 2, $P(S) = 1$, y de esta manera $P(\emptyset) = 0$.\\\\
+\end{teo}
+
+% teorema 2.2
+\begin{teo} Para cualquier evento $E \subset S, 0 \leq P(E) \leq 1$.\\\\
+    Demostración.-\; Por el axioma 1, $P(E) \geq 0$; de aquí sólo es necesario probar que $P(E) \leq 1$.
+    $$E \cup \overline{E} = S \quad y \quad E\cap \overline{E} = \emptyset.$$
+    Por los axiomas 2 y 3, $$P(E\cup \overline{E} = P(E) + P(\overline{E}) = P(S) = 1;$$
+    dado que $P(\overline{E}) \geq 0, \; P(E) \leq 1$.\\\\
+\end{teo}
+
+% teorema 2.3
+\begin{teo} Sea $S$ un espacio muestral que contiene a cualesquiera dos eventos $A$ y $B$; entonces,
+    $$A(A\cup B) = P(A) + P(B) - P(A\cap B).$$
+\end{teo}
+
+\section{Probabilidad conjunta, marginal y condicional}
+
+% Definición 2.14
+\begin{tcolorbox}[colframe = white]
+    \begin{def.} Sean $A$ y $B$ cualesquiera dos eventos que se encuentran en un espacio muestral $S$ de manera tal que $P(B)>0$. La probabilidad condicional de $A$ al ocurrir el evento $B$, es el cociente de la probabilidad conjunto de $A$ y $B$ con respecto a la probabilidad marginal de $B$; de esta manera se tiene
+	\begin{equation}
+	    P(A/B) = \dfrac{P(A\cap B)}{P(B)}, \quad P(B)>0.
+	\end{equation}
+	\begin{equation}
+	    P(A\cap B) = P(B)P(A\/B).
+	\end{equation}
+    \end{def.}
+\end{tcolorbox}
+
+La definición 2.14 puede extenderse para incluir cualquier número de eventos que se encuentren en el espacio muestral. Por ejemplo, puede demostrarse que para tres eventos $A,B$ y $C$
+\begin{equation}
+    A/B\cap C) = \dfrac{P(A\cap B \cap C)}{P(A\cap C)}, \quad P(B\cap C)>0.
+\end{equation}
+
+\begin{equation}
+    P(A\cap B / C) = \dfrac{P(A\cap B \cap C)}{P(C)}, \quad P(C)>0.
+\end{equation}
+
+\section{Eventos estadísticamente independientes}

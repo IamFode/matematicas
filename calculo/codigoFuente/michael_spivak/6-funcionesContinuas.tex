@@ -3,15 +3,32 @@
 % ---------- definición 
 \begin{tcolorbox}[colframe = white]
     \begin{def.} La función $f$ es continua  en $a$ si $$\lim\limits_{x\to a} f(x) = f(a)$$
+	Para todo $\epsilon > 0$ existe un $\delta > 0$ tal que, para todo $x$, si $0<|x-a|<\delta$.\\
+	Pero en este caso, en que el límite es $f(a)$, la frase $$0<|x-a|<\delta$$
+	puede cambiarse por la condición más sencilla $$|x-a|<\delta$$
+	puesto que si $x=a$ se cumple ciertamente que $|f(x)-f(a)|<\epsilon$.
     \end{def.}
 \end{tcolorbox}
 
 %---------- teorema 1
 \begin{teo} Si $f$ y $g$ son continuas en $a$, entonces 
     \begin{center}
-    $(1)\quad f+g$ es continua en $a$.\\
-    $(2) \quad f\cdot g$ es continua en $a$.
+	\begin{tabular}{rl}
+	    $(1)$ & $f+g$ es continua en $a$.\\
+	    $(2)$ & $f\cdot g$ es continua en $a$.\\
+    Además, si $g(a)\neq 0$, entonces 
+	    $(3)$&$1/g$ es continua en $a$\\
+	\end{tabular}
     \end{center}	
-    Demostración.-\; 
+    Demostración.-\; Puesto que $f$ y $g$ son continuas en $a$,
+    $$\lim_{x\to a}f(x) = f(a) \qquad y \qquad \lim_{x\to a} g(x) = g(a).$$
+    Por el teorema 2(1) del capítulo 5 esto implica que 
+    $$\lim_{x\to a} (f+g)(x) = f(a)+g(a) = (f+g)(a),$$
+    lo cual es precisamente la afirmación de que $f+g$ es continua en $a$.\\
+    Para $f\cdot g$ se tiene que $$\lim_{x\to a}(f\cdot g)(x) = f(a)\cdot fg(a) = (f\cdot g)(a)$$
+    Por último para $1/g$ tenemos que $$\lim_{x\to a} 1/g = 1/g(a) , \qquad para \; g(a)\neq 0$$\\
 \end{teo}
 
+%---------- teorema 2
+\begin{teo}
+\end{teo}
