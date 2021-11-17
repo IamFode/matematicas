@@ -68,12 +68,32 @@
 \begin{tcolorbox}[colframe = white]
     \begin{def.} Si $f$ es continua en $x$ para todo $x$ en $(a,b)$, entonces se dice que $f$ es continua en $(a,b)$ si 
 	\begin{center}
-	    $f$ es continua en $x$ para todo $x$ de $(a,b), \qquad (1)$
+	    $f$ es continua en $x$ para todo $x$ de $(a,b), \qquad (1)$\\
+	    \vspace{.5cm}
 	    $\lim\limits_{x\to a^+} f(x) = f(a)$ y $\lim\limits_{x\to b^-}f(x) = f(b). \qquad (2)$
 	\end{center}
     \end{def.}
 \end{tcolorbox}
 
 %---------- teorema 3
-\begin{teo}
+\begin{teo} Supóngase que $f$ es continua en $a$, y $f(a)>0$. Entonces existe un número $\delta>0$ tal que $f(x)>0$ para todo $x$ que satisface $|x-a|<\delta$. Análogamente, si $f(a)>0$, entonces existe un número $\delta>0$ tal que $f(x)<0$ para todo $x$ que satisface $|x-a|<\delta.$\\\\
+    Demostración.-\; Considérese el caso $f(a)>0$ puesto que $f$ que es continua en $a$, si $\epsilon>0$ existe un $\delta>0$ tal que, para todo $x$,
+    \begin{center}
+	Si $|x-a|<\delta$, entonces $|f(x)-f(a)|<\epsilon.$
+    \end{center}
+    Puesto que $f(a)>0$ podemos tomar a $f(a)$ como el $epsilon$. Así, pues, existe $\delta>0$ tal que para todo $x$,
+    \begin{center}
+	Si $|x-a|<\delta$, entonces $|f(x)-f(a)|<f(a)$
+    \end{center}
+    Y esta última igualdad implica $f(x)>0$.\\
+    Puede darse una demostración análoga en el caso $f(a)<0$; tómese $\epsilon=-f(a)$. O también se puede aplicar el primer caso a la función $-f$.\\\\
+
 \end{teo}
+
+\section{Problemas}
+\begin{enumerate}[\Large\bfseries 1.]
+
+%--------------------1.
+\item 
+
+\end{enumerate}

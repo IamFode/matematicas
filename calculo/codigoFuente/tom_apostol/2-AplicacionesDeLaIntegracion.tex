@@ -737,6 +737,53 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     \end{enumerate}
 
 %--------------------15.
+\item Si $h\neq 0$, demostrar que las identidades siguientes son válidas para todo $x$:
+    $$\dfrac{\sen(x+h)-\sen x}{h} = \dfrac{\sen(h/2)}{h/2}\cos\left(x+\dfrac{h}{2}\right)$$
+    $$\dfrac{\cos(x+h)-\cos x}{h} = -\dfrac{\sen(h/2)}{h/2}\cos\left(x+\dfrac{h}{2}\right)$$
+    Estas fórmulas se utilizan en cálculo diferencial.\\\\
+    Demostración.-\; Usando el seno y coseno para la suma y diferencia, se sigue,
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\dfrac{\sen(x+h)-\sen x}{h}$&$=$&$\dfrac{\sen(x+\frac{h}{2}+\frac{h}{2})-\sen(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
+					 &$=$&$\dfrac{\sen(x+\frac{h}{2})\cos(\frac{h}{2})+\sen(\frac{h}{2})\cos(x+\frac{h}{2})-\sen(x+\frac{h}{2})\cos (\frac{h}{2})+\sen(\frac{h}{2})\cos(x+\frac{h}{2})}{h}$\\\\
+					 &$=$&$\dfrac{2\sen \frac{h}{2}}{h}\cos\left(x+\dfrac{h}{2}\right)$\\\\
+					 &$=$&$\dfrac{\sen \frac{h}{2}}{h/2}\cos\left(x+\dfrac{h}{2}\right)$\\\\
+	\end{tabular}
+    \end{center}
+    y
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\dfrac{\cos(x+h)-\cos x}{h}$&$=$&$\dfrac{\cos(x+\frac{h}{2}+\frac{h}{2})-\cos(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
+					 &$=$&$\dfrac{\cos(x+\frac{h}{2})\cos(\frac{h}{2})-\sen(x+\frac{h}{2})\sen(\frac{h}{2})-\cos(x+\frac{h}{2})\cos(\frac{h}{2})-\sen(x+\frac{h}{2})\sen(\frac{h}{2})}{h}$\\\\
+					 &$=$&$\dfrac{2\sen(x+\frac{h}{2})\sen(\frac{h}{2})}{h}$\\\\
+					 &$=$&$-\dfrac{\sen(\frac{h}{2})}{h/2}\sen\left(x+\dfrac{h}{2}\right)$\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------16.
+\item Demostrar si son o no ciertas las siguientes afirmaciones.
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Para todo $x\neq 0$ se tiene $\sen2x \neq 2\sen x$.\\\\
+	    Demostración.-\; Sea $x=\pi$, entonces $\sen 2 x = \sen2\pi = 0$, y $2\sen x = 2\sen \pi = 0$. Luego por hipótesis $x\neq 0$,  pero $\sen2x = 2\sen x$, por lo tanto este proposición es falsa.\\\\
+
+	%----------(b)
+	\item Para cualquier $x$, existe un y tal que $\cos(x+y)=\cos x+\cos y$.\\\\
+	    Demostración.-\; Sea $x=0$, entonces $\cos(x+y) = \cos y,$ pero $\cos x +\cos y = 1+\cos y.$ Por lo tanto la proposición es falsa.\\\\
+
+	%----------(c)
+	\item Existe un $x$ tal que $\sen(x+y)=\sen x + \sen y $ para todo $y$.\\\\
+	    Demostración.-\; Sea $x=0$, entonces $\sen(x+y) = \sen y,$ para todo $y$, y $x+\sen y =\sen y$ para todo $y.$ Y por lo tanto la proposición es verdadera.\\\\
+
+	%----------(d)
+	\item Existe un $y\neq 0$ tal que $\int_0^y \sen x\; dx = \sen y$.\\\\
+	    Demostración.-\; Sea $y=\dfrac{\pi}{2}$, entonces $\displaystyle\int_0^pi 2 \sen x \; dx = 1-\cos\dfrac{\pi}{2}=1$ y $\sen \dfrac{\pi}{2}=1.$ Por lo tanto la proposición es verdadera.\\\\
+
+    \end{enumerate}
+
+%--------------------17.
 \item 
 
 \end{enumerate}
