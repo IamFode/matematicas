@@ -33,5 +33,33 @@
 ## 4. P(M\A) = P(M inters A) / P(A)
 20/50
 
-####### 2.6 #######
+####### 2.5 #######
+library(gtools)
+x <- c("h","m")
+permutations(n=2,r=3, v=x, repeats.allowed = TRUE)#Permutaciones con repetición
+# exactamente dos de los hijos tengan el mismo sexo
+6/8
+# tener  un varón y dos mujeres
+3/8
+# tener tres hijos del mismo sexo
+2/8
+
+####### 2.7 #######
+x <- c("o","t")
+per<-permutations(n=2,r=10, v=x, repeats.allowed = TRUE)#Permutaciones con repetición
+# probabilidad que salga todas las veces cara
+1/1024
+1/2^10 # variaciones con repetición 
+# el decimoprimero lanzamiento el resultado sea cruz
+1/2
+
+####### 2.8 #######
+x <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,"def1","def2")
+permutations(n=20,r=2, v=x, repeats.allowed = FALSE)#Permutaciones sin repetición
+(2*(18+18+1))/perm_sin_orden(20,2)
+
+####### 2.9 #######
+2/3*2/5 + 1/3*1/2
+
+####### 2.10 #######
 

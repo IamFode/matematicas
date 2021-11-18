@@ -42,3 +42,19 @@ DMed = function(x){
 }
 
 
+#############################  CAPÍTULO 2  #####################################
+######################  CONCEPTOS DE PROBABILIDAD  #############################
+################################################################################
+
+#Permutaciones sin repetición 
+factorial(n)
+
+# permutaciones cualquier orden
+perm_sin_orden <- function(n,r){
+  return(factorial(n)/factorial(n-r))
+}
+
+# permutaciones con orden
+perm_con_orden <- function(n,r){
+  return(factorial(n)/(factorial(n-r)*factorial(r)))
+}
