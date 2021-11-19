@@ -1,4 +1,6 @@
 ########################## EJERCICIOS CAPÍTULO 2 ###############################
+source("funciones.R")
+library(gtools)
 
 ####### 2.1 #######
 
@@ -34,7 +36,6 @@
 20/50
 
 ####### 2.5 #######
-library(gtools)
 x <- c("h","m")
 permutations(n=2,r=3, v=x, repeats.allowed = TRUE)#Permutaciones con repetición
 # exactamente dos de los hijos tengan el mismo sexo
@@ -56,10 +57,14 @@ per<-permutations(n=2,r=10, v=x, repeats.allowed = TRUE)#Permutaciones con repet
 ####### 2.8 #######
 x <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,"def1","def2")
 permutations(n=20,r=2, v=x, repeats.allowed = FALSE)#Permutaciones sin repetición
-(2*(18+18+1))/perm_sin_orden(20,2)
+perm_con_orden(18,2)/perm_con_orden(20,2)
 
 ####### 2.9 #######
 2/3*2/5 + 1/3*1/2
 
 ####### 2.10 #######
-
+x <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,"def1","def2", "def3")
+permutations(n=20,r=4,v=x,repeats.allowed = FALSE)
+#(a)
+perm_con_orden(17,4)/perm_con_orden(20,4)
+#(b)

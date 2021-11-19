@@ -125,8 +125,25 @@
 
 %--------------------3.
 \item 
+    \begin{enumerate}[\Large\bfseries (a)]
 
+	%---------- (a)
+	\item Supóngase que $f$ es una función que satisface $|f(x)|\leq |x|$ para todo $x$. Demostrar que $f$ es continua en $0$.[Observe que $f(0)$ debe ser igual a $0$.]\\\\
+	    Demostración.-\; Supongamos que $|f(x)|\leq |x|$. afirmamos que, $\lim\limits_{x\to 0} f(x)=0$. De hecho dado $\epsilon>0$, tomamos $\delta=\epsilon$. Si $|x|<\delta$ entonces $|f(x)|\leq |x|<\delta = \epsilon$. Esto prueba que $\lim\limits_{x\to 0} f(x) = 0$. Para concluir que $f$ es constante en $0$, tenga en cuenta que, como se señala en la pregunta, aplicar $|f(x)|\leq |x|$ para todo $x$, en $x=0$ se da $|f(0)|\leq 0$ y en consecuencia $f(0)=0$.  Por lo tanto $\lim\limits_{x \to 0} f(x) = 0$ implica que $\lim\limits_{x\to 0} f(x) = f(0)$, así $f$ es constante en $0$.\\\\
 
+	%---------- (b)
+	\item Dar un ejemplo de una función $f$ que no sea continua en ningún $a\neq 0$.\\\\
+	    Respuesta.-\; Sea $f(x)=0$ para $x$ irracional, y $f(x)=x$ para $x$ racional.\\\\
+
+	%---------- (c)
+	\item Supóngase que $g$ es continua en $0$, $g(0)=0,$ y $|f(x)|\leq |g(x)|.$ Demostrar que $f$ es continua en $0$.\\\\
+	    Demostración.-\; La condición $|f(x)|\leq |g(x)|$ para todo $x$ y $g(0)=0$ implica que $ff(0)=0$, así que sólo tenemos que demostrar que $\lim\limits_{x\to 0} f(x) = 0$.\\
+	    Sea $\epsilon>0$, luego ya que $g$ es continua en $0$, existe un $\delta >0$ tal que $|x|<\delta$ entonces $|g(x)-g(0)|=|g(x)|<\epsilon$. Usando $|f(x)|\leq |g(x)|$ para todo $x$, vemos que $|x|<\delta$ implica $|f(x)|\leq |g(x)|<\epsilon$. Por lo tanto esto demuestra que $\lim\limits_{x\to 0} f(x) = 0$.\\\\
+
+    \end{enumerate}
+
+%--------------------4.
+\item 
 
 
 \end{enumerate}
