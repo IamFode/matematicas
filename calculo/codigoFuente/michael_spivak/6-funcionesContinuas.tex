@@ -143,6 +143,47 @@
     \end{enumerate}
 
 %--------------------4.
+\item Dar un ejemplo de una función $f$ que no sea continua en ningún punto, pero tal que $|f|$ sea continua en todos lo puntos.\\\\
+    Respuesta.-\; Sea $f(x)=1$ para $x$ racional, y $f(x)=-1$ para $x$ irracional.\\\\
+
+%--------------------5.
+\item Para todo número $a$, hallar la función que sea continua en $a$, pero no lo sea en ningún otro punto.\\\\
+    Respuesta.-\; Sea $f(x)=a$ para $x$ irracional, y $f(x)=x$ para $x$ racional.\\\\
+
+%--------------------6.
+\item 
+\begin{enumerate}[\bfseries (a)]
+
+    %---------- (a)
+    \item Hallar una función $f$ que sea descontinua en $1,\frac{1}{2},\frac{1}{3},\ldots,$ pero continua en todos los demás puntos.\\\\
+	Respuesta.-\; Define $f$ como sigue,
+	$$f(x) = \left\{\begin{array}{rl}
+	0,&x\leq 0\\\\
+	\dfrac{1}{\left[\dfrac{1}{x}\right]},&0<x\leq 1\\\\
+	  2,&x>1\\\\
+	\end{array}\right.$$
+
+    %---------- (b)
+    \item Hallar una función $f$ que sea descontinua en $1,\frac{1}{2},\frac{1}{3},\ldots,$ y en $0$, pero sea continua en ningún en todos los demás puntos.\\\\
+	Respuesta.-\; Sea 
+	$$f(x) = \left\{\begin{array}{rl}
+	-1,&x\leq 0\\\\
+	\dfrac{1}{\left[\dfrac{1}{x}\right]},&0<x\leq 1\\\\
+	  2,&x>1\\\\
+	\end{array}\right.$$
+
+\end{enumerate}
+
+%--------------------7.
+\item Supóngase que  $f$ satisface $(x+y) = f(x)+f(y)$, y que $f$ es continua en $0$. Demostrar que $f$ es continua en $a$ para todo $a$.\\\\
+    Demostración.-\; Sea $f(x+0) = f(x)+f(0)$, por lo tanto $f(0)=0$, entonces
+    $$\begin{array}{rcl}
+	\lim\limits_{h\to 0} f(a+h) - f(a)&=&\lim\limits_{h\to 0}f(a)+f(h)-f(a)\\\\
+	&=&\lim\limits_{h\to 0}f(h)\\\\
+	&=&\lim\limits_{h\to 0} f(h)-f(0) = 0\\\\
+    \end{array}$$
+
+%--------------------8.
 \item 
 
 

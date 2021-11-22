@@ -1,4 +1,3 @@
-
 # función media aritmética, media cuadrática y media aritmética.
 def promedios(lista):
     sum_arit, sum_cuad, sum_armo = 0,0,0

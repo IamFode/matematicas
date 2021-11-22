@@ -860,7 +860,63 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 
 %--------------------24.
 \item $\displaystyle\int_{-\pi}^x \bigg|\dfrac{1}{2}+\cos t\bigg|\; dx$ si $0\leq x \leq \pi$.\\\\
-    Respuesta.-\; 
+    Respuesta.-\; Primero queremos determinar $\frac{1}{2}+\cos t$ para $t$ positivo y en otro caso negativo, por lo tanto,
+    $$\bigg| \dfrac{1}{2}+\cos t \bigg| = \left\{\begin{array}{rcl}
+	    \dfrac{1}{2}+\cos t&si&-\pi\leq x \leq -\dfrac{2\pi}{3}\; o \; \dfrac{2\pi}{3}\leq x \leq \pi\\\\
+	    -\left(\dfrac{1}{2}+\cos t\right)&si&-\dfrac{2\pi}{3}\leq x \leq \dfrac{2\pi}{3}\\\\
+    \end{array}\right.$$
+    Ahora consideremos dos casos. Si $0\leq x \leq \dfrac{2\pi}{3},$ entonces 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\displaystyle\int_{-\pi}^x \bigg|\dfrac{1}{2}+\cos t\bigg|\; dt$&$=$&$-\displaystyle\int_{-\i}^{-\frac{2\pi}{3}}\left(\dfrac{1}{2}+\cos t\right)\; dt + \int_{-\frac{2\pi}{3}}^x \left(\dfrac{1}{2}+\cos t\right)\; dt$\\\\ &$=$&$-\left(-\dfrac{\pi}{3}+\dfrac{\pi}{2}\right)-\left[\sen\left(-\dfrac{2\pi}{3}\right)-\sen(-\pi)\right]+\left(\dfrac{x}{2}+\dfrac{\pi}{3}\right)+\left[\sen x - \sen \left(-\dfrac{2\pi}{3}\right)\right]$\\\\
+									     &$=$&$\dfrac{\pi}{6}+\sqrt{3}+\dfrac{x}{2}+\sen x$\\\\
+	\end{tabular}
+    \end{center}
+
+    En otro caso, si $\frac{2\pi}{3}\leq x \leq \pi$, entonces, 
+    \begin{center}
+	\begin{tabular}{rcl}
+	    $\displaystyle\int_{-\pi}^{x} \bigg|\dfrac{1}{2}+\cos t\bigg|$&$=$&$-\displaystyle\int_{-\pi}^{-\frac{2\pi}{3}}\left(\dfrac{1}{2}+\cos t\right)\; dt + \int_{-\frac{2\pi}{3}}^{\frac{2\pi}{3}}\left(\dfrac{1}{2}+\cos t\right)\; dx - \int_{\frac{2\pi}{3}}^x \left(\dfrac{1}{2}+\cos t\right)\; dx$\\\\
+									  &$=$&$\left(-\dfrac{\pi}{6}-\dfrac{\sqrt{3}}{2}\right)+\left(\dfrac{2\pi}{3}+\sqrt{3}\right)-\left(\dfrac{\pi}{2}-\dfrac{\pi}{3}\right)-\left(\sen x - \dfrac{\sqrt{3}}{2}\right)$\\\\
+									  &$=$&$\dfrac{5\pi}{6}+2\sqrt{3} - \dfrac{x}{2}-\sen x$\\\\
+	\end{tabular}
+    \end{center}
+
+%--------------------25.
+\item $\displaystyle\int_{x}^{x^2}(t^2+\sen t)\; dx = \dfrac{x^6-x^3}{3} - \cos (x^2) + \cos x$.\\\\
+
+%--------------------26.
+\item $\displaystyle\int_0^{\pi/2} \sen 2 x\; dx = \dfrac{1}{2}\int_{0\cdot 2}^{\frac{\pi}{2}\cdot 2}  \sen x\; dx = -\dfrac{1}{2}(\cos \pi -\cos 0) = 1$.\\\\
+
+%--------------------27.
+\item $\displaystyle\int_0^{\pi/3} \cos \dfrac{x}{2}\; dx =2 \int_{0\cdot \frac{1}{2}}^{\frac{\pi}{3}\cdot \dfrac{1}{2}}\cos x \; dx = 2 (\sen \dfrac{\pi}{6} - \sen 0) = 1$.\\\\
+
+
+%--------------------28.
+\item Demostrar las siguientes fórmulas de integración, válidas para $b\neq 0$.
+    $$\int_0^x cos(a+bt)\; dt = \dfrac{1}{b}\left[\sen(a+bx)+\sen a\right],$$
+    $$\int_0^x \sen (a+bt)\; dt = -\dfrac{1}{b} \left[\cos(a+bx)-\cos a\right].$$\\\\
+	Demostración.-\; Usando la formula de adición tenemos,
+
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^x \cos(a+bt)\; dt&=&\displaystyle\int_0^x \left[\sen a \cos(bt)+\sen(bt)\cos a\right]\, dt\\\\
+						 &=&\dfrac{\cos a}{b} \displaystyle\int_0^{bx} \cos t \; dt  - \dfrac{\sen a}{b} \displaystyle\int_0^{bx} \sen t \; dt \qquad b\neq 0\\\\
+						 &=&\dfrac{1}{b}\left[\cos a \sen(bx)-\sen a + \sen a \cos(bx)\right]\\\\
+						 &=&\dfrac{1}{b}\left[\sen(a+bx)-\sen a\right]\\\\
+
+	\end{array}$$
+	Similar a la anterior demostración tenemos, \\
+
+	 $$\begin{array}{rcl}
+	     \displaystyle\int_0^x \sen(a+bt)\; dt&=&\displaystyle\int_0^x \left[\sen a \cos(bt)+\sen(bt)\cos a\right]\; dt\\\\
+						  &=&\dfrac{\sen a}{b} \displaystyle\int_0^{bx} \cos t \; dt - \dfrac{\cos a}{b}\int_0^{bx} \sen t \; dt \qquad b\neq 0\\\\
+						  &=&\dfrac{\sen a}{b}\sen(bx)+\dfrac{\cos a}{b}(1-\cos(bx))\\\\
+						  &=&\dfrac{1}{b}\left[\sen a \sen (bx) + \cos a - \cos a \cos (bx)\right]\\\\
+						  &=&-\dfrac{1}{b} \left[\cos(a+bx)-\cos a\right]\\\\
+	 \end{array}$$
+
+%--------------------29.
+\item 
 
 \end{enumerate}
 
