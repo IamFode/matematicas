@@ -917,6 +917,84 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 
 %--------------------29.
 \item 
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Hacer uso de la identidad $\sen 3t = 3 \sen t  - 4 \sen^3 t$ para deducir la fórmula de integración
+	    $$\int_0^x \sen^3 t \;dt = \frac{2}{3} - \frac{1}{3}(2\sen^2x)\cos x.$$
+
+	    Respuesta.-\; $\sen^3 = \dfrac{3}{4} = \dfrac{3}{4}\sen t - \dfrac{1}{4}\sen(3t)$
+	    $$ \begin{array}{rcl}
+		\displaystyle\int_0^x \sen^3 t \; dx&=&\displaystyle \int_0^x\left[\dfrac{3}{4}\sen t - \dfrac{1}{4}\sen (3t)\right]\; dt\\\\
+						    &=&\dfrac{3}{4}(1-\cos x)-\dfrac{1}{12}\displaystyle \int_0^x \sen t \; dt\\\\
+						    &=&\dfrac{3}{4} - \dfrac{3}{4}\cos x - \dfrac{1}{12}+\dfrac{1}{12} \cos 3x\\\\
+						    &=&\dfrac{2}{3}-\dfrac{3}{4}\cos x + \dfrac{1}{12}\left(\cos x  - 4\sen^2 x \cos x\right)\\\\
+						    &=&\dfrac{2}{3}-\dfrac{2}{3}\cos x - \dfrac{1}{2}\sen^2 x \cos x\\\\
+						    &=&\dfrac{2}{3}-\dfrac{1}{3}\left(2+\sen^2 x\right)\cos x\\\\
+	    \end{array}$$
+
+	%----------(b)
+	\item Deducir la identidad $\cos 3t = 4\cos^3 t - 3\cos t$ y utilizándola para demostrar que 
+	    $$\int_0^x \cos^3 t \; dt = \frac{1}{3}(2+\cos^2 x)\sen x$$
+	    Respuesta.-\; $\cos3 x = 4\cos^2 - 3\cos x$
+
+	    $$\begin{array}{rcl}
+		\displaystyle\int_0^x \cos^3 t\; dt&=&\displaystyle\int_0^x \left[\cos(3t) + 3\cos t\right]\; dt\\\\
+						   &=&\dfrac{1}{4}\displaystyle\int_0^x \cos(3t)\; dt + \displaystyle\int_0^x \cos t \; dt\\\\
+						   &=&\dfrac{1}{12}\displaystyle\int_0^3x \cos t \; dt + \dfrac{3}{4}\displaystyle\int_0^x \cos t \; dt\\\\
+						   &=&\dfrac{1}{12} \sen(3t) \; dt + \dfrac{3}{4}\sen x\\\\
+						   &=&\dfrac{1}{12}(3\sen x - 4 \sen^3 x) + \dfrac{3}{4}\sen x\\\\
+						   &=&\sen x \dfrac{1}{3}\sen^3 x\\\\
+						   &=&\sen x \dfrac{1}{3}\sen^2x \sen x\\\\
+						   &=&\sen x - \dfrac{1}{3}\sen^2x \sen x\\\\
+						   &=&\left[1 - \dfrac{1}{3}\left(1-\cos^2 x\right)\right]\sen x\\\\
+						   &=&\left(\dfrac{2}{3}+\dfrac{1}{3}\cos^2 x\right)\sen x\\\\
+						   &=&\dfrac{1}{3}\left(2+\cos^2 x\right)\sen x\\\\
+		\end{array}$$
+
+    \end{enumerate}
+
+%--------------------30.
+\item Si una función $f$ es periódica $p>0$ e integrable en $[0,p]$, demostrar que $\int_{0}^{2p} f(x)\; dx = \int_a^{a+p} f(x)\; dx$ para todo $a$.\\\\
+    Demostración.-\; Sabemos que existe un único $n\in \mathbb{Z}$ tal que 
+    $$n\leq \dfrac{a}{p}<n+1 \quad \Longrightarrow \quad np\leq a < np + p \leq a + p \quad \Longrightarrow \quad np\leq a < (n+1)p\leq a+p$$
+    Entonces, empezamos dividiendo la integral en dos partes\\ 
+    $$\begin{array}{rcll}
+	\displaystyle\int_{a}^{a+p}f(x) \; dx&=&\displaystyle\int_{a}^{(n+1)p}f(x) \; dx + \displaystyle\int_{(n+1)p}^{a+p}f(x) \; dx &\\\\
+					     &=&\displaystyle\int_{a-np}^{(n+1)p-np} f(x+np) \; dx + \displaystyle\int_{(n+1)p-(n+1)p}^{a+p-(n+1)p} f(x+(n+1)p)  \; dx &\\\\
+					     &=&\displaystyle\int_{a-np}^{p} f(x) \; dx + \displaystyle\int_{0}^{a-np} f(x) \; dx & periodicidad \; de \; p\\\\
+					     &=&\displaystyle\int_{0}^{p} f(x) \; dx & ya \; que\;  0\leq a-np<p\\\\
+    \end{array}$$
+
+%--------------------31.
+\item
+\begin{enumerate}[\bfseries (a)]
+
+    %----------(a)
+    \item Demostrar que $\int_0^{2\pi} \sen nx \;dx = \int_0^{2\pi} \cos nx \; dx = 0$ para todos los enteros $n\neq 0$.\\\\
+	Demostración.-\; 
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^{2\pi} \sen nx\; dx&=&\displaystyle\int_0^{2\pi}\cos nx\; dx\\\\
+	    \displaystyle\int_0^{2\pi\cdot n}\sen x \; dx&=&\displaystyle\int_0^{2\pi\cdot n}\cos x \; dx\\\\
+	    -\dfrac{1}{n}\left[\cos(2\pi\cdot n)-\cos 0\right]&=&\dfrac{1}{n} \left[\sen(2\pi\cdot n) - \sen 0\right]\\\\
+	    -\dfrac{1}{n}(0-0)&=&\dfrac{1}{n}(1-1)\\\\
+	    0&=&0\\\\
+	\end{array}$$
+
+    %----------(b)
+    \item Usando la parte (a) y las fórmulas de adición para seno y coseno, establecer las siguientes fórmulas, válidas para los enteros $m$ y $n$, tales que $m^2 \neq n^2$;
+	$$\int_0^{2\pi} \sen nx \cos mx \; dx = \int_0^{2\pi} \sen nx \sen mx \; dx = \int_0^{2\pi} \cos nx \cos mx \; dx = 0,$$
+	$$\int_0^{2\pi} \sen^2 nx \; dx = \int_0^{2\pi} \cos^2 nx \; dx = \pi, \qquad si \; n\neq 0$$
+	Estas fórmulas son las relaciones de ortogonalidad para el seno y el coseno.\\\\
+	Demostración.-\; 
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^{2\pi} \sen(nx)\cos(mx)\; dx&=&\dfrac{1}{2}\displaystyle\int_0^{2\pi}2\sen(nx)\cos(mx)\; dx\\\\
+							    &=&\dfrac{1}{2}\displaystyle\int_0^{2\pi} \left[\sen(n+m)x - \sen(n-m)x\right]\; dx\\\\
+							    &=&\dfrac{1}{2(n+m)}\displaystyle\int_0^{2\pi(n+m)} \sen x\; dx - \dfrac{1}{2(n-m)}\displaystyle\int_0^{2\pi(n-m)} \sen x\; dx\\\\
+							    &=&0\\\\
+	\end{array}$$
+
+\end{enumerate}
 
 \end{enumerate}
 

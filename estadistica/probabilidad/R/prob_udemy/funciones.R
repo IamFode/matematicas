@@ -24,3 +24,9 @@ dist_binom = function(n,k,p){
   return(coe_binom(n,k)*p^{k}*(1-p)^{n-k})
 }
 
+
+################### Distribución binomial negativa #############################
+varbn <- function(n) {
+  return(n*(1-p)/p^2)
+}
+

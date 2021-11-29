@@ -209,28 +209,9 @@
 
     %---------- (a)
     \item Demostrar que si $f$ es continua en $a$, entonces también lo es $|f|$.\\\\
-	Demostración.-\; Ya que $\lim\limits_{x\to a} f(x) = l \; \Longrightarrow \; \lim\limits_{x\to a} |f|(x) = |l|$ como se vio en el problema 5-16, entonces 
-	$$\lim_{x\to a} |f|(x) = \left|\lim_{x\to a} f(x)\right| = |f(a)| = |f|(a).$$\\
-
-    %---------- (b)
-    \item Demostrar que toda función continua $f$ puede escribirse en la forma $f=E+O$, donde $E$ es par y continua y $O$ es impar y continua.\\\\
-	Demostración.-\; Por el problema 13 del capítulo 3 (funciones) mostramos que $E$ y $O$ son continuas si $f$ lo es.\\\\
-
-    %---------- (c)
-    \item Demostrar que si $f$ y $g$ son continuas, también lo son $\max(f,g)$ y $\min(f,g)$.\\\\
-	Demostración.-\; Por la parte a) y sabiendo que 
-	$$\begin{array}{rcl}
-	    \max(f,g)&=&\dfrac{f+g+|f-g|}{2}\\\\
-	    \min(f,g)&=&\dfrac{f+g-|f-g|}{2}\\\\
-	    \end{array}$$
-
-    %---------- (d)
-    \item Demostrar que toda función continua $f$ puede escribirse en la forma $f=g-h$, donde $g$ y $h$ son no negativas y continuas.\\\\
-	Demostración.-\; Por el problema 15 del capítulo 3 (funciones) podemos comprobar que $f=g-h$ siempre que $f$ sea continua.\\\\ 
+	Demostración.-\; Ya que $\lim\limits_{x\to a} f(x) = l \; \Longrightarrow \; \lim\limis_{x\to a} |f|(x) = |l|$ como se vio en el problema 5-16, entonces 
+	$$\lim_{x\to a} |f|(x) = \left|\lim_{x\to a} f(x)\right| = |f(a)| = |f|(a)$$.\\\\
 
 \end{enumerate}
-
-%--------------------11.
-\item 
 
 \end{enumerate}
