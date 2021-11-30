@@ -72,6 +72,9 @@ par(mfrow=c(1,1))
 # números binomiales negativos
 choose(-6,4)
 
+############################ Distribución Poisson ##############################
+
+
 
 
 
