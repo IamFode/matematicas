@@ -3,7 +3,6 @@
 Un estadístico o estimador puntual es una funcion que aplicada a una muestra nos
 permite estimar un valor que queramos conocer sobre toda la población
 "
-
 # cuando hablemos de error estándar de T hablaremos de su desviación típica
 # Generalmente 
 
@@ -21,12 +20,16 @@ res sobre la variable longitud de pétalo (Petal.Length)
 tral
 "
 set.seed(1001)
-valores.medios.long.pétalo = replicate(10000, 
+valores.medios.long.pétalo = replicate(10, 
                                        mean(sample(iris$Petal.Length, 
                                                    40,
                                                    replace = TRUE)))
+# la media de las medias muestrales
 mean(valores.medios.long.pétalo)
+# la media poblacional
 mean(iris$Petal.Length)
 #Desviación típica
 sd(valores.medios.long.pétalo)
 sd(iris$Petal.Length) / sqrt(40)
+
+############################# Poblaciones Normales #############################

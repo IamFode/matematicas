@@ -1,0 +1,101 @@
+---
+title: "Variables aleatorias discretas"
+author: "Christian Limbert Paredes Aguilera"
+date: "1/12/2021"
+output: pdf_document
+---
+
+## Definición de variable aleatoria
+Una variable aleatoria es una aplicación que toma valores numéricos determinados por el resultado de un experimento aleatorio.
+
+## Tipos de variables aleatorias
+Variables aleatorias discretas, continua y mixtas.
+
+## Función de probabilidad para varibales discretas
+La función de probabilidad de una variable aleatoria discreta $X$ es la que denotamos por 
+$$P_X(x) = P(X=x)$$
+Dominio de una variable aleatoria discreta
+$$D_X = \left\{ x \in \mathbb{R} \; | \, P_X(x) > 0\right\}$$
+en el caso discreto lo mas habitual es que
+$$X(\Omega) =D_X$$
+
+## Propiedades de la función de probabilidad
+
+Sea $X$ una v.a. discreta $X:\Omega:\Rightarrow \mathbb{R}$ con dominio $D_X$. Su función de probabilidad $P_X$ verifica las siguientes propiedades:
+
+- $0\leq P_X(x) \leq 1$ para todo $x\in \mathbb{R}$
+
+- $\sum\limits_{x\in D_X} P_X(x) = 1$
+
+$$P_X(x) = \left\{ \begin{array}{rcl} 
+  \dfrac{1}{8} & si & x=0,3\\\\ 
+  \dfrac{3}{8}& si & x=1,2\\\\
+  0&&en\; otro \; caso\\\\
+\end{array}\right.$$
+
+Efectivamente los valores de la función de distribución suman 1
+$$\sum_{x=0}^{3} P_X(x) = \dfrac{1}{8} + \dfrac{3}{8} + \dfrac{3}{8} + \dfrac{1}{8} = 1$$
+
+## Función de distribución de variables aleatorias 
+La función de distribución de probabilidad (acumulada) de la v.a. X ya sea discreta o continua $F_X(x)$ representa la probabilidad de que $X$ toem un menor o igual que $x$ es decir
+$$F_X(x) = P(X\leq x)$$
+Sea $X$ una v.a. y $F_X$ su función de distribución
+
+1. $P(X>x) = 1-P(X\leq x) = 1 - F_X(x)$
+
+Demostración.- Tenemos que el complementario de $X$ mayor que $x$ es $\overline{\lbrace X>x\rbrace} = \lbrace X>x\rbrace^c = \lbrace X\leq x\rbrace$. Además 
+
+$$P(X>x) = 1 -P\left(\overline{\lbrace X > x}\rbrace\right) = 1 - P(X\leq x) = 1 - F_X(x)$$
+
+2. Sea $a$ y $b$ tales que $a<b$,
+$$P(a<X\leq b) = P(X\leq b) - P(X\leq a) = F_X(b) - F_X(a)$$
+
+Demostración.- Por otro lado, que $X$ se encuentre entre dos valores $a$ y $b$ es $\lbrace a<X\leq b \rbrace = \lbrace X\leq b \rbrace - \lbrace X\leq a \rbrace$ ahora podemos hacer
+
+$$\begin{array}{rcl}
+  P(a<X\leq b)&=&P( \lbrace X\leq \lbrace - \lbrace X \leq a \rbrace )\\
+  &=&P( \lbrace X \leq b \rbrace ) - P( \lbrace X \leq a \rbrace )\\
+  &=&F_X(b)-F_X(a)\\
+\end{array}$$
+
+### propiedadades de la función de distribución
+Sea $F_X$ la función de distribución de un v.a. $X$ entonces:
+\begin{itemize}
+\item $0\leq F_X(x) \leq 1$
+\item La función $F_x$ es no decreciente.
+\item Si denotamos por $F_X(x_o^-) = \displaystyle\lim_{x\to x_o^-} F(x)$, entonces se cumple que 
+
+$P(X<x_0) = F_X(x_0^-)$ y que $P(X=x_0) = F_X(x_0) - F_X(x_0^-)$
+\item Se cumple que $\displaystyle\lim_{x\to\infty} F_X(x)=1\;; \quad \lim_{x\to -\infty}F_X(x)=0$
+\item Toda función $F$ verificando las propiedades anteriores es función de distribución de alguna v.a. $X$.
+\item $P(X>x) = 1-F_X(x)$
+\item Dado $a,b\in \mathbb{R}$ con $a < b$
+$$P(a<X\leq b) = F_X(b) - F_X(a)$$
+\end{itemize}
+
+### Desigualdades estrictas
+\begin{itemize}
+\item $P(X=x) = F_X(x)-F_X(x^-)$
+\item $P(a<X<b) = F_X(b^-) - F_X(a)$
+\item $P(a\leq X < b) = F_X(b^-) - F_X(a^-)$
+\item $P(X<a)=F_X(a^-)$
+\end{itemize}
+
+### Más propiedades de la función de distribución
+
+\begin{itemize}
+\item Si $F_x$ es continua en $x$ se tiene que $P(X=x) = 0$ y por lo tanto $P(X\leq a) = P(X<a) + P(X=a) = P(X<a)$.
+
+Demostración.- Si $X$ es continua entonces,
+$$P(X=x) = F(a) - F(a^-) = F(a) - F(a) = 0$$
+por lo tanto 
+$$P(X\leq a) = P(X<a) + P(X=x) = P(X<a) + 0 = P(X<a)$$
+\item Sea $X$ una v-a- discreta con dominio $D_X$ y que tiene por función de probabilidad $P_X(x)$ entonces su función de distribución $F_X(x_0)$ es 
+$$F_X(x_0) = \sum_{x\leq x_0} P_X(x)$$
+donde $\sum\limits_{x\leq x_0}$ indica que sumamos todos los $x\in D_X$ tales que $x\leq x_0$
+
+Demostración.- 
+$$F_X(x_0) = P(X\leq x_0) P\left(\bigcup_{x\leq x_0; x\in D_X} \lbrace x \rbrace \right) = \sum_{x\leq x_0}P(X=x)=  \sum_{x\leq x_0} P_X(x)$$
+\end{itemize}
+
+## Valor esperado
