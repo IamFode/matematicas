@@ -99,3 +99,68 @@ $$F_X(x_0) = P(X\leq x_0) P\left(\bigcup_{x\leq x_0; x\in D_X} \lbrace x \rbrace
 \end{itemize}
 
 ## Valor esperado
+$$E(X)=\sum_{x\in X(\Omega)} x P_X(x)$$
+
+En ocasiones se le denomina media poblacional o simplemente media y muy frecuentemente se la denota por 
+$$\mu_X = E(X) \quad o \quad \mu = E(X)$$
+
+Si ${n\to \infty}$ se tiene que $\lim\limits_{n\to \infty} \dfrac{n_x}{x} = P_X(x)$ por lo tanto $E(X) = \lim\limits_{x\to \infty}\sum\limits_{x=1}^n x\dfrac{n_x}{n}$
+Entonces el valor esperado en una v.a. discreta puede entenderse como el valor promedio que tomaría una v.a. en un número grande de repeticiones.
+
+### Esperanza de funciones de variables aleatorias discretas
+Sea $X$ una v.a. discreta con función de probabilidad $P_X$ y de distribución $F_X$. Entonces el valor esperado de una función $f(x)$ es:
+$$E(g(x)) = \sum_{x} g(x)P_X(x)$$
+
+### Propiedades de los valores esperados
+
+\begin{itemize}
+\item $E(k) = k$ para cualquier constante $k$.
+
+Demostración.- Se tiene que 
+$$E(k) = \sum_{x=1}^n k\cdot P(X=k) = k\cdot P(X=k) + \ldots + k\cdot   P(X=k) = k\left[ P(X=k) + \ldots + P(X=k)\right] = k\cdot 1 = k$$
+
+\item Si $a\leq X\leq b$ entonces $a\leq E(X) \leq b$
+
+Demostración.- Sea $E(a) \leq E(X)\leq E(b)$ entonces por la anterior propiedad se tiene que $$a\leq E(X)\leq b$$
+
+\item SI $X$ es una v.a. discreta que toma valores enteros no negativos entonces $E(X) = \sum\limits_{x=0}^{\infty} (1-F_X(x))$
+
+Demostración.- Sea,
+$$\begin{array}{rcl}
+E(X)&=&\sum\limits_{k=0}^\infty k\cdot P(X=k)\\\\
+&=&P(X=1)\\\\
+&+&P(X=2)+P(X=2)\\\\
+&+&P(X=3)+P(X=3)+P(X=3)\\\\
+&+&P(X=4)+P(X=4)+P(X=4)+P(X=4)\\\\
+&+&\ldots\\\\
+\end{array}$$
+
+Luego sumando por columnas se tiene,
+
+$$\begin{array}{rcl}
+\sum\limits_{k=1}^\infty P(X=k)&=&P(X>0)\\\\
+\sum\limits_{k=2}^\infty P(X=k)&=&P(X>1)\\\\
+\sum\limits_{k=3}^\infty P(X=k)&=&P(X>2)\\\\
+\sum\limits_{x=0}^\infty kP(X=k)&=&\sum\limits_{k=0}^\infty P(X>k)\\\\
+E(X)&=&\sum\limits_{k=0}^\infty 1-F_X(x)\\\\
+\end{array}$$
+\end{itemize}
+
+### Propiedades de las series geométricas
+\begin{itemize}
+\item Una progresión geométrica de razon $r$ es una sucesión de la forma 
+$$r^0,r^1,r^2, \ldtos$$
+
+\item La serie geométrica es la suma de todos los valores de la progresión geométrica
+$$\sum_{k=0}^\infty r^k$$
+\item Las sumas parciales desde el término $n_0$ al $n$ de una progesión geométrica valen
+$$\sum_{k=n_0}^n r^k = \dfrac{r^{r_0}-r^n r}{1-r}$$
+\item Si $|r|<1$ la serie geométrica es convergente y 
+$$\sum_{k=0}^\infty r^k = \dfrac{1}{1-r}$$
+\item En el caso en que se comience en $n_o$ se tiene que
+$$\sum_{k=0}^\infty r^k = \dfrac{r^{n_0}}{1-r}$$
+\item Si $|r|<1$ también son convergentes las derivadas, respecto de $f$, de la serie geométrica y convergen a la derivada correspondiente. Así teneos que 
+$$\left(\sum_{k=0}^\infty r^k\right)^{'} = \sum_{k=1}^\infty kr^{k-1}\left(\dfrac{1}{1-r}\right)^{'} = \dfrac{1}{(1-r)^2}$$
+$$\left(\sum_{k=0}^\infty r^k\right)^{''} = \sum_{k=2}^\infty kr^{k-2}\left(\dfrac{1}{1-r}\right)^{''} = \dfrac{2}{(1-r)^3}$$
+\end{itemize}
+

@@ -1,0 +1,45 @@
+---
+title: "Estimación puntual"
+author: "Christian Limbert Paredes Aguilera"
+date: "2/12/2021"
+output: 
+  pdf_document: 
+    keep_tex: yes
+---
+
+## La media muestral
+Sea $X_1,\ldots X_n$ una muestra aleatoria simple de tamaño $n$ de una v.a. $X$ de esperanza $\mu_X$ y desviación típica $\sigma_X$
+La media muestral es:
+$$\overline{X} = \dfrac{X_1+\ldots + X_n}{n}$$
+
+En estas condiciones,
+$$E(\overline{X}=\mu_X),\qquad \sigma_X = \dfrac{\sigma_X}{\sqrt{n}}$$
+
+donde $\sigma_{\overline{X}}$ es el error estándar de $\overline{X}$
+
+\begin{itemize}
+\item Es un estimador puntal de $\mu_X$
+\item $E(\overline{X})=\mu_X:$ el valor esperado de de $\overline{X}$ es $\mu_X$.
+\item Si tomamos muchas veces una m.a.s. y calculamos la media muestral, el valor medio de estas medias tiende con mucha probabilidad a ser $\mu_X$
+\item $\sigma_{\overline{X}} = \sigma_X / \sqrt{n}:$ la variabilidad de los resultados de $\overline{X}$ tiende a $0$ a medida que tomamos muestras más grandes.
+\end{itemize}
+
+### Ejercicio
+\begin{enumerate}[\bfseries 1.]
+\item Generar 10000 muestra de tamaño 40 con repocisión de las longitudes del pétalo.
+\item A continuación hallaremos los valores medios de cada muestra.
+\item Consideraremos la media y la desviación típica de dichos valores medios y los compararemos con los valores exactos dados por las propiedades de la media muestral.
+\end{enumerate}
+
+```{r}
+set.seed(1001)
+#1
+valores.medios.long.pétalo <- replicate(10000,mean(sample(iris$Petal.Length,40,replace = TRUE)))
+head(valores.medios.long.pétalo,10)
+#2
+mean(valores.medios.long.pétalo)
+sd(valores.medios.long.pétalo)
+#3
+mean(iris$Petal.Length)
+sd(iris$Petal.Length)/sqrt(40)
+```
