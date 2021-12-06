@@ -240,7 +240,16 @@
 
 	%---------- (a)
 	\item Demostrar que si $f$ es continua en $l$, y $\lim\limits_{x\to a} g(x) = l$ entonces $\lim\limits_{x\to a}f(g(x)) = f(l)$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Sea 
+	    $$G(x) = \left\{\begin{array}{rcl}
+		    g(x)&si&x\neq a\\\\
+			l&si&x=a\\\\
+	    \end{array}\right.$$
+	    entonces $G$ es continua en $a$, ya que $G(a)=l=\lim\limits_{x\to a} g(x) = \lim_{x\to a} G(x)$. Así $f\circ G$ es continua en $a$ esto por el teorema 2. Luego 
+	    $$f(l)=f(G(a))=(f\circ G)(a) = \lim\limits_{x\to a} = \lim\limits_{x\to a}(f\circ G)(x) = \lim\limits_{x\to 0} f(g(x)).$$
+
+	%---------- (b)
+	\item 
 
     \end{enumerate}
 
