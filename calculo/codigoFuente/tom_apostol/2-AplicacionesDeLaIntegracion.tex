@@ -1022,12 +1022,41 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 			      &=&\cos \left[(2k+1)\dfrac{x}{2}\right]-\cos\left[(2k-1)\dfrac{x}{2}\right]\\\\
     \end{array}$$
     
-    Luego aplicando el anterior problema se tiene,
+    Luego, aplicando la propiedad telescópica de las sumas finitas, y la primera parte del teorema 4 se tiene,
     $$\begin{array}{rcl}
+	\sum\limits_{k=1}^n \sen kx&=&\dfrac{\cos \left[(n+\frac{1}{2})\right]-\cos \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
+				   &=&\dfrac{\cos(nx)\cos \frac{x}{2}-\sen(mx)\sen \frac{x}{2}-\cos \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
+				   &=&\dfrac{\cos\frac{x}{2}(\cos(nx)-1)-\sen (nx) \sen \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
+				   &=&\dfrac{-2\cos \frac{x}{2}\sen^2 \frac{nx}{2} - 2\sen \frac{ns}{2} \cos \frac{nx}{2} \sen \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
+				   &=&\dfrac{\sen \frac{nx}{2}\left(\cos \frac{x}{2} \sen \frac{nx}{2} + \cos \frac{nx}{2} \sen{x}{2}\right)}{2\sen \frac{x}{2}}\\\\
+				   &=&\dfrac{\sen \frac{nx}{2} \sen \frac{(n+1)x}{2}}{2\sen \frac{x}{2}}\\\\
     \end{array}$$
 
-
+%--------------------34.
+\item Se hace referencia a la figura 2.7. Por comparación del área del triángulo OAP con la del sector circular OAP, demostrar que $\sen x < x$ si $0<x<\frac{1}{2}\pi$. Usando entonces el hecho de que $\sen(-x)=-\sen x,$ demostrar que $|\sen x|<|x|$ si $0<|x|<\frac{1}{2}\pi$.\\\\
+    Demostración.-\; Considere la siguiente figura  
+    \begin{center}
+	\begin{tikzpicture}[scale=.5]
+	    \draw(0,0) circle (3);
+	    \draw(0,0)node[left]{$O$}--(2.25,2)node[right]{$P=(a,b)$}--(3,0)node[right]{$A=(1,0)$}--(0,0);
+	    \draw[gray](2.25,2)--(2.25,0);
+	    \draw[gray](2.8,1)node[right]{$b=\sen x$};
+	    \draw(.8,-.1)node[above]{$x$};
+	\end{tikzpicture}
+    \end{center}
+    Asumiendo que el radio es $r=1$. Para $0<x<\frac{x}{2}$ tenemos el triangulo $OAP_t$ de tamaño de base $a=1$ y altura $b=\sen x$, es decir,
+    $$Area(OAP_t) = \dfrac{1}{2}ab = \dfrac{\sen x}{2}$$
+    Luego el área del sector circular $OAP_s$ es
+    $$Area(OAP_s) = \dfrac{x}{2\pi}\pi r^2 = \dfrac{x}{2}$$
+    Ya que el área del triángulo $OAP_t$ es menor al área del sector $OAP_t$ tenemos,
+    $$\dfrac{\sen x}{2}<\dfrac{x}{2} \quad \Longrightarrow \quad \sen x < x$$
+    dado que $\sen(-x)=-\sen x$ para $0<x<\frac{\pi}{2}$ entonces 
+$$\sen x < x \quad \Longrightarrow \quad -\sen x > -x \quad \Longrightarrow \quad |\sen x| < |x|$$
+para $0<|x|<\frac{x}{2}$.\\\\
+    
 \end{enumerate}
+
+\section{Coordenadas polares}
 
 
 

@@ -13,7 +13,7 @@ La media muestral es:
 $$\overline{X} = \dfrac{X_1+\ldots + X_n}{n}$$
 
 En estas condiciones,
-$$E(\overline{X}=\mu_X),\qquad \sigma_X = \dfrac{\sigma_X}{\sqrt{n}}$$
+$$E(\overline{X})=\mu_X,\qquad \sigma_X = \dfrac{\sigma_X}{\sqrt{n}}$$
 
 donde $\sigma_{\overline{X}}$ es el error estándar de $\overline{X}$
 
@@ -25,7 +25,7 @@ donde $\sigma_{\overline{X}}$ es el error estándar de $\overline{X}$
 \end{itemize}
 
 ### Ejercicio
-\begin{enumerate}[\bfseries 1.]
+\begin{enumerate}
 \item Generar 10000 muestra de tamaño 40 con repocisión de las longitudes del pétalo.
 \item A continuación hallaremos los valores medios de cada muestra.
 \item Consideraremos la media y la desviación típica de dichos valores medios y los compararemos con los valores exactos dados por las propiedades de la media muestral.
@@ -34,7 +34,9 @@ donde $\sigma_{\overline{X}}$ es el error estándar de $\overline{X}$
 ```{r}
 set.seed(1001)
 #1
-valores.medios.long.pétalo <- replicate(10000,mean(sample(iris$Petal.Length,40,replace = TRUE)))
+valores.medios.long.pétalo <- replicate(10000,mean(sample(iris$Petal.Length,
+                            40,
+                            replace = TRUE)))
 head(valores.medios.long.pétalo,10)
 #2
 mean(valores.medios.long.pétalo)
@@ -43,3 +45,63 @@ sd(valores.medios.long.pétalo)
 mean(iris$Petal.Length)
 sd(iris$Petal.Length)/sqrt(40)
 ```
+
+## poblaciones normales
+
+### Combinación lineal de distribuciones normales
+La combinación lineal de distribuciones normlaes es normal. es decir, si $Y_i,\ldots Y_n$ son v.a. normales independientes, cada $Y_i \sim N(\mu_i,\sigma_i)$ y $a_1,\ldots, a_n, b\in \mathbb{R}$ entonces 
+$$Y=a_iY_i + \ldots a_nY_n + b$$
+es una v.a. $N(\mu,\sigma)$ con $\mu$ y $\sigma$ las que correspondan:
+\begin{itemize}
+\item $E(Y)a_i\cdot \mu_i + \ldots a_n \cdot \mu_n + b$ 
+\item $\sigma\left(Y\right)^2 = a_1^2 \cdot \sigma_1^2 + \ldots + a_n^2 \cdot \sigma_n^2$
+\end{itemize}
+
+### Distribución de la media muestral
+Sea $X_1, \ldots , X_n$ una m.a.s de una v.a. $X$ de esperanza $\mu_X$ y desviación típica $\sigma_X$
+Si $X$ es $N(\mu_X,\sigma_X)$ entonces 
+$$\overline{X} \;\mbox{es}\; N\left(\mu_X,\dfrac{\sigma_X}{\sqrt{n}}\right)$$
+
+y por tanto 
+
+$$Z = \dfrac{\overline{X}}{\frac{\sigma_X}{\sqrt{n}}}\; \mbox{es}\; N(0,1)$$
+
+### Teorema central del límite
+Sea $SX_1,\ldots,X_n$ una m.a.s. de una v.a. $X$ cualquiera, de esperanza $\mu_X$ y desviación típica $\sigma_X$. Cuando ${n\to \infty}$
+$${\overline{X} \to N\left(\mu_X,\dfrac{\sigma_X}{\sqrt{n}}\right)}$$
+
+y por tanto
+
+$$Z = {\dfrac{\overline{X}-\mu_X}{\frac{\sigma_X}{\sqrt{n}}} \to N(0,1)}$$
+
+Esta convergencia se refiere a las distribuciones 
+
+\textbf{Caso n grande}: Si $n$ es grande $n\geq 30$, $\overline{X}$ es aproximadamente normal, con esperanza $\mu_X$ y desviación típica $\dfrac{\sigma_X}{\sqrt{n}}$
+
+### Media muestral en muestras sin repetición
+Sea $X_1,\ldots X_n$ una m.a. sin repocisión de tamaño $n$ de una v.a. $X$ de esperanza $\mu_X$ y desviación típica $\sigma_X$.
+Si $n$ es pequeño en relación al tamaño $N$ de la población, todo lo que hemos contado funciona aproximadamente.
+Si $n$ es grande en relación a $N$ , entonces
+$$E(\overline{X})=\mu_X, \qquad \sigma_{\overline{X}} = \dfrac{\sigma_X}{\sqrt{n}}\cdot \sqrt{\dfrac{N-n}{N-1}} $$
+
+factor de población finita. el teorema del límite central ya no funciona exactamente en este último caso.
+
+```{r}
+x = c(-4,-3,-2,-1,0,1,2,3,4,2)
+var(x)
+```
+
+\texbf{Varianza poblacional}
+```{r}
+sum(x^2)/length(x)
+```
+\textbf{Varianza muestral o cuasivarianza}
+```{r}
+var_poblacional <- sum(x^2)/length(x) - mean(x)^2 
+n <- length(x)
+n/(n-1)*var_poblacional
+```
+```{r}
+var(x)
+```
+

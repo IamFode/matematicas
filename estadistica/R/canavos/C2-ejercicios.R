@@ -98,7 +98,6 @@ perm_n_orden(4,1) * perm_con_orden(17,3) / perm_con_orden(20,4)
 # P(D\D) = P(D\C) P(C) / P(D\C) P(C) + P(D\NC)P(CP) 
 0.05*0.92 / (.05*0.92 + .3*.08) 
 
-####### 2.16 #######
 
 
 

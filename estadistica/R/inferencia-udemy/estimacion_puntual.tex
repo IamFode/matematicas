@@ -42,6 +42,46 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -78,10 +118,9 @@ una v.a. \(X\) de esperanza \(\mu_X\) y desviación típica \(\sigma_X\)
 La media muestral es: \[\overline{X} = \dfrac{X_1+\ldots + X_n}{n}\]
 
 En estas condiciones,
-\[E(\overline{X}=\mu_X),\qquad \sigma_X = \dfrac{\sigma_X}{\sqrt{n}}\]
+\[E(\overline{X})=\mu_X,\qquad \sigma_X = \dfrac{\sigma_X}{\sqrt{n}}\]
 
-donde \(\sigma_{\overline{X}}\) es el error estándar de
-\(\overline{X}\)\textbackslash\textbackslash{}
+donde \(\sigma_{\overline{X}}\) es el error estándar de \(\overline{X}\)
 
 \begin{itemize}
 \item Es un estimador puntal de $\mu_X$
@@ -89,5 +128,121 @@ donde \(\sigma_{\overline{X}}\) es el error estándar de
 \item Si tomamos muchas veces una m.a.s. y calculamos la media muestral, el valor medio de estas medias tiende con mucha probabilidad a ser $\mu_X$
 \item $\sigma_{\overline{X}} = \sigma_X / \sqrt{n}:$ la variabilidad de los resultados de $\overline{X}$ tiende a $0$ a medida que tomamos muestras más grandes.
 \end{itemize}
+
+\hypertarget{ejercicio}{%
+\subsubsection{Ejercicio}\label{ejercicio}}
+
+\begin{enumerate}
+\item Generar 10000 muestra de tamaño 40 con repocisión de las longitudes del pétalo.
+\item A continuación hallaremos los valores medios de cada muestra.
+\item Consideraremos la media y la desviación típica de dichos valores medios y los compararemos con los valores exactos dados por las propiedades de la media muestral.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1001}\NormalTok{)}
+\CommentTok{\#1}
+\NormalTok{valores.medios.long.pétalo }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length,}
+                            \DecValTok{40}\NormalTok{,}
+                            \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))}
+\FunctionTok{head}\NormalTok{(valores.medios.long.pétalo,}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 3.5975 3.5150 3.9400 3.2650 3.9125 3.9650 4.2825 3.2950 3.8500 3.7850
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#2}
+\FunctionTok{mean}\NormalTok{(valores.medios.long.pétalo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.754478
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(valores.medios.long.pétalo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2796513
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#3}
+\FunctionTok{mean}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.758
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(}\DecValTok{40}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2791182
+\end{verbatim}
+
+\hypertarget{poblaciones-normales}{%
+\subsection{poblaciones normales}\label{poblaciones-normales}}
+
+\hypertarget{combinaciuxf3n-lineal-de-distribuciones-normales}{%
+\subsubsection{Combinación lineal de distribuciones
+normales}\label{combinaciuxf3n-lineal-de-distribuciones-normales}}
+
+La combinación lineal de distribuciones normlaes es normal. es decir, si
+\(Y_i,\ldots Y_n\) son v.a. normales independientes, cada
+\(Y_i \sim N(\mu_i,\sigma_i)\) y \(a_1,\ldots, a_n, b\in \mathbb{R}\)
+entonces \[Y=a_iY_i + \ldots a_nY_n + b\] es una v.a. \(N(\mu,\sigma)\)
+con \(\mu\) y \(\sigma\) las que correspondan:
+
+\begin{itemize}
+\item $E(Y)a_i\cdot \mu_i + \ldots a_n \cdot \mu_n + b$ 
+\item $\sigma\left(Y\right)^2 = a_1^2 \cdot \sigma_1^2 + \ldots + a_n^2 \cdot \sigma_n^2$
+\end{itemize}
+
+\hypertarget{distribuciuxf3n-de-la-media-muestral}{%
+\subsubsection{Distribución de la media
+muestral}\label{distribuciuxf3n-de-la-media-muestral}}
+
+Sea \(X_1, \ldots , X_n\) una m.a.s de una v.a. \(X\) de esperanza
+\(\mu_X\) y desviación típica \(\sigma_X\) Si \(X\) es
+\(N(\mu_X,\sigma_X)\) entonces
+\[\overline{X} \;\mbox{es}\; N\left(\mu_X,\dfrac{\sigma_X}{\sqrt{n}}\right)\]
+
+y por tanto
+
+\[Z = \dfrac{\overline{X}}{\frac{\sigma_X}{\sqrt{n}}}\; \mbox{es}\; N(0,1)\]
+
+\hypertarget{teorema-central-del-luxedmite}{%
+\subsubsection{Teorema central del
+límite}\label{teorema-central-del-luxedmite}}
+
+Sea \(SX_1,\ldots,X_n\) una m.a.s. de una v.a. \(X\) cualquiera, de
+esperanza \(\mu_X\) y desviación típica \(\sigma_X\). Cuando
+\({n\to \infty}\)
+\[{\overline{X} \to N\left(\mu_X,\dfrac{\sigma_X}{\sqrt{n}}\right)}\]
+
+y por tanto
+
+\[Z = {\dfrac{\overline{X}-\mu_X}{\frac{\sigma_X}{\sqrt{n}}} \to N(0,1)}\]
+
+Esta convergencia se refiere a las distribuciones
+
+\textbf{Caso n grande}: Si \(n\) es grande \(n\geq 30\),
+\(\overline{X}\) es aproximadamente normal, con esperanza \(\mu_X\) y
+desviación típica \(\dfrac{\sigma_X}{\sqrt{n}}\)
 
 \end{document}
