@@ -246,12 +246,21 @@
 			l&si&x=a\\\\
 	    \end{array}\right.$$
 	    entonces $G$ es continua en $a$, ya que $G(a)=l=\lim\limits_{x\to a} g(x) = \lim_{x\to a} G(x)$. Así $f\circ G$ es continua en $a$ esto por el teorema 2. Luego 
-	    $$f(l)=f(G(a))=(f\circ G)(a) = \lim\limits_{x\to a} = \lim\limits_{x\to a}(f\circ G)(x) = \lim\limits_{x\to 0} f(g(x)).$$
+	    $$f(l)=f(G(a))=(f\circ G)(a) = \lim\limits_{x\to a} = \lim\limits_{x\to a}(f\circ G)(x) = \lim\limits_{x\to 0} f(g(x)).$$\\
 
 	%---------- (b)
 	\item Demostrar que si no se supone la continuidad de $f$ en $l$, entonces no se cumple, por lo general, que $\lim\limits_{x\to a} f(g(x)) = f\left(\lim\limits_{x\to a} g(x)\right)$.\\\\
-	    Demostración.-\; 
+	    Demostración.-\; Sea $g(x)=l+x-a$ y 
+	    $$f(x) = \left\{ \begin{array}{rl}
+		    0,&x\neq 1\\
+		    1, & x=1\\
+		\end{array}\right.$$
+
+		Luego $\lim\limits_{x\to a} g(x) = l$, así $f\left(\lim\limits_{x\to a} g(x)\right) = f(l) = l$, pero $g(x)\neq l$ para $x\neq a$, por lo tanto $\lim\limits_{x\to a} f(g(x)) = \lim\limits_{x\to a} = 0$.\\\\
 
     \end{enumerate}
+
+%--------------------13.
+\item 
 
 \end{enumerate}

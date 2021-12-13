@@ -216,7 +216,7 @@ se la denomina desviación típica o estándar de $X$.
 ### Propiedades
 \begin{itemize}
   \item Si $X$ es una v.a. discreta con función de probabilidad $P_X$ su varianza es
-  $$\sigma_X^2 = Var(x) = E\left[(X-E(X))^2\right] = \sum_{x} \left[x-E(X)\right]P_X(x)$$
+  $$\sigma_X^2 = Var(x) = E\left[(X-E(X))^2\right] = \sum_{x} \left[x-E(X)\right]^2 P_X(x)$$
  
   \item Sea $X$ una v.a. 
   $$Var(X) = E(X^2) -\left[E(X)\right]^2 = \sum_{x} x^2 P_X(X) - \left[E(X)\right]^2$$
@@ -235,18 +235,21 @@ se la denomina desviación típica o estándar de $X$.
 ### Propiedades de la varianza
 \begin{itemize}   
   \item $Var(X) \geq 0$
+  
     Demostración.- La definición nos dice que la diferencia de la v.a. X y la esperanza del mismo está elevada al cuadrado y por tanto $Var(X)\geq 0$.
     
   \item $Var(cte) = E(cte^2) -E(cte)^2 = cte^2 - cte^2 = 0$
+  
     Demostración.- Dado que la varianza de una constante es la misma constante, entonces $cte^2 - cte^2$ y por tanto queda demostrada la proposición. 
     
   \item El mínimo de $E\left[(X-C)^2\right]$ se calcanza cuando $C=E(X)$ y es $Var(X)$. Esta propiedad es una de las que hace útil a la varianza como medida de dispersión.
+  
     Demostración.- Sea
     $$\begin{array}{rcl}
-      E\left[(X-C)^2\right]&=&\sum\limits_{x}(X-C)P_X(x)\\\\
-      &=&\sum\limits_{x} \left(X^2 - 2XC + C^2\right) P_X(x)\\\\
-      &=&\sum\limits_{x}x^2P(X) - 2\sum\limits_{x} XCP_X(x) + \sum\limits_{x}C^2P_X(x)\\\\
-      &=&\sum\limits_{x}X^2P(x)-2CE(x) + C^2\\\\
+      E\left[(X-C)^2\right]&=&\sum\limits_{x}(x-C)^2 P_X(x)\\\\
+      &=&\sum\limits_{x} \left(x^2 - 2xC + C^2\right) P_X(x)\\\\
+      &=&\sum\limits_{x}x^2P_X(X) - 2\sum\limits_{x} xCP    _X(x) + \sum\limits_{x}C^2P_X(x)\\\\
+      &=&\sum\limits_{x}x^2P_X(x)-2CE(X) + C^2\\\\
     \end{array}$$
     
   
@@ -257,5 +260,39 @@ se la denomina desviación típica o estándar de $X$.
     
 \end{itemize}
 
+## Transformaciones lineales de variables aleatorios
+Un cambio de variable lineal o transformación lineal de una v.a. X es otra v.a. $Y=a+bX$ donde $a,b\in \mathbb{R}$
+
+### Esperanza de una transformación lineal
+Sea $X$ una v.a. con $E(X) = \mu_X$ y $Var(X)=\sigma^2_X$ y $a,b\in \mathbb{R}$, entonces si $Y=a+bX$
+\begin{itemize}
+  \item $E(Y) = E(a+bX) = a+b\cdot E(X) = a+b\mu_X$
+  
+  Demostración.- 
+  $$\begin{array}{rcl}
+    E(Y)&=&E(a+bX)\\\\
+    &=&\sum\limits_{x}(a+b\cdot X)P_X(x)\\\\
+    &=&a\sum\limits_{x}P_X(x) + b\sum\limits_{x}x\cdot P_X(x)\\\\
+    &=&a+b\cdot E(X)\\\\
+    &=&a+b\mu_X\\\\
+  \end{array}$$
+  
+  \item $Var(Y) = Var(a+bX) = b^2 Var(X)= b^2 \sigma_X^2$
+  
+  Demostración.-\; 
+  $$\begin{array}{rcl}
+    Var(Y) = Var(a+bX)&=&E\left[(a+bX)\right]-\left[E(a+bX)\right]^2\\\\
+    &=&E\left(a^2 + 2abX + b^2 X^2\right) - \left[a + bE(X)\right]^2\\\\
+    &=&a^2 + 2abE(X) + b^2E(X^2) - a^2 - 2abE(X) - b^2\left[E(X)\right]^2\\\\
+    &=&b^2E(X^2)-b^2\left[E(X)\right]^2\\\\
+    &=&b^2Var(X)\\\\
+    &=&b^2\cdot \sigma_X^2\\\\
+  \end{array}$$
+  
+  \item $\sigma_Y = \sqrt{Var(Y)} \sqrt{2^2 Var(X)} = |b|\sigma_X$
+  
+  Demostración.-\; ya que $\sqrt{b^2} = |b|$ y en consecuencia del anterior ejercicio se tiene demostrada la proposición mencionada.
+  
+\end{itemize}
 
 

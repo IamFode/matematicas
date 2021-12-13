@@ -1,0 +1,103 @@
+---
+title: "Variables_aleatorias_continuas"
+author: "Christian Limbert Paredes Aguilera"
+date: "9/12/2021"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+## Variables aleatorias continuas definición 
+Notemos que si $X$ es una v.a. con función de distribución continua se tiene que 
+$P(X=x_0) = F_X(x_0)-F(x_0^-) = 0$ por lo que no tiene sentido definir función
+de probabilidad
+
+En general tendremos que $P(X<x_0) = P(X\leq x_0)$
+
+### Propiedades
+Los sucesos del tipo $\lbrace X\leq x\rbrace$ y $\lbrace X<x \rbrace$ tendrán la misma probabilidad.
+
+Dada una v.a. continua $X$ se tiene que:
+\begin{itemize}
+  \item $P(X\leq b) = P(X<b)$\\\\
+  Demostración.- $P(X\leq b) = P(X<b)+P(X=b) = P(X<b)$\\\\
+  
+  \item $P(X<b) = P(X<a) + P(a<X<b)$\\\\
+  Demostración.- Sea $\lbrace X<a \rbrace \cap \lbrace a<X<b \rbrace = \emptyset$
+  y $\lbrace X<a \rbrace \cup \lbrace a<X<b \rbrace = \lbrace X<b\rbrace$
+  entonces,\\
+  $$\begin{array}{rcl}
+    P(X\leq b)&=&P\left(\lbrace X<a \rbrace \cup \lbrace a<X<b \rbrace\right)\\\\
+    &=&P(X<a) + P(a<X<b)\\\\
+  \end{array}$$
+  
+  \item $P(a<X<b) = P(X<b)-P(X<a)$\\\\
+  Demostración.-\; Si reescribimos la igualdad dada nos queda,
+  $$P(X\leq b) = P(X<a) + P(a<X<b),$$ de donde por la primera y segunda propiedad queda demostrada la proposición.\\\\
+\end{itemize}
+
+### Propiedades de la función de distribución
+Dada una variable aleatoria contina se tiene que:
+\begin{itemize}
+  \item $F_X(b) = F_X(a) + P(a<X<b)$
+  \item $P(a<X<b) = F_X(b) - F_X(a)$
+  \item $P(a\leq X\leq b) = FX_(b)-F_X(a)$
+\end{itemize}
+
+## Función de densidad
+Una función $f$ : ${\mathbb{R}\to \mathbb{R}}$ es una función de densidad sobre $\mathbb{R}$ si cumple que 
+\begin{itemize}
+  \item $f_X(x)\geq 0$ para todo $x\in \mathbb{R}$
+  \item $f$ es continua salvo a lo más en una cantidad finita de puntos sobre cada intervalo acotado de $\mathbb{R}$.
+  \item $\displaystyle\int_{-\infty}^{\infty} f_X(x) \; dx = 1$
+\end{itemize}
+
+### Función de densidad de una variable aleatoria
+Sea $X$ una v.a. con función de distribución $F_X$. Sea ${f:\mathbb{R}\to \mathbb{R}}$ una función de desidad tal que 
+$$F_X(x) = \displaystyle\int_{-\infty}^{\infty} f_X(t)\; dt \quad \forall\;   x\in \mathbb{R}.$$
+
+Entonces $X$ es una variable aleatoria continua y $f_X$ es la densidad de v.a. $X$
+
+### Dominio de una variable aleatoria continua
+El conjunto $D_X = \lbrace x\in\mathbb{R} | f_X(x)>0 \rbrace$ recibe el nombre de soporte de la variable eleatoria continua y se interpreta su conjunto de resultados posible
+
+### Densidad diana 
+$$f_X(x) \left\{ = \begin{array}{rcl}
+  0&si&x\leq 0\\
+  1&si&0<x<1\\
+  0&si&1\leq x\\
+\end{array}\right.$$
+
+
+$$\begin{array}{crcl}
+  Si & x\leq 0 & entonces&\displaystyle\int_{-\infty}^x f_X(t)\; dt = 0\\\\
+  Si&0\leq x \leq 1&entonces&\displaystyle\int_{\infty}^x f_X(t)\; dx = \int_0^x 1\; dt = x\\\\
+  Si&x\geq 1&entonces&\displaystyle\int_{-\infty}^x F_X(t)\; dt = \int_0^1 1 \; dt = 1\\\\
+ &&\mbox{Por lo tanto}&\displaystyle\int_{\infty}^x f_X(x) \; \mbox{para todo}\; x\in \mathbb{R}\\\\
+\end{array}$$
+
+```{r}
+curve(dunif(x,0,1),xlim = c(-0.5,1.5),col="blue",
+      main="Densidad de la distribución uniforme en [0,1]")
+```
+
+## Utilidad de la función de densidad
+La función de densidad nos permite calcular diversas probabilidades
+
+### Propiedades
+Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X$ entonces
+\begin{itemize}
+  \item $P(a<X<b) = P(a<X\leq b) = P(a\leq X < b) = P(a\leq X \leq b) = \displaystyle\int_a^b f_X(x)\; dx$
+  \item Si $A$ es un conjunto adecuado de $\mathbb{R}$ entonces 
+  $$P(X\in A) = \displaystyle\int_{A}f(X) \; dx = \int_{A\cap D_X} f(x)\; dx$$
+\end{itemize}
+
+### Propiedades de la función de densidad
+Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X$ entonces
+\begin{itemize}
+  \item Si $f_X$ es continua en un punto $x$, $F_X$ es derivable en ese punto y $F^{'}_X(x) = f_X(x)$
+  \item $P(X=x) = 0\; \forall x\in \mathbb{R}$.
+\end{itemize}
+
+
