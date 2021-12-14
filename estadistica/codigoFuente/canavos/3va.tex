@@ -39,4 +39,42 @@
 	\end{def.}
 \end{tcolorbox}
 
+En general, la función de distribución acumulativa $F(x)$ de una variable aleatoria discreta es una función no decreciente de los valores de $X$, de tal manera que:
+\begin{enumerate}[\bfseries 1.]
+    \item $0\leq F(x) \leq 1$ para cualquier $x$;
+    \item $F(x_i)\geq F(x_j)$ si $x_i\geq x_j;$
+    \item $P(X>x) = 1 - F(x).$
+    \item $P(X=x) = F(x) - F(x-1);$
+    \item $P(x_i \geq X \geq x_j) = F(x_j) - F(x_i - 1)$
+\end{enumerate}
 
+\section{Distribuciones de probabilidad de variables aleatorias continuas}
+
+%-------------------- Definición 3.6
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	\begin{enumerate}[\bfseries 1.]
+	    \item $f(x)\geq 0$, $-\infty<x<\infty$,
+	    \item $\displaystyle\int_{-\infty}^\infty f(x) \;dx$ y 
+	    \item $P(a\leq X \leq b) = \displaystyle\int_{a}^{b} f(x) \; dx$
+	\end{enumerate}
+    \end{def.}
+\end{tcolorbox}
+
+Para la función de distribución acumulativa $F(x)$ se tiene:
+\begin{tcolorbox}[colframe=white]
+    $$P(X\leq x) = F(x) = \int_{-\infty}^x f(t) \; dt$$
+\end{tcolorbox}
+
+Dado que para cualquier varible aleatoria continua $X$,
+$$P(X=x) = \inf_x^x f(t)\; dt = 0, \qquad \Longrightarrow \qquad P(X\leq x) = P(X<x) = F(x)$$\\
+
+La distribución acumulativa $F(x)$ es una función lisa no decreciente de los valores de la v.a. con las siguiente propiedades:
+\begin{enumerate}[\bfseries 1.]
+    \item $F(-\infty) = 0;$
+    \item $F(\infty) = 1$;
+    \item $P(a<X<b) = F(b) - F(a)$
+    \item $dF(x)/dx = f(x).$
+\end{enumerate}
+
+\section{Valor esperado de una variable aleatoria}

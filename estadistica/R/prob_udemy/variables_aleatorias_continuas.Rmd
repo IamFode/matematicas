@@ -100,4 +100,45 @@ Sea $X$ una v.a. continua con función de distribución $F_X$ y de densidad $f_X
   \item $P(X=x) = 0\; \forall x\in \mathbb{R}$.
 \end{itemize}
 
+## Esperanza y varianza para variables aleatorias continuas
+
+### Esperanza
+$$E(X) = \int_{-\infty}^{\infty} xf_X(x)\; dx$$
+
+Su $f(x)$ es una función de la variable $X$ entonces:
+$$E(g(X)) = \int_{-\infty}^{\infty} g(x)\cdot f_X(x)\; dx$$
+
+### Varianza
+
+$$Var(X) = \sigma_X^2 = E\left[(X-\mu_X)^2\right] = \int_{-\infty}^{\infty} (x -\mu_X)^2 f_X(x)\; dx$$
+
+### Desviación típica
+$$\sigma_X = +\sqrt{\sigma_X^2}$$
+
+### Propiedades
+\begin{itemize}
+  \item $\sigma_X^2 \geq 0$
+  \item $Var(cte) = E(cte^2) - (E(cte))^2 = cte^2 - cte^2 = 0$
+  \item $Var(X) = E(X^2) - \mu_X^2 = \displaystyle\int_{-\infty}^\infty x^2 f_X(x)\; dx - \mu_X^2$
+  \item El mínimo de $E\left[(X-C)^2\right]$ se alcanza cuando $C = E(X)$ y es $Var(X)$
+\end{itemize}
+
+### Proposición
+Sea $X$ una v.a. continua con $E(X) = \mu_X$ y $Var(X) = \sigma_X^2$ sea $Y=a+bX$, donde $a,b\in \mathbb{R}$ es una nueva v.a. continua obtenida mediante una transformación lineal de $X$. Se verifica las mismas propiedades que en el caso discreto:
+
+\begin{itemize}
+  \item $E(Y) = E(a+bX) = a+bE(X)$
+  \item $Var(Y) = Var(a+bX) = b^2Var(X)$
+  \item $\sigma_Y = |b|\sigma_X$
+  \item $Z=\dfrac{X-\mu_X}{\sigma_X}$ es una transformación lineal de $X$ de forma que 
+  $$E(Z) = 0 \qquad y \qquad Var(Z)=1$$
+  
+  Demosrtación.- Para la esperanza:
+  $$E(Z) = E\left[\dfrac{X-\mu_X}{\sigma_X}\right] = \dfrac{E(X)-\mu_X}{\sigma_X} = \dfrac{\mu_X - \mu_X}{\sigma_X} = 0$$
+  
+  Luego para la varianza se tiene:
+  
+  $$Var(Z) = Var\left[\dfrac{X-\mu_X}{\sigma_X}\right] =  \dfrac{Var(X)}{\sigma_X^2} = -\mu_X + \sigma_X^{-1} \cdot Var(X) = \sigma_X^{-2} Var(X) =  \dfrac{\sigma_X^2}{\sigma_X^2} = 1$$
+\end{itemize}
+
 
