@@ -1,0 +1,36 @@
+---
+title: "tarea 6"
+author: "Christian Limbert Paredes Aguilera"
+date: "15/12/2021"
+output: pdf_document
+---
+
+```{r}
+source("funciones.R")
+```
+
+```{r}
+coe_binom(3,2) / coe_binom(10,2)
+```
+
+# 1.
+10 Estudiantes en una clase de estadística.
+3 tienen 19 años
+4 tiene 20 años
+1 tiene 21 años
+1 tiene 24 años
+1 tiene 26 años
+
+
+$$\P_X(x) = P(X=X) = \left\{\begin{array}{rcl}
+  \dfrac{\binom{3}2}{\binom{10}{2}} = \dfrac{3}{45}&si&x=19\\\\
+  \dfrac{}{}&si&x=19.5\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  \dfrac{}{}&si&\\\\
+  0&& en cualquier otro caso \\\\
+\end{array}\right.$$

@@ -78,3 +78,38 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
 \end{enumerate}
 
 \section{Valor esperado de una variable aleatoria}
+
+%-------------------- Definición 3.7
+\begin{tcolorbox}[colframe=white]
+    \begin{def.}
+	El valor esperado de una variable aleatoria $X$ es el promedio o valor medio de $X$ y está dado por:
+	$$\begin{array}{rcll}
+	    E(X)& = & \sum\limits_{x} xp(x) & \mbox{Si $x$ es discreta, o}\\\\
+	    E(X) & = & \displaystyle\int_{-\infty}^\infty x f(x) \; dx & \mbox{Si $x$ es continua.}\\\\
+	\end{array}$$
+	En donde $p(x)$ y $f(x)$ son las funciones de probabilidad y de densidad de probabilidad, respectivamente.\\\\	
+	En general, el valor esperado de una función $g(x)$ de la variables aleatoria $X$, está dado por:
+	$$\begin{array}{rcll}
+	    E(g(X))& = & \sum\limits_{x} g(x) p(x) & \mbox{Si $x$ es discreta, o}\\\\
+	    E(g(X)) & = & \displaystyle\int_{-\infty}^\infty g(x)x f(x) \; dx & \mbox{Si $x$ es continua.}\\\\
+	\end{array}$$
+    \end{def.}
+\end{tcolorbox}
+
+\subsection{Propiedades}
+\begin{enumerate}[\bfseries 1.]
+
+    %---------- 1.
+    \item El valor esperado de una constante $c$ es el valor de la constante.
+	$$E(c) = \displaystyle\int_{-\infty}^\infty cf(x)\; dx = c\int_{-\infty}^{\infty} f(x) \; dx = c$$
+    
+    %---------- 2.
+    \item El valor esperado de la cantidad $aX+b,$ en donde $a$ y $b$ son constantes, es el producto de $a$ por el valor esperado de $x$ más $b$.
+	$$E(aX+b) = \displaystyle\int_{-\infty}^\infty (ax+b)f(x)\; dx = a\int_{-\infty}^\infty xf(x)\; dx + b \int_{-\infty}^\infty f(x)\; dx = aE(X)+b$$
+
+    %---------- 3.
+    \item El valor esperado de la suma de dos funciones $g(X)$ y $h(X)$ de $X$ es la suma de los valores esperados de $g(X)$ y $h(X)$.
+	$$E\left[g(X) + h(X)\right] = \displaystyle\int_{-\infty}^\infty \left[g(x) + h(x)\right]\; dx \int_{-\infty}^\infty g(x)f(x)\; dx + \int_{-\infty}^infty h(x)f(x)\; dx = E\left[g(X)\right] + E\left[h(X)\right]$$
+\end{enumerate}
+
+\section{Momentos de una variable aleatoria}
