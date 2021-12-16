@@ -113,3 +113,43 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
 \end{enumerate}
 
 \section{Momentos de una variable aleatoria}
+ Los momentos de una variable aleatoria $X$ son los valores esperados de ciertas funciones de $X$. 
+
+ %-------------------- Definición 3.8
+ \begin{tcolorbox}[colframe=white]
+     \begin{def.}
+	 Sea $X$ una variable aleatoria. El r-ésimo momento de $X$ alrededor de cero se define por:
+	 $$\begin{array}{rcll}
+	     \mu_r^{'} & = & E(X^r) = \sum\limits_{x} x^r p(x) & \mbox{Si $x$ es discreta, o}\\\\
+	     \mu_r^{'} & = & E(X^r) =  \displaystyle\int_{-\infty}^\infty x^r f(x)\; dx & \mbox{Si $x$ es continua.}\\\\
+	 \end{array}$$
+     \end{def.}
+ \end{tcolorbox}
+ El primer momento al rededor del cero es la media o valor esperado de la variable aleatoria. y se denota por $\mu$; de ésta manera se tiene que $\mu_1^{'} = \mu = E(X)$. 
+
+ %-------------------- Definición 3.9
+ \begin{tcolorbox}[colframe=white]
+     \begin{def.}
+	 Sea $X$ una variable aleatoria. El r-ésimo momento central de $X$ o el r-ésimo momento alrededor de la media de $X$ se define por:
+	 $$\begin{array}{rcll}
+	     \mu_r & = & E(X-\,u)^r = \sum_{x}(x-\mu)^r p(x) &  \mbox{Si $x$ es discreta, o}\\\\
+	     \mu_r & = & E(X-\,u)^r = \displaystyle\int_{-\infty}^\infty (x-\mu)^r f(x)\; dx & \mbox{Si $x$ es continua.}\\\\
+	 \end{array}$$
+     \end{def.}
+ \end{tcolorbox}
+
+ El momento central de cero de cualquier variable aleatoria es uno, dado que:
+ $$\mu_0 = E(X-\mu)^0 = E(1) = 1$$
+ De manera similar, el primer momento central de cualquier variables aleatoria es cero, dado que:
+ $$\mu_1 = E(E-\mu)^0 = E(X) - \mu = 0$$
+ El segundo momento central:
+ $$\mu_2 = E(X-\mu)^2$$
+ Recibe el nombre de varianza de la variable aleatoria. Puesto que:
+ $$\begin{array}{rcl}
+     \mu_2 = Var(X) &=& E(X-\mu)^2\\
+		    &=&E(X^2 - 2X\mu + \mu^2)\\
+		    &=&E(X^2) - 2\mu^2 + \mu^2\\
+		    &=&\mu_2^{'} - \mu^2\\
+ \end{array}$$
+
+ La varianza de cualquier variable aleatoria es el segundo momento alrededor del origen menos el cuadrado de la media. Generalmente se denota por $\sigma^2$

@@ -1006,6 +1006,7 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     Luego por la propiedad telescopica de las sumas finitas, se tiene, 
     $$2\sen\dfrac{\pi}{2}\sum\limits_{k=1}^n \cos kx = \sen \left[(2n+1)\dfrac{x}{2}\right]-\sen(0+1)\dfrac{x}{2}$$
     luego,
+
     $$\begin{array}{rcl}
 	\displaystyle\sum_{k=1}^n \cos kx&=&\dfrac{\sen \left[(2n+1)\frac{x}{2}\right]-\sen\frac{x}{2}}{2\sen \frac{x}{2}}\\\\
 					 &=&\dfrac{2\sen\frac{(2n+1)\frac{x}{2}-\frac{x}{2}}{2}\cos \frac{(2n+1)\frac{x}{2}+\frac{x}{2}}{2}}{2\sen\frac{x}{2}}\\\\
@@ -1023,6 +1024,7 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     \end{array}$$
     
     Luego, aplicando la propiedad telescópica de las sumas finitas, y la primera parte del teorema 4 se tiene,
+
     $$\begin{array}{rcl}
 	\sum\limits_{k=1}^n \sen kx&=&\dfrac{\cos \left[(n+\frac{1}{2})\right]-\cos \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
 				   &=&\dfrac{\cos(nx)\cos \frac{x}{2}-\sen(mx)\sen \frac{x}{2}-\cos \frac{x}{2}}{-2\sen \frac{x}{2}}\\\\
@@ -1059,6 +1061,181 @@ para $0<|x|<\frac{x}{2}$.\\\\
 \setcounter{section}{9}
 \section{la integral para el área en coordenadas polares}
 
+\begin{teo}
+    Sea $R$ el conjunto radial de una función no negativa $f$ en un intervalo $[a,b]$, donde $0\leq b-a\leq 2\pi$, y se asume que $R$ es medible. Si $f^2$ es integrable en $[a,b]$ el área de $R$ esta dado por la integral
+    $$a(R)= \dfrac{1}{2}\int_a^b f^2(\theta)\; d\theta$$
 
+    Demostración.-\; Elegimos dos funciones escalonadas $s$ y $t$ que satisface
+    $$0\leq s(\theta) \leq f(\theta)\leq t(\theta)$$
+    Para todo $\theta$ en $[a,b]$, y denotamos $S$ y $T$ sus conjuntos radiales, respectivamente. Ya que $s\leq f\leq t$ en $[a,b]$, los conjuntos radiales satisfacen la relación de inclusión $S\subseteq R \subseteq T.$ Por lo tanto, por la propiedad monótona del área, tenemos $a(S)\leq a(R) \leq a(T).$ Pero $S$ y $T$ son conjuntos radiales de la función escalonada, así $a(S) = \dfrac{1}{2}\displaystyle\int_a^b s^2(\theta)\; d\theta$ y $a(T) = \dfrac{1}{2}\displaystyle\int_a^b t^2 (\theta)\; d\theta$. Entonces tenemos la inecuación 
+    $$\int_a^b s^2(\theta)\; d\theta \leq 2a(R)\leq \int_a^b t^2(\theta)\; d\theta$$
+    para todo función escalonada $s$ y $t$ que satisface $s\leq f\leq t$ en $[a,b]$. Donde $s^2$ y $t^2$ son funciones escalonadas arbitrarias que satisfacen $s^2\leq f^2 \leq t^2$ en $[a,b]$, se sigue $f^2$ es integrable, y tenemos $2a(R)=\displaystyle\int_a^b f^2(\theta)\; d\theta$. Esto prueba el teorema.
+\end{teo}
+
+\section{Ejercicios}
+
+En cada uno de los ejercicios 1 al 4, demostrar que el conjunto de puntos cuyas coordenadas rectangulares $(x,y)$ satisfacen la ecuación cartesiana dada, es igual al conjunto de todos los puntos cuyas coordenadas polares $(r,\theta)$ satisfacen la correspondiente ecuación polar.
+\begin{enumerate}[\bfseries 1.]
+
+    %----------1.
+    \item 
+
+    %----------2.
+    \item 
+
+    %----------3.
+    \item
+
+    %----------4.
+    \item $(x^2)$\\\\
+
+
+En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordenadas polares y calcular el área del conjunto radial de $f$ sobre el intervalo especificado. Se supondrá que cada conjunto es medible.
+
+
+    %----------5.
+    \item Espiral de Arquimedes: $f(\theta)=\theta,\quad 0\leq \theta \leq 2\pi$
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:2*pi, data cs = polarrad, samples = 600, fill = gray!30,opacity=.5]{x};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------6.
+    \item 
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = -90:90, data cs = polar, samples = 360, fill = gray!30, opacity=.5]{2*cos(x)};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------7.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar,samples = 600, fill=gray!30,opacity=.5]{2*abs(cos(x))};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------8.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:180, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{4*sin(x)};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------9.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{4*abs(sin(x))};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------10.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:90, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sin(2*x)};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------11.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{abs(sin(2*x))};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------12.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(x)))};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------13.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(2*x)))};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------14.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{1+cos(x)};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+    %----------15.
+    \item
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \begin{polaraxis}[
+		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		]
+		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{2+cos(x)};
+	    \end{polaraxis}
+	\end{tikzpicture}
+    \end{center}
+
+\end{enumerate}
 
 

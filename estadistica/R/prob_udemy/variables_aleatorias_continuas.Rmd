@@ -141,14 +141,19 @@ Sea $X$ una v.a. continua con $E(X) = \mu_X$ y $Var(X) = \sigma_X^2$ sea $Y=a+bX
   $$Var(Z) = Var\left[\dfrac{X-\mu_X}{\sigma_X}\right] =  \dfrac{Var(X)}{\sigma_X^2} = -\mu_X + \sigma_X^{-1} \cdot Var(X) = \sigma_X^{-2} Var(X) =  \dfrac{\sigma_X^2}{\sigma_X^2} = 1$$
 \end{itemize}
 
-## Calculo de cuantiles de una variable aleatoria
 
-$$F_X(t) = \left\{\begin{array}{rcl}
-  0 & si & t<0\\\\
-  1/6 & si & 0\leq t < 1 \\\\
-  1/3 & si & 1\leq t < 2 \\\\
-  1/2 & si & 2\leq t < 3 \\\\
-  1 & si & t\geq 3 \\\\
-\end{array}\right.$$
+## Transformaciones de variables aleatorias
 
+### Propiedades 
+Sea $X$ una v.a. continua cuya función de densidad es $f_X.$ Sea $h:{\mathbb{R} \to \mathbb{R}}$ una aplicación estrictamente monótona y derivable tal que $h^{'}(x) \neq 0$ para todo $x\in \mathbb{R}$. Sea $Y=h(X)$ la transformación de $X$ por $h$. Entonces $Y$ es una v.a. continua con función de densidad 
+$$f_Y(y) = \dfrac{f_X(x)}{|h^{'}(x)|}\bigg|_{x=h^{-1}(y)}$$
 
+### densidades de una transformación de una v.a. continua
+Sea $X$ una v.a. continua cuya función de densidad es $f_X$. Sea 
+$$h:{\mathbb{R} \to \mathbb{R}}$$
+una aplicación, no necesariamente monótona tal que:
+\begin{itemize}
+  \item Sea derivable con derivada no nula.
+  \item La ecuación $h(x)=y$ tiene un número finito de soluciones $x_1,x_2,\ldots,x_n$ entonces
+  $$f_Y(y) = \sum\limits_{k=1}^n \dfrac{f_X(x)}{|h^{'}(x)|}\bigg|_{x=x_k}$$
+\end{itemize}
