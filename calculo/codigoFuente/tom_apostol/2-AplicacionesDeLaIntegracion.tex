@@ -1078,23 +1078,55 @@ En cada uno de los ejercicios 1 al 4, demostrar que el conjunto de puntos cuyas 
 \begin{enumerate}[\bfseries 1.]
 
     %----------1.
-    \item 
+    \item $(x-1)^2 + y^2 = 1;\quad r=2\cos \theta, \; cos \theta$.\\\\
+	Respuesta.-\; Sea $x = r\cos \theta$ y $y=r\sen \theta$ entonces
+	$$\begin{array}{rcr}
+	    (x-1)^2 + y^2 = 1 &\Longrightarrow & (r\cos \theta - 1)^2 + r^2 \sen^2 \theta = 1\\
+	    &\Longrightarrow & r^2 \cos^2 \theta - 2r \cos \theta  + 1 + r^2\sen^2 \theta = 1\\
+	    &\Longrightarrow & r^2(\cos^2 \theta + \sen^2 \theta) - 2r\cos \theta = 0\\
+	    &\Longrightarrow & r = 2\cos \theta\\
+	\end{array}$$
+	Donde $\cos \theta > 0$ entonces $r>0$.\\\\
 
     %----------2.
-    \item 
+    \item $x^2 + y^2 - x = \sqrt{x^2 + y^2};\quad r=1+\cos \theta$.\\\\
+	Respuesta.-\; Sea  $x = r\cos \theta$ y $y=r\sen \theta$ entonces
+	$$\begin{array}{rcrcl}
+	    x^2 + y^2 - x = \sqrt{x^2 + y^2}&\Longrightarrow&r^2\cos^2 \theta + r^2\sen^2 \theta&=&\sqrt{r^2\cos^2\theta + r^2\sen^2\theta}\\
+	    &\Longrightarrow&r^2 - r\cos \theta&=&r\\
+	    &\Longrightarrow&1+\cos \theta&=&r.\\\\
+	\end{array}$$
+
 
     %----------3.
-    \item
+    \item $(x^2+y^2)^2 = x^2 - y^2,\; y^2 \leq x^2; \quad r=\sqrt{\cos 2\theta},\; \cos 2\theta \geq 0$\\\\
+	Respuesta.-\; Sea $x = r\cos \theta$ y $y=r\sen \theta$ entonces
+	$$\begin{array}{rcrcl}
+	    (x^2+y^2)^2 = x^2 - y^2 &\Longrightarrow& (r^2 \cos^2 \theta + r^2 \sen^2 \theta)^2&=&r^2 \cos^2 \theta - r^2 \sen^2 \theta\\
+				    &\Longrightarrow&r^4&=&r^2\cos(2\theta)\\
+				    &\Longrightarrow&r^2&=&r^2 \cos(2\theta)\\
+				    &\Longrightarrow&r&=&\sqrt{\cos(2\theta)}\\\\
+	\end{array}$$
+	Ya que $cos^2\theta - r^2 \sen^2 \theta$.\\\\
+
 
     %----------4.
-    \item $(x^2)$\\\\
+    \item $(x^2+y^2) = |x^2 - y^2|;\quad r=\sqrt{|\cos 2\theta|}$\\\\
+	Respuesta.-\; Sea $x = r\cos \theta$ y $y=r\sen \theta$ entonces
+	$$\begin{array}{rcrcl}
+	    (x^2+y^2) = |x^2 - y^2| &\Longrightarrow&(r^2\cos^2\theta + r^2\sen^2\theta)^2&=&|r^2\cos^2 \theta -r^2\sen^2\theta|\\
+				    &\Longrightarrow&r^4&=&r^2|\cos(2\theta)|\\
+				    &\Longrightarrow&r^2&=&|\cos(2\theta)|\\
+				    &\Longrightarrow&&=&\sqrt{|\cos(2\theta)|}.\\\\
+	\end{array}$$
 
 
-En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordenadas polares y calcular el área del conjunto radial de $f$ sobre el intervalo especificado. Se supondrá que cada conjunto es medible.
+En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordenadas polares y calcular el área del conjunto radial de $f$ sobre el intervalo especificado. Se supondrá que cada conjunto es medible.\\
 
 
     %----------5.
-    \item Espiral de Arquimedes: $f(\theta)=\theta,\quad 0\leq \theta \leq 2\pi$
+    \item Espiral de Arquimedes: $f(\theta)=\theta,\quad 0\leq \theta \leq 2\pi$.\\\\
+	Respuesta.-\; $$\dfrac{1}{2}\int_0^{2\pi} \theta^2 \; d\theta = \dfrac{1}{2} \cdot \left(\dfrac{\theta^3}{3}\bigg|_0^{2\pi}\right) = \dfrac{1}{2}\cdot \dfrac{(2\pi)^3}{3} = \dfrac{4\pi^3}{3}$$
     \begin{center}
 	\begin{tikzpicture}[scale=.7]
 	    \begin{polaraxis}[
@@ -1105,9 +1137,13 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \end{polaraxis}
 	\end{tikzpicture}
     \end{center}
+    \vspace{.5cm}
 
     %----------6.
-    \item 
+\item Circunferencia tangente al eje y: $f(\theta) = 2\cos \theta,\quad -\pi/2 \leq \theta\leq \pi/2$\\\\
+    Respuesta.-\;
+    $$\dfrac{1}{2}\int_{-\pi/2}^{\pi/2} 2^2\cos^2\theta \; d\theta = 2\int_{-\pi/2}^{\pi/2} (1-\sen^2\theta)\; d\theta = $$
+
     \begin{center}
 	\begin{tikzpicture}[scale=.7]
 	    \begin{polaraxis}[
@@ -1118,6 +1154,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \end{polaraxis}
 	\end{tikzpicture}
     \end{center}
+    \vspace{.5cm}
 
     %----------7.
     \item

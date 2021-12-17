@@ -157,3 +157,60 @@ una aplicación, no necesariamente monótona tal que:
   \item La ecuación $h(x)=y$ tiene un número finito de soluciones $x_1,x_2,\ldots,x_n$ entonces
   $$f_Y(y) = \sum\limits_{k=1}^n \dfrac{f_X(x)}{|h^{'}(x)|}\bigg|_{x=x_k}$$
 \end{itemize}
+
+## Desigualdad de Markov
+Sea $X$ una v.a. positiva con $E(X)$ finita. Entonces 
+$$P(X\geq a)\leq \dfrac{E(X)}{a}\; \mbox{para todo}\; a>0.$$
+
+Demostración.- Si $X$ es continua y sólo toma valores positivos 
+
+$$\begin{array}{rcl}
+E(X) &=& \displaystyle\int_{-\infty}^{\infty} xf_X(x)\; dx\\\\
+&=& \displaystyle\int_0^{\infty} xf_X(x)\; dx\\\\
+&=& \displaystyle\int_0^a xf_X(x)\; dx + \int_a^{\infty} xf_X(x)\; dx\\\\
+&\geq& \displaystyle\int_a^{\infty} xf_X(x)\; dx\\\\
+&\geq& \displaystyle a\int_a^{\infty} f_X(x)\; dx \\\\
+&=&a\cdot P(X\geq a)\\\\
+\end{array}$$
+de donde se sigue que 
+$$P(X\geq a) \leq \dfrac{E(X)}{a}$$
+
+### Corolario
+Sea $X$ una v.a. con $E(X)$ finita entonces para todo $a>0$
+$$P(|X|\geq a) \leq \dfrac{E(|X|)}{a}$$
+
+Demostración.- 
+
+$$\begin{array}{rcl}
+P(|X|\geq a) &=& \displaystyle\int_{-\infty}^{\infty} |x|f_X(x)\; dx\\\\
+&=& \displaystyle\int_{-\infty}^a |x|f_X(x)\; dx + \int_a^{\infty} |x|f_X(x)\; dx\\\\
+&\geq & \displaystyle\int_a^{\infty} |x|f_X(x)\; dx\\\\
+&\leq & \displaystyle \int_a^{\infty} \dfrac{|x|}{a} f_X(x)\; dx \\\\
+&\leq & \dfrac{1}{a} \displaystyle\int_{-\infty}^{\infty} |x|f(x)\;dx\\\\
+&=&\dfrac{E(|X|)}{a}\\\\
+\end{array}$$
+
+## Desigualdad de Chebychev
+Sea $X$ una v.a. con $E(X) = \mu$ y $Var=\sigma^2$ entonces para todo $a>0$
+$$P(|X-\mu|\geq a)\leq \dfrac{\sigma^2}{a^2}$$
+
+Demostración.-\; Aplicamos la consecuencia de la desigualdad de Markov a la v.a. no negativa $$Y^2 = (X-\mu)^2$$
+entonces 
+$$P(Y^2\geq a^2) \leq \dfrac{E(Y^2)}{a^2} = \dfrac{E\left[ (X-\mu)^2 \right] }{a^2} = \dfrac{Var(X)}{a^2} = \dfrac{\sigma^2}{a^2}$$
+
+Por otra parte
+
+$$P(Y^2 \geq a^2) = P(|Y|\geq a) = P(|X-\mu|\geq a)$$
+
+de donde 
+$$P(|X-\mu|\geq a) = \dfrac{\sigma^2}{a^2}$$
+
+Si substituimos $a$ por $a\cdot \sigma$ en la desigualdad de Chebychev nos queda
+$$P(|X-\mu|\geq a\sigma)\leq \dfrac{\sigma^2}{(a\sigma)^2} = \dfrac{1}{a^2}$$
+
+La desigualdad de Chebychev también se puede escribir de al menos dos maneras más:
+$$P(\mu -a \leq X \leq \mu + a ) \geq 1-\dfrac{\sigma^2}{a^2}$$
+
+y tomando como $a = k\sigma$
+
+$$P(\mu - k\sigma \leq X \leq \mu k\sigma)\geq 1 - \dfrac{1}{k^2}$$

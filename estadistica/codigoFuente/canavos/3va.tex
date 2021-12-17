@@ -152,4 +152,46 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
 		    &=&\mu_2^{'} - \mu^2\\
  \end{array}$$
 
- La varianza de cualquier variable aleatoria es el segundo momento alrededor del origen menos el cuadrado de la media. Generalmente se denota por $\sigma^2$
+ La varianza de cualquier variable aleatoria es el segundo momento alrededor del origen menos el cuadrado de la media. Generalmente se denota por $\sigma^2$\\\\
+ Es útil notar que la varianza de una variable aleatoria $X$ es invariable; es decir, $Var(X+b) = Var(X)$ para cualquier constante $b$. De manera más general, se demostrará que $Var(aX+b) = a^2Var(X)$ para cualquiera dos constantes $a$ y $b$. Por definición,\\
+
+ $$\begin{array}{rcl}
+     Var(aX+b)&=&E(aX+b)^2 - E^2(aX+b)\\\\
+	      &=&E(a^2X^2-2abX + b^2)-\left[a E(X)+b\right]^2\\\\
+	      &=&a^2E(X)^2 + 2abE(X) + b^2 - a^2E^2(X) - 2abE(X) - b^2\\\\
+	      &=&a^2 E(X)^2 - a^2E^2(X)\\\\
+	      &=&a^2\left[E(X)^2 - E^2(X)\right]\\\\
+	      &=&a^2Var(X)\\\\
+ \end{array}$$
+
+ Una medida que compara la dispersión relativa de dos distribuciones de probabilidad es el coeficiente de variación, que está definido por:
+ $$V=\dfrac{\sigma}{\mu}$$
+ Expresa la magnitud de la dispersión de una variable aleatoria con respecto a su valor esperado.\\\\
+
+ El tercer momento central
+ $$\mu_3 = E(X-\mu)^3$$
+ esta relacionado con la asimetría de la distribución de probabilidad de $X$.\\\\
+
+ Cualquier momento central de una variable aleatoria $X$ puede expresarse en términos de los momentos de ésta, alrededor de cero. Por definición:
+ $$u_r = E(X-\mu)^r$$
+ pero la expansión de $(X-\mu)^r$ puede expresarse como:
+ $$(X-\mu)^r = \sum_{i=0}^r (-1)^i \dfrac{r!}{(r-i)!i!}\mu^i x^{r-i} = \sum_{i=0}^r (-1)^i \dfrac{r!}{(r-i)!i!}\mu^i E(X^{r-i}) = \sum_{i=0}^r (-1)^i \dfrac{r!}{(r-i)!i!}\mu^i \mu^{'}_{r-i}$$
+
+ En particular,
+ $$\mu_3 = \mu_3^{'} - 3\mu\mu^{'}_2 + 2\mu^3$$
+
+ Para las distribuciones de probabilidad que presentan un sólo pico, si $\mu_3 < 0$, se dice que la distribución es asimétrica negativamente, si $\mu_3 > 0$, la distribución es asimétrica positivamente y si $\mu_3 = 0$, la distribución recibe el nombre de simétrica.\\
+ Una medida más apropiada de la asimetría, es el tercer momento estandarizado, dado por:
+ $$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$$
+ Que recibe el nombre de coeficiente de asimetría. Una distribución de probabilidad es asimétrica positiva, negativa o simétrica si $\alpha_3 > 0$, $\alpha_3<0$ o $\alpha_3=0$ respectivamente.\\\\
+
+ El cuarto momento central, 
+ $$\mu_4 = E(X-\mu)^4 = \mu^{'}_4 - 4\mu \mu^{'}_3 + 6\mu^2 \mu^{'}_2 - 3 \mu^4$$
+ Es una medida de qué tan puntiaguda es la distribución de probabilidad y recibe el nombre de curtosis. Al igual que para el tercer momento, es preferible emplear el cuarto momento estandarizado,
+ $$\alpha_4  = \dfrac{\mu_4}{\mu^2_2}$$
+ Si $\alpha_4>3$, la distribución de probabilidad presenta un pico relativamente alto y recibe el nombre de letocúrtica, si $\alpha_4<3$, la distribución es relativamente plana y recibe el nombre de platicúrtica y si $\alpha_4 = 3$, la distribución no presenta un pico muy alto i muy bajo y recibe el nombre de mesocúrtica. \\\\
+
+En este momento se considerará el concepto de variable aleatoria estandarizada. 
+Pagina 73
+
+
