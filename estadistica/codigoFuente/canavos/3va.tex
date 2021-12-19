@@ -146,7 +146,7 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
  $$\mu_2 = E(X-\mu)^2$$
  Recibe el nombre de varianza de la variable aleatoria. Puesto que:
  $$\begin{array}{rcl}
-     \mu_2 = Var(X) &=& E(X-\mu)^2\\
+	\mu_2 = Var(X) &=& E\left[(X-\mu)^2\right]\\
 		    &=&E(X^2 - 2X\mu + \mu^2)\\
 		    &=&E(X^2) - 2\mu^2 + \mu^2\\
 		    &=&\mu_2^{'} - \mu^2\\
@@ -182,8 +182,7 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
 
  Para las distribuciones de probabilidad que presentan un sólo pico, si $\mu_3 < 0$, se dice que la distribución es asimétrica negativamente, si $\mu_3 > 0$, la distribución es asimétrica positivamente y si $\mu_3 = 0$, la distribución recibe el nombre de simétrica.\\
  Una medida más apropiada de la asimetría, es el tercer momento estandarizado, dado por:
- $$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$$
- Que recibe el nombre de coeficiente de asimetría. Una distribución de probabilidad es asimétrica positiva, negativa o simétrica si $\alpha_3 > 0$, $\alpha_3<0$ o $\alpha_3=0$ respectivamente.\\\\
+ $$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$$ Que recibe el nombre de coeficiente de asimetría. Una distribución de probabilidad es asimétrica positiva, negativa o simétrica si $\alpha_3 > 0$, $\alpha_3<0$ o $\alpha_3=0$ respectivamente.\\\\
 
  El cuarto momento central, 
  $$\mu_4 = E(X-\mu)^4 = \mu^{'}_4 - 4\mu \mu^{'}_3 + 6\mu^2 \mu^{'}_2 - 3 \mu^4$$
@@ -191,7 +190,21 @@ La distribución acumulativa $F(x)$ es una función lisa no decreciente de los v
  $$\alpha_4  = \dfrac{\mu_4}{\mu^2_2}$$
  Si $\alpha_4>3$, la distribución de probabilidad presenta un pico relativamente alto y recibe el nombre de letocúrtica, si $\alpha_4<3$, la distribución es relativamente plana y recibe el nombre de platicúrtica y si $\alpha_4 = 3$, la distribución no presenta un pico muy alto i muy bajo y recibe el nombre de mesocúrtica. \\\\
 
-En este momento se considerará el concepto de variable aleatoria estandarizada. 
-Pagina 73
+En este momento se considerará el concepto de variable aleatoria estandarizada. Sea $X$ cualquier variable aleatoria con media $\mu$ y desviación estándar $\sigma$ la cantidad 
+$$Y=\dfrac{(x-\mu)}{\sigma}$$
+define una variable aleatoria $Y$ con media cero y desviación estándar uno. Esta variable recibe el nombre de \textbf{variable aleatoria estandarizada} correspondiente a $X$\\\\
+El valor esperado de $Y$ es cero, puesto que:
+$$E\left(\dfrac{X-\mu}{\sigma}\right) = \dfrac{1}{\sigma} E(X-\mu) = 0$$
+
+De hecho, puesto que $E(Y) = 0$, el r-ésimo momento central de $Y$ es:
+$$\begin{array}{rcl}
+    \mu_r(Y)&=&E(Y^r)\\\\
+	    &=&E\left(\dfrac{X-\mu}{\sigma}\right)^r\\\\
+	    &=&\dfrac{1}{\sigma^r} E(X-\mu)^r\\\\
+	    &=&\dfrac{\mu_r (X)}{\sigma^r}\\\\
+\end{array}$$
+ 
+De esta manera se tiene que:
+$$\mu_r(Y) = \dfrac{\mu_r(X)}{\left[\mu_2(X)\right]^{r/2}}$$
 
 

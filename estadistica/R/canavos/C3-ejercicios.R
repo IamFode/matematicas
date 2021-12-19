@@ -1,3 +1,5 @@
+# library
+library(ggplot2)
 
 ############################## Ejemplo 3.8 #####################################
 
@@ -80,3 +82,32 @@ según el tercer momento el cual mide la simetría se tiene que Y es mas sesgado
 que X hacia la derecha es decir u_3 > 0. Luego X es platicúrtica (alpha<3) e 
 Y es letocúrtica alpha > 3
 "
+
+############################## Ejercicios #######################################
+
+####### 3.1 #######
+# a) 
+X <- c(0,1,2,3,4,5,6,7)
+fp <- c()
+for (x in 0:7) {
+  fp <- c(fp, exp(-3)*3^x / factorial(x))
+}
+df <- data.frame(X,fp,fda)
+
+# b)
+ggplot(data = df, mapping = aes(X,fp)) + 
+  geom_col(width = 0.1)
+
+# c)  
+fda <- c()
+sum <- 0
+for (x in 0:7) {
+  sum <- sum + (exp(-3)*3^x / factorial(x))
+  fda <- c(fda,sum)
+}
+
+# d)
+ggplot(data = df, mapping = aes(X,fda)) + 
+  geom_line(width = 2)
+
+####### 3.2 ######

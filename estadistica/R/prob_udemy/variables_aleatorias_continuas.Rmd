@@ -128,17 +128,25 @@ Sea $X$ una v.a. continua con $E(X) = \mu_X$ y $Var(X) = \sigma_X^2$ sea $Y=a+bX
 
 \begin{itemize}
   \item $E(Y) = E(a+bX) = a+bE(X)$
+  
   \item $Var(Y) = Var(a+bX) = b^2Var(X)$
+  
+  Demostración.-\; $$ Var(a+bX) = E(b^2X^2) - \left[E(bX)\right]^2 = b^2 E(X) - b^2 \left[E(X)\right]^2 = b^2\left[E(X^2) - E^ 2(X) \right] = b^2 Var(X)$$
+  
   \item $\sigma_Y = |b|\sigma_X$
+  
+  Demostración.-\; 
+  
   \item $Z=\dfrac{X-\mu_X}{\sigma_X}$ es una transformación lineal de $X$ de forma que 
   $$E(Z) = 0 \qquad y \qquad Var(Z)=1$$
   
-  Demosrtación.- Para la esperanza:
+  Demostración.- Para la esperanza:
   $$E(Z) = E\left[\dfrac{X-\mu_X}{\sigma_X}\right] = \dfrac{E(X)-\mu_X}{\sigma_X} = \dfrac{\mu_X - \mu_X}{\sigma_X} = 0$$
   
   Luego para la varianza se tiene:
   
-  $$Var(Z) = Var\left[\dfrac{X-\mu_X}{\sigma_X}\right] =  \dfrac{Var(X)}{\sigma_X^2} = -\mu_X + \sigma_X^{-1} \cdot Var(X) = \sigma_X^{-2} Var(X) =  \dfrac{\sigma_X^2}{\sigma_X^2} = 1$$
+  $$Var(Z) = Var\left(\dfrac{X-\mu_X}{\sigma_X}\right) = Var\left(\dfrac{1}{\sigma_X} X - \dfrac{\mu_X}{\sigma_X}\right) = \dfrac{1^2}{\sigma_X^2} Var(X) = \dfrac{\sigma_X^2}{\sigma_X^2} = 1$$
+  
 \end{itemize}
 
 
@@ -214,3 +222,5 @@ $$P(\mu -a \leq X \leq \mu + a ) \geq 1-\dfrac{\sigma^2}{a^2}$$
 y tomando como $a = k\sigma$
 
 $$P(\mu - k\sigma \leq X \leq \mu k\sigma)\geq 1 - \dfrac{1}{k^2}$$
+
+
