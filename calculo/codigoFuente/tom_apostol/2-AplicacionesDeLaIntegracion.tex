@@ -1128,7 +1128,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
     \item Espiral de Arquimedes: $f(\theta)=\theta,\quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\; $$\dfrac{1}{2}\int_0^{2\pi} \theta^2 \; d\theta = \dfrac{1}{2} \cdot \left(\dfrac{\theta^3}{3}\bigg|_0^{2\pi}\right) = \dfrac{1}{2}\cdot \dfrac{(2\pi)^3}{3} = \dfrac{4\pi^3}{3}$$
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
@@ -1141,11 +1141,10 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
     %----------6.
     \item Circunferencia tangente al eje y: $f(\theta) = 2\cos \theta,\quad -\pi/2 \leq \theta\leq \pi/2$.\\\\
-	Respuesta.-\;
-    $$\dfrac{1}{2}\int_{-\pi/2}^{\pi/2} 2^2\cos^2\theta \; d\theta = 2\int_{-\pi/2}^{\pi/2} (1-\sen^2\theta)\; d\theta = $$
+	Respuesta.-\; $$\dfrac{1}{2}\int_{-\pi/2}^{\pi/2} 2^2\cos^2\theta \; d\theta = 2\int_{-\pi/2}^{\pi/2} (1-\sen^2\theta)\; d\theta = $$
 
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
@@ -1158,10 +1157,10 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
     %----------7.
     \item Dos circunferencias tangentes al eje $y$: $f(\theta) = 2|\cos \theta|,\quad 0\leq \theta \leq 2\pi$.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; $$\dfrac{1}{2}\int_{0}^{2\pi} 4 \cos^2 \theta \; d\theta = 2\int_{0}^{2\pi} \left(\dfrac{1+\cos(2\theta)}{2}\right)\; d\theta = 2 \int_{0}^{2\pi} \dfrac{1}{2}\; d\theta +2 \int_0^{2\pi} \cos(2\theta)\; d \theta = 2\pi + 0 = 2\pi$$
 
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
@@ -1170,13 +1169,14 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \end{polaraxis}
 	\end{tikzpicture}
     \end{center}
+    \vspace{.5cm}
 
     %----------8.
     \item Circunferencia tangente al eje $x$: $f(\theta) = 4\sen \theta, \quad 0\leq \theta \leq \pi$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; $$\dfrac{1}{2}\int_0^\pi 16\sen^2\theta \; d\theta = 8\int_0^\pi \sen^2 \theta \; d\theta = 8\left(\dfrac{\pi}{2}-\dfrac{1}{4} \sen 2\pi\right) = 4\pi$$
 
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
@@ -1185,11 +1185,14 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \end{polaraxis}
 	\end{tikzpicture}
     \end{center}
+    \vspace{.5cm}
 
     %----------9.
     \item Dos circunferencias tangentes al eje $x$: $f(\theta) = 4|\sen \theta|,\quad 0\leq \theta \leq 2\pi$.\\\\
+	Respuesta.-\; $$\dfrac{1}{2}\int_0^\pi 16\sen^2\theta \; d\theta = 8\int_0^\pi \sen^2 \theta \; d\theta = 8\left(\dfrac{2\pi}{2}-\dfrac{1}{4} \sen 2\pi\right) = 8\pi$$
+
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
@@ -1201,10 +1204,10 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
     %----------10.
     \item Pétalo de rosa: $f(\theta) = \sen 2\theta,\quad 0\leq \theta \leq \pi/2$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; $$$$
 
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.55]
 	    \begin{polaraxis}[
 		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
 		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}

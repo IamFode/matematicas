@@ -1,0 +1,88 @@
+---
+title: "Distribuciones notables discretas"
+author: "Christian Limbert Paredes Aguilera"
+date: "23/12/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Distribución Bernoulli
+\begin{itemize}
+  \item Consideremos un experemento con dos resultados posibles éxito (E) y fracaso (F). El espacio de sucesos será $\Omega = \lbrace E,F\rbrace$
+  \item Supongamos que la probabilidad de éxito es $P(E) = p,$ y naturalmente $P(E)=1-p=q$ con $0<p<1$.
+  \item Consideremos la aplicación $$X:\Omega = \lbrace E,F\rbrace \longrightarrow \mathbb{R}$$
+  definida por $$E(X)=1,\quad X(F)=0$$
+\end{itemize}
+
+Su función de probabilidad es 
+$$P_X(x) = \left\{\begin{array}{rcl}
+  1-p=q&si&x=0\\
+  p&si&x=1\\
+  0&si&\mbox{en cualquier otro caso}\\
+\end{array}\right.$$
+
+Su función de distribución es 
+
+$$P_X(x) = \left\{\begin{array}{rcl}
+  0&si&x<0\\
+  1-p=q&si&0\leq x<1\\
+  1&si&1\leq x\\
+\end{array}\right.$$
+
+\begin{itemize}
+  \item Lo denotaremos por $$X\equiv Ber(p) \quad o\quad X\equiv B(1,p)$$
+  \item a este tipo de experimentos (éxito/fracaso) se les denomina experimentos Bernoulli.
+\end{itemize}
+
+### Esperanza de una v.a. X Ber(p)
+Su valor esperado es $$E(X) = \sum_{x=1}^1 x\cdot P(x=x) = 0\cdot(1-p)+1\cdot p = p$$
+
+Calculemos también $E(X^2)$
+$$E(X^2) = \sum_{x=o}^1 x\cdot P(X=x) = 0^2 \cdot (1-p) + 1^2\cdot p = p$$
+
+### Varianza de una v.a. X Ber(p)
+Su varianza es $$Var(X) = E(X^2) - E^2(X) = p-p^2 = p\cdot (1-p) = p\cdot q$$
+
+Su desviación típica es $$\sqrt{Var(X)}=\sqrt{p\cdot (1-p)}$$
+
+```{r}
+#función de probabilidad
+dbinom(0, size = 1, prob = 0.25)
+```
+
+```{r}
+#función de probabilidad
+dbinom(1, size = 1, prob = 0.25)
+```
+
+```{r}
+# muestra aleatoria simple de probabilidad Bernoulli
+rbinom(n = 20, size = 1, prob = 0.25)
+```
+
+```{r}
+# gráfico de la función de probabilidad y la de distribución de una Ber(p=0.25)
+{par(mfrow=c(1,2))
+plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
+     ylim=c(0,1),xlim=c(-1,2),xlab="x",
+     main="Función de probabilidad\n Ber(p=0.25)")
+lines(x=c(0,0,1,1),y=c(0,0.75,0,0.25), type = "h", lty = 2,col="blue")
+curve(pbinom(x,size=1,prob=0.25),
+      xlim=c(-1,2),col="blue",
+      main="Función de distribución\n Ber(p=0.25)")
+par(mfrow=c(1,1))}
+```
+
+## Distribución binomial
+
+Si repetimos $n$ veces de forma independiente un experimento Bernoulli de parámetro $p$.
+
+El espacio muestral $\Omega$ estará formado por cadenas $E^{'} s$ y $F^{s}$ de longitud $n$ consideremos la v.a.
+$$X(EFF\ldots EEF) \; = \; \mbox{número de éxitos en la cadena}$$
+
+### Función de probabilidad de una binomial
+
+$$P_X(x)\left\{\begin{array}{rcl}
+  &&
+\end{array}$$
