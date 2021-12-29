@@ -3,25 +3,15 @@ from scipy.stats import geom
 import numpy as np
 import matplotlib.pyplot as plt
 
+######################### distribución binomial ################################
 # binom.pmf()(k,n,p,loc) = binom.pmf(k-loc,n,p)
 # F_X(0) = P(X<=0) y $f_X(X<=4)
 binom.cdf(0,n=10,p=.25) # distribuciones acumiladas cdf
 binom.cdf(4,n=10,p=.25)
- # P(X=0) y P(X=4)
- binom.pmf(0,n=10,p=0.25) #distrubciones iguales pmf
- binom.pmf(4,n=10,p=0.25)
- 
-######################### DISTRIBUCIÓN BINOMIAL (rvs) ##########################
+# P(X=0) y P(X=4)
+binom.pmf(0,n=10,p=0.25) #distrubciones iguales pmf
+binom.pmf(4,n=10,p=0.25)
 binom.rvs(n=20,p=0.25,size=100)
-# ejemplo
-# 100 bolas donde 40 son rojas y 60 blancas proceso n=10 y probabilidad de éxito 0.4
-## probabilidad de sacar 4 rojas
-## probabilidad de sacar al menos 4 rojas
-## probabilidad de sacar al menos 3 rojas
-## valor esperado de bolas rojas
-print("E(X) = {m}".format(m=binom.stats(n=10, p=.4, moments = 'm')))
-## desviación típica del número de bolas rojas
-print("Var(X) = {v}".format(v=binom.stats(n=10, p=.4, moments = 'v')))
 #gráfico
 n, p = 10, 0.25
 x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
@@ -42,6 +32,18 @@ for tick in ax.yaxis.get_major_ticks():
   tick.label.set_fontsize(5)
 fig.suptitle('Distribucion Binomial')
 plt.show()
+
+# ejemplo
+# 100 bolas donde 40 son rojas y 60 blancas proceso n=10 y probabilidad de éxito 0.4
+## probabilidad de sacar 4 rojas
+## probabilidad de sacar al menos 4 rojas
+## probabilidad de sacar al menos 3 rojas
+## valor esperado de bolas rojas
+print("E(X) = {m}".format(m=binom.stats(n=10, p=.4, moments = 'm')))
+## desviación típica del número de bolas rojas
+print("Var(X) = {v}".format(v=binom.stats(n=10, p=.4, moments = 'v')))
+
+
 ########################### DISTRIBUCIÓN GEOMÉTRICA ############################
 # geom.pmf(x,p,loc=-1) = geom.pmf(x-1,p,loc=0) 
         ## loc= -1 el número de fracasos antes del 1er éxito

@@ -189,7 +189,7 @@ pre code {
 \end{array}\right.\]</span></p>
 <div id="esperanza-de-una-v.a.-x-berp" class="section level3">
 <h3>Esperanza de una v.a. X Ber(p)</h3>
-<p>Su valor esperado es <span class="math display">\[E(X) = \sum_{x=1}^1 x\cdot P(x=x) = 0\cdot(1-p)+1\cdot p = p\]</span></p>
+<p>Su valor esperado es <span class="math display">\[E(X) = \sum_{x=0}^1 x\cdot P(X=x) = 0\cdot(1-p)+1\cdot p = p\]</span></p>
 <p>Calculemos también <span class="math inline">\(E(X^2)\)</span> <span class="math display">\[E(X^2) = \sum_{x=o}^1 x\cdot P(X=x) = 0^2 \cdot (1-p) + 1^2\cdot p = p\]</span></p>
 </div>
 <div id="varianza-de-una-v.a.-x-berp" class="section level3">
@@ -204,7 +204,7 @@ dbinom(1, size = 1, prob = 0.25)</code></pre>
 <pre><code>## [1] 0.25</code></pre>
 <pre class="r"><code># muestra aleatoria simple de probabilidad Bernoulli
 rbinom(n = 20, size = 1, prob = 0.25)</code></pre>
-<pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0</code></pre>
+<pre><code>##  [1] 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0</code></pre>
 <pre class="r"><code># gráfico de la función de probabilidad y la de distribución de una Ber(p=0.25)
 {par(mfrow=c(1,2))
 plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
@@ -225,7 +225,7 @@ par(mfrow=c(1,1))}</code></pre>
 <div id="función-de-probabilidad-de-una-binomial" class="section level3">
 <h3>Función de probabilidad de una binomial</h3>
 <p><span class="math display">\[P_X(x)\left\{\begin{array}{rcl}
-  {n \to x}\cdot p^x \cdot (1-p)^{n-x}&amp;si&amp;x=0,1,\ldots,n\\
+  {n \choose x}\cdot p^x \cdot (1-p)^{n-x}&amp;si&amp;x=0,1,\ldots,n\\
   0&amp;si&amp;\mbox{en otro caso}\\
 \end{array}\right.\]</span></p>
 </div>
@@ -251,8 +251,49 @@ choose(22,10)</code></pre>
 </div>
 <div id="esperanza-de-un-x-bnp" class="section level3">
 <h3>Esperanza de un X B(n,p)</h3>
-<p>Su esperanza es <span class="math display">\[E(X) = \sum_{k=0}^n k\cdot {n \choose k}\cdot \]</span></p>
+<p>Su esperanza es <span class="math display">\[E(X) = \sum_{k=0}^n k\cdot {n \choose k}\cdot p^k \cdot q^{n-k} = n\cdot p\]</span></p>
+<p>La esperanza de <span class="math inline">\(X^2\)</span> es <span class="math display">\[E(X^2) = \sum_{k=0}^n k^2\cdot {n\choose k}\cdot p^k \cdot q^{n-k} = n\cdot p\cdot q - (n\cdot p)^2\]</span></p>
 </div>
+<div id="varianza-de-una-x-bnp" class="section level3">
+<h3>Varianza de una X B(n,p)</h3>
+<p>Su varianza es <span class="math display">\[Var(X) = E(X^2) - E^2(X) = n\cdot p\cdot q = n\cdot p \cdot (1-p)\]</span></p>
+<p>Su desviación típica es <span class="math display">\[\sqrt{n\cdot p \cdot q} = \sqrt{n\cdot p \cdot (1-p)}\]</span></p>
+</div>
+</div>
+<div id="la-distribución-binomila-en-python-y-r" class="section level2">
+<h2>La distribución Binomila en Python y R</h2>
+<div id="caáculos-binomila-con-r" class="section level3">
+<h3>Caáculos binomila con R</h3>
+<p>Veamos los cálculos con funciones de R para una v.a. X con distribución binomial B(n=10,p=0.25)</p>
+<p>Si queremos calculo con R algún valor de la función de distribución como por ejemplo <span class="math inline">\(F_X(0) = P(X\leq 0)\)</span></p>
+<pre class="r"><code>pbinom(0,size = 10, prob = 0.25)</code></pre>
+<pre><code>## [1] 0.05631351</code></pre>
+<p>si queremos por ejemplo <span class="math inline">\(F_X(4) = P(X\leq 4)\)</span></p>
+<pre class="r"><code>pbinom(4, size = 10, prob = 0.25)</code></pre>
+<pre><code>## [1] 0.9218731</code></pre>
+<p>Sin embargo, si queremos calcular algún valor de la función de probabilidad como por ejemplo <span class="math inline">\(P(X=0)\)</span></p>
+<pre class="r"><code>dbinom(0,size=10, prob = 0.25)</code></pre>
+<pre><code>## [1] 0.05631351</code></pre>
+<p>o por ejemplo para <span class="math inline">\(P(X=4)\)</span></p>
+<pre class="r"><code>dbinom(4, size=10, prob = 0.25)</code></pre>
+<pre><code>## [1] 0.145998</code></pre>
+</div>
+<div id="generación-de-muestras-aleatorias-con-r" class="section level3">
+<h3>Generación de muestras aleatorias con R</h3>
+<p>Generaremos una muestra eleatoria de 100 valores de una población B(20,0.5)</p>
+<pre class="r"><code># Repetir 100 veces el experimento lanzar una moneda 20 veces y contar el número de caras.
+set.seed(2021)
+rbinom(100, size = 20, prob = 0.5)</code></pre>
+<pre><code>##   [1] 10 12 11  9 11 11 11  9 12 15  6 12 11 10 12  8 10 12 14 10  8 14  9  9 10
+##  [26] 13 13 13 14 12  6 14 14 13 10  8 13  8 13 10  8 12 10 14  8 12 13  5  6 12
+##  [51] 10 11  7 10  9  8 10  9 12 12  6 10  7  9 12  7  7 11  9  6  6 11  7 13  7
+##  [76] 10 10  9 11 16 10  9 14 11  9  8 15 12 10  9  8 11 13 10  8 13 11 11 12 11</code></pre>
+</div>
+</div>
+<div id="ejemplo-completo-de-distribución-binomial" class="section level2">
+<h2>Ejemplo completo de distribución binomial</h2>
+<p>Tenemos una urna con 100 bolas de las cuales 40 son rojas y 60 blancas. Extraemos al azar una bola, anotamos su color y la devolvemos (la reponemos) a la urna Supongamos que repetimos este proceso <span class="math inline">\(n=10\)</span> reponiendo en cada ocación la bola extraida. Consideremos la v.a. <span class="math inline">\(X\)</span> = Número de bolas extraidas con repocisión en <span class="math inline">\(n=10\)</span> repeticiones del mismo experimento Bernoulli. Bajo estas condiciones tenemos que repetimos <span class="math inline">\(n=10\)</span> veces el mismo experimento Bernoulli con probabilidad de éxito (sacar bola roja) es <span class="math display">\[P(Roja) = P(Exito)=p=\dfrac{40}{100}=0.4\]</span></p>
+<p>Así que la variable <span class="math inline">\(X\)</span> = número de bolas rojas extraídas de la urna con reposición en <span class="math inline">\(n=10\)</span> ocasiones sigue una ley binomial <span class="math inline">\(B(n=10,p=0.4)\)</span></p>
 </div>
 
 

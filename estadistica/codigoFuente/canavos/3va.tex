@@ -211,3 +211,47 @@ es decir, $$\left(\sigma^r\right)^2 = \left[\mu_2(X)\right]^r\; \Longrightarrow 
 de donde se tiene que $Var(Y) = \mu_2(Y) = 1$. En particular, nótese que $\alpha_3(Y) = \alpha_3(X)$ y $\alpha_4(Y) = \alpha_4(X)$. La estandarización de una variable aleatoria afecta a la media y a la varianza, pero no a los factores de forma.
 
 
+\section{Otras medidas de tendencia central y dispersión}
+
+%-------------------- definición 3.10
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}
+	Para cualquier variable aleatoria $X$, se define a la mediana $x_{0.5}$ de $X$, para ser:
+	$$\begin{array}{ll}
+	    P(X<x_{0.5}) \leq 1/2\quad y \quad P(X\leq x_{0.5}) \geq 1/2&\mbox{si X es discreta, o}\\\\
+	    P(X\leq x_{0.5}) = 1/2&\mbox{si X es continua}\\
+	\end{array}$$
+    \end{def.}
+\end{tcolorbox}
+
+%-------------------- definición 3.11
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}
+	Para cualquier variable aleatoria $X$, se define la moda como el valor $x_m$ de $X$ que maximiza la función de probabilidad si $X$ es discreta o la función de densidad si $X$ es continua.
+    \end{def.}
+\end{tcolorbox}
+
+
+
+
+\section{Ejercicios}
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+    %--------------------1
+    \item Solución script C3-ejercicios.R
+
+    %--------------------2
+    \item Por definición 3.4, sea $$k+\dfrac{k}{2}+\dfrac{k}{3}+\dfrac{k}{4}=1 \quad \Longrightarrow \quad k=\dfrac{12}{25}$$
+	entonces la función de probabilidad de una variable aleatoria discreta $X$ estará dada por:
+	$$\begin{array}{rcl}
+	    \dfrac{12}{25}&si&x=1\\\\
+	    \dfrac{6}{25}&si&x=2\\\\
+	    \dfrac{4}{25}&si&x=3\\\\
+	    \dfrac{3}{25}&si&x=4\\\\
+	     &si&\\\\
+	\end{array}$$
+
+	Así, la probabilidad de $P(1\leq X \leq 3)$ será, $$P(1\leq X \leq 3) = 1 - P(X=4) = 1 - \dfrac{3}{25} = \dfrac{22}{25} = 1.88$$\\\\
+\end{enumerate}
+

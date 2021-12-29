@@ -3,9 +3,9 @@ title: "Distribuciones notables discretas"
 author: "Christian Limbert Paredes Aguilera"
 date: "23/12/2021"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 ---
 
 #library
@@ -40,7 +40,7 @@ $$P_X(x) = \left\{\begin{array}{rcl}
 \end{itemize}
 
 ### Esperanza de una v.a. X Ber(p)
-Su valor esperado es $$E(X) = \sum_{x=1}^1 x\cdot P(x=x) = 0\cdot(1-p)+1\cdot p = p$$
+Su valor esperado es $$E(X) = \sum_{x=0}^1 x\cdot P(X=x) = 0\cdot(1-p)+1\cdot p = p$$
 
 Calculemos también $E(X^2)$
 $$E(X^2) = \sum_{x=o}^1 x\cdot P(X=x) = 0^2 \cdot (1-p) + 1^2\cdot p = p$$
@@ -89,7 +89,7 @@ $$X(EFF\ldots EEF) \; = \; \mbox{número de éxitos en la cadena}$$
 ### Función de probabilidad de una binomial
 
 $$P_X(x)\left\{\begin{array}{rcl}
-  {n \to x}\cdot p^x \cdot (1-p)^{n-x}&si&x=0,1,\ldots,n\\
+  {n \choose x}\cdot p^x \cdot (1-p)^{n-x}&si&x=0,1,\ldots,n\\
   0&si&\mbox{en otro caso}\\
 \end{array}\right.$$
 
@@ -126,4 +126,138 @@ $$B(1,p) \equiv Ber(p)$$
 
 ### Esperanza de un X B(n,p)
 Su esperanza es
-$$E(X) = \sum_{k=0}^n k\cdot {n \choose k}\cdot $$
+$$E(X) = \sum_{k=0}^n k\cdot {n \choose k}\cdot p^k \cdot q^{n-k} = n\cdot p$$
+
+La esperanza de $X^2$ es
+$$E(X^2) = \sum_{k=0}^n k^2\cdot {n\choose k}\cdot p^k \cdot q^{n-k} = n\cdot p\cdot q - (n\cdot p)^2$$
+
+### Varianza de una X B(n,p)
+Su varianza es 
+$$Var(X) = E(X^2) - E^2(X) = n\cdot p\cdot q = n\cdot p \cdot (1-p)$$
+
+Su desviación típica es 
+$$\sqrt{n\cdot p \cdot q} = \sqrt{n\cdot p \cdot (1-p)}$$
+
+## La distribución Binomila en Python y R
+### Caáculos binomila con R
+Veamos los cálculos con funciones de R para una v.a. X con distribución binomial B(n=10,p=0.25)
+
+Si queremos calculo con R algún valor de la función de distribución como por ejemplo $F_X(0) = P(X\leq 0)$
+
+```{r}
+pbinom(0,size = 10, prob = 0.25)
+```
+
+si queremos por ejemplo $F_X(4) = P(X\leq 4)$
+
+```{r}
+pbinom(4, size = 10, prob = 0.25)
+```
+
+Sin embargo, si queremos calcular algún valor de la función de probabilidad como por ejemplo $P(X=0)$
+
+```{r}
+dbinom(0,size=10, prob = 0.25)
+```
+
+o por ejemplo para $P(X=4)$
+```{r}
+dbinom(4, size=10, prob = 0.25)
+```
+
+### Generación de muestras aleatorias con R
+Generaremos una muestra eleatoria de 100 valores de una población B(20,0.5)
+
+```{r}
+# Repetir 100 veces el experimento lanzar una moneda 20 veces y contar el número de caras.
+set.seed(2021)
+rbinom(100, size = 20, prob = 0.5)
+```
+## Ejemplo completo de distribución binomial
+Tenemos una urna con 100 bolas de las cuales 40 son rojas y 60 blancas. Extraemos al azar una bola, anotamos su color y la devolvemos (la reponemos) a la urna
+Supongamos que repetimos este proceso $n=10$ reponiendo en cada ocación la bola extraida.
+Consideremos la v.a. $X$ = Número de bolas extraidas con repocisión en $n=10$ repeticiones del mismo experimento Bernoulli.
+Bajo estas condiciones tenemos que repetimos $n=10$ veces el mismo experimento Bernoulli con probabilidad de éxito (sacar bola roja) es
+$$P(Roja) = P(Exito)=p=\dfrac{40}{100}=0.4$$
+
+Así que la variable $X$ = número de bolas rojas extraídas de la urna con reposición en $n=10$ ocasiones sigue una ley binomial $B(n=10,p=0.4)$
+
+
+1.¿Cual es la probabilidad de que saquemos exactamente 4 rojas?
+  
+  Respuesta.- Utilizando la función de probabilidad tenemos que 
+  $$P_X(X=4) = {10 \choose 4} \cdot 0.4^4 \cdot (1-0.4)^10.4 = \dfrac{10!}{(10-4)!\cdot 4!}\cdot 0.4^4 \cdot 0.6^6 = 0.2508227$$
+  
+```{r}
+dbinom(4, size = 10, prob = 0.4)
+```
+
+2. ¿Cuál es la probabilidad de que saquemos al menos 4 rojas?
+  
+  Respuesta.- Al menos 4 rojas es $P(X\geq 4) = 1 - P(X<4) = 1 - P(X\leq 3)$
+  es decir,
+  
+  $$\begin{array}{rcl}
+    P(X\leq 3)&=&P(X=0) + P(X=1) + P(X=2) + P(X=3)\\\\
+    &=&\displaystyle {10\choose 0}\cdot 0.4^0 \cdot (1-0.4)^{10-0} + {10\choose 1}\cdot 0.4^1 \cdot (1-0.4)^{10-1}\\\\ 
+    &+& \displaystyle {10\choose 2}\cdot 0.4^2 \cdot (1-0.4)^{10-2} + {10\choose 3}\cdot 0.4^3 \cdot (1-0.4)^{10-3} \\\\
+    &=&0.3822806\\\\
+  \end{array}$$
+  
+```{r}
+pbinom(3,10,0.4)
+```
+
+Así, $P(X\geq 4) = 1-P(X<4) = 1 - P(X\leq 3) = 1 - 0.3822806 = 0.6177194$
+
+```{r}
+1-pbinom(3,10,0.4)
+```
+
+Aunque en estos casos el parámetro lower.tail = FALSE es sin duda nuestra mejor opción:
+```{r}
+pbinom(3,10,0.4,lower.tail = FALSE)
+```
+
+3.- ¿Cuál es la porbabilidad de que saquemos menos 3 rojas?
+
+4.- ¿Cuál es el valor esperado del número de bolas rojas?
+
+Respuesta.- Como $X$ es una $B(10,0.4)$ sabemos que 
+$$E(X) = n\cdot p = 10 \cdot 0.4 = 4$$
+
+5.- ¿Cuál es la deviación típica del número de bolas rojas?
+La varianza es 
+$$Var(X) = n\cdot p \cdot (1-p) = 10\cdot 0.4 \cdot 0.6 = 2.4$$
+Y por lo tanto $\sqrt{Var(X)} = \sqrt{2.4} = 1.5491933$
+
+
+## Distribución geométrica
+
+\begin{itemize}
+  \item Repitamos un experimento Bernoulli de parámetro $p$, de forma independiente hasta obtener el primer éxito.
+  \item Sea $X$ la v.a. que cuenta el número de fracasos antes del primer éxito. Por ejemplo que hayamos tenido $x$ fracasos será una cadena de $x$ fracasos culminada con un éxito. Más concretamente
+  $$P(FFF, \ldots FE) = P(F)^x \cdot P(E) = (1-P)^x \cdot p = q^x \cdot p$$
+  
+\end{itemize}
+
+### Distribución geométrica
+Su función de probabilidad es
+$$PX_(x) = P(X=x) = \left\{\begin{array}{rcl}
+  (1-p)^x\cdot p&si&x=0,1,2,\ldots\\
+  0&& \mbox{en otro caso}\\
+\end{array}\right.$$
+
+La denotaremos por $Ge(p)$
+
+
+### Función de distribución
+
+Calculemos $P(X\leq 3)$.
+
+Por la propiedad de la probabilidad del suceso complementario tenemos que
+$$P(X\leq 3) = 1 -P(x>3) = 1-P(X\geq 4)$$
+Efectivamente, el evento tenemos que $X\leq 3$ es que hemos fracasado más de tres veces hasta conseguir el primer éxito; es decir hemos gracasado 4 o más veces, por lo tanto
+$${X>3} = {X\geq4} = {FFFF}$$
+
+Ahora al ser los intentos sucesos independientes, tenemos que:

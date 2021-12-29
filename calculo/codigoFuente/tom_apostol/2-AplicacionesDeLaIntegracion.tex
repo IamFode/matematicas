@@ -1,5 +1,6 @@
 \chapter{Algunas aplicaciones de la integración}
 
+
 \setcounter{section}{1}
 \section{El área de una región comprendida entre dos gráficas expresada como una integral}
 
@@ -1069,13 +1070,14 @@ para $0<|x|<\frac{x}{2}$.\\\\
     $$0\leq s(\theta) \leq f(\theta)\leq t(\theta)$$
     Para todo $\theta$ en $[a,b]$, y denotamos $S$ y $T$ sus conjuntos radiales, respectivamente. Ya que $s\leq f\leq t$ en $[a,b]$, los conjuntos radiales satisfacen la relación de inclusión $S\subseteq R \subseteq T.$ Por lo tanto, por la propiedad monótona del área, tenemos $a(S)\leq a(R) \leq a(T).$ Pero $S$ y $T$ son conjuntos radiales de la función escalonada, así $a(S) = \dfrac{1}{2}\displaystyle\int_a^b s^2(\theta)\; d\theta$ y $a(T) = \dfrac{1}{2}\displaystyle\int_a^b t^2 (\theta)\; d\theta$. Entonces tenemos la inecuación 
     $$\int_a^b s^2(\theta)\; d\theta \leq 2a(R)\leq \int_a^b t^2(\theta)\; d\theta$$
-    para todo función escalonada $s$ y $t$ que satisface $s\leq f\leq t$ en $[a,b]$. Donde $s^2$ y $t^2$ son funciones escalonadas arbitrarias que satisfacen $s^2\leq f^2 \leq t^2$ en $[a,b]$, se sigue $f^2$ es integrable, y tenemos $2a(R)=\displaystyle\int_a^b f^2(\theta)\; d\theta$. Esto prueba el teorema.
+    para todo función escalonada $s$ y $t$ que satisface $s\leq f\leq t$ en $[a,b]$. Donde $s^2$ y $t^2$ son funciones escalonadas arbitrarias que satisfacen $s^2\leq f^2 \leq t^2$ en $[a,b]$, se sigue $f^2$ es integrable, y tenemos $2a(R)=\displaystyle\int_a^b f^2(\theta)\; d\theta$. Esto prueba el teorema.\\\\
 \end{teo}
+
 
 \section{Ejercicios}
 
 En cada uno de los ejercicios 1 al 4, demostrar que el conjunto de puntos cuyas coordenadas rectangulares $(x,y)$ satisfacen la ecuación cartesiana dada, es igual al conjunto de todos los puntos cuyas coordenadas polares $(r,\theta)$ satisfacen la correspondiente ecuación polar.
-\begin{enumerate}[\bfseries 1.]
+\begin{enumerate}[\Large \bfseries 1.]
 
     %----------1.
     \item $(x-1)^2 + y^2 = 1;\quad r=2\cos \theta, \; cos \theta$.\\\\
@@ -1126,34 +1128,41 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
     %----------5.
     \item Espiral de Arquimedes: $f(\theta)=\theta,\quad 0\leq \theta \leq 2\pi$.\\\\
-	Respuesta.-\; $$\dfrac{1}{2}\int_0^{2\pi} \theta^2 \; d\theta = \dfrac{1}{2} \cdot \left(\dfrac{\theta^3}{3}\bigg|_0^{2\pi}\right) = \dfrac{1}{2}\cdot \dfrac{(2\pi)^3}{3} = \dfrac{4\pi^3}{3}$$
-    \begin{center}
-	\begin{tikzpicture}[scale=.55]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:2*pi, data cs = polarrad, samples = 600, fill = gray!30,opacity=.5]{x};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
-    \vspace{.5cm}
+	Respuesta.-
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:2*pi, data cs = polarrad, samples = 600, fill = gray!30,opacity=.5]{x};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\dfrac{1}{2}\int_0^{2\pi} \theta^2 \; d\theta = \dfrac{1}{2} \cdot \left(\dfrac{\theta^3}{3}\bigg|_0^{2\pi}\right) = \dfrac{1}{2}\cdot \dfrac{(2\pi)^3}{3} = \dfrac{4\pi^3}{3}$$\\\\
 
     %----------6.
     \item Circunferencia tangente al eje y: $f(\theta) = 2\cos \theta,\quad -\pi/2 \leq \theta\leq \pi/2$.\\\\
-	Respuesta.-\; $$\dfrac{1}{2}\int_{-\pi/2}^{\pi/2} 2^2\cos^2\theta \; d\theta = 2\int_{-\pi/2}^{\pi/2} (1-\sen^2\theta)\; d\theta = $$
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.55]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = -90:90, data cs = polar, samples = 360, fill = gray!30, opacity=.5]{2*cos(x)};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
-    \vspace{.5cm}
+	Respuesta.-
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = -90:90, data cs = polar, samples = 360, fill = gray!30, opacity=.5]{2*cos(x)};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\begin{array}{rcl}
+	    \dfrac{1}{2}\displaystyle\int_{-\pi/2}^{\pi/2} 4\cos^2 \theta \; d\theta&=&\displaystyle\int_{-\pi/2}^{\pi/2} (1-\sen^2\theta)\; d\theta\\\\
+										    &=&2\displaystyle\int_{-\pi/2}^{\pi/2} 1 \; d\theta + \displaystyle\int_{-\pi/2}^{\pi/2} (1-2\sen^2\theta - 1)\; d\theta\\\\
+										    &=&2\pi + \left(\displaystyle\int_{-\pi/2}^{\pi/2} \cos 2\theta \; d\theta\right)-\pi\\\\
+										    &=&\pi +\dfrac{1}{2} \displaystyle\int_{-\pi/2}^{\pi/2} \cos \theta \; d\theta\\\\
+										    &=&\dfrac{1}{2}\left(\sen \theta \bigg|_{-\pi}^\pi\right) + \pi\\\\
+										    &=&\pi\\\\
+	\end{array}$$
+	\vspace{.5cm}
 
     %----------7.
     \item Dos circunferencias tangentes al eje $y$: $f(\theta) = 2|\cos \theta|,\quad 0\leq \theta \leq 2\pi$.\\\\
@@ -1201,98 +1210,134 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \end{polaraxis}
 	\end{tikzpicture}
     \end{center}
+    \vspace{.5cm}
 
     %----------10.
     \item Pétalo de rosa: $f(\theta) = \sen 2\theta,\quad 0\leq \theta \leq \pi/2$.\\\\
-	Respuesta.-\; $$$$
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.55]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:90, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sin(2*x)};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	Respuesta.- 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:90, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sin(2*x)};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\dfrac{1}{2}\int_0^{\pi/2} \sen^2(2\theta)\; d\theta = \dfrac{1}{2\cdot 2}\int_{0\cdot 2}^{2 \cdot \pi/2} \sen^2\left(\dfrac{2\theta}{2}\right)\; d\theta = \dfrac{1}{4}\left[\dfrac{\pi}{2} + \dfrac{1}{4}\sen(2 \pi)\right] = \dfrac{\pi}{8}$$\\
+	Se aplico el teorema 1.19 (dilatación o contracción del intervalo de integración) y la nota 2.4 respectivamente.\\\\
 
     %----------11.
     \item Rosa de cuatro hojas: $f(\theta) = |\sen 2\theta|,\quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\;
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{abs(sin(2*x))};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{abs(sin(2*x))};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\dfrac{1}{2}\int_0^{2\pi} \sen^2(2\theta)\; d\theta = \dfrac{1}{2\cdot 2}\int_{2\cdot 0}^{2\cdot 2 \pi}\sen^2\left(\dfrac{2\theta}{2}\right)\; d\theta = \dfrac{1}{4}\left[\dfrac{4\pi}{2} + \dfrac{1}{4}\sen(2\cdot 4\pi)\right] = \dfrac{\pi}{2}$$\\\\
 
     %----------12.
     \item Ocho aplastado: $f(\theta) = \sqrt{|\cos \theta|}, \quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\;
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(x)))};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(x)))};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\begin{array}{rcl}
+	    \displaystyle\dfrac{1}{2}\int_0^{2\pi} \left(\sqrt{|\cos \theta|}\right)^2\; d\theta&=&\displaystyle \dfrac{1}{2}\left(\int_0^{\frac{\pi}{2}} \cos \theta\; d\theta - \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\cos \theta\; d \theta + \int_{\frac{3\pi}{2}}^{2\pi} \cos \theta\; d \theta\right)\\\\
+												&=&\dfrac{1}{2}\left[\sen\dfrac{\pi}{2} - \left(\sen \dfrac{3\pi}{2} - \sen \dfrac{\pi}{2}\right)+\sen 2\pi - \sen \dfrac{3\pi}{2}\right]\\\\
+												&=&\dfrac{1}{2}\left(1 + 1 + 1 + 0 + 1\right)\\\\
+	    &=&2\\\\
+	\end{array}$$
+	Esto por la nota 2.2. y por hecho de que 
+	$$|\cos \theta| = \left\{\begin{array}{rcl}
+	    +&si&0\leq x \leq \dfrac{\pi}{2}\\\\
+	    -&si&\dfrac{\pi}{2} < x \leq \dfrac{3\pi}{2}\\\\
+	    +&si&\dfrac{3\pi}{2} < x \leq 2\pi \\
+	\end{array}\right.$$
+	\vspace{.5cm}
 
     %----------13.
     \item Trébol de cuatro hojas: $f(\theta) = \sqrt{|\cos 2\theta|}, \quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\;
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(2*x)))};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{sqrt(abs(cos(2*x)))};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\begin{array}{rcl}
+	    \dfrac{1}{2}\int_0^{2\pi}\left(\sqrt{|\cos(2\theta)|}\right)^2\; d\theta&=&\dfrac{1}{2\cdot 2}\int_{0\cdot 2}^{2\pi\cdot 2} \bigg|\cos\dfrac{2\theta}{2}\bigg|\; d\theta\\\\
+	    &=&\dfrac{1}{4} \int_0^{4\pi} |\cos \theta| \; d\theta\\\\
+	    &=&\dfrac{1}{4}\left(\displaystyle \int_0^{\frac{\pi}{2}} \cos \theta\; d\theta - \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\cos \theta\; d \theta + \int_{\frac{3\pi}{2}}^{2\pi} \cos \theta\; d \theta\right.\\\\
+	    &+& \left. \displaystyle \int_{2\pi}^{\frac{5\pi}{2}} \cos \theta\; d\theta - \int_{\frac{5\pi}{2}}^{\frac{7\pi}{2}}\cos \theta\; d \theta + \int_{\frac{7\pi}{2}}^{4\pi} \cos \theta\; d \theta\right)\\\\
+	    &=&\dfrac{1}{4}\left[\sen \dfrac{\pi}{2} - \left(\sen \dfrac{3\pi}{2} - \sen \dfrac{\pi}{2}\right) + \sen 2\pi - \sen \dfrac{3\pi}{2}\right. \\\\ 
+	    &+&\left. \sen \dfrac{5\pi}{2}- \sen 2\pi - \left(\sen \dfrac{7\pi}{2} - \sen \dfrac{5\pi}{2}\right) + \sen 4\pi - \sen \dfrac{7\pi}{2}\right] \\\\
+	    &=&\dfrac{1}{4}\left(1 + 1+1+0+1 +1+1+1+0+1\right)\\\\
+	    &=&2\\\\
+	\end{array}$$
+	\vspace{.5cm}
 
     %----------14.
     \item Cardioide: $f(\theta) = 1+\cos \theta,\quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\;
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{1+cos(x)};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{1+cos(x)};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\begin{array}{rcl}
+	    \dfrac{1}{2}\displaystyle\int_0^{2\pi}(1+\cos \theta)^2\; d\theta&=&\dfrac{1}{2}\displaystyle\int_0^{2\pi}\left(1+2\cos \theta + \cos^2 \theta \right) \; d\theta\\\\
+									     &=&\dfrac{1}{2}\left(2\pi + 2\sen 2\pi + \dfrac{2\pi}{2} + \dfrac{1}{4}\sen 4 \pi\right)\\\\
+									     &=&\dfrac{3\pi}{2}\\\\
+	\end{array}$$
+	\vspace{.5cm}
 
     %----------15.
     \item Caracol: $f(\theta) = 2 + \cos \theta,\quad 0\leq \theta \leq 2\pi$.\\\\
 	Respuesta.-\;
-
-    \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \begin{polaraxis}[
-		xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-		$\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-		]
-		\addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{2+cos(x)};
-	    \end{polaraxis}
-	\end{tikzpicture}
-    \end{center}
+	\begin{center}
+	    \begin{tikzpicture}[scale=.55]
+		\begin{polaraxis}[
+		    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
+		    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
+		    ]
+		    \addplot[mark = none, domain = 0:360, data cs = polar, samples = 600, fill=gray!30, opacity=.5]{2+cos(x)};
+		\end{polaraxis}
+	    \end{tikzpicture}
+	\end{center}
+	$$\begin{array}{rcl}
+	    \dfrac{1}{2}\displaystyle\int_0^{2\pi}(2+\cos \theta)^2\; d\theta&=&\dfrac{1}{2}\displaystyle\int_0^{2\pi}\left(4 + 4\cos \theta + \cos^2 \theta \right) \; d\theta\\\\
+									     &=&\dfrac{1}{2}\left(8\pi + 4\sen 2\pi + \dfrac{2\pi}{2} + \dfrac{1}{4}\sen 4 \pi\right)\\\\
+									     &=&\dfrac{9\pi}{2}\\\\
+	\end{array}$$
+	\vspace{.5cm}
 
 \end{enumerate}
+
+\section{Aplicación de la integración al cálculo de volúmenes}
 
 
 
