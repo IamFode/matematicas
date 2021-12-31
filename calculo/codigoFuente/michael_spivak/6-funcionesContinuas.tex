@@ -299,11 +299,35 @@
 \item 
 \begin{enumerate}[\bfseries (a)]
 
-	%---------- (a)
-	\item 
+    %---------- (a)
+    \item Demuestre la siguiente versión del teorema 3 para la continuidad por la derecha: Supóngase que $\lim\limits_{x\to a^+} f(x) = f(a)$, y $f(a)>0$. Entonces existe un número $\delta>0$ tal que $f(x)>0$ para todo $x$ que satisface $0\leq x-a < \delta$. Análogamente, si $f(a)<0$, entonces existe un número $\delta>0$ tal que $f(x)<0$ para todo $x$ que satisface $0\leq x-a<\delta$.\\\\
+	Demostración.-\; Se tiene que 
+	$$\forall \epsilon > 0, \; \exists\; \delta > 0 \setminus \forall x, \; si \; 0\leq x-a<\delta \Longrightarrow |f(x)-f(a)|<\epsilon $$ 
+	luego podemos tomar $f(a)>0$ como $\epsilon$, así  nos queda,
+	$$\forall \epsilon > 0, \; \exists\; \delta > 0 \setminus \forall x, \; si \; 0\leq x-a<\delta \Longrightarrow |f(x)-f(a)|<f(a)$$ 
+	de donde implica $f(x)>0$.\\\\
+	Análogamente 
+	$$\forall \epsilon > 0, \; \exists\; \delta > 0 \setminus \forall x, \; si \; 0\leq a-x<\delta \Longrightarrow |f(x)-f(a)|<f(a)$$ 
+	luego tomamos $\epsilon = -f(a)>0$
+	$$\forall \epsilon > 0, \; \exists\; \delta > 0 \setminus \forall x, \; si \; 0\leq x-a<\delta \Longrightarrow |f(x)-f(a)|<-f(a)$$ 
+	de donde implica que $f(x)<0$.\\\\
+
+    %---------- (b)
+    \item Demostrar una versión del teorema 3 cuando $\lim\limits_{x\to b^-} f(x) = f(b)$.\\\\
+    	Demostración.-\; Similar al anterior inciso podemos decir que,
+	$$\forall \epsilon > 0, \; \exists\; \delta > 0 \setminus \forall x, \; si \; 0\leq a-x<\delta \Longrightarrow |f(x)-f(a)|<f(a)$$ 
+	cuando $f(a)>0$ que implica que $f(x)>0$.\\\\
+	Análogamente se tiene para $f(a)<0$.\\\\
 
 \end{enumerate}
 
+%--------------------16.
+\item Si $\lim\limits_{s\to a} f(x)$ existe, pero $\neq f(a)$, entonces se dice que $f$ tiene una discontinuidad evitable en $a$.
+\begin{enumerate}[\bfseries (a)]
 
+    %----------(a)
+    \item 
+
+\end{enumerate}
 
 \end{enumerate}

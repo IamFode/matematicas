@@ -56,7 +56,8 @@ En general, la función de distribución acumulativa $F(x)$ de una variable alea
 	\begin{enumerate}[\bfseries 1.]
 	    \item $f(x)\geq 0$, $-\infty<x<\infty$,
 	    \item $\displaystyle\int_{-\infty}^\infty f(x) \;dx$ y 
-	    \item $P(a\leq X \leq b) = \displaystyle\int_{a}^{b} f(x) \; dx$
+	    \item $P(a\leq X \leq b) = \displaystyle\int_{a}^{b} f(x) \; dx$\\\\
+		Para cualquier $a$ y $b$, entonces $f(x)$ es la función de densidad de probabilidad de la variable aleatoria continua $X$.
 	\end{enumerate}
     \end{def.}
 \end{tcolorbox}
@@ -231,27 +232,32 @@ de donde se tiene que $Var(Y) = \mu_2(Y) = 1$. En particular, nótese que $\alph
     \end{def.}
 \end{tcolorbox}
 
+%-------------------- definición 3.12
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}
+	Para cualquier variable aleatoria $X$, el valor cuantil $X_q$, de orden $q$. $0<q<1$, es el valor de $X$ tal que:
+	$$\begin{array}{ll}
+	    P(X<x_q) \leq q \quad y \quad P(X\leq x_{q}) \geq q&\mbox{si X es discreta, o}\\\\
+	    P(X\leq x_{q}) = q&\mbox{si X es continua}\\
+	\end{array}$$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------definición 3.13
+
+
+
+
+
+
+
+
+
+
 
 
 
 \section{Ejercicios}
 
-\begin{enumerate}[\Large \bfseries 1.]
-
-    %--------------------1
-    \item Solución script C3-ejercicios.R
-
-    %--------------------2
-    \item Por definición 3.4, sea $$k+\dfrac{k}{2}+\dfrac{k}{3}+\dfrac{k}{4}=1 \quad \Longrightarrow \quad k=\dfrac{12}{25}$$
-	entonces la función de probabilidad de una variable aleatoria discreta $X$ estará dada por:
-	$$\begin{array}{rcl}
-	    \dfrac{12}{25}&si&x=1\\\\
-	    \dfrac{6}{25}&si&x=2\\\\
-	    \dfrac{4}{25}&si&x=3\\\\
-	    \dfrac{3}{25}&si&x=4\\\\
-	     &si&\\\\
-	\end{array}$$
-
-	Así, la probabilidad de $P(1\leq X \leq 3)$ será, $$P(1\leq X \leq 3) = 1 - P(X=4) = 1 - \dfrac{3}{25} = \dfrac{22}{25} = 1.88$$\\\\
-\end{enumerate}
+Los ejercicios se encuentra en el archivo $Ej\_Cap3.Rmd$
 

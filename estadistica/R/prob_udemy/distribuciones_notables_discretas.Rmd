@@ -261,3 +261,65 @@ Efectivamente, el evento tenemos que $X\leq 3$ es que hemos fracasado más de tr
 $${X>3} = {X\geq4} = {FFFF}$$
 
 Ahora al ser los intentos sucesos independientes, tenemos que:
+$$\begin{array}{rcl}
+  P(X>3)&=&P({FFFF}) = P(F)\cdot P(F)\cdot P(F)\cdot P(F)\\
+  &=&(1-p)\cdot (1-p)\cdot (1-p)\cdot (1-p) = (1-p)^{3+1} \\
+  &=&(1-p)^4\\
+\end{array}$$
+
+calculamos 
+$$F_X(3) = P(X\leq 3) = 1-P(X>3) = 1-(1-p)^{3+1}$$
+
+por lo que podemos generalizar a cualquier entero positivo $k=0,1,2,\ldots$
+
+$$F_X(x) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&si&x<0\\\\
+  1-(1-p)&si&k= 0 \leq x < 1\\\\
+  1-(1-p)^2&si& k = 1\leq x < 2\\\\
+  1-(1-p)^3&si& k = 2\leq x < 3\\\\
+  1-(1-p)^{k+1}&si& k\leq x < k+1 \; para \; k=0,1,2,\ldots\\
+\end{array}\right.$$
+
+notemos que si $k=0,1,2,\ldots$ el límite de la función de distribución es 
+$$\lim_{k\to \infty} F_X(k) = \lim_{k\to \infty} 1 - (1-p)^{k+1} = 1$$
+
+ya que $0<1-p<1$
+
+## La esperanza y la varianza de una distribución geométrica.
+
+### Esperanza de una v.a. Ge(p)
+$$\begin{array}{rcl}
+  E(X) &=& \sum\limits_{x=0}^\infty x \cdot P_X(x)\\
+  &=& \sum\limits_{x=0}^\infty x\cdot (1-p)^x \cdot p\\\
+  &=& p\cdot (1-p)\cdot \sum\limits_{x=1}^\infty x\cdot (1-p)^{x-1}\\
+  &=& p\cdot (1-p)\cdot \dfrac{1}{\left[1-(1-p)\right]^2}\\
+  &=&(1-p)\cdot \dfrac{1}{p^2}\\
+  &=&\dfrac{1-p}{p}\\
+\end{array}$$ 
+
+### Valor E(X^2) de una v.a. Ge(p)
+$$\begin{array}{rcl}
+  E(X^2) &=& \sum\limits_{x=0}^\infty x^2 \cdot P_X(x)\\\\
+  &=& \sum\limits_{x=0}^\infty x^2 \cdot (1-p)^x \cdot p\\\\
+  &=& \sum\limits_{x=1}^\infty \left[x\cdot (x-1)+x \right] (1-p)^{x} \cdot p\\\\
+  &=&\sum\limits_{x=1}^\infty x\cdot (x-1)\cdot (1-p)^x\cdot p + \sum\limits_{x=1}^\infty x\cdot (1-p)^x \cdot p\\\\
+  &=&(1-p)^2\cdot p \cdot \sum\limits_{x=2}^\infty x\cdot (x-1)\cdot (1-p)^{x-2}\\\\
+  &+&(1-p)\cdot p\sum\limits_{x=1}^\infty x\cdot (1-p)^{x-1} \\\\
+  &=&p\cdot (1-p)^2 \dfrac{2}{\left[1-(1-p)\right]^3} + (1-p)\cdot p \dfrac{1}{\left[1-(1-p)\right]^2}\\\\
+  &=&p\cdot (1-p)^2 \dfrac{2}{p^3}+(1-p)\cdot p \dfrac{1}{p^2}\\\\
+  &=&\dfrac{2\cdot(1-p)^2}{p^2}+\dfrac{1-p}{p}\\
+\end{array}$$ 
+
+### Varianza de una v.a. Ge(p)
+
+$$\begin{array}{rcl}
+  Var(X)&=&E(X^2) - E^2(X)\\\\
+  &=&\dfrac{2\cdot(1-p)^2}{p^2}+\dfrac{1-p}{p}-\left(\dfrac{1-p}{p}\right)^2\\\\
+  &=&\dfrac{2\cdot(1-p)^2+p\cdot (1-p)-(1-p)^2}{p^2}\\\\
+  &=&\dfrac{(1-p)^2 + p\cdot (1-p)}{p^2}\\\\
+  &=&\dfrac{1-2\cdot p p^2 + p - p^2}{p^2}\\\\
+  &=&\dfrac{1-p}{p^2}\\\\
+\end{array}$$
+
+
+ 

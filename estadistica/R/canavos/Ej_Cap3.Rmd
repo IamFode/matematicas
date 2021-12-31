@@ -1,0 +1,121 @@
+---
+title: "Ejercicios del Capítulo 3"
+author: "Christian Limbert Paredes Aguilera"
+date: "30/12/2021"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r}
+#librerias
+library(ggplot2)
+```
+
+# 3.1
+
+## a)
+```{r}
+X <- c(0,1,2,3,4,5,6,7)
+fp <- c()
+for (x in 0:7) {
+  fp <- c(fp, exp(-3)*3^x / factorial(x))
+}
+df <- data.frame(X,fp)
+```
+
+## b)
+```{r}
+ggplot(data = df, mapping = aes(X,fp)) + 
+  geom_col(width = 0.1)
+```
+
+## c)
+```{r}
+fda <- c()
+sum <- 0
+for (x in 0:7) {
+  sum <- sum + (exp(-3)*3^x / factorial(x))
+  fda <- c(fda,sum)
+}
+df <- data.frame(X,fp,fda)
+print(fda)
+```
+
+## d)
+```{r}
+ggplot(data = df, mapping = aes(X,fda)) + 
+  geom_line(width = 2)
+```
+
+
+# 3.2.
+Por definición 3.4, sea 
+$$k+\dfrac{k}{2}+\dfrac{k}{3}+\dfrac{k}{4}=1 \quad \Longrightarrow \quad k=\dfrac{12}{25}$$
+
+entonces la función de probabilidad de una variable aleatoria discreta $X$ estará dada por:
+
+$$p(x) = \left\{\begin{array}{rcl}
+    \dfrac{12}{25}&si&x=1\\\\
+    \dfrac{6}{25}&si&x=2\\\\
+    \dfrac{4}{25}&si&x=3\\\\
+    \dfrac{3}{25}&si&x=4\\
+\end{array}\right.$$
+
+Así, la probabilidad de $P(1\leq X \leq 3)$ será, $$P(1\leq X \leq 3) = 1 - P(X=4) = 1 - \dfrac{3}{25} = \dfrac{22}{25} = 1.88$$
+
+
+# 3.3.
+## a)	    
+Según la definición 3.6 se tiene,
+$$\int_{-x}^x kx^2\; dx = \int_{-1}^1 kx^2\; dx =  1 \quad \Longrightarrow \quad k=\dfrac{3}{2}$$
+
+```{r}
+integrate(function(x) 3/2*x^2, lower = -1, upper = 1)
+```
+## b)
+$$P(X\leq x) = \int_{-\infty}^x f(t)\; dt = \int_{-\infty}^{-1} 0\; dt + \int_{-1}^x \dfrac{3}{2}t^2\; dt = \dfrac{3}{2} \cdot \dfrac{x^3+1}{3} =\dfrac{x^3+1}{2}$$
+```{r}
+funcdist <- function(x) (x^3+1)/2
+```
+
+$$P(X\leq x) = \left\{\begin{array}{rcl}
+  \dfrac{x^3+1}{2}&si&x>0\\\\
+  0&si&\mbox{Para cualquier otro valor}\\\\
+\end{array}\right.$$
+```{r}
+ggplot() +
+   xlim(-1, 1) +
+   geom_function(
+     aes(color = "Normal"),
+     fun =~ (.x^3-1)/2 
+     )
+```
+
+
+## c)
+$$P(X\geq 1/2) = 1 - P(X\leq 1/2) = 1 - \dfrac{x^3+1}{2} = 1 - \dfrac{\left(1/2\right)^3+1}{2} =1- \dfrac{9/8}{2} = \dfrac{7}{16}$$
+
+```{r}
+1-funcdist(1/2)
+```
+
+$$P(-1/2 \leq X \leq 1/2) = P(X\leq 1/2) - P(X\leq -1/2) = \dfrac{(1/2)^3}{2} - \dfrac{(-1/2)^3}{2} = \dfrac{1}{8} $$
+
+```{r}
+# primera manera
+funcdist(1/2) - funcdist(-1/2)
+```
+```{r}
+# segunda manera
+integrate(function(x) 3/2*x^2, lower = -1/2, upper = 1/2)
+```
+
+# 3.4.
+
+## a)
+Por la definición 3.6 se tiene y sabiendo que $x\leq 0$ es cero.
+$$\int_{-x}^x k\cdot e^{-x/5}\; dx = \int_0^x k\cdot e^{-x/5}\; dx$$
+Luego igualando a uno,
+$$\int_0^x k\cdot e^{-x/5}\; dx = 1 \quad \Longrightarrow \quad $$
