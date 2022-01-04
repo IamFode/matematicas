@@ -1364,5 +1364,24 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
     \end{enumerate}
 \end{tcolorbox}
 
+% -------------------- teorema 2.7 --------------------
+\begin{teo}
+    Sea $R$ un sólido de Cavalieri de $\mathscr{A}$ cuya función área seccional $a_R$, sea integrable en un intervalo $[a,b]$ y nula fuera del mismo. En tales condiciones el volumen de $R$ es igual a la integral del área seccional:
+    $$v(R) = \int_a^b a_R(u)\; du$$\\
+    Demostración.-\; Elijamos funciones escalonadas $s$ y $t$ tales que $s\leq a_R \leq t$ en $[a,b]$ y definamos $s$ y $t$ como nulas fuera de $[a,b]$. Para cada subintervalo de $[a,b]$ en el que $s$ sea constante, podemos imaginar un sólido cilíndrico construido de modo que su área seccional en este subintervalo tenga el mismo valor constante que $s$. La reunión de esos cilindros sobre los intervalos en los que $s$ es constante es un sólido $S$ cuyo volumen $v(S)$ es, por la aditividad, igual a la integral $\int_a^b s(u) \; du$. Del mismo modo, existe un sólido $T$, una reunión de cilindros, cuyo volumen $v(T)=\int_a^b t(u)\; du$. Pero $a_S(u) = s(u)\leq t(u)=a_r(u)$ para todo $u$ de $[a,b]$, de modo que el principio de Cavalieri implica que $v(S) \leq v(R)\leq v(T)$. En otras palabras, $v(R)$ satisface las desigualdades,
+    $$\int_a^b s(u)\; du \leq v(R) \leq \int_a^b t(u)\; du.$$
+    para todas las funciones escalonadas $s$ y $t$ que satisfacen $s\leq a_S \leq t$ en $[a,b]$. Puesto que $a_S$ es integrable en $[a,b]$, resulta que $v(R)=\int_a^b a_S(u)\; du$.
+\end{teo}
+
+\section{Ejercicios}
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+    %---------------------1.
+    \item 
+
+\end{enumerate}
+
+
 
 

@@ -116,6 +116,64 @@ integrate(function(x) 3/2*x^2, lower = -1/2, upper = 1/2)
 
 ## a)
 Por la definición 3.6 se tiene y sabiendo que $x\leq 0$ es cero.
-$$\int_{-x}^x k\cdot e^{-x/5}\; dx = \int_0^x k\cdot e^{-x/5}\; dx$$
+$$\int_{-\infty}^\infty k\cdot e^{-x/5}\; dx = \int_0^\infty k\cdot e^{-x/5}\; dx$$
 Luego igualando a uno,
-$$\int_0^x k\cdot e^{-x/5}\; dx = 1 \quad \Longrightarrow \quad $$
+$$\int_0^\infty k\cdot e^{-x/5}\; dx = 1 \quad \Longrightarrow \quad k = \dfrac{1}{5}$$
+
+```{r}
+integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = Inf)
+```
+
+## b)
+```{r}
+ggplot() +
+   xlim(-1, 1) +
+   geom_function(
+     aes(color = "Normal"),
+     fun =~ 1/5 * exp(-.x/5)  
+     )
+```
+
+## c)
+$$P(X\leq 5) = \int_0^5 \dfrac{1}{5}e^{-x/5}\; dx = 1-\dfrac{1}{e}$$
+```{r}
+integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 5)
+```
+
+$$P(0\leq X \leq 8) = \int_0^8 \dfrac{1}{5}e^{-x/5}\; dx = 1-\dfrac{1}{e^{8/5}}$$
+
+```{r}
+integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 8)
+```
+
+## d)
+La función de distribución acumulativa esta dado por 
+$$F(x) = \int_{\infty}^x f(t)\; dt = \int_{-\infty}^0 0\; dt + \dfrac{1}{5}\int_0^x e^{-t/5}\; dt = -e^{-x/5}-1$$
+
+```{r}
+ggplot() +
+   xlim(0, 10) +
+   geom_function(
+     aes(color = "Normal"),
+     fun =~ -exp(-.x/5) - 1  
+     )
+```
+
+
+
+# 3.5
+$$F(x) = 1-exp(-x/100),\quad x>0$$
+
+## a)
+$$F^{'}(x) = 1-e^{-x/100} = \dfrac{1}{100}e^{-x/100}$$
+
+## b)
+$$1-(1-exp(-200/100)) = 0.13533$$
+
+```{r}
+1-(1-exp(-200/100))
+
+integrate(function(x) 1/100 * exp(-x/100), lower = 0, upper = 200)
+```
+
+# 3.6

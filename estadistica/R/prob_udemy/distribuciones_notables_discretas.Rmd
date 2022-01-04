@@ -358,6 +358,34 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 En general tenemos que 
-$$P(X>k+1) = (1-p)\cdot = (1-p)\cdot P(X>k)$$
+$$P(X>k+1) = (1-p)\cdot P(X>k)$$
 
 del mismo modo para $j=2$
+$$P(X>k+2) = (1-p)\cdot P(X>k+1)$$
+Restando la primera igualdad de la última obtenemos:
+$$P(X>k+1) - P(X>k+2) = (1-p)\cdot P(X>k) - (1-p)\cdot P(X>k+1)$$
+de donde operando en cada lado de la igualdad obtenemos la recurrencia 
+$$\left[1-P(X\leq k+1)  \right] - \left[1-P(X\leq k+2)\right] = (1-p)\cdot \left[P(X>k)-P(X>k+1)\right]$$
+
+ahora operando 
+$$\begin{array}{rcl}
+  P(X\leq k+2)-P(X\leq k+1)&=&(1-p)\cdot \left[ 1-P(X\leq k)-(1-P(X\leq k+1))\right]\\\\
+  P(X=k+2)&=&(1-p)\cdot \left[P(X\leq k+1)-P(X\leq k)\right]\\\\
+  P(X=k+2)&=&(1-p)\cdot P(X=k+1)\\\\
+\end{array}$$
+
+De forma similar obtenemos 
+$$P(X=k+1) = (1-p)\cdot P(X=k)$$
+Utilizando la recurrencia anterior para calcular todas las probabilidades a partir de la $P(X=0)=p$; que vienen dadas por:
+
+$$\begin{array}{rcl}
+  P(X=0)&=&p\\
+  P(X=1)&=&P(X=0+1) = (1-p)\cdot P(X=0) = (1-p)\cdot p\\
+  P(X=2)&=&P(X=1+1) = (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p = (1-p)^2\cdot p\\
+  P(X=k)&=&P(X=(k-1)+1) = (1-p)\cdot P(X=k+1) = (1-p)\cdot (1-p)^{k-1}\cdot p = (1-p)^k \cdot p\\
+\end{array}$$
+
+Lo que demuestra el recíproco, es decir que $X$ es Geom(p).
+
+
+## La distribución geométrica con R y Python
