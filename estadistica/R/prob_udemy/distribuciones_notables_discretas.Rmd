@@ -237,7 +237,7 @@ Y por lo tanto $\sqrt{Var(X)} = \sqrt{2.4} = 1.5491933$
 \begin{itemize}
   \item Repitamos un experimento Bernoulli de parámetro $p$, de forma independiente hasta obtener el primer éxito.
   \item Sea $X$ la v.a. que cuenta el número de fracasos antes del primer éxito. Por ejemplo que hayamos tenido $x$ fracasos será una cadena de $x$ fracasos culminada con un éxito. Más concretamente
-  $$P(FFF, \ldots FE) = P(F)^x \cdot P(E) = (1-P)^x \cdot p = q^x \cdot p$$
+  $$P(FFF, \ldots FE) = P(F)^x \cdot P(E) = (1-p)^x \cdot p = q^x \cdot p$$
   
 \end{itemize}
 
@@ -321,5 +321,43 @@ $$\begin{array}{rcl}
   &=&\dfrac{1-p}{p^2}\\\\
 \end{array}$$
 
+## Propiedad de falta de memoria
+Sea  $X$ una v.a. discreta con dominio $D_X = \lbrace0,1,2, \ldots\rbrace$ con $P(X=0) = p$ entonces $X$ sigue una ley $Ge(p)$ si y sólo si
+$$P(X> k + j \;|\; X\geq j) = P(X>k)$$
+para todo $k,j = 0,1,2,3,\ldots$
 
- 
+Es decir, el número de veces que voy a fallar hasta el primer éxito no está condicionado por las veces que estamos probando. Por ejemplo es lo mismo lanzar 80 veces o lanzar 2 veces hasta el primer éxito.
+
+Demostración.- Si es geométrica entonces el lado derecho de la igualdad es 
+$$P(X>k) = 1 - P(x\leq k) = 1 - (1-(1-p)^{k+1}) = (1-p)^{k+1}$$
+
+Luego 
+$$\begin{array}{rcl}
+  P(X>k+j | X\geq j)&=&\dfrac{P(\lbrace X>k+j\rbrace)\cap \lbrace X\geq j\rbrace}{P(X\geq j)}\\\\
+  &=&\dfrac{P(X>k+j)}{P(>\geq j)}\\\\
+  &=&\dfrac{1-P(X\leq k+j)}{1-P(X\leq j-1)}\\\\
+  &=&\dfrac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{k-1+1})}\\\\
+  &=&\dfrac{(1-p)^{k+j+1}}{(1-p)^j}\\\\
+  &=&(1-p)^{k+1}\\\\
+\end{array}$$
+
+Para demostrar el recíproco tomemos $j=1$ y $k\geq 0$ entonces por la propiedad de la pérdida de memoria
+$$P(X>k+1 | X\geq 1) = P(X>k)$$
+
+Como sabemos $P(X=0)=p$ tenemos $P(X\geq 1) = 1 - P(X<1) = 1-P(X=0) = 1-p$
+
+Luego combinando las igualdades tenemos que
+$$P(X<k+1 | X\geq 1) = \dfrac{P(X>k+1, X\geq 1)}{P(X\geq 1)} = \dfrac{P(X>k+1)}{P(X\geq 1)} = P(X>k)$$
+
+Así  podemos poner que 
+$$\begin{array}{rcl}
+  P(X>k+1)&=&P(X\geq 1)\cdot P(X>k)\\\\
+  &=&P(X<1)\cdot P(X>k)\\\\
+  &=&(1-P(X=0))\cdot P(X>k)\\\\
+  &=&(1-p)\cdot P(X>k)\\\\
+\end{array}$$
+
+En general tenemos que 
+$$P(X>k+1) = (1-p)\cdot = (1-p)\cdot P(X>k)$$
+
+del mismo modo para $j=2$

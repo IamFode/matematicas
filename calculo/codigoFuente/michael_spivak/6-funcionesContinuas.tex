@@ -322,11 +322,39 @@
 \end{enumerate}
 
 %--------------------16.
-\item Si $\lim\limits_{s\to a} f(x)$ existe, pero $\neq f(a)$, entonces se dice que $f$ tiene una discontinuidad evitable en $a$.
+\item Si $\lim\limits_{x\to a} f(x)$ existe, pero $\neq f(a)$, entonces se dice que $f$ tiene una discontinuidad evitable en $a$.
 \begin{enumerate}[\bfseries (a)]
 
     %----------(a)
-    \item 
+    \item Si $f(x) = \sen 1/x$ para $x\neq 0$ y $f(0)=1$, ¿tiene $f$ una descontinuidad evitable en $0$? ¿Y si $f(x)=x \sen 1/x$ para $x\neq 0$, y $f(0)=1$?.\\\\
+	Respuesta.-\; No se tendrá en el primer caso. Y se tendrá en el segundo caso. Por la existencia en cada caso.\\\\
+
+    %----------(b)
+    \item Supóngase que $f$ tiene una discontinuidad evitable en $a$. Sea $g(x)=f(x)$ para $x\neq a$, y sea $g(a) = \lim\limits_{x\to a} f(x).$ Demuestre que $g$ es continuo en $a$.\\\\
+	Demostración.-\; Si $g(a) = \lim\limits_{x\to a} f(x)$ y $f(x)=g(x)$ entonces $g$ es continuo en $a$. Es decir,
+	$$\lim_{x\to a} g(x) = \lim_{x\to a} f(x) = g(a)$$\\
+
+    %----------(c)
+    \item Sea $f(x) = 0$ si $x$ es racional, y sea $f(p/q) = 1/q$ si $p/q$ es una fracción irreducible. ¿Qué función es la $g$ definida por $g(x)=\lim\limits_{u\to x}f(y)$?.\\\\
+	Respuesta.-\; La función será $g(x)=0$ para todo $x$.\\\\
+
+    %----------(d)
+    \item Sea $f$ una función con la propiedad de que todo punto de discontinuidad es una discontinuidad evitable. Esto significa que $\lim\limits_{y\to x} f(y)$ existe para todo $x$, pero $f$ podría ser discontinuo en algunos (incluso en infinitos) números $x$. Defínase $g(x)=\lim\limits_{y\to x}f(y)$. Demostrar que $g$ es continua.\\\\
+	Demostración.-\; Sea $g(x)=\lim\limits_{y\to x}f(y)$ entonces para todo $\epsilon>0$ existe un $\delta>0$ tal que $|f(y)-g(x)|<\epsilon$ para $0<|y-x|<\delta$, esto significa que:
+	$$f(y)-\epsilon < g(x)<f(y)+\epsilon \quad \mbox{para}\quad |y-x|<\delta$$
+	luego,
+	$$f(y)-\epsilon < \lim\limits_{y\to x} f(y)<f(y)+\epsilon \quad \mbox{para}\quad |y-x|<\delta$$
+	Por definición también sabemos que $g(a) = \lim\limits_{y\to a} f(y)$ de donde se sigue que para todo $\epsilon>0$ existe un $2\delta = \delta^{'}>0$ tal que $|y-a|<\delta$ entonce $|f(y)-g(a)|<\epsilon$ es decir,
+	$$g(a)-\epsilon < f(y) < g(a)+\epsilon \quad \mbox{para}\quad |y-a|<\delta^{'}$$
+	Así por $|y-a|<\delta^{'}$ y $|y-x|<\delta$, se tiene,
+	$$g(a)-\epsilon \leq f(y)-\epsilon < \lim\limits_{y\to x} f(y) < f(y)+\delta \leq g(a)+\epsilon \quad \mbox{para}\quad |x-a|<\delta$$
+	ya que $-2\delta -(-\delta )<y-a-(y-x) < 2\delta - \delta$. Lo cual demuestra que $|g(x)-g(a)|<\epsilon$ para todo $x$ que satisfaga $|x-a|<\delta$. De modo que $g$ es continua en $a$.\\\\ 
+
+    %----------(e)
+    \item ¿Existe alguna función $f$ que sea discontinua en todo punto y que tenga solamente discontinuidades evitables?.\\\\
+	Respuesta.-\; No existe.\\\\
+
+
 
 \end{enumerate}
 
