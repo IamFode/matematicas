@@ -15,7 +15,7 @@ library(ggplot2)
 
 # 3.1
 
-## a)
+### a)
 ```{r}
 X <- c(0,1,2,3,4,5,6,7)
 fp <- c()
@@ -25,13 +25,13 @@ for (x in 0:7) {
 df <- data.frame(X,fp)
 ```
 
-## b)
+### b)
 ```{r}
 ggplot(data = df, mapping = aes(X,fp)) + 
   geom_col(width = 0.1)
 ```
 
-## c)
+### c)
 ```{r}
 fda <- c()
 sum <- 0
@@ -43,7 +43,7 @@ df <- data.frame(X,fp,fda)
 print(fda)
 ```
 
-## d)
+### d)
 ```{r}
 ggplot(data = df, mapping = aes(X,fda)) + 
   geom_line(width = 2)
@@ -67,14 +67,14 @@ Así, la probabilidad de $P(1\leq X \leq 3)$ será, $$P(1\leq X \leq 3) = 1 - P(
 
 
 # 3.3.
-## a)	    
+### a)	    
 Según la definición 3.6 se tiene,
 $$\int_{-x}^x kx^2\; dx = \int_{-1}^1 kx^2\; dx =  1 \quad \Longrightarrow \quad k=\dfrac{3}{2}$$
 
 ```{r}
 integrate(function(x) 3/2*x^2, lower = -1, upper = 1)
 ```
-## b)
+### b)
 $$P(X\leq x) = \int_{-\infty}^x f(t)\; dt = \int_{-\infty}^{-1} 0\; dt + \int_{-1}^x \dfrac{3}{2}t^2\; dt = \dfrac{3}{2} \cdot \dfrac{x^3+1}{3} =\dfrac{x^3+1}{2}$$
 ```{r}
 funcdist <- function(x) (x^3+1)/2
@@ -94,7 +94,7 @@ ggplot() +
 ```
 
 
-## c)
+### c)
 $$P(X\geq 1/2) = 1 - P(X\leq 1/2) = 1 - \dfrac{x^3+1}{2} = 1 - \dfrac{\left(1/2\right)^3+1}{2} =1- \dfrac{9/8}{2} = \dfrac{7}{16}$$
 
 ```{r}
@@ -114,7 +114,7 @@ integrate(function(x) 3/2*x^2, lower = -1/2, upper = 1/2)
 
 # 3.4.
 
-## a)
+### a)
 Por la definición 3.6 se tiene y sabiendo que $x\leq 0$ es cero.
 $$\int_{-\infty}^\infty k\cdot e^{-x/5}\; dx = \int_0^\infty k\cdot e^{-x/5}\; dx$$
 Luego igualando a uno,
@@ -124,7 +124,7 @@ $$\int_0^\infty k\cdot e^{-x/5}\; dx = 1 \quad \Longrightarrow \quad k = \dfrac{
 integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = Inf)
 ```
 
-## b)
+### b)
 ```{r}
 ggplot() +
    xlim(-1, 1) +
@@ -134,7 +134,7 @@ ggplot() +
      )
 ```
 
-## c)
+### c)
 $$P(X\leq 5) = \int_0^5 \dfrac{1}{5}e^{-x/5}\; dx = 1-\dfrac{1}{e}$$
 ```{r}
 integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 5)
@@ -146,7 +146,7 @@ $$P(0\leq X \leq 8) = \int_0^8 \dfrac{1}{5}e^{-x/5}\; dx = 1-\dfrac{1}{e^{8/5}}$
 integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 8)
 ```
 
-## d)
+### d)
 La función de distribución acumulativa esta dado por 
 $$F(x) = \int_{\infty}^x f(t)\; dt = \int_{-\infty}^0 0\; dt + \dfrac{1}{5}\int_0^x e^{-t/5}\; dt = -e^{-x/5}-1$$
 
@@ -164,16 +164,89 @@ ggplot() +
 # 3.5
 $$F(x) = 1-exp(-x/100),\quad x>0$$
 
-## a)
+### a)
 $$F^{'}(x) = 1-e^{-x/100} = \dfrac{1}{100}e^{-x/100}$$
 
-## b)
+### b)
 $$1-(1-exp(-200/100)) = 0.13533$$
 
 ```{r}
 1-(1-exp(-200/100))
-
 integrate(function(x) 1/100 * exp(-x/100), lower = 0, upper = 200)
 ```
 
 # 3.6
+Función acumulada de v.a. es
+$$F(X) = \left\{ \begin{array}{lr}
+  0&x<0\\
+  2x-x^2&0<x<1\\
+  1&x>1\\
+\end{array}\right.$$
+
+### a)
+```{r}
+# gráfico de F(x)
+ggplot() +
+   xlim(0, 1) +
+   geom_function(
+     aes(color = "Normal"),
+     fun =~ 2*.x - .x^2,
+     )
+```
+
+### b)
+
+$P(X<1/2) = 2\cdot 1/2 - (1/2)^2 = 3/4 = 0.75$
+
+
+```{r}
+func <- function(x) 2*x - x^2
+func(0.5)
+```
+
+$1 - P(X>3/4) = 1 - ( 2\cdot 3/4 - (3/4)^2 ) = 1 - (-3/4) 1 - (15/16) = 1/16 = 0.0625$
+
+```{r}
+1-func(3/4)
+```
+
+### c)
+
+$F^{'}(x) = 2 x - 2^2 = 2 - x$
+
+# 3.7
+
+```{r}
+x <- c(0,1,2,3,4,5,6,7,8)
+px <- c(0.05,0.1,0.1,0.1,0.2,0.25,0.1,0.05,0.05)
+```
+
+$E(X) = \sum\limits_{x=1}^n x\cdot p(x) = 0\cdot 0.05 + 1\cdot 0.1 + \ldots + 8\cdot 0.05 = 4$
+
+```{r}
+sum <- 0 
+for (i in 1:length(x)){
+ sum <- sum + x[i]*px[i] 
+}
+sum
+```
+$E(X^2) = \sum\limits_{x=1}^n x^2p(x) = 0^2\cdot 0.05 + 1^2 \cdot 0.1 + \ldots + 8^2\cdot 0.05 = 20.1$
+
+```{r}
+sum2 <- 0 
+for (i in 1:length(x)){
+ sum2 <- sum2 + x[i]^2 * px[i] 
+}
+sum2
+```
+$Var(X) = E(X^2) - E^2(X) = 20.1 - 4^2 = 4.1$
+
+```{r}
+sum2 - sum^2
+```
+
+# 3.8
+
+
+
+

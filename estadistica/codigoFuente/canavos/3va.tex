@@ -255,6 +255,19 @@ de donde se tiene que $Var(Y) = \mu_2(Y) = 1$. En particular, nótese que $\alph
 \end{tcolorbox}
 
 
+\section{Funciones generadoras de momentos}
+
+%-------------------- definición 3.14
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}
+	Sea $X$ una variable aleatoria. El valor esperado de $exp(tX)$ recibe el nombre de función generadora de momentos, y se denota por $m_X(t)$, si el valor esperado existe para cualquier valor de $t$ en algún intervalo $-c<t<c$ en donde $c$ es un número positivo. En otras palabras:
+	$$\begin{array}{ll}
+	    m_X(t) = E[exp(tX)] = \sum\limits_x e^{tx} p(x) & \mbox{si X es discreta, o}\\\\
+	    m_X(t) = E[exp(tX)] = \displaystyle\int_{-\infty}^\infty e^{tx} f(x) \; dx & \mbox{si X es continua}\\
+	\end{array}$$
+    \end{def.}
+\end{tcolorbox}
+Si la función generadora de momentos existe, puede demostrarse que es única y que determina por completo la distribución de probabilidad de $X$. En otras palabras \textbf{si dos variables aleatorias tienen la misma función generadora de momentos, entonces tienen la misma distribución de probabilidad.}
 
 
 
