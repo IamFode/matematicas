@@ -269,7 +269,16 @@ de donde se tiene que $Var(Y) = \mu_2(Y) = 1$. En particular, nótese que $\alph
 \end{tcolorbox}
 Si la función generadora de momentos existe, puede demostrarse que es única y que determina por completo la distribución de probabilidad de $X$. En otras palabras \textbf{si dos variables aleatorias tienen la misma función generadora de momentos, entonces tienen la misma distribución de probabilidad.}
 
-
+%-------------------- definición 3.15
+\begin{tcolorbox}[colframe = white]
+    \begin{def.}
+	Sea $X$ una variable aleatoria. El valor esperado de $exp[t(X-\mu)]$ recibe el nombre de función generadora de momentos central y denota por $m_{X-\mu}(t),$ si el valor esperado existe para cualquier $t$ en algún intervalo $-c<t<c$ en donde $c$ es un número positivo.
+	$$\begin{array}{ll}
+	    m_{X-\mu}(t) = E{exp[t(X-\mu)]} = \sum\limits_x exp[t(x-\mu)] p(x) & \mbox{si X es discreta, o}\\\\
+	    m_{X-\mu}(t) = E{exp[t(X-\mu)]} = \displaystyle\int_{-\infty}^\infty exp[t(x-\mu)] f(x) \; dx & \mbox{si X es continua}\\
+	\end{array}$$
+    \end{def.}
+\end{tcolorbox}
 
 
 

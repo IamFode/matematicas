@@ -246,7 +246,68 @@ sum2 - sum^2
 ```
 
 # 3.8
+Calculamos el valor para un ganancia nula
+$$E[X] = 0 = \dfrac{C\cdot 995}{1000} - \dfrac{50000\cdot 5}{100} \Longrightarrow 995C=250000 \Longrightarrow C = 251.26 $$
 
+# 3.9
+Función de densidad de una v.a. X está dada por:
+$$f(x) = \left\{\begin{array}{ll}
+  2(1-x) & 0<x<1 \\
+  0 & \mbox{para cualquier otro caso}
+\end{array}\right.$$
 
+### a)
+$$E(X) = \int_0^1 x\cdot 2(1-x)\; dx = \int_0^1 2x-2x^2\; dx = \dfrac{1}{3}$$
 
+```{r}
+func <- function(x) x*2*(1-x)
+integrate(func, lower = 0, upper = 1)
+```
+
+### b)
+$$E(X^2) = \int_0^1 x^2\cdot 2(1-x)\; dx = \int_0^1 2x^2-2x^3\; dx = \dfrac{1}{6}$$
+
+```{r}
+func <- function(x) x^2*2*(1-x)
+integrate(func, lower = 0, upper = 1)
+```
+
+$$Var(X) = E(X^2) - E(X)^2 = \dfrac{1}{6} - \left(\dfrac{1}{3}\right)^2 = \dfrac{1}{18}$$
+
+```{r}
+# varianza
+1/6 - (1/3)^2
+```
+
+# 3.10
+Función de densidad de una v.a. de $X$ está dada por:
+$$f(x) = \left\{\begin{array}{ll}
+  1/10&0<x<10\\
+  0&\mbox{para cualquier otro valor}\\
+\end{array}\right.$$
+
+### a)
+$$E(X) = \int_0^{10} \dfrac{1}{10} x\cdot\; dx = \dfrac{1}{10}\int_0^{10} x\; dx = 5$$
+
+```{r}
+func <- function(x) 1/10 * x
+integrate(func, lower = 0, upper = 10)
+```
+
+### b)
+$$E(X) = \int_0^{10} \dfrac{1}{10} x^2 \cdot\; dx = \dfrac{1}{10}\int_0^{10} x^2 \; dx = \dfrac{100}{3}$$
+
+```{r}
+func <- function(x) 1/10 * x^2
+integrate(func, lower = 0, upper = 10)
+```
+
+$$Var(X) = E(X^2) - E(X)^2 = \dfrac{100}{3} - 5^2 = \dfrac{25}{3} = 8.33333$$
+
+```{r}
+# varianza
+100/3 - 5^2
+```
+
+### c)
 

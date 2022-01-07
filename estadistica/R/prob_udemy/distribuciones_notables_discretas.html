@@ -204,7 +204,7 @@ dbinom(1, size = 1, prob = 0.25)</code></pre>
 <pre><code>## [1] 0.25</code></pre>
 <pre class="r"><code># muestra aleatoria simple de probabilidad Bernoulli
 rbinom(n = 20, size = 1, prob = 0.25)</code></pre>
-<pre><code>##  [1] 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0</code></pre>
+<pre><code>##  [1] 0 1 1 0 0 0 0 0 1 0 0 1 0 1 0 0 1 1 0 0</code></pre>
 <pre class="r"><code># gráfico de la función de probabilidad y la de distribución de una Ber(p=0.25)
 {par(mfrow=c(1,2))
 plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
@@ -294,6 +294,187 @@ rbinom(100, size = 20, prob = 0.5)</code></pre>
 <h2>Ejemplo completo de distribución binomial</h2>
 <p>Tenemos una urna con 100 bolas de las cuales 40 son rojas y 60 blancas. Extraemos al azar una bola, anotamos su color y la devolvemos (la reponemos) a la urna Supongamos que repetimos este proceso <span class="math inline">\(n=10\)</span> reponiendo en cada ocación la bola extraida. Consideremos la v.a. <span class="math inline">\(X\)</span> = Número de bolas extraidas con repocisión en <span class="math inline">\(n=10\)</span> repeticiones del mismo experimento Bernoulli. Bajo estas condiciones tenemos que repetimos <span class="math inline">\(n=10\)</span> veces el mismo experimento Bernoulli con probabilidad de éxito (sacar bola roja) es <span class="math display">\[P(Roja) = P(Exito)=p=\dfrac{40}{100}=0.4\]</span></p>
 <p>Así que la variable <span class="math inline">\(X\)</span> = número de bolas rojas extraídas de la urna con reposición en <span class="math inline">\(n=10\)</span> ocasiones sigue una ley binomial <span class="math inline">\(B(n=10,p=0.4)\)</span></p>
+<p>1.¿Cual es la probabilidad de que saquemos exactamente 4 rojas?</p>
+<p>Respuesta.- Utilizando la función de probabilidad tenemos que <span class="math display">\[P_X(X=4) = {10 \choose 4} \cdot 0.4^4 \cdot (1-0.4)^10.4 = \dfrac{10!}{(10-4)!\cdot 4!}\cdot 0.4^4 \cdot 0.6^6 = 0.2508227\]</span></p>
+<pre class="r"><code>dbinom(4, size = 10, prob = 0.4)</code></pre>
+<pre><code>## [1] 0.2508227</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que saquemos al menos 4 rojas?</li>
+</ol>
+<p>Respuesta.- Al menos 4 rojas es <span class="math inline">\(P(X\geq 4) = 1 - P(X&lt;4) = 1 - P(X\leq 3)\)</span> es decir,</p>
+<p><span class="math display">\[\begin{array}{rcl}
+    P(X\leq 3)&amp;=&amp;P(X=0) + P(X=1) + P(X=2) + P(X=3)\\\\
+    &amp;=&amp;\displaystyle {10\choose 0}\cdot 0.4^0 \cdot (1-0.4)^{10-0} + {10\choose 1}\cdot 0.4^1 \cdot (1-0.4)^{10-1}\\\\ 
+    &amp;+&amp; \displaystyle {10\choose 2}\cdot 0.4^2 \cdot (1-0.4)^{10-2} + {10\choose 3}\cdot 0.4^3 \cdot (1-0.4)^{10-3} \\\\
+    &amp;=&amp;0.3822806\\\\
+  \end{array}\]</span></p>
+<pre class="r"><code>pbinom(3,10,0.4)</code></pre>
+<pre><code>## [1] 0.3822806</code></pre>
+<p>Así, <span class="math inline">\(P(X\geq 4) = 1-P(X&lt;4) = 1 - P(X\leq 3) = 1 - 0.3822806 = 0.6177194\)</span></p>
+<pre class="r"><code>1-pbinom(3,10,0.4)</code></pre>
+<pre><code>## [1] 0.6177194</code></pre>
+<p>Aunque en estos casos el parámetro lower.tail = FALSE es sin duda nuestra mejor opción:</p>
+<pre class="r"><code>pbinom(3,10,0.4,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 0.6177194</code></pre>
+<p>3.- ¿Cuál es la porbabilidad de que saquemos menos 3 rojas?</p>
+<p>4.- ¿Cuál es el valor esperado del número de bolas rojas?</p>
+<p>Respuesta.- Como <span class="math inline">\(X\)</span> es una <span class="math inline">\(B(10,0.4)\)</span> sabemos que <span class="math display">\[E(X) = n\cdot p = 10 \cdot 0.4 = 4\]</span></p>
+<p>5.- ¿Cuál es la deviación típica del número de bolas rojas? La varianza es <span class="math display">\[Var(X) = n\cdot p \cdot (1-p) = 10\cdot 0.4 \cdot 0.6 = 2.4\]</span> Y por lo tanto <span class="math inline">\(\sqrt{Var(X)} = \sqrt{2.4} = 1.5491933\)</span></p>
+</div>
+<div id="distribución-geométrica" class="section level2">
+<h2>Distribución geométrica</h2>
+<div id="distribución-geométrica-1" class="section level3">
+<h3>Distribución geométrica</h3>
+<p>Su función de probabilidad es <span class="math display">\[PX_(x) = P(X=x) = \left\{\begin{array}{rcl}
+  (1-p)^x\cdot p&amp;si&amp;x=0,1,2,\ldots\\
+  0&amp;&amp; \mbox{en otro caso}\\
+\end{array}\right.\]</span></p>
+<p>La denotaremos por <span class="math inline">\(Ge(p)\)</span></p>
+</div>
+<div id="función-de-distribución-1" class="section level3">
+<h3>Función de distribución</h3>
+<p>Calculemos <span class="math inline">\(P(X\leq 3)\)</span>.</p>
+<p>Por la propiedad de la probabilidad del suceso complementario tenemos que <span class="math display">\[P(X\leq 3) = 1 -P(x&gt;3) = 1-P(X\geq 4)\]</span> Efectivamente, el evento tenemos que <span class="math inline">\(X\leq 3\)</span> es que hemos fracasado más de tres veces hasta conseguir el primer éxito; es decir hemos gracasado 4 o más veces, por lo tanto <span class="math display">\[{X&gt;3} = {X\geq4} = {FFFF}\]</span></p>
+<p>Ahora al ser los intentos sucesos independientes, tenemos que: <span class="math display">\[\begin{array}{rcl}
+  P(X&gt;3)&amp;=&amp;P({FFFF}) = P(F)\cdot P(F)\cdot P(F)\cdot P(F)\\
+  &amp;=&amp;(1-p)\cdot (1-p)\cdot (1-p)\cdot (1-p) = (1-p)^{3+1} \\
+  &amp;=&amp;(1-p)^4\\
+\end{array}\]</span></p>
+<p>calculamos <span class="math display">\[F_X(3) = P(X\leq 3) = 1-P(X&gt;3) = 1-(1-p)^{3+1}\]</span></p>
+<p>por lo que podemos generalizar a cualquier entero positivo <span class="math inline">\(k=0,1,2,\ldots\)</span></p>
+<p><span class="math display">\[F_X(x) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&amp;si&amp;x&lt;0\\\\
+  1-(1-p)&amp;si&amp;k= 0 \leq x &lt; 1\\\\
+  1-(1-p)^2&amp;si&amp; k = 1\leq x &lt; 2\\\\
+  1-(1-p)^3&amp;si&amp; k = 2\leq x &lt; 3\\\\
+  1-(1-p)^{k+1}&amp;si&amp; k\leq x &lt; k+1 \; para \; k=0,1,2,\ldots\\
+\end{array}\right.\]</span></p>
+<p>notemos que si <span class="math inline">\(k=0,1,2,\ldots\)</span> el límite de la función de distribución es <span class="math display">\[\lim_{k\to \infty} F_X(k) = \lim_{k\to \infty} 1 - (1-p)^{k+1} = 1\]</span></p>
+<p>ya que <span class="math inline">\(0&lt;1-p&lt;1\)</span></p>
+</div>
+</div>
+<div id="la-esperanza-y-la-varianza-de-una-distribución-geométrica." class="section level2">
+<h2>La esperanza y la varianza de una distribución geométrica.</h2>
+<div id="esperanza-de-una-v.a.-gep" class="section level3">
+<h3>Esperanza de una v.a. Ge(p)</h3>
+<p><span class="math display">\[\begin{array}{rcl}
+  E(X) &amp;=&amp; \sum\limits_{x=0}^\infty x \cdot P_X(x)\\
+  &amp;=&amp; \sum\limits_{x=0}^\infty x\cdot (1-p)^x \cdot p\\\
+  &amp;=&amp; p\cdot (1-p)\cdot \sum\limits_{x=1}^\infty x\cdot (1-p)^{x-1}\\
+  &amp;=&amp; p\cdot (1-p)\cdot \dfrac{1}{\left[1-(1-p)\right]^2}\\
+  &amp;=&amp;(1-p)\cdot \dfrac{1}{p^2}\\
+  &amp;=&amp;\dfrac{1-p}{p}\\
+\end{array}\]</span></p>
+</div>
+<div id="valor-ex2-de-una-v.a.-gep" class="section level3">
+<h3>Valor E(X^2) de una v.a. Ge(p)</h3>
+<p><span class="math display">\[\begin{array}{rcl}
+  E(X^2) &amp;=&amp; \sum\limits_{x=0}^\infty x^2 \cdot P_X(x)\\\\
+  &amp;=&amp; \sum\limits_{x=0}^\infty x^2 \cdot (1-p)^x \cdot p\\\\
+  &amp;=&amp; \sum\limits_{x=1}^\infty \left[x\cdot (x-1)+x \right] (1-p)^{x} \cdot p\\\\
+  &amp;=&amp;\sum\limits_{x=1}^\infty x\cdot (x-1)\cdot (1-p)^x\cdot p + \sum\limits_{x=1}^\infty x\cdot (1-p)^x \cdot p\\\\
+  &amp;=&amp;(1-p)^2\cdot p \cdot \sum\limits_{x=2}^\infty x\cdot (x-1)\cdot (1-p)^{x-2}\\\\
+  &amp;+&amp;(1-p)\cdot p\sum\limits_{x=1}^\infty x\cdot (1-p)^{x-1} \\\\
+  &amp;=&amp;p\cdot (1-p)^2 \dfrac{2}{\left[1-(1-p)\right]^3} + (1-p)\cdot p \dfrac{1}{\left[1-(1-p)\right]^2}\\\\
+  &amp;=&amp;p\cdot (1-p)^2 \dfrac{2}{p^3}+(1-p)\cdot p \dfrac{1}{p^2}\\\\
+  &amp;=&amp;\dfrac{2\cdot(1-p)^2}{p^2}+\dfrac{1-p}{p}\\
+\end{array}\]</span></p>
+</div>
+<div id="varianza-de-una-v.a.-gep" class="section level3">
+<h3>Varianza de una v.a. Ge(p)</h3>
+<p><span class="math display">\[\begin{array}{rcl}
+  Var(X)&amp;=&amp;E(X^2) - E^2(X)\\\\
+  &amp;=&amp;\dfrac{2\cdot(1-p)^2}{p^2}+\dfrac{1-p}{p}-\left(\dfrac{1-p}{p}\right)^2\\\\
+  &amp;=&amp;\dfrac{2\cdot(1-p)^2+p\cdot (1-p)-(1-p)^2}{p^2}\\\\
+  &amp;=&amp;\dfrac{(1-p)^2 + p\cdot (1-p)}{p^2}\\\\
+  &amp;=&amp;\dfrac{1-2\cdot p p^2 + p - p^2}{p^2}\\\\
+  &amp;=&amp;\dfrac{1-p}{p^2}\\\\
+\end{array}\]</span></p>
+</div>
+</div>
+<div id="propiedad-de-falta-de-memoria" class="section level2">
+<h2>Propiedad de falta de memoria</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta con dominio <span class="math inline">\(D_X = \lbrace0,1,2, \ldots\rbrace\)</span> con <span class="math inline">\(P(X=0) = p\)</span> entonces <span class="math inline">\(X\)</span> sigue una ley <span class="math inline">\(Ge(p)\)</span> si y sólo si <span class="math display">\[P(X&gt; k + j \;|\; X\geq j) = P(X&gt;k)\]</span> para todo <span class="math inline">\(k,j = 0,1,2,3,\ldots\)</span></p>
+<p>Es decir, el número de veces que voy a fallar hasta el primer éxito no está condicionado por las veces que estamos probando. Por ejemplo es lo mismo lanzar 80 veces o lanzar 2 veces hasta el primer éxito.</p>
+<p>Demostración.- Si es geométrica entonces el lado derecho de la igualdad es <span class="math display">\[P(X&gt;k) = 1 - P(x\leq k) = 1 - (1-(1-p)^{k+1}) = (1-p)^{k+1}\]</span></p>
+<p>Luego <span class="math display">\[\begin{array}{rcl}
+  P(X&gt;k+j | X\geq j)&amp;=&amp;\dfrac{P(\lbrace X&gt;k+j\rbrace)\cap \lbrace X\geq j\rbrace}{P(X\geq j)}\\\\
+  &amp;=&amp;\dfrac{P(X&gt;k+j)}{P(&gt;\geq j)}\\\\
+  &amp;=&amp;\dfrac{1-P(X\leq k+j)}{1-P(X\leq j-1)}\\\\
+  &amp;=&amp;\dfrac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{k-1+1})}\\\\
+  &amp;=&amp;\dfrac{(1-p)^{k+j+1}}{(1-p)^j}\\\\
+  &amp;=&amp;(1-p)^{k+1}\\\\
+\end{array}\]</span></p>
+<p>Para demostrar el recíproco tomemos <span class="math inline">\(j=1\)</span> y <span class="math inline">\(k\geq 0\)</span> entonces por la propiedad de la pérdida de memoria <span class="math display">\[P(X&gt;k+1 | X\geq 1) = P(X&gt;k)\]</span></p>
+<p>Como sabemos <span class="math inline">\(P(X=0)=p\)</span> tenemos <span class="math inline">\(P(X\geq 1) = 1 - P(X&lt;1) = 1-P(X=0) = 1-p\)</span></p>
+<p>Luego combinando las igualdades tenemos que <span class="math display">\[P(X&lt;k+1 | X\geq 1) = \dfrac{P(X&gt;k+1, X\geq 1)}{P(X\geq 1)} = \dfrac{P(X&gt;k+1)}{P(X\geq 1)} = P(X&gt;k)\]</span></p>
+<p>Así podemos poner que <span class="math display">\[\begin{array}{rcl}
+  P(X&gt;k+1)&amp;=&amp;P(X\geq 1)\cdot P(X&gt;k)\\\\
+  &amp;=&amp;P(X&lt;1)\cdot P(X&gt;k)\\\\
+  &amp;=&amp;(1-P(X=0))\cdot P(X&gt;k)\\\\
+  &amp;=&amp;(1-p)\cdot P(X&gt;k)\\\\
+\end{array}\]</span></p>
+<p>En general tenemos que <span class="math display">\[P(X&gt;k+1) = (1-p)\cdot P(X&gt;k)\]</span></p>
+<p>del mismo modo para <span class="math inline">\(j=2\)</span> <span class="math display">\[P(X&gt;k+2) = (1-p)\cdot P(X&gt;k+1)\]</span> Restando la primera igualdad de la última obtenemos: <span class="math display">\[P(X&gt;k+1) - P(X&gt;k+2) = (1-p)\cdot P(X&gt;k) - (1-p)\cdot P(X&gt;k+1)\]</span> de donde operando en cada lado de la igualdad obtenemos la recurrencia <span class="math display">\[\left[1-P(X\leq k+1)  \right] - \left[1-P(X\leq k+2)\right] = (1-p)\cdot \left[P(X&gt;k)-P(X&gt;k+1)\right]\]</span></p>
+<p>ahora operando <span class="math display">\[\begin{array}{rcl}
+  P(X\leq k+2)-P(X\leq k+1)&amp;=&amp;(1-p)\cdot \left[ 1-P(X\leq k)-(1-P(X\leq k+1))\right]\\\\
+  P(X=k+2)&amp;=&amp;(1-p)\cdot \left[P(X\leq k+1)-P(X\leq k)\right]\\\\
+  P(X=k+2)&amp;=&amp;(1-p)\cdot P(X=k+1)\\\\
+\end{array}\]</span></p>
+<p>De forma similar obtenemos <span class="math display">\[P(X=k+1) = (1-p)\cdot P(X=k)\]</span> Utilizando la recurrencia anterior para calcular todas las probabilidades a partir de la <span class="math inline">\(P(X=0)=p\)</span>; que vienen dadas por:</p>
+<p><span class="math display">\[\begin{array}{rcl}
+  P(X=0)&amp;=&amp;p\\
+  P(X=1)&amp;=&amp;P(X=0+1) = (1-p)\cdot P(X=0) = (1-p)\cdot p\\
+  P(X=2)&amp;=&amp;P(X=1+1) = (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p = (1-p)^2\cdot p\\
+  P(X=k)&amp;=&amp;P(X=(k-1)+1) = (1-p)\cdot P(X=k+1) = (1-p)\cdot (1-p)^{k-1}\cdot p = (1-p)^k \cdot p\\
+\end{array}\]</span></p>
+<p>Lo que demuestra el recíproco, es decir que <span class="math inline">\(X\)</span> es Geom(p).</p>
+</div>
+<div id="la-distribución-geométrica-con-r-y-python" class="section level2">
+<h2>La distribución geométrica con R y Python</h2>
+<p>Veamos los cálculos básicos con R para la distribución geométrica Ge(p=0.25). R implementa la geométrica que cuenta el número de fracasos.</p>
+<p><span class="math inline">\(P(X=0) = (1-0.25)^0 \cdot 0.25 = 0.25\)</span></p>
+<pre class="r"><code>dgeom(0,prob = 0.25)</code></pre>
+<pre><code>## [1] 0.25</code></pre>
+<p><span class="math inline">\(P(X\leq 0) = 1-(1-0.25)^{0+1} = 1 - 0.75 = 0.25\)</span></p>
+<pre class="r"><code>pgeom(0,prob = 0.25)</code></pre>
+<pre><code>## [1] 0.25</code></pre>
+<p><span class="math inline">\(P(X\leq 4) = 1-(1-0.25)^{4+1} = 1-0.75^5 = 0.7626953\)</span></p>
+<pre class="r"><code>pgeom(4,prob = 0.25)</code></pre>
+<pre><code>## [1] 0.7626953</code></pre>
+<p>Una muestra de tamaño 25 de una Ge(0.25)</p>
+<pre class="r"><code>rgeom(n = 25, prob = 0.25)</code></pre>
+<pre><code>##  [1]  2 18  3  1  7  1  0 10  2  2  2  0  9  9  4  8  2  0  1  5  8  1  1  2  2</code></pre>
+</div>
+<div id="la-distribución-binomial-negativa" class="section level2">
+<h2>La distribución binomial negativa</h2>
+<div id="función-de-probabilidad" class="section level3">
+<h3>Función de probabilidad</h3>
+<p><span class="math display">\[P_X(x) = P(X=k) = \left\{\begin{array}{lcr}
+  {k+n-1 \choose n-1}\cdot (1-p)^k \cdot p^n&amp;si&amp;k=0,1,\ldots\\\\
+  0&amp;&amp;\mbox{en otro caso}\\
+\end{array}\right.\]</span></p>
+</div>
+</div>
+<div id="números-binomiales-negativos" class="section level2">
+<h2>Números binomiales negativos</h2>
+<p>Dados dos enteros positivos <span class="math inline">\(n\)</span> y <span class="math inline">\(k\)</span> se define en número binomial negativo como <span class="math display">\[{-n\choose k} = \dfrac{(-n)(-n-1)\ldots (-n-k+1)}{k!}\]</span></p>
+<p>se cumple que <span class="math display">\[(t+1)^{-n} = \sum\limits_{k=0}^{\infty} {-n \choose k} t^k\]</span></p>
+<p>Con R es la misma función que para los números binomiales</p>
+<p><span class="math display">\[{-6 \choose 4} = \dfrac{-6\cdot (-6-1)\cdot (-6-2) \cdot (-6-3) }{4!} = \dfrac{-6\cdot (-7)\cdot (-8)\cdot (-9)}{24} = \dfrac{3024}{24} = 126\]</span></p>
+<pre class="r"><code>choose(-6,4)</code></pre>
+<pre><code>## [1] 126</code></pre>
+<div id="esperanza-de-una-bnnp" class="section level3">
+<h3>Esperanza de una BN(n,p)</h3>
+<p>Su esperanza es <span class="math display">\[E(X) = \sum\limits_{k=0}^\infty k \cdot {k+n-1 \choose n-1} \cdot (1-p)^k \cdot p^n = n\cdot \dfrac{1-p}{p}\]</span></p>
+<p>La esperanza del cuadrado <span class="math inline">\(X^2\)</span> es</p>
+<p><span class="math display">\[E(X^2) = \sum\limits_{k=0}^\infty k^2 \cdot {k+n-1 \choose n-1} \cdot (1-p)^k \cdot p^n = n\cdot \dfrac{1-p}{p^2} + \left(n\cdot \dfrac{1-p}{p}\right)^2\]</span></p>
+</div>
+<div id="varianza-de-una-bnnp" class="section level3">
+<h3>Varianza de una BN(n,p)</h3>
+<p>Por último la varianza es <span class="math display">\[Var(X) = E(X^2)-E(X)^2 = n\cdot \dfrac{1-p}{p^2}+\left(n\cdot \dfrac{1-p}{p}\right)^2 - \left(n\cdot \dfrac{1-p}{p}\right)^2 = \dfrac{1-p}{p^2}\]</span></p>
+<p>Y por tanto la desviación típica es <span class="math display">\[\sqrt{Var(X)} = \dfrac{\sqrt{n(1-p)}}{p}\]</span></p>
+</div>
 </div>
 
 
