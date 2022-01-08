@@ -204,7 +204,7 @@ dbinom(1, size = 1, prob = 0.25)</code></pre>
 <pre><code>## [1] 0.25</code></pre>
 <pre class="r"><code># muestra aleatoria simple de probabilidad Bernoulli
 rbinom(n = 20, size = 1, prob = 0.25)</code></pre>
-<pre><code>##  [1] 0 1 1 0 0 0 0 0 1 0 0 1 0 1 0 0 1 1 0 0</code></pre>
+<pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 1</code></pre>
 <pre class="r"><code># gráfico de la función de probabilidad y la de distribución de una Ber(p=0.25)
 {par(mfrow=c(1,2))
 plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
@@ -475,6 +475,77 @@ rbinom(100, size = 20, prob = 0.5)</code></pre>
 <p>Por último la varianza es <span class="math display">\[Var(X) = E(X^2)-E(X)^2 = n\cdot \dfrac{1-p}{p^2}+\left(n\cdot \dfrac{1-p}{p}\right)^2 - \left(n\cdot \dfrac{1-p}{p}\right)^2 = \dfrac{1-p}{p^2}\]</span></p>
 <p>Y por tanto la desviación típica es <span class="math display">\[\sqrt{Var(X)} = \dfrac{\sqrt{n(1-p)}}{p}\]</span></p>
 </div>
+</div>
+<div id="ejemplo-de-la-puerta-con-dos-llaves" class="section level2">
+<h2>Ejemplo de la puerta con dos llaves</h2>
+<p>Tenemos un manojo de 10 llaves casi idénticas. De mnaera que cada vez que probamos una llave olvidamos qué llave hemos usado. Sea <span class="math inline">\(X\)</span> la v.a. que nos da el número de intentos fallidos hasta abrir la puerta.</p>
+<div id="section" class="section level4">
+<h4>1.</h4>
+<p>¿Cuál es la distribución de probabilidad de <span class="math inline">\(X\)</span> la v.a. que nos da el número de fallos hasta abrir la puerta? Respuesta.- Sabemos que la probabilidad de éxito de cada intento es <span class="math inline">\(p=dfrac{1}{10} = 0.1\)</span> Como cada vez olvidamos qué llave hemos probado cada intento será independiente del anterior. Así que la variable <span class="math inline">\(X\)</span> que queremos modelar cuenta el número de fallos de repeticiones sucesivas e independientes de un experimento Ber(p=0.1) hasta conseguir 2 éxitos en un experimento. Por lo tanto podemos asegurar que <span class="math inline">\(X\)</span> sigue un distribución BN(n=2,p=0.1)</p>
+</div>
+<div id="section-1" class="section level4">
+<h4>2.</h4>
+<p>¿Cuál es la función de probabilidad y de distribución de <span class="math inline">\(X\)</span>? Respuesta.- En general la función de probabilidad de un BN(n,p) es <span class="math display">\[P_X(x) = P(X=k) = \left\{ \begin{array}{ll}
+  {k+n-1 \choose n-1}\cdot (1-p)^k \cdot p^n&amp;si&amp;k=0,1,\ldots\\\\
+  0&amp;&amp;\mbox{en otro caso}\\
+  \end{array}\right.\]</span></p>
+<p>En particular la función de probabilidad de una BN(n=2,p=0.1) es <span class="math display">\[P_X(x) = P(X=k) = \left\{ \begin{array}{ll}
+  {k+2-1 \choose 2-1}\cdot 0.9^k \cdot 0.1^2&amp;si&amp;k=0,1,\ldots\\\\
+  0&amp;&amp;\mbox{en otro caso}\\
+  \end{array}\right.\]</span></p>
+<p>La función de distribución en general es <span class="math display">\[F_X(x) = P(X\leq x) = \left\{\begin{array}{lcl}
+    0&amp;si&amp;\\
+    \sum\limits_{i=1}^k {i+n-1 \choose n-1}\cdot \left(1-p\right)^{i+n-1}\cdot 0.1^n&amp;si&amp;x&lt;0\\
+    &amp;si&amp;k\leq x &lt; k+1 \; y \; k=0,1,2,\ldots\\
+    1&amp;si&amp;\mbox{en otro caso}\\
+  \end{array}\right.\]</span></p>
+<p>Para <span class="math inline">\(n=2\)</span> y <span class="math inline">\(p=0.1\)</span></p>
+<p><span class="math display">\[F_X(x) = P(X\leq x) = \left\{\begin{array}{lcl}
+    0&amp;si&amp;\\
+    \sum\limits_{i=1}^k {i+1 \choose 1}\cdot 0.9^{i+1}\cdot 0.1^2&amp;si&amp;x&lt;0\\
+    &amp;si&amp;k\leq x &lt; k+1 \; y \; k=0,1,2,\ldots\\
+    1&amp;si&amp;\mbox{en otro caso}\\
+  \end{array}\right.\]</span></p>
+</div>
+<div id="section-2" class="section level4">
+<h4>3.</h4>
+<p>¿Cuál es la probabilidad de fallar exactamente 5 veces antes de abrir la puerta? Respuesta.- <span class="math display">\[P(X=5) = {5+2-1\choose 1}\cdot 0.9^5 \cdot 0.1^2 = {6\choose 1}\cdot 0.9^5 \cdot 0.1^2 = 6\cdot 0.9^5 \cdot 0.1^2 = 0.0354294\]</span></p>
+</div>
+<div id="section-3" class="section level4">
+<h4>5.</h4>
+<p>¿Cuál es la probabilidad de fallar más de 4 ? Respuesta.-; Nos piden que <span class="math display">\[P(X&gt;4) = 1 - P(X\leq 4)\]</span> Calculemos primero <span class="math inline">\(P(X\leq 4):\)</span> <span class="math display">\[\begin{array}{rcl}
+    P(X\leq 4)&amp;=&amp;\sum\limits_{x=0}^4 P(X=x)\\\\
+    &amp;=&amp;P(X=0) + P(X=1) + P(X=2) + P(X=3) + P(X=4)\\\\
+    &amp;=&amp;{0+2-1\choose 1}\cdot 0.9^0 \cdot 0.1^2 + {1+2-1 \choose 1}\cdot 0.9^1 \cdot 0.1^2\\\\
+    &amp;+&amp;{0+2-1\choose 1}\cdot 0.9^2 \cdot 0.1^2 + {1+2-1 \choose 1}\cdot 0.9^3 \cdot 0.1^2\\\\
+    &amp;+&amp;{0+2-1\choose 1}\cdot 0.9^4 \cdot 0.1^2 \\\\
+    &amp;=&amp;0.114265\\\\
+  \end{array}\]</span></p>
+</div>
+<div id="section-4" class="section level4">
+<h4>5.</h4>
+<p>¿Cuál es el número esperado de fallos? ¿Y su desviación típica? Respuesta.- Como <span class="math inline">\(X\)</span> sigue una ley BN(n=2,p=0.1) <span class="math display">\[E(X) = n\cdot \dfrac{1-p}{p} = 2 \cdot \dfrac{1-0.1}{0.1} = 18\]</span></p>
+<p>El número de fallos esperado es 18</p>
+<p><span class="math display">\[Var(X) = n\cdot \dfrac{1-p}{p^2} = 2\cdot \cdot \dfrac{1-0.1}{0.1^2} = 180\]</span></p>
+<p>Y su desviación típica será <span class="math display">\[sv(X) = \sqrt{180}\]</span></p>
+</div>
+</div>
+<div id="la-binomial-negativa-en-r" class="section level2">
+<h2>La binomial negativa en R</h2>
+<p>En el ejemplo de la puerta <span class="math inline">\(X\)</span> es una BN(size = 2, p = 0.1) Por ejemplo <span class="math inline">\(P(X=5)\)</span></p>
+<pre class="r"><code>dnbinom(5,size = 2, p = 0.1)</code></pre>
+<pre><code>## [1] 0.0354294</code></pre>
+<p>Calculemos <span class="math inline">\(P(X\leq 4)\)</span></p>
+<pre class="r"><code>pnbinom(4,size = 2, p = 0.1)</code></pre>
+<pre><code>## [1] 0.114265</code></pre>
+<p>P(X&gt;4)</p>
+<pre class="r"><code>1-pnbinom(4,2,0.1)</code></pre>
+<pre><code>## [1] 0.885735</code></pre>
+<pre class="r"><code>pnbinom(4,2,0.1,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 0.885735</code></pre>
+</div>
+<div id="la-distribución-de-poisson" class="section level2">
+<h2>La distribución de Poisson</h2>
 </div>
 
 

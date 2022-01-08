@@ -310,4 +310,97 @@ $$Var(X) = E(X^2) - E(X)^2 = \dfrac{100}{3} - 5^2 = \dfrac{25}{3} = 8.33333$$
 ```
 
 ### c)
+$\alpha_3$ también llamado coeficiente de asimetría estará dado por
+$$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$$
+de donde $\mu_3$ será:
+$$\mu_3 = E(X-5)^3 = \int_0^{10} \dfrac{1}{10} \cdot (x-5)^3\; dx = \dfrac{1}{10}\cdot \int_0^{10}(x^3 - 15x^2 + 75x - 125)\; dx = 0$$
+
+para $\mu_2$ tenemos
+$$Var(X) = E(X-5)^2 = \int_0^{10} \dfrac{1}{10}\cdot (x-5)^2\; dx = \dfrac{1}{10}\int_0^{10} (x^2 - 10x + 25)\; dx  = \dfrac{25}{3}$$
+
+Entonces 
+$$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}} = \dfrac{0}{\left(\frac{25}{3}\right)^{3/2}} = 0$$
+```{r}
+func <- function(x) 1/10 * (x-5)^3
+func2 <- function(x) 1/10 * (x-5)^2
+integrate(func, lower = 0, upper = 10)
+integrate(func2, lower = 0, upper = 10)
+```
+
+Donde nos menciona que se tiene un coeficiente de asimetría simétrica.
+
+### d)
+
+Para $\alpha_4$ como medida relativa de la curtosis tenemos
+$$\alpha_4 = \dfrac{\mu_4}{\mu_2^2}$$
+
+de donde tenemos $\mu_4$ de la siguiente manera
+$$\mu_4 = E(X-5)^4 = \int_0^{10}\dfrac{1}{10}\cdot (x-5)^4\; dx = 125$$
+
+```{r}
+func4 <- function(x) 1/10 * (x-5)^4
+integrate(func4, lower = 0, upper = 10)
+```
+para luego:
+$$\alpha_4 = \dfrac{\mu_4}{\mu_2^2} = \dfrac{125}{\frac{25^2}{3^3}} = 5.4$$
+
+Donde nos dice que la distribución presenta un pico relativamente alto
+
+
+# 3.11
+La función de densidad viene dada por 
+$$f(x) = \left\{\begin{array}{ll}
+  \frac{1}{4}e^{-x/4}&x>0\\
+  0&\mbox{para cualquier otro valor}
+\end{array}\right.$$
+
+### a)
+$$E(X) = \int_0^\infty x\cdot \dfrac{1}{4}e^{-x/4}\; dx = \dfrac{1}{4}\int_0^\infty x\cdot e^{-x/4}\; dx = 4$$
+
+```{r}
+func <- function(x) 1/4*x*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)
+```
+
+### b)
+$$Var(X) = E(X-4)^2 = \int_0^\infty \dfrac{1}{4}e^{-x/4}\cdot (x-4)^2\; dx = \dfrac{1}{4}\int_0^\infty e^{-x/4}\cdot (x-4)^2\; dx =  16$$
+
+```{r}
+func <- function(x) 1/4*(x-4)^2*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)
+```
+
+### c)
+
+$$\mu_3 = E(X-4)^3 = \dfrac{1}{4}\int_0^\infty (x-4)^3\cdot e^{-x/4}\; dx = 128 $$
+
+```{r}
+func <- function(x) 1/4*(x-4)^3*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)
+```
+$$\alpha_3 = \dfrac{\mu_3}{\mu_2^{3/2}} = \dfrac{128}{16^{3/2}} = 2$$
+
+```{r}
+128/(16^(3/2))
+```
+
+De donde podemos mencionar que se tiene una asimetría positiva.
+
+### d)
+
+$$\mu_4 = E(X-4)^4 = \dfrac{1}{4}\int_0^\infty (x-4)^4\cdot e^{-x/4}\; dx = 2304 $$
+
+```{r}
+func <- function(x) 1/4*(x-4)^4*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)
+```
+así,
+
+$$\alpha_4 = \dfrac{\mu_4}{\mu^2_2} = \dfrac{2304}{16^2} = 9$$
+
+```{r}
+2304/16^2
+```
+
+### e)
 

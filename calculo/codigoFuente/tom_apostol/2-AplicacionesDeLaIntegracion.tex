@@ -1614,7 +1614,37 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	$$V = \pi\int_0^{\sqrt{3}}(4-x^2-1)\; dx = 3\pi \int_0^{\sqrt{3}}\; dx - \pi\int_0^{\sqrt{3}} x^2\; dx = 3\pi \sqrt{3} - \pi\sqrt{3} = 2 \pi \sqrt{3} .$$\\
 
     %---------------------12.
+    \item Dibujar el gráfico de $f(x) = \sqrt{x}$ y $g(x)=x/2$ sobre el intervalo $[0,2]$. Encuentre un número $t$, $1<t<2$, de modo que la región entre los gráficos de $f$ y $g$ sobre el intervalo $[0,t]$ gira alrededor del eje $x$, engendra un sólido de revolución cuyo volumen es igual a $\pi t^3/3$.\\\\
+	Respuesta.-\; El volumen del sólido de revolución generado por la región entre los gráficos $f$ y $g$ en el intervalo $[0,t]$ es,
+	$$V=\pi\int_0^t \left(x-\dfrac{x^2}{4}\right)\; dx$$
+	Así, 
+	$$\dfrac{\pi t^2}{3} = \int_0^t \left(x-\dfrac{x^2}{4}\right)\; dx \;\Longrightarrow \; \dfrac{t^3}{3}=\dfrac{x^2}{2}\bigg|_0^t - \dfrac{x^3}{12}\bigg|_0^t \; \Longrightarrow \; \dfrac{t^3}{3} = \dfrac{t^2}{2} - \dfrac{t^3}{12} \; \Longrightarrow \; 4t^3 = 6t^2 - t^3 \; \Longrightarrow \; t=\dfrac{6}{5}.$$\\
+
+    %---------------------13.
+    \item ¿Qué volumen de material se quita de una esfera de radio $2r$ cuando se atraviesa con un taladro, formando un agujero centrado de radio $r$?.\\\\
+	Respuesta.-\; Primero, el volumen de una esfera de radio $2r$ es dado por,
+	$$V_S = \dfrac{4}{3}\pi(2r)^3 = \dfrac{32}{3}\pi r^3$$
+	entonces, el volumen de una esfera con un agujero centrado es el volumen del sólido de revolución generado por la región entre $$f(x) = \sqrt{4r^2 - x^2}\quad \mbox{y} \quad g(x)=r \quad \mbox{para}\quad -\sqrt{3}r \; \mbox{hasta} \; \sqrt{3}r.$$ 
+	Denotemos en volumen por $V_T$ de donde tenemos,
+	$$\begin{array}{rcl}
+	    V_T&=&\pi \left[\int_{-\sqrt{3}r}^{\sqrt{3}r}(4r^2-x^2 - r^2)\; dx\right]\\\\
+	       &=&\pi \left[\int_{-\sqrt{3}r}^{\sqrt{3}r} (3r^2 - x^2)\; dx\right]\\\\
+	       &=&4\sqrt{3}\pi r^3\\\\
+	\end{array}$$
+	Por lo tanto, el volumen de material que se quita de una esfera cuando se atraviesa con un taladro es,
+	$$V_S - V_T = \dfrac{32}{3}\pi r^2.$$\\
+
+    %---------------------14.
+    \item Un servilletero se obtiene practicando un agujero cilíndrico en una esfera de modo que el eje de aquél pase por el centro de ésta. Si la longitud del agujero es $2h$, demostrar que el volumen del servilletero es $\pi ah^3$, siendo $a$ un número racional.\\\\
+	Demostración.-\; Sea $r_s$ el radio de la esfera y $r_c$ el radio del agujero cilíndrico. Entonces el volumen del anillo es el volumen del sólido de revolución formado al rotación el área entre las funciones 
+	$$f(x) = \sqrt{r_s^2 - x^2}, \quad g(x)=r_c,\quad -h\leq x\leq h$$
+	sobre el eje $x$. Dado que la longitud del agujero es $2h$, sabemos que $f(h)=g(h)$; por lo tanto $r_s^2 - h^2 = r_c^2 \; \Longrightarrow \; r_s^2 - r_c^2 = h^2.$ Así se tiene,
+	$$V = \pi\int_{-h}^h \left[\left(\sqrt{r_s^2 - x^2}\right)^2 - r_c^2\right]\; dx = \pi \int_{-h}^h (r_s^2 - r_c^2 -x^2)\; dx = \pi h^2 (2h) - \pi \dfrac{x^3}{3}\bigg|_{-h}^h = \dfrac{4}{3}\pi h^3 = \pi a h^3$$.\\
+
+    %---------------------15.
     \item 
+
+
 
 
 \end{enumerate}

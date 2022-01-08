@@ -1,4 +1,5 @@
 from scipy.stats import binom
+from scipy.stats import nbinom
 from scipy.stats import geom
 import numpy as np
 import matplotlib.pyplot as plt
@@ -80,3 +81,14 @@ for tick in ax.yaxis.get_major_ticks():
         tick.label.set_fontsize(5)
 fig.suptitle("Distribución Geométrica")
 plt.show()
+
+######################### Distribución binomial negativa #######################
+nbinom.pmf(5,2,0.1)
+nbinom.pmf(k=5,n=2,p=0.1,loc=0)
+nbinom.rvs(2,0.1,size=100)
+
+# esperanza y la varianza 
+n, p = 2, 0.1
+params = nbinom.stats(n-1,p,moments = 'mv')
+print("E(X) = {m}".format(m=params[0]))
+print("Var(X) = {v}".format(v=params[1]))

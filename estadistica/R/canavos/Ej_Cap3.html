@@ -428,6 +428,72 @@ integrate(func, lower = 0, upper = 10)</code></pre>
 </div>
 <div id="c-4" class="section level3">
 <h3>c)</h3>
+<p><span class="math inline">\(\alpha_3\)</span> también llamado coeficiente de asimetría estará dado por <span class="math display">\[\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}\]</span> de donde <span class="math inline">\(\mu_3\)</span> será: <span class="math display">\[\mu_3 = E(X-5)^3 = \int_0^{10} \dfrac{1}{10} \cdot (x-5)^3\; dx = \dfrac{1}{10}\cdot \int_0^{10}(x^3 - 15x^2 + 75x - 125)\; dx = 0\]</span></p>
+<p>para <span class="math inline">\(\mu_2\)</span> tenemos <span class="math display">\[Var(X) = E(X-5)^2 = \int_0^{10} \dfrac{1}{10}\cdot (x-5)^2\; dx = \dfrac{1}{10}\int_0^{10} (x^2 - 10x + 25)\; dx  = \dfrac{25}{3}\]</span></p>
+<p>Entonces <span class="math display">\[\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}} = \dfrac{0}{\left(\frac{25}{3}\right)^{3/2}} = 0\]</span></p>
+<pre class="r"><code>func &lt;- function(x) 1/10 * (x-5)^3
+func2 &lt;- function(x) 1/10 * (x-5)^2
+integrate(func, lower = 0, upper = 10)</code></pre>
+<pre><code>## 1.204593e-15 with absolute error &lt; 3.5e-13</code></pre>
+<pre class="r"><code>integrate(func2, lower = 0, upper = 10)</code></pre>
+<pre><code>## 8.333333 with absolute error &lt; 9.3e-14</code></pre>
+<p>Donde nos menciona que se tiene un coeficiente de asimetría simétrica.</p>
+</div>
+<div id="d-2" class="section level3">
+<h3>d)</h3>
+<p>Para <span class="math inline">\(\alpha_4\)</span> como medida relativa de la curtosis tenemos <span class="math display">\[\alpha_4 = \dfrac{\mu_4}{\mu_2^2}\]</span></p>
+<p>de donde tenemos <span class="math inline">\(\mu_4\)</span> de la siguiente manera <span class="math display">\[\mu_4 = E(X-5)^4 = \int_0^{10}\dfrac{1}{10}\cdot (x-5)^4\; dx = 125\]</span></p>
+<pre class="r"><code>func4 &lt;- function(x) 1/10 * (x-5)^4
+integrate(func4, lower = 0, upper = 10)</code></pre>
+<pre><code>## 125 with absolute error &lt; 1.4e-12</code></pre>
+<p>para luego: <span class="math display">\[\alpha_4 = \dfrac{\mu_4}{\mu_2^2} = \dfrac{125}{\frac{25^2}{3^3}} = 5.4\]</span></p>
+<p>Donde nos dice que la distribución presenta un pico relativamente alto</p>
+</div>
+</div>
+<div id="section-10" class="section level1">
+<h1>3.11</h1>
+<p>La función de densidad viene dada por <span class="math display">\[f(x) = \left\{\begin{array}{ll}
+  \frac{1}{4}e^{-x/4}&amp;x&gt;0\\
+  0&amp;\mbox{para cualquier otro valor}
+\end{array}\right.\]</span></p>
+<div id="a-7" class="section level3">
+<h3>a)</h3>
+<p><span class="math display">\[E(X) = \int_0^\infty x\cdot \dfrac{1}{4}e^{-x/4}\; dx = \dfrac{1}{4}\int_0^\infty x\cdot e^{-x/4}\; dx = 4\]</span></p>
+<pre class="r"><code>func &lt;- function(x) 1/4*x*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)</code></pre>
+<pre><code>## 4 with absolute error &lt; 1.2e-05</code></pre>
+</div>
+<div id="b-7" class="section level3">
+<h3>b)</h3>
+<p><span class="math display">\[Var(X) = E(X-4)^2 = \int_0^\infty \dfrac{1}{4}e^{-x/4}\cdot (x-4)^2\; dx = \dfrac{1}{4}\int_0^\infty e^{-x/4}\cdot (x-4)^2\; dx =  16\]</span></p>
+<pre class="r"><code>func &lt;- function(x) 1/4*(x-4)^2*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)</code></pre>
+<pre><code>## 16 with absolute error &lt; 0.00051</code></pre>
+</div>
+<div id="c-5" class="section level3">
+<h3>c)</h3>
+<p><span class="math display">\[\mu_3 = E(X-4)^3 = \dfrac{1}{4}\int_0^\infty (x-4)^3\cdot e^{-x/4}\; dx = 128 \]</span></p>
+<pre class="r"><code>func &lt;- function(x) 1/4*(x-4)^3*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)</code></pre>
+<pre><code>## 128 with absolute error &lt; 0.00029</code></pre>
+<p><span class="math display">\[\alpha_3 = \dfrac{\mu_3}{\mu_2^{3/2}} = \dfrac{128}{16^{3/2}} = 2\]</span></p>
+<pre class="r"><code>128/(16^(3/2))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>De donde podemos mencionar que se tiene una asimetría positiva.</p>
+</div>
+<div id="d-3" class="section level3">
+<h3>d)</h3>
+<p><span class="math display">\[\mu_4 = E(X-4)^4 = \dfrac{1}{4}\int_0^\infty (x-4)^4\cdot e^{-x/4}\; dx = 2304 \]</span></p>
+<pre class="r"><code>func &lt;- function(x) 1/4*(x-4)^4*exp(-x/4)
+integrate(func, lower = 0, upper = Inf)</code></pre>
+<pre><code>## 2304 with absolute error &lt; 0.0025</code></pre>
+<p>así,</p>
+<p><span class="math display">\[\alpha_4 = \dfrac{\mu_4}{\mu^2_2} = \dfrac{2304}{16^2} = 9\]</span></p>
+<pre class="r"><code>2304/16^2</code></pre>
+<pre><code>## [1] 9</code></pre>
+</div>
+<div id="e" class="section level3">
+<h3>e)</h3>
 </div>
 </div>
 

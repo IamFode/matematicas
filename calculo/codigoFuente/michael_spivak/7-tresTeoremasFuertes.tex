@@ -32,10 +32,40 @@
 
 % -------------------- teorema 5 --------------------
 \begin{teo}
-    Si $f$ es continua 
+    Si $f$ es continua en $[a,b]$ y $f(a)>c>f(b)$, entonces existe algún $x$ en $[a,b]$ tal que $f(x)=c$.\\\\
+    Demostración.-\; La función $-f$ es continua en $[a,b]$ y $-f(a)<-c<-f(b)$. Por el teorema 4 existe algún $x$ en $[a,b]$ tal que $-f(x)=-c$, lo que significa que $f(x)=c$.\\\\
 \end{teo}
 
+Si una función continua en un intervalo toma dos valores, entonces toma todos los valores comprendidos entre ellos; esta ligera generalización del teorema 1 recibe a menudo el nombre de \textbf{teorema de los valores intermedios}.\\\\ 
 
+%---------------------- teorema 6 ----------------------
+\begin{teo}
+    Si $f$ es continua en $[a,b]$, entonces $f$ es acotada inferiormente en $[a,b]$, es decir, existe algún número $N$ tal que $f(x)\geq N$ para todo $x$ en $[a,b]$.\\\\
+    Demostración.-\; La función $-f$ es continua en $[a,b]$, así por el teorema 2 existe un número $M$ tal que $-f(x)\leq M$ para todo $x$ en $[a,b]$. Pero esto significa que $f(x)\geq -M$ para todo $x$ en $[a,b]$, así podemos poner $N=-M$.\\\\
+\end{teo}
+
+Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son acotados en $[a,b]$, es decir, existe un número $N$ tal que $|f(x)|\leq N$ para todo $x$ en $[a,b]$. En efecto, puesto que el teorema 2 asegura la existencia de un número $N_1$ tal que $f(x)\leq N,$ para todo $x$ de $[a,b]$ y el teorema 6 asegura la existencia de un número $N_2$ tal que $f(x)\geq N$, para todo $x$ en $[a,b]$, podemos tomar $N=\max(|N_1|,|N_2|)$.\\\\
+
+%---------------------- teorema 7 ----------------------
+\begin{teo}
+    Si $f$ es continua en $[a,b]$, entonces existe algún $y$ en $[a,b]$ tal que $f(y)\leq f(x)$ para todo $x$ en $[a,b]$.\\\\
+    Demostración.-\; La función $-f$ es continua en $[a,b]$; por el teorema 3 existe algún $y$ en $[a,b]$ tal que $-f(y)\geq -f(x)$ para todo $x$ en $[a,b]$, lo que significa que $f(y)\leq f(x)$ para todo $x$ en $[a,b]$.\\\\
+\end{teo}
+
+%---------------------- teorema 8 ----------------------
+\begin{teo}
+    Todo número positivo posee una raíz cuadrada. En otras palabras, si $\alpha > 0$, entonces existe algún número $x$ tal que $x^2=\alpha$.\\\\
+    Demostración.-\; Consideremos la función $f(x)=x^2$, el cual es ciertamente continuo. Notemos que la afirmación del teorema puede ser expresado en términos de $f$: $"$el número $\alpha$ posee una raíz cuadrada$"$ significa que $f$ toma el valor $alpha$. La demostración de este hecho acerca de $f$ será una consecuencia fácil del teorema 4.\\
+    Existe, evidentemente, un número $b>0$ tal que $f(b)>\alpha$; en efecto, si $\alpha>1$ podemos tomar $b=\alpha$, mientras que si $\alpha<1$ podemos tomar $b=1$. Puesto que $f(0)<\alpha <f(b)$, el teorema 4 aplicado a $[0,b]$ implica que para algún $x$ de $[0,b]$, tenemos $f(x)=\alpha$, es decir, $x^2=\alpha$.\\\\
+    Precisamente el mismo raciocinio puede aplicarse para demostrar que todo número positivo tiene una raíz n-ésima, cualquiera que sea el número $n$. Si $n$ es impar, se puede decir mas: todo número tiene una raíz n-ésima. Para demostrarlo basta observar que si el número positivo $\alpha$ tiene la raíz n-ésima $x$, es decir, si $x^n=\alpha$, entonces $(-x)^n=-\alpha$ (puesto que $n$ es impar), de modo que $\alpha$ tiene una raíz n-ésima $-\alpha$. Afirmar que, para un $n$ impar, cualquier número $\alpha$ tiene una raíz n-ésima equivale a afirmar que la ecuación
+    $$x^n - \alpha = 0$$
+    tiene una raíz si $n$ es impar. El resultado expresado de este modo es susceptible de gran generalización.\\\\
+\end{teo}
+
+%---------------------- teorema 9 ----------------------
+\begin{teo}
+
+\end{teo}
 
 
 
@@ -50,7 +80,28 @@
 
     \begin{enumerate}[\bfseries (i)]
 
-	\item $f(x) = x^2$ en $(-1,1)$.
+	%----------(i)
+	\item $f(x) = x^2$ en $(-1,1)$.\\\\
+	    Respuesta.-\; Se encuentra acotada superior como inferiormente. El mínimo es $0$ e no tiene máximo.\\\\
+
+	%----------(ii)
+	\item $f(x) = x^3$ en  $(-1,1)$.\\\\
+	    Respuesta.-\; Se encuentra acotada superior como inferiormente. No tiene máximo ni mínimo\\\\
+
+	%----------(iii)
+	\item $f(x) = x^2$ en $\mathbf{R}$.\\\\
+	    Respuesta.-\; No está acotado superior pero si inferiormente. Su mínimo es $0$ y no tiene  máximo.\\\\ 
+
+	%----------(iv)
+	\item $f(x)=x^2$ en $[0,\infty)$.\\\\
+	    Respuesta.-\; Está acotada inferiormente pero no así superiormente. Su mínimo es $0$ y no tiene máximo.\\\\ 
+
+	%----------(v)
+	\item $f(x) = \left\{\begin{array}{ll} x^2, & x\leq a \\ a+2, & x\geq a \end{array}\right.$ en $(-a-1,a+1)$\\\\
+	    Respuesta.-\; Es acotado superior e inferiormente. Se entiende que $a>-1$ (de modo que $-a-1<a+1$). Si $-1<a\leq 1/2$, entonces $a<-a-1$, así $f(x)=a+2$ para todo $x$ en $(-a-1,a+1)$, por lo tanto $a+2$ es el máximo y mínimo valor. Si $-1/2<a\leq 0$, entonces $f$ tiene el mínimo valor en $a^2$, y si $a\geq 0$, entonces $f$ tiene un mínimo valor en $0$. Ya que $a+2>(a+1)^2$ solo para $[-1-\sqrt{5}]/2 < a < [1+\sqrt{5}]/2$, cuando $a\geq -1/2$ésta función $f$ tiene un máximo valor solo para $a\leq [1+\sqrt{5}]/2$ (el máximo valor será $a+2$).\\\\
+
+	%----------(vi)
+	\item 
 
     \end{enumerate}
 

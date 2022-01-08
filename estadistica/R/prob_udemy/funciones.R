@@ -32,3 +32,14 @@ varbn <- function(n) {
 }
 
 
+############################ Distribución poisson ##############################
+
+fpoisson <- function(x,l){
+  for (x in 0){
+    
+  }
+  if(x>=0){
+   return(l^x / factorial(x) * (1 + -l/100000000)^(10000000) ) 
+  }
+}
+
