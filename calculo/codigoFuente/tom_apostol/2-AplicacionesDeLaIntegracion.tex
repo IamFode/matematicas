@@ -1376,7 +1376,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
 \section{Ejercicios}
 
-\end{comment}
 
 \begin{enumerate}[\Large \bfseries 1.]
 
@@ -1642,12 +1641,92 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	$$V = \pi\int_{-h}^h \left[\left(\sqrt{r_s^2 - x^2}\right)^2 - r_c^2\right]\; dx = \pi \int_{-h}^h (r_s^2 - r_c^2 -x^2)\; dx = \pi h^2 (2h) - \pi \dfrac{x^3}{3}\bigg|_{-h}^h = \dfrac{4}{3}\pi h^3 = \pi a h^3$$.\\
 
     %---------------------15.
-    \item 
+    \item Un sólido tiene una base circular de radio $2$. Cada sección producida por un plano perpendicular a un diámetro fijo es un triángulo equilátero. Calcular el volumen del sólido.\\\\
+	Demostración.-\; Podemos describir la mitad superior de la base circular del sólido mediante la ecuación
+	$$f(x)=\sqrt{4-x^2}$$
+	de donde, la longitud de la base de cualquier sección transversal triangular equilátera es,
+	$$2\sqrt{4-x^2}\quad -2\leq x \leq 2$$
+	Como estos son triángulos equiláteros, con lado de longitud $2\sqrt{4-x^2}$, el área es dada por 
+	$$a(x) = \sqrt{3}(4-x^2)$$
+	Por lo tanto, calculando el volumen se tiene,
+	$$\begin{array}{rcl}
+	    V&=&\sqrt{3}(4-x^2)\; dx\\\\
+	     &=&3\sqrt{3}(4) - \sqrt{3}\left(\dfrac{x^3}{3}\bigg|_{-2}^2\right)\\\\
+	     &=&16\sqrt{3} - \dfrac{16}{3}\sqrt{3}\\\\
+	     &=&\dfrac{32\sqrt{3}}{3}\\\\
+	\end{array}$$
+	\vspace{0.5cm}
 
+    %---------------------16.
+    \item las secciones transversales de un sólido son cuadrados perpendiculares al eje $x$ con sus centros en el eje. Si el cuadrado cortado en $x$ tiene arista $2x^2$, encuentra el volumen del sólido entre $x = 0$ y $x = a$. Haz un dibujo.
+	El área de las secciones transversales son dados por,
+	$$A(x) = (2x^2)^2 = 4x^4$$
+	Así, el volumen del sólido para $0\leq x \leq a$ será,
+	$$V=\int_0^a 4x^4\; dx = \dfrac{4}{5}a^5.$$\\
 
+    %---------------------17.
+    \item Hallar el volumen de un sólido cuya sección transversal, por un plano perpendicular al eje $x$ tiene de área $ax^2+bx+c$ para $x$ del intervalo $0\leq x\leq h$. Expresar el volumen en términos de áreas $B_1,\; M$ y $B_2$ de la sección transversal correspondiente a $x=0$, $x=h/2$ y $x=h$, respectivamente.. La fórmula que resulta se conoce como fórmula del prismatoide.\\\\
+	Respuesta.-\; Ya que el área de la sección transversal en $x$ está dada por $ax^2+bx+c$, tenemos,
+	$$\begin{array}{rcl}
+	    B_i&=&c\\\\
+	      M&=&\dfrac{ah^2}{4}+\dfrac{bh}{2}+c\\\\
+	    B_2&=&ah^2 + bh + c\\\\
+	\end{array}$$
+	entonces, calculamos el volumen de la siguiente manera.
+	$$\begin{array}{rcl}
+	    V&=&\displaystyle\int_0^h (ax^2 + bx + c)\; dx\\\\
+	     &=&\dfrac{ah^3}{3} + \dfrac{bh^2}{2} + ch\\\\
+	     &=&\dfrac{h}{6}(2ah^2 + 3bh + 6c)\\\\
+	     &=&\dfrac{h}{6} (B_1 + 4M + B_2)\\\\
+	\end{array}$$
+	\vspace{0.5cm}
 
+    %---------------------18.
+    \item Dibujar un esquema de la región en el plano $xy$ formada por todos los puntos $(x,y)$ que satisfacen las desigualdades simultaneas $0\leq x\leq 2,$  $\frac{1}{4}x^2 \leq y \leq 1$. Calcular el volumen del solido obtenido haciendo girar esta región: a) alrededor del eje $x$; b) alrededor del eje $y$ c) alrededor de la vertical que pasa por $(2,0)$; de la horizontal que pasa por $(0,1)$.\\\\
+	Respuesta.-\; 
+
+	\begin{center}
+	    \begin{tikzpicture}[scale=1.2,draw opacity = 0.6]
+		% abscisa y ordenada
+		\tkzInit[xmax= 2,xmin=0, xstep = 1,ymax=1.5, ymin=0, ystep = 1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% etiqueta x, f(x)
+		\tkzDrawX[opacity=0.6,label=x,right=0.3]
+		\tkzDrawY[opacity=0.6,label=f(x),below = -0.6]
+		%dominio y función
+		\draw [domain=0:2,thick,gray] plot(\x,{1/4*\x^2});
+		\tkzText[opacity=0.6,above](1.9,.2){\tiny $f(x)=\frac{1}{4} x^2$}
+		\draw [domain=0: 2,thick,gray] plot(\x,{1});
+		\tkzText[opacity=0.6,above](1,1.2){\tiny $g(x)=1$}
+	    \end{tikzpicture}
+	\end{center}
+
+	Para el inciso $a)$, calculamos el volumen al girar sobre el eje de la siguiente manera
+	$$V=\pi\int_0^2 \left[1-\left(\dfrac{x^2}{4}\right)^2\right]\; dx = 2\pi-\dfrac{\pi}{16}\int_0^2 x^4 \; dx = \dfrac{8\pi}{5}$$
+
+	Para el inciso $b)$ encontraremos una ecuación para $\dfrac{1}{4}x^2$ en términos de $x$, como sigue
+	$$y=\dfrac{1}{4}\; dx,\quad \Longrightarrow \; |x|=2\sqrt{y}$$
+	entonces calculamos el volumen de la siguiente manera al girar alrededor del eje de la siguiente manera,
+
+	$$V = \pi\int_0^1 (2\sqrt{y})^2\; dy = 2\pi$$
+
+	Para el inciso $c)$, calculamos el volumen de la siguiente manera al girar alrededor de la línea vertical de la $x=2$ de la siguiente manera.
+	$$\begin{array}{rcl}
+	    V &=& \pi\displaystyle\int_0^1 4 \;dy \\\\
+	    &=&4\pi -\pi\displaystyle\int_0^1 (4-8\sqrt{y}+4y)\; dx\\\\
+	    &=&\dfrac{p\pi}{3}\\\\
+	\end{array}$$
+
+	Y por último para el inciso d) calculamos el volumen de la siguiente manera al girar alrededor de la linea horizontal de la $y=1$ de la siguiente manera.\\\\
+	$$V=\int_0^2\left(\dfrac{1}{4}x^2 - 1\right)^2 \; dx = \dfrac{16\pi}{15}.$$\\\\
 
 \end{enumerate}
+
+\end{comment}
+
+\section{Aplicación de la integración al concepto del trabajo}
+
+
 
 
 

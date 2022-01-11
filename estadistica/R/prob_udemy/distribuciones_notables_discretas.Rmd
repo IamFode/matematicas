@@ -586,3 +586,165 @@ exp(4)
 
 ## La distribución Poisson como límite de una binomial
 
+## Procesos de Poisson
+Cosideramos un experimento Poisson con $\lambda$ igual al promedio de eventos en una unidad de tiempo (u.t).
+
+Si $t$ es una cantidad de tiempo en u.t., la v.a. $X_t$ = número de eventos en el intervalo $(0,t]$ es una Po(\lambda\¢dot t)
+
+El conjunto de varibales ${X_t}_{t>0}$ recibe el nombre de proceso de Poisson.
+
+Por ejemplo si 
+$$n \geq 20\, \mbox{o mejor}\; n\geq 30,\; n\cdot p  < 10\, \mbox{y}\; p\leq 0.05$$
+la aproximación de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo para los valores cercanos a $E(X)=\lambda$
+
+## Ejemplo
+Consideremos la v.a. X que cuenta número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es $E(X)=20$ y que podemos admitir que $X$ sigue una ley de probabilidad $Po(\lambda = 20)$
+
+#### 1. Comentar de forma breve si se cumple intuitivamente las condiciones para tener una distribución Poisson.
+  Respuesta.- Primero el número promedio de eventos en el intervalo $(0,1]$, una hora es $\lambda = 20>0.$
+  Luego es posible dividir el intervalo de tiempo de una hora en un gran número de subintervalos(denotamos por $n$ al número de intervalos de forma que:)
+  \begin{itemize}
+    \item La probabilidad de que se produzcan dos o más electrocuciones, un subintervalo es despreciable. No es posible que dos mosquitos se electrocuten al mismo tiempo.
+    \item El número de ocurrencias, electrocuciones de insectos, en un intervalo es independiente del número de electrocuciones en otro intervalo.
+    \item La probabilidad de que un evento ocurra en un subintrevalo es $p_n\cdot n = \lambda$ o lo que es lo mismo $p_n =\dfrac{\lambda}{n}$. Podemos dividir los 20 insectos promedio entre los $n$ intervalos (trozo por hora) de forma que $p_n = \dfrac{\lambda}{n}.$
+    \item Por ejemplo si $n=60$ tenemos que $p_n=\dfrac{20}{60}=\dfrac{1}{3}$. La probabilidad de que en un minuto la trampa chisporrotee es $\dfrac{1}{3}$
+  \end{itemize}
+
+#### 2. Escribir de forma explicita la función de probabilidad y de distribución de X.
+   Repuesta.- Escribiendo de forma explicita la función de probabilidad de X. La distribución de probabilidad de un $P_0(\lambda)$ es
+   
+ $$P_X(x) = P(X=x) = \left\{ \begin{array}{ll}
+ \frac{20^x}{x!} e^{-\lambda} & si x=0,1,,\ldots\\
+ 0&\mbox{en otro caso}\\
+ \end{array}\right.$$
+
+#### 3. Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 einsectos.
+
+La función será
+$$P(X=21)=\dfrac{20^{21}}{21!}e^{20} = 0.084$$
+
+```{r}
+20^21/factorial(21)*exp(-20)
+dpois(21,lambda = 20)
+```
+
+#### 4. calcular la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
+$$\begin{array}{rcl}
+  P(X\geq 6)&=&1-P(X<6)\\\\
+  &=&1-P(X\leq 5)\\\\
+  &=&1-F_X(5)\\\\
+  &=&1-\sum\limits_{x=0}^5 \dfrac{20^x}{x!} \cdot e^{-20}\\\\
+  &=&1-\left(\dfrac{20^0}{0!}\cdot e^{-20}+ \dfrac{20^1}{1!}\cdot e^{-20}+\ldots + \dfrac{20^5}{5!}\cdot e^{-20}\right)\\\\
+  &=&1-e^{-20}\cdot \dfrac{4186520}{120}\\\\
+  &=&1-0.0066126\\\\
+\end{array}$$
+
+#### 5. ¿Cuál es el valor esperado, la varianza y la desviación típica de X?
+La esperanza será
+$$E(X) = \lambda = 20$$
+
+Su varianza es
+$$Var(X) = \lambda = 20$$
+
+y la desviación típica será
+$$\sqrt{Var(X)} = \sqrt{\lambda} = \sqrt{20}$$
+
+## La Poisson con R y Python
+Sea $X$ una v.a. Po(\lambda = 3). Entonces 
+
+$P_X(0)=P(X=0)$
+```{r}
+dpois(0,lambda = 3)
+```
+
+$P_X(1)=P(X=1)$
+
+```{r}
+dpois(1,lambda = 3)
+```
+
+$F_X(0) = P(X\leq 0)$
+```{r}
+ppois(0,lambda = 3)
+```
+
+$F_X(1) = P(X\leq 1)$
+
+```{r}
+ppois(1,lambda = 3)
+```
+
+Por ejemplo podemos comprobar que $F_X(10) = \sum\limits_{x=0}^{10} P_X(x)$
+
+```{r}
+dpois(0:10,3)
+```
+
+```{r}
+sum(dpois(0:10,3))
+```
+
+```{r}
+ppois(10,3)
+```
+
+Y también generar secuencias de observaciones aleatorias de unapoblación Po(3)
+```{r}
+rpois(n=100,lambda = 3)
+```
+
+En el ejercicio de la trampa apra insectos teníamos que $X$ es una Po(20). Responder con R a la pregunta 3 y 4 de este ejercicio
+
+$P(X=21)$
+```{r}
+dpois(21,lambda = 20)
+```
+
+### gráficos 
+```{r}
+{lambda=20
+par(mfrow=c(1,2))
+n=qpois(0.99,lambda=lambda)
+aux=rep(0,(n+1)*2)
+aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
+ymax=max(ppois(0:n,lambda=lambda))
+plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
+     ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",
+     main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),
+                 collapse = ""))
+lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
+curve(ppois(x,lambda=lambda),
+      xlim=c(-1,n+1),col="blue",
+      main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),
+                  collapse = ""))
+par(mfrow=c(1,1))}
+```
+
+
+## Ejemplo proceso Poisson
+Un colega de trabajo, al que llamaremos JG, es muy aficionado a los grandes premios de velocidad tanto en coches como en motos.
+Como es tan aficionado, está obsesionado con muchas de las más extravagantes estadísticas de estos deportes. En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un motorista GP o de un conductor de fórmula 1 .
+La idea es que el número de insectos está igualmente repartido por todo el circuito y de promedio impactan  $\lambda>0$ insectos por minuto. También es razonable suponer que:
+\begin{itemize}
+\item Podemos dividir la superficie de la visera en cuadrados suficientemente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente $0$.
+\item la probabilidad de que un insecto impacte en un cuadrado cualquiera de la visera es independiente de cualquier otro cuadrado.
+\item Si hemos dividido la visera en $n$ cuadrados la probabilidad  $p_n$ de impacto de un cuadrado vale $p_n=\dfrac{\lambda}{n}$
+\end{itemize}
+Así que Bajo estas condiciones, si denotamos por  $X_t=$ el número de insectos que ha impactado en la visera en el intervalo $(0,t]$ en $t$ minutos podemos afirmar que $X_t$ es un proceso de poisson $Po(\lambda \cdot t)$  
+  
+#### 1.
+¿Cuál es la probabilidad de que en 10 minutos impacten más de 25 insectos?
+Respuesta.- En este caso $t=10$ $X_10=$ el número de insectos que impactan en 10 minutos, el intervalo $[0,10)$ que sigue una $P(3\cdot = 30)$ por lo tanto
+$$P(X>25) = 1 - p(X\leq 25)$$
+
+```{r}
+1-ppois(25,lambda=30)
+```
+#### 2.
+¿Cuál es la probabilidad de que tengamos que esperar más de 2 minutos para observar el primer impacto?
+$$P(X_2=0) =\dfrac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}=0.002479$$
+
+```{r}
+ppois(0,lambda = 6)
+```
+

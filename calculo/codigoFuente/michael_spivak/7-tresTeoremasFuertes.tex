@@ -64,6 +64,26 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 %---------------------- teorema 9 ----------------------
 \begin{teo}
+    Si $n$ es impar, entonces cualquier ecuación 
+    $$x^n + a_{n-1}x^{n-1}+\ldots + a_0 = 0$$
+    posee raíz.\\\\
+	Demostración.-\; Tendremos que considerar, evidentemente, la función 
+	$$f(x) = x^n + a_{n-1}x^{n-1} + \ldots + a_0$$
+	habría que demostrar que $f$ es unas veces positiva y otras veces negativa. La idea intuitiva es que para un $|x|$ grande, la función se parece mucho más a $g(x)=x^n$ y puesto que $n$ es impar, ésta función es positiva para $x$ grandes positivos y negativos para $x$ grandes negativos. Un poco de cálculo algebraico es todo lo que hace falta para dar formar a esta idea intuitiva.\\
+	Para analizar debidamente la función $f$ conviene escribir 
+	$$f(x) = x^n + a_{n-1}x^{n-1}+\ldots + a_0 = x^n\left(1+\dfrac{a_{n-1}}{x} + \ldots + \dfrac{a_0}{x^n}\right)$$
+	obsérvese que
+	$$\bigg| \dfrac{a_{n-1}}{x} + \dfrac{a_{n-2}}{x^2} + \ldots + \dfrac{a_0}{x^n} \bigg|\leq \dfrac{|a_{n-1}|}{|x|} + \ldots + \dfrac{|a_0|}{|x^n|}$$
+	En consecuencia, si elegimos un $x$ que satisfaga
+	$$|x|>1,2n|a_{n-1}|,\ldots,2n|a_0|$$
+	entonces $|x^k| > |x|$ y 
+	$$\dfrac{|a_{n-k}}{x^k}<\dfrac{a_{n-k}}{|x|}<\dfrac{|a_{n-k}|}{2n|a_{n-k}}=\dfrac{1}{2n}$$
+	de modo que 
+	$$\bigg| \dfrac{a_{n-1}}{x} + \dfrac{a_{n-2}}{x^2} + \ldots + \dfrac{a_0}{x^n} \bigg|\leq \dfrac{1}{2n}+\ldots + \dfrac{1}{2n}=\dfrac{1}{2}$$
+	expresado de otra forma,
+	$$-\dfrac{1}{2}\leq \dfrac{a_{n-1}}{x}+\ldots + \dfrac{a_0}{x_n}\leq \dfrac{1}{2},$$
+	lo cual implica que 
+	$$\dfrac{1}{2}\leq 1 + \dfrac{a_{n-1}}{x}+\ldots + \dfrac{a_0}{x_n}..$$
 
 \end{teo}
 
@@ -101,6 +121,10 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	    Respuesta.-\; Es acotado superior e inferiormente. Se entiende que $a>-1$ (de modo que $-a-1<a+1$). Si $-1<a\leq 1/2$, entonces $a<-a-1$, así $f(x)=a+2$ para todo $x$ en $(-a-1,a+1)$, por lo tanto $a+2$ es el máximo y mínimo valor. Si $-1/2<a\leq 0$, entonces $f$ tiene el mínimo valor en $a^2$, y si $a\geq 0$, entonces $f$ tiene un mínimo valor en $0$. Ya que $a+2>(a+1)^2$ solo para $[-1-\sqrt{5}]/2 < a < [1+\sqrt{5}]/2$, cuando $a\geq -1/2$ésta función $f$ tiene un máximo valor solo para $a\leq [1+\sqrt{5}]/2$ (el máximo valor será $a+2$).\\\\
 
 	%----------(vi)
+	\item $f(x) = \left\{\begin{array}{ll}x^2, & x<a \\ a+2, & x\geq a \end{array}\right.$ en $[-a-1,a+1].$\\\\
+	    Respuesta.-\; Está acotado superior e inferiormente. Como en la parte (v), se asume que $a>-1$. Si $a\leq -1/2$ entonces $f$ tiene el valor mínimo y un máximo $3/2$. Si $a\geq 0$, entonces $f$ tiene un valor mínimo en $0$, y un valor máximo $max(a^2,a+2)$. Si $-1/2<a<0$ , entonces $f$ tiene un máximo valor $3/2$ y no así con un valor mínimo.\\\\
+
+	%----------(vii)
 	\item 
 
     \end{enumerate}

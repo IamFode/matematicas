@@ -1,6 +1,7 @@
 from scipy.stats import binom
 from scipy.stats import nbinom
 from scipy.stats import geom
+from scipy.stats import poisson 
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -92,3 +93,35 @@ n, p = 2, 0.1
 params = nbinom.stats(n-1,p,moments = 'mv')
 print("E(X) = {m}".format(m=params[0]))
 print("Var(X) = {v}".format(v=params[1]))
+
+######################### Distribución Poisson #################################
+# Sea X una v.a. Po(lambda = 3) Entonces
+
+# P_X(0) = P(X=0)
+poisson.pmf(0,mu=3)
+
+# P_X(1) = P(X=1)
+poisson.pmf(1,mu=3)
+
+# F_X(0) = P(X\leq 0)
+poisson.cdf(0,mu=3)
+
+# F_X(1) = P(X\leq 1)
+poisson.cdf(1,mu=3)
+poisson.pmf(0,mu=3)+poisson.pmf(1,mu=3)
+
+# Podemos comprobar que F_X(10) = \sum_0^10 P_X(x)
+poisson.pmf(range(0,10),mu=3)
+sum(poisson.pmf(range(0,10),mu=3))
+
+#P(X=21)
+poisson.pmf(21,mu=20)
+
+# P(X>=6) = 1-P(X<=5)
+1-poisson.cdf(5,mu=20)
+
+#momentos 
+poisson.stats(mu=3,moments='mv')
+
+#secuencias de observaciones aleatorias de una población Po(3)
+poisson.rvs(mu=3,size=40)

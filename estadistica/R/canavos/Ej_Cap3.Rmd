@@ -403,4 +403,21 @@ $$\alpha_4 = \dfrac{\mu_4}{\mu^2_2} = \dfrac{2304}{16^2} = 9$$
 ```
 
 ### e)
+Del ejercico 3.10 
+$$V_X = \dfrac{E(X)}{Var(X)} = \dfrac{5}{8.33333}$$
+
+```{r}
+5/8.33333
+```
+
+Del ejercio 3.11
+$$V_Y = \dfrac{E(X)}{Var(X)} = \dfrac{4}{16}$$
+
+```{r}
+4/16
+```
+
+De donde $V_Y$ muestra mayor dispersión relativa con respecto a la media que la distribución correspondiente a $X$
+
+# 3.12
 
