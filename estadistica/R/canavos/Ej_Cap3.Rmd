@@ -420,4 +420,32 @@ $$V_Y = \dfrac{E(X)}{Var(X)} = \dfrac{4}{16}$$
 De donde $V_Y$ muestra mayor dispersión relativa con respecto a la media que la distribución correspondiente a $X$
 
 # 3.12
+Sea $$E(X)=62.5,\qquad y \qquad \sqrt{Var(X)} = 10 \; \Rightarrow \; Var(X) = 100$$
 
+y 
+
+$$E(aX+b) = 70 \qquad y \qquad Var(aX+b) = 80$$
+
+entonces 
+
+$$a^2Var(X)=80 \; \Longrightarrow \; a=2\sqrt{\dfrac{1}{5}}$$
+
+y 
+
+$$a E(X) + b = 70 \; \Longrightarrow \;b = 14.098$$
+
+Entonces la respuesta estará dada por 
+$$aX+b = 2\sqrt{\dfrac{1}{5}} X + \left(70 - 125\sqrt{\dfrac{1}{5}}\right) $$
+
+```{r}
+EX <- function(x) 2*(1/5)^(1/2)*x + 70-125*(1/5)^(1/2)
+EX(62.5)
+```
+
+```{r}
+VarX <- function(varx) (2*(1/5)^(1/2))^2 * varx 
+VarX(100)
+```
+
+# 3.13
+## a)

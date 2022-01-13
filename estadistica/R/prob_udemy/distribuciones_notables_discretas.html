@@ -204,7 +204,7 @@ dbinom(1, size = 1, prob = 0.25)</code></pre>
 <pre><code>## [1] 0.25</code></pre>
 <pre class="r"><code># muestra aleatoria simple de probabilidad Bernoulli
 rbinom(n = 20, size = 1, prob = 0.25)</code></pre>
-<pre><code>##  [1] 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 1</code></pre>
+<pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0</code></pre>
 <pre class="r"><code># gráfico de la función de probabilidad y la de distribución de una Ber(p=0.25)
 {par(mfrow=c(1,2))
 plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
@@ -694,6 +694,35 @@ Un colega de trabajo, al que llamaremos JG, es muy aficionado a los grandes prem
 <p>¿Cuál es la probabilidad de que tengamos que esperar más de 2 minutos para observar el primer impacto? <span class="math display">\[P(X_2=0) =\dfrac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}=0.002479\]</span></p>
 <pre class="r"><code>ppois(0,lambda = 6)</code></pre>
 <pre><code>## [1] 0.002478752</code></pre>
+</div>
+</div>
+<div id="tiempo-entre-dos-ocurrencias-de-poisson" class="section level2">
+<h2>Tiempo entre dos ocurrencias de Poisson</h2>
+<p><span class="math inline">\(X_S \sim Poiss(\lambda_S)\)</span> número de sucesos en el intervalo <span class="math inline">\((0,s]\)</span></p>
+<p><span class="math inline">\(S =\)</span> tiempo hasta la segunda incidencia <span class="math display">\[\lbrace S&gt;s\rbrace = \lbrace X_S \leq 1 \rbrace\]</span></p>
+<p><span class="math display">\[P(S&gt;s) = P(X_S \leq 1) = P(X_S=0)+P(X_S = 1) = \dfrac{(\lambda\cdot s)^0}{0!}e^{-\lambda\cdot s} + \dfrac{(\lambda\cdot s)^1}{1!}e^{-\lambda\cdot s} = e^{-\lambda\cdot s}(1-\lambda\cdot s),\qquad s&gt;0\]</span></p>
+<div id="función-de-distribución-2" class="section level4">
+<h4>Función de distribución</h4>
+<p><span class="math display">\[F_S(s) = 1-P(S&gt;s) = 1 - e^{-\lambda_S}(1+\lambda\cdot s)\qquad \lambda\cdot s&gt;0\]</span></p>
+</div>
+<div id="función-de-densidad" class="section level4">
+<h4>Función de densidad</h4>
+<p><span class="math display">\[f_S(s) = F_S^{&#39;}(s) = 0 + \lambda\cdot s \cdot e^{-\lambda\cdot s}(1+\lambda\cdot s) - e^{-\lambda_S} (0+\lambda) = (\lambda\cdot s)^2 e^{-\lambda\cdot s},\quad \lambda_s&gt;0\]</span></p>
+</div>
+</div>
+<div id="generalizamos-tiempo-entre-n-ocurrencias-de-poisson" class="section level2">
+<h2>Generalizamos tiempo entre n ocurrencias de Poisson</h2>
+<p>$X_s Poiss(s) = $ número de sucesos en <span class="math inline">\((0,s],\; s&gt;0\)</span> <span class="math inline">\(T_r\sim\)</span> tiempo hasta la incidencia número <span class="math inline">\(r\)</span> en el proceso de Poisson <span class="math inline">\(r\geq 1\)</span> La idea será que tendremos que hallar la densidad de <span class="math display">\[f_{T_r}/F_{t_r}\]</span> llamado también distribución gamma que es una especie del número factorial.</p>
+<p><span class="math display">\[\lbrace T_r &gt; s\rbrace = \lbrace X_S&lt;r\rbrace = \lbrace X_S \leq r-1 \rbrace \]</span></p>
+<p><span class="math display">\[P(T_r)&gt;s = P(X_S\leq r-1)=\sum\limits_{i=0}^{r-1} P(X_S = i) = \sum_{i=0}^{r-1} \dfrac{(\lambda\cdot s)^i}{i!}e^{-\lambda\cdot s},\quad \lambda\cdot s&gt;0\]</span></p>
+<div id="función-de-distribución-3" class="section level4">
+<h4>Función de distribución</h4>
+<p><span class="math display">\[F_{T_r} = 1 - P(T_r&gt;s) = 1 - \sum_{i=0}^{r-1} \dfrac{\lambda_S^i}{i!}e^{-\lambda\cdot s} = 1-e^{-\lambda \cdot s} \cdot \sum_{i=0}^{r-1} \dfrac{(\lambda\cdot s)^i}{i!} \quad s&gt;0\]</span></p>
+</div>
+<div id="función-de-densidad-1" class="section level4">
+<h4>Función de densidad</h4>
+<p><span class="math display">\[f_{T_r} (s) = F^{&#39;}_{T_r}(s) = 0 + \lambda e^{-\lambda\cdot s}\cdot \sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} - e^{-\lambda \cdot s}\cdot \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i-1}\cdot \lambda}{i!} = \lambda e^{-\lambda\cdot s}\cdot \sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} - \lambda e^{-\lambda \cdot s}\cdot \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i}\cdot \lambda}{i!} \]</span> <span class="math display">\[= \lambda\cdot e^{-\lambda\cdot s}\left(\sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} -  \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i}\cdot \lambda}{i!} \right) = \lambda\cdot e^{-\lambda\cdot s}\cdot \dfrac{(\lambda \cdot s)^{r-1}}{(r-1:w
+)!} = \dfrac{\lambda^r\cdot s^{r-1}}{(r-1)!}\cdot e^{-\lambda \cdot s},\quad s&gt;0\]</span></p>
 </div>
 </div>
 </div>

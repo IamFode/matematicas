@@ -505,6 +505,20 @@ integrate(func, lower = 0, upper = Inf)</code></pre>
 </div>
 <div id="section-11" class="section level1">
 <h1>3.12</h1>
+<p>Sea <span class="math display">\[E(X)=62.5,\qquad y \qquad \sqrt{Var(X)} = 10 \; \Rightarrow \; Var(X) = 100\]</span></p>
+<p>y</p>
+<p><span class="math display">\[E(aX+b) = 70 \qquad y \qquad Var(aX+b) = 80\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[a^2Var(X)=80 \; \Longrightarrow \; a=2\sqrt{\dfrac{1}{5}}\]</span></p>
+<p>y</p>
+<p><span class="math display">\[a E(X) + b = 70 \; \Longrightarrow \;b = 14.098\]</span></p>
+<p>Entonces la respuesta estará dada por <span class="math display">\[aX+b = 2\sqrt{\dfrac{1}{5}} X + \left(70 - 125\sqrt{\dfrac{1}{5}}\right) \]</span></p>
+<pre class="r"><code>EX &lt;- function(x) 2*(1/5)^(1/2)*x + 70-125*(1/5)^(1/2)
+EX(62.5)</code></pre>
+<pre><code>## [1] 70</code></pre>
+<pre class="r"><code>VarX &lt;- function(varx) (2*(1/5)^(1/2))^2 * varx 
+VarX(100)</code></pre>
+<pre><code>## [1] 80</code></pre>
 </div>
 
 

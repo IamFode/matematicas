@@ -1726,7 +1726,35 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
 \section{Aplicación de la integración al concepto del trabajo}
 
+%---------------------Propiedades fundamentales del trabajo
+\begin{tcolorbox}[colframe = white]
+    \begin{prop}[Propiedades fundamentales del trabajo]
+	Designemos con $W_a(f)$ el trabajo realizado por una función fuerza $f$ al mover una partícula desde $a$ hasta $b$. Entonces el trabajo tiene las siguientes propiedades:
+	\begin{enumerate}[\bfseries 1.]
 
+	    %----------1.
+	    \item Propiedad aditiva. Si $a<c<b$. Entonces $W_a^c(f) + W_c^b(f)$.
 
+	    %----------2.
+	    \item Propiedad monótona. Si $f\leq g$ en $[a,b]$, entonces $W_a^b (f) \leq W_a^b(g)$. Esto es una mayor fuerza realiza un mayor trabajo.
+
+	    %----------3.
+	    \item Fórmula elemental. Si $f$ es constante, $f(x)=c$ para todo $x$ in el intervalo abierto $(a,b)$, entones $W_a^b(f) = cdot (b-a)$.\\\\
+
+	\end{enumerate}
+
+	La propiedad aditiva puede extenderse por inducción para cualquier número infinito del intervalo.\\
+	Esto es, si $a=x_0<x_1<\ldots<x_n = b,$ tenemos,
+	$$W_a^b(f) = \sum\limits_{k=1}^n W_k$$
+	Donde $W_k$  es el trabajo realizado por $f$ desde $x_{k-1}$ a $x_k$. En particular, si la fuerza es una función escalonada $s$ que toma un valor constante $s_k$ en el intervalo abierto $(x_{k-1}-x_k)$ la propiedad 3 establece que $W_k = s_k\cdot (x_k-x_{k-1})$, con lo que 
+	$$W_a^b (s) = \sum_{k=0} s_k \cdot (x_k-x_{k-1}) = \int_a^b s(x)\; dx$$
+	Así pues, para funciones escalonadas, el trabajo se expresa como una integral. Es fácil demostrar que esto es cierto en casos más generales.
+    \end{prop}
+\end{tcolorbox}
+
+%--------------------- Teorema 2.8
+\begin{teo}
+
+\end{teo}
 
 

@@ -748,3 +748,44 @@ $$P(X_2=0) =\dfrac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}=0.002479$$
 ppois(0,lambda = 6)
 ```
 
+
+## Tiempo entre dos ocurrencias de Poisson
+$X_S \sim Poiss(\lambda_S)$ número de sucesos en el intervalo $(0,s]$
+
+$S =$ tiempo hasta la segunda incidencia
+$$\lbrace S>s\rbrace = \lbrace X_S \leq 1 \rbrace$$
+
+$$P(S>s) = P(X_S \leq 1) = P(X_S=0)+P(X_S = 1) = \dfrac{(\lambda\cdot s)^0}{0!}e^{-\lambda\cdot s} + \dfrac{(\lambda\cdot s)^1}{1!}e^{-\lambda\cdot s} = e^{-\lambda\cdot s}(1-\lambda\cdot s),\qquad s>0$$
+
+#### Función de distribución 
+$$F_S(s) = 1-P(S>s) = 1 - e^{-\lambda_S}(1+\lambda\cdot s)\qquad \lambda\cdot s>0$$
+
+#### Función de densidad
+$$f_S(s) = F_S^{'}(s) = 0 + \lambda\cdot s \cdot e^{-\lambda\cdot s}(1+\lambda\cdot s) - e^{-\lambda_S} (0+\lambda) = (\lambda\cdot s)^2 e^{-\lambda\cdot s},\quad \lambda_s>0$$
+
+
+
+## Generalizamos tiempo entre n ocurrencias de Poisson
+$X_s \sim Poiss(\lambda \cdot s) = $ número de sucesos en $(0,s],\; s>0$
+$T_r\sim$ tiempo hasta la incidencia número $r$ en el proceso de Poisson $r\geq 1$ 
+La idea será que tendremos que hallar la densidad de 
+$$f_{T_r}/F_{t_r}$$
+llamado también distribución gamma que es una especie del número factorial.
+
+$$\lbrace T_r > s\rbrace = \lbrace X_S<r\rbrace = \lbrace X_S \leq r-1 \rbrace $$
+
+$$P(T_r)>s = P(X_S\leq r-1)=\sum\limits_{i=0}^{r-1} P(X_S = i) = \sum_{i=0}^{r-1} \dfrac{(\lambda\cdot s)^i}{i!}e^{-\lambda\cdot s},\quad \lambda\cdot s>0$$
+
+
+#### Función de distribución
+$$F_{T_r} = 1 - P(T_r>s) = 1 - \sum_{i=0}^{r-1} \dfrac{\lambda_S^i}{i!}e^{-\lambda\cdot s} = 1-e^{-\lambda \cdot s} \cdot \sum_{i=0}^{r-1} \dfrac{(\lambda\cdot s)^i}{i!} \quad s>0$$
+
+#### Función de densidad
+$$f_{T_r} (s) = F^{'}_{T_r}(s) = 0 + \lambda e^{-\lambda\cdot s}\cdot \sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} - e^{-\lambda \cdot s}\cdot \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i-1}\cdot \lambda}{i!} = \lambda e^{-\lambda\cdot s}\cdot \sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} - \lambda e^{-\lambda \cdot s}\cdot \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i}\cdot \lambda}{i!} $$
+$$= \lambda\cdot e^{-\lambda\cdot s}\left(\sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s)^i}{i!} -  \sum_{i=0}^{r-1} \dfrac{i(\lambda\cdot s)^{i}\cdot \lambda}{i!} \right) = \lambda\cdot e^{-\lambda\cdot s}\cdot \dfrac{(\lambda \cdot s)^{r-1}}{(r-1:w
+)!} = \dfrac{\lambda^r\cdot s^{r-1}}{(r-1)!}\cdot e^{-\lambda \cdot s},\quad s>0$$
+
+De ésta manera hallamos la función de densidad gamma.
+
+
+

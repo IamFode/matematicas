@@ -75,7 +75,7 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	obsérvese que
 	$$\bigg| \dfrac{a_{n-1}}{x} + \dfrac{a_{n-2}}{x^2} + \ldots + \dfrac{a_0}{x^n} \bigg|\leq \dfrac{|a_{n-1}|}{|x|} + \ldots + \dfrac{|a_0|}{|x^n|}$$
 	En consecuencia, si elegimos un $x$ que satisfaga
-	$$|x|>1,2n|a_{n-1}|,\ldots,2n|a_0|$$
+	$$|x|>1,2n|a_{n-1}|,\ldots,2n|a_0|\qquad (*)$$
 	entonces $|x^k| > |x|$ y 
 	$$\dfrac{|a_{n-k}}{x^k}<\dfrac{a_{n-k}}{|x|}<\dfrac{|a_{n-k}|}{2n|a_{n-k}}=\dfrac{1}{2n}$$
 	de modo que 
@@ -84,6 +84,17 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	$$-\dfrac{1}{2}\leq \dfrac{a_{n-1}}{x}+\ldots + \dfrac{a_0}{x_n}\leq \dfrac{1}{2},$$
 	lo cual implica que 
 	$$\dfrac{1}{2}\leq 1 + \dfrac{a_{n-1}}{x}+\ldots + \dfrac{a_0}{x_n}..$$
+	Por lo tanto, si elegimos un $x_1>0$ que satisfaga $(*)$, entonces 
+	$$\dfrac{x_1^n}{2} \leq x_1^n \left(1+\dfrac{a_{n-1}}{x_1}+\ldots + \dfrac{a_0}{x^n}\right) = f(x_1)$$
+	así que $f(x_1)>0$. Por otro lado, si $x_2<0$ satisface $(*)$, entonces $x_2^n < 0$ y 
+	$$\dfrac{x_2^n}{2}\geq x_2^n \left(1+\dfrac{a_{n-1}}{x_2}+\ldots + \dfrac{a_0}{x_2^n}\right)=f(x_2),$$
+	así $f(x_2)<0$. \\
+	Ahora aplicando el teorema 1 para el intervalo $[x_2,x_1]$ llegamos a la conclusión de que existe un $x$ en $[x_2,x_1]$ tal que $f(x)=0$.\\\\
+
+\end{teo}
+
+%---------------------- teorema 10 ----------------------
+\begin{teo}
 
 \end{teo}
 
@@ -125,6 +136,10 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	    Respuesta.-\; Está acotado superior e inferiormente. Como en la parte (v), se asume que $a>-1$. Si $a\leq -1/2$ entonces $f$ tiene el valor mínimo y un máximo $3/2$. Si $a\geq 0$, entonces $f$ tiene un valor mínimo en $0$, y un valor máximo $max(a^2,a+2)$. Si $-1/2<a<0$ , entonces $f$ tiene un máximo valor $3/2$ y no así con un valor mínimo.\\\\
 
 	%----------(vii)
+	\item $f(x) = \left\{\begin{array}{ll} 0,& x\; \mbox{irracional}  \\  1/q,& x=p/q \; \mbox{fracción irreducible} \end{array}\right.$ en $[0,1].$\\\\
+	    Respuesta.-\; Acotada superior e inferiormente. El mínimo es $0$ y el máximo es $1$.\\\\
+
+	%----------(viii)
 	\item 
 
     \end{enumerate}
