@@ -1,0 +1,8 @@
+---
+title: "distribuciones_notables_continuas"
+author: "Christian Limbert Paredes Aguilera"
+date: "14/1/2022"
+output: html_document
+---
+
+# La distribución uniforme

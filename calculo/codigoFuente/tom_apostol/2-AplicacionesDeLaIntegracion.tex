@@ -1727,7 +1727,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \section{Aplicación de la integración al concepto del trabajo}
 
 %---------------------Propiedades fundamentales del trabajo
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}[colback = white]
     \begin{prop}[Propiedades fundamentales del trabajo]
 	Designemos con $W_a(f)$ el trabajo realizado por una función fuerza $f$ al mover una partícula desde $a$ hasta $b$. Entonces el trabajo tiene las siguientes propiedades:
 	\begin{enumerate}[\bfseries 1.]
@@ -1739,7 +1739,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	    \item Propiedad monótona. Si $f\leq g$ en $[a,b]$, entonces $W_a^b (f) \leq W_a^b(g)$. Esto es una mayor fuerza realiza un mayor trabajo.
 
 	    %----------3.
-	    \item Fórmula elemental. Si $f$ es constante, $f(x)=c$ para todo $x$ in el intervalo abierto $(a,b)$, entones $W_a^b(f) = cdot (b-a)$.\\\\
+	    \item Fórmula elemental. Si $f$ es constante, $f(x)=c$ para todo $x$ in el intervalo abierto $(a,b)$, entones $W_a^b(f) = c \cdot (b-a)$.\\\\
 
 	\end{enumerate}
 
@@ -1754,7 +1754,34 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
 %--------------------- Teorema 2.8
 \begin{teo}
-
+    Supóngase que el trabajo fue definido para una clase de funciones fuerza $f$ de modo que satisface las propiedades 1, 2, 3. Entonces el trabajo efectuado por una función fuerza integrable $f$ al mover una partícula desde $a$ hasta $b$ es igual a la integral de $f$.
+    $$W_a^b (f) = \int_a^b f(x)\; dx.$$
+    Demostración.-\; Sean $s$ y $t$ dos funciones escalonadas que satisfacen $s\leq f\leq t$ en $[a,b]$. La propiedad del trabajo establece que $W_a^b (s) \leq W_a^b(f) \leq W_a^b (t)$. Pero $W_a^b (s) = \int_a^b s(x)$ y $W_a^b (t) = \int_a^b t(x) \;dx $ de modo que el número $W_a^b (f)$ satisface las desigualdades
+    $$\int_a^b s(x)\; dx \leq W_a^b (f) \leq \int_a^b t(x)\; dx$$
+    para todas las funciones escalonadas $s$ y $t$ que satisfacen $s\leq f\leq t$ en $[a,b]$. Puesto que $f$ es integrable en $[a,b]$, resulta que $W_a^b (f) = \int_a^b f(x)\; dx.$
 \end{teo}
 
 
+\section{Ejercicios}
+En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obedece la ley de Hooke.\\\\
+
+\begin{enumerate}[\Large \bfseries 1.]
+
+    %----------1.
+    \item Si una fuerza de 10 libras alarga un muelle elástico 1 pulgada, ¿qué trabajo se realiza al alargar el muelle 1 pie?.\\\\
+	Respuesta.-\; Sea 1 pulgada = $\dfrac{1}{12}$ pie, entonces $f\left(\dfrac{1}{12}\right) = 10$ por lo tanto $c=120$, luego 
+	$$W=\int_0^1 120x\; dx = \dfrac{}{}\bigg|_0^1 = 60\; pies-libra$$\\
+
+    %----------2.
+    \item Un muelle tiene normalmente la longitud de 1 metro. Una fuerza de 100 newtons la comprime hasta $0.9$ m. ¿Cuántos joules de trabajo se precisan para comprimirlo hasta la mitad de su longitud normal? ¿Cuál es la longitud del muelle cuando ya se han realizado 20 joules de trabajo?.\\\\
+	Respuesta.-\; Sea $f(100) = 100c = 0.1\; Longrightarrow \; c=1000$
+	Luego calculamos cuanto trabajo es requerido para comprimir el muelle 0.5 metros,
+	$$W = \int_0^5 1000x\; dx = 1000\left(\dfrac{x^2}{2}\bigg|_0^5\right) = 125 joules.$$
+	Como nos dan una cantidad de trabajo (20 loules) de donde resolveremos par un distacia a. Para la fórmula de trabajo tenemos,
+	$$\int_0^a 1000x\; dx \; \Longrightarrow \; a=0.2\;m$$
+	Dado que su longitud inicial es 1 m, tenemos que la longitud del resorte cuando se comprime es igual a $1m-0.2m = 0.8m$.\\\\
+
+    %----------3.
+    \item 
+
+\end{enumerate}

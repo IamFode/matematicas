@@ -449,3 +449,38 @@ VarX(100)
 
 # 3.13
 ## a)
+Sea $E(X)=\mu$ y $Var(X) = \sigma^2$ entonces,
+$$E(X-c)^2 = E(X^2-2cX + c^2) = E(X^2) -2cE(X) + c^2 = E(X^2) - E^2(X) + E(X)\cdot E(X) - 2cE(X) +c^2 =$$
+$$Var(X) + (E(X)-c)^2 = \sigma^2 + (\mu-c)^2$$
+
+## b)
+Cuando $c=\mu$
+
+
+# 3.14
+$$E(Y) = E\left(\dfrac{X-4}{4}\right)=\int_0^\infty \left(\dfrac{x-4}{4}\right)\cdot \dfrac{1}{4}\cdot e^{-x/4}\; dx = \dfrac{1}{16}\int_0^\infty (x-4)\cdot e^{-x/4} \; dx = 0$$
+```{r}
+fx = function(x) ((x-4)/4) * 1/4 * exp( -x/4 )
+integrate(fx,lower = 0, upper = Inf)
+```
+
+$$Var(Y) = Var\left(\dfrac{X-4}{4}\right)^2 = \int_0^\infty \left(\dfrac{x-4}{4}\right)^2\cdot \dfrac{1}{4}\cdot e^{-x/4}\; dx = \dfrac{1}{64}\int_0^\infty (x-4)^2\cdot e^{-x/4}\; dx = 1 $$
+
+```{r}
+fx = function(x) 1/64 * (x-4)^2 * exp(-x/4)
+integrate(fx,lower = 0, upper = Inf)
+```
+
+## 3.15
+$$E\bigg|X-\frac{1}{3}\bigg| = \int_0^1 \bigg|x-\dfrac{1}{3}\bigg|\cdot 2(1-x)\; \; dx = \int_0^{1/3}\left(\dfrac{1}{3}-x\right)*2(1-x)\; dx + \int_{1/3}^1\left(x-\dfrac{1}{3}\right)*2(1-x)\; dx = 0.1975309$$
+```{r}
+f <- function(x) abs(x-1/3)*2*(1-x)
+integrate(f,lower = 0,upper = 1)
+```
+
+La desviación estandar del ejercicio 3.9 viene dada por $\sqrt{\dfrac{1}{18}} = 0.2357$
+
+Luego comparando con la desviación media vemos que se tiene poca diferencia.
+
+
+## 3.16

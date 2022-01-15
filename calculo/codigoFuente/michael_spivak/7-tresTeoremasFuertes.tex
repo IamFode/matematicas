@@ -95,7 +95,32 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 %---------------------- teorema 10 ----------------------
 \begin{teo}
+    Si $n$ es par y $f(x)=x^n + a_{n-1} x^{n-1} + \ldots + a_0$, entonces existe un número $y$ tal que $f(y)=f(x)$ para todo $x$.\\\\
+	Demostración.-\; Lo mismo que en el teorema 9, si 
+	$$M = \max(1,2n|a_{n-1}|,\ldots , 2n|a_0|),$$
+	entonces para todo $x$ con $|x|\geq M,$ tenemos
+	$$\dfrac{1}{2}\leq 1 + \dfrac{a_{n-1}}{x}+\ldots + \dfrac{a_0}{x^n}$$
+	Al ser $n$ par, $x^n \geq 0$ para todo $x$, de modo que 
+	$$\dfrac{x^n}{2}\leq x^n \left(1+\dfrac{a_{n-1}}{x} + \ldots + \dfrac{a_0}{x^n}\right) = f(x),$$
+	siempre que $|x|\geq M$. Consideremos ahora el número $f(0)$. Sea $b>0$ un número tal que $b^n \geq 2f(0)$ y también $b>M$. Entonces si $x\geq b,$ tenemos 
+	$$f(x)\geq \dfrac{x^n}{2}\geq \dfrac{b^n}{2}\geq f(0).$$
+	Análogamente, si $x\leq -b$, entonces
+	$$f(x)\geq \dfrac{}{}\geq \dfrac{}{} = \dfrac{}{}\geq f(0).$$
+	Resumiendo ahora el teorema 7 a la función $f$ en el intervalo $[-b,b]$. Se deduce que existe un número $y$ tal que
+	$$(1)\qquad \mbox{si}\; -b\leq x\leq b, \; \mbox{entonce}\; f(y)\leq f(x).$$
+	En particular, $f(y)\leq f(0).$ De este modo
+	$$(2)\qquad \mbox{si}\; x\leq -b \; \mbox{o}\; x\geq b,\; \mbox{entonces}\; f(x)\geq f(0)\geq f(y).$$
+	Cambiando (1) y (2) vemos que $f(y)\leq f(x)$ para todo $x$.\\\\
+\end{teo}
 
+%---------------------- teorema 11 ----------------------
+\begin{teo}
+    Consideremos la ecuación
+    $$(*)\qquad x^n + a_{n-1}x^{n-1}+ \ldots + a_0 = c,$$
+    y supongamos que $n$ es par. Entonces existe un número $m$ tal que $(*)$ posee una solución para $c\geq m$ y no posee ninguna para $c<m.$\\\\
+    Demostración.-\; Sea $f(x) = x^n + a_{n-1}x^{n-1}+\ldots + a_0$
+    Según el teorema 10, existe un número $y$ tal que $f(y)\leq f(x)$ para todo $x$.\\
+    Sea $m=f(y)$. Si $c<m$ entonces la ecuación $(*)$ no tiene, evidentemente, ninguna solución, puesto que el primer miembro tiene un valor $\geq m$. Si $c=m$ entonces $(*)$ tiene $y$ como solución. Finalmente, supongamos $c>m$. Sea $b$ un número tal que $b>y$, $f(b)>c$. Entonces $f(y)=m<c<f(b)$. En consecuencia, según el teorema 4, existe algún número $x$ en $[y,b]$ tal que $f(x)=c$, con lo que $x$ es una solución de $(*).$\\\\
 \end{teo}
 
 
@@ -140,6 +165,10 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	    Respuesta.-\; Acotada superior e inferiormente. El mínimo es $0$ y el máximo es $1$.\\\\
 
 	%----------(viii)
+	\item $f(x) = \left\{\begin{array}{rcl}1, & x \; \mbox{irracional} // 1/q, & x = p/q \; \mbox{fracción irreducible}\end{array}\right.$ en $[0,1]$.\\\\
+	    Respuesta.-\; Acotada superior e inferiormente.  El máximo es $1$ y no existe un mínimo.\\\\
+
+	%----------(ix)
 	\item 
 
     \end{enumerate}

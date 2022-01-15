@@ -788,4 +788,45 @@ $$= \lambda\cdot e^{-\lambda\cdot s}\left(\sum_{i=0}^{r-1}\dfrac{(\lambda\cdot s
 De ésta manera hallamos la función de densidad gamma.
 
 
+# Distribución hipergeométrica
+
+### Función de probabilidad
+
+$$P_X(x)=\left\{\begin{array}{ll}
+  \dfrac{ {m\choose x}{n\choose k-x} }{ {m+n \choose k} } & \mbox{si}\;  \max(0,k-n)\leq x\leq \min{m,k} \, \mbox{para} \; x\in N.\\\\
+  0 & \mbox{en otro caso}.\\\\
+\end{array}\right.$$
+
+### Función de distribución
+$$F_X(x) = P(X=x)$$
+
+### Esperanza y varianza
+Su esperanza viene dado por
+$$E(X) = \dfrac{k\cdot m}{m+n}$$
+
+Su varianza viene dado por
+$$Var(X) = k\cdot \dfrac{m}{m+n}\cdot \left(1-\dfrac{m}{m+n}\right)\cdot \dfrac{m+n-k}{m+n-1}$$
+
+## Cálculo en R
+
+Si $X$ es una H(m=15,n=10,k=3), $P(X=2)$ y que $P(X>1) = 1-P(X\leq 1)$ son 
+
+```{r}
+dhyper(x=2,m=15, n=10,k=3)
+```
+
+```{r}
+phyper(q=1,m=15,n=10,k=3)
+```
+
+```{r}
+1-phyper(q=1,m=15,n=10,k=3)
+```
+
+Una muestra aleatoria de este experimento de tamaño 200 seria
+
+```{r}
+rhyper(nn=200,m=15,n=10,k=3)
+```
+
 
