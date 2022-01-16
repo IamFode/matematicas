@@ -1722,7 +1722,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 
 \end{enumerate}
 
-\end{comment}
 
 \section{Aplicación de la integración al concepto del trabajo}
 
@@ -1782,6 +1781,125 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 	Dado que su longitud inicial es 1 m, tenemos que la longitud del resorte cuando se comprime es igual a $1m-0.2m = 0.8m$.\\\\
 
     %----------3.
-    \item 
+    \item Una partícula se mueve a lo largo del eje $x$ mediante una fuerza impulsora $f(x)=3x^2+4x$ newtons. Calcular cuántos joules de trabajo se realizan con esa fuera para trasladar la particular a) desde $x=0$ hasta $x=7$; b) desde $x=2m$ hasta $x=7m$.\\\\
+	Respuesta.-\; a) Usando la fórmula de trabajo entonces,
+	$$W=\int_0^7 (3x^2+4x)\; dx = x^3\bigg|_0^7 + 2x^2\bigg|_0^7 = = 343+98=441\; joules.$$
+	b) Usando la fórmula de trabajo entonces,
+	$$W=\int_2^7 (3x^2+4x)\; dx = (x^3 + 2x^2)\bigg|_2^7 = = 441 - 16 = 425\; joules.$$\\\\
+
+
+    %----------4.
+    \item Una partícula se mueve a lo largo del eje $x$ mediante una fuerza impulsadora dada por $f(x)=ax^2+bx$ dinas. Calcular $a$ y $b$ de modo que se precisen $900$ ergs de trabajo para desplazar la partícula $10cm$ a partir del origen, si la fuerza es de $65$ dinas cuando $x=4cm$.\\\\
+	Respuesta.-\; Dado $f(5) = 65$, entonces,
+	$$f(5) = 25a + 5b = 65 \; \Longrightarrow \; b=13-5a$$
+	luego, ya que $900$ ergs de trabajo son requeridos para mover una partícula de $10cm$, tenemos que,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^{10}&\Longrightarrow&\dfrac{ax^3}{3}\bigg|0^{10} + \dfrac{bx^2}{2}\bigg|_0^{10} = 900\\\\
+				    &\Longrightarrow&\left(\dfrac{1000}{3}\right)a + 50b = 900\\\\
+				    &\Longrightarrow&\left(\dfrac{1000}{3}\right)a + 650 - 150a=900\\\\
+	    &\Longrightarrow&a=3, \qquad b=-2\\\\
+	\end{array}$$
+
+    %----------5.
+    \item Un cable de $50$ pies de longitud y $4$ libras de peso por pie pende de un torno. Calcular el trabajo realizado al enrollar $25$ pies de cable. No considerar más fuerzas que la gravedad.\\\\
+	Respuesta.-\; La función fuerza es $f(x)=200-4x$, es decir, el peso total del cable menos $4$ libras por pie, cuando enrollaos el cable. Se sigue que,
+	$$W = \int_0^{25} (200-4x)\; dx = 200\cdot 25 - 2\cdot 625 = 3750\; libras-pie.$$\\
+
+    %----------6.
+    \item Resolver el ejercicio 5 si se cuelga un peso de $50$ libras en el extremo del cable.\\\\
+	Respuesta.-\; Dado que se tiene un peso de $50$ libras en el extremo del cable, la función de fuerza ahora está dada por $f(x) = 250-4x$. Entonces, el trabajo requerido es,
+	$$W = \int_0^{25} (250-4x)\; dx = 6250-1250 = 5000\; libras-pie.$$\\
+
+    %----------7.
+    \item Un peso de $150$ libras se fija en un extremo de una cadena cuyo peso es de $2$ libras por pie. Inicialmente el peso se suspende con $10$ pies de cadena sobre el borde de un edificio de $100$ pies de altura. Considerando sólo la fuerza de gravedad, calcular el trabajo realizado cuando el peso se baja hasta una posición de $10$ pies sobre el suelo.\\\\
+	Respuesta.-\; Dado que el edificio mide $100$ pies y el extremo cuelga inicialmente $10$ pies sobre el borde del edificio, comienza en una posición de $90$ pies sobre el suelo. Se baja a $10$ pies sobre el suelo. La fuerza de gravedad que actúa sobre la cadena es $f(x)=150+2x$, por lo que el trabajo realizado es 
+	$$W = \int_{10}^{90}(150+2x)\; dx 0 150\cdot 80 + 90^2 - 10^2 = 2000 \; libras-pies.$$\\
+
+    %----------8.
+    \item En el ejercicio 7, suponer que la cadena sólo tiene $60$ pies de longitud y que el peso y la cadena se dejan caer al suelo, partiendo de la misma posición inicial que antes. Calcular el trabajo realizado por la fuerza de la gravedad cuando el peso alcanza el suelo.\\\\
+	Respuesta.-\; Ahora tenemos una función de fuerza definida por partes: una parte mientras parte de la cadena aún está sobre el borde, y la otra parte una vez que toda la cadena está sobre el borde. Esta función es
+	$$f(x)=\left\{\begin{array}{rcl}
+		170+2x & para & 0\leq x\leq 50\\
+		270 & para & 50\leq x\leq 90\\
+	\end{array}\right.$$
+	Así, el trabajo realizado es,
+	$$W = \int_0^{50}(170+2x)\; dx + \int_{50}^{90} 270\; dx = 170\cdot 50 + 50^2 + 270\cdot(90-50) = 21800\; libras-pie.$$\\
+
+    %----------9.
+    \item Sea $V(q)$ el voltaje necesario para situar una carga $q$ en las placas de un condensador. El trabajo necesario para cargar un condensador desde $q=a$ hasta $q=b$ se define mediante la integral $\int_a^b V(q)\; dx$. Si el voltaje es proporcional a la carga, demostrar que el trabajo realizado para situar una carga $Q$ es un condensador descargado $\frac{1}{2}QV(Q)$.\\\\
+	Demostración.-\; Ya que asumimos que el voltaje es proporcional a la carga, tenemos $V(q)=cq$ para alguna constante $c$, entonces,
+	$$\begin{array}{rcl}
+	    W&=&\displaystyle\int_a^b V(q)\; dq\\\\
+	    &=&\displaystyle\int_a^b cq\; dq\\\\
+	    &=&c\dfrac{q^2}{2}\bigg|_a^b\\\\
+	    &=&\dfrac{1}{2}\left[cv(b)-cv(a)\right]\\\\
+	    &=&\dfrac{1}{2}QV(Q)\\\\
+	\end{array}$$
+    
+\end{enumerate}
+
+\end{comment}
+
+\section{Valor medio de una función}
+
+%-------------------- definición de valor medio de una función en un intervalo.
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Definición del valor medio de una función en un intervarlo]
+	Si $f$ es integrable en un intervalo $[a,b]$, definimos $A(f)$, el valor medio de $f$ en $[a,b]$, por la siguiente fórmula
+	$$A(f) = \dfrac{1}{b-a} \int_a^b f(x) \; dx$$\\
+    Podemos ahora demostrar que ésta la fórmula es en realidad una extensión del concepto de media aritmética. Sea $f$ una función escalonada que es constante en cada uno de los subintervalos de $[a,b]$, obtenidos al dividirlo en $n$ partes iguales. En particular, sea $x_k=a+k(b-a)/n$ para $k=0,1,2,\ldots,n,$ y supongamos que $f(x)=f(x_k),$ si $x_{x-1}<x<x_k$. Entonces será $x_k - x_{k-1} = (b-a)/n$, con lo que se tiene
+    $$\dfrac{1}{b-a}\int_a^b f(x)\; dx = \dfrac{1}{b-a}\sum_{k=0}^n f(x_k) \dfrac{b-a}{n} = \dfrac{1}{n} \sum_{k=1}^n f(x_k)$$
+    Así pues, para funciones escalonadas, el promedio $A(f)$ coincide con la media aritmética de los valores $f(x_1),\ldots , f(x_k)$ tomados en los intervalos en los que la función es constante.
+    
+    \end{def.}
+\end{tcolorbox}
+
+
+\section{Ejercicios}
+
+\begin{enumerate}[\Large\bfseries 1.]
+
+%-------------------- 1.
+\item $f(x)=x^2,\quad a\leq x \leq b.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{1}{b-a}\int_a^b x^2\; dx = \dfrac{1}{b-a} \cdot \dfrac{x^3}{3}\bigg|_a^b = \dfrac{1}{b-a}\cdot \dfrac{b^3 - a^3}{3}=\dfrac{b^3 - a^3}{3(b-a)} = \dfrac{b^2+2ba+a^2}{3}.$$\\
+
+%-------------------- 2.
+\item $f(x)=x^2+x^3, \quad 0\leq x \leq 1.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{1}{1-0}\int_0^1 (x^2+x^3)\; dx = \dfrac{x^3}{3}\bigg|_0^1 + \dfrac{x^4}{4}\bigg|_0^1 = \dfrac{1}{3} + \dfrac{1}{4} = \dfrac{7}{12}.$$\\
+
+%-------------------- 3.
+\item $f(x)=x^{1/2},\quad 0\leq x \leq 4.$\\\\
+    Respuesta.-\; $$A(f)=\dfrac{1}{4-0}\int_0^4 x^{1/2}\; dx = \dfrac{1}{4}\cdot \dfrac{2x^{3/2}}{3}\bigg|_0^4\; = \dfrac{4}{3}.$$\\
+
+%-------------------- 4.
+\item $f(x)=x^{1/3},\quad 1\leq x \leq 8.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{1}{8-1}\int_1^8 x^{1/3}\; dx = \dfrac{1}{7}\cdot \dfrac{3x^{4/3}}{4}\bigg|_1^8 = \dfrac{48-3}{7} = \dfrac{45}{28}.$$\\ 
+
+%-------------------- 5.
+\item $f(x)=\sen x,\quad 0\leq x \leq \pi/2$.\\\\
+    Respuesta.-\; $$A(f)=\dfrac{1}{\pi/2}\int_0^{\pi/2} \sen x\; dx = \dfrac{2}{\pi}\cdot (1-\cos \pi/2) = \dfrac{2}{\pi}.$$\\
+
+%-------------------- 6.
+\item $f(x)=\cos x,\quad -\pi/2\leq x \leq \pi/2.$\\\\
+    Respuesta.-\; $$A(f)=\dfrac{1}{\pi/2 + \pi/2}\int_{-\pi/2}^{\pi/2} \cos x\; dx = \dfrac{1}{\pi}\cdot (\sen \pi/2 + \sen \pi/2) = \dfrac{2}{\pi}.$$\\
+
+%-------------------- 7.
+\item $f(x)=\sen 2x,\quad 0\leq x \leq \pi/2.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{2}{\pi}\int_0^{\pi/2}\sen(2x)\; dx =  \dfrac{2}{2\pi}\int_{0\cdot 2}^{\frac{\pi}{2}\cdot 2}  \sen x\; dx = -\dfrac{1}{\pi}(1 -\cos \pi) = \dfrac{2}{\pi}$$.\\
+
+%-------------------- 8.
+\item $f(x)=\sen x \cos x,\quad 0\leq x \leq \pi/4.$\\\\
+    Respuesta.-\; $$A(f)=\dfrac{4}{\pi}\int_0^{\pi/4}\sen x \cos x\; dx = \dfrac{2}{\pi}\int_0^{\pi/4}\sen(2x)\; dx = \dfrac{1}{\pi}\int_0^{\pi/2}\sen x\; dx = \dfrac{1}{\pi}\left(1-\cos \dfrac{\pi}{2}\right) = \dfrac{1}{\pi}.$$\\
+
+%-------------------- 9.
+\item $f(x)=\sen^2 x, \quad 0\leq x \leq \pi/2.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{2}{\pi}\int_0^{\pi/2} \sen^2 x \; dx = \dfrac{1}{\pi}\int_0^{\pi/2} (1-\cos 2x)\; dx = \dfrac{1}{2} - \dfrac{1}{2\pi}\sen \pi = \dfrac{1}{2}.$$\\
+
+%-------------------- 10.
+\item $f(x)=\cos^2 x, \quad 0\leq x \leq pi.$\\\\
+    Respuesta.-\; $$A(f) = \dfrac{1}{\pi}\int_0^{\pi}\cos^2 x\; dx = \dfrac{1}{2\pi}\int_0^\pi (1-\cos 2x)\; dx = \dfrac{1}{2\pi}\left(\pi + \dfrac{1}{2}\sen 2\pi\right) = \dfrac{1}{2}.$$\\
+
+%-------------------- 11.
+\item 
 
 \end{enumerate}

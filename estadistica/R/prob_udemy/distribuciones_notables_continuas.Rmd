@@ -6,3 +6,78 @@ output: html_document
 ---
 
 # La distribución uniforme
+
+### Función de densidad
+Una v.a. continua $X$ diremos que tiene una distribución uniforme sobre el intervalo real $(a,b)$, si su función de densidad es
+$$f_X(x) = \left\{\begin{array}{rcl}
+  \dfrac{1}{b-a} & si & a<x<b \\ 
+  0&&\mbox{en cualquier otro caso}
+\end{array}\right.$$
+
+ Comprobar que el área entre $f_X$ y la horizontal vale $1$.
+ $$\int_{-\infty}^{\infty} f_X(x)\; dx = \int_a^b \dfrac{1}{b-a}\; dx = \dfrac{x}{b-a} \bigg|_a^b = 1$$
+ 
+```{r}
+curve(dunif(x,0,1),xlim=c(-0.5,1.5),col="blue",
+      main="Densidad de la distribución uniforme en [0,1]")
+```
+ 
+### Función de distribución
+
+$$f_X(x) = \left\{\begin{array}{rcl}
+  0&si&x\leq a \\
+  \dfrac{x-a}{b-a} & si & a<x<b\\ 
+  1&si&b\leq x
+\end{array}\right.$$
+
+Demostración.-
+
+Si $x\leq a$ entonces,
+$$f_X(x) = \int_{-\infty}^x f(t)\; dt = \int_{-\infty}^x 0 \; dt$$
+
+Si $a<x<b$ entonces,
+$$f_X(x) = \int_{-\infty}^x f(t)\; dt = \int_{-\infty}^a 0\; dt + \int_{a}^x \dfrac{1}{b-a}\; dt = \dfrac{x-a}{b-a}$$
+
+Si $x\geq b$ entonces,
+
+$$F_X(x) = \int_{-\infty}^{x} f(t)\; dt = \int_a^{b} \dfrac{1}{b-a}\; dt = \dfrac{t}{b-a}\bigg|_a^{b} = \dfrac{b}{b-a} - \dfrac{a}{b-a} = 1 $$
+
+```{r}
+curve(punif(x,0,1),xlim=c(-1,2),col="blue",
+      main="Función de distribución de una v.a. uniforme en el intervalo unidad.")
+```
+
+## Esperanza y varianza
+
+### Esperanza
+$$E(X) = \int_{-\infty}^{\infty} x\cdot f_X(x)\; dx = \int_a^b x\cdot \dfrac{1}{b-a}\; dx = \dfrac{x^2}{2(b-a)}\bigg|_a^b = \dfrac{b-a}{2}$$
+
+### Varianza
+$$E(X^2) = \int_{-\infty}^{\infty} x^2 f_X(x)\; dx = \int_a^b x^2\dfrac{1}{b-a}\; dx = \dfrac{x^3}{3(b-a)}\bigg|_a^b = \dfrac{b^2+ab+a^2}{3}$$
+$$Var(X) = E(X^2)-E^2(X) = \dfrac{b^2 + ab + a^2}{3}-\left(\dfrac{b+a}{2}\right)^2 = \dfrac{(b-a)^2}{12}$$
+
+## Cambio lineal de la uniforme
+Si $X$ sigue una distribución $U(a,b)$ entonces $Z=\dfrac{x-a}{b-a}$ sigue una distribución $U(0,1)$
+
+### Propiedades cambio lineal distribución uniforme
+Sea $X$ una v.a. $U(a,b)$
+
+Si $scale\neq 0$ y $loc$ son dos constantes reales entonces 
+
+- Si $scale>0$ $T=scale\cdot X + loc$ sigue una ley $U(scale \cdot a + loc, scale\cdot b + loc)$
+
+- Si $scale<0$ $T=scale\cdot X + loc$ sigue una ley $U(scale \cdot b + loc, scale\cdot a + loc)$
+  
+Supongamos que $X$ sigue una ley $U(a,b)$, que $scale>0$ y que $T=\dfrac{X-loc}{scale}$
+
+Así tenemos que
+$$F_X(X) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&si&x\leq a\\
+  \dfrac{x-a}{b-a}&si&x\leq x \leq b\\
+  1&si&b\leq x\\
+\end{array}\right.$$
+
+
+
+
+

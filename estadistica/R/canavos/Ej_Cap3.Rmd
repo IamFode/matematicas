@@ -484,3 +484,36 @@ Luego comparando con la desviación media vemos que se tiene poca diferencia.
 
 
 ## 3.16
+$$E|X-\mu|= \int_0^{10} |x-5|\cdot \dfrac{1}{10}\; dx = \dfrac{1}{10}\left[\int_0^5 (5-x)\; dx + \int_5^{10} (x-5)\; dx \right] = \dfrac{1}{10}\left(5x\bigg|_0^5 - \dfrac{x^2}{2}\bigg|_0^5 + \dfrac{x^2}{2}\bigg|_5^{10} - 5x\bigg|_5^{10}\right) = $$
+$$\dfrac{1}{10}\left(25 - \dfrac{25}{2} + \dfrac{75}{2} - 25\right) = \dfrac{5}{2}$$
+
+```{r}
+f <- function(x) abs(x-5)*1/10
+integrate(f,lower = 0,upper = 10)
+```
+```{r}
+# desviación típica del ejercicio 10
+(25/3)^(1/2)
+```
+
+De lo que concluimos que entre la desviación media de $X$ y la desviación estándar de ejercicio 10 se tiene una diferencia de $0.33$.
+
+
+# 3.17
+$$$$
+```{r}
+ggplot() +
+   xlim(0, 1) +
+   geom_function(
+     aes(color = "exp"),
+     fun =~ 1/100*exp(-.x/800) 
+     )
+```
+
+## a)
+$$E(X) = \int_0^\infty x\cdot \dfrac{1}{800}\cdot e^{-x/800}\; dx = \dfrac{1}{800}\int_0^\infty x\cdot e^{-x/800} = 800$$
+
+```{r}
+integrate(function(x) 1/800*x*exp(-x/800), lower = 0, upper = Inf)
+```
+
