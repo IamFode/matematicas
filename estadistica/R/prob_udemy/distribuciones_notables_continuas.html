@@ -222,7 +222,63 @@ pre code {
 <li><p>Si <span class="math inline">\(scale&gt;0\)</span> <span class="math inline">\(T=scale\cdot X + loc\)</span> sigue una ley <span class="math inline">\(U(scale \cdot a + loc, scale\cdot b + loc)\)</span></p></li>
 <li><p>Si <span class="math inline">\(scale&lt;0\)</span> <span class="math inline">\(T=scale\cdot X + loc\)</span> sigue una ley <span class="math inline">\(U(scale \cdot b + loc, scale\cdot a + loc)\)</span></p></li>
 </ul>
+<p>Supongamos que <span class="math inline">\(X\)</span> sigue una ley <span class="math inline">\(U(a,b)\)</span>, que <span class="math inline">\(scale&gt;0\)</span> y que <span class="math inline">\(T=\dfrac{X-loc}{scale}\)</span></p>
+<p>Así tenemos que <span class="math display">\[F_X(X) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&amp;si&amp;x\leq a\\
+  \dfrac{x-a}{b-a}&amp;si&amp;x\leq x \leq b\\
+  1&amp;si&amp;b\leq x\\
+\end{array}\right.\]</span></p>
+<p>Si <span class="math inline">\(T\)</span> es una <span class="math inline">\(U(scale\cdot a + loc, scale\cdot b + loc)\)</span> su función de distribución será: <span class="math display">\[F_T(x) = P(scale\cdot X + loc\leq t) = P\left(X\leq \dfrac{t-loc}{scale}\right) = F_X \left(X=\dfrac{t-loc}{scale}\right) = \]</span></p>
+<p><span class="math display">\[=\left\{\begin{array}{rcl}
+  0&amp;si&amp;\frac{t-loc}{scale}\leq a\\
+  \dfrac{\frac{t-loc}{scale}}{b-a}&amp;si&amp;a\leq \frac{t-loc}{scale} \leq b\\
+  1&amp;si&amp;b\leq \frac{t-loc}{scale}\\
+\end{array}\right. = 
+\left\{\begin{array}{lcl}
+  0&amp;si&amp;t\leq scale\cdot a + loc\\
+  \dfrac{t-(scale\cdot a + loc)}{scale\cdot b + loc - (scale\cdot a + loc)}&amp;si&amp;scale\cdot a + loc \leq t \leq scale\cdot b + loc\\
+  1&amp;si&amp;scale\cdot b+loc\leq t\\
+\end{array}\right.\]</span></p>
 </div>
+</div>
+<div id="distribución-uniforme-en-r" class="section level2">
+<h2>Distribución uniforme en R</h2>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. y <span class="math inline">\(U(-1,1)\)</span>. Como es habitual, aunque ahora la variable es continua, las funciones de densidad y de distribución son</p>
+<pre class="r"><code>dunif(x=0.5,min=-1,max=1)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="r"><code>punif(q=0.5,min = -1, max = 1)</code></pre>
+<pre><code>## [1] 0.75</code></pre>
+<pre class="r"><code>runif(n=5,min=-1,max=1)</code></pre>
+<pre><code>## [1] -0.7691004 -0.9669015 -0.1407827 -0.4624178 -0.7479537</code></pre>
+<p>por defecto dunif(x,max=0,max=1)</p>
+<pre class="r"><code>dunif(x=0.5)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>punif(q=0.5)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="r"><code>runif(n=5)</code></pre>
+<pre><code>## [1] 0.72914375 0.01833212 0.73377171 0.21513565 0.31953207</code></pre>
+</div>
+<div id="cuantiles-de-variables-aleatorias" class="section level2">
+<h2>Cuantiles de variables aleatorias</h2>
+<p>Si <span class="math inline">\(X\)</span> es una v.a. con dominio <span class="math inline">\(D_X\)</span> y <span class="math inline">\(0&lt;q&lt;1\)</span> llamaremos cuantil de orden <span class="math inline">\(q\)</span> al menor valor perteneciente al dominio <span class="math inline">\(x_q\subset D_X\)</span> tal que <span class="math display">\[P(X\leq x_q)\geq q.\]</span></p>
+<p>Por ejemplo si <span class="math inline">\(X\)</span> es una <span class="math inline">\(B(5,0.5)\)</span></p>
+<pre class="r"><code>pbinom(0:5,5,0.5)</code></pre>
+<pre><code>## [1] 0.03125 0.18750 0.50000 0.81250 0.96875 1.00000</code></pre>
+<pre class="r"><code>qbinom(c(0.25,0.5,0.75),5,0.5)</code></pre>
+<pre><code>## [1] 2 2 3</code></pre>
+<pre class="r"><code>qbinom(c(0.3,0.6,0.8),5,0.5)</code></pre>
+<pre><code>## [1] 2 3 3</code></pre>
+<p>Como <span class="math inline">\(X\)</span> sigue una <span class="math inline">\(B(5,0.5)\)</span>, recordemos que <span class="math inline">\(D_X = {0,1,2,\ldots,n=5}\)</span>, y que su función de distribución es <span class="math display">\[F_X(x) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&amp;si&amp;\\
+  0.03125&amp;si&amp;x&lt;0\\
+  0.18750&amp;si&amp;0\leq x &lt; 1\\
+  0.50000&amp;si&amp;2\leq x &lt; 2\\
+  0.81250&amp;si&amp;3\leq x &lt; 4\\
+  0.96875&amp;si&amp;4\leq x &lt; 5\\
+  1.00000&amp;si&amp;5\leq x\\
+\end{array}\right.\]</span></p>
+<p>El cuantil <span class="math inline">\(q=0.3\)</span> es el primer valor <span class="math inline">\(x\in D_X\)</span> tal que <span class="math inline">\(F_X(x)=P(X\leq x_{0.3}) \geq 0.3\)</span> así que el primer valor es <span class="math inline">\(x_{0.3}=2\)</span> ya que <span class="math inline">\(F_X(2)=P(X\leq 2) = 0.5 \geq 0.3\)</span></p>
+<p>En general podemos considerar que <span class="math inline">\(F^{-1}\)</span> es la función que nos da los cuantiles (es decir si <span class="math inline">\(F^{-1}(p)\)</span> de más de un valor tomaremos como anti-imagen el valor más pequeño que esté dentro del dominio <span class="math inline">\(D_X\)</span>).</p>
 </div>
 </div>
 

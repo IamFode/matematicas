@@ -511,9 +511,46 @@ ggplot() +
 ```
 
 ## a)
+La media es:
+
 $$E(X) = \int_0^\infty x\cdot \dfrac{1}{800}\cdot e^{-x/800}\; dx = \dfrac{1}{800}\int_0^\infty x\cdot e^{-x/800} = 800$$
 
 ```{r}
 integrate(function(x) 1/800*x*exp(-x/800), lower = 0, upper = Inf)
 ```
 
+La mediana es:
+
+$$F(x_{0.5}) = P(X\leq x_{0.5}) = \dfrac{1}{800}\int_0^{x_{0.5}} e^{(-x/800)}\; dx = 0.5 \; \Longrightarrow \; -e^{-x_{0.5}/800}+1 = 0.5 \Longrightarrow x_{0.5} = 554.5177$$
+
+```{r}
+-800*log(0.5)
+```
+
+## b)
+Recorrido intercuartil
+$$F(x_{0.25}) = P(X\leq x_{0.25}) = \dfrac{1}{800}\int_0^{x_{0.25}} e^{(-x/800)}\; dx = 0.25 \; \Longrightarrow \; -e^{-x_{0.25}/800}+1 = 0.25 \Longrightarrow x_{0.25}$$ $$\Longrightarrow x_{0.25} = -800\cdot ln(0.25) = 1109.03548$$
+
+$$F(x_{0.75}) = -800\cdot ln(0.75) = 230.14565$$
+
+por lo que $$x_{0.75} - x_{0.25} = |230.14565 - 1109.03548| = 878.8898$$
+
+## c)
+Recorrido interdecil
+
+$$F(x_{0.1}) = P(X\leq x_{0.1}) = \dfrac{1}{800}\int_0^{x_{0.1}} e^{(-x/800)}\; dx = 0.1 \; \Longrightarrow \; -e^{-x_{0.1}/800}+1 = 0.1 $$ $$ \Longrightarrow x_{0.1} \Longrightarrow x_{0.1} = -800\cdot ln(0.1) = 1842.068$$
+
+$$F(x_{0.9}) = -800\cdot ln(0.9) = 84.2884$$
+
+$$x_{0.9}-x_{0.1} = |84.2884 - 1842.068| = 1757.78$$
+
+## d)
+$$P(X\geq 800) = 1 - P(X \leq 800) = 1 - \dfrac{1}{800} \int_0^{800} e^{-x/800}\; dx = 1 - 0.3678794 = 0.3679$$
+
+```{r}
+integrate(function(x) 1/800*exp(-x/800), lower = 0, upper = 800)
+1 - 0.6321206
+```
+
+
+# 3.18

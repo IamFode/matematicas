@@ -77,7 +77,79 @@ $$F_X(X) = P(X\leq x) = \left\{\begin{array}{rcl}
   1&si&b\leq x\\
 \end{array}\right.$$
 
+Si $T$ es una $U(scale\cdot a + loc, scale\cdot b + loc)$ su función de distribución será:
+$$F_T(x) = P(scale\cdot X + loc\leq t) = P\left(X\leq \dfrac{t-loc}{scale}\right) = F_X \left(X=\dfrac{t-loc}{scale}\right) = $$
 
+$$=\left\{\begin{array}{rcl}
+  0&si&\frac{t-loc}{scale}\leq a\\
+  \dfrac{\frac{t-loc}{scale}}{b-a}&si&a\leq \frac{t-loc}{scale} \leq b\\
+  1&si&b\leq \frac{t-loc}{scale}\\
+\end{array}\right. = 
+\left\{\begin{array}{lcl}
+  0&si&t\leq scale\cdot a + loc\\
+  \dfrac{t-(scale\cdot a + loc)}{scale\cdot b + loc - (scale\cdot a + loc)}&si&scale\cdot a + loc \leq t \leq scale\cdot b + loc\\
+  1&si&scale\cdot b+loc\leq t\\
+\end{array}\right.$$
 
+## Distribución uniforme en R
+Sea $X$ una v.a. y $U(-1,1)$. Como es habitual, aunque ahora la variable es continua, las funciones de densidad y de distribución son 
 
+```{r}
+dunif(x=0.5,min=-1,max=1)
+```
 
+```{r}
+punif(q=0.5,min = -1, max = 1)
+```
+
+```{r}
+runif(n=5,min=-1,max=1)
+```
+
+por defecto dunif(x,max=0,max=1)
+
+```{r}
+dunif(x=0.5)
+```
+
+```{r}
+punif(q=0.5)
+```
+
+```{r}
+runif(n=5)
+```
+
+## Cuantiles de variables aleatorias
+Si $X$ es una v.a. con dominio $D_X$ y $0<q<1$ llamaremos cuantil de orden $q$ al menor valor perteneciente al dominio $x_q\subset D_X$ tal que 
+$$P(X\leq x_q)\geq q.$$
+
+Por ejemplo si $X$ es una $B(5,0.5)$
+```{r}
+pbinom(0:5,5,0.5)
+```
+
+```{r}
+qbinom(c(0.25,0.5,0.75),5,0.5)
+```
+
+```{r}
+qbinom(c(0.3,0.6,0.8),5,0.5)
+```
+
+Como $X$ sigue una $B(5,0.5)$, recordemos que $D_X = {0,1,2,\ldots,n=5}$, y que su función de distribución es 
+$$F_X(x) = P(X\leq x) = \left\{\begin{array}{rcl}
+  0&si&\\
+  0.03125&si&x<0\\
+  0.18750&si&0\leq x < 1\\
+  0.50000&si&2\leq x < 2\\
+  0.81250&si&3\leq x < 4\\
+  0.96875&si&4\leq x < 5\\
+  1.00000&si&5\leq x\\
+\end{array}\right.$$
+
+El cuantil $q=0.3$ es el primer valor $x\in D_X$ tal que $F_X(x)=P(X\leq x_{0.3}) \geq 0.3$ así que el primer valor es $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2) = 0.5 \geq 0.3$
+
+En general podemos considerar que $F^{-1}$ es la función que nos da los cuantiles (es decir si $F^{-1}(p)$ de más de un valor tomaremos como anti-imagen el valor más pequeño que esté dentro del dominio $D_X$).
+
+# Distribución exponencial
