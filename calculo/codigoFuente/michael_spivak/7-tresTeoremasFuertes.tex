@@ -95,7 +95,7 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 %---------------------- teorema 10 ----------------------
 \begin{teo}
-    Si $n$ es par y $f(x)=x^n + a_{n-1} x^{n-1} + \ldots + a_0$, entonces existe un número $y$ tal que $f(y)=f(x)$ para todo $x$.\\\\
+    Si $n$ es par y $f(x)=x^n + a_{n-1} x^{n-1} + \ldots + a_0$, entonces existe un número $y$ tal que $f(y)\leq f(x)$ para todo $x$.\\\\
 	Demostración.-\; Lo mismo que en el teorema 9, si 
 	$$M = \max(1,2n|a_{n-1}|,\ldots , 2n|a_0|),$$
 	entonces para todo $x$ con $|x|\geq M,$ tenemos
@@ -230,11 +230,40 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	%----------(a)
 	\item Si $n-k$ es par, y $\geq 0$, hallar una función polinómica de grado $n$ que tenga exactamente $k$ raíces.\\\\
 	    Respuesta.-\; Sea $l = (n-k)/2$ de donde 
-	    $$f(x) = x^{2(n-k)/2}+(x-1)(x-2)\cdot \cdot \cdot (x-k).$$\\\\
+	    $$f(x) = (x^{2(n-k)/2} + 1)(x-1)(x-2)\cdot \cdot \cdot (x-k).$$\\\\
 	
 	%----------(b)
-	\item 
+	\item Una raíz $a$ de una función polinómica $f$ se dice que tiene multiplicidad $m$ si $f(x)=(x-a)^m g(x),$ donde $g$ es una función polinómica que no tiene la raíz $a$. Sea $f$ una función polinómica de grado $n$. Supóngase que $f$ tiene $k$ raíces, contando multiplicidades, es decir supóngase que $k$ es la suma de las multiplicidades de todas las raíces. Demostrar que $n-k$ es par.\\\\
+	    Demostración.-\; Por la condición dada, $f$ es una función polinómica real de grado $n$ tal que $f$ tiene exactamente $k$ raíces en $\mathbb{R}$ contando multiplicidades. Probaremos que $n-k$ es par. Para ello consideraremos los siguientes casos.\\\\
+	    \textbf{Caso 1}.- Si $n=k$ es trivial decir que $n-k=0$ de donde se sabe que es par.\\\\
+	    \textbf{Caso 2}.- Si $n>k$, sea $x_1,x_2,\ldots , _m$ raíces reales de $f$ con multiplicidades $k_1,k_2,\ldots, k_m$ respectivamente y por lo tanto,
+	    $$k_1 + k_2 + \ldots + k_m = k.$$
+	    Entonces $f$ puede ser escrito como,
+	    $$f(x) = (x-x_1)^{k_1}(x-x_2)^{k_2}\cdots (x-x_m)^{k_m}p_1(x)p_2(x)\cdots p_i(x)$$
+	    donde $p_i(x)$ son polinomios irreducibles en $\mathbb{R}$ tal que el grado de $p_i$  suma $n-k$. Ahora recordemos que todo polinomio irreducible en $\mathbb{R}$ debe tener de grado un entero par. Esto se debe a que cada polinomio de orden impar tiene al menos una raíz real, esto por el teorema 9, por lo tanto $p_i(x)$ no puede ser irreducible en $\mathbb{R}$. Ahora observe que sin pérdida de generalidad hemos asumido que hay $l$ polinomios irreducibles tales que la suma de sus grados $n-k$. Dado que cada uno de los $l$ polinomios tienen grado par, entonces la suma de sus grados debe ser un entero par. Se sigue que $n-k$ es un entero par.\\\\ 
 
     \end{enumerate}
+
+%-------------------- 5.
+\item Supóngase que $f$ es continua en $[a,b]$ y que $f(x)$ es siempre racional. ¿Qué puede decirse acerca de $f$?.\\\\
+    Respuesta.-\; $f$ es constante, ya que si $f$ tomara dos valores distintos, entonces $f$ tomaría todos los valores intermedios, incluyendo valores irracionales, es decir, si no fuera constante, entonces existe dos números racionales $r_1$ y $r_2$ tal que para algún $c,d$ se tiene $a\leq c<d\leq$, $f(c)=r_1$ y $f(d) = r_2$. Por el teorema 7.4 en el intervalo $[c,d]$, $f$ toma todos los valores entre $r_1$ y $r_2$, donde se concluye que existe algún número irracional, contradiciendo el hecho de que $f$ solo toma valores racionales.\\\\
+
+%-------------------- 6.
+\item Supóngase que $f$ es una función continua en $[-1,1]$ tal que $x^2+f^2(x) = 1$ para todo $x$. (Esto significa que $(x,f(x))$ siempre está sobre el circulo unidad.) Demostrar que o bien es $f(x)=\sqrt{1-x^2}$ para todo $x$, o bien $f(x)=-\sqrt{1-x^2}$ para todo $x$.\\\\
+    Demostración.-\; De lo contrario, $f$ toma valores tanto positivos como negativos, por lo que $f$ tendría el valor $0$ en  $(-1, 1)$, lo cual es imposible, ya que $\sqrt{1-x^2} \neq 0$ para $x$ en $(-1,1)$.\\\\ 
+ 
+
+%-------------------- 7.
+\item ¿Cuántas funciones continuas $f$ existen satisfaciendo $f^2(x)=x^2$ para todo $x$?.\\\\
+    Respuesta.-\; Existen 4 funciones continuas que satisfacen la condición dada, es decir,
+    $$\begin{array}{rcl}
+	f(x)&=&x\\
+	f(x)&=&-x\\
+	f(x)&=&|x|\\
+	f(x)&=&-|x|\\\\
+    \end{array}$$
+
+%-------------------- 8.
+\item 
 
 \end{enumerate}

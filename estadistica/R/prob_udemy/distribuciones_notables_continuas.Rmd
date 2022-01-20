@@ -153,3 +153,76 @@ El cuantil $q=0.3$ es el primer valor $x\in D_X$ tal que $F_X(x)=P(X\leq x_{0.3}
 En general podemos considerar que $F^{-1}$ es la función que nos da los cuantiles (es decir si $F^{-1}(p)$ de más de un valor tomaremos como anti-imagen el valor más pequeño que esté dentro del dominio $D_X$).
 
 # Distribución exponencial
+## Distribución del tiempo entre dos eventos Poisson
+Supongamos que tenemos un proceso Poisson con parámetro $\lambda$ en una unidad de tiempo.
+
+Sea $t$ una cantidad de tiempo en $u.t.$ entonces $N_t =$ número de eventos en el intervalo de tiempo $(0,1]$ es una $Po(\lambda \cdot t)$. Consideremos la v.a. T=tiempo transcurrido entre dos eventos Poisson consecutivos.
+
+Sea $t>0$ entonces
+$$P(T>t) = P(\mbox{cero eventos en el intervalo(0,t]}) = P(N_t=0) = \dfrac{(\lambda t)^0}{0!}e^{-\lambda t} = e^{-\lambda t}$$
+
+### Función de distribución 
+Tomando complementarios, la función de distribución de $T$ será
+$$F_T(t) = P(T\leq t) = 1 - P(X>t) = \left\{\begin{array}{rcl} 0 & si & t\leq 0 \\ 1 - e^{-\lambda t} & si & t>0\end{array}\right.$$
+
+luego, derivando respecto de $t$ se tiene,
+$$f_t(t) = \left\{\begin{array}{rcl} \lambda \cdot e^{-\lambda t} & si & t>0 \\ 0 & si & t\leq 0 \end{array}\right.$$
+
+La exponencial de denota por $Exp(\lambda)$.
+
+La poisson es la distribución discreta que cuenta el número de eventos por unidad de tiempo y la exponencial es la versión continua que cuenta el tiempo entre dos sucesos de poisson.
+
+### Propiedad de falta de memoria
+Sea $X$ una v.a. Exp(\lambda) entonces
+$$P(X>s+t | X>s) = P(X>t)\; \mbox{para todo}\; s,t \in \mathbb{R}$$
+
+Demostración.- Si $X$ es una variable aleatoria $Exp(\lambda)$ tenemos que 
+$$P(X>x) = 1-P(X\leq x) = 1  - (1-e^{-\lambda\cdot x}) = e^{-\lambda\cdot x}\; \mbox{para todo}\; x>0$$
+
+$$P(X>s+t | X>s) = \dfrac{P({X>s+t}\cap {X>s})}{P(X>s)}=\dfrac{P(X>s+t)}{P(X>s)}=\dfrac{e^{-\lambda(s+t)}}{e^{-\lambda\cdot s}}=\dfrac{e^{-\lambda} \cdot s \cdot e^{-\lambda\cdot t}}{e^{-\lambda\cdot s}}=e^{-\lambda\cdot t} $$
+
+### Esperanza
+$$E(X)=\dfrac{1}{\lambda}$$
+
+### Varianza
+$$Var(X) = \dfrac{1}{\lambda^2}$$
+
+## Distribución exponencial en R
+La función de densidad, de distribución y la generación aleatoria de valores de una exponencial, se puede obtener en R con:
+
+```{r}
+# función de densidad pudee dar mas de 1
+dexp(0.001, rate=3)
+```
+
+```{r}
+# función de distribución
+pexp(0.5,rate=3)
+```
+
+```{r}
+rexp(10,3)
+```
+
+#### gráfica
+```{r}
+{lambda=10
+par(mfrow=c(1,2))
+curve(dexp(x,rate=lambda),xlim=c(-0.05,round(qexp(0.99,rate=lambda,2),2)+0.25),
+      ylim=c(0,dexp(0,lambda)+0.1),col="blue",
+      main=paste0("Función densidad Exp(",lambda,")"),
+      ylab=paste0("dexp(x,rate=",lambda,")"))
+curve(pexp(x,rate=lambda),xlim=c(-0.05,qexp(0.999,10)),ylim=c(0,1.1),col="blue",
+      main=paste0("Función de distribución Exp(",lambda,")"),
+      ylab=paste0("pexp(x,rate=",lambda,")"))
+par(mfrow=c(1,1))}
+```
+
+
+
+
+
+
+
+
+
