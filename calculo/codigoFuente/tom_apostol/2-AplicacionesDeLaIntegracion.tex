@@ -1854,6 +1854,27 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
     \end{def.}
 \end{tcolorbox}
 
+% --------------------- Definición de media ponderada.
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Definición del valor medio de una función en un intervarlo]
+	$$A(f) = \dfrac{\int_a^b w(x)f(x)\; dx}{f_a^b w(x)\; dx}$$
+    \end{def.}
+\end{tcolorbox}
+
+% --------------------- Primer momento al rededor de 0 
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Primer momento al rededor de 0]
+	$$\overline{x}=\dfrac{\int_0^b xp(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
+    \end{def.}
+\end{tcolorbox}
+
+%--------------------- Segundo momento al rededor de 0
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Segundo momento al rededor de 0 o momento de inercia]
+	$$r^2=\dfrac{\int_0^b x^2p(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
+    \end{def.}
+\end{tcolorbox}
+
 
 \section{Ejercicios}
 
@@ -1964,6 +1985,33 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 
 %-------------------- 14.
 \item ¿Cuáles de la propiedades del problema 13 son validas para las medias ponderadas definidas en 2.19?.\\\\
-    Respuesta.-\; 
+    Respuesta.-\; Para $A(f+g)$ tenemos,
+    $$\begin{array}{rcl}
+	A(f+g)&=&\dfrac{\int_a^b w(x)\left[f(x)+g(x)\right]\; dx}{\int_a^b w(x)\; dx}\\\\
+	      &=&\dfrac{\int_a^b w(x)f(x)\; dx + \int_a^b w(x)g(x)\; dx}{\int_a^b w(x)\; dx}\\\\
+	      &=&\dfrac{\int_a^b w(x)f(x)\; dx}{\int_a^b w(x)\; dx}+\dfrac{\int_a^b w(x)g(x)\; dx}{\int_a^b w(x)\; dx}\\\\
+	      &=&A(f)+A(g)\\\\
+    \end{array}$$
+
+    Para $A(cf)$ tenemos,
+
+    $$\begin{array}{rcl}
+	A(cf)&=&\dfrac{\int_a^b cf(x)w(x)\; dx}{int_a^b w(x)\; dx}\\\\
+	     &=&c\cdot \dfrac{\int_a^b w(x)f(x)\; dx}{\int_a^b w(x)\; dx}\\\\
+	     &=&cA(f)\\\\
+    \end{array}$$
+
+    Por último sea $f\leq q$ en $[a,b]$, entonces ya que $w$ es no negativo tenemos, $w(x)f(x)\leq w(x)g(x)$ para todo $x\in [a,b]$. Se sigue por la propiedad monótona de la integral que,
+    $$\int_a^b w(x)f(x)\; dx\leq \int_a^b w(x)g(x)\; dx$$
+
+    ya que $w$ es no negativo, $\int_a^b w(x)\; dx$ también es no negativo y por lo tanto,
+
+    $$\begin{array}{rcl}
+	\dfrac{\int_a^b w(x)\; dx}{\int_a^b w(x)\; dx}&\leq&\dfrac{\int_a^b w(x)g(x)\; dx}{\int_a^b w(x)\; dx}\\\\
+	A(f)&\leq&A(g)\\\\
+    \end{array}$$
+
+%-------------------- 15.
+\item 
 
 \end{enumerate}

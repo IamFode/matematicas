@@ -554,3 +554,15 @@ integrate(function(x) 1/800*exp(-x/800), lower = 0, upper = 800)
 
 
 # 3.18
+$$\begin{array}{rcl}
+  \dfrac{d^r m_{X-\mu}(t)}{dt^r}\bigg|_{t=\mu}&=&\dfrac{d^r}{dt^r}E[e^{t(X-\mu)}]\bigg|_{t=0}\\\\
+  &=&E\left\{ \dfrac{d^r}{dt^r}\left[e^{t(X-\mu)}\right] \right\}\\\\
+  &=&E\left[(X-\mu)^r e^{t(X-\mu)}\right]\bigg|_{t=0}\\\\
+  &=&E[X-\mu]^r\\\\
+  &=&u_r\\\\
+\end{array}$$
+
+# 3.19
+
+
+

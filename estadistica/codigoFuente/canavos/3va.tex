@@ -267,7 +267,40 @@ de donde se tiene que $Var(Y) = \mu_2(Y) = 1$. En particular, nótese que $\alph
 	\end{array}$$
     \end{def.}
 \end{tcolorbox}
-Si la función generadora de momentos existe, puede demostrarse que es única y que determina por completo la distribución de probabilidad de $X$. En otras palabras \textbf{si dos variables aleatorias tienen la misma función generadora de momentos, entonces tienen la misma distribución de probabilidad.}
+Si la función generadora de momentos existe, puede demostrarse que es única y que determina por completo la distribución de probabilidad de $X$. En otras palabras \textbf{si dos variables aleatorias tienen la misma función generadora de momentos, entonces tienen la misma distribución de probabilidad.}\\\\
+
+Si la función generadora de momentos existe para $-c<t<c$ entonces existen las derivadas de ésta de todas las órdenes para $t=0$. Lo anterior asegura que $m_X(t)$ generará todos los momentos de $X$ al rededor del origen. Para demostrar lo anterior se diferencia $m_X(t)$ con respecto a $t$, y se evalúa la derivada en $t=0$. Suponiendo que pueden intercambiarse los símbolos de diferenciación y esperanza, se tiene:
+$$\begin{array}{rcl}
+    \dfrac{d^2m_X(t)}{dt}\bigg|_{t=0}&=&\dfrac{d}{dt}E[e^{tX}]\bigg|_{t=0}\\\\
+				     &=&E\left[ \dfrac{d}{dt}(e^{tX}) \right]\\\\
+				     &=&E\left(X \cdot e^{tX}\right)\bigg|_{t=0}\\\\
+				     &=&E(X) \\\\
+				     &=& \mu \\\\
+\end{array}$$	
+
+Al tomar la segunda derivada y evaluar en $t=0$.
+
+$$\begin{array}{rcl}
+    \dfrac{d^2m_X(t)}{dt^2}\bigg|_{t=0}&=&\dfrac{d^2}{dt^2}E[e^{tX}]\bigg|_{t=0}\\\\
+				       &=&E\left[\dfrac{d^2}{dt^2}(e^{tX})\right]\\\\
+				       &=&E\left[\dfrac{d}{dt}(X\cdot e^{tX})\right]\\\\
+				       &=&E[X^2 e^{tX}]\bigg|_{t=0}\\\\
+				       &=&E(X^2)\\\\
+				       &=&\mu_2^{'}\\\\
+\end{array}$$	
+
+Al continuar este proceso de diferenciación se puede deducir que se obtiene el 
+
+$$\begin{array}{rcl}
+    \dfrac{d^r m_X(t)}{dt^r}&=&\dfrac{d^r}{dt^r}E[e^{tX}]\bigg|_{t=0}\\\\
+			    &=&E\left[\dfrac{d^{r}}{dt^r}(e^{tX})\right]\\\\
+			    &=&E[X^r e^{tX}]\bigg|_{t=0}\\\\
+			    &=&E(X^r)\\\\
+			    &=&\mu_r^{'}\\\\
+\end{array}$$	
+
+mismo resultado si se reemplaza la función exponencial por su expansión en serie de potencias.
+$$E[e^{tX}] = E\left(1 + tX \dfrac{t^2X^2}{2!} + \ldots + \dfrac{t^r X^r}{r!} + \ldots\right)$$\\\\
 
 %-------------------- definición 3.15
 \begin{tcolorbox}[colframe = white]
