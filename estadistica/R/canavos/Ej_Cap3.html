@@ -607,6 +607,40 @@ integrate(f,lower = 0,upper = 10)</code></pre>
 </div>
 <div id="section-17" class="section level1">
 <h1>3.18</h1>
+<p><span class="math display">\[\begin{array}{rcl}
+  \dfrac{d^r m_{X-\mu}(t)}{dt^r}\bigg|_{t=\mu}&amp;=&amp;\dfrac{d^r}{dt^r}E[e^{t(X-\mu)}]\bigg|_{t=0}\\\\
+  &amp;=&amp;E\left\{ \dfrac{d^r}{dt^r}\left[e^{t(X-\mu)}\right] \right\}\\\\
+  &amp;=&amp;E\left[(X-\mu)^r e^{t(X-\mu)}\right]\bigg|_{t=0}\\\\
+  &amp;=&amp;E[X-\mu]^r\\\\
+  &amp;=&amp;u_r\\\\
+\end{array}\]</span></p>
+</div>
+<div id="section-18" class="section level1">
+<h1>3.19</h1>
+<div id="a-10" class="section level2">
+<h2>a)</h2>
+<p><span class="math display">\[m_X(t) = E\left[e^{tX}\right] = \int_{0}^{\infty} e^{tx}\cdot \dfrac{1}{16}\cdot x \cdot e^{-\frac{x}{4}}\; dx = \dfrac{1}{16}\int_0^\infty x\cdot e^{\frac{x(4t-1)}{4}}\; dx = (1-4t)^{-2}\]</span></p>
+</div>
+<div id="b-10" class="section level2">
+<h2>b)</h2>
+<p><span class="math display">\[\dfrac{dm_x(t)}{dt}\bigg|_{t=0} = \dfrac{d}{dt}\cdot (1-4t)^{-2}\bigg|_{t=0} = \dfrac{8}{(1-4x)^3}\bigg|_{t=0} = 8 = E(X)\]</span></p>
+<p><span class="math display">\[\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d}{dt} \dfrac{8}{(1-4x)^2}\bigg|_{t=0} = \dfrac{96}{(-4x+1)^4}\bigg|_{t=0} = 96 = E(X^2)\]</span></p>
+<p><span class="math display">\[Var(X) = E(X^2) - E^2(X) = 96 - 8^2 = 32\]</span></p>
+</div>
+</div>
+<div id="section-19" class="section level1">
+<h1>3.20</h1>
+<p><span class="math display">\[m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx = \dfrac{e^{tx-\frac{1}{4}x}}{x}\bigg|_0^\infty\]</span></p>
+</div>
+<div id="section-20" class="section level1">
+<h1>3.21</h1>
+<p><span class="math inline">\(E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c\)</span></p>
+<p><span class="math inline">\(E(cX+b) = \sum\limits_x (cx + b)p(x) = c\sum\limits_x x\cdot p(x) + b\sum\limits_x p(x) = cE(x) + b\)</span></p>
+<p><span class="math inline">\(E[g(X)+h(X)] = \sum\limits_x [g(x)+h(x)] p(x) + \sum\limits_x g(x)p(x) + \sum\limits_xh(x)p(x) = E[g(X)]+E[h(X)]\)</span></p>
+</div>
+<div id="section-21" class="section level1">
+<h1>3.22</h1>
+<p><span class="math display">\[Var(X)=(X-\mu)^2 = \sum_x (x-\mu)^2 p(x) = \sum_x x^2p(x) - 2\mu\sum_x x p(x) + \mu^2\sum_x  p(x) =\]</span> <span class="math display">\[E(X^2) - 2E^2(X) + E^2(X) = E(X^2) - E^2(X)\]</span></p>
 </div>
 
 

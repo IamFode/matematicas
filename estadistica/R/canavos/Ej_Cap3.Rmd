@@ -563,6 +563,27 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 # 3.19
+## a)
+$$m_X(t) = E\left[e^{tX}\right] = \int_{0}^{\infty} e^{tx}\cdot \dfrac{1}{16}\cdot x \cdot e^{-\frac{x}{4}}\; dx = \dfrac{1}{16}\int_0^\infty x\cdot e^{\frac{x(4t-1)}{4}}\; dx = (1-4t)^{-2}$$
 
+## b)
+$$\dfrac{dm_x(t)}{dt}\bigg|_{t=0} = \dfrac{d}{dt}\cdot (1-4t)^{-2}\bigg|_{t=0} = \dfrac{8}{(1-4x)^3}\bigg|_{t=0} = 8 = E(X)$$
+
+$$\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d}{dt} \dfrac{8}{(1-4x)^2}\bigg|_{t=0} = \dfrac{96}{(-4x+1)^4}\bigg|_{t=0} = 96 = E(X^2)$$
+
+$$Var(X) = E(X^2) - E^2(X) = 96 - 8^2 = 32$$
+
+# 3.20
+$$m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx = \dfrac{e^{tx-\frac{1}{4}x}}{x}\bigg|_0^\infty$$
+
+# 3.21
+$E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c$
+
+$E(cX+b) = \sum\limits_x (cx + b)p(x) = c\sum\limits_x x\cdot p(x) + b\sum\limits_x p(x) = cE(x) + b$
+
+$E[g(X)+h(X)] = \sum\limits_x [g(x)+h(x)] p(x) + \sum\limits_x g(x)p(x) + \sum\limits_xh(x)p(x) = E[g(X)]+E[h(X)]$
+
+# 3.22
+$$Var(X)=(X-\mu)^2 = \sum_x (x-\mu)^2 p(x) = \sum_x x^2p(x) - 2\mu\sum_x x p(x) + \mu^2\sum_x  p(x) =$$ $$E(X^2) - 2E^2(X) + E^2(X) = E(X^2) - E^2(X)$$
 
 

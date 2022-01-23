@@ -221,8 +221,141 @@ par(mfrow=c(1,1))}
 
 # Distribución normal
 
+### Función de densidad
+Distribución normal o de Gauss diremos que una v.a. $X$ sigue una ley normal de parámetros $\mu$ y $\sigma^2$ y la denotaremos por $N(\mu,\sigma)$si tiene por función de densidad
+$$f_X(x) = \dfrac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}\cdot \left(\frac{x-\mu}{\sigma}\right)^2}$$
+para todo $x\in \mathbb{R}$.
+
+La v.a. normal con $\mu=0$ y $\sigma=1$ recibe el nombre de normal estándar y se suele denotar por la letra $Z$ normal $N(0,1)$.
+ 
+### Gráfica
+```{r}
+curve(dnorm(x),main = "Función de densidad de una normal estándar", xlim = c(-3.9,3.9))
+```
+
+### Propiedades de la densidad normal
+Sea $X$ una v.a. $N(\mu,\sigma)$ sea $f_X$ su función de densidad. Entonces:
+
+- Evidetemente $f_X$ verifica todas las propiedades de las funciones de densidad.
+
+- $f_X(\mu-x) = f_X(\mu+x)$ es simétrica respecto de la recta $x=\mu$.
+
+- $f_X$ alcanza el máximo en $x=\mu$.
+
+- Si $F_X$ la función de distribución de $X$ entonces $F_X(\mu+x) = F_X(\mu-x)$
+
+- En particular si $Z$ es una $N(0,1)$ entonces $F_X(-x) = 1-F_Z(x)$
+
+- $Z=\dfrac{X-\mu}{\sigma}$ es una v.a. $N(0,1)$ y $X=\sigma \cdot Z + \mu$ es una $N(\mu,\sigma)$ donde $Z$ es la normal estándar.
+
+### Función de distribución $N(0,1)$
+
+Su función de distribución es, como sabemos:
+
+$$F(X) = \int_{-\infty}^x \dfrac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{1}{2}\left(\frac{t-\mu}{\sigma}\right)^2}\; dt$$
+
+### Esperanza
+$$E(X)=\mu$$
+
+### Varianza
+Var(X)=\sigma^2
+
+## Distribución normal en R
+Para una $X\sim N(\mu=1,\sigma=2)$ la función de densidad $f_X(2)$ se puede calcular como:
+
+```{r}
+dnorm(2,mean=1,sd=2)
+```
+
+y la función de distribución $F_X(2)=P(X\leq 2)$ como
+
+```{r}
+pnorm(2,mean=1,sd=2)
+```
+
+El cuantil $x_{0.95}$ es el valor que cumple $P(X\leq x_{0.95}) = 0.95$ como
+
+```{r}
+qnorm(0.95,mean=1,sd=2)
+```
+
+Y la generación aleatoria de valores egún $X$ como
+
+```{r}
+rnorm(n=5,mean=1,sd=2)
+```
+
+## Propiedades de la distribución normal
+La función de densidad de la distribución normal tiene las siguientes propiedades:
+
+- La función $f_X$ es continua.
+
+- $\displaystyle\int_{-\infty}^\infty \dfrac{1}{\sqrt{2\pi \sigma^2}} \cdot e^{-\frac{1}{2}\cdot \left(\frac{x-\mu}{\sigma}\right)^2}\; dx = 1$ (Propiedad de todas las densidades).
+
+- $f(\mu-x) = f(\mu-x).$
+
+- $F(\mu-x) = 1-F(\mu+x).$
+
+- $\lim\limits_{x\to +\infty} f(x) = \lim\limits_{x\to - \infty} = 0$ es decir tiene asíntota horizontal a derecha e izquierda.
+
+- $f$ es estrictamente creciente si $x<\mu$ y decreciente si $x>\mu$.
+
+- Alcanza el máximo en $x=\mu$ y en este punto vale $f(\mu)=\dfrac{1}{\sqrt{2\pi \sigma^2}}$.
+
+- Tiene dos puntos de inflexión en $x=\mu+\sigma$ y en $x=\mu-\sigma$.
 
 
+## Cómo calcular cuantiles de la normal
+$p_{0.9}=50$ y $p_{0.15} = 25$
+
+$0.9=P(X\leq 50)=P\left( Z\leq\dfrac{50-\mu}{\sigma} \right) \Longrightarrow \dfrac{50-\mu}{\sigma} = 1.28$
+
+$0.15=P(X\leq 25)=P\left(Z\leq\dfrac{25-\mu}{\sigma}\right) \Longrightarrow \dfrac{50-\mu}{\sigma} = 1.04$
+
+- cuando vale $\mu$
+
+$\mu=36.2$
+
+- Cuanto vale $\sigma$
+
+$\sigma=10.77$
+
+- $p_{0.4}$
+
+$P(X\leq P_{0.4}) = 0.4 \Longrightarrow P\left(>\leq \dfrac{p_{0.4}-36.2}{10.77}\right) = 0.4 \Longrightarrow \dfrac{p_{0.4}-36.2}{10.77} = -0.26 \Longrightarrow p_{0.4} = 33.4$
 
 
+## Transformaciones lineales de variables aleatorias normales
 
+### Propiedades
+
+Sea $X$ una variable $N(\mu,\sigma)$ entonces la variable $Y=aX+b$ con $a\neq 0,\; b\in \mathbb{R}$ tiene distribución $N(a\mu + b, |a| \cdot \sigma)$
+
+En particular si $X$ sigue una $N(\mu,\sigma)$ , tomando $a=\dfrac{1}{\sigma}$ y $b=\dfrac{-\mu}{\sigma}$ obtenemos la tipificación o estandarización de la v.a.
+$$Z=\dfrac{X-\mu}{\sigma}$$
+
+se sitribuye $N(0,1)$, es decir $E(X)=0$ y $Var(X) = 1$.
+
+Esta propiedad es muy útil, ya que utilizándola sólo necesitaremos tabular la $N(0,1)$
+
+Si $Z$ sigue una distribución $N(0,1)$ diremos que $Z$ sigue una distribución normal estándar.
+
+Por lo tanto podemos calcular cualquier distribución normal desde la distribución normal estándar:
+$$F_X(x)=F_Z\left(\dfrac{x-\mu}{\sigma}\right)$$
+
+Sea $Z$ una $N(0,1)$
+
+Como en este caso $\mu=0$ y $\sigma=1$ tenemos que algunas de las propiedades anteriores se simplifican incluso más:
+
+- De $f_X(\mu-x) = f_X(\mu+x)$ obtenemos $f_Z(-x) =f_Z(x)$.
+
+- De $F_X(\mu-x) = 1- F_X(\mu+x)$ obtenemos $F_Z(-x)= 1- F(x)$.
+
+. Dado $\delta>0,$ $P(-\delta\leq Z \leq \delta) = F_Z(\delta) - F_Z(-\delta) = F_Z(\delta) - (1-F_Z(\delta)) = 2\cdot F_Z(\delta)-1$
+
+
+### Ejercicio
+
+Sea una distribución $N(0,1)$ calcular las siguientes probabilidades en función de $F_Z.$
+
+$P(-4\leq Z \leq 4) = F_Z(4)$

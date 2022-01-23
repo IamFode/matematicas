@@ -2012,6 +2012,53 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
     \end{array}$$
 
 %-------------------- 15.
+\item Designamos por $A_a^b(f)$ el promedio de $f$ en el intervalo $[a,b]$.
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Si $a<c<b$, demostrar que existe un número $t$ que satisface $0<t<1$ tal que $A_a^b(f)=tA_a^c(f)+(1-t)A_c^b (f)$. Así pues, $A_a^b(f)$ es una media aritmética ponderada de $A_a^c(f)$ y $A_c^b(f)$.\\\\
+	    Demostración.-\; Sea $$\dfrac{c-a}{b-a}$$
+	    entonces, ya que $a<c<b,$ tenemos $0<t<1$, de donde,
+	    $$1-t=1-\dfrac{a-c}{a-b} = \dfrac{c-b}{a-b}$$
+	    así,
+	    $$\begin{array}{rcl}
+		&=&\displaystyle \dfrac{c-a}{b-a}\cdot \dfrac{1}{c-a}\int_a^b f(x)\; dx + \dfrac{c-b}{a-b}\cdot \dfrac{1}{b-c}\int_c^b f(x)\; dx\\\\
+		&=&\displaystyle\dfrac{1}{b-a}\int_a^c f(x)\; dx - \dfrac{1}{a-b} \int_c^b f(x)\; dx\\\\
+		&=&\displaystyle\dfrac{1}{b-a}\left[\int_a^c f(x)\; dx + \int_c^b f(x)\; dx\right]\\\\
+		&=&\displaystyle\dfrac{1}{b-a}\int_a^b f(x)\; dx\\\\
+		&=&A_a^b(f)\\\\
+	    \end{array}$$
+
+	%----------(b)
+	\item Demostrar que el resultado de la parte (a) también es válido para medias ponderadas como las definidas por 2.19.\\\\
+	    Demostración.-\; Sea 
+	    $$t=\dfrac{\int_a^c w(x)\; dx}{\int_a^b w(x)\; dx}$$
+	    entonces,
+	    $$1-t=\dfrac{\int_a^b w(x)\; dx - \int_a^c w(x)\; dx}{\int_a^b w(x)\; dx}=\dfrac{\int_c^b w(x)\; dx}{\int_a^b w(x)\; dx}$$
+	    por lo tanto, $0<t<1$ ya que $a<c<b$ y $w$ es no negativo. Luego,
+	    $$\begin{array}{rcl}
+		t\cdot A_a^c (f) + (1+t)\cdot A_c^b(f)&=&\dfrac{\int_a^c w(x)\;dx}{\int_a^b w(x)\; dx}\cdot \dfrac{\int_a^c w(x)f(x)\; dx}{\int_a^c w(x)\; dx}+\dfrac{\int_c^b w(x)\; dx}{\int_a^b w(x)\; dx}\cdot \dfrac{\int_c^b w(x)f(x)\; dx}{\int_c^b w(x)\; dx}\\\\
+						      &=&\dfrac{\int_a^c w(x)f(x)\; dx + \int_c^b w(x)f(x)\; dx}{\int_a^b w(x)\; dx}\\\\
+		&=&\dfrac{\int_a^b w(x)\; dx f(x)\;dx}{\int_a^b w(x)\; dx}\\\\
+		&=&A_a^b (f)\\\\
+	    \end{array}$$
+	    
+    \end{enumerate}
+
+En cada uno de los ejercicios del 16 al 21 se hace referencia a una varilla de longitud $L$ situada en el eje $x$ con un extremo en el origen. Con la densidad de masa $\rho$ que se cita en cada caso, calcular (a) el centro de masa de la varilla, (b) el momentos de inercia en torno al origen, y (c) el radio de giro.\\\\
+
+%-------------------- 16.
+\item $\rho(x)=1$ para $0\neq x \leq L$.\\\\
+    Respuesta.-\; El centro de masa es dado por, 
+    $$\overline{x} = \dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx} = \dfrac{\int_0^L x \; dx}{\int_0^L \; dx} = \dfrac{\frac{L^2}{2}}{L} = \dfrac{L}{2}.$$
+    El momento de inercia es,
+    $$\int_0^L x^2 \rho(x)\; dx = \int_0^L x^2\; dx = \dfrac{L^3}{3}.$$
+    El radio de giro es,
+    $$r^2 = \dfrac{\int_0^L x^2\; dx}{\int_0^L \rho(x)\; dx} = \dfrac{\frac{L^3}{3}}{L} = \dfrac{L^2}{3}$$
+    $$r=\dfrac{L}{\sqrt{3}}$$
+
+%-------------------- 17.
 \item 
 
 \end{enumerate}
