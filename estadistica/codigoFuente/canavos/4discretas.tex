@@ -1,0 +1,44 @@
+\chapter{Algunas distribuciones discretas de probabilidad}
+
+
+\setcounter{section}{1}
+\section{La distribución binomial}
+Llámese éxito a la ocurrencia del evento y fracaso a su no ocurrencia.\\\\
+Las dos suposiciones claves para la distribución binomial son:
+\begin{enumerate}
+    \item La probabilidad de éxito $p$ permanece constante para cada ensayo.
+    \item Los $n$ ensayos son independientes entre sí.
+\end{enumerate}
+
+Para obtener la función de probabilidad de la distribución binomial, primero se determina la probabilidad de tener, en $n$ ensayos, $x$ éxitos consecutivos seguidos de $n$-$x$ fracasos consecutivos. Dado que, por hipótesis, los $n$ ensayos son independientes de la definición 2.15, se tiene:
+$$p\cdot p\cdots p \cdot (1-p)\cdot (1-p)\cdots (1-p) = p^x(1-p)^{n-x}$$
+
+%-------------------- Definición 4.1.
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Distribución binomial con función de probabilidad]
+	Sea $X$ una variable aleatoria que representa el número de éxitos en $n$ ensayos y $p$ la probabilidad de éxito con cualquiera de éstos. Se dice entonces que $X$ tiene una distribución binomial con función de probabilidad.
+	$$p(x;n,p)\left\{\begin{array}{ll}
+	    \dfrac{n!}{(n-x)!x!} p^x(1-p)^{n-x} & x = 0,1,2,\ldots,n.\\\\
+	    0\; \mbox{para cualquier otro valor.} & 0\leq p \leq 1. \; \mbox{para } n \;\mbox{entero}.\\
+	\end{array}\right.$$
+     \end{def.}
+\end{tcolorbox}
+
+El nombre distribución binomial proviene del hecho de que los valores de $p(x;n,p)$ para $x=1,2,\ldots,n$ son los términos sucesivos de la expansión binomial de $[(1-p)+p]^n;$ esto es,
+$$\begin{array}{rcl}
+    [(1-p)+p]^n & = & (1-p)^n + n(1-p)^{n-1} p + \dfrac{n(n-1)}{2!} (1-p)^{n-2}p^2 + \cdots + p^n\\\\
+		& = & \sum\limits_{x=0}^n \dfrac{n!}{(x-x)!x!} p^x(1-p)^{n-x}\\\\
+		& = & \sum\limits_{x=0}^n p(x;n,p)\\\\
+\end{array}$$
+
+Pero dado que $[(1-p)+p]^n = 1$ y $p(x;n,p)\geq 0$ para $x=0,1,2,\ldots n,$ este hecho también verifica que $p(x;n,p)$ es una función de probabilidad.\\\\
+
+La probabilidad de que una variable aleatoria $X$ sea menor o igual a un valor específico de $x$, se determina por la \textbf{función de distribución acumulativa}.
+
+% ---------------------- función de distribución acumulativa
+\begin{tcolorbox}[colback=white]
+    $$P(X\leq x) = F(x;n,p) = \sum_{i=0}^x {n\choose i} P^i (1-p)^{n-1}$$
+\end{tcolorbox}
+
+
+

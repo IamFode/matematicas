@@ -358,4 +358,51 @@ Como en este caso $\mu=0$ y $\sigma=1$ tenemos que algunas de las propiedades an
 
 Sea una distribución $N(0,1)$ calcular las siguientes probabilidades en función de $F_Z.$
 
-$P(-4\leq Z \leq 4) = F_Z(4)$
+$P(-4\leq Z \leq 4) = F_Z(4)-F_Z(-4) = F_Z(4) - (1-F_Z(4)) = 2F_Z(4) - 1$
+
+$P(-2\leq Z\leq 2) =F_Z(2) - F_Z(-2) = 2F_Z(2) - 1$
+
+$P(Z\leq -2) = F_Z(-2) = 1-F_Z(2)$
+
+$P(Z\leq 2) F_Z(2)$
+
+$P(Z\geq 2) = 1 - P(Z<2) = 1 - F_Z(2)$
+
+$P(Z>2) = 1 - P(Z\leq 2) = 1-F_Z(2)$
+
+$P(Z=2) = 0$
+
+$P(Z\geq -2) = 1-P(Z<-2)=1-F_Z(-2)=1-(1-F_Z(2))=F_Z(2)$
+
+## Relación entre una normal y la normal estándar.
+### Propiedades
+- Si $X$ es una normal $N(\mu, \sigma)$ es una variable tipificada, es decir, $Z=\dfrac{X-\mu}{\sigma}$ es una $N(0,1)$ entonces:
+
+$$P(X\leq x) = P\left(\dfrac{X-\mu}{\sigma}\leq \dfrac{x-\mu}{\sigma}\right) = F_Z\left(\dfrac{x-\mu}{\sigma}\right)$$
+
+- Cuando tengamos un intevalo
+
+$$\begin{array}{rcl}
+  P(a<X<b)&=&P\left(\dfrac{a-\mu}{\sigma}<\dfrac{X-\mu}{\sigma}<\dfrac{b-\mu}{\sigma}\right)\\
+  &=&\left(\dfrac{a-\mu}{\sigma}<Z<\dfrac{b-\mu}{\sigma}\right)\\
+  &=&F_Z\left(\dfrac{b-\mu}{\sigma}\right) - F_Z\left(\dfrac{a-\mu}{\sigma}\right)\\
+\end{array}$$
+
+- Si $\delta>0$, $P(\mu-\sigma\leq X\leq \mu+\sigma) = 2F_Z\left(\dfrac{\delta}{\sigma}\right)-1$
+
+#### Ejercicio
+Sea $X$ una normal con media 2 y varianza 4, calcular:
+
+$P(1<X<2) = P\left(\dfrac{1-2}{2}<\dfrac{Z-\mu}{\sigma}<\dfrac{2-2}{2}\right) = -\dfrac{1}{2}<Z<0 = P_Z(0)-1+P_Z(1)$
+
+```{r}
+pnorm(2,mean=2,sd=2) - pnorm(1,mean = 2,sd=2)
+```
+
+$P(X>3) = P\left(\dfrac{X-2}{2}>\dfrrac{3-2}{2}\right) = P(Z>0.5) = 1 - F_Z(0.5)$
+
+```{r}
+pnorm(3,mean=2,sd=2,lower.tail = FALSE) 
+1 - pnorm(3,mean = 2,sd = 2)
+```
+

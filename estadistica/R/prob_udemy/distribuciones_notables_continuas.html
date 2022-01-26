@@ -249,14 +249,14 @@ pre code {
 <pre class="r"><code>punif(q=0.5,min = -1, max = 1)</code></pre>
 <pre><code>## [1] 0.75</code></pre>
 <pre class="r"><code>runif(n=5,min=-1,max=1)</code></pre>
-<pre><code>## [1] -0.5193438  0.9098391 -0.8033289 -0.8705719 -0.8065023</code></pre>
+<pre><code>## [1] -0.56910217  0.32896129 -0.50651531 -0.08012987 -0.53645099</code></pre>
 <p>por defecto dunif(x,max=0,max=1)</p>
 <pre class="r"><code>dunif(x=0.5)</code></pre>
 <pre><code>## [1] 1</code></pre>
 <pre class="r"><code>punif(q=0.5)</code></pre>
 <pre><code>## [1] 0.5</code></pre>
 <pre class="r"><code>runif(n=5)</code></pre>
-<pre><code>## [1] 0.9502646 0.1015836 0.1631511 0.8253541 0.1015105</code></pre>
+<pre><code>## [1] 0.6066706 0.9342993 0.9705692 0.6967223 0.1455541</code></pre>
 </div>
 <div id="cuantiles-de-variables-aleatorias" class="section level2">
 <h2>Cuantiles de variables aleatorias</h2>
@@ -320,8 +320,8 @@ dexp(0.001, rate=3)</code></pre>
 pexp(0.5,rate=3)</code></pre>
 <pre><code>## [1] 0.7768698</code></pre>
 <pre class="r"><code>rexp(10,3)</code></pre>
-<pre><code>##  [1] 0.23164553 0.12832383 0.26649158 0.01008781 0.02708187 0.40263140
-##  [7] 0.21732877 0.35220888 0.21468315 0.15252557</code></pre>
+<pre><code>##  [1] 0.0899544028 0.7816951540 0.1390991518 0.3538137019 0.1922555366
+##  [6] 0.0008061177 0.3455399663 0.2771373037 0.1317110202 0.5702379805</code></pre>
 <div id="gráfica" class="section level4">
 <h4>gráfica</h4>
 <pre class="r"><code>{lambda=10
@@ -388,7 +388,7 @@ par(mfrow=c(1,1))}</code></pre>
 <pre><code>## [1] 4.289707</code></pre>
 <p>Y la generación aleatoria de valores egún <span class="math inline">\(X\)</span> como</p>
 <pre class="r"><code>rnorm(n=5,mean=1,sd=2)</code></pre>
-<pre><code>## [1] -1.2770466  0.7863839  0.9892280  1.9571564  1.6159660</code></pre>
+<pre><code>## [1]  2.997860  3.797537  1.509001  2.013666 -1.009448</code></pre>
 </div>
 <div id="propiedades-de-la-distribución-normal" class="section level2">
 <h2>Propiedades de la distribución normal</h2>
@@ -443,7 +443,40 @@ par(mfrow=c(1,1))}</code></pre>
 <div id="ejercicio" class="section level3">
 <h3>Ejercicio</h3>
 <p>Sea una distribución <span class="math inline">\(N(0,1)\)</span> calcular las siguientes probabilidades en función de <span class="math inline">\(F_Z.\)</span></p>
-<p><span class="math inline">\(P(-4\leq Z \leq 4) = F_Z(4)\)</span></p>
+<p><span class="math inline">\(P(-4\leq Z \leq 4) = F_Z(4)-F_Z(-4) = F_Z(4) - (1-F_Z(4)) = 2F_Z(4) - 1\)</span></p>
+<p><span class="math inline">\(P(-2\leq Z\leq 2) =F_Z(2) - F_Z(-2) = 2F_Z(2) - 1\)</span></p>
+<p><span class="math inline">\(P(Z\leq -2) = F_Z(-2) = 1-F_Z(2)\)</span></p>
+<p><span class="math inline">\(P(Z\leq 2) F_Z(2)\)</span></p>
+<p><span class="math inline">\(P(Z\geq 2) = 1 - P(Z&lt;2) = 1 - F_Z(2)\)</span></p>
+<p><span class="math inline">\(P(Z&gt;2) = 1 - P(Z\leq 2) = 1-F_Z(2)\)</span></p>
+<p><span class="math inline">\(P(Z=2) = 0\)</span></p>
+<p><span class="math inline">\(P(Z\geq -2) = 1-P(Z&lt;-2)=1-F_Z(-2)=1-(1-F_Z(2))=F_Z(2)\)</span></p>
+</div>
+</div>
+<div id="relación-entre-una-normal-y-la-normal-estándar." class="section level2">
+<h2>Relación entre una normal y la normal estándar.</h2>
+<div id="propiedades-1" class="section level3">
+<h3>Propiedades</h3>
+<ul>
+<li>Si <span class="math inline">\(X\)</span> es una normal <span class="math inline">\(N(\mu, \sigma)\)</span> es una variable tipificada, es decir, <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\)</span> es una <span class="math inline">\(N(0,1)\)</span> entonces:</li>
+</ul>
+<p><span class="math display">\[P(X\leq x) = P\left(\dfrac{X-\mu}{\sigma}\leq \dfrac{x-\mu}{\sigma}\right) = F_Z\left(\dfrac{x-\mu}{\sigma}\right)\]</span></p>
+<ul>
+<li>Cuando tengamos un intevalo</li>
+</ul>
+<p><span class="math display">\[\begin{array}{rcl}
+  P(a&lt;X&lt;b)&amp;=&amp;P\left(\dfrac{a-\mu}{\sigma}&lt;\dfrac{X-\mu}{\sigma}&lt;\dfrac{b-\mu}{\sigma}\right)\\
+  &amp;=&amp;\left(\dfrac{a-\mu}{\sigma}&lt;Z&lt;\dfrac{b-\mu}{\sigma}\right)\\
+  &amp;=&amp;F_Z\left(\dfrac{b-\mu}{\sigma}\right) - F_Z\left(\dfrac{a-\mu}{\sigma}\right)\\
+\end{array}\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(\delta&gt;0\)</span>, <span class="math inline">\(P(\mu-\sigma\leq X\leq \mu+\sigma) = 2F_Z\left(\dfrac{\delta}{\sigma}\right)-1\)</span></li>
+</ul>
+<div id="ejercicio-1" class="section level4">
+<h4>Ejercicio</h4>
+<p>Sea <span class="math inline">\(X\)</span> una normal con media 2 y varianza 4, calcular:</p>
+<p><span class="math inline">\(P(1&lt;X&lt;2) = P\left(\dfrac{1-2}{2}&lt;\dfrac{Z-\mu}{\sigma}&lt;\dfrac{2-2}{2}\right) = -\dfrac{1}{2}&lt;Z&lt;0\)</span></p>
+</div>
 </div>
 </div>
 </div>

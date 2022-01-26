@@ -1,0 +1,15 @@
+---
+title: 'Nivel avanzado: Variables aleatorias. Complementos'
+author: "Christian Limbert Paredes Aguilera"
+date: "25/1/2022"
+output: html_document
+---
+
+# Momentos de orden n
+Sea $X$ una variable aleatoria. Definimos el momento de orden $n$ como $m_n = E(X^n)$
+
+El momento de orden $1$ de una variable aleatorio es su valor medio o $E(X).$
+
+Los momentos de orden $n$ caracterizan una variable $X$. O sea, que si conocemos todos los momentos de orden $n$, podemos deducir cuál es la distribución de $X$.
+
+## Momoentos centrales de orden n de una variable aleatoria

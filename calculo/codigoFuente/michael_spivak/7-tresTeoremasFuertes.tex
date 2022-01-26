@@ -277,8 +277,31 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	    Esto es, $f(x)>0$ para todo  $x\in(a,\infty).$ Similarmente, $f(x)>0$ para todo  $x\in(-\infty,a).$ Por lo tanto podemos decir que $f(x)>0$ para todo $x\neq a$.\\\\
 
 	%----------(b)
-	\item 
+	\item Supongamos ahora que $f$ es continuo y que $f(x)=0$ solo para $x=a$, pero supongamos, en cambio, que $f(x)>0$ para algún $x>a$ y $f(x)<0$ para algún $x<a$. Ahora que puede decir de $f(x)$ para $x\neq a$?.\\\\
+	    Respuesta.-\; Por hipótesis, existe algún $x_1\in (a,\infty)$ tal que $f(x_1)>0.$. Ahora si existe $y_1\in (a,\infty)$ con $f(y_1)<0$, entonces existe algún $z_1\in (a,\infty)$ entre $x_1$ y $y_1$ tal que $f(z_1)=0.$ Esto contradice que $f$ es cero sólo en $x=a$. Por lo tanto, no existe algún $y_1\in (a,\infty)$ con $f(y_1)<0.$\\
+	    Esto es, $f(x)>0$ para todo $x\in (a,\infty).$ Luego por similar argumento, $f(x)<0$ para todo $x\in (-\infty,a)$. Así, $f(x)>0$ para todo $x>a$ y $f(x)<0$ para todo $x<a$.\\\\
+
+	%----------(c)
+	\item Discutir el signo de $x^3+x^2+xy^2+y^3$ cuando $x$ e $y$ no son ambos $0$.\\\\
+	    Respuesta.-\; Para $y\neq 0$, sea $f(x)=x^3+x^2y+xy^2+y^3$. Luego
+	    $$f(x)=\dfrac{x^4-y^4}{x-y}$$
 
     \end{enumerate}
+
+%-------------------- 10.
+\item Supóngase $f$ y $g$ son continuas en $[a,b]$ y que $f(a)<g(a)$, pero $f(b)>g(b)$. Demostrar que $f(x)=g(x)$ para algún $x$ en $[a,b]$.\\\\
+    Demostración.-\; Sea $$h=f-g$$
+    entonces por el teorema 1 se tiene $$h(x)=0$$
+    por lo que $$f(x)=g(x)\; \mbox{para algún }x \in [a,b].$$\\
+
+%-------------------- 11.
+\item Supóngase que $f$ es una función continua en $[0,1]$ y que $f(x)$ es en $[0,1]$ para cada $x$. Demostrar que $f(x)=x$ para algún número $x$.\\\\
+    Demostración.-\; Ya que $x$ es continuo entonces $$g(x)=x-f(x)$$ también es continuo. Luego por el teorema 1 se tiene,
+    $$f(x) - x = 0 \; \Longrightarrow \; x=f(x) \; \mbox{para algún}\; x \in [0,1].$$\\
+
+%-------------------- 12.
+\item 
+
+    
 
 \end{enumerate}

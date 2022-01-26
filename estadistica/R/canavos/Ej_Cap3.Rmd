@@ -574,7 +574,7 @@ $$\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d
 $$Var(X) = E(X^2) - E^2(X) = 96 - 8^2 = 32$$
 
 # 3.20
-$$m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx = \dfrac{e^{tx-\frac{1}{4}x}}{x}\bigg|_0^\infty$$
+$$m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx $$
 
 # 3.21
 $E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c$

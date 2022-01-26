@@ -2059,6 +2059,179 @@ En cada uno de los ejercicios del 16 al 21 se hace referencia a una varilla de l
     $$r=\dfrac{L}{\sqrt{3}}$$
 
 %-------------------- 17.
-\item 
+\item $\rho(x)=1$ para $0\leq x \leq \dfrac{L}{2}$, $\rho(x)=2$ para $\dfrac{L}{2}<x\leq<L$.\\\\
+    Respuesta.-\;  El centro de masa es dado por,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^{\frac{L}{2}} + \int_{\frac{L}{2}^L}2x\; dx}{\int_0^{\frac{L}{2}}\; dx + \int_{\frac{L}{2}^L}2\; dx}\\\\
+		    &=&\dfrac{\frac{L^2}{8}}{\frac{3L^2}{4}}{\frac{L}{2}+L}\\\\
+		    &=&\dfrac{7L}{12}.\\\\
+    \end{array}$$
+
+    El momento de inercia es,
+
+    $$\begin{array}{rcl}
+	\displaystyle\int_0^L x^2 \rho(x)\; dx&=&\displaystyle\int_0^{\frac{L}{2}} x^2\; dx + \displaystyle\int_{\frac{L}{2}}^{L}2x^2\; dx\\\\
+					      &=&\dfrac{L^3}{24}+\dfrac{2L^3}{3}-\dfrac{L^3}{12}\\\\
+					      &=&\dfrac{5L^3}{8}.\\\\
+    \end{array}$$
+
+    El radio de giro es,
+
+    $$\begin{array}{rcl}
+	r^2&=&\dfrac{\int_0^L x \rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	   &=&\dfrac{\frac{5L^3}{8}}{\frac{3L}{2}}\\\\
+	   &=&\dfrac{5L^2}{12}\\\\
+	   &=&\dfrac{\sqrt{5}L}{2\sqrt{3}}\\\\
+    \end{array}$$
+
+%-------------------- 18.
+\item $\rho(x)=x$ para $0\leq x \leq L$.\\\\
+    Respuesta.-\; El centro de masa es dado por,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^L x^2\; dx}{\int_0^L x\; dx}\\\\
+		    &=&\dfrac{\frac{L^3}{3}}{\frac{2L}{3}}.\\\\
+		    &=&\dfrac{2L}{3}.\\\\
+    \end{array}$$
+
+    El momento de inercia es,
+
+    $$\begin{array}{rcl}
+	\displaystyle\int_0^L x^2 \rho(x)\; dx&=&\displaystyle\int_0^L x^3\; dx\\\\
+					      &=&\dfrac{L^4}{4}.\\\\
+    \end{array}$$
+
+    El radio de giro es,
+
+    $$\begin{array}{rcl}
+	r^2&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	   &=&\dfrac{\frac{L^4}{4}}{\frac{L^2}{2}}\\\\
+	   &=&\dfrac{L^2}{2}\\\\
+    \end{array}$$
+
+%-------------------- 19.
+\item $\rho(x)=x$ para $0\leq x \leq \dfrac{L}{2},$ $\rho(x)=\dfrac{L}{2}$ para $\dfrac{L}{2}\leq x \leq L$.\\\\ 
+    Respuesta.-\; El centro de masa es dado por,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^{\frac{L}{2}}x^2\; dx + \int_{\frac{L}{2}}^L \frac{L}{2} x\; dx}{\int_0^{\frac{L}{2}}x\; dx + \int_{\frac{L}{2}}^L \frac{L}{2}\; dx}\\\\
+		    &=&\dfrac{\frac{L^3}{24}+\frac{L^3}{4}-\frac{L^3}{16}}{\frac{L^2}{8}+\frac{L^2}{4}}\\\\
+		    &=&\dfrac{11L}{18}.\\\\
+    \end{array}$$
+
+    El momento de inercia es,
+
+    $$\begin{array}{rcl}
+	\displaystyle\int_0^Lx^2\rho(x)\; dx&=&\displaystyle\int_0^{\frac{L}{2}}x^3\; dx + \int_{\frac{L}{2}}^L x^2\; dx\\\\
+					    &=&\dfrac{L^3}{64}+\dfrac{L^4}{6}-\dfrac{L^4}{48}\\\\
+					    &=&\dfrac{31L^4}{192}\\\\
+    \end{array}$$
+
+    El radio de giro es,
+
+    $$\begin{array}{rcl}
+	r^2&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	   &=&\dfrac{\frac{31L^4}{192}}{\frac{3L^2}{8}}\\\\
+	   &=&\dfrac{31L^2}{72}.\\\\
+    \end{array}$$
+
+%-------------------- 20.
+\item $\rho(x) = x^2$ para $0\leq x\leq L.$\\\\
+    Respuesta.-\; El centro de masa es dado por,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^L x^3\; dx}{\int_0^L x^2\; dx}\\\\
+		    &=&\dfrac{\frac{L^4}{4}}{\frac{L^3}{3}}\\\\
+		    &=&\dfrac{3L}{4}\\\\
+    \end{array}$$
+
+    El momento de inercia es,
+
+    $$\int_0^L x^2 \rho(x)\; dx = \int_0^L x^4\; dx = \dfrac{L^5}{5}.$$
+
+    El radio de giro es,
+
+    $$\begin{array}{rcl}
+	&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	&=&\dfrac{\frac{L^5}{5}}{\frac{L^3}{3}}\\\\
+	&=&\dfrac{3L^3}{5}\\\\
+    \end{array}$$
+
+%-------------------- 21.
+\item $\rho(x)=0x^2$ para $0\leq x\leq \frac{L}{2},$ $\rho(x)=\dfrac{L^2}{4}$ para $\dfrac{L}{2}\leq x \leq L$.\\\\
+    Respuesta.-\; El centro de masa es dado por,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^{\frac{L}{2}}x^3\; dx + \int_{\frac{L}{2}}^L x\frac{L^2}{4}\; dx}{\int_0^{\frac{L}{2}} x^2\; dx + \int_{\frac{L}{2}}^L \frac{L^2}{4}\; dx}\\\\
+		    &=&\dfrac{\frac{L^4}{64}+\frac{L^4}{32}}{\frac{L^3}{24}+\frac{L^3}{8}}\\\\
+		    &=&\dfrac{\frac{7L^4}{64}}{\frac{L^3}{6}}\\\\
+		    &=&\dfrac{21L}{32}\\\\
+    \end{array}$$
+
+    El momento de inercia es,
+    $$\begin{array}{rcl}
+	\displaystyle\int_0^L x^2 \rho(x)\; dx&=&\displaystyle\int_0^{\frac{L}{2}}x^4\; dx + \int_{\frac{L}{2}}^L x^2 \dfrac{L^2}{4}\; dx\\\\
+					      &=&\dfrac{L^5}{160}+\dfrac{7L^5}{96}\\\\
+					      &=&\dfrac{16L^5}{240}\\\\
+    \end{array}$$
+
+    El radio de giro es,
+    $$\begin{array}{rcl}
+	r^2&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	   &=&\dfrac{\int_0^L x \rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+	   &=&\dfrac{\frac{19L^5}{240}}{\frac{L^3}{6}}\\\\
+	   &=&\dfrac{19L^2}{40}\\\\
+    \end{array}$$
+
+%-------------------- 22.
+\item Determine la densidad de masa $\rho$ para que el centro de masa de una barra de longitud $L$ esté a una distancia L/4 de un extremo de la varilla.\\\\
+    Respuesta.-\; Sea $$\rho(x)=x^2\; mbox{para}\; 0\leq x \leq L$$
+    entonces calculamos el centro de masa de la barra,
+    $$\begin{array}{rcl}
+	\overline{x}&=&\dfrac{\int_0^L x\rho(x)\; dx}{\int_0^L \rho(x)\; dx}\\\\
+		    &=&\dfrac{\int_0^L x^3\; dx}{\int_0^L x^2\; dx}\\\\
+		    &=&\dfrac{\frac{L^4}{4}}{\frac{L^3}{4}}\\\\
+		    &=&\dfrac{3L}{4}\\\\
+    \end{array}$$
+
+    Por lo tanto, el centro de masa está a una distancia $L/4$ de un extremo de la barra.\\\\
+
+%-------------------- 23.
+\item En un circuito eléctrico, el voltaje $e(t)$ en el tiempo $t$ está dado por la fórmula $e(t)=3\sen 2t$. Calcular: (a) el voltage medio sobre el intervalo de tiempo $[0,\pi/2]$; (b) la raíz cuadrada media del voltaje; esto es, la raíz cuadrada de la media de la función $e^2$ en el intervalo $[0,\pi/2]$.\\\\
+    Respuesta.-\; Notemos que la media de $e(t)$ como $A(e)$,
+    $$\begin{array}{rcl}
+	A(e)&=&\dfrac{\int_0^{\frac{\pi}{2}}\sen 2t\; dt}{\int_0^{\frac{\pi}{2}}\; dt}\\\\
+	    &=&\dfrac{6}{\pi}\displaystyle\int_0^{\frac{\pi}{2}\sen 2t\; dt}\\\\
+	    &=&\dfrac{3}{\pi}\displaystyle\int_0^\pi \sen t\; dt\\\\
+	    &=&\dfrac{3}{\pi}(1-\cos \pi)\\\\
+	    &=&\dfrac{6}{\pi}\\\\
+    \end{array}$$
+
+    La raíz cuadrada media viene dada por la raiz cuadrada de la función $e^2$ sobre el intervalo $0<t\leq \frac{\pi}{2}$, así,
+    $$\begin{array}{rcl}
+	R^2&=&\left(\dfrac{2}{\pi}\displaystyle\int_0^{\frac{\pi}{2}} 9\sen^2 2t\; dt\right)^{1/2}\\\\
+	   &=&\left(\dfrac{9}{\pi}\displaystyle\int_0^{\pi} \sen^2 t\; dt\right)^{1/2}\\\\
+	   &=&\sqrt{\dfrac{9}{2}}\\\\
+	   &=&\dfrac{3}{\sqrt{2}}\\\\
+    \end{array}$$
+    Donde usanmos la fórmula de la solución del ejemplo 3 pag 101, para calcular la integral $\int_0^\pi \sen^2 x\; dx = \frac{\pi}{2}.$\\\\
+
+
+%-------------------- 24.
+\item En un circuito eléctrico, el voltaje $e(t)$ y la corriente $i(t)$ en el tiempo $t$ son dados por las fórmulas $e(t)=160\sen t$, $i(t)=2\sen (t-\pi/6)$. La potencia media se define como 
+    $$\dfrac{1}{T}\int_0^T e(t)i(t)\; dx$$
+    donde $T$ es el periodo del voltaje y la corriente. Determine $T$ y calcule la potencia media.\\\\
+    Respuesta.-\; Primero, ya que el voltaje está dado por $e(t)=160\sen t$ sabemos que tiene periodo $2\pi$, así $T=2\pi$. Entonces podemos calcular la potencia promedio como sigue,
+    $$\begin{array}{rcl}
+	A&=&\dfrac{1}{2\pi}\displaystyle\int_0^{2\pi}320\sen t \sen \left(t-\dfrac{\pi}{6}\right)\; dt\\\\
+	 &=&\dfrac{160}{\pi}\displaystyle\int_0^{2\pi} \sen t \left(\sen t \cos \dfrac{\pi}{6} - \sen \dfrac{\pi}{6} \cos t\right)\; dt\\\\
+	 &=&\dfrac{160}{\pi}\displaystyle \left( \cos \dfrac{\pi}{6} \int_0^{2\pi} \sen^2 t \; dt - \sen\dfrac{\pi}{6} \int_0^{2\pi} \sen t \cos t\; dt \right)\\\\
+	 &=&\dfrac{160}{\pi}\displaystyle\left(\dfrac{\sqrt{3}}{2}\int_0^{2\pi} (1-\cos 2t)\; dt - \dfrac{1}{4}\int_0^{2\pi} \sen 2t\; dt \right)\\\\
+	 &=&\dfrac{80\sqrt{3}}{2\pi}(2\pi-0)-\dfrac{40}{\pi}\cdot 0\\\\
+	 &=&80\sqrt{3}.\\\\
+    \end{array}$$
 
 \end{enumerate}
+
+\section{La integral como función de límite superior. Integrales indefinidas}

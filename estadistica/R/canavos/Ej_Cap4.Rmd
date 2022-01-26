@@ -1,0 +1,7 @@
+---
+title: "Ejercicios capítulo 4"
+author: "Christian Limbert Paredes Aguilera"
+date: "25/1/2022"
+output: html_document
+---
+
