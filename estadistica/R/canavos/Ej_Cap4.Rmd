@@ -5,3 +5,25 @@ date: "25/1/2022"
 output: html_document
 ---
 
+# 4.1.
+$$\begin{array}{rcl}
+  p(n-x;n,1-p)&=&\dfrac{n!}{\left[n-(n-x)\right]!(n-x)!}(1-p)^{n-x}\left[1-(1-p)\right]^{n-(n-x)}\\\\
+  &=&\dfrac{n!}{x!(n-x)!}(1-p)^{n-x} p^{x}\; \mbox{para } x=0,1,2,\ldots n\\\\
+  &=&p(x;n,p)\\\\
+\end{array}$$
+
+
+# 4.2.
+$$0.08808038=\dfrac{10!}{\left[10-(10-4)\right]!(10-4)!}(1-0.8)^{10-6}\left[1-(1-0.8)\right]^{10-(10-6)} =\dfrac{10!}{6!(10-6)!}(1-0.8)^{10-6} 0.8^{6} = 0.08808038$$
+
+
+```{r}
+dbinom(4,10,0.2)
+dbinom(6,10,0.8)
+```
+
+
+# 4.3
+$$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1} = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
+
+# 4.4.

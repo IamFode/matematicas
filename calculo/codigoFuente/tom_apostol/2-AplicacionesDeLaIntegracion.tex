@@ -1838,7 +1838,6 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
     
 \end{enumerate}
 
-\end{comment}
 
 \section{Valor medio de una función}
 
@@ -2208,14 +2207,14 @@ En cada uno de los ejercicios del 16 al 21 se hace referencia a una varilla de l
 	    &=&\dfrac{6}{\pi}\\\\
     \end{array}$$
 
-    La raíz cuadrada media viene dada por la raiz cuadrada de la función $e^2$ sobre el intervalo $0<t\leq \frac{\pi}{2}$, así,
+    La raíz cuadrada media viene dada por la raíz cuadrada de la función $e^2$ sobre el intervalo $0<t\leq \frac{\pi}{2}$, así,
     $$\begin{array}{rcl}
 	R^2&=&\left(\dfrac{2}{\pi}\displaystyle\int_0^{\frac{\pi}{2}} 9\sen^2 2t\; dt\right)^{1/2}\\\\
 	   &=&\left(\dfrac{9}{\pi}\displaystyle\int_0^{\pi} \sen^2 t\; dt\right)^{1/2}\\\\
 	   &=&\sqrt{\dfrac{9}{2}}\\\\
 	   &=&\dfrac{3}{\sqrt{2}}\\\\
     \end{array}$$
-    Donde usanmos la fórmula de la solución del ejemplo 3 pag 101, para calcular la integral $\int_0^\pi \sen^2 x\; dx = \frac{\pi}{2}.$\\\\
+    Donde usamos la fórmula de la solución del ejemplo 3 página 101, para calcular la integral $\int_0^\pi \sen^2 x\; dx = \frac{\pi}{2}.$\\\\
 
 
 %-------------------- 24.
@@ -2234,4 +2233,49 @@ En cada uno de los ejercicios del 16 al 21 se hace referencia a una varilla de l
 
 \end{enumerate}
 
+\end{comment}
+
 \section{La integral como función de límite superior. Integrales indefinidas}
+
+Si $f$ es no negativa en $[a,b]$, la integral indefinida $A$ es creciente, puesto que se tiene
+$$A(y)-A(x)=\int_a^y f(t)\; dx - \int_a^x f(t)\; dx = \int_x^y f(t)\; dx \geq 0$$
+siempre que $a\leq x \leq b.$\\\\
+
+%-------------------- Definición de función convexa
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Definición de función convexa] Una función $g$ se llama convexa en un intervalo $[a,b]$ si, para todo $x$ e $y$ en $[a,b]$ y para cada $\alpha$ tal que $0<\alpha<1$, tenemos 
+	$$g(z)\leq \alpha g(y) + (1-\alpha)g(x),\; \mbox{donde}\; <=\alpha y + (1-\alpha)x$$
+	Decimos que $g$ es cóncava en $[a,b]$ si es válida la desigualdad invertida,
+	$$g(z)\geq \alpha g(y) + (1-\alpha)g(x),\; \mbox{donde}\; <=\alpha y + (1-\alpha)x$$
+    \end{def.}
+\end{tcolorbox}
+
+%-------------------- teorema 
+\begin{teo}
+    Sea $A(x) =\int_a^x f(t)\; dt$. Entonces, $A$ es convexa en cada intervalo donde $f$ es creciente , y cóncavo en cada intervalo donde $f$ es decreciente.\\\\
+    Demostración.-\; Supongamos que $f$ es creciente en $[a,b]$, elijamos $x<y$,  y sea $z=\alpha y + (1-\alpha)x.$ Tenemos que demostrar que $A(z)\leq \alpha A(y)+(1-\alpha)A(x)$. 
+\end{teo}
+
+
+
+
+
+\section{Ejercicios}
+
+Calcular las integrales de los ejercicios 1 al 16.\\\\
+
+\begin{enumerate}[\bfseries \Large 1.]
+
+    %--------------------1.
+    \item $\displaystyle\int_0^x (1+t+t^2)\; dt = \left(t+\dfrac{t^2}{2}+\dfrac{t^3}{3}\right)\bigg|_0^x = x+\dfrac{x^2}{2}+\dfrac{x^3}{3}.$\\\\
+
+    %--------------------2.
+    \item $\displaystyle\int_0^{2y} (1+t+t^2)\; dt = \left(t+\dfrac{t^2}{2}+\dfrac{t^3}{3}\right)\bigg|_0^{2y} = 2y + 2y^2 + \dfrac{8y^2}{3}.$\\\\
+
+    %--------------------3.
+    \item 
+   
+
+
+\end{enumerate}
+

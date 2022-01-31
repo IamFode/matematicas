@@ -296,11 +296,124 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 %-------------------- 11.
 \item Supóngase que $f$ es una función continua en $[0,1]$ y que $f(x)$ es en $[0,1]$ para cada $x$. Demostrar que $f(x)=x$ para algún número $x$.\\\\
-    Demostración.-\; Ya que $x$ es continuo entonces $$g(x)=x-f(x)$$ también es continuo. Luego por el teorema 1 se tiene,
+    Demostración.-\; Para $f(0)=0$ o $f(1)=1$ entonces se puede elegir $x=0$ o $x=1$. Ya que $x$ es continuo entonces $$g(x)=x-f(x)$$ también es continuo. Luego, por el teorema 1 se tiene,
     $$f(x) - x = 0 \; \Longrightarrow \; x=f(x) \; \mbox{para algún}\; x \in [0,1].$$\\
 
 %-------------------- 12.
+\item  
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item El problema 11 muestra que $f$ intersecta la diagonal del cuadrado. Demostrar que $f$ debe cortar a la otra diagonal.\\\\
+	    Demostración.-\; Vemos que la linea representa una función $f$ en $[0,1]$, dado por,
+	    $$f(x)=x.$$
+	    es continuo sobre $[0,1]$. Ahora supongamos una nueva función $g$ en $[0,1]$ tal que
+	    $$g(x)=x-f(x)$$
+	    de donde,
+	    $$\begin{array}{l}
+		g(0)=0-f(0)=-f(0)\leq 0\\\\
+		g(1)=1-f(1)\\
+	    \end{array}$$
+
+	    De las dos funciones anteriores se tiene,
+	    $$\begin{array}{l}
+		f(0)<g(0)\\\\
+		f(1)>g(1)\\
+	    \end{array}$$
+
+	    Por último definamos una nueva función continua $h$ de forma que,
+	    $$h=f-g$$
+	    entonces,
+	    $$\begin{array}{l}
+		h(1)=f(1)-g(1)>0\\\\
+		h(0)=f(0)-g(0)<0\\
+	    \end{array}$$
+	    
+	    Luego, existe algún punto $c$ en $[0,1]$ por lo que ambas curvas es,
+	    $$h(c)=0$$
+	    y 
+	    $$\begin{array}{rcl}
+		f(c)-g(c)&=&0\\
+		f(c)&=&g(c)\\
+	    \end{array}$$
+
+	    Por lo tanto, hay algún $c$ en $[0,1]$ donde $f$ intersecta a la otra linea diagonal.\\\\
+
+	%----------(b)
+	\item Demostrar el siguiente hecho más general: Si $g$ es continuo en $[0,1]$ y $g(0)=0$, $g(1)=1$ o $g(0)=1$, $g(1)=0$, entonces $f(x)=g(x)$ para algún $x$.\\\\
+	    Demostración.-\;  Sea $f$ en $[0,1]$ entonces
+	    $$\begin{array}{l}
+		f(0)=0\\\\
+		f(1)=1\\
+	    \end{array}$$
+
+	    La otra linea punteada representa una función $g$ en $[0,1]$ dada por,
+	    $$\begin{array}{l}
+		g(0)=0\\\\
+		g(1)=1\\
+	    \end{array}$$
+
+	    De donde 
+
+	    $$\begin{array}{l}
+		f(0)<g(0)\\\\
+		f(1)>g(1)\\
+	    \end{array}$$
+
+	    Ahora definimos una nueva función continua $h$ de forma que,
+	    $$h=f-g$$
+	    entonces,
+	    $$\begin{array}{l}
+		h(1)=f(1)-g(1)>0\\\\
+		h(0)=f(0)-g(0)<0\\
+	    \end{array}$$
+	    
+	    Luego, existe algún punto $c$ en $[0,1]$ por lo que ambas curvas es,
+	    $$h(c)=0$$
+	    y 
+	    $$\begin{array}{rcl}
+		f(c)-g(c)&=&0\\
+		f(c)&=&g(c)\\
+	    \end{array}$$
+
+	    Por lo tanto, un continuo $f(g)$ y $g$, existe $f(x)=g(x)$ para algún $x$.\\\\
+
+    \end{enumerate}
+
+%-------------------- 13.
 \item 
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Sea $f(x)=\sen 1/X$ para $x\neq 0$ y sea $f(0)=0,$ ¿Es $f$ continuo en $[-1,1]$?. Demostrar que $f$ satisface la conclusión del teorema de valor intermedio en $[-1,1]$; en otras palabras, si $f$ toma dos valores comprendidos en $[-1,1]$, toma también todos los valores intermedios.\\\\
+	    Demostración.-\; Sea la secuencia ${x_n}_n$ en $[-1,1]$ definida por,
+	    $$x_ = \dfrac{2}{\pi(4n-3)},\quad n\geq 1$$
+	    luego notamos que 
+	    $$\lim_{x\to \infty} x_n = 0$$
+	    Ahora aplicando la función $f$ se tiene,
+	    $$\lim_{n\to \infty}f(x_n) = \lim_{n\to \infty}\sin\left(\dfrac{1}{\frac{2}{\pi(4n-3)}}\right) = \lim_{n\to \infty}\sin\left(\dfrac{\pi(4n-3)}{2}\right) = 1, \quad \forall n\geq 1.$$
+	    por lo tanto la función $f$, como tal, no es continuo en $[-1,1]$.\\\\
+	    Ahora demostraremos que $f$ satisface el teorema de valor intermedio en $[-1,1]$. Ya que $f(0)=0$ según la hipótesis, podemos decir que $f$ es continuo en $[0,1]$. Vamos a considerar los siguientes casos:\\
+
+	    \begin{enumerate}[\bfseries C1]
+
+		%----------C1
+		\item Si $a<b$ son dos puntos de $[-1,1]$ con $a,b>0$ o $a,b<0$, entonces $f$ toma cada valor entre $f(a)$ y $f(b)$ en el intervalo $[a,b]$ ya que $f$ es continuo en $[a,b]$.\\
+
+		%----------C2
+		\item Si $a<0<b$, entonces $f$ toma todos los valores entre $-1$ y $1$ en $[a,b]$. \\ 
+
+	    \end{enumerate}
+	    Así $f$ tomas todos los valores entre $f(a)$ y $f(b)$. Lo mismo ocurre para $a=0$ o $b=0$.\\\\
+
+
+	%----------(b)
+	\item Supóngase que $f$ satisface la conclusión del teorema del valor intermedio y que $f$ toma cada valor solo una vez. Demostrar que $f$ es continua.\\\\
+	    Demostración.-\; 
+
+	
+
+    \end{enumerate}
 
     
 

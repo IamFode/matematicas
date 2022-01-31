@@ -13,3 +13,75 @@ El momento de orden $1$ de una variable aleatorio es su valor medio o $E(X).$
 Los momentos de orden $n$ caracterizan una variable $X$. O sea, que si conocemos todos los momentos de orden $n$, podemos deducir cuál es la distribución de $X$.
 
 ## Momoentos centrales de orden n de una variable aleatoria
+Sea $X$ una variable aleatoria. Definimos el momento central de orden $n$ como $\mu_n = E[(X--\mu)^n]$, donde $\mu=E(X)$ es la media o esperanza de la variables aleatoria $X$.
+
+El momento central de orden 1 de una v.a. es siempre 0.
+$$\mu_1 = E_1(X-\mu) = E(X)-E(\mu)=E(X)-E(X)=0$$
+
+El momento central de orden 2 de una v.a. es la varianza
+$$\mu_2 = E(X-\mu)^2 = Var(X)$$
+
+Los momentos centrales de orden $n$ caracterizan también una variable $X$. O sea, que si conocemos todos los momentos centrales de orden $n$, podemos deducir cuál es la distribución de $X$.
+
+#### Propocisión 
+La relación que hay entre los momentos centrales y los momentos de una v.a. es la siguiente:
+$$\mu_n = \sum_{k=0}^n (-1)^{n-k}{n\choose k} \mu^{n-k}m_k = \sum_{k=0}^n (-1)^k{n \choose k}\mu^k m_{n-k}$$
+donde $\mu=E(X)$ recordemos que es la esperanza de la v.a. X.
+
+Demostración.-\; Recordemos la definición de momentos centrales de orden $n$ y desarrollemos aplicando el binomio de Newton:
+$$\mu_n = E(X-\mu) = E\left(\sum_{k=0}^n (-1)^{n-k}{n \choose k} x^k \mu^{n-k}\right)$$
+
+La esperanza de la suma es la suma de esperanzas, obtenemos la expresión dada por la proposición:
+$$\mu_n = \sum_{k=0}^n (-1)^{n-k} E(X^k)=\sum_{k=0}^n (-1)^{n-k}{n\choose k}\mu^{n-k}m_k$$
+
+## Asimetría de una variable aleatoria
+Una variable aleatoria tiene asimetría positiva si su función de densidad o de probabilidad presenta una cola a la derecha y asimetría negativa, si su función de densidad o de probabilidad presenta cola a la izquierda.
+
+### ¿Cómo calcular la asimetría de una variable aleatoria?
+
+#### Coeficiente de asimetría de Pearson
+La simetría de una variable aleatoria $X$ se calcula a partir de sus momentos centrales de segundo y tercer orden:
+$$\gamma = E \left(\dfrac{X-\mu}{\sigma} \right)^3 = \dfrac{\mu_3}{\sigma^3}$$
+
+donde $\mu=E(X)$ y $\sigma^2 = Var(X)$
+
+### Coeficiente de asimetría
+$$\gamma_1 = \dfrac{m_3 - 3\mu\sigma^2 - \mu^3}{\sigma^3}$$
+
+Por tanto, una variable aleatoria $X$ tendrá simetría positiva o a la derecha si   $\gamma_1>0$ y tendrá asimetría negativa o a la izquierda, si $\gamma_1<0$.
+
+## Curtosis o apuntamiento de una variable aleatoria
+
+### Medida de curtosis de Pearson
+La manera estándard de medir la curtosis de una variable aleatoria $X$ es a partir de su momento central de cuarto orden:
+$$\gamma^2 = E\left(\dfrac{X-\mu}{\sigma}\right)^4=\dfrac{\mu_4}{\sigma^4}$$
+
+
+-  Diremos que una variable aleatoria no tiene exceso de curtosis o mesocúrtica si $\gamma_2=3.$
+
+- Diremos que una variable aleatoria tiene exceso positivo de curtosis o leptocúrtica si $\gamma_2>3.$
+
+- Diremos que una variable aleatoria tiene exceso negativo de curtosis o platicúrtica si $\gamma_2<3.$
+
+
+# Función generadora de momentos
+Sea $X$ una v.a. $X$ con función de probabilidad $P_X$ en el caso discreto o función de densidad $f_X$ en el caso continuo.
+
+Sea $t\in \mathbb{R}$ un valor real cualquiera. Definimos la función generatriz de momentos $m_X(t)$ en el valor $t$ como:
+$$m_X(t)=E(e^{tX})$$
+
+## Cómo calcular los momentos a partir de la función generatriz
+### Relación entre la función generatriz de momentos y los momentos
+
+#### Proposición 
+Sean $X$ una variable aleatoria con función generatriz de momentos $m_x(t)$. Entonces, el momento de orden $n$ de $X$ se puede obtener de la forma siguiente:
+$$m_n = E(X^n) = \dfrac{d}{dt^n}m_X(t)\bigg|_{t=0} = m_X^{(n)}(0).$$
+
+O sea, el momento de orden $n$ de $X$ es la derivadan-ésima de la función generatriz de momentos evaluada en $t=0$.
+
+Demostración.- Recordemos la definición de la función generatriz de momentos: $$M_X(t)=E(e^{tX}).$$
+
+la idea de la demostración es probar por inducción que $m_X^{(n)}(t)$
+
+Veámoslo para $n=1$
+

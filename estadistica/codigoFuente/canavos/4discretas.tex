@@ -37,8 +37,32 @@ La probabilidad de que una variable aleatoria $X$ sea menor o igual a un valor e
 
 % ---------------------- función de distribución acumulativa
 \begin{tcolorbox}[colback=white]
-    $$P(X\leq x) = F(x;n,p) = \sum_{i=0}^x {n\choose i} P^i (1-p)^{n-1}$$
+    $$P(X\leq x) = F(x;n,p) = \sum_{i=0}^x {n\choose i} p^i (1-p)^{n-i}$$
 \end{tcolorbox}
 
+Nótese que si $n=1$, la función de probabilidad binomial se deduce a
 
+\begin{tcolorbox}[colback=white]
+    $$p(x;n,p)=\left\{\begin{array}{ll}
+	p^x(1-p)^{1-x} & x = 0,1\\\\
+	0 & \mbox{para cualquier otro valor}.
+    \end{array}\right.$$
+\end{tcolorbox}
 
+Que es la función de probabilidad de la distribución puntual o Bernoulli.\\\\
+
+Por definición 3.8, el primer momento alrededor del cero de la variable aleatoria binomial $X$ es el valor esperado de $X$.
+$$\begin{array}{rcl}
+    E(X) & = & x\sum\limits_{x=0}^n \dfrac{n!}{(n-x)!x!} p^x(1-p)^{n-x}\\\\
+	 & = & x\sum\limits_{x=1}^n \dfrac{n!}{(n-x)!x!} p^x(1-p)^{n-x}\\\\
+	 & = & \sum\limits_{x=1}^n \dfrac{n!}{(n-x)!(x-1)!} p^x(1-p)^{n-x}\\\\
+\end{array}$$
+
+en donde se ha escrito la suma desde uno hasta $n$, dado que cuando $x=0$ el primer término es cero y se cancela la $x$ del numerador con la $x$ en $x!$. Factorizando $n$ y $p$, se tiene: 
+$$E(X)=np\sum_{x=1}^n \dfrac{(n-1)!}{(n-x)!(x-1)!}p^{x-1}(1-p)^{n-x}$$
+
+Si $y=x-1$ y $m=n-1$, entonces:
+$$E(X)=np\sum_{x=1}^n \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$$
+
+De donde se sabe que $p(y; m,p) = \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$   es la función de probabilidad de una variable aleatoria binomial $Y$ con parámetros $m=n-1$ y $p$; de ésta manera $\sum_{y=0}^m p(y;m,p) = 1$ y la media de una variable  aleatoria binomial es:
+$$E(X)=\mu = np.$$
