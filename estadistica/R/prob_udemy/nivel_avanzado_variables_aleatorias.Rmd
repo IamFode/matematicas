@@ -87,5 +87,5 @@ Veámoslo para $n=1$; $m^{'}_X(t) = E(e^{tX}X)$
 
 Seguidamente, apliquemos inducción sobre $n$. Supongamos que $m_X^{(n)}(t)=E(e^{tX}X^n)$ y veamos que $m_X^{n+1}(t)=E(e^{tX}X^{n+1}): m_X^{n+1}(t) = \dfrac{d}{dt}(m_X^{(n)}X^n) = E(e^{tX}X^{n+1})$ tal como queriamos demostar.
 
-Por último apliquemos la expresión demostrada $m_X^{(n)}=E(e^{tX}X^n)$ a $t=0$, obtenemos: $m_X^{(n)}(0) = E(X^n) = m_n$ tal como dice la propocisión.
+Por último apliquemos la expresión demostrada $m_X^{(n)}=E(e^{tX}X^n)$ a $t=0$, obtenemos: $m_X^{(n)}(0) = E(X^n) = m_n$ tal como dice la proposición.
 

@@ -5,6 +5,10 @@ date: "25/1/2022"
 output: html_document
 ---
 
+```{r}
+library(ggplot2)
+```
+
 # 4.1.
 $$\begin{array}{rcl}
   p(n-x;n,1-p)&=&\dfrac{n!}{\left[n-(n-x)\right]!(n-x)!}(1-p)^{n-x}\left[1-(1-p)\right]^{n-(n-x)}\\\\
@@ -27,3 +31,8 @@ dbinom(6,10,0.8)
 $$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1} = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
 
 # 4.4.
+$$p(x+1;8,0.4) = \dfrac{(8-x)0.4}{(x+1)(1-0.4)}p(x;8,0.4)$$
+# 4.5
+## a)
+
+## b)
