@@ -49,7 +49,7 @@ Nótese que si $n=1$, la función de probabilidad binomial se deduce a
     \end{array}\right.$$
 \end{tcolorbox}
 
-Que es la función de probabilidad de la distribución puntual o Bernoulli.\\\\
+Que es la \textbf{función de probabilidad de la distribución puntual o Bernoulli.}\\\\
 
 Por definición 3.8, el primer momento alrededor del cero de la variable aleatoria binomial $X$ es el valor esperado de $X$.
 $$\begin{array}{rcl}
@@ -64,5 +64,38 @@ $$E(X)=np\sum_{x=1}^n \dfrac{(n-1)!}{(n-x)!(x-1)!}p^{x-1}(1-p)^{n-x}$$
 Si $y=x-1$ y $m=n-1$, entonces:
 $$E(X)=np\sum_{x=1}^n \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$$
 
-De donde se sabe que $p(y; m,p) = \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$   es la función de probabilidad de una variable aleatoria binomial $Y$ con parámetros $m=n-1$ y $p$; de ésta manera $\sum_{y=0}^m p(y;m,p) = 1$ y la media de una variable  aleatoria binomial es:
-$$E(X)=\mu = np.$$
+De donde se sabe que $p(y; m,p) = \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$   es la función de probabilidad de una variable aleatoria binomial $Y$ con parámetros $m=n-1$ y $p$; de ésta manera $\sum_{y=0}^m p(y;m,p) = 1$ y \textbf{la media de una variable  aleatoria binomial es}:
+
+\begin{tcolorbox}[colback=white]
+    $$E(X)=\mu = np.$$
+\end{tcolorbox}
+
+Para obtener la varianza, se necesita el segundo momento alrededor de cero, $\mu_2^{'}$, o:
+$$E(X^2) = \sum\limits_{x=0}^n x^2 p(x;n,p)$$
+pero, e el término $x^2/x!$ se cancelará una sola $x$ en el numerador, y la que resta evitará que la suma se manipule de la misma forma en que se determinó la media. La alternativa es escribir $x^2$ como:
+$$x^2= x(x-1)+x;$$
+de esta manera se tiene:
+$$E(X^2) = E[X(X-1)]+E(X).$$
+Dado que $E(X)$ ya se ha determinado, puede usarse el mismo procedimiento para evaluar $E(X(X-1))$:
+$$\begin{array}{rcl}
+    E[X(X-1)]&=&\sum\limits_{x=0}^n x(x-1)\dfrac{n!}{(n-x)!x!}p^x (1-p)^{n-x}\\\\
+	     &=&\sum\limits_{x=2}^n x(x-1)\dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\\\\
+	     &=&\sum\limits_{x=2}^n \dfrac{n!}{(n-x)(x-2)!}p^x(1-p)^{n-x}\\\\
+	     &=&n(n-1)p^2\sum\limits_{x=2}^n \dfrac{(n-2)!}{(n-x)!(x-2)!}p^{x-2}(1-p)^{n-x}\\\\
+\end{array}$$
+
+Sea $y=x-2$ y $m=n-2$, entonces:
+$$\begin{array}{rcl}
+    E[X(X-1)]&=&n(n-1)p^2\sum\limits_{y=0}^m \dfrac{m!}{(m-y)y!}p^y(1-p)^{m-y}\\\\
+	     &=&n(n-1)p^2\sum\limits_{y=0}^m p(y;m,p)\\\\
+	     &=&n(n-1)p^2\\\\
+\end{array}$$
+
+Así,
+$$E(X^2) = \mu_2^{'} = n(n-1)p^2+np$$
+De esta manera, la \textbf{varianza de una variable aleatoria binomial} es:
+
+\begin{tcolorbox}[colback=white]
+    $$Var(X) = \mu_2^{'}-\mu^2 = n(n-1)p^2 + np - n^2p^2 = np[(n-1)p+1-np] = np(1-p).$$
+\end{tcolorbox}
+

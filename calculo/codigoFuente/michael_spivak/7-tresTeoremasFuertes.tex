@@ -409,12 +409,16 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 	%----------(b)
 	\item Supóngase que $f$ satisface la conclusión del teorema del valor intermedio y que $f$ toma cada valor solo una vez. Demostrar que $f$ es continua.\\\\
-	    Demostración.-\; 
+	Demostración.-\; Si $f$ no fuese continua en $a$, entonces por el problema 6-9(b) para algún $\epsilon>0$ existirían $x$ tan cerca como se quiera de $a$ con $f(x)>f(a)+\epsilon$
+	$f(x)<f(a)-\epsilon$. Supongamos que ocurre lo primero. Podemos incluso suponer que existen $x$ tan cerca como se quiera de $a$ y $>a$, o bien tan cerca como se quiera de $a$ y $<a$. Supongamos también aquí lo primero. Tomemos un $x>a$ con $f(x)>f(a)+\epsilon$. Según el teorema de los valores intermedios, existe un $x^{'}$ entre $a$ y $x$ con $f(x^{'})<f(a)+\epsilon$. Pero existe también $y$ entre $a$ y $x^{'}$ con $f(y)<f(a)+\epsilon$. Pero existe también $y$ entre $a$ y $x^{'}$ con $f(y)>f(a)+\epsilon$. Según el teorema de los valores intermedios, $f$ forma el valor $f(a)+\epsilon$ entre $x$ y $x^{'}$ y también entre $x^{'}$ e $y$, contrariamente a la hipótesis.\\\\
 
-	
+	%----------(c)
+	\item Generalizar para el caso donde $f$ toma cada valor solo un número finito de veces.\\\\
+	    Respuesta.-\; Lo mismo que en $(b)$ elíjase $x_1>a$ con $f(x_1)>f(a)+\epsilon$. Después elijase $x_1^{'}$ entre $a$ y $x_1$ con $f(x_1^{'})<f(a)+\epsilon.$ Luego elíjase $x_2$ entre $a$ y $x_1^{'}$ con $f(x_2)>f(a)+\epsilon$ y $x_2^{'}$ entre $a$ y $x_2$ con $f(x_2^{'})<f(a)+\epsilon$, etc. Entonces $f$ toma el valor $f(a)+\epsilon$ en cada uno de los intervalos $[x_n^{'},x_n]$ en contradicción con la hipótesis.\\\\
 
     \end{enumerate}
 
-    
+% -------------------- 14.
+\item 
 
 \end{enumerate}

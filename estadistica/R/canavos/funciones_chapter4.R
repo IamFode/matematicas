@@ -28,6 +28,18 @@ acum_binom <- function(x,n,p){
   return(sum)
 }
 
-1-acum_binom(2,10,0.3)
-func_binom(5,10,0.3)
 
+# función de probabilidad de la distribución puntual o Bernoulli
+dist_bernoulli <- function(x,p){
+  if (x>=0){
+    return(p^x * (1-p)^{1-x})
+  }else{
+    return("x debe ser mayor o igual a 0")
+  } 
+}
+
+# experanza matemática
+Ex_binom <- function(n,p) n*p
+
+# varianza
+Var_binom <- function(n,p) n*p*(1-p)

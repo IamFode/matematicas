@@ -77,11 +77,15 @@ $$m_X(t)=E(e^{tX})$$
 Sean $X$ una variable aleatoria con función generatriz de momentos $m_x(t)$. Entonces, el momento de orden $n$ de $X$ se puede obtener de la forma siguiente:
 $$m_n = E(X^n) = \dfrac{d}{dt^n}m_X(t)\bigg|_{t=0} = m_X^{(n)}(0).$$
 
-O sea, el momento de orden $n$ de $X$ es la derivadan-ésima de la función generatriz de momentos evaluada en $t=0$.
+O sea, el momento de orden $n$ de $X$ es la derivada n-ésima de la función generatriz de momentos evaluada en $t=0$.
 
 Demostración.- Recordemos la definición de la función generatriz de momentos: $$M_X(t)=E(e^{tX}).$$
 
 la idea de la demostración es probar por inducción que $m_X^{(n)}(t)$
 
-Veámoslo para $n=1$
+Veámoslo para $n=1$; $m^{'}_X(t) = E(e^{tX}X)$
+
+Seguidamente, apliquemos inducción sobre $n$. Supongamos que $m_X^{(n)}(t)=E(e^{tX}X^n)$ y veamos que $m_X^{n+1}(t)=E(e^{tX}X^{n+1}): m_X^{n+1}(t) = \dfrac{d}{dt}(m_X^{(n)}X^n) = E(e^{tX}X^{n+1})$ tal como queriamos demostar.
+
+Por último apliquemos la expresión demostrada $m_X^{(n)}=E(e^{tX}X^n)$ a $t=0$, obtenemos: $m_X^{(n)}(0) = E(X^n) = m_n$ tal como dice la propocisión.
 

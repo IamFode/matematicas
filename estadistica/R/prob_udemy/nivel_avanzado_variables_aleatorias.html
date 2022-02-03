@@ -223,6 +223,22 @@ pre code {
 <h1>Función generadora de momentos</h1>
 <p>Sea <span class="math inline">\(X\)</span> una v.a. <span class="math inline">\(X\)</span> con función de probabilidad <span class="math inline">\(P_X\)</span> en el caso discreto o función de densidad <span class="math inline">\(f_X\)</span> en el caso continuo.</p>
 <p>Sea <span class="math inline">\(t\in \mathbb{R}\)</span> un valor real cualquiera. Definimos la función generatriz de momentos <span class="math inline">\(m_X(t)\)</span> en el valor <span class="math inline">\(t\)</span> como: <span class="math display">\[m_X(t)=E(e^{tX})\]</span></p>
+<div id="cómo-calcular-los-momentos-a-partir-de-la-función-generatriz" class="section level2">
+<h2>Cómo calcular los momentos a partir de la función generatriz</h2>
+<div id="relación-entre-la-función-generatriz-de-momentos-y-los-momentos" class="section level3">
+<h3>Relación entre la función generatriz de momentos y los momentos</h3>
+<div id="proposición" class="section level4">
+<h4>Proposición</h4>
+<p>Sean <span class="math inline">\(X\)</span> una variable aleatoria con función generatriz de momentos <span class="math inline">\(m_x(t)\)</span>. Entonces, el momento de orden <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span> se puede obtener de la forma siguiente: <span class="math display">\[m_n = E(X^n) = \dfrac{d}{dt^n}m_X(t)\bigg|_{t=0} = m_X^{(n)}(0).\]</span></p>
+<p>O sea, el momento de orden <span class="math inline">\(n\)</span> de <span class="math inline">\(X\)</span> es la derivada n-ésima de la función generatriz de momentos evaluada en <span class="math inline">\(t=0\)</span>.</p>
+<p>Demostración.- Recordemos la definición de la función generatriz de momentos: <span class="math display">\[M_X(t)=E(e^{tX}).\]</span></p>
+<p>la idea de la demostración es probar por inducción que <span class="math inline">\(m_X^{(n)}(t)\)</span></p>
+<p>Veámoslo para <span class="math inline">\(n=1\)</span>; <span class="math inline">\(m^{&#39;}_X(t) = E(e^{tX}X)\)</span></p>
+<p>Seguidamente, apliquemos inducción sobre <span class="math inline">\(n\)</span>. Supongamos que <span class="math inline">\(m_X^{(n)}(t)=E(e^{tX}X^n)\)</span> y veamos que <span class="math inline">\(m_X^{n+1}(t)=E(e^{tX}X^{n+1}): m_X^{n+1}(t) = \dfrac{d}{dt}(m_X^{(n)}X^n) = E(e^{tX}X^{n+1})\)</span> tal como queriamos demostar.</p>
+<p>Por último apliquemos la expresión demostrada <span class="math inline">\(m_X^{(n)}=E(e^{tX}X^n)\)</span> a <span class="math inline">\(t=0\)</span>, obtenemos: <span class="math inline">\(m_X^{(n)}(0) = E(X^n) = m_n\)</span> tal como dice la propocisión.</p>
+</div>
+</div>
+</div>
 </div>
 
 

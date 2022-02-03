@@ -2273,8 +2273,72 @@ Calcular las integrales de los ejercicios 1 al 16.\\\\
     \item $\displaystyle\int_0^{2y} (1+t+t^2)\; dt = \left(t+\dfrac{t^2}{2}+\dfrac{t^3}{3}\right)\bigg|_0^{2y} = 2y + 2y^2 + \dfrac{8y^2}{3}.$\\\\
 
     %--------------------3.
-    \item 
+    \item $\displaystyle\int_{-1}^{2x} (1+t+t^2)\; dx = \left(t+\dfrac{t^2}{2}+\dfrac{t^3}{3}\right)\bigg|_{-1}^{2x} = 2x+1 + \dfrac{4x^2 -1}{2} + \dfrac{8x^3 + 1}{3} = \dfrac{16x^3+12x^2+12x+5}{6}.$\\\\
+
+    %--------------------4.
+    \item $\displaystyle\int_1^{1-x} (1-2t+3t^2)\; dx = \left(t + t^2 + t^3\right)\bigg|_1^{1-x} = 1-x - 1 + (1-x)^2 + 1 + (1-x)^3 - 1 = (1-x)^3 + (1-x)^2 + (1 - x) - 1 = -x^3 + 2x^2 - 2x$\\\\
+
+    %--------------------5.
+    \item $\displaystyle\int_{-2}^{x}t^2(t^2+1)\; dt = \int_{-2}^x (t^4+t^2)\; dt = \left(\dfrac{t^5}{5}+\dfrac{t^3}{3}\right)\bigg|_{-2}^x = \left(\dfrac{x^5}{5}\right) - \left(-\dfrac{32}{5}-\dfrac{8}{3}\right) = \dfrac{1}{5}x^5+\dfrac{1}{3}x^3+\dfrac{136}{15}.$\\\\
+
+    %--------------------6.
+    \item $\displaystyle\int_x^{x^2} (t^2+1)^2\; dt.$\\\\
+	Respuesta.-\; $$\begin{array}{rcl}
+	    \displaystyle\int_x^{x^2}(t^2+1)^2\; dt&=&\displaystyle\int_x^{x^2}(t^4+2t^2+1)\; dt\\\\
+						   &=&\left(\dfrac{t^5}{5}+\dfrac{2t^3}{3}+t\right)\bigg|_x^{x^2}\\\\
+						   &=&\left(\dfrac{x^10}{5}+\dfrac{2x^5}{3}+x^2\right)-\left(\dfrac{x^5}{5}+\dfrac{2x^3}{5}+x\right)\\\\
+						   &=&\dfrac{x^{10}}{5}+\dfrac{2x^6}{3}-\dfrac{x^5}{5}-\dfrac{x^3}{3}+x^2-x\\\\
+	\end{array}$$
+
+    %--------------------7.
+    \item $\displaystyle\int_1^x (t^{1/2}+1)\; dt, \quad x>0.$\\\\
+	Respuesta.-\; 
+	$$\begin{array}{rcl}
+	    \displaystyle\int_1^x (t^{1/2}+1)\; dt&=&\left(\dfrac{2t^{2/3}}{3}+t\right)\bigg|_1^x\\\\
+						  &=&\left(\dfrac{2x^{2/3}}{3}+x\right)-\left(1-\dfrac{2}{3}\right)\\\\
+						  &=&\dfrac{2x^{2/3}}{3}+x-\dfrac{5}{3}.\\\\
+						  
+	\end{array}$$
+
+    %--------------------8.
+    \item $\displaystyle\int_x^{x^2} (t^{1/2} + t^{1/4})\; dt, \quad x>0$.\\\\
+	Respuesta.-\;
+	$$\begin{array}{rcl}
+	    \displaystyle\int_x^{x^2} (t^{1/2} + t^{1/4})\; dt&=&\left(\dfrac{2t^{2/3}}{3}+\dfrac{4t^{5/4}}{5}\right)\bigg|_x^{x^2}\\\\
+							      &=&\left(\dfrac{2x^3}{3}-\dfrac{4x^{5/2}}{5}\right)-\left(\dfrac{2x^{2/3}}{3}+\dfrac{4x^{5/4}}{5}\right)\\\\
+							      &=&\dfrac{2}{3}(x^3-x^{3/2})+\dfrac{4}{5}(x^{5/2}-x^{5/4})\\\\
+	\end{array}$$
+
+    %--------------------9.
+    \item $\displaystyle\int_{-\pi}^{x} cos t\; dt = \sen t \bigg|_{-\pi}^x = \sen x.$\\\\
+
+    %--------------------10.
+    \item $\displaystyle\int_0^{x^2} (\frac{1}{2}+\cos t)\; dt = \left(\dfrac{t}{2}+\sen t\right)\bigg|_0^{x^2} = \dfrac{x^2}{2}+\sen x^2$.\\\\
+
+    %--------------------11.
+    \item $\displaystyle\int_x^{x^2}(\frac{1}{2}-\sen t)\; dt = \dfrac{x^2}{2}-\dfrac{x}{2}-\cos x + \cos x^2.$\\\\
    
+    %--------------------12.
+    \item $\displaystyle\int_0^x (u^2 + \sen 3u)\; du = \int_0^x u^2\; du + \dfrac{1}{3}\int_0^{3x}\sen u\; du 0 \dfrac{x^3}{3}+\dfrac{1}{3}(-\cos u)\bigg|_0^{3x} = \dfrac{x^3}{3}+\dfrac{1}{3}-\dfrac{1}{3}\cos 3x.$\\\\
+
+    %--------------------13.
+    \item $\displaystyle\int_x^{x^2}(v^2 + \sen 3v)\; dt = \int_x^{x^2}v^2\; dv + \int_x^{x^2}\sen 3v\; dv = \left(\dfrac{x^6}{3}-\dfrac{x^3}{3}\right)+\dfrac{1}{3}\int_{3x}^{3x^2}\sen v\; dv = \dfrac{1}{3}(x^6-x^3+\cos3x - \cos^2 3x).$\\\\
+
+    %--------------------14.
+    \item $\displaystyle\int_0^y (\sen^2x+x)\; dx = \dfrac{1}{2}\int_0^y (1-\cos2x)\; dx + \int_0^y x\; dx = \dfrac{y}{2}-\dfrac{1}{4}\int_0^y \cos x \; dx + \dfrac{y^2}{2} = -\dfrac{1}{4}\sen y + \dfrac{y}{2} + \dfrac{y^2}{2}.$\\\\
+
+    %--------------------15.
+    \item $\displaystyle\int_0^x \left(\sen 2w + \cos \dfrac{w}{2}\right)\; dw.$\\\\
+	Respuesta.-\;
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^x \left(\sen 2w + \cos \dfrac{w}{2}\right)\; dw&=&\displaystyle\dfrac{1}{2}\int_0^{2x}\sen w\; dw + 2\int_0^{\frac{x}{2}}\cos w\; dw\\\\
+									       &=&\dfrac{1}{2}(-\cos w)\bigg|_0^{2x} + 2(\sen w)\bigg|_0^{\frac{x}{2}}\\\\
+									       &=&-\dfrac{1}{2}\cos 2x +\dfrac{1}{2}+2\sen \dfrac{x}{2}\\\\
+									       &=&\dfrac{1}{2}-\dfrac{1}{2}\cos 2x +2\sen \dfrac{x}{2}.\\\\
+	\end{array}$$
+
+    %--------------------16.
+    \item $\displaystyle\int_{-\pi}^{x}(\frac{1}{2}+\cos t)^2\; dt$
 
 
 \end{enumerate}
