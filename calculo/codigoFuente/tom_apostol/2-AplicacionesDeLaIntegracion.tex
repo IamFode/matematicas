@@ -2338,7 +2338,20 @@ Calcular las integrales de los ejercicios 1 al 16.\\\\
 	\end{array}$$
 
     %--------------------16.
-    \item $\displaystyle\int_{-\pi}^{x}(\frac{1}{2}+\cos t)^2\; dt$
+    \item $\displaystyle\int_{-\pi}^{x}(\frac{1}{2}+\cos t)^2\; dt$.\\\\
+	Respuesta.-\;
+	$$\begin{array}{rcl}
+	    \displaystyle\int_{-\pi}^{x}(\frac{1}{2}+\cos t)^2\; dt&=&\displaystyle\int_{-\pi}^{x}\left(\dfrac{1}{4}+\cos t + \cos^2 t\right)\; dt\\\\
+								   &=&\dfrac{1}{4}\displaystyle\int_{-\pi}^{x} t \; dt +\int_{-\pi}^{x} \cos t\; dt + \int_{-\pi}^x \cos^2 t \; dt\\\\
+								   &=&\dfrac{1}{4}(x+\pi)+[\sen x - \sen (-\pi)] + \int \displaystyle\int_{-\pi}^x \dfrac{1}{2}[1+\cos(2t)]\; dt\\\\
+								   &=&\dfrac{1}{4}(x+\pi) + \sen x + \dfrac{1}{2}(x+\pi)+\dfrac{1}{4}\displaystyle\int_{-2\pi}^{2x}\cos t\; dt\\\\
+								   &=&\dfrac{3}{4}(x+\pi) + \sen x + \left(\dfrac{1}{4}\sen x\bigg|_{-2\pi}^{2x}\right)\\\\
+
+								   &=&\dfrac{3}{4}(x+\pi)+\sen x + \dfrac{1}{4}\sen 2x.\\\\
+	\end{array}$$
+
+    %--------------------17.
+    \item 
 
 
 \end{enumerate}
