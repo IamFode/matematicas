@@ -235,7 +235,26 @@ pre code {
 <p>la idea de la demostración es probar por inducción que <span class="math inline">\(m_X^{(n)}(t)\)</span></p>
 <p>Veámoslo para <span class="math inline">\(n=1\)</span>; <span class="math inline">\(m^{&#39;}_X(t) = E(e^{tX}X)\)</span></p>
 <p>Seguidamente, apliquemos inducción sobre <span class="math inline">\(n\)</span>. Supongamos que <span class="math inline">\(m_X^{(n)}(t)=E(e^{tX}X^n)\)</span> y veamos que <span class="math inline">\(m_X^{n+1}(t)=E(e^{tX}X^{n+1}): m_X^{n+1}(t) = \dfrac{d}{dt}(m_X^{(n)}X^n) = E(e^{tX}X^{n+1})\)</span> tal como queriamos demostar.</p>
-<p>Por último apliquemos la expresión demostrada <span class="math inline">\(m_X^{(n)}=E(e^{tX}X^n)\)</span> a <span class="math inline">\(t=0\)</span>, obtenemos: <span class="math inline">\(m_X^{(n)}(0) = E(X^n) = m_n\)</span> tal como dice la propocisión.</p>
+<p>Por último apliquemos la expresión demostrada <span class="math inline">\(m_X^{(n)}=E(e^{tX}X^n)\)</span> a <span class="math inline">\(t=0\)</span>, obtenemos: <span class="math inline">\(m_X^{(n)}(0) = E(X^n) = m_n\)</span> tal como dice la proposición.</p>
+</div>
+</div>
+</div>
+<div id="función-característica-de-una-variable-aleatoria" class="section level2">
+<h2>Función característica de una variable aleatoria</h2>
+<div id="definición" class="section level3">
+<h3>Definición</h3>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria <span class="math inline">\(X\)</span> con función de probabilidad <span class="math inline">\(P_X\)</span> en el caso discreto o función de densidad <span class="math inline">\(f_X\)</span> en el caso continuo.</p>
+<p>Sea <span class="math inline">\(w\in \mathbb{R}\)</span> un valor real cualquiera.</p>
+<p>Definimos la función característica <span class="math inline">\(\phi_X(w)\)</span> en el valor <span class="math inline">\(w\)</span> como:</p>
+<p><span class="math inline">\(\phi_X(w) = E(e^{iwX})\)</span>, donde <span class="math inline">\(i\)</span> es el número complejo <span class="math inline">\(i=\sqrt{-1}\)</span></p>
+<div id="observaciones" class="section level4">
+<h4>Observaciones</h4>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria continua, la función caracteristica <span class="math inline">\(\phi_X(w)\)</span> puede interpretarse como la transformada de Fourier de la función de densidad de <span class="math inline">\(X\)</span>: <span class="math display">\[\phi(w) = \int_{-\infty}^\infty f_X(x)e^{iwx}\; dx\]</span></p>
+<p>Por lo tanto, usando la fórmula de la antitransformada de Fourier, podemos escribir la función de densidad <span class="math inline">\(f_X(x)\)</span> como función de la función característica de <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[\phi_X(x): \; f_X(x) = \dfrac{1}{2\pi}\int_{-\infty}^{\infty}\phi_X(w)e^{-iwx}\; dw\]</span></p>
+<p>En el caso discreto, o sea, si <span class="math inline">\(X\)</span> es una variable discreta, la función característica <span class="math inline">\(\phi_X(w)\)</span> se escribe como función de la función de probabilidad <span class="math inline">\(P_X(x_k)\)</span> con dominio <span class="math inline">\(D_X = \lbrace x_k,k\rbrace\)</span> como: <span class="math inline">\(\phi(w)\sum_k P_X(x_k)e^{iwk}.\)</span></p>
+<p>En los casos en que los <span class="math inline">\(x_k\)</span> sean enteros, <span class="math inline">\(x_k=k\)</span>, que son la mayoría, la ecuación anterior en la transformada de Fourier de la secuencia <span class="math inline">\(P_X(k)\)</span>. Dicha función es una función periódica en <span class="math inline">\(w\)</span> de periodo <span class="math inline">\(2\pi\)</span> ya que <span class="math inline">\(e^{i(w+2\pi)k}=e^{iwk}.\)</span></p>
+<p>Por tanto, usando la fórmula de inversión, podemos escribir la función de probabilidad <span class="math inline">\(P_X(k)\)</span> como función de la función característica de <span class="math inline">\(X\)</span>, <span class="math inline">\(\phi(w)\)</span>: <span class="math display">\[P_X(k)=\dfrac{1}{2\pi}\int_0^{2\pi}\phi(w)e^{-iwk}\; dw\]</span></p>
 </div>
 </div>
 </div>

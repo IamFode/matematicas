@@ -2351,7 +2351,24 @@ Calcular las integrales de los ejercicios 1 al 16.\\\\
 	\end{array}$$
 
     %--------------------17.
-    \item 
+    \item Encuentre todos los valores reales de $x$ tal que 
+	$$\int_0^x (t^3-t)\; dt = \dfrac{1}{3}\int_{\sqrt{2}}^x (t-t^3)\; dt.$$
+	Dibuja una figura adecuada e interpreta la ecuación geométricamente. \\\\
+
+	Respuesta.-\; Primeramente evaluamos la integral de la izquierda.
+	$$\int_0^x (t^3-t)\; dt = \dfrac{x^4}{4}-\dfrac{x^2}{2}.$$
+	luego evaluamos la integral de la derecha.
+	$$\dfrac{1}{3}\int_{\sqrt{2}}^x (t-t^3)\; dt = -\dfrac{1}{3}\left(\dfrac{x^4}{4}-\dfrac{x^2}{2}\right)$$
+	así, igualando los dos resultados nos que da
+	$$\dfrac{x^4}{4}-\dfrac{x^2}{2} = -\dfrac{1}{3}\left(\dfrac{x^4}{4}-\dfrac{x^2}{2}\right)$$
+	Se ve claramente que una solución es $x=0$. Si $x\neq 0$ entonces podemos dividir por $x^2$ y obtenemos,
+	$$\dfrac{x^2}{4}-\dfrac{1}{2}=-\dfrac{1}{3}\left(\dfrac{x^2}{4}-\dfrac{1}{2}\right)\; \Longrightarrow \; \dfrac{x^2}{3}=\dfrac{2}{3}\; \Longrightarrow\; x^2=2 \; \Longrightarrow\; x=\pm\sqrt{2}.$$
+	de donde concluimos que las soluciones vienen dadas por $x=0,\sqrt{2},-\sqrt{2}.$\\\\
+
+    %--------------------18.
+    \item Sea $f(x)=x-[x]-\frac{1}{2}$ si $x$ no es un entero, y sea $f(x)=0$ si $x$ es un entero. (Se denota $[x]$ como el entero mayor $\leq x$). Definir una nueva función $P$ como sigue:
+	$$P(x)=\int_0^x f(t)\; dt\quad \mbox{para cada real }x$$
+
 
 
 \end{enumerate}

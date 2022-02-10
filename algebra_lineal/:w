@@ -23,31 +23,7 @@ $$\begin{array}{lll}
 									&&a(b+c)=ab+ac&\mbox{Distributividad}\\\\
 \end{array}$$
 
-$(\mathbb{R},+,\cdot)$ Se llama campo o cuerpo.\\\\
+$(\mathbb{R},+,\cdot)$ Se llama campo o cuerpo
 
-\begin{center}
-    \begin{tikzpicture}[s]
-	\draw[->] (-1,0) -- (3,0);
-	\draw[->] (0,-1) -- (0,3);
-	\draw[->] (0,0) -- (2,2)node[right]{$A(x,y)$};
-	\draw[dashed] (2,0)node[below]{$x$} -- (2,2);
-	\draw[dashed] (0,2)node[left]{$y$} -- (2,2);
-    \end{tikzpicture}
-\end{center}
-
-
-
-$$\begin{array}{cccc}
-    + : & \mathbb{R}^2\times \mathbb{R}^2 & \Longrightarrow &\mathbb{R}^2\\
-	&&&\\
-	&&&\\
-\end{array}$$
-
-\begin{itemize}
-    \item Conmutativo: $(x,y)+(m,n) = (x+m,y+n) = (m+x,n+y)=(m,n)+(x,y)$ por lo tanto $$(x,y)+(m,n)=(n,m)+(x,y)$$
-    \item Asociatividad: $(x,y)+\left[(m,n)+(a,b)\right]=\left[(x,y)+(m,n)\right]+(a,b)$
-    \item Neutro: $(x,y)+(0,0) = (x+0,y+0)=(x,y)$
-    \item Inverso: $(x,y)+(x^{'},y^{'})=();\; x^{'}=-x,\; y^{'}=-y$ 
-    \end{itemize}
 
 

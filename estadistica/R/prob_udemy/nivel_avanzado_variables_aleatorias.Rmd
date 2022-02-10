@@ -89,3 +89,30 @@ Seguidamente, apliquemos inducción sobre $n$. Supongamos que $m_X^{(n)}(t)=E(e^
 
 Por último apliquemos la expresión demostrada $m_X^{(n)}=E(e^{tX}X^n)$ a $t=0$, obtenemos: $m_X^{(n)}(0) = E(X^n) = m_n$ tal como dice la proposición.
 
+## Función característica de una variable aleatoria
+### Definición
+
+Sea $X$ una variable aleatoria $X$ con función de probabilidad $P_X$ en el caso discreto o función de densidad $f_X$ en el caso continuo.
+
+Sea $w\in \mathbb{R}$ un valor real cualquiera.
+
+Definimos la función característica $\phi_X(w)$ en el valor $w$ como:
+
+$\phi_X(w) = E(e^{iwX})$, donde $i$ es el número complejo $i=\sqrt{-1}$
+
+#### Observaciones
+Si $X$ es una variable aleatoria continua, la función caracteristica $\phi_X(w)$ puede interpretarse como la transformada de Fourier de la función de densidad de $X$:
+$$\phi(w) = \int_{-\infty}^\infty f_X(x)e^{iwx}\; dx$$
+
+Por lo tanto, usando la fórmula de la antitransformada de Fourier, podemos escribir la función de densidad $f_X(x)$ como función de la función característica de $X$
+
+$$\phi_X(x): \; f_X(x) = \dfrac{1}{2\pi}\int_{-\infty}^{\infty}\phi_X(w)e^{-iwx}\; dw$$
+
+En el caso discreto, o sea, si $X$ es una variable discreta, la función característica $\phi_X(w)$ se escribe como función de la función de probabilidad $P_X(x_k)$ con dominio $D_X = \lbrace x_k,k\rbrace$ como: $\phi(w)\sum_k P_X(x_k)e^{iwk}.$
+
+En los casos en que los $x_k$ sean enteros, $x_k=k$, que son la mayoría, la ecuación anterior en la transformada de Fourier de la secuencia $P_X(k)$. Dicha función es una función periódica en $w$ de periodo $2\pi$ ya que $e^{i(w+2\pi)k}=e^{iwk}.$
+
+Por tanto, usando la fórmula de inversión, podemos escribir la función de probabilidad $P_X(k)$ como función de la función característica de $X$, $\phi(w)$:
+$$P_X(k)=\dfrac{1}{2\pi}\int_0^{2\pi}\phi(w)e^{-iwk}\; dw$$
+
+## Cómo calcular los momentos a partir de una función característica.

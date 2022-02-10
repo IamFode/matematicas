@@ -1,4 +1,6 @@
+
 \chapter{Tres teoremas fuertes}
+
 
 % -------------------- teorema 1 --------------------
 \begin{tcolorbox}[colback = white]
@@ -428,8 +430,53 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 	    Demostración.-\; Ya que $|cf|=|c|\cdot |f(x)|$ para todo $x$ de $[0,1].$ entonces podemos elegir un $x_0$ tal que $|f|(x_0)=\|f\|$, y por lo tanto $\|cf\| = |c|\cdot \|f\|$.\\\\
 
 	%----------(b)
-	\item 
+	\item Demostrar que $\|f+g\|\leq \|f\|+\|g\|.$ Dar un ejemplo donde $\|f+g\|\neq \|f\|+\|g\|.$\\\\
+	    Demostración.-\; Para las todos funciones dadas, tenemos
+	    $$\begin{array}{rcl}
+		|f+g|(x)&=&|f(x)+g(x)|\\
+		|f+g|(x)&\leq&|f(x)|+|g(x)|\\
+		|f+g|(x)&\leq&|f|(x)+|g|(x)\\
+	    \end{array}$$
+	    También sabemos que si $f$ o $g$ tienen el máximo valor en $x_0$ entonces,
+	    $$\begin{array}{rcl}
+		|f|(x_0)&=&\|f\|\\
+		|g|(x_0)&=&\|g\|\\
+	    \end{array}$$
 
+	    Luego si la función $|f+g|$ tiene el máximo valor en $x_0$ entonces,
+	    $$\begin{array}{rcl}
+		\|f+g\|&=&|f+g|(x_0)\\
+		\|f+g\|&\leq&|f|(x_0) + |g|(x_0)\\
+		       \|f+g\|&\leq&\|f\| + \|g\|\\
+	    \end{array}$$
+	    Por último, sea $f(x)=x+3$ y $g(x)=x-4$ entonces se cumple que $\|f+g\|\neq \|f\|+\|g\|$.\\\\
+
+	%----------(c)
+	\item Demostrar que $\|h-f\|\leq \|h-g\|+\|g-f\|$.\\\\
+	    Demostración.-\; Para las todos funciones dadas, tenemos
+	    $$\begin{array}{rcl}
+		|h-f|(x)&=&|(h-g)-(g-f)|(x)\\
+		|h-f|(x)&\leq&|(h-g)(x)|+|(g-f)(x)|\\
+		|h-f|(x)&\leq&|h-g|(x)+|g-f|(x)\\
+	    \end{array}$$
+	    También sabemos que si $f$ o $g$ tienen el máximo valor en $x_0$ entonces,
+	    $$\begin{array}{rcl}
+		|f|(x_0)&=&\|f\|\\
+		|g|(x_0)&=&\|g\|\\
+		|h|(x_0)&=&\|h\|\\
+	    \end{array}$$
+
+	    Luego si la función $|f+g|$ tiene el máximo valor en $x_0$ entonces,
+	    $$\begin{array}{rcl}
+		\|h-f\|&=&|h-f|(x_0)\\
+		\|h-f\|&\leq&|h-g|(x_0) + |g-f|(x_0)\\
+		       \|h-f\|&\leq&\|h-g\| + \|g-f\|\\\\
+	    \end{array}$$
+   
     \end{enumerate}
+
+    % -------------------- 15.
+    \item 
+
 
 \end{enumerate}
