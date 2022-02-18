@@ -119,16 +119,30 @@ $$\begin{array}{rcl}
 	     &=&n(n-1)(n-2)p^3+3n(n-1)p^2+np\\
 \end{array}$$
 
-El tercero momento central $\mu_3$ puede ser determinado por 
-
-
-
-
-
-
+El tercero momento central $\mu_3$ puede ser determinado por $\mu_3 = \mu_3^{'}-3\mu\mu_2^{'} + 2\mu^3$.
+$$\mu_3 = n(n-1)(n-2)p^3 +3n(n-1)p^2 + np-3np[n(n-1)p^2+np]+2n^3p^3$$
+Lo que se traduce como:
+$$\mu_3=np(1-p)(1-2p)$$
+Por tanto de $\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$ el tercer momento estandarizado de la distribución binomial es:
+$$\begin{array}{rcl}
+    \alpha_3&=&\dfrac{np(1-p)(1-2p)}{[np(1-p)]^{3/2}}\\\\
+	    &=&\dfrac{np(1-p)(1-2p)}{np(1-p)[np(1-p)]^{1/2}}\\\\
+	    &=&\dfrac{1-2p}{[np(1-p)]^{1/2}}\\\\
+\end{array}$$
 
 
 De manera similar, para el cuarto momento alrededor del cero se evalúa $E[X(X-1)(X-2)(X-3)]$ dado que:
 $$E[X(X-1)(X-2)(X-3)] = \mu_4^{'}-6\mu_3^{'}+11\mu_2^{'}-6\mu.$$
 
-pag 112
+es decir,
+
+$$\begin{array}{rcl}
+		       E[X(X-1)(X-2)(X-3)]&=&\sum\limits_{x=4}^n x(x-1)(x-2)(x-3)\cdot \dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\\\\
+					  &=&n(n-1)(n-2)(n-3)p^4\sum\limits_{x=4}^n \dfrac{(n-4)!}{(n-x)!(x-4)!}p^{x-4}(1-p)^{n-x}\\\\
+					  &=&n(n-1)(n-2)(n-3)p^4\sum\limits_{y=0}^m\dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{m-y}\\\\
+		       &=&n(n-1)(n-2)(n-3)p^4\\\\
+\end{array}$$
+
+Sustituir en 
+
+

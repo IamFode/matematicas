@@ -1,11 +1,8 @@
 ---
-title: "Ejercicios del Capítulo 3"
-author: "Christian Limbert Paredes Aguilera"
-date: "30/12/2021"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+title: "Problemas resueltos: Probabilidad y estadística aplicaciones y métodos George Canavos "
+author: "Christian Paredes Aguilera (Fode)"
+date: "12/2/2022"
+output: pdf_document
 ---
 
 ```{r}
@@ -13,9 +10,14 @@ output:
 library(ggplot2)
 ```
 
-# 3.1
+# Ejercicios Capítulo 3
+
+## 3.1 
+Sea $X$ una variable aleatoria que representa el número de llamadas que recibe un conmutador en un intervalo de cinco minutos y cuta función de probabilidad está dada por $p(x)=e^{-3} (3)^x/x!, x=0,1,2,\ldots.$
 
 ### a)
+Determinar las probabilidades de que $X$ sea igual a $0,1,2,3,4,5,6$ y $7$.
+
 ```{r}
 X <- c(0,1,2,3,4,5,6,7)
 fp <- c()
@@ -23,15 +25,20 @@ for (x in 0:7) {
   fp <- c(fp, exp(-3)*3^x / factorial(x))
 }
 df <- data.frame(X,fp)
+df
 ```
 
 ### b)
+Graficar la función de probabilidad para estos valores de $X$
+
 ```{r}
 ggplot(data = df, mapping = aes(X,fp)) + 
   geom_col(width = 0.1)
 ```
 
 ### c)
+Determinar la función de distribución acumulativa para estos valores de $X$
+
 ```{r}
 fda <- c()
 sum <- 0
@@ -44,14 +51,18 @@ print(fda)
 ```
 
 ### d)
+Graficar la función de distribución acumulativa.
+
 ```{r}
 ggplot(data = df, mapping = aes(X,fda)) + 
   geom_line(width = 2)
 ```
 
 
-# 3.2.
-Por definición 3.4, sea 
+## 3.2.
+Sea $X$ una variable aleatoria discreta. Determinar el valor de $k$ para que la función $p(x)=k/x, x=1,2,3,4,$ sea la función de probabilidad de $X$. Determinar $P(1\leq X\leq 3)$
+
+Respuesta.- Por definición 3.4, sea 
 $$k+\dfrac{k}{2}+\dfrac{k}{3}+\dfrac{k}{4}=1 \quad \Longrightarrow \quad k=\dfrac{12}{25}$$
 
 entonces la función de probabilidad de una variable aleatoria discreta $X$ estará dada por:
@@ -66,15 +77,27 @@ $$p(x) = \left\{\begin{array}{rcl}
 Así, la probabilidad de $P(1\leq X \leq 3)$ será, $$P(1\leq X \leq 3) = 1 - P(X=4) = 1 - \dfrac{3}{25} = \dfrac{22}{25} = 1.88$$
 
 
-# 3.3.
+## 3.3.
+Sea $X$ una variable aleatoria continua.
+
 ### a)	    
-Según la definición 3.6 se tiene,
+Determinar el valor de $k$, de manera tal que la función
+$$f(x)=\left\{ \begin{array}{ll}kx^2 & -1\leq x \leq 1, \\\\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
+
+sea la función de densidad de probabilidad de $X$.
+
+Respuesta.- Según la definición 3.6 se tiene,
 $$\int_{-x}^x kx^2\; dx = \int_{-1}^1 kx^2\; dx =  1 \quad \Longrightarrow \quad k=\dfrac{3}{2}$$
 
 ```{r}
 integrate(function(x) 3/2*x^2, lower = -1, upper = 1)
 ```
+
 ### b)
+Determinar la función de distribución acumulativa de $X$ y graficar $F(x).$
+
+Respuesta.-
+
 $$P(X\leq x) = \int_{-\infty}^x f(t)\; dt = \int_{-\infty}^{-1} 0\; dt + \int_{-1}^x \dfrac{3}{2}t^2\; dt = \dfrac{3}{2} \cdot \dfrac{x^3+1}{3} =\dfrac{x^3+1}{2}$$
 ```{r}
 funcdist <- function(x) (x^3+1)/2
@@ -95,6 +118,10 @@ ggplot() +
 
 
 ### c)
+Calcular $P(X\geq 1/2)$ y $P(-1/2\leq X \leq 1/2)$.
+
+Respuesta.- 
+
 $$P(X\geq 1/2) = 1 - P(X\leq 1/2) = 1 - \dfrac{x^3+1}{2} = 1 - \dfrac{\left(1/2\right)^3+1}{2} =1- \dfrac{9/8}{2} = \dfrac{7}{16}$$
 
 ```{r}
@@ -112,10 +139,17 @@ funcdist(1/2) - funcdist(-1/2)
 integrate(function(x) 3/2*x^2, lower = -1/2, upper = 1/2)
 ```
 
-# 3.4.
+## 3.4.
+Sea $X$ una variable aleatoria continua.
 
 ### a)
-Por la definición 3.6 se tiene y sabiendo que $x\leq 0$ es cero.
+Determinar el valor de $k$ para que la función
+
+Respuesta.- 
+$$f(x)=\left\{\begin{array}{ll}k e^{-x/5} & x>0 \\\\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
+sea la función de densidad de probabilidad de $X$
+
+Respuesta.- Por la definición 3.6 se tiene y sabiendo que $x\leq 0$ es cero.
 $$\int_{-\infty}^\infty k\cdot e^{-x/5}\; dx = \int_0^\infty k\cdot e^{-x/5}\; dx$$
 Luego igualando a uno,
 $$\int_0^\infty k\cdot e^{-x/5}\; dx = 1 \quad \Longrightarrow \quad k = \dfrac{1}{5}$$
@@ -125,6 +159,10 @@ integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = Inf)
 ```
 
 ### b)
+Graficar $f(x)$
+
+Respuesta.-
+
 ```{r}
 ggplot() +
    xlim(-1, 1) +
@@ -135,6 +173,10 @@ ggplot() +
 ```
 
 ### c)
+Calcular $P(X\leq 5)$ y $P(0\leq X \leq 8).$
+
+Respuesta.- 
+
 $$P(X\leq 5) = \int_0^5 \dfrac{1}{5}e^{-x/5}\; dx = 1-\dfrac{1}{e}$$
 ```{r}
 integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 5)
@@ -147,7 +189,9 @@ integrate(function(x) 1/5 * exp(-x/5), lower = 0, upper = 8)
 ```
 
 ### d)
-La función de distribución acumulativa esta dado por 
+Determinar $F(x)$ y graficarla.
+
+Respuesta.- La función de distribución acumulativa esta dado por 
 $$F(x) = \int_{\infty}^x f(t)\; dt = \int_{-\infty}^0 0\; dt + \dfrac{1}{5}\int_0^x e^{-t/5}\; dt = -e^{-x/5}-1$$
 
 ```{r}
@@ -162,12 +206,20 @@ ggplot() +
 
 
 # 3.5
-$$F(x) = 1-exp(-x/100),\quad x>0$$
+La duración en horas de un componente electrónico, es una variable aleatoria cuya función de distribución acumulativa es $F(x)=1-e^{-x/100}, x>0$
 
 ### a)
+Determinar la función de probabilidad de $X$.
+
+Respuesta.- 
+
 $$F^{'}(x) = 1-e^{-x/100} = \dfrac{1}{100}e^{-x/100}$$
 
 ### b)
+Determinar la probabilidad de que el componente trabaje más de $200$ horas.
+
+Respuesta.- 
+
 $$1-(1-exp(-200/100)) = 0.13533$$
 
 ```{r}
@@ -176,14 +228,14 @@ integrate(function(x) 1/100 * exp(-x/100), lower = 0, upper = 200)
 ```
 
 # 3.6
-Función acumulada de v.a. es
-$$F(X) = \left\{ \begin{array}{lr}
-  0&x<0\\
-  2x-x^2&0<x<1\\
-  1&x>1\\
-\end{array}\right.$$
+La función de distribución acumulativa de una variable aleatoria está dada por 
+$$F(x)=\left\{\begin{array}{ll}0&x<0\\ 2x-x^2 & 0<x<1 \\ 1 & x>1\end{array}\right.$$
 
 ### a)
+Graficar $F(x)$.
+
+Respuesta.-
+
 ```{r}
 # gráfico de F(x)
 ggplot() +
@@ -195,6 +247,9 @@ ggplot() +
 ```
 
 ### b)
+Obtener $P(X<1/2)$ y $P(X>3/4)$.
+
+Respuesta.- 
 
 $P(X<1/2) = 2\cdot 1/2 - (1/2)^2 = 3/4 = 0.75$
 
@@ -211,10 +266,25 @@ $1 - P(X>3/4) = 1 - ( 2\cdot 3/4 - (3/4)^2 ) = 1 - (-3/4) 1 - (15/16) = 1/16 = 0
 ```
 
 ### c)
+Determinar $f(x).$
+
+Respuesta.-
 
 $F^{'}(x) = 2 x - 2^2 = 2 - x$
 
 # 3.7
+Sea $X$ una variable aleatoria que representa el número de clientes que llega a una tienda en un periodo de una hora. Dada la siguiente información
+
+
+$$\begin{array}{c|ccccccccc}
+  x&0&1&2&3&4&5&6&7&8\\
+  \hline
+  p(x)&0.05&0.10&0.10&0.10&0.20&0.25&0.10&0.05&0.05
+\end{array}$$
+
+encontrar $E(x)$ y $Var(X)$
+
+Respuesta.-
 
 ```{r}
 x <- c(0,1,2,3,4,5,6,7,8)
@@ -246,17 +316,26 @@ sum2 - sum^2
 ```
 
 # 3.8
-Calculamos el valor para un ganancia nula
+Una compañía de seguros debe determinar la cuota anual a cobrarse por un seguro de $50$ mil dolares para hombres cuya edad se encuentra entre los $30$ y $35$ años. Con base en las tablas actuariales el número de fallecimientos al año, para este grupo, es de $5$ por cada mil. Si $X$ es la variable aleatoria que representa la ganancia de la compañía de seguros, determinar el monto de la cuota anual para que la compañía no pierda, a pesar de tener un número grande de tales seguros.
+
+Respuesta.- Calculamos el valor para un ganancia nula
 $$E[X] = 0 = \dfrac{C\cdot 995}{1000} - \dfrac{50000\cdot 5}{100} \Longrightarrow 995C=250000 \Longrightarrow C = 251.26 $$
 
 # 3.9
-Función de densidad de una v.a. X está dada por:
+La función de densidad de probabilidad de una variable aleatoria $X$ está dada por:
+
 $$f(x) = \left\{\begin{array}{ll}
   2(1-x) & 0<x<1 \\
   0 & \mbox{para cualquier otro caso}
 \end{array}\right.$$
 
+Determinar:
+
 ### a)
+$E(X)$
+
+Respuesta.-
+
 $$E(X) = \int_0^1 x\cdot 2(1-x)\; dx = \int_0^1 2x-2x^2\; dx = \dfrac{1}{3}$$
 
 ```{r}
@@ -265,6 +344,10 @@ integrate(func, lower = 0, upper = 1)
 ```
 
 ### b)
+$Var(X)$
+
+Respuesta.- 
+
 $$E(X^2) = \int_0^1 x^2\cdot 2(1-x)\; dx = \int_0^1 2x^2-2x^3\; dx = \dfrac{1}{6}$$
 
 ```{r}
@@ -280,13 +363,20 @@ $$Var(X) = E(X^2) - E(X)^2 = \dfrac{1}{6} - \left(\dfrac{1}{3}\right)^2 = \dfrac
 ```
 
 # 3.10
+Sea $X$ una variable aleatoria que representa la magnitud de la desviación, a partir de una valor prescrito, del peso neto de ciertos recipientes, los que se llenan mediante una máquina. 
 Función de densidad de una v.a. de $X$ está dada por:
 $$f(x) = \left\{\begin{array}{ll}
   1/10&0<x<10\\
   0&\mbox{para cualquier otro valor}\\
 \end{array}\right.$$
 
+Determinar:
+
 ### a)
+$E(X)$.
+
+Respuesta.- 
+
 $$E(X) = \int_0^{10} \dfrac{1}{10} x\cdot\; dx = \dfrac{1}{10}\int_0^{10} x\; dx = 5$$
 
 ```{r}
@@ -295,6 +385,10 @@ integrate(func, lower = 0, upper = 10)
 ```
 
 ### b)
+$Var(X).$
+
+Respuesta.- 
+
 $$E(X) = \int_0^{10} \dfrac{1}{10} x^2 \cdot\; dx = \dfrac{1}{10}\int_0^{10} x^2 \; dx = \dfrac{100}{3}$$
 
 ```{r}
@@ -310,6 +404,10 @@ $$Var(X) = E(X^2) - E(X)^2 = \dfrac{100}{3} - 5^2 = \dfrac{25}{3} = 8.33333$$
 ```
 
 ### c)
+$\alpha_3(X).$
+
+Respuesta.-
+
 $\alpha_3$ también llamado coeficiente de asimetría estará dado por
 $$\alpha_3 = \dfrac{\mu_3}{(\mu_2)^{3/2}}$$
 de donde $\mu_3$ será:
@@ -330,6 +428,9 @@ integrate(func2, lower = 0, upper = 10)
 Donde nos menciona que se tiene un coeficiente de asimetría simétrica.
 
 ### d)
+$\alpha_4(X).$
+
+Respuesta.-
 
 Para $\alpha_4$ como medida relativa de la curtosis tenemos
 $$\alpha_4 = \dfrac{\mu_4}{\mu_2^2}$$
@@ -346,15 +447,21 @@ $$\alpha_4 = \dfrac{\mu_4}{\mu_2^2} = \dfrac{125}{\frac{25^2}{3^3}} = 5.4$$
 
 Donde nos dice que la distribución presenta un pico relativamente alto
 
-
 # 3.11
-La función de densidad viene dada por 
+Supóngase que la duración en minutos de una llamada de negocios, es una variable aleatoria cuyo función de densidad de probabilidad está determinada
+
 $$f(x) = \left\{\begin{array}{ll}
   \frac{1}{4}e^{-x/4}&x>0\\
   0&\mbox{para cualquier otro valor}
 \end{array}\right.$$
 
+Determinar:
+
 ### a)
+$E(X).$
+
+Respuesta.- 
+
 $$E(X) = \int_0^\infty x\cdot \dfrac{1}{4}e^{-x/4}\; dx = \dfrac{1}{4}\int_0^\infty x\cdot e^{-x/4}\; dx = 4$$
 
 ```{r}
@@ -363,6 +470,10 @@ integrate(func, lower = 0, upper = Inf)
 ```
 
 ### b)
+$Var(X).$
+
+Respuesta.-
+
 $$Var(X) = E(X-4)^2 = \int_0^\infty \dfrac{1}{4}e^{-x/4}\cdot (x-4)^2\; dx = \dfrac{1}{4}\int_0^\infty e^{-x/4}\cdot (x-4)^2\; dx =  16$$
 
 ```{r}
@@ -371,6 +482,9 @@ integrate(func, lower = 0, upper = Inf)
 ```
 
 ### c)
+$\alpha_3(x).$
+
+Respuesta.-
 
 $$\mu_3 = E(X-4)^3 = \dfrac{1}{4}\int_0^\infty (x-4)^3\cdot e^{-x/4}\; dx = 128 $$
 
@@ -387,6 +501,9 @@ $$\alpha_3 = \dfrac{\mu_3}{\mu_2^{3/2}} = \dfrac{128}{16^{3/2}} = 2$$
 De donde podemos mencionar que se tiene una asimetría positiva.
 
 ### d)
+$\alpha_4(X).$
+
+Respuesta.-
 
 $$\mu_4 = E(X-4)^4 = \dfrac{1}{4}\int_0^\infty (x-4)^4\cdot e^{-x/4}\; dx = 2304 $$
 
@@ -403,6 +520,10 @@ $$\alpha_4 = \dfrac{\mu_4}{\mu^2_2} = \dfrac{2304}{16^2} = 9$$
 ```
 
 ### e)
+Defiérase al ejercicio 3.10. Basandose en sus respuestas $a$, a $d$ del problema 3.11, compare las dos distribuciones de probabilidades. ¿Cuál muestra la mayor dispersión relativa?.
+
+Respuesta.- 
+
 Del ejercico 3.10 
 $$V_X = \dfrac{E(X)}{Var(X)} = \dfrac{5}{8.33333}$$
 
@@ -420,7 +541,9 @@ $$V_Y = \dfrac{E(X)}{Var(X)} = \dfrac{4}{16}$$
 De donde $V_Y$ muestra mayor dispersión relativa con respecto a la media que la distribución correspondiente a $X$
 
 # 3.12
-Sea $$E(X)=62.5,\qquad y \qquad \sqrt{Var(X)} = 10 \; \Rightarrow \; Var(X) = 100$$
+La calificación promedio en una prueba de estadística fue de $62.5$ con una desviación estándar de $10$. El profesor sospecha que el examen fue difícil. De acuerdo con lo anterior, desea ajustar las calificaciones de manera que el promedio sea de $70$ y la desviación estándar de $8$. ¿Qué ajuste del tipo $aX+b,$ debe utilizar?.
+
+Respuesta.- Sea $$E(X)=62.5,\qquad y \qquad \sqrt{Var(X)} = 10 \; \Rightarrow \; Var(X) = 100$$
 
 y 
 
@@ -448,16 +571,25 @@ VarX(100)
 ```
 
 # 3.13
+Sea $X$ una variable aleatoria con media $\mu$ y varianza $\sigma^2$.
+
 ## a)
-Sea $E(X)=\mu$ y $Var(X) = \sigma^2$ entonces,
+Evaluar $E(X-c)^2$ en términos de $\mu$ y $\sigma^2$ en donde $c$ es una constante.
+
+Respuesta.- Sea $E(X)=\mu$ y $Var(X) = \sigma^2$ entonces,
 $$E(X-c)^2 = E(X^2-2cX + c^2) = E(X^2) -2cE(X) + c^2 = E(X^2) - E^2(X) + E(X)\cdot E(X) - 2cE(X) +c^2 =$$
 $$Var(X) + (E(X)-c)^2 = \sigma^2 + (\mu-c)^2$$
 
 ## b)
-Cuando $c=\mu$
+¿Para qué valor de $c$ es $E(X-c)^2$ mínimo?.
 
+Respuesta.-  Cuando $c=\mu$
 
 # 3.14
+Con respecto al ejercicio 3.11, demostrar que la variable aleatoria $Y=(X-4)/4$ tiene media cero y desviación estándar uno. Demostrar que los factores de forma, primero y segundo, de la distribución de $Y$ son los mismos de la distribución de $X$.
+
+Respuesta.- 
+
 $$E(Y) = E\left(\dfrac{X-4}{4}\right)=\int_0^\infty \left(\dfrac{x-4}{4}\right)\cdot \dfrac{1}{4}\cdot e^{-x/4}\; dx = \dfrac{1}{16}\int_0^\infty (x-4)\cdot e^{-x/4} \; dx = 0$$
 ```{r}
 fx = function(x) ((x-4)/4) * 1/4 * exp( -x/4 )
@@ -472,6 +604,10 @@ integrate(fx,lower = 0, upper = Inf)
 ```
 
 ## 3.15
+Considérese la función de densidad de probabilidad de $X$ dada en el ejercicio 3.9. Determinar la desviación media de $X$ y compararla con su desviación estándar.
+
+Respuesta.- 
+
 $$E\bigg|X-\frac{1}{3}\bigg| = \int_0^1 \bigg|x-\dfrac{1}{3}\bigg|\cdot 2(1-x)\; \; dx = \int_0^{1/3}\left(\dfrac{1}{3}-x\right)*2(1-x)\; dx + \int_{1/3}^1\left(x-\dfrac{1}{3}\right)*2(1-x)\; dx = 0.1975309$$
 ```{r}
 f <- function(x) abs(x-1/3)*2*(1-x)
@@ -482,8 +618,11 @@ La desviación estandar del ejercicio 3.9 viene dada por $\sqrt{\dfrac{1}{18}} =
 
 Luego comparando con la desviación media vemos que se tiene poca diferencia.
 
-
 ## 3.16
+Considérese la función de densidad de probabilidad de $X$ dada en el ejercicio 3.10. Determinar la desviación media de $X$ y compararla con su desviación estándar.
+
+Respuesta.- 
+
 $$E|X-\mu|= \int_0^{10} |x-5|\cdot \dfrac{1}{10}\; dx = \dfrac{1}{10}\left[\int_0^5 (5-x)\; dx + \int_5^{10} (x-5)\; dx \right] = \dfrac{1}{10}\left(5x\bigg|_0^5 - \dfrac{x^2}{2}\bigg|_0^5 + \dfrac{x^2}{2}\bigg|_5^{10} - 5x\bigg|_5^{10}\right) = $$
 $$\dfrac{1}{10}\left(25 - \dfrac{25}{2} + \dfrac{75}{2} - 25\right) = \dfrac{5}{2}$$
 
@@ -498,9 +637,10 @@ integrate(f,lower = 0,upper = 10)
 
 De lo que concluimos que entre la desviación media de $X$ y la desviación estándar de ejercicio 10 se tiene una diferencia de $0.33$.
 
-
 # 3.17
-$$$$
+Supóngase que el ingreso semanal de un asesor profesional es una variable aleatoria cuya función de densidad de probabilidad está determinada por:
+$$f(x)=\left\{\begin{array}{ll}\dfrac{1}{800}e^{-x/800} & x>0 \\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
+
 ```{r}
 ggplot() +
    xlim(0, 1) +
@@ -511,7 +651,9 @@ ggplot() +
 ```
 
 ## a)
-La media es:
+Determinar los ingresos medios y medianos
+
+Respuesta.- La media es:
 
 $$E(X) = \int_0^\infty x\cdot \dfrac{1}{800}\cdot e^{-x/800}\; dx = \dfrac{1}{800}\int_0^\infty x\cdot e^{-x/800} = 800$$
 
@@ -528,7 +670,9 @@ $$F(x_{0.5}) = P(X\leq x_{0.5}) = \dfrac{1}{800}\int_0^{x_{0.5}} e^{(-x/800)}\; 
 ```
 
 ## b)
-Recorrido intercuartil
+Determinar el recorrido intercuartil.
+
+Respuesta.- Recorrido intercuartil
 $$F(x_{0.25}) = P(X\leq x_{0.25}) = \dfrac{1}{800}\int_0^{x_{0.25}} e^{(-x/800)}\; dx = 0.25 \; \Longrightarrow \; -e^{-x_{0.25}/800}+1 = 0.25 \Longrightarrow x_{0.25}$$ $$\Longrightarrow x_{0.25} = -800\cdot ln(0.25) = 1109.03548$$
 
 $$F(x_{0.75}) = -800\cdot ln(0.75) = 230.14565$$
@@ -536,7 +680,9 @@ $$F(x_{0.75}) = -800\cdot ln(0.75) = 230.14565$$
 por lo que $$x_{0.75} - x_{0.25} = |230.14565 - 1109.03548| = 878.8898$$
 
 ## c)
-Recorrido interdecil
+Determinar el recorrido interdecil.
+
+Respuesta.- Recorrido interdecil
 
 $$F(x_{0.1}) = P(X\leq x_{0.1}) = \dfrac{1}{800}\int_0^{x_{0.1}} e^{(-x/800)}\; dx = 0.1 \; \Longrightarrow \; -e^{-x_{0.1}/800}+1 = 0.1 $$ $$ \Longrightarrow x_{0.1} \Longrightarrow x_{0.1} = -800\cdot ln(0.1) = 1842.068$$
 
@@ -545,6 +691,9 @@ $$F(x_{0.9}) = -800\cdot ln(0.9) = 84.2884$$
 $$x_{0.9}-x_{0.1} = |84.2884 - 1842.068| = 1757.78$$
 
 ## d)
+Determinar la probabilidad de que el ingreso semanal exceda al ingreso promedio.
+
+Respuesta.- 
 $$P(X\geq 800) = 1 - P(X \leq 800) = 1 - \dfrac{1}{800} \int_0^{800} e^{-x/800}\; dx = 1 - 0.3678794 = 0.3679$$
 
 ```{r}
@@ -554,6 +703,10 @@ integrate(function(x) 1/800*exp(-x/800), lower = 0, upper = 800)
 
 
 # 3.18
+Comprobar que la función generadora de momentos central de una variable aleatoria $X$, genera todos los momentos centrales de $X$.
+
+Respuesta.- 
+
 $$\begin{array}{rcl}
   \dfrac{d^r m_{X-\mu}(t)}{dt^r}\bigg|_{t=\mu}&=&\dfrac{d^r}{dt^r}E[e^{t(X-\mu)}]\bigg|_{t=0}\\\\
   &=&E\left\{ \dfrac{d^r}{dt^r}\left[e^{t(X-\mu)}\right] \right\}\\\\
@@ -563,10 +716,21 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 # 3.19
+La función de densidad de probabilidad de una variable aleatoria $X$ está determinada:
+$$f(x)=\left\{\begin{array}{ll}\dfrac{1}{16}x e^{-x/4} & x>0, \\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
+
 ## a)
+Determinar la función generadora de momentos de $X$.
+
+Respuesta.- 
+
 $$m_X(t) = E\left[e^{tX}\right] = \int_{0}^{\infty} e^{tx}\cdot \dfrac{1}{16}\cdot x \cdot e^{-\frac{x}{4}}\; dx = \dfrac{1}{16}\int_0^\infty x\cdot e^{\frac{x(4t-1)}{4}}\; dx = (1-4t)^{-2}$$
 
 ## b)
+Utilizar la función generadora de momentos para encontrar la media y la varianza de $X$.
+
+Respuesta.-
+
 $$\dfrac{dm_x(t)}{dt}\bigg|_{t=0} = \dfrac{d}{dt}\cdot (1-4t)^{-2}\bigg|_{t=0} = \dfrac{8}{(1-4x)^3}\bigg|_{t=0} = 8 = E(X)$$
 
 $$\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d}{dt} \dfrac{8}{(1-4x)^2}\bigg|_{t=0} = \dfrac{96}{(-4x+1)^4}\bigg|_{t=0} = 96 = E(X^2)$$
@@ -574,16 +738,26 @@ $$\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d
 $$Var(X) = E(X^2) - E^2(X) = 96 - 8^2 = 32$$
 
 # 3.20
+Considérese la función de densidad de probabilidad dada en el ejercicio 3.11. Encontrar la función generadora de momentos y utilizaría para comprobar los valores de la media y la varianza, determinados en el ejercicio 3.11.
+
+Respuesta.- 
+
 $$m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx $$
 
 # 3.21 
-$E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c$
+Sea $X$ una variable aleatoria discreta con función de probabilidad $p(x)=0,1,2,\ldots ,n,$ y sean $a,b$ y $c$ constantes. Demostrar que $E(c) = c,$ $E(aX+b) = aE(X)+b,$ y $E[g(X)+h(X)] = E[g(X)+E[g(X)]]$, donde $g(x)$ y $h(x)$ son funciones de $X$.
+
+Respuesta.- $E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c$
 
 $E(cX+b) = \sum\limits_x (cx + b)p(x) = c\sum\limits_x x\cdot p(x) + b\sum\limits_x p(x) = cE(x) + b$
 
 $E[g(X)+h(X)] = \sum\limits_x [g(x)+h(x)] p(x) + \sum\limits_x g(x)p(x) + \sum\limits_xh(x)p(x) = E[g(X)]+E[h(X)]$
 
 # 3.22
+Para la variable aleatoria discreta del ejercicio anterior, utilizar las definiciones 3.8 y 3.9 para demostrar que $Var(X)=E(X^2)-E^2(X).$
+
+Respuesta.-
+
 $$Var(X)=(X-\mu)^2 = \sum_x (x-\mu)^2 p(x) = \sum_x x^2p(x) - 2\mu\sum_x x p(x) + \mu^2\sum_x  p(x) =$$ $$E(X^2) - 2E^2(X) + E^2(X) = E(X^2) - E^2(X)$$
 
 

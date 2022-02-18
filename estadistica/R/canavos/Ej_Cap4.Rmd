@@ -2,14 +2,21 @@
 title: "Ejercicios capítulo 4"
 author: "Christian Limbert Paredes Aguilera"
 date: "25/1/2022"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r}
 library(ggplot2)
 ```
 
-# 4.1.
+# Ejercicios capitulo 4
+
+## 4.1.
+Sea $X$ una variable aleatoria con distribución binomial y parámetros $n$ y $p$. Mediante la función de probabilidad binomial, verificar que $p(n-x;n,1-p)=p(x;n,p).$
+
+Respuesta.-
 $$\begin{array}{rcl}
   p(n-x;n,1-p)&=&\dfrac{n!}{\left[n-(n-x)\right]!(n-x)!}(1-p)^{n-x}\left[1-(1-p)\right]^{n-(n-x)}\\\\
   &=&\dfrac{n!}{x!(n-x)!}(1-p)^{n-x} p^{x}\; \mbox{para } x=0,1,2,\ldots n\\\\
@@ -17,7 +24,11 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 
-# 4.2.
+## 4.2.
+En una distribución binomial, sea $X$ el número de éxistos obtenidos en diez ensayos donde la probabilidad de éxito en cada uno es de $0.8$. Con el resultado del problema anterior, demostrar que la probabilidad de lograr de manera exacta seis éxitos es igual a la probabilidad de tener cuatro fracasos.
+
+Respuesta.-
+
 $$0.08808038=\dfrac{10!}{\left[10-(10-4)\right]!(10-4)!}(1-0.8)^{10-6}\left[1-(1-0.8)\right]^{10-(10-6)} =\dfrac{10!}{6!(10-6)!}(1-0.8)^{10-6} 0.8^{6} = 0.08808038$$
 
 
@@ -27,12 +38,23 @@ dbinom(6,10,0.8)
 ```
 
 
-# 4.3
+## 4.3
+Mediante el empleo de la función de probabilidad binomial, verificar la siguiente fórmula de recursión:
+
+$$p(x+1;n,p) = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
+
+Respuesta.- 
+
 $$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1} = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
 
-# 4.4.
+## 4.4.
 $$p(x+1;8,0.4) = \dfrac{(8-x)0.4}{(x+1)(1-0.4)}p(x;8,0.4)$$
-# 4.5
-## a)
 
-## b)
+## 4.5
+Sea $X$ una variable aleatoria distribuida binomialmente con $n=10$ y $p=0.5$ 
+
+### a) 
+Determinar las probabilidades de que $X$ se encuentre dentro de una desvianción estándar de la media y a dos desvaiciones estándar de la media.
+
+### b) 
+¿Cómo cambiarían las respuestas de a) si $n=15$ y $p=0.4$?

@@ -406,6 +406,7 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 		\item Si $a<0<b$, entonces $f$ toma todos los valores entre $-1$ y $1$ en $[a,b]$. \\ 
 
 	    \end{enumerate}
+
 	    Así $f$ tomas todos los valores entre $f(a)$ y $f(b)$. Lo mismo ocurre para $a=0$ o $b=0$.\\\\
 
 
@@ -472,11 +473,54 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 		\|h-f\|&\leq&|h-g|(x_0) + |g-f|(x_0)\\
 		       \|h-f\|&\leq&\|h-g\| + \|g-f\|\\\\
 	    \end{array}$$
+
+    \end{enumerate}
    
+% -------------------- 15.
+\item Supóngase que $\phi$ es continua y $\lim\limits_{x\to\infty} \phi(x)/x^n = 0 = \lim\limits_{x\to -\infty} \phi (x)/x^n$.
+
+    \begin{enumerate}[\bfseries (a)]
+
+	%----------(a)
+	\item Demostrar que si $n$ es impar, entonces existe un número $x$ tal que $x^n+\phi(x)=0$.\\\\
+	    Demostración.-\; Sea $b>0$ tal que $$\bigg|\dfrac{\phi(b)}{b^n}\bigg|<\dfrac{1}{2}$$
+	    entonces,
+	    $$b^n+\phi(b)=b^n\left(1+\dfrac{\phi(b)}{b^n}\right)>\dfrac{1}{2}>0$$
+	    De la misma manera, sea $a<0$ tal que
+	    $$\bigg|\dfrac{\phi(a)}{a^n}\bigg|<\dfrac{1}{2}$$
+	    entonces, ya que $n$ es impar,
+	    $$a^n + \phi(a)=a^n\left(1+\dfrac{\phi(a)}{a^n}\right)<\dfrac{a^n}{2}<0$$
+	    Por lo tanto, existe un $x$ tal que 
+	    $$x^n + \phi(x)=0.$$\\
+
+	%----------(b)
+	\item Demostrar que si $n$ es par, entonces existe un número $y$ tal que $y^n+\phi(y)\leq x^n + \phi(x)$ para todo $x$.\\\\
+	    Demostración.-\; Sea $b>0$ tal que 
+	    $$b^n>2\phi(0)$$
+	    Y $|x|>b$ 
+	    $$\bigg|\dfrac{\phi(x)}{x^n}<\dfrac{1}{2}\bigg|$$
+	    de donde tenemos,
+	    $$\begin{array}{rcl}
+		x^n+\phi(x)&>&x^n\left(1+\dfrac{\phi(x)}{x^n}\right)\\\\
+		x^n+\phi(x)&>&\dfrac{x^n}{2}\\\\
+		x^n+\phi(x)&>&\dfrac{b^n}{2}\\\\
+		x^n+\phi(x)&>&\phi(0).\\\\
+	    \end{array}$$
+
+	    Así, el mínimo de $x^n+\phi(x)$ para $x$ in $[-b,b]$ es el mínimo del intevalo.
+	    Y por lo tanto, existe un número $y$, para todo $x$, tal que,
+	    $$y^n+\phi(y)\leq x^n +\phi(x).$$\\
+
     \end{enumerate}
 
-    % -------------------- 15.
-    \item 
+% -------------------- 16.
+\item 
+    \begin{enumerate}[\bfseries (a)]
 
+	%----------(a)
+	\item Supóngase que $f$ es continua en $(a,b)$ y $\lim\limits_{x\to a^+} f(x)=\lim\limits_{x\to b^-} f(x)=\infty$. Demostrar que $f$ tiene un mínimo en todo el intervalo $(a,b)$.\\\\
+	    Demostración.-\;
+
+    \end{enumerate}
 
 \end{enumerate}

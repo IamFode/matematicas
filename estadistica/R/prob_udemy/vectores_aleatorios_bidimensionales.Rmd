@@ -1,0 +1,41 @@
+---
+title: "Vectores aleatorios bidimensionales"
+author: "Christian Limbert Paredes Aguilera"
+date: "16/2/2022"
+output: pdf_document
+---
+# VEctores aleatorios bidimencionales 
+
+## Variables aleatorias bidimencionales
+Redordemos que una variable aleatoria $X$ es una aplicación que toma valores numéricos para cada resultado de un experimento aleatorio:
+$$\begin{array}{rcl}
+  X:\Omega&\longrightarrow&\mathbb{R}\\
+  w&\longrightarrow&X(w)\\
+\end{array}$$
+
+A partir de la definición anterior, generalizamos la noción de variable aleatoria unidimencional a variable aleatoria bidimencional.
+
+### Definición de variable aleatoria bidimencional
+Dado un experimentos aleatorio con espacio muestral $\Omega$, definimos variable aleatoria bidimencional $(X,Y)$ a toda aplicación 
+$$\begin{array}{rcl}
+  X:\Omega&\longrightarrow&\mathbb{R}^2\\
+  w&\longrightarrow&(X(w),Y(w))\\
+\end{array}$$
+
+La probabilidad de que la variable bidimencional pertenezca a una cierta región del plano $B$ se define de la forma siguiente:
+$$P((X,Y)\in B)=P\lbrace w\in \Omega,\; | \; (X(w),Y(w))\in B\rbrace$$
+
+o sea, la probabilidad anterior es la probabilidad del suceso formado por los elementos de $w\in \Omega$ que cumplen que su imagen por la variable aleatoria bidimencional $(X,Y)$ esté en $B$.
+
+## Función de distribución conjunta
+
+### Definición de función de distribución conjunta: 
+Dada una variable bidimencional $(X,Y)$, definimos su función de distribución conjunta $F_{XY}$ a la función definida sobre $\mathbb{R}^2$ de la manera siguiente:
+
+$$\begin{array}{rcl}
+  F_{XY}:\mathbb{R}^2&\longrightarrow&\mathbb{R}\\
+  (x,y)&\longrightarrow&F_{XY}(x,y)=P(X\leq x, Y\leq y)\\
+\end{array}$$
+
+ Se buscará que tan probable será que un punto caiga en una región del plano cartesiano.
+ 

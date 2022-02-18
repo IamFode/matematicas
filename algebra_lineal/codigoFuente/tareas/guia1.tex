@@ -1,16 +1,16 @@
 
 \section*{\center Guía 1}
-\vspace{1.5cm}
-\setlength{\columnsep}{1cm}
+\vspace{1.2cm}
+\setlength{\columnsep}{.7cm}
 \setlength{\columnseprule}{0.1pt}
 \begin{multicols}{2}
 
-\begin{enumerate}[\bfseries 1.]
+\begin{enumerate}[\large\bfseries 1.]
 
     %----------1.
     \item  \textbf{\boldmath Suponga que $a,b$ son números reales no nulos simultáneamente. Hallar números reales $c$ y $d$ tales que,
 	$$\dfrac{1}{a+bi}=c+di$$\\}
-	\textbf{Respuesta.-}\; Hallemos $c\in \mathbb{R}$ de la siguiente manera,
+	\textbf{Respuesta.-}\; Hallemos $c\in \mathbb{R}$ como sigue,
 	$$\begin{array}{rcl}
 	    \dfrac{1}{a+bi}&=&c+di\\
 	    \dfrac{1}{a+bi} - di&=&c+di - di\\
@@ -19,7 +19,7 @@
 
 	Ya que, $i^4 = i^3i=(-i)i=-(i^2) = -(-1) = 1\; $
 	y $$i^3 = i^2i=(-1)i = -i,$$
-	podemos hallamos $d\in \mathbb{R}$,
+	Luego hallamos $d\in \mathbb{R}$,
 	$$\begin{array}{rcl}
 	    \dfrac{1}{a+bi}&=&c+di\\
 			   di&=&\dfrac{1}{a+bi}-c\\
@@ -55,8 +55,40 @@
 
 
     %----------5.
-    \item \textbf{\boldmath Probar que para todo $\alpha \in \mathbb{C}$, existe un único $b\in \mathbb{C}$ tal que $\alpha + \beta = 0$.}\\\\
-	\textbf{Demostración.-}\;
+    \item \textbf{\boldmath Probar que para todo $\alpha \in \mathbb{C}$, existe un único $\beta \in \mathbb{C}$ tal que $\alpha + \beta = 0$.}\\\\
+	\textbf{Demostración.-}\; La existencia queda demostrada por la propiedad identidad para la adición.\\
+	Ahora demostremos su unicidad de la siguiente manera:\\
+	Supongamos que existen  $\beta^{'},\; \beta \in \mathbb{C}$ tales que $\alpha + \beta = 0\;$ y $\;\alpha + \beta^{'} = 0$ que implica,
+	$$\alpha + \beta = \alpha + \beta^{'} \; \Longrightarrow \;\beta=\beta^{'}.$$
+	Y por lo tanto, queda demostrada la unicidad.\\\\
+	Demostrada la existencia y unicidad concluimos que se cumple la propiedad del inverso aditivo para $\mathbb{C}$.\\\\
+	
+
+    %----------6.
+    \item \textbf{ \boldmath Probar que para todo $\alpha \in \mathbb{C}-\lbrace0 \rbrace,$ existe un único $\beta \in \mathbb{C}$ tal que $\alpha \beta = 1$.}\\\\
+	\textbf{Demostración.-}\; Similar al anterior ejercicio podemos demostrar la existencia de $\beta$ por la propiedad de identidad para la multiplicación. Luego demostremos la unicidad de la siguiente manera:\\\\
+	Sean $\beta, \beta^{'}\in \mathbb{C}$ tales que $\alpha \beta = 1\; $ y $\; \alpha \beta = 1$  entonces $$\alpha\beta = \alpha \beta^{'}$$
+	 como $\alpha\neq 0$, nos queda que, $\beta=\beta{'}$.\\\\ 
+	 Así, queda demostrada la propiedad del inverso multiplicativo para $\mathbb{C}$.\\\\
+
+    %----------7.
+     \item \textbf{ \boldmath Hallar $x\in \mathbb{R}^4$ tal que $(4,-3,1,7)+2x=(5,9,-6,8)$.}\\\\
+	 \textbf{Respuesta.-}\; se tiene que,
+	 $$\begin{array}{rcl}
+	     (4,-3,1,7)+2x&=&(5,9,-6,8)\\
+			  2x&=&(5,9,-6,8)-(4,-3,1,7)\\
+			    2x&=&(5-4,9+3,-6-1,8-7)\\
+			    2x&=&(1,12,-7,1)\\
+	 \end{array}$$
+	 De donde $x=\left(\dfrac{1}{2},6,-\dfrac{7}{2},\dfrac{1}{2}\right).$\\\\
+
+    %----------8.
+     \item \textbf{\boldmath Probar que $(x+y)+z=x+(y+z)$ para todo $x,y,z\in \mathbf{F}^n$.}\\\\
+	 \textbf{Demostración.-}\; 
+
+	 
+
+
 
 
 \end{enumerate}

@@ -2367,8 +2367,115 @@ Calcular las integrales de los ejercicios 1 al 16.\\\\
 
     %--------------------18.
     \item Sea $f(x)=x-[x]-\frac{1}{2}$ si $x$ no es un entero, y sea $f(x)=0$ si $x$ es un entero. (Se denota $[x]$ como el entero mayor $\leq x$). Definir una nueva función $P$ como sigue:
-	$$P(x)=\int_0^x f(t)\; dt\quad \mbox{para cada real }x$$
+	$$P(x)=\int_0^x f(t)\; dt\quad \mbox{para cada real}\; x$$
 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Graficar $f$ sobre el intervalo $[-3,3]$ y demostrar que $f$ es periódico con periodo $1$; $f(x+1)=f(x)$ para todo $x$.\\\\
+		Demostración.-\; Tenemos 
+		$$\begin{array}{rcl}
+		    f(x-1)&=&(x+1)-[x+1]-\frac{1}{2}\\
+			  &=&(x+1)-([x]+1)-\frac{1}{2}\\
+			  &=&x+1-[x]-1-\frac{1}{2}\\
+			  &=&x-[x]-\frac{1}{2}\\
+			  &=&f(x)\\
+		\end{array}$$
+		Por lo que queda demostrada la proposición.\\\\
+
+	    %----------(b)
+	    \item Demostrar que $P(x)=\frac{1}{2}(x^2-x),$ si $0\leq x \leq 1$ y que $P$ es periódico con periodo $1$.\\\\
+		Demostración.-\; Primero estableceremos la fórmula requerida,
+		$$\begin{array}{rcl}
+		    P(x)=\displaystyle\int_0^x f(t)\; dt&=&\displaystyle\int_0^x \left(t-[t]-\dfrac{1}{2}\right)\; dt\\\\
+							&=&\displaystyle\int_0^x t\; dt - \int_0^x[t]\; dt - \int_0^x \dfrac{1}{2}\; dt\\\\
+							&=&\displaystyle\int_0^x t\; dt - 0 - \displaystyle\int_0^x\dfrac{1}{2}\; dt\\\\
+							&=&\dfrac{t^2}{2}\bigg|_0^x - \dfrac{t}{2}\bigg|_0^x\\\\
+							&=&\dfrac{1}{2}(x^2-x)\\\\
+		\end{array}$$
+		Notemos $\displaystyle\int_0^x[t]\; dt = 0$.\\
+		Ahora probemos que $P(x)$ es periodico con periodo $1$.
+		$$\begin{array}{rcl}
+		    P(x+1)&=&\displaystyle\int_0^{x+1}f(t)\; dt\\\\
+			  &=&\displaystyle\int_0^1 f(t)\; dt + \int_x^{x+1} f(t)\; dt\\\\
+			  &=&P(1)+\displaystyle\int_x^{x+1} f(t)\; dt\\\\
+		\end{array}$$
+
+		Luego
+
+		$$\begin{array}{rcl}
+		    &=&P(1)+\displaystyle\int_0^x f(t+1)\; dt\\\\
+		    &=&P(1)+\displaystyle\int_0^x f(t)\; dt\\\\
+		\end{array}$$
+		Vemos que $f$ es periódica. Por último podemos resolver para $P(1)$, donde 
+		$$P(x)=\dfrac{1}{2}(x^2-x)\; \Longrightarrow\; P(1)=\dfrac{1}{2}(1^2-1)=0.$$
+		Por lo tanto,
+		$$\begin{array}{rcl}
+		    &=&P(1)+\displaystyle\int_0^x f(t)\; dt\\\\
+		    &=&0+\displaystyle\int_0^x f(t)\; dt\\\\
+		    &=&\displaystyle\int_0^x f(t)'; dt\\\\
+		    &=&P(x)\\\\
+		\end{array}$$
+
+	    %----------(c)
+	    \item Expresar $P(x)$ in términos de $[x]$.\\\\
+		Demostración.-\; Para expresar $P(x)$ en términos de $[x]$ calculamos como sigue:
+		$$\begin{array}{rcl}
+		    P(x)=\displaystyle\int_0^x f(t)\; dt&=&\displaystyle\int_0^1 f(t)\; dt + \int_1^2 f(t)\; dt + \ldots + \int_{[x]}^x f(t)\; dt\\\\
+							&=&0+0+\ldots + \int_{[x]}^x f(t)\; dt\\\\
+		\end{array}$$
+		donde $f(t+[x])=f(t)$ ya que $[x]$ es un entero y $f$ tiene periodo $1$.\\\\
+		Así $f(t+n)=f(t)$ para cualquier entero $n$. Luego,
+		$$\begin{array}{rcl}
+		    &=&\displaystyle\int_0^{x-[x]} \left(t-[t]-\dfrac{1}{2}\right)\; dt\\\\
+		    &=&\dfrac{t^2}{2}\bigg|_0^{x-[x]}-\dfrac{t}{2}\bigg|_0^{x-[x]}\\\\
+		\end{array}$$
+		Aquí, sabemos que $[t]$ en la integral es cero ya que $[t]=0$ para todo $t\in [0,[x]]$. Por último ya que $x-[x]<1$ entonces,
+		$$\begin{array}{rcl}
+		    P(x)&=&\dfrac{1}{2}\left[(x-[x])^2-x+[x]\right]\\\\
+			&=&\dfrac{1}{2}(x-[x])^2-\dfrac{1}{2}(x-[x])\\\\
+		\end{array}$$
+		Esta es la expresión que se obtiene.\\\\
+
+
+	    %----------(d)
+	    \item Determinar una constante $c$ tal que $\int_0^1\left[P(t)+c\right]\; dt = 0$.\\\\
+		Respuesta.-\; Usando la fórmula de $P(x)$ de la parte (c) resolvemos el problema dado.
+		$$\begin{array}{rcl}
+		    \displaystyle\int_0^1 (P(t)+c)\; dt&\Longrightarrow&\displaystyle\int_0^1 \left(\dfrac{1}{2}(t-[t])^2-\dfrac{1}{2}(t+[t])+c\right)\; dt =0\\\\
+					  &\Longrightarrow&\dfrac{1}{2}\displaystyle\int_0^1 t^2\; dt - \dfrac{1}{2}\int_0^1 t\; dt + \int_0^1 c\; dt = 0\\\\
+					  &\Longrightarrow&c=\dfrac{1}{12}\\\\
+		\end{array}$$
+
+	    %----------(e)
+	    \item Para la constante $c$ de la parte (d), sea $Q(x)=\int_0^x \left[P(t)+c\right]\; dt$. Demostrar que $Q$ es periódico con periodo $1$ y que 
+		$$Q(x)=\dfrac{x^3}{6}-\dfrac{x^2}{4}+\dfrac{x}{12}\quad \mbox{si}\; 0\leq x\leq 1.$$\\
+		Demostración.-\; Primero probaremos que $Q$ es periódico con periodo $1$.
+		$$\begin{array}{rcl}
+		    Q(x+1)&=&\displaystyle\int_0^{x+1}\left(P(t)+\dfrac{1}{12}\right)\; dt\\\\
+			  &=&\displaystyle\int_0^1\left(P(t)+\dfrac{1}{12}\right)+\int_t^{x+1}\left(P(t)+\dfrac{1}{12}\right)\; dt\\\\
+		    &=&0+\displaystyle\int_0^x \left(P(t+q)\dfrac{1}{12}\right)\; dt\\\\
+		    &=&\displaystyle\int_0^x \left(P(t)+\dfrac{1}{12}\right)\; dt\\\\
+		    &=&Q(x)\\\\
+		\end{array}$$	
+		Luego, si $0\leq x \leq 1$ entonces,
+		$$\begin{array}{rcl}
+		    Q(x)&=&\displaystyle\int_0^x\left(P(t)+\dfrac{1}{12}\right)\; dt\\\\
+			&=&\displaystyle\int_0^x \left(\dfrac{1}{2}(t-[t])^2-\dfrac{1}{2}(t-[t])+\dfrac{1}{12}\right)\\\\
+			&=&\dfrac{1}{2}\displaystyle\int_0^x-\dfrac{1}{2}\int_0^x t\; dt + \dfrac{1}{12}\int_0^x\; dt\\\\
+		\end{array}$$
+		donde todos los $[t]$  son $0$ para $0\leq t \leq 1$, así,
+		$$\begin{array}{rcl}
+		    &=&\dfrac{t^3}{6}\bigg|_0^x-\dfrac{t^2}{4}\bigg|_0^x+\dfrac{t}{12}\bigg|_0^x\\\\
+		    &=&\dfrac{x^3}{6}-\dfrac{x^2}{4}+\dfrac{x}{12}\\\\
+		\end{array}$$
+		como queriamos encontrar.\\\\
+
+	\end{enumerate}
+
+
+    %--------------------19.
+    \item 
 
 
 \end{enumerate}

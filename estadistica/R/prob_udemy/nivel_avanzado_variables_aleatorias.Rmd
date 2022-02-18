@@ -116,3 +116,134 @@ Por tanto, usando la fórmula de inversión, podemos escribir la función de pro
 $$P_X(k)=\dfrac{1}{2\pi}\int_0^{2\pi}\phi(w)e^{-iwk}\; dw$$
 
 ## Cómo calcular los momentos a partir de una función característica.
+La relación entre la función característica y los momentos es la siguiente:
+
+Proposición.- Sea $X$ una variable aleatoria con función característica $\phi_X(w)$. Entonces, el momento de orden $n$ de $X$ se puede obtener de la forma siguiente:
+$$m_n = E(X^n) = \dfrac{1}{i^n}\dfrac{d}{dw^n}\phi(w)\bigg|_{w=0} = \dfrac{1}{i^ n} \phi_X^{(n)}(0)$$
+
+Osea, el momento de orden $n$ de $X$ es la derivada n-ésima de la función característica evaluada en $w=0$ dividido por $i^n$ 
+
+## Generación de variables aleatorias con el método de la transformación
+Todos los métodos que vamos a describir presuponen que podemos generar números aleatorios que se distribuyen uniformemente entre $0$ y $1$. En R se puede hacer uso con la función $runif(n),$ donde $n$ es la cantidad de números aleatorios entre $0$ y $1$ a generar.
+
+### Método de transformación 
+Sea $X$ una variable aleatoria con función de distribución $F_X(x)$. Supongamos que $F_X(x)$ es estrictamente creciente o que existe $F_X^{-1}(y)$, para todo $y\in [0,1]$. Sea $Y$ la variable aleatoria definida como: $Y=F_X(X)$. Entonces la distribución de $Y$ es uniforme en el intervalo $[0,1]$.
+
+Demostración.- Claramente, por propia definición de $Y$, tenemos que el dominio de $Y$ es $[0,1]$ ya que el conjunto recorrido de la función de distribución de cualquier variable es el intervalo $[0,1]$.
+
+Para ver que la distribución de $Y$ es $U[0,1]$ basta comprobar que $F_Y(y)=y,$ para todo $y\in[0,1]$.
+
+$$F_Y(y)=P(PY\leq y) = P(F_X(X)\leq y)=P(X\leq F_X^{-1}(y))=F_X(F_X^{-1}(y))=y.$$
+
+#### Ejemplo 1
+Recordemos que si $X$ es exponencial de parámetro $\lambda$, su función de distribución es: $F_X(x)=1-e^{-\lambda x}$.
+
+Hallaremos a continuación $F_X^{-1}$:
+
+$$y=1-e^{-\lambda x} \; \Longleftrightarrow\; 1-y=e^{-\lambda x}, \; \Longleftrightarrow \; ln(1-y)=-\lambda x, \; \Longleftrightarrow \; x=-\dfrac{1}{\lambda}ln(1-y)$$
+
+por lo tanto, $F_X^{-1}(y)=-\dfrac{1}{\lambda}ln(1-y)$
+
+#### Ejemplo 1 en R
+Generar una muestra con $R$ de $25$ valores de una variable exponencial de parámetro $\lambda=2$ usando el método anterior:
+
+```{r}
+n = 25
+lambda = 2 
+muestra_y = runif(n)
+muestra_x = -(1/lambda)*log(1-muestra_y)
+muestra_x
+```
+
+#### Ejemplo 2 en R
+Generamos una muestra de 500 valores usando el método de transformación y dibujaremos su histograma de frecuencias relativas.
+
+Seguidamente dibujaremos la función de denisdad de la variable exponencial de parámetro $\lambda$ y compararemos los resultados:
+
+```{r}
+{n=500
+lambda = 2 
+muestra_y = runif(n)
+muestra_x = -(1/lambda)*log(1-muestra_y)
+hist(muestra_x,freq = FALSE,main = "Histograma de la muestra")
+x2=seq(from=0,to=2.5,by=0.01)
+lines(x2,dexp(x2,lambda),col="red")}
+```
+
+
+### Método de rechazo
+Sea $X$ una variable aleatoria continua tal que su función de densidad verifica:
+
+- Existen valores $a$ y $b$ tal que $f_x(x)=0$ si $x\notin [a,b]$
+- Existen valores $c$ y $d$ tal que $f_X(x)\in [c,d]$, si $x\in [a,b]$
+
+En resumen, los puntos $(x,f(x))$ pertenecen al rectángulo $[a,b]\times [c,d]$ y en caso contrario $f_X(x)=0$.
+
+Para generar una muestra aleatoria de la variable $X$, hacemos lo siguiente: 
+
+1. Generamos un valor aleatorio $x$ entre $a$ y $b$.
+2. Generamos un valor aleatorio $y$ entre $c$ y $d$.
+3. Si $y\leq f_X(x)$, aceptamos $x$ como valor de la muestra. En caso contrario, volvemos a empezar en $1$.
+
+#### Ejemplo 1 en R
+Sea 
+$$f_X(x)=\left\{\begin{array}{rcl}x,&si&0\leq x \leq 1 \\ 2-x,&si&1\leq x \leq 2\\ 0, & & \mbox{en caso contrario}\end{array}\right.$$
+
+```{r}
+{a=0;b=2; c=0; d=1; n=25; i=1;
+f = function(x){
+  ifelse(x>=0 & x<=1, x, ifelse(x>=1 & x<=2, 2-x, 0))
+}
+muestra = c()
+while(i<=n){
+  x=runif(1,a,b)
+  y=runif(1,c,d)
+  if(y<=f(x)){
+    muestra=c(muestra,x);
+    i=i+1
+  }
+}
+muestra}
+```
+
+#### Ejemplo 2 en R
+```{r}
+{a=0;b=2; c=0; d=1; n=500; i=1;
+f = function(x){
+  ifelse(x>=0 & x<=1, x, ifelse(x>=1 & x<=2, 2-x, 0))
+}
+muestra = c()
+while(i<=n){
+  x=runif(1,a,b)
+  y=runif(1,c,d)
+  if(y<=f(x)){
+    muestra=c(muestra,x);
+    i=i+1
+  }
+}
+muestra
+hist(muestra,freq = FALSE, main = "Histograma de la muestra")
+x2 = seq(from=0,to=2,by=0.01)
+lines(x2,f(x2),col="red")}
+```
+
+## Entropía
+La entropía es una medida de la incertidumbre en un experimento aleatorio.
+
+Veremos cómo la entropía cuantifica la incertidumbre por la cantidad de de información requerida para especificar el resultado de un experimento aleatorio.
+
+Supongamos que tenemos una variable aleatoria $X$ discreta con valores enteros:
+$$D_X=\lbrace 1,2,\ldots,N \rbrace$$
+
+Sea $k\in D_X$ un valor de la variable. Estamos interesados en cuantificar la invertidumbre del suceso $A_k=\lbrace X=k \rbrace$.
+
+O sea, cuánta menos incertidumbre tenga $A_k$, más alta será su probabilidad, y cuánta más incertidumbre, menos probabilidad de aparecer $A_k.$
+
+Una medida que cumple las condiciones anteriores es la siguiente:
+$$I(A_k) = I(\lbrace X= k\rbrace)=ln\left(\dfrac{1}{P(X=k)}\right)=-ln(P(X=k)).$$
+
+Por ejemplo , si $P(A_k)=1,$ o sea, $A_k$ aparece seguro, entonces tiene incertidumbre nula, $I(A_k)=0,$ y si $P(A_k)=0,$ o sea, $A_k$ no aparece nunca, tiene invertidumbre máxima, $I(A_k)=\infty$.
+
+### Definición de entropía de una variable aleatoria
+Sea $X$ una variable aleatoria con función de densidad $f_X(x)$ en el caso continuo o función de probabilidad $P_X(x)$ en el caso discreto. Definimos entropía de $X$ como: $H_X=E(-ln(f_X)) = \int_{-\infty}^{\infty}-ln(f_X(x))f_X(x)\; dx,$ en el caso continuo y $H_X=E(-ln(P_X)) = \sum_{x_K \in D_X}-ln(P_X(x_k))P_X(x_k)$, en el caso discreto.
+
