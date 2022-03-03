@@ -9,6 +9,7 @@ output:
 
 ```{r}
 library(ggplot2)
+source("funciones_chapter4.R")
 ```
 
 # Ejercicios capitulo 4
@@ -29,7 +30,7 @@ En una distribución binomial, sea $X$ el número de éxistos obtenidos en diez 
 
 Respuesta.-
 
-$$0.08808038=\dfrac{10!}{\left[10-(10-4)\right]!(10-4)!}(1-0.8)^{10-6}\left[1-(1-0.8)\right]^{10-(10-6)} =\dfrac{10!}{6!(10-6)!}(1-0.8)^{10-6} 0.8^{6} = 0.08808038$$
+$$0.08808038=\dfrac{10!}{\left[10-(10-4)\right]!(10-4)!}(1-0.8)^{10-6}\left[1-(1-0.8)\right]^{10-(10-6)}$$ $$ =\dfrac{10!}{6!(10-6)!}(1-0.8)^{10-6} 0.8^{6} = 0.08808038$$
 
 
 ```{r}
@@ -45,16 +46,106 @@ $$p(x+1;n,p) = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
 
 Respuesta.- 
 
-$$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1} = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
+$$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1}$$ $$= \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
 
 ## 4.4.
+sea $X$ una variable aleatoria con distribución binomial y parámetros $n=8$ y $p=0.4$. Emplear la fórmula de recursión del problema anterior para obtener las probabilidades puntuales de los valores de $X$. 
+
+Respuesta.- 
+
 $$p(x+1;8,0.4) = \dfrac{(8-x)0.4}{(x+1)(1-0.4)}p(x;8,0.4)$$
 
 ## 4.5
 Sea $X$ una variable aleatoria distribuida binomialmente con $n=10$ y $p=0.5$ 
 
 ### a) 
-Determinar las probabilidades de que $X$ se encuentre dentro de una desvianción estándar de la media y a dos desvaiciones estándar de la media.
+Determinar las probabilidades de que $X$ se encuentre dentro de una desviación estándar de la media y a dos desviaciones estándar de la media.
+
+Respuesta.- Para una desviación estándar
+
+Sabemos que $\mu = E(X) = np = 10\cdot 0.5 = 5$ y $\sigma = \sqrt{np(1-p)} = \sqrt{10\cdot 0.5\cdot (1-0.5)} = 1.581139$, luego si queremos hallar la desviación estándar de la media tenemos que calcular la desviación hacia la derecha y hacia la izquierda, es decir, $5\pm 1.581139 = 6.581139 \; \mbox{y} \; 3.418861$. Si restamos y sumamos a $6.581139$ y $3.418861$, $0.581139$ respectivamente tenemos por un lado $6$ y por otro $2.837722 \approx 3$.
+Así tenemos que,
+
+$$P \left( X\leq 6 \right) - P \left( X\leq 3 \right) = F\left(6;10,0.5\right) - F\left(3;10,0.5\right)= \sum_{i=0}^6 {10 \choose i} 0.5^i (1-0.5)^{10-i}- \sum_{i=0}^3 {10 \choose i} 0.5^i (1-0.5)^{10-i}$$ 
+$$= 0.65625$$
+
+```{r}
+pbinom(6,10,0.5) - pbinom(3,10,0.5)
+```
+
+Para dos desviaciones estándar, tenemos que $\sigma = 2\sqrt{np(1-p)} = 2\sqrt{10\cdot 0.5\cdot (1-0.5)} = 3.162278$, de donde $5\pm 3.162278 = 8.162278\; \mbox{y}\; 1.837722$. Podemos construir directamente la probabilidad requerida como sigue, 
+
+$$P \left( X\leq 8 \right) - P \left( X\leq 2 \right) = F\left(8;10,0.5\right) - F\left(2;10,0.5\right) = \sum_{i=0}^8 {10 \choose i} 0.5^i (1-0.5)^{10-i}- \sum_{i=0}^2 {10 \choose i} 0.5^i (1-0.5)^{10-i}$$ 
+$$=0.9345703$$
+
+```{r}
+pbinom(8,10,0.5)-pbinom(2,10,0.5)
+```
+
 
 ### b) 
 ¿Cómo cambiarían las respuestas de a) si $n=15$ y $p=0.4$?
+
+Respuesta.- Para una desviación estándar,
+
+Similar a la parte a) tenemos que $\mu = E(X) = np = 15\cdot 0.4 = 6$ de donde se tiene $\sigma = \sqrt{np(1-p)} = \sqrt{15\cdot 0.4\cdot (1-0.4)} = 1.897367$ de donde $6\pm 1.897367 = 7.897367\; \mbox{y}\; 4.102633$, por lo tanto,
+
+$$P \left( X\leq 7 \right) - P \left( X\leq 2 \right) = F\left(7;15,0.4\right) - F\left(2;15,0.4\right)= \sum_{i=0}^7 {15 \choose i} 0.4^i (1-0.4)^{15-i}- \sum_{i=0}^2 {15 \choose i} 0.4^i (1-0.4)^{15-i}$$ 
+$$=0.5696191$$
+
+```{r}
+pbinom(7,15,0.4)-pbinom(4,15,0.4)
+```
+
+Para dos desviaciones estándar, 
+
+tenemos que $\sigma = 2\sqrt{np(1-p)} = 2\sqrt{15\cdot 0.4\cdot (1-0.4)} = 3.794733$, de donde $6\pm 3.794733 = 9.794733\; \mbox{y}\; 2.205267$. se sigue, 
+
+$$P \left( X\leq 9 \right) - P \left( X\leq 2 \right) = F\left(9;15,0.4\right) - F\left(2;15,0.4\right) = \sum_{i=0}^9 {15 \choose i} 0.4^i (1-0.4)^{15-i}- \sum_{i=0}^2 {15 \choose i} 0.4^i (1-0.4)^{15-i}$$ 
+$$=0.9345703$$
+
+```{r}
+pbinom(9,15,0.4)-pbinom(2,15,0.4)
+```
+
+## 4.6
+Supóngase que la probabilidad de tener una unidad defectuosa en una línea de ensamble es de 0.05. Si el número de unidades terminadas constituye un conjunto de ensayos independientes 
+
+### a)
+¿Cuál es la probabilidad de que entre 20 unidades dos se encuentren defectuosas?
+
+Respuesta.-
+$$P(X=2)={20 \choose 2}\cdot 0.05^2\cdot (1-0.05)^{20-2} = $$
+
+```{r}
+# opción 1
+choose(20,2)*0.05^2*(1-0.05)^(20-2)
+# opción 2
+dbinom(2,20,0.05)
+```
+
+### b)
+¿Cuál es la probabilidad de que entre 20 unidades, dos como límite se encuentren defectuosas?
+
+Respuesta.-
+$$P(X\leq 2) = F(2;20,0.05) = \sum_{i=0}^{2} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.9245163$$
+
+```{r}
+pbinom(2,20,0.05)
+```
+
+### c)
+¿Cuál es la probabilidad de que por lo menos una se encuentre defectuosa?
+
+Respuesta.-
+
+$$1-P(X\leq 1) = 1-F(1;20,0.05) = \sum_{i=0}^{1} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.2641605$$
+
+```{r}
+pbinom(1,20,0.05,lower.tail = FALSE)
+```
+
+## 4.7
+En una fábrica de circuitos electrónicos, se afirma que la proporción de unidades defectuosas de cierto componente que ésta produce, es del $5\%$. Un buen comprador de estos componentes revisa $15$ unidades seleccionadas al azar y encuentra cuatro defectuosas. Si la compañia se encuentra en lo correcto y prevalecen las suposiciones para que la distribución binomial sea el modelo de probabilidad adecuado para esta situación, ¿Cuál es la probabilidad de este hecho?. Con base en el resultado anterior ¿puede concluir que la compañia está equivocada?
+
+Respuesta.-\; 

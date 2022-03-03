@@ -84,13 +84,50 @@
 
     %----------8.
      \item \textbf{\boldmath Probar que $(x+y)+z=x+(y+z)$ para todo $x,y,z\in \mathbf{F}^n$.}\\\\
-	 \textbf{Demostración.-}\; 
+	 \textbf{Demostración.-}\; Sea 
+	 $$\begin{array}{rcl}
+	     x&=&(x_1,\ldots,x_n)\\ 
+	     y&=&(y_1,\ldots,y_n)\\
+	     z&=&(z_1,\ldots,z_n)
+	 \end{array}$$ 
+	     entonces,
 
-	 
+	 $$\begin{array}{rcl}
+	     (x+y)+z&=&\left[(x_1,\ldots,x_n)+(y_1,\ldots,y_n)\right]\\
+		    &+&(z_1,\ldots,z_n)\\\\
+		    &=&(x_1+y_1,\ldots,x_n+y_n)\\
+		    &+&(z_1,\ldots ,z_n)\\\\
+		    &=&(x_1+y_1+z_1,\ldots,x_n+y_n+z_n)\\
+	 \end{array}$$
 
+	 $$\begin{array}{rcl}
+	     x+(y+z)&=&(x_1,\ldots,x_n)\\
+		    &+&\left[(y_1,\ldots,y_n)+(z_1,\ldots,z_n)\right]\\\\
+		    &=&(x_1,\ldots,x_n)\\
+		    &+&(y_1 + z_1,\ldots ,y_n + z_n)\\\\
+		    &=&(x_1+y_1+z_1,\ldots,x_n+y_n+z_n)\\
+	 \end{array}$$
 
+	 De donde se tiene que,
+	 $$(x+y)+z=x+(y+z).$$\\
+
+    %----------9.
+     \item \textbf{\boldmath Probar que $(ab)x=a(bx)$ para todo $x\in F^n$ y para todo $a,b \in F$.}\\\\
+	 \textbf{Demostración.-}\; Sea $x=(x_1,\ldots,x_n)$ entonces,
+	 $$\begin{array}{rcl}
+	     (ab)x&=&(ab)(x_1,\ldots,x_n)\\
+		  &=&((ab)x_1,\ldots,(ab)x_n)\\
+		  &=&(a(bx_1),\ldots,a(bx_n))\\
+		  &=&a(bx_1,\ldots,bx_n)\\
+		  &=&a(bx).\\
+	 \end{array}$$
+	 De ésta manera se demuestra que la propiedad dada.\\\\
+
+    %----------10.
+    \item 
 
 
 \end{enumerate}
+
 
 \end{multicols}

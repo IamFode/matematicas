@@ -42,4 +42,13 @@ dist_bernoulli <- function(x,p){
 Ex_binom <- function(n,p) n*p
 
 # varianza
-Var_binom <- function(n,p) n*p*(1-p)
+var_binom <- function(n,p) n*p*(1-p)
+
+######################## Distribución de Poisson ###############################
+dist_poisson <- function(x,n,p){
+  return(factorial(n)/(factorial(n-x)*factorial(x))*p^x * (1-p)^(n-x))
+}
+
+
+
+

@@ -519,8 +519,31 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 	%----------(a)
 	\item Supóngase que $f$ es continua en $(a,b)$ y $\lim\limits_{x\to a^+} f(x)=\lim\limits_{x\to b^-} f(x)=\infty$. Demostrar que $f$ tiene un mínimo en todo el intervalo $(a,b)$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Sea $c\in (a,b)$. Ya que $\lim\limits_{x\to a^-}=\infty$, existe $a_1\in (a,b)$ tal que $a_1<c$ y $f(x)<f(c)$ para todo $x\in (a,a_1)$. Similarmente, ya que $\lim\limits_{x\to b^+}=\infty$, existe un $b_1\in (a,b)$ tal que $b_1>c$ y $f(x)>f(c)$ para todo $x\in (b_1,b)$, entonces por el teorema 7.7  Se tiene que existe un $y\in [a_1,b_1]$ tal que $f(y)\leq f(x)$ para todo $x\in [a_1,b_1]$.\\
+	    En particular, $f(y)\leq f(c)$, de donde si $x\in[a_1,b_1]$, entonces $f(y)\leq f(x)$. Si $x\in(a,a_1)$, entonces $f(y)\leq f(c)<f(x)$ y si $x\in (b_1,b)$, entonces $f(y)\leq f(c)<f(x)$ de donde demostramos que $f$ tiene un mínimo $y$  en $(a,b)$.\\\\
+
+	%----------(b)
+	\item Demostrar el correspondiente resultado cuando $a=-\infty$ y/o $b=\infty$.\\\\
+	    Demostración.-\; Sea $c\in \mathbb{R}$. Ya que $\lim\limits_{x\to -\infty}f(x) = \infty$, existe $M\in \mathbb{R}$ tal que $M<c$ y $f(x)>f(c)$ para todo $x<M.$ Similarmente, ya que $\lim\limits_{x\to \infty} f(x)=\infty$, existe $N\in \mathbb{R}$ tal que $N>c$ y $f(x)>f(c)$ para todo $x>N$.\\
+	    Luego, $f$ es continua en $[M,N]$, alcanza el mínimo en este intervalo. Esto es, existe $y\in [M,N]$ tal que $f(y)\leq f(x)$ para todo $x\in [M,N]$. En particular, $f(y)\leq f(c)$, de donde si $x\in [M,N]$, entonces $f(y)\leq f(x).$ Si $x<M$, entonces $f(y)\leq f(c)<f(x).$ Si $x>N$, entonces $f(y)\leq f(c)<f(x).$ Esto muestra que $f$ tiene un mínimo en $y \in \mathbb{R}.$\\\\
 
     \end{enumerate}
+
+% -------------------- 17.
+\item Sea $f$ cualquier función polinómica. Demostrar que existe algún número $y$ tal que $|f(y)|\leq |f(x)|$ para todo $x$.\\\\
+    Demostración.-\; Ya que $f$ es un polinomio real entonces,
+    $$\lim_{x\to \infty} |f(x)|=\lim_{x\to -\infty}|f(x)|=\infty$$
+    de donde existe un entero $N$ tal que 
+    $$|f(0)|<|f(x)|\quad \mbox{para todo}\; x\in (-\infty,-N)\cup(N,\infty)$$
+    Ahora consideremos el intervalo cerrado $[-N,N]$, notemos que este intervalo es un conjunto compacto en $\mathbb{R}$. Luego sabemos que la función $|f|$ es continuo en $[-N,N]$ por lo que debe existir un punto $y$ en $[-N,N]$ tal que 
+    $$|f(y)|\leq |f(x)|,\quad \forall x\in [-N,N].$$
+    Ahora note que $0 \in [-N,N]$, se sigue que,
+    $$|f(y)|\leq |f(0)|.$$
+    por lo tanto,
+    $$|f(y)|\leq |f(x)|,\quad \forall x\in \mathbb{R}.$$\\
+
+% -------------------- 18.
+\item 
+    
 
 \end{enumerate}

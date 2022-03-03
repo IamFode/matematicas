@@ -143,6 +143,50 @@ $$\begin{array}{rcl}
 		       &=&n(n-1)(n-2)(n-3)p^4\\\\
 \end{array}$$
 
-Sustituir en 
+Sustituir en $E[X(X-1)(X-2)(X-3)] = \mu_4^{'}-6\mu_3^{'}+11\mu_2^{'}-6\mu.$ y para resolver $\mu_4^{'}$ se tiene:
+$$\mu_4^{'} = n(n-1)(n-2)(n-3)p^4 + 6[n(n-1)(n-2)p^2+3n(n-1)p^2+np]-11[n(n-1)p^2+np]+6np$$
 
+Luego de acuerdo a $\mu_4=\mu_4^{'}-4\mu \mu_3^{'}+6\mu^2\mu_2^{'}-3\mu^4$ el cuarto momento central es:
+$$\mu_4 = np(1-p)\lbrace 3np(1-p)+[1-6p(1-p)]\lbrace.$$
+
+Y de de acuerdo con $\alpha_4=\mu_4/\mu_2^2$
+$$\alpha_4=\dfrac{np(1-p)\lbrace 3np(1-p)+[1-6p(1-p)]\lbrace}{n^2p^2(1-p)^2} = 3 + \dfrac{[1-6p(1-p)]}{np(1-p)}$$
+La varianza de una variable aleatoria binomial siempre es menor que el valor de su media.\\\\
+
+De acuerdo con la definición 3.14 la función generadora de momentos para la distribución binomial es:
+$$\begin{array}{rcl}
+    m_X(t)=E(e^{tX})&=&\sum\limits_{x=0}^n e^{tx}\dfrac{n!}{(n-x)x!}p^x(1-p)^{n-x}\\\\
+		    &=&\sum\limits_{x=0}^n \dfrac{n!}{(n-x)x!}(e^t p)(1-p)^{n-x}\\\\
+		    &=&(1-p)^n + n(1-p)^{n-1}(e^t p) + \dfrac{n(n-1)}{2!}(1-p)^{n-2} (e^t p)^2+\ldots+(e^t p)^n\\\\
+		    &=&[(1-p)+e^tp]^n\\\\
+\end{array}$$
+
+Al tomar las dos primeras derivadas de $[(1-p)+e^tp]^n$ con respecto de $t$, se obtiene:
+$$\dfrac{dm_X(t)}{dt} = ne^t p [(1-p)+e^t p]^{n-1}$$
+y
+$$\dfrac{d^2m_X (t)}{dt^2}=n(n-1)(e^t p)^2[(1-p)+e^tp]^{n-2}+ne^t p[(1-p)+e^t p]^{n-1}$$
+Si $t=0$, obtiene el primero y segundo momento al rededor del cero,
+$$\dfrac{dm_X(t)}{dt}\bigg|_{t=0} = np[(1-p)+p]^{n-1} = np$$
+y
+$$\dfrac{d^2m_X(t)}{dt^2}\bigg|_{t=0} = n(n-1)p^2[(1-p)+p]^{n-2} + np[(1-p)+p]^{n-1}=n(n-1)p^2 + np.$$
+
+\section{La distribución de Poisson}
+La distribución es el principal modelo de probabilidad empleado para analizar problemas de líneas de espera. Además, ofrece una aproximación excelente a la función de probabilidad binomial cuando $p$ es pequeño y $n$ es grande.\\\\
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}
+	Sea $X$ una variable aleatoria que representa el número de eventos aleatorios independientes que ocurren a una rapidez constante sobre el tiempo o el espacio. Se dice entonces que la variable aleatoria $X$ tiene una distribución de Poisson con función de probabilidad.
+	$$p(x;\lambda)=\left\{\begin{array}{ll}
+		\dfrac{e^{-\lambda}\lambda^x}{x!} & x=0,1,2,\ldots; \quad \lambda > 0\\
+		0&\mbox{para cualquier otro valor}\\
+	\end{array}\right.$$\\
+	El parámetro de la distribución de Poisson es $\lambda$, el número promedio de ocurrencias del evento aleatorio por unidad de tiempo.
+    \end{def.}
+\end{tcolorbox}
+Verificamos que es una función de probabilidad. Puesto que $p(x;\lambda)>0$ para $x0,1,2,\ldots$,
+$$\sum_{x=0}^\infty p(x;\lambda) = \sum_{x=0}^\infty \dfrac{e^{-\lambda}\lambda^x}{x!} = e^{-\lambda}\sum_{x=0}^\infty \dfrac{\lambda^x}{x!}=e^{-\lambda}\left(1+\lambda + \dfrac{\lambda^2}{2!}+\ldots\right) = e^{-\lambda}e^{\lambda}=1$$\\
+
+\textbf{Deducción de la función de probabilidad de Poisson.-}\\\\
+
+Sea $p(x;t)$ la probabilidad de tener, de manera exacta, $X$ ocurrencias en un intervalo $t$, y supóngase lo siguiente 
 

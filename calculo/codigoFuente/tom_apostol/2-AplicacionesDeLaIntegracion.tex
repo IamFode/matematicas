@@ -1,7 +1,5 @@
 \chapter{Algunas aplicaciones de la integración}
 
-\begin{comment}
-
 \setcounter{section}{1}
 \section{El área de una región comprendida entre dos gráficas expresada como una integral}
 
@@ -2233,7 +2231,6 @@ En cada uno de los ejercicios del 16 al 21 se hace referencia a una varilla de l
 
 \end{enumerate}
 
-\end{comment}
 
 \section{La integral como función de límite superior. Integrales indefinidas}
 
@@ -2255,7 +2252,6 @@ siempre que $a\leq x \leq b.$\\\\
     Sea $A(x) =\int_a^x f(t)\; dt$. Entonces, $A$ es convexa en cada intervalo donde $f$ es creciente , y cóncavo en cada intervalo donde $f$ es decreciente.\\\\
     Demostración.-\; Supongamos que $f$ es creciente en $[a,b]$, elijamos $x<y$,  y sea $z=\alpha y + (1-\alpha)x.$ Tenemos que demostrar que $A(z)\leq \alpha A(y)+(1-\alpha)A(x)$. 
 \end{teo}
-
 
 
 
@@ -2475,8 +2471,120 @@ Calcular las integrales de los ejercicios 1 al 16.\\\\
 
 
     %--------------------19.
-    \item 
+    \item Dado una función función $f$, definida en todas partes, periódica con periodo 2, e integrable en todo intervalo. Sea $g(x)=\int_0^x f(t)\; dt$ 
+	\begin{enumerate}[\bfseries (a)]
 
+	    %----------(a)
+	    \item Demostrar que $g(2n)=0$ para cada entero $n$.\\\\
+		Demostración.-\; Podemos establecer esto por un calculo directo.
+		$$\begin{array}{rcl}
+		    g(2n)&=&\displaystyle\int_0^2n f(t)\; dt\\\\
+			 &=&\displaystyle\int_{-2n}^0 f(t+2n)\; dt\\\\
+			 &=&\displaystyle\int_{-2n}^0 f(t)\; dt\\\\
+			 &=&-\displaystyle\int_0^{-2n} f(t)\; dt\\\\
+			 &=&\displaystyle\int_0^{2n} f(-t)\; dt\\\\
+			 &=&-\displaystyle\int_0^{2n} f(t)\; dt\\\\
+		\end{array}$$
+
+		Pero entonces tenemos, 
+		$$\int_0^{2n} f(t)\; dt = -\int_0^{2n} f(t)\; dt \quad \Longrightarrow \quad \int_0^{2n} f(t)\; dt=0$$
+		Ya que $f(2n)=\int_0^{2n} f(t)\; dt$ entonces tenemos el resultado es,
+		$$g(2n)=\int_0^{2n} f(t)\; dt=0.$$\\
+
+	    %----------(b)
+	    \item Demostra que $g$ es par y periodico de periodo $2$.\\\\
+		Demostración.-\; Para demostrar que $f$ es par necesitamos mostrar $g(-x)=g(x)$ para todo $x$. Utilizaremos  el hecho que $f$ es impar como también la propiedad de expación-contración de la integral. (teorema 1.19 con $k=-1$).
+		$$\begin{array}{rcl}
+		    g(-x)&=&\displaystyle\int_0^{-x}f(t)\; dt\\\\
+			 &=&-\displaystyle\int_0^x f(-t)\; dt\\\\
+			 &=&\displaystyle\int_0^x f(t)\; dt\\\\
+			 &=&g(x)\\\\
+		\end{array}$$
+		Luego, mostraremos que $g$ es periódica con periodo $2$, es decir, debemos demostrar que $g(x+2)=g(x)$ para todo $x$.
+		$$\begin{array}{rcl}
+		    g(x+2)&=&\displaystyle\int_0^{x+2} f(t)\; dt\\\\
+			  &=&\displaystyle\int_0^2 f(t)\; dt + \int_2^{x+2} f(t)\; dt\\\\
+			  &=&0+\displaystyle\int_0^x f(t+2)\; dt\\\\
+			  &=&\displaystyle\int_0^2 f(t)\; dt\\\\
+		    &=&g(x)\\\\
+		\end{array}$$
+		\vspace{0.5cm}
+
+
+
+	\end{enumerate}
+
+    %--------------------20.
+    \item Dado una función par $f$, definida en todas partes, periódica con periodo 2, e integrable en todo intervalo. Sea $g(x)=\int_0^x f(t)\; dt$ y sea $A=g(1)$.
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Demostrar que $g$ es impar y que $g(x+2)-g(x)=g(2)$.\\\\
+		Demostración.-\; Usaremos la expanción-contracción del intervalo de intregración,
+		$$\int_a^b f(t)\; dt = \dfrac{1}{k}\int_{ka}^{kb} f\left(\dfrac{t}{k}\right)\; dt$$
+		donde en este caso $k=-1$. De donde,
+		$$\begin{array}{rcl}
+		    &=&\displaystyle\int_0^{-x} f(t)\; dt\\\\
+		    &=&\displaystyle\int_0^x f(-t)\; dt\\\\
+		    &=&\displaystyle\int_0^x f(t)\; dt\\\\
+		    &=&-g(x)\\\\
+		\end{array}$$
+		Por lo tanto, $g$ es impar.\\\\
+		Por otro lado tenemos,
+		$$\begin{array}{rcl}
+		    g(x+2)-g(x)&=&\displaystyle\int_0^{x+2} f(t)\; dt - \int_0^x f(t)\; dt\\\\
+			       &=&\displaystyle\int_0^{x} f(t)\; dt + \int_2^{x+2} f(t)\; dt - \int_0^x f(t)\; dt\\\\
+			       &=&g(2)+\displaystyle\int_0^{x}f(t+2)\; dt - \int_0^x f(t)\; dt\\\\
+			       &=&g(2)+\displaystyle\int_0^{x}f(t)\; dt - \int_0^x f(t)\; dt\\\\
+			       &=&g(2)\\\\
+		\end{array}$$
+
+	    %----------(b)
+	    \item Calcular $g(2)$ y $g(5)$ e terminos de $A$.\\\\
+		Respuesta.-\; Primeramente encontraremos $f(2)$. Sea $x=1$, donde,
+		$$g(x+2)-g(x)=g(2)\; \Longrightarrow \; g(3)-g(1)=g(2)$$
+		así,
+		$$\begin{array}{rcl}
+		    g(2)&=&g(3)-g(1)\\\\\
+			&=&\displaystyle\int_0^3 f(t)\; dt - \int_0^1 f(t)\; dt\\\\
+			&=&\displaystyle\int_0^3 f(t)\;dt - \int_0^1 f(t)\; dt\\\\
+			&=&\displaystyle\int_1^3 f(t)\; dt\\\\
+			&=&\displaystyle\int_{-1}^1 f(t+2)\; dt\\\\
+			&=&\displaystyle\int_{-1}^1 f(t)\; dt\\\\
+			&=&\displaystyle\int_{-1}^0 f(t)\; dt + \int_0^1 f(t)\; dt\\\\
+			&=&-\displaystyle\int_1^0 f(-t)\; dt + \int_0^1 f(t)\; dt\\\\
+			&=&\displaystyle\int_{1}^0 f(t)\; dt + \int_0^1 f(t)\; dt \\\\
+			&=&2\displaystyle\int_{0}^1 f(t)\; dt \\\\
+			&=&2\cdot g(1)\\\\
+			&=&2A\\\\
+		\end{array}$$
+		Por lo tanto, 
+		$$g(2)=g(3)-g(1)\; \Longrightarrow \; 2A=g(3)-A \; \Longrightarrow \; g(3)=2A+A=3A$$
+		Y finalmente para encontrar $g(5)$ suponemos que $x=3$,
+		$$g(x+2)-g(x)=g(2)\; \Longrightarrow \; g(5)-g(3)=g(2)\; \Longrightarrow \; g(5) = 2A + 3A = 5A$$\\
+
+	    %----------(c)
+	    \item Para que valor de $A$ será $g$ periodica con periodo $2$?\\\\
+		Respuesta.-\; $g$ es periódica con periodo $2$ por lo tanto,
+		$$\begin{array}{rcr}
+		    g(x+2)=g(x)&\Longrightarrow&g(x+2)-g(x)=0\\
+			       &&g(0+2)-g(0)=0\\
+			       &&g(2)-0=0\\
+			       &&2A=0\\
+			       &&A=0\\\\
+		\end{array}$$
+
+	\end{enumerate}
+
+    %--------------------21.
+    \item Dadas dos funciones $f$ y $g$, integrables en todo intervalo y teniendo las siguientes propiedades: $f$ es par, $g$ es impar, $f(5)=7,\; f(0)=0,\; g(x)=f(x+5),\; f(x)=\int_0^x g(t)\; dt$ para todo $x$. Demostrar que (a) $f(x-5)=-g(x)$ para todo $x$; (b) $\int_0^5 f(t)\; dt$; (c) $\int_0^x f(t)\; dt=g(0)-g(x)$.\\\\
+	Demostración.-\; para la (a) calculemos usando las propiedades dadas:
+	$$f(x+5)=g(x)\; \Longrightarrow \; g(-x)=f(-x+5)\; \Longrightarrow \; -g(x)=f(x-5)$$
+	donde $g$ es impar y $f$ es par.\\\\
+	Para la parte (b) una vez más calculamos usando las propiedades para $f$ y $g$:
+	$$\int_0^5 f(t)\; dt = \int_0^5 g(t-5)\;dt = \int_{-5}^0 g(t)\; dt = -\int_5^0 g(-t)\; dt = \int_0^5 g(t)\; dt = f(5)=7$$
+	Finalmente para (c):
+	$$\int_0^x f(t)\; dt = \int_0^x g(t-5)\; dt = \int_{-5}^{x-5} = \int_{-5}^0 g(t)\; dt + \int_0^{x-5} g(t)\;dt = f(5)+f(x-5)=g(0)-g(x).$$
 
 \end{enumerate}
 
