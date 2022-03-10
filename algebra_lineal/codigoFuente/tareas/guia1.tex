@@ -105,7 +105,7 @@
 		    &+&\left[(y_1,\ldots,y_n)+(z_1,\ldots,z_n)\right]\\\\
 		    &=&(x_1,\ldots,x_n)\\
 		    &+&(y_1 + z_1,\ldots ,y_n + z_n)\\\\
-		    &=&(x_1+y_1+z_1,\ldots,x_n+y_n+z_n)\\
+		    &=&[x_1+(y_1+z_1),\ldots,x_n+(y_n+z_n)]\\
 	 \end{array}$$
 
 	 De donde se tiene que,
@@ -113,7 +113,7 @@
 
     %----------9.
      \item \textbf{\boldmath Probar que $(ab)x=a(bx)$ para todo $x\in F^n$ y para todo $a,b \in F$.}\\\\
-	 \textbf{Demostración.-}\; Sea $x=(x_1,\ldots,x_n)$ entonces,
+	 \textbf{Demostración.-}\; Sea $x=(x_1,\ldots,x_n)$ un elemento arbitrario de $\mathbb{F}_n$ y $a,b\in \mathbb{F}$ entonces, por la multiplicación de un escalar en $\mathbb{F}$ tenemos,
 	 $$\begin{array}{rcl}
 	     (ab)x&=&(ab)(x_1,\ldots,x_n)\\
 		  &=&((ab)x_1,\ldots,(ab)x_n)\\
@@ -124,7 +124,44 @@
 	 De ésta manera se demuestra que la propiedad dada.\\\\
 
     %----------10.
-    \item 
+     \item \textbf{\boldmath Probar que $1x=x$ para todo $x\in F^n$.}\\\\
+	 \textbf{Demostración.-}\; Similar al anterior ejercicio, sea $x=(x_1,\ldots,x_n) \in \mathbb{F}^n$ entonces,
+	 $$\begin{array}{rcl}
+	     1(x_1,\ldots,x_n)&=&(1\cdot x_1,\ldots,1\cdot x_n)\\
+			      &=&(x_1,\ldots,x_n)\\
+			      &=&x\\
+	 \end{array}$$
+	 Así, se demuestra que la propiedad dada.\\\\
+
+    %----------11.
+     \item \textbf{\boldmath Probar que $\lambda(x+y)=\lambda x + \lambda y,$ para todo $\lambda \in \mathbb{F}$ y todo $x,y\in \mathbb{F}^n$.}\\\\
+	 \textbf{Demostración.-}\; Sea en $\mathbb{F}^n$ $$x=(x_1,\ldots,x_n)\quad \mbox{e}\quad y=(y_1,\ldots,y_n).$$ 
+	 Luego por la multiplicación escalar y la adición en $\mathbb{F}$ se tiene,  
+    	 $$\begin{array}{rcl}
+	     \lambda(x+y)&=&\lambda(x_1+y_1,\ldots,x_n+y_n)\\
+			 &=&[\lambda(x_1+y_1),\ldots,\lambda(x_n+y_n)]\\
+			 &=&(\lambda x_1 + \lambda y_1,\ldots,\lambda x_n + \lambda y_n)\\
+			 &=&(\lambda x_1,\ldots,\lambda x_n)+(\lambda y_1,\ldots,\lambda y_n)\\
+			 &=&\lambda(x_1,\ldots,x_n)+\lambda(y_1,\ldots,y_n)\\
+			 &=&\lambda x + \lambda y\\
+	 \end{array}$$
+	Por lo tanto queda demostrado la propiedad.\\\\
+
+    %----------12.
+    \item \textbf{\boldmath Probar que $(a+b)x=ax+bx,$ para todo $a,b\in \mathbb{F}$ y todo $x\in F^n$.}\\\\
+	\textbf{Demostración.-}\; Sea $x=(x_1,\ldots,x_n)\in \mathbb{F}^n$ y de la definición de multiplicación de un escalar y adición en $\mathbb{F}^n$ se tiene,
+	$$\begin{array}{rcl}
+	     (a+b)x&=&(a+b)(x_1,\ldots,x_n)\\
+		   &=&[(a+b)x_1,\ldots,(a+b)x_n]\\
+		   &=&(ax_1+bx_2,\ldots,a x_n + b_n)\\
+		   &=&a(x_1,\ldots, x_n)+b( x_1,\ldots, x_n)\\
+		   &=&ax + bx\\
+       \end{array}$$
+       De donde queda demostrado la proposición planteada.\\\\ 
+
+    %----------13.
+   \item \textbf{\boldmath Probar que $-(-v)=v$ para todo $v\in V$.}\\\\
+       	\textbf{Demostración.-}\;
 
 
 \end{enumerate}

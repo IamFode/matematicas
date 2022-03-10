@@ -39,3 +39,26 @@ $$\begin{array}{rcl}
 
  Se buscará que tan probable será que un punto caiga en una región del plano cartesiano.
  
+Entonces la función de distribución conjunta en el valor $(x,y)$ es la probabilidad del suceso formado por aquellos elementos tal que la imagen por la variable aleatoria bidimensional $(X,Y)$ caen dentro de la región sombreada en el gráfico anterior:
+
+$$F_{XY}(x,y)=P\lbrace w\in \Omega | (X(w),Y(w)) \in (-\infty,x]\times (-\infty,y]) \rbrace = P\lbrace w \in \Omega | X(w)\leq Y(w)\leq y\rbrace$$
+
+#### Propiedades
+Sea $(X,Y)$ una variable bidimensional. Sean $F_{XY}$ su función de distribución conjunta. Dicha función satisface las propiedades siguientes:
+
+- La función de distribución conjunta es no decreciente en cada una de las variables:
+$$\mbox{Si}\;  x_1\leq x_2,\; y\; y_1\leq y_2,\; \mbox{entonces}\; F_{XY}(x_1,y_1)\leq F_{XY}(x_2,y_2).$$
+
+- $F_{XY}(x,-\infty)=F_{XY}(-\infty,y)=0,\; F_{XY}(\infty,infty)=1$ para todo $x,y\in \mathbb{R}$.
+
+- Las variables aleatorias $X$ e $Y$ se llaman variables aleatorias marginales y sus funciones de distribución $F_X$ y $F_Y$ pueden hallarse de la forma siguiente como función de la función de distribución conjunta $F_{XY}$:
+$$F_X(x)=F_{XY}(x,\infty),\; F_Y(y)=F_{XY}(\infty.y),$$
+para todo $x,y \in \mathbb{R}$
+
+- La función de distribución conjunta es continua por el norte y por el este:
+$$\lim_{x\to a^+}F_{XY}(x,y)=\lim_{x\to a, x>a}F_{XY}(x,y)=F_{XY}(a,y),$$
+$$\lim_{x\to b^+}F_{XY}(x,y)=\lim_{x\to b, x>b} F_{XY}(x,y)=F_{XY}(x,b),$$
+para todo $a,b \in \mathbb{R}$.
+
+- Dados $x_1<x_2$ e $y_1<y_2$, consideramos $B$ el rectángulo de vértices $(x_1,y_1)$, $(x_1,y_2)$, $(x_2,y_1)$ y $(x_2,y_2)$: $(x_1,y_2]\times (y_1,y_2]$. Entonces,
+$$P((X,Y)\in B)=F_{XY}(x_2,y_2)-F_{XY}(x_2,y_1)-F_{XY}(x_1,y_2)+F_{XY}(x_1,y_1)$$

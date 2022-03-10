@@ -1,0 +1,191 @@
+\chapter{Espacios Vectoriales}
+
+\section{\boldmath $R^n$ y $C^n$}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Números complejos] \hfill
+	\begin{itemize}
+	    \item Un número complejo es un par ordenado $(a,b)$, donde $a,b\in \mathbb{R}$, pero lo escribimos como $a+bi$.
+	    \item El conjunto de todos los números complejos es denotado por $\mathbb{C}$:
+		$$\mathbb{C}=\lbrace a+bi:a,b\in \mathbb{R}\rbrace.$$
+
+	    \item La adición y la multiplicación en $\mathbb{C}$ esta definida por:
+		$$(a+bi)+(c+di)=(a+c)+(b+d)i$$
+		$$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$$
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Propiedades de la aritmética compleja}, colback=white]
+	\textbf{Conmutatividad}
+	$$\alpha + \beta = \beta + \alpha\quad \mbox{y}\quad \alpha \beta = \beta \alpha \quad \mbox{para todo }\; \alpha,\beta \in \mathbb{C};$$
+
+	\textbf{Asociatividad}
+	$$(\alpha + \beta )+\lambda = \alpha + (\beta + \lambda) \quad \mbox{para todo}\; \alpha,\beta,\lambda \in \mathbb{C};$$
+
+	\textbf{Inverso aditivo}
+	\begin{center}
+	    Para cada $\alpha \in \mathbb{C}$, existe un único $\beta \in \mathbb{C}$ tal que $\alpha + \beta = 0;$
+	\end{center}
+
+	\textbf{Inverso multiplicativo}
+	\begin{center}
+	    Para cada $\alpha \in \mathbb{C}$ con $\alpha \neq 0$, existe un único $\beta \in \mathbb{C}$ tal que $\alpha \beta = 1;$
+	\end{center}
+
+	\textbf{Propiedad distributiva}
+	$$\lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta \quad \mbox{para todo}\; \lambda, \alpha, \beta \in \mathbb{C}$$
+\end{tcolorbox}
+
+\begin{teo}[Conmutatividad]
+    Muestre que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \mathbb{C}$.\\\\
+    Demostración.-\; Supóngase $\alpha = a+bi$ y $\beta = c+di$, donde $a,b,c,d \in \mathbb{R}$. Entonces la definición de multiplicación de números complejos muestra que 
+    $$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i$$
+    y
+    $$\beta \alpha = (c+di)(a+bi)=(ca-db)+(cb+da)i$$
+    Por lo tanto $\alpha \beta = \beta \alpha$.\\\\
+\end{teo}
+
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[$-\alpha$, sustracción, $1/\alpha$] 
+	Sea $\alpha, \beta \in \mathbb{C}$
+	\begin{itemize}
+	    \item Sea $-\alpha$ que denota el inverso aditivo de $\alpha$. Por lo tanto $-\alpha$ es el único número complejo tal que 
+		$$\alpha + (-\alpha) = 0.$$
+
+	    \item \textbf{Sustracción} en $\mathbb{C}$ es definido por:
+		$$\beta - \alpha = \beta + (-\alpha).$$
+
+	    \item Para $\alpha\neq 0$, sea $1/\alpha$ denotado por el inverso multiplicativo de $\alpha$. Por lo tanto $1/\alpha$ es el único número complejo tal que
+		$$\alpha (1/\alpha)=1.$$
+
+	    \item \textbf{División} en $\mathbb{C}$ es definido por:
+		$$\beta/\alpha = \beta(1/\alpha).$$
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+\subsection{Listas}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Listas, longitud] 
+	Supóngase que $n$ es un entero no negativo. Una lista de longitud $n$ es una colección ordenada de $n$ elementos (el cual podría ser números, otras listas, o mas entidades abstractas) separadas por comas y cerradas por paréntesis. Una lista de longitud $n$ se muestra de la siguiente manera:
+	$$(x_1,\ldots,x_n)$$
+	Dos listas son iguales si y sólo si tienen la misma longitud y los mismos elementos en el mismo orden.
+    \end{def.}
+\end{tcolorbox}
+Las listas difieren de los conjuntos de dos maneras: en las listas, el orden importa y las repeticiones tienen significado; en conjuntos, el orden y las repeticiones son irrelevantes.\\\\
+
+\subsection{\boldmath $F^n$}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Listas, longitud] 
+	$\mathbb{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\mathbb{F}$
+	$$\mathbb{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \mathbb{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
+	Para $(x_1,\ldots, x_n)\in \mathbb{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[\boldmath Adición en $\mathbb{F}^n$]
+	La adición en $F^n$ es definido añadiendo las correspondientes coordenadas: 
+	$$(x_1,\ldots,x_n)+(y_1,\ldots, y_n)=(x_1+y_1,\ldots, x_n + y_n)$$
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Si $x,y \in F^n,$ entonces $x+y=y+x$.\\\\
+    Demostración.-\; $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces
+    $$\begin{array}{rcl}
+	x+y&=&(x_1,\ldots,x_n)+(y_1,\ldots,y_n)\\
+	   &=&(x_1+y_1,\ldots, x_n + y_n)\\
+	   &=&(y_1+x_1,\ldots, y_n x_n)\\
+	   &=&(y_1,\ldots,y_n)+(x_1,\ldots,x_n)\\
+	   &=&y+x\\
+    \end{array}$$
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[$0$]
+	Sea $0$ la lista de longitud n cuyas coordenadas son todas 0: 
+	$$0=(0,\ldots,0)$$
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[\boldmath Inverso aditivo en $\mathbb{F}^n$]
+	Para $x\in \mathbb{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \mathbb{F}^n$ tal que $$x+(-x) =0$$
+	En otras palabras, si $x=(x_1,\ldots,x_n)$, entonces $-x=(-x_1,\ldots,-x_n).$
+    \end{def.}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Multiplicación scalar en $\mathbb{F}^n$]
+	El producto de un número $\lambda$ y un vector en $\mathbb{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
+	$$\lambda(x_1,\ldots,x_n) = (\lambda x_1,\ldots, \lambda x_n)$$
+	donde $\lambda \in \mathbb{F}$ y $(x_1,\ldots,x_n)\in \mathbb{F}^n$.
+    \end{def.}
+\end{tcolorbox}
+
+\subsection{Ejercicios}
+
+
+\section{Definición de espacio vectorial}
+La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\mathbb{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Adición y multiplicación escalar]\hfill
+	\begin{itemize}
+	    \item Una adición en un conjunto $V$ es una función que asigna un elemento $u+v\in V$ para cada par de elementos $u,v\in V$.
+	    \item Una multiplicación escalar en un conjunto $V$ es una función que asigna un elemento $\lambda  v\in V$ para cada $\lambda \in \mathbb{F}$ y cada $v\in V$.
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Espacio vectorial] Un espacio vectorial es un conjunto $V$ junto con una suma en $V$ y una multiplicación escalar en $V$ tal que se cumplen las siguientes propiedades: 
+	\begin{itemize}
+	    \item \textbf{Conmutatividad}
+		$$u+v=v+u\; \mbox{para todo}\; u,v\in V;$$
+	    \item \textbf{Asociatividad}
+		$$(u+v)+w=u+(v+w)\; \mbox{y}\; (ab)v=a(bv)\; \mbox{para todo}\; u,v,w \in V\; \mbox{y todo}\; a,b\in \mathbb{F};$$
+	    \item \textbf{Identidad aditiva}
+		\begin{center}
+		    Existe un elemento $0\in V$ tal que $v+0=v$ para todo $v\in V$;
+		\end{center}
+
+	    \item \textbf{Inverso aditivo}
+		\begin{center}
+		    Para cada $v\in V$, existe $w \in V$ tal que $v+w=0$;
+		\end{center}
+
+	    \item \textbf{Identidad Multiplicativa}
+		$$1v=v\; \mbox{para todo}\; v\in V$$
+
+	    \item \textbf{Propiedad distributiva}
+		\begin{center}
+		    $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $a,b\in \mathbb{F}$ y todo $u,v \in V$.
+		\end{center}
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Vector, punto]
+	Elementos de un espacio vectorial son llamados vectores o puntos.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Vector, punto]\hfill
+	\begin{itemize}
+	    \item Un espacio vectorial sobre $\mathbb{R}$ es llamado un espacio vectorial real.
+	    \item Un espacio vectorial sobre $\mathbb{C}$ es llamado un espacio vectorial complejo.
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+
+

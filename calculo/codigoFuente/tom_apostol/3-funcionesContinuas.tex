@@ -1,4 +1,44 @@
 \chapter{Funciones continuas}
 
-\setcounter{section}{1}
-\section{La definición del límite de una función}
+\setcounter{section}{2}
+\section{Definición de límite de una función}
+La continuidad existe si existe  continuidad por la izquierda y por la derecha.
+
+\begin{tcolorbox}[colback = white]
+    \begin{def.}[Definición de entorno de un punoto]
+	Cualquier intervalo abierto que contenga un punto $p$ como su punto medio se denomina entorno de $p$.
+    \end{def.}
+\end{tcolorbox}
+\vspace{0.3cm}
+\textbf{Notación.-} Designemos los entornos con $N(p), N_1(p), N_2(p),$ etc. Puesto que un entorno $N(p)$ es un intervalo abierto simétrico respecto a $p$, consta de todos los números reales $x$ que satisfagan $p-r<x<p+r$ para un cierto $r>0$. El número positivo $r$ se llama radio del entorno. En lugar de $N(p)$ ponemos $N(p;r)$ si deseamos especificar su radio. Las desigualdades $p-r<x<p+r$ son equivalentes a $-r<x-p<r$, y a $|x-p|<r$. Así pues, $N(p;r)$ consta de todos los puntos $x$ , cuya distancia a $p$ es menor que $r$.\\
+En la definición que sigue suponemos que $A$ es un número real y que $f$ es una función definida en un cierto entorno de un punto $p$ (excepción hecha acaso del mismo $p$). La función puede estar definida en $p$ pero esto no interviene en la definición.\\
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Definición de límite de una función]
+	El simbolismo $$\lim_{x\to p}f(x)=A\qquad [\mbox{o}\; {f(x)\to A}\quad {x\to p}]$$
+	significa que para todo entorno $N_1(A)$ existe un cierto entorno $N_2(p)$ tal que 
+	\begin{center}
+	    $f(x)\in N_1(A)$ siempre que $x\in N_2(p)$ y $x\neq p$
+	\end{center}
+	\vspace{0.3cm}
+	El entorno $N_2(A)$ se cita en primer lugar, e indica cuán próximo queremos que sea $f(x)$ a su límite $A$. El segundo entorno, $N_2(p)$, nos indica lo próximo que debe estar $x$ de $p$ para que $f(x)$ sea interior al primer entorno $N_1(p)$. El entorno $N_2(p)$ dependerá del $N_1(A)$ elegido. Un entorno $N_2(p)$ que sirva para un $N_1(A)$ determinado servirá también, naturalmente, para cualquier $N_1(A)$ mayor, pero puede no ser útil para todo $N_1(A)$ más pequeño.\\
+	Decir que $f(x)\in N_1(A)$ es equivalente a la desigualdad $|f(x)-A|<\epsilon$ y poner que $x\in N_2(p),\; x\neq p$ es lo mismo que escribir $0<|x-p|<\delta$. Por lo tanto, la definición de límite puede también expresarse así:\\\\
+	El símbolo $\lim\limits_{x\to p}f(x)=A$ significa que para todo $\epsilon > 0$, existe un $\delta >0$ tal que $$|f(x)-A|<\epsilon \quad \mbox{siempre que}\quad 0<|x-p|<\delta.$$
+    \end{def.}
+\end{tcolorbox}
+
+Observamos que las tres desigualdades,
+
+\begin{center}
+    $\lim\limits_{x\to p}f(x)=A$, $\lim\limits_{x\to p}(f(x)-A)=0$, $\lim\limits_{x\to p}[f(x)-A]=0$
+\end{center}
+
+Son equivalentes. También son equivalentes las desigualdades,
+
+\begin{center}
+    $\lim\limits_{x\to p} f(x)=A,$ $\lim\limits_{h\to 0}f(p+h)=A.$
+\end{center}
+
+Todas estas se derivan de la definición de límite.
+
+
