@@ -183,10 +183,29 @@ La distribución es el principal modelo de probabilidad empleado para analizar p
 	El parámetro de la distribución de Poisson es $\lambda$, el número promedio de ocurrencias del evento aleatorio por unidad de tiempo.
     \end{def.}
 \end{tcolorbox}
-Verificamos que es una función de probabilidad. Puesto que $p(x;\lambda)>0$ para $x0,1,2,\ldots$,
+Verificamos que es una función de probabilidad. Puesto que $p(x;\lambda)>0$ para $x=0,1,2,\ldots$,
 $$\sum_{x=0}^\infty p(x;\lambda) = \sum_{x=0}^\infty \dfrac{e^{-\lambda}\lambda^x}{x!} = e^{-\lambda}\sum_{x=0}^\infty \dfrac{\lambda^x}{x!}=e^{-\lambda}\left(1+\lambda + \dfrac{\lambda^2}{2!}+\ldots\right) = e^{-\lambda}e^{\lambda}=1$$\\
 
 \textbf{Deducción de la función de probabilidad de Poisson.-}\\\\
 
-Sea $p(x;t)$ la probabilidad de tener, de manera exacta, $X$ ocurrencias en un intervalo $t$, y supóngase lo siguiente 
+Sea $p(x;t)$ la probabilidad de tener, de manera exacta, $X$ ocurrencias en un intervalo $t$, y supóngase lo siguiente:
+
+\begin{enumerate}[\bfseries 1.]
+    \item En este intervalo, los eventos ocurren de manera independiente.
+    \item La probabilidad de una sola ocurrencia, en un intervalo muy pequeño $dt$ es $vdt$, en donde $v$ es la frecuencia constante de ocurrencia y $(v>0)$.
+    \item El intervalo $dt$ en tan pequeño, que la probabilidad de tener más de una ocurrencia en $dt$ es despreciable.
+\end{enumerate}
+
+El evento que en el tiempo $t+dt$ ha ocurrido exactamente $x$ veces, puede llevarse a cabo de dos maneras diferentes y excluyentes:
+
+\begin{enumerate}[\bfseries 1.]
+    \item Existen $x$ ocurrencias por tiempo $t$, con probabilidad $p(x;t)$ y ninguna en $dt$, con probabilidad $(1-vdt)$. Dada la suposición de independencia, la probabilidad conjunta es $p(x;t)(1-vdt)$.
+    \item Existen $x-1$ ocurrencias por tiempo $t$, con probabilidad $p(x-1;t)$ y una durante $dt$, con probabilidad $vdt$. Otra vez, dada la suposición de independencia, la probabilidad conjunta es: $p(x-1;t)vdt.$ 
+\end{enumerate}
+Esto es:
+$$p(x;t+dt)=p(x;t)(1-vdt)+p(x-1;t)vdt.$$
+Después de multiplicar, transportar $p(x;t)$ al primer miembro, y dividir por $dt$ se tiene:
+$$\dfrac{p(x;t+dt)-p(x;t)}{dt}=v[p(x-1;t)]-p(x;t).$$
+Si se toma el límite conforme $dt\to 0$, por definición se tiene:
+$$\dfrac{dp(x;t)}{dt}=v[p(x-1;t)-p(x;t)]$$
 

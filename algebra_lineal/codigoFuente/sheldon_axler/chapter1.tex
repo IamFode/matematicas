@@ -80,7 +80,7 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 \subsection{\boldmath $F^n$}
 
 \begin{tcolorbox}[colback=white]
-    \begin{def.}[Listas, longitud] 
+    \begin{def.} 
 	$\mathbb{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\mathbb{F}$
 	$$\mathbb{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \mathbb{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
 	Para $(x_1,\ldots, x_n)\in \mathbb{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
@@ -129,7 +129,7 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
     \end{def.}
 \end{tcolorbox}
 
-\subsection{Ejercicios}
+\subsection{Ejercicios 1.A}
 
 
 \section{Definición de espacio vectorial}
@@ -179,13 +179,167 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white]
-    \begin{def.}[Vector, punto]\hfill
+    \begin{def.}[Espacio vectorial real, espacio vectorial complejo]\hfill
 	\begin{itemize}
 	    \item Un espacio vectorial sobre $\mathbb{R}$ es llamado un espacio vectorial real.
 	    \item Un espacio vectorial sobre $\mathbb{C}$ es llamado un espacio vectorial complejo.
 	\end{itemize}
     \end{def.}
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[\boldmath $F^S$]\hfill
+	\begin{itemize}
+	    \item Si $S$ es un conjunto, entonces $F^S$ se denota como el conjunto de funciones de $S$ para $F$.
+	    \item Para $f,g\in F^S$, la suma $f+g\in F_S$ es la función definida por $$(f+g)(x)=f(x)+g(x)$$ para todo $x\in S$
+	    \item Para $\lambda \in F$ y $f\in F^S$, el producto $\lambda f \in F^S$ es una función definida por $$(\lambda f)(x)=\lambda f(x)$$
+		para todo $x\in S$.
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+
+La definición de un espacio vectorial requiere que tenga una identidad aditiva. El siguiente resultado establece que esta identidad es única.
+
+\begin{teo}
+    Un espacio vectorial tiene una única identidad aditiva.\\\\
+	Demostración.-\; Supóngase $0$ y $0^{'}$ ambos identidades aditivas para algún espacio vectorial $V$ entonces,
+	$$0^{'}=0^{'}+0=0+0^{'}=0$$
+	donde se cumple la primera igualdad porque $0$ es una identidad aditiva, la segunda igualdad viene de la conmutatividad, y la tercera igualdad se cumple porque $0^{'}$ es una identidad aditiva. Por lo tanto $0^{'}=0$ y queda probado que $V$ tiene una sola identidad aditiva.\\
+\end{teo}
+
+Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento $w$ en el espacio vectorial tal que $v + w = 0$. El siguiente resultado muestra que cada elemento en un espacio vectorial tiene solo un inverso aditivo. \\
+
+\begin{teo}
+    Cada elemento en un espacio vectorial tiene un único inverso aditivo.\\\\
+	Demostración.-\; Supóngase que $V$ es un espacio vectorial. Sea $v\in V$,  $w$ y $w^{'}$ inversos aditivos de $v$. Entonces
+	$$w=w+0=w+(v+w^{'}) = (w+v)+w^{'}=0+w^{'}=w^{'}$$
+	Así $w=w^{'}$.\\
+\end{teo}
+
+\begin{tcolorbox}[colback=white]
+    \begin{nota}[$-v,w-v$]
+	Sea $v,w \in V$. Entonces
+	\begin{itemize}
+	    \item $-v$ se denota como el inverso aditivo de $v$;
+	    \item $w-v$ es definido como $w+(-v)$.
+	\end{itemize}
+    \end{nota}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white]
+    \begin{nota}[$V$]
+	Por el resto del libro, $V$ se define como el espacio vectorial sobre $F$.
+    \end{nota}
+\end{tcolorbox}
+
+\begin{teo}
+    $0v=0$ para cada $v\in V$.\\\\
+	Demostración.-\; Para $v\in V$, tenemos
+	$$0v=(0+0)v=0v+0v$$
+	Luego añadiendo el inverso aditivo de $0v$ para ambos lados de la ecuación de arriba tenemos $0=0v$.\\
+
+\end{teo}
+
+Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igual al vector $0$.\\
+
+\begin{teo}
+    $a0=0$ para cada $a\in \mathbb{F}$.\\\\
+	Demostración.-\; Para $a\in \mathbb{F}$, tenemos 
+	$$a0=a(0+0)=a0+a0$$
+	Luego añadiendo el inverso aditivo de $a0$ para ambos lados de la ecuación de arriba tenemos $0=a0$.\\
+\end{teo}
+
+Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, entonces el resultado es el inverso aditivo del elemento de $V$.\\
+\begin{teo}
+    $(-1)v=-v$ para cada $v\in V$.\\\\
+    	Demostración.-\; Para $v\in V$, tenemos
+	$$v+(-1)v=1v+(-1)v=[1+(-1)]v=0v=0.$$
+	Esta ecuación nos dice que $(-1)v$, cuando se suma a $v$ da $0$. Así $(-1)v$ es el inverso aditivo de $v$.\\
+\end{teo}
+
+\subsection{Ejercicio 1.B}
+
+\section{Subespacios}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Subespacio]
+	Un subconjunto $U$ de $V$ es llamado un subespacio de $V$ si $U$ es también un espacio vectorial (Usando la misma adición y multiplicación escalar como en $V$).\\\\
+    \end{def.}
+\end{tcolorbox}
+\vspace{.5cm}
+
+El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.\\
+
+\begin{teo}
+
+    Un subconjunto $U$ de $V$ es un subespacio de $V$ si y sólo si $U$ satisface las siguientes tres condiciones:
+    \begin{itemize}
+	\item \textbf{Identidad aditiva.} $$0\in U;$$
+	\item \textbf{Cerrado bajo adición.}$$u,w\in U\; \mbox{implica}\; u+w\in U;$$
+	\item \textbf{Cerrado bajo multiplicación escalar.}
+	    $$a\in F \; \mbox{y}\; u\in U\; \mbox{implica}\; au\in U;$$
+    \end{itemize}
+
+	Demostración.-\; Si $U$ es un subespacio de $V$, entonces $U$ satisface las tres condiciones de arriba por la definición de espacio vectorial.\\
+	Por el contrario, suponga que $U$ satisface las tres condiciones anteriores. La primera condición anterior asegura que la identidad aditiva de $V$ está en $U$. La segunda condición de arriba asegura que la adición tenga sentido en $U$. La tercera condición asegura que la multiplicación escalar tenga sentido en $U$.\\
+	Si $u\in U$, entonces $-u$ es también en $U$ por la tercera condición de arriba. Por lo tanto cada elemento de $U$ tiene un inverso aditivo en $U$.\\
+	Las otras partes de la definición de un espacio vectorial,como la asociatividad y conmutatividad, se satisfacen automáticamente para $U$ porque sostienen el espacio más grande de $V$. Así $U$ es un espacio vectorial y por ende es un subespacio de $V$.\\
+
+\end{teo}
+
+\subsection{Suma de subespacios}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Suma de subespacios]
+	Supóngase $U_1,\ldots ,U_m$ son subconjuntos de $V$. La suma de $U_1,\ldots, U_m$, denotado por $U_1 + \ldots+U_m$, es el conjunto de todas los posibles  sumas de los elementos de $U_1,\ldots,U_m$. Más precisamente,
+	$$U_1+\ldots+U_m = \lbrace u_1+\ldots +u_m\; :\; u_1\in U_1,\ldots, u_m \in U_m \rbrace$$
+    \end{def.}
+\end{tcolorbox}
+\vspace{.5cm}
+
+El siguiente resultado establece que la suma de subespacios es un subespacio y, de hecho, es el subespacio más pequeño que contiene todos los sumandos.
+
+\begin{teo}[Suma de subespacios es el contenedor más pequeño de subespacios] \hfill
+
+    Supóngase que $U_1,\ldots,U_m$ son subespacios de $V$. Entonces $U_1+\ldots +U_m$ es el subepsacio más pequeño de $V$ que contiene $U_1,\ldots, U_m$.\\\\
+	Demostración.-\; Es fácil ver que $0\in U_1+\ldots + U_m$ y que $U_1+\ldots +U_m$ es cerrado sobre la adición y la multiplicación escalar, es decir, por las tres condiciones dadas anteriormente podemos afirmar que $U_1+\ldots + U_m$ es un subespacio de $V$.\\
+	Claramente $U_1,\ldots, U_m$ están todos contenidos en $U_1 + \ldots + U_m$ (para ver esto, considere las sumas $u_1+\ldots + u_m$ donde todas menos una de las $u^{'}s$ son $0$). Por el contrario, todo subespacio de $V$ que contenga $U_1,\ldots , U_m$ contiene $U_1 + \ldots + U_m$ (porque los subespacios deben contener todas las sumas finitas de sus elementos). Por lo tanto $U_1+\ldots + U_m$ es el subespacio más pequeño de $V$ que contiene a $U_1,\ldots , U_m$.
+\end{teo}
+
+\subsection{Sumas directas}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Suma directa]
+	Supóngase que $U_1,\ldots, U_m$ son subespacios de $V$.
+	\begin{itemize}
+	    \item La suma $U_1+\ldots + U_m$ es llamada una suma directa si cada elemento de $U_1+\ldots + U_m$ se puede escribir de una sola manera como una suma  $u_1 + \ldots + u_m$ donde cada $u_j$ esta en $U_j$.
+	    \item Si $U_1 + \ldots + U_m$ es una suma directa, entonces $U_1 \oplus \ldots \oplus U_m$ denota $U_1 + \ldots + U_m$ con la notación $\oplus$ sirviendo como una indicación de que se trata de una suma directa.
+	\end{itemize}
+    \end{def.}
+\end{tcolorbox}
+\vspace{.5cm}
+
+El siguiente resultado muestra que al decidir si una suma de subespacios es una suma directa, solo necesitamos considerar si 0 se puede escribir únicamente como una suma apropiada.\\
+
+\begin{teo}[Condición para una suma directa]
+    Supóngase que $U_1,\ldots, U_m$ son subespacios de $V$. Entonces $U_1+\ldots + U_m$ es una suma directa si y sólo si la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$.\\\\
+	Demostración.-\; Supóngase que $U_1+\ldots + U_m$ es una suma directa. Entonces la definición de suma directa implica que la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$. Para mostrar que $U_1 + \ldots + U_m$ es una suma directa, sea $v \in U_1 + \ldots + U_m$. Podemos escribir:
+	$$v = u_1 + \ldots + u_m$$
+	para algún $u_1 \in U_1 , \ldots, u_m \in U_m$. Para mostrar que esta representación es única, supongamos que también tenemos
+	$$v = v_1 + \ldots + v_m$$
+	donde $v_1 \in U_1,\ldots , v_m \in U_m$. Restando estas dos ecuaciones, tenemos,
+	$$0=(u_1-v_1)+\ldots + (u_m - v_m).$$
+	Porque $u_1-v_1\in U_1,\ldots U_m$, la ecuación dada implica que cada $u_j - v_j$ es igual a $0$. Por lo tanto $u_1 = v_1, \ldots , u_m = v_m$.\\
+
+\end{teo}
+
+El siguiente resultado da una condición simple para probar qué pares de subespacios dan una suma directa.\\
+
+\begin{teo}[Suma directa de dos subespacios]
+    Supóngase que $U$ y $W$ son subespacios de $V$. Entonces $U+W$ es una suma directa si y sólo si $U \cap W = \lbrace 0 \rbrace$.\\\\
+    Demostración.-\; Primero supóngase que $U+W$ es una suma directa. Si $v \in U\cap W,$ entonces $0=v+(-v),$ donde $v\in U$ y $-v\in W$. Por la única representación de $0$ como la suma de un vector en $U$ y un vector en $W$, tenemos $v=0$. 
+\end{teo}
+
 
 
 

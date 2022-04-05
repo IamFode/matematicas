@@ -21,7 +21,7 @@ En la definición que sigue suponemos que $A$ es un número real y que $f$ es un
 	    $f(x)\in N_1(A)$ siempre que $x\in N_2(p)$ y $x\neq p$
 	\end{center}
 	\vspace{0.3cm}
-	El entorno $N_2(A)$ se cita en primer lugar, e indica cuán próximo queremos que sea $f(x)$ a su límite $A$. El segundo entorno, $N_2(p)$, nos indica lo próximo que debe estar $x$ de $p$ para que $f(x)$ sea interior al primer entorno $N_1(p)$. El entorno $N_2(p)$ dependerá del $N_1(A)$ elegido. Un entorno $N_2(p)$ que sirva para un $N_1(A)$ determinado servirá también, naturalmente, para cualquier $N_1(A)$ mayor, pero puede no ser útil para todo $N_1(A)$ más pequeño.\\
+	El entorno $N_1(A)$ se cita en primer lugar, e indica cuán próximo queremos que sea $f(x)$ a su límite $A$. El segundo entorno, $N_2(p)$, nos indica lo próximo que debe estar $x$ de $p$ para que $f(x)$ sea interior al primer entorno $N_1(p)$. El entorno $N_2(p)$ dependerá del $N_1(A)$ elegido. Un entorno $N_2(p)$ que sirva para un $N_1(A)$ determinado servirá también, naturalmente, para cualquier $N_1(A)$ mayor, pero puede no ser útil para todo $N_1(A)$ más pequeño.\\
 	Decir que $f(x)\in N_1(A)$ es equivalente a la desigualdad $|f(x)-A|<\epsilon$ y poner que $x\in N_2(p),\; x\neq p$ es lo mismo que escribir $0<|x-p|<\delta$. Por lo tanto, la definición de límite puede también expresarse así:\\\\
 	El símbolo $\lim\limits_{x\to p}f(x)=A$ significa que para todo $\epsilon > 0$, existe un $\delta >0$ tal que $$|f(x)-A|<\epsilon \quad \mbox{siempre que}\quad 0<|x-p|<\delta.$$
     \end{def.}
@@ -39,6 +39,35 @@ Son equivalentes. También son equivalentes las desigualdades,
     $\lim\limits_{x\to p} f(x)=A,$ $\lim\limits_{h\to 0}f(p+h)=A.$
 \end{center}
 
-Todas estas se derivan de la definición de límite.
+Todas estas se derivan de la definición de límite.\\
 
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Límites laterales]
+	Los límites laterales pueden definirse en forma parecida. Por ejemplo, si ${f(x)\to A}$ cuando ${x\to p}$ con valores mayores que $p$, decimos que $A$ es el límite por la derecha de $f$ en $p$, indicamos esto poniendo
+	$$\lim_{x\to p^+}f(x)=A.$$
+	En la terminología de los entornos esto significa que para todo entorno $N_1(A),$ existe algún entorno $N_2(p)$ tal que 
+	$$f(x)\in N_1(A)\; \mbox{siempre que}\; x \in N_2(p)\quad \mbox{y}\quad x>p.$$
+	Los límites a la izquierda, que indican poniendo ${x\to p^-}$, se definen del mismo modo restringiendo $x$ a valores menores que $p$.
+    \end{def.}
+\end{tcolorbox}
 
+\section{Definición de continuidad de una función}
+
+\begin{tcolorbox}[colback=white]
+    \begin{def.}[Definición de continuidad de una función en un punto]
+	Se dice que una función $f$ es continua en un punto $p$ si 
+	\begin{enumerate}[\bfseries a)]
+	    \item $f$ está definida en $p$, y
+	    \item $\lim\limits_{x\to p}f(x)=f(p)$.
+	\end{enumerate}
+	Esta definición también puede formularse con entornos. Una función $f$ es continua en $p$ si para todo entorno $N_1[f(p)]$ existe un entorno $N_2(p)$ tal que 
+	$$f(x)\in N_1[f(p)]\; \mbox{siempre que}\; x \in N_2(p).$$
+	Puesto que $f(p)$ pertenece siempre a $N_1[f(p)]$, no se precisa la condición $x\neq p$.\\\\
+	Especificando los radios de los entornos, la definición de continuidad puede darse como sigue:
+	\begin{center}
+	    $|f(x)-f(p)|<\epsilon$ siempre que $|x-p|<\delta$.
+	\end{center}
+    \end{def.}
+\end{tcolorbox}
+
+\section{Teoremas fundamentales sobre límites. Otros ejemplos de funciones continuas.}

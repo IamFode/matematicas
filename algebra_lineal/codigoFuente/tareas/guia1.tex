@@ -161,7 +161,165 @@
 
     %----------13.
    \item \textbf{\boldmath Probar que $-(-v)=v$ para todo $v\in V$.}\\\\
-       	\textbf{Demostración.-}\;
+       \textbf{Demostración.-}\; Por definición $-(-v)$ es un vector que satisface la ecuación 
+       $$-v+(-v)=0$$
+       y por el teorema de la unicidad del inverso aditivo sabemos que este vector es único. Luego, añadiendo el vector $v$ a ambos lados de la ecuación tenemos, 
+       $$\begin{array}{rcll}
+	   v+[-v+-(-v)]&=&v+0&\\
+	   (v-v)-(-v)&=&v&\mbox{asoc. y def. de}\; 0\\
+       0+[-(-v)]&=&v&\mbox{def. de}\; $-v$\\
+       -(-v)+0&=&v&\mbox{conmut.}\\
+       -(-v)&=&v&\mbox{def. de}\; 0\\
+       \end{array}$$
+       por lo tanto el resultado está probado.\\\\
+
+    %----------14.
+    \item \textbf{\boldmath Supóngase que $a\in F, v\in V$, y $av=0$. Probar que $a=0$ o $v=0$.}\\\\
+	\textbf{Demostración.-}\; Si $a=0$ entonces la demostración es inmediata. Ahora suponga $a\neq 0$, con $a\in F$, de donde $a$ tiene un inverso multiplicativo $a^{-1}$. Sea $v\in V$ por lo tanto
+	$$\begin{array}{rcl}
+	    av&=&0\\
+	    a^{-1}(av)&=&a^{-1}0\\
+	    (a\cdot a^{-1})v&=&0\\
+	      1v&=&0\\
+	      v&=&0\\
+	\end{array}$$
+	Por lo tanto se demuestra que $a=0$ o $v=0$.\\\\
+
+    %----------15.
+    \item \textbf{\boldmath Supóngase que $v,w\in V,$. Explique por que existe un único $x\in V$ tal que $v+3x=w$.}\\\\
+	\textbf{Demostración.-}\; Para poder responder a la pregunta planteada tendremos que demostrar la existencia y la unicidad de la proposición dada. \\\\
+	 \textbf{Existencia.} Ya que $v,w\in V$ entonces por la adición y multiplicación de vectores se tiene que $x=\dfrac{1}{3}(w-v)$ también pertenece a $V$ por lo que queda demostrado su existencia.\\\\
+	 \textbf{Unicidad.} Sean dos ecuaciones,
+	$$v+3x_1=w\quad \mbox{;} \quad v+3x_2=w$$
+	de donde podemos decir que, $$v+3x_1=v+3x_2$$
+	Por lo tanto añadiendo $-v$ a ambos lados nos queda,
+	$$\begin{array}{rcl}
+	    -v+(v+3x_1)&=&-v+(v+3x_2)\\
+	    (-v+v)+3x_1&=&(-v+v)+3x_2\\
+	    3x_1&=&3x_2\\
+		x_1&=&x_2\\
+	\end{array}$$
+	de ésta manera, queda demostrada la unicidad. Y por ende respondimos a la pregunta dada.\\\\
+
+    %----------16.
+    \item \textbf{El conjunto vacío no es un espacio vectorial. El conjunto vacío satisface solo uno de los requisitos enumerados en 1.19. ¿Cuál?.}\\\\
+	\textbf{Respuesta.-}\; El conjunto vacío no es un espacio vectorial porque no contiene ninguna identidad aditiva $0$ (no tiene ningún vector).\\\\
+
+    %----------17.
+    \item \textbf{\boldmath Sea $\infty$ y $-\infty$ denota dos objetos distintos, ninguno de los cuales esta en $\mathbb{R}$.}\\\\
+	\textbf{Respuesta.-}\; No logro entender la pregunta.\\\\
+
+    %----------18.
+    \item \textbf{\boldmath Para cada uno de los siguientes subconjuntos de $F^3$, determinar cuales son subespacios de $F^3$}.\\\\
+	Para demostrar que un conjunto $A$ es un subespacio, necesitamos mostrar que contiene $0$, que es cerrado bajo la adición y bajo la multiplicación escalar. Por lo que solo necesitaremos demostrar que una de estas condiciones no se cumple.\\
+	$0\in A$
+		Supóngase $a=(a_1,a_2,a_3)\in A$ y $b=(b_1,b_2,b_3)\in A$. Es suficiente demostrar que $ja+kb \in A$ para todo escalar $j$ y $k.$ Esto cubre la adición como la multiplicación escalar.
+		$$\begin{array}{rcl}
+		    &&(ja_1+kb_1)+2(ja_2+kb_2)+3(ja_3+kb_3)\\
+		    &=&j(a_1+2a_2+3a_3)+k(b_1+2b_2+3b_3)\\
+		    &=&j\cdot 0 + k\cdot 0\\
+		    &=&0\\\\
+		\end{array}$$
+
+	\begin{enumerate}[\bfseries a)]
+	    \item $\lbrace (x_1,x_2,x_3) \in F^3\; : \; x_1+3x_2 + 3x_3=0 \rbrace$;\\\\
+		Respuesta.-\; Sea $A=\lbrace (x_1,x_2,x_3) \in F^3\; : \; x_1+2x_2+3x_3=0\rbrace$. $A$ satisface las tres condiciones necesarias para ser un subespacio.\\\\
+
+	    \item $\lbrace (x_1,x_2,x_3) \in F^3\; : \; x_1+2x_2 + 3x_3=4 \rbrace$;\\\\
+		Respuesta.-\; Sea $A=\lbrace ()\in F^3\; : \; x_1x_2x_3=0\rbrace$. $A$ no es un subespacio porque no es cerrado bajo la adición. $(1,1,0)$ y $(0,0,1)$ ambos son en $A$, pero $(1,1,1)=(1,1,0)+(0,0,1)$ no es.\\\\
+
+	    \item $\lbrace (x_1,x_2,x_3) \in F^3\; : \; x_1=4x_3 \rbrace$.\\\\
+		Respuesta.-\; Sea $A=\lbrace (x_1,x_2,x_3)\in F^3\; : \; x_1=5x_3\rbrace$. $A$ satisface las tres condiciones necesarias para ser un subespacio.\\\\
+
+	\end{enumerate}
+
+    %----------19.
+    \item \textbf{\boldmath Probar que el conjunto de funciones diferenciales $f$ con valores reales definida sobre el intervalo $(-4,4)$ tal que $f^{'}(-1)=3f(2)$, es un subespacio de $\mathbb{R}^{(-4,4)}$}.\\\\
+	\textbf{Demostración.-}\; Sea $A$ el conjunto de funciones diferenciables de valor real en $(-4,4)$ tal que $f^{'}(-1)=3f(2)$.\\
+	$A \in A$.\\
+	Sea $f,g\in A$. Entonces por definición $$f^{'}(-1)=3f(2)\qquad g^{'}(-1)=3g(2)$$
+	Luego,
+	$$\begin{array}{rcl}
+	    &&f^{'}(-1) + g^{'}(-1)=3[f(2)+g(2)]\\
+	    &\Longrightarrow&(f+g)^{'}(-1)=3(f+g)(2)\\
+	    &\Longrightarrow&(f+g)\in A\\
+	\end{array}$$
+	Ahora sea $\alpha \in \mathbb{R}, \; \alpha f^{'}(-1)=3\alpha f(2)$. De donde $(\alpha f)^{'}(-1)=3(\alpha f)(2)$. Esto implica para $f\in A, \; \alpha f \in A$. Por lo tanto para $f,g\in A,\; f+g\in A$ y $\alpha f \in A.$. Así esto demuestra que $A$ es un subespacio de $(-4,4)$.\\\\
+	
+
+    %----------20.
+    \item Supóngase que $b\in \mathbb{R}$. Demostrar que el conjunto de funciones continuas $f$ de valores reales definidas sobre el intervalo $[0,1]$ tal que $\int_0^1 f=0$, es un subconjunto de $\mathbb{R}^{[0,1]}$ si y sólo si $b=0$.\\\\
+	\textbf{Demostración.-}\;
+
+    %----------21.
+    \item \textbf{\boldmath Es $\mathbb{R}^2$ un subespacio de los números complejos $\mathbb{C}^2$}.\\\\
+	\textbf{Respuesta.-}\; Si $\mathbb{R}^2$ es un subespacio de $\mathbb{C}^2$ entonces $\mathbb{R}^2$ es cerrado sobre la multiplicación escalar; verificaremos esto.\\
+	Sea $\lambda$ un escalar para $\mathbb{C}$. Si $\lambda = i$  y  tenemos $(0,1)$, que pertenece a $\mathbb{R}^2$, entonces $i(0,1)=(i,0)$, el cual no pertence a $\mathbb{R}^2$, de hecho podemos tomar cualquier $(x_1,x_2)$ para $\mathbb{R}^2$ (no necesariamente $(1,0)$) tal que $x_1\neq 0$ o $x_2 \neq 0$, y podemos demostrar que $i(x_1,x_2)=(ix_1,ix_2)$ que no pertenece a $\mathbb{R}^2$. De donde concluimos que $\mathbb{R}^2$ no es un subespacio de $\mathbb{C}^2.$\\\\
+
+    %----------22.
+    \item \textbf{\boldmath Probar o refutar los siguientes:}
+
+	\begin{enumerate}[\bfseries a)]
+
+	    \item \textbf{\boldmath Es ${(a,b,c)\in \mathbb{R}^3:a^3=b^3}$ un subespacio de $\mathbb{R}^3$.}\\\\
+		\textbf{Respuesta.-}\; 
+
+	    \item \textbf{\boldmath Es ${(a,b,c)\in \mathbb{C}^3:a^3=b^3}$ un subespacio de $\mathbb{C}^3$.}\\\\
+		\textbf{Respuesta.-}\; 
+
+	\end{enumerate}
+
+    %----------23.
+    \item \textbf{\boldmath Dar un ejemplo de un conjunto no vacío $U$ de $\mathbb{R}^2$ tal que $U$ es cerrado sobre la adición y los inversos aditivos ($-u\in U$, siempre que $u\in U$), pero $U$ no es un subespacio de $\mathbb{R}^2$.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------24.
+    \item \textbf{\boldmath Dar un ejemplo de un conjunto no vacío $U$ de $\mathbb{R}^2$  tal que $U$ es cerrado sobre la multiplicación escalar, pero $U$ no es un subespacio de $\mathbb{R}^2$.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------25.
+    \item \textbf{\boldmath Supóngase que $U_1$ y $U_2$ son subespacios del espacio vectorial $V$. Demostrar que la intresección $U_1 \cap U_2$ es un subespacio de $V$.}\\\\ 
+	\textbf{Demostración.-}\;
+
+    %----------26.
+    \item \textbf{\boldmath Probar que la unión de dos subespacios de $V$ es un subespacio de $V$ si, y solo si uno de ellos esta contenido en el otro.}\\\\
+	\textbf{Demostración.-}\;
+
+    %----------27.
+    \item \textbf{\boldmath Probar que la unión de tres subespacios de $V$ es un subespacio de $V$ si, y solo si uno de los subespacios contiene a los otros dos.}\\\\
+	\textbf{Demostración.-}\;
+
+    %----------28.
+    \item \textbf{\boldmath Supóngase que $U$ es un subespacio de $V$. ¿Es $U+U$ un subespacio de $V$?.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------29.
+    \item \textbf{\boldmath Probar o refutar que si $U,W$ son subespacios de $V$, entonces $U+W=W+U$. }\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------30.
+    \item \textbf{\boldmath Probar o dar un contraejemplo: si $U_11, U_2, W$ son subespacios de $V$ tal que $U_1+W = U_2+W$, entonces $U_1 = U_2$.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------31.
+    \item \textbf{\boldmath Supóngase que $U=\lbrace (x,x,y,y)\in F^4\; : \; x,y \in F\rbrace$. Hallar un subespacio $W$ de $F^4$ tal que $F^4=U\oplus W$.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------32.
+    \item \textbf{\boldmath Supongase que $U=\lbrace (x,y,x+y,x-y,2x)\in F^5\; : \; x,y\in F\rbrace$. Hallar un subespacio $W$ de $F^5$ tal que $F^5=U\oplus W$.}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------33.
+    \item \textbf{\boldmath Probar o dar un contra ejemplo: si $U_1,U_2,W$ son subespacios de $V$ tal que $V=U_1\oplus W$ y $V=U_2\oplus W,$ entonces $U_1=U_2$}\\\\
+	\textbf{Respuesta.-}\;
+
+    %----------34.
+    \item \textbf{\boldmath Una función $f:{\mathbb{R} \to \mathbb{R}}$ es llamada par si $f(-x)=f(x),$ para todo $x\in \mathbb{R}$. Una función $f:{\mathbb{R}\to \mathbb{R}}$ es llamada impar si $f(-x)=-f(x)$, para todo $x\in \mathbb{R}$. Sea $U_p$ el conjunto de todas las funciones pares de valores reales definidas en $\mathbb{R}$, y sea $U_i$ el conjunto de todas las funciones impares de valores reales definidas en $\mathbb{R}$. Probar que $\mathbb{R}=U_p \oplus U_i$.}\\\\
+	\textbf{Demostración.-}\;
+
+
+
+
 
 
 \end{enumerate}

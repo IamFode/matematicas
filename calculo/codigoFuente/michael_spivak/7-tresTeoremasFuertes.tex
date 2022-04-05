@@ -549,7 +549,57 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 % -------------------- 19.
 \item 
     \begin{enumerate}[\bfseries (a)]
-	\item 
+
+	%----------(a)
+	\item Supóngase que $f$ es continua en $[a,b]$, y sea $x$ algún número. Demostrar que existe un punto en la gráfica de $f$ el cual es cerrado para $(x,0)$; en otras palabras existe algún $y$ en $[a,b]$ tal que la distancia desde $(x,0)$ hasta $(y,f(y))$ es $\leq$ a la distancia desde $(x,0)$ hasta $(z,f(z))$ para todo $z$ en $[a,b]$.\\\\
+	    Demostración.-\; Definamos $h :  {[a,b]\to \mathbb{R}}$ como $h(z)=\sqrt{(z-x)^2+f(z)^2}$. Esta es la distancia del punto $(z,f(z))$ para el punto $(x,0)$. Esta es una función continua en $[a,b]$ y por lo tanto alcanza el mínimo. Así, para algún $y \in [a,b],\; h(y)$ es mínimo. Esto es, la distancia desde $(x,0)$ hasta $(y,f(y)\leq$ a la distancia desde $(x,0)$ hasta $(z,f(z))$ para algún $z\in [a,b]$.\\\\
+
+	%----------(b)
+	\item Demuestre que la misma afirmación no es necesariamente cierta si $[a,b]$ es remplazado por $(a,b)$.\\\\
+	    Demostración.-\; Sea $f(x)=x$ en $(0,1)$ y sea $x=0$, entonces la distancia entre $(0,0)$ y un punto en la gráfica es $h(z)=\sqrt{(z-0)^2+f(z)^2}=\sqrt{2}z$.\\
+	    Esta función no alcanza el mínimo en $(0,1).$\\\\
+
+	%----------(c)
+	\item Demuestre que este resultado es cierto si $[a,b]$ se sustituye por $\mathbb{R}$.\\\\
+	    Demostración.-\; En otras palabras si $f$ es una función continua en $\mathbb{R}$ y si $\lim\limits_{x\to -\infty} f(x)=\infty = \lim\limits_{x\to \infty} f(x)$, entonces $f$ alcanza el mínimo en $\mathbb{R}$.\\
+	    Defina $h: {\mathbb{R} \to \mathbb{R}}$ como $h(x)=\sqrt{(z-x)^2+f(z)^2}$. Esta es la distancia del punto $(z,f(z))$ desde el punto $(x,0)$. Esta es una función continua en $\mathbb{R}.$\\
+	    Observe que ${h(z)\to \infty}$ si ${z\to \infty}$ así como también si ${<\to -\infty}$.\\
+	    Por lo tanto, en virtud del resultado anterior, $h(y)$ es mínimo para algún $y\in [a,b]$. Esto es, la distancia de $(x,0)$ hasta $(y,f(y)) \leq$ a la distancia de $(x,0)$ hasta $(z,f(z))$ para cualquier $z\in \mathbb{R}$.\\\\
+
+	%----------(d)
+	\item En los casos (a) y (c), sea $g(x)$ la mínima distancia de $(x,0)$ a un punto de la gráfica de $f$. Demuestre que $g(y)\leq g(x)+|x-y|$, y concluya que $g$ es continua.\\\\
+	    Demostración.-\; Sea $g(x)=d((x,0), (\alpha, f(\alpha)))$ donde $d$ denota la distancia. Esto significa que $(\alpha,f(\alpha))$ es el punto en la gráfica de $f$ el cual es cerrado para $(x,0)$.\\
+	    Por la inecuación triangular
+	    $$d((y,0),(\alpha,f(\alpha)))\leq d((x,0),(\alpha, f(\alpha))) + d((y,0),(x,0))$$
+	    $$d((y,0),(\alpha,f(\alpha))) < f(x) + |x+y|\qquad (1)$$
+	    Ya que $g(y)$ es la distancia más corta de $(y,0)$ para el gráfico de $f.$
+	    $$g(y)\leq d((y,0),(\alpha,f(\alpha))) \qquad (2)$$
+	    Las ecuaciones (1) y (2) implican que $g(y)\leq g(x)+|x-y|$. Podemos reescribir esto como
+	    $$g(y)-g(x)\leq |x+y|$$
+	    Intercambiando los roles de $x$ y $y$, tenemos
+	    $$g(x)-g(y)\leq |y-x|=|x-y|$$
+	    Ambos implican que 
+	    $$|g(x)-g(y)|\leq |x-y|$$
+	    Para algún $\epsilon > 0$, elija $\delta = \epsilon$, entonces $|x-y|<\delta(=\epsilon)$ implica $|g(x)-g(y)|<\epsilon$. Esto demuestra que $g$ es continua.\\\\
+
+	%----------(e)
+	\item Demuestre que existen números $x_0$ y $x_1$ de $[a,b]$ tales que la distancia de $(x_0,0)$ a $(x_1,f(x_1))$ es $leq$ que la distancia $(x_0^{'},0)$ a $(x_1^{'},f(x_1^{'}))$ para cualquiera $x_0^{'}$, $x_1^{'}$ de $[a,b]$.\\\\
+	    Demostración.-\; Sea $g(x)$ la distancia más corta de $(x,0)$ para la gráfica de $f$. Entonces, por la anterior parte $g$ es continua en $[a,b]$. Por consiguiente $g$ alcanza el mínimo sobre $[a,b]$. Esto es, $g(x_0)\leq g\left(x_0^{'}\right)$ para cualquier $x_0^{'}\in [a,b]$. Es equivalente a decir que existe $(x_1,f(x_1))$ tal que la distancia desde $(x_0)$ hasta $(x_1,f(x_1))$ es menor o igual a la distancia de $\left(x_0^{'}\right)$ hasta $\left(x_1^{'},f(x_1^{'})\right)$ para cualquier $x_0^{'}\in [a,b]$.\\\\
+
+    \end{enumerate}
+
+% -------------------- 20.
+\item 
+    \begin{enumerate}[\bfseries a)]
+	
+	%----------(a)
+	\item Supóngase que $f$ es continua en $[0,1]$ y $f(0)=f(1)$. Sea $n$ cualquier número natural. Demuestre que existe algún número $x$ tal que $f(x)=f(x+1/n)$, como se muestra en la figura para $n=4$. Considerar la función $f(x)=f(x)-f(x+1/n)$; ¿qué ocurriría si $f(x)\neq 0$ para todo $x$?.\\\\
+	    Demostración.-\; 
+
+	%----------(b)
+	\item Suponga que $0<a<1$, pero que $a$ no es igual a $1/n$ para cualquier número natural $n$. Encuentre una función $f$ que sea continua en $[0,1]$ y que satisfaga $f(0)=f(1)$ , pero que no satisfaga $f(x)=f(x+a)$ para ningún $x$.\\\\
+	    Respuesta.-\; 
+
     \end{enumerate}
     
 

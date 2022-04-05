@@ -4,7 +4,7 @@ author: "Christian Limbert Paredes Aguilera"
 date: "16/2/2022"
 output: pdf_document
 ---
-# VEctores aleatorios bidimencionales 
+# Vectores aleatorios bidimencionales 
 
 ## Variables aleatorias bidimencionales
 Redordemos que una variable aleatoria $X$ es una aplicación que toma valores numéricos para cada resultado de un experimento aleatorio:
@@ -49,7 +49,7 @@ Sea $(X,Y)$ una variable bidimensional. Sean $F_{XY}$ su función de distribuci�
 - La función de distribución conjunta es no decreciente en cada una de las variables:
 $$\mbox{Si}\;  x_1\leq x_2,\; y\; y_1\leq y_2,\; \mbox{entonces}\; F_{XY}(x_1,y_1)\leq F_{XY}(x_2,y_2).$$
 
-- $F_{XY}(x,-\infty)=F_{XY}(-\infty,y)=0,\; F_{XY}(\infty,infty)=1$ para todo $x,y\in \mathbb{R}$.
+- $F_{XY}(x,-\infty)=F_{XY}(-\infty,y)=0,\; F_{XY}(\infty,\infty)=1$ para todo $x,y\in \mathbb{R}$.
 
 - Las variables aleatorias $X$ e $Y$ se llaman variables aleatorias marginales y sus funciones de distribución $F_X$ y $F_Y$ pueden hallarse de la forma siguiente como función de la función de distribución conjunta $F_{XY}$:
 $$F_X(x)=F_{XY}(x,\infty),\; F_Y(y)=F_{XY}(\infty.y),$$
@@ -62,3 +62,30 @@ para todo $a,b \in \mathbb{R}$.
 
 - Dados $x_1<x_2$ e $y_1<y_2$, consideramos $B$ el rectángulo de vértices $(x_1,y_1)$, $(x_1,y_2)$, $(x_2,y_1)$ y $(x_2,y_2)$: $(x_1,y_2]\times (y_1,y_2]$. Entonces,
 $$P((X,Y)\in B)=F_{XY}(x_2,y_2)-F_{XY}(x_2,y_1)-F_{XY}(x_1,y_2)+F_{XY}(x_1,y_1)$$
+
+## Variables bidimensionlaes discretas.
+
+La función pdado devuelve la probabilidad de que salga la cara $x$ en un dado de $n$ caras donde por defecto $n=6$.
+
+```{r}
+pdado = function(x,n=6) sapply(x,FUN = function(x)
+  if(x %in% c(1:n)) {return(1/n)} else {return(0)})
+pdado(4,6)
+```
+
+## Propiedades de la función de probabilidad conjunta.
+
+Sea $(X,Y)$ una variable aleatoria bidimensional discreta con conjunto de valores $(X,Y)(\Omega) = \lbrace (x_i, y_j) i = 1,2, \ldots, j = 1,2,\ldots \rbrace$ Entonces su función de probabilidad conjunta verifica las propiedades siguientes:
+
+La suma de todos los valores de la función de probabilidad conjunta sobre el conjunto de valores siempre vale 1:
+
+$$\sum_i \sum_j P_{XY}(x_i,y_j)=1$$
+
+En particular sea $B$ una región del plano. El valor de la probabilidad $P((X,Y)\in B)$ se puede calcular de ña forma siguiente:
+$$P((X,Y)\in B) = \sum_{(x_i.y_j)\in B} P_{XY}(x_i,y_j)$$
+
+O sea, la probabilidad de que la variable bidimensional coja valores en $B$ es igual a la suma de todos aquellos valores de la función de probabilidad conjunta que están en $B$.
+
+Luego tenemos la realación siguiente que relaciona la función de distribución conjunta con la función de probabilidad conjunta:
+$$F_{XY}(x,y) = \sum_{x_i\leq x, y_j\leq y} P_{XY}(x_i.y_j).$$
+Dicha expresión se deduce de la expresión anterior considerando  $B=(-\infty,x]\times (-\infty,y]$
