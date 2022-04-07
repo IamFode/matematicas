@@ -17,7 +17,7 @@
 \end{teo}
 
 %----------nota 2.1
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}
     \begin{nota} En los intervalos $[a,b]$ puede descomponerse en un número de subintervalos en cada uno de los cuales $f\leq g$ o $g\leq f$ la fórmula (2.1) del teorema 2.1 adopta la forma 
     $$a(S) = \int_a^b |g(x) -f(x)| \; dx$$
     \end{nota}
@@ -34,7 +34,7 @@
     \end{lema}
 
 %---------------------definición 2.1
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}
     \begin{def.} Se define el número $\pi$ como el área de un disco unidad.
 	$$\pi = 2 \int_{-1}^1 \sqrt{1-x^2}\; dx$$
     \end{def.}
@@ -43,7 +43,7 @@
     La formula que se acaba de demostrar establece que $A(r) = \pi r^2$\\
 \end{center}
 
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}
 Generalizando el anterior lema se tiene 
     $$a(kS) = \int_{ka}^{kb} g(x)\; dx = k \int_{ka}^{kb} f(x/k) \; dx = k^2 \int_a^b f(x) \; dx$$
 \end{tcolorbox}
@@ -64,7 +64,7 @@ Generalizando el anterior lema se tiene
 
 En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gráficas de $f$ y $g$ para el intervalo $[a,b]$ que en cada caso se especifica. Hacer un dibujo de las dos gráficas y sombrear $S$.\\
 
-\begin{enumerate}[\Large\bfseries 1.]
+\begin{enumerate}[\bfseries 1.]
 
 %--------------------1.
 \item $f(x) = 4 - x^2, \quad g(x)=0, \quad a = -2, \quad b = 2$\\\\
@@ -318,7 +318,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 \section{Las funciones trigonométricas}
 
 %--------------------Propiedades fundamentales del seno y del coseno
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}
     \begin{prop}\; \\
 	\begin{enumerate}[\bfseries 1.]
 	    \item Dominio de definición. Las funciones seno y coseno están definidas en toda la recta real.
@@ -429,7 +429,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     Esto demuestra que la igualdad (2.13) implica (2.14).\\\\
 \end{teo}
 
-\begin{tcolorbox}[colframe = white,colback=black!2!]
+\begin{tcolorbox}
     \begin{nota} Usando (2.13) y (2.14) junto con la propiedad aditiva $$\int_a^b f(x) \; dx = \int_0^b f(x)\; dx - \int_0^a f(x)\; dx $$
     llegamos a las fórmulas de integración más generales
     $$\int_a^b \cos x \; dx = \sen b - \sen a$$
@@ -439,7 +439,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     \end{nota}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colframe = white,colback=black!2!]
+\begin{tcolorbox}
     \begin{nota} 
 	Con los resultados del ejemplo 1 y la propiedad de dilatación $$\int_a^b f(x)\; dx = \dfrac{1}{c}\int_{ca}^{cb} f(x/c)\; dx,$$
 	obtenemos las fórmulas siguientes, válidas para $c\neq 0$;
@@ -448,7 +448,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     \end{nota}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colframe = white,colback=black!2!]
+\begin{tcolorbox}
     \begin{nota} 
 	La identidad $\cos 2x = 1-2\sen^2 x$ implica $\sen^2 x = \frac{1}{2}(1-\cos 2x)$ con lo que, a partir del ejemplo 2, obtenemos $$\int_a^b \sen^2 x \; dx = \dfrac{1}{2}\int_0^a (1-\cos 2x)\; dx = \dfrac{a}{2}-\dfrac{1}{4}\sen 2a$$
 	Puesto que $\sen^2 x + \cos^2 x = 1,$ encontramos también $$\int_0^a \cos^2 x \; dx = \int_0^a(1-\sen^2 x)\; dx = a - \int_0^a \sen^2 x\; dx = \dfrac{a}{2}+\dfrac{1}{4}\sen 2a$$
@@ -460,7 +460,7 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
 En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del coseno citadas en las Secciones de la 2.5 a la 2.7.\\\\
 
-\begin{enumerate}[\Large\bfseries 1.]
+\begin{enumerate}[\bfseries 1.]
 
 %--------------------1.
 \item 
@@ -1076,7 +1076,7 @@ para $0<|x|<\frac{x}{2}$.\\\\
 \section{Ejercicios}
 
 En cada uno de los ejercicios 1 al 4, demostrar que el conjunto de puntos cuyas coordenadas rectangulares $(x,y)$ satisfacen la ecuación cartesiana dada, es igual al conjunto de todos los puntos cuyas coordenadas polares $(r,\theta)$ satisfacen la correspondiente ecuación polar.
-\begin{enumerate}[\Large \bfseries 1.]
+\begin{enumerate}[ \bfseries 1.]
 
     %----------1.
     \item $(x-1)^2 + y^2 = 1;\quad r=2\cos \theta, \; cos \theta$.\\\\
@@ -1337,7 +1337,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \end{enumerate}
 
 \section{Aplicación de la integración al cálculo de volúmenes}
-\begin{tcolorbox}[colframe = white]
+\begin{tcolorbox}
     \begin{enumerate}[\bfseries 1.]
 
 	%----------1.
@@ -1375,7 +1375,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \section{Ejercicios}
 
 
-\begin{enumerate}[\Large \bfseries 1.]
+\begin{enumerate}[ \bfseries 1.]
 
     %---------------------1.
     \item Usa la integración para calculular el volumen de un cono circular recto engendrado haciendo girar alrededor del eje $x$ la gráfica de la función $f$ dada por $f(x)=xc$ en el intervalo $0\leq x\leq b$. Demostrar que el resultado es el producto de un tercio del área de la base por la altura del cono.\\\\
@@ -1724,7 +1724,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \section{Aplicación de la integración al concepto del trabajo}
 
 %---------------------Propiedades fundamentales del trabajo
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{prop}[Propiedades fundamentales del trabajo]
 	Designemos con $W_a(f)$ el trabajo realizado por una función fuerza $f$ al mover una partícula desde $a$ hasta $b$. Entonces el trabajo tiene las siguientes propiedades:
 	\begin{enumerate}[\bfseries 1.]
@@ -1762,7 +1762,7 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \section{Ejercicios}
 En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obedece la ley de Hooke.\\\\
 
-\begin{enumerate}[\Large \bfseries 1.]
+\begin{enumerate}[ \bfseries 1.]
 
     %----------1.
     \item Si una fuerza de 10 libras alarga un muelle elástico 1 pulgada, ¿qué trabajo se realiza al alargar el muelle 1 pie?.\\\\
@@ -1840,7 +1840,7 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 \section{Valor medio de una función}
 
 %-------------------- definición de valor medio de una función en un intervalo.
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{def.}[Definición del valor medio de una función en un intervarlo]
 	Si $f$ es integrable en un intervalo $[a,b]$, definimos $A(f)$, el valor medio de $f$ en $[a,b]$, por la siguiente fórmula
 	$$A(f) = \dfrac{1}{b-a} \int_a^b f(x) \; dx$$\\
@@ -1852,21 +1852,21 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 \end{tcolorbox}
 
 % --------------------- Definición de media ponderada.
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{def.}[Definición del valor medio de una función en un intervarlo]
 	$$A(f) = \dfrac{\int_a^b w(x)f(x)\; dx}{f_a^b w(x)\; dx}$$
     \end{def.}
 \end{tcolorbox}
 
 % --------------------- Primer momento al rededor de 0 
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{def.}[Primer momento al rededor de 0]
 	$$\overline{x}=\dfrac{\int_0^b xp(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
     \end{def.}
 \end{tcolorbox}
 
 %--------------------- Segundo momento al rededor de 0
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{def.}[Segundo momento al rededor de 0 o momento de inercia]
 	$$r^2=\dfrac{\int_0^b x^2p(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
     \end{def.}
@@ -1875,7 +1875,7 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 
 \section{Ejercicios}
 
-\begin{enumerate}[\Large\bfseries 1.]
+\begin{enumerate}[\bfseries 1.]
 
 %-------------------- 1.
 \item $f(x)=x^2,\quad a\leq x \leq b.$\\\\
@@ -2239,7 +2239,7 @@ $$A(y)-A(x)=\int_a^y f(t)\; dx - \int_a^x f(t)\; dx = \int_x^y f(t)\; dx \geq 0$
 siempre que $a\leq x \leq b.$\\\\
 
 %-------------------- Definición de función convexa
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     \begin{def.}[Definición de función convexa] Una función $g$ se llama convexa en un intervalo $[a,b]$ si, para todo $x$ e $y$ en $[a,b]$ y para cada $\alpha$ tal que $0<\alpha<1$, tenemos 
 	$$g(z)\leq \alpha g(y) + (1-\alpha)g(x),\; \mbox{donde}\; <=\alpha y + (1-\alpha)x$$
 	Decimos que $g$ es cóncava en $[a,b]$ si es válida la desigualdad invertida,
@@ -2260,7 +2260,7 @@ siempre que $a\leq x \leq b.$\\\\
 
 Calcular las integrales de los ejercicios 1 al 16.\\\\
 
-\begin{enumerate}[\bfseries \Large 1.]
+\begin{enumerate}[\bfseries  1.]
 
     %--------------------1.
     \item $\displaystyle\int_0^x (1+t+t^2)\; dt = \left(t+\dfrac{t^2}{2}+\dfrac{t^3}{3}\right)\bigg|_0^x = x+\dfrac{x^2}{2}+\dfrac{x^3}{3}.$\\\\

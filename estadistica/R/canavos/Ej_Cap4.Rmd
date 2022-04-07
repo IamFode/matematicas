@@ -115,7 +115,7 @@ Supóngase que la probabilidad de tener una unidad defectuosa en una línea de e
 ¿Cuál es la probabilidad de que entre 20 unidades dos se encuentren defectuosas?
 
 Respuesta.-
-$$P(X=2)={20 \choose 2}\cdot 0.05^2\cdot (1-0.05)^{20-2} = $$
+$$P(X=2)={20 \choose 2}\cdot 0.05^2\cdot (1-0.05)^{20-2} = 0.1886768$$
 
 ```{r}
 # opción 1
@@ -148,4 +148,30 @@ pbinom(1,20,0.05,lower.tail = FALSE)
 ## 4.7
 En una fábrica de circuitos electrónicos, se afirma que la proporción de unidades defectuosas de cierto componente que ésta produce, es del $5\%$. Un buen comprador de estos componentes revisa $15$ unidades seleccionadas al azar y encuentra cuatro defectuosas. Si la compañia se encuentra en lo correcto y prevalecen las suposiciones para que la distribución binomial sea el modelo de probabilidad adecuado para esta situación, ¿Cuál es la probabilidad de este hecho?. Con base en el resultado anterior ¿puede concluir que la compañia está equivocada?
 
-Respuesta.-\; 
+Respuesta.- 
+$$P(X=4)= {15 \choose 4}\cdot 0.05^4 \cdot (1-0.05)^{15-4}=0.004852576$$
+
+```{r}
+dbinom(4,15,0.05)
+choose(15,4)*0.05^4*(1-0.05)^(15-4)
+func_binom(4,15,0.05)
+```
+
+Ahora veamos que tan probable es que existe más de 4 circuitos defectuosos.
+
+$$P(X\geq 4) = 1-P(X < 4) = 1-P(x\leq 3)  = 1- F(3;20,0.05) = \sum_{i=0}^3 \cdot 0.05^i\cdot  (1-0.05)^{15-i} = 0.005467259$$
+
+```{r}
+pbinom(3,15,0.05, lower.tail = FALSE)
+1-acum_binom(3,15,0.05)
+```
+
+Por lo que se dice de la afirmación es incorrecta.
+
+## 4.8
+La probabilidad de que un satélite, después de colocarlo en la órbita, funcione de manera adecuada es de $0.9$. Supóngase que cinco de éstos se colocan en órbita y operan de manera independiente.
+
+### a)
+¿Cuál es la probabilidad de que, por lo menos, el $80\%$ funcione adecuadamente?
+
+Respuesta.-
