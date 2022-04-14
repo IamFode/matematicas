@@ -12,9 +12,7 @@ library(ggplot2)
 source("funciones_chapter4.R")
 ```
 
-# Ejercicios capitulo 4
-
-## 4.1.
+# 4.1.
 Sea $X$ una variable aleatoria con distribución binomial y parámetros $n$ y $p$. Mediante la función de probabilidad binomial, verificar que $p(n-x;n,1-p)=p(x;n,p).$
 
 Respuesta.-
@@ -25,7 +23,7 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 
-## 4.2.
+# 4.2.
 En una distribución binomial, sea $X$ el número de éxistos obtenidos en diez ensayos donde la probabilidad de éxito en cada uno es de $0.8$. Con el resultado del problema anterior, demostrar que la probabilidad de lograr de manera exacta seis éxitos es igual a la probabilidad de tener cuatro fracasos.
 
 Respuesta.-
@@ -39,7 +37,7 @@ dbinom(6,10,0.8)
 ```
 
 
-## 4.3
+# 4.3
 Mediante el empleo de la función de probabilidad binomial, verificar la siguiente fórmula de recursión:
 
 $$p(x+1;n,p) = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
@@ -48,14 +46,14 @@ Respuesta.-
 
 $$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1}$$ $$= \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
 
-## 4.4.
+# 4.4.
 sea $X$ una variable aleatoria con distribución binomial y parámetros $n=8$ y $p=0.4$. Emplear la fórmula de recursión del problema anterior para obtener las probabilidades puntuales de los valores de $X$. 
 
 Respuesta.- 
 
 $$p(x+1;8,0.4) = \dfrac{(8-x)0.4}{(x+1)(1-0.4)}p(x;8,0.4)$$
 
-## 4.5
+# 4.5
 Sea $X$ una variable aleatoria distribuida binomialmente con $n=10$ y $p=0.5$ 
 
 ### a) 
@@ -82,7 +80,6 @@ $$=0.9345703$$
 pbinom(8,10,0.5)-pbinom(2,10,0.5)
 ```
 
-
 ### b) 
 ¿Cómo cambiarían las respuestas de a) si $n=15$ y $p=0.4$?
 
@@ -108,7 +105,7 @@ $$=0.9345703$$
 pbinom(9,15,0.4)-pbinom(2,15,0.4)
 ```
 
-## 4.6
+# 4.6
 Supóngase que la probabilidad de tener una unidad defectuosa en una línea de ensamble es de 0.05. Si el número de unidades terminadas constituye un conjunto de ensayos independientes 
 
 ### a)
@@ -139,13 +136,13 @@ pbinom(2,20,0.05)
 
 Respuesta.-
 
-$$1-P(X\leq 1) = 1-F(1;20,0.05) = \sum_{i=0}^{1} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.2641605$$
+$$1-P(X\leq 1) = 1-F(1;20,0.05) = 1-\sum_{i=0}^{1} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.2641605$$
 
 ```{r}
 pbinom(1,20,0.05,lower.tail = FALSE)
 ```
 
-## 4.7
+# 4.7
 En una fábrica de circuitos electrónicos, se afirma que la proporción de unidades defectuosas de cierto componente que ésta produce, es del $5\%$. Un buen comprador de estos componentes revisa $15$ unidades seleccionadas al azar y encuentra cuatro defectuosas. Si la compañia se encuentra en lo correcto y prevalecen las suposiciones para que la distribución binomial sea el modelo de probabilidad adecuado para esta situación, ¿Cuál es la probabilidad de este hecho?. Con base en el resultado anterior ¿puede concluir que la compañia está equivocada?
 
 Respuesta.- 
@@ -159,7 +156,7 @@ func_binom(4,15,0.05)
 
 Ahora veamos que tan probable es que existe más de 4 circuitos defectuosos.
 
-$$P(X\geq 4) = 1-P(X < 4) = 1-P(x\leq 3)  = 1- F(3;20,0.05) = \sum_{i=0}^3 \cdot 0.05^i\cdot  (1-0.05)^{15-i} = 0.005467259$$
+$$P(X\geq 4) = 1-P(X < 4) = 1-P(x\leq 3)  = 1- F(3;20,0.05) = 1-\sum_{i=0}^3 0.05^i\cdot  (1-0.05)^{15-i} = 0.005467259$$
 
 ```{r}
 pbinom(3,15,0.05, lower.tail = FALSE)
@@ -168,10 +165,172 @@ pbinom(3,15,0.05, lower.tail = FALSE)
 
 Por lo que se dice de la afirmación es incorrecta.
 
-## 4.8
+# 4.8
 La probabilidad de que un satélite, después de colocarlo en la órbita, funcione de manera adecuada es de $0.9$. Supóngase que cinco de éstos se colocan en órbita y operan de manera independiente.
 
 ### a)
 ¿Cuál es la probabilidad de que, por lo menos, el $80\%$ funcione adecuadamente?
 
+Respuesta.-  Ya que el $80\%$ de 5 es 4 por lo que 
+
+$$P(X\geq 4) = 1 - P(X<3) = 1 - F(3;5,0.9) = 1-\sum_{i=0}^3  0.9^{i}\cdot (1-0.9)^{5-i} = 0.91854$$
+
+```{r}
+pbinom(3,5,.9,lower.tail = FALSE)
+1-acum_binom(3,5,0.9)
+```
+
+### b)
+Responder a a) si $n=10$
+
 Respuesta.-
+
+$$P(X\geq 10) = 1 - P(X<9) = 1 - F(9;10,0.9) = 1-\sum_{i=0}^9  0.9^{i}\cdot (1-0.9)^{10-i} = 0.7360989$$
+
+```{r}
+pbinom(8,10,.9,lower.tail = FALSE)
+1-acum_binom(8,10,0.9)
+```
+
+### c)
+Responder a a) si $n=20$
+
+Respuesta.-
+$$P(X\geq 16) = 1 - P(X<15) = 1 - F(15;20,0.9) = 1 - \sum_{i=0}^{15}  0.9^{i}\cdot (1-0.9)^{5-i} = 0.8670467$$
+
+```{r}
+pbinom(16,20,.9,lower.tail = FALSE)
+1-acum_binom(16,20,0.9)
+```
+
+### d)
+¿Son inesperados estos resultados? ¿Por qué?
+
+Respuesta.- Son inesperados ya que no se puede ver una tendencia clara cuando $n$ es más grande.
+
+# 4.9. 
+Con base en encuestas al consumidor se sabe que la preferencia de éste con respecto a dos marcas, A y B, de un producto dado, se encuentra muy pareja. Si la opción de compra entre estas marcas es independiente, ¿cuál es la probabilidad de que entre 25 personas seleccionadas al azar, no más de diez tengan preferencia por la marca A?
+
+Respuesta.- Ya que A y B se encuentran parejas entonces la probabilidad es de 0.5, luego:
+
+$$P(X\leq 10) = F(10;25,0.5) = \sum_{i=0}^{10} 0.5^{i}\cdot (1-0.5)^{25-i} = 0.2121781$$
+
+```{r}
+pbinom(10,25,0.5)
+acum_binom(10,25,0.5)
+```
+
+# 4.10
+Supóngase que un examen contiene 15 preguntas del tipo falso o verdadero. El examen se aprueba contestando correctamente por lo menos nueve preguntas. Si se lanza una moneda para decidir el valor de verdad de cada pregunta, ¿cuál es la probabilidad de aprobar el examen?
+
+Respuesta.- Ya que al lanzar una moneda se tiene sólo dos opciones entonces la probabilidad es de 0.5, luego: 
+
+$$P(X\geq 9) = 1 - P(X\geq 8) = 1 - F(8;15,0.5) = 1 - \sum_{i=0}^{8} 0.5^i\cdot (1-05)^{15-i} = 0.1508789$$
+
+```{r}
+pbinom(9,15,0.5,lower.tail = FALSE)
+1-acum_binom(9,15,0.5)
+```
+
+# 4.11
+Un vendedor de seguros sabe que la oportunidad de vender una póliza es mayor mientras más contactos realice con clientes potenciales. Si la probabilidad de que una persona compre una póliza de seguro después de la visita, es constante e igual a $0.25$, y si el conjunto de visitas constituye independiente de ensayos, ¿cuántos compradores potenciales debe visitar el vendedor para que la probabilidad de vender por lo menos una póliza sea de $0.80$?
+
+Respuesta.-
+
+$$P(X\geq 1) = 0.25 \; \Rightarrow \; 1-P(X<0) = 1 - [0.25^0 \cdot (1-0.25)^{n-0}] =  1 - 0.75^{n} = 0.8 \; \Rightarrow \; n \ln(0.75) = \ln(0.2)$$
+
+$$n=\dfrac{\ln(0.2)}{\ln(0.75)} = 5.59450194 \approx 6$$
+
+```{r}
+log(0.20)/log(0.75)
+```
+
+Por lo que debe existir 6 o más compradores.
+
+# 4.12.
+El gerente de un restaurante que sólo da servicio mediante reservación sabe, por experiencia, que el $15\%$ de las personas que reservan una mesa no asistirán. Si el restaurante acepta $25$ reservaciones pero sólo dispone de $20$ mesas, ¿cuál es la probabilidad de que a todas las personas que asistan al restaurante se les asigne una mesa?.
+
+Respuesta.- Existe la probabilidad de que el $85\%$ asista al restaurante. Por lo que,
+
+$$P(X\leq 20) = F(20;25,0.85) = \sum_{i=0}^{20} 0.85^i \cdot (1-0.85)^{25-i} = 0.317893$$
+
+```{r}
+pbinom(20,25,0.85)
+```
+
+# 4.13.
+Mediante la probabilidad de Poisson, demostrar la siguiente fórmula de recursión:
+$$p(x+1;\lambda)=\dfrac{\lambda}{x+1}p(x;\lambda)$$
+
+Demostración.- Por definición de de función de probabilidad de Poisson se tiene que,
+$$p(x+1;\lambda) = \dfrac{e^{-\lambda} \cdot \lambda^{x+1}}{(x+1)!},\qquad \mbox{para}\; x=0,1,2,\ldots, \; \lambda >0$$
+que también podemos reescribirlo de la siguinete manera,
+$$\dfrac{e^{-\lambda} \cdot \lambda^{x+1}}{(x+1)!} = \dfrac{e^{-\lambda}\cdot \lambda\cdot \lambda^{x}}{x!\cdot (x+1)} $$
+y por lo tanto
+$$p(x+1;\lambda) = \dfrac{\lambda}{x+1} \cdot \dfrac{e^{-\lambda}\cdot \lambda^{x}}{x!} = \dfrac{\lambda}{x+1} p(x;\lambda)$$
+
+# 4.14
+Sea $X$ una variable aleatoria de Poisson con parámetro $\lambda=2$. Emplear la fórmula del problema anterior para determinar las probabilidades puntuales de $X=0,1,2,3,4,5,6,7,8$ y hágase una gráfica de la función de probabilidad.
+
+Respuesta.- 
+
+- Para $X=0$
+$$p(0+1;2) = \dfrac{\lambda}{x+1} \cdot \dfrac{e^{-\lambda}\cdot \lambda^{x}}{x!} = \dfrac{2}{0+1} \cdot \dfrac{e^{-2}\cdot 2^{0+1}}{(0+1)!} = 0.2707$$
+
+- Para $X=1$ 
+
+$$p(1+1;2) =  \dfrac{2}{1+1} \cdot \dfrac{e^{-2}\cdot 2^{1+1}}{(1+1)!} = 0.2707$$
+
+- Para $X=2$
+
+$$p(2+1;2) =  \dfrac{2}{2+1} \cdot \dfrac{e^{-2}\cdot 2^{2+1}}{(2+1)!} = 0.1804$$
+
+- Para $X=3$
+
+$$p(3+1;2) = \dfrac{2}{3+1} \cdot \dfrac{e^{-2}\cdot 2^{3+1}}{(3+1)!} = 0.0902$$
+
+- Para $X=4$
+
+$$p(4+1;2) = \dfrac{2}{4+1} \cdot \dfrac{e^{-2}\cdot 2^{4+1}}{(4+1)!} = 0.036$$
+
+- Para $X=5$
+
+$$p(5+1;2) = \dfrac{2}{5+1} \cdot \dfrac{e^{-2}\cdot 2^{5+1}}{(5+1)!} = 0.012$$
+
+- Para $X=6$
+
+$$p(6+1;2) = \dfrac{2}{6+1} \cdot \dfrac{e^{-2}\cdot 2^{6+1}}{(6+1)!} = 0.0034$$
+
+- Para $X=7$
+
+$$p(7+1;2) = \dfrac{2}{7+1} \cdot \dfrac{e^{-2}\cdot 2^{7+1}}{(7+1)!} = 0.0008$$
+
+- Para $X=8$
+
+$$p(8+1;2) = \dfrac{2}{8+1} \cdot \dfrac{e^{-2}\cdot 2^{8+1}}{(8+1)!} = 0.0001$$
+
+
+```{r}
+lambda = 2
+
+x = 0
+while (x<9){
+  print(paste0(x," = ", (exp(-lambda)*lambda^(x+1))/fact((x+1))))
+  x = x+1
+}
+
+x = 0
+X = c()
+Probabilidad = c()
+while (x<9) {
+  X = c(X,x)
+  Probabilidad = c(Probabilidad, dpois(x+1,lambda))
+  x=x+1
+}
+
+ggplot(mapping = aes(X,Probabilidad)) +
+  geom_col(width = 0.1) 
+```
+
+
+# 4.15

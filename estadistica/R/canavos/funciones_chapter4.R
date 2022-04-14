@@ -38,17 +38,32 @@ dist_bernoulli <- function(x,p){
   } 
 }
 
-# experanza matemática
-Ex_binom <- function(n,p) n*p
+# esperanza matemática
+Es_binom <- function(n,p) n*p
 
 # varianza
 var_binom <- function(n,p) n*p*(1-p)
 
 ######################## Distribución de Poisson ###############################
-dist_poisson <- function(x,n,p){
-  return(factorial(n)/(factorial(n-x)*factorial(x))*p^x * (1-p)^(n-x))
+
+# función de probabilidad
+func_poisson <- function(x,lambda){
+  if (lambda > 0 & x>0 & x%%1==0){
+  return((exp(-lambda)*lambda^x)/fact(x))
+  }else{
+    return("lambda debe ser mayor a 0 o x intero mayor o igual a cero")
+  }
 }
 
-
-
-
+# función acumulada
+acum_poisson <- function(x,lambda){
+  if (lambda > 0 & x>0 & x%%1==0){
+    sum = 0
+    for (i in 0:x){
+      sum = sum + (exp(-lambda)*lambda^i)/fact(i)
+    }
+  return(sum)
+  }else{
+    return("lambda debe ser mayor a 0 o x intero mayor o igual a cero")
+  }
+}

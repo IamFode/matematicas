@@ -40,7 +40,7 @@ Son equivalentes. También son equivalentes las desigualdades,
 \end{center}
 
 Todas estas se derivan de la definición de límite.\\
-
+\begin{tcolorbox}
     \begin{def.}[Límites laterales]
 	Los límites laterales pueden definirse en forma parecida. Por ejemplo, si ${f(x)\to A}$ cuando ${x\to p}$ con valores mayores que $p$, decimos que $A$ es el límite por la derecha de $f$ en $p$, indicamos esto poniendo
 	$$\lim_{x\to p^+}f(x)=A.$$
@@ -48,6 +48,7 @@ Todas estas se derivan de la definición de límite.\\
 	$$f(x)\in N_1(A)\; \mbox{siempre que}\; x \in N_2(p)\quad \mbox{y}\quad x>p.$$
 	Los límites a la izquierda, que indican poniendo ${x\to p^-}$, se definen del mismo modo restringiendo $x$ a valores menores que $p$.
     \end{def.}
+\end{tcolorbox}
 
 \section{Definición de continuidad de una función}
 
@@ -69,4 +70,60 @@ Todas estas se derivan de la definición de límite.\\
 \end{tcolorbox}
 
 \section{Teoremas fundamentales sobre límites. Otros ejemplos de funciones continuas.}
+
+%-------------------- teorema 3.1 --------------------------
+\begin{tcolorbox}
+    \begin{teo}
+	Sean $f$ y $g$ dos funciones tales que 
+	$$\lim_{x\to p} f(x)=A,\qquad \lim_{x\to p}g(x)=B$$
+	Se tiene entonces
+	\begin{enumerate}[\bfseries (i)]
+	    \item $\lim\limits_{x\to p} [f(x)+g(x)]=A+B$,
+	    \item $\lim\limits_{x\to p} [f(x)-g(x)=A-B]$,
+	    \item $\lim\limits_{x\to p} f(x)\cdot g(x) = A\cdot B$,
+	    \item $\lim\limits_{x\to p} \dfrac{f(x)}{g(x)} = \dfrac{A}{B}\qquad \mbox{si}\; B\neq 0$.\\
+	\end{enumerate}
+	Las demostraciones estarán dadas en la sección 3.5.
+    \end{teo}
+\end{tcolorbox}
+
+
+Observemos primero que las afirmaciones del teorema pueden escribirse en forma un poco distinta. Por ejemplo, (i) puede ponerse como sigue:
+$$\lim_{x\to p}[f(x)+g(x)]=\lim_{x\to p}f(x) + \lim_{x\to p}g(x).$$\\
+Es costumbre indicar por $f+g$, $f-g$, $f\cdot g$ y $f/g$ las funciones cuyos valores para cada $x$ son:
+$$f(x)+g(x),\quad f(x)-g(x),\quad f(x)\cdot g(x),\quad y \quad f(x)/g(x).$$\\
+
+\begin{teo}
+    Sean $f$ y $g$ dos funciones continuas en un punto $p$. La suma $f+g$, la diferencia $f-g$,  el producto $f\cdot g$ y  $g(p)\neq 0$ siempre que $g(p)\neq 0$ son también continuas en $p$.\\\\
+    Demostración.-\; Puesto que $f$ y $g$ son continuas en $p$, se tiene $\lim\limits_{x\to p} f(x)=f(p)$ y $\lim\limits_{x\to p}g(x)=g(p)$. Aplicando las propiedades para límites, dadas en el teorema 3.1, cuando $A=f(p)$ y $B=g(p)$, se deduce el teorema 3.2.\\\\
+\end{teo}
+
+El teorema que sigue demuestra que si una función $g$ está intercalada entre otras dos funciones que tienen el mismo límite cuando $x\to p,$ $g$ tiene también este límite cuando $x\to p.$\\\\
+
+% -------------------- teorema 3.3 --------------------------
+\begin{teo}[Principio de intercalación]
+    Supongamos que $f(x)\leq g(x)\leq h(x)$ para todo $x\neq p$ en un cierto entorno $N(p)$. Supongamos también que 
+    $$\lim_{x\to p}f(x)=\lim_{x\to p}h(x)=a.$$
+    Se tiene entonces $\lim_{x\to p}g(x)=a.$\\\\
+	Demostración.-\; Sean $G(x)=g(x)-f(x)$, y $H(x)=h(x)-f(x)$. Las desigualdades $f\leq g\leq h$ implican $0\leq g-f\leq h-f$ o
+	$$0\leq G(x)\leq H(x)$$
+	para todo $x\neq p$ en $N(p)$. Para demostrar el teorema, basta probar que $G(x)\to 0$ cuando $x\to p$, dado que $H(x)\to 0$ cuando $x\to p$.\\
+	Sea $N_1(0)$ un entorno cualquier de $0$. Puesto que $H(x)\to 0$ cuando $x\to p,$ existe un entorno $N_2(p)$ tal que 
+	\begin{center}
+	    $H(x) \in N_1(0)$ siempre que $x\in N_2(p)$ y $x\neq p.$
+	\end{center}
+	    Podemos suponer que $N_2(p) \subseteq N(p)$. Entonces la desigualdad $0\leq G \leq H$ establece que $G(x)$ no está más lejos de $0$ si $x$ está en $N_2(p), x\neq p$. Por consiguiente $G(x)\in N_1(0)$ para tal valor $x$ y por tanto $G(x)\to 0$ cuando $x\to p$. La misma demostración es válida si todos los límites son límites a un lado.\\\\
+\end{teo}
+
+% -------------------- teorema 3.4 --------------------------
+\begin{teo}[Continuidad de las integrales indefinidas]
+    Supongamos que $f$ es integrable en $[a,x]$ para todo $x$ en $[a,b]$, y sea
+    $$A(x)=\int_a^x f(t)\; dt$$
+    Entonces la integral indefinida $A$ es continua en cada punto de $[a,b]$ (En los extremos del intervalo tenemos continuidad a un lado.)\\\\
+	Demostración.-\; Elijamos $p$ en $[a,b]$. Hay que demostrar que $A(x)\to A(p)$ cuando $x\to p.$ Tenemos
+	$$A(x)-A(p)=\int_p^x f(t)\; dt$$
+	Puesto que $f$ está acotada en $[a,b]$, existe una constante $M>0$ tal que $-M\leq f(t)\leq M$ para $t$ en $[a,b]$. Si $x>p$, integramos esas desigualdades en el intervalo $[p,x]$ obteniendo
+	$$\int_p^x -M \;dt \leq \int_p^x f(t)\; dt\leq \int_p^x M \; dt \quad \Longrightarrow \quad -M(x-p)\leq A(x)-A(p)\leq M(x-p).$$
+	Si $x<p$, obtenemos las mismas desigualdades con $x-p$ sustituida por $p-x$. Por consiguiente, en uno u otro caso podemos hacer que $x\to p$ y aplicar el principio de intercalación encontrando que $A(x)\to A(p)$. Esto prueba el teorema. Si $p$ es un extremo de $[a,b]$, tenemos que hacer que $x\to p$ desde el interior del intervalo, con lo que los límites son a un lado.
+\end{teo}
 

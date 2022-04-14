@@ -170,6 +170,7 @@ $$\dfrac{dm_X(t)}{dt}\bigg|_{t=0} = np[(1-p)+p]^{n-1} = np$$
 y
 $$\dfrac{d^2m_X(t)}{dt^2}\bigg|_{t=0} = n(n-1)p^2[(1-p)+p]^{n-2} + np[(1-p)+p]^{n-1}=n(n-1)p^2 + np.$$
 
+
 \section{La distribución de Poisson}
 La distribución es el principal modelo de probabilidad empleado para analizar problemas de líneas de espera. Además, ofrece una aproximación excelente a la función de probabilidad binomial cuando $p$ es pequeño y $n$ es grande.\\\\
 
@@ -185,6 +186,9 @@ La distribución es el principal modelo de probabilidad empleado para analizar p
 \end{tcolorbox}
 Verificamos que es una función de probabilidad. Puesto que $p(x;\lambda)>0$ para $x=0,1,2,\ldots$,
 $$\sum_{x=0}^\infty p(x;\lambda) = \sum_{x=0}^\infty \dfrac{e^{-\lambda}\lambda^x}{x!} = e^{-\lambda}\sum_{x=0}^\infty \dfrac{\lambda^x}{x!}=e^{-\lambda}\left(1+\lambda + \dfrac{\lambda^2}{2!}+\ldots\right) = e^{-\lambda}e^{\lambda}=1$$\\
+
+Nótese que la variable aleatoria de Poisson tiene un valor entero, y que pueden usarse los valores de las probabilidades acumuladas para determinar las probabilidades individuales mediante el empleo de la relación:
+$$p(x;\lambda) = F(x;\lambda)-F(x-1;\lambda)$$\\
 
 \textbf{Deducción de la función de probabilidad de Poisson.-}\\\\
 
@@ -208,4 +212,38 @@ Después de multiplicar, transportar $p(x;t)$ al primer miembro, y dividir por $
 $$\dfrac{p(x;t+dt)-p(x;t)}{dt}=v[p(x-1;t)]-p(x;t).$$
 Si se toma el límite conforme $dt\to 0$, por definición se tiene:
 $$\dfrac{dp(x;t)}{dt}=v[p(x-1;t)-p(x;t)]$$
+ Si se toma el límite conforme $dt\to 0,$ por definición se tiene:
+ $$\dfrac{dp(x;t)}{dt}=v\left[p(x-1;t)-p(x;t)\right]$$
+ que es una ecuación diferencial lineal con respecto a $t$ y una ecuación de diferencias finitas de primer orden, con respecto a $x$. Si $x=0$, la ecuación se convierte en 
+ $$\dfrac{dp(0;t)}{dt}=v\left[p(-1;t)-p(0;t)\right] = -vp(0;t)$$
+ dado que $p()i-1;t$ tiene que ser cero. La solución general de la ecuación diferencial lineal 
+ $$\dfrac{dp(0;t)}{dt}=-vp(0;t)$$
+ se obtiene mediante separación de variables e integración en ambos miembros, lo que da como resultado:
+ $$ln\left[p(0;t)\right]=ln(c)-vt,$$
+ o
+ $$p(0;t)=ce^{-vt}$$
+ Dado que la probabilidad de tener cero ocurrencias en un intervalo $t=0$, debe ser $1$, $c=1$, y
+ $$p(0;t)=e^{-vt}.$$
+ Si $x=1,$ la ecuación  $\dfrac{dp(x;t)}{dt}=v[p(x-1;t)-p(x;t)]$ se convierte en
+$$\dfrac{dp(1;t)}{dt}=v[p(0;t)-p(1;t)]$$
+o
+$$\dfrac{dp(1;t)}{dt}+vp(1;t) = ve^{-vt}$$
+
+Esta ecuación es una ecuación diferencial no homogénea con la condición inicial de que $p(1;0)=0$ dado que la probabilidad de tener exactamente una ocurrencia en $t=0$ debe ser cero.  La solución es
+$$p(1;t)=(vt) e^{-vt}$$
+De manera similar, para $x=2$ y $p(2;0)=0$, $\dfrac{dp(x;t)}{dt}=v[p(x-1;t)-p(x;t)]$ se reduce a
+$$\dfrac{dp(2;t)}{dt} + vp(2;t) = v^2te^{-vt}$$
+cuya solución es 
+$$p(2;t)=\dfrac{(vt)^2e^{-vt}}{2!}.$$
+Al continuar este proceso puede deducirse que la probabilidad de tener exactamente $x$ ocurrencias en $t$ es 
+$$p(x;t)=\dfrac{(xt)^x e^{-vt}}{x!},\qquad x=0,1,2,\ldots$$
+
+siempre que $p(x;0)=0$. Si se sustituye $\lambda =vt$ en esta último ecuación, el resultado es la función de probabilidad de Poisson.\\
+
+\begin{tcolorbox}[colback=white]
+    La probabilidad de que una variable aleatoria de Poisson $X$ sea menor o igual a un valor de $x$ se determina por la función de distribución acumulativa.
+    $$P(X\leq x)=F(x;\lambda)=\sum_{i=0}^x \dfrac{e^{-\lambda} \lambda^i}{i!}$$
+    se podría usar también la relación
+    $$p(x;\lambda) = F(x;\lambda)-F(x-1;\lambda).$$
+\end{tcolorbox}
 

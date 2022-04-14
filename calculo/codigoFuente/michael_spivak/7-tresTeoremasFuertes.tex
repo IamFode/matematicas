@@ -3,7 +3,7 @@
 
 
 % -------------------- teorema 1 --------------------
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{teo}
 	Si $f$ es continua en $[a,b]$ y $f(a)<0<f(b)$ entonces existe algún $x$ en $[a,b]$ tal que $f(x)=0$.\\\\
 	Geométricamente, esto significa que la gráfica de una función continua que empieza por debajo del eje horizontal y termina por encima del mismo debe cruzar a este eje en algún punto.
@@ -11,7 +11,7 @@
 \end{tcolorbox}
 
 % -------------------- teorema 2 --------------------
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{teo}
 	Si $f$ es continua en $[a,b]$, entonces $f$ está acotada superiormente en $[a,b]$, es decir, existe algún número $N$ tal que $f(x)\leq N$ para todo $x$ en $[a,b]$.\\\\
 	Geométricamente, este teorema significa que la gráfica $f$ queda por debajo de alguna línea paralela al eje horizontal. 
@@ -19,7 +19,7 @@
 \end{tcolorbox}
 
 % -------------------- teorema 3 --------------------
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{teo}
 	Si $f$ es continua en $[a,b]$ entonces existe algún número $y$ en $[a,b]$ tal que $f(y)\geq f(x)$ para todo $x$ en $[a,b]$.\\\\
 	Se dice que una función continua en un intervalo cerrado alcanza su valor máximo en dicho intervalo.
@@ -127,11 +127,9 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
 
 
 
-
-
 \section{Problemas}
 
-\begin{enumerate}[\Large\bfseries 1.]
+\begin{enumerate}[\bfseries 1.]
 
 %-------------------- 1.
 \item Para cada una de las siguientes funciones, decidir cuáles está acotadas superiormente o inferiormente en el intervalo indicado, y cuáles de ellas alcanzan sus valores máximo y mínimo.
@@ -593,14 +591,68 @@ Los teoremas 2 y 6 juntos muestran  que una función continua $f$ en $[a,b]$ son
     \begin{enumerate}[\bfseries a)]
 	
 	%----------(a)
-	\item Supóngase que $f$ es continua en $[0,1]$ y $f(0)=f(1)$. Sea $n$ cualquier número natural. Demuestre que existe algún número $x$ tal que $f(x)=f(x+1/n)$, como se muestra en la figura para $n=4$. Considerar la función $f(x)=f(x)-f(x+1/n)$; ¿qué ocurriría si $f(x)\neq 0$ para todo $x$?.\\\\
-	    Demostración.-\; 
+	\item Supóngase que $f$ es continua en $[0,1]$ y $f(0)=f(1)$. Sea $n$ cualquier número natural. Demuestre que existe algún número $x$ tal que $f(x)=f(x+1/n)$, como se muestra en la figura para $n=4$. Considerar la función $g(x)=f(x)-f(x+1/n)$; ¿qué ocurriría si $f(x)\neq 0$ para todo $x$?.\\\\
+	    Demostración.-\; Sea $g(x)=-f(x+1/n)$. Entonces , $g$ es una función continua.\\
+	    Si $g(x)=0$ para algún $x\in[0,1]$, entonces hemos terminado con la demostración. Ahora supóngase que $g(x)\neq 0$ para cualquier $x$. Entonces será $g(x)>0$ para todo $x$ o $g(x)<0$ para todo $x$.\\
+	    Asumiendo, que $g(x)>0$ para todo $x$, implica que $f(x)>f(x-1/n),$ y por lo tanto usando la relación recursiva se tiene
+	    $$f(0)>f(1/n)>f(2/n)>\ldots > f[(n-1)/n]>f(n/n)=f(1).$$
+	    Esto contradice la hipótesis que $f(0)=f(1)$. Así $f(x)=f(x+1/n)$ para algún $x$ y para cada $n\in \mathbb{N}.$\\\\
 
 	%----------(b)
 	\item Suponga que $0<a<1$, pero que $a$ no es igual a $1/n$ para cualquier número natural $n$. Encuentre una función $f$ que sea continua en $[0,1]$ y que satisfaga $f(0)=f(1)$ , pero que no satisfaga $f(x)=f(x+a)$ para ningún $x$.\\\\
-	    Respuesta.-\; 
+	    Respuesta.-\; Considere $f(x)=\sen(2\pi x)$. Entonces, $f(0)=f(1)=0$. Luego sea $a=\dfrac{3}{4},$ donde para que se cumpla $x+a$ en $[0,1]$ solo puede variar de $0$ a $\dfrac{1}{4}.$ Es decir, 
+	    $$0\leq x \leq \dfrac{1}{4} \; \Longrightarrow \; \dfrac{3}{4}\leq x + a \leq 1.$$
+	    Por lo tanto, cuando $x\in \left[0,\dfrac{1}{4}\right]$, tenemos $f(x)>0$ mientras que $f(x+a)<0$. Así, $f(x)\neq f(x+a)$ para cualquier admisible valor de $x$.\\\\
 
     \end{enumerate}
-    
+
+% -------------------- 21.
+\item
+    \begin{enumerate}[\bfseries a)]
+
+	%----------(a)
+	\item Demuestre que no existe una función continua $f$ definida en $\mathbb{R}$ que tome exactamente dos veces cada uno de los valores, Indicación: Si $f(a)=f(b)$ para $a<b$, entonces o bien $f(x)>f(a)$ para todo $x$ de $(a,b)$, o bien $f(x)<f(a)$ para todo $x$ de $(a,b)$. ¿Por qué? En el primer caso todos los valores próximos a $f(a)$, pero ligeramente mayores que $f(a)$, son alcanzados en algún punto de $(a,b)$; esto implica que $f(x)<f(a)$ para $x<a$ y $x>b.$\\\\
+	    Demostración.-\; supóngase que $f$ es una función definida en $\mathbb{R}$ que toma cada valor exactamente dos veces.\\
+	    Sea $a<b$ y $f(a)=f(b)$, entonces $f$ toma cada valor exactamente dos veces, para algunos $c\in (a,b)$, $f(c)>f(a)$ o $f(c)<f(a).$\\
+	    Para el primer caso, implica que $f(x)>f(a),\; \forall x \in (a,b)$ porque $f$ es una función continua en $[a,b]$, por lo que cambia de signo el término $f(x)-f(a)$ no es posible sin cruzar la linea $y=f(a)$ y eso implicaría la ocurrencia del valor $f(a)$ más de dos veces, contraría a la suposición.\\
+	    De la misma manera, $f(c)<f(a)\; \Rightarrow \; f(x)<f(a),\; \forall x\in (a,b).$\\
+	    Supongamos el primer caso, $f(x)>f(a),\; forall x \in (a,b).$\\
+	    Ya que $f$ es una función continua en $[a,b]$, existe algún $f(d_1)=M$ y $f(x)\leq M,\; \forall x \in [a,b]$ (la función continua en el segmento toma su máximo valor.) Basado en la suposición de que cada valor se toma exactamente dos veces, existe $d_2$ tal que $f(d_2)=M.$ Porque $f(x)<f(a)$ para $x\in \mathbb{R}  / [a,b] \; \rightarrow \; d_2 \in (a,b).$ entonces tenemos $d_1,d_2 \in (a,b),\; d_1\neq d_2$ y $f(d_1)=f(d_2)=M=\max\limits_{x\in[a,b]}f(x)$. Para algún $t\in (d_1,d_2)$, no es posible $f(t)>M$ ya que $m=\max\limits_{x\in [a,b]} f(x).$ Además, no es posible $f(t)<M$ por que el valor $f(t)$ ya se toma dos veces, una vez para algún $x_1\in(a,d_1)$ y una segunda vez para algún $x_2 \in(d_2,d)$, porque la continuidad de $f$ en algún segmento (aquí asumimos $d_1<d_2$.) Sigue siendo $f(t)=M$, pero eso es una contradicción con el hecho de que cada valor se toma exactamente dos veces, ya que $f(d_1)=f(d_2)=M.$\\
+	    Entonces, la suposición de que existe la función que toma todos los valores exactamente dos veces conduce a una contradicción, por lo que la suposición no es cierta.
+
+	%----------(b)
+	\item Precise el apartado (a) demostrando que no existe ninguna función continua $f$ que tome cada valor $2$ veces o bien ninguna, es decir, que tome exactamente dos veces cada valor alcanzado por la función. Indicación: La indicación anterior implica que $f$ posee o bien un valor máximo o un valor mínimo (el cual debe ser alcanzado dos veces). ¿Qué puede decirse acerca de los valores próximos al valor máximo?.\\\\
+	    Respuesta.-\; Suponga lo contrario. Existe un función continua $f$ que toma cada valor $0$ veces o $2$ veces.\\
+	    Entonces, sea $y\in \mathbb{R}_f$ (la imagen de la función $f$). Entonces $y$ se toma dos veces. Sea $a<b$ y $f(a)=f(b)=y$. Exactamente la misma consideración que en la parte (a) conduce a una contradicción con el hecho de que $y$ se toma exactamente dos veces. Concluimos que la suposición era incorrecta.\\\\
+
+	%----------(c)
+	\item Halle una función continua $f$ que tome todos los valores exactamente tres veces. De modo más general, halle una función continua que tome todos los valores exactamente $n$ veces, si $n$ es impar.\\\\
+	    Respuesta.-\; La figura que sigue, para $n=5$, ilustra el caso general.
+	    \begin{center}
+		\begin{tikzpicture}[scale=1,draw opacity = 0.6]
+		    % abscisa y ordenada
+		    \tkzInit[xmax= 9,xmin=-3,ymax=4,ymin=-2]
+		    \tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		    % etiqueta x, f(x)
+		    \tkzDrawX[opacity=0.6,right=0.3]
+		    \tkzDrawY[opacity=0.6,below = -0.6]
+		    %dominio y función
+		    \draw[dashed](-3,-.5)--(9,-.5);
+		    \draw[dashed](-3,.5)--(9,.5);
+		    \draw[dashed](-3,1.5)--(9,1.5);
+		    \draw[dashed](-3,2.3)--(9,2.3);
+
+		    \draw(-2.5,-1.5)--(-2,-0.5)--(-1.5,-1)--(-1,-.5)--(-.5,-1)--(0,.5)--(0.5,-0.5)--(1,.5)--(1.5,-.5)--(2,1.5)--(2.5,0.5)--(3,1.5)--(3.5,.5)--(4,2.3)--(4.5,1.5)--(5,2.3)--(5.5,1.5)--(6,3)--(6.5,2.3)--(7,3)--(7.5,2.3)--(8,3.8);
+		\end{tikzpicture}
+	    \end{center}
+	    \vspace{0.7cm}
+
+	%----------(d)
+	\item Demuestre que si $n$ es par, entonces no existe ninguna función continua $f$ que tome todos los valores exactamente $n$ veces. Indicación: Para abordar, por ejemplo, el caso $n = 4$, ponga $f(x_1) = f(x_2 ) = f(x_3 ) = f(x_4)$. Entonces, o bien $f(x) > 0$ para todo $x$ en dos de los tres intervalos $(x_1,x_2), (x_2 ,x_3 ), (x_3 ,x_4)$, o bien $f(x) < 0$ para todo $x$ en dos de los tres intervalos.\\\\
+	    Demostración.-\; Supongamos que buscamos una función que tome cada valor exactamente 4 veces. Sea $x_1,x_2,x_3$ y $x_4$ tales que $f(x_1)=f(x_2)=f(x_3)=f(x_4).$ Ya que $f$ es una función continua, es cierto que $f(x)>f(x_1), \forall x \in (x_i,x_{i+1}), \forall i, i=1,2,3$ o $f(x)<f(x_1), \forall x \in (x_i,x_{i+1}), \forall i, i=1,2,3$ (el termino $f(x)-f(x_1)$ mantiene el mismo signo en cada uno de los intervalos $(x_i,x_{y_0+1}), i=1,2,3$). No es posible que el término $f(x)-f(x_1)$ tiene el mismo signo en cada uno de los intervalos $(x_i,x_{y_0+1})$, porque eso conducirá a la ocurrencia de parte del valor más de $4$ veces. (Imagine que tenemos 6 valores positivos.) Entonces el término $f(x)-f(x_1)$ es positivo en dos de los tres intervalos, y negativo en un intervalo, o al contrario. Pero eso significa que tenemos ocurrencias desiguales de los valores, por lo que no es posible lograr exactamente la misma ocurrencia de cada valor.\\
+	    Dado que el número par de puntos genera el número impar de intervalos, la misma consideración nos lleva a la conclusión de que no es posible que una función continua alcance cada uno de los valores exactamente (cualquier) número par de veces.\\\\
+
+
+    \end{enumerate}
 
 \end{enumerate}

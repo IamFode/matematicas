@@ -89,3 +89,104 @@ O sea, la probabilidad de que la variable bidimensional coja valores en $B$ es i
 Luego tenemos la realación siguiente que relaciona la función de distribución conjunta con la función de probabilidad conjunta:
 $$F_{XY}(x,y) = \sum_{x_i\leq x, y_j\leq y} P_{XY}(x_i.y_j).$$
 Dicha expresión se deduce de la expresión anterior considerando  $B=(-\infty,x]\times (-\infty,y]$
+
+## Las variables marginales
+Consideremos una variable aleatoria bidimensional discreta $(X,Y)$ con función de probabilidad conjunta $P_{XY}(x_i,y_i)$, con $x_i,y_i \in (X,Y)(\Omega), i=1,2,\ldots,\; j=1,2,\ldots$.
+
+Donde $P_X$ y $P_Y$ llamadas distribuciones marginales se pueden obtener de la tabla $P_{XY}$
+
+### Proposición. Expresión de las funciones de probabilidad marginales.
+
+Sea $(X,Y)$ una variable aleatoria bidimensional discreta con función de probabilidad conjunta $P_{XY}(x_i,y_i)$, con $(x_i,y_i)\in (X,Y)(\Omega), \; i = 1,\ldots, n,\; j=1,\ldots,m$
+
+Las funciones de probabilidad marginales $P_X(x_i)$ y $P_Y(y_j)$ se calculan usando las expresiones siguientes:
+
+$$\begin{array}{rcl}
+P_X(x_i)&=&\sum_{j=1} P_{XY}(x_i,y_j),\; i=1,2,\ldots,\\\\
+P_Y(y_j)&=&\sum_{i=1} P_{XY}(x_i,y_j),\; j=1,2,\ldots,\\
+\end{array}$$
+
+Para obtener la función de probabilidad marginal de la variable $X$ en el valor $x_i$, $P_X(x_i)$ hay que sumar todos los valores de $P_{XY}(x_i,y_j)$ correspondientes a la fila i-énesima y para obtener la función de probabilidad marginal de la variable $Y$ en el valor $y_j$, $P_Y(y_j)$ hay que sumar todos los valores de $P_{XY}(x_i.y_j)$ correspondientes a la columna j-ésima.
+
+
+## Variables aleatorias continuas
+
+### Definición de variable aleatoria bidimensional continua
+Sea $(X,Y)$ una variable aleatoria bidimensional. Diremos que $(X,Y)$ es continua si existe una función $f_{XY}: \mathbb{R}^2 \longrightarrow \mathbb{R}$ llamada función de densidad no negativa $f_{XY}(x,y)\geq 0$ para todo $(x,y)\in \mathbb{R}^2$ tal que dado cualquier región $B$ del plano, la probabilidad de que $(X,Y)$ esté en $B$ se calcula de la forma siguiente:
+
+$$P((X,Y)\in B) = \int\int_B f_{XY}(x,y)\; dx \,dy.$$
+
+### Propiedades de la función de densidad
+Sea $(X,Y)$ una variable aleatoria bidimensional continua con función de densidad $f_{XY}$. Entonces dicha función verifica las propiedades siguientes:
+
+- La integral de dicha función sobre todo el plano vale 1:
+
+$$\int\int_{\mathbb{R}^2} f_{XY} (x,y)\;dx\,dy = 1.$$
+
+Para ver dicha propiedad, basta considerar $B=\mathbb{R}^2$, tener en cuenta que el suceso $(X,Y) \in \mathbb{R}^2$ es el total $\Omega$ y aplicar la definición de $f_{XY}$
+
+$$P((X,Y)\in \mathbb{R}^2)=1=\int\int_{\mathbb{R}^2} f_{XY}(x,y)\; dx\, dy.$$
+
+- La relación que hay entre la función de distribución $F_{XY}$ y la función de densidad $f_{XY}$ es la siguiente:
+
+$$F_{XY}(x,y)=\int_{-\infty}^x \int_{-\infty}^y f_{XY}(u,y)\; du\, dv.$$
+
+Para ver dicha propiedad, basta considerar $B=(-\infty,x]\times (-\infty,y]$ y aplicar la definción de función de distribución:
+$$F_{XY}(x,y) = P((X,Y)\in (-\infty,x]\times (-\infty,y])=\int_{-\infty}^x \int_{-\infty}^y f_{XY}(u,v)\; du\, dv.$$
+
+- La relación que hay entre la función de densidad $f_{XY}$ y la función de distribución $F_{XY}$ es la siguiente:
+
+$$f_{XY}(x,y)=\dfrac{\partial^2 F_{XY}(x,y)}{\partial x \, \partial y}$$
+dicha propiedad se deduce de la anterior, derivando primero respecto a $x$ y después respecto a $y$ para eliminar las dos integrales.
+
+- Las funciones de densidad marginales de las variables $X$ e $Y$, $f_X,\, f_X(x)$ y $f_Y (y)$ respectivamente, se calculan de la forma siguiente:
+
+$$f_X(x)=\int_{-\infty}^{\infty}f_{XY}(x,y)\; dy,\, f_Y(y)=\int_{-\infty}^{\infty}f_{XY}(x,y)\; dx$$
+
+## La distribución normal bidimensional.
+
+### Definición de distribución Gaussiana bidimensional
+Diremos que la distribución de la variable aleatoria bidimensional $(X,Y)$ es gaussiana bidimensional dependiendo del parámetro $rho$ si su función de densidad conjunta es:
+
+$$f_{XY}(x,y) = \dfrac{1}{2\pi \sqrt{1-\rho^2}} e^{-\frac{x^2-2\rho xy + y^2}{2(1-\rho^2)}}, \qquad -\infty < x,y < \infty.$$
+
+### Propiedades
+
+- Para cualquier punto $(x,y) \in \mathbb{R}^2$, la función de densidad es no nula: $f$_{XY}(x,y)>0.$
+
+- La función de densidad tiene un único máximo absoluto en el punto $(0,0)$ que vale $f_{XY}(0,0)=\dfrac{1}{2\pi \sqrt{1-\rho^2}}.$ Por tanto, para $\rho=0$, dicho máximo alcanza el mínimo valor posible y su $p\to \pm 1$, dicho máximo tiende a $\infty$.
+
+- Las densidades marginales $f_{X}(x)$ y $f_Y(y)$ son normales $N(0,1)$.
+
+Demostración.-\; Veámoslo con $f_{X}(x).$ Por simetría, quedaría deducido para $f_Y(y)$:
+
+$$\begin{array}{rcl}
+  f_X(x) & = & \dfrac{1}{2\pi \sqrt{1-\rho^2}} \displaystyle \int_{-\infty}^{\infty} e^{-\frac{x^2-2\rho xy + y^2}{2(1-\rho^2)}} dy \\
+  &=&\dfrac{1}{2\pi \sqrt{1-\rho^2}} e^{-\frac{x^2}{2(1-\rho^2)}}\displaystyle\int_{-\infty}^{\infty} e^{-\frac{-2\rho xy + y^2}{2(1-\rho^2)}} dy\\
+  &=&\dfrac{1}{2\pi \sqrt{1-\rho^2}} e^{-\frac{x^2}{2(1-\rho^2)}}\displaystyle\int_{-\infty}^{\infty}e^{\frac{(y-\rho x)^2}{2(1-\rho^2)}}e^{\frac{\rho^2 x^2}{2(1-\rho^2)}} \;dy\\
+  &=&\dfrac{1}{2\pi \sqrt{1-\rho^2}} e^{-\frac{x^2}{2}}\displaystyle\int_{-\infty}^\infty e^{-\frac{(y-\rho x)^2}{2(1-\rho^2)}}\; dy, \;\mbox{hacemos cambio}\; z=\dfrac{y-\rho x}{\sqrt{1-\rho^2}}\\
+  &=&\dfrac{1}{2\pi \sqrt{1-\rho^2}} e^{-\frac{x^2}{2}}\displaystyle\int_{-\infty}^\infty e^{-\frac{z^2}{2}} \sqrt{1-\rho^2\; dy}\\
+  &=&\dfrac{1}{\sqrt{2\pi}} e^{\frac{x^2}{2}}\\
+\end{array}$$
+
+función que coincide con la función de densidad de la variable $N(0,1).$
+
+En el último paso hemos usado que 
+$$\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{x^2}{2}}\; dz = 1.$$
+
+Ya que correspondería al área de una función de densidad de una distribución $N(0,1)$
+
+## Independencia de variables aleatorias discretas
+
+### Definición de independencia para variables aleatorias bidimensionales discretas.
+
+Sean $(X,Y)$ una variable aleatoria bidimensional discreta con $(X,Y)=\lbrace (x_i,y_j),\; i=1,2,\ldots, \; j=1,2,\ldots\rbrace$ y función de probabilidad $P_{XY}$ y funciones de probabilidad marginales $P_X$ y $P_Y$. Entonces $X$ e $Y$ son independientes si:
+$$P_{XY}(x_i,y_i) = P_X(x_i)\cdot P_Y(y_k), \; i=1,2,\ldots,\; j=1,2,\ldots$$
+o dicho de otra forma:
+
+$$P(X=x_i,Y=y_k) = P(X=x_i)\cdot P(Y=y_j), \; i=1,2,\ldots,\; j=1,2,\ldots$$
+
+#### Observación.-
+Si la tabla de la función de probabilidad conjunta de $(X,Y)$ contiene algún $0$, $X$ e $Y$ no pueden ser independientes.
+
+
