@@ -14,7 +14,7 @@ Para obtener la función de probabilidad de la distribución binomial, primero s
 $$p\cdot p\cdots p \cdot (1-p)\cdot (1-p)\cdots (1-p) = p^x(1-p)^{n-x}$$
 
 %-------------------- Definición 4.1.
-\begin{tcolorbox}[colback = white]
+\begin{tcolorbox}
     \begin{def.}[Distribución binomial con función de probabilidad]
 	Sea $X$ una variable aleatoria que representa el número de éxitos en $n$ ensayos y $p$ la probabilidad de éxito con cualquiera de éstos. Se dice entonces que $X$ tiene una distribución binomial con función de probabilidad.
 	$$p(x;n,p)\left\{\begin{array}{ll}
@@ -36,13 +36,13 @@ Pero dado que $[(1-p)+p]^n = 1$ y $p(x;n,p)\geq 0$ para $x=0,1,2,\ldots n,$ este
 La probabilidad de que una variable aleatoria $X$ sea menor o igual a un valor específico de $x$, se determina por la \textbf{función de distribución acumulativa}.
 
 % ---------------------- función de distribución acumulativa
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     $$P(X\leq x) = F(x;n,p) = \sum_{i=0}^x {n\choose i} p^i (1-p)^{n-i}$$
 \end{tcolorbox}
 
 Nótese que si $n=1$, la función de probabilidad binomial se deduce a
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     $$p(x;n,p)=\left\{\begin{array}{ll}
 	p^x(1-p)^{1-x} & x = 0,1\\\\
 	0 & \mbox{para cualquier otro valor}.
@@ -66,7 +66,7 @@ $$E(X)=np\sum_{x=1}^n \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$$
 
 De donde se sabe que $p(y; m,p) = \dfrac{m!}{(m-y)!y!}p^{y}(1-p)^{n-y}$   es la función de probabilidad de una variable aleatoria binomial $Y$ con parámetros $m=n-1$ y $p$; de ésta manera $\sum_{y=0}^m p(y;m,p) = 1$ y \textbf{la media de una variable  aleatoria binomial es}:
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     $$E(X)=\mu = np.$$
 \end{tcolorbox}
 
@@ -95,7 +95,7 @@ Así,
 $$E(X^2) = \mu_2^{'} = n(n-1)p^2+np$$
 De esta manera, la \textbf{varianza de una variable aleatoria binomial} es:
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     $$Var(X) = \mu_2^{'}-\mu^2 = n(n-1)p^2 + np - n^2p^2 = np[(n-1)p+1-np] = np(1-p).$$
 \end{tcolorbox}
 
@@ -174,7 +174,7 @@ $$\dfrac{d^2m_X(t)}{dt^2}\bigg|_{t=0} = n(n-1)p^2[(1-p)+p]^{n-2} + np[(1-p)+p]^{
 \section{La distribución de Poisson}
 La distribución es el principal modelo de probabilidad empleado para analizar problemas de líneas de espera. Además, ofrece una aproximación excelente a la función de probabilidad binomial cuando $p$ es pequeño y $n$ es grande.\\\\
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     \begin{def.}
 	Sea $X$ una variable aleatoria que representa el número de eventos aleatorios independientes que ocurren a una rapidez constante sobre el tiempo o el espacio. Se dice entonces que la variable aleatoria $X$ tiene una distribución de Poisson con función de probabilidad.
 	$$p(x;\lambda)=\left\{\begin{array}{ll}
@@ -240,10 +240,121 @@ $$p(x;t)=\dfrac{(xt)^x e^{-vt}}{x!},\qquad x=0,1,2,\ldots$$
 
 siempre que $p(x;0)=0$. Si se sustituye $\lambda =vt$ en esta último ecuación, el resultado es la función de probabilidad de Poisson.\\
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     La probabilidad de que una variable aleatoria de Poisson $X$ sea menor o igual a un valor de $x$ se determina por la función de distribución acumulativa.
     $$P(X\leq x)=F(x;\lambda)=\sum_{i=0}^x \dfrac{e^{-\lambda} \lambda^i}{i!}$$
     se podría usar también la relación
     $$p(x;\lambda) = F(x;\lambda)-F(x-1;\lambda).$$
 \end{tcolorbox}
+
+% ------------------ teorema 1
+\begin{teo}
+    Sea $X$ una variable aleatoria con distribución binomial y función de probabilidad:
+    $$p(x;n,p)=\dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\qquad x=0,1,2,\ldots,n.$$
+    Si para $n=1,2,\ldots$ la relación $p=\lambda/n$ es cierta para alguna constante $\lambda>0,$ entonces
+    $$\lim_{n\to\infty, \; p\to 0} p(x;n,p)=\dfrac{e^{-\lambda} \lambda^x}{x!},\qquad x=0,1,2,\ldots$$
+    Demostración.-\; Al multiplicar numerador y denominador por $n^x$ y sustituir $n!/(n-x)!=n(n-1)(n-2)\ldots(n-x+1)$, la función de probabilidad binomial es:
+    $$\begin{array}{rcl}
+	p(x;n,p) &=& \dfrac{n(n-1)(n-2)\ldots(n-x+1)}{n^x x!}(np)^x(1-p)^{n-x}\\\\
+		 &=& \dfrac{n(n-1)(n-2)\ldots(n-x+1)}{n^x x!}\dfrac{\lambda^x}{x!}(1-p)^{n-x}\\\\
+		 &=& 1\left(1-\dfrac{1}{n}\right)\left(1-\dfrac{2}{n}\right)\ldots \left(1-\dfrac{x-1}{n}\right)\dfrac{\lambda^x}{x!}(1-p)^{n-x}\\\\
+		 &=& \dfrac{\left(1-\dfrac{1}{n}\right)\left(1-\dfrac{2}{n}\right)\ldots \left(1-\dfrac{x-1}{n}\right)}{(1-p)^x}\dfrac{\lambda^x}{x!}(1-p)^{n}\\\\
+    \end{array}$$
+    Dado que:
+    $$(1-p)^n=[(1-p)^{-1/p}]^{-np} = [(1-p)^{-1/p}]^{-\lambda}$$
+    y por definición 
+    $$\lim_{z\to 0}(1+z)^{1/z}=e,$$
+    mediante el cambio de variable $z=-p,$ se tiene
+    $$\lim_{p\to 0}[(1-p)^{-1/p}]^{-\lambda=e^{-\lambda}}$$
+    Además,
+    $$\lim_{n\to \infty}\left(1-\dfrac{1}{n}\right)\left(1-\dfrac{2}{n}\right)\ldots \left(1-\dfrac{x-1}{n}\right)=1$$
+    Al sustituir se tiene,
+    $$\lim_{x\to \infty.\; p\to 0}p(x;n,p)=\dfrac{e^{-\lambda}\lambda^{x}}{x!},\qquad x=0,1,2,\ldots .$$\\
+\end{teo}
+
+Los momentos de la variable de Poisson se determinan mediante los mismo procedimientos utilizados para obtener los momentos de la variable aleatoria binomial. \textbf{\boldmath Si $X$ es una variable aleatoria de Poisson, su valor esperado es:}
+
+\begin{tcolorbox}
+    $$E(X)=\sum_{x=0}^\infty x\dfrac{e^{-\lambda}\lambda^x}{x!}=e^{-\lambda}\sum_{x=1}^\infty\dfrac{\lambda^x}{(x-1)!}=\lambda e^{-\lambda}\sum_{x=1}^\infty \dfrac{\lambda^{x-1}}{(x-1)!}=\lambda e^{-\lambda}\sum_{y=0}^\infty \dfrac{\lambda^y}{y!}=\lambda.$$
+\end{tcolorbox}
+
+Para la varianza $X$:
+
+$$E[X(X-1)]=\sum_{x=0}^\infty x(x-1)\dfrac{e^{-\lambda}\lambda^x}{x!}=\lambda^2e^{-\lambda}\sum_{y=2}\dfrac{\lambda^{x-2}}{(x-2)!}=\lambda^2e^{-\lambda}\sum_{y=0}^\infty \dfrac{\lambda^y}{y!}=\lambda^2$$
+
+Luego por el hecho de que $E(X^2)=E[X(X-1)]+E(X)$ tenemos,
+
+$$E(X^2)=\mu^{'}_2 = \lambda^2 + \lambda,$$
+
+Y \textbf{\boldmath la varianza de $X$ de una variable aleatoria de Poisson es:}
+
+\begin{tcolorbox}
+    $$Var(X)=\mu_2^{'}-\mu^2=\lambda^2+\lambda - \lambda^2 = \lambda.$$
+\end{tcolorbox}
+
+De esta manera, una característica distintiva de la variable aleatoria de Poisson  es que su media es igual a su varianza.\\\\
+
+Para el tercer momento central, se tiene:
+
+$$E[X(X-1)(X-2)]=\lambda^3.$$
+
+De donde $$\mu_3^{'}=\lambda^3+3\lambda^2 + \lambda,$$
+
+Y \textbf{el tercer momento central} es:
+
+\begin{tcolorbox}
+$$\mu_3=\lambda$$
+\end{tcolorbox}
+
+Como resultado, \textbf{el coeficiente de asimetría} se determina por:
+
+\begin{tcolorbox}
+    $$\alpha_3=\dfrac{\mu_3}{\mu_2^{3/2}}=\dfrac{1}{\sqrt{\lambda}}.$$
+\end{tcolorbox}
+
+Par el cuarto momento central puede emplearse el mismo procedimiento para demostrar que:
+
+$$E[X(X-1)(X-2)(X-3)]=\lambda^4,$$
+
+De donde 
+$$\mu_4^{'}=\lambda^4+6\lambda^3 + 7\lambda^2+\lambda.$$
+
+Así el \textbf{cuarto momento central} es:
+
+$$\mu_4 = 3\lambda^2 + \lambda,$$
+
+Y el \textbf{cuarto momento estandarizado para la distribución de Poisson} lo establece:
+
+$$\lambda_4 = \dfrac{\mu_4}{\mu_2^2}=3+\dfrac{1}{\lambda}$$
+
+\textbf{La función generadora de momentos para la distribución de Poisson} se determina por:
+
+\begin{tcolorbox}
+    $$m_x(t)=\sum_{x=0}^\infty e^{tx}\dfrac{e^{-\lambda}\lambda^x}{x!}=e^{-\lambda}\sum_{x=0}^\infty \dfrac{\left(\lambda e^t\right)^x}{x!}=e^{-\lambda}e^{\lambda e^t}=e^{[\lambda(e^t-1)]}.$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    En conclusión, la distribución de Poisson es leptocúrtica con un sesgo positivo y se emplea para modelar el número de eventos aleatorios independientes que ocurren a una rapidez constantes ya sea sobre el tiempo o el espacio.
+\end{tcolorbox}
+
+
+\section{La distribución hipergeométrica}
+
+% -------------------- definición 4.3
+\begin{def.}
+    Sea $N$ el número total de objetos en una población finita, de manera tal que $k$ de estos es de un tipo $N-k$ de otros. Si se selecciona una muestra aleatoria de la población constituida por $n$ objetos de la probabilidad de que $x$ sea de un tipo exactamente y $n-x$ sea de otro, está dada por la función de probabilidad hipergeométrica:
+    \begin{tcolorbox}
+	$$p(x;N,n,k)=\left\{\begin{array}{ll}
+		\dfrac{{k \choose x}{N-k\choose n-x}}{{N\choose n}}, & x=0,1,2,\ldots,n;\quad x\leq k, \quad n-x\leq N-k;\quad N,n,k, \mbox{ enteros positivos,}\\\\
+		0 & \mbox{ para cualquier otro valor.}
+	\end{array}\right.$$
+    \end{tcolorbox}
+\end{def.}
+
+La \textbf{distribución acumulada} estará dada por 
+
+\begin{tcolorbox}
+    $$P(X\leqx) = F(x;N,n,k)=\sum_{i=0}^x \dfrac{{k \choose x}{N-k\choose n-x}}{{N\choose n}}.$$
+\end{tcolorbox}
+
 

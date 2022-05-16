@@ -73,11 +73,104 @@ El enorme significado de P13 se hará patente sólo de manera gradual, aunque ya
 \setcounter{teo}{0}
 \begin{teo}
     Si $f$ es continua en $[a,b]$ y $f(a)<0<f(b)$, entonces existe algún número $x$ de $[a,b]$ tal que $f(x)=0.$\\\\
-	Demostración.-\; 
+	Demostración.-\; La demostración es tan sólo una versión rigurosa del método esbozado al final del capítulo 7: localizaremos el menor número $x$ de $[a,b]$ tal que $f(x)=0$.\\
+	Definamos el conjunto $A$, de la manera siguiente:
+
+	$$A=\lbrace x:a\leq x \leq b, \; \mbox{y}\; f \; \mbox{negativa en en el intervalo}\; [a,x]\rbrace.$$
+
+	Obviamente $A\neq \emptyset$ ya que $a$ pertenece a $A$; de hecho, existe un $\delta >0$  tal que $A$ contiene a todos los puntos $x$ que satisfacen $a\leq x < a+\delta$ ya que $f$ es continua en $[a,b]$ y $f(a)<0$. Análogamente, $b$ es una cota superior de $A$ y, de hecho, existe un $\delta>0$ tal que todos los puntos $x$ que satisfacen $b-\delta<x\leq b$ son cotas superiores de $A$; esto también se deduce del Problema 6-16, ya que $f(b)>0$.\\
+	A partir de estas observaciones se deduce que $A$ posee cota superior mínima $\alpha$ y que $a<\alpha<b$. Ahora demostraremos que $f(\alpha)=0$, excluyendo las posibilidades $f(\alpha)<0$ y $f(\alpha)>0$.\\
+	Supongamos primero que $f(\alpha)<0$. Según el teorema 6-3, existe un $\delta>0$ tal que $f(x)<0$ si $\alpha- \delta<x<\alpha+\delta$. Ha de existir un número $x_0$ de $A$ que satisface $\alpha-\delta<x_0<\alpha$ (ya que sino $\alpha$ no sería la mínima cota superior de $A$). Esto significa que $f$ es negativa en todo el intervalo $[a,x_0]$. Pero si $x_1$ es un número situado entre $\alpha$ y $\alpha+\delta$, entonces $f$ también es negativa en todo el intervalo a $A$. Pero esto contradice el hecho de que $\alpha$ sea una cota superior de $A$; concluimos pues que la suposición que hemos hecho anteriormente, de que $f(\alpha)<0$ sebe ser falsa.\\
+	Supongamos ahora que $f(\alpha)>0$. Entonces existe un número $\delta>0$ tal que $f(x)>0$ si $\alpha-\delta<x<\alpha+\delta$. Una vez más, sabemos que existe un $x_0$ de $A$ que satisface $\alpha-\delta<x_0<\alpha$; pero esto significa que $f$ es negativa en $[a,x_0]$, lo cual es imposible ya que $f(x_0)>0$. Así pues, la suposición de que $f(\alpha)>0$ conduce a una contradicción, quedando sólo la posibilidad de que $f(\alpha)=0$.\\
 \end{teo}
+
+Las demostraciones de los teoremas 2 y 3 del capítulo 7 requieren un sencillo resultado preliminar, que va a desempeñar una función muy similar a la del teorema 6-3 en la demostración anterior.\\\\
 
 \setcounter{chapter}{8}
 \setcounter{teo}{0}
 
 \begin{teo}
+    Si $f$ es continua en $a$, existe un número $\delta>0$ tal que $f$ está acotada superiormente en el intervalo $(a-\delta,a+\delta)$.\\\\
+    Demostración.-\; Como el $\lim\limits_{x\to a} f(x) =f(a)$, para cada $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$,
+    \begin{center}
+	si $|x-a|<\delta$, entonces $|f(x)-f(a)|<\epsilon,$
+    \end{center}
+    Tan sólo es necesario aplicar esta propiedad a algún $\epsilon$ en particular, por ejemplo $\epsilon=1$. Deducimos pues que existe un $\delta>0$ tal que, para todo $x$,
+
+    \begin{center}
+	si $|x-a|<\delta$, entonces $|f(x)-f(a)|<1,$
+    \end{center}
+
+    y, en particular, si $|x-a|<\delta$ entonces $f(x)-f(a)<1$. Esto completa la demostración: en el intervalo $(a-\delta,a+\delta)$ la función $f$ está acotada superiormente por $f(a)+1.$\\\\
 \end{teo}
+
+Por supuesto, ahora podríamos demostrar también que $f$ está acotada inferiormente en algún intervalo $(a-\delta,a+\delta)$, concluyendo, por tanto, que $f$ está acotada en algún intervalo abierto que contiene a $a$.\\
+En este sentido, cabe destacar en particular la observación de que si $\lim\limits_{x\to a^{+}},$ entonces existe un $\delta>0$ tal que $f$ está acotada en el conjunto $\lbrace x:a\leq x < a+\delta\rbrace$, pudiendo hacerse una observación análoga si $\lim\limits_{x\to b^-}=f(b)$.\\\\
+
+\setcounter{chapter}{7}
+\setcounter{teo}{1}
+\begin{teo}
+    Si $f$ es continua en $[a,b]$, entonces $f$ está acotada superiormente en $[a,b]$.\\\\
+	Demostración.-\; Sea,
+	$$A=\lbrace x:a\leq x \leq b \;\mbox{y}\; f \; \mbox{está acotada superiormente en}\; [a,x]\rbrace$$
+	Obviamente $A\neq \emptyset$ (ya que $a$ pertenece a $A$), y está acotada superiormente por $b$, de manera que $A$ posee una cota superior mínima $\alpha$. Observemos que estamos aplicando el término acotado superiormente tanto al conjunto $A$, localizado en el eje horizontal, como a la función $f$, es decir, a conjuntos del tipo $\lbrace f(y):a\leq y \leq x\rbrace$, localizados en el eje vertical.\\
+	La primera etapa de la demostración consiste en probar que $\alpha=b$. Supongamos, por el contrario, que $a<b$. Según el teorema 1 existe un $\delta >0$ tal que $f$ está acotada en $(a-\delta,a+\delta)$. Como $\alpha$ es la cota superior mínima de $A$ existe algún $x_0$ de $A$ que satisface $\alpha-\delta<x_0<\alpha$. Esto significa que $f$ está acotada en $[a,x_0]$. Pero si $x_1$ es cualquier número tal que $\alpha<x_1<\alpha+\delta$, entonces $f$ también está acotada en $[x_0,x_1]$. Por lo tanto $f$ está acotada en $[a,x_1]$, de manera que $x_1$ pertenece a $A$, lo que contradice el hecho de que $\alpha$ sea una cota superior a $A$. Esta contradicción demuestra que $\alpha=b$. Debemos mencionar un detalle: en la demostración hemos puesto implícitamente que $a<\alpha$ de manera que $f$ está definida en algún intervalo $(\alpha-\delta,\alpha+\delta)$; la posibilidad $a=\alpha$ puede excluirse de manera similar, utilizando el hecho de que existe un $\delta>0$ tal que $f$ está acotada en $\lbrace x:a\leq x < a + \delta\rbrace$.\\
+	La demostración todavía no es completa; únicamente sabemos que $f$ está acotada en $[a,x]$ para todo $x<b$, no necesariamente que $f$ está acotada en $[a,b]$. Sin embargo, sólo es necesario añadir una pequeña observación.\\
+	Existe un $\delta>0$ tal que $f$ está acotada en $\lbrace x:b-\delta < x \leq b \rbrace$. Existe también un $x_0$ de $A$ tal que $b-\delta<x_0<b$. De manera que $f$ está acotada en $[a,x_0]$ y también en $[x_0,b],$ por tanto $f$ está acotada en $[a,b]$.\\\\
+\end{teo}
+
+%-------------------- teorema 7.3
+\begin{teo}
+    Si $f$ es continua en $[a,b]$, entonces existe un número $y$ de $[a,b]$ tal que $f(y)\geq f(x)$ para todo $x$ de $[a,b]$.\\\\
+	Demostración.-\; Sabemos que $f$ está acotada en $[a,b]$, lo que significa que le conjunto
+	$$\lbrace f(x):x \mbox{ pertenezca a }[a,b]\rbrace$$
+	está acotado. Además, dicho conjunto es, obviamente, distinto del $\emptyset$, de manera que admite una cota superior mínima $\alpha$. Como $\alpha\geq f(x)$ para $x$ de $[a,b]$, basta demostrar que $\alpha=f(y)$ para algún $y$ de $[a,b]$.\\
+	Supongamos, por el contrario, que $\alpha\neq f(y)$ para todo $y$ de $[a,b]$. Entonces la función $g$ definida mediante
+	$$g(x)=\dfrac{1}{\alpha-f(x)},\quad x\in [a,b]$$
+	es continua en $[a,b]$, ya que el denominador de la expresión del lado derecho de la igualdad nunca vale $0$. Por otra parte, $\alpha$ es la mínima cota superior de $\lbrace f(x):x \mbox{ pertenezca a }[a,b] \rbrace$, esto significa que 
+	\begin{center}
+	    para cada $\epsilon > 0$ existe un $x$ de $[a,b]$ con $\alpha - f(x)<\epsilon$.
+	\end{center}
+	Esto, a su vez, significa que 
+	\begin{center}
+	    para cada $\epsilon > 0$ existe un $x$ de $[a,b]$ con $g(x)>1/\epsilon$.
+	\end{center}
+	Pero esto quiere decir que $g$ no está acotada en $[a,b]$, lo que contradice el resultado del teorema anterior.\\\\
+\end{teo}
+
+\setcounter{chapter}{8}
+\setcounter{teo}{1}
+%-------------------- teorema 8.2
+\begin{teo}
+    $\mathbb{N}$ no está acotado superiormente.\\\\
+	Demostración.-\; Supongamos que $\mathbb{N}$ estuviera acotado superiormente. Como $\mathbb{N}=\emptyset$, existiría una cota superior mínima $\alpha$ de $\mathbb{N}$. Entonces
+	\begin{center}
+	    $\alpha\geq n$ para todo $n$ de $\mathbb{N}.$
+	\end{center}
+	Por consiguiente,
+	\begin{center}
+	    $\alpha\geq n+1$ para todo $n$ de $\mathbb{N},$
+	\end{center}
+	ya que si $n$ pertenece a $\mathbb{N}$, $n+1$ también. Pero esto significa que 
+	\begin{center}
+	    $\alpha-1\geq n$ para todo $n$ de $\mathbb{N},$
+	\end{center}
+	lo cual quiere decir que $\alpha-1$ también es una cota superior de $\mathbb{N}$, lo que contradice el hecho de que $\alpha$ sea la cota superior mínima de $\mathbb{N}$.\\\\
+\end{teo}
+
+% ------------------- teorema 8.3
+\begin{teo}
+    Para cualquier $\epsilon>0$ existe un número natural $n$ con $1/n<\epsilon$.\\\\
+    Demostración.-\; Supongamos que no fuese así; entonces $1/n\geq \epsilon$ para todo $n$ de $\mathbb{N}$. Por tanto, $n\leq 1/\epsilon$ para todo $n$ de $\mathbb{N}.$ Pero esto significa que $1/\epsilon$ es una cota superior de $\mathbb{N},$ lo cual contradice el resultado del teorema 8.2.\\\\
+\end{teo}
+
+
+\section{Problemas}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %---------- 1.
+    \item 
+
+\end{enumerate}
+

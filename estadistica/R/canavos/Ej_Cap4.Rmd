@@ -334,3 +334,56 @@ ggplot(mapping = aes(X,Probabilidad)) +
 
 
 # 4.15
+Para un volumen fijo, el número de células sanguíneas rojas es una variable aleatoria que se presenta con una frecuencia constante. Si el número promedio para un volumen dado es de nueve células para personas normales, determinar la probabilidad de que el número de células rojas para una persona se encuentre dentro de una desviación estándar del valor promedio y a dos desviaciones estándar del promedio.
+
+Respuesta.- Sea la desviación estándar de una variable aleatoria Poisson igual a,
+$$\sqrt{\lambda} = \sqrt{9} = 3$$
+Entonces una desviación estándar del valor promedio estará dada por:  
+$$9\pm 3 = 6 \mbox{ y } 12$$
+Acá debemos tener cuidado ya que estamos trabajando con distribuciones discretas , por lo que tenemos  $P(X\leq 6) = P(X<7)$ es decir cuando restamos $P(X\leq 12)-P(X\leq 6)=P(X\leq 12)-P(X< 7)$, por lo tanto lo correcto será restar 
+$$P(X\leq 12)-P(X\leq 5)=P(X\leq 12)-P(X<6)$$  
+Luego,
+$$P(X\leq 12) - P(X\leq 5) = F(12,9)-F(5,9)=\sum_{i=0}^{12}\dfrac{e^{-9}\cdot 9^i}{i!}-\sum_{i=0}^5 \dfrac{e^{-9}\cdot 9^{i}}{i!}=0.7600829$$
+
+```{r}
+ppois(12,9)-ppois(5,9)
+acum_poisson(12,9)-acum_poisson(5,9)
+```
+
+Por otro lado para dos desviaciones estándar se tiene,
+
+$$P(X\leq 15) - P(X\leq 2) = F(15,9)-F(2,9)=\sum_{i=0}^{15}\dfrac{e^{-9}\cdot 9^i}{i!}-\sum_{i=0}^2\dfrac{e^{-9}\cdot 9^{i}}{i!}=0.9717321.$$
+
+```{r}
+ppois(15,9)-ppois(2,9)
+acum_poisson(15,9)-acum_poisson(2,9)
+```
+
+# 4.16
+El número total de clientes que llega a un banco es una variable aleatoria Poisson. Si el número promedio es de $120$ por hora, ¿Cuál es la probabilidad de que en un minuto lleguen por lo menos tres clientes? ¿Puede esperarse que la frecuencia de llegada de los clientes al banco sea contante en un día cualquier?
+
+Respuesta.- Sabiendo que en un minuto el promedio de llegada es $120/60$  y que por lo menos se espera que lleguen 3 cliente, entonces 
+$$P(X \geq 3) = 1-P(X\leq 2) = \sum_{i=0}^2 \dfrac{e^{-\frac{120}{60}}\cdot \left(\dfrac{120}{60}\right)^i}{i!}=0.3233236$$
+
+```{r}
+ppois(120/60,2,lower.tail = FALSE)
+1-acum_poisson(120/60,2)
+```
+Luego, puede esperarse que la frecuencia de los clientes al banco sea constante en un día cualquiera, ya que $\lambda$ es grande.
+
+# 4.17  
+Supóngase que en un cruce transitado ocurren de manera aleatoria e independiente dos accidentes por semana. Determinar la probabilidad de que ocurra un accidente en una semana y de que ocurra tres, en la siguiente semana.
+
+Respuesta.-
+
+$$P(X=1)\cdot P(X=3) = p(1;2)\cdot p(3;2) = \dfrac{e^{-2}\cdot 2^1}{1!}\cdot \dfrac{e^{-2}\cdot 2^3}{3!} = 0.0488417$$
+
+```{r}
+dpois(1,2)*dpois(3,2)
+func_poisson(1,2)*func_poisson(3,2)
+```
+
+# 4.18
+Sea $X$ una variable aleatoria binomial. Para $n=20$ calcular las probabilidades puntales binomiales y compararlas con las correspondientes probabilidades de Poisson para $p=0.5,\; 0.2,\; 0.1$ y $0.01$.
+
+Respuesta.-

@@ -1,6 +1,6 @@
 \chapter{Funciones continuas}
 
-\setcounter{section}{2}
+\setcounter{section}{1}
 \section{Definición de límite de una función}
 La continuidad existe si existe  continuidad por la izquierda y por la derecha.
 
@@ -34,7 +34,7 @@ Observamos que las tres desigualdades,
 \end{center}
 
 Son equivalentes. También son equivalentes las desigualdades,
-
+    
 \begin{center}
     $\lim\limits_{x\to p} f(x)=A,$ $\lim\limits_{h\to 0}f(p+h)=A.$
 \end{center}
@@ -79,7 +79,7 @@ Todas estas se derivan de la definición de límite.\\
 	Se tiene entonces
 	\begin{enumerate}[\bfseries (i)]
 	    \item $\lim\limits_{x\to p} [f(x)+g(x)]=A+B$,
-	    \item $\lim\limits_{x\to p} [f(x)-g(x)=A-B]$,
+	    \item $\lim\limits_{x\to p} [f(x)-g(x)]=A-B$,
 	    \item $\lim\limits_{x\to p} f(x)\cdot g(x) = A\cdot B$,
 	    \item $\lim\limits_{x\to p} \dfrac{f(x)}{g(x)} = \dfrac{A}{B}\qquad \mbox{si}\; B\neq 0$.\\
 	\end{enumerate}
@@ -126,4 +126,201 @@ El teorema que sigue demuestra que si una función $g$ está intercalada entre o
 	$$\int_p^x -M \;dt \leq \int_p^x f(t)\; dt\leq \int_p^x M \; dt \quad \Longrightarrow \quad -M(x-p)\leq A(x)-A(p)\leq M(x-p).$$
 	Si $x<p$, obtenemos las mismas desigualdades con $x-p$ sustituida por $p-x$. Por consiguiente, en uno u otro caso podemos hacer que $x\to p$ y aplicar el principio de intercalación encontrando que $A(x)\to A(p)$. Esto prueba el teorema. Si $p$ es un extremo de $[a,b]$, tenemos que hacer que $x\to p$ desde el interior del intervalo, con lo que los límites son a un lado.
 \end{teo}
+
+
+\section{Demostraciones de los teoremas fundamentales sobre límites}
+
+Demostración de (i) y (ii). Puesto que las dos igualdades:
+
+\begin{center}
+    $\lim\limits_{x\to p}f(x)=A\;$ y $\;\lim\limits_{x\to p}[f(x)-A]=0$
+\end{center}
+
+son completamente equivalentes, y como se tiene
+
+$$f(x)+g(x)-(A+B) = [f(x)-A]+[g(x)-B],$$
+
+basta demostrar las igualdades (i) y (ii) del teorema cuando los límites de $A$ y $B$ son ambos cero.\\
+Supóngase pues, que $f(x)\to 0$ y $g(x)\to 0$ cuando $x\to p$. Se demostrará en primer lugar que $f(x)+g(x)\to 0$ cuando $x\to p$. Para ello se tiene que probar que para cada $\epsilon > 0$ existe un $\delta>0$ tal que 
+
+\begin{center}
+    $|f(x)+g(x)|<\epsilon\; $ siempre que $\;0<|x-p|<\delta.$
+\end{center}
+
+Sea $\epsilon$ dado. Puesto que $f(x)\to 0$ cuando $x\to p$, exista un $\delta_1>0$ tal que 
+
+\begin{center}
+    $|f(x)|<\dfrac{\epsilon}{2}\;$ siempre que $\; 0<|x-p|<\delta_1.$
+\end{center}
+
+Análogamente, puesto que $g(x)\to 0$ cuando $x\to p$ existe un $\delta_2>0$ tal que:
+
+\begin{center}
+    $|g(x)|<\dfrac{\epsilon}{2}\;$ siempre que $\; 0<|x-p|<\delta_2.$
+\end{center}
+
+Si se indica por $\delta$ el menor de los dos números $\delta_1$ y $\delta_2$, entonces, ambas igualdades últimas son válidas si $0<|x-p|<\delta$, y por tanto, en virtud de la desigualdad triangular, se tiene:
+
+$$|f(x)+g(x)|\leq |f(x)|+|g(x)|<\dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon$$
+
+Esto demuestra la proposición dada que, a su vez, demuestra (i). La demostración de (ii) es completamente análoga, salvo que en el último paso se emplea la desigualdad $|f(x)-g(x)|\leq |f(x)|+|g(x)|.$\\\\
+
+Demostración de (iii). Supóngase que se ha demostrado (iii) en el caso particular en que uno de los límites es $0$. Entonces el caso general resulta fácilmente de este caso particular, como se deduce de la siguiente igualdad:
+$$f(x)g(x)-AB = f(x)[g(x)-B]+B[f(x)-A].$$
+El caso particular implica que cada término del segundo miembro tienda a $0$ cuando $x\to p$ y en virtud de la propiedad (i) la suma de los dos términos tiende también a $0$. Por tanto, basta sólo probar (iii) en el caso en que uno de los límites, por ejemplo $B$, sea $0$.\\
+Supóngase que $f(x)\to A$ y $g(x)\to 0$ cuando $x\to p$. Se trata de probar que $f(x)\cdot g(x)\to 0$ cuando $x\to p.$ Para ello se ha de ver que dado un número positivo $\epsilon,$ existe un $\delta>0$ tal que 
+\begin{center}
+$|f(x)g(x)|<\epsilon\;$ siempre que $\;0<|x-p|<\delta.$
+\end{center}
+
+Puesto que $f(x)\to A$ cuando $x\to p$, existe un $\delta_1$ tal que 
+
+\begin{center}
+    $|f(x)-A|<1\;$ siempre que $\; 0<|x-p|<\delta_1.$
+\end{center}
+
+Para tal $x$, tenemos $|f(x)-A+A|\leq |f(x)-A|+|A|<1+|A|,$ y por tanto
+
+$$|f(x)g(x)|=|f(x)||g(x)|<(1+|A|)|g(x)|.$$
+
+Ya que $f(x)\to 0$ cuando $x\to p$, para todo $\epsilon > 0$ existe un $\delta_2$ tal que 
+
+\begin{center}
+$|g(x)|<\dfrac{\epsilon}{1+|A|}\;$ siempre que $\; 0<|x-p|<\delta_2.$
+\end{center}
+
+Por consiguiente, si llamamos $\delta$ al menor de los dos números $\delta_1$ y $\delta_2$ entonces las dos igualdades son válidas siempre que $0<|x-p|<\delta$ y para tal valor de $x$ deducimos 
+
+\begin{center}
+$|f(x)g(x)|<\epsilon\;$ siempre que $\;0<|x-p|<\delta.$
+\end{center}
+
+Lo que completa la demostración.\\\\
+
+Demostración de (iv). Puesto que el cociente $f(x)/g(x)$ es el producto de $f(x)/B$ por $B/g(x)$ basta demostrar que $B/g(x)\to 1$ cuando $x\to p$ y luego aplicar (iii). Sea $h(x)=g(x)/B$, por lo que $h(x)\to 1$ cuando $x\to p$, y se quiere demostrar que $1/h(x)$ cuando $x\to p$.\\
+Dado $\epsilon>0,$ se trata de ver si existe un $\delta>0$ tal que
+\begin{center}
+$\bigg|\dfrac{1}{h(x)}\bigg|<\epsilon\;$ siempre que $\; 0<|x-p|<\delta.$
+\end{center}
+La diferencia se puede escribir como sigue:
+$$\bigg|\dfrac{1}{h(x)}-1\bigg|=\dfrac{|h(x)-1|}{|g(x)|}.$$
+Puesto que $g(x)\to 1$ cuando $x\to p$ se puede elegir un $\delta>0$ tal que ambas desigualdades:
+$$|h(x)-1|<\dfrac{\delta}{2}\quad \mbox{y}\quad |h(x)-1|<\dfrac{1}{2}.$$
+se satisfagan siempre que $0<|x-p|<\delta$. La segunda de estas desigualdades implica $h(x)>\dfrac{1}{2}$ y por tanto $1/|h(x)|=1/h(x)<2$ para tales valores de $x$. Empleando este resultado en junto con la primera desigualdad, obtenemos 
+$$\bigg|\dfrac{1}{h(x)}-1\bigg|=\dfrac{|h(x)-1|}{|g(x)|}.$$
+Esto completa la demostración de (iv).\\
+
+\section{Ejercicios}
+
+En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido los teoremas utilizados en cada caso.\\\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item $\lim\limits_{x\to 2}\dfrac{1}{x^2}.$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to 2}\dfrac{1}{x^2} = \dfrac{\lim\limits_{x\to 2}1}{\lim\limits_{x\to 2}x^2} = \dfrac{1}{2^2}=\dfrac{1}{4}.$$
+
+	Esto por el teorema 3.1 inciso (iv) y por el hecho de que el límite de una constante es la misma constante.\\\\
+
+    %-------------------- 2.
+    \item $\lim\limits_{x\to 0} \dfrac{25x^3+2}{75x^7-2}$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to 0} \dfrac{25x^3+2}{75x^7-2}=\dfrac{\lim\limits_{x\to 0}25x^3+\lim\limits_{x\to 0}2}{\lim\limits_{x\to 0}75x^7-\lim\limits_{x\to 0}2} = \dfrac{0 + 2}{0-2}=-1.$$
+	Por el teorema 3.1 incisos (i),(ii) y (iii).\\\\
+
+    %-------------------- 3.
+    \item $\lim\limits_{x\to 2}\dfrac{x^2-4}{x-2}$.\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to 2}\dfrac{x^2-4}{x-2} = \lim_{x\to 2}\dfrac{(x-2)(x+2)}{x-2}=\lim_{x\to 2}(x+2) = \lim_{x\to 2} x + \lim_{x\to 2}2 = 4.$$
+	Esto por el teorema 3.1 inciso (1).\\\\
+
+    %-------------------- 4.
+    \item $\lim\limits_{x\to 1}\dfrac{2x^2-3x+1}{x-1}$.\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to 1}\dfrac{2x^2-3x+1}{x-1} = \lim_{x\to 1}\dfrac{(2x-1)(x-1)}{x-1}=\lim_{x\to 1} 2x - \lim_{x\to 1} 1 = 1.$$
+	Esto por el teorema 3.1 inciso (1).\\\\
+
+    %-------------------- 5.
+    \item $\lim\limits_{h\to 0}\dfrac{(t+h)^2-t^2}{h}.$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{h\to 0}\dfrac{(t+h)^2-t^2}{h} = \lim_{h\to 0}\dfrac{t^2+2th+h^2-t^2}{h}=\lim_{h \to 0} (2t+h) = \lim_{h\to 0}2t + \lim_{h\to 0}h = 2t.$$
+	Esto por el teorema 3.1 inciso (1).\\\\
+
+    %-------------------- 6.
+    \item $\lim\limits_{x\to 0}\dfrac{x^2-a^2}{x^2+2ax+a^2},\qquad a\neq 0$.\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to 0}\dfrac{x^2-a^2}{x^2+2ax+a^2} = \lim_{x\to 0}\dfrac{(x-a)(x+a)}{(x+a)^2}=\lim_{x\to 0}\dfrac{x-a}{x+a}=\dfrac{\lim\limits_{x\to 0}x-\lim\limits_{x\to 0}a}{\lim\limits_{x\to 0}x + \lim\limits_{x\to 0}a} = -1.$$
+	Por el teorema 3.1 incisos (i),(ii) y (iii).\\\\
+
+    %-------------------- 7.
+    \item $\lim\limits_{a\to 0}\dfrac{x^2-a^2}{x^2+2ax+a^2},\qquad a\neq 0.$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{a\to 0}\dfrac{x^2-a^2}{x^2+2ax+a^2} = \lim_{a\to 0}\dfrac{(x-a)(x+a)}{(x+a)^2}=\lim_{a\to 0}\dfrac{x-a}{x+a}=\dfrac{\lim\limits_{a\to 0}x-\lim\limits_{a\to 0}a}{\lim\limits_{a\to 0}x + \lim\limits_{a\to 0}a} = 1.$$
+	Por el teorema 3.1 incisos (i),(ii) y (iii).\\\\
+
+    %-------------------- 8.
+    \item $\lim\limits_{x\to a}\dfrac{x^2-a^2}{x^2+2ax+a^2},\qquad a\neq 0.$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{x\to a}\dfrac{x^2-a^2}{x^2+2ax+a^2} = \lim_{x\to a}\dfrac{(x-a)(x+a)}{(x+a)^2}=\lim_{x\to a}\dfrac{x-a}{x+a}=\dfrac{\lim\limits_{x\to a}x-\lim\limits_{x\to a}a}{\lim\limits_{x\to a}x + \lim\limits_{x\to a}a} = 0$$
+	Por el teorema 3.1 incisos (i),(ii) y (iii).\\\\
+
+    %-------------------- 9.
+    \item $\lim\limits_{t\to 0} \tan t.$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{t\to 0} \tan t = 0.$$\\
+
+    %-------------------- 10.
+    \item $\lim\limits_{t\to 0}(\sen 2t + t^2 \cos 5t).$\\\\
+	Respuesta.-\; 
+	$$\lim\limits_{t\to 0}(\sen 2t + t^2 \cos 5t) = \lim_{t\to 0}\sen 2t + \lim_{t\to 0}t^2\cdot \lim_{t\to 0}\cos 5t = 0.$$
+	Por el teorema 3.1 incisos (i) y (iii).\\\\
+
+    %-------------------- 11.
+    \item $\lim\limits_{x\to 0^+}\dfrac{|x|}{x}.$\\\\
+	Respuesta.-\; Ya que $|x|=x$ para $x>0$, por lo tanto tenemos  
+	$$\lim_{x\to 0^+}\dfrac{|x|}{x}=\lim_{x\to 0^+}\dfrac{x}{x}=1.$$\\
+
+    %-------------------- 12.
+    \item $\lim\limits_{x\to 0^-}\dfrac{|x|}{x}.$\\\\
+	Respuesta.-\; Ya que $|x|=-x$ para $x<0$, por lo tanto tenemos  
+	$$\lim_{x\to 0^-}\dfrac{|x|}{x}=\lim_{x\to 0^-}\dfrac{-x}{x}=-1.$$\\
+
+    %-------------------- 13.
+    \item $\lim\limits_{x\to 0^+}\dfrac{\sqrt{x^2}}{x}.$\\\\
+	Respuesta.-\; Para $x>0$ tenemos $\sqrt{x^2}=|x|=x$ entonces,
+	$$\lim_{x\to 0^+}\dfrac{\sqrt{x^2}}{x}=\lim_{x\to 0^+} \dfrac{x}{x}=1.$$\\
+
+    %-------------------- 14.
+    \item $\lim\limits_{x\to 0^-}\dfrac{\sqrt{x^2}}{x}.$\\\\
+	Respuesta.-\; Para $x<0$ tenemos $\sqrt{x^2}=|x|=-x$ entonces,
+	$$\lim_{x\to 0^-}\dfrac{\sqrt{x^2}}{x}=\lim_{x\to 0^-} \dfrac{-x}{x}=-1.$$\\
+
+	Utilizar la relación $\lim\limits_{x\to 0}(\sen x)/x$ para establecer las igualdades de los Ejercicios del 15 al 20.\\\\
+
+    %-------------------- 15.
+    \item $\lim\limits_{x\to 0}\dfrac{\sen 2x}{x}=2.$\\\\
+	Respuesta.-\; 
+
+    %-------------------- 16.
+    \item $\lim\limits_{x\to 0}\dfrac{\tan 2x}{\sen x}=2.$\\\\
+	Respuesta.-\; 
+
+    %-------------------- 17.
+    \item $\lim\limits_{x\to 0}\dfrac{\sen 5x}{\sen x}=5.$\\\\
+	Respuesta.-\; 
+    %-------------------- 18.
+    \item $\lim\limits_{x\to 0}\dfrac{\sen 5x - \sen 3x}{x}=2.$\\\\
+	Respuesta.-\; 
+    %-------------------- 19.
+    \item $\lim\limits_{x\to 0}\dfrac{\sen x - \sen a}{x-a}=\cos a.$\\\\
+	Respuesta.-\; 
+    %-------------------- 20.
+    \item $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x^2}=\dfrac{1}{2}.$\\\\
+	Respuesta.-\; 
+	
+
+
+
+\end{enumerate}
 

@@ -1,9 +1,14 @@
+\begin{multicols}{2}
 \section*{Introducción}
 Cuando hablamos de integrales, podemos decir que hablamos de cálculo de áreas, pero ¿como llegamos a esta conclusión?, el objetivo de este trabajo es dar un enfoque riguroso, posiblemente no tan extenso como debería ser pero si bien fundamentado. Se recomienda repasar algunos conceptos teóricos que no son tan difíciles de asimilar cuando se dedica el tiempo. \\
 
-Como primer paso conoceremos el método de Arquímedes para la aproximación de efecto y exceso de cálculo de áreas, luego nos introduciremos a las integrales superiores e inferiores, para posterior dar una definición del área de un conjunto de ordenada expresada como una integral. Después entraremos a temas de integrabilidad de funciones monótonas acotadas y su respectivo calculo para luego demostrar las propiedades fundamentales de la integral.\\\\
+Como primer paso conoceremos el método de Arquímedes para la aproximación de efecto y exceso de cálculo de áreas, luego nos introduciremos a las integrales superiores e inferiores, para posterior dar una definición del área de un conjunto de ordenada expresada como una integral. Después entraremos a temas de integrabilidad de funciones monótonas acotadas y su respectivo calculo para luego demostrar las propiedades fundamentales de la integral.
 
-\begin{multicols}{2}
+\section*{Historia}
+El origen del calculo integral de remonta a más de 2000 años, cuando los griegos intentaban resolver el problema del área ideando el proceso llamado método de exhaución, que se detalla a continuación:Dada una región cuya área quiere determinarse, se escribe en ella una región poligonal que se aproxime a la dada y cuya área sea de fácil cálculo, luego se elige otra región poligonal que dé una aproximación mejor y se continua el proceso tomando polígonos con mayor número de lados cada vez, tendiendo a llenar la región dada. Este método fue usado satisfactoriamente por Arquímedes (287-212 A.C.)\\
+18 siglos después (siglo XVI D.C.), los avances de Tartaglia, Cardano y Ferrari al encontrar soluciones algebraicas a las ecuaciones cúbicas y cuárticas dieron paso al desarrollo de la matemática y a la aceptación del lenguaje algebraico nuevo y superior. Así con la introducción muy extendida de los bienes elegidos símbolos algebraicos, revivió el interés por el antiguo método de exahaución descubriendo múltiples resultados parciales, los que como Cavalieri, Toricelli, Roverval, Fermat, Pascal y Wallis fueron pioneros.\\
+Gradualmente el método de exhaución fue transformándose en lo que hoy conocemos como Cálculo Integral, que no solo tiene aplicaciones en problemas relativos a áreas y volúmenes, sino también en problemas de otras ciencias. Este método, recibió su mayor impulso en el siglo XVII, gracias a los esfuerzos de Isaac Newton (1642-1727) y Gottfried Leibniz (1646-1716). Su desarrollo continuo durante el siglo XiX, hasta que Augustin-Louis Cauchy (1789-1857) y Bernhard Rieman (1826-1866) le dieron una base matemática firme.
+
 \section*{El método de exhaución para el área de un segmento de parábola}
 
 El método consiste simplemente en lo siguiente: se divide la figura en un cierto número de bandas y se obtienen dos aproximaciones de la región, una por defecto y otra por exceso, utilizando dos conjuntos de rectángulos.\\
@@ -41,7 +46,8 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 \begin{teo}
     Toda función $f$ acotada en $[a,b]$ tiene una integral inferior $\underbar{I}(f)$ y una integral superior $\bar{I}(f)$ que satisfacen las desigualdades $$\int_a^b s(x) \; dx \leq \underbar{I}(f) \leq \bar{I}(f) \leq \int_a^b t(x) \; dx$$ 
     para todas las funciones $s$ y $t$ tales que $s\leq f\leq t$. La función $f$ es integrable en $[a,b]$ si y sólo si sus integrables superior e inferior son iguales, en cuyo caso se tiene $$\int_a^b f(x) \; dx = \underbar{I}(f)=\bar{I}(f)$$\\
-    Demostración.-\; Sea $S$ el conjunto de todos los números $\int_a^b s(x)\; dx$ obtenidos al tomar como $s$ todas las funciones escalonadas inferiores a $f$, y sea $T$ el conjunto de todos los números $\int_a^b t(x)\; dx$ al tomar como $t$ todas las funciones escalonadas superiores a $f$. Esto es $$ S=\left\{ \int_a^b s(x)\; dx | s\leq f\right\}, \qquad T=\left\{ \int_a^b t(x)\; dx | f\leq t\right\}$$ 
+    Demostración.-\; Sea $S$ el conjunto de todos los números $\int_a^b s(x)\; dx$ obtenidos al tomar como $s$ todas las funciones escalonadas inferiores a $f$, y sea $T$ el conjunto de todos los números $\int_a^b t(x)\; dx$ al tomar como $t$ todas las funciones escalonadas superiores a $f$. Esto es 
+    $$ S=\left\{ \int_a^b s(x)\; dx | s\leq f\right\}, \;\; T=\left\{ \int_a^b t(x)\; dx | f\leq t\right\}$$ 
     Los dos conjuntos $S$ y $T$ son no vacíos puesto que $f$ es acotada. Asimismo, $\int_a^b s(x)\; dx \leq \int_a^b t(x)\; dx$ si $s\leq f \leq t$, de modo que todo número de $S$ es menor que cualquiera de $T$. Por consiguiente según el teorema I.34, $S$ tiene extremo superior, y $T$ tiene extremo inferior, que satisfacen las desigualdades $$\int_a^b s(x)\; dx \leq \sup S \leq \inf T \leq \int_a^b y(x)\; dx$$
     para todas las $s$ y $t$ que satisfacen $s\leq f\leq t$. Esto demuestra que tanto $\sup S$ como el $\inf T$ satisfacen $\int_a^b s(x)\; dx \leq I\leq \int_a^b t(x)\; dx$. Por lo tanto $f$ es integrable en $[a,b]$ si y sólo si $\sup S = \inf T$, en cuyo caso se tiene $$\int_a^b f(x)\; dx = \sup S = \inf T.$$
     El número $\sup S$ se llama integral inferior de $f$ y se presenta por $\underbar{I}(f)$. El número $\inf T$ se llama integral superior de $f$ y se presenta por $\bar{I}(f)$. Así que tenemos 
@@ -72,7 +78,12 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 \begin{teo} Si $f$ es monótona en un intervalo cerrado $[a,b]$, $f$ es integrable en $[a,b]$\\\\
     Demostración.-\; Demostraremos el teorema para funciones decrecientes. El razonamiento es análogo para funciones decrecientes. Supongamos pues $f$ decreciente y sean $\underbar{I}(f)$ e $\overline{I}(f)$ sus integrales inferior y superior. Demostraremos que $\underbar{I}(f)=\overline{I}(f)$. \\
     Sea $n$ un número entero positivo y construyamos dos funciones escalonadas de aproximación $s_n$ y $t_n$ del modo siguiente: $P=\lbrace x_0,x_1,...,x_n \rbrace$ una partición de $[a,b]$ en $n$ subintervalos iguales, esto es, subintervalos $[x_{k-1},x_k]$ tales que $x_k-x_{k-1} = (b-a)/n$ para cada valor de $k$. Definamos ahora $s_n$ y $t_n$ por las fórmulas $$s_n(x)=f(x_{k-1}), \quad t_n(x)=f(x_k) \quad si \quad x_{k-1}<x<x_k$$ en los puntos de división, se definen $s_n$ y $t_n$ de modo que se mantengan las relaciones $s(x)\leq f(x) \leq t_n(x)$ en todo $[a,b]$. Con esta elección de funciones escalonadas, tenemos 
-    $$\int_a^b t_n - \int_a^b s_n = \sum\limits_{k=1}^n f(x_k)(x_k-x_{k-1}) - \sum\limits_{k=1}^n f(x_{k-1})(x_k-x_{k-1})  $$ $$ = \dfrac{b-a}{n}\sum\limits_{k=1}^n \left[f(x_{k}) - f(x_{k-1})\right]=\dfrac{(b-a)\left[f(b)-f(a)\right]}{n}$$
+    $$\begin{array}{rcl}
+	\int_a^b t_n - \int_a^b s_n &=& \sum\limits_{k=1}^n f(x_k)(x_k-x_{k-1})\\\\
+				    &-& \sum\limits_{k=1}^n f(x_{k-1})(x_k-x_{k-1})\\\\
+				    &=& \dfrac{b-a}{n}\sum\limits_{k=1}^n \left[f(x_{k}) - f(x_{k-1})\right]\\\\
+				    &=&\dfrac{(b-a)\left[f(b)-f(a)\right]}{n}\\\\
+    \end{array}$$
     siendo la última igualdad una consecuencia de la propiedad telescópica de las sumas finitas. Esta última relación tiene una interpretación geométrica muy sencilla. La diferencia $\int_a^n t_n - \int_a^b s_n$ es igual a la suma de las áreas de los rectángulos. Deslizando esos rectángulos hacia la derecha, vemos que completan un rectángulo de base $(b-a)/n$ y altura $f(b)-f(a)$; la suma de las áreas es por tanto, $C/n$, siendo $C=(b-a)\left[f(b)-f(a)\right]$.\\
     Volvamos a escribir la relación anterior en la forma $$\int_a^b t_n - \int_a^b s_n = \dfrac{C}{n} \qquad (1)$$
     Las integrales superior e inferior de $f$ satisfacen las desigualdades $$\int_a^b s_n \leq \underbar{I}(f) \leq \int_a^b t_n \quad y \quad \int_a^b s_n \leq \bar{I}(f)\leq \int_a^b t_n$$
@@ -106,34 +117,41 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 
 %--------------------teorema 1.16
 \begin{teo}[Linealidad respecto al integrando] Si $f$ y $g$ son ambas integrables en $[a,b]$ también lo es $c_1f+c_2g$ para cada par de constantes $c_1$ y $c_2$. Además, se tiene
-    $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx = c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$
+    $$\int_a^b \left[c_1 f(x) + c_2g(x)\right]\; dx$$
+    $$\shortparallel$$ 
+    $$c_1\int_a^b f(x) \; dx + c_2 \int_a^b g(x) \; dx$$\\\\
     Nota.- \; Aplicando el método de inducción, la propiedad de linealidad se puede generalizar como sigue: Si $f_1,...,f_n$ son integrables en $[a.b]$ también lo es $c_1f_1+...+c_nf_n$ para $c_1,...,c_n$ reales cualesquiera y se tiene $$\int_a^b \sum\limits_{k=1}^n c_kf_k(x)\; dx = \sum\limits_{k=1}^n c_k \int_a^b f_k(x)\; dx$$\\
 
     Demostración.-\; Descompongamos esa propiedad en dos partes:
     $$\int_a^b (f+g) = \int_a^b f + \int_a^b g \qquad (A)$$
     $$\int_a^b cf = c \int_a^b f \qquad (B)$$
-    Para demostrar $(A)$, pongamos $I(f) = \int_a^b f$ e $I(g) = \int_a^b g$. Demostraremos que $\underbar{I}(f+g) = \bar{I}(f+g) = I(f) + I(g).$
-    Sean $s_1$ y $s_2$ funciones escalonadas cualesquiera inferiores a $f$ y $g$, respectivamente. Puesto que $f$ y $g$ son integrables, se tiene $$I(f) = \sup\left\{ \int_a^b s_1 | s_1 \leq f \right\}, \quad I(g) =\sup\left\{ \int_a^b s_2 | s_2 \leq g\right\}$$
-    Por el teorema I.33 aditiva del extremo superior, también se tiene $$I(f) + I(g) = \sup\left\{\int_a^b s_1 + \int_a^b s_2 | s_1 \leq f, s_2\leq g\right\} \qquad (1.11)$$
+    Para demostrar $(A)$, pongamos $$I(f) = \int_a^b f \quad\mbox{e}\quad I(g) = \int_a^b g$$. Demostraremos que $$\underbar{I}(f+g) = \bar{I}(f+g) = I(f) + I(g).$$
+    Sean $s_1$ y $s_2$ funciones escalonadas cualesquiera inferiores a $f$ y $g$, respectivamente. Puesto que $f$ y $g$ son integrables, se tiene 
+    $$I(f) = \sup\left\{ \int_a^b s_1 | s_1 \leq f \right\},$$ $$I(g) =\sup\left\{ \int_a^b s_2 | s_2 \leq g\right\}$$
+    Por el teorema I.33 aditiva del extremo superior, también se tiene $$I(f) + I(g) = \sup\left\{\int_a^b s_1 + \int_a^b s_2 | s_1 \leq f, s_2\leq g\right\}$$ $$(1.11)$$\\
     Pero si $s_1\leq f$ y $s_2 \leq g,$ entonces la suma $s=s_1+s_2$ es una función escalonada inferior a $f+g$, y tenemos 
     $$\int_a^b s_1 + \int_a^b s_2 = \int_a^b s \leq \underbar{I}(f+g)$$
     Por lo tanto, el número $\underbar{I}(f+g)$ es una cota superior para el conjunto que aparece en el segundo miembro de (1.11). Esta cota superior no puede ser menor que el extremo superior del conjunto de manera que $$I(f) + I(g) \leq \underbar{I}(f+g) \qquad (1.12)$$ 
     Del mismo modo, si hacemos uso de las relaciones 
     $$I(f) = \inf\left\{\int_a^b t_1 | f\leq t_1\right\},$$ $$I(g)= \inf\left\{\int_a^b t_2 | g\leq t_2\right\}$$
-    donde $t_1$ y $t_2$ representan funciones escalonadas arbitrarias superiores a $f$ y $g$, respectivamente, obtenemos la desiguald
+    donde $t_1$ y $t_2$ representan funciones escalonadas arbitrarias superiores a $f$ y $g$, respectivamente, obtenemos la desigualdad
     $$\bar{I}(f+g) \leq I(f) + I(g).$$
     Las desigualdades (1.12) y (1.13) juntas demuestran que $\underbar{I}(f+g) = \bar{I} (f+g) = I(f) + I(g)$. Por consiguiente $f+g$ es integrable y la relación $(A)$ es cierta.\\
     La relación $(B)$ es trivial si $c=0$. Si $c>0$, observemos que toda función escalonada $s_1=cf$ es de la forma $s_1=cs,$ siendo $s$ una función escalonada inferior a $f$. Análogamente, cualquier función escalonada $t_1$ superior a $cf$ es de la forma $t_1=ct$, siendo $t$ una función escalonada superior a $f$. Por hipótesis se tenemos, 
-    $$\bar{I}(cf) = \sup\left\{ \int_a^b s_1 | s_1 \leq cf\right\} =$$$$ \sup\left\{c\int_a^b s | s \leq f\right\} = cI(f)$$
+    $$\bar{I}(cf) = \sup\left\{ \int_a^b s_1 | s_1 \leq cf\right\} $$$$\shortparallel$$$$ \sup\left\{c\int_a^b s | s \leq f\right\} = cI(f)$$
     $$\mbox{y}$$ 
-    $$\underbar{I}(cf) = \inf\left\{\int_a^b t_1 | cf \leq t_1\right\} =$$$$ \inf\left\{c\int_a^b t | f \leq t\right\} = cI(f)$$
+    $$\underbar{I}(cf) = \inf\left\{\int_a^b t_1 | cf \leq t_1\right\} $$$$\shortparallel$$$$ \inf\left\{c\int_a^b t | f \leq t\right\} = cI(f)$$\\
     Luego $\underbar{I}(cf)=\bar{I}(cf)=cI(f).$ Aquí hemos utilizado las propiedades siguientes del extremo superior y del extremo inferior:
-    $$\sup \lbrace cx | x\in A \rbrace = c \sup \lbrace x|x\in A \rbrace,$$$$ \inf \lbrace c x | x \in A\rbrace = c \inf\lbrace x|x\in A \rbrace \qquad \mbox{(1.14)}$$
+    $$\sup \lbrace cx | x\in A \rbrace = c \sup \lbrace x|x\in A \rbrace,$$ $$ \inf \lbrace c x | x \in A\rbrace = c \inf\lbrace x|x\in A \rbrace \qquad \mbox{(1.14)}$$
     que son válidas si $c>0$. Esto demuestra $(B)$ si $c>0$.\\
     Si $c<0$, la demostración de $(B)$ es básicamente la misma, excepto que toda función escalonada $s_1$ inferior a $cf$ es de la forma $s_1=ct$, siendo $t$ una función escalonada superior a $f$ y toda función escalonada $t_1$ superior a $cf$ es de la forma $t_1=cs$, siendo $s$ una función escalonada inferior a $f$. Asimismo, en lugar de (1.14) utilizamos las relaciones 
-    $$\sup{cx | x\in A} = c\inf{x | x \in A}, \quad \inf{cx | x \in A} = c \sup {x | x \in A},$$
+    $$\sup{cx | x\in A} = c\inf{x | x \in A},$$ $$ \inf{cx | x \in A} = c \sup {x | x \in A},$$
     que son ciertas si $c<0$. Tenemos pues 
-    $$\underbar{I}(cf) = \sup\left\{\int_a^b s_1 | s_1 \leq cf\right\}= $$$$\sup \left\{c \int_a^b t | f \leq t\right\} = \inf \left\{\int_a^b t | f \leq t\right\} = cI(f).$$
+    $$\begin{array}{rcl}
+	\underbar{I}(cf) &=& \sup\left\{\int_a^b s_1 | s_1 \leq cf\right\}\\\\
+			 &=& \sup \left\{c \int_a^b t | f \leq t\right\}\\\\
+			 &=& \inf \left\{\int_a^b t | f \leq t\right\} = cI(f).\\
+    \end{array}$$
     Análogamente, encontramos $\bar{I}(f)=cI(f)$. Por consiguiente $(B)$ es cierta para cualquier valor real de $c$.\\\\
 
 \end{teo}
@@ -145,7 +163,11 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
     Si $s$ es una función escalonada cualquiera inferior a $f$ en $[a,c]$, se tiene $$\int_a^c = \int_a^b + \int_b^c s.$$
     Recíprocamente, si $s_1$ y $s_2$ son funciones escalonadas inferiores a $f$ en $[a,b]$ y $[b,c]$ respectivamente, la función $s$ que coincide con $s_1$ en $[a,b]$ y con $s_2$ en $[b,c]$ es una función escalonada inferior a $f$ para lo que $$\int_a^c = \int_a^b s_1 + \int_b^c s_2.$$
     Por consiguiente, en virtud de la propiedad aditiva del extremo superior, tenemos 
-    $$\underbar{I}(f) = \sup\left\{\int_a^c s | s\leq f\right\} =$$$$ \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} + \sup \left\{\int_b^c s_2 | s_2 \leq f\right\} = \int_a^b f + \int_b^c f.$$
+    $$\begin{array}{rcl}
+	\underbar{I}(f) &=& \sup\left\{\int_a^c s | s\leq f\right\} \\\\
+			&=& \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} + \sup \left\{\int_b^c s_2 | s_2 \leq f\right\}\\\\
+			&=& \int_a^b f + \int_b^c f.\\
+    \end{array}$$
     Análogamente, encontramos $$\bar{I}(f) = \int_a^b f + \int_b^c f,$$
     lo que demuestra (1.15) cuando $a<b<c$. La demostración es parecida para cualquier otra disposición de los puntos $a,b,c$.\\\\
 
@@ -155,7 +177,12 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 \begin{teo}[Invariancia frente a una traslación] Si $f$ es integrable en $[a,b]$, para cada número real $c$ se tiene: $$\int_a^b f(x) \; dx = \int_{a+c}^{b+c} f(x-c)\; dx$$\\
     Demostración.-\; Sea $g$ la función definida en el intervalo $[a+c,b+c]$ por la ecuación $g(x) = f(x-c)$. Designemos por $\underbar{I}(g)$ e $\bar{g}$ las integrales superior e inferior de $g$ en el intervalo $[a+c,b+c]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = \int_a^b f(x) \; dx.$$
     Sea $s$ cualquier función escalonada inferior a $g$ en el intervalo $[a+c,b+c]$. Entonces la función $s_1$ definida en $[a,b]$ por la ecuación $s_1(x) = s(x+c)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ inferior a $f$ en $[a,b]$ tiene esta forma para un cierta $s$ inferior a $g$. También, por la propiedad de traslación para las integrales de las funciones escalonadas, tenemos $$\int_{a+c}^{b+c} \; dx = \int_a^b s(x+c)\; dx = \int_a^b s_1(x)\; dx. \qquad (1.16)$$
-    Por consiguiente se tiene $$\underbar{I}(g) = \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\} =  \sup \left\{\int_a^b s_1 | s_1 \leq f\right\} =$$$$ \int_a^b f(x) \; dx.$$
+    Por consiguiente se tiene 
+    $$\begin{array}{rcl}
+	\underbar{I}(g) &=& \sup\left\{\int_{a+c}^{b+c} s | s \leq g\right\}\\\\
+			&=&  \sup \left\{\int_a^b s_1 | s_1 \leq f\right\}\\\\
+			&=&\displaystyle\int_a^b f(x) \; dx.
+    \end{array}$$
     Análogamente, encontramos $\underbar{I} = \int_a^b f(x)\; dx$, que prueba (1.16).\\\\ 
     
 \end{teo}
@@ -166,7 +193,12 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
     Demostración.-\; Supongamos $k>0$ y definamos $g$ en el intervalo $[ka,kb]$ para la igualdad $g(x)=f(x/k)$. Designemos por $\underbar{I}(g)$ e $\bar{I}(g)$ las integrales inferiores y superiores de $g$ en $[ka,kb]$. Demostraremos que $$\underbar{I}(g) = \bar{I}(g) = k \int_a^b f(x) \; dx. \qquad (1.17)$$
     Sea $s$ cualquier función escalonada inferior a $g$ en $[ka,kb]$. Entonces la función definida en $[a,b]$ por la igualdad $s_1(x) = (kx)$ es una función escalonada inferior a $f$ en $[a,b]$. Además, toda función escalonada $s_1$ a $f$ en $[a,b]$ tiene esta forma. También, en virtud de la propiedad de dilatación para las integrales de funciones escalonadas, tenemos 
     $$\int_{ka}^{kb} s(x)\; dx = k \int_a^b s(kx)\; dx = k \int_a^b s_1(x) \; dx.$$
-    Por consiguiente $$\underbar{I}(g) = \sup\left\{\int_{ka}^{kb} s | s\leq g\right\} =$$$$ \sup\left\{ k \int_a^b s_1 | s_1\leq f\right\} = k \int_a^b f(x) \; dx.$$
+    Por lo tanto, 
+    $$\begin{array}{rcl}
+	\underbar{I}(g) &=& \sup\left\{\int_{ka}^{kb} s | s\leq g\right\}\\\\ 
+			&=& \sup\left\{ k \int_a^b s_1 | s_1\leq f\right\}\\\\ 
+			&=& k \displaystyle\int_a^b f(x) \; dx.\\
+    \end{array}$$
     Análogamente, encontramos $\underbar{I}(g) = k \int_a^b f(x)\; dx$, que demuestra (1.17) si $k>0.$ El mismo tipo de demostración puede utilizarse si $k<0$.\\\\
 
 \end{teo}
@@ -174,7 +206,7 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 %--------------------teorema 1.20
 \begin{teo}[teorema de comparación] Si $f$ y $g$ son ambas integrables en $[a,b]$ y si $g(x)\leq f(x)$ para cada $x$ en $[a,b]$ se tiene: $$\int_a^b g(x)\; dx \leq \int_a^b f(x)\; dx$$\\\\
     Demostración.-\; Supongamos $g\leq f$ en el intervalo $[a,b]$. Sea $s$ cualquier función escalonada inferior a $g$, y sea $t$ cualquier función escalonada superior a $f$. Se tiene entonces $\int_a^b s \leq \int_a^b t,$ y por tanto el teorema I.34 nos da 
-    $$\int_a^b = \sup \left\{\int_a^b s | s\leq g \right\} \leq \inf \left\{\int_a^b t | f\leq t\right\} = \int_a^b f.$$
+    $$\int_a^b = \sup \left\{\int_a^b s | s\leq g \right\} \leq \inf \left\{\int_a^b t | f\leq t\right\} = \int_a^b f$$
     Esto demuestra que $\int_a^b g \leq \int_a^b f,$ como deseábamos.\\\\
 
 \end{teo}
@@ -182,8 +214,8 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 \end{multicols}
 
 \let\cleardoublepage\clearpage
-\begin{thebibliography}{10}
 
+\begin{thebibliography}{10}
 
 %----------sin numeración
 

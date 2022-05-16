@@ -1,4 +1,5 @@
 
+source("funciones.R")
 ################################## factorial ###################################
 fact <- function(x){
   if (x==0){
@@ -67,3 +68,39 @@ acum_poisson <- function(x,lambda){
     return("lambda debe ser mayor a 0 o x intero mayor o igual a cero")
   }
 }
+
+######################## Distribución hipergeométrica ##########################
+
+# función de probabilidad
+func_hiper = function(x,N,n,k){
+  if(x>=0 & x<=k & n<=N-k+x){
+    return((perm_sin_orden(k,x)*perm_sin_orden(N-k,n-x))/perm_sin_orden(N,n))
+  }
+  else{
+    return(0)
+  }
+}
+
+x <- 1 # variable a determinar
+N <- 12 # Población
+n <- 3 # muestra
+k <- 5 # casos exitosos
+func_hiper(x,N,n,k)
+dhyper(x = x,m = k,n = N-k,k = n)
+
+# función acumulada
+acum_hiper = function(x,N,n,k){
+  sum = 0
+  for(i in 0:x){
+    sum=sum+((perm_sin_orden(k,i)*perm_sin_orden(N-k,n-i))/perm_sin_orden(N,n))
+  }
+  return(sum)
+}
+
+x <- 1 # variable a determinar
+N <- 12 # Población
+n <- 3 # muestra
+k <- 5 # casos exitosos
+acum_hiper(x,N,n,k)
+phyper(q=x,m=k,n=N-k,k=n)
+
