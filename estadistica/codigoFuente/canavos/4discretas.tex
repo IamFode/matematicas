@@ -354,7 +354,38 @@ $$\lambda_4 = \dfrac{\mu_4}{\mu_2^2}=3+\dfrac{1}{\lambda}$$
 La \textbf{distribución acumulada} estará dada por 
 
 \begin{tcolorbox}
-    $$P(X\leqx) = F(x;N,n,k)=\sum_{i=0}^x \dfrac{{k \choose x}{N-k\choose n-x}}{{N\choose n}}.$$
+    $$P(X\leq x) = F(x;N,n,k)=\sum_{i=0}^x \dfrac{{k \choose x}{N-k\choose n-x}}{{N\choose n}}.$$
 \end{tcolorbox}
 
+Si la proporción de artículos defectuosos en el lote es $p=k/N$, puede escribirse la función de probabilidad hipergeométrica como:
+
+\begin{tcolorbox}
+    $$\lim_{N\to \infty} p_H(x;N,n,p) = p_B(x;n,p)$$
+    en donde $p_B (x;n,p)$ es la función de probabilidad binomial.
+\end{tcolorbox}
+
+Para determinar la \textbf{media de la distribución hipergeométrica} se sigue un procedimiento análogo al empleado para la distribución binomial. Si la función de probabilidad está dada por la definición de función de probabilidad hiptergeométrica entonces,
+
+    $$E(X)=\sum_{x= 0}^n x\dfrac{{k\choose x}{N-k\choose n-x}}{{N\choose n}} = \sum_{x=1}^n \dfrac{\dfrac{k!}{(k-x)!x!}{N-k\choose n-x}}{{N\choose n}}=k\sum_{x=1}^n \dfrac{{k-1\choose x-1}{N-k\choose n-x}}{{N\choose n}}$$
+
+    Pero puede demostrarse que:
+    $${N\choose n} = \dfrac{N}{n}{N-1\choose n-1}, \qquad \mbox{o}\qquad \dfrac{N!}{(N-n)!n!}=\dfrac{N}{n}\left[\dfrac{(N-1)!}{(N-n)!(n-1)!}\right].$$
+
+    Entonces:
+
+    $$E(X)=k\sum_{x=1}^n \dfrac{{k-1\choose x-1}{N-k\choose n-x}}{\dfrac{N}{n}{N-1\choose n-1}} = \dfrac{nk}{N}\sum_{x=1}^n \dfrac{{k-1\choose x-1}{N-k\choose n-x}}{{N-1\choose n-1}}$$
+
+    Si $M=N-1,\; r=k-1,\; s=n-1$ y $y=x-1$,
+
+    \begin{tcolorbox}
+	$$E(X)=\dfrac{nk}{N} \sum_{y=0}^s \dfrac{{r\choose y}{M-r\choose s-y}}{{M\choose s}} = \dfrac{nk}{N}.$$
+    \end{tcolorbox}
+
+Con el mismo procedimiento podemos demostrar que \textbf{la varianza} de una distribución hipergeométrica es:
+
+\begin{tcolorbox}
+    $$Var(X)=\dfrac{nk(N-k)}{N^2}\cdot \dfrac{N-n}{N-1}.$$
+\end{tcolorbox}
+
+\section{La distribución binomial negativa}
 

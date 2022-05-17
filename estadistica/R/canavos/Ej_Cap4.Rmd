@@ -386,4 +386,40 @@ func_poisson(1,2)*func_poisson(3,2)
 # 4.18
 Sea $X$ una variable aleatoria binomial. Para $n=20$ calcular las probabilidades puntales binomiales y compararlas con las correspondientes probabilidades de Poisson para $p=0.5,\; 0.2,\; 0.1$ y $0.01$.
 
+Respuesta.- Sea $\lambda = n\cdot p$ entonces,
+
+```{r}
+prob = data.frame(X=0:20,
+           binom1=dbinom(0:20,20,0.5),
+           poisson1 = dpois(0:20,0.5*20),
+           binom2=dbinom(0:20,20,0.2),
+           poisson2 = dpois(0:20,0.2*20),
+           binom3=dbinom(0:20,20,0.1),
+           poisson3 = dpois(0:20,0.1*20),
+           binom4=dbinom(0:20,20,0.01),
+           poisson4 = dpois(0:20,0.01*20))
+
+p1 = ggplot(prob, aes(x=X,y=binom1))+
+  geom_point()
+p2 = ggplot(prob, aes(x=X,y=binom2))+
+  geom_point()
+p3 = ggplot(prob, aes(x=X,y=binom3))+
+  geom_point()
+p4 = ggplot(prob, aes(x=X,y=binom4))+
+  geom_point()
+p5 = ggplot(prob, aes(x=X,y=poisson1))+
+  geom_point()
+p6 = ggplot(prob, aes(x=X,y=poisson2))+
+  geom_point()
+p7 = ggplot(prob, aes(x=X,y=poisson3))+
+  geom_point()
+p8 = ggplot(prob, aes(x=X,y=poisson4))+
+  geom_point()
+
+multiplot(p1,p2,p3,p4,p5,p6,p7,p8,cols=2)
+```
+
+# 4.19
+Una compañia compra cantidades muy grandes de componentes electrónicos. La decisión para aceptar o rechazar un lote de componentes se toma con base en una muestra aleatoria de 100 unidades. Si el lote se rechaza al encontrar tres o más unidades defectuosas en la muestra, ¿Cuál es la probabilidad de rechazar un lote que contenga un $8\%$ de unidades defectuosas?
+
 Respuesta.-

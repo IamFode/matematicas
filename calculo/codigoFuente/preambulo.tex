@@ -5,8 +5,8 @@
 \usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} %(símbolos de la AMS)
 \parindent = 0cm  %sangria
 \usepackage[T1]{fontenc} %acentos en español
-\usepackage[spanish]{babel} %español capitulos y secciones
 \usepackage{graphicx} %gráficos y figuras.
+\usepackage[spanish,english]{babel}
 \usepackage{mathpazo} % tipo de letra
 \usepackage{titlesec} %formato de títulos
 \usepackage[backref=page]{hyperref} %hipervinculos
@@ -51,6 +51,9 @@
 \newtheorem{lema}{Lema}[chapter]
 \newtheorem{prob}{Problema}[chapter]
 \newtheorem{nota}{Nota}[chapter]
+
+\makeatletter\renewcommand\theenumi{\@roman\c@enumi}\makeatother
+\renewcommand\labelenumi{\theenumi)}
 
 %---------------------------------
 \titleformat*{\section}{\bfseries}

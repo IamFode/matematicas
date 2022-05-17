@@ -300,21 +300,38 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
     %-------------------- 15.
     \item $\lim\limits_{x\to 0}\dfrac{\sen 2x}{x}=2.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Sea $\sen(2x) = 2\sen x \cos x$ entonces 
+	$$\dfrac{\sen 2x}{x} = \dfrac{2\sen x \cos x}{x} = 2\cos x\left(\dfrac{\sen x}{x}\right)$$
+	de donde 
+	$$\lim_{x\to 0}\dfrac{\sen 2x}{x}=\lim_{x\to 0}\left(2\cos x \dfrac{\sen x}{x}\right) = \lim_{x\to 0}2\cdot \lim_{x\to 0}\cos x \cdot \lim_{x\to 0}\dfrac{\sen x}{x} = 2.$$\\
 
     %-------------------- 16.
     \item $\lim\limits_{x\to 0}\dfrac{\tan 2x}{\sen x}=2.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Ya que $\tan2x = \dfrac{\sen 2x}{\cos 2x}$ entonces,
+	$$\lim_{x\to 0}\dfrac{\tan 2x}{\sen x} = \lim_{x\to 0} \dfrac{\sen 2x}{\cos 2x \sen x} = \lim_{x\to 0} \dfrac{2\sen x \cos x}{\cos 2x \sen x}=\lim_{x\to 0} \dfrac{2\cos x}{\cos 2x}=2.$$\\
 
     %-------------------- 17.
     \item $\lim\limits_{x\to 0}\dfrac{\sen 5x}{\sen x}=5.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Primeramente tenemos,
+	$$\lim_{x\to 0}\dfrac{\sen 5x}{\sen x}=\lim_{x\to 0}\left[\left(\dfrac{\sen x}{x}\right)\left(\dfrac{\sen 5x}{\sen x}\right)\right]=\lim_{x\to 0}\dfrac{\sen 5x}{x}.$$
+	Luego usando la formula $\sen(x+y)=\sen x \cos y + \cos x \sen y$ obtenemos,
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{\sen 5x}{x}&=&\lim\limits_{x\to 0}\dfrac{\sen(4x+x)}{x}\\\\
+						  &=&\lim\limits_{x\to 0}\dfrac{\sen 4x \cos x + \sen x \cos 4x}{x}\\\\
+						  &=&\lim\limits_{x\to 0}\left(\dfrac{2\sen 2x \cos 2x \cos x}{x}+\dfrac{\sen x}{x}\cos 4x\right)\\\\
+						  &=&\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}2\cos 2x \cos x + \dfrac{\sen x}{x}\cos 4x\right)\\\\
+	\end{array}$$
+	pero sabemos que $\lim\limits_{x\to 0}\dfrac{\sen 2x}{x}=2$, así 
+	$$\lim_{x\to 0}\dfrac{\sen 5x}{\sen x}=\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}2\cos 2x \cos x + \dfrac{\sen x}{x}\cos 4x\right)=2\cdot 2 + 1\cdot 1 = 5.$$\\
+
     %-------------------- 18.
     \item $\lim\limits_{x\to 0}\dfrac{\sen 5x - \sen 3x}{x}=2.$\\\\
 	Respuesta.-\; 
+
     %-------------------- 19.
     \item $\lim\limits_{x\to 0}\dfrac{\sen x - \sen a}{x-a}=\cos a.$\\\\
 	Respuesta.-\; 
+
     %-------------------- 20.
     \item $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x^2}=\dfrac{1}{2}.$\\\\
 	Respuesta.-\; 
