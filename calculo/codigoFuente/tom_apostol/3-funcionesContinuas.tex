@@ -322,21 +322,58 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 						  &=&\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}2\cos 2x \cos x + \dfrac{\sen x}{x}\cos 4x\right)\\\\
 	\end{array}$$
 	pero sabemos que $\lim\limits_{x\to 0}\dfrac{\sen 2x}{x}=2$, así 
-	$$\lim_{x\to 0}\dfrac{\sen 5x}{\sen x}=\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}2\cos 2x \cos x + \dfrac{\sen x}{x}\cos 4x\right)=2\cdot 2 + 1\cdot 1 = 5.$$\\
+	$$\lim_{x\to 0}\dfrac{\sen 5x}{\sen x}=\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}2\cos 2x \cos x + \dfrac{\sen x}{x}\cos 4x\right)=2\cdot 2 + 1\cdot 1 = 5.$$\\\\
 
     %-------------------- 18.
     \item $\lim\limits_{x\to 0}\dfrac{\sen 5x - \sen 3x}{x}=2.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Sabemos por ejercicios anteriores que
+	$$\lim_{x\to 0}\dfrac{\sen 5x}{x}=5,\qquad \mbox{y} \qquad \lim_{x\to 0}\dfrac{\sen 2x}{x}=2$$
+	entonces 
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{\sen 3x}{x}&=&\lim\limits_{x\to 0} \dfrac{\sen (2x+x)}{x}\\\\
+						  &=&\lim\limits_{x\to 0}\dfrac{\sen 2x \cos x + \sen x \cos 2x}{x}\\\\
+						  &=&\lim\limits_{x\to 0}\left(\dfrac{\sen 2x}{x}\cos x + \dfrac{\sen x}{x}\cos 2x\right)\\\\
+	\end{array}$$
+	por lo tanto
+	$$\lim_{x\to 0}\dfrac{\sen 3x}{x}=2+1=3$$
+	Así, por el teorema 3.1(ii),
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{\sen 5x-\sen 3x}{x}&=&\lim\limits_{x\to 0}\left(\dfrac{\sen 5x}{x}-\dfrac{\sen 3x}{x}\right)\\\\
+	    &=&\lim\limits_{x\to 0}\dfrac{\sen 5x}{x}-\lim\limits_{x\to 0}\dfrac{\sen 3x}{x}\\\\
+	    &=&5-3\\\\
+	    &=&2.\\\\
+	\end{array}$$
 
     %-------------------- 19.
-    \item $\lim\limits_{x\to 0}\dfrac{\sen x - \sen a}{x-a}=\cos a.$\\\\
-	Respuesta.-\; 
+    \item $\lim\limits_{x\to a}\dfrac{\sen x - \sen a}{x-a}=\cos a.$\\\\
+	Respuesta.-\; Por el teorema 2.3 (g) sabemos que 
+	$$\sen a - \sen b = 2\sen \dfrac{a-b}{2} \cos \dfrac{a+b}{2}$$
+	de donde 
+	$$\lim_{x\to a}\dfrac{sen x-\sen a}{x-a}=\lim_{x\to a}\dfrac{2\sen \dfrac{x-a}{2}\cos \dfrac{x+a}{2}}{x-a} = \lim_{x\to a}\left(\dfrac{\sen \dfrac{x-a}{2}}{\dfrac{x-a}{2}}\cos \dfrac{x+a}{2}\right)$$
+	pero,
+	$$\lim_{x\to a}\dfrac{\sen \dfrac{x-a}{2}}{\dfrac{x-a}{2}}=\lim_{y\to 0}\dfrac{\sen y}{y}=1,\qquad \mbox{ya que, } \;y=\dfrac{x-a}{2} \; \mbox{ e } \; y\to 0 \;\mbox{ como }\; x\to a.$$
+	así,
+	$$\lim_{x\to a}\dfrac{\dfrac{x-a}{2}}{\dfrac{x-a}{2}}\cos \dfrac{x+a}{2}=\lim_{x\to a}\dfrac{x+a}{2}=\cos a.$$
+
 
     %-------------------- 20.
     \item $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x^2}=\dfrac{1}{2}.$\\\\
-	Respuesta.-\; 
-	
+	Respuesta.-\; Sea,
+	$$\lim_{x\to 0}\dfrac{1-\cos x}{x^2}=\lim_{x\to 0} \dfrac{(1-\cos x)(1+\cos x)}{x^2(1+\cos x)}=\lim_{x\to 0}\dfrac{1-\cos^2 x}{x^2(1+\cos x)}$$
+	Luego, ya que $\cos^2x+\sen^2 x = 1 \; \Longrightarrow \; 1-\cos^2x = \sen^2x,$ entonces
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{1-\cos^2 x}{x^2(1+\cos x)}&=&\lim\limits_{x\to 0}\left(\dfrac{\sen^2 x}{x}\cdot \dfrac{1}{1+\cos x}\right)\\\\
+								 &=&\lim\limits_{x\to 0}\left[\left(\dfrac{\sen x}{x}\right)^2 \dfrac{1}{1+\cos x}\right]\\\\
+								 &=&\lim\limits_{x\to 0}\left[\dfrac{\sen x}{x}\cdot \dfrac{\sen x}{x}\cdot \dfrac{1}{1+\cos x}\right]\\\\
+								 &=&\lim\limits_{x\to 0}\dfrac{1}{1+\cos x}\\\\
+								 &=&\dfrac{1}{2}.\\\\
 
+
+	\end{array}$$
+
+    %-------------------- 21.
+    \item Demostrar que $\lim\limits_{x\to 0}\dfrac{1-\sqrt{1-x^2}}{x^2}=\dfrac{1}{2}.$\\\\
+	Demostración.-\; 
 
 
 \end{enumerate}

@@ -388,4 +388,56 @@ Con el mismo procedimiento podemos demostrar que \textbf{la varianza} de una dis
 \end{tcolorbox}
 
 \section{La distribución binomial negativa}
+Sea un escenario binomial en que se observa una secuencia de ensayos independientes; la probabilidad de éxito en cada ensayo es constante e igual a $p$. En lugar de fijar el número de ensayos en $n$ y observar el número de éxitos, supóngase que se continúan los ensayos hasta que han ocurrido exactamente $k$ éxitos. Esta situación lleva a lo que se conoce como la distribución binomial negativa.
 
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $X+k$, el número de ensayos independientes necesarios para alcanzar, de manera exacta, $k$ éxitos en un experimento binomial en donde la probabilidad de éxito en cada ensayo en $p$. Se dice entonces que $X$ es una variable binomial negativa con función de probabilidad
+	$$p(x;k,p)=\left\{\begin{array}{ll}
+	    {k+x-1\choose k-1}p^k(1-p)^x & x=0,1,2,\ldots,\quad k=1,2,\ldots, \quad 0\leq p \leq 1,\\\\
+	    0 & \mbox{para cualquier otro valor.}
+
+	\end{array}\right.$$
+    \end{def.}
+\end{tcolorbox}
+
+Debe notarse que si $k=1$ en la definición 4.4 entonces se conoce con el nombre de distribución geométrica:
+$$p(x;p)=p(1-p)^x, \qquad x=0,1,2,3,\ldots,\; 0\leq p\leq 1$$
+La variable aleatoria geométrica representa el número de fallas que ocurren antes de que se presente el primer éxito.\\\\
+Puede demostrarse que si $X$ es una variable aleatoria binomial negativa con función de probabilidad dada en 4.4, entonces:
+$$P(X\leq x ) = P(Y\geq k),$$
+en donde $Y$ es una variable aleatoria binomial con parámetros $n=k+x$ y $p$. Esto es:
+\begin{tcolorbox}
+$$F_{NB}(x;k,p)=1-F_S(k-1;k+x,p)$$
+\end{tcolorbox}
+en donde $F_{NB}(x;k,p)$ es la \textbf{distribución binomial negativa acumulada} y $F_S(k-1;k+x,p)$ es la distribución acumulada.\\\\
+Si $X$ es una variable aleatoria binomial con función de probabilidad entonces,
+
+\begin{tcolorbox}
+    $$E(X)=\dfrac{k(1-p)}{p}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    $$Var(X)=\dfrac{k(1-p)}{p^2}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    $$\alpha_3=\dfrac{2-p}{[k(1-p)]^{1/2}}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    $$\alpha_4 = 3+\dfrac{(p^2-6p+6)}{k(1-p)}.$$
+\end{tcolorbox}
+
+La función generadora de momentos se obtiene de la siguiente manera:
+
+$$\begin{array}{rcl}
+    E(e^{tX})&=&\sum_{x=0}e^{tx} {k+x-1 \choose k-1} p^k(1-p)^x \\\\
+	     &=& \sum_{x=0} \dfrac{(k+x-1)!}{(k-1)!x!} p^k[(1-p)e^t]^x \\\\
+	     &=& p^k + kp^k [(1-p)e^t] + \dfrac{k(k+1)}{2!} p^k[(1-p)e^t]^2 +\ldots,\\\\
+\end{array}$$
+pero esta es la expansión binomial de $\left[\dfrac{1}{p}-\dfrac{(1-p)e^t}{p}\right]^{-k}$; por lo tanto, \textbf{función generadora de momentos} está dada por:
+
+\begin{tcolorbox}
+    $$m_x(t)=\dfrac{p^k}{[1-(1-p)e^t]^k}$$
+\end{tcolorbox}
