@@ -422,4 +422,69 @@ multiplot(p1,p2,p3,p4,p5,p6,p7,p8,cols=2)
 # 4.19
 Una compañia compra cantidades muy grandes de componentes electrónicos. La decisión para aceptar o rechazar un lote de componentes se toma con base en una muestra aleatoria de 100 unidades. Si el lote se rechaza al encontrar tres o más unidades defectuosas en la muestra, ¿Cuál es la probabilidad de rechazar un lote que contenga un $8\%$ de unidades defectuosas?
 
+Respuesta.- Ya que $P(X\geq 3) = 1-P(X\leq2)$ y $\lambda = 1/100$ Entonces,
+
+$$P(X\geq 3) = 1-P(X\leq 2) = 1-\sum_{i=0}^n \dfrac{e^{\frac{1}{100}}\cdot \left(\dfrac{1}{100}\right)^i} {i!} = 0.0803014$$
+
+
+```{r}
+ppois(2,1,lower.tail = FALSE)
+1- acum_poisson(2,1)
+```
+
+Análogamente pasa para $\lambda = 8/100$
+
+$$P(X\geq 3) = 1-P(X\leq 2) = 1-\sum_{i=0}^n \dfrac{e^{\frac{8}{100}}\cdot \left(\dfrac{8}{100}\right)^i} {i!} = 0.0803014$$
+
+```{r}
+ppois(2,8,lower.tail = FALSE)
+1- acum_poisson(2,8)
+```
+
+
+# 4.20
+El número de componentes que fallan antes de cumplir 100 horas de operación es una variable aleatoria de Poisson. Si el número promedio de éstas es ocho:
+
+### a)
+¿Cuál es la probabilidad de que falle un componente en 25 horas?
+
+Respuesta.-  Primero realizamos la regla de tres par determinar $\lambda$
+$$\lambda_{25}=\dfrac{25\cdot 8}{100} = 2$$
+Luego,
+
+$$P(X=1)=p(1;2)=\dfrac{e^{-2}\cdot 2^1}{1!} = 0.2706706$$
+
+```{r}
+dpois(1,2)
+func_poisson(1,2)
+```
+
+### b)
+¿Cuál es la probabilidad de que fallen no más de dos componentes en 50 horas?
+
+Respuesta.- Sea $\lambda = 4$ y $P(X\leq 2)$, entonces
+
+$$P(X\leq 2)=p(1;4)=\sum_{i=0}^4 \dfrac{e^{-4}\cdot 4^i}{i!} = 0.2381033$$
+
+```{r}
+ppois(2,4)
+acum_poisson(2,4)
+```
+
+### c)
+¿Cuál es la probabilidad de que fallen por lo menos diez en 125 horas?
+
+Respuesta.- $\lambda = 10$ y $P(X\geq 10) = 1-P(X\leq 9)$
+
+$$P(X\geq 10)= 1-P(X\leq 9)= 1-p(9;10)=\sum_{i=0}^9 \dfrac{e^{-10}\cdot 10^i}{i!} = 0.5420703$$
+
+```{r}
+ppois(9,10,lower.tail = FALSE)
+1 - acum_poisson(9,10)
+```
+
+# 4.21
+mediante estudios recientes se ha determinado que la probabilidad de morir por causa de cierta vacuna contra gripe es de 0.00002. Si se administra la vacuna a 100 mil personas y se supone que éstas constituyen un conjunto independiente de ensayos, ¿cuál es la probabilidad de que mueran no más de dos personas a causa de la vacuna?
+
 Respuesta.-
+

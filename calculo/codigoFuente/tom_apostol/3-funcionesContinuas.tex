@@ -373,7 +373,22 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
     %-------------------- 21.
     \item Demostrar que $\lim\limits_{x\to 0}\dfrac{1-\sqrt{1-x^2}}{x^2}=\dfrac{1}{2}.$\\\\
-	Demostración.-\; 
+	Demostración.-\; Multiplicando por el límite dado por $1+\sqrt{1-x^2}$ tenemos,
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}&=&\lim\limits_{x\to 0}\dfrac{1-(1-x^2)}{x^2(1+\sqrt{1-x^2})}\\\\
+				&=&\lim\limits_{x\to 0}\dfrac{x^2}{x^2(1+\sqrt{1-x^2})}\\\\
+				&=&\lim\limits_{x\to 0}\dfrac{1}{1+\sqrt{1-x^2}}\\\\
+				&=&\dfrac{1}{2}\\\\\
+	\end{array}$$
+
+    %-------------------- 22.
+    \item Una función $f$ está definida como sigue:
+    $$f(x)=\left\}\begin{array}{rcl}
+	\sen x & \mbox{si} & x\leq c,\\
+	ax+b & \mbox{si} & x>c,\\
+    \end{array}\right.$$
+    siendo $a,b,c$ constates. Si $b$ y $c$ están dados, hallar todos los valores de $a$ (si existe alguno) para los que $f$ es continua en el punto $x=c$.\\\\
+	Respuesta.-\; 
 
 
 \end{enumerate}

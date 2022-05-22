@@ -237,14 +237,22 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 	\begin{enumerate}[\bfseries (a)]
 
 	    %---------- (a)
-	    \item La demostración del teorema 7-1 estableció que existe un $x$ mínimo de $[a,b]$ con $f(x)=0$. Si existe más de un $x$ de $[a,b]$ con $f(x)=0$ ¿Existe necesariamente un segundo elemento más pequeño $x$ tal que $f(x)=0$? Demuestre que existe un máximo de $[a,b]$ con $f(x)=0$.\\\\
-		Demostración.-\; 
+	    \item La demostración del teorema 7-1 estableció que existe un $x$ mínimo de $[a,b]$ con $f(x)=0$. Si existe más de un $x$ de $[a,b]$ con $f(x)=0$, ¿Existe necesariamente un segundo elemento más pequeño $x$ tal que $f(x)=0$? Demuestre que existe un máximo de $[a,b]$ con $f(x)=0$.\\\\
+		Demostración.-\; El teorema 7.1 no dice nada sobre el número/cantidad  de $x\in[a,b]$ tal que $f(x)=0$. La idea es que solo exista al menos uno. Por lo tanto, no existe necesariamente el segundo (el más pequeño.)\\
+		Sea $g(x)=f(a+b-x)$, entonces podríamos tener 
+		$$g(a)=f(b)>0\quad \mbox{y}\quad g(b)=f(a)<0$$ 
+		Por el enunciado, existe un $y$ más pequeño tal que $g(y)=0$. De donde $f(a+b-y)=0$ y $a+b-y$ es el más grande porque si no fuese así $g(z)=f(a+b-z)=0$ para algún $z$ con $a+b-y<a+b-z$ o $z<y$ pero esto es una contradicción ya que $y$ es el más pequeño para el cual $g$ es cero.\\\\
 
 	    %--------- (b)
-	    \item La demostración del teorema 7-1 se basada en considerar el conjunto $A=\left\{x:a\leq x \leq b \mbox{ y } f \mbox{ negativa en }[a,x]\right\}$. De otra demostración del teorema 7-1, basada en considerar $B=\left\{x:a\leq x\leq b \mbox{ y } f(x)<0\right\}.$ ¿Qué punto $x$ de $[a,b]$ con $f(x)=0$ será localizado con esta demostración? Dé un ejemplo en el cual los conjuntos $A$ y $B$ sean los mismos.\\\\
-		Demostración.-\; 
+	    \item La demostración del teorema 7-1 se basada en considerar el conjunto $$A=\lbrace x:a\leq x \leq b \mbox{ y } f \mbox{ negativa en }[a,x]\rbrace.$$ De otra demostración del teorema 7-1, basada en considerar $B=\left\{x:a\leq x\leq b \mbox{ y } f(x)<0\right\}.$ ¿Qué punto $x$ de $[a,b]$ con $f(x)=0$ será localizado con esta demostración? Dé un ejemplo en el cual los conjuntos $A$ y $B$ sean los mismos.\\\\
+		Demostración.-\; Sabemos que $B\neq \emptyset$ y está acotada, por lo que existe el $\sup B \in [a,b]$. De donde demostraremos que $f(\sup B)=0$.\\
+		Supongamos que $f(\sup B)<0$. Ya que $f$ es continuo, existe $\delta>0$ tal que $f(x)<0$ con $x\in (\sup B - \delta, \sup B +\delta)$. Pero, esto es una contracción ya que $B$ tiene supremo, es decir, existe $x_1\in (\sup B-\delta, \sup B)$ tal que $x_1\in B$. Supongamos ahora que $f(\sup B)>0$. Ya que $f$ es continuo, existe $\delta>0$ tal que $f(x)>0$ con $x\in (\sup B - \delta, \sup B + \delta)$, pero esto también es una contradicción ya que $B$ tiene mencionamos que tiene supremo. Por lo que concluimos que $f(\sup B)=0$.\\
+		Si $f$ tiene un múltiplo cero en el intervalo $[a,b]$, los conjuntos $A$ y $B$ no son los mismos.
 
 	\end{enumerate}
+
+    %-------------------- 4.
+    \item 
 
 \end{enumerate}
 
