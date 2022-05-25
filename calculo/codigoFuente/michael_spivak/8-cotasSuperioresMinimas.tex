@@ -241,18 +241,62 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		Demostración.-\; El teorema 7.1 no dice nada sobre el número/cantidad  de $x\in[a,b]$ tal que $f(x)=0$. La idea es que solo exista al menos uno. Por lo tanto, no existe necesariamente el segundo (el más pequeño.)\\
 		Sea $g(x)=f(a+b-x)$, entonces podríamos tener 
 		$$g(a)=f(b)>0\quad \mbox{y}\quad g(b)=f(a)<0$$ 
-		Por el enunciado, existe un $y$ más pequeño tal que $g(y)=0$. De donde $f(a+b-y)=0$ y $a+b-y$ es el más grande porque si no fuese así $g(z)=f(a+b-z)=0$ para algún $z$ con $a+b-y<a+b-z$ o $z<y$ pero esto es una contradicción ya que $y$ es el más pequeño para el cual $g$ es cero.\\\\
+		Por el enunciado, existe un $y$ mínimo tal que $g(y)=0$. De donde $f(a+b-y)=0$ y $a+b-y$ es el máximo porque si no fuese así $g(z)=f(a+b-z)=0$ para algún $z$ con $a+b-y<a+b-z$ o $z<y$ pero esto es una contradicción ya que $y$ es el máximo para el cual $g$ es cero.\\\\
 
 	    %--------- (b)
 	    \item La demostración del teorema 7-1 se basada en considerar el conjunto $$A=\lbrace x:a\leq x \leq b \mbox{ y } f \mbox{ negativa en }[a,x]\rbrace.$$ De otra demostración del teorema 7-1, basada en considerar $B=\left\{x:a\leq x\leq b \mbox{ y } f(x)<0\right\}.$ ¿Qué punto $x$ de $[a,b]$ con $f(x)=0$ será localizado con esta demostración? Dé un ejemplo en el cual los conjuntos $A$ y $B$ sean los mismos.\\\\
 		Demostración.-\; Sabemos que $B\neq \emptyset$ y está acotada, por lo que existe el $\sup B \in [a,b]$. De donde demostraremos que $f(\sup B)=0$.\\
 		Supongamos que $f(\sup B)<0$. Ya que $f$ es continuo, existe $\delta>0$ tal que $f(x)<0$ con $x\in (\sup B - \delta, \sup B +\delta)$. Pero, esto es una contracción ya que $B$ tiene supremo, es decir, existe $x_1\in (\sup B-\delta, \sup B)$ tal que $x_1\in B$. Supongamos ahora que $f(\sup B)>0$. Ya que $f$ es continuo, existe $\delta>0$ tal que $f(x)>0$ con $x\in (\sup B - \delta, \sup B + \delta)$, pero esto también es una contradicción ya que $B$ tiene mencionamos que tiene supremo. Por lo que concluimos que $f(\sup B)=0$.\\
-		Si $f$ tiene un múltiplo cero en el intervalo $[a,b]$, los conjuntos $A$ y $B$ no son los mismos.
+		Si $f$ tiene un múltiplo cero en el intervalo $[a,b]$, los conjuntos $A$ y $B$ no son los mismos.\\\\
 
 	\end{enumerate}
 
     %-------------------- 4.
     \item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item Suponga que $f$ es continua en $[a,b]$ y que $f(a)=f(b)=0$. Suponga también que $f(x_0)>0$ para algún $x_0$ de $[a,b]$. Demuestre que existen números $c$ y $d$ con $a\leq c< x_0 < d \leq b$ tales que $f(c)=f(d)=0,$ pero $f(x)>0$ para todo $x$ de $(c,d)$.\\\\
+		Demostración.-\; Primero veamos que si $f(x)>0$ con $x\in (a,x_0]$ entonces $c=a$.\\
+		Si existe $x_1\in (a,x_0)$ tal que $f(x_1)<0$ entonces por el teorema 7.1 existe $x_2\in (x_1,x_0)$ tal que $f(x_2)=0$. Basado en el problema 3, sabemos que existe un  $x\in [x_1,x_0]$ máximo tal que $f(x)=0$, denotemos con $c$. Así, $f(c)=0$ y $f(x)>0$ donde $x\in (c,x_0)$.\\
+		De la misma manera, si $f(x)>0$, de donde $x\in [x_0,b)$ entonces $d=b$. Si no, entonces existe $x_1 \in (x_0,b)$ tal que $f(x_1)<0$ entonces existe $x_2 \in (x_0,x_1)$ tal que $f(x_2)=0$. Basado en el problema 3, conocemos que existe $x\in [x_0,x_1]$ mínimo tal que $f(x)=0$, denotemos con $d$. Así $f(d)=0$ y $f(x)>0$ de donde $x\in (x_0,d)$. Por lo que la proposición queda demostrada.\\\\
+		\pgfmathdeclarefunction{gauss}{2}{%
+		    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+		}
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[ticks=none,draw opacity = .5, style={
+		      domain=-1:6,samples=100,smooth}, 
+		      axis x line=center, % no box around the plot, only x and y axis
+		      axis y line=center, % the * suppresses the arrow tips
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-2,
+		      xmax=5,
+		      ymin=-.2,
+		      ymax=.8,
+		      enlargelimits=upper] % extend the axes a bit to the right and top
+		      \addplot[black,opacity=1]{gauss(2.5,.5)};
+		      \addplot[mark=*] coordinates {(0.2,0)}node[below]{$a$};
+		      \addplot[mark=*] coordinates {(0.7,0)}node[below]{$c$};
+		      \addplot[mark=*] coordinates {(4.8,0)}node[below]{$b$};
+		      \addplot[mark=*] coordinates {(4.3,0)}node[below]{$d$};
+		      \addplot[mark=*] coordinates {(2.5,0)}node[below]{$x_0$};
+		      \addplot[mark=*] coordinates {(.5,-.1)}node[below]{$x_1$};
+		      \addplot[mark=*] coordinates {(1.1,0)}node[below]{$x_2$};
+		      \addplot[] coordinates {(-1,0)}node[below]{\tiny$f(a)=f(b)=0$};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	    %---------- (b)
+	    \item Suponga que $f$ es continua en $[a,b]$ y que $f(a)<f(b)$. Demuestre que existen números $c$ y $d$ con $a\leq c<d\leq b$ tales que $f(c)=f(a)$ y $f(b)=f(b)$ y $f(a)<f(x)<f(d)$ para todo $x$ de $(c,d)$.\\\\
+		Demostración.-\; 
+
+	\end{enumerate}
 
 \end{enumerate}
 

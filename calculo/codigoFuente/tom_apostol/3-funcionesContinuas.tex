@@ -383,12 +383,56 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
     %-------------------- 22.
     \item Una función $f$ está definida como sigue:
-    $$f(x)=\left\}\begin{array}{rcl}
+    $$f(x)=\left\{\begin{array}{rcl}
 	\sen x & \mbox{si} & x\leq c,\\
 	ax+b & \mbox{si} & x>c,\\
     \end{array}\right.$$
-    siendo $a,b,c$ constates. Si $b$ y $c$ están dados, hallar todos los valores de $a$ (si existe alguno) para los que $f$ es continua en el punto $x=c$.\\\\
-	Respuesta.-\; 
+    siendo $a,b,c$ constantes. Si $b$ y $c$ están dados, hallar todos los valores de $a$ (si existe alguno) para los que $f$ es continua en el punto $x=c$.\\\\
+	Respuesta.-\; Por definición de continuidad, de una función en un punto, conocemos que $f$ es continua en $x=c$ el cual significa que $f$ está definida en $c$ y $\lim\limits_{x\to c} f(x)=f(c)$.\\
+	Ya que $\sen x$ y $ax+b$ son definidos para todo $x\in \mathbb{R}$, conocemos que $f$ es conocida en $x=c$ para todo $c\in \mathbb{R}$. Entonces podemos encontrar valores de $a$ tal que 
+	$$\lim_{x\to c}f(x)=f(c).$$
+	Por la definición de $f$, sabemos que
+	$$f(c)=\sen c$$
+	Entonces, evaluamos el limite en $x\to c$ a través de valores mayores que $c$ (ya que el límite en $x\to c$ a través de valores menos que $c$ es $f(c)$ ya que $\sen x$ es una función continua y para valores menores que $c,$ $f(x)=\sen x$),
+	$$\lim_{x\to c^+}f(x)=\lim_{x\to c^+} ax+b=ac+b$$
+	y por lo tanto, para que $f$ sea continua en $c$ debemos tener,
+	$$ac+b=\sen c\; \Longrightarrow\; b=0,\; \mbox{ y } a \mbox{ es arbitrario}.$$\\
+
+    %-------------------- 23.
+    \item Resolver el ejercicio 22 si $f$ se define de este modo:
+    $$f(x)=\left\{\begin{array}{rcl}
+	2\sen x & \mbox{si} & x\leq c,\\
+	ax^2+b & \mbox{si} & x>c,\\
+    \end{array}\right.$$
+	Respuesta.-\; Por la definición de continuidad, conocemos que $f$ es continua en $x=c$ el cual significa que $f(c)$ es definida y $\lim\limits_{x\to c}f(x)=f(c)$. Ya que $2\cos x$ y $ax^2+b$ está definida para todo $x\in \mathbb{R}$, conocemos que $f$ es definida para todo $c\in \mathbb{R}$. Entonces para demostrar que es continua debemos demostrar
+	$$\lim_{x\to c}f(x)=f(c).$$
+	De la definición de $f$ sabemos 
+	$$f(c)=2\cos c.$$
+	Entonces, tomando el límite como $x$ se aproxima a $c$ por la derecha (ya que $\lim\limits_{x\to c^-} f(x)=f(c)$,  $2\cos x$ es continua y $f(x)=2\cos x$ cuando $x$ se aproxima a $c$ por la izquierda),
+	$$\lim_{x\to c^+}f(x)=\lim_{x\to c^+} ax^2+b=ac^2+b.$$
+	Así, debemos tener
+	$$ac^2+b=2\cos c \; \Longrightarrow \; a=\dfrac{2\cos -b}{c^2} \mbox{ si } c\neq 0.$$
+	Si $c=0$ entonces,
+	$$ac^2+b=2\cos c \; \Longrightarrow \; b=2\, \mbox{ y } a \mbox{ es arbitrario}.$$\\
+
+    %-------------------- 24.
+    \item ¿En qué punto son funciones continuas la tangente y la cotangente?.\\\\
+	Respuesta.-\; Sea $$\tan x = \dfrac{\sen x}{\cos x}$$
+	y $\sen x,\, \cos x$ son continuas para todo los número reales de donde sabemos por el teorema 3.2 que $\tan x$ es continua en todas partes, por lo que $\cos x$ no es cero. Probamos que 
+	$$\cos x=0 \; \Longleftrightarrow \; x=\dfrac{\pi}{2}+n\pi,\quad n\in \mathbb{Z}.$$
+	por lo que $\tan x$ es continuo para 
+	$$\lbrace x\in \mathbb{R} | x\neq \dfrac{\pi}{2}+n\pi,\; n\in \mathbb{Z} \rbrace$$
+	Similarmente 
+	$$\cot x = \dfrac{\cos x}{\sen x}$$
+	 y por el teorema 3.2 tenemos que $\cot x$ es continua en todo lugar donde $\sen x$ no sea cero. Luego probamos que,
+	 $$\sen x = 0\; \Longleftrightarrow \; x=n\pi \quad n  \in \mathbb{Z}.$$
+	 Por lo tanto, $\cot x$ es continua para 
+	 $$\lbrace x\in \mathbb{R} | x\neq n\pi, \; n \in mathbb{R}\rbrace.$$\\\\
+
+    %-------------------- 25.
+    \item 
+
+
 
 
 \end{enumerate}

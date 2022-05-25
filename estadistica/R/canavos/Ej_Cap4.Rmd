@@ -484,7 +484,17 @@ ppois(9,10,lower.tail = FALSE)
 ```
 
 # 4.21
-mediante estudios recientes se ha determinado que la probabilidad de morir por causa de cierta vacuna contra gripe es de 0.00002. Si se administra la vacuna a 100 mil personas y se supone que éstas constituyen un conjunto independiente de ensayos, ¿cuál es la probabilidad de que mueran no más de dos personas a causa de la vacuna?
+Mediante estudios recientes se ha determinado que la probabilidad de morir por causa de cierta vacuna contra gripe es de 0.00002. Si se administra la vacuna a 100 mil personas y se supone que éstas constituyen un conjunto independiente de ensayos, ¿cuál es la probabilidad de que mueran no más de dos personas a causa de la vacuna?
+
+Respuesta.- Sea $\lambda = 100000\cdot 0.00004 = 2$ y
+$$P(X\leq 2) = F(2;2) =\sum_{i=0}^2 \dfrac{e^{-2}\cdot 2^i}{i!} = 0.6766764$$
+
+```{r}
+ppois(2,2)
+acum_poisson(2,2)
+```
+
+# 4.22
+Un fabricante asegura a una compañía que el porcentaje de unidades defectuosas es de sólo dos. La compañía revisa 50 unidades seleccionadas aleatoriamente y encuentra cinco defectuosas. ¿Qué tan probable es este resultado si el porcentaje de unidades defectuosas es el que el fabricante asegura?
 
 Respuesta.-
-
