@@ -430,9 +430,78 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 	 $$\lbrace x\in \mathbb{R} | x\neq n\pi, \; n \in mathbb{R}\rbrace.$$\\\\
 
     %-------------------- 25.
-    \item 
+    \item Sea $f(x)=(\tan x/x)$ si $x\neq 0$. Esbozar la gráfica de $f$ correspondientes a los intervalos semiabiertos $[-\frac{1}{4}\pi,0]$. ¿Qué le ocurre a $f(x)$ cuando $x\to 0$? ¿Puede definirse $f(0)$ de modo que $f$ se haga continua en $0$?.\\\\
+	Respuesta.-\; 
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[draw opacity = .5, style={
+		  domain=-1/4*pi:0,samples=100,smooth}, 
+		  axis x line=center, % no box around the plot, only x and y axis
+		  axis y line=center, % the * suppresses the arrow tips
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-1/4*pi,xmax=0,ymin=0,ymax=1.5,
+		  enlargelimits=upper] % extend the axes a bit to the right and top
+		  \addplot[black,opacity=1]{tan(deg(x))/x};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
 
+	    Tenemos que,
+	    $$\begin{array}{rcl}
+		\lim\limits_{x\to 0}\dfrac{\tan x}{x}&=&\lim\limits_{x\to 0}\dfrac{\sen x}{x\cos x}\\\\
+						     &=&\lim\limits_{x\to 0}\left[\left(\dfrac{\sen x}{x} \right)\cos x\right]\\\\
+						     &=&\lim\limits_{x\to 0}\cos x\\\\
+						     &=&1.\\\\
+	    \end{array}$$
+	    ya que $f(x)=\dfrac{\tan x}{x}$ no está definida en cero entonces no es una función continua. Sin embargo, dado que el límite existe, podríamos redefinir $f$ por:
+	    $$f(x)=\left\{\begin{array}{rcl}
+		\dfrac{\tan x}{x}&\mbox{si}&x\neq 0\\\\
+		1&\mbox{si}&x = 0\\\\
+	    \end{array}\right.$$
+	    \vspace{.5cm}
 
+    %-------------------- 26.
+	\item Este ejercicio ofrece otra demostración de la continuidad de las funciones seno y coseno. a) La desigualdad $|\sen x|<|x|$, válida para $0<|x|<\frac{1}{2}\pi$, fue demostrada en el ejercicio 34 de la sección 2.8. Utilizarla para demostrar que la función seno es continua en $0$. b) Hacer uso de la parte a) y de la identidad $\cos 2x = 1-2\sen^2 x$ para demostrar la continuidad del coseno en $0$.\\\\
+	    Demostración.-\; Demostraremos primeramente que $\lim\limits_{x\to 0}\sen x = \sen 0 = 0$.\\
+	    Para todo $\epsilon>0$ existe un $\delta >0$ tal que $|\sen x|<\epsilon$ entonces $|x|<\delta$. Sea $\delta = \epsilon$, se tiene
+	    $$|\sen x|<|x|\delta = \epsilon,\qquad \mbox{de donde }0<|x|<\delta$$
+	    así, $\sen x$ es continua en $0$.\\
+	    Por último usando la identidad dada, tenemos que
+	    $$\cos(2x)=1-2\sen^2 x\; \Longrightarrow \; \cos x  1-2\sen^2\dfrac{x}{2},$$
+	    por lo tanto
+	    $$\begin{array}{rcl}
+		\lim\limits_{x\to 0}\cos x&=&\lim\limits_{x\to 0}\left(1-2\sen^2\dfrac{x}{2}\right)\\\\
+					  &=&1-2\lim\limits_{x\to 0}\left[\sen\left(\dfrac{x}{2}\right)\sen \left(\sen \dfrac{2}{x}\right)\right]\\\\
+					  &=&1\\\\
+					  &=&\cos 0.
+	    \end{array}$$
+	    así, el coseno es continuo en $0$.\\\\
+
+    %-------------------- 27.
+    \item La figura siguiente muestra una proporción de la gráfica de la función $f$ definida como sigue:
+	$$f(x)=\sen \dfrac{1}{x}\quad \mbox{si}\quad x\neq 0$$
+	Para $x=1/(n\pi)$, siendo $n$ entero, tenemos $\sen(1/x)=\sen(n\pi)=0$. Entre dos de esos puntos, la función asciende hasta $1$ y baja otra vez hasta $0$ o bien desciende a $-1$ y vuelve a subir a $0$. Por consiguiente, entre cualquiera de esos puntos y el origen, la curva presenta infinitas oscilaciones. Esto sugiere que los valores de la función no tienden a ningún valor fijo cuando $x\to 0$. Demostrar que no existe ningún valor real $A$ tal que $f(x)\to A$ cuando $x\to 0.$ Esto demuestra que no es posible definir $f(0)$ de manera que $f$ sea continua en $0$.\\
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[draw opacity = .5, style={
+		  samples=100,smooth}, 
+		  axis x line=center, % no box around the plot, only x and y axis
+		  axis y line=center, % the * suppresses the arrow tips
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-20,xmax=20,ymin=-1,ymax=1.2,
+		  enlargelimits=upper] % extend the axes a bit to the right and top
+		  \addplot[black,opacity=1]{sin(deg(1/x))};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
 
 
 \end{enumerate}

@@ -265,36 +265,75 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		}
 		\begin{center}
 		    \begin{tikzpicture}
-		    \begin{axis}[ticks=none,draw opacity = .5, style={
-		      domain=-1:6,samples=100,smooth}, 
+		    \begin{axis}[ticks=none,scale=.9,draw opacity = .5,samples=100,smooth, 
 		      axis x line=center, % no box around the plot, only x and y axis
 		      axis y line=center, % the * suppresses the arrow tips
 		      ylabel = {$f(x)$},
 		      xlabel = {$x$},
 		      xlabel style={below right},
 		      ylabel style={above left},
-		      xmin=-2,
-		      xmax=5,
-		      ymin=-.2,
-		      ymax=.8,
+		      xmin=-3.5,xmax=8.5,ymin=-.2,ymax=.4,
 		      enlargelimits=upper] % extend the axes a bit to the right and top
-		      \addplot[black,opacity=1]{gauss(2.5,.5)};
-		      \addplot[mark=*] coordinates {(0.2,0)}node[below]{$a$};
-		      \addplot[mark=*] coordinates {(0.7,0)}node[below]{$c$};
-		      \addplot[mark=*] coordinates {(4.8,0)}node[below]{$b$};
-		      \addplot[mark=*] coordinates {(4.3,0)}node[below]{$d$};
-		      \addplot[mark=*] coordinates {(2.5,0)}node[below]{$x_0$};
-		      \addplot[mark=*] coordinates {(.5,-.1)}node[below]{$x_1$};
-		      \addplot[mark=*] coordinates {(1.1,0)}node[below]{$x_2$};
-		      \addplot[] coordinates {(-1,0)}node[below]{\tiny$f(a)=f(b)=0$};
+		      \addplot[domain=-10:10,black,opacity=1]{gauss(4.5,1};
+		      \addplot[mark=*] coordinates {(0.3,0)}node[below]{$a$};
+		      \addplot[mark=*] coordinates {(0.7,0)}node[above]{$c$};
+		      \addplot[mark=*] coordinates {(8.5,0)}node[below]{$b$};
+		      \addplot[mark=*] coordinates {(7.7,0)}node[below]{$d$};
+		      \addplot[mark=*] coordinates {(4.5,0)}node[below]{$x_0$};
+		      \addplot[mark=*] coordinates {(1,-.1)}node[below]{$x_1$};
+		      \addplot[mark=*] coordinates {(1.3,0)}node[below]{$x_2$};
+		      \addplot[] coordinates {(-2,0)}node[below]{\tiny$f(a)=f(b)=0$};
 		    \end{axis}
 		\end{tikzpicture}
 		\end{center}
 		\vspace{.5cm}
 
 	    %---------- (b)
-	    \item Suponga que $f$ es continua en $[a,b]$ y que $f(a)<f(b)$. Demuestre que existen números $c$ y $d$ con $a\leq c<d\leq b$ tales que $f(c)=f(a)$ y $f(b)=f(b)$ y $f(a)<f(x)<f(d)$ para todo $x$ de $(c,d)$.\\\\
+	    \item Suponga que $f$ es continua en $[a,b]$ y que $f(a)<f(b)$. Demuestre que existen números $c$ y $d$ con $a\leq c<d\leq b$ tales que $f(c)=f(a)$ y $f(d)=f(b)$ y $f(a)<f(x)<f(d)$ para todo $x$ de $(c,d)$.\\\\
 		Demostración.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[ticks=none,scale=.9,draw opacity = .5,samples=100,smooth, 
+		      axis x line=center, % no box around the plot, only x and y axis
+		      axis y line=center, % the * suppresses the arrow tips
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-3.5,xmax=8.5,ymin=-.4,ymax=.1,
+		      enlargelimits=upper] % extend the axes a bit to the right and top
+		      \addplot[domain=-10:10,black,opacity=1]{-gauss(4.5,1};
+		      \addplot[mark=*] coordinates {(0.3,0)}node[below]{$a$};
+		      \addplot[mark=*] coordinates {(0.9,0)}node[below]{$c$};
+		      \addplot[mark=*] coordinates {(8.5,0)}node[below]{$b$};
+		      \addplot[mark=*] coordinates {(7.7,0)}node[below]{$d$};
+		      \addplot[mark=*] coordinates {(4.5,-.395)}node[above]{$x$};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+		Sea $A=\lbrace x\in [a,b]:f(x)-f(a)<0\rbrace$, por el problema 3b sabemos que $A$ está acotado y $\sup A = c$ tal que $f(c)=f(a).$ Luego sea $B=\lbrace x\in [a,b]:f(x)-f(b)<0 \; \mbox{en el intervalo }[c,x]\rbrace$, de donde por la prueba del teorema 7.1 sabemos que $B$ está acotado y que el $\sup B = d\in (c,b]$, tal que $f(d)=f(b)$.\\
+		Por lo que tenemos  $a\leq c<d\leq b$ tal que $f(c)=f(a),\; f(d)=f(b)$ y $f(a)<f(x)<f(d)$ para todo $x$ en $(c,d)$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 5.
+    \item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Suponga que $y-x>1.$ Demuestre que existe un entero $k$ tal que $x<k<y$.\\\\
+		Demostración.-\;
+
+	    %----------(b)
+	    \item
+
+	    %----------(c)
+	    \item
+
+	    %----------(d)
+	    \item
+
 
 	\end{enumerate}
 

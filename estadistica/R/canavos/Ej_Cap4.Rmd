@@ -497,4 +497,17 @@ acum_poisson(2,2)
 # 4.22
 Un fabricante asegura a una compañía que el porcentaje de unidades defectuosas es de sólo dos. La compañía revisa 50 unidades seleccionadas aleatoriamente y encuentra cinco defectuosas. ¿Qué tan probable es este resultado si el porcentaje de unidades defectuosas es el que el fabricante asegura?
 
+Respuesta.- Ya que $P(X\geq 2) = 1 - P(X\leq 1)$ entonces,
+
+$$P(X\leq 5)-[1-P(X\leq 1)]=\sum_{i=0}^5 \dfrac{e^{-2}\cdot 2^i}{i!} - 1 - \sum_{i=0}^1 \dfrac{e^{-2}\cdot 2^i}{i!} = 0.3894422$$
+
+```{r}
+ppois(5,2) - ppois(1,2,lower.tail = FALSE) 
+acum_poisson(5,2)-(1-ppois(1,2))
+```
+
+# 4.23
+El número de accidentes graves en una planta industrial es de diez por año, de manera tal que el gerente instituye un plan que considera efectivo para reducir el número de accidentes en la planta. Un año después de ponerlo en marca, sólo han ocurrido cuatro accidentes. ¿Qué probabilidad hay de cuatro o menos accidentes por año, si la frecuencia promedio aún es diez? Después de lo anterior ¿puede concluirse que, luego de un año, el número de accidentes promedio ha disminuido?
+
 Respuesta.-
+
