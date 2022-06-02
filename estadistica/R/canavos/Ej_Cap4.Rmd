@@ -310,7 +310,7 @@ $$p(7+1;2) = \dfrac{2}{7+1} \cdot \dfrac{e^{-2}\cdot 2^{7+1}}{(7+1)!} = 0.0008$$
 $$p(8+1;2) = \dfrac{2}{8+1} \cdot \dfrac{e^{-2}\cdot 2^{8+1}}{(8+1)!} = 0.0001$$
 
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 lambda = 2
 
 x = 0
@@ -507,7 +507,65 @@ acum_poisson(5,2)-(1-ppois(1,2))
 ```
 
 # 4.23
-El número de accidentes graves en una planta industrial es de diez por año, de manera tal que el gerente instituye un plan que considera efectivo para reducir el número de accidentes en la planta. Un año después de ponerlo en marca, sólo han ocurrido cuatro accidentes. ¿Qué probabilidad hay de cuatro o menos accidentes por año, si la frecuencia promedio aún es diez? Después de lo anterior ¿puede concluirse que, luego de un año, el número de accidentes promedio ha disminuido?
+El número de accidentes graves en una planta industrial es de diez por año, de manera tal que el gerente instituye un plan que considera efectivo para reducir el número de accidentes en la planta. Un año después de ponerlo en marcha, sólo han ocurrido cuatro accidentes. ¿Qué probabilidad hay de cuatro o menos accidentes por año, si la frecuencia promedio aún es diez? Después de lo anterior ¿puede concluirse que, luego de un año, el número de accidentes promedio ha disminuido?
 
-Respuesta.-
+Respuesta.- Ya que cada experimentos es independiente entonces
 
+$$P(X\leq 4) = F(4;10)=\sum_{i=0}^4 \dfrac{e^{-10}\cdot 10^i}{i!} = 0.02925269$$
+
+```{r}
+ppois(4,10)
+acum_poisson(4,10)
+```
+
+Concluimos que si disminuyo los accidentes.
+
+
+# 4.24
+El departamento de protección del Ambiente ha adquirido 40 instrumentos de precisión para medir la contaminación del aire en distintas localidades. Se seleccionan aleatoriamente ocho instrumentos y se someten a una prueba para encontrar defectos. Si cuatro de los 40 instrumentos se encuentran defectuosos ¿cuál es la probabilidad de que la muestra contenga no más de un instrumento defectuoso? 
+
+Respuesta.- La probabilidad de tener instrumentos defectuosos es de $4/40=0.1$ por lo que el número promedio de ocurrencias de las muestras seleccionadas es $\lambda=8\cdot 0.1=0.8$, de donde 
+
+$$P(X\leq 1) = F(1;0.8) = \sum_{i=0}^1 \dfrac{e^{-0.8}\cdot 0.8^i}{i!} =0.8087921$$
+
+```{r}
+ppois(1,0.8)
+```
+
+# 4.25 
+Se sospecha que por causa de un error humano se han incluido en un embarque de 50 unidades, dos (o más) defectuosas. El fabricante admite el error y envía al cliente sólo 48 unidades. Antes de recibir el embarque, el cliente selecciona aleatoriamente cinco unidades y encuentra una defectuosa ¿Debe reclamar una indemnización al fabricante?
+
+Respuesta.- El enunciado no es del todo claro, pero al entender nos dice que nos envió menos 2 unidades, pero se sospecha que puede haber más de dos defectuosos, cuando el cliente de esas 50 unidades selecciona 5 muestras ve que una es defectuosa por lo tanto $p=1/5$ (decimos que selecciono de las 50 porque aún no llega el embarque con las 48 unidades.). Ahora si multiplicamos dicha probabilidad por las 50 unidades nos da el verdadero $\lambda = 1/5*50 = 10$ de donde solo nos queda ver si existe más de 2 unidades defectuosas, es decir,
+
+$$P(X\geq 2) = 1- P(X\leq 1) = 1-F(1;10) = \sum_{i=0}^1\dfrac{e^{-10}\cdot 10^i}{i!} = 0.9995 = 1$$
+
+```{r}
+ppois(1,10,lower.tail = FALSE)
+```
+Por lo que el cliente debe reclamar una indemnización al fabricante.
+
+# 4.26
+Los jurados para una corte federal de distrito se seleccionan de manera aleatoria entre la lista de votantes del distrito. En un determinado mes se selecciona una lista de 25 candidatos. Ésta contiene los nombres de 20 hombres y cinco mujeres.
+
+Respuesta.- 
+
+### a)
+Si la lista de vontantes se encuentra igualmente dividida por sexo. ¿cuál es la probabilidad de tener una lista que contenga a 20 hombres y cinco mujeres?
+
+### b)
+Supóngase que de esta lista se elige un jurado de doce personas, de las cuales sólo una es mujer. ¿Cuál es la probabilidad de este hecho, si los miembros del jurado se seleccionan de manera aleatoria?
+
+### c)
+Si el lector fuera el abogado de la defensa, ¿que podría argumentar mediante el empleo de las respuesta de la parte a y b?
+
+# 4.27
+Una compañia recibe un lote de 1000 unidades. Para aceptarlo se seleccionan diez unidades de manera aleatoria, y se inspeccionan. Si ninguna se encuentra defectuosa, el lote se acepta; de otro modo, se rechaza. Si el lote contiene un $5\%$ de unidades defectuosas:
+
+### a)
+Determinar la probabilidad de aceptarlo mediante el empleo de la distribución hipergeométrica.
+
+### b)
+Aproximar la respuesta de la parte a mediante el empleo de la distribución binomial.
+
+### c)
+Aproximar la respuesta de la parte b mediante el empleo de la distribución de Poisson.

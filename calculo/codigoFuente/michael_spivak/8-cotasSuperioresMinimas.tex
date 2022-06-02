@@ -265,7 +265,7 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		}
 		\begin{center}
 		    \begin{tikzpicture}
-		    \begin{axis}[ticks=none,scale=.9,draw opacity = .5,samples=100,smooth, 
+		    \begin{axis}[ticks=none,scale=.75,draw opacity = .5,samples=100,smooth, 
 		      axis x line=center, % no box around the plot, only x and y axis
 		      axis y line=center, % the * suppresses the arrow tips
 		      ylabel = {$f(x)$},
@@ -276,7 +276,7 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		      enlargelimits=upper] % extend the axes a bit to the right and top
 		      \addplot[domain=-10:10,black,opacity=1]{gauss(4.5,1};
 		      \addplot[mark=*] coordinates {(0.3,0)}node[below]{$a$};
-		      \addplot[mark=*] coordinates {(0.7,0)}node[above]{$c$};
+		      \addplot[mark=*] coordinates {(0.8,0)}node[above]{$c$};
 		      \addplot[mark=*] coordinates {(8.5,0)}node[below]{$b$};
 		      \addplot[mark=*] coordinates {(7.7,0)}node[below]{$d$};
 		      \addplot[mark=*] coordinates {(4.5,0)}node[below]{$x_0$};
@@ -293,7 +293,7 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		Demostración.-\; 
 		\begin{center}
 		    \begin{tikzpicture}
-		    \begin{axis}[ticks=none,scale=.9,draw opacity = .5,samples=100,smooth, 
+		    \begin{axis}[ticks=none,scale=.7,draw opacity = .5,samples=100,smooth, 
 		      axis x line=center, % no box around the plot, only x and y axis
 		      axis y line=center, % the * suppresses the arrow tips
 		      ylabel = {$f(x)$},
@@ -323,17 +323,48 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 
 	    %----------(a)
 	    \item Suponga que $y-x>1.$ Demuestre que existe un entero $k$ tal que $x<k<y$.\\\\
-		Demostración.-\;
-
+		Demostración.-\; Existe un $n\in \mathbb{N}$ tal que 
+		$$-n<x<n$$
+		Esto ya que $\mathbb{N}$ no está acotado. Podemos tomar el  número más grande $K$ entre $-n<x$, es decir, $K\leq x.$ Luego por la definición del entero más grande se tiene que $K+1>x$, por lo que $x<K+1\leq x+1<y$. Así $K+1$ es ese entero que buscamos.\\\\
+		
 	    %----------(b)
-	    \item
+	    \item Suponga que $x<y$. Demuestre que existe un número racional $r$ tal que $x<r<y.$\\\\
+		Demostración.-\; Si $y-x>0$ entonces existe un $n\in \mathbb{N}$ tal que $n(y-x)>1$, esto implica que $ny-nx>1$. Por el anterior inciso (a) tenemos que existe un $k\in \mathbb{Z}$ tal que 
+		$$ny>k>nx,\quad n\in \mathbb{N}\; \Longleftrightarrow \; y>\dfrac{k}{n}>x\quad \mbox{o}\quad x<\dfrac{k}{n}<y.$$
+		Así, $r=\dfrac{k}{n}$  es un numero racional.\\\\
 
 	    %----------(c)
-	    \item
+	    \item Suponga que $r<s$ son números racionales. Demuestre que existe un número irracional entre $r$ y $s$.\\\\
+		Demostración.-\; Un número irracional en el intervalo $(0,1)$ es por ejemplo $\dfrac{\sqrt{2}}{2}$, entonces el número irracional $t$ e el intervalo $(r,s)$ es $t=r+(s-r)\dfrac{\sqrt{2}}{2}$.\\\\
 
 	    %----------(d)
-	    \item
+	    \item Suponga que $x<y$. Demuestre que existe un número irracional entre $x$ e $y$.\\\\
+		Demostración.-\; Del inciso (b) sabemos que hay un número racional $r_1$ tal que 
+		$$x<r_1<y$$
+		También, existe un número racional $r_2$ tal que
+		$$x<r_1<r_2<y$$
+		Luego por el inciso (c) sabemos que existe un número irracional $t$ tal que
+		$$x<r_1<t<r_2<y.$$\\\\
 
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item Se dice que un conjunto $A$ de números reales es denso si todo intervalo abierto contiene un punto de $A$. El problema 5 demuestra que el conjunto de los número racionales y el conjunto de los números irracionales son densos.
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %----------(a)
+	    \item Demuestre que si $f$ es continua y $f(x)=0$ para todo los números $x$ de un conjunto denso $A$, entonces $f(x)=0$ para todo $x$.\\\\
+		Demostración.-\; Sea $\epsilon>0$, ya que $f$ es continua, existe $\delta>0$ tal que para cada $y\in \mathbb{R}$, si $0<|y-x|<\delta$, entonces $|f(y)-f(x)|<\epsilon.$\\
+		Luego $A$ es denso en $\mathbb{R}$ por lo que existe $y_0\in A$ que satisface $|y_0-x|<\delta.$ Si $y_0=x$ entonces $f(x)=0$, de lo contrario $0<|y_0-x|<\delta$, de donde se tendría $|f(y_0)-f(x)|<\epsilon$ por lo que concluimos que $|f(x)|<\epsilon.$ Ya que $\epsilon$ es arbitrario, $f(x)=0$.\\\\
+
+	    %----------(b)
+	    \item Demuestre que si $f$ y $g$ son continuas y $f(x)=g(x)$ para todo $x$ de un conjunto denso $A$, entonces $f(x)=g(x)$ para todo $x$.\\\\
+		Demostración.-\;
+
+	    %----------(c)
+	    \item Si suponemos, en cambio que $f(x)\geq g(x)$ para todo $x$ de $A$, demuestre que $f(x)\geq(x)$ para todo $x$. ¿Puede sustituirse el símbolo $\geq$ por el símbolo $>$ en todas partes?.\\\\
+		Demostración.-\;
 
 	\end{enumerate}
 

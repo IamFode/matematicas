@@ -434,7 +434,7 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 	Respuesta.-\; 
 	    \begin{center}
 		\begin{tikzpicture}
-		\begin{axis}[draw opacity = .5, style={
+		\begin{axis}[scale=.7,draw opacity = .5, style={
 		  domain=-1/4*pi:0,samples=100,smooth}, 
 		  axis x line=center, % no box around the plot, only x and y axis
 		  axis y line=center, % the * suppresses the arrow tips
@@ -487,15 +487,14 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 	Para $x=1/(n\pi)$, siendo $n$ entero, tenemos $\sen(1/x)=\sen(n\pi)=0$. Entre dos de esos puntos, la función asciende hasta $1$ y baja otra vez hasta $0$ o bien desciende a $-1$ y vuelve a subir a $0$. Por consiguiente, entre cualquiera de esos puntos y el origen, la curva presenta infinitas oscilaciones. Esto sugiere que los valores de la función no tienden a ningún valor fijo cuando $x\to 0$. Demostrar que no existe ningún valor real $A$ tal que $f(x)\to A$ cuando $x\to 0.$ Esto demuestra que no es posible definir $f(0)$ de manera que $f$ sea continua en $0$.\\
 	    \begin{center}
 		\begin{tikzpicture}
-		\begin{axis}[draw opacity = .5, style={
-		  samples=100,smooth}, 
+		\begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
 		  axis x line=center, % no box around the plot, only x and y axis
 		  axis y line=center, % the * suppresses the arrow tips
 		  ylabel = {$f(x)$},
 		  xlabel = {$x$},
 		  xlabel style={below right},
 		  ylabel style={above left},
-		  xmin=-20,xmax=20,ymin=-1,ymax=1.2,
+		  xmin=-4,xmax=4,ymin=-1,ymax=1.2,
 		  enlargelimits=upper] % extend the axes a bit to the right and top
 		  \addplot[black,opacity=1]{sin(deg(1/x))};
 		\end{axis}
@@ -503,6 +502,176 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 	    \end{center}
 	    \vspace{.5cm}
 
+	    Demostración.-\; Supongamos que existe algún $A\in \mathbb{R}$ tal que $\lim\limits_{x\to 0}f(x)=A.$ De la definición de límites esto significa que para todo $\epsilon>0$ existe un $\delta>0$ tal que 
+	    $$|f(x)-A|<\epsilon\; \mbox{siempre que}\; 0<|x|<\delta$$
+	    Primero, afirmamos que para cualquiera de estos $A$ debemos tener $|A|\leq 1$. Debe ser así porque si $|A|>1$ entonces $|A|-1>0$, de donde podríamos elegir $\epsilon$ tal que $0<\epsilon<(|A|-1)$. Pero se tiene $|f(x)|\leq 1$ para todo $x$, por consiguiente
+	    $$|f(x)-A|=|A-f(x)|\geq |A|-|f(x)|\geq |A|-1>\epsilon$$
+	    Esto contradice nuestra elección de $\epsilon$, por lo que $|A|$ deber ser menor o igual que 1.\\
+	    Luego supongamos $|A|\leq 1$ y elegimos $\epsilon=\frac{1}{2}>0$. Para obtener nuestra contradicción debemos demostrar que no existe $\delta > 0$ tal que
+	    $$|f(x)-A|<\dfrac{1}{2}\; \mbox{ siempre que } 0<|x|<\delta$$
+	    Por la propiedad de Arquímedes de los números reales sabemos que para cualquier $x\in \mathbb{R}$, existe un entero positivo tal que $n$ con $n=1\; (modk\; 4)$. Pero,
+	    $$0<\dfrac{2}{n\pi}<|x|\; \Longrightarrow \; 0<\dfrac{2}{(n+2)\pi}<|x|$$
+	    Entonces, por la definición de $f$ y ya que $n=1\; (mod \;4)$ y $n+2=3\; (\mod\; 4)$, tenemos 
+	    $$f\left(\dfrac{2}{n\pi}\right)=\sen\left(\dfrac{n\pi}{2}\right)=1 \qquad \quad f\left[\dfrac{2}{(n+2)\pi}\right]=\sen\left[\dfrac{(n+2)\pi}{2}\right]=-1$$
+	    pero,
+	    $$\bigg|f\left(\dfrac{n\pi}{2}\right)-A\bigg|\; \Longrightarrow \; |1-A|<\dfrac{1}{2} \; \Longrightarrow\; \dfrac{1}{2}<A\leq 1$$
+	    Además,
+	    $$\bigg|f\left[\dfrac{(n+2)\pi}{2}\right]-A\bigg|=|-1-A|>\dfrac{1}{2}.$$
+	    Esto contradice que si $\lim\limits_{x\to 0}f(x)=A$ entonces para cada $\epsilon>0$ tenemos $|f(x)-A|<\epsilon$ para todo $0<|x|<\delta$. En otras palabras, encontramos un $\epsilon$ mayor que $0$ tal que no importa tan pequeño que elijamos $\delta$ existe un $x$ tal que $|x|$ es menor que $\delta$, pero $|f(x)-A|$ es mayor que $\epsilon$. Esto contradice la definición de $\lim\limits_{x\to 0}f(x)=A$. Por lo tanto no puede haber tal núemero en $A\in \mathbb{R}$.\\\\
+
+    %-------------------- 28.
+    \item Para $x\neq 0$, sea $f(x)=[1/x]$, designado por $[t]$ el mayor entero $\leq t.$ Trazar la gráfica de $f$ para los intervalos $[-2,-\frac{1}{5}]$ y $[\frac{1}{5},2]$. ¿Qué le ocurre a $f(x)$ cuando $x\to 0$ tomando valores positivos? ¿y tomando valores negativos? ¿Puede definirse $f(0)$ para que $f$ sea continuo en $0$? \\\\
+	Respuesta.-\; 
+	\begin{center}
+	    \begin{tikzpicture}
+	    \begin{axis}[scale=1.2,draw opacity =.5,samples=100,smooth, 
+	      axis x line=center, 
+	      axis y line=center,
+	      ylabel = {$f(x)$},
+	      xlabel = {$x$},
+	      xlabel style={below right},
+	      ylabel style={above left},
+	      xmin=-2,xmax=2,ymin=-5,ymax=4,
+	      label style={font=\tiny},
+	      tick label style={font=\tiny},
+	      enlargelimits=upper] 
+	      \addplot[black,opacity=1,domain=-2:-1]{-1};
+	      \addplot[fill=white,mark=*] coordinates {(-2,-1)};
+	      \addplot[mark=*] coordinates {(-1,-1)};
+	      \addplot[black,opacity=1,domain=-1:-.5]{-2};
+	      \addplot[fill=white,mark=*] coordinates {(-1,-2)};
+	      \addplot[mark=*] coordinates {(-.5,-2)};
+	      \addplot[black,opacity=1,domain=-.5:-.35]{-3};
+	      \addplot[fill=white,mark=*] coordinates {(-.5,-3)};
+	      \addplot[mark=*] coordinates {(-.35,-3)};
+	      \addplot[black,opacity=1,domain=-.35:-.25]{-4};
+	      \addplot[fill=white,mark=*] coordinates {(-.35,-4)};
+	      \addplot[mark=*] coordinates {(-.25,-4)};
+	      \addplot[black,opacity=1,domain=-.25:-.15]{-5};
+	      \addplot[fill=white,mark=*] coordinates {(-.25,-5)};
+	      \addplot[mark=*] coordinates {(-.15,-5)};
+	      \addplot[black,opacity=1,domain=.20:.25]{4};
+	      \addplot[fill=white,mark=*] coordinates {(.2,4)};
+	      \addplot[mark=*] coordinates {(.25,4)};
+	      \addplot[black,opacity=1,domain=.25:.35]{3};
+	      \addplot[fill=white,mark=*] coordinates {(.25,3)};
+	      \addplot[mark=*] coordinates {(.35,3)};
+	      \addplot[black,opacity=1,domain=.35:.5]{2};
+	      \addplot[fill=white,mark=*] coordinates {(.35,2)};
+	      \addplot[mark=*] coordinates {(.5,2)};
+	      \addplot[black,opacity=1,domain=.5:1]{1};
+	      \addplot[fill=white,mark=*] coordinates {(.5,1)};
+	      \addplot[mark=*] coordinates {(1,1)};
+	      \addplot[black,opacity=1,domain=1:2]{0};
+	      \addplot[fill=white,mark=*] coordinates {(1,0)};
+	      \addplot[mark=*] coordinates {(2,0)};
+	    \end{axis}
+	\end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Como $x\to 0^+,\; f(x)$ toma valores positivos arbitrariamente grandes.\\
+	Como $x\to 0^-,\; f(x)$ toma valores negativos arbitrariamente grandes.\\
+	No hay manera de definir $f(0)$ para que $f$ sea continuo en $0$.\\\\
+
+    %-------------------- 29.
+    \item Hacer lo mismo que en el ejercicio 28, cuando $f(x)=(-1)^{[1/x]}$ para $x\neq 0$.\\\\
+	Respuesta.-\;
+	\begin{center}
+	    \begin{tikzpicture}
+	    \begin{axis}[scale=1.2,draw opacity =.5,samples=100,smooth, 
+	      axis x line=center, 
+	      axis y line=center,
+	      ylabel = {$f(x)$},
+	      xlabel = {$x$},
+	      xlabel style={below right},
+	      ylabel style={above left},
+	      xmin=-2,xmax=2,ymin=-1.5,ymax=1.5,
+	      label style={font=\tiny},
+	      tick label style={font=\tiny},
+	      enlargelimits=upper] 
+	      \addplot[black,opacity=1,domain=-2:-1]{-1};
+	      \addplot[black,opacity=1,domain=-1:-.5]{1};
+	      \addplot[black,opacity=1,domain=-.5:-.3]{-1};
+	      \addplot[black,opacity=1,domain=-.3:-.23]{1};
+	      \addplot[black,opacity=1,domain=-.23:-.2]{-1};
+
+	      \addplot[black,opacity=1,domain=.2:.23]{1};
+	      \addplot[black,opacity=1,domain=.23:.3]{-1};
+	      \addplot[black,opacity=1,domain=.3:.5]{1};
+	      \addplot[black,opacity=1,domain=.5:1]{-1};
+	      \addplot[black,opacity=1,domain=1:2]{1};
+	    \end{axis}
+	\end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Como $x\to 0^+,\; f(x)$ alterna entre $1$ y $-1$.\\
+	Como $x\to 0^-,\; f(x)$ alterna entre $1$ y $-1$.\\
+	No hay forma  de definir $f(0)$ para que $f$ sea continuo en $0$, ya que $f(x)$ tomará ambos valores $1$ y $-1$ no importa cuán pequeño elijamos nuestro $\delta>0$.\\\\
+
+    %-------------------- 30.
+    \item Los mismo que en el ejercicio 28, cuando $f(x)=x(-1)^{[1/x]}$ para $x\neq 0$.\\\\
+	Respuesta.-\;
+	\begin{center}
+	    \begin{tikzpicture}
+	    \begin{axis}[scale=1,draw opacity =.5,samples=100,smooth, 
+	      axis x line=center, 
+	      axis y line=center,
+	      ylabel = {$f(x)$},
+	      xlabel = {$x$},
+	      xlabel style={below right},
+	      ylabel style={above left},
+	      xmin=-2,xmax=2,ymin=-1.5,ymax=1.5,
+	      label style={font=\tiny},
+	      tick label style={font=\tiny},
+	      enlargelimits=upper] 
+	      \addplot[black,opacity=1,domain=-2:-1]{-x};
+	      \addplot[black,opacity=1,domain=-1:-.5]{x};
+	      \addplot[black,opacity=1,domain=-.5:-.37]{-x};
+	      \addplot[black,opacity=1,domain=-.37:-.3]{x};
+	      \addplot[black,opacity=1,domain=-.3:-.25]{-x};
+	      \addplot[black,opacity=1,domain=.25:.3]{x};
+	      \addplot[black,opacity=1,domain=.3:.37]{-x};
+	      \addplot[black,opacity=1,domain=.37:.5]{x};
+	      \addplot[black,opacity=1,domain=.5:1]{-x};
+	      \addplot[black,opacity=1,domain=1:2]{x};
+	    \end{axis}
+	\end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+	Como $x\to 0^+$, $f(x)\to 0$.\\
+	Como $x\to 0^-$, $f(x)\to 0$.\\
+	Si definimos $f(0)=0$ entonces $f$ es continuo en $0$.\\\\
+
+    %-------------------- 31.
+    \item Dar un ejemplo de una función continua en un punto de un intervalo y discontinua en los demás puntos del intervalo, o probar que no existe una tal función.\\\\
+	Demostración.-\;
+
+    %-------------------- 32.
+    \item Sea $f(x)=x\sen (1/x)$ si $x\neq 0$. Definir $f(0)$ de manera que $f$ sea continua en $0$.\\\\
+	Demostración.-\;
+
+    %-------------------- 33.
+    \item Sea $f$ una función tal que $|f(u)-f(v)|\leq |u-v|$ para todos los valores $u$ y $v$ de un intervalo $[a,b]$.
+
+	\begin{enumerate}[\bfseries a)]
+
+	    %---------- a)
+	    \item Probar que $f$ es continua en cada punto de $[a,b]$.\\\\
+		Demostración.-\;
+
+	    %---------- b)
+	    \item Suponiendo que $f$ sea integrable en $[a,b]$, demostrar que
+		$$\bigg|\int_a^b f(x)\; dx - (b-a)f(a)\bigg|\leq \dfrac{(b-a)^2}{2}$$
+		Demostración.-\;
+
+	    %---------- c)
+	    \item Más general. Demostrar que para cualquier $c$ de $[a,b]$, se tiene
+		$$\bigg|\int_a^b f(x)\; dx - (b-a)f(c)\bigg|\leq \dfrac{(b-a)^2}{2}$$
+		Demostración.-\;
+
+
+	\end{enumerate}
 
 \end{enumerate}
+
 
