@@ -360,13 +360,103 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 
 	    %----------(b)
 	    \item Demuestre que si $f$ y $g$ son continuas y $f(x)=g(x)$ para todo $x$ de un conjunto denso $A$, entonces $f(x)=g(x)$ para todo $x$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $h = f-g$, entonces basta demostrar que $\lim\limits_{x\to a} t(x) = 0 = h$. Dado ahora un $\epsilon>0$ existe un $\delta>0$ tal que $|t(x)-h|<\epsilon$ para todo $x$ que satisface $0<|x-a|<\delta$. Puesto que $A$ es denso, existe un número $x$ en $A$ que satisface $0<|x-a|<\delta;$ así pues, $|0-h|<\epsilon$. Al cumplirse esto para todo $\epsilon>0$, se sigue que $h=0$ y por lo tanto $f(x)=g(x).$\\\\
 
 	    %----------(c)
-	    \item Si suponemos, en cambio que $f(x)\geq g(x)$ para todo $x$ de $A$, demuestre que $f(x)\geq(x)$ para todo $x$. ¿Puede sustituirse el símbolo $\geq$ por el símbolo $>$ en todas partes?.\\\\
+	    \item Si suponemos, en cambio que $f(x)\geq g(x)$ para todo $x$ de $A$, demuestre que $f(x)\geq g(x)$ para todo $x$. ¿Puede sustituirse el símbolo $\geq$ por el símbolo $>$ en todas partes?.\\\\
+		Demostración.-\; Sea $f(x)\geq g(x)$ con $x\in A \; \Longrightarrow \; h(x)=f(x)-g(x)\geq 0$ para $x\in A$. Si $f$ y $g$ son continuas también lo es $h$, por lo que sólo nos faltaría demostrar que $h(x)\geq 0\; \forall x$. Supóngase que $h(x)<0$ para algún $x$. Entonces, existe $\delta>0$ tal que $h(x)<0$ para $x\in (x-\delta,x+\delta)$. Ya que $A$ es denso, existe $t\in (x-\delta,x+\delta)$ y $t\in A$ tal que $h(x)<0,$ donde es contradictorio al hecho de que $h(x)\geq 0$ para $x\in A$. Luego no podemos sustituir $\geq$ por $>$. Por ejemplo si $f(x)=|x|$, entonces $f(x)>0$ para todo $x$ del conjunto denso ${x:x\neq 0}$, pero no se cumple que $f(x)>0$ para todo $x$.\\\\ 
+
+	\end{enumerate}
+
+    %-------------------- 7.
+    \item Demuestre que si $f$ es continua y $f(x+y)=f(x)+f(y)$ para todo $x$ e $y$ entonces existe un número $c$ tal que $f(x)=cx$ para todo $x$.\\\\
+	Demostración.-\; Demostremos que $f(x)=cx$ en algún conjunto denso. Sea $x=y$ por lo que 
+	$$f(x+x)=f(x)+f(x)=2f(x)$$
+	por inducción tenemos,
+	$$f(nx)=nf(x),\qquad n\in \mathbb{N}.$$
+	Sustituyendo $x=1$
+	$$f(n)=n\cdot f(1)=cn.$$
+	Por lo que podemos afirmar que la función tiene la forma dada a un principio.\\
+	Luego ya que 
+	$$f(0)=f(0)+f(0)=2f(0)\; \Longrightarrow \; f(0)=0$$
+	se sigue que,
+	$$f(0)=f(x+(-x))=f(x)+f(-x)\; \Longrightarrow \; 0=f(x)+f(-x)$$
+	así sabemos que la función es impar, 
+	$$f(-x)=-f(x).$$
+	Para $n\in \mathbb{Z}$ tenemos,
+	$$f(-n)=-f(n)=-cn=c(-n)$$
+	así, es válido para
+	$f(x)=cx,\quad x\in \mathbb{Z}.$\\
+	Por último sea $\dfrac{p}{q}\in \mathbb{Q}$ necesitamos demostrar $f\left(\dfrac{p}{q}\right)=c\dfrac{p}{q}$.\\
+	Ya que $p$ es entero entonces,
+	$$f\left(\dfrac{p}{q}\cdot q\right)=f(p)=cp$$
+	por otro lado, ya que $q$ es entero entonces,
+	$$f\left(\dfrac{p}{q}\cdot q\right)=qf\left(\dfrac{p}{q}\right)$$
+	igualando, se sigue que 
+	$$f\left(\dfrac{p}{q}\right)=\dfrac{cp}{q}=c\dfrac{p}{q}$$
+	por lo que es válido para
+	$$f(x)=cx,\quad x\in \mathbb{Q}.$$\\
+
+
+    %-------------------- 8.
+    \item Suponga que $f$ es una función tal que $f(a)\leq f(b)$ siempre que $a<b$.\\
+
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[ticks=none,scale=.7,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, % no box around the plot, only x and y axis
+		      axis y line=center, % the * suppresses the arrow tips
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      label style={font=\scriptsize},
+		      tick label style={font=\scriptsize},
+		      yticklabel style={above left},
+		      xtick={-4,-3,-2,2.7,3.5,4},
+		      xticklabels={-4,a,u,v,b,4},
+		      ytick={.7,.4,1},
+		      yticklabels={f(u),f(v),1},
+		      xmin=-1.5,xmax=4.5,ymin=-.5,ymax=1.2,
+		      enlargelimits=upper] % extend the axes a bit to the right and top
+		      \addplot[domain=1.4:3,black,opacity=1]{x^2/10};
+		      \addplot[mark=*] coordinates {(1.4,.2)};
+		      \addplot[mark=*] coordinates {(3,.9)};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item Demuestre que $\lim\limits_{x\to a^-} f(x)$ y $\lim\limits_{x\to a^+} f(x)$ existen ambos.\\\\
+		Demostración.-\; Sea $A=\lbrace f(x):x<a \rbrace$ acotado superiormente por lo que $A$ tiene supremo, de donde tendremos que demostrar, $$\sup A = \lim\limits_{x\to a^-} f(x).$$\\
+		Sea $\epsilon>0$, existe $x_0<a$ tal que $f(x_0)>\sup A - \epsilon$. Ya que $f$ es una función no decreciente,
+		$$x>x_0\; \Longrightarrow \; f(x)>\sup A - \epsilon \; \Longleftrightarrow \; \sup A-f(x)<\epsilon$$
+		Así, para un $\epsilon>0$ arbitrario, existe $\delta > 0$ para $\delta = a - x_0$, tal que 
+		$$a-\delta<x<a\; \Longrightarrow \sup A-f(x)<\epsilon$$
+		que es la definición del límite dado, concluimos que $\inf A=\lim\limits_{x\to a^-} f(x).$\\
+		Por analogía se tiene $A^{'}=\lbrace f(x): x>a \rbrace$ es acotado inferiormente por lo que $A$ tiene ínfimo, así nos faltaría demostrar que,
+		$$\inf A^{'} = \lim_{x\to a^+} f(x)$$
+		Sea $\epsilon > 0$, entonces existe $x_0>a$ tal que $f(x_0)<\inf A^{'}+\epsilon$, luego ya que $f$ es una función no decreciente,
+		$$x<x_0 \; \Longrightarrow \; f(x)<\sup A^{'} \; \Longleftrightarrow \; f(x_0)-\inf A^{'} < \epsilon$$
+		Así, para $\epsilon > 0$ arbitrario, existe $\delta > 0$ para $\delta = x_0 - a$, tal que 
+		$$a<x<a+\delta\; \Longrightarrow \; f(x) - \inf A^{'} < \epsilon.$$\\
+
+	    %---------- (b)
+	    \item Demuestre que $f$ no tiene nunca una discontinuidad evitable.\\\\
+		Demostración.-\; Ya que $f$ es una función no decreciente, entonces por la parte (a), tenemos que 
+		$$\lim_{x\to a^-} f(x)\leq f(a)\leq \lim_{x\to a^+} f(x)$$
+		Si el $\lim\limits_{x\to a} f(x)$ existe, se sigue que
+		$$\lim_{x\to a}f(x)=\lim_{x\to a^-} f(x)\leq f(a)\leq \lim_{x\to a} f(x) = \lim_{x\to a} f(x),$$
+		que implica que $\lim\limit_{x\to a} f(x)=f(a).$ Por lo tanto $f$ es continua en $a$.\\\\
+
+	    %---------- (c)
+	    \item Demuestre que si $f$ satisface las conclusiones del teorema del valor intermedio, entonces $f$ es continua.\\\\
 		Demostración.-\;
 
 	\end{enumerate}
+
+
 
 \end{enumerate}
 

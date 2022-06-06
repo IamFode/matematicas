@@ -86,10 +86,10 @@ var_binom <- function(n,p) n*p*(1-p)
 
 # función de probabilidad
 func_poisson <- function(x,lambda){
-  if (lambda > 0 & x>0 & x%%1==0){
+  if (lambda>0 & x>0 & x%%1==0){
   return((exp(-lambda)*lambda^x)/fact(x))
   }else{
-    return("lambda debe ser mayor a 0 o x intero mayor o igual a cero")
+    return("lambda debe ser mayor a 0 o x entero mayor o igual a cero")
   }
 }
 
@@ -110,7 +110,7 @@ acum_poisson <- function(x,lambda){
 
 # función de probabilidad
 func_hiper = function(x,N,n,k){
-  if(x>=0 & x<=k & n<=N-k+x){
+  if(x>=0 & x<=k & n<=(N-k+x)){
     return((perm_sin_orden(k,x)*perm_sin_orden(N-k,n-x))/perm_sin_orden(N,n))
   }
   else{
@@ -121,7 +121,7 @@ func_hiper = function(x,N,n,k){
 x <- 1 # variable a determinar
 N <- 12 # Población
 n <- 3 # muestra
-k <- 5 # casos exitosos
+k <- 5 # casos exitosos o casos de otro tipo
 func_hiper(x,N,n,k)
 dhyper(x = x,m = k,n = N-k,k = n)
 

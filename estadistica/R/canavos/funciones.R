@@ -46,6 +46,21 @@ DMed = function(x){
 ######################  CONCEPTOS DE PROBABILIDAD  #############################
 ################################################################################
 
+# Factorial
+fact = function(num){
+  fac = 1
+  if(num < 0) {
+    print("No existe para número negativos")
+  } else if(num == 0) {
+    return(as.numeric("0"))
+  } else {
+    for(i in 1:num) {
+      fac = fac * i
+    }
+    return(fac)
+  }
+}
+
 #Permutaciones sin repetición 
 # (luego que sea el elegido la primera persona ya no se toma en cuenta)
 ## factorial(n)
@@ -72,6 +87,7 @@ perm_con_orden <- function(n,r){
 # (solo tres personas son las agraciadas para el premio) y donde no importa el orden 
 # (es exactamente lo mismo que Pepito, Pepita y Pepete sean escogidos que lo sea Pepita, Pepito y Pepete o que lo sea Pepete, Pepito y Pepita)
 perm_sin_orden <- function(n,r){
-  return(factorial(n)/(factorial(n-r)*factorial(r)))
+  return(fact(n)/(fact(n-r)*fact(r)))
 }
+
 #combinations(n=10, r=3, v=x)

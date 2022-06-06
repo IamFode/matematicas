@@ -1,6 +1,6 @@
 ---
 title: "Problemas resueltos: Probabilidad y estadística aplicaciones y métodos George Canavos "
-author: "Christian Paredes Aguilera (Fode)"
+author: "Por: Christian Paredes Aguilera (Fode)"
 date: "12/2/2022"
 output: pdf_document
 ---
@@ -31,7 +31,7 @@ df
 ### b)
 Graficar la función de probabilidad para estos valores de $X$
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot(data = df, mapping = aes(X,fp)) + 
   geom_col(width = 0.1)
 ```
@@ -53,7 +53,7 @@ print(fda)
 ### d)
 Graficar la función de distribución acumulativa.
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot(data = df, mapping = aes(X,fda)) + 
   geom_line(width = 2)
 ```
@@ -107,7 +107,7 @@ $$P(X\leq x) = \left\{\begin{array}{rcl}
   \dfrac{x^3+1}{2}&si&x>0\\\\
   0&si&\mbox{Para cualquier otro valor}\\\\
 \end{array}\right.$$
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot() +
    xlim(-1, 1) +
    geom_function(
@@ -163,7 +163,7 @@ Graficar $f(x)$
 
 Respuesta.-
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot() +
    xlim(-1, 1) +
    geom_function(
@@ -194,7 +194,7 @@ Determinar $F(x)$ y graficarla.
 Respuesta.- La función de distribución acumulativa esta dado por 
 $$F(x) = \int_{\infty}^x f(t)\; dt = \int_{-\infty}^0 0\; dt + \dfrac{1}{5}\int_0^x e^{-t/5}\; dt = -e^{-x/5}-1$$
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot() +
    xlim(0, 10) +
    geom_function(
@@ -236,7 +236,7 @@ Graficar $F(x)$.
 
 Respuesta.-
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 # gráfico de F(x)
 ggplot() +
    xlim(0, 1) +
@@ -641,7 +641,7 @@ De lo que concluimos que entre la desviación media de $X$ y la desviación est�
 Supóngase que el ingreso semanal de un asesor profesional es una variable aleatoria cuya función de densidad de probabilidad está determinada por:
 $$f(x)=\left\{\begin{array}{ll}\dfrac{1}{800}e^{-x/800} & x>0 \\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
 
-```{r}
+```{r, fig.width=3, fig.height=2, fig.align='center'}
 ggplot() +
    xlim(0, 1) +
    geom_function(

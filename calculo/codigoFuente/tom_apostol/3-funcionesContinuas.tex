@@ -1,5 +1,5 @@
 \chapter{Funciones continuas}
-
+\begin{comment}
 \setcounter{section}{1}
 \section{Definición de límite de una función}
 La continuidad existe si existe  continuidad por la izquierda y por la derecha.
@@ -644,34 +644,291 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
     %-------------------- 31.
     \item Dar un ejemplo de una función continua en un punto de un intervalo y discontinua en los demás puntos del intervalo, o probar que no existe una tal función.\\\\
-	Demostración.-\;
+	Demostración.-\; Sea $f$ una función en el intrevalo $[-a,a]$ tal que,
+	$$f(x)=\left\{\begin{array}{rcl}
+		x & \mbox{para} & x\in \mathbb{Q}\\
+		-x & \mbox{para} & x\in \mathbb{R}\\
+	\end{array}\right.$$
+	Por lo tanto, la función $f$ es continua solo en el punto $x=0$, y discontinuo en todos los demás puntos del intervalo $[-a,a]$.\\\\
 
     %-------------------- 32.
     \item Sea $f(x)=x\sen (1/x)$ si $x\neq 0$. Definir $f(0)$ de manera que $f$ sea continua en $0$.\\\\
-	Demostración.-\;
+	Demostración.-\; Ya que $-1\leq \sen \dfrac{1}{x}\leq 1$ para todo $x\neq 0$ sabemos que,
+	$$-x\leq x\sen\dfrac{1}{x}\leq x,\quad x\neq 0$$
+	después se tiene que,
+	$$\lim_{x\to 0}-x=\lim_{x\to 0}x=0$$
+	Aplicando el teorema 3.3 concluimos,
+	$$\lim_{x\to 0}x\sen\dfrac{1}{x}=0$$
+	Por lo tanto, definiendo $f(0)=0$, extendemos $f$ a una función continua en $0$.\\\\
 
     %-------------------- 33.
     \item Sea $f$ una función tal que $|f(u)-f(v)|\leq |u-v|$ para todos los valores $u$ y $v$ de un intervalo $[a,b]$.
+
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, % no box around the plot, only x and y axis
+		  axis y line=center, % the * suppresses the arrow tips
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  label style={font=\scriptsize},
+	          tick label style={font=\scriptsize},
+		  yticklabel style={above left},
+		  xtick={-4,-3,-2,2.7,3.5,4},
+		  xticklabels={-4,a,u,v,b,4},
+		  ytick={.7,.4,1},
+		  yticklabels={f(u),f(v),1},
+		  xmin=-4.5,xmax=4.5,ymin=-.5,ymax=1.2,
+		  enlargelimits=upper] % extend the axes a bit to the right and top
+		  \addplot[black,opacity=1]{x^2/10};
+		  \addplot+[
+		    black,very thick,dashed,
+		    mark=none,
+		    const plot,
+		    empty line=jump,
+		    ]
+		    coordinates{
+			(-2,0)
+			(-2,.4)
+			(0,.4)
+
+			(0,.7)
+			(2.7,.7)
+			(2.7,0)
+		    };
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
 
 	\begin{enumerate}[\bfseries a)]
 
 	    %---------- a)
 	    \item Probar que $f$ es continua en cada punto de $[a,b]$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $h$ cualquier punto en $[a,b]$, de donde para todo $\epsilon>0$ con $\delta=\epsilon$ se tiene por hipótesis que,
+		$$|x-h|<\delta \;  \Longrightarrow \; |x-h|<\epsilon \; \Longrightarrow \; |f(x)-f(h)|<\epsilon$$
+		Así, para todo $\epsilon>0$, tenemos $|f(x)-f(h)|<\epsilon$ siempre que $|x-h|<\delta$, y por lo tanto
+		$$\lim_{x\to h}f(x)=f(h).$$\\\\
+
 
 	    %---------- b)
 	    \item Suponiendo que $f$ sea integrable en $[a,b]$, demostrar que
 		$$\bigg|\int_a^b f(x)\; dx - (b-a)f(a)\bigg|\leq \dfrac{(b-a)^2}{2}$$
-		Demostración.-\;
+		Demostración.-\; Sea $x\in [a,b]$ tenemos,
+		$$|f(x)-f(a)|\leq |x-a|=x-a$$
+		y sabemos que,
+		$$\int_a^b f(a)\; dx = (b-a)f(a)$$
+		entonces,
+		$$\begin{array}{rcl}
+		    \bigg|\displaystyle\int_a^b f(x)\; dx - (b-a)f(a)\bigg|&=&\bigg|\displaystyle\int_a^b f(x)\; dx - \displaystyle\int_a^b f(a)\; dx\bigg|\\\\
+									   &=&\bigg|\displaystyle\int_a^b \left[f(x)-f(a)\right]\; dx\bigg|\\\\
+					 &\leq &\displaystyle\int_a^b|f(x)-f(a)|\; dx\\\\
+					 &\leq &\displaystyle\int_a^b |x-a|\; dx = \int_a^b (x-a)\;dx\\\\
+					 &=&\dfrac{x^2}{2}-ax\bigg|_a^b = \dfrac{(b-a)^2}{2}\\\\
+		\end{array}$$
+		\vspace{.5cm}
 
 	    %---------- c)
 	    \item Más general. Demostrar que para cualquier $c$ de $[a,b]$, se tiene
 		$$\bigg|\int_a^b f(x)\; dx - (b-a)f(c)\bigg|\leq \dfrac{(b-a)^2}{2}$$
-		Demostración.-\;
-
+		Demostración.-\; Similar a la parte (b) se tiene que,
+		$$\begin{array}{rcl}
+		    \bigg|\displaystyle\int_a^b f(x)\; dx - (b-a)f(c)\bigg|&=&\bigg|\displaystyle\int_a^b f(x)\; dx - \displaystyle\int_a^b f(c)\; dx\bigg|\\\\
+									   &\leq &\displaystyle\int_a^b|f(x)-f(c)|\; dx\\\\
+									   &=&\displaystyle\int_a^b |x-c|\; dx\\\\
+		\end{array}$$
+		Luego ya que $c\in [a,b]$ y $|x-a|=-(x-c)$ para $x<c$ y $|x-c|=x-c$ para $x\geq c$,
+		$$\begin{array}{rcl}
+		    \displaystyle\int_a^b|x-c|\; dx&=&\displaystyle\int_a^c -(x-c)\; dx + \int_c^b (x-c)\; dx\\\\
+						   &=&-\dfrac{x^2}{2}\bigg|_a^c +c\cdot x\bigg|_a^c +\dfrac{x^2}{2}\bigg|_c^b - c\cdot x\bigg|_c^b\\\\
+						   &=&\dfrac{a^2-c^2}{2}+c(c-a)+\dfrac{b^2-c^2}{2} - c(b-c)\\\\
+						   &=&\dfrac{a^2+b^2}{2}+c^2-c(b+a)\\\\
+		\end{array}$$
+		Pero, sabemos que $c\in[a,b]$ implica que $c\leq b$ por lo que 
+		$$\begin{array}{rcl}
+		    \dfrac{a^2+b^2}{2}+c^2-c(b+a)&=&\dfrac{a^2+b^2}{2}+c[c-(b+a)]\\\\
+		    &\leq&\dfrac{b^2+a^2}{2}+b(b-b-a)\\\\
+		    &=&\dfrac{b^2+a^2}{2}-ab\\\\
+		    &=&\dfrac{b^2-2ab+a^2}{2}\\\\
+		    &=&\dfrac{(b-a)^2}{2}\\\\
+		\end{array}$$
 
 	\end{enumerate}
 
 \end{enumerate}
+
+\end{comment}
+
+\section{funciones compuestas y continuas}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $u$ y $v$ dos funciones dadas cualquiera. La compuesta o la composición de $u$ y $v$ en ese orden se define como la función $f$ para la cual
+	$$f(x)=u[v(x)]$$
+	Es decir, para calcular el valor de $f$ en $x$ primero se calcula $v(x)$ y luego se calcula $u$ e el punto $v(x)$. Naturalmente que para que este cálculo tenga sentido, es necesario que los valores de $v(x)$ entren en el dominio de la función $u$, y $f$ estará sólo definida en aquellos puntos $x$ para los cuales $v(x)$ está en el dominio de $u$.
+    \end{def.}
+\end{tcolorbox}
+
+La notación para indicar composición es: 
+$$f=u\circ v$$
+que tiene una analogía con la notación de producto $u\cdot v$. En efecto, se verá a continuación que la operación de composición tiene algunas de las propiedades de la multiplicación
+La \textbf{ley asociativa} está dada por:
+$$u\circ(v\circ w) = (u\circ v)\circ w$$
+La demostración  inmediata. Luego la ley conmutativa no es siempre válida en la composición.\\
+
+\begin{teo}
+    Suponiendo que $v$ continua en $p$ y que $u$ es continua en $q$, siendo $q=v(p)$, la función compuesta $f=u\circ v$ es continua en $p$.\\\\
+	Demostración.-\; Puesto que $u$ es continua en $q$, para todo entorno $N_1[u(q)]$ existe un entorno $N_2(q)$ tal que 
+	$$u(y)\in N[u(q)]\mbox{ siempre que } y \in N_2(q).$$
+	Pero $q=v(p)$ y $v$ es continua en $p$, de modo que para el entorno $N_2(q)$ existe otro entorno $N_3(p)$ tal que 
+	$$v(x)\in N_2(q)\mbox{ siempre que } x\in N_3(p).$$
+	Si ponemos $y=v(x)$ y combinamos estas últimas, encontramos que para todo entorno $N_1(u[v(p)])$ existe un entorno $N_3(p)$ tal que 
+	$$u[v(x)]\in N_1[f(p)]\mbox{ siempre que } x\in N_3(p),$$
+	o, dicho de otro modo, puesto que $f(x)=u[v(x)],$
+	$$f(x)\in N_1[f(p)]\mbox{ siempre que } x\in N_3(p).$$
+	Esto significa que $f$ es continua en $p$, como se afirmó.\\\\
+
+\end{teo}
+
+\section{Ejercicios}
+
+En los Ejercicios del $1$ al $10$, las funciones $f$ y $g$ están definidas por las fórmulas dadas. Si no se dice lo contrario, los dominios de $f$ y $g$ consisten en todos los números reales. Pongamos $h(x)=f[g(x)]$ siempre que $g(x)$ esté en el dominio de $f$. En cada caso, precisar el dominio de $h$ y dar una o más fórmulas para la determinación de $h(x)$.\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item $f(x)=x^2-2x, \qquad g(x)=x+1$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=(x+1)^2-2x = x^2+2x+1-2x = x^2+1$$
+	esto es válido para $x\in \mathbb{R}$.\\\\
+
+
+    %-------------------- 2.
+    \item $f(x)=x+1, \qquad g(x)=x^2-2x$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=x^2-2x+1 = (x-1)^2$$
+	válido para $x\in \mathbb{R}$.\\\\
+
+    %-------------------- 3.
+    \item $f(x)=\sqrt{x},$ si $x\leq 0 \qquad g(x)=x^2.$\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sqrt{x^2}=|x|.$$
+	Ya que $g(x)\geq 0$ la composición es válida para todos $x\in \mathbb{R}$.\\\\
+
+    %-------------------- 4.
+    \item $f(x)=\sqrt{x}$ si $x\geq 0, \qquad g(x)=-x^2$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sqrt{-x^2}$$
+	Ya que $-x^2\leq 0$ y $\sqrt{x}\geq 0$ la composición sólo está definida para $x=0$.\\\\
+
+    %-------------------- 5.
+    \item $f(x)=x^2,\qquad g(x)=\sqrt{x}$ si $x\geq 0.$\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\left(\sqrt{x}\right)^2=x.$$
+	Esto es válido para $x\geq 0$.\\\\
+
+    %-------------------- 6.
+    \item $f(x)=-x^2,\qquad g(x)=\sqrt{x}$ si $x\geq 0.$\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=-\left(\sqrt{x}\right)^2=-x.$$
+	Esto es válido para $x\geq 0$.\\\\
+
+    %-------------------- 7.
+    \item $f(x)=\sen x,\qquad g(x)=\sqrt{x}$ si $x\geq 0.$\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sen \left(\sqrt{x}\right).$$
+	Es válido para $x\geq 0$.\\\\
+
+    %-------------------- 8.
+    \item $f(x)=\sqrt{x}$ si $x\geq 0,\qquad g(x)=\sen x$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sqrt{\sen x}.$$
+	Es válido para $x\geq 0$, por el hecho de que se define el dominio de $f$ como $x\geq 0$.\\\\
+
+    %-------------------- 9.
+    \item $f(x)=\sqrt{x}$ si $x>0,\qquad g(x)=x+\sqrt{x}$ si $x>0$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sqrt{x+\sqrt{x}}.$$
+	Ya que $g(x)=x+\sqrt{x}>0$ y $f$ está definida en $x>0$, la composición es válida para $x>0$.\\\\
+
+    %-------------------- 10.
+    \item $f(x)=\sqrt{x+\sqrt{x}}$ si $x>0, \qquad g(x)=x+\sqrt{x}$ si $x>0$.\\\\
+	Respuesta.- Sea $h(x)=f[g(x)]$ entonces,
+	$$h(x)=\sqrt{x+\sqrt{x}+\sqrt{x+\sqrt{x}}}$$
+	Ya que cada función está definida par $x>0$, entonces la composición es válida para $x>0$.\\\\
+
+Calcular los límites en los ejercicios del 11 al 20 y explicar qué teoremas se aplican en cada caso.\\\\
+
+    %-------------------- 11.
+    \item $\lim\limits_{x\to -2} \dfrac{x^3+8}{x^2-4}$.\\\\
+	Respuesta.-\; $$\lim\limits_{x\to -2} \dfrac{x^3+8}{x^2-4} = \lim_{x\to -2}\dfrac{(x+2)(x^2-2x+4)}{(x+2)(x-2)} = \lim_{x\to 0}\dfrac{x^2-2x+4}{x-2} = -3$$\\
+
+    %-------------------- 12.
+    \item $\lim\limits_{x\to 4}\sqrt{1+\sqrt{x}}.$\\\\
+	Respuesta.-\; $$\lim\limits_{x\to 4}\sqrt{1+\sqrt{x}} = \sqrt{3}.$$\\
+
+    %-------------------- 13.
+    \item $\lim\limits_{t\to 0}\dfrac{\sen(\tan t)}{\sen t}.$\\\\
+	Respuesta.-\; Recordemos que $\lim\limits_{x\to 0}\dfrac{\sen x}{x}=1$, por lo tanto
+	$$\lim_{t\to 0}\dfrac{\sen(\tan t)}{\sen t}=\lim_{t\to 0} \left(\dfrac{1}{\cos t}\cdot \dfrac{\sen(\tan t)}{\dfrac{\sen t}{\cos t}}\right) = \lim_{t\to 0}\left(\dfrac{1}{\cos t}\cdot \dfrac{\sen(\tan t)}{\tan t}\right) = \lim_{t\to 0}\dfrac{1}{\cos t}\cdot \lim_{t\to 0}\dfrac{\sen (\tan t)}{\tan t} = 1.$$\\
+
+    %-------------------- 14.
+    \item $\lim\limits_{x\to \pi/2} \dfrac{\sen(\cos x)}{\cos x}$.\\\\
+	Respuesta.-\; Sean $\lim\limits_{x\to \pi/2} \cos x = \cos \dfrac{\pi}{2} = 0\; $ y $\; \lim\limits_{x\to 0}\dfrac{\sen x }{x} = 1$ entonces
+	$$\lim_{x\to \pi/2}\dfrac{\sen(\cos x)}{\cos x}=1.$$\\
+
+
+    %-------------------- 15.
+    \item $\lim\limits_{t\o \pi}\dfrac{\sen(t-\pi)}{t-\pi}$.\\\\
+	Respuesta.-\; Sea $x=t-\pi$, donde $t\to \pi$ es $x \to 0$ entonces,
+	$$\lim\limits_{t\to \pi}\dfrac{\sen(t-\pi)}{t-\pi} = \lim\limits_{x\to 0}\dfrac{\sen x}{x}=1.$$\\
+
+    %-------------------- 16.
+    \item $\lim\limits_{x\to 1}\dfrac{\sen(x^2-1)}{x-1}$.\\\\
+	Respuesta.-\; Sea $\lim\limits_{x\to 0}\dfrac{\sen x}{x}=1$ entonces,
+	$$\lim_{x\to 1}\dfrac{\sen(x^2-1)}{x-1} = \lim_{x\to 1}\left[x+1\cdot \dfrac{\sen(x^2-1)}{(x+1)(x-1)}\right] = \lim_{x\to 1} (x + 1)\cdot \lim_{x\to 1}\dfrac{\sen(x^2-1)}{x^2-1} = 2.$$\\
+
+    %-------------------- 17.
+    \item $\lim\limits_{x\to 0} x\sen \dfrac{1}{x}$.\\\\
+	Respuesta.-\; Ya que $\lim\limits_{x\to 0} f(x)=f(0)$ y $$-1\leq \sen \dfrac{1}{x}\leq 1,\; x\neq 0 \; \Longrightarrow \; -x\leq x\sen \dfrac{1}{x}\leq x,\; x\neq 0$$ 
+	como también,
+    $$\lim_{x\to 0} -x = 0\qquad y \qquad \lim_{x\to 0} x = 0$$
+    entonces por el teorema 3.3 concluimos que,
+    $$\lim_{x\to 0} x\sen \dfrac{1}{x}=0.$$\\
+
+
+    %-------------------- 18.
+    \item $\lim\limits_{x\to 0}\dfrac{1-\cos 2x}{x^2}$.\\\\
+	Respuesta.-\; Sea $\cos(2x)=1-2\sen^2 x$ entonces,
+	$$\lim_{x\to 0}\dfrac{1-\cos(2x)}{x^2} = \lim_{x\to 0}\dfrac{1-(1-2\sen^2 x)}{x^2} = 2\cdot \lim_{x\to 0}\dfrac{\sen^2 x}{x^2} = \lim_{x\to 0}\dfrac{\sen x}{x}\cdot \lim_{x\to 0}\dfrac{\sen x}{x} =  2.$$\\
+
+    %-------------------- 19.
+    \item $\lim\limits_{x\to 0} \dfrac{\sqrt{1+x}-\sqrt{1-x}}{x}$.\\\\
+	Respuesta.-\; 
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{\sqrt{1-x}-\sqrt{1-x}}{x}&=&\lim\limits_{x\to 0}\dfrac{\left(\sqrt{1+x}-\sqrt{1-x}\right)\left(\sqrt{1+x}+\sqrt{1-x}\right)}{x\left(\sqrt{1+x}+\sqrt{1-x}\right)}\\\\
+								&=&\lim\limits_{x\to 0}\dfrac{(1+x)-(1-x)}{x\left(\sqrt{1+x}+\sqrt{1-x}\right)}\\\\
+								&=&\lim\limits_{x\to 0}\dfrac{2}{\sqrt{1+x}+\sqrt{1-x}}\\\\
+								&=&1.\\\\
+
+	\end{array}$$
+
+    %-------------------- 20.
+    \item $\lim\limits_{x\to 0} \dfrac{1-\sqrt{1-4x^2}}{x^2}$.\\\\
+	Respuesta.-\;
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0}\dfrac{1-\sqrt{1-4x^2}}{x^2}&=&\lim\limits_{x\to 0}\dfrac{\left(1-\sqrt{1-4x^2}\right)\left(1+\sqrt{1-4x^2}\right)}{x^2\left(1+\sqrt{1-4x^2}\right)}\\\\
+							    &=&\lim\limits_{x\to 0}\dfrac{1-(1-4x^2)}{x^2\left(1+\sqrt{1-4x^2}\right)}\\\\
+							    &=&\lim\limits_{x\to 0}\dfrac{4}{1-\sqrt{1-4x^2}}\\\\
+					  &=&2.\\\\
+	\end{array}$$
+
+    %-------------------- 21.
+    \item 
+
+\end{enumerate}
+
 
 
