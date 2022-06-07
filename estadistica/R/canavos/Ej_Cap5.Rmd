@@ -1,0 +1,17 @@
+---
+title: "Ejercicios capítulo 5"
+author: "Christian Limbert Paredes Aguilera"
+date: "6/6/2022"
+output: pdf_document
+---
+
+# Ejercicios Capítulo 5
+
+## 5.1
+En la misma gráfica, dibujar las distribuciones normales $N(0,5)$ y $N(0,4)$
+
+Respuesta.-
+
+```{r}
+
+```

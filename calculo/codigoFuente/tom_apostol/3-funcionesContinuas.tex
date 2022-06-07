@@ -759,7 +759,6 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
 \end{enumerate}
 
-\end{comment}
 
 \section{funciones compuestas y continuas}
 
@@ -926,9 +925,68 @@ Calcular los límites en los ejercicios del 11 al 20 y explicar qué teoremas se
 	\end{array}$$
 
     %-------------------- 21.
-    \item 
+    \item Sean $f$ y $g$ dos funciones definidas como sigue:
+    \begin{center}
+	$f(x)=\dfrac{x+|x|}{2}$ para todo $x$, $\qquad g(x)=\left\{\begin{array}{rcl}x&\mbox{para}&x<0,\\ x^2&\mbox{para}&x\geq 0\end{array}\right.$
+    \end{center}
+    Hallar una fórmula (o fórmulas) para el cálculo de la función compuesta $h(x)=f[g(x)].$ ¿Para qué valores de $x$ s continua $h$?.\\\\
+	Respuesta.-\; Si $x<0$, tenemos $|x|=-x$ de donde podemos calcular la composición de la siguiente manera,
+	$$h(x)=f(g(x)) =f(x) = \dfrac{x-x}{2}=0.$$
+
+	Si $x\geq 0$, tenemos $|x|=x$ de donde,
+	$$h(x)=f(g(x))=f\left(x^2\right) = \dfrac{2x^2}{2}=x^2.$$
+	Así,
+	$$h(x)=\left\{\begin{array}{rcl}
+		0&\mbox{si}&x<0,\\
+		x^2&\mbox{si}&x\geq 0.
+	\end{array}\right.$$
+
+	Ciertamente vemos que $h$ es continuo para todo $x\neq 0$, ya que las funciones constante $h8x)=0$ y el polinomio $h(x)=x^2$ son continuos. Además $h$ es continuo en $x=0$ ya que,
+	$$\lim_{x\to 0^-}h(x)=\lim_{x\to 0^+} h(x)=\lim_{x\to 0} h(x) = h(0).$$\\
+
+    %-------------------- 22.
+    \item Resolver el ejercicio 21 cuando $f$ y $g$ se definen del modo siguiente:
+	\begin{center}
+	    $f(x)=\left\{\begin{array}{rcl}
+		1&\mbox{si}&|x|\leq 1,\\
+		0&\mbox{si}&|x|>1,\\
+	    \end{array}\right.$
+	    $\qquad g(x)=\left\{\begin{array}{rcl}
+		2-x^2&\mbox{si}&|x|\leq 2,\\
+		2&\mbox{si}&|x|> 2,\\
+	    \end{array}\right.$
+	\end{center}
+
+	Respuesta.-\; Si $|x|>2$ entonces $g(x)=2$ y así $|f(x)|>1$. Por lo tanto,
+	$$h(x)=f(g(x))=0.$$
+	Si $\sqrt{3}<x\leq 2$, entonces $|g(x)|=|2-x^2|>1$ así,
+	$$h(x)=f(g(x))=0.$$
+	Luego si $1\leq x \leq sqrt{3}$, entonces $|g(x)|=|2-x^2|\leq 1$ de donde,
+	$$h(x)=f(g(x))=1.$$
+	Finalmente, si $|x|<1,$ entonces $|g(x)|=|2-x^2|>1$. Por lo tanto,
+	$$h(x)=f(g(x))=0.$$
+	Concluimos que,
+	$$h(x)=\left\{\begin{array}{rcl}
+		1 & \mbox{si} & 1\leq |x|<\sqrt{3},\\
+		0 & \mbox{en otro caso}.
+	\end{array}\right.$$
+	Para esta expresión tenemos que $h(x)$ es continua en cualquier punto menos en $|x|=1$ y $|x|=\sqrt{3}.$\\\\
+
+    %-------------------- 23.
+    \item Resolver el ejercicio 21 cuando $h(x)=g[f(x)]$.\\\\
+	Respuesta.-\; Si $x<0$ tenemos $|x|=-x$ de donde calculamos la composición de la siguiente manera,
+	$$h(x)=g[f(x)]=g\left[\dfrac{x-x}{2}\right]=g(0)=0.$$
+	Si $x\geq 0$, entonces $|x|=x$ y la composición será,
+	$$h(x)=g[f(x)]=g\left[\dfrac{x+x}{2}\right]=g(x)=x^2.$$
+	Por lo tanto,
+	$$h(x)=\left\{\begin{array}{rcl}
+		0&\mbox{si}&x<0,\\
+		x^2&\mbox{si}&x\geq 0.
+	\end{array}\right.$$
+	Donde $h$ es una función continua para todo $x$.\\\\
 
 \end{enumerate}
 
+\end{comment}
 
-
+\section{Teorema de Bolzano para las funciones continuas}

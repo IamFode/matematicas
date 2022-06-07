@@ -8,9 +8,10 @@ output: pdf_document
 ```{r}
 #librerias
 library(ggplot2)
+source("funciones_chapter4.R")
 ```
 
-# Ejercicios Capítulo 3
+# Ejercicios Capítulo 3 
 
 ## 3.1 
 Sea $X$ una variable aleatoria que representa el número de llamadas que recibe un conmutador en un intervalo de cinco minutos y cuta función de probabilidad está dada por $p(x)=e^{-3} (3)^x/x!, x=0,1,2,\ldots.$
@@ -205,7 +206,7 @@ ggplot() +
 
 
 
-# 3.5
+## 3.5
 La duración en horas de un componente electrónico, es una variable aleatoria cuya función de distribución acumulativa es $F(x)=1-e^{-x/100}, x>0$
 
 ### a)
@@ -227,7 +228,7 @@ $$1-(1-exp(-200/100)) = 0.13533$$
 integrate(function(x) 1/100 * exp(-x/100), lower = 0, upper = 200)
 ```
 
-# 3.6
+## 3.6
 La función de distribución acumulativa de una variable aleatoria está dada por 
 $$F(x)=\left\{\begin{array}{ll}0&x<0\\ 2x-x^2 & 0<x<1 \\ 1 & x>1\end{array}\right.$$
 
@@ -272,7 +273,7 @@ Respuesta.-
 
 $F^{'}(x) = 2 x - 2^2 = 2 - x$
 
-# 3.7
+## 3.7
 Sea $X$ una variable aleatoria que representa el número de clientes que llega a una tienda en un periodo de una hora. Dada la siguiente información
 
 
@@ -315,13 +316,13 @@ $Var(X) = E(X^2) - E^2(X) = 20.1 - 4^2 = 4.1$
 sum2 - sum^2
 ```
 
-# 3.8
+## 3.8
 Una compañía de seguros debe determinar la cuota anual a cobrarse por un seguro de $50$ mil dolares para hombres cuya edad se encuentra entre los $30$ y $35$ años. Con base en las tablas actuariales el número de fallecimientos al año, para este grupo, es de $5$ por cada mil. Si $X$ es la variable aleatoria que representa la ganancia de la compañía de seguros, determinar el monto de la cuota anual para que la compañía no pierda, a pesar de tener un número grande de tales seguros.
 
 Respuesta.- Calculamos el valor para un ganancia nula
 $$E[X] = 0 = \dfrac{C\cdot 995}{1000} - \dfrac{50000\cdot 5}{100} \Longrightarrow 995C=250000 \Longrightarrow C = 251.26 $$
 
-# 3.9
+## 3.9
 La función de densidad de probabilidad de una variable aleatoria $X$ está dada por:
 
 $$f(x) = \left\{\begin{array}{ll}
@@ -362,7 +363,7 @@ $$Var(X) = E(X^2) - E(X)^2 = \dfrac{1}{6} - \left(\dfrac{1}{3}\right)^2 = \dfrac
 1/6 - (1/3)^2
 ```
 
-# 3.10
+## 3.10
 Sea $X$ una variable aleatoria que representa la magnitud de la desviación, a partir de una valor prescrito, del peso neto de ciertos recipientes, los que se llenan mediante una máquina. 
 Función de densidad de una v.a. de $X$ está dada por:
 $$f(x) = \left\{\begin{array}{ll}
@@ -447,7 +448,7 @@ $$\alpha_4 = \dfrac{\mu_4}{\mu_2^2} = \dfrac{125}{\frac{25^2}{3^3}} = 5.4$$
 
 Donde nos dice que la distribución presenta un pico relativamente alto
 
-# 3.11
+## 3.11
 Supóngase que la duración en minutos de una llamada de negocios, es una variable aleatoria cuyo función de densidad de probabilidad está determinada
 
 $$f(x) = \left\{\begin{array}{ll}
@@ -540,7 +541,7 @@ $$V_Y = \dfrac{E(X)}{Var(X)} = \dfrac{4}{16}$$
 
 De donde $V_Y$ muestra mayor dispersión relativa con respecto a la media que la distribución correspondiente a $X$
 
-# 3.12
+## 3.12
 La calificación promedio en una prueba de estadística fue de $62.5$ con una desviación estándar de $10$. El profesor sospecha que el examen fue difícil. De acuerdo con lo anterior, desea ajustar las calificaciones de manera que el promedio sea de $70$ y la desviación estándar de $8$. ¿Qué ajuste del tipo $aX+b,$ debe utilizar?.
 
 Respuesta.- Sea $$E(X)=62.5,\qquad y \qquad \sqrt{Var(X)} = 10 \; \Rightarrow \; Var(X) = 100$$
@@ -570,7 +571,7 @@ VarX <- function(varx) (2*(1/5)^(1/2))^2 * varx
 VarX(100)
 ```
 
-# 3.13
+## 3.13
 Sea $X$ una variable aleatoria con media $\mu$ y varianza $\sigma^2$.
 
 ## a)
@@ -585,7 +586,7 @@ $$Var(X) + (E(X)-c)^2 = \sigma^2 + (\mu-c)^2$$
 
 Respuesta.-  Cuando $c=\mu$
 
-# 3.14
+## 3.14
 Con respecto al ejercicio 3.11, demostrar que la variable aleatoria $Y=(X-4)/4$ tiene media cero y desviación estándar uno. Demostrar que los factores de forma, primero y segundo, de la distribución de $Y$ son los mismos de la distribución de $X$.
 
 Respuesta.- 
@@ -637,7 +638,7 @@ integrate(f,lower = 0,upper = 10)
 
 De lo que concluimos que entre la desviación media de $X$ y la desviación estándar de ejercicio 10 se tiene una diferencia de $0.33$.
 
-# 3.17
+## 3.17
 Supóngase que el ingreso semanal de un asesor profesional es una variable aleatoria cuya función de densidad de probabilidad está determinada por:
 $$f(x)=\left\{\begin{array}{ll}\dfrac{1}{800}e^{-x/800} & x>0 \\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
 
@@ -702,7 +703,7 @@ integrate(function(x) 1/800*exp(-x/800), lower = 0, upper = 800)
 ```
 
 
-# 3.18
+## 3.18
 Comprobar que la función generadora de momentos central de una variable aleatoria $X$, genera todos los momentos centrales de $X$.
 
 Respuesta.- 
@@ -715,7 +716,7 @@ $$\begin{array}{rcl}
   &=&u_r\\\\
 \end{array}$$
 
-# 3.19
+## 3.19
 La función de densidad de probabilidad de una variable aleatoria $X$ está determinada:
 $$f(x)=\left\{\begin{array}{ll}\dfrac{1}{16}x e^{-x/4} & x>0, \\ 0 & \mbox{para cualquier otro valor}\end{array}\right.$$
 
@@ -737,14 +738,14 @@ $$\dfrac{d^2m_X(t)}{dt^2} \bigg|_{t=0} = \dfrac{d^2}{dt^2}(1-4x)^{-2} = \dfrac{d
 
 $$Var(X) = E(X^2) - E^2(X) = 96 - 8^2 = 32$$
 
-# 3.20
+## 3.20
 Considérese la función de densidad de probabilidad dada en el ejercicio 3.11. Encontrar la función generadora de momentos y utilizaría para comprobar los valores de la media y la varianza, determinados en el ejercicio 3.11.
 
 Respuesta.- 
 
 $$m_X(t) = \dfrac{1}{4}\int_0^{\infty} e^{tx}\cdot e^{-\frac{x}{4}}\; dx $$
 
-# 3.21 
+## 3.21 
 Sea $X$ una variable aleatoria discreta con función de probabilidad $p(x)=0,1,2,\ldots ,n,$ y sean $a,b$ y $c$ constantes. Demostrar que $E(c) = c,$ $E(aX+b) = aE(X)+b,$ y $E[g(X)+h(X)] = E[g(X)+E[g(X)]]$, donde $g(x)$ y $h(x)$ son funciones de $X$.
 
 Respuesta.- $E(c) = \sum\limits_x c\cdot p(x) = c\sum\limits_x p(x) = c$
@@ -753,11 +754,892 @@ $E(cX+b) = \sum\limits_x (cx + b)p(x) = c\sum\limits_x x\cdot p(x) + b\sum\limit
 
 $E[g(X)+h(X)] = \sum\limits_x [g(x)+h(x)] p(x) + \sum\limits_x g(x)p(x) + \sum\limits_xh(x)p(x) = E[g(X)]+E[h(X)]$
 
-# 3.22
+## 3.22
 Para la variable aleatoria discreta del ejercicio anterior, utilizar las definiciones 3.8 y 3.9 para demostrar que $Var(X)=E(X^2)-E^2(X).$
 
 Respuesta.-
 
 $$Var(X)=(X-\mu)^2 = \sum_x (x-\mu)^2 p(x) = \sum_x x^2p(x) - 2\mu\sum_x x p(x) + \mu^2\sum_x  p(x) =$$ $$E(X^2) - 2E^2(X) + E^2(X) = E(X^2) - E^2(X)$$
+
+
+
+\newpage
+
+# Ejercicios capítulo 4.
+
+## 4.1.
+Sea $X$ una variable aleatoria con distribución binomial y parámetros $n$ y $p$. Mediante la función de probabilidad binomial, verificar que $p(n-x;n,1-p)=p(x;n,p).$
+
+Respuesta.-
+$$\begin{array}{rcl}
+  p(n-x;n,1-p)&=&\dfrac{n!}{\left[n-(n-x)\right]!(n-x)!}(1-p)^{n-x}\left[1-(1-p)\right]^{n-(n-x)}\\\\
+  &=&\dfrac{n!}{x!(n-x)!}(1-p)^{n-x} p^{x}\; \mbox{para } x=0,1,2,\ldots n\\\\
+  &=&p(x;n,p)\\\\
+\end{array}$$
+
+
+## 4.2.
+En una distribución binomial, sea $X$ el número de éxistos obtenidos en diez ensayos donde la probabilidad de éxito en cada uno es de $0.8$. Con el resultado del problema anterior, demostrar que la probabilidad de lograr de manera exacta seis éxitos es igual a la probabilidad de tener cuatro fracasos.
+
+Respuesta.-
+
+$$0.08808038=\dfrac{10!}{\left[10-(10-4)\right]!(10-4)!}(1-0.8)^{10-6}\left[1-(1-0.8)\right]^{10-(10-6)}$$ $$ =\dfrac{10!}{6!(10-6)!}(1-0.8)^{10-6} 0.8^{6} = 0.08808038$$
+
+
+```{r}
+dbinom(4,10,0.2)
+dbinom(6,10,0.8)
+```
+
+
+## 4.3
+Mediante el empleo de la función de probabilidad binomial, verificar la siguiente fórmula de recursión:
+
+$$p(x+1;n,p) = \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
+
+Respuesta.- 
+
+$$p(x+1,n,p)=\dfrac{n!}{[n-(x+1)]!(x+1)!} p^{x+1}(1-p)^{n-(x+1)} = \dfrac{n!}{\frac{(n-x!)}{(n-x)}x!(x+1)}p^x p (1-p)^{n-x}(1-p)^{-1}$$ $$= \dfrac{(n-x)p}{(x+1)(1-p)}p(x;n,p)$$
+
+## 4.4.
+sea $X$ una variable aleatoria con distribución binomial y parámetros $n=8$ y $p=0.4$. Emplear la fórmula de recursión del problema anterior para obtener las probabilidades puntuales de los valores de $X$. 
+
+Respuesta.- 
+
+$$p(x+1;8,0.4) = \dfrac{(8-x)0.4}{(x+1)(1-0.4)}p(x;8,0.4)$$
+
+## 4.5
+Sea $X$ una variable aleatoria distribuida binomialmente con $n=10$ y $p=0.5$ 
+
+### a) 
+Determinar las probabilidades de que $X$ se encuentre dentro de una desviación estándar de la media y a dos desviaciones estándar de la media.
+
+Respuesta.- Para una desviación estándar
+
+Sabemos que $\mu = E(X) = np = 10\cdot 0.5 = 5$ y $\sigma = \sqrt{np(1-p)} = \sqrt{10\cdot 0.5\cdot (1-0.5)} = 1.581139$, luego si queremos hallar la desviación estándar de la media tenemos que calcular la desviación hacia la derecha y hacia la izquierda, es decir, $5\pm 1.581139 = 6.581139 \; \mbox{y} \; 3.418861$. Si restamos y sumamos a $6.581139$ y $3.418861$, $0.581139$ respectivamente tenemos por un lado $6$ y por otro $2.837722 \approx 3$.
+Así tenemos que,
+
+$$P \left( X\leq 6 \right) - P \left( X\leq 3 \right) = F\left(6;10,0.5\right) - F\left(3;10,0.5\right)= \sum_{i=0}^6 {10 \choose i} 0.5^i (1-0.5)^{10-i}- \sum_{i=0}^3 {10 \choose i} 0.5^i (1-0.5)^{10-i}$$ 
+$$= 0.65625$$
+
+```{r}
+pbinom(6,10,0.5) - pbinom(3,10,0.5)
+```
+
+Para dos desviaciones estándar, tenemos que $\sigma = 2\sqrt{np(1-p)} = 2\sqrt{10\cdot 0.5\cdot (1-0.5)} = 3.162278$, de donde $5\pm 3.162278 = 8.162278\; \mbox{y}\; 1.837722$. Podemos construir directamente la probabilidad requerida como sigue, 
+
+$$P \left( X\leq 8 \right) - P \left( X\leq 2 \right) = F\left(8;10,0.5\right) - F\left(2;10,0.5\right) = \sum_{i=0}^8 {10 \choose i} 0.5^i (1-0.5)^{10-i}- \sum_{i=0}^2 {10 \choose i} 0.5^i (1-0.5)^{10-i}$$ 
+$$=0.9345703$$
+
+```{r}
+pbinom(8,10,0.5)-pbinom(2,10,0.5)
+```
+
+### b) 
+¿Cómo cambiarían las respuestas de a) si $n=15$ y $p=0.4$?
+
+Respuesta.- Para una desviación estándar,
+
+Similar a la parte a) tenemos que $\mu = E(X) = np = 15\cdot 0.4 = 6$ de donde se tiene $\sigma = \sqrt{np(1-p)} = \sqrt{15\cdot 0.4\cdot (1-0.4)} = 1.897367$ de donde $6\pm 1.897367 = 7.897367\; \mbox{y}\; 4.102633$, por lo tanto,
+
+$$P \left( X\leq 7 \right) - P \left( X\leq 2 \right) = F\left(7;15,0.4\right) - F\left(2;15,0.4\right)= \sum_{i=0}^7 {15 \choose i} 0.4^i (1-0.4)^{15-i}- \sum_{i=0}^2 {15 \choose i} 0.4^i (1-0.4)^{15-i}$$ 
+$$=0.5696191$$
+
+```{r}
+pbinom(7,15,0.4)-pbinom(4,15,0.4)
+```
+
+Para dos desviaciones estándar, 
+
+tenemos que $\sigma = 2\sqrt{np(1-p)} = 2\sqrt{15\cdot 0.4\cdot (1-0.4)} = 3.794733$, de donde $6\pm 3.794733 = 9.794733\; \mbox{y}\; 2.205267$. se sigue, 
+
+$$P \left( X\leq 9 \right) - P \left( X\leq 2 \right) = F\left(9;15,0.4\right) - F\left(2;15,0.4\right) = \sum_{i=0}^9 {15 \choose i} 0.4^i (1-0.4)^{15-i}- \sum_{i=0}^2 {15 \choose i} 0.4^i (1-0.4)^{15-i}$$ 
+$$=0.9345703$$
+
+```{r}
+pbinom(9,15,0.4)-pbinom(2,15,0.4)
+```
+
+## 4.6
+Supóngase que la probabilidad de tener una unidad defectuosa en una línea de ensamble es de 0.05. Si el número de unidades terminadas constituye un conjunto de ensayos independientes 
+
+### a)
+¿Cuál es la probabilidad de que entre 20 unidades dos se encuentren defectuosas?
+
+Respuesta.-
+$$P(X=2)={20 \choose 2}\cdot 0.05^2\cdot (1-0.05)^{20-2} = 0.1886768$$
+
+```{r}
+# opción 1
+choose(20,2)*0.05^2*(1-0.05)^(20-2)
+# opción 2
+dbinom(2,20,0.05)
+```
+
+### b)
+¿Cuál es la probabilidad de que entre 20 unidades, dos como límite se encuentren defectuosas?
+
+Respuesta.-
+$$P(X\leq 2) = F(2;20,0.05) = \sum_{i=0}^{2} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.9245163$$
+
+```{r}
+pbinom(2,20,0.05)
+```
+
+### c)
+¿Cuál es la probabilidad de que por lo menos una se encuentre defectuosa?
+
+Respuesta.-
+
+$$1-P(X\leq 1) = 1-F(1;20,0.05) = 1-\sum_{i=0}^{1} {20\choose i} \cdot 0.05^i \cdot  (1-0.05)^{20-i} = 0.2641605$$
+
+```{r}
+pbinom(1,20,0.05,lower.tail = FALSE)
+```
+
+## 4.7
+En una fábrica de circuitos electrónicos, se afirma que la proporción de unidades defectuosas de cierto componente que ésta produce, es del $5\%$. Un buen comprador de estos componentes revisa $15$ unidades seleccionadas al azar y encuentra cuatro defectuosas. Si la compañia se encuentra en lo correcto y prevalecen las suposiciones para que la distribución binomial sea el modelo de probabilidad adecuado para esta situación, ¿Cuál es la probabilidad de este hecho?. Con base en el resultado anterior ¿puede concluir que la compañia está equivocada?
+
+Respuesta.- 
+$$P(X=4)= {15 \choose 4}\cdot 0.05^4 \cdot (1-0.05)^{15-4}=0.004852576$$
+
+```{r}
+dbinom(4,15,0.05)
+choose(15,4)*0.05^4*(1-0.05)^(15-4)
+func_binom(4,15,0.05)
+```
+
+Ahora veamos que tan probable es que existe más de 4 circuitos defectuosos.
+
+$$P(X\geq 4) = 1-P(X < 4) = 1-P(x\leq 3)  = 1- F(3;20,0.05) = 1-\sum_{i=0}^3 0.05^i\cdot  (1-0.05)^{15-i} = 0.005467259$$
+
+```{r}
+pbinom(3,15,0.05, lower.tail = FALSE)
+1-acum_binom(3,15,0.05)
+```
+
+Por lo que se dice de la afirmación es incorrecta.
+
+## 4.8
+La probabilidad de que un satélite, después de colocarlo en la órbita, funcione de manera adecuada es de $0.9$. Supóngase que cinco de éstos se colocan en órbita y operan de manera independiente.
+
+### a)
+¿Cuál es la probabilidad de que, por lo menos, el $80\%$ funcione adecuadamente?
+
+Respuesta.-  Ya que el $80\%$ de 5 es 4 por lo que 
+
+$$P(X\geq 4) = 1 - P(X<3) = 1 - F(3;5,0.9) = 1-\sum_{i=0}^3  0.9^{i}\cdot (1-0.9)^{5-i} = 0.91854$$
+
+```{r}
+pbinom(3,5,.9,lower.tail = FALSE)
+1-acum_binom(3,5,0.9)
+```
+
+### b)
+Responder a a) si $n=10$
+
+Respuesta.-
+
+$$P(X\geq 10) = 1 - P(X<9) = 1 - F(9;10,0.9) = 1-\sum_{i=0}^9  0.9^{i}\cdot (1-0.9)^{10-i} = 0.7360989$$
+
+```{r}
+pbinom(8,10,.9,lower.tail = FALSE)
+1-acum_binom(8,10,0.9)
+```
+
+### c)
+Responder a a) si $n=20$
+
+Respuesta.-
+$$P(X\geq 16) = 1 - P(X<15) = 1 - F(15;20,0.9) = 1 - \sum_{i=0}^{15}  0.9^{i}\cdot (1-0.9)^{5-i} = 0.8670467$$
+
+```{r}
+pbinom(16,20,.9,lower.tail = FALSE)
+1-acum_binom(16,20,0.9)
+```
+
+### d)
+¿Son inesperados estos resultados? ¿Por qué?
+
+Respuesta.- Son inesperados ya que no se puede ver una tendencia clara cuando $n$ es más grande.
+
+## 4.9. 
+Con base en encuestas al consumidor se sabe que la preferencia de éste con respecto a dos marcas, A y B, de un producto dado, se encuentra muy pareja. Si la opción de compra entre estas marcas es independiente, ¿cuál es la probabilidad de que entre 25 personas seleccionadas al azar, no más de diez tengan preferencia por la marca A?
+
+Respuesta.- Ya que A y B se encuentran parejas entonces la probabilidad es de 0.5, luego:
+
+$$P(X\leq 10) = F(10;25,0.5) = \sum_{i=0}^{10} 0.5^{i}\cdot (1-0.5)^{25-i} = 0.2121781$$
+
+```{r}
+pbinom(10,25,0.5)
+acum_binom(10,25,0.5)
+```
+
+## 4.10
+Supóngase que un examen contiene 15 preguntas del tipo falso o verdadero. El examen se aprueba contestando correctamente por lo menos nueve preguntas. Si se lanza una moneda para decidir el valor de verdad de cada pregunta, ¿cuál es la probabilidad de aprobar el examen?
+
+Respuesta.- Ya que al lanzar una moneda se tiene sólo dos opciones entonces la probabilidad es de 0.5, luego: 
+
+$$P(X\geq 9) = 1 - P(X\geq 8) = 1 - F(8;15,0.5) = 1 - \sum_{i=0}^{8} 0.5^i\cdot (1-05)^{15-i} = 0.1508789$$
+
+```{r}
+pbinom(9,15,0.5,lower.tail = FALSE)
+1-acum_binom(9,15,0.5)
+```
+
+## 4.11
+Un vendedor de seguros sabe que la oportunidad de vender una póliza es mayor mientras más contactos realice con clientes potenciales. Si la probabilidad de que una persona compre una póliza de seguro después de la visita, es constante e igual a $0.25$, y si el conjunto de visitas constituye independiente de ensayos, ¿cuántos compradores potenciales debe visitar el vendedor para que la probabilidad de vender por lo menos una póliza sea de $0.80$?
+
+Respuesta.-
+
+$$P(X\geq 1) = 0.25 \; \Rightarrow \; 1-P(X<0) = 1 - [0.25^0 \cdot (1-0.25)^{n-0}] =  1 - 0.75^{n} = 0.8 \; \Rightarrow \; n \ln(0.75) = \ln(0.2)$$
+
+$$n=\dfrac{\ln(0.2)}{\ln(0.75)} = 5.59450194 \approx 6$$
+
+```{r}
+log(0.20)/log(0.75)
+```
+
+Por lo que debe existir 6 o más compradores.
+
+## 4.12.
+El gerente de un restaurante que sólo da servicio mediante reservación sabe, por experiencia, que el $15\%$ de las personas que reservan una mesa no asistirán. Si el restaurante acepta $25$ reservaciones pero sólo dispone de $20$ mesas, ¿cuál es la probabilidad de que a todas las personas que asistan al restaurante se les asigne una mesa?.
+
+Respuesta.- Existe la probabilidad de que el $85\%$ asista al restaurante. Por lo que,
+
+$$P(X\leq 20) = F(20;25,0.85) = \sum_{i=0}^{20} 0.85^i \cdot (1-0.85)^{25-i} = 0.317893$$
+
+```{r}
+pbinom(20,25,0.85)
+```
+
+## 4.13
+Mediante la probabilidad de Poisson, demostrar la siguiente fórmula de recursión:
+$$p(x+1;\lambda)=\dfrac{\lambda}{x+1}p(x;\lambda)$$
+
+Demostración.- Por definición de de función de probabilidad de Poisson se tiene que,
+$$p(x+1;\lambda) = \dfrac{e^{-\lambda} \cdot \lambda^{x+1}}{(x+1)!},\qquad \mbox{para}\; x=0,1,2,\ldots, \; \lambda >0$$
+que también podemos reescribirlo de la siguinete manera,
+$$\dfrac{e^{-\lambda} \cdot \lambda^{x+1}}{(x+1)!} = \dfrac{e^{-\lambda}\cdot \lambda\cdot \lambda^{x}}{x!\cdot (x+1)} $$
+y por lo tanto
+$$p(x+1;\lambda) = \dfrac{\lambda}{x+1} \cdot \dfrac{e^{-\lambda}\cdot \lambda^{x}}{x!} = \dfrac{\lambda}{x+1} p(x;\lambda)$$
+
+## 4.14
+Sea $X$ una variable aleatoria de Poisson con parámetro $\lambda=2$. Emplear la fórmula del problema anterior para determinar las probabilidades puntuales de $X=0,1,2,3,4,5,6,7,8$ y hágase una gráfica de la función de probabilidad.
+
+Respuesta.- 
+
+- Para $X=0$
+$$p(0+1;2) = \dfrac{\lambda}{x+1} \cdot \dfrac{e^{-\lambda}\cdot \lambda^{x}}{x!} = \dfrac{2}{0+1} \cdot \dfrac{e^{-2}\cdot 2^{0+1}}{(0+1)!} = 0.2707$$
+
+- Para $X=1$ 
+
+$$p(1+1;2) =  \dfrac{2}{1+1} \cdot \dfrac{e^{-2}\cdot 2^{1+1}}{(1+1)!} = 0.2707$$
+
+- Para $X=2$
+
+$$p(2+1;2) =  \dfrac{2}{2+1} \cdot \dfrac{e^{-2}\cdot 2^{2+1}}{(2+1)!} = 0.1804$$
+
+- Para $X=3$
+
+$$p(3+1;2) = \dfrac{2}{3+1} \cdot \dfrac{e^{-2}\cdot 2^{3+1}}{(3+1)!} = 0.0902$$
+
+- Para $X=4$
+
+$$p(4+1;2) = \dfrac{2}{4+1} \cdot \dfrac{e^{-2}\cdot 2^{4+1}}{(4+1)!} = 0.036$$
+
+- Para $X=5$
+
+$$p(5+1;2) = \dfrac{2}{5+1} \cdot \dfrac{e^{-2}\cdot 2^{5+1}}{(5+1)!} = 0.012$$
+
+- Para $X=6$
+
+$$p(6+1;2) = \dfrac{2}{6+1} \cdot \dfrac{e^{-2}\cdot 2^{6+1}}{(6+1)!} = 0.0034$$
+
+- Para $X=7$
+
+$$p(7+1;2) = \dfrac{2}{7+1} \cdot \dfrac{e^{-2}\cdot 2^{7+1}}{(7+1)!} = 0.0008$$
+
+- Para $X=8$
+
+$$p(8+1;2) = \dfrac{2}{8+1} \cdot \dfrac{e^{-2}\cdot 2^{8+1}}{(8+1)!} = 0.0001$$
+
+
+```{r, fig.width=3, fig.height=2, fig.align='center'}
+lambda = 2
+
+x = 0
+while (x<9){
+  print(paste0(x," = ", (exp(-lambda)*lambda^(x+1))/fact((x+1))))
+  x = x+1
+}
+
+x = 0
+X = c()
+Probabilidad = c()
+while (x<9) {
+  X = c(X,x)
+  Probabilidad = c(Probabilidad, dpois(x+1,lambda))
+  x=x+1
+}
+
+ggplot(mapping = aes(X,Probabilidad)) +
+  geom_col(width = 0.1) 
+```
+
+
+## 4.15
+Para un volumen fijo, el número de células sanguíneas rojas es una variable aleatoria que se presenta con una frecuencia constante. Si el número promedio para un volumen dado es de nueve células para personas normales, determinar la probabilidad de que el número de células rojas para una persona se encuentre dentro de una desviación estándar del valor promedio y a dos desviaciones estándar del promedio.
+
+Respuesta.- Sea la desviación estándar de una variable aleatoria Poisson igual a,
+$$\sqrt{\lambda} = \sqrt{9} = 3$$
+Entonces una desviación estándar del valor promedio estará dada por:  
+$$9\pm 3 = 6 \mbox{ y } 12$$
+Acá debemos tener cuidado ya que estamos trabajando con distribuciones discretas , por lo que tenemos  $P(X\leq 6) = P(X<7)$ es decir cuando restamos $P(X\leq 12)-P(X\leq 6)=P(X\leq 12)-P(X< 7)$, por lo tanto lo correcto será restar 
+$$P(X\leq 12)-P(X\leq 5)=P(X\leq 12)-P(X<6)$$  
+Luego,
+$$P(X\leq 12) - P(X\leq 5) = F(12,9)-F(5,9)=\sum_{i=0}^{12}\dfrac{e^{-9}\cdot 9^i}{i!}-\sum_{i=0}^5 \dfrac{e^{-9}\cdot 9^{i}}{i!}=0.7600829$$
+
+```{r}
+ppois(12,9)-ppois(5,9)
+acum_poisson(12,9)-acum_poisson(5,9)
+```
+
+Por otro lado para dos desviaciones estándar se tiene,
+
+$$P(X\leq 15) - P(X\leq 2) = F(15,9)-F(2,9)=\sum_{i=0}^{15}\dfrac{e^{-9}\cdot 9^i}{i!}-\sum_{i=0}^2\dfrac{e^{-9}\cdot 9^{i}}{i!}=0.9717321.$$
+
+```{r}
+ppois(15,9)-ppois(2,9)
+acum_poisson(15,9)-acum_poisson(2,9)
+```
+
+## 4.16
+El número total de clientes que llega a un banco es una variable aleatoria Poisson. Si el número promedio es de $120$ por hora, ¿Cuál es la probabilidad de que en un minuto lleguen por lo menos tres clientes? ¿Puede esperarse que la frecuencia de llegada de los clientes al banco sea contante en un día cualquier?
+
+Respuesta.- Sabiendo que en un minuto el promedio de llegada es $120/60$  y que por lo menos se espera que lleguen 3 cliente, entonces 
+$$P(X \geq 3) = 1-P(X\leq 2) = \sum_{i=0}^2 \dfrac{e^{-\frac{120}{60}}\cdot \left(\dfrac{120}{60}\right)^i}{i!}=0.3233236$$
+
+```{r}
+ppois(120/60,2,lower.tail = FALSE)
+1-acum_poisson(120/60,2)
+```
+Luego, puede esperarse que la frecuencia de los clientes al banco sea constante en un día cualquiera, ya que $\lambda$ es grande.
+
+## 4.17  
+Supóngase que en un cruce transitado ocurren de manera aleatoria e independiente dos accidentes por semana. Determinar la probabilidad de que ocurra un accidente en una semana y de que ocurra tres, en la siguiente semana.
+
+Respuesta.-
+
+$$P(X=1)\cdot P(X=3) = p(1;2)\cdot p(3;2) = \dfrac{e^{-2}\cdot 2^1}{1!}\cdot \dfrac{e^{-2}\cdot 2^3}{3!} = 0.0488417$$
+
+```{r}
+dpois(1,2)*dpois(3,2)
+func_poisson(1,2)*func_poisson(3,2)
+```
+
+## 4.18
+Sea $X$ una variable aleatoria binomial. Para $n=20$ calcular las probabilidades puntales binomiales y compararlas con las correspondientes probabilidades de Poisson para $p=0.5,\; 0.2,\; 0.1$ y $0.01$.
+
+Respuesta.- Sea $\lambda = n\cdot p$ entonces,
+
+```{r}
+prob = data.frame(X=0:20,
+           binom1=dbinom(0:20,20,0.5),
+           poisson1 = dpois(0:20,0.5*20),
+           binom2=dbinom(0:20,20,0.2),
+           poisson2 = dpois(0:20,0.2*20),
+           binom3=dbinom(0:20,20,0.1),
+           poisson3 = dpois(0:20,0.1*20),
+           binom4=dbinom(0:20,20,0.01),
+           poisson4 = dpois(0:20,0.01*20))
+
+p1 = ggplot(prob, aes(x=X,y=binom1))+
+  geom_point()
+p2 = ggplot(prob, aes(x=X,y=binom2))+
+  geom_point()
+p3 = ggplot(prob, aes(x=X,y=binom3))+
+  geom_point()
+p4 = ggplot(prob, aes(x=X,y=binom4))+
+  geom_point()
+p5 = ggplot(prob, aes(x=X,y=poisson1))+
+  geom_point()
+p6 = ggplot(prob, aes(x=X,y=poisson2))+
+  geom_point()
+p7 = ggplot(prob, aes(x=X,y=poisson3))+
+  geom_point()
+p8 = ggplot(prob, aes(x=X,y=poisson4))+
+  geom_point()
+
+multiplot(p1,p2,p3,p4,p5,p6,p7,p8,cols=2)
+```
+
+## 4.19
+Una compañia compra cantidades muy grandes de componentes electrónicos. La decisión para aceptar o rechazar un lote de componentes se toma con base en una muestra aleatoria de 100 unidades. Si el lote se rechaza al encontrar tres o más unidades defectuosas en la muestra, ¿Cuál es la probabilidad de rechazar un lote que contenga un $8\%$ de unidades defectuosas?
+
+Respuesta.- Ya que $P(X\geq 3) = 1-P(X\leq2)$ y $\lambda = 1/100$ Entonces,
+
+$$P(X\geq 3) = 1-P(X\leq 2) = 1-\sum_{i=0}^n \dfrac{e^{\frac{1}{100}}\cdot \left(\dfrac{1}{100}\right)^i} {i!} = 0.0803014$$
+
+
+```{r}
+ppois(2,1,lower.tail = FALSE)
+1- acum_poisson(2,1)
+```
+
+Análogamente pasa para $\lambda = 8/100$
+
+$$P(X\geq 3) = 1-P(X\leq 2) = 1-\sum_{i=0}^n \dfrac{e^{\frac{8}{100}}\cdot \left(\dfrac{8}{100}\right)^i} {i!} = 0.0803014$$
+
+```{r}
+ppois(2,8,lower.tail = FALSE)
+1- acum_poisson(2,8)
+```
+
+
+## 4.20
+El número de componentes que fallan antes de cumplir 100 horas de operación es una variable aleatoria de Poisson. Si el número promedio de éstas es ocho:
+
+### a)
+¿Cuál es la probabilidad de que falle un componente en 25 horas?
+
+Respuesta.-  Primero realizamos la regla de tres par determinar $\lambda$
+$$\lambda_{25}=\dfrac{25\cdot 8}{100} = 2$$
+Luego,
+
+$$P(X=1)=p(1;2)=\dfrac{e^{-2}\cdot 2^1}{1!} = 0.2706706$$
+
+```{r}
+dpois(1,2)
+func_poisson(1,2)
+```
+
+### b)
+¿Cuál es la probabilidad de que fallen no más de dos componentes en 50 horas?
+
+Respuesta.- Sea $\lambda = 4$ y $P(X\leq 2)$, entonces
+
+$$P(X\leq 2)=p(1;4)=\sum_{i=0}^4 \dfrac{e^{-4}\cdot 4^i}{i!} = 0.2381033$$
+
+```{r}
+ppois(2,4)
+acum_poisson(2,4)
+```
+
+### c)
+¿Cuál es la probabilidad de que fallen por lo menos diez en 125 horas?
+
+Respuesta.- $\lambda = 10$ y $P(X\geq 10) = 1-P(X\leq 9)$
+
+$$P(X\geq 10)= 1-P(X\leq 9)= 1-p(9;10)=\sum_{i=0}^9 \dfrac{e^{-10}\cdot 10^i}{i!} = 0.5420703$$
+
+```{r}
+ppois(9,10,lower.tail = FALSE)
+1 - acum_poisson(9,10)
+```
+
+## 4.21
+Mediante estudios recientes se ha determinado que la probabilidad de morir por causa de cierta vacuna contra gripe es de 0.00002. Si se administra la vacuna a 100 mil personas y se supone que éstas constituyen un conjunto independiente de ensayos, ¿cuál es la probabilidad de que mueran no más de dos personas a causa de la vacuna?
+
+Respuesta.- Sea $\lambda = 100000\cdot 0.00004 = 2$ y
+$$P(X\leq 2) = F(2;2) =\sum_{i=0}^2 \dfrac{e^{-2}\cdot 2^i}{i!} = 0.6766764$$
+
+```{r}
+ppois(2,2)
+acum_poisson(2,2)
+```
+
+## 4.22
+Un fabricante asegura a una compañía que el porcentaje de unidades defectuosas es de sólo dos. La compañía revisa 50 unidades seleccionadas aleatoriamente y encuentra cinco defectuosas. ¿Qué tan probable es este resultado si el porcentaje de unidades defectuosas es el que el fabricante asegura?
+
+Respuesta.- Ya que $P(X\geq 2) = 1 - P(X\leq 1)$ entonces,
+
+$$P(X\leq 5)-[1-P(X\leq 1)]=\sum_{i=0}^5 \dfrac{e^{-2}\cdot 2^i}{i!} - 1 - \sum_{i=0}^1 \dfrac{e^{-2}\cdot 2^i}{i!} = 0.3894422$$
+
+```{r}
+ppois(5,2) - ppois(1,2,lower.tail = FALSE) 
+acum_poisson(5,2)-(1-ppois(1,2))
+```
+
+## 4.23
+El número de accidentes graves en una planta industrial es de diez por año, de manera tal que el gerente instituye un plan que considera efectivo para reducir el número de accidentes en la planta. Un año después de ponerlo en marcha, sólo han ocurrido cuatro accidentes. ¿Qué probabilidad hay de cuatro o menos accidentes por año, si la frecuencia promedio aún es diez? Después de lo anterior ¿puede concluirse que, luego de un año, el número de accidentes promedio ha disminuido?
+
+Respuesta.- Ya que cada experimentos es independiente entonces
+
+$$P(X\leq 4) = F(4;10)=\sum_{i=0}^4 \dfrac{e^{-10}\cdot 10^i}{i!} = 0.02925269$$
+
+```{r}
+ppois(4,10)
+acum_poisson(4,10)
+```
+
+Concluimos que si disminuyo los accidentes.
+
+
+## 4.24
+El departamento de protección del Ambiente ha adquirido 40 instrumentos de precisión para medir la contaminación del aire en distintas localidades. Se seleccionan aleatoriamente ocho instrumentos y se someten a una prueba para encontrar defectos. Si cuatro de los 40 instrumentos se encuentran defectuosos ¿cuál es la probabilidad de que la muestra contenga no más de un instrumento defectuoso? 
+
+Respuesta.- Sea $N=40$ los instrumentos de precisión adquiridos de donde se estableció que $k=4$ son defectuosos, para ello se selecciono $n=8$ instrumentos y se quiere saber $P(X < 1) = P(X\leq 0)$ (ya que la función es discreta), entonces:
+
+$$P(X\leq 0) = p(x;N,n,k) = p(0;40,8,4) = \dfrac{{4\choose 0}{40-4\choose 8-0}}{{40\choose 8}} = 0.3934785$$
+
+```{r}
+choose(4,0)*choose(40-4,8-0)/choose(40,8)
+func_hiper(0,40,8,4)
+dhyper(0,4,40-4,8)
+```
+
+## 4.25 
+Se sospecha que por causa de un error humano se han incluido en un embarque de 50 unidades, dos (o más) defectuosas. El fabricante admite el error y envía al cliente sólo 48 unidades. Antes de recibir el embarque, el cliente selecciona aleatoriamente cinco unidades y encuentra una defectuosa ¿Debe reclamar una indemnización al fabricante?
+
+Respuesta.- Vemos que se mando  $N=50$ unidades de manera que $k=2$ unidades son defectuosos, luego se selecciona una muestra de $n=5$ unidades de donde $x=1$ es defectuoso, entonces:
+
+$$P(X=1) = p(x;N,n,k) = p(1,50,5,2) = \dfrac{{2\choose 1}{50-2\choose 5-1}}{{50\choose 5}} = 0.1836735$$
+
+```{r}
+choose(2,1)*choose(50-2,5-1)/choose(50,5)
+func_hiper(1,50,5,2)
+dhyper(1,2,50-2,5)
+```
+Por lo que el cliente no debe reclamar una indemnización al fabricante.
+
+## 4.26
+Los jurados para una corte federal de distrito se seleccionan de manera aleatoria entre la lista de votantes del distrito. En un determinado mes se selecciona una lista de 25 candidatos. Ésta contiene los nombres de 20 hombres y cinco mujeres.
+
+$$N = 25,\quad k=20$$
+
+### a)
+Si la lista de votantes se encuentra igualmente dividida por sexo. ¿cuál es la probabilidad de tener una lista que contenga a 20 hombres y cinco mujeres?
+
+Respuesta.- 
+
+$$N=25,\quad k=15,\qquad n=25,\quad x=20$$
+
+```{r}
+dhyper(20,15,25-15,25)*dhyper(5,15,25-15,25)
+dhyper(5,5,25-5,25)
+dhyper(20,20,25-20,25)
+```
+
+### b)
+Supóngase que de esta lista se elige un jurado de doce personas, de las cuales sólo una es mujer. ¿Cuál es la probabilidad de este hecho, si los miembros del jurado se seleccionan de manera aleatoria?
+
+Respuesta.-
+
+### c)
+Si el lector fuera el abogado de la defensa, ¿que podría argumentar mediante el empleo de las respuesta de la parte a y b?
+
+Respuesta.-
+
+
+## 4.27
+Una compañia recibe un lote de 1000 unidades. Para aceptarlo se seleccionan diez unidades de manera aleatoria, y se inspeccionan. Si ninguna se encuentra defectuosa, el lote se acepta; de otro modo, se rechaza. Si el lote contiene un $5\%$ de unidades defectuosas:
+
+### a)
+Determinar la probabilidad de aceptarlo mediante el empleo de la distribución hipergeométrica.
+
+Respuesta.- Sea $N=1000$ $n=10$ $P(X\leq 0)$ $k = 1000*0.05 = 50$, entonces
+
+$$P(X\leq 0) = p(0,1000,10,50) = \dfrac{{50\choose 0}{1000-50\choose 10-0}}{{1000 \choose 10}} = 0.5973113$$
+
+```{r}
+choose(50,0)*choose(1000-50,10-0)/choose(1000,10)
+phyper(0,50,1000-50,10)
+```
+
+### b)
+Aproximar la respuesta de la parte a mediante el empleo de la distribución binomial.
+
+Respuesta.- Ya que $N\to \infty$ entonces,
+
+$$P(X\leq 0) = p(x;n,p) = {n\choose x}p^x (1-p)^{n-x} = {10\choose 0}0.05^0\cdot (1-0.05)^{10-0} = 0.5987369$$
+
+```{r}
+choose(10,0)*0.05^0*(1-0.05)^10
+dbinom(0,10,0.05)
+func_binom(0,10,0.05)
+```
+
+### c)
+Aproximar la respuesta de la parte b mediante el empleo de la distribución de Poisson.
+
+Respuesta.- Sea $\lambda = n\cdot p = 10*0.05 = 0.5$, entonces
+
+$$P(X\leq 0)=p(0,0.5) = \dfrac{e^{-0.5}\cdot 0.5^0}{0!} = 0.6065307$$
+
+```{r}
+exp(-0.5)*0.05^0/factorial(0)
+dpois(0,0.5)
+```
+
+## 4.28
+En el ejercicio anterior, ¿cómo cambiarían las respuestas de la parte a, b y c si el tamaño del lote fuera de 40 unidades?
+
+### a)
+Determinar la probabilidad de aceptarlo mediante el empleo de la distribución hipergeométrica.
+
+Respuesta.- Sea $N=40$ $n=10$ $P(X\leq 0)$ $k = 40*0.05 = 2$, entonces
+
+$$P(X\leq 0) = p(0,40,10,2) = \dfrac{{2\choose 0}{40-2\choose 10-0}}{{40 \choose 10}} = 0.5576923$$
+
+```{r}
+choose(2,0)*choose(40-2,10-0)/choose(40,10)
+phyper(0,2,40-2,10)
+```
+
+### b)
+Aproximar la respuesta de la parte a mediante el empleo de la distribución binomial.
+
+Respuesta.- Ya que $N=40$ entonces,
+
+$$P(X\leq 0) = p(x;n,p) = {n\choose x}p^x (1-p)^{n-x} = {10\choose 0}0.05^0\cdot (1-0.05)^{10-0} = $$
+
+```{r}
+choose(10,0)*0.05^0*(1-0.05)^10
+dbinom(0,10,0.05)
+func_binom(0,10,0.05)
+```
+
+### c)
+Aproximar la respuesta de la parte b mediante el empleo de la distribución de Poisson.
+
+Respuesta.- Sea $\lambda = n\cdot p = 10*0.05 = 0.5$, entonces
+
+$$P(X\leq 0)=p(0,0.5) = \dfrac{e^{-0.5}\cdot 0.5^0}{0!} = 0.6065307$$
+
+```{r}
+exp(-0.5)*0.05^0/factorial(0)
+dpois(0,0.5)
+```
+
+
+## 4.29.
+Considere las funciones de probabilidad binomial y binomial negativa dadas por las expresiones 4.1 y 4.34, respectivamente. Demostrar que:
+$$p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p).$$
+
+Demostración.- Sea
+$$\dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\qquad \mbox{y}\qquad {k+x-1\choose k-1}p^k(1-p)^x$$
+
+$$\begin{array}{rcl}
+  p_{NB}(x;k,p) &=& \displaystyle{k+x-1\choose k-1}p^k(1-p)^x\\\\
+  &=& \dfrac{(k+x-1)!}{(k+x-1-k+1)!(k-1)!}p^k(1-p)^x\\\\
+  &=&\dfrac{(x+k-1)!}{x!(k-1)!}p^k(1-p)^{x+k-k}\\\\
+  &=&\dfrac{k}{x+k}\dfrac{(x+k+1-1)!}{x!(k-1+1)!}p^k(1-p)^{x+k-k}\\\\
+  &=& \dfrac{k}{x+k} \cdot \dfrac{(x+k)!}{[(x+k)-k]!k!}p^k(1-p)^{x+k-k}\\\\
+  &=& \dfrac{k}{x+k}p_{B}(k;x+k,p)
+  \end{array}$$
+
+
+## 4.30.
+Sea $X$ una variable aleatoria binomial negativa con parámetros $k=3$ y $p=0.4$. Emplee el resultado del problema anterior para calcular las probabilidades puntuales para las siguientes valores de $X:0,1,2,3$ y $5.$
+
+Respuesta.- Sea $k=3$ y $p=0.4$, entonces
+
+- Para P(X=0)
+
+$$\begin{array}{rcl}
+  P(X=0) &=& p(0,3,0.4)\\\\
+  &=& p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p)= p(3;0+3,0.4)\\\\
+  &=&  \dfrac{3}{0+3}\cdot \dfrac{(0+3)!}{(0+3-3)!3!}0.4^3(1-0.4)^{0+3-3}\\\\
+  &=& 0.064
+  \end{array}$$
+
+```{r}
+dnbinom(0,3,0.4)
+3/(0+3)*(factorial(0+3))/((factorial(0+3-3))*factorial(3))*0.4^3*(1-0.4)^(0+3-3)
+3/(0+3)*dbinom(3,0+3,0.4)
+```
+
+- Para P(X=1)
+
+$$\begin{array}{rcl}
+  P(X=1) &=& p(1,3,0.4)\\\\
+  &=& p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p)= p(3;1+3,0.4)\\\\
+  &=&  \dfrac{3}{1+3}\cdot \dfrac{(1+3)!}{(1+3-3)!3!}0.4^3(1-0.4)^{1+3-3}\\\\
+  &=& 0.1152
+  \end{array}$$
+
+```{r}
+dnbinom(1,3,0.4)
+3/(1+3)*(factorial(1+3))/((factorial(1+3-3))*factorial(3))*0.4^3*(1-0.4)^(1+3-3)
+3/(1+3)*dbinom(3,1+3,0.4)
+```
+
+- Para P(X=2)
+
+$$\begin{array}{rcl}
+  P(X=2) &=& p(2,3,0.4)\\\\
+  &=& p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p)= p(3;2+3,0.4)\\\\
+  &=&  \dfrac{3}{2+3}\cdot \dfrac{(2+3)!}{(2+3-3)!3!}0.4^3(1-0.4)^{2+3-3}\\\\
+  &=& 0.13824
+  \end{array}$$
+
+```{r}
+dnbinom(2,3,0.4)
+3/(2+3)*(factorial(2+3))/((factorial(2+3-3))*factorial(3))*0.4^3*(1-0.4)^(2+3-3)
+3/(2+3)*dbinom(3,2+3,0.4)
+```
+
+- Para P(X=3)
+
+$$\begin{array}{rcl}
+  P(X=3) &=& p(3,3,0.4)\\\\
+  &=& p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p)= p(3;3+3,0.4)\\\\
+  &=&  \dfrac{3}{3+3}\cdot \dfrac{(3+3)!}{(3+3-3)!3!}0.4^3(1-0.4)^{3+3-3}\\\\
+  &=& 0.13824
+  \end{array}$$
+
+```{r}
+dnbinom(3,3,0.4)
+3/(3+3)*(factorial(3+3))/((factorial(3+3-3))*factorial(3))*0.4^3*(1-0.4)^(3+3-3)
+3/(3+3)*dbinom(3,3+3,0.4)
+```
+
+- Para P(X=5)
+
+$$\begin{array}{rcl}
+  P(X=5) &=& p(5,3,0.4)\\\\
+  &=& p_{NB}(x;k,p)=\dfrac{k}{x+k}p_{B}(k;x+k,p)= p(3;5+3,0.4)\\\\
+  &=&  \dfrac{3}{5+3}\cdot \dfrac{(5+3)!}{(5+3-3)!3!}0.4^3(1-0.4)^{5+3-3}\\\\
+  &=& 0.1045094 
+  \end{array}$$
+
+```{r}
+dnbinom(5,3,0.4)
+3/(5+3)*(factorial(5+3))/((factorial(5+3-3))*factorial(3))*0.4^3*(1-0.4)^(5+3-3)
+3/(5+3)*dbinom(3,5+3,0.4)
+```
+
+
+## 4.31
+
+Greenwood y Yule dieron a conocer el número de accidentes ocurrido entre 414 operadores de maquinaria, en un periodo de tres meses consecutivos. En la tabla la primera columna indica el número de accidentes sufridos por un mismo operador, y la segunda indica la frecuencia relativa para aquellos que habían sufrido la cantidad de accidentes indicada en el lapso de tres meses.
+
+Con el procedimiento del ejemplo 4.10, comparar las frecuencias relativas observadas con las correspondientes probabilidades si el número de accidentes es una variable aleatoria binomial negativa.
+
+Respuesta.- Sea $x=0$, $E(X) = 0.08333333$, $Var(X) = 0.007143697$ entonces,
+$$p = \dfrac{E(X)}{Var(X)} = \dfrac{0.08333333}{0.007143697} =0.4889976$$ $$y$$ $$ k = \dfrac{E(X)^2}{Var(X)-E(X)} = \dfrac{0.08333333^2}{0.007143697-0.08333333} = 0.4593301 $$
+sea $\Gamma(n) = \displaystyle\int_0^\infty u^{n-1}e^{-u}\; du, \;\; n>0,$ y dado que $k$ no es entero entonces,
+
+$$p(x;k,p) = \dfrac{\Gamma(k+x)}{x!\Gamma(k)}p^k(1-p)^x = \dfrac{\Gamma(0.4593301-0)}{0!\Gamma(0.4593301)}0.4889976^{0.4593301}(1-0.4889976)^0 =0.7199282179 $$
+
+El mismo procedimiento para las demás $x$.
+
+```{r}
+x = c(0,1,2,3,4,5,6,7,8)
+fr = c(0.715,0.179,0.063,0.019,0.010,0.010,0.002,0.000,0.002)
+EX = function(x,fr){
+  e = 0 
+  for(i in 1:length(x)){
+    e = e + x[i]*fr[i]
+  }
+  return(e)
+}
+EX2 = function(x,fr){
+  e = 0 
+  for(i in 1:length(x)){
+    e = e + x[i]^2*fr[i]
+  }
+  return(e)
+}
+m = EX(x,fr)
+v = EX2(x,fr)-EX(x,fr)^2
+p = m/v
+k = m^2/(v-m)
+teo = c()
+for(i in 0:8){
+  teo = c(teo,(gamma(k+i)/(factorial(i)*gamma(k))) * p^k * (1-p)^i)
+}
+t = data.frame(x,fr,teo)
+colnames(t) = c("x","Freq relativa","Prob teórica")
+t
+```
+
+
+## 4.32
+Un contador recientemente graduado pretende realizar el examen CPA. Si el número de veces que se hace el examen constituye un conjunto de eventos independientes con una probabilidad de aprobar a 0.6, ¿cuál es la probabilidad de que no se necesiten más de cuatro intentos para aprobar el examen? ¿Son válidas las suposiciones de independencia y probabilidad constante?
+
+Respuesta.- Ya que $K=1$ surge un caso especial de la distribución binomial negativa, que se conoce con el nombre de distribución geométrica y cuya función de probabilidad está dada por
+
+$$p(x;p) = p(1-p)^x$$
+
+Sabiendo que esta variable geométrica representa el número de fallas que ocurren antes de que se presente el primer éxito, y que nosotros tenemos que calcular la probabilidad hasta el primer éxito entonces la función acumulada estará dada por
+
+$$P(X\leq 4) = F(x;p) = 1-(1-p)^x = 1-(1-0.6)^4 = 0.9744$$
+
+```{r}
+pgeom(4-1,0.6)
+1-(1-0.6)^4
+```
+
+Efectivamente son válidas las suposiciones de independencia y probabilidad constante, debido a que éstas distribuciones se derivan de la distribución binomial.
+
+## 4.33
+En un departamento de control de calidad se inspeccionan las unidades terminadas que provienen de una linea de ensamble. Se piensa que la proposición de unidades defectuosas es de 0.05.
+
+### a)
+¿Cuál es la probabilidad de que la vigésima unidad inspeccionada sea la segunda que se encuentre defectuosa?
+
+Respuesta.- Sean $P(X=20)$, $k=2$ y $p=0.05$ por la función binomial negativa tenemos,
+
+$$P(X=20) = p(x;k,p) =  {k+x-1\choose k-1} p^k(1-p)^x = p(20;2,0.05) = {2+20-1\choose 2-1} 0.05^{2}(1-0.05)^{20} = 0.01882$$
+
+
+```{r}
+dnbinom(20,2,0.05)
+```
+
+### b)
+Supóngase que la décimo quinta unidad inspeccionada es la segunda que se encuentra defectuosa. ¿Cuál es la probabilidad de este hecho bajo condiciones determinadas?
+
+Respuesta.- Similar al inciso a)
+
+$$P(X=15) = p(x;k,p) =  {k+x-1\choose k-1} p^k(1-p)^x = p(20;2,0.05) = {2+15-1\choose 2-1} 0.05^{2}(1-0.05)^{15} = 0.01853165$$
+
+```{r}
+dnbinom(15,2,0.05)
+```
+
+
+## 4.33
+De las distribuciones binomial, Poisson, hipergeometrica y binomial negativa, ¿cuáles no consideraría si alguien le dijera, de una distribución en particular que:
+
+### a)
+¿La media es igual a la varianza?
+
+Respuesta.- No consideraría a las distribuciones binomial, hipergeométrica y binomial negativa.
+
+### b)
+¿La media es más grande que la varianza?
+
+Respuesta.- no consideraría a la distribución de Poisson.
+
+### c)
+¿La media es menor a la varianza?
+
+Respuesta.- Todas son consideradas.
+
+### d)
+El tercer momento, alrededor de la media, ¿es negativo?
+
+Respuesta.- no consideraría a las distribuciones binomial, Poisson y binomial negativa.
+
+### e)
+¿El fenómeno aleatorio de interés constituye un grupo de ensayos independientes?
+
+Respuesta.- no consideraría a las distribuciones binomial, Poisson y binomial negativa.
+
+### f)
+¿El muestreo se lleva a cabo con reemplazo?
+
+Respuesta.- no consideraría a las distribuciones hipergeométrica y Poisson.
+
+### g)
+¿El muestreo se lleva a cabo sin reemplazo?
+
+Respuesta.- No se consideraría a las distribuciones binomial, binomial negativa y Poisson
+
+
+
 
 

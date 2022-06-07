@@ -804,40 +804,85 @@ t
 
 
 ## 4.32
-Un contador recientemiente graduado pretende realizar el examen CPA. Si el número de veces que se hace el examen constituye un conjunto de eventos independientes con una probabilidad de aprobar a 0.6, ¿cuál es la probabilidad de que no se necesiten más de cuatro intentos para aprobar el examen? ¿Son válidas las suposiciones de independencia y probabilidad constante?
+Un contador recientemente graduado pretende realizar el examen CPA. Si el número de veces que se hace el examen constituye un conjunto de eventos independientes con una probabilidad de aprobar a 0.6, ¿cuál es la probabilidad de que no se necesiten más de cuatro intentos para aprobar el examen? ¿Son válidas las suposiciones de independencia y probabilidad constante?
+
+Respuesta.- Ya que $K=1$ surge un caso especial de la distribución binomial negativa, que se conoce con el nombre de distribución geométrica y cuya función de probabilidad está dada por
+
+$$p(x;p) = p(1-p)^x$$
+
+Sabiendo que esta variable geométrica representa el número de fallas que ocurren antes de que se presente el primer éxito, y que nosotros tenemos que calcular la probabilidad hasta el primer éxito entonces la función acumulada estará dada por
+
+$$P(X\leq 4) = F(x;p) = 1-(1-p)^x = 1-(1-0.6)^4 = 0.9744$$
+
+```{r}
+pgeom(4-1,0.6)
+1-(1-0.6)^4
+```
+
+Efectivamente son válidas las suposiciones de independencia y probabilidad constante, debido a que éstas distribuciones se derivan de la distribución binomial.
 
 ## 4.33
-en un departamento de control de calidad se inspeccionan las unidades terminadas que provienen de una linea de ensamble. Se piensa que la proposición de unidades defectuosas es de 0.05.
+En un departamento de control de calidad se inspeccionan las unidades terminadas que provienen de una linea de ensamble. Se piensa que la proposición de unidades defectuosas es de 0.05.
 
 ### a)
 ¿Cuál es la probabilidad de que la vigésima unidad inspeccionada sea la segunda que se encuentre defectuosa?
 
+Respuesta.- Sean $P(X=20)$, $k=2$ y $p=0.05$ por la función binomial negativa tenemos,
+
+$$P(X=20) = p(x;k,p) =  {k+x-1\choose k-1} p^k(1-p)^x = p(20;2,0.05) = {2+20-1\choose 2-1} 0.05^{2}(1-0.05)^{20} = 0.01882$$
+
+
+```{r}
+dnbinom(20,2,0.05)
+```
+
 ### b)
 Supóngase que la décimo quinta unidad inspeccionada es la segunda que se encuentra defectuosa. ¿Cuál es la probabilidad de este hecho bajo condiciones determinadas?
 
+Respuesta.- Similar al inciso a)
+
+$$P(X=15) = p(x;k,p) =  {k+x-1\choose k-1} p^k(1-p)^x = p(20;2,0.05) = {2+15-1\choose 2-1} 0.05^{2}(1-0.05)^{15} = 0.01853165$$
+
+```{r}
+dnbinom(15,2,0.05)
+```
+
 
 ## 4.33
-De las distribuciones binomial, Poisson, hipergeometrica y binomial negativa, ¿cuáles no consideraria si alguien le dijera, de una distribución en particular que:
+De las distribuciones binomial, Poisson, hipergeometrica y binomial negativa, ¿cuáles no consideraría si alguien le dijera, de una distribución en particular que:
 
 ### a)
 ¿La media es igual a la varianza?
 
+Respuesta.- No consideraría a las distribuciones binomial, hipergeométrica y binomial negativa.
+
 ### b)
 ¿La media es más grande que la varianza?
+
+Respuesta.- no consideraría a la distribución de Poisson.
 
 ### c)
 ¿La media es menor a la varianza?
 
+Respuesta.- Todas son consideradas.
+
 ### d)
 El tercer momento, alrededor de la media, ¿es negativo?
+
+Respuesta.- no consideraría a las distribuciones binomial, Poisson y binomial negativa.
 
 ### e)
 ¿El fenómeno aleatorio de interés constituye un grupo de ensayos independientes?
 
+Respuesta.- no consideraría a las distribuciones binomial, Poisson y binomial negativa.
+
 ### f)
 ¿El muestreo se lleva a cabo con reemplazo?
+
+Respuesta.- no consideraría a las distribuciones hipergeométrica y Poisson.
 
 ### g)
 ¿El muestreo se lleva a cabo sin reemplazo?
 
+Respuesta.- No se consideraria a las distribuciones binomial, binomial negativa y Poisson
 
