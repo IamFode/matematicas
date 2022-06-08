@@ -509,7 +509,7 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 	    \item Suponga que $P$ es un polígono regular inscrito en un círculo. Si $P^{'}$ es el polígono regular inscrito de doble número de lados, demuestre que la diferencia entre el área del círculo y el área de $P^{'}$ es menor que la mitad de la diferencia entre el área del círculo y el área de $P$.\\\\
 		Demostración.-\; Sea,
 		\begin{center}
-		    \begin{tikzpicture}
+		    \begin{tikzpicture}[scale=.8]
 			\draw[] (0,0)node[circle,fill,inner sep = 1,label = below:\scriptsize$B$]{}--(1,0)node[circle,fill,inner sep=1pt,label = below:\scriptsize$F$]{}--(1,2)node[circle,fill,inner sep=1pt,label = right:\scriptsize$D$]{}--(1,4)node[circle,fill,inner sep=1pt,label = above:\scriptsize$E$]{}--(0,4)node[circle,fill,inner sep=1pt,label = above:\scriptsize$C$]{}--(-1,2)node[circle,fill,inner sep=1pt,label = left:\scriptsize$A$]{}--(0,0)node[circle,fill,inner sep=1pt]{}--(0,2)node[circle,fill,inner sep=1pt,label = above left:\scriptsize$G$]{}--(0,4)--(1,2)--(0,0);
 			\draw[dashed](-1,2)--(1,2);
 			\draw[rotate=90] (0,0) parabola bend (2,-1) (4,0);
@@ -518,16 +518,63 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 		    \end{tikzpicture}
 		\end{center}
 		\vspace{.5cm}
+		$CB$ es arista de $P$ mientras $CD$ y $DB$ son aristas de $P^{'}$. Sea $a$ la diferencia entre las áreas del sector circular $AIDHCA$ y la parte del polígono $P$ que se encuentra dentro de este sector, De este modo,
+		$$a=Area(ABIDHCA)-Area(\triangle CAB) = Area(CGBIDHC)$$
+		Sea $b$ la diferencia entre las áreas del sector circular $ABIDHCA$ y la parte del polígono $P^{'}$ que se encuentra dentro de este sector, De este modo,
+		$$b=Area(ABIDHCA)-Area(\square CABD) = Area(DBID)+Area(CDHC)$$
+		Donde demostraremos que $b\leq \dfrac{a}{2}.$
+		$$b\leq \dfrac{a}{2}\; \Leftrightarrow \; -b\geq a-b\geq a-\dfrac{a}{2}\; \Leftrightarrow \; a-b\geq \dfrac{a}{2}.$$
+		Por lo tanto probaremos la equivalencia $a-b\geq \dfrac{a}{2}.$
+
+		$$\begin{array}{rcl}
+		    a-b&=&Area(CGBIDHC)-\left[Area(DBID)+Area(CDHC)\right]\\\\
+		       &=&Area(\triangle CBD)\\\\
+		       &=&Area(\triangle CGD)+Area(\triangle BGD) \qquad \mbox{ ya que } \triangle BGD \cong \triangle CED\\\\
+		       &=&Area(\triangle CGD)+Area(\triangle CED)\\\\
+		       &=&Area(\square CGDE)\\\\
+		\end{array}$$
+
+		$$\begin{array}{rcl}
+		    a&=&Area(CGDIBHC)\\\\
+		     &=&Area(CGDHC)+Area(GBIDG)\\\\
+		     &=&2Area(CGDHC)\qquad \mbox{ ya que } CGDHC \cong GBIDG\\\\
+		\end{array}$$
+
+		Así
+		$$\dfrac{1}{2}=Area(CGDHC)$$
+
+		Observe que $CGDHC$ es contenido en $\square$, de donde $Area(CGDHC)\leq Area(\square CGDE)$, comparando las inecuaciones $Area(\square CGDE)$ y $\dfrac{a}{2}=Area(CGDHC)$ tenemos,
+		$$a-b\geq \dfrac{a}{2}.$$\\
+
 
 	    %---------- (c)
 	    \item Demuestre que existe un polígono regular $P$ inscrito en un círculo y con área tan próxima como se desee al área del círculo.\\\\
-		Demostración.-\;
+		Demostración.-\; Supongamos $P_1$ un triángulo equilátero inscrito en una circunferencia y sea $P_n$ el polígono regular con lados $3\cdot 2^n$ inscrito en el mismo circo. Luego sea $a_n$ denotado por la diferencia entre el área del circulo y la de $P_n$. Entonces por la parte (b),
+		$$a_{n+1}\leq \dfrac{a_n}{2}$$
+		Por la parte (a), dado cualquier $\epsilon$, podemos encontrar $n$ tal que $a_n<\epsilon$. Esto es, dado cualquier $\epsilon,$ se tiene $P_n$ tal que la diferencia entre el área del circulo y la del $P_n$ es menor que $\epsilon.$\\
+		En otras palabras, podemos encontrar $P_n$ cuya área es tan cercana al área del circulo como se desee.\\\\
 
 	    %---------- (d)
 	    \item Utilizando el hecho de que las áreas de dos polígonos regulares con el mismo número de lados están entre sí en la misma relación que los cuadrados de sus lados, demuestre que las áreas de dos círculos están en la misma relación que los cuadrados de sus radios.\\\\
-		Demostración.-\;
+		Demostración.-\; Consideremos dos círculos $C_1$ y $C_2$ co radio $r_1$ y $r_2$ respectivamente. Asumamos que 
+		$$\dfrac{Area C_1}{Area C_2} = R< \dfrac{r^2_1}{r^2_2}$$
+		Elijase $\epsilon>0$ tal que $R<R+\epsilon < \dfrac{r_1^2}{r^2_2}$. Se tiene un polígono regular de n lado en $C_1$ y $C_2$. Llamados $P_1$ y $P_2$ respectivamente. Sea las longitudes de estos lados $d_1$ y $d_2$. Entonces,
+		$$d_1 = 2r_1\sen(\pi/n), \qquad d_2 = 2r_2\sen(\pi/n)$$
+		Por lo tanto, $\dfrac{d_1^2}{d_2^2}=\dfrac{r_1^2}{r_2^2}=R.$
+		Asumimos que $Area C_1=Area P_1 + \epsilon_1$ y $Area C_2 = Area P_2+\epsilon_2.$\\
+		Para $\dfrac{Area C_1}{Area C_2} = R< \dfrac{r^2_1}{r^2_2}$ obtenemos,
+		$$Area C_1 = R\cdot Area C_2$$
+		así,
+		$$Area P_1 + \epsilon_1 = R(Area P_2 + \epsilon_2)\; \Rightarrow \; \dfrac{Area P_1}{Area P_2}=R+\dfrac{1}{Area P_2}(R \epsilon_2 + \epsilon_1)$$
+		Demostramos que podemos elegir $n$ suficiente grande tal que $\epsilon_1$ y $\epsilon_2$ puede ser tan pequeño como se desee. Ahora elijamos $n$ tal que $\dfrac{1}{Area P_2}(R \epsilon_2 - \epsilon_1)<\epsilon.$ Entonces 
+		$$\dfrac{Area P_1}{Area P_2}=R+\dfrac{1}{Area P_2}(R \epsilon_2-\epsilon_1)<R+\epsilon < \dfrac{r^2_1}{r^2_2}=\dfrac{d_1^2}{d_2^2}$$
+		donde $\dfrac{Area P_1}{Area P_2}<\dfrac{d_1^2}{d_2^2}$ es una contradicción ya que ambos $P_1$ y $P_2$ son polígonos regulares que tiene igual número de lados. Esto muestra que nuestra suposición inicial $\dfrac{Area C_1}{Area C_2}<\dfrac{r_1^2}{r_2^2}$ es incorrecto. Por otro lado podemos argumentar análogamente y llegar a una contradicción si asumimos $\dfrac{Area C_1}{Area C_2}>\dfrac{r_1^2}{r_2^2}$. Así se sigue,
+		$$\dfrac{Area C_1}{Area C_2}=\dfrac{r_1^2}{r_2^2}.$$\\
 
 	\end{enumerate}
+
+    %-------------------- 12
+    \item 
 
 \end{enumerate}
 

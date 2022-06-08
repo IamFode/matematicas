@@ -989,4 +989,35 @@ Calcular los límites en los ejercicios del 11 al 20 y explicar qué teoremas se
 
 \end{comment}
 
+
 \section{Teorema de Bolzano para las funciones continuas}
+
+%-------------------- teorema 3.6
+\begin{teo}[Teorema de Bolzano]
+    Sea $f$ continua en cada punto del intervalo cerrado $[a,b]$ y supongamos que $f(a)$ y $f(b)$ tienen signos opuestos. Existe entonces por lo menos un $c$ en el intervalo abierto $(a,b)$ tal que $f(c)=0$.\\
+\end{teo}
+
+Basaremos nuestra demostración del teorema de Bolzano en la siguiente propiedad de las funciones continuas que establecemos aquí como un teorema.\\\\
+
+%-------------------- teorema 3.7
+\begin{teo}[Conservación del signo de las funciones continuas]
+    Sea $f$ continua en $c$ y supongamos que $f(c)\neq 0$. Existe entonces un intervalo $(c-\delta,c+\delta)$ en el que $f$ tiene el mismo signo que $f(c)$.\\\\
+	Demostración.-\; Supóngase $f(c)>0$. En virtud de la continuidad para cada $\epsilon>0$ existe un $\delta>0$ tal que:
+	\begin{center}
+	$|f(x)-f(c)|<\epsilon \;\Rightarrow \quad  f(c)-\epsilon<f(x)<f(c)+\epsilon$ siempre que $c-\delta < x <c+\delta\quad \Leftarrow \; |x-c|<\delta$
+	\end{center}
+	Tomando el $\delta$ correspondiente a $\epsilon=f(c)/2$ (este $\epsilon$ es positiva) entonces se sigue,
+	\begin{center}
+	$\dfrac{1}{2}f(c)<f(c)<\dfrac{3}{2}f(c)$ siempre que $c-\delta < x <c+\delta$
+	\end{center}
+	De aquí se deduce que $f(x)>0$ en este intervalo y por tanto $f(x)$ y $f(c)$ tienen el mismo signo. Si $f(c)<0$ se toma $\delta$ correspondiente a $\epsilon=-\dfrac{1}{2}f(c)$ y se llega a la misma conclusión.\\\\
+\end{teo}
+
+\textbf{Nota.-} Si existe continuidad a un lado de $c$, entonces existe el correspondiente intervalo unilateral $[(c,c+\delta)\mbox{ o } (c-\delta,c)]$\\\\
+
+Demostración del teorema de Bolzano.- Para fijar ideas, supóngase $f(a)<0$ y $f(b)>0$. Puede haber muchos valores de $x$ entre $a$ y $b$ para los cuales $f(x)=0$. Se trata aquí de encontrar uno y esto se hará determinando el mayor $x$ para el cual $f(x)=0$. Para ello, sea $S$ el conjunto de todos los puntos del intervalo $[a,b]$ para los cuales $f(x)\leq 0$. Hay por lo menos un punto en $S$ puesto que $f(a)<0$. Por lo tanto, $S$ es un conjunto no vacío. $S$ está acotado superiormente puesto que todos los puntos de $S$ están en $[a,b]$, y puesto que todo conjunto no vacío de números reales que está acotado superiormente tiene un extremo superior, a éste se le llama $c$. Se trata de demostrar que $f(c)=0$.\\
+Hay sólo tres posibilidades: $f(c)>0$, $f(c)>0$ y $(c)=0$. Si $f(c)>0$ hay un intervalo $(c-\delta,c+\delta)$  o $(c-\delta,c]$ si $c=b$, entonces $f(x)$ es positivo. Por tanto, ningún punto de $S$ puede estar a la derecha de $c-\delta$ y así $c-\delta$ es una cota superior del conjunto $S$. Pero $c-\delta < c$ y $c$ es el extremo superior de $S$. De donde concluimos que la desigualdad $f(c)>0$ es imposible. Si $f(c)<0$ hay un intervalo $(c-\delta,c+\delta)$ o $[c,c+\delta)$ si $c=a$, en el cual $f$ es negativa y por tanto $f(x)<0$ para algún $x>c$, en contra del hecho de que $c$ es una cota superior de $S$. De donde $f(c)<0$ también es imposible. Así sólo nos queda la posibilidad de que $f(c)=0$. Además $a<c<b$ puesto que $f(a)<0$ y $f(b)>0$. Con lo que queda demostrado el teorema de Bolzano.\\\\
+
+
+\section{Teorema del valor intermedio para funciones continuas}
+

@@ -5,6 +5,11 @@ date: "6/6/2022"
 output: pdf_document
 ---
 
+```{r}
+#library
+library(ggplot2)
+```
+
 # Ejercicios Capítulo 5
 
 ## 5.1
@@ -12,6 +17,31 @@ En la misma gráfica, dibujar las distribuciones normales $N(0,5)$ y $N(0,4)$
 
 Respuesta.-
 
-```{r}
-
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
+curve(dnorm(x, mean=0, sd=5), ylim =c(0,.11) ,from = -18, to = 18, ylab = "normal")
+curve(dnorm(x, mean=0, sd=4),  add = TRUE, col = 2)
+legend(7, .1, legend=c("N(0,5)", "N(0,4)"),
+       col=c("black", "red"), lty=1:1, cex=0.4)
 ```
+
+
+## 5.2
+Sea $X\sim N(50,10).$ Determinar las siguientes probabilidades
+
+### a)
+$P(X<40)$
+
+### b)
+$P(X<65)$
+
+### c)
+$P(X>55)$
+
+### d)
+$P(X>35)$
+
+### e)
+$P(40<X<45)$
+
+### f)
+$P(38<X<62)$

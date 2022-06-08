@@ -5,6 +5,69 @@
 \begin{tcolorbox}
     \begin{def.}
 	se dice que una variable aleatoria $X$ se encuentra normalmente distribuida si su función de densidad de probabilidad está dada por 
-	$$f(x;\mu,\sigma) = \dfrac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+	$$f(x;\mu,\sigma) = \dfrac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},\quad \begin{array}{l}-\infty<x<\infty \\ -\infty<\mu<\infty,\; \sigma>0\end{array}$$
     \end{def.}
 \end{tcolorbox}
+
+Si se obtienen las dos primeras derivadas de $f(x;\mu,\sigma)$ con respecto a $x$ y se igualan a cero, se tiene que el valor máximo de $f(x;\mu,\sigma)$ ocurre cuando $x=\mu,$ y los valores $x=\mu\pm \sigma$ son las abcisas de los dos puntos de inflexión de la curva.\\\\
+
+\textbf{Demostrar que la definición 5.1 es una función de densidad de probabilidad.}\\\\
+    Demostración.-\; El que la función sea no negativa se satisface, ya que $f(x;\mu,\sigma)>0$ para $-\infty<x<\infty,\; -\infty<\mu<\infty$ y $\sigma>0$. Para demostrar que:
+    $$\int_{-\infty}^\infty f(x;\mu,\sigma)\; dx = 1.$$
+    Sea
+    $$I=\dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^\infty e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx$$
+    el valor de la integral y aplíquese la transformación lineal $y=(x-\mu)/\sigma$ de manera tal que $x=\sigma y + \mu$ y $dx = \sigma \; dy$. Esto da como resultado:
+    $$I=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-y^2/2}\; dy.$$
+    Si puede demostrarse que $I^2=1$, puede deducirse que $I=1$ puesto que $f(x;\mu,\sigma)$ tiene un valor positivo. De acuerdo con lo anterior:
+    $$I^2 = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}e^{-y^2/2}\; dy \cdot \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}e^{-z^2/2}\; dz = \dfrac{1}{\sqrt{2\pi}} \int_{\infty}^\infty \int_{-\infty}^\infty e^{\frac{(y^2+z^2)}{2}}\; dy dz,$$
+    en donde se ha escrito el producto de las dos integrales como una doble integral ya que las funciones de $z$ son contantes con respecto a $y$ como también de manera viceversa. Al cambiar de coordenadas rectangulares representadas por $x$ e $y$, a coordenadas polares $r$ y $\theta$, en donde $y=r\cos \theta$ y $z=r\sen \theta$. Esto es:
+    $$y^2+z^2 = r^2\cos^2\theta + r^2\sen^2 \theta = r^2$$
+    y el elemento de área $dy dz$, en coordenadas rectangulares se reemplaza por $rd rd\theta$ en coordenadas polares. Dado que los límites $(-\infty,\infty)$ tanto para $y$ como para $z$ generan el plano completo $yz$, el plano correspondiente a $r$ y a $\theta$ se genera mediante el empleo de los límites $(0,2\pi)$ para $\theta$ y $(0,\infty)$ para $r$. De esta forma se tiene:
+    $$I^2 = \dfrac{1}{2\pi}\int_0^{2\pi} \int_0^x e^{-r^2/2}\; rdrd\theta = \dfrac{1}{2\pi}\int_0^{2\pi}\;d\theta \int_0^x e^{-r^2/2}\; rdr = \dfrac{\theta}{2\pi}\bigg|_0^{2\pi}\cdot [-e^{-r^2/2}]\bigg|_0^x = 1.$$\\
+
+    \textbf{La media de una variable aleatoria distribuida normalmente} se encuentra definida por:
+\begin{tcolorbox}
+    $$E(X)=\dfrac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x x e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx.$$
+\end{tcolorbox}
+
+Se pretende demostrar que $E(X)=\mu$. Supóngase que a $E(X)=\dfrac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x x e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx$ se suma y se resta
+$$\dfrac{\mu}{\sqrt{2\pi}\sigma}\int_{-\infty}^\infty e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}\; dx$$
+
+La identidad se mantiene, pero después de reacomodar términos se tiene
+$$\begin{array}{rcl}
+    E(X)&=&\displaystyle\int_{-\infty}^\infty (x-\mu)e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx + \dfrac{\mu}{\sqrt{2\pi}\sigma}\int_{-\infty}^\infty e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx\\\\
+	&=&\displaystyle\dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^x (x-\mu)e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx + \mu\\\\
+\end{array}$$
+
+dado que el valor de la segunda integral es uno. Al afectar un cambio de variable de integración de manera tal que $y=\dfrac{x-\mu}{\sigma},\; x=\sigma y+\mu$ y $dx=\sigma dy$, se tiene:
+$$E(X)=\dfrac{\sigma}{\sqrt{2\pi}}\int_{-\infty}^\infty y e^{-y^2/2}\; dy + \mu = -\dfrac{\sigma}{\sqrt{2\pi}}e^{-y^2/2}\bigg|_{-\infty}^\infty + \mu = \mu.$$
+
+El lector recordará de sus cursos de cálculo que la última integral es cero porque el integrando es una función impar y la integración se lleva a cabo sobre un intervalo simétrico alrededor de cero.\\\\
+
+Si el valor máximo de la función de densidad de probabilidad normal ocurre cuando $x=\mu$ este es la media, la mediana y la moda de cualquier variable aleatoria distribuida aleatoriamente.\\
+Para encontrar los demás momentos, se determinará la función generadora de momentos. Por definición:
+$$m_{X-\mu}(t) = E\left[e^{t(X-\mu)}\right] = \dfrac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^\infty e^{t(x-\mu)} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx = \dfrac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^\infty e^{-\frac{1}{2\sigma^2}\left[(x-\mu)^2-2\sigma^2 t(x-\mu)\right]}\; dx.$$
+de donde se completa el cuadrado en el interior del paréntesis rectangular y se tiene:
+$$(x-\mu)^2-2\sigma^2 t(x-\mu) = (x-\mu)^2-2\sigma^2 t(x-\mu)+\sigma^4 t^2 - \sigma^4 t^2 = (x-\mu-\sigma^2t)^2 - \sigma^4 t^2.$$
+Por lo que,
+$$m_{X-\mu}(t) = \dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^\infty e^{\frac{\sigma^2 t^2}{2}}e^{-\frac{x-(\mu+\sigma^2 t)^2}{2\sigma^2}}\; dx = e^{\frac{\sigma^2t^2}{2}},$$
+dado que el integrando junto con el factor $\dfrac{1}{\sqrt{2\pi}\sigma}$ es una función de densidad de probabilidad normal con parámetros $\mu+\sigma^2 t$ y $\sigma.$
+
+Al desarrollar $e^{\frac{\sigma^2 t^2}{2}}$ en serie de potencias se tiene:
+$$m_{X-\mu}(t) = 1+\dfrac{(\sigma t)^2}{2}+\dfrac{(\sigma t)^4}{4\cdot 2!}+\dfrac{(\sigma t)^6}{8\cdot 3!}+\dfrac{(\sigma t)^8}{16\cdot 4!} + \ldots$$
+Cuando las potencias impares de $t$ no se encuentran presentes, todos los momentos centrales de $X$ de orden impar son cero, de esta forma se asegura la simetría de la curva.\\\\
+
+La segunda derivada de $m_{X-\mu}(t)$  evaluada en $t=0$ es la varianza y está dada por:
+$$Var(X)=\dfrac{d^2m_{X-\mu}(t)}{dt^2}\bigg|_{t=0}=\sigma^2 + \dfrac{12t^2 \sigma^4}{4\cdot 2!}+\dfrac{30t^4\sigma^6}{8\cdot 3!} + \ldots \bigg|_{t=0} = \sigma^2;$$
+
+De esta manera \textbf{ la desviación estándar es  $\mathbold \sigma$}. De manera similar, la cuarta derivada de $m_{X-\mu}(t)$ evaluada en $t=0$ es el cuarto momento central, el cual es:
+$$\mu_4=\dfrac{d^4m_{X-\mu}(t)}{dt^4}\bigg|_{t=0}=3\sigma^4 + \dfrac{360t^2\sigma^6}{8\cdot 3!}+ \ldots \bigg|_{t=0}=3\sigma^4$$
+De acuerdo con lo anterior, para cualquier distribución normal el coeficiente de asimetría es $\alpha_3(X)=0,$ mientras que la curtosis relativa es $\alpha_4(X)=\dfrac{3\sigma^4}{\sigma^4} = 3.$ Para momentos alrededor del cero, puede determinarse la función generadora de momentos centrales o viceversa. Dado que
+$$m_{X-\mu}(t)=E\left[e^{t(X-\mu)}\right]=e^{-\mu t}E\left[e^{tX}\right] = e^{-ut}m_X(t),$$
+para una distribución normal
+$$e^{-\mu t}m_X (t) = e^{\frac{\sigma^2t^2}{2}}$$
+y
+$$m_X (t)=e^{\mu t + \frac{\sigma^2t^2}{2}}.$$
+
+     
+pag 150
