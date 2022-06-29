@@ -40,7 +40,10 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 dado que el valor de la segunda integral es uno. Al afectar un cambio de variable de integración de manera tal que $y=\dfrac{x-\mu}{\sigma},\; x=\sigma y+\mu$ y $dx=\sigma dy$, se tiene:
+
+\begin{tcolorbox}
 $$E(X)=\dfrac{\sigma}{\sqrt{2\pi}}\int_{-\infty}^\infty y e^{-y^2/2}\; dy + \mu = -\dfrac{\sigma}{\sqrt{2\pi}}e^{-y^2/2}\bigg|_{-\infty}^\infty + \mu = \mu.$$
+\end{tcolorbox}
 
 El lector recordará de sus cursos de cálculo que la última integral es cero porque el integrando es una función impar y la integración se lleva a cabo sobre un intervalo simétrico alrededor de cero.\\\\
 
@@ -57,8 +60,10 @@ Al desarrollar $e^{\frac{\sigma^2 t^2}{2}}$ en serie de potencias se tiene:
 $$m_{X-\mu}(t) = 1+\dfrac{(\sigma t)^2}{2}+\dfrac{(\sigma t)^4}{4\cdot 2!}+\dfrac{(\sigma t)^6}{8\cdot 3!}+\dfrac{(\sigma t)^8}{16\cdot 4!} + \ldots$$
 Cuando las potencias impares de $t$ no se encuentran presentes, todos los momentos centrales de $X$ de orden impar son cero, de esta forma se asegura la simetría de la curva.\\\\
 
-La segunda derivada de $m_{X-\mu}(t)$  evaluada en $t=0$ es la varianza y está dada por:
-$$Var(X)=\dfrac{d^2m_{X-\mu}(t)}{dt^2}\bigg|_{t=0}=\sigma^2 + \dfrac{12t^2 \sigma^4}{4\cdot 2!}+\dfrac{30t^4\sigma^6}{8\cdot 3!} + \ldots \bigg|_{t=0} = \sigma^2;$$
+La segunda derivada de $m_{X-\mu}(t)$  evaluada en $t=0$ es \textbf{la varianza} y está dada por:
+\begin{tcolorbox}
+    $$Var(X)=\dfrac{d^2m_{X-\mu}(t)}{dt^2}\bigg|_{t=0}=\sigma^2 + \dfrac{12t^2 \sigma^4}{4\cdot 2!}+\dfrac{30t^4\sigma^6}{8\cdot 3!} + \ldots \bigg|_{t=0} = \sigma^2;$$
+\end{tcolorbox}
 
 De esta manera \textbf{ la desviación estándar es  $\mathbold \sigma$}. De manera similar, la cuarta derivada de $m_{X-\mu}(t)$ evaluada en $t=0$ es el cuarto momento central, el cual es:
 $$\mu_4=\dfrac{d^4m_{X-\mu}(t)}{dt^4}\bigg|_{t=0}=3\sigma^4 + \dfrac{360t^2\sigma^6}{8\cdot 3!}+ \ldots \bigg|_{t=0}=3\sigma^4$$
@@ -69,5 +74,48 @@ $$e^{-\mu t}m_X (t) = e^{\frac{\sigma^2t^2}{2}}$$
 y
 $$m_X (t)=e^{\mu t + \frac{\sigma^2t^2}{2}}.$$
 
-     
-pag 150
+La probabilidad de que una variable aleatoria normalmente distribuida $X$ sea menor o igual a un valor específico, $x$ está dada por \textbf{función de distribución acumulativa}
+\begin{tcolorbox}
+    $$P(X\leq x)=F(x;\mu,\sigma) = \dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x} e^{\frac{-(t-\mu)^2}{2\sigma^2}}\; dt.$$
+\end{tcolorbox}
+
+Sea $Z$ una variable aleatoria definida por la siguiente relación:
+
+$$Z=\dfrac{(X-\mu)}{\sigma}$$
+
+en donde $\mu$ y $\sigma$ son la media y la desviación estándar de $X$, respectivamente. De acuerdo con lo anterior, $Z$ es una variable aleatoria estandarizada con media cero y desviación estándar uno. Así,
+\begin{tcolorbox}
+    $$P(X\leq x) = P[X\leq (x-\mu)/\sigma] = \dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{(x-\mu)/\sigma} e^{\frac{-z^2}{2}}\sigma \; dz = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{(x-\mu)/\sigma} e^{\frac{-z^2}{2}}\; dz.$$
+\end{tcolorbox}
+El integrando junto con el factor $1/\sqrt{2\pi}$ es la \textbf{función de densidad de probabilidad de la variable aleatoria normal estandarizada Z}. De donde 
+$$F_X(x;\mu,\sigma) = F_Z(z;0,1)$$
+
+Para cualquier valor específico de $z$, el correspondiente valor en la tabla es la probabilidad de que la variable aleatoria normal estándar $Z$ sea menor o igual a $z$; esto es
+\begin{tcolorbox}
+    $$P(Z\leq z)=F_Z(z;0,1) = \dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^z e^{\frac{-t^2}{2}}\; dt.$$
+\end{tcolorbox}
+
+La notación $X\sim N(\mu,\sigma)$ denotará que la variable $X$ se encuentra distribuida normalmente con media $\mu$ y desviación estándar $\sigma$.\\\\
+Determinaremos la probabilidad de que un valor de $X$ se encuentre entre $a$ y $b$, si $X\sim N(\mu,\sigma)$. Por definición:
+$$P(a\leq X\leq b) = \dfrac{1}{\sqrt{2\pi}\sigma} \int_a^b e^{\frac{-(x-\mu)^2}{2\sigma^2}}\; dx,$$
+
+pero, mediante el empleo de $E(X)=\displaystyle\dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^x (x-\mu)e^{-\frac{(x-\mu)^2}{2\sigma^2}}\; dx + \mu$ se tiene:
+
+\begin{tcolorbox}
+    $$P(a\leq X\leq b) = P\left(\dfrac{a-\mu}{\sigma}\leq Z \leq \dfrac{b-\mu}{\sigma}\right) = \dfrac{1}{\sqrt{2\pi}}\int_{\frac{a-\mu}{\sigma}}^{\frac{b-\mu}{\sigma}} e^{\frac{-z^2}{2}}\; dz = F_Z\left(\dfrac{b-\mu}{\sigma};0,1\right)-F_Z\left(\dfrac{a-\mu}{\sigma};0.1\right)$$
+\end{tcolorbox}
+
+\begin{teo}
+    Sea $X$ una variable aleatoria binomial con media $np$ y desviación estándar $\sqrt{np(1-p)}$. La distribución de la variable aleatoria tiende a la normal
+    $$Y=\dfrac{X-np}{\sqrt{np(1-p)}}$$\\
+    estándar conforme el número de ensayos independientes $n\to \infty$.\\\\
+	Demostración.-\; La demostración que aquí se presenta se basa en el hecho de que una función generadora de momentos define, de manera única, a una distribución. Se demostrará que la función generadora de momentos de $Y$ tiende a una distribución normal conforme $n\to \infty$. $X$ es una variable aleatoria binomial:
+	$$m_X(t)=[(1-p)+p e^t]^n$$
+	Entonces:
+	$$m_Y(t)=E(e^{tY})=E\left[e^{\frac{t(X-np)}{\sqrt{np(1-p)}}}\right] = e^{\frac{npt}{\sqrt{np(1-p)}}}\cdot E\left[e^{\frac{tX}{\sqrt{np(1-p)}}}\right]$$
+	donde $E\left[e^{\frac{tX}{\sqrt{np(1-p)}}}\right]$ es la función generadora de momentos de $X$ con argumento $\frac{t}{\sqrt{np(1-p)}}$. De esta forma se tiene:
+	$$m_y(t)=e^{\frac{-npt}{\sqrt{np(1-p)}}}\left[(1-p)+ pe^{\frac{t}{\sqrt{np(1-p)}}}\right]^n;$$
+	pero:
+
+
+\end{teo}

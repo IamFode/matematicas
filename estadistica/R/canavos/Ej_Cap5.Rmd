@@ -31,17 +31,231 @@ Sea $X\sim N(50,10).$ Determinar las siguientes probabilidades
 ### a)
 $P(X<40)$
 
+Respuesta.-
+$$P(X<40) = P[Z<(40-50)/10] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{40-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.1586553.$$
+
+```{r}
+pnorm(40,50,10)
+integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(40-50)/10)
+1/(sqrt(2*pi))*(-exp(-((-1)^2/2)) + exp(-(-Inf)^2/2))
+```
+
 ### b)
 $P(X<65)$
+
+Respuesta.-
+$$P(X<40) = P[Z<(65-50)/10] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{65-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.9331928$$
+
+```{r}
+pnorm(65,50,10)
+integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(65-50)/10)
+```
 
 ### c)
 $P(X>55)$
 
+Respuesta.-
+$$P(X<40) = P[Z>(55-50)/10] = 1 - P[Z\leq (55-50)/10] = 1-\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{55-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.3085375$$
+
+
+```{r}
+pnorm(55,50,10,lower.tail = FALSE)
+```
+
 ### d)
 $P(X>35)$
+
+Respuesta.-
+$$P(X<40) = P[Z>(35-50)/10] = 1 - P[Z\leq (35-50)/10] = 1-\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{35-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.93319285$$
+
+```{r}
+pnorm(35,50,10,lower.tail = FALSE)
+```
 
 ### e)
 $P(40<X<45)$
 
+Respuesta.-
+$$P(40<X<45) = P\left(\dfrac{40-50}{10}<Z<\dfrac{45-50}{10}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{45-50}{10}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{40-50}{10}} e^{\frac{-z^2}{2}}\; dz =0.1498823.$$
+
+```{r}
+pnorm(45,50,10) - pnorm(40,50,10)
+```
+
 ### f)
 $P(38<X<62)$
+
+Respuesta.-
+$$P(38<X<62) = P\left(\dfrac{38-50}{10}<Z<\dfrac{62-50}{10}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{62-50}{10}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{38-50}{10}} e^{\frac{-z^2}{2}}\; dz =0.7698607.$$
+
+```{r}
+pnorm(62,50,10) - pnorm(38,50,10)
+```
+
+## 5.3
+Sea $X\sim N(200,20)$. Determinar las siguientes probabilidades:
+
+### a)
+P(185<X<210)
+
+Respuesta.-
+$$P\left(\dfrac{185-200}{20}<Z<\dfrac{210-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{210-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{185-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.4648351.$$
+```{r}
+pnorm(210,200,20)-pnorm(185,200,20)
+```
+
+### b)
+P(215<X<250)
+
+Respuesta.-
+$$P\left(\dfrac{215-200}{20}<Z<\dfrac{250-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{250-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{215-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.2204177.$$
+```{r}
+pnorm(250,200,20)-pnorm(215,200,20)
+```
+
+### c)
+P(X>240)
+
+Respuesta.-
+$$P\left(Z>\dfrac{240-200}{20}\right) = P 1-\left(Z\leq\dfrac{240-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{240-200}{20}} e^{\frac{-z^2}{2}}\; dz = 0.02275013.$$
+```{r}
+pnorm(240,200,20,lower.tail = FALSE)
+```
+### d)
+P(X>178)
+
+Respuesta.-
+$$P\left(Z>\dfrac{178-200}{20}\right) = P 1-\left(Z\leq\dfrac{178-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{178-200}{20}} e^{\frac{-z^2}{2}}\; dz =0.8643339.$$
+```{r}
+pnorm(178,200,20,lower.tail = FALSE)
+```
+
+## 5.4
+Sea $X\sim N(-25,10)$. Encontrar los valores de $x$ que corresponden a las siguientes probabilidades:
+
+### a)
+$P(X<x)=0.1251$.
+Respuesta.- Viendo la tabla z tenemos
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -1.15\cdot 10 - 25 = -35.5$$
+```{r}
+qnorm(0.1251)*10-25
+```
+
+### b)
+$P(X<x) = 0.9382$
+Respuesta.- 
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 1.54\cdot 10 - 25 = -9.6$$
+
+```{r}
+qnorm(0.9382)*10-25
+```
+### c)
+$P(X>x) 0 0.3859$
+Respuesta.- 
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -0.29\cdot 10 - 25 = -27.9$$
+
+```{r}
+qnorm(0.3859)*10-25
+```
+### d)
+$P(X>x) 0 0.8340$
+Respuesta.- 
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 0.97\cdot 10 - 25 = .15.3$$
+
+```{r}
+qnorm(0.8340)*10-25
+```
+
+## 5.5
+Sea $X\sim N(10,5)$. Encontrar los valores de $x$ que corresponden a las siguientes probabilidades:
+
+### a)
+$P(X<x)=0.05$
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.645\cdot 5+10 = 1.775$$
+
+```{r}
+qnorm(0.05)*5+10
+```
+
+### b)
+$P(X<x)=0.95$
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.645\cdot 5+10=18.225$$
+
+```{r}
+qnorm(0.95)*5+10
+```
+
+### c)
+$P(X<x)=0.99$
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 2.33\cdot 5+10 = 21.65$$
+
+```{r}
+qnorm(0.99)*5+10
+```
+
+### d)
+$P(X<x)=0.01$
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -2.33\cdot 5+10=-1.65$$
+
+```{r}
+qnorm(0.01)*5+10
+```
+
+### e)
+$P(X<x)=0.025$
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.96\cdot 5+10 = 0.2$$
+
+```{r}
+qnorm(0.025)*5+10
+```
+
+### f)
+$P(X<x)=0.975$
+
+Respuesta.- 
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.96\cdot 5+10 = 19.8$$
+
+```{r}
+qnorm(0.975)*5+10
+```
+
+## 5.6)
+Sea $X\sim N(\mu,\sigma)$. Determinar la media y la varianza de $X$ si los cuantiles son $x_{0.4} = 50$ y $x_{0.8}=100$.
+
+Respuesta.- Sea $z_1=\dfrac{x_{0.4}-\mu}{\sigma} \qquad z_2= \dfrac{z_{0.8}-\mu}{\sigma}$, entonces
+
+$$\dfrac{50-\mu}{z_1}=\dfrac{100-\mu}{z_2}$$
+
+Así, 
+$$\mu = \dfrac{100z_1 - 50z_2}{z_1-z_2} = \dfrac{100\cdot (-0.225)-50\cdot 0.845}{-0.225-0.845} = 60.51402$$
+
+Luego reemplazamos $\mu$ en $z_1$ para hallar $\sigma$,
+
+$$\sigma=\dfrac{x_{0.4}-\mu}{z_1} = \dfrac{50-60.51402}{-0.225} = 46.72898 $$
+
+```{r}
+mu = (100*qnorm(0.4)-50*qnorm(0.8))/(qnorm(0.4)-qnorm(0.8))
+mu
+(50-mu)/qnorm(0.4)
+```
+
+## 5.7
+Una universidad espera recibir, para el siguiente año escolar, 16000 solicitudes de ingreso el primer año de licenciatura. Se supone que las calificaciones obtenidas por los aspirantes en la prueba SAT se pueden calcular, de manera adecuada, por una distribución normal con media 950 y desviación estándar 100. Si la universidad decide admitir al $25\%$ de todos los aspirantes que obtengan las calificaciones más altas en la prueba SAT, ¿cuál es la mínima calificación que es necesario obtener en esta prueba, para ser admitido por la universidad?
+
+Respuesta.- Sea $P(X>x_{0.25})$ entonces  $P(X<x_{0.75}) = -1.96$ así
+$$x_{0.75} = 0.675*100+950 = 1017.5 \simeq 1018$$
+
+```{r}
+x025 = qnorm(0.75)*100+950
+x025
+```
+
+## 5.8
+Una fábrica produce pistones cuyos diámetros se encuentran adecuadamente clasificados por una distribución normal con un diámetro promedio de $5$ cm y una desviación estándar igual a $0.001$ cm. Para que un pistón sirva, su diámetro debe encontrarse entre $4.998$ y $5.002$ cm. Si el diámetro del pistón es menor que $4.998$ se desecha; si es mayor que $5.002$ el pistón puede reprocesarse. ¿Qué porcentaje de pistones servirá? ¿Qué porcentaje será desechado? ¿Qué porcentaje será reprocesado?.
+
+Respuesta.-

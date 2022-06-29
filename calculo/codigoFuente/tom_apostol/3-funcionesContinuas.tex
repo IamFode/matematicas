@@ -987,7 +987,6 @@ Calcular los límites en los ejercicios del 11 al 20 y explicar qué teoremas se
 
 \end{enumerate}
 
-\end{comment}
 
 
 \section{Teorema de Bolzano para las funciones continuas}
@@ -1020,4 +1019,347 @@ Hay sólo tres posibilidades: $f(c)>0$, $f(c)>0$ y $(c)=0$. Si $f(c)>0$ hay un i
 
 
 \section{Teorema del valor intermedio para funciones continuas}
+
+%-------------------- teorema 3.8
+\begin{teo}
+    Sea $f$ continua en cada punto de un intervalo $[a,b]$. Si $x_1<x_2$ son dos puntos cualesquiera de $[a,b]$ tales que $f(x_1)\neq f(x_2)$, entonces la función $f$ toma todos los valores entre $f(x_1)$ y $f(x_2)$ en algún lugar del intervalo $(x_1,x_2)$.\\\\
+	Demostración.-\; Supongamos $f(x_1)<f(x_2)$ y sea $k$ cualquier valor entre $f(x_1)$ y $f(x_2)$. Sea $g$ la función definida en $[x_1,x_2]$ como sigue:
+	$$g(x)=f(x)-k.$$
+	Entonces $g$ es continuo en cada punto de $[x_1,x_2]$, y tenemos
+	$$g(x_1)=f(x_1)-k<0,\qquad g(x_2)=f(x_2)-k>0.$$
+	Aplicando el teorema de Bolzano para $g$, tenemos $g(x)=0$ para algún $c$ entre $x_1$ y $x_2$. Pero esto significa $f(c)=k,$ quedando así demostrado el teorema.\\\\
+\end{teo}
+
+%-------------------- teorema 3.9
+\begin{teo}
+    Si $n$ es un entero positivo y si $a>0$, entonces existe exactamente un $b$ positivo tal que $b^n=a.$\\\\
+	Demostración.-\; Escoja $c>1$ tal que $0<a<c$, y considere la función $f$ definida en el intervalo $[0,c]$ por la ecuación $f(x)=x_n$. Esta función es continua en $[0,c]$, y en los extremos tenemos $f(0)=0$ y $f(c)=c^n$. Puesto que $0<a<c<c^n$ el número $a$ dado está comprendido entre los valores de la función $f(0)$ y $f(c)$. Por tanto, en virtud del teorema del valor intermedio, se tiene $f(x)=a$ para algún $x$ en $[0,c]$, digamos para $x=b$. Esto prueba la existencia de por lo menos un $b$ positivo tal que $b^n=a.$ No puede haber más que uno tal que puesto que $f$ es estrictamente creciente en $[0,c]$, con lo cual queda demostrado en teorema.\\\\
+\end{teo}
+
+\section{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Sea $f$ un polinomio de grado $n$, $f(x)=\sum\limits_{k=0}^n c_k x^k$, tal que el primero y el último coeficiente $c_0$ y $c_n$ tienen signos distintos. Demostrar que $f(x)=0$ por lo menos para un valor positivo de $x$.\\\\
+	Demostración.-\; Tenemos que evaluar la función $f$ en el punto $0$ de la siguiente manera,
+	$$f(0)=\sum_{k=0}^n c_k 0^k = c_0$$
+	donde notamos que $f(0)$ tiene el mismo signo que $c_0$, luego 
+	$$f(x)=c_nx^n + x_{n-1}x^{n-1}+\ldots + c_1 x^0 = c_nx^n \left(1+\dfrac{c_{n-1}}{c_n}+\ldots+\dfrac{c_0}{c_n}\cdot \dfrac{1}{x_n}\right)$$
+	se sigue que para un $x$ grande se tiene,
+	$$1+\dfrac{c_{n-1}}{c_n}\cdot \dfrac{1}{x}+\ldots + \dfrac{c_0}{c_n}\cdot \dfrac{1}{x^n}>0$$
+	por lo que $f(x)$ tendrá el mismo signo que $c_n$ para un $x$ grande, luego para $x>0$,
+	$$x^n\left(1+\dfrac{c_{n-1}}{c_n}\cdot \dfrac{1}{x}+\ldots + \dfrac{c_0}{c_n}\cdot \dfrac{1}{x^n}\right)>0$$
+	que nos dice que cuando multiplicamos un número positivo por $c_n$ el resultado tendrá el mismo signo que $c_n$.\\
+	Por lo tanto debemos demostrar que el término es realmente positivo. Primeramente,
+	$$1+\dfrac{c_{n-1}}{c_n}\cdot \dfrac{1}{x}+\ldots + \dfrac{c_0}{c_n}\cdot \dfrac{1}{x^n}\geq 1-\left(\bigg| \dfrac{c_{n-1}}{c_n} \cdot \dfrac{1}{x}\bigg| +\ldots + \bigg|\dfrac{c_0}{c_n}\cdot \dfrac{1}{x^n}\bigg|\right)$$
+	esto es cierto ya que,
+	$$\bigg|\dfrac{c_i}{c_n}\cdot \dfrac{1}{x^{n-i}}\bigg|\geq \dfrac{c_i}{c_n}\cdot \dfrac{1}{x_{n-i}}\quad \mbox{para todo} \; 1\leq i \leq n-1$$
+	Ahora, dado que estamos mostrando que hay un tamaño suficientemente grande de $x$ como para que nuestra afirmación sea verdadera, dejemos que
+	$$x>\max\left\{ 1, \bigg|\dfrac{c_n}{n\cdot c_a}\bigg|\right\}, \quad \mbox{donde}\quad |c_a|=\max\left\{|c_0|,|c_1|,\ldots,|c_n|\right\}.$$
+	Ya que $x>1$ sabemos que $\dfrac{1}{x}>\dfrac{1}{x^n}$ para todo $n \in \mathbb{Z}$ por lo que 
+	$$\begin{array}{rcl}
+	    1-\left(\bigg| \dfrac{c_{n-1}}{c_n} \cdot \dfrac{1}{x}\bigg| +\ldots + \bigg|\dfrac{c_0}{c_n}\cdot \dfrac{1}{x^n}\bigg|\right) & > & 1-\left(\bigg| \dfrac{c_{n-1}}{c_n} \cdot \dfrac{1}{x}\bigg| +\ldots + \bigg|\dfrac{c_0}{c_n}\cdot \dfrac{1}{x}\bigg|\right) \\\\ 
+							      &=&1-\left(\bigg|\dfrac{c_{n-1}}{c_n}\cdot \dfrac{c_n}{n\cdot c_a}\bigg|+\ldots + \bigg|\dfrac{c_0}{c_n}\cdot \dfrac{c_n}{n\cdot c_a}\bigg|\right)\\\\
+							      &=&1-\left(\bigg|\dfrac{c_{n-1}}{n\cdot c_a}\bigg|+\ldots + \bigg|\dfrac{c_0}{n\cdot c_a}\bigg|\right)\\\\
+								     &>&1-\left(\bigg|\dfrac{c_a}{n\cdot c_a}\bigg|+\ldots + \bigg|\dfrac{c_a}{n\cdot c_a}\bigg|\right)\\\\
+								     &=&1-\left(\dfrac{1}{n}+\ldots + \dfrac{1}{n}\right)\\\\
+								     &=&1-\left(\dfrac{n-1}{n}\right)\\\\
+								     &=&\dfrac{1}{n}>0\\\\
+
+	\end{array}$$
+	Esto prueba nuestra afirmación, por lo que $f(x)$ tiene el mismo signo que $c_n$ para un $x$ suficientemente grande. Así tanto $f(0)$ y $f(x)$ tienen signos diferentes y por lo tanto hay algunos $c>0$ tales que $f(c)=c.$\\\\
+
+
+    %-------------------- 2.
+    \item Un número real $x_1$, tal que $f(x_1)=0$ es una raíz real de la ecuación $f(x)=0$. Decimos que una raíz real de una ecuación a sido separada si se ha encontrado un intervalo $[a,b]$ que contiene esta raíz y ninguna otra. Con ayuda del teorema de Bolzano, separar las raíces reales de cada una de las siguientes ecuaciones (cada una tiene cuatro raíces reales).
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item $3x^4-2x^3-36x^2+26x-8=0.$\\\\
+		Respuesta.-\; 
+		$$\begin{array}{lcl}
+		    f(-4)=168,\quad f(-3)=-143&\Longrightarrow & f(c_1)=0\; \mbox{para}\; c_1=0 \in [-4,-3]\\\\
+		    f(0)=-8,\quad f(1/2)=\dfrac{15}{16}&\Longrightarrow & f(c_2)=0\; \mbox{para}\; c_2 \in [0,1/2]\\\\
+		    f(1/2)=\dfrac{15}{16},\quad f(-7)=-7&\Longrightarrow & f(c_3)=0\; \mbox{para}\; c_3 \in [1/2,1]\\\\
+		    f(1)=-7,\quad f(4)=200&\Longrightarrow & f(c_4)=0\; \mbox{para}\; c_4 \in [-7,4]\\\\
+		\end{array}$$
+
+	    %---------- (b)
+	    \item $2x^4-14x^2+14x-1=0$.\\\\
+		Respuesta.-\; 
+		$$\begin{array}{lcl}
+		    f(-4)=,\quad f(-3)=-7&\Longrightarrow & f(c_1)=0\; \mbox{para}\; c_1 \in [-4,-3]\\\\
+		    f(0)=,\quad f(1)=1&\Longrightarrow & f(c_2)=0\; \mbox{para}\; c_2 \in [0,1]\\\\
+		    f(1)=,\quad f(3/2)=-\dfrac{11}{8}&\Longrightarrow & f(c_3)=0\; \mbox{para}\; c_3 \in [1,3/2]\\\\
+		    f(3/2)=-\dfrac{11}{8},\quad f(2)=3&\Longrightarrow & f(c_4)=0\; \mbox{para}\; c_4 \in [3/2,2]\\\\
+		\end{array}$$
+
+	    %---------- (c)
+	    \item $x^4+4x^3+x^2-6x+2=0$.\\\\
+		Respuesta.-\; 
+		$$\begin{array}{lcl}
+		    f(-3)=2,\quad f(-5/2)=-\dfrac{3}{16}&\Longrightarrow & f(c_1)=0\; \mbox{para}\; c_1 \in [-3,-5/2]\\\\
+		    f(-5/2)=-\dfrac{3}{16},\quad f(-2)=2&\Longrightarrow & f(c_2)=0\; \mbox{para}\; c_2 \in [-5/2,-2]\\\\
+		    f(0)=2,\quad f(1/2)=-\dfrac{3}{16}&\Longrightarrow & f(c_3)=0\; \mbox{para}\; c_3 \in [0,1/2]\\\\
+		    f(1/2)=-\dfrac{3}{16},\quad f(1)=2&\Longrightarrow & f(c_4)=0\; \mbox{para}\; c_4 \in [1/2,1]\\\\
+		\end{array}$$
+	\end{enumerate}
+
+	\vspace{.5cm}
+
+    %-------------------- 3.
+    \item Si $n$ es un entero positivo impar y $a<0$ demostrar que existe un número negativo $b$ y sólo uno tal que $b^n = a.$\\\\
+	Demostración.-\; Sea $f(x)=x^n$ una función definida en $[c,0]$ tal que $c<-1$. Así $f(x)$ es una función continua en $[c,0]$. De donde en los extremos tenemos $f(c)=c^n$ y $f(0)=0$, por lo que 
+	$$c^n<c.$$
+	Luego sea $a$ un número que se encuentra entre $f(c)$ y $f(0)$, entonces tenemos
+	$$f(c)<a<f(0)\quad \Rightarrow \quad c^n < a < 0$$
+	Por el teorema del valor intermedio, existe al menos un número negativo $b$ en $[c,0]$ tal que 
+	$$f(b)=a\quad \Rightarrow \quad b^n = a.$$
+	de donde concluimos que $f$ es una función estrictamente creciente en $[c,0]$, por lo que existe exactamente un $b<0$ tal que $b^n=a$.\\\\ 
+
+    %-------------------- 4.
+    \item Sea $f(x)=\tan x$. A pesar de ser $f(\pi/4)=1$ y $f(4\pi/4)=-1$, no hay ningún punto $x$ en el intervalo $[\pi/4,3\pi/4]$ tal que $f(x)=0$. Explicar por qué no hay contradicción con el teorema de Bolzano.\\\\
+	Respuesta.- No se contradice ya que $\tan x$ no es continua en el intervalo $[\pi/4,3\pi/4]$ya que no está definido en $\pi/2$.\\\\
+
+    %-------------------- 5.
+    \item Dada una función $f$ de valores reales continua en el intervalo cerrado $[0,1]$. Supongamos que $0\leq f(x)\leq 1$ para cada $x$ en $[0,1]$. Demostrar que existe por lo menos un punto $c$ en $[0,1]$ para el cual $f(c)=c$. Tal punto se llama un punto fijo de $f$. El resultado de este ejercicio es un caso particular del teorema del punto fijo de Brower.\\\\
+	Demostración.-\; Sea $g(x)=f(x)-x$, por lo que $g$ es continua en $[0,1]$, esto porque la diferencia de funciones continuas es continua sobre $[0,1]$, de donde tenemos las siguientes inecuaciones:
+	$$g(0)=f(0)-0=f(0), \qquad  g(1)=f(1)-1$$
+	Luego ya que, $\forall x \in [0,1]$, entonces $0\leq f(x)\leq 1$ por lo que se tiene las siguientes inecuaciones,
+	$$0\leq f(0)\leq 1\quad \Rightarrow  \quad  0\leq g(0)\leq 1$$
+	y
+	$$0 \leq f(1)\leq 1,\quad \Rightarrow \quad -1\leq f(1)-1\leq 0 \quad \Rightarrow \quad -1\leq g(1)\leq 0$$
+	Así $g(0)$ y $g(1)$ tiene signos opuestos, entonces aplicando el teorema de Bolzano existe al menos un $c \in (0,1)$ tal que $g(c)=0$, que implica $f(c)-c=0$ o $f(c)=c$.\\\\
+
+
+    %-------------------- 6.
+    \item Dada una función continua $f$ de valores reales en el intervalo cerrado $[a,b]$. Suponiendo que $f(a)\leq a$ y que $f(b)\geq b$, demostrar que $f$ tiene un punto fijo en $[a,b]$.\\\\
+	Demostración.-\;  Sea $g(x)=f(x)-x$, de donde $f(x)$ y $x$ son funciones continuas en $[a,b]$, entonces $g(x)$ es continua en cada punto de $[a,b]$, por hipótesis tenemos,
+	$$f(a)\leq a \quad \Rightarrow \quad f(a)-a\leq 0 \quad \Rightarrow \quad g(a)\leq 0$$
+	y
+	$$f(b)\geq b \quad \Rightarrow \quad f(b)-b\geq 0 \quad \Rightarrow \quad g(b)\geq 0.$$
+	de donde $g(a)$ y $g(b)$ tiene signos opuestos. Por el teorema de Bolzano, al al menos un $c$ en $[a,b]$ tal que $g(c)=0$, por lo tanto $f(c)-c=0$ o $f(c)=c.$\\\\
+
+\end{enumerate}
+
+\section{El proceso de inversión}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $f$ con dominio $A$ y recorrido $B$. A cada $x$ de $A$ corresponde un $y$ de $B$ tal que $y=f(x)$. Para cada $y$ de $B$, existe por lo menos un $x$ de $A$ tal que $f(x)=y.$ Supongamos que existe uno sólo de esos $x$. Entonces podemos definir una nueva función $g$ de $B$ del modo siguiente:
+	\begin{center}
+	    $g(y)=x$ significa que $y=f(x).$
+	\end{center}
+	Dicho de otro modo, el valor de $g$ en cada punto $y$ de $B$ es el único $x$ de $A$ tal que $f(x)=x$, es decir,
+	\begin{center}
+	    $g[f(x)]=x$ para todo $x$ de $A$ y que $f[g(y)]=y$ para todo $y$ de $B$.
+	\end{center}
+	El proceso de inversión puede aplicarse a cualquier función $f$ que tenga la propiedad de que para cada $y$ en el recorrido de $f$, existe un sólo $x$ en el dominio de $f$ tal que $f(x)=y$.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{lema}
+    Toda función continua estrictamente monótona tiene inversa.\\\\
+	Demostración.-\; Sean una función continua y estrictamente monótona en un intervalo $[a,b]$ y $c=f(a)$, $d=f(b)$. El teorema del valor intermedio para las funciones continuas nos dice que en el intervalo $[a,b]$, $f$ toma todo valor comprendido entre $c$ y $d$. Además, no puede tomar dos veces el mismo valor porque $f(x_1)\neq f(x_2)$ siempre que $x_1\neq x_2$
+\end{lema}
+
+
+\section{Propiedades de las funciones que se conservan por la inversión}
+
+\begin{teo}
+    Sea $f$ estrictamente creciente y continua en un intervalo $[a,b]$. Sean $c=f(a)$ y $d=f(b)$ y sea $g$ la inversa de $f$. Esto es, para cada $y$ en $[c,d]$, sea $g(y)$ aquel $x$ de $[a,b]$ tal que $y=f(x)$. Entonces
+    \begin{enumerate}[(a)]
+	\item $g$ es estrictamente creciente en $[c,d]$.
+	\item $g$ es continua en $[c,d]$.\\\\
+    \end{enumerate}
+	Demostración.-\; Elijamos $y_1<y_2$ en $[c,d]$ y pongamos $x_1=g(y_1)$, $x_2=g(y_2)$. Entonces $y_1 = f(x_1)$ e $y_2=f(x_2)$. Puesto que $f$ es estrictamente creciente, la relación $y_1<y_2$ implica que $x_1<x_2$, la cual, a su vez, implica que $g$ sea estrictamente creciente en $[c,d]$. Esto demuestre la parte (a).\\
+	Demostremos ahora b). Elijamos un punto $y_0$ en el intervalo abierto $(c,d)$. Para demostrar que $g$ es continua en $y_0$, debemos probar que para todo $\epsilon>0$ existe un $\delta>0$ tal que 
+	\begin{center}
+	    $g(y_0)-\epsilon < g(y) < g(x_0) + \epsilon$ siempre que $y_0<y<y_0+\delta.$
+	\end{center}
+	Pongamos $x_0=g(y_0)$, de modo que $f(x_0)=y_0$. Supongamos $\epsilon$ dado. (No se pierde generalidad si consideramos aquellos valores de $\epsilon$ bastante pequeños para que $x_0-\epsilon$ y $x_0+\epsilon$ queden en el interior de $[a,b].$) Sea $\delta$ el menor de los dos números 
+	$$f(x_0)-f(x_0-\epsilon)\quad \mbox{y}\quad f(x_0+\epsilon)-f(x_0).$$
+	Es fácil comprobar que con este $\delta$ se verifica. Una ligera modificación del razonamiento prueba que $g$ es continua a la derecha de $c$, y a la izquierda de $d$.\\
+	Existe el teorema análogo para funciones decrecientes. Esto es, la inversa de una función $f$ estrictamente decreciente es estrictamente decreciente y continua. Esto resulta de aplicar el teorema 3.10 a $-f$.\\\\
+\end{teo}
+
+\section{Inversas de funciones monótonas a trozos}
+Para encajar la función $f(x)=x^2$ con $g_1(y)=\sqrt{y}\quad \mbox{y}\quad g_2(y)=-\sqrt{y}$ para cada $y$ en $[0,c^2]$ se puede considerar que la ecuación $y=x^2$ no define una función $f$ sino dos funciones $f_1$ y $f_2$ donde:
+$$f_1(x)=x^2 \quad \mbox{si}\quad 0\leq x \leq c \quad \mbox{y}\quad f_2(x)=x^2\quad \mbox{si}\quad -c\leq x \leq 0.$$
+Estas funciones pueden considerarse como distintas porque tienen dominios distintos. Cada una de ellas es monótona es su dominio y cada una tiene una inversa, la inversa de $f_1$ es $g_1$ y la inversa de $f_2$ es $g_2$ donde $g_1$ y $g_2$ están dada por $g_1(y)=\sqrt{y}\quad \mbox{y}\quad g_2(y)=-\sqrt{y}$ para cada $y$ en $[0,c^2]$.
+
+
+\section{Ejercicios}
+
+En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monótona en todo el eje real. Desígnese por $g$ la inversa de $f$. Describir el dominio de $g$ en cada caso. Poner $y=f(x)$ y despejar $x$ en función de $y$; hallar una fórmula (o fórmulas) para calcular $g(y)$ para cada $y$ en el dominio de $g$.\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item $f(x)=x+1$.\\\\
+	Respuesta.-\; Primero demostremos que $f$ es monótona. Sea $x_1,x_2\in \mathbb{R}$ con $x_1<x_2$ entonces 
+	$$x_1+1<x_2+1\quad \Rightarrow \quad f(x_1)<f(x_2).$$
+	Por lo que, $f$ es estrictamente creciente en $\mathbb{R}.$\\
+	Luego,
+	$$y=x+1 \quad \rightarrow \quad x=y-1 \quad \Rightarrow \quad g(y)=y-1,\; \forall\; y \in \mathbb{R}.$$\\
+
+    %------------------- 2.
+    \item $f(x)=2x+5.$\\\\
+	Respuesta.-\; Demostremos que $f$ es monótona. Sea $x_1$, $x_2\in \mathbb{R}$ con $x_1<x_2$, entonces
+	$$x_1<x_2 \quad \Rightarrow \quad 2x_1<2x_2 \quad \Rightarrow \quad 2x_1+5<2x_2+5\quad \Rightarrow \quad f(x_1)<f(x_2).$$
+	Por lo que, $f$ es estrictamente creciente en $\mathbb{R}.$\\
+	Luego,
+	$$y=2x+5\quad \Rightarrow \quad x=\dfrac{y-5}{2}\quad \Rightarrow \quad g(y)=\dfrac{y-5}{2},\; \forall \; y\in \mathbb{R}.$$\\
+    %------------------- 3.
+    \item $f(x)=1-x.$\\\\
+	Respuesta.-\; Demostremos que $f$ es monótona. Sea $x_1,x_2\in \mathbb{R}$ con $x_1<x_2$ entonces,
+	$$x_1<x_2 \quad \Rightarrow \quad -x_1>-x_2 \quad \Rightarrow\quad 1-x_1>1-x_2\quad \Rightarrow \quad f(x_1)>f(x_2).$$
+	Por lo que, $f$ es estrictamente decreciente en $\mathbb{R}.$\\
+	Luego,
+	$$y=1-x\quad \Rightarrow \quad x=1-y\quad \Rightarrow \quad g(y)=1-y,\; \forall \; y\in \mathbb{R}.$$\\
+
+    %------------------- 4.
+    \item $f(x)=x^3.$\\\\
+	Respuesta.-\; Demostremos que $f$ es monótona. Sea $x_1,x_2\in \mathbb{R}$ con $x_1<x_2$ de donde consideramos que
+	$$x_2^3-x_1^3 = \left(x_2-x_1 \right)\left(x_2^2+x_1x_2+x_1^2\right) = (x_2-x_1)\left[\left(x_2+\dfrac{x_1}{2}\right)^2+\dfrac{3x_1^2}{4}\right]$$
+	pero, dado que $x_2>x_1$ por suposición, tenemos $(x_2-x_1)>0$. El segundo término del producto también es positivo ya que es una suma de términos positivos. Por lo tanto,
+	$$x_2^3-x_1^3>0\quad \Rightarrow \quad f(x_2)>f(x_1).$$
+	Así, $f$ es estrictamente creciente en $\mathbb{R}.$\\
+	Luego,
+	$$y=x^3\quad \Rightarrow \quad x=y^{\frac{1}{3}} \quad \Rightarrow \quad g(y)=y^{\frac{1}{3}},\; \forall\; y\in \mathbb{R}.$$\\
+
+    %------------------- 5.
+    \item $f(x)=\left\{\begin{array}{lcl}
+		x & \mbox{si} & x<1, \\
+		x^2 & \mbox{si} & 1 \leq x\leq 4, \\
+		8x^{\frac{1}{2}} & \mbox{si} & x>4 \\
+		\end{array}\right.$
+		\vspace{.5cm}
+
+	Respuesta.- \; Demostremos que $f$ es estrictamente creciente en $\mathbb{R}$. Notemos que cada componente es estrictamente creciente, entonces debemos comprobar que las funciones crece de un intervalo al otro.
+	$$x_1<1\leq x_2\quad \Rightarrow \quad x_1<x^2_2 \quad \Rightarrow \quad f(x_1)<f(x_2)$$
+	y
+	$$1\leq x_1 \leq 4 \leq x_2\quad \Rightarrow \quad x_1^2 < 8x_2^{1/2} \quad \Rightarrow \quad f(x_1)<f(x_2).$$\\
+	Por lo tanto, $f$ es creciente en $\mathbb{R}$. Luego,\\
+
+	$$g(y)=\left\{\begin{array}{lcl}
+	    y & \mbox{si} & y<1, \\
+	    y^{\frac{1}{2}} & \mbox{si} & 1 \leq y \leq 16, \\
+	    \left(\dfrac{y}{8}\right)^{\frac{1}{2}} & \mbox{si} & y>16
+	\end{array}\right.$$
+	\vspace{.7cm}
+
+    Valores medios. Sea $f$ continua y estrictamente monótona en el eje real positivo y sea $g$ la inversa de $f$. Si $a_1<a_2<\ldots<a_n$ son $n$ números reales positivos dados, se llama valor medio (o promedio) con respecto a $f$ al número $M$ definido como sigue:
+    $$M_f=g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right).$$
+    En particular, cuando $f(x)=x^p$ para $p\neq 0$, $M_f$ es llamado media de potencias p-ésimas. Los ejercicios siguientes se refieren a las propiedades de los valores medios.\\\\ 
+
+    %------------------- 6.
+    \item Demostrar que $f(M_f) = (1/n)\sum\limits_{i=1}^n f(a_i)$. Dicho de otro modo, el valor de $f$ en el promedio $M_f$ es la media aritmética de los valores $f(a_1),\ldots,f(a_n)$.\\\\
+	Demostración.-\; Ya que $g$ es inversa de $f$ sabemos que $f(g(x))=x$ para todo $x$ en el rango de $f$, es decir, para todo $x$ tal que existe algún $x\in \mathbb{R}^+$ tal que $f(c)=x.$\\
+	Por definición de valor medio tenemos que,
+	$$f(M_f)=f\left[g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)\right].$$
+	Así, si $\dfrac{1}{n}\sum\limits_{i=1}^n f(a_i)$ es en el dominio de $g$ entonces hemos terminado. Por otro lado ya que $g$ es la inversa de $f$ su dominio es igual al rango de $f$. Por lo que demostraremos que este valor es en el rango de $f$ usando el teorema del valor intermedio.\\
+	Sin perder la generalidad, supongamos que $f$ es estrictamente creciente (la suposición alternativa, que $f$ es estrictamente creciente, producirá un argumento casi idéntico).  Entonce, como $a_1<a_2<\ldots<a_n$ son números reales positivos, tenemos $f(a_1)<f_(a_2)<\ldots<f(a_n)$. (Aquí, si hubiéramos asumido que $f$ era estrictamente decreciente, las desigualdades de roles se invertirían). Entonces se tendrá,
+	$$f(a_1)=\dfrac{1}{n}\sum_{i=1}^n  f(a_1) < \dfrac{1}{n}\sum_{i=1}^n f(a_i) < \dfrac{1}{n}\sum_{i=1}^n f(a_n)=f(a_n).$$
+	Luego por el teorema del valor intermedio, ya que
+	$$\dfrac{1}{n}\sum_{i=1}^n f(a_i) \in [f(a_1),f(a_n)]$$
+	debe existir algún $c\in \mathbb{R}^+$. De donde
+	$$f(c)=\dfrac{1}{n}\sum_{i=1}^n f(a_i).$$
+	Por lo tanto, $\dfrac{1}{n}\sum\limits_{i=1}^n f(a_i)$ está en el dominio de $g$, por lo que
+	$$f(M_f) = f\left[g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)\right]=\dfrac{1}{n}\sum_{i=1}^n f(a_i).$$\\
+
+
+
+    %------------------- 7.
+    \item Demostrar que $a_1 < M_f < a_n.$ De otro modo, el promedio de $a_1,\ldots , a_n$ está comprendido entre el mayor y el menor de los $a_i$.\\\\
+	Demostración.-\;  Dado que $f$ es estrictamente monótona en el eje real positivo y $a_1 < a_2 < \cdots < a_n$ son $n$ reales positivos, sabemos que $f$ es estrictamente creciente o estrictamente decreciente, de donde, 
+	$$f(a_i)<f(a_2)<\ldots < f(a_n) \quad \mbox{o}\quad f(a_1)>f(a_2)>\ldots > f(a_n).$$
+	Primero, supongamos que $f$ es estrictamente creciente, luego
+	$$f(a_i)<f(a_2)<\ldots < f(a_n)\quad \Rightarrow \quad \dfrac{1}{n}\sum_{i=1}^n f(a_1) < \dfrac{1}{n}\sum_{i=1}^n f(a_i) <\dfrac{1}{n}\sum_{i=1}^n f(a_n).$$
+	Dado que $f$ es estrictamente creciente, también lo es su inversa $g$ (por el Teorema 3.10 de Apostol); así, tenemos   
+	$$g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_1)\right)<g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)<g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_n)\right) \; \Rightarrow \; g[f(a_i)]<M_f < g[f(a_n)]\; \Rightarrow \; a_i<M_f<a_n$$
+	Si $f$ es estrictamente decreciente, entonces
+	$$\begin{array}{rcl}
+	    f(a_i)>f(a_2)>\ldots > f(a_n)&\Rightarrow& \displaystyle \dfrac{1}{n}\sum_{i=1}^n f(a_1) > \dfrac{1}{n}\sum_{i=1}^n f(a_i) >\dfrac{1}{n}\sum_{i=1}^n f(a_n)\\\\
+					 &\Rightarrow& \displaystyle g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)<g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)<g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_n)\right)\\\\
+					 &\Rightarrow& a_i < M_f < a_n.\\\\
+	\end{array}$$
+
+
+    %------------------- 8.
+    \item Si $h(x)=af(x)+b,$ donde $a\neq 0,$ demostrar que $M_h=M_f$. Esto prueba que funciones distintas pueden conducir al mismo promedio. Interpretar geométricamente este teorema comparando las gráficas de $h$ y $f.$\\\\
+	Demostración.-\; Sea $h(x)=af(x)+b$ con $a\neq 0$. Entonces, $h$ tiene un inverso ya que es estrictamente monótona (esto es porque la composición de $f$ y la función lineal $ax+b,$ ambas son estrictamente monótonas para $a\neq 0$). De donde su inversa está dada por,
+	$$h^{-1}(x)=f^{-1}\left(\dfrac{x-b}{a}\right).$$
+	Así,
+	$$\begin{array}{rcl}
+	    M_h &=& h^{-1}\left(\dfrac{1}{n}\sum_{i=1}^n h(a_i)\right)\\\\
+		&=& h^{-1}\left(\dfrac{1}{n}\sum_{i=1}^n [af(a_i)+b]\right)\\\\
+		&=&f^{-1} \left(\dfrac{\left[\sum_{i=1}^n f(a_i)\right]+b-b}{a}\right)\\\\
+		&=& h^{-1}\left[\dfrac{a}{n}\left(\sum_{i=1}^n f(a_i)\right)+b\right]\\\\
+		&=& g\left(\dfrac{1}{n}\sum_{i=1}^n f(a_i)\right)\\\\
+		&=& M_f.\\\\
+	\end{array}$$
+
+\end{enumerate}
+
+\end{comment}
+
+\section{teorema de los valores extremos para funciones continuas}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $f$ una función de valores reales definida en un conjunto $S$ de números reales. Se dice que la función $f$ tiene un máximo absoluto en el conjunto $S$ si existe por lo menos un punto $c$ en $S$ tal que 
+	\begin{center}
+	    $f(x)\leq f(c)$ para todo $x$ en $S$.
+	\end{center}
+	El número $f(c)$ se llama máximo absoluto de $f$ en $S$. 
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Decimos que $f$ es mínimo absoluto en $S$ si existe un punto $d$ en $S$ tal que
+	\begin{center}
+	    $f(x)\geq f(d)$ para todo $x$ en $S$.
+	\end{center}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}[Teorema de acotación para funciones continuas]
+    Sea $f$ continua en un intervalo cerrado $[a,b]$. Entonces $f$ es acotada en $[a,b]$. Esto es, existe un número $C\geq 0$ tal que $|f(x)|\leq C$ para todo $x$ en $[a,b]$.\\\\
+	Demostración.-\; Razonamos por reducción al absurdo o contradicción, utilizando una técnica llamada método de bipartición. Supongamos que $f$ no es acotada en $[a,b]$. Sea $c$ el punto medio de $[a,b]$. Ya que $f$ no es acotada en $[a,b]$ tampoco lo está en al menos uno de los subintervalos $[a,c]$ o $[c,b]$. Sea $[a_1,b_1]$ aquella mitad de $[a,b]$ en la que $f$ no está acotada. Si $f$ no es acotada en ambas mitades, sea $[a_1,b_1]$ la mitad izquierda de $[a,c]$. Continuemos el proceso de bipartición reiteradamente, designando con $[a_{n+1},b_{n+1}]$ la mitad de $[a_n,b_n]$ en la cual $f$ no es acotada, con el convenio de elegir la mitad izquierda si $f$ no es acotada en ambas mitades. Como la longitud de cada intervalo es la mitad de su precedente, observamos que la longitud de $[a_n,b_n]$, es $\dfrac{b-a}{2^n}$.\\
+	Designemos con $A$ el conjunto de los extremos izquierdos $a,a_1,a_2,\ldots,$ así obtenidos, y sea $\alpha$ el extremos superior de $A$. Tal punto $\alpha$ está situado en $[a,b]$. Por la continuidad de $f$ en $\alpha$, existe un intervalo de la forma $(\alpha-\delta,\alpha+\delta)$ en el que 
+	$$|f(x)-f(\alpha)|<1.$$
+	Si $\alpha=a$ este intervalo tiene la forma $[a,a+\delta)$, y si $\alpha=b$ tiene la forma $(b-\delta,b]$. La desigualdad dada implica
+	$$|f(x)|<1+|f(\alpha)|,$$
+	de modo que $f$ es acotada por $1+|f(\alpha)|$ en ese intervalo. Sin embargo, el intervalo $[a_n,b_n]$ está contenido en $(\alpha-\delta,\alpha+\delta)$ cuando $n$ es lo bastante grande para que $\dfrac{b-a}{2^n}<\delta$. Por consiguiente $f$ también es acotada en $[a_n,b_n]$, en contradicción con el hecho de que $f$ no está acotada en $[a_n,b_n]$. Esta contradicción completa la demostración.\\\\
+\end{teo}
+
+\begin{teo}[Teorema del máximo (mínimo)para funciones continuas]
+    Si $f$ es continua en un intervalo cerrado $[a,b]$, existen puntos $c$ y $d$ en $[a,b]$ tales que
+    $$f(c)=\sup f\quad \mbox{y}\quad f(d)=\inf f.$$\\
+	Demostración.-\; Basta probar que $f$ alcanza su extremo superior en $[a,b]$. Para el extremo inferior basta tener en cuenta el extremo inferior de $f$ es el extremo superior de $-f$.\\
+	Sea $M=\sup f$. Supondremos que no existe un $x$ en $[a,b]$ para el que $f(x)=M$ y se llegará a una contradicción. Sea $g(x)=M-f(x)$. Para todo $x$ en $[a,b]$ será entonces $g(x)>0$ con lo que la función recíproca $1/g$ es continua en $[a,b]$, supongamos $1/g(x)<C$ par todo $x$ en $[a,b]$, siendo $C>0$. Esto implica que $M-f(x)>1/C$, con lo que $f(x)<M-1/C$ para todo $x$ de $[a,b]$. Esto está en contradicción con el hecho de que $M$ es la menor cota superior de $f$ en $[a,b]$. Por consiguiente, $f(x)=M$ para por lo menos un $x$ en $[a,b]$.\\
+	Este teorema demuestra que si $f$ es continua en $[a,b]$, el $\sup f$ es su máximo absoluto y el $\inf f$ es su mínimo absoluto. Luego, en virtud del teorema del valor intermedio, el recorrido de $f$ es el intervalo cerrado $[\inf f, \sup f]$.\\\\
+\end{teo}
+
+\section{Teorema de la continuidad uniforme}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $f$ una función de valores reales y continua en un intervalo cerrado $[a,b]$ y sean $M(f)$ y $m(f)$ los valores máximos y mínimos respectivamente de $f$ en $[a,b]$. Llamaremos a la diferencia 
+	$$M(f)-m(f)$$
+	el oscilación de $f$ en el intervalo $[a,b]$. Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares. en el inte Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Sea $f$ continua en un intervalo cerrado $[a,b]$. Para todo $\epsilon>0$ existe una partición de $[a,b]$, en un número finito de subintervalos, tal que la oscilación de $f$ en todo subintervalo es menor que $\epsilon$.\\\\
+	Demostración.-\; Razonemos por contradicción, utilizando el método de biparticiones sucesivas. Supongamos que el teorema es falso. Esto es, que para un cierto $\epsilon$, por ejemplo para $\epsilon=\epsilon_0$, el intervalo $[a,b]$ no puede ser subdividido en un número finito de subintervalos en cada uno de los cuales la oscilación de $f$ sea menor que $\epsilon_0$. Sea $c$ el punto medio de $[a,b]$. Entonces para ese $\epsilon_0$ el teorema es falso en por lo menos uno de los dos subintervalos $[a,c]$ o $[c,b]$. (Si el teorema fuese cierto en ambos subintervalos, también lo sería en el intervalo completo $[a,b]$.) Sea $[a_1,b_1]$ aquella mitad de $[a,b]$ en la que teorema es falso para $\epsilon_0$. Si es falso en ambas mitadas, sea $[a_1,b_1]$ la mitad izquierda $[a,c]$. Reiteramos el proceso de bipartición, designando por $[a_{n+1},b_{n+1}]$ aquella mitad de $[a_n,b_n]$ en la que teorema es falso para $\epsilon_0$, teniendo en cuenta que elegimos la mitad izquierda si el teorema es falso en ambas mitades de $[a_n,b_n]$. Nótese que la oscilación de $f$ en cada subintervalo de $[a_n,b_n]$ así construido es por lo menos $\epsilon_0$.\\
+	Llamemos $A$ al conjunto de extremos izquierdos $a,a_1,a_2,\ldots,$ construidos como se indicó, y sea $\alpha$ la mínima cota superior de $A$. Este punto $\alpha$ está situado en $[a,b]$. Por la continuidad de $f$ en $\alpha$, existe un intervalo $(\alpha-\delta,\alpha+\delta)$ en el que la oscilación de $f$ es menor que $\epsilon_0$. (Si $\alpha=a$ ese intervalo es $[a,a+\delta]$, y si $\alpha=b$, es $(b-\delta,b)$.) Sin embargo, el intervalo $[a_n,b_n]$ está dentro de $(\alpha-\delta,\alpha+\delta)$ cuando $n$ es lo bastante grande para que $\dfrac{b-a}{2^n}<\delta$ con lo que la oscilación de $f$ en $[a_n,b_n]$ es también menor que $\epsilon_0$, lo que está en contradicción con el hecho de que la oscilación de $f$ es por lo menos $\epsilon_0$ en $[a_n,b_n]$. Esta contradicción completa la demostración del teorema.\\\\
+\end{teo}
+
+\section{Teorema de integrabilidad para funciones continuas}
 

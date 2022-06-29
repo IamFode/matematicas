@@ -184,12 +184,12 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 
 	    %---------- (iii)
 	    \item $\left\{ x:x=0 \mbox{ o } x=1/n \mbox{ para algún } n \mbox{ en } \mathbb{N}\right\}$.\\\\
-		Respuesta.-\;Llamemos $A$ al conjunto dado. Todos los números están en el intervalo $[0,1]$. De donde el $0$ es el mayor límite inferior y el $1$ es el menor límite superior, es decir,
+		Respuesta.-\;Llamemos $A$ al conjunto dado. Todos los números están en el intervalo $[0,1]$. De donde $0$ es la mayor cota inferior y el $1$ es la menor cota superior, es decir,
 		$\sup A = \max A = 1$ y $\inf A = \min A = 0$.\\\\
 
 	    %---------- (iv)
 	    \item $\left\{ x:0\leq x \leq \sqrt{2} \mbox{ y } x \mbox{ racional }\right\}$.\\\\
-		Respuesta.-\; Sea $A$ el conjunto dado. En este caso $0$ es el mayor límite inferior y está contenido en el conjunto y $\sqrt{2}$ es el límite superior mínimo pero no está en el conjunto, por lo tanto, $\inf A = \min A = 0$ y $\sup A = \sqrt{2}.$\\\\
+		Respuesta.-\; Sea $A$ el conjunto dado. En este caso $0$ es la mayor cota inferior y está contenido en el conjunto y $\sqrt{2}$ es la cota superior mínima pero no está en el conjunto, por lo tanto, $\inf A = \min A = 0$ y $\sup A = \sqrt{2}.$\\\\
 
 	    %---------- (v)
 	    \item $\left\{ x:x^2+x+1\geq 0\right\}$.\\\\
@@ -574,7 +574,378 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 	\end{enumerate}
 
     %-------------------- 12
+    \item Supongamos que $A$ y $B$ son dos conjuntos no vacíos de números tales que $x\leq y$ para todo $x$ en $A$ y todo $y$ de $B$.
+
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item Demuestre que $\sup A \leq y$ para todo $y$ de $B$.\\\\
+		Demostración.-\; Puesto que cualquier $y$ en $B$ satisface $y\geq x$ para todo $x$ en $A$, cualquiera $y$ en $B$ es una cota superior de $A$, por tanto $y\geq \sup A$.\\\\ 
+
+	    %---------- (b)
+	    \item Demuestre que $\sup A \leq \inf B.$\\\\
+		Demostración.-\; El apartado (a) demuestra que $\sup A$ es una cota inferior de $B$, por tanto $\sup A \leq \inf B.$\\\\
+
+	\end{enumerate}
+
+    %-------------------- 13
+    \item Sean $A$ y $B$ dos conjuntos numéricos no vacíos y acotados superiormente, y sea $A+B$ el conjunto de todos los números $x+y$ con $x$ de $A$ e $y$ de $B$. Demuestre que $\sup(A+B)=\sup A + \sup B$.\\\\
+	Demostración.-\; Supuesto que $x\leq \sup A$ e $y\leq \sup B$ para cualquier $x$ en $A$ e $y$ en $B$, se deduce que $x+y\leq \sup A + \sup B$. En consecuencia, $\sup A + \sup B$ es una cota superior de $A+B$, por tanto $$\sup(A+B)\leq \sup A + \sup B.$$
+	Para todo $\epsilon>0$. Ya que $\sup A$ es una cota superior mínima de $A$ y $\sup A - \epsilon/2$ no es una cota superior de $A$, entonces existe un $x\in A$ tal que $\sup A-x<\epsilon/2$. De similar forma, existe un $y\in B$ tal que $\sup B - y < \epsilon/2.$ Así nos aseguramos que $\sup A + \sup B>(x+y)$, es decir,
+	$$\sup A + \sup B - (x+y)<\epsilon$$
+	Luego por hipótesis sabemos que,
+	$$\sup(A+B)\geq x+y$$
+	de donde,
+	$$\sup(A+B)\geq x+y>\sup A + \sup B - \epsilon$$
+
+	Por lo tanto, $\sup(A+B)=\sup A + \sup B$.\\\\
+
+    %-------------------- 14
     \item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item Considere una sucesión de intervalos cerrados $I_1 = [a_1,b_1],\; I_2 = [a_2,b_2], \ldots$. Suponga que $a_n\leq a_{n+1}$ y que $b_{n+1}\leq b_n$ para todo $n$. Demuestre que existe un punto $x$ que pertenece a todos los $I_n$.\\\\
+	    \begin{center}
+	    \begin{tikzpicture}[scale=.7]
+		\draw[] (0,0)--(10,0);
+		\filldraw[black] (0,0) circle (1pt) node[below]{$a_1$};
+		\filldraw[black] (2,0) circle (1pt) node[below]{$a_2$};
+		\filldraw[black] (3.8,0) circle (1pt) node[below]{$a_3$};
+		\filldraw[black] (7,0) circle (1pt) node[below]{$b_3$};
+		\filldraw[black] (8.5,0) circle (1pt) node[below]{$b_2$};
+		\filldraw[black] (10,0) circle (1pt) node[below]{$b_1$};
+	    \end{tikzpicture}
+	    \end{center}
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item Demuestre que esta conclusión es falsa si se consideran intervalos abiertos en lugar de intervalos cerrados.\\\\
+		Demostración.-\;
+		El sencillo resultado del problema 14(a) se denomina Teorema de los Intervalos Encajados. Puede utilizarse para dar otras demostraciones de los Teoremas 1 y 2. El procedimiento utilizado, que se ilustra en los dos problemas siguientes, ilustra un método general denominado argumento de bisección.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 15
+    \item Suponga que $f$ es continua en $[a,b]$ y $f(a)<0<f(b)$. Entonces o bien $f[(a+b)/2] = 0$, o $f$ tiene signos distintos en los extremos del intervalo $[a,(a+b)/2]$, o bien $f$ tiene distintos en los extremos del intervalo $[(a+b)/2,b]$. ¿Por qué? Si $f[(a+b)/2]\neq 0$, sea $I_1$ aquel de los dos intervalos en el que $f$ cambia de signo. Divida ahora $I_1$ en dos mitades. O bien $f$ en $0$ en el punto medio, o bien $f$ cambia de signo en uno de los dos intervalos. Sea $I_2$ uno de estos. Continue de esta manera definiendo $I_n$ para cada $n$ (a no ser que $f$ sea $0$ en algún punto medio). Utilice el teorema de los intervalos encajados para hallar un punto $x$ en el que $f(x)=0$.\\\\
+	Demostración.-\; Si $f$ es cero en algún punto medio, entonces quedará demostrada la proposición. Supongamos que $f$ no es cero en ningún punto medio. Si denotamos el n-simo intervalo por $I_n=[a_n,b_n]$, podemos seguir construyendo $I_n$ indefinidamente. Esta $I_n$ tendrá la siguientes propiedades.
+	\begin{enumerate}[(a)]
+	    \item $[a,b] = I_0 \supseteq I_1 \supseteq I_2 \supseteq \ldots$
+	    \item $l(I_n) = \dfrac{1}{2} l(I_n)$ donde $l(I)$ denota la longitud del intervalo $I$.
+	\end{enumerate}
+
+	Por el argumento del ejercicio anterior, tenemos $a_m\leq b_n$ para todo $m$ y $n$, que demuestra que el conjunto $A=\lbrace a_m : m\in \mathbb{N} \rbrace$ es acotado superiormente y cada $b_n$ es una cota superior de $A$. Sea $x=\sup A$, entonces $a_n\leq x$ para cada $n\geq 0$ y ya que $x$ es la mínima cota superior, tenemos también $x\leq b_n$ para cada $n\geq 0$. De donde 
+	$$a_n\leq x \leq b_n$$
+	para cada $n$.\\
+	Similarmente, el conjunto $B=\lbrace b_n : n\in \mathbb{N} \rbrace$ es acotado superiormente y cada $a_m$ es una cota inferior de $B$. Sea $y=\inf A$, entonces $b_n\geq y$ para cada $n\geq 0$ y ya que $y$ es la mayor cota inferior, tenemos también $y\geq a_n$ para cada $n\geq 0$ y por lo tanto,
+	$$a_n\leq y \leq b_n$$
+	para cada $n$.\\
+	Si $x\leq z \leq y,$ entonces $a_n\leq x \leq z \leq y \leq b_n$ para cada $n$. Por lo tanto, el intervalo $[x,y]$ se encuentra en $I_n$, para cada $n$. Esto es,
+	$$[x,y]\subseteq \bigcap_{n=0}^{\infty} I_n$$
+	Recordemos la segunda propiedad citada a un principio. Usando recursivamente tenemos lo siguiente,
+	$$l(I_n) = \dfrac{1}{2}l \left(I_{n-1}\right) = \left(\dfrac{1}{2}\right)^2 l\left(I_{n-2}\right) = \ldots = \left(\dfrac{1}{2}\right)^nl(I_0) = \dfrac{b-a}{2^n}$$
+	Esto muestra que $l(I_n)\to 0$ cuando $n\to \infty$. Ya que $\displaystyle\bigcap_{n=0}^{\infty} I_n \subseteq I_n$ para cada $n$, tenemos $[x,y]\subseteq I_n$ para cada $n$.\\
+	Como $n\to \infty$ entonces $l(I_n)\to 0$, efectivamente $l([x,y])=0$. Esto será posible si y sólo si $x=y.$ Esto implica que $\displaystyle\bigcap_{n=0}^\infty I_n$ consiste de un simple elemento
+	$$\bigcap_{n=0}^\infty I_n = {x}$$
+	Ahora probemos que para este $x, f(x)=0$. Tenemos $\sup A = x = y = \inf B$. Ya que $(a_n)$ es una secuencia creciente, $a_n\to x.$ Similarmente, $b_n\to x.$ Esto implica que $f(a_n)\to f(x)$ y $f(b_n) \to f(x)$ esto como $f$ es continuo. Sin embargo, por construcción $f(a_n)<0$ para todo $k$ y $f(b_n)>0$ para todo $k$. Esto es $f(x)$ tiene dos sucesiones, una formada por números positivos y la otra por números negativos, que convergen en ella. Esto es posible si $f(x)=0.$\\\\
+
+    %-------------------- 16.
+    \item Suponga que $f$ es continua en $[a,b]$, pero que no estuviese acotada en $[a,b]$. Entonces $f$ no estaría acotada en $[a,(a+b)/2]$ o bien no lo estaría en $[(a+b)/2,b]$. ¿Por qué? Sea $I_1$ uno de estos intervalos en los que $f$ no está acotada. Aplique el método utilizado en el problema 15 para llegar a una contradicción.\\\\
+	Demostración.-\; Si denotamos el n-esimo intervalo por $I_n=[a_n,b_n]$ podemos seguir construyendo $I_n$ indefinidamente. Esta $I_n$ satisfacerá las siguientes propiedades.
+	\begin{enumerate}[(a)]
+	    \item $[a,b] = I_0 \supseteq I_1 \supseteq I_2 \supseteq \ldots$
+	    \item $l(I_n) = \dfrac{1}{2} l(I_n)$ donde $l(I)$ denota la longitud del intervalo $I$.
+	\end{enumerate}
+	Por el argumento del anterior ejercicio, tenemos $a_m\leq b_n$ para cada $m$ y cada $n$. Esto demuestra que el conjunto $A=\left\{a_m : m\in \mathbb{N}\right\}$ es acotado superiormente y cada $b_n$ es un una cota superior de $A$. Luego sea $x=\sup A$, entonces $a_n\leq x$ para cada $n\geq 0$ y ya que $x$ es la mínima cota superior, tenemos también $x\leq b_n$ para cada $n\geq 0$. De donde 
+	$$a_n\leq x \leq b_n$$
+	para cada $n$.\\
+	Similarmente, el conjunto $B=\lbrace b_n : n\in \mathbb{N} \rbrace$ es acotado superiormente y cada $a_m$ es una cota inferior de $B$. Sea $y=\inf A$, entonces $b_n\geq y$ para cada $n\geq 0$ y ya que $y$ es la mayor cota inferior, tenemos también $y\geq a_n$ para cada $n\geq 0$ y por lo tanto,
+	$$a_n\leq y \leq b_n$$
+	para cada $n$.\\
+	Si $x\leq z \leq y,$ entonces $a_n\leq x \leq z \leq y \leq b_n$ para cada $n$. Por lo tanto, el intervalo $[x,y]$ se encuentra en $I_n$, para cada $n$. Esto es,
+	$$[x,y]\subseteq \bigcup_{n=0}^{\infty} I_n$$
+	Recordemos la segunda propiedad citada a un principio. Usando recursivamente tenemos lo siguiente,
+	$$l(I_n) = \dfrac{1}{2}l \left(I_{n-1}\right) = \left(\dfrac{1}{2}\right)^2 l\left(I_{n-2}\right) = \ldots = \left(\dfrac{1}{2}\right)^nl(I_0) = \dfrac{b-a}{2^n}$$
+	Esto muestra que $l(I_n)\to 0$ cuando $n\to \infty$. Ya que $\displaystyle\bigcap_{n=0}^{\infty} I_n \subseteq I_n$ para cada $n$, tenemos $[x,y]\subseteq I_n$ para cada $n$.\\
+	Como $n\to \infty$ entonces $l(I_n)\to 0$, efectivamente $l([x,y])=0$. Esto será posible si y sólo si $x=y.$ Esto implica que $\displaystyle\bigcap_{n=0}^\infty I_n$ consiste de un simple elemento
+	$$\bigcap_{n=0}^\infty I_n = {x}$$
+	Ya que $f$ no está acotado en cada $I_n$ y cada $x$ se encuentra en cada $I_n$, entonces $f$ no está acotado en $x$. De donde llegamos a una contradicción ya que por hipótesis $f$ no está acotada en $[a,b]$.\\\\
+
+    %-------------------- 17.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %----------(a)
+	    \item Sea $A=\left\{x:x<\alpha \right\}$. Demuestre lo siguiente:
+
+		\begin{enumerate}[(i)]
+
+		    %----- (i)
+		    \item Si $x$ pertenece a $A$ e $y<x$, entonces $y$ pertenece a $A$.\\\\
+			Demostración.-\; Que $x$ esté en $A$ implica que $x<\alpha$, luego que $y<x$ implica que $y<x<\alpha$. De este modo $y \in A$.\\\\
+
+		    %----- (ii)
+		    \item $A\neq \emptyset$.\\\\
+			Demostración.-\; Que $\alpha-1<\alpha$ implica que $\alpha-1\in A$, por lo que $A\neq \emptyset$.\\\\
+
+		    %----- (iii)
+		    \item $A\neq \mathbb{R}$.\\\\
+			Demostración.-\; Análogo al anterior inciso, se tiene que $\alpha + 1>\alpha$ que implica que $\alpha +1 \notin A,$ por lo que $A\neq \mathbb{R}.$\\\\
+
+		    %----- (iv)
+		    \item Si $x$ pertenece a $A$, entonces existe algún número $x^{'}$ de $A$ tal que $x<x^{'}$.\\\\
+			Demostración.-\; Sea $x\in A$, entonces $x<\alpha$ de donde $\alpha-x>0$, luego sea $x^{'}=x+\dfrac{\alpha-x}{2}$, entonces $x^{'}>x$ ya que $\dfrac{\alpha-x}{2}>0$, por lo tanto
+			$$x^{'}=x+\dfrac{\alpha-x}{2}=\dfrac{\alpha+x}{2}<\dfrac{\alpha+\alpha}{2}=\alpha.$$
+			Esto demuestra que $x^{'}<\alpha$ lo que implica que $x^{'}\in A.$\\\\
+
+		\end{enumerate}
+
+		%----------(b)
+	    \item Suponga a la inversa, que $A$ satisface (i)-(iv). Demuestre que $A=\left\{x:x<\sup A\right\}$.\\\\
+		Demostración.-\; Supongamos que $z\in \mathbb{R}$ tal que $z\notin A$. Luego sea $x>z$, si $x\in A$, entonces por la propiedad (i), $z$ también está en $A$, lo que contradice el hecho de que $z\notin A.$ Lo que demuestra que $A$ está acotado superiormente por $z$. Luego ya que $A\neq \emptyset$ entonces el $\sup A$ existe. Por último, dado que $x\in A$, elíjase $x^{'}$ en $A$, de donde según (iv), con $x<x^{'}$, entonces $x<x^{'}\leq \sup A$, con lo que $x<\sup A$. Recíprocamente, si $x<\sup A$, existe entonces un $y$ en $A$ con $x<y$. De aquí, por (i), $x\in A.$\\\\
+
+	\end{enumerate}
+
+    %-------------------- 18.
+    \item Un número $x$ se denomina una casi cota superior de $A$ si en $A$ existen sólo un número finito de números $y$ con $y\geq x.$ Del mismo modo se define una casi cota inferior de $A$.
+
+	\begin{enumerate}[(a)]
+
+	    %----------(a)
+	    \item Halle todas las casi cotas superiores y todas las casi cotas inferiores de los conjuntos del problema 1.\\\\
+
+		Respuesta.-\; \\ 
+		\begin{enumerate}[(i)]
+
+		    %----- (i)
+		    \item Llamemos al conjunto de cotas casi superiores del conjunto $A$ con $csup A$, y el conjunto de cotas casi inferiores con $cinf A$, entonces tenemos
+		    $$A=\left\{\dfrac{1}{n} : n\in \mathbb{N}\right\}=\left\{1,\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4},\ldots\right\}$$
+		    de donde cualquier cota casi superior es una cota superior (cero elementos $y$ tal que $y\geq x$ son un número finito de elementos) por lo que $[1,\infty) \subseteq csup A$. Luego cada número positivo $\epsilon$ es una cota casi superior, ya que $\dfrac{1}{n}>\epsilon$ tiene un número finito de soluciones ($\frac{1}{n}< \epsilon \Rightarrow n < \frac{1}{\epsilon}$ número finito de soluciones para $\epsilon$). Sabemos que cero o cualquier número negativo $x$, no es una cota casi superior, ya que existe infinitos elementos del conjunto $A$ tal que $\dfrac{1}{n}\geq 0$ o $\dfrac{1}{n}\geq x$. Así,
+		    $$csup A = (0,\infty)$$
+		    Por otro lado cualquier cota inferior es una cota casi inferior (cero elementos $y$ tal que $y\leq x$ son un número finito de elementos) entonces $(-\infty,0]\subseteq cinf A$. Ningún elementos positivo $x$ es una cota casi inferior, ya que existe infinitos elementos del conjunto $A$ tal que $\dfrac{1}{n}\leq x$. Así,
+		    $$cinf A = (-\infty,0].$$\\
+
+		    %----- (ii)
+		    \item Sea
+		    $$A=\left\{\dfrac{1}{n} : n\in \mathbb{Z},\; n\neq 0\right\} = \left\{1,-1,\dfrac{1}{2},-\dfrac{1}{2},\dfrac{1}{3},-\dfrac{1}{3},\ldots\right\}$$
+		    De donde cualquier cota casi superior es una cota superior (cero elementos $y$ tal que $y\geq x$ son un número finito de elementos) por lo que $[1,\infty) \subseteq csup A$. Luego cada número positivo $\epsilon$ es una cota casi superior, ya que $\dfrac{1}{n}>\epsilon$ tiene un número finito de soluciones ($\frac{1}{n}< \epsilon \Rightarrow n < \frac{1}{\epsilon}$ número finito de soluciones para $\epsilon$). Sabemos que cero o cualquier número negativo $x$, no es una cota casi superior, ya que existe infinitos elementos del conjunto $A$ tal que $\dfrac{1}{n}\geq 0$ o $\dfrac{1}{n}\geq x$. Así,
+		    $$csup A = (0,\infty)$$
+		    Por otro lado cada número negativo $V$ es una cota casi superior, ya que existe un finito número $y$ de elementos del conjunto $A$ tal que $y\leq V$. Sabemos que cero o cualquier número negativo $x$, no es una cota casi inferior, ya que existe infinitos elementos del conjunto $A$ tal que $y\leq x$. Así,
+		    $$cinf A = (-\infty,0].$$\\
+
+		    %----- (iii)
+		    \item Similar a los anteriores incisos,
+			$$csup A = (0,\infty),\qquad cinf A = (-\infty,0].$$\\
+
+		    %----- (iv)
+		    \item $$csup A = [\sqrt{2},\infty],\qquad cinf A = (-\infty,0].$$\\
+
+		    %----- (v)
+		    \item $$\left\{ x: x^2 + x + 1 \geq 0 \right\}=\mathbb{R}$$
+			La desigualdad se cumple para todos los números reales, por lo que no hay una cota casi superior, ni una cota casi inferior.\\\\
+
+		    %----- (vi)
+		    \item Se tiene,
+			$$x^2+x-1=0\quad \Rightarrow \quad x_{1,2} = \dfrac{-1\pm \sqrt{1^2+4}}{2} \quad \Rightarrow \quad x_1 = -\dfrac{1}{2}-\dfrac{\sqrt{5}}{2},\quad x_2=-\dfrac{1}{2}+\dfrac{\sqrt{5}}{2}.$$
+			La parabola está abierta hacia arriba, entonces el conjunto solución es un intervalo 
+			$$\left(-\dfrac{1}{2}-\dfrac{\sqrt{5}}{2}, -\dfrac{1}{2}+\dfrac{\sqrt{5}}{2}\right)$$
+			Así,
+			$$csup A = \left[-\dfrac{1}{2}-\dfrac{\sqrt{5}}{2},\infty\right),\qquad cinf A = \left(-\infty,-\dfrac{1}{2}+\dfrac{\sqrt{5}}{2}\right].$$\\
+
+		    %----- (vii)
+		    \item $$A=\left\{x:x<0 \; \land \; x-1<0\right\}=\left(-\dfrac{1}{2}-\dfrac{\sqrt{5}}{2},0\right)$$
+			Así,
+			$$csup A = [0,\infty), \quad cinf = \left(-\infty,-\dfrac{1}{2}-\dfrac{\sqrt{5}}{2}\right].$$\\
+
+		    %----- (viii)
+		    \item $$A=\left\{\dfrac{1}{n} + (-1)^n:n\in \mathbb{N}\right\}$$
+			La subsecuencia con índices impares converge a $-1$, mientras que la subsecuencia con índices pares converge a 1, por lo que hay infinitos elementos del conjunto $A$ entre $1$ y $-1$, por lo tanto
+			$$csup A = (1,\infty),\qquad cinf A  = (-\infty,-1].$$\\
+
+		\end{enumerate}
+
+
+	    %----------(b)
+	    \item Suponga que $A$ es un conjunto finito acotado, Demuestre que el conjunto $B$ de todas las casi cotas superiores de $A$ es no vacío y está acotado inferiormente.\\\\
+		Demostración.-\; Dado que $A$ está acotado, tiene al menos una cota superior, y ese también es una cota casi superior, por lo que el conjunto $B$ de cotas casi superiores no está vacío. Además, dado que $A$ está acotado, tiene al menos una cota  inferior, digamos $l$. Debido a que $A$ es infinito, hay infinitos elementos de $A$ por encima de $l$, por lo que $l$ no es una casi cota superior, y tampoco lo es ningún número debajo de $l$, por la misma razón. Por lo tanto, $l$ es una cota inferior para el conjunto de todos los límites casi superiores, y $B$ está ciertamente acotado por abajo.\\\\
+
+	    %----------(c)
+	    \item Del apartado (b) se deduce que existe el $\inf B$; este número se denomina el límite superior de $A$, y se representa mediante el símbolo $\overline{\lim} A$ o $\lim A$ para cada conjunto $A$ del problema 1.\\\\
+		Respuesta.-\; Por (a) se sigue,
+		\begin{enumerate}[(i)]
+		    
+		    %----- (i)
+		    \item $\overline{\lim} A = 0$.\\\\
+
+		    %----- (ii)
+		    \item $\overline{\lim} A = 0$.\\\\
+
+		    %----- (iii)
+		    \item $\overline{\lim} A = 0$.\\\\
+
+		    %----- (iv)
+		    \item $\overline{\lim} A = \sqrt{2}$.\\\\
+
+		    %----- (v)
+		    \item No existe.\\\\
+
+		    %----- (vi)
+		    \item $\overline{\lim} A = -\dfrac{1}{2}+\dfrac{\sqrt{5}}{2}$.\\\\
+
+		    %----- (vii)
+		    \item $\overline{\lim} A = 0$.\\\\
+
+		    %----- (viii)
+		    \item $\overline{\lim} A = 1$.\\\\
+
+		\end{enumerate}
+
+	    %----------(d)
+	    \item Defina el $\underline{\lim} A$ y hállelo para todos los $A$ del problema 1.\\\\
+		Respuesta.-\; Si $A$ es un conjunto infinito acotado, existe números $m$ y $M$ tal que
+		$$m\leq y \leq M,\; \forall \; y \in A$$
+		Luego, $m$ es una cota casi inferior de $A$ ya que o no existe elemento $y$ de $A$ tal que $y\leq M$ o existe un elemento $y=M$ de $A$ tal que $y\leq M$. Denotemos el conjunto de todas las cotas casi inferiores de $A$ con $C$. Este último conjunto está acotado superiormente con $M$, llamemos a este número cota inferior de $A$ y denotado por $\underline{\lim} A$. Se sigue de (a):\\
+
+		\begin{enumerate}[(i)]
+
+		    %----- (i)
+		    \item $\underline{\lim} A = 0$.\\\\
+
+		    %----- (ii)
+		    \item $\underline{\lim} A = 0$.\\\\
+
+		    %----- (iii)
+		    \item $\underline{\lim} A = 0$.\\\\
+
+		    %----- (iv)
+		    \item $\underline{\lim} A = 0$.\\\\
+
+		    %----- (v)
+		    \item No existe.\\\\
+
+		    %----- (vi)
+		    \item $\underline{\lim} A = -\dfrac{1}{2}-\dfrac{\sqrt{2}}{2}$.\\\\
+
+		    %----- (vii)
+		    \item $\underline{\lim} A = -\dfrac{1}{2}-\dfrac{\sqrt{5}}{2}$.\\\\
+
+		    %----- (viii)
+		    \item $\underline{\lim} A = -1$.\\\\
+
+		\end{enumerate}
+
+	\end{enumerate}
+
+    %-------------------- 19.
+    \item Si $A$ es un conjunto infinito acotado demuestre que
+
+	\begin{enumerate}[(a)]
+
+	    %----------(a)
+	    \item $\underline{\lim} A \leq \overline{\lim} A.$\\\\
+		Demostración.-\; Sea $B$ el conjunto de cotas casi superiores de $A$, entonces $\overline{\lim} A = \inf B.$ Por la propiedad de infimo, existe $\alpha<\overline{\lim} A + \epsilon$ tal que $\alpha \in B$. Por lo que existe un número finito de elementos de $A$ mayores o iguales a $\alpha.$ Por otro lado sea $C$ el conjunto de cotas casi inferiores de $A$, entonces $\underline{\lim} A = \sup C$. Por la propiedad de supremo, existe $\beta>\underline{\lim} A - \epsilon$ tal que $\beta \in C$. Por lo tanto existe un número finito de elementos de $A$ menores o iguales que $\beta$.\\
+		Ahora, probemos que $\beta<\alpha$. Sea $\beta\geq \alpha,$ ya que existe un número finito de elementos de $A$ mayores o iguales que $\alpha$, entonces $\beta\geq \alpha$ implica que existe finitos números de $A$ mayores o iguales a $\beta$. Sin embargo, existe números finitos elementos de $A$ mayores o iguales que $\beta\in C$. Esto significa que existe número finitos elementos en $A$ lo que contradice la hipótesis de que $A$ es infinito. De este modo $\beta<\alpha$ implica que $\underline{\lim} A -\epsilon < \beta < \alpha < \overline{\lim} A + \epsilon.$ Que $\underline{\lim} A - \epsilon < \overline{\lim} A + \epsilon$ para cada $\epsilon>0$ implica que $\underline{\lim} A \leq \overline{\lim} A.$\\\\
+
+	    %----------(b)
+	    \item $\overline{\lim} A \leq \sup A$.\\\\
+		Demostración.-\; Si $B$ denota el conjunto de cotas casi superiores de $A$, entonces $\sup A \in B$. Luego ya que $\overline{\lim} A = \inf B,$ por lo propiedad de ínfimo, $\overline{\lim} \leq \sup A$.\\\\
+
+	    %----------(c)
+	    \item Si $\overline{\lim} A < \sup A$, entonces $A$ contiene un elemento máximo.\\\\
+		Demostración.-\; Sea $\overline{\lim} A < \sup A,$ elija $z$ tal que $\overline{\lim} < z < \sup A$. Si $B$ es el conjunto de cotas casi superiores de $A$, entonces $z\in B.$ Por lo tanto existe un número finito de elementos de $A$ mayores o iguales que $z$. Por otro lado, ya que $z<\sup A$, existe al menos un elementos de $A$ mayores o iguales a $z$. Es decir, hay un número finito y diferentes de cero en $A$ mayor o igual que $z$, donde se elije el elemento más grande de $A$.\\\\
+
+	    %----------(d)
+	    \item Demuestre los casos análogos a los apartados (b) y (c) para $\underline{\lim}$.\\\\
+		Demostración.-\; Probemos que $\underline{\lim} A \geq \inf A.$ Si $C$ denota el conjunto de cotas casi superiores de $A$, entonces $\inf A \in C$. Ya que $\underline{\lim} A = \sup B$, por la propiedad de supremo $\underline{\lim} A \geq \inf A$. \\
+		Ahora demostremos que si $\underline{\lim} A  > \inf A$, entonces $A$ contiene el elemento más pequeño. Asumiendo que $\underline{\lim} A > \inf A$, elija $z$ tal que $\underline{\lim} A > z > \inf A$. Si $C$ es el conjunto de cotas casi inferiores de $A$, entonces $z\in C$. Por lo tanto existe números finitos de elementos de $A$ menores o iguales que $z$. Por otro lado, ya que $z>\inf A$, existe al menos un elemento de $A$ menores o iguales que $z$. Es decir, existe un número diferente de cero y finito de $A$ mejor o igual que $z$. Donde se elije al elemento más pequeño de $A$.\\\\  
+
+	\end{enumerate}
+
+    %-------------------- 20.
+    \item Sea $f$ una función continua en $\mathbb{R}$. Un punto $x$ se denomina un punto de sombra de $f$ si existe un número $y>x$ con $f(y)>f(x)$. Suponga que todos los puntos de $(a,b)$ son puntos de sombra, pero que $a$ y $b$ no lo son. En este caso se verifica, evidentemente, que $f(a)\geq f(b).$
+
+	\begin{enumerate}[(a)]
+
+	    %----------(a)
+	    \item Suponga que $f(a)>f(b)$. Demuestre que el punto en el que $f$ alcanza su valor máximo en $[a,b]$ ha de ser $a$.\\\\
+		Demostración.-\; Supongamos que $f(a)>f(b)$, de donde debemos demostrar que $f$ tiene un valor máximo en el punto $a$ del intervalo $[a,b]$. Sea $z\in (a,b]$ un punto el cual la función alcanza su máximo. Por lo que tenemos que $f(z)>f(x),\; \forall \; x\in (a,b]$. Pero, $z$ es el punto de sombra por la suposición inicial. Esto significa que existe algún punto $z^{'}$ por el cual $f(z)<f(z^{'})$. Este punto no puede estar en el intervalo $(a,b)$ ya que $f(z)$ es el máximo en el intervalo. De aquí se sigue que $z^{'}>b$. De donde la combinación de todos estos resultados da,
+		$$f(b)<f(z)\leq f(z^{'}), \mbox{ para } b<z^{'}$$
+		Por lo tanto, $b$ no es el punto de sombra, así demostramos que es una contradicción. Se sigue que $z=a$, es decir, la función debe alcanzar su máximo en el punto $a$.\\\\
+
+	    %----------(b)
+	    \item Demuestre ahora que esto conduce a una contradicción, de manera que se ha de verificar que $f(a)=f(b).$\\\\
+		Demostración.-\; Existe tres posibilidades para $f(a)$ y $f(b)$. 
+		$$f(a)<f(b),\quad f(a)>f(b) \quad \mbox{o} \quad f(a)=f(b).$$
+		Supongamos que $f(a)<f(b)$, ya que $a<b$, de la definición de los puntos de sombra se sigue que $a$ será el punto de sombra, el cual es una contradicción.\\
+		Supongamos ahora que $f(a)>f(b)$, de donde sabemos que todos los puntos $x\in (a,b)$ son puntos de sombra, mientras $b$  no es un punto de sombra. Por lo tanto $f(x)<f(b)$ para todo $x\in (a,b)$. Sabemos que $f$ es una función continua, de la deducción anterior se sigue que existirá algún punto $t\in (a,b)$ por el cual $f(t)=f(b).$\\
+		Ya que $b$ no es un punto de sombra, entonces $f(b)>f(x)$ para $x>b$. Tengamos en cuenta que no es difícil deducir que $f(t)>f(x),\; \forall\; x > b$. Por lo tanto, los puntos en el intervalo $(a,t)$ no son puntos de sombra, ya que $f(t)<f(z),\; \forall\; z \in (a,t)$. Esto es también contradictorio. Por lo que $f(a)=f(b)$.\\\\
+
+	\end{enumerate}
 
 \end{enumerate}
 
+\section{Apéndice: Continuidad Uniforme}
+
+\begin{tcolorbox}
+    \begin{def.}
+	La función $f$ es uniformemente continua en un intervalo $A$ si para cada $\epsilon>0$ existe algún $\delta>0$ tal que, para todo $x$ e $y$ de $A$,
+	\begin{center}
+	    $|x-y|<\delta,$ entonces $|f(x)-f(y)|<\epsilon.$
+	\end{center}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{lema}
+    Sea $a<b<c$ y $f$ continua en el intervalo $[a,c]$. Sea $\epsilon>0$ y supongamos que si verifican,
+    \begin{enumerate}[(i)]
+	\item Si $x$ e $y$ pertenecen a $[a,b]$ y $|x-y|<\delta_1$ entonces $|f(x)-f(y)|<\epsilon,$
+	\item Si $x$ e $y$ pertenecen a $[b,c]$ y $|x-y|<\delta_2$ entonces $|f(x)-f(y)|<\epsilon.$
+    \end{enumerate}
+    Entonces existe un $\delta>0$ tal que,
+    \begin{center}
+	Si $x$ e $y$ pertenecen a $[a,c]$ y $|x-y|<\delta$, entonces $|f(x)-f(y)|<\epsilon.$
+    \end{center}
+    \vspace{.7cm}
+	Demostración.-\; Como $f$ es continua en $b$, existe un $\delta_3>0$ tal que,
+	\begin{center}
+	    Si $|x-b|<\delta_3$, entonces $|f(x)-f(b)|<\dfrac{\epsilon}{2}.$
+	\end{center}
+	Deducimos pues que
+	\begin{enumerate}[iii)]
+	    \item Si $|x-b|<\delta_3$ y $|y-b|<\delta_3$, entonces $|f(x)-f(y)|<\epsilon.$
+	\end{enumerate}
+	Si elegimos $\delta$ igual al mínimo de $\delta_1.\delta_2$ y $\delta_3$ es fácil demostrar que éste es el valor buscado; en efecto, supongamos que $x$ e $y$ son dos puntos cualesquiera del intervalo $[a,c]$ tales que $|x-y|<\delta$. Si $x$ e $y$ están en el intervalo $[a,b]$, entonces $|f(x)-f(y)|<\delta$ según (i); y si $x$ e $y$ pertenecen ambos al intervalo $[b,c]$, entonces $|f(x)-f(y)|<\epsilon$ según (ii). La única posibilidad que queda es que 
+	\begin{center}
+	    $x<b<y$ o $y<b<x.$
+	\end{center}
+	En ambos casos, como $|x-y|<\delta$, se verifica también que $|x-b|<\delta$ y $|y-b|<\delta$. De manera que $|f(x)-f(y)|<\epsilon$ según (iii).\\\\
+\end{lema}
+
+\begin{teo}
+    Si $f$ es continua en $[a,b]$, entonces $f$ es uniformemente continua en $[a,b]$.\\\\
+	Demostración.-\; Emplearemos la estrategia acostumbrada, aunque hemos de ir con cuidado con el mecanismo de la demostración. Dado un $\epsilon>0$ diremos que $f$ es $\epsilon-adecuada$ en $[a,b]$ si existe algún $\delta>0$ tal que, para todo $y$,  $z$ de $[a,b]$,
+	\begin{center}
+	    $|y-z|<\delta,$ entonces $|f(y)-f(z)|<\epsilon.$
+	\end{center}
+	De hecho, queremos demostrar que $f$ es $\epsilon-adecuada$ en $[a,b]$ para todo $\epsilon>0.$\\
+	Consideremos un $\epsilon>0$ determinado. Sea
+	$$A=\left\{x:a\leq x \leq b \mbox{ y } f \mbox{ es } \epsilon-adecuada \mbox{ en } [a,x]\right\}.$$
+	Entonces $A\neq 0$ (ya que pertenece a $A$), y $A$ está acotado superiormente por $b$, de manera que $A$ posee una cota superior mínima $\alpha$. En realidad tendríamos que escribir $\alpha_\epsilon$ ya que $A$ y $\alpha$ podrían depender de $\epsilon$. Pero no lo haremos ya que, precisamente, lo que intentamos demostrar es que $\alpha=b$, sea cual sea el $\epsilon$ elegido.\\
+	Supongamos que $a < b$. Como $f$ es continua en $\alpha$, existe algún $\delta_0 > 0$ tal que, si $|y - \alpha| < \delta_0$, entonces $|f(y) — f(\alpha)| < \epsilon/2$. Por tanto, si $|y - \alpha| < \delta_0$ y $|z - \alpha| < \delta_0$, entonces $|f(y) - f(z)| < \epsilon$. Esto nos asegura que $f$ es $\epsilon-adecuada$ en el intervalo $[\alpha - \delta_0, \alpha + \delta_0]$. Por otra parte, como a es la cota superior mínima de $A$, se verifica también que $f$ es $\epsilon-adecuada$ en el intervalo $[\alpha, \alpha - \delta_0]$. Entonces el Lema demostrado anteriormente implica que $f$ es $\epsilon-adecuada$ en $[\alpha, \alpha + \delta_0]$, por tanto $\alpha + \delta_0$ pertenece a $A$, lo que contradice el hecho de que a sea una cota superior de $A$.\\
+	Para completar la demostración hemos de probar que $\alpha = b$ pertenece a $A$. El argumento, en este caso, es prácticamente el mismo: ya que $f$ es continua en $b$, existe algún $\delta_0 > 0$ tal que, si $b - \delta_0 < y < b$, entonces $|f(y) - f(b)| < \epsilon/2$. Por tanto $f$ es $\epsilon-adecuada$ en $[b - \delta_0, b]$. Pero $f$ es también $\epsilon-adecuada$ en $[a, b - \delta_0]$, de manera que el Lema implica que $f$ es $\epsilon-adecuada$ en $[a,b]$.\\\\
+\end{teo}
+
+\section{Problemas}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------ 1.
+    \item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item 
+
+	\end{enumerate}
+
+\end{enumerate}
