@@ -1,0 +1,31 @@
+\chapter{Cálculo diferencial}
+
+\setcounter{section}{3}
+\section{Derivada de una función}
+
+\begin{tcolorbox}
+    \begin{def.}[Definición de derivada]
+	La derivada $f'(x)$ está definida por la igualdad 
+	$$f'(x)=\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h},$$
+	siempre que exista el límite. El número $f'(x)$ también se denomina coeficiente de variación de $f$ en $x$.
+    \end{def.}
+\end{tcolorbox}
+\vspace{.7cm}
+
+\begin{ejem}[Derivada de una función potencial de exponente entero positivo]
+    Consideremos el caso $f(x)=x^n$, siendo $n$ un entero positivo. El cociente de diferencias es ahora\\
+    $$\dfrac{f(x+h)-f(x)}{h}=\dfrac{(x+h)^n-x^n}{h}$$\\
+    Para estudiar este cociente al tender $h$ a cero, podemos proceder de dos maneras, o por la descomposición factorial del numerador considerado como diferencia de dos potencias n-simas o aplicando el teorema del binomio para el desarrollo de $(x + h)^n$. Seguiremos con el primer método.\\
+
+    En álgebra elemental se tiene la identidad
+    $$a^n - b^n = (b-a)\sum_{k=0}^{n-1} a^k b^{n-1-k}$$
+    Si se toma $a=x+h$ y $b=x$ y dividimos ambos miembros por $h$, esa identidad se transforma en \\
+    $$\dfrac{(x+h)^n-x^n}{h} = \sum_{k=0}^{n-1}(x+h)^k x^{n-1-k}$$\\
+    En la suma hay $n$ términos. Cuando $h$ tiende a $0$, $(x+h)^k$ tiende a $x^k$, el k-ésimo término tiende a $x^k x^{n-1-k}=x^{n-1},$ y por tanto la suma de los $n$ términos tiende a $nx^{n-1}$. De esto resulta que \\
+    $$f'(x)=nx^{n-1}\quad \forall \; x.$$\\
+\end{ejem}
+
+\begin{ejem}[Derivada de la función seno]
+    Sea $s(x)=\sen x$. El cociente de diferencias es
+    $$\dfrac{s(x+h)-s(x)}{h}=\dfrac{\sen(x+h)-\sen x}{h}$$
+\end{ejem}

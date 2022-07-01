@@ -1,5 +1,4 @@
 \chapter{Funciones continuas}
-\begin{comment}
 \setcounter{section}{1}
 \section{Definición de límite de una función}
 La continuidad existe si existe  continuidad por la izquierda y por la derecha.
@@ -1406,8 +1405,6 @@ En la Sección 2.16 se definió el valor promedio $A(f)$ de una función $f$ sob
     Si $\displaystyle\int_a^b g(x)\; dx = 0$, esa desigualdad demuestra que $\displaystyle\int_a^b f(x)g(x)\; dx=0$. En este caso, se satisface para cualquier $c$ ya que ambos miembros son cero. De otro modo, la integral de $f$ es positiva, y podemos dividir por esta integral y aplicar como antes el teorema del valor intermedio para completar la demostración. Si $g$ es no positiva, aplicamos el mismo razonamiento con $-g$.\\
 \end{teo}
 
-\end{comment}
-
 \section{Ejercicios}
 
 \begin{enumerate}[\bfseries 1.]
@@ -1478,19 +1475,57 @@ En la Sección 2.16 se definió el valor promedio $A(f)$ de una función $f$ sob
     %------------------- 5.
     \item Si $n$ es un entero positivo, utilizar el teorema 3.16 para demostrar que
     $$\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}}\sen(t^2)\; dt = \dfrac{(-1)^n}{c}\; \mbox{ donde }\; \sqrt{n\pi}\leq c \leq \sqrt{(n+1)\pi}.$$\\
-	Respuesta.-\;
+	Respuesta.-\; Tenemos las siguientes ecuaciones:
+	$$\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}} f(t) g(t)\; dt = \int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}}\sen t^2\; dt = \int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}} \dfrac{1}{t}\cdot t\sen t^2\; dt.$$
+	donde $f$ y $g$ son funciones continuas en $\left[\sqrt{n\pi},\sqrt{(n+1)\pi}\right]$ tal que $f(t)=\dfrac{1}{t}$ y $g(t)=t\sen t^2.$\\
+	Ahora veamos si $f(t)$ es un función monótona creciente o decreciente para $t\in \left[\sqrt{n\pi},\sqrt{(n+1)\pi}\right]$. Es decir, 
+	$$\sqrt{n\pi}\leq t\leq \sqrt{(n+1)\pi}\; \Rightarrow \; \dfrac{1}{\sqrt{(n+1)\pi}}\leq \dfrac{1}{t}\leq \dfrac{1}{\sqrt{n\pi}}.$$
+	Sabemos que $f\left(\sqrt{n\pi}\right)=\dfrac{1}{\sqrt{n\pi}}$ y $f\left(\sqrt{(n+1)\pi}\right)=\dfrac{1}{\sqrt{(n+1)\pi}}$. De donde
+	$$f\left(\sqrt{(n+1)\pi}\right)\leq f(t)\leq f\left(\sqrt{n\pi}\right)$$
+	Por lo tanto la función $f$ es estrictamente decreciente en $\left[\sqrt{n\pi},\sqrt{(n+1)\pi}\right]$.\\
+	Ahora estudiaremos el signo de la función $g(t)$ mediante las siguientes inecuaciones:
+	$$\sqrt{n\pi}\leq t \leq \sqrt{(n+1)\pi}\quad \Rightarrow \quad n\pi\leq t^2\leq (n+1)\pi.$$
+	de donde 
+	$$n\pi \leq t^2 \; \Rightarrow \; \sen(n\pi) \leq \sen t^2 \; \Rightarrow \; 0\leq \sen t^2 \; \Rightarrow \; 0\leq t\sen t^2\; \Rightarrow \; 0\leq g(t).$$
+	de esta manera podemos verificar que la función $g$ no cambia de signo en $\left[\sqrt{n\pi},\sqrt{(n+1)\pi}\right]$.\\
+	Así, por el teorema del valor medio ponderado para las integrales, tenemos que para algún $c \in \left[\sqrt{n\pi},\sqrt{(n+1)\pi}\right]$ se tiene,
+
+	$$\begin{array}{rcl}
+	    \displaystyle\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}} f(t)g(t)\; dt &=& f(c)\displaystyle\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}} g(t)\; dt\\\\
+									    &=&\displaystyle\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}}t\sen t^2\; dt\\\\
+									    &=&\dfrac{1}{c}\displaystyle\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}}t\sen t^2\; dt\\\\
+									    &=&\dfrac{1}{2c}\displaystyle\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}} 2t\sen t^2\; dt\\\\
+									    &=&\dfrac{1}{2c}\displaystyle\int_{n\pi}^{(n+1)\pi}\sen (x)\; dx\\\\
+									    &=&\dfrac{1}{2c}\cdot \left(-\cos x\right)\bigg|_{n\pi}^{(n+1)\pi}\\\\
+									    &=&\dfrac{(-1)^n}{c}\\\\
+	\end{array}$$
 
     %-------------------- 6.
     \item Supóngase que $f$ es continua en $[a,b]$. Si $\int_a^b f(x)\; dx=0$, demostrar que $f(c)=0$ por lo menos para un $c$ de $[a,b]$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Ya que $f$ es continuo en el intervalo $[a,b]$, podemos aplicar el teorema del valor intermedio por lo que,
+	$$\int_a^b f(x)\; dx  = f(c)(b-a)\quad \mbox{ para algún } c\in [a,b].$$
+	Así,
+	$$\int_a^b f(x)\; dx = 0 \quad \Rightarrow \quad f(c)(b-a)=0$$
+	Pero ya que $b>a$, sabemos que $(b-a)\neq 0$, por lo tanto tenemos un $f(c)=0$ para algún $cin [a,b]$.\\\\
 
     %-------------------- 7.
     \item Supóngase que $f$ es integrable y no negativa en $[a, b]$. Si $\int_a^b f(x) dx = O$, demostrar que $f(x) = O$ en cada punto de continuidad de $f$.\\\\
-	Demostración.-\;
+	Demostración.-\; Demostremos por contradiccion. Sea $p \in [a, b]$ un punto en el cual $f$ es continua, y supongamos $f(p) \neq 0$. Que implica $f(p) > 0$, ya que $f$ es no negativo por hipótesis.Luego, dado que $f$ es continua en $p)$, sabemos por la propiedad de conservación de signo de las funciones continuas (Teorema 3.7), que existe alguna vecindad alrededor de $p$, por ejemplo $(p - \delta, p + \delta)$ tal que $f(x)$ tiene el mismo signo que $f(p)$ para todo $x \in (p - \delta, p + \delta)$, es decir, $f(x) > 0$ para todo $x \in (p - \delta, p + \delta)$. Pero entonces por la propiedad monótona de la integral sabemos,
+	$$\int_{p-\delta}^{p+\delta}f(x)\; dx > \int_{p-\delta}^{p+\delta} 0\; dt = 0$$
+	Entonces,
+	$$\int_a^b f(x)\; dx = \int_{a}^{p-\delta}f(x)\; dx+\int_{p-\delta}^{p+\delta} f(x)\; dx + \int_{p+\delta}^b f(x)\; dx=0.$$
+	Por lo que se contradice ya que $f$ es no negativa. Luego,
+	$$\int_a^{p-\delta}f(x)\; dx\quad \mbox{ y }\quad \int_{p+\delta}^b f(x)\; dx \geq 0.$$
+	Como $\int_{p-\delta}^{p+\delta}f(x)\; dt$ es estrictamente positiva, la suma de las tres partes de la integral $\int_a^b f(x)\; dx$ no puede ser igual a $0$.\\\\
 
     %-------------------- 8.
     \item Supóngase que $f$ es continua en $[a, b]$ y que $\int_a^b f(x)g(x) dx = O$, para toda función $g$ que sea continua en $[a, b]$. Demostrar que $f(x) = O$ para todo $x$ en $[a, b].$\\\\
-	Demostración.-\;
+    $$\int_a^b f(x) f(x)\; dt = \int_a^b \left[f(x)\right]^2\; dx=0$$
+	Demostración.-\; Se tiene,
+	$$\int_a^b f(x)g(x)\; dx = 0,$$
+	para toda función $g$, donde podemos elegir $g(x)=f(x)$. Ya que $f$ es continua en $[a, b]$, entonces $f^2$ es continua en $[a,b]$ por lo que se tiene,
+	$$\int_a^b f^2(x)\; dx = 0.$$
+	Cabe mencionar que $f^2$ es integrable y no negativa en $[a,b]$. Luego sabemos que si $\int_a^b f^2(x)\; dx = 0.$, entonces por el anterior ejercicio $f^2(x)=0$ para cada punto de continuidad de $f^2$. Luego ya que $f^2(x)=0$ entonces $f(x)=0$ para todo $x\in [a,b]$.\\\\
 
 
 
