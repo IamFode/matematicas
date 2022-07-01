@@ -258,4 +258,4 @@ x025
 ## 5.8
 Una fábrica produce pistones cuyos diámetros se encuentran adecuadamente clasificados por una distribución normal con un diámetro promedio de $5$ cm y una desviación estándar igual a $0.001$ cm. Para que un pistón sirva, su diámetro debe encontrarse entre $4.998$ y $5.002$ cm. Si el diámetro del pistón es menor que $4.998$ se desecha; si es mayor que $5.002$ el pistón puede reprocesarse. ¿Qué porcentaje de pistones servirá? ¿Qué porcentaje será desechado? ¿Qué porcentaje será reprocesado?.
 
-Respuesta.-
+Respuesta.    -

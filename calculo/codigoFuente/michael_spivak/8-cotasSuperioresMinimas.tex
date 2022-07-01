@@ -944,8 +944,94 @@ En este sentido, cabe destacar en particular la observación de que si $\lim\lim
 	\begin{enumerate}[\bfseries (a)]
 
 	    %---------- (a)
-	    \item 
+	    \item ¿Para cuáles de los siguientes valores de $\alpha$, la función $f(x)=x^\alpha$ es uniformemente continua en $[0,\infty)$? $\alpha=1/3,1/2,2,3$.\\\\
+		Respuesta.-\; Sea $\epsilon>0$. Ya que la función es continua, entonces es uniformemente continua en $[0,1]$. Por lo que existe $\delta_1$ tal que para cualquier $x,y\i [0,1]$ con $|x-y|<\delta_1$, tenemos $|f(x)-f(y)|<\epsilon.$ Esto equivale a decir que si $x,y\leq 1$ y $|x-y|<\delta_1$ entonces $|f(x)-f(y)|<\epsilon.$ Luego sea $y>1$ de donde $x^{2/3}+x^{1/3}y^{1/3}+y^{2/3}\geq y^{2/3}>1.$\\
+		$|f(x)-f(y)|=|x^{1/3}-y^{1/3}|=\dfrac{|x-y|}{x^{2/3}+x^{1/3}y^{1/3}+y^{2/3}}<|x-y|$. Así, si $|x-y|<\epsilon$, entonces se sigue $|f(x)-f(y)|<\epsilon$. Por último sea $\delta = \min{\delta_1,\epsilon}$, o ambos son $x,y\leq 1$ o uno de ellos es mayor que $1$. Por lo tanto si $|x-y|<\delta$ entonces en cualquier caso $|f(x)-f(y)|<\epsilon$. Lo que demuestra la continuidad uniforme en $[0,\infty)$ para $\alpha=1/3$.\\\\
+		La prueba para $\alpha=1/2$ es similar. Con $x^{1/2}+y^{1/2}\geq y^{172}>1$. Por lo que concluimos que la función $f$ es uniformemente continua en $[0,\infty)$ para $\alpha=1/2$.\\\\
+		Para $f(x)=x^2$ se tiene que $|f(x)-f(y)|=|x^2-y^2|=(x+y)|x-y|$ de este modo,
+		$$|f(x)-f(y)|<\epsilon \quad \Leftrightarrow \quad (x+y)|x-y|<\epsilon \quad \Leftrightarrow \quad |x-y|<\dfrac{\epsilon}{x+y}.$$
+		Esto demuestra que $|x-y|$ depende de los valores de $x$ e $y$. Cuanto más grande sea $x$ e $y$ el más pequeño sebe ser $|x-y|$ para que $|f(x)-f(y)|$ sea menor que $\epsilon.$ Por lo que $f$ no es uniformemente continua en $[0,\infty)$.\\\\
+		Similarmente vemos que no es uniforme para $f(x)=x^3$ ya que si $|f(x)-f(y)|=|x^3-y^3|=(x^2+xy+y^2)|x-y|$ entonces,
+		$$|f(x)-f(y)|<\epsilon \quad \Leftrightarrow \quad (x^2+xy+y^2)|x-y|<\epsilon \quad \Leftrightarrow \quad |x-y|<\dfrac{\epsilon}{x^2+xy+y^2}.$$
+		Esto demuestra que $|x-y|$ depende de los valores de $x$ e $y$. Cuanto más grande sea $x$ e $y$ el más pequeño sebe ser $|x-y|$ para que $|f(x)-f(y)|$ sea menor que $\epsilon.$\\\\
+
+	    %---------- (b)
+	    \item Halle una función $f$ que sea continua y acotada en $(0,1]$, pero no uniforme continua en $(0,1]$.\\\\
+		Respuesta.-\; Sea $f(x)=\sen(1/x)$. Entonces $f$ es continua y está acotada en $(0,1]$. Luego supongamos que $x=\dfrac{1}{2n\pi+\frac{\pi}{2}} = \dfrac{2}{(4n+1)\pi}$ e $y=\dfrac{1}{(2n+1)+\frac{\pi}{2}}=\dfrac{2}{(4n+3)\pi}$ y $\epsilon =1$, por lo que 
+		$$f(x)-f(y)=\sen\left(2n\pi +\dfrac{\pi}{2}\right)-\sen \left[(2n+1)\pi+\dfrac{\pi}{2}\right]=1-(-1)=2>\epsilon.$$
+		$$|x-y|=\bigg|\dfrac{2}{(4n+1)\pi}-\dfrac{2}{(4n+3)\pi}\bigg|=\dfrac{4}{(4n+1)(4n+3)\pi}<\delta$$
+		Dado cualquier $\delta>0,$ podemos escoger $n$ tal que $|x-y|=\dfrac{4}{(4n+1)(4n+3)\pi}<\delta$. Esto significa que existe $\epsilon>0$ tal que dado cualquier $\delta>0$ existe un par $x,y$ con $|x-y|<\delta$ pero $|f(x)-f(y)|>\epsilon.$\\\\
+
+	    %---------- (c)
+	    \item Halle una función $f$ que sea continua y acotada en $[0,\infty)$, pero no uniforme continua en $[0,\infty)$.\\\\
+		Respuesta.-\; Sea $f(x)=\sen(x^2)$. Entonces es continua y acotada en $[0,\infty)$. Luego sean $\epsilon=1$ y $x=\sqrt{\dfrac{(4n+1)\pi}{2}}$  e $y=\sqrt{\dfrac{(4n+3)\pi}{2}}$ entonces,
+		$$f(x)-f(y)=\sen \left(\dfrac{(4n+1)\pi}{2}\right)-\sen \left(\dfrac{(4n+3)\pi}{2}\right)=1-(-1)=2>\epsilon$$
+		$$|x-y|=\bigg|\sqrt{\dfrac{(4n+1)\pi}{2}}-\sqrt{\dfrac{(4n+3)\pi}{2}}\bigg| = \dfrac{\bigg|\dfrac{(4n+1)\pi}{2}-\dfrac{(4n+3)\pi}{2}\bigg|}{\bigg|\sqrt{\dfrac{(4n+1)\pi}{2}}+\sqrt{\dfrac{(4n+3)\pi}{2}}\bigg|}=\dfrac{\sqrt{2\pi}}{\sqrt{4n+1}+\sqrt{4n+3}}$$
+		Dado cualquier $\delta>0$, podemos escoger $n$ tal que $|x-y|=\dfrac{\sqrt{2\pi}}{\sqrt{4n+1}+\sqrt{4n+3}}<\delta.$ Esto significa que existe $\epsilon>0$ tal que dado cualquier $\delta>0$ existe un par $x,y$ con $|x-y|<\delta$ pero $|f(x)-f(y)|>\epsilon.$\\\\ 
 
 	\end{enumerate}
+
+    %------------------ 2.
+    \item 
+	\begin{enumerate}[\bfseries (a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f$ y $g$ son uniformemente continuas en $A$, entonces $f+g$ también lo es.\\\\
+		Demostración.-\; Sea $x>0$, por la continuidad uniforme de $f$, existe $\delta_1$ tal que $|x-y|<\delta_1 \; \Rightarrow \; |f(x)-f(y)|<\epsilon/2$. Similarmente por la continuidad uniforme de $g$ existe un $\delta_2$ tal que $|x-y|<\delta_2\; \Rightarrow\; |g(x)-g(y)|<\epsilon/2$. Luego sea $\delta=\min{\delta_1,\delta_2}$, entonces $|x-y|<\delta$ tal que $|f(x)-f(y)|<\epsilon/2$ y $|g(x)-g(y)|<\epsilon/2$, por lo que 
+		$$|(f+g)(x)-(f+g)(x)|=|f(x)-f(y)+g(x)-g(y)|\leq |f(x)-f(y)|+|g(x)-g(y)|<\dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon.$$
+		Por lo tanto encontramos $\delta$ tal que $|x-y|<\delta \; \Rightarrow \; |(f+g)(x)-(f+g)(y)|<\epsilon.$ Esto prueba que $f+g$ es uniformemente continua en $A$.\\\\
+
+	    %---------- (b)
+	    \item Demuestre que si $f$ y $g$ son uniformemente continuas y acotadas en $A$, entonces $fg$ es uniformemente en $A$.\\\\
+		Demostración.-\; Asumiendo que $|f(x)|<M$ tal que $x\in A$ y $g(x)<N$ tal que $x\in A$. Sea $\epsilon > 0$, entonces por la continuidad uniforme de $f$ y $g$ existen $\delta_1$ y $\delta_2$ tal que $|x-y|<\delta_1 \; \Rightarrow \; |f(x)-f(y)|<\epsilon/2N$ y $|x-y|<\delta_2\; \Rightarrow \; |g(x)-g(y)|<\epsilon/2M$, respectivamente. Sea $\delta=\min{\delta_1,\delta_2}$, entonces $|x-y|<\delta,$ implica que $|f(x)-f(y)|<\epsilon/2N$ y $|g(x)-g(y)|<\epsilon/2M$. Por lo que 
+		$$\begin{array}{rcl}
+		    |fg(x)-fg(y)| &=& |f(x)g(x)-f(y)g(y)|\\
+				  &=& |f(x)g(x)-f(x)g(y)+f(x)g(y)-f(y)g(y)| \\
+				  &\leq& |f(x)| |g(x)-g(y)| + |g(y)||f(x)-f(y)|\\
+				  &<& M(\epsilon/2M)+N(\epsilon/2N)\\
+				  &=& \epsilon \\
+		\end{array}$$
+		Por lo tanto, podemos encontrar $\delta$ tal que $|x-y|<\delta \; \Rightarrow \; |fg(x)-fg(y)|<\epsilon.$ Esto prueba que $fg$ es uniformemente continua en $A$.\\\\
+
+	    %---------- (c)
+	    \item Demuestre que esta conclusión no es válida si una de ambas funciones no está acotada.\\\\
+		Demostración.-\; Sea $f(x)=x$ uniformemente continua y no acotado en $\mathbb{R}$ y sea $g(x)=\sen x$ también uniformemente continua pero acotada en $\mathbb{R}$, entonces demostraremos que $h(x)=x\sen x$ no es uniformemente continuo en $\mathbb{R}$.\\
+		Sean $\epsilon=\dfrac{1}{2}$ y $x=2n\pi\dfrac{1}{n}$ e $y=2n\pi$, entonces $|x-y|=\dfrac{1}{n}$, por lo que 
+		$$|h(x)-h(y)|=|x\sen x - 0|=\left(2n\pi + \dfrac{1}{n}\right)\sen \dfrac{1}{n} = 2n\pi \sen \dfrac{1}{n} + \dfrac{1}{n}\sen \dfrac{1}{n} = 2n\pi \sen \dfrac{1}{n} = 2\pi\left(\dfrac{\sen \frac{1}{n}}{\frac{1}{n}}\right)$$
+		Ya que $\lim\limits_{n\to \infty}\dfrac{\sen\frac{1}{n}}{\frac{1}{n}} = 1,$ podemos elegir un $n_1$ tal que $\dfrac{\sen \frac{1}{n}}{\frac{1}{n}}>\dfrac{1}{2}$ para todo $n\geq n_1$ esto es, $|h(x)-h(y)|>2\pi\left(\dfrac{\sen \frac{1}{n}}{\frac{1}{n}}\right)>2\pi\cdot \dfrac{1}{2}=\pi.$ Dado un $\delta>0$ tenemos que elegir $n_2$ tal que $|x-y|=\dfrac{1}{n_2}<\delta$. Luego sea $n=\max{n_1,n_2}$, entonces tenemos $|x-y|<\delta$ y $|h(x)-h(y)|>\pi.$ Por lo tanto existe $\epsilon=\pi$ tal que dado cualquier $\delta>0$, podemos definir el par $x,y$ para cada $|x-y|<\delta$ pero $|h(x)-h(y)|>\epsilon.$ Por lo que $h$ no es uniformemente continua.\\\\
+
+
+	    %---------- (d)
+	    \item Suponga que $f$ es uniformemente continua en $A$, que $g$ es uniformemente continua en $B$ y que $f(x)$ pertenece a $B$ para todo $x$ en $A$. Demuestre que $g\circ f$ es uniformemente continua en $A$.\\\\
+		Demostración.-\; Sea $\epsilon > 0$. Usando la continuidad uniforme de $g$ y eligiendo $\delta_1$ tal que $|x-y|<\delta_1$, entonces $|g(x)-g(y)|<\epsilon$ y la continuidad uniforme de $f$ tal que $|x-y|<\delta$ entonces $|f(x)-f(y)|<\delta_1$. Luego sea $|x-y|<\delta,$ entonces $|f(x)-f(y)|<\delta_1$ que implica $|g(f(x)-g(f(y))|<\epsilon$. Esto es $|g\circ f(x)-g\circ f(y)|<\epsilon.$ Por lo tanto, dado un $\epsilon$, encontramos un $\delta>0$ tal que $|x-y|<\delta$ entonces $|f(x)-f(y)|<\epsilon$.\\\\
+
+	\end{enumerate}
+
+    %------------------ 3.
+    \item Utilice el argumento de bisección para dar otra demostración del teorema 1.\\\\
+	Demostración.-\; Se da una función $f$ es continua en un intervalo cerrado $[a,b]$ por lo que demostraremos que esta función también es uniformemente continua en un intervalo cerrado $[a,b]$.\\
+	Supongamos que $f$ no es uniformemente continua en $[a,b]$, de donde usamos el argumento de bisección. Si bisecamos el intervalo $[a,b]$ tal que una secuencia de intervalos $I_1=[a_1,b_1]$, $I_2=[a_2,b_2], \ldots$, entonces dado $\epsilon$ y cada $n$, podemos elegir $x_n,y_n\in [a_n,b_n]$ tal que,
+	$$|x_n-y_n|<\dfrac{1}{n}\quad \mbox{y}\quad |f(x_n)-f(y_n)|\geq \epsilon.$$
+	Ya que $$a\leq a_n \leq a_{n+1}<b_{n+1}\leq b_n\leq b$$
+	de donde $a_1,a_2,b_3,\ldots$ y $b_1,b_2,b-3,\ldots$ están acotadas y son monótonas, entonces son sucesiones convergentes. Luego vemos que $bn-a_n$ tiende a cero, entonces podríamos decir que ambas sucesiones deben converger al mismo límite, digamos $k$ y formar la desigualdad
+	$$a_n\leq x_n\leq y_n\leq b_n$$
+    Así concluimos que la secuencia ${x_n}$ y la secuencia ${y_n}$ converge al límite $k$, es decir,
+    $$x_n\to k\quad \mbox{y}\quad y_n\to k$$
+    Que implica,
+    $$|f(x_n)-f(y_n)|\to |f(k)-f(k)|=0.$$
+    que contradice el hecho que $|f(x_n)-f(y_n)|\geq \epsilon$ para todo $n$.\\\\
+
+    %------------------ 4.
+    \item Deduzca el teorema 7-2 como una consecuencia del teorema 1.\\\\
+	Respuesta.-\; Sea $f$ continua en $[a,b]$, entonces es también uniformemente continua en $[a,b]$. Supongamos ahora que $\epsilon>0$, por la continuidad uniforme, existe $\delta>0$ tal que $|x-y|<\delta\quad \Rightarrow \quad |f8x)-f(y)|<\epsilon.$ Luego dividiendo el intervalo $[a,b]$ en $N$ subintervalos $a=x_0,x_1,\ldots, x_{N-1},x_N=b$ tal que cada uno de esos tenga una longitud menor que $\delta$, entonces $|f(x_j)-f(j-1)|<\epsilon$ para $1\leq j\leq N$ donde $N$ es un número fijo. Así sea $y\in [a,b]$, después $y\in[x_M,x_{M+1}]$ para algunos $M<N$, de donde estimaremos $|f(y)-f(a)|$.\\
+	Sumando y restando cada $x_M,x_{M-1},\ldots,x_2,x_1$ se sigue,
+	$$\begin{array}{rcl}
+	    |f(y)-f(a)| &=& |f(y)-f(x_0)|\\
+			&=&|f(y)-f(x_M)|+f(x_M)-\ldots - f(x_1)+f(x_1)-f(x_0)|\\
+			&=&|f(y)-f(x_M)|+|f(x_M-f(x_{M-1})|+\ldots + |f(x_1)-f(x_0)|\\
+			&<&(M+1)\epsilon\\
+			&\leq& N\epsilon\\
+	\end{array}$$
+	donde $K=N\epsilon+|f(a)|$, el demuestra que $|f(y)|\leq K$ para cada $y\in [a,b]$. Esto es $f$ esta acotado en $[a,b]$.\\\\
 
 \end{enumerate}

@@ -1304,7 +1304,6 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
 
 \end{enumerate}
 
-\end{comment}
 
 \section{teorema de los valores extremos para funciones continuas}
 
@@ -1351,7 +1350,7 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
     \begin{def.}
 	Sea $f$ una función de valores reales y continua en un intervalo cerrado $[a,b]$ y sean $M(f)$ y $m(f)$ los valores máximos y mínimos respectivamente de $f$ en $[a,b]$. Llamaremos a la diferencia 
 	$$M(f)-m(f)$$
-	el oscilación de $f$ en el intervalo $[a,b]$. Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares. en el inte Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares.
+	la oscilación de $f$ en el intervalo $[a,b]$. Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares. en el inte Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares.
     \end{def.}
 \end{tcolorbox}
 
@@ -1362,4 +1361,139 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
 \end{teo}
 
 \section{Teorema de integrabilidad para funciones continuas}
+El teorema de la continuidad uniforme puede utilizarse para demostrar que una función continua en $[a,b]$ es integrable en $[a,b]$.\\
+
+\begin{teo}[Integrabilidad de funciones continuas]
+    Si una función $f$ es continua en todos los puntos de un intervalo cerrado $[a,b]$, es integrable en $[a,b]$.\\\\
+	Demostración.-\; El teorema $3.11$ demuestra que $f$ es acotada en $[a,b]$, con lo que $f$ tiene una integral superior, $\overline{I}(f)$, y una integral inferior $\underline{I}(f)$. Demostraremos que $\overline{I}(f)=\underline{I}(f)$.\\
+	Elijamos un entero $N\geq 1$ y sea $\epsilon=1/N$. En virtud del teorema de la continuidad uniforme, elegido este $\epsilon$ existe una partición $P=\left\{x_0,x_1,\ldots,x_n\right\}$ de $[a,b]$ en $n$ subintervalos tal es que la oscilación de $f$ en cualquier subintervalo es menor que $\epsilon$. Designemos por $M_k(f)$ y $m_k(f)$, respectivamente, el máximo y el mínimo absolutos de $f$ en el k-ésimo subintervalo $[x_{k-1},x_k]$. Tenemos entonces
+	$$M_k(f)-m_k(f)<\epsilon$$
+	para cada $k=1,2,\ldots,n$. Sean $s_n$ y $t_n$ dos funciones escalonadas definidas en $[a,b]$ como sigue:
+	$$\begin{array}{cccc}
+	    s_n(x)=m_k(f) & \mbox{si} & x_{k-1}<x\leq x_k, & s_n(a)=m_1(f), \\\\
+	    t_n(x)=M_k(f) & \mbox{si} & x_{k-1}\leq x < x_k, & t_n(b)=M_n(f). \\\\
+	\end{array}$$
+	Tenemos entonces $s_n(x)\leq f(x)\leq t_n(x)$ para todo $x$ de $[a,b]$. Tenemos también 
+	$$\int_a^b s_n = \sum_{k=1}^n m_k(f)(x_k-x_{k-1})\quad \mbox{y}\quad \int_a^b t_n = \sum_{k=1}^n M_n(f)(x_k - x_{k-1}.$$
+	La diferencia de esas dos integrales es
+	$$\int_a^b t_n - \int_a^b s_n = \sum_{k=1}^n \left[M_k(f)-m_k(f)\right](x_k-x_{k-1})<\epsilon \sum_{k=1}^n (x_k-x_{k-1})=\epsilon(b-a).$$
+	Puesto que $\epsilon = 1/N$, esta desigualdad puede escribirse en la forma 
+	$$\int_a^b t_n - \int_a^b s_n < \dfrac{b-a}{N}$$
+	Por otra parte, las integrales superior e inferior de $f$ satisfacen las desigualdades
+	$$\int_a^b s_n\leq \underline{I}(f) \leq \int_a^b t_n \qquad \mbox{e}\qquad \int_a^b \leq \overline{I}(f)\leq \int_a^b t_n.$$
+	Multiplicando el primer conjunto de desigualdades por $(-1)$ y sumando el resultado al segundo conjunto obtenemos
+	$$\overline{I}(f)-\underline{I}(f)\leq \int_a^b t_n - \int_a^b s_n.$$
+	por la relación $\underline{I}(f)\leq \overline{I}(f)$, tenemos
+	$$0\leq \overline{I}(f)-\underline{I}(f)<\dfrac{b-a}{N}$$
+	para todo entero $N\leq 1$. Por consiguiente, según el teorema I.31, debe ser $\underline{(f)}=\overline{I}(f)$. Esto demuestra que $f$ es integrable en $[a,b]$.\\
+
+\end{teo}
+
+\section{teoremas del valor medio para funciones continuas}
+En la Sección 2.16 se definió el valor promedio $A(f)$ de una función $f$ sobre un intervalo $[a, b]$ como el cociente $\displaystyle\int_a^b f(x) dx / (b-a)$. Cuando $f$ es continua, podemos demostrar que este valor promedio es igual al valor de $f$ en un cierto punto de $[a, b]$.\\
+
+\begin{teo}[teorema del valor medio para integrales.]
+    Si $f$ es continua en $[a,b]$, para un cierto $c$ de $[a,b]$ tenemos
+    $$\int_a^b f(x)\; dx = f(c)(b-a).$$\\
+	Demostración.-\; Representamos por $m$ y $M$, respectivamente, los valores máximo y mínimo de $f$ en $[a,b]$. Entonces $m\leq f(x)\leq M$ para todo $x$ en $[a,b]$. Integrando esas desigualdades y dividiendo por $b-a$, encontramos que $m\leq A(f)\leq M$, siendo $A(f)=\displaystyle\int_a^b f(x)\; dx / (b-a)$. Pero ahora el teorema del valor intermedio nos dice que $A(f)=f(c)$ para un cierto $c$ de $[a,b]$. Esto completa la demostración.\\\\
+\end{teo}
+
+\begin{teo}[Teorema del valor medio ponderado para integrales.]
+    Supongamos que $f$ y $g$ son continuas en $[a,b]$. Si $g$ no cambia nunca de signo en $[a,b]$ entonces, para un cierto $c$ de $[a,b]$, tenemos
+    $$\int_a^b f(x)g(x)\; dx = f(c)\int_a^b g(x)\; dx.$$\\
+    Demostración.-\; NO cambiando nunca de signo en $[a,b]$, $g$ es siempre no negativa o siempre no positiva en $[a,b]$. Supongamos que $g$ es no negativa en $[a,b]$. Entonces podemos razonar como en la demostración del teorema 3.15, excepto que integramos las desigualdades $mg(x)\leq f(x)g(x)\leq Mg(x)$ obteniendo
+    $$m\int_a^b g(x)\; dx \leq \int_a^b f(x)g(x)\; dx \leq M\int_a^b g(x)\; dx.$$
+    Si $\displaystyle\int_a^b g(x)\; dx = 0$, esa desigualdad demuestra que $\displaystyle\int_a^b f(x)g(x)\; dx=0$. En este caso, se satisface para cualquier $c$ ya que ambos miembros son cero. De otro modo, la integral de $f$ es positiva, y podemos dividir por esta integral y aplicar como antes el teorema del valor intermedio para completar la demostración. Si $g$ es no positiva, aplicamos el mismo razonamiento con $-g$.\\
+\end{teo}
+
+\end{comment}
+
+\section{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item Con el teorema 3.16 establecer las desigualdades siguientes:
+    $$\dfrac{1}{10\sqrt{2}}\leq \int_0^1 \dfrac{x^9}{\sqrt{1+x}}\; dx \leq \dfrac{1}{10}.$$\\
+	Respuesta.-\; Sea $$f(x)=\dfrac{1}{\sqrt{1+x}},\quad g(x)=x^9.$$
+	Sustituyendo nuestras definiciones de $f$ y $g$ se tiene,
+	$$\int_0^1 \dfrac{x^9}{\sqrt{1+x}}\; dx = \int_0^1 f(x) g(x)\; dx.$$
+	Ya que $f$ y $g$ son continuas y $g$ no cambia de signo en $[0,1]$ podemos aplicar el teorema 3.16,
+	$$\int_0^1 f(x) g(x)\; dx = f(c)\int_0^1 g(x)\; dx, \qquad \mbox{para algún}\; c\in [0,1].$$
+	Luego $f$ es estrictamente creciente en $[0,1]$, por lo que,
+	$$f(0)\geq f(c)\geq f(1)\quad \Rightarrow \quad 1\geq f(c)\geq \dfrac{1}{\sqrt{2}}.$$
+	Por lo tanto,
+	$$\begin{array}{rcl}
+	    f(1)\displaystyle\int_0^1 g(x)\; dx \leq \int_0^1 g(x)\; dx \leq f(0)\int_0^1 g(x)\; dx &\Rightarrow & \dfrac{1}{\sqrt{2}}\displaystyle\int_0^1 x^9\; dx \leq f(c)\int_0^1 x^9\; dx \leq \int_0^1 x^9 \; dx \\\\
+														    &\Rightarrow & \dfrac{1}{10\sqrt{2}}\leq f(c) \displaystyle\int_0^1 \dfrac{x^9}{\sqrt{1+x}}\; dx\leq \dfrac{1}{10}.\\\
+	\end{array}$$
+
+    %------------------- 2.
+    \item teniendo en cuenta que $\sqrt{1-x^2} = (1-x^2)/\sqrt{1-x^2}$ y por medio del teorema 3.16 obtenemos las desigualdades
+    $$\dfrac{11}{\24}\leq \int_0^{1/2}\sqrt{1-x^2}\; dx \leq \dfrac{11}{24}\sqrt{\dfrac{4}{3}}.$$\\
+    Respuesta.-\; Sea $$f(x)=\dfrac{1}{\sqrt{1-x^2}},\quad g(x)=1-x^2.$$ 
+    Entonces,
+    $$\int_0^{1/2}\sqrt{1-x^2}=\int_0^{1/2}\dfrac{1-x^2}{\sqrt{1-x^2}}\; dx = \int_0^{1/2}f(x)g(x)\; dx = f(c)\int_0^{1/2}g(x)\; dx$$
+    para algún $c\in [0,\frac{1}{2}]$. Ya que $f$ es estrictamente creciente en $[0,\frac{1}{2}]$, tenemos $f(0)\leq f(c)\leq f(\frac{1}{2})$ el cual implica que $1\leq f(c)\leq \sqrt{\dfrac{4}{3}}$. Y por lo tanto,
+    $$f(0)\int_0^{1/2}g(x)\; dx \leq f(c) \int_0^{1/2}g(x)\; dx \leq f(1)\int_0^{1/2}g(x)\; dx.$$
+    Por otro lado también sabemos que,
+    $$\int_0^{1/2}g(x)\; dx = \int_0^{1/2}(1-x^2)\; dx=\dfrac{1}{2}-\dfrac{1}{24}=\dfrac{11}{24}.$$
+    de donde concluimos que 
+    $$\dfrac{11}{24}\leq \int_0^{1/2}\sqrt{1-x^2}\; dx \leq \dfrac{11}{24}\sqrt{\dfrac{4}{3}}.$$\\
+
+    %------------------- 3.
+    \item Utilizar la identidad $1+x^6=(1+x^2)(1-x^2+x^4)$ y el teorema 3.16 para demostrar que para $a>0$, tenemos
+    $$\dfrac{1}{1+a^6}\left(a-\dfrac{a^5}{3}+\dfrac{a^5}{5}\right)\leq \int_0^a \dfrac{dx}{1+x^2}\leq a -\dfrac{a^3}{3}+\dfrac{a^5}{5}.$$
+    Tómese $a=1/10$ y calcular el valor de la integral con seis cifras decimales.\\\\
+	Respuesta.-\; Sea
+	$$f(x)\dfrac{1}{1+x^6},\quad g(x)=1-x^2+x^4.$$
+	Entonces,
+	$$\int_0^a \dfrac{dx}{1+x^2}=\int_0^a \dfrac{1-x^2+x^4}{1+x^6}\; dx = \int_0^a f(x) g(x)\; dx = \dfrac{1}{c}\int_0^a g(x)\; dx$$
+	para algún $c\in [0,a].$ Ya que $f$ es estrictamente creciente en $[0,a]$, tenemos $f(a)\leq f(c)\leq f(0)$. Por lo tanto,
+	$$\dfrac{1}{1+a^6}\leq f(c)\leq 1.$$
+	Es más,
+	$$\int_0^a g(x)\; dx = \int_0^a (1-x^2+x^4)\; dx = a-\dfrac{a^3}{3}+\dfrac{a^5}{5}.$$
+	Así,
+	$$\left(\dfrac{1}{1+a^6}\right)\left(a-\dfrac{a^3}{3}+\dfrac{a^4}{5}\right)\leq \int_0^a \dfrac{dx}{1+x^2}\leq \left(a-\dfrac{a^3}{3}+\dfrac{a^5}{5}\right).$$
+	Ahora calculemos para $a=\dfrac{1}{10}$,
+	$$\left[\dfrac{1}{1+(\frac{1}{10})^6}\right]\left[\dfrac{1}{10}-\dfrac{(\frac{1}{10})^3}{3}+\dfrac{(\frac{1}{10})^4}{5}\right]\leq \int_0^{\frac{1}{10}} \dfrac{dx}{1+x^2}\leq \left(\dfrac{1}{10}-\dfrac{(\frac{1}{10})^3}{3}+\dfrac{(\frac{1}{10})^5}{5}\right)$$ $$\Downarrow$$ $$ 0-0996686\leq \int_0^{\frac{1}{10}}\dfrac{dx}{1+x^2}\leq 0.0996687$$.
+
+    %------------------- 4.
+    \item Una de las siguientes afirmaciones es incorrecta. Explicar por qué es falsa.
+
+	\begin{enumerate}[a)]
+
+	    %---------- a)
+	    \item La integral $\int_{2\pi}{4\pi}(\sen t)/t \; dt > 0$ debido a que $\int_{2\pi}{3\pi} (\sen t)/t\; dt>\int_{3\pi}^{4\pi}|\sen t|/t\; dt.$\\\\
+		Respuesta.-\; La integral $$\int_{2\pi}^{4\pi}\dfrac{\sen t}{t}\; dt > 0$$
+		porque $$\int_{2\pi}^{3\pi}\dfrac{\sen t}{t}\; dt>\int_{3\pi}^{4\pi}\dfrac{|\sen t|}{t}\; dt.$$\\
+
+	    %---------- b)
+	    \item La integral $\int_{2\pi}{4\pi}(\sen t)/t \; dt = 0$ porque, según el teorema 3.16 para un cierto $c$ comprendido entre $2\pi$ y $4\pi$ tenemos
+		$$\int_{2\pi}^{4\pi}=\dfrac{1}{c}\int_{2\pi}^{4\pi}\sen t \; dt0\dfrac{\cos(2\pi)-\cos(4\pi)}{c}=0.$$\\
+		Respuesta.-\; La declaración (b) es falsa ya que el teorema del valor medio ponderado requiere que la función $g(t)$ no cambie de signo en el intervalo $[2 \pi, 4 \pi]$. Pero como $g(t) = \sen t$ cambia de signo en el intervalo, no podemos aplicar el teorema.\\\\
+
+	\end{enumerate}
+
+    %------------------- 5.
+    \item Si $n$ es un entero positivo, utilizar el teorema 3.16 para demostrar que
+    $$\int_{\sqrt{n\pi}}^{\sqrt{(n+1)\pi}}\sen(t^2)\; dt = \dfrac{(-1)^n}{c}\; \mbox{ donde }\; \sqrt{n\pi}\leq c \leq \sqrt{(n+1)\pi}.$$\\
+	Respuesta.-\;
+
+    %-------------------- 6.
+    \item Supóngase que $f$ es continua en $[a,b]$. Si $\int_a^b f(x)\; dx=0$, demostrar que $f(c)=0$ por lo menos para un $c$ de $[a,b]$.\\\\
+	Demostración.-\; 
+
+    %-------------------- 7.
+    \item Supóngase que $f$ es integrable y no negativa en $[a, b]$. Si $\int_a^b f(x) dx = O$, demostrar que $f(x) = O$ en cada punto de continuidad de $f$.\\\\
+	Demostración.-\;
+
+    %-------------------- 8.
+    \item Supóngase que $f$ es continua en $[a, b]$ y que $\int_a^b f(x)g(x) dx = O$, para toda función $g$ que sea continua en $[a, b]$. Demostrar que $f(x) = O$ para todo $x$ en $[a, b].$\\\\
+	Demostración.-\;
+
+
+
+\end{enumerate}
+
 
