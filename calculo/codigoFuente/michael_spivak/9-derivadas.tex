@@ -4,6 +4,71 @@
     \begin{def.}
     La función $f$ es \textbf{\boldmath diferenciable en $a$} si existe el  
     $$\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$
-    En este caso, dicho límite se presenta mediante $f'(a)$ y se denomina la derivada de $f$ en $a$. (Diremos también que $f$ es diferenciable si $f$ es diferenciable en $a$ para todo $a$ del dominio de $f.$) 
+    En este caso, dicho límite se presenta mediante $f'(a)$ y se denomina la derivada de $f$ en $a$. (Diremos también que $f$ es diferenciable si $f$ es diferenciable en $a$ para todo $a$ del dominio de $f.$)\\\\
+    La derivada $f'$ son representadps a menudo mediante
+    $$\dfrac{dg(x)}{dx}, \qquad \dfrac{df(x)}{dx}\bigg|_{x=a}$$
     \end{def.}
 \end{tcolorbox}
+
+Recordemos que la diferenciabilidad se supone que es una mejora respecto a la simple continuidad. Esto lo demuestran los numerosos ejemplos de funciones que son continuas, pero no diferenciables; sin embargo, hay que destacar un punto importante:\\
+
+% -------------------- teorema 1
+\begin{teo}
+    Si $f$ es diferenciable en el punto $a$, entonces $f$ es continua en $a$.\\\\
+	Demostración.-\;
+	$$\lim_{h\to 0} \left[f(a+h)-f(a)\right] = \lim_{h\to 0} \left[\dfrac{f(a+h)-f(a)}{h}\cdot h\right] = \lim_{h\to 0} \dfrac{f(a+h)-f(a)}{h}\cdot \lim_{h\to 0} h = f'(a)\cdot 0 = 0.$$\\
+	La ecuación $\lim\limits_{h\to 0}f(a+h)-f(a)=0$ es equivalente a $\lim\limits_{x\to a} f(x)=f(a);$ así, $f$ es continua en $a$.\\\\
+\end{teo}
+
+Es muy importante recordar el Teorema 1, e igualmente importante recordar que el recíproco no es cierto. Una función diferenciable es continua, pero una función continua no necesariamente es diferenciable.\\
+
+Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente derivadas de orden superior de $f$. Y en la notación se tiene $$\dfrac{d\left(\frac{df(x)}{dx}\right)}{dx}\dfrac{d^2f(x)}{dx^2}.$$
+
+\section{Problemas}
+
+\begin{enumerate}[\bfseries 1]
+
+    %-------------------- 1.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre, aplicando directamente la definición, que si $f(x)=1/x$, entonces $f'(a)=-1/a^2$ para $a\neq 0$.\\\\
+		Demostración.-\; Por definición se tiene $$f'(a)=\lim_{h\to 0}\dfrac{\frac{1}{a+h}-\frac{1}{a}}{h} = \lim_{h\to 0} \dfrac{\frac{a-(a+h)}{a(a+h)}}{h} = \lim_{h\to a}\dfrac{-h}{a(a+h)h} = -\dfrac{1}{a^2}, \quad \mbox{siempre que}\; x\neq 0.$$\\
+
+	    %---------- (b)
+	    \item Demuestre que la recta tangente a la gráfica de $f$ en el punto $(a,1/a)$ sólo corta a la gráfica de $f$ en este punto.\\\\
+		Demostración.-\; La pendiente de la tangente cuando $x=a$ es $-\dfrac{1}{a^2}$, de donde la ecuación de la recta tangente es,
+		$$y-\dfrac{1}{a} = -\dfrac{1}{a^2}(x-a)\quad \Rightarrow \quad a^2y-a=-x+a \qquad \Rightarrow \quad a^2y+x=2a.$$
+		Luego $y=\dfrac{1}{x}$ ya que necesitamos encontrar el punto de intersección, y en consecuencia,
+		$$a^2\dfrac{1}{x}+x=2a\quad \rightarrow \quad x^2-2ax+a^2=0 \quad \Rightarrow \quad (x-a)^2=0 \quad \Rightarrow \quad x=a$$
+		Por lo tanto, el único punto de intersección será $\left(a,\dfrac{1}{a}\right)$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 2.
+    \item
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f(x)=1/x^2$, entonces $f'(a)=-2/a_3$ para $a\neq 0$.\\\\
+		Demostración.-\; Por definición tenemos,
+		$$f'(a)=\lim_{h\to 0}\dfrac{\frac{1}{(a+h)^2}-\frac{1}{a^2}}{h} = \lim_{h\to 0} \dfrac{\frac{a^2-(a+h)^2}{a^2(a+h)^2}}{h} = \lim_{h\to a}\dfrac{-h(2a+h)}{ha^2(a+h)^2} = -\dfrac{2}{a^3}, \quad \mbox{siempre que}\; x\neq 0.$$\\
+
+	    %---------- (b)
+	    \item Demuestre que la recta tangente a $f$ en el punto $(a,1/a^2)$ corta a $f$ en otro punto, que se encuentra en el lado opuesto del eje vertical.\\\\
+		Demostración.-\; Ya que $f'(a)=-\dfrac{2}{a^3}$ que representa la pendiente de la tangente entonces la ecuación de la tangente estará dada para $(a,1/a^2)$ por,
+		$$y-y_1=m(x-x_1)\quad \Rightarrow \quad y-\dfrac{1}{a^2}=-\dfrac{2}{a^3}(x-a)\quad \Rightarrow \quad y=-\dfrac{2x}{a^3}+\dfrac{3}{a^2}$$
+		luego resolviendo para $x$ e $y$ sabiendo que $y=\dfrac{1}{x^2}$ tenemos,
+		$$x_1 = a,\quad x_2 = -\dfrac{a}{2} \qquad \mbox{e}\qquad y_1 = \dfrac{1}{a^2}, \quad y_2=\dfrac{4}{a^2}.$$
+		Por lo que la tangente intersecta a la $f$ en $(a,1/a^2)$ y en $(-a/2,4/a^2)$. Así estos puntos son apuestos al eje vertical.\\\\
+
+
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item Demuestre que si $f(x) = \sqrt{x}$, entonces $f'(a) = 1/\left(2\sqrt{a}\right)$, para $a > 0$.\\\\
+	Demostración.-\;
+
+\end{enumerate}

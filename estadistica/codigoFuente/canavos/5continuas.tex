@@ -116,6 +116,41 @@ pero, mediante el empleo de $E(X)=\displaystyle\dfrac{1}{\sqrt{2\pi}\sigma}\int_
 	donde $E\left[e^{\frac{tX}{\sqrt{np(1-p)}}}\right]$ es la función generadora de momentos de $X$ con argumento $\frac{t}{\sqrt{np(1-p)}}$. De esta forma se tiene:
 	$$m_y(t)=e^{\frac{-npt}{\sqrt{np(1-p)}}}\left[(1-p)+ pe^{\frac{t}{\sqrt{np(1-p)}}}\right]^n;$$
 	pero:
+	$$e^{-\frac{npt}{\sqrt{np(1-p)}}} = \left(e^{-\frac{pt}{\sqrt{np(1-p)}}}\right)^n$$
+	y:
+	$$m_y(t)=\left[(1-p)e^{-\frac{pt}{\sqrt{np(1-p)}}}+pe^{\frac{t}{\sqrt{np(1-p)}}-\frac{pt}{\sqrt{np(1-p)}}}\right]^n = \left[(1-p)e^{-\frac{pt}{\sqrt{np(1-p)}}}+pe^{\frac{(1-p)t}{\sqrt{np(1-p)}}}\right]^n.$$
+	En la última expresión, al expander ambas funciones exponenciales en una serie de potencias, se tiene:
+	$$\begin{array}{rcl}
+	    (1-p)e^{-\frac{pt}{\sqrt{np(1-p)}}} &=& (1-p) - \dfrac{(1-p)pt}{\sqrt{np(1-p)}} + \dfrac{(1-p)p^2t^2}{2np(1-p)} + \mbox{términos en } (-1)^k \left(\dfrac{1}{n}\right)^{k/2}, \; k=3,4,\ldots\\\\
+						&=&(1-p)-\dfrac{(1-p)pt}{\sqrt{np(1-p)}}+\dfrac{pt^2}{2n}+\mbox{términos en } (-1)^k\left(\dfrac{1}{n}\right)^{k/2},\; k=3,4,\ldots\\\\
+	\end{array}$$
+	y
+	$$\begin{array}{rcl}
+	    pe^{-\frac{(1-p)t}{\sqrt{np(1-p)}}} &=& p + \dfrac{(1-p)pt}{\sqrt{np(1-p)}} + \dfrac{(1-p)pt^2}{2np(1-p)} + \mbox{términos en } \left(\dfrac{1}{n}\right)^{k/2}, \; k=3,4,\ldots\\\\
+						&=&p+\dfrac{(1-p)pt}{\sqrt{np(1-p)}}+\dfrac{(1-p)t^2}{2n}+\mbox{términos en } \left(\dfrac{1}{n}\right)^{k/2},\; k=3,4,\ldots\\\\
+	\end{array}$$
 
+	Al sustituir los resultados anteriores en $m_Y(t)$ y agrupar términos,
+
+	$$m_Y(t)=\left[1+\dfrac{t^2}{2n}+\mbox{ términos en }\left(\dfrac{1}{n}\right)^{k/2}\right]^n,\; k=3,4,\ldots$$
+	Dado que todos los términos que contiene a $(1/n)^{k/2},\; k=3,4,\ldots$, tienen exponentes mayores que uno, puede factorizarse el término $1/n$. De esta forma se tiene que:
+
+	$$m_Y(t)=\left[1+\dfrac{1}{n} \left(\dfrac{t^2}{2}+\mbox{ términos en }\left(\dfrac{1}{n}\right)^{(k-2)/2}\right)\right]^n,\; k=3,4,\ldots$$
+
+	Por definición:
+	$$\lim_{n\to \infty}\left(1+\dfrac{u}{n}\right)^n=e^u$$
+	entonces, conforme $n\to \infty$, la última expresión para $m_Y(t)$ es idéntica a esta forma, con $u$ representando a todo lo que se encuentra entre paréntesis de esta expresión. Pero conforme $n\to \infty$, todos los términos de $u$, excepto el primero, tienen un valor de cero, dado que todos tienen potencias positivas de $n$ en sus denominadores. De acuerdo con lo anterior.
+	$$\lim_{n\to \infty}m_Y(t)=e^{t^2/2},$$
+	que es la función generadora de momentos de la distribución normal estándar.\\\\
 
 \end{teo}
+
+La aproximación del teorema anterior es adecuada tanto como $np>5$ cuando $p\leq 1/2$, o cuando $n(1-p)>5$ para $p>1/2$. Esto es
+$$P(a\leq X_B \leq b) = P\left(\dfrac{a-np}{\sqrt{np(1-p)}}\leq Z_N\leq \dfrac{b-np}{\sqrt{np(1-p)}}\right)$$
+en donde $Z_N$ es $N(0,1)$. Como también
+$$P(X_B=x)\approx P\left(\dfrac{x-np-1/2}{\sqrt{no(1-p)}}\leq Z_N\leq \dfrac{x-np+1/2}{\sqrt{np(1-p)}}\right)$$
+por lo que se puede modificar la expresión de desigualdad de la siguiente manera:
+$$P(a\leq X_B \leq b) = P\left(\dfrac{a-np-0.5}{\sqrt{np(1-p)}}\leq Z_N\leq \dfrac{b-np+0.5}{\sqrt{np(1-p)}}\right)$$
+
+
+\section{La distribución uniforme}

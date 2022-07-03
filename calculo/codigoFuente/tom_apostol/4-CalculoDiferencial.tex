@@ -28,4 +28,46 @@
 \begin{ejem}[Derivada de la función seno]
     Sea $s(x)=\sen x$. El cociente de diferencias es
     $$\dfrac{s(x+h)-s(x)}{h}=\dfrac{\sen(x+h)-\sen x}{h}$$
+    Para transformarlo de modo que haga posible calcular el límite cuando $h\to 0$, utilizamos la identidad trigonométrica
+    $$\sen y -\sen x = 2\sen \dfrac{y-x}{2}\cos \dfrac{y+x}{2}$$
+    poniendo $y=x+h$. Esto conduce a la fórmula
+    $$\dfrac{\sen(x+h)-\sen x}{h}=\dfrac{\sen\frac{h}{2}}{\frac{h}{2}} \cos \left(x+\dfrac{h}{2}\right)$$
+    Como $h\to 0$, el factor $\cos(x+\frac{1}{2}h)\to \cos x$ por la continuidad del coseno. Así mismo, la fórmula 
+    $$\lim_{x\to 0}\dfrac{\sen x}{x}=1,$$
+    demuestra que
+    $$\dfrac{\sen \frac{h}{2}}{\frac{h}{2}}\to 1\;\mbox{ para todo } \; h\to 0$$
+    Por lo tanto el cociente de diferencias tiene como límite $\cos x$ cuando $h\to 0$. Dicho de otro modo, $s'(x)=\cos x;$ para todo $x$; la derivada de la función seno es la función coseno.\\\\ 
 \end{ejem}
+
+\begin{ejem}[Derivada de la función coseno]
+    Sea $c(x)=\cos x$. Demostraremos que $c'(x)=-\sen x$; esto es, la derivada de la función coseno es menos la función seno. Partamos de la identidad
+    $$\cos y - \cos x = -2\sen \dfrac{y-x}{2}\sen \dfrac{y+x}{2}$$
+    y pongamos $y=x+h$. Esto nos conduce a la fórmula
+    $$\dfrac{\cos(x+h)-\cos x}{h}=-\dfrac{\sen \frac{h}{2}}{\frac{h}{2}}\sen \left(x+\dfrac{h}{2}\right).$$
+    La continuidad del seno demuestra que $\left(x+\frac{1}{2}h\right)\to x$ cuando $h\to 0$; luego ya que 
+    $$\dfrac{\sen \frac{h}{2}}{\frac{h}{2}}\to 1\;\mbox{ para todo } \; h\to 0$$
+    obtenemos $c'(x)=-\sen x$.\\
+\end{ejem}
+
+\begin{ejem}[Derivada de la función raíz n-esima]
+    Si $n$ es un entero positivo, sea $f(x)=x^{1/n}$ para $x>0$. El cociente de diferencias para $f$ es
+    $$\dfrac{f(x+h)-f(x)}{h}=\dfrac{(x+h)^{1/n}-x^{1/n}}{h}.$$
+    Pongamos $u=(x+h)^{1/n}$ y $v=x^{1/n}$. Tenemos entonces $u^n = x+h$ y $v^n=x,$ con lo que $h=u^n-v^n$, y el cociente de diferencias toma la forma
+    $$\dfrac{f(x+h)-f(x)}{h}=\dfrac{u-v}{u^n -v^n}=\dfrac{1}{u^{n-1}+u^{n-2}v + \ldots + uv^{n-2}v^{n-1}}$$
+    La continuidad de la función raíz n-sima prueba que $u \to v$ cuando $h \to O$. Por consiguiente cada término del denominador del miembro de la derecha tiene límite $v^{n-1}$ cuando $h \to O$. En total hay $n$ términos, con lo que el cociente de diferencias tiene como límite $v^{1-n}/n$. Puesto que  $v = x^{1/n}$, esto demuestra que
+    $$f'(x)=\dfrac{1}{n}x^{1/n-1}.$$\\
+\end{ejem}
+
+\begin{tcolorbox}
+    \begin{ejem}[Continuidad de las funciones que admiten derivada]
+	Si una función $f$ tiene derivada en un punto $x$, es también continua en $x$. Para demostrar, empleamos la identidad
+	$$f(x+h)=f(x)+h\left(\dfrac{f(x+h)-f(x)}{h}\right)$$
+	que es válida para $h\neq 0$. Si hacemos que $h\to 0$, el cociente de diferencias del segundo miembro tiende a $f'(x)$, puesto que este cociente está multiplicando por un factor que tiende a $0$, el segundo término del segundo miembro tiende a $0\cdot f'(x)$. Esto demuestra que $f(x+h)\to f(x)$ cuando $h\to 0$ y por tanto que $f$ es continua en $x$.
+    \end{ejem}
+\end{tcolorbox}
+
+\section{Álgebra de las derivadas}
+
+\begin{teo}
+    Sean $f$ y $g$ dos funciones definidas en un intervalo común. En cada punto en que $f$ y $g$ tienen derivadas, también las tienen la suma $f+g$
+\end{teo}
