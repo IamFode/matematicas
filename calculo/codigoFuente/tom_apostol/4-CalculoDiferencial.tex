@@ -1,5 +1,6 @@
 \chapter{Cálculo diferencial}
 
+\begin{comment}
 \setcounter{section}{3}
 \section{Derivada de una función}
 
@@ -69,5 +70,478 @@
 \section{Álgebra de las derivadas}
 
 \begin{teo}
-    Sean $f$ y $g$ dos funciones definidas en un intervalo común. En cada punto en que $f$ y $g$ tienen derivadas, también las tienen la suma $f+g$
+    Sean $f$ y $g$ dos funciones definidas en un intervalo común. En cada punto en que $f$ y $g$ tienen derivadas, también las tienen la suma $f+g$, la diferencia $f-g$, el producto $f\cdot g$ y el cociente $f/g$. (Para $f/g$ hay que añadir también que $g$ ha de ser distinta de cero en el punto considerado). Las derivadas de estas funciones están dadas por las siguientes fórmulas:
+    \begin{enumerate}[(i)]
+	\item $(f+g)' = f'+g',$
+	\item $(f-g)' = f'-g',$
+	\item $(f\cdot g)'=f\cdot g' + g\cdot f',$
+	\item $\left(\dfrac{f}{g}\right)' = \dfrac{g\cdot f' - f\cdot g'}{g^2}$ en puntos $x$ donde $g(x)\neq 0$.\\\\
+    \end{enumerate}
+	Demostración.-\; Demostración de (i). Sea $x$ un punto en el que existen ambas derivadas $f'(x)$ y $g'(x)$: El cociente de diferencias para $f+g$ es
+	$$\dfrac{(f+g)(x+h)-(f+g)(x)}{h}=\dfrac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}{h}=\dfrac{f(x+h)-f(x)}{h}+\dfrac{g(x+h)-g(x)}{h}$$
+	Cuando $h\to 0$, el primer cociente del segundo miembro tiende a $f'(x)$ y el segundo a $g'(x)$ y por tanto la suma tiende a $f'(x)+g'(x)$. La demostración de (ii) es análoga.\\
+
+	Demostración de (iii). El cociente de diferencias para el producto $f\cdot g$ es:
+	$$\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}.$$
+	Para estudiar este cociente cuando $h\to 0$ se suma y resta al numerador un término conveniente para que se puede escribir la fórmula dada como la suma de dos términos en los que aparezca los cocientes de diferencias de $f$ y $g$. Sumando y restando $f(x)f(x+h)$ se convierte en
+	$$\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}=g(x)\dfrac{f(x+h)-f(x)}{h}+f(x+h)\dfrac{g(x+h)-g(x)}{h}.$$
+	Cuando $h\to 0$ el primer término del segundo miembro tiende a $g(x)f'(x)$, y puesto que $f(x+h)\to f(x),$ el segundo término tiende a $f(x)g'(x)$, lo que demuestra (iii).\\
+
+	Demostración de (iv). Un caso particular de (iv) se tiene cuando $f(x)=1$ para todo $x$. En este caso $f'(x)=0$ y (iv) se reduce a la fórmula
+	$$\left(\dfrac{1}{g}\right)'=-\dfrac{g'}{g^2}$$
+	suponiendo que $f(x)\neq 0$ partir de este caso particular, se puede deducir la fórmula general (iv) escribiendo $f/g$ como producto y aplicando (iii), con lo cual se tiene:
+	$$\left(f\cdot \dfrac{1}{g}\right)'=\dfrac{1}{g}\cdot f' + f\cdot \left(\dfrac{1}{g}\right)'=\dfrac{f'}{g}-\dfrac{f\cdot g'}{g^2}=\dfrac{g\cdot f'-f\cdot g'}{g^2}$$
+	Por tanto, queda solamente por probar $\left(\dfrac{1}{g}\right)'=-\dfrac{g'}{g^2}$. El cociente de diferencias de $1/g$ es:
+	$$\dfrac{\frac{1}{g(x+h)}-\frac{1}{g(x)}}{h} = -\dfrac{g(x+h)-g(x)}{h}\cdot \dfrac{1}{g(x)}\dfrac{1}{g(x+h)}$$
+	Cuando $h\to 0,$ el primer cociente de la derecha tiende a $g'(x)$ y el tercer factor tiende a $\frac{1}{g(x)}$. Se requiere la continuidad de $g$ en $x$ ya que se hace uso del hecho que $g(x+h)\to g(x)$ cuando $h\to 0$. Por tanto, el cociente tiende a $-\dfrac{g'(x)}{g(x)^2}$.\\\\
+
 \end{teo}
+
+Un caso particular de (iii) se tiene cuando una de las dos funciones es constante, por ejemplo, $g(x) = c$ para todo valor de $x$. En este caso, (iii) se transforma en: $(c \cdot f)' = c\cdot f'$; es decir, la derivada del producto de una función por una constante es el producto de la derivada de la función por la constante. Combinando esta propiedad con la de la derivada de una suma [propiedad (i)] se tiene, que para cada par de constantes $c_1$ y $c_2$, es:
+$$(c_1f+c_2g)'=c_1f'+c_2g'$$
+Esta propiedad se denomina propiedad lineal de la derivada, y es análoga a la propiedad lineal de la integral.\\
+Aplicando el método de inducción se puede extender la propiedad lineal a un número cualquiera finito de sumandos:
+$$\left(\sum_{i=1}^n c_i\cdot f_i\right)' = \sum_{i=1}^n c_i\cdot f_i',$$
+donde $c_1, c_2, c_3,\ldots , c_n$ son constantes y $f_1, f_2, \ldots , f_n$ son funciones cuyas derivadas son $f_1',f_2',\ldots, f_n'$.\\
+Cuando se consideran los valores de estas funciones en un punto x, se obtienen fórmulas entre números; así la fórmula (i) implica
+$$(f+g)(x)=f'(x)+g'(x)$$
+
+\begin{ejem}[funciones Racionales]
+    Si $r$ es el cociente de dos polinomios, es decir, $r(x)=p(x)/q(x)$, la derivada $r'(x)$ se puede calcular por medio de la fórmula del cociente (iv) del teorema 4.1. La derivada existe para todo $x$ en el que $g(x)\neq 0$. Obsérvese que la función $r'$ así definida es a su vez una función racional. En particular, si $r(x)=1/x^m$ donde $m$ es un entero positivo y $x\neq 0$ se tiene:
+    $$r'(x)=\dfrac{x^m\cdot 0 - mx^{m-1}}{x^{2m}}=\dfrac{-m}{x^{m+1}}$$
+    Escribiendo este resultado en la forma: $r'(x) = - mx^{-m-1}$ se obtiene una extensión a exponentes negativos de la fórmula dada para la derivación de potencias n-simas para $n$ positivo.\\\\
+\end{ejem}
+
+\section{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %--------------------1.
+    \item Si $f(x)=2+x-x^2$, calcular $f'(0),f'(\frac{1}{2}),f'(1),f'(-10)$.\\\\
+	Respuesta.-\; Por definición sea,
+	$$\begin{array}{rcl}
+	    f'(x)&=&\lim\limits_{h\to 0}\dfrac{\left[2+(x+h)-(x+h)^2\right]-(2+x-x^2)}{h}\\\\
+		 &=&\lim\limits_{h\to 0}\dfrac{2+x+h-x^2-2xh-h^2-2-x+x^2}{h}\\\\
+		 &=&\lim\limits_{h\to 0} \dfrac{h(1-2x-h)}{h}\\\\
+		 &=&1-2x\\\\
+	\end{array}$$
+	De donde 
+	$$\begin{array}{rclcr}
+	    f'(0)&=&1-2\cdot 0 &=&1\\\\
+	    f'(\frac{1}{2})&=&1-2\cdot\frac{1}{2} &=& 0\\\\
+	    f'(1)&=&1-2\cdot 1 &=& -1\\\\
+	    f'(-10)&=&1-2\cdot (-10) &=& 21\\\\
+	\end{array}$$
+	\vspace{.7cm}
+
+    %--------------------2.
+    \item Si $f(x)=\frac{1}{3}x^3+\frac{1}{2}x^2-2x$, encontrar todos los valores de $x$ para los que \\
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $f'(x)=0.$\\\\
+		Respuesta.-\; Sea $f'(x)=x^2+x-2$, entonces 
+		$$x^2+x-2=0\quad \Rightarrow \quad x_1=1\quad \mbox{y} \quad x_2=-2.$$\\
+
+	    %---------- (b)
+	    \item $f'(x)=-2$.\\\\
+		Respuesta.-\;  Sea $f'(x)=x^2+x-2$, entonces
+		$$x^2+x-2=-2\quad \Rightarrow \quad x^2+x = 0  \quad \Rightarrow \quad x_1=0 \quad \mbox{y} \quad x_2=-1.$$\\
+
+	    %---------- (c)
+	    \item $f'(x)=10$.\\\\
+		Respuesta.-\; Sea $f'(x)=x^2+x-2$, entonces
+		$$x^2+x-2=10\quad \Rightarrow \quad x^2+x -12 = 0  \quad \Rightarrow \quad x_1=3 \quad \mbox{y} \quad x_2=-4.$$\\\\
+
+	\end{enumerate}
+
+    En los ejercicios del 3 al 12, obtener una fórmula para $f'(x)$ si $f(x)$ es la que se indica.\\\\
+
+    %--------------------3.
+    \item $f(x)=x^2+2x+2$.\\\\
+	Respuesta.-\; Por definición,
+	$$\begin{array}{rcl}
+	    f'(x)&=&\lim\limits_{h\to 0}\dfrac{(x+h)^2+2(x+h)+2-(x^2+2x+2)}{h}\\\\
+		 &=&\lim\limits_{h\to 0}\dfrac{x^2+2xh+h^2+2x+2h+2-x^2-2x-2}{h}\\\\
+		 &=&\lim\limits_{h\to 0}\dfrac{h^2+2xh+2h}{h}\\\\
+		 &=&\lim\limits_{h\to 0}\dfrac{h(h+2x+2)}{h}\\\\
+		 &=&2x+2\\\\
+	\end{array}$$
+
+    %--------------------4.
+    \item $f(x)=x^4+\sen x$.\\\\
+	Respuesta.-\; Ya que $(f+g)'=f'+g'$ y sabiendo que la derivada de $\sen x$ es $\cos x$, entonces
+	$$f'(x) = 3x^2+\cos x.$$\\
+
+    %--------------------5.
+    \item $f(x)=x^4\sen x$.\\\\
+	Respuesta.-\; Ya que $(fg)'=f\cdot g'+g\cdot f'$ y la derivada de $\sen x$ es $\cos x$, entonces
+	$$f'(x) = x^4\cos x + 4x^3 \sen x.$$\\
+
+    %--------------------6.
+    \item $f(x)=\dfrac{1}{x+1},\quad x\neq -1.$\\\\
+	Respuesta.-\; Sean $g(x)=1$ y $h(x)=x+1$. Sabemos que $\left(\dfrac{g}{h}\right)'=\dfrac{h\cdot g'-g\cdot h'}{h^2}$, entonces
+	$$f'(x)=\dfrac{(x+1)\cdot 1' -1\cdot(x+1)'}{(x+1)^2}=\dfrac{1\cdot0 - 1\cdot 1}{(x+1)^2}=\dfrac{1}{(x+1)^2}.$$\\
+
+    %--------------------7.
+    \item $f(x)=\dfrac{1}{x^2+1}+x^5\cos x$.\\\\
+	Respuesta.-\; Sean, $k(x)=1,\; g(x)=x^2+1,\; h(x)=x^5$ y $j(x)=\cos x$. Ya que $\left(\dfrac{k}{g}\right)'=\dfrac{g\cdot k'-k\cdot g'}{g^2}$, $(hj)'=h\cdot j'+j\cdot h'$ y la derivada de $\cos x$ es $-\sen x$, entonces 
+	$$\begin{array}{rcl}
+	    &=&\lim\limits_{h\to 0} \dfrac{(x^2+1)\cdot1'-1\cdot (x^2+1)'}{(x^2+1)^2}+x^5\cdot (\cos x)'+\cos x\cdot (x^5)'\\\\
+	    &=&\lim\limits_{h\to 0}\dfrac{- 2x}{(x^2+1)^2}+x^5\cdot (-\sen x) + \cos x\cdot 5x^4\\\\
+	\end{array}$$
+
+    %--------------------8.
+    \item $f(x)=\dfrac{x}{x-1},\quad x\neq 1$.\\\\
+	Respuesta.-\; Sean $k(x)=x$ y $g(x)=x-1$. Ya que $\left(\dfrac{k}{g}\right)'=\dfrac{g\cdot k'-k\cdot g'}{g^2}$ para $g\neq 0$, entonces
+	$$f'(x) = \dfrac{x-1 - x}{(x-1)^2} = -\dfrac{1}{(x-1)^2}.$$\\
+
+    %--------------------9.
+    \item $f(x)=\dfrac{1}{2+\cos x}.$\\\\
+	Respuesta.-\; $$f'(x)=\dfrac{(2+\cos x)\cdot 0+\sen x}{(2+\cos x)^2}=\dfrac{\sen x}{(2+\cos x)^2}.$$\\
+
+    %--------------------10.
+    \item $f(x)=\dfrac{x^2+3x+2}{x^4+x^2+1}$.\\\\
+	Respuesta.-\; $$f'(x)=\dfrac{(x^4+x^2+1)(2x+3)-(x^2+3x+2)(4x^3+2x)}{(x^4+x^2+1)^2} = \dfrac{2x^5+9x^4+8x^3+3x^2+2x-3}{(x^4+x^2+1)^2}.$$\\
+
+    %--------------------11.
+    \item $f(x)=\dfrac{2-\sen x}{2-\cos x}$.\\\\
+	Respuesta.-\; $$\begin{array}{rcl}
+	    f'(x)&=&\dfrac{(-\cos x)(2-\cos x)-(2-\sen x)(\sen x)}{(2-\cos x)^2}\\\\
+		 &=&\dfrac{-2\cos x + \cos^2 x - 2\sen x +\sen^2 x}{(2-\cos x)^2}\\\\
+		 &=&\dfrac{1-2(\sen x + \cos x)}{(2-\cos x)^2}
+	\end{array}$$
+	\vspace{.7cm}
+
+    %--------------------12.
+    \item $f(x)=\dfrac{x\sen x}{1+x^2}$.\\\\
+	Respuesta.-\; Primero escribimos 
+	$$f(x)=\dfrac{x\sen x}{1+x^2}=x\left(\dfrac{\sen x}{1+x^2}\right)$$
+	Luego usando el la regla del producto y del cociente para derivadas tenemos,
+	$$f'(x)=\dfrac{\sen x}{1+x^2}+x\left[\dfrac{(1+x^2)\cos x - 2x\sen x}{(1+x^2)^2}\right] =\dfrac{\sen x + x \cos x}{1+x^2}- \dfrac{2x^2\sen x}{(1+x^2)^2}.$$\\
+
+    %--------------------13.
+    \item Se supone que la altura $f(t)$ de un proyectil, $t$ segundos después de haber sido lanzado hacia arriba a partir del suelo con una velocidad inicial de $v_0$ metros por segundo, está dada por la fórmula:
+	$$f(t)=v_0t-16t^2.$$
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Aplíquese el método descrito en la Sección 4.2 para probar que la velocidad media del proyectil durante el intervalo de tiempo de $t$ a $t+h$ es $v_0-32t-16h$ pies sobre segundo, y que la velocidad instantánea en el instante $t$ es $v_0-32t$ pies por segundo.\\\\
+		Respuesta.-\; La velocidad media es dada por,
+		$$\dfrac{f(t+h)-f(t)}{h} = \dfrac{v_0(t+h)-16(t+h)^2-v_0t+16t^2}{h} = v_0-32t-16h.$$\\
+		Luego, la velocidad instantánea está dada por,
+		$$\begin{array}{rcl}
+		\lim\limits_{h\to 0}\dfrac{v_0(t+h)-16(t+h)^2-v_0t+16t^2}{h}&=&\lim\limits_{h\to 0}\dfrac{v_0t+v_0h-16t^2-32th-16h^2-v_0t+16t^2}{h}\\\\
+									    &=& \lim\limits_{h\to 0}\dfrac{v_0h-32th-16t^2}{h}\\\\
+									    &=&\lim_{h\to 0}v_0-32t-16h\\\\
+									    &=&v_0-32t.\\\\
+		\end{array}$$
+
+	    %---------- (b)
+	    \item Calcúlese (en función de $v_0$) el tiempo necesario para que la velocidad se anule.\\\\
+		Respuesta.-\; Para ello igualamos $v_0-32t$ a cero como sigue,
+		$$v_0-32t=0\quad \Rightarrow \quad t=\dfrac{v_0}{32}.$$\\
+
+	    %---------- (c)
+	    \item ¿Cuál es la velocidad de retorno a la Tierra?.\\\\
+		Respuesta.-\; Sea $f'(t)=0$, entonces 
+		$$v_0t-16t^2=0\quad \Rightarrow \quad t(v_0-16t)=0\quad \Rightarrow \quad t=\dfrac{v_0}{16}.$$
+		Esto significa que el proyectil regresa a la tierra luego de $\frac{v_0}{16}$ segundos. Luego la velocidad de retorno será:
+		$$v\left(\dfrac{v_0}{16}\right) = v_0-32\cdot \dfrac{v_0}{16}=v_0-2v_0=-v_0.$$\\
+
+	    %---------- (d)
+	    \item ¿Cuál debe ser la velocidad inicial del proyectil para que regrese a la tierra al cabo de $1$ segundo? ¿y al cabo de $10$ segundos? ¿y al cabo de $T$ segundos?.\\\\
+		Respuesta.-\; La velocidad inicial para que el proyectil regrese a la tierra luego de un segundo será:
+		$$f(1)=0\quad \Rightarrow \quad v_0\cdot 1 -16\cdot 1^2 = 0 \quad \Rightarrow \quad v_0=16.$$
+		Después la velocidad inicial para que el proyectil regrese a la tierra luego de 10 segundos será:
+		$$f(10)=0\quad \Rightarrow \quad v_0\cdot 10-16\cdot 10^2 = 0\quad \Rightarrow \quad v_0=160.$$
+		Y para que vuelva luego de $T$ segundos será:
+		$$f(T)=0\quad \Rightarrow \quad v_0\cdot T-16\cdot T^2 = 0\quad \Rightarrow \quad v_0=16T.$$\\
+
+	    %---------- (e)
+	    \item Pruébese que el proyectil se mueve con aceleración constante.\\\\
+		Demostración.-\; La aceleración constante viene dada por $f''(t)$, es decir,
+		$$f''(t)=v'(t)=\dfrac{d}{dt}(v_0-32t)=-32.$$\\
+
+	    %---------- (f)
+	    \item Búsquese un ejemplo de otra fórmula para la altura que dé lugar a una aceleración constante de $-20$ pies por segundo al cuadrado.\\\\
+		Respuesta.-\; Sea $f(t)=v_0t-10t^2$, entonces $f'(t)=v_0-20t$ y $f''(t)=-20\; ft/sec^2$.\\\\
+
+	\end{enumerate}
+
+    %--------------------14.
+    \item ¿Cuál es el coeficiente de variación del volumen de un cubo con respecto a la longitud de cada lado?.\\\\
+	Respuesta.-\; El volumen de un cubo viene dado por $V(x)=x^3$, por lo tanto el coeficiente de variación vendrá dado por,
+	$$V'(x)=3x^2.$$\\
+
+    %--------------------15.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item El área de un círculo de radio $r$ es $\pi r^2$ y su circunferencia es $2\pi r$. Demostrar que el coeficiente de variación del área respecto al radio es igual a la circunferencia.\\\\
+		Demostración.-\; Sea $C(r)=\pi r^2$. Dado que el coeficiente de variación es la derivada de $C(r)$ entonces,
+		$$C'(r)=2\pi r.$$
+		Tal como se quiere.\\\\
+
+	    %---------- (b)
+	    \item El volumen de una esfera de radio $r$ es $4\pi r^3/3$ y su área es $4\pi r^2.$ Demostrar que el coeficiente de variación del volumen respecto al radio es igual al área.\\\\
+		Demostración.-\; Sea $V(r)=4\pi r^3/3$. Dado que el coeficiente de variación es la derivada de $V(r)$ entonces,
+		$$V'(r)=4\pi r^2.$$\\
+
+	\end{enumerate}
+
+    En los ejercicios del 16 al 23, obtener una fórmula para $f'(x)$ si $f(x)$ es la que se indica.\\\\
+
+    %--------------------16.
+    \item $f(x)=\sqrt{x},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la definición de derivada para número con coeficiente racional se tiene,
+	$$f'(x)=\dfrac{1}{2}x^{-\frac{1}{2}},\qquad x>0.$$\\
+
+    %--------------------17.
+    \item $f(x)=\dfrac{1}{1+\sqrt{x}},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para cocientes y la derivada de una potencia racional se tiene,
+	$$f'(x)=\dfrac{(1+\sqrt{x})\cdot 0 - 1\cdot \frac{1}{2}x^{-\frac{1}{2}}}{(1+\sqrt{x})^2}=-\dfrac{1}{2\sqrt{x}(1+\sqrt{x})^2}\qquad x>0.$$\\
+
+    %--------------------18.
+    \item $f(x)=x^{3/2},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para potencias racionales se tiene,
+	$$f'(x)=\dfrac{3}{2}x^{\frac{1}{2}},\qquad x>0.$$\\
+
+    %--------------------19.
+    \item $f(x)=x^{-3/2},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para potencias racionales se tiene,
+	$$f'(x)=-\dfrac{3}{2}x^{-\frac{5}{2}},\qquad x>0.$$\\
+
+    %--------------------20.
+    \item $f(x)=x^{1/2}+x^{1/3}+x^{1/4},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para potencias racionales se tiene,
+	$$f'(x)=\dfrac{1}{2}x^{-\frac{1}{2}}+\dfrac{1}{3}x^{-\frac{2}{3}}+\dfrac{1}{4}x^{-\frac{3}{4}},\qquad x>0.$$\\
+
+    %--------------------21.
+    \item $x^{-1/2}+x^{-1/3}+x^{-1/4},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para potencias racionales se tiene,
+	$$f'(x)=-\dfrac{1}{2}x^{-\frac{3}{2}}-\dfrac{1}{3}x^{-\frac{4}{3}}-\dfrac{1}{4}x^{-\frac{5}{4}},\qquad x>0.$$\\
+
+    %--------------------22.
+    \item $f(x)=\dfrac{\sqrt{x}}{1+x},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para cocientes y la derivada de una potencia racional se tiene,
+	$$f'(x)=\dfrac{\frac{1}{2}x^{-\frac{1}{2}(1+x)-\sqrt{x}}}{(1+x)^2} = \dfrac{1+x-2x}{2\sqrt{x}(1+x)^2} = \dfrac{1-x}{2\sqrt{x}(1+x)^2}.$$\\
+
+    %--------------------23.
+    \item $f(x)=\dfrac{x}{1+\sqrt{x}},\qquad x>0$. \\\\
+	Respuesta.-\; Usando la derivada para cocientes y la derivada de una potencia racional se tiene,
+	$$f'(x)=\dfrac{1+\sqrt{x}-x\left(\frac{1}{2}x^{-\frac{1}{2}}\right)}{(1+\sqrt{x})^2} = \frac{2+\sqrt{x}}{2(1+\sqrt{x})^2}.$$\\
+
+    %--------------------24.
+    \item Sean $f_1,\ldots,f_n$ funciones que admiten derivadas $f_1',\ldots, f_n'$. Dar una regla para la derivación del producto $g=f_1\ldots f_n$ y demostrarla por inducción. Demostrar que para aquellos puntos $x$, en los que ninguno de los valores $f_1(x),\ldots,f_n(x)$ es cero, tenemos
+	$$\dfrac{g'(x)}{g(x)}=\dfrac{f_1'(x)}{f_1(x)}+\ldots + \dfrac{f_n'(x)}{f_n(x)}.$$\\
+	Demostración.-\; Según la derivada para productos se tendría que demostra,
+	$$g' = f_1'\cdot f_2\cdot f_3 \cdots f_n + f_1\cdot f_2' \cdot f_3 \cdots f_n + \ldots + f_1\cdot f_2 \cdot f_{n-1} \cdot f_n'.$$
+	Par ello tomamos $n=2$ por lo que la derivada nos queda,
+	$$f'=f_1'\cdot f_2 + f_1\cdot f_2'$$
+	Por lo que es cierto para $n=2$. Supongamos luego que la afirmación:
+	$$g'=f_1'\cdot f_2\cdot f_3 \cdots f_n + f_1\cdot f_2'\cdot f_3 \cdots f_n + \ldots + f_1\cdot f_2 \cdots f_{n-1}\cdot f_n'.$$
+	es cierta para $n$. Por lo que demostraremos que es cierta para $n+1$ de la siguiente manera,
+	$$\begin{array}{rcl}
+	    g&=&(f_1\cdot f_2\cdots f_n)\cdot f_{n+1}\\\\
+	     &=&(f_1\cdot f_2 \cdots f_n)'\cdot f_{n+1}+(f_1\cdot f_2\cdot \cdots f_n)\cdot f_{n+1}'\\\\
+	     &=&f_1'\cdot f_2 \cdot f_3 \cdots f_n\cdot f_{n+1}+f_1\cdot f_2'\cdot f_3 \cdots f_n\cdot f_{n+1}\\\\
+	     &+& \ldots + f_1\cdot f_2 \cdots f_{n-1}\cdot f_n'\cdot f_{n+1}+f_1\cdot f_2 \cdots f_n\cdot f_{n+1}'.\\\\
+	\end{array}$$	
+	Por lo tanto es cierto para $n+1$, así para $g=f_1\cdot f_2 \cdots f_n$ tenemos la derivada,
+	$$g' = f_1'\cdot f_2\cdot f_3 \cdots f_n + f_1\cdot f_2' \cdot f_3 \cdots f_n + \ldots + f_1\cdot f_2 \cdot f_{n-1} \cdot f_n'.$$
+	Por otro lado. Sea $x$ un punto tal que $f_1(x)\neq 0$ para $i=1,\ldots,n$, entonces
+	$$\dfrac{g'(x)}{g(x)}= \dfrac{f_1'\cdot f_2 \cdots f_n}{f_1 \cdots f_n} + \ldots  + \dfrac{f_1 \cdots f_{n-1}\cdot f_n'}{f_1\cdots f_n} = \dfrac{f_1'\cdots f_n}{f_1 \cdots f_2}+\ldots + \dfrac{f_1\cdots f_n'}{f_1\cdots f_n} = \dfrac{f_1'}{f_1}+\ldots + \dfrac{f_n'}{f_n}$$
+
+    %--------------------25.
+    \item Comprobar la pequeña tabla de derivadas que sigue. Se sobreentiende que las fórmulas son válidas para aquellos valores de $x$ para los que $f(x)$ está definida.\\
+	    $$\begin{array}{cc|cc}
+		f(x) & f'(x) & f(x) & f'(x) \\
+		\hline
+		\tan x & \sec^2x & \sec x & \tan x \sec x\\
+		       \cot x&-\csc^2 x&\csc x&-\cot x \csc x\\
+	    \end{array}$$\\
+
+	Demostración.-\; Verificaremos que si $f(x)=\tan x$ entonces $f'(x)=\sec^2 x$. Sabemos que por la identidad trigonométrica 
+	$$\tan x = \dfrac{\sen x}{\cos x}$$
+	Luego, aplicando las distintas reglas de derivación,
+	$$f'(x) = \dfrac{\cos x \sen x - \sen x (-\sen x)}{\cos^2x} = \dfrac{\cos^2 x + \sen^2 x}{\cos^2 x}=\dfrac{1}{\cos^2 x} = \sec^2 x.$$\\
+	Ahora, verificaremos que si $f(x)=\cot x$ implica que $f'(x)=-\csc^2x$. Sea $f(x)=\cot x =\dfrac{\cos x}{\sen x}$. De donde,
+	$$f'(x)=\dfrac{(-\sen^2x)\sen x-\cos x\cos x}{\sen^2x} = \dfrac{-\sen^2 x - \cos^2 x}{\sen^2 x} = -\dfrac{1}{\sen^2 x} = -\csc^2x.$$\\
+	Después verificamos que si $f(x)=\csc x$ entonces $f'(x)=\tan x \sec x$. Sea $f(x)=\sec x =\dfrac{1}{\cos x}$. Usando las reglas de derivación tenemos,
+	$$f'(x)=\dfrac{\sen x}{\cos^2 x} = \dfrac{\sen x}{\cos x}\cdot \dfrac{1}{\cos x} = \tan x \sec x.$$\\
+	Por último verificaremos que si $f(x)=\csc x$ entonces $f'(x)=-\cot \csc x.$ Sea $f(x)=\csc x = \dfrac{1}{\sen x}$. De donde,
+	$$f'(x)=\dfrac{-\cos x}{\sen^2 x}=-\dfrac{\cos x}{\sen^2 x}\cdot \dfrac{1}{\sen x} = -\cot x \csc x.$$\\\\
+
+En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende que cada fórmula será válida para aquellos valores de $x$ para los que $f(x)$ esté definida.\\\\
+
+    %--------------------26.
+    \item $f(x)=\tan x \sec x.$\\\\
+	Respuesta.-\; Sean $(\tan x)'=\sec^2 x$ y $(\sec x)'=\tan x \sec x$, entonces usando las reglas de derivación para el producto,
+	$$f'(x)=\sec^2 x \sec x + \tan x (\tan x \sec x)=\sec^3x + \tan^2 x \sec x.$$\\
+
+    %--------------------27.
+    \item $f(x)=x\tan x$.\\\\
+	Respuesta.-\; Sea $(\tan x)'=\sec^2 x$, entonces usando las reglas de derivación para el producto se tiene,
+	$$f'(x)=\tan x + x\sec^2 x.$$\\
+
+    %--------------------28.
+    \item $f(x)=\dfrac{1}{x}+\dfrac{2}{x^2}+\dfrac{3}{x^3}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=-\dfrac{1}{x^2}-\dfrac{4}{x^3}-\dfrac{9}{x^4}.$$\\
+
+    %--------------------29.
+    \item $f(x)=\dfrac{2x}{1-x^2}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{2(1-x^2)-2x(-2x)}{(1-x^2)^2}=\dfrac{2+2x^2}{(1-x^2)^2}.$$\\
+
+    %--------------------30.
+    \item $f(x)=\dfrac{1+x-x^2}{1-x+x^2}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{(1-2x)(1-x+x^2)-(1+x-x^2)(-1+2x)}{(1-x+x^2)^2}=\dfrac{2(1-2x)}{(1-x+x^2)^2}.$$\\
+
+    %--------------------31.
+    \item $f(x)=\dfrac{\sen x}{x}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{(\cos x)x-\sen x}{x^2}.$$\\
+
+    %--------------------32.
+    \item $f(x)=\dfrac{1}{x+\sen x}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{-1-\cos x}{(x+\cos x^2)^2}.$$\\
+
+    %--------------------33.
+    \item $f(x)=\dfrac{ax+b}{cx+d}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{a(cx+d)-(ax+b)c}{(cx+d)^2}=\dfrac{ad-bd}{(cx+d)^2}.$$\\
+
+    %--------------------34.
+    \item $f(x)=\dfrac{\cos x}{2x^2+3}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$f'(x)=\dfrac{-\sen x(2x^2+3)-(\cos x)4x}{(2x^2+3)^2}=-\dfrac{\sen x(2x^2+3)-4x\cos x}{(2x^2+3)^2}.$$\\
+
+    %--------------------35.
+    \item $f(x)=\dfrac{ax^2+bx+c}{\sen x + \cos x}$.\\\\
+	Respuesta.-\; Usando la regla de derivación para cocientes tenemos,
+	$$\begin{array}{rcl}
+	    f'(x)&=&\dfrac{(2ax+b)(\sen x + \cos x)-(ax^2+bx+c)(\cos x - \sen x)}{(\sen x + \cos x)^2}\\\\
+		 &=&\dfrac{(2ax+b)(\sen x + \cos x)+(ax^2+bx+c)(\sen x - \cos x)}{1+\sen 2x}\\\\
+	\end{array}$$
+
+    %--------------------36.
+    \item Si $f(x)=(ax+b)\sen x + (cx+d)\cos x$, determinar valores de las constantes $a,b,c,d$ tal que $f'(x)=x\cos x$.\\\\
+	Respuesta.-\; Sea 
+	$$f'(x)=a\sen x + (ax+b)\cos x + c\cos x + (cx+d)(-\sen x)=(a-d-cx)\sen x + (ax+b+c)\cos x.$$
+	Luego por hipótesis tenemos,
+	$$x\cos x = (a-d-cx)\sen x+(ax+b+c)\cos x$$
+	Comparando los coeficientes de $cos x$ y $\sen x$, se tiene
+	$$a-d-cx = 0\qquad \mbox{y}\qquad ax+b+c=x \; \Rightarrow \;(a-1)x+b+c=0.$$
+	De donde,
+	$$cx=0 \quad \Rightarrow \quad c=0 \qquad \mbox{y}\qquad (a-1)x=0\quad \Rightarrow \quad a=1$$
+	Igualando nos queda,
+	$$1-d = 0 \quad \Rightarrow \quad d=1.$$
+	Por lo tanto 
+	$$\begin{array}{rcl}
+	    x\cos x &=& (1-0x-1)\sen x + (1x-0+0)\cos x \\
+		    &=&0\sen x +x \cos x\\
+		    &=&x\cos x\\
+	\end{array}$$
+	\vspace{.7cm}
+
+    %--------------------37.
+    \item Si $g(x)=(ax^2+bx+c)\sen x + (dx^2+ex+f)\cos x,$ determinar valores de las constantes $a,b,c,d,e,f$ tal es que $g'(x)=x^2\sen x$.\\\\
+	Respuesta.-\; Sea,
+	$$\begin{array}{rcl}
+	    g'(x)&=&(2ax+b)\sen x + (ax^2+bx+c)\cos x + (2dx+e)\cos x - (dx^2+cx+f)\sen x\\
+		 &=&\left[-dx^2+(2a-e)x+(b+f)\right]\sen x + \left[ax^2+(b+2d)+(c+e)\right]\cos x\\
+	\end{array}$$
+	Ya que $g'(x)=x^2\sen x$ tenemos
+	$$-dx^2+(2a-c)x+b+f=x^2\qquad \mbox{y}\qquad ax^2+(b+2d)+c+e=0.$$
+	Luego, de la ecuación de la izquierda, igualando potencias similares de $x$ tenemos,
+	$$d=-1,\quad 2a-e=0,\quad b+f=0.$$
+	Por otro lado de la ecuación de la derecha, igualando potencias similares de $x$ tenemos,
+	$$a=0,\quad b+2d=0,\quad c+e=0.$$
+	Por último igualando todas estos resultados, nos queda
+	$$2\cdot 0 - 0 \; \Rightarrow \; e=0,\qquad b+2(-1)=0 \; \Rightarrow \; b=2, \qquad c+0=0 \; \Rightarrow \; c=0,\qquad 2+f=0\; \Rightarrow \; f=-2.$$
+	Por lo tanto,
+	$$a=0,\quad b=2,\quad d=-1,\quad c=0,\quad f=-2.$$\\
+
+    %--------------------38.
+    \item Dada la fórmula 
+	$$1+x+x^2+\ldots + x_n = \dfrac{x^{n+1}-1}{x-1}$$
+
+	válida si $x\neq 1$, determinar por derivación, fórmulas para las siguientes sumas:\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $1+2x+3x^2+\ldots + nx^{n-1}$.\\\\
+		Respuesta.- Veamos que 
+		$$(1+x+x^2+\ldots+x^n)' = 1+2x+3x^2+\ldots + nx^{n-1}.$$
+		Por lo que,
+		$$\begin{array}{rcl}
+		    1+2x+3x^2+\ldots+nx^{n-1} &=&\left(\dfrac{x^{n+1}}{x-1}\right)'\\\\
+					      &=&\dfrac{(x-1)\left[(n+1)x^n\right]-(x^{n+1}-1)1}{(x-1)^2}\\\\
+					      &=&\dfrac{nx^{n+1}-(n+1)x^n + 1}{(x-1)^2}\\\\
+		\end{array}$$
+
+
+	    %---------- (b)
+	    \item $1^2x+2^2x^2+3^2x^3+\ldots + n^2x^n$.\\\\
+		Respuesta.-\; Sea 
+		    $$(1+2x+3x^2+\ldots+nx^{n-1})'=\left(\dfrac{nx^{n+1}-(n+1)x^n + 1}{(x-1)^2}\right)'$$
+
+		$$\begin{array}{cl}
+		    \Rightarrow&2+6x+\ldots + n(n-1)x^{n-2}\\\\
+			       &=\dfrac{(x-1)^2\left[n(n+1)x^n - n(n+1)x^{n-1}\right]-(2x-2)\left[nx^{n+1}-(n+1)x^n+1\right]}{(x-1)^4}\\\\
+		    \Rightarrow&\left[1+4x+9x^2+\ldots + (n-1)^2x^{n-2}\right]+\left[1+2x+3x^2+\ldots + (n-1)x^{n-2}\right]\\\\
+			       &=\dfrac{(n-1)\left[n(n+1)x^n - n(n+1)x^{n-1}\right]-2\left[nx^{n+1}-(n+1)x^n + 1\right]}{(x-1)^3}\\
+		    \Rightarrow & \left(\dfrac{1}{x}\right) \left[1^2x+2^2x^2+\ldots+(n-1)^2x^{n-1}\right]+\left[1+2x+\ldots + (n-1)x^{n-2}\right]\\\\
+				&= \dfrac{(n^2-n)x^{n+1}-2(n^2-1)x^n + n(n+1)x^{n-1}-2}{(x-1)^3}\\\\
+		\end{array}$$
+		Entonces, por el segundo término en la suma de la izquierda tenemos,
+		$$\begin{array}{rcl}
+		    1+2x+\ldots + (n-1)x^{n-2} &=& (1+x+\ldots + x^n)' -nx^{n-1} \\\\
+					       &=&\left(\dfrac{x^{n+1}-1}{x-1}\right)'-nx^{n-1}\\\\
+					       &=&\dfrac{nx^{n+1}-(n+1)x+1}{(x-1)^2}-nx^{n-1}\\\\
+					       &=&\dfrac{(n+1)x^n-nx^{n-1}+1}{(x-1)^2}.\\\\
+		\end{array}$$
+
+		Por lo tanto, reemplazando esto en la expresión anterior,
+		$$\begin{array}{cl}
+		    &\dfrac{1}{x}\left[1^2x+2^2x^2+\ldots + (n-1)^2x^{n-1}\right]\\\\
+		    &=\dfrac{(n^2-n)x^{n+1}-2(n^2-1)x^n + n(n+1)x^{n-1}-2}{(x-1)^3}-\dfrac{(n-1)x^n-nx^{n-1}+1}{(x-1)^2}\\\\
+		    \Rightarrow & 1^2x+2^2x^2+\ldots + (n-1)^2 x^{n-1} + n^2 x^n\\\\
+				&=x\left\{\dfrac{(n^2-n)x^{n+1}-2(n^2-1)x^n + n(n+1)x^{n-1}-2-\left[(x-1)((x-1)x^n+nx^{n-1}+1)\right]}{(x-1)^3}\right\}\\\\
+		    \Rightarrow & 1^2+x+2^2x^2+\ldots + (n-1)^2 x^{n-1} + n^2 x^n\\\\
+				&=\dfrac{n^2x^{n+3}-(2n^2+2n-1)x^{n+2}+(n+1)^2x^{n+1}-x^2-x}{(x-1)^3}\\\\
+		\end{array}$$
+
+
+	\end{enumerate}
+
+    %--------------------39.
+    \item Sea $f(x)=x^n$, siendo $n$ entero positivo. Utilizar el teorema del binomio para desarrollar $(x+h)^n$ y deducir la fórmula
+    $$\dfrac{f(x+h)-f(x)}{h}=nx^{n-1}+\dfrac{n(n-1)}{2}x^{n-2}h + \ldots + nxh^{n-2}+h^{n-1}$$
+    Expresar el segundo miembro en forma de sumatorio. Hágase que $h\to 0$ y deducir que $f'(x)=nx^{n-1}$. Indicar los teoremas relativos a límites que se han empleado.\\\\
+	Respuesta.-\; Sea 
+	$$(n+h)^n = \sum_{k=0}^n {n\choose k}x^kh^{n-k}.$$
+	el teorema del binomio. Así tenemos,
+	$$\begin{array}{rcl}
+	    \dfrac{f(x+h)-f(x)}{h}&=&\dfrac{1}{h}\left[(x+h)^n - x^n\right]\\\\
+				  &=&\displaystyle\dfrac{1}{h}\left[\left(\sum_{k=0}^n {n\choose k}x^k h^{n-k}\right)-x^n\right]\\\\
+				  &=&\displaystyle\dfrac{1}{h}\left[\sum_{k=0}^{n-1}{n\choose k}x^kh^{n-k}\right]\\\\
+				  &=&\displaystyle\sum_{k=0}^{n-1}{n\choose k}x^k h^{n-k-1}\\\\
+				  &=&nx^{n-1}+\dfrac{n(n-1)}{2}x^{n-2}+\ldots + h^{n-1}\\\\
+	\end{array}$$
+	Tomando el límite de $h\to 0$ a ambos lados de la ecuación concluimos que,
+	$$f'(x)=\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}=nx^{n-1}.$$\\
+
+\end{enumerate}
+
+\end{comment}
+
+
+\section{Interpretación geométrica de la derivada como una pendiente}

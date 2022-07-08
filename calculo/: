@@ -304,22 +304,7 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 	$$f'(0)=\lim_{h\to 0}\dfrac{f(0+h)-f(0)}{h}=\lim_{h\to 0}\dfrac{h^2-0}{h}=0.$$
 	Luego,
 	$$\lim_{h\to 0^+}\lim_{h\to 0}\dfrac{f(0+h)-f(0)}{h}=0= \lim_{h\to 0^-}\dfrac{f(0+h)-f(0)}{h}$$
-
 	Entonces, $f$ es diferencial en $0$.\\\\
-
-    %-------------------- 15.
-    \item 
-	\begin{enumerate}[\bfseries]
-
-	    %---------- (a)
-	    \item Sea $f$ una función tal que $|f(x)|\leq x^2$ para todo $x$. Demuestre que $f$ es diferenciable en el punto $0$.\\\\
-		Demostración.-\; 
-
-	    %---------- (b)
-	    \item Este resultado se puede generalizar si $x^2$ se sustituye por $|g(x)|$, en el caso de que $g$ cumpla una determina propiedad. ¿Cuál?.\\\\
-		Respuesta.-\;
-
-	\end{enumerate}
 	
 
 \end{enumerate}

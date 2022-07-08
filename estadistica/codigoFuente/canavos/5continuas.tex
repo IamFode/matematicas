@@ -154,3 +154,33 @@ $$P(a\leq X_B \leq b) = P\left(\dfrac{a-np-0.5}{\sqrt{np(1-p)}}\leq Z_N\leq \dfr
 
 
 \section{La distribución uniforme}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Se dice que una variable aleatoria $X$ está distribuida uniformemente sobre el intervalo $(a,b)$ si su función de densidad de probabilidad está dada por:
+	$$f(x;a,b) = \left\{ \begin{array}{ll}
+		\dfrac{1}{b-a} & a\leq x\leq b \\\\
+		0 & \mbox{para cualquier otro valor.} \\
+	\end{array} \right.$$
+    \end{def.}
+\end{tcolorbox}
+
+\textbf{La función de distribución acumulativa} se determina de manera fácil y está dada por
+\begin{tcolorbox}
+    $$P(X\leq x)=F_{x;a,b}=\dfrac{1}{b-a}\int_a^x dt = \left\{\begin{array}{ll}
+	    0 & x<a,\\
+	    \dfrac{x-a}{b-a} & a\leq x\leq b,\\
+	    1 & x>b.
+	\end{array}\right.$$
+\end{tcolorbox}
+
+Se sigue entonces que para cualquier subintervalo $(a_1,b_1)$ interior a $(a,b)$:
+$$P(a_1\leq X\leq b_1)=F(b_1;a,b)-F(a_1;a,b)=\dfrac{b_1-a_1}{b-a}.$$\\
+
+El \textbf{valor esperado} de una variable aleatoria distribuida de manera uniforme es 
+
+\begin{tcolorbox}
+    $$E(X)=\dfrac{1}{b-a}\int_a^b x\;dx = \dfrac{a+b}{2}.$$
+\end{tcolorbox}
+
+
