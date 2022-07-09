@@ -309,17 +309,63 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 
     %-------------------- 15.
     \item 
-	\begin{enumerate}[\bfseries]
+	\begin{enumerate}[(a)]
 
 	    %---------- (a)
 	    \item Sea $f$ una función tal que $|f(x)|\leq x^2$ para todo $x$. Demuestre que $f$ es diferenciable en el punto $0$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Tenemos que
+		$$|f(x)|\leq x^2 \quad \Rightarrow \quad |f(0)|=0\quad \Rightarrow \quad f(0)=0.$$
+		Ahora, vemos que
+		$$\bigg|\dfrac{f(h)}{h}\bigg|\leq \dfrac{h^2}{|h|}\quad \Rightarrow \quad \bigg|\dfrac{f(h)}{h}\bigg|\leq |h|.$$
+		Por lo tanto,
+		$$\begin{array}{rcl}
+		    \lim\limits_{h\to 0}\dfrac{f(h)}{h}&\leq&\lim\limits_{h\to 0}|h|\\\\
+		    \lim\limits_{h\to 0} \dfrac{f(h)}{h}&=&0\\\\
+		    \lim\limits_{h\to 0} \dfrac{f(h)-0}{h}&=&0\\\\
+		    \lim\limits_{h\to 0} \dfrac{f(0+h)-f(0)}{0}&=&0\\\\
+					      f'(0)&=&0\\\\
+		\end{array}$$
+		Así, ya que $f'(0)$ existe entonces $f$ es diferencial en $0$.\\\\
 
 	    %---------- (b)
 	    \item Este resultado se puede generalizar si $x^2$ se sustituye por $|g(x)|$, en el caso de que $g$ cumpla una determina propiedad. ¿Cuál?.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Reemplacemos $x^2=|g(x)|$ por lo que nos queda
+		$$|f(x)|\leq |g(x)|.$$
+		Al ser $f$ diferenciable en $0$ entonces $f'(0)$ debe existir, por lo tanto
+		$$|g(x)|\geq |f(x)|\quad \Rightarrow \quad |g(0)|\geq |f(0)|\quad \Rightarrow \quad |g(0)|\geq 0.$$
+		Luego para $g$ tan pequeño como se quiera,
+		$$|g(0)|=0\quad \Rightarrow \quad g(0)=0.$$
+		Además podemos observar,
+		$$\begin{array}{rcl}
+		    \bigg|\dfrac{f(h)}{h}\bigg|&\leq&\bigg|\dfrac{g(h)}{h}\bigg|\\\\
+		    \lim\limits_{h\to 0}\bigg|\dfrac{f(h)}{h}\bigg|&\leq&\lim\limits_{h\to 0}\bigg|\dfrac{g(h)}{h}\bigg|\\\\
+		    \lim\limits_{h\to 0} \bigg|\dfrac{f(h)-f(0)}{h}\bigg| & \leq &\lim\limits_{h\to 0} \bigg|\dfrac{g(h)-f(0)}{h}\bigg|\\\\
+					       |f'(0)|&\leq&|g'(0)|\\\\
+					       0&\leq&|g'(0)|\\\\
+					       |g'(0)|&\geq&0\\
+		\end{array}$$	
+		Luego ya que $g'(0)$ podría ser lo más pequeño que se quiera, entonces
+		$$|g'(0)|=0\quad \Rightarrow \quad g'(0)=0.$$
+		Por lo tanto $f$ es diferenciable en $0$ si se tiene,
+		$$g(0)=0\qquad \mbox{y} \qquad g'(0).$$\\
 
 	\end{enumerate}
-	
 
+    %-------------------- 16.
+    \item Sea $\alpha>1.$ Si $f$ satisface $|f(x)|\leq |x|^{\alpha}$, demuestre que $f$ es diferenciable en $0$.\\\\
+	Demostración.-\; Sea $|f(x)|\leq |x|^\alpha\;\Rightarrow \; -x^\alpha\leq f(x)\leq x^\alpha$ y $f(0)=0$ entonces,
+	$$-h^{\alpha-1}\leq \dfrac{f(h)-f(0)}{h}\leq h^{\alpha-1}\quad \Rightarrow \quad -h^\alpha \leq f(h)\leq h^\alpha.$$
+	Por lo que concluimos que $f$ es diferencial en $0$ y $f'(0)=0.$\\\\
+
+
+    %-------------------- 17.
+    \item Sea $0<\beta<1.$ Demuestre que si $f$ satisface $|f(x)|\geq |x|^{\beta}$ y $f(0)=a,$ entonces $f$ no es diferenciable en $0$.\\\\
+	Demostración.-\; Sea $|f(x)|\geq |x|^\beta\;\Rightarrow \; -x^\beta\leq f(x)\leq x^\beta$ y $f(0)=0$ entonces,
+
+	$$-h^{\beta-1}\leq \dfrac{f(h)-f(0)}{h}\leq h^{\beta-1}.$$
+	Ya que $0<\beta < 1,$, $h^\beta$ será $\dfrac{1}{h^{1-\beta}}$, el cual tiende a $\infty$. Por lo tanto $f$ no es diferenciable en $0$.\\\\
+
+    %-------------------- 18.
+    \item 
+	
 \end{enumerate}

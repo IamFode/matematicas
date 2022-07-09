@@ -448,3 +448,309 @@ pnorm((13-20)/2,lower.tail = FALSE)
 ```
 
 ## 5.17.
+Una organización llevó a cabo una encuesta entre $1600$ personas, seleccionadas de manera aleatoria de toda la población del país, para conocer su opinión con respecto a la seguridad en las plantas de energía nuclear. De este grupo, el $60\%$ opinó que las plantas de energía nuclear tienen muy poca seguridad. Con base en estos resultados ¿existe alguna razón para dudar que la población en general tiene una opinión neutral con respecto a este asunto?.
+
+Respuesta.- Sea $\mu = 1600\cdot 0.6 = 960$ y $\sigma = \sqrt{1600*0.4*(1-0.4)}=\sqrt{384}$, entonces
+
+$$P(X\leq 800) = P\left(Z\leq \dfrac{800-960}{\sqrt{384}}\right) = P(-160/\sqrt{384};0,1) = 0.$$
+
+```{r}
+pnorm((800-1600*0.6)/sqrt(1600*0.4*(1-0.4)))
+```
+
+Si existe ya que la probabilidad es prácticamente $0$.
+
+
+## 5.18.
+Sea $X$ una variable aleatoria distribuida binomialmente.
+
+### a)
+Para $n=15,\; p=0.25$ y $n=15$ y $p=0.5$, calcular las siguientes probabilidades:
+
+Respuesta.- 
+
+#### P(X=8)
+
+$$P(X=8) = p(8;15,0.25) = {15\choose 8}\cdot 0.25^{8} \cdot(1-0.25)^{15-8} = 0.01310682$$
+
+```{r}
+choose(15,8)*0.25^(8)*(1-0.25)^(15-8)
+dbinom(8,15,0.25)
+```
+
+$$P(X=8) = p(8;15,0.5) = {15\choose 8}\cdot 0.5^{8} \cdot(1-0.5)^{15-8}=0.1963806$$
+
+```{R}
+choose(15,8)*0.5^(8)*(1-0.5)^(15-8)
+dbinom(8,15,0.5)
+```
+
+#### P(X<=3)
+
+$$P(X\leq 3) = F(3;15,0.25) = \sum_{i=0}^3 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} =0.4612869$$
+
+```{r}
+pbinom(3,15,0.25)
+```
+
+$$P(X\leq 3) = F(3;15,0.5) = \sum_{i=0}^3 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.01757813$$
+
+```{R}
+pbinom(3,15,0.5)
+```
+
+#### P(X<=7)
+
+$$P(X\leq 7) = F(7;15,0.25) = \sum_{i=0}^7 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.9827002 $$
+
+```{r}
+pbinom(7,15,0.25)
+```
+
+$$P(X\leq 7) = F(8;15,0.5) = \sum_{i=0}^7 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.5$$
+
+```{R}
+pbinom(7,15,0.5)
+```
+
+#### P(X>=9)
+
+$$P(X\geq 9) =1-P(X< 9)=1-P(X\leq 8) = 1-F(8;15,0.25) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.004193014$$
+
+```{r}
+pbinom(8,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 9) = F(9;15,0.5) =1-P(X<9)= 1-P(X\leq 8) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.3036194$$
+
+```{R}
+pbinom(8,15,0.5,lower.tail = FALSE)
+```
+
+#### P(X>=12)
+
+$$P(X\geq 12) =1-P(X< 12)=1-P(X\leq 11) = 1-F(11;15,0.25) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0$$
+
+```{r}
+pbinom(12,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 12) = F(12;15,0.5) =1-P(X<12)= 1-P(X\leq 11) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.01757813$$
+
+```{R}
+pbinom(11,15,0.5,lower.tail = FALSE)
+```
+
+### b)
+Aproxímense los valores de las probabilidades anteriores mediante el empleo de la distribución normal.
+
+#### P(X=8)
+
+$$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(2.53;0,1) = 0$$
+```{r}
+dnorm((8-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(2.25;0,1) = 0$$
+
+#### P(X<=3)
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(-0.447;0,1) = 0.328$$
+
+```{r}
+pnorm((3-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-2.32;0,1) = 0.0102$$
+
+```{r}
+pnorm((3-15*0.5)/(sqrt(15*0.5*(1-0.5))))
+```
+
+#### P(X<=7)
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(1.937;0,1) = 0.9735$$
+
+```{r}
+pnorm((7-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-0.258;0,1) = 0.397$$
+
+```{r}
+pnorm((7-15*0.5)/(sqrt(15*0.5*(1-0.5))))
+```
+
+#### P(X>=9)
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(3.13;0,1) = 0$$
+
+```{r}
+pnorm((9-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(0.77;0,1) = 1-0.7794=0.2206$$
+
+```{r}
+pnorm((9-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+#### P(X>=12)
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(4.91;0,1) = 0$$
+
+```{r}
+pnorm((12-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(2.32;0,1) = 1-0.9898 = 0.0102$$
+
+```{r}
+pnorm((12-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+
+
+
+
+
+
+
+### c)
+Repetir los incisos a) y b) para $n=25$ y comparar resultados
+
+#### P(X=8)
+
+$$P(X=8) = p(8;25,0.25) = {25\choose 8}\cdot 0.25^{8} \cdot(1-0.25)^{25-8} = 0.1240561$$
+
+```{r}
+choose(25,8)*0.25^(8)*(1-0.25)^(25-8)
+dbinom(8,25,0.25)
+```
+
+$$P(X=8) = P\left(Z=\dfrac{8-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(0.8;0,1) = 0=0$$
+```{r}
+dnorm((8-25*0.25)/(sqrt(25*0.25*(1-0.25))))
+```
+
+
+$$P(X=8) = p(8;25,0.5) = {25\choose 8}\cdot 0.5^{8} \cdot(1-0.5)^{25-8}=0.032$$
+
+```{R}
+choose(25,8)*0.5^(8)*(1-0.5)^(25-8)
+dbinom(8,25,0.5)
+```
+
+$$P(X=8) = P\left(Z=\dfrac{8-25\cdot 0.5}{\sqrt{25\cdot 0.5\cdot (1-0.5)}}\right) = 0$$
+
+#### P(X<=3)
+
+$$P(X\leq 3) = F(3;25,0.25) = \sum_{i=0}^3 {25\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{25-i} =0.09621407$$
+
+```{r}
+pbinom(3,25,0.25)
+```
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(-0.5;0,1) = 0.0668$$
+
+```{r}
+pnorm((3-25*0.25)/(sqrt(25*0.25*(1-0.25))))
+```
+
+
+$$P(X\leq 3) = F(3;25,0.5) = \sum_{i=0}^3 {25\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{25-i}= 0$$
+
+```{R}
+pbinom(3,25,0.5)
+```
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-25\cdot 0.5}{\sqrt{25\cdot 0.5\cdot (1-0.5)}}\right) = p(-3.8;0,1) = 0$$
+
+```{r}
+pnorm((3-25*0.5)/(sqrt(25*0.5*(1-0.5))))
+```
+
+#### P(X<=7)
+
+$$P(X\leq 7) = F(7;25,0.25) = \sum_{i=0}^7 {25\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{25-i} = 0.7265062$$
+
+```{r}
+pbinom(7,25,0.25)
+```
+
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(;0,1) = 0.$
+
+```{r}
+pnorm((7-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X\leq 7) = F(8;15,0.5) = \sum_{i=0}^7 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.5$$
+
+```{R}
+pbinom(7,25,0.5)
+```
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-0.258;0,1) = 0.397$$
+
+```{r}
+pnorm((7-15*0.5)/(sqrt(15*0.5*(1-0.5))))
+```
+
+#### P(X>=9)
+
+$$P(X\geq 9) =1-P(X< 9)=1-P(X\leq 8) = 1-F(8;15,0.25) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.004193014$$
+
+```{r}
+pbinom(8,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(3.13;0,1) = 0$$
+
+```{r}
+pnorm((9-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+
+$$P(X\geq 9) = F(9;15,0.5) =1-P(X<9)= 1-P(X\leq 8) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.3036194$$
+
+```{R}
+pbinom(8,15,0.5,lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(0.77;0,1) = 1-0.7794=0.2206$$
+
+```{r}
+pnorm((9-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+#### P(X>=12)
+
+$$P(X\geq 12) =1-P(X< 12)=1-P(X\leq 11) = 1-F(11;15,0.25) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0$$
+
+```{r}
+pbinom(12,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(4.91;0,1) = 0$$
+
+```{r}
+pnorm((12-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+$$P(X\geq 12) = F(12;15,0.5) =1-P(X<12)= 1-P(X\leq 11) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.01757813$$
+
+```{R}
+pbinom(11,15,0.5,lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(2.32;0,1) = 1-0.9898 = 0.0102$$
+
+
+```{r}
+pnorm((12-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+
+
+
