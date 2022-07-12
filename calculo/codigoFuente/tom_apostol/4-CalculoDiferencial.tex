@@ -557,7 +557,9 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 
     %--------------------2.
     \item Sea $f(x)=\dfrac{2}{3}x^3+\dfrac{1}{2}x^2-x-1$ para todo $x$. Hallar los puntos de la gráfica de $f$ en los que la pendiente es:\\
+
 	\begin{enumerate}[a)]
+
 	    %---------- a)
 	    \item $0$.\\\\
 		Respuesta.-\; Sea $f'(x)=2x^2+x-1$, entonces
@@ -573,6 +575,8 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 		Respuesta.-\; Sea $f'(x)=2x^2+x-1$, entonces
 		$$f'(x)=2x^2+x-1=5\quad \Rightarrow \quad 2x^2+x-6=0 \quad \Rightarrow \quad x_1=-2,\quad x_2=\dfrac{3}{2}.$$\\
 
+	    %---------- d)
+
 	\end{enumerate}
 
     %--------------------3.
@@ -581,6 +585,74 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 	$$1+\cos x = 0 \quad \Rightarrow \quad \cos x = -1 \quad \Rightarrow \quad x=(2n+1)\pi,\; n\in \mathbb{Z}.$$\\
 
     %--------------------4.
-    \item 
+    \item Sea $f(x)=x^2+ax+b$ para todo $x$. Hallar los valores de $a$ y $b$ tales que la recta $y=2x$ sea tangente a la gráfica de $f$ en el punto $(2,3)$.\\\\
+	Respuesta.-\; Primero, derivamos $f(x)$, como sigue
+	$$g'(x)=2x+a.$$
+	Así, si la linea $y=2x$ es tangente a $f$ en el punto $(2,4)$, tenemos
+	$$f'(2)=2\quad \Rightarrow \quad 4+a=2 \quad \Rightarrow \quad a=-2.$$
+	Luego, el punto $(2,4)$ debe estar en la gráfica de $f$, es decir, 
+	$$f(2)=4\quad \Rightarrow \quad 4+(-2)2+b=4 \quad \Rightarrow \quad b=4.$$
+	Por lo tanto, los valores son $a=-2$ y $b=4$.\\\\
+
+    %--------------------5.
+    \item Hallar valores de las constantes $a,b$ y $c$ para los cuales las gráficas de los dos polinomios $f(x)=x^2+ax+b$ y $g(x)=x^3-c$ se intersecten en el punto $(1,2)$ y tengan la misma tangente en dicho punto.\\\\
+	Repuesta.-\; Dado que $f$ y $g$ se intersectan en $(1,2)$, podríamos tener $f(1)=g(1)=2$, de donde 
+	$$f(1)=2\;\rightarrow \; 1+a+b=2\qquad \mbox{y}\qquad g(1)=2\; \Rightarrow \; 1-c=2 \; \Rightarrow \; c=-1.$$
+	Luego, calculamos las derivadas para que podamos encontrar la pendiente de las rectas tangentes en este punto,
+	$$f'(x)=2x+a,\qquad g'(x)=3x^2.$$
+	Por el hecho de que estos deben ser los mismos en el punto $(1,2)$ tenemos
+	$$f'(1)=1\quad \Rightarrow \quad 2+a=3\quad \Rightarrow \quad a=1.$$
+	Por lo que $1+a+b=2\; \Rightarrow \; b=0.$ Por lo tanto las constantes son
+	$$a=1,\qquad b=0,\qquad c=-1.$$\\
+
+    %--------------------6.
+    \item Considérese la gráfica de la función $f$ definida por la ecuación $f(x)=x^2+ax+b$, siendo $a$ y $b$ constantes.
+
+	\begin{enumerate}[(a)]
+
+	    %---------- a)
+	    \item Hallar la pendiente de la cuerda que une los puntos de la gráfica para los que $x=x_1$ y $x=x_2$.\\\\
+		Respuesta.-\; Los puntos en la gráfica de $f$ en $x_1$ y $x_2$ son $\left(x_1,f(x_1)\right)$ y $\left(x_2,f(x_2)\right)$. Entonces la cuerda que los une tiene una pendiente dada 
+
+	    %---------- b)
+	    \item Hallar, en función de $x_1$ y $x_2$, todos los valores de $x$ para los que la tangente en $(x,f(x))$ tiene la misma pendiente que la cuerda de la parte a).\\\\
+		Repuesta.-\;
+
+	\end{enumerate}
+
+    %--------------------7.
+    \item Demostrar que la recta $y=-x$ es tangente a la curva dada por la ecuación $x^3-6x^2+8x$. Hallar los puntos de tangencia. ¿Vuelve la tangente a cortar la curva?.\\\\
+	Demostración.-\;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.6,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, % no box around the plot, only x and y axis
+		  axis y line=center, % the * suppresses the arrow tips
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-1,xmax=4,ymin=-5,ymax=4,
+		  enlargelimits=upper] % extend the axes a bit to the right and top
+		  \addplot[black,opacity=1]{x^3-6*x^2+8*x};
+		  \addplot[black,opacity=1]{-x};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	    Primero calculemos la derivada de la recta y la curva, respectivamente
+	    $$y'=-1,\qquad y_0'=3x^2-12x+8$$
+	    Luego igualando estas ecuaciones obtenemos
+	    $$y_1=3x^2-12x+8=-1\quad \Rightarrow \quad  x_1 = 3;\quad x_2=1.$$
+	    Luego, para que la linea sea tangente a la curva, el punto debe estar en la curva $y_0=x^3-6x^2+8x$ como sigue,
+	    \begin{itemize}
+		\item Para $x_1=3$, se tiene $y(3)=-3=-x$ por lo que $y=-x$ es tangente a la curva en $(3,-3)$.\\
+		\item Para $x_2=1$, se tiene $y(1)=1\neq -x$ por lo que $x_2$ no es tangente a la curva.\\
+	    \end{itemize}
+	    Esta linea tangente también corta la curva en $(0,0)$.\\\\
+
+    %--------------------8.
+    \item Dibujar la gráfica de la función cúbica $f(x)=x-x^3$ en el intervalo cerrado $-2\leq x\leq 2$. Hallar las constantes $m$ y $b$ de modo que la recta $y=mx+b$ sea tangente a la gráfica de $f$ en el punto $(-1,0)$. Una segunda recta que pasa por $(-1,0)$ es también tangente a la gráfica de $f$ en el punto $(a,c)$. Determinar las coordenadas $a$ y $c$.\\\\
+	Respuesta.-\; 
 
 \end{enumerate}

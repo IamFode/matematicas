@@ -3,6 +3,9 @@ title: "Ejercicios capítulo 5"
 author: "Christian Limbert Paredes Aguilera"
 date: "6/6/2022"
 output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r}
@@ -13,7 +16,9 @@ library(ggplot2)
 # Ejercicios Capítulo 5
 
 ## 5.1.
-En la misma gráfica, dibujar las distribuciones normales $N(0,5)$ y $N(0,4)$
+
+En la misma gráfica, dibujar las distribuciones normales $N(0,5)$ y
+$N(0,4)$
 
 Respuesta.-
 
@@ -24,11 +29,12 @@ legend(7, .1, legend=c("N(0,5)", "N(0,4)"),
        col=c("black", "red"), lty=1:1, cex=0.4)
 ```
 
-
 ## 5.2.
+
 Sea $X\sim N(50,10).$ Determinar las siguientes probabilidades
 
 ### a)
+
 $P(X<40)$
 
 Respuesta.-
@@ -41,6 +47,7 @@ integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(40-50)/10)
 ```
 
 ### b)
+
 $P(X<65)$
 
 Respuesta.-
@@ -52,17 +59,18 @@ integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(65-50)/10)
 ```
 
 ### c)
+
 $P(X>55)$
 
 Respuesta.-
 $$P(X<40) = P[Z>(55-50)/10] = 1 - P[Z\leq (55-50)/10] = 1-\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{55-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.3085375$$
-
 
 ```{r}
 pnorm(55,50,10,lower.tail = FALSE)
 ```
 
 ### d)
+
 $P(X>35)$
 
 Respuesta.-
@@ -73,6 +81,7 @@ pnorm(35,50,10,lower.tail = FALSE)
 ```
 
 ### e)
+
 $P(40<X<45)$
 
 Respuesta.-
@@ -83,6 +92,7 @@ pnorm(45,50,10) - pnorm(40,50,10)
 ```
 
 ### f)
+
 $P(38<X<62)$
 
 Respuesta.-
@@ -93,73 +103,88 @@ pnorm(62,50,10) - pnorm(38,50,10)
 ```
 
 ## 5.3.
+
 Sea $X\sim N(200,20)$. Determinar las siguientes probabilidades:
 
 ### a)
-P(185<X<210)
+
+P(185\<X\<210)
 
 Respuesta.-
 $$P\left(\dfrac{185-200}{20}<Z<\dfrac{210-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{210-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{185-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.4648351.$$
+
 ```{r}
 pnorm(210,200,20)-pnorm(185,200,20)
 ```
 
 ### b)
-P(215<X<250)
+
+P(215\<X\<250)
 
 Respuesta.-
 $$P\left(\dfrac{215-200}{20}<Z<\dfrac{250-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{250-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{215-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.2204177.$$
+
 ```{r}
 pnorm(250,200,20)-pnorm(215,200,20)
 ```
 
 ### c)
-P(X>240)
+
+P(X\>240)
 
 Respuesta.-
 $$P\left(Z>\dfrac{240-200}{20}\right) = P 1-\left(Z\leq\dfrac{240-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{240-200}{20}} e^{\frac{-z^2}{2}}\; dz = 0.02275013.$$
+
 ```{r}
 pnorm(240,200,20,lower.tail = FALSE)
 ```
+
 ### d)
-P(X>178)
+
+P(X\>178)
 
 Respuesta.-
 $$P\left(Z>\dfrac{178-200}{20}\right) = P 1-\left(Z\leq\dfrac{178-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{178-200}{20}} e^{\frac{-z^2}{2}}\; dz =0.8643339.$$
+
 ```{r}
 pnorm(178,200,20,lower.tail = FALSE)
 ```
 
 ## 5.4.
-Sea $X\sim N(-25,10)$. Encontrar los valores de $x$ que corresponden a las siguientes probabilidades:
+
+Sea $X\sim N(-25,10)$. Encontrar los valores de $x$ que corresponden a
+las siguientes probabilidades:
 
 ### a)
-$P(X<x)=0.1251$.
-Respuesta.- Viendo la tabla z tenemos
+
+$P(X<x)=0.1251$. Respuesta.- Viendo la tabla z tenemos
 $$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -1.15\cdot 10 - 25 = -35.5$$
+
 ```{r}
 qnorm(0.1251)*10-25
 ```
 
 ### b)
-$P(X<x) = 0.9382$
-Respuesta.- 
+
+$P(X<x) = 0.9382$ Respuesta.-
 $$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 1.54\cdot 10 - 25 = -9.6$$
 
 ```{r}
 qnorm(0.9382)*10-25
 ```
+
 ### c)
-$P(X>x) 0 0.3859$
-Respuesta.- 
+
+$P(X>x) 0 0.3859$ Respuesta.-
 $$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -0.29\cdot 10 - 25 = -27.9$$
 
 ```{r}
 qnorm(0.3859)*10-25
 ```
+
 ### d)
-$P(X>x) 0 0.8340$
-Respuesta.- 
+
+$P(X>x) 0 0.8340$ Respuesta.-
 $$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 0.97\cdot 10 - 25 = .15.3$$
 
 ```{r}
@@ -167,11 +192,13 @@ qnorm(0.8340)*10-25
 ```
 
 ## 5.5.
-Sea $X\sim N(10,5)$. Encontrar los valores de $x$ que corresponden a las siguientes probabilidades:
+
+Sea $X\sim N(10,5)$. Encontrar los valores de $x$ que corresponden a las
+siguientes probabilidades:
 
 ### a)
-$P(X<x)=0.05$
-Respuesta.- 
+
+$P(X<x)=0.05$ Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.645\cdot 5+10 = 1.775$$
 
 ```{r}
@@ -179,8 +206,8 @@ qnorm(0.05)*5+10
 ```
 
 ### b)
-$P(X<x)=0.95$
-Respuesta.- 
+
+$P(X<x)=0.95$ Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.645\cdot 5+10=18.225$$
 
 ```{r}
@@ -188,8 +215,8 @@ qnorm(0.95)*5+10
 ```
 
 ### c)
-$P(X<x)=0.99$
-Respuesta.- 
+
+$P(X<x)=0.99$ Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 2.33\cdot 5+10 = 21.65$$
 
 ```{r}
@@ -197,8 +224,8 @@ qnorm(0.99)*5+10
 ```
 
 ### d)
-$P(X<x)=0.01$
-Respuesta.- 
+
+$P(X<x)=0.01$ Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -2.33\cdot 5+10=-1.65$$
 
 ```{r}
@@ -206,8 +233,8 @@ qnorm(0.01)*5+10
 ```
 
 ### e)
-$P(X<x)=0.025$
-Respuesta.- 
+
+$P(X<x)=0.025$ Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.96\cdot 5+10 = 0.2$$
 
 ```{r}
@@ -215,9 +242,10 @@ qnorm(0.025)*5+10
 ```
 
 ### f)
+
 $P(X<x)=0.975$
 
-Respuesta.- 
+Respuesta.-
 $$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.96\cdot 5+10 = 19.8$$
 
 ```{r}
@@ -225,13 +253,17 @@ qnorm(0.975)*5+10
 ```
 
 ## 5.6.
-Sea $X\sim N(\mu,\sigma)$. Determinar la media y la varianza de $X$ si los cuantiles son $x_{0.4} = 50$ y $x_{0.8}=100$.
 
-Respuesta.- Sea $z_1=\dfrac{x_{0.4}-\mu}{\sigma} \qquad z_2= \dfrac{z_{0.8}-\mu}{\sigma}$, entonces
+Sea $X\sim N(\mu,\sigma)$. Determinar la media y la varianza de $X$ si
+los cuantiles son $x_{0.4} = 50$ y $x_{0.8}=100$.
+
+Respuesta.- Sea
+$z_1=\dfrac{x_{0.4}-\mu}{\sigma} \qquad z_2= \dfrac{z_{0.8}-\mu}{\sigma}$,
+entonces
 
 $$\dfrac{50-\mu}{z_1}=\dfrac{100-\mu}{z_2}$$
 
-Así, 
+Así,
 $$\mu = \dfrac{100z_1 - 50z_2}{z_1-z_2} = \dfrac{100\cdot (-0.225)-50\cdot 0.845}{-0.225-0.845} = 60.51402$$
 
 Luego reemplazamos $\mu$ en $z_1$ para hallar $\sigma$,
@@ -245,21 +277,37 @@ mu
 ```
 
 ## 5.7.
-Una universidad espera recibir, para el siguiente año escolar, 16000 solicitudes de ingreso el primer año de licenciatura. Se supone que las calificaciones obtenidas por los aspirantes en la prueba SAT se pueden calcular, de manera adecuada, por una distribución normal con media 950 y desviación estándar 100. Si la universidad decide admitir al $25\%$ de todos los aspirantes que obtengan las calificaciones más altas en la prueba SAT, ¿cuál es la mínima calificación que es necesario obtener en esta prueba, para ser admitido por la universidad?
 
-Respuesta.- Sea $P(X>x_{0.25})$ entonces  $P(X<x_{0.75}) = -1.96$ así
+Una universidad espera recibir, para el siguiente año escolar, 16000
+solicitudes de ingreso el primer año de licenciatura. Se supone que las
+calificaciones obtenidas por los aspirantes en la prueba SAT se pueden
+calcular, de manera adecuada, por una distribución normal con media 950
+y desviación estándar 100. Si la universidad decide admitir al $25\%$ de
+todos los aspirantes que obtengan las calificaciones más altas en la
+prueba SAT, ¿cuál es la mínima calificación que es necesario obtener en
+esta prueba, para ser admitido por la universidad?
+
+Respuesta.- Sea $P(X>x_{0.25})$ entonces $P(X<x_{0.75}) = -1.96$ así
 $$x_{0.75} = 0.675*100+950 = 1017.5 \simeq 1018$$
 
 ```{r}
-x025 = qnorm(0.75)*100+950
-x025
+qnorm(0.75)*100+950
 ```
 
 ## 5.8.
-Una fábrica produce pistones cuyos diámetros se encuentran adecuadamente clasificados por una distribución normal con un diámetro promedio de $5$ cm y una desviación estándar igual a $0.001$ cm. Para que un pistón sirva, su diámetro debe encontrarse entre $4.998$ y $5.002$ cm. Si el diámetro del pistón es menor que $4.998$ se desecha; si es mayor que $5.002$ el pistón puede reprocesarse. ¿Qué porcentaje de pistones servirá? ¿Qué porcentaje será desechado? ¿Qué porcentaje será reprocesado?.
 
-Respuesta.- Sea $X\sim N(\mu,\sigma)$ de donde, el porcentaje que servirá vendrá dado por 
-$$P \left( \dfrac{4.998-5}{0.001} \leq Z \leq \dfrac{5.002-5}{0.001} \right)$$ 
+Una fábrica produce pistones cuyos diámetros se encuentran adecuadamente
+clasificados por una distribución normal con un diámetro promedio de $5$
+cm y una desviación estándar igual a $0.001$ cm. Para que un pistón
+sirva, su diámetro debe encontrarse entre $4.998$ y $5.002$ cm. Si el
+diámetro del pistón es menor que $4.998$ se desecha; si es mayor que
+$5.002$ el pistón puede reprocesarse. ¿Qué porcentaje de pistones
+servirá? ¿Qué porcentaje será desechado? ¿Qué porcentaje será
+reprocesado?.
+
+Respuesta.- Sea $X\sim N(\mu,\sigma)$ de donde, el porcentaje que
+servirá vendrá dado por
+$$P \left( \dfrac{4.998-5}{0.001} \leq Z \leq \dfrac{5.002-5}{0.001} \right)$$
 entonces,
 
 $$P(-2\leq Z\leq 2) = F_Z(2,0,1)-F_Z(-2,0,1) = 0.9772-0.0228 = 0.9544.$$
@@ -278,28 +326,46 @@ pnorm((4.998-5)/0.001)
 El porcentaje que será reprocesado está dado por:
 
 $$P(Z\geq 2) = 1 - F_Z(2;0,1) = 1 - 0.9772 = 0.0228.$$
+
 ```{r}
 pnorm((5.002-5)/0.001, lower.tail = FALSE)
 ```
 
 ## 5.9.
-La demanda mensual de cierto producto $A$ tiene una distribución normal con una media de $200$ unidades y desviación estándar igual a $40$ unidades. La demanda de otro producto $B$ también tiene una distribución normal con media de $500$ unidades y desviación estándar igual a $80$ unidades. Un comerciante que vende estos productos tiene en su almacén $280$ unidades de $A$ y $650$ de $B$ al comienzo de un mes, ¿cuál es la probabilidad de que, en el mes, se vendan todas las unidades de ambos productos? Puede suponerse independencia entre ambos eventos.
 
-Respuesta.- Sea $z_A=\dfrac{280-200}{40}=2$ y $z_B=\dfrac{650-500}{80}=1.875$, entonces para hallar la probabilidad de que se vendan ambos productos estará dado por 
+La demanda mensual de cierto producto $A$ tiene una distribución normal
+con una media de $200$ unidades y desviación estándar igual a $40$
+unidades. La demanda de otro producto $B$ también tiene una distribución
+normal con media de $500$ unidades y desviación estándar igual a $80$
+unidades. Un comerciante que vende estos productos tiene en su almacén
+$280$ unidades de $A$ y $650$ de $B$ al comienzo de un mes, ¿cuál es la
+probabilidad de que, en el mes, se vendan todas las unidades de ambos
+productos? Puede suponerse independencia entre ambos eventos.
+
+Respuesta.- Sea $z_A=\dfrac{280-200}{40}=2$ y
+$z_B=\dfrac{650-500}{80}=1.875$, entonces para hallar la probabilidad de
+que se vendan ambos productos estará dado por
 $$P(Z_A\geq 2)\cdot P(Z_B\geq 1.875) = \left[1-F_{Z_A}(2;0,1)\right]\cdot\left[1-F_{Z_B}(1.875;0,1)\right] = (1-0.9772)(1-0.9696) = 0.00069312$$
-
 
 ```{r}
 pnorm((280-200)/40,lower.tail = FALSE)*pnorm((650-500)/80,lower.tail = FALSE)
 ```
 
 ## 5.10.
-El peso de cereal que contiene una caja se aproxima a una distribución normal con una media de $600$ gramos. El proceso de llenado de las cajas está diseñado para que de entre 100 cajas, el peso de una se encuentre fuera del intervalo 590-610 gramos. ¿Cuál es el valor máximo de la desviación estándar para alcanzar este requerimiento?
 
-Respuesta.- Si una caja de entre 100 (1/100) queda fuera del intervalo $590-610$  entonces lo que queda dentro estará dado por $(99/100)=0.99$. Sabemos que la distribución Normal estandarizada es simétrica respecto al 0, por lo que,
+El peso de cereal que contiene una caja se aproxima a una distribución
+normal con una media de $600$ gramos. El proceso de llenado de las cajas
+está diseñado para que de entre 100 cajas, el peso de una se encuentre
+fuera del intervalo 590-610 gramos. ¿Cuál es el valor máximo de la
+desviación estándar para alcanzar este requerimiento?
+
+Respuesta.- Si una caja de entre 100 (1/100) queda fuera del intervalo
+$590-610$ entonces lo que queda dentro estará dado por $(99/100)=0.99$.
+Sabemos que la distribución Normal estandarizada es simétrica respecto
+al 0, por lo que,
 $$P\left(\dfrac{-10}{\sigma}\leq Z\leq \dfrac{10}{\sigma}\right)=P\left(\dfrac{-10}{\sigma}\leq Z\leq 0\right)+P\left(0\leq Z \leq \dfrac{10}{\sigma}\right)$$
 
-Luego, ya que 
+Luego, ya que
 $$P\left(\dfrac{-10}{\sigma}\leq Z\leq 0\right)=P\left(0\leq Z \leq \dfrac{10}{\sigma}\right)$$
 
 entonces,
@@ -313,10 +379,17 @@ $$P\left(Z\leq \dfrac{10}{\sigma}\right)-0.5 \geq 0.495 \quad \Rightarrow \quad 
 Así,
 $$ z\geq 2.58 \quad \Rightarrow \quad \dfrac{10}{\sigma}\geq 2.58 \quad \Rightarrow \quad \sigma \leq 3.876.$$
 
-Por lo que el valor máximo de $\sigma$ para alcanzar el requerimiento estará dado por $3.876.$
+Por lo que el valor máximo de $\sigma$ para alcanzar el requerimiento
+estará dado por $3.876.$
 
 ## 5.11
-En una tienda de descuento la demanda diaria de acumuladores para automóvil se calcula mediante una distribución normal con una media de 50 acumuladores que tienen una desviación estándar de $10$. En dos días consecutivos se venden $80$ y $75$ acumuladores respectivamente. Si estos días son típicos, ¿qué tan probable es, bajo las suposiciones dadas, vender $80$ o más y $75$ o más acumuladores?
+
+En una tienda de descuento la demanda diaria de acumuladores para
+automóvil se calcula mediante una distribución normal con una media de
+50 acumuladores que tienen una desviación estándar de $10$. En dos días
+consecutivos se venden $80$ y $75$ acumuladores respectivamente. Si
+estos días son típicos, ¿qué tan probable es, bajo las suposiciones
+dadas, vender $80$ o más y $75$ o más acumuladores?
 
 Respuesta.- Sea $X\sim N(50,10)$ entonces
 
@@ -332,15 +405,27 @@ pnorm((80-50)/10,lower.tail = FALSE) * pnorm((75-50)/10,lower.tail = FALSE)
 ```
 
 ## 5.12-
-Un fabricante de aviones desea obtener remaches para montar los propulsores de sus aviones. El esfuerzo a la tensión mínimo necesario de cada remache es de $25000$ lb. Se pide a tres fabricantes de remaches (A,B y C) que proporcionen toda la información pertinente con respecto a los remaches que producen. Los tres fabricantes aseguran que la resistencia a la tensión de sus remaches se encuentran distribuida, de manera aproximada, normalmente con un valor medio de $28000,30000$ y $29000$ lb, respectivamente.
+
+Un fabricante de aviones desea obtener remaches para montar los
+propulsores de sus aviones. El esfuerzo a la tensión mínimo necesario de
+cada remache es de $25000$ lb. Se pide a tres fabricantes de remaches
+(A,B y C) que proporcionen toda la información pertinente con respecto a
+los remaches que producen. Los tres fabricantes aseguran que la
+resistencia a la tensión de sus remaches se encuentran distribuida, de
+manera aproximada, normalmente con un valor medio de $28000,30000$ y
+$29000$ lb, respectivamente.
 
 ### a)
+
 ¿Tiene el fabricante la suficiente información para hacer una selección?
 
 Respuesta.- No, ya qua no se definio la desviación estándar.
 
 ### b)
-Supóngase que las desviaciones estándar para A, B y C son $1000, 1800$ y $1200$, respectivamente. ¿Cuál es la probabilidad de que un remache producido ya sea por A, B o C no reúna los requisitos mínimos?
+
+Supóngase que las desviaciones estándar para A, B y C son $1000, 1800$ y
+$1200$, respectivamente. ¿Cuál es la probabilidad de que un remache
+producido ya sea por A, B o C no reúna los requisitos mínimos?
 
 Respuesta.- Para $X_A \sim N(28000,1000)$ se tiene
 $$P(X_A\leq 25000) = P\left(Z_A\leq \dfrac{25000-28000}{1000}\right) = F_{Z_A}(-3;0,1) = 0.0013.$$
@@ -353,7 +438,6 @@ Para $X_B \sim N(30000,1800)$ se tiene
 
 $$P(X_B\leq 25000) = P\left(Z_B\leq \dfrac{25000-30000}{1800}\right) = F_{Z_B}(-2.78;0,1) = 0.0027$$
 
-
 ```{r}
 pnorm((25000-30000)/1800)
 ```
@@ -362,24 +446,35 @@ Para $X_C \sim N(29000,1200)$ se tiene
 
 $$P(X_C\leq 25000) = P\left(Z_C\leq \dfrac{25000-29000}{1200}\right) = F_{Z_C}(-3.33;0,1) = 0.0004$$
 
-
 ```{r}
 pnorm((25000-29000)/1200)
 ```
 
 ### c)
-Si usted fuera el fabricante de aviones, ¿podría elegir entre A, B y C, con base a sus respuesta al inciso b)? ¿Por qué?.
- 
-Respuesta.- Escogería a $C$ ya que tiene la probabilidad más baja de que se rompa un remache.
+
+Si usted fuera el fabricante de aviones, ¿podría elegir entre A, B y C,
+con base a sus respuesta al inciso b)? ¿Por qué?.
+
+Respuesta.- Escogería a $C$ ya que tiene la probabilidad más baja de que
+se rompa un remache.
 
 ## 5.13.
-Un fabricante de escapes para automóviles desea garantizar su producto durante un periodo igual al de la duración del vehículo. El fabricante supone que el tiempo de duración de su producto es una variable aleatoria con una distribución normal, con una vida promedio de tres años y una desviación estándar de seis meses. Si el costo de reemplazo por unidad es de $\$ 10$, ¿cuál puede ser el costo total de reemplazo para los primeros dos años, si se instalan 1000000 unidades?
+
+Un fabricante de escapes para automóviles desea garantizar su producto
+durante un periodo igual al de la duración del vehículo. El fabricante
+supone que el tiempo de duración de su producto es una variable
+aleatoria con una distribución normal, con una vida promedio de tres
+años y una desviación estándar de seis meses. Si el costo de reemplazo
+por unidad es de $\$ 10$, ¿cuál puede ser el costo total de reemplazo
+para los primeros dos años, si se instalan 1000000 unidades?
 
 Respuesta.- Sea $\mu = 3$ y $\sigma = 0.5$, entonces
 
 $$P(X\leq 2) = P(Z\leq \dfrac{2-3}{0.5}) = P(Z\leq -2) = F_Z(-2;0,1) = 0.0228.$$
 
-Ahora ya que el costo de reemplazo es de $\% 10$, de donde sólo el $2.28\%$ de $1000000$ será cambiado entonces el costo total de reemplazo estará dado por:
+Ahora ya que el costo de reemplazo es de $\% 10$, de donde sólo el
+$2.28\%$ de $1000000$ será cambiado entonces el costo total de reemplazo
+estará dado por:
 
 $$1000000*0.0228*10=228000.$$
 
@@ -387,9 +482,12 @@ $$1000000*0.0228*10=228000.$$
 pnorm((2-3)/0.5)*1000000*10
 ```
 
-
 ## 5.14.
-El tiempo necesario para armar cierta unidad es una variable aleatoria normalmente distribuida con una media de $30$ minutos y desviación estándar igual a dos minutos. Determinar el tiempo de armado de manera tal que la probabilidad de exceder este sea de $0.02$.
+
+El tiempo necesario para armar cierta unidad es una variable aleatoria
+normalmente distribuida con una media de $30$ minutos y desviación
+estándar igual a dos minutos. Determinar el tiempo de armado de manera
+tal que la probabilidad de exceder este sea de $0.02$.
 
 Respuesta.- Sea $\mu = 30$ y $\sigma=2$, entonces
 
@@ -399,14 +497,21 @@ $$P\left( Z\geq \dfrac{T-30}{2}\right) = 0.02 \; \Rightarrow \; 1-F_Z(T) = 0.02 
 2*qnorm(0.02,lower.tail = FALSE)+30
 ```
 
-
 ## 5.15.
-Un periódico llevó a cabo una encuesta entre $400$ personas seleccionadas aleatoriamente, en un estado, sobre el control de armas. De las $400$ personas, 220 se pronunciaron en favor de un estricto control.
+
+Un periódico llevó a cabo una encuesta entre $400$ personas
+seleccionadas aleatoriamente, en un estado, sobre el control de armas.
+De las $400$ personas, 220 se pronunciaron en favor de un estricto
+control.
 
 ### a)
-¿Qué tan probable resulta el hecho de tener $220$ o más personas a favor del control de armas, si la población en este estado se encuentra dividida en opinión de igual manera?.
 
-Respuesta.- Sea, $p=0.5$, $\mu=np=400\cdot 0.5 = 200$ y $\sigma = \sqrt{np(1-p)} = \sqrt{400\cdot 0.5\cdot 0.5} = 10$, entonces
+¿Qué tan probable resulta el hecho de tener $220$ o más personas a favor
+del control de armas, si la población en este estado se encuentra
+dividida en opinión de igual manera?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=400\cdot 0.5 = 200$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{400\cdot 0.5\cdot 0.5} = 10$, entonces
 
 $$P\left(Z\geq \dfrac{220-200}{10}\right) = P(Z\geq 2) = 1-F_Z(2;0,1) = 0.0228.$$
 
@@ -415,9 +520,14 @@ pnorm((220-200)/10,lower.tail = FALSE)
 ```
 
 ### b)
-Supóngase que se encuesta a $2000$ personas teniendo la misma proporción de estas a favor del control de armas, que la del inciso anterior. ¿Cómo cambiaría su respuesta al inciso a)?.
 
-Respuesta.- Sea, $p=0.5$, $\mu=np=2000\cdot 0.5 = 1000$ y $\sigma = \sqrt{np(1-p)} = \sqrt{2000\cdot 0.5\cdot 0.5} = \sqrt{500}$, entonces dado que la proporción es de $220/400=0.55$
+Supóngase que se encuesta a $2000$ personas teniendo la misma proporción
+de estas a favor del control de armas, que la del inciso anterior. ¿Cómo
+cambiaría su respuesta al inciso a)?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=2000\cdot 0.5 = 1000$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{2000\cdot 0.5\cdot 0.5} = \sqrt{500}$,
+entonces dado que la proporción es de $220/400=0.55$
 
 $$P(X\geq 1100) = P\left(Z\geq \dfrac{1100-1000}{\sqrt{500}}\right) = P(Z\geq 4.47) = 1-F_Z(4.47;0,1) = 0$$
 
@@ -426,9 +536,13 @@ pnorm((1100-1000)/sqrt(500),lower.tail = FALSE)
 ```
 
 ### c)
-Si el número de personas encuestadas es de $10000$, ¿cuál es la probabilidad de tener una ocurrencia diferente al del inciso b)?.
 
-Respuesta.- Sea, $p=0.5$, $\mu=np=10000\cdot 0.5 = 5000$ y $\sigma = \sqrt{np(1-p)} = \sqrt{10000\cdot 0.5\cdot 0.5} = 50$, entonces dado que la proporción es de $220/400=0.55$
+Si el número de personas encuestadas es de $10000$, ¿cuál es la
+probabilidad de tener una ocurrencia diferente al del inciso b)?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=10000\cdot 0.5 = 5000$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{10000\cdot 0.5\cdot 0.5} = 50$,
+entonces dado que la proporción es de $220/400=0.55$
 
 $$P(X\geq 5500) = P\left(Z\geq \dfrac{5500-5000}{50}\right) = P(Z\geq 10) = 1-F_Z(10;0,1) = 0$$
 
@@ -437,9 +551,15 @@ pnorm((5500-5000)/50,lower.tail = FALSE)
 ```
 
 ## 5.16.
-Una prueba de opción múltiple contiene $25$ preguntas y cada una de estas cinco opciones. ¿Cuál es la probabilidad de que, al contestar de manera aleatoria cada pregunta, más de la mitad de las respuetas sea incorrecta?
 
-Respuesta.- Sea $p=4/5$ la probabilidad de contestar una pregunta mal y dado que $\mu = np = 25\cdot \dfrac{4}{5} = 20$ y $\sigma = \sqrt{25\cdot \dfrac{4}{5}\cdot \dfrac{1}{5}} = 2$, entonces
+Una prueba de opción múltiple contiene $25$ preguntas y cada una de
+estas cinco opciones. ¿Cuál es la probabilidad de que, al contestar de
+manera aleatoria cada pregunta, más de la mitad de las respuetas sea
+incorrecta?
+
+Respuesta.- Sea $p=4/5$ la probabilidad de contestar una pregunta mal y
+dado que $\mu = np = 25\cdot \dfrac{4}{5} = 20$ y
+$\sigma = \sqrt{25\cdot \dfrac{4}{5}\cdot \dfrac{1}{5}} = 2$, entonces
 
 $$P(X\geq13) = P\left(Z\geq \dfrac{13-20}{2} \right) = 1-F_Z(-3.5) = 1-0.0002 = 0.9998$$
 
@@ -448,9 +568,17 @@ pnorm((13-20)/2,lower.tail = FALSE)
 ```
 
 ## 5.17.
-Una organización llevó a cabo una encuesta entre $1600$ personas, seleccionadas de manera aleatoria de toda la población del país, para conocer su opinión con respecto a la seguridad en las plantas de energía nuclear. De este grupo, el $60\%$ opinó que las plantas de energía nuclear tienen muy poca seguridad. Con base en estos resultados ¿existe alguna razón para dudar que la población en general tiene una opinión neutral con respecto a este asunto?.
 
-Respuesta.- Sea $\mu = 1600\cdot 0.6 = 960$ y $\sigma = \sqrt{1600*0.4*(1-0.4)}=\sqrt{384}$, entonces
+Una organización llevó a cabo una encuesta entre $1600$ personas,
+seleccionadas de manera aleatoria de toda la población del país, para
+conocer su opinión con respecto a la seguridad en las plantas de energía
+nuclear. De este grupo, el $60\%$ opinó que las plantas de energía
+nuclear tienen muy poca seguridad. Con base en estos resultados ¿existe
+alguna razón para dudar que la población en general tiene una opinión
+neutral con respecto a este asunto?.
+
+Respuesta.- Sea $\mu = 1600\cdot 0.6 = 960$ y
+$\sigma = \sqrt{1600*0.4*(1-0.4)}=\sqrt{384}$, entonces
 
 $$P(X\leq 800) = P\left(Z\leq \dfrac{800-960}{\sqrt{384}}\right) = P(-160/\sqrt{384};0,1) = 0.$$
 
@@ -460,14 +588,16 @@ pnorm((800-1600*0.6)/sqrt(1600*0.4*(1-0.4)))
 
 Si existe ya que la probabilidad es prácticamente $0$.
 
-
 ## 5.18.
+
 Sea $X$ una variable aleatoria distribuida binomialmente.
 
 ### a)
-Para $n=15,\; p=0.25$ y $n=15$ y $p=0.5$, calcular las siguientes probabilidades:
 
-Respuesta.- 
+Para $n=15,\; p=0.25$ y $n=15$ y $p=0.5$, calcular las siguientes
+probabilidades:
+
+Respuesta.-
 
 #### P(X=8)
 
@@ -485,7 +615,7 @@ choose(15,8)*0.5^(8)*(1-0.5)^(15-8)
 dbinom(8,15,0.5)
 ```
 
-#### P(X<=3)
+#### P(X\<=3)
 
 $$P(X\leq 3) = F(3;15,0.25) = \sum_{i=0}^3 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} =0.4612869$$
 
@@ -499,7 +629,7 @@ $$P(X\leq 3) = F(3;15,0.5) = \sum_{i=0}^3 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5
 pbinom(3,15,0.5)
 ```
 
-#### P(X<=7)
+#### P(X\<=7)
 
 $$P(X\leq 7) = F(7;15,0.25) = \sum_{i=0}^7 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.9827002 $$
 
@@ -513,7 +643,7 @@ $$P(X\leq 7) = F(8;15,0.5) = \sum_{i=0}^7 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5
 pbinom(7,15,0.5)
 ```
 
-#### P(X>=9)
+#### P(X\>=9)
 
 $$P(X\geq 9) =1-P(X< 9)=1-P(X\leq 8) = 1-F(8;15,0.25) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.004193014$$
 
@@ -527,7 +657,7 @@ $$P(X\geq 9) = F(9;15,0.5) =1-P(X<9)= 1-P(X\leq 8) = 1-\sum_{i=0}^{8} {15\choose
 pbinom(8,15,0.5,lower.tail = FALSE)
 ```
 
-#### P(X>=12)
+#### P(X\>=12)
 
 $$P(X\geq 12) =1-P(X< 12)=1-P(X\leq 11) = 1-F(11;15,0.25) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0$$
 
@@ -542,18 +672,21 @@ pbinom(11,15,0.5,lower.tail = FALSE)
 ```
 
 ### b)
-Aproxímense los valores de las probabilidades anteriores mediante el empleo de la distribución normal.
+
+Aproxímense los valores de las probabilidades anteriores mediante el
+empleo de la distribución normal.
 
 #### P(X=8)
 
 $$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(2.53;0,1) = 0$$
+
 ```{r}
 dnorm((8-15*0.25)/(sqrt(15*0.25*(1-0.25))))
 ```
 
 $$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(2.25;0,1) = 0$$
 
-#### P(X<=3)
+#### P(X\<=3)
 
 $$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(-0.447;0,1) = 0.328$$
 
@@ -567,7 +700,7 @@ $$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}
 pnorm((3-15*0.5)/(sqrt(15*0.5*(1-0.5))))
 ```
 
-#### P(X<=7)
+#### P(X\<=7)
 
 $$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(1.937;0,1) = 0.9735$$
 
@@ -581,7 +714,7 @@ $$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}
 pnorm((7-15*0.5)/(sqrt(15*0.5*(1-0.5))))
 ```
 
-#### P(X>=9)
+#### P(X\>=9)
 
 $$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(3.13;0,1) = 0$$
 
@@ -595,7 +728,7 @@ $$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)
 pnorm((9-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
 ```
 
-#### P(X>=12)
+#### P(X\>=12)
 
 $$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(4.91;0,1) = 0$$
 
@@ -609,148 +742,21 @@ $$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)
 pnorm((12-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
 ```
 
+## 5.19.
 
+Sea $X$ una variable aleatoria con distribución uniforme sobre el
+intervalo $(a,b)$
 
+### a)
 
+¿Cuál es la probabilidad de que $X$ tome un valor que se encuentre a una
+desviación estándar de la media?
 
+Respuesta.-
 
+### b) 
 
+¿Puede tomar $X$ un valor que se encuentre a dos desviaciones estándar
+de la media?
 
-### c)
-Repetir los incisos a) y b) para $n=25$ y comparar resultados
-
-#### P(X=8)
-
-$$P(X=8) = p(8;25,0.25) = {25\choose 8}\cdot 0.25^{8} \cdot(1-0.25)^{25-8} = 0.1240561$$
-
-```{r}
-choose(25,8)*0.25^(8)*(1-0.25)^(25-8)
-dbinom(8,25,0.25)
-```
-
-$$P(X=8) = P\left(Z=\dfrac{8-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(0.8;0,1) = 0=0$$
-```{r}
-dnorm((8-25*0.25)/(sqrt(25*0.25*(1-0.25))))
-```
-
-
-$$P(X=8) = p(8;25,0.5) = {25\choose 8}\cdot 0.5^{8} \cdot(1-0.5)^{25-8}=0.032$$
-
-```{R}
-choose(25,8)*0.5^(8)*(1-0.5)^(25-8)
-dbinom(8,25,0.5)
-```
-
-$$P(X=8) = P\left(Z=\dfrac{8-25\cdot 0.5}{\sqrt{25\cdot 0.5\cdot (1-0.5)}}\right) = 0$$
-
-#### P(X<=3)
-
-$$P(X\leq 3) = F(3;25,0.25) = \sum_{i=0}^3 {25\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{25-i} =0.09621407$$
-
-```{r}
-pbinom(3,25,0.25)
-```
-
-$$P(X\leq 3)=P\left(Z\leq \dfrac{3-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(-0.5;0,1) = 0.0668$$
-
-```{r}
-pnorm((3-25*0.25)/(sqrt(25*0.25*(1-0.25))))
-```
-
-
-$$P(X\leq 3) = F(3;25,0.5) = \sum_{i=0}^3 {25\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{25-i}= 0$$
-
-```{R}
-pbinom(3,25,0.5)
-```
-
-$$P(X\leq 3)=P\left(Z\leq \dfrac{3-25\cdot 0.5}{\sqrt{25\cdot 0.5\cdot (1-0.5)}}\right) = p(-3.8;0,1) = 0$$
-
-```{r}
-pnorm((3-25*0.5)/(sqrt(25*0.5*(1-0.5))))
-```
-
-#### P(X<=7)
-
-$$P(X\leq 7) = F(7;25,0.25) = \sum_{i=0}^7 {25\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{25-i} = 0.7265062$$
-
-```{r}
-pbinom(7,25,0.25)
-```
-
-
-$$P(X\leq 7)=P\left(Z\leq \dfrac{7-25\cdot 0.25}{\sqrt{25\cdot 0.25\cdot (1-0.25)}}\right) = p(;0,1) = 0.$
-
-```{r}
-pnorm((7-15*0.25)/(sqrt(15*0.25*(1-0.25))))
-```
-
-$$P(X\leq 7) = F(8;15,0.5) = \sum_{i=0}^7 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.5$$
-
-```{R}
-pbinom(7,25,0.5)
-```
-
-$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-0.258;0,1) = 0.397$$
-
-```{r}
-pnorm((7-15*0.5)/(sqrt(15*0.5*(1-0.5))))
-```
-
-#### P(X>=9)
-
-$$P(X\geq 9) =1-P(X< 9)=1-P(X\leq 8) = 1-F(8;15,0.25) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.004193014$$
-
-```{r}
-pbinom(8,15,0.25,lower.tail = FALSE)
-```
-
-$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(3.13;0,1) = 0$$
-
-```{r}
-pnorm((9-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
-```
-
-
-$$P(X\geq 9) = F(9;15,0.5) =1-P(X<9)= 1-P(X\leq 8) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.3036194$$
-
-```{R}
-pbinom(8,15,0.5,lower.tail = FALSE)
-```
-
-$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(0.77;0,1) = 1-0.7794=0.2206$$
-
-```{r}
-pnorm((9-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
-```
-
-#### P(X>=12)
-
-$$P(X\geq 12) =1-P(X< 12)=1-P(X\leq 11) = 1-F(11;15,0.25) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0$$
-
-```{r}
-pbinom(12,15,0.25,lower.tail = FALSE)
-```
-
-$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(4.91;0,1) = 0$$
-
-```{r}
-pnorm((12-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
-```
-
-$$P(X\geq 12) = F(12;15,0.5) =1-P(X<12)= 1-P(X\leq 11) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.01757813$$
-
-```{R}
-pbinom(11,15,0.5,lower.tail = FALSE)
-```
-
-$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(2.32;0,1) = 1-0.9898 = 0.0102$$
-
-
-```{r}
-pnorm((12-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
-```
-
-
-
-
+Repuesta.-

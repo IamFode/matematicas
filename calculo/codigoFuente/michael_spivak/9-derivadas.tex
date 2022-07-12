@@ -366,6 +366,86 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 	Ya que $0<\beta < 1,$, $h^\beta$ será $\dfrac{1}{h^{1-\beta}}$, el cual tiende a $\infty$. Por lo tanto $f$ no es diferenciable en $0$.\\\\
 
     %-------------------- 18.
+    \item Sea $f(x)=0$ si $x$ es irracional, y $1/q$ si $x=p/q$, fracción irreducible. Demuestre que $f$ no es diferenciable en $a$ para cualquier $a$.\\\\
+	Demostración.-\; Si $a$ es racional, al no ser $f$ continua en $a$ será $f$ derivable en $a$. Si $a=0 a_1a_2a_3\ldots$ es irracional y $h$ es racional, entonces $a+h$ es irracional, co lo que $f(a+h)-f(a)=0$. Pero si $h = -0.00\ldots 0 a_{n+1}a_{n+2}\ldots,$ entonces $a+h=0a_1a_2\ldots a_n 000 \ldots$, con lo que $f(a+h)\geq 10^{-n}$, mientras que $|h|<10^{-n}$, la cual hace que $|[f(a+h)-f(a)]/h|\geq 1$. Así pues, $[f(a+h)-f(a)/h]$ es $0$ para valores de $h$ tan  pequeños como se quiera y tiene valores absolutos mayores que $1$ también con $h$ tan pequeño como se quiera, lo cual dice que $\lim\limits_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$ no existe.\\\\
+
+    %-------------------- 19.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Suponga que $f(a)=g(a)=h(a)$, que $f(x)\leq g(x)\leq h(x)$ para todo $x$, y que $f'(a)=h'(a)$. Demuestre que $g$ es diferenciable en $a$, y que $f'(a)=g'(a)=h'(a)$.\\\\
+		Demostración.-\; Ya que $f(x)\leq g(x)\leq h(x)$ y $f(a)=g(a)=h(a)$, entonces
+
+		$$\begin{array}{rcccl}
+		    f(x)&\leq&g(x)&\leq&h(x)\\\\
+		    f(a+t)&\leq&g(a+t)&\leq&h(a+t)\\\\
+		    \dfrac{f(a+t)-f(a)}{t}&\leq&\dfrac{g(a+t)-g(a)}{t}&\leq&\dfrac{h(a+t)-h(a)}{t}\\\\
+		    \lim\limits_{h\to 0}\dfrac{f(a+t)f(a)}{t}&\leq&\lim\limits_{h\to 0}\dfrac{g(a+t)-g(a)}{t}&\leq&\lim\limits_{h\to 0}\dfrac{h(a+t)-h(a)}{t}\\\\
+		    f'(a)&\leq&g'(a)&\leq&h'(a)\\\\
+		\end{array}$$
+		Luego sabemos que $f'(a)=h'(a)$ lo que implica $g'(a)$ existe y $f'(a)=g'(a)=h'(a)$. Por lo tanto $g$ es diferenciable en $a$.\\\\
+
+
+	    %---------- (b)
+	    \item Demuestre que la conclusión no es cierta si se omite la hipótesis $f(a)=g(a)=h(a)$.\\\\
+		Demostración.-\; Se dará un contraejemplo sin la condición $f(a)=g(a)=h(a)$.\\
+		Sea $f(x)=-1$, $g(x)=\dfrac{1}{1+e^{-x}}$ y $h(x)=2.$ Entonces
+		    $$f(a) = -1,\quad g(a)=\dfrac{1}{1+e^{-a}},\quad h(a)=2.$$
+		    Por lo que la conclusión no es cierta.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 20.
+    \item Sea $f$ una función polinómica; veremos en el próximo capítulo que $f$ es diferenciable. La recta tangente a $f$ en $\left(a,f(a)\right)$ es la gráfica $g(x)=f'(a)(x-a)+f(a)$. Por tanto, $f(x)-g(x)$ es la función polinómica $d(x)=f(x)-f'(a)(x-a)-f(a)$. Ya hemos visto que si $f(x)=x^2$, entonces $d(x)=(x-a)^2,$ y si $f(x)=x^3,$ entonces $d(x)=(x-a)^2(x-2a)$.\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Halle $d(x)$ cuando $f(x)=x^4$, y demuestre que es divisible por $(x-a)^2$.\\\\
+		Demostración.-\; Se tiene,
+		$$\begin{array}{rcl}
+		    d(x)&=&f(x)-f(a)(x-a)-f(a)=x^4-4a^3(x-a)-a^4\\\\
+			&=&x^4-4a^3x+3a^4\\\\
+			&=&(x-a)(x^3+ax^2+a^2x-3a^3)\\
+		\end{array}$$
+		Por lo que $d(x)$ es divisible por $(x-a)^2$.\\\\
+
+	    %---------- (b)
+	    \item Parece, ciertamente que $d(x)$ siempre sea divisible por $(x-a)^2$. En general, las rectas paralelas a la tangente cortan la gráfica de la función en dos puntos; la recta tangente corta a la gráfica sólo una vez cerca del punto, de manera que la intersección debería ser una doble intersección. Para dar una demostración riguroso, observe en primer lugar que 
+	    $$\dfrac{d(x)}{x-a}=\dfrac{f(x)-f(a)}{x-a}-f'(a).$$
+	    Ahora responda las siguientes cuestiones. ¿Por qué $f(x)-f(a)$ es divisible por $(x-a)$? ¿Por qué existe una función polinómica $h$ tal que $h(x)=d(x)/(x-a)$ para $x\neq a$? ¿Por qué el $\lim\limits_{x\to a} h(x) = 0$? ¿Por qué $h(a)=0$? ¿Por qué esto resuelve el problema?.\\\\
+		Repuesta.-\; Tenemos $d(x)=f(x)-f'(a)(x-a)-f(a)$, entonces
+		$$d(x)=f(x)-f'(a)(x-a)-f(a) \quad \Rightarrow \quad \dfrac{d(x)}{x-a}=\dfrac{f(x)-f(a)}{x-a}-f'(a)$$
+		También sabemos que
+		$$d(x)=[f(x)-f(a)]-f'(a)(x-a)$$
+		de donde $d(x)$ es divisible por $(x-a)^2$ lo que implica que $f(x)-f(a)$ es divisible por $(x-a)$. Así,
+		$$\dfrac{f(x)-f(a)}{x-a}$$
+		es una función polinómica. Y por lo tanto la función $h$ es un polinomio, como sigue
+		$$h(x)=\dfrac{d(x)}{x-a}\quad \Rightarrow \quad h(x)=\dfrac{f(x)-f(a)}{x-a}-f'(a)$$
+		para $x\neq a$. Ahora tenemos 
+		$$\begin{array}{rcl}
+		    \lim\limits_{x\to a} h(x) &=&\lim\limits_{x\to a} \left[\dfrac{f(x)-f(a)}{x-a}-f'(a)\right]\\\\
+		    \lim\limits_{x\to a} h(x) &=&\lim\limits_{x\to a} \left[\dfrac{f(x)-f(a)}{x-a}\right]-f'(a)\\\\
+		    \lim\limits_{x\to a} h(x) &=&f'(a)-f'(a)\\\\
+		    \lim\limits_{x\to a} h(x) &=&0\\\\
+					      h(a)&=&0\\\\
+		\end{array}$$
+
+		Significa que $h$ tiene a $a$ como una raíz. Esto indica que $\dfrac{d(x)}{x-a}$ es divisible por $x-a$. Y así, $d(x)$ es divisible por $(x-a)^2$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 21.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item 
+
+	    %---------- (b)
+	    \item 
+
+	\end{enumerate}
 	
 \end{enumerate}
