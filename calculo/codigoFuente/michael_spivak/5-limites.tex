@@ -309,7 +309,10 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 
 %--------------------9.
 \item Demostrar que $\lim\limits_{x\to a} f(x) = \lim\limits_{h \to 0}f(a+h).$\\\\
-    Demostración.-\; Sea $\lim\limits_{x\to a} f(x)$ y $g(h) f(a+h)$. Entonces para todo $\epsilon>0$ existe algún $\delta > 0$, tal que, para todo $x$, si $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon$. Ahora bien, si $0<|h-0|<delta$, entonces $|(h+a)-a|<\delta$, de modo que $|f(h+a)-l|<\epsilon$. Esta desigualdad puede escribirse $|g(x)-l|<\epsilon$. Así pues, $\lim\limits_{h\to 0}g(h) = l,$ lo cual puede escribirse también $\lim\limits_{h\to 0} f(a+h) = l$. el mismo razonamiento demuestra que si $\lim_{h\to 0} f(a+h) = m$, entonces $\lim\limits_{x\to a} f(x) = m.$ Así pues, existe uno cualquiera de los dos límites si existe el otro, y en este caso son iguales.\\\\ 
+    Demostración.-\; Sea $\lim\limits_{x\to a} f(x)$ y $g(h) = f(a+h)$. Entonces para todo $\epsilon>0$ existe algún $\delta > 0$, tal que, para todo $x$, si $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon$. Ahora bien, si $0<|h-0|<\delta$, entonces $|(h+a)-a|<\delta$, de modo que $|f(h+a)-l|<\epsilon$. Esta desigualdad puede escribirse $|g(x)-l|<\epsilon$. Así pues, $\lim\limits_{h\to 0}g(h) = l,$ lo cual puede escribirse también $\lim\limits_{h\to 0} f(a+h) = l$. el mismo razonamiento demuestra que si $\lim\limits_{h\to 0} f(a+h) = m$, entonces $\lim\limits_{x\to a} f(x) = m.$ Así pues, existe uno cualquiera de los dos límites si existe el otro, y en este caso son iguales.\\
+
+    Se puede demostrar de otra manera. Sea $h=x-a$, observe que $h\to 0\; \Leftrightarrow \; x-a\to 0 \; \Rightarrow \; x\to a$, entonces 
+    $$\lim_{x\to a}f(x)=\lim_{h\to 0}f(a+h).$$\\
 
 %--------------------10.
 \item 
@@ -335,7 +338,7 @@ Para cada $\epsilon>0$ hallar un $\delta>0$ tal que, para todo $x$,\\
 \end{enumerate}
 
 %--------------------11.
-\item Supóngase que existe un $\delta > 0$ tal que $f(x) = g(x)$ cuando $0<|x-a|<\delta$. Demostrar que $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} g(x)$.\\\\
+\item Supóngase que existe un $\delta > 0$ tal que $f(x) = g(x)$ cuando $0<|x-a|<\delta$. Demostrar que $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} g(x)$. En otras palabras, el $\lim\limits_{x\to a}f(x)$ depende solamente de los valores de $f(x)$ cuando $x$ está cerca de $a$; este hecho se expresa a menudo diciendo que los límites poseen una propiedad local.\\\\
     Demostración.-\; Asumamos que  $\lim\limits_{x \to a} f(x) = l$. Deseamos demostrar que $\lim\limits_{x \to a} g(x) = l$. Sea $\epsilon > 0$, de donde existe algún $\delta_1 > 0$ tal que si $0<|x-a|<\delta_1$, entonces $|f(x)-l|<\epsilon$. Luego pongamos $\delta^{'} = \min(\delta,\delta_1)$ que complace  $0<|x-a|<\delta^{'}$, en virtud de como se define $\delta^{'}$ sabemos que si $0<|x-a|<\delta_1$ y $0<|x-a|<\delta$ tal que $f(x)=g(x)$ entonces $|f(x)-l|<\epsilon$, de donde concluimos que $|g(x) - l|<\epsilon$.\\\\
 
 %--------------------12.

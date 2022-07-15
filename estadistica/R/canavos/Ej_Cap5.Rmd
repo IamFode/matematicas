@@ -752,11 +752,49 @@ intervalo $(a,b)$
 ¿Cuál es la probabilidad de que $X$ tome un valor que se encuentre a una
 desviación estándar de la media?
 
-Respuesta.-
+Respuesta.- Sea $\sigma=\dfrac{b-a}{2\sqrt{3}}$ la desviación estándar de una distribución uniforme. Cabe mencionar que $\sigma$ es la longitud de del subintervalo que queremos calcular. Dado que existe $sigma$ a la derecha y a la izquierda se tiene,
+
+$$P(\sigma^- \leq X\leq \sigma^+) = 2\cdot \dfrac{b-a}{2\sqrt{3}}\cdot \dfrac{1}{b-a} = \dfrac{1}{\sqrt{3}} = 0.5773503$$
+
+
+```{r}
+punif(1/(sqrt(3)))
+```
 
 ### b) 
 
 ¿Puede tomar $X$ un valor que se encuentre a dos desviaciones estándar
 de la media?
 
-Repuesta.-
+Repuesta.- No puedo, dado que tendríamos que multiplicar $\dfrac{1}{\sqrt{3}}$ por $4$ el cual es mayor a $1$.
+
+
+## 5.20
+Sea $X$ una variable aleatoria con distribución uniforme sobre el intervalo $(a,b)$. ¿Cuál es la máxima distancia, en términos de la desviación estándar, a la que puede encontrarse un valor $X$ a partir de la media?
+
+Respuesta.- Sea $x$ la máxima distnacia en terminos de la desviación estándar, entonces como se vio en el anterior ejercicio se tiene,
+
+$$x\cdot \dfrac{1}{2\sqrt{3}}=1 \quad \Rightarrow \quad x=2\sqrt{3}$$
+
+donde la distnacia máxima estará dada por $2\sqrt{3}.$
+
+
+## 5.21
+Sea $X$ una variable aleatoria con distribución uniforme sobre el intrevalo $(a,b).$ Si $E(X)=10$ y $Var(X)=12$, encontrar los valores de $a$ y de $b$.
+
+Respuesta.- Sean $E(X)=\dfrac{a+b}{2}=10$ y $Var(X)=\dfrac{(b-a)^2}{12}$, entonces
+
+$$\left\{\begin{array}{ccc}\dfrac{a+b}{2}&=&10\\\dfrac{(b-a)^2}{12}&=&12\end{array}\right. \quad \Rightarrow \quad \left\{\begin{array}{ccc} a+b&=&20\\ b-a&=&12\end{array}\right. \quad \Rightarrow \quad a=4,\quad b=16.$$
+
+## 5.22
+Supóngase que la concentración de cierto contaminante se encuentra distribuida de manera uniforme en el intervalo de $4$ a $20$ ppm (partes por millón). Si se considera como tóxica una concentración de $15$ ppm o más ¿Cuál es la probabilidad de que al tomarse una muestra la concentración de ésta sea tóxica?
+
+Respuesta.- Sea $a=4$ y $b=20$ entonces,
+$$P(X\geq 15) = 1 - P(X < 15) = 1 - F(15;3,20) = 1 - \dfrac{15-4}{20-4} = 0.3125$$
+
+```{r}
+punif(15,4,20,lower.tail = FALSE)
+```
+
+
+## 5.23

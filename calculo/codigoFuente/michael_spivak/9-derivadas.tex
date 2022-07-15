@@ -432,7 +432,7 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 					      h(a)&=&0\\\\
 		\end{array}$$
 
-		Significa que $h$ tiene a $a$ como una raíz. Esto indica que $\dfrac{d(x)}{x-a}$ es divisible por $x-a$. Y así, $d(x)$ es divisible por $(x-a)^2$.\\\\
+		    Significa que $h$ tiene a $a$ como una raíz. Esto indica que $\dfrac{d(x)}{x-a}$ es divisible por $x-a$. Y así, $d(x)$ es divisible por $(x-a)^2$.\\\\
 
 	\end{enumerate}
 
@@ -441,11 +441,29 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 	\begin{enumerate}[(a)]
 
 	    %---------- (a)
-	    \item 
+	    \item Demuestre que $f'(a)=\lim\limits_{x\to a} \dfrac{f(x)-f(a)}{x-a}$.\\\\
+		Demostración.-\; Sean $h=x-a$,  el hecho de que $\lim\limits_{x\to a}f(x)=\lim\limits_{h\to 0}f(a+h)$ y por un cambio infinitesimal $a\to a+h$, entonces 
+		$$\begin{array}{rcl}
+		     \lim\limits_{x\to a}\dfrac{f(x)-f(a)}{x-a}&=& \lim\limits_{x\to a+h}\dfrac{f(x)-f(a)}{x-a}\\\\
+							       &=& \lim\limits_{h\to 0} \dfrac{f(a+h)-f(a)}{(a+h)-a}\\\\
+							       &=& \lim\limits_{h\to 0}\dfrac{f(a+h)-f(a)}{h}\\\\
+					&=& f'(a)\\\\
+		\end{array}$$
+		\vspace{.5cm}
 
 	    %---------- (b)
-	    \item 
+	    \item Demuestre que las derivadas son una propiedad local: si $f(x)=g(x)$ para todo $x$ en algún intervalo abierto que contiene $a$, entonces $f'(a)=g'(a)$. (Esto significa que al calcular $f'(a)$, puede ignorarse a $f(x)$ para un determinado $x\neq a$. Evidentemente, ¡no! se puede ignorar a $f(x)$ para todos estos $x$ simultáneamente.)\\\\
+		Demostración.-\; Se da $f$ y $g$ son iguales en un intervalo abierto que contiene $a$, entonces en el intervalo tenemos una pequeña cantidad $h\to 0$ como,
+		$$\begin{array}{rcl}
+		    \lim\limits_{h\to 0} f(a+h) &=& \lim\limits_{h\to 0} g(a+h)\\\\
+		    \lim\limits_{h\to 0} \left[f(a+h)-f(a)\right] &=& \lim\limits_{h\to 0} \left[g(a+h)-g(a)\right]\\\\
+		    \lim\limits_{h\to 0} \left[\dfrac{f(a+h)-f(a)}{h}\right] &=& \lim\limits_{h\to 0} \left[\dfrac{g(a+h)-g(a)}{h}\right]\\\\
+									     f'(a)&=&g'(a)\\\\
+		\end{array}$$
 
 	\end{enumerate}
+
+    %-------------------- 22.
+    \item
 	
 \end{enumerate}

@@ -177,10 +177,49 @@ $$P(a\leq X_B \leq b) = P\left(\dfrac{a-np-0.5}{\sqrt{np(1-p)}}\leq Z_N\leq \dfr
 Se sigue entonces que para cualquier subintervalo $(a_1,b_1)$ interior a $(a,b)$:
 $$P(a_1\leq X\leq b_1)=F(b_1;a,b)-F(a_1;a,b)=\dfrac{b_1-a_1}{b-a}.$$\\
 
+Este resultado ilustra que la probabilidad de que $X$ tome valores del subintervalo $\left(a_1,b_1\right)$, es $\dfrac{1}{b-a}$ por la longitud del subintervalo y de esta forma, igual a la probabilidad de que $X$ tome un valor en cualquier otro subintervalo de la misma longitud.\\\\
+
 El \textbf{valor esperado} de una variable aleatoria distribuida de manera uniforme es 
 
 \begin{tcolorbox}
     $$E(X)=\dfrac{1}{b-a}\int_a^b x\;dx = \dfrac{a+b}{2}.$$
 \end{tcolorbox}
 
+Para obtener los momentos superiores de $X$, es más fácil trabajar con la variable aleatoria $Y=X-\dfrac{a+b}{2}$, que desplaza la media a cero, dado que $E(Y)=E(X)-\dfrac{a+b}{2}$. De esta forma:
+$$f(y;\theta)=\dfrac{1}{\theta},\qquad -\dfrac{\theta}{2}\leq y\leq \dfrac{\theta}{2},$$
+en donde $\theta=b-a.$ De acuerdo con lo anterior, el r-ésimo momento central de $Y$ es igual al r-ésimo momento central alrededor del cero, esto es:
+$$\mu_r(Y)=\mu_r'(Y)=\theta^{-1}\int_{-\theta/2}^{\theta/2}y^r \; dy = \left(\dfrac{1}{\theta}\right)\dfrac{y^{r+1}}{r+1}\bigg|_{-\theta/2}^{\theta/2}=\left\{\begin{array}{ll}0&\mbox{si r es impar}\\ \theta^r/[(r+1)2^r]&\mbox{si r es par}\end{array}\right.$$
+Dado que ni la varianza ni los factores de forma se ven afectados por el cambio de localización, la varianza, el coeficiente de asimetria y la curtosis relativa de la variable aleatoria distribuida uniformente se encuentran a partir de $\left\{\begin{array}{ll}0&\mbox{si r es impar}\\ \theta^r/[(r+1)2^r]&\mbox{si r es par}\end{array}\right.$ y están determinadas por:
+\begin{tcolorbox}
+    $$Var(X)=\dfrac{(b-a)^2}{12}$$
+\end{tcolorbox}
 
+\begin{tcolorbox}
+    $$\alpha_3(X)=0$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    $$\alpha_4(X)=\dfrac{\frac{(b-a)^4}{80}}{\left[\frac{(b-a)^2}{12}\right]^2}=\dfrac{9}{5}.$$
+\end{tcolorbox}
+
+Puede emplearse $f(y;\theta)=\dfrac{1}{\theta},\qquad -\dfrac{\theta}{2}\leq y\leq \dfrac{\theta}{2},$ para determinar la \textbf{desviación media} de la siguiente manera:
+
+\begin{tcolorbox}
+    $$E|Y|=\theta^{-1}\int_{-\theta/2}^{\theta/2}=2\theta^{-1}\int_{0}^{\theta/2} y \; dy = \dfrac{\theta}{4}=\dfrac{b-a}{4}.$$
+\end{tcolorbox}
+
+No tiene moda y su \textbf{mediana} es igual a la media. Los valores cuantiles $x_q$, correspondientes a la proporción acumulativa $q$, son de manera tal que:
+\begin{tcolorbox}
+    $$F(x_q,a,b)=q$$
+\end{tcolorbox}
+
+Los que por $\left\{\begin{array}{ll}
+	    0 & x<a,\\
+	    \dfrac{x-a}{b-a} & a\leq x\leq b,\\
+	    1 & x>b.
+	\end{array}\right.$
+son:
+
+$$x_q=a+(b-a)q.$$
+
+\section{La distribución beta}
