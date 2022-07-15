@@ -464,6 +464,47 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 	\end{enumerate}
 
     %-------------------- 22.
-    \item
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Suponga que $f$ es diferenciable en $x$. Demuestre que
+	    $$f'(x)=\lim_{h\to 0}\dfrac{f(x+h)-f(x-h)}{2h}.$$\\
+		Demostración.-\; Sea $h=-h$ entonces\\
+		$$f'(x)=\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}=\lim_{h\to 0}\dfrac{f(x-h)-f(x)}{-h} \cdot \dfrac{-1}{-1} = \lim_{h\to 0}\dfrac{f(x)-f(x-h)}{h}$$
+		A continuación, sumamos la igualdad de la izquierda y de la derecha, como sigue\\
+		$$\begin{array}{rcl}
+		    f'(x)+f'(x)&=&\lim\limits_{h\to 0} \left[\dfrac{f(x+h)-f(x)}{h}\right] + \lim\limits_{h\to 0} \left[\dfrac{f(x)-f(x-h)}{h}\right]\\\\
+		    2f'(x)&=& \lim\limits_{h\to 0} \left[\dfrac{f(x+h)-f(x)}{h}+\dfrac{f(x)-f(x-h)}{h}\right]\\\\
+		    2f'(x)&=& \lim\limits_{h\to 0} \left[\dfrac{f(x+h)-f(x-h)}{h}\right]\\\\
+		    f'(x)&=&\lim\limits_{h\to 0} \left[\dfrac{f(x+h)-f(x-h)}{2h}\right]\\\\
+		\end{array}$$\\
+
+	    %---------- (b)
+	    \item Demuestre, más generalmente, que 
+	    $$f'(x)=\lim_{h,k\to 0^+}\dfrac{f(x+h)-f(x-k)}{h+k}.$$
+	    Aunque hasta ahora no habíamos encontrado expresiones como $\lim\limits_{h,k \to 0}$, su significado debería ser claro para el lector, y por tanto debería ser capaz de formular la definición $\epsilon-\delta$ adecuada. Lo importante en este caso es que $\lim\limits_{h,k\to 0}$, de manera que estamos considerando únicamente valores de $h$ y $k$ positivos.\\\\
+		Demostración.-\; Sea $h$ suficientemente pequeño, entonces
+		$$f'(x)=\lim_{h\to 0}\left[\dfrac{f(x+h)-f(x)}{h}\right].$$
+		Similarmente, sea $k=-k$ sufientemente pequeño, entonces
+		$$f'(x)=\lim_{k\to 0}\dfrac{f(x+k)-f(x)}{k}=\lim_{k\to 0}\dfrac{f(x-k)-f(x)}{-k} \cdot \dfrac{-1}{-1} = \lim_{k\to 0}\dfrac{f(x)-f(x-k)}{k}.$$
+		Ahora consideremos,
+		$$\begin{array}{rcl}
+		    \dfrac{f(x+h)-f(x-h)}{h+k}&=&\dfrac{h}{h+k}\dfrac{f(x+h)-f(x)}{h}+\dfrac{k}{h+k}\dfrac{f(x)-f(x-k)}{k}\\\\
+		    \lim\limits_{h,k\to 0}\dfrac{f(x+h)-f(x-h)}{h+k}&=&\lim\limits_{h,k\to 0}\dfrac{h}{h+k}\dfrac{f(x+h)-f(x)}{h}+\lim\limits_{h,k\to 0}\dfrac{k}{h+k}\dfrac{f(x)-f(x-k)}{k}\\\\
+		    \lim\limits_{h,k\to 0}\dfrac{f(x+h)-f(x-h)}{h+k}&=&\lim\limits_{h,k\to 0}\dfrac{h}{h+k}\cdot f'(x)+\lim\limits_{h,k\to 0}\dfrac{k}{h+k}\cdot f'(x)\\\\
+		\end{array}$$
+		Aquí $h$ y $k$ son ambos positivos, ya que si no lo fuesen $\dfrac{h}{h+k}$ y $\dfrac{k}{h+k}$ podrían ser muy grandes, esto eligiendo $k\approx-h$. Por lo tanto, existe $\delta>0$ tal que 
+		$$0<h<\delta,\qquad 0<k<\delta$$
+		de donde 
+		$$\left\{\begin{array}{rcccl}
+		    -\epsilon&<&\dfrac{f(x+h)-f(x)}{h}-f'(x)&<&\epsilon\\\\
+		    -\epsilon&<&\dfrac{f(x)-f(x-k)}{k}-f'(x)&<&\epsilon\\
+	    \end{array}\right.\quad \Rightarrow \quad -\epsilon<\dfrac{}{}-f'(x)$$
+
+
+
+
+	\end{enumerate}
 	
 \end{enumerate}

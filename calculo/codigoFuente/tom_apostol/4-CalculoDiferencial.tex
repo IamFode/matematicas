@@ -714,11 +714,66 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 
     %--------------------10.
     \item Resolver el ejercicio 9 cuando $f$ es:
-    $$f(x)=\left\{\begin{array}{rcl}
+    $$f(x)=\left\{\begin{array}{lcl}
 	    \dfrac{1}{|x|}&\mbox{si}&|x|>c,\\\\
-	    a+bx^2 &\mbox{si}&|x|\leq c.\\\\
+	    a+bx^2 &\mbox{si}&|x|\leq c.\\
     \end{array}\right.$$\\
-	Respuesta.-\; 
+	Respuesta.-\; Supongamos que $c>0$ de lo contrario $f(x)=\dfrac{1}{|x|}$ para todo $x$. Entonces, existe la derivada para todo los valores de las constantes de $a$ y $b$. Luego sabemos que si una función tiene derivada en un punto $x$, entonces también es continua en $x$, por lo tanto la función $f$ es continua en $c$, así,\\
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to c^+}f(x)&=&\lim\limits_{x\to c^-}f(x)\\\\
+	    \lim\limits_{x\to c^+}\dfrac{1}{|x|}&=&\lim\limits_{x\to c^-}a+bx^2\\\\
+	    \dfrac{1}{c}&=&a+bc^2\\\\
+			ac+bc^3&=&1\\\\
+	\end{array}$$
+	por otro lado,
+	$$\begin{array}{rcl}
+	    \lim\limits_{x\to 0^+}f(x)&=&\lim\limits_{x\to 0^-}f(x)\\\\
+	    \lim\limits_{x\to 0^+}\dfrac{\frac{1}{|c+h|}-a+bc^2}{h}&=&\lim\limits_{x\to 0^-}\dfrac{a+b(c+h)^2-(a+bc^2)}{h}\\\\
+	    \lim\limits_{x\to 0^+}\dfrac{\frac{1}{c+h}-a+bc^2}{h}\cdot \dfrac{c+h}{c+h}&=&\lim\limits_{x\to 0^-}\dfrac{2bch+bh^2}{h}\\\\
+	    \lim\limits_{x\to 0^+}\dfrac{1-ac-bc^3-ah-bc^2h}{h(c+h)}&=&\lim\limits_{x\to 0^-}\dfrac{h(2bc+bh)}{h}\\\\
+	    \lim\limits_{x\to 0^+}\dfrac{ac+bx^3-ac-bc^3-ah-bc^2h}{h}&=&\lim\limits_{x\to 0^-}2bc+bh\\\\
+	    \lim\limits_{x\to 0^+}\dfrac{-h(a+bc^2)}{h(c+h)}&=&2bc+\lim\limits_{x\to 0^-}bh\\\\
+	    \lim\limits_{x\to 0^+}-\dfrac{a+bc^2}{c+h}&=&2bc.\\\\
+	    -\dfrac{a+bc^2}{c}&=&2bc.\\
+	\end{array}$$
+	Por último resolvemos las dos ecuaciones anteriores:
+	$$\left\{\begin{array}{rcl}
+		-\dfrac{a+bc^2}{c}&=&2bc\\\\
+			   ac+bc^3&=&1\\
+	\end{array}\right.
+	\quad \Rightarrow \quad 
+	\left\{\begin{array}{rcl}
+		b &=& -\dfrac{1}{2c^3}\\\\
+		a &=& -\dfrac{3}{2c}\\
+	    \end{array}\right.$$\\\\
 
+    %--------------------11.
+    \item Resolver el ejercicio 9 cuando $f$ es:
+    $$f(x)=\left\{\begin{array}{lcl}
+	\sen x &\mbox{si}&x\leq c\\\\
+	ax+b &\mbox{si}&x>c.\\
+    \end{array}\right.$$\\\\
+	Respuesta.-\; Sabemos que $f'(c)$ existe si y sólo si 
+	$$\lim_{h\to 0}\dfrac{f(c+h)-f(c)}{h}$$
+	Existe. También sabemos que el límite existe si y sólo si los dos límites unilaterales existen y son iguales, es decir
+	$$\lim_{h\to 0^+}\dfrac{f(c+h)-f(c)}{h}=\lim_{h\to 0^-}\dfrac{f(c+h)-f(c)}{h}$$
+	Por lo tanto usando la definición de $f$ tenemos,
+	$$\begin{array}{rcl}
+	    \lim\limits_{h\to 0^+} \dfrac{a(c+h)+b-\sen c}{h} &=& \lim\limits_{h\to 0^-} \dfrac{\sen (c+h)-\sen c}{h} \\\\
+	    \lim\limits_{h\to 0^+} \left(\dfrac{ac + b-\sen c}{h}\right)+a &=& \lim\limits_{h\to 0^-} \dfrac{\sen c \cos h + \sen h \cos c - \sen c}{h}\\\\
+	    \lim\limits_{h\to 0^+} \left(\dfrac{ac + b-\sen c}{h}\right)+a &=& \lim\limits_{h\to 0^-} \left[\dfrac{\sen c ( \cos h -1)}{h}\right] + \cos c \\\\
+	\end{array}$$
+
+	Al simplificar el lado derecho usamos el hecho de que $\lim\limits_{h\to 0}\dfrac{\sen h}{h}=1$. Además para que existe el límite por el lado izquierdo debemos tener $ac+b-\sen c = 0$ de lo contrario el límite divergirá como $h\to 0$. Ahora, para la expresión de la derecha, vemos que el límite tiende a $0$. Eso se puede ver ya que 
+	$$\lim_{h\to 0^-}\dfrac{\sen c(\cos h - 1)}{h}=\sen c \lim_{h\to c^-}\dfrac{\cos h - 1}{h} = \sen c \lim_{h\to c^-}\dfrac{\cos(0+h)-\cos 0}{h}$$
+	Pero este límite es la derivada de $\cos x$ en $x=0$. Luego ya que $(\cos x)'=-\sen x$ y $\sen 0 =0$ el termino tiende a $0$. Por lo tanto
+	$$\lim\limits_{h\to 0^+} \left(\dfrac{ac + b-\sen c}{h}\right)+a = \lim\limits_{h\to 0^-} \left[\dfrac{\sen c ( \cos h -1)}{h}\right] + \cos c \quad \Rightarrow \quad a=\cos c.$$
+	Así, dado que $ac+b-\sen c=0$ entonces 
+	$$b=\sen c - c\cos c.$$\\
+
+    %--------------------12.
+    \item Si $f(x)=\dfrac{1-\sqrt{x}}{1+\sqrt{x}}$ para $x>0$, hallar fórmulas para $Df(x),\; D^2f(x)$ y $D^3f(x)$.\\\\
+	Respuesta.- \; La fórmula para $Df(x)$ es:
+	$$Df(x)=\dfrac{}{}$$
 
 \end{enumerate}

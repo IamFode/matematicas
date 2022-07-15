@@ -223,3 +223,42 @@ son:
 $$x_q=a+(b-a)q.$$
 
 \section{La distribución beta}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Se dice que una variable aleatoria $X$ posee una distribución beta si su función de densidad está dada por:
+	$$f(x;\alpha,\beta)=\left\{\begin{array}{ll}
+		\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1} & 0<x<1,\quad \alpha,\beta >0,\\\\
+		0&\mbox{para cualquier otro valor}
+	     \end{array}\right.$$
+	     Recordemos que $\Gamma(n)=\displaystyle\int_{0}^{\infty} u^{n-1}e^{-u} du,\; n>0$.
+    \end{def.}
+\end{tcolorbox}
+
+Si tanto $\alpha$ como $\beta$ son menores que uno, la distribución beta tiene un perfil en forma de $U$. Si $\alpha<1$ y $\beta\geq 1$, la distribución tiene un perfil de $J$ transpuesta, y si $\beta<1$ y $\alpha\geq 1$, el perfil es una $J$. Finalmente cuando $\alpha=\beta$ la distribución es simétrica. Nótese que si en la definición se reemplaza por $x-1$, se obtiene la siguiente relación de simetría:
+$$f(1-x;\beta,\alpha) = f(x;\alpha,\beta)$$
+
+El nombre de esta distribución proviene de su asociación con la función beta que se encuentra definida por
+$$B(\alpha,\beta) = \int_{0}^{1}x^{\alpha-1}(1-x)^{\beta -1}\; dx$$
+Puede demostrarse que las funciones beta y gama se encuentran relacionadas por la expresión
+$$B(\alpha,\beta)=\dfrac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}.$$
+
+Mediante el empleo de estas últimas fórmulas, es obvio que la definición es una función de densidad de probabilidad. Esto es:
+$$\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1x^{\alpha-1}(1-x)^{\beta-1}\; dx = \dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} B(\alpha,\beta) = 1,$$
+
+y puesto que $f(x;\alpha,\beta)$ es no negativa, entonces la definición es una función de densidad de probabilidad.\\\\
+
+La \textbf{función de distribución acumulativa} se encuentra definida por:
+
+\begin{tcolorbox}
+	\begin{def.}
+	$$F(x;\alpha,\beta)=\left\{\begin{array}{ll}
+		0 & x\leq 0,\\\\
+		\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\displaystyle\int_0^x t^{\alpha-1}(1-t)^{\beta-1} \; dt & 0<x<1,\\\\
+		1&x\geq 1.
+	     \end{array}\right.$$
+	\end{def.}
+\end{tcolorbox}
+
+
+
