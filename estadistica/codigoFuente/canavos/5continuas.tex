@@ -260,5 +260,13 @@ La \textbf{función de distribución acumulativa} se encuentra definida por:
 	\end{def.}
 \end{tcolorbox}
 
+La integral que aparece es la función beta incompleta:
+$$B_x(\alpha,\beta)=\int_0^x t^{\alpha-1}(1-t)^{\beta-1}\; dt.$$
+
+De esta forma, la función de distribución beta puede expresarse como un cociente de funciones beta incompletas,
+\begin{tcolorbox}
+    $$ F(x;\alpha,\beta)=\dfrac{B_x(\alpha,\beta)}{B(\alpha,\beta)}=\dfrac{\displaystyle\int_0^x t^{\alpha-1}(1-t)^{\beta-1}\; dt}{\displaystyle\int_{0}^{1}x^{\alpha-1}(1-x)^{\beta -1}\; dx}=I_x(\alpha,\beta),\;\; 0<x<1,$$
+\end{tcolorbox}
+
 
 

@@ -488,23 +488,22 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 		$$f'(x)=\lim_{h\to 0}\left[\dfrac{f(x+h)-f(x)}{h}\right].$$
 		Similarmente, sea $k=-k$ sufientemente pequeño, entonces
 		$$f'(x)=\lim_{k\to 0}\dfrac{f(x+k)-f(x)}{k}=\lim_{k\to 0}\dfrac{f(x-k)-f(x)}{-k} \cdot \dfrac{-1}{-1} = \lim_{k\to 0}\dfrac{f(x)-f(x-k)}{k}.$$
-		Ahora consideremos,
-		$$\begin{array}{rcl}
-		    \dfrac{f(x+h)-f(x-h)}{h+k}&=&\dfrac{h}{h+k}\dfrac{f(x+h)-f(x)}{h}+\dfrac{k}{h+k}\dfrac{f(x)-f(x-k)}{k}\\\\
-		    \lim\limits_{h,k\to 0}\dfrac{f(x+h)-f(x-h)}{h+k}&=&\lim\limits_{h,k\to 0}\dfrac{h}{h+k}\dfrac{f(x+h)-f(x)}{h}+\lim\limits_{h,k\to 0}\dfrac{k}{h+k}\dfrac{f(x)-f(x-k)}{k}\\\\
-		    \lim\limits_{h,k\to 0}\dfrac{f(x+h)-f(x-h)}{h+k}&=&\lim\limits_{h,k\to 0}\dfrac{h}{h+k}\cdot f'(x)+\lim\limits_{h,k\to 0}\dfrac{k}{h+k}\cdot f'(x)\\\\
-		\end{array}$$
-		Aquí $h$ y $k$ son ambos positivos, ya que si no lo fuesen $\dfrac{h}{h+k}$ y $\dfrac{k}{h+k}$ podrían ser muy grandes, esto eligiendo $k\approx-h$. Por lo tanto, existe $\delta>0$ tal que 
-		$$0<h<\delta,\qquad 0<k<\delta$$
-		de donde 
-		$$\left\{\begin{array}{rcccl}
-		    -\epsilon&<&\dfrac{f(x+h)-f(x)}{h}-f'(x)&<&\epsilon\\\\
-		    -\epsilon&<&\dfrac{f(x)-f(x-k)}{k}-f'(x)&<&\epsilon\\
-	    \end{array}\right.\quad \Rightarrow \quad -\epsilon<\dfrac{}{}-f'(x)$$
-
-
-
+		Ahora, para todo $\epsilon>0$, existe un $\delta>0$ tal que $0<h<\delta$ y $0<k<\delta$, entonces
+		$$\bigg|\dfrac{f(x+h)-f(x)}{h}-f´(x)\bigg|<\epsilon \quad \Rightarrow \quad -\epsilon<\dfrac{f(x+h)-f(x)}{h}-f'(x)<\epsilon$$
+		$$\bigg|\dfrac{f(x)-f(x-k)}{k}-f´(x)\bigg|<\epsilon \quad \Rightarrow \quad -\epsilon<\dfrac{f(x)-f(x-k)}{k}-f(x)<\epsilon$$
+		Luego multiplicamos ambas desigualdades por $\dfrac{h}{h+k}$ y $\dfrac{k}{h+k}$.
+		Aquí $h$ y $k$ son ambos positivos, ya que si no lo fuesen $\dfrac{h}{h+k}$ y $\dfrac{k}{h+k}$ podrían ser muy grandes, esto eligiendo $k\approx-h$. 
+		$$-\epsilon\cdot \dfrac{h}{h+k}<\dfrac{h}{h+k}\dfrac{f(x+h)-f(x)}{h}-\dfrac{h}{h+k}\cdot f'(x)<\epsilon \cdot \dfrac{h}{h+k}$$
+		$$-\epsilon\cdot \dfrac{k}{h+k}<\dfrac{k}{h+k}\dfrac{f(x)-f(x-k)}{k}-\dfrac{k}{h+k}\cdot f'(x)<\epsilon \cdot \dfrac{k}{h+k}$$
+		Sumando las desigualdades, obtenemos
+		$$-\epsilon<\dfrac{f(x+h)-f(x-k)}{h+k}-f'(x)<\epsilon \quad \Rightarrow \quad \bigg| \dfrac{f(x+h)-f(x-k)}{k+h}-f'(x) \bigg| <\epsilon$$
+		Por lo tanto 
+		$$f'(x)=\lim_{h,k\to 0^+}\dfrac{f(x+h)-f(x-k)}{h+k}.$$\\
 
 	\end{enumerate}
-	
+
+    %-------------------- 23
+    \item Demuestre que si $f$ es par, entonces $f'(x)=-f'(-x)$. (Para evitar al máximo la confusión, sea $g(x)=f(-x)$; hállese $g'(x)$ y luego recuerde que otra coas es $g.$).\\\\
+	Demostración.-\; 
+
 \end{enumerate}
