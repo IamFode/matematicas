@@ -798,3 +798,30 @@ punif(15,4,20,lower.tail = FALSE)
 
 
 ## 5.23
+Sea $X$ una variable aleatoria con distribución beta y parámetros $\alpha=3$ y $\beta=1$.
+
+### a)
+Graficar la función de densidad de probabilidad.
+
+Respuesta.-
+
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
+curve(dbeta(x,3,1),xlim=c(0,1),col="blue",lwd=2,
+      xlab="x",ylab="f(x)",main="Función de Densidad beta(x;3,1)")
+```
+
+### b)
+Obtener la media, la varianza, la desviación media, el coeficiente de asimetría y a curtosis relativa.
+
+Respuesta.- La media de la distribución beta viene dada por 
+$$=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{3}{3+1}=0.75$$
+
+### c)
+¿Cuaĺ es la probabilidad de que $X$ tome un valor que se encuentre dentro de una desviación estándar a partir de la media? ¿A dos desviaciónes estándar?
+
+Respuesta.-
+
+### d)
+Determinar los cuantiles de esta distribución.
+
+Respuesta.-

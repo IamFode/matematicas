@@ -268,5 +268,64 @@ De esta forma, la función de distribución beta puede expresarse como un cocien
     $$ F(x;\alpha,\beta)=\dfrac{B_x(\alpha,\beta)}{B(\alpha,\beta)}=\dfrac{\displaystyle\int_0^x t^{\alpha-1}(1-t)^{\beta-1}\; dt}{\displaystyle\int_{0}^{1}x^{\alpha-1}(1-x)^{\beta -1}\; dx}=I_x(\alpha,\beta),\;\; 0<x<1,$$
 \end{tcolorbox}
 
+Con el fin de encontrar los valores cuantiles correspondientes a puntos de alto porcentaje, considérese lo siguiente:
+$$P(X\leq x)=P(1-X\geq 1-x)=1-P(1-X\leq 1-x);$$
+
+entonces, por la relación de simetría $f(1-x;\beta,\alpha)=f(x;\alpha,\beta)$:
+
+$$F(x;\alpha,\beta)=1-F(1-x;\beta,\alpha)$$
+o
+$$I_x(\alpha,\beta)=1-I_{1-x}(\beta,\alpha).$$\\
+
+Obtenemos los momentos de la variable aleatoria beta como sigue.
+
+$$\begin{array}{rcl}
+    \mu_r'&=&\dfrac{\Gamma (\alpha+\beta)}{\Gamma (\alpha)\Gamma (\beta)}\displaystyle\int_0^1 x^{\alpha+r-1}(1-x)^{\beta - 1}\; dx\\\\
+    &=&\dfrac{\Gamma (\alpha+\beta)}{\Gamma (\alpha)\Gamma (\beta)}B(\alpha+r,\beta)\\\\
+    &=&\dfrac{\Gamma (\alpha+\beta)}{\Gamma (\alpha)\Gamma (\beta)}\cdot \dfrac{\Gamma (\alpha + r)\Gamma (\beta)}{\Gamma (\alpha + \beta +r)}\\\\
+    &=&\dfrac{\Gamma (\alpha+\beta)\Gamma (\alpha + r)}{\Gamma (\alpha)\Gamma (\alpha + \beta + r)}\\\\
+\end{array}$$
+
+Como resultado,
+
+\begin{tcolorbox}
+    $$E(X)=\dfrac{\Gamma(\alpha+\beta)\Gamma(\alpha + 1)}{\Gamma (\alpha)\Gamma (\alpha + \beta + 1)}= \dfrac{\alpha}{\alpha+\beta}.$$
+\end{tcolorbox}
+
+Y
+
+\begin{tcolorbox}
+    $$Var(x)=\dfrac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)}-\dfrac{\alpha^2}{(\alpha+\beta)^2}=\dfrac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta + 1)}.$$
+\end{tcolorbox}
+
+Al seguir este procedimiento y después de efectuar el álgebra necesaria, el \textbf{el coeficiente de asimetría} y la \textbf{curtosis relativa} para la distribución beta están dadas por:
+
+\begin{tcolorbox}
+    $$\alpha_3(X)=\dfrac{2(\beta + \alpha)\sqrt{\alpha+\beta+1}}{\sqrt{\alpha \beta}(\alpha+\beta+2)}$$
+\end{tcolorbox}
+
+Y
+
+\begin{tcolorbox}
+    $$\alpha_4(X)=\dfrac{3(\alpha+\beta+1)\left[2(\alpha+\beta)^2\alpha\beta (\alpha+\beta - 6)\right]}{\alpha\beta (\alpha+\beta + 2)(\alpha +\beta + 3)}$$
+\end{tcolorbox}
+
+Puede demostrarse que si la suma de los parámetros que determinan el perfil de la distribución beta es, de manera relativa, grande, la función de distribución acumulativa beta se puede aproximar de manera adecuada por la diferencia de dos funciones de distribución normal estándar. Esto es:
+
+$$F(x;\alpha, \beta) \approx F_N(z_u;0,1)-F_N(z_l; 0,1),$$
+
+En donde:
+
+$$z_u=\dfrac{[\beta] - 0.5 - (\alpha+\beta-1)(1-x)}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
+$$z_u=\dfrac{(\alpha+\beta-1)(1-x)+0.5}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
+
+donde $[\beta]$ denota el entero más grande que no excede a $\beta$.
+
+
+\section{La distribución gamma}
+
+
+
+
 
 
