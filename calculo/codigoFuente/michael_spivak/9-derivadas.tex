@@ -5,8 +5,8 @@
     La función $f$ es \textbf{\boldmath diferenciable en $a$} si existe el  
     $$\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$
     En este caso, dicho límite se presenta mediante $f'(a)$ y se denomina la derivada de $f$ en $a$. (Diremos también que $f$ es diferenciable si $f$ es diferenciable en $a$ para todo $a$ del dominio de $f.$)\\\\
-    La derivada $f'$ son representadps a menudo mediante
-    $$\dfrac{dg(x)}{dx}, \qquad \dfrac{df(x)}{dx}\bigg|_{x=a}$$
+    La derivada $f'$ son representados a menudo mediante
+    $$\dfrac{df(x)}{dx}, \qquad \dfrac{df(x)}{dx}\bigg|_{x=a}$$
     \end{def.}
 \end{tcolorbox}
 
@@ -518,6 +518,198 @@ Las distintas funciones $f^{((k)}$, para $k\leq 2$ se denominan generalmente der
 	Respuesta.- $f^{(k)}$ es par si $f$ es impar y $k$ también es impar. $f^{(k)}$ es par si $f$ es impar y $k$ es par y $f^{(k)}$ es par si $f$ es par y $k$ es impar.\\\\
 
     %-------------------- 26
+    \item Halle $f''(x)$ si\\
+
+	\begin{enumerate}[(i)]
+
+	    %--------- (i)
+	    \item $f(x)=x^3$.\\\\
+		Respuesta.-\; $f'(x)=3x^2 \quad \mbox{y}\quad f''(x)=6x.$\\
+
+	    %--------- (ii)
+	    \item $f(x)=x^5$.\\\\
+		Respuesta.-\; $f'(x)=5x^4\quad \mbox{y}\quad f''(x)=20x^3.$\\
+
+	    %--------- (iii)
+	    \item $f'(x)=x^4$.\\\\
+		Respuesta.-\; $f''(x)=4x^3.$\\
+
+	    %--------- (iv)
+	    \item $f(x+3)=x^5$.\\\\
+		Respuesta.-\; $f'(x+3)=5(x+3)^4,\quad \mbox{y}\quad f''(x+3)=20(x+3)^3.$\\\\
+
+	\end{enumerate}
+
+    %-------------------- 27
+    \item Si $S_n=x^n$ y $0\leq k\leq n$, demuestre que 
+    $$S_n^{(k)}(x)=\dfrac{n!}{(n-k)!}x^{n-k}=k!{n\choose k}x^{n-k}.$$\\
+	Demostración.-\; La prueba la realizaremos por inducción. Para comprender mejor verificaremos  si se cumple la ecuación para $k=0$, $k=2$ y $k=2$, 
+
+	$$\begin{array}{rclcl}
+	    S_n^{(0)}(x)&=&\dfrac{n!}{(n-0)!}x^{n-0}&=&x^n\\\\
+	    S_n^{(1)}(x)&=&\dfrac{n!}{(n-1)!}x^{n-1}&=&nx^{n-1}\\\\
+	    S_n^{(2)}(x)&=&\dfrac{n!}{(n-2)!}x^{n-2}&=&n(n-1)x^{n-2}\\\\
+	\end{array}$$
+
+	En otras palabras podemos suponer que la fórmula dada puede encontrar la función sin derivar, la primera y segunda derivada.\\
+
+	
+	Ahora, establecemos la hipótesis, para $k$ 
+	$$S_n^{(k)}(x)=\dfrac{n!}{(n-k)!}x^{n-k}$$
+	si derivamos una vez más, entonces para $k+1$ se tiene
+	$$\begin{array}{rcl}
+	    S_n^{(k+1)}(x)&=&\dfrac{n!(n-k)}{(n-k)!}x^{n-k-1}\\\\
+			  &=&\dfrac{n!}{(n-k-1)!}x^{n-(k+1)}\\\\
+			  &=&\dfrac{n!}{\left[n-(k+1)\right]!}x^{n-(k+1)}.
+	\end{array}$$
+
+	El cual se cumple para $k+1$, por lo tanto
+	$$S_n^{(k)}=\dfrac{n!}{(n-k)!}x^{n-k}.$$\\
+
+
+    %-------------------- 28
     \item 
+	\begin{enumerate}[(a)]
+
+	    %--------- (a)
+	    \item Halle $f'(x)$ si $f(x)=|x|^3$. Halle $f''(x)$. ¿Existe $f'''(x)$ para todo $x$?.\\\\
+		Respuesta.-\; Dada la función $f(x)=|x|^3$ tenemos,
+
+		$$f(x)=\left\{\begin{array}{rl}
+			x^3, & x> 0 \\
+			-x^3, & x<0 \\
+		\end{array}\right.$$
+
+		$$f'(x)=\left\{\begin{array}{rl}
+			3x^2, & x> 0 \\
+			-3x^2, & x<0 \\
+		\end{array}\right.$$ 
+
+		$$f''(x)=\left\{\begin{array}{rl}
+			6x, & x> 0 \\
+			-6x, & x<0 \\
+		\end{array}\right.$$
+
+		$$f'''(x)=\left\{\begin{array}{rl}
+			6, & x> 0 \\
+			-6, & x<0 \\
+		\end{array}\right.$$
+
+		Además, $f'(0)=f''(0)=0$. Pero $f'''(0)$ no existe. Por tanto $f'''(x)$ no existe para todo $x$.\\\\
+
+
+	    %--------- (b)
+	    \item Analice $f$ de manera similar si $f(x)=x^4$ para $x\geq 0$ y $f(x)=-x^4$ para $x\leq 0.$\\\\
+		Respuesta.-\; Dada la función $f(x)=|x|^4$ tenemos,
+
+		$$\begin{array}{rcl}
+		    f(x) & = & \left\{ \begin{array}{rl}
+			    x^4,& x\geq 0 \\
+			    -x^4,& x\leq 0 \\
+		    \end{array}\right.\\\\
+		    f'(x) & = & \left\{ \begin{array}{rl}
+			    4x^3,& x\geq 0 \\
+			    -4x^3,& x\leq 0 \\
+		    \end{array}\right.\\\\
+		    f''(x) & = & \left\{ \begin{array}{rl}
+			    12x^2,& x\geq 0 \\
+			    -12x^2,& x\leq 0 \\
+		    \end{array}\right.\\\\
+		    f'''(x) & = & \left\{ \begin{array}{rl}
+			    24x,& x\geq 0 \\
+			    -24x,& x\leq 0 \\
+		    \end{array}\right.\\\\
+		    f''''(x) & = & \left\{ \begin{array}{rl}
+			    24,& x\geq 0 \\
+			    -24,& x\leq 0 \\
+		    \end{array}\right.\\\\
+		\end{array}$$
+
+		Y Además $f'(0)=f''(0)=0$. Pero $f'''(0)$ no existe. Por tanto $f'''(x)$ no existe para todo $x$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 29
+    \item Sea $f(x)=x^n$ para $x\geq 0$ y sea $f(x)=0$ para $x\leq 0$. Demuestre que $f^{n-1}$ existe (y encuentre una fórmula que la describa), pero que $f^{(n)}$ no existe.\\\\
+	Demostración.-\; La función esta dada como, 
+	$$\begin{array}{rcll}
+	    f(x)&=&x^n& \mbox{para}\;x\geq 0 \\
+	    f(x)&=&0& \mbox{para}\;x\leq 0 \\
+	\end{array}$$
+	Luego para $0\leq k\leq n-1$ se tiene,
+	$$\begin{array}{rcll}
+	    f^{(k)}(x)&=&\dfrac{n!}{(n-k)!}x^{n-k}& \mbox{para}\;x\geq 0 \\
+	    f^{(k)}(x)&=&0& \mbox{para}\;x< 0 \\
+	\end{array}$$
+	de donde para $n-1$ obtenemos,
+	$$\begin{array}{rcll}
+	    f^{(n-1)}(x)&=&n!x& \mbox{para}\;x\geq 0 \\
+	    f^{(n-1)}(x)&=&0& \mbox{para}\;x<0\\
+	\end{array}$$
+	pero para $f^n(0)$  
+	$$\begin{array}{rcll}
+	    f^{(n)}(0)&=&n!& \mbox{para}\;x\geq 0 \\
+	    f^{(n)}(0)&=&0& \mbox{para}\;x<0\\
+	\end{array}$$
+
+	no existe. Ya que $\lim\limits_{h\to 0^+}n!\cdot \dfrac{h}{h}=n!$, mientras que $\lim\limits_{h\to 0^-}0\cdot \dfrac{h}{h}=0$.\\\\
+
+
+    %-------------------- 30
+    \item Interprete las siguientes expresiones en las que se utiliza la notación de Leibniz; cada una de ellas es una nueva definición de un hecho ya considerado en un problema previo.
+
+	\begin{enumerate}[(i)]
+
+	    %--------- (i)
+	    \item $\dfrac{dx^n}{dx}=nx^{n-1}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$f'(a)=na^{n-1},\; \mbox{si}\; f(x)=x^n.$$\\
+
+	    %--------- (ii)
+	    \item $\dfrac{dz}{dy}=-\dfrac{1}{y^2}$ si $z=\dfrac{1}{y}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$f'(a)=-\dfrac{1}{a^2},\; \mbox{si}\; f(y)=\dfrac{1}{y}.$$\\
+
+	    %--------- (iii)
+	    \item $\dfrac{d[f(x)+c]}{dx}=\dfrac{df(x)}{dx}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$g'(a)=f'(a),\; \mbox{si}\; g(x)=f(x)+c.$$\\
+
+	    %--------- (iv)
+	    \item $\dfrac{d[cf(x)]}{dx}=c\dfrac{df(x)}{dx}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$g'(a)=cf'(a),\; \mbox{si}\; g(x)=cf(x).$$\\
+
+	    %--------- (v)
+	    \item $\dfrac{dz}{dx}=\dfrac{dy}{dx}$ si $z=y+c$.\\\\
+		Respuesta.-\; La expresión significa que, si $\dfrac{d(y+c)}{dx}=\dfrac{dy}{dx}$, entonces
+		$$g'(a)=f'(a),\; \mbox{si}\; g(x)=f(x)+c.$$\\
+
+	    %--------- (vi)
+	    \item $\dfrac{dx^3}{dx}\bigg|_{x=a^2}=3a^4$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$f'(a)=3a^4,\; \mbox{si}\; f(x)=x^3.$$\\
+
+	    %--------- (vii)
+	    \item $\dfrac{df(x+a)}{dx}\bigg|_{x=b}=\dfrac{df(x)}{dx}\bigg|_{x=b+a}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$g'(b)=f'(b+a),\; \mbox{si}\; g(x)=f(x+a).$$\\
+
+	    %--------- (viii)
+	    \item $\dfrac{df(cx)}{dx}\bigg|_{x=b}=c\dfrac{df(x)}{dx}\bigg|_{x=cb}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$g'(b)=cf'(cb),\; \mbox{si}\; g(x)=f(cx).$$\\
+
+	    %--------- (ix)
+	    \item $\dfrac{df(cx)}{dx}=c\dfrac{df(y)}{dy}\bigg|_{y=cx}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$g'(ab)=cf'(cb),\; \mbox{si}\; g(x)=f(cx).$$\\
+
+	    %--------- (x)
+	    \item $\dfrac{d^kx^n}{dx^k}=k!\displaystyle{n\choose k}x^{n-k}$.\\\\
+		Respuesta.-\; La expresión significa que,
+		$$f^{(k)}(a)=k!{n\choose n}a^{n-k},\;  \mbox{si}\; f(x)=x^n.$$\\
+
+	\end{enumerate}
 
 \end{enumerate}

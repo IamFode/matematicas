@@ -1,6 +1,5 @@
 \chapter{Cálculo diferencial}
 
-\begin{comment}
 \setcounter{section}{3}
 \section{Derivada de una función}
 
@@ -541,8 +540,6 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 
 \end{enumerate}
 
-\end{comment}
-
 
 \setcounter{section}{8}
 \section{Ejercicios}
@@ -836,7 +833,115 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 	\end{enumerate}
 
     %--------------------15.
-    \item 
+    \item Supóngase que existe la derivada $f'(a)$. Indicar cuáles de las desigualdades siguientes son ciertas y cuáles falsas. Expresar el fundamento de la decisión en cada caso.
 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $f'(a)=\lim\limits_{h\to a}\dfrac{f(h)-f(a)}{h-a}$.\\\\
+		Respuesta.-\; Sea $j=h-a$ entonces
+		$$\lim_{h\to a}\dfrac{f(h)-f(a)}{h-a}=\lim_{h\to a}\dfrac{f(a-a+h)-f(a)}{h-a}=\lim_{j\to 0}\dfrac{f(a+j)-f(a)}{j}=f'(a).$$
+		Por lo que $f'(a)$ es verdadera.\\\\
+
+	    %---------- (b)
+	    \item $f'(a)=\lim\limits_{h\to 0}\dfrac{f(a)-f(a+h)}{h}$.\\\\
+		Respuesta.-\; Sea $j=-h$, entonces
+		$$\lim_{h\to 0}\dfrac{f(a)-f(a-h)}{h}=\lim_{h\to a}\dfrac{f(a)-f(a+j)}{-j}=\lim_{t\to 0}\dfrac{f(a+j)-f(a)}{j}.$$\\
+		Por lo tanto $f'(a)$ es verdadera.\\\\
+
+	    %---------- (c)
+	    \item $f'(a)=\lim\limits_{t\to 0}\dfrac{f(a+2t)-f(a)}{t}$.\\\\
+		Respuesta.-\; Sea $j=2t$, entonces
+		$$\lim_{t\to 0}\dfrac{f(a+2t)-f(a)}{t}=\lim_{t\to 0}=2\cdot\dfrac{f(a+2t)-f(a)}{2t}=2\cdot \lim_{t\to 0}\dfrac{f(a+j)-f(a)}{j}=2f'(a)\neq f'(a).$$\\
+		Por lo tanto $f'(a)$ es falsa.\\\\
+
+	    %---------- (d)
+	    \item $f'(a)=\lim\limits_{t\to 0}\dfrac{f(a+2t)-f(a+t)}{2t}$.\\\\
+		Respuesta.-\; Sea $j=2t$, entonces
+		$$\begin{array}{rcl}
+		    \lim\limits_{t\to 0}\dfrac{f(a+2t)-f(a+t)}{2t}&=&\lim\limits_{t\to 0}\dfrac{f(a+2t)-f(a+t)+f(a)-f(a)}{2t}\\\\
+						  &=&\lim\limits_{t\to 0}\dfrac{f(a+2t)-f(a)}{2t}-\lim\limits_{t\to 0}\dfrac{f(a+t)-f(a)}{2t}\\\\
+						  &=&\lim\limits_{t\to 0}\dfrac{f(a+j)-f(a)}{j}-\dfrac{1}{2}\cdot \lim\limits_{t\to 0}\dfrac{f(a+t)-f(a)}{t}\\\\
+						  &=&f'(a)-\dfrac{1}{2}f'(a)\\\\
+						  &=&\dfrac{1}{2}f'(a)\neq f'(a).\\\\
+		\end{array}$$
+		Por lo tanto $f'(a)$ es falsa.\\\\
+
+	\end{enumerate}
+
+    %--------------------16.
+    \item Supóngase que en lugar de la definición usual de derivada $Df(x)$ se define una nueva clase de derivada $D^*f(x)$ por fórmula:
+	$$D^*f(x)=\lim_{h\to 0}\dfrac{f^2(x+h)-f^2(x)}{h},$$
+	donde $f^2(x)$ significa $[f(x)]^2.$\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Hallar fórmulas para calcular la derivada $D^*$ de una suma, diferencia, producto y cociente.\\\\
+		Respuesta.-\; Sea $f$ y $g$. Para la suma se tiene,
+		$$\begin{array}{rcl}
+		    D^*\left[f(x)+g(x)\right]&=&\lim\limits_{h\to 0}\dfrac{\left[f(x+h)+g(x+h)\right]^2-\left[f(x)+g(x)\right]^2}{h}\\\\
+					     &=&\lim\limits_{h\to 0}\dfrac{f^2(x+h)+2f(x+h)(x+h)+g^2(x+h)-f^2(x)-2f(x)g(x)-g^2(x)}{h}\\\\
+					     &=&\lim\limits_{h\to 0}\left[\dfrac{f^2(x+h)-f^2(x)}{h}\right]+2\lim\limits_{h\to 0}\left[\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}\right]\\\\
+					     &+&\lim\limits_{h\to 0}\left[\dfrac{g^2(x+h)-g^2(x)}{h}\right]\\\\
+					     &=&D^*f(x)+d^*g(x)+2\lim\limits_{h\to 0}\left[\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}\right].\\\\
+		\end{array}$$
+		Luego multiplicamos el límite anterior por $\dfrac{f(x+h)g(x+h)+f(x)g(x)}{f(x+h)g(x+h)+f(x)g(x)}$, de donde
+		$$\begin{array}{rcl}
+		    &=&D^*f(x)+f^*g(x)+2\lim\limits_{h\to 0}\left[\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}\cdot \dfrac{f(x+h)g(x+h)+f(x)g(x)}{f(x+h)g(x+h)+f(x)g(x)}\right]\\\\
+		    &=&D^*f(x)+D^*g(x)+2\lim\limits_{h\to 0}\left[\dfrac{f^2(x+h)g^2(x+h)-f^2(x)g^2(x)}{h\left(f(x+h)g(x+h)+f(x)g(x)\right)}\right]\\\\
+		    &=&D^*f(x)+D^*g(x)+\dfrac{1}{f(x)g(x)}\lim\limits_{h\to 0}\dfrac{\left[f(x+h)g(x+h)\right]-\left[f(x)g(x)\right]^2}{h}.\\\\
+		\end{array}$$
+		Ahora, para el límite restante, usamos la regla del producto para la derivada en esta definición alternativa, que derivamos a continuación. (Este último límite es $D^* (f(x)g(x))$. Luego derivamos que $D^* (f(x)g(x)) = g^2 D^*f + f^2 D^* g)$. Por lo tanto,
+		$$\begin{array}{rcl}
+		    D^*\left[f(x)+g(x)\right] &=&D^*f(x)+D^*g(x)+\dfrac{1}{f(x)g(x)}\lim\limits_{h\to 0}\dfrac{\left[f(x+h)g(x+h)\right]-\left[f(x)g(x)\right]^2}{h}.\\\\
+					      &=&D^*f(x)+D^*g(x)+\dfrac{1}{f(x)g(x)}\left[g^2(x)D^*f(x)+f^2(x)D^*g(x)\right]\\\\
+					      &=&D^*f(x)+D^*g(x)+\dfrac{g(x)}{f(x)}D^*f(x)+\dfrac{f(x)}{g(x)}D^*g(x)\\\\
+					      &=&\left(1+\dfrac{g(x)}{f(x)}\right)D^*f(x)+\left(1+\dfrac{f(x)}{g(x)}\right)D^*g(x)\\\\
+		\end{array}$$
+
+		Para la diferencia se sigue similar a la suma,
+
+		$$D^*\left[f(x)-g(x)\right]=\left(1-\dfrac{g(x)}{f(x)}\right)D^*f(x)+\left(1-\dfrac{f(x)}{g(x)}\right)D^*g(x)$$
+
+		Para el producto tenemos,
+
+		$$\begin{array}{rcl}
+		    D^*\left[f(x)g(x)\right] &=&\lim\limits_{h\to 0}\dfrac{\left[f(x+h)g(x+h)\right]^2-\left[f(x)g(x)\right]^2}{h}\\\\ 
+					     &=&\lim\limits_{h\to 0}\dfrac{f^2(x+h)g^2(x+h)-f^2(x)g^2(x)}{h}\\\\
+					     &=&\lim\limits_{h\to 0}\dfrac{f^2(x+h)g^2(x+h)-f^2(x)g^2(x)+f^2(x+h)g^2(x)-f^2(x+h)g^2(x)}{h}\\\\
+					     &=&\lim\limits_{h\to 0}\left[g^2(x)\dfrac{f^2(x+h)-f^2(x)}{h}\right]+\lim\limits_{h\to 0}\left[f^2(x+h)\dfrac{g^2(x+h)-g^2(x)}{h}\right]\\\\
+					     &=&g^2(x)D^*f+f^2(x)D^*g.\\\\
+
+		\end{array}$$
+
+		Por último para el cociente tenemos,
+
+		$$\begin{array}{rcl}
+		    D^*\left[\dfrac{f(x)}{g(x)}\right]&=&\lim\limits_{h\to 0}\dfrac{\frac{f^2(x+h)}{g^2(x+h)}-\frac{f^2(x)}{g^2(x)}}{h}\\\\
+						      &=&\lim\limits_{h\to 0}\left[\dfrac{g^2(x)f^2(x+h)-f^2(x)g^2(x+h)}{h\cdot g^2(x+h)g^2(x)}\right]\\\\
+						      &=&\dfrac{1}{g^4(x)}\lim\limits_{h\to 0}\left[\dfrac{g^2(x)f^2(x+h)-f^2(x)g^2(x+h)+g^2(x)f^2(x)-g^2(x)f^2(x)}{h}\right]\\\\
+						      &=&\dfrac{1}{g^4(x)}\lim\limits_{h\to 0}\left[g^2(x)\dfrac{f^2(x+h)-f^2(x)}{h}-f^2(x)\dfrac{g^2(x+h)-g^2(x)}{h}\right]\\\\
+						      &=&\dfrac{g^2D^*f-f^2D^*g}{g^4}\\\\
+		\end{array}$$
+
+
+
+	    %---------- (b)
+	    \item Expresar $D^*f(x)$ en función de $Df(x)$.\\\\
+		Respuesta.-\; Usaremos la idea de $\lim_{h \to 0} f(x+h) = f(x)$, y que $f(x)$ es una constante en $h$, por lo que podemos sacar el límite. 
+		$$D^*f(x)=\lim_{h\to 0}\dfrac{f^2(x+h)-f^28x)}{h}=\lim_{h\to 0}\dfrac{\left[f(x+h)+f(x)\right]\left[f(x+h)-f(x)\right]}{h}=2f(x)\cdot Df(x).$$\\
+
+
+	    %---------- (c)
+	    \item ¿Para qué funciones es $D^*f=Df$?.\\\\
+		Respuesta.-\; Para encontrar la función $f$ tal que $Df=D^*f$ igualamos las dos expresiones y resolvemos $f$ usando $D^*f=2D f$, como sigue
+		$$Df=D^*f\quad \Rightarrow \quad Df=2f(x)Df\quad \Rightarrow \quad Df=0\; \mbox{o}\; 2f(x)=1.$$
+		En cualquier caso tenemos $f(x)=c$ para alguna constante $c$.\\\\
+
+	\end{enumerate}
 
 \end{enumerate}
+
+
+\section{Regla de la cadena para la derivación de funciones compuestas}
