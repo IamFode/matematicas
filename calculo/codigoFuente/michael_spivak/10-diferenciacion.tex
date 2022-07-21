@@ -1,1 +1,134 @@
 \chapter{Diferenciación}
+
+% -------------------- teorema 1
+\begin{teo}
+    Si $f$ es una función constante, $f(x)=c,$ entonces
+    \begin{center}
+	$f'(a)=0$ para todo número $a$.
+    \end{center}
+    \vspace{.5cm}
+	Demostración.-\; $$f'(a)=\lim\limits_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=\lim\limits_{h\to 0}\dfrac{(c+h)-c}{h}=0.$$\\\\
+\end{teo}
+
+% -------------------- teorema 2
+\begin{teo}
+    Si $f$ es la función identidad, $f(x)=x,$ entonces
+    \begin{center}
+	$f'(a)=1$ para todo número $a$.
+    \end{center}
+    \vspace{.5cm}
+	Demostración.-\;
+	$$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=\lim\limits_{h\to 0}\dfrac{a+h-a}{h}=\lim_{h\to 0}\dfrac{h}{h}=1.$$\\
+\end{teo}
+
+% -------------------- teorema 3
+\begin{teo}
+    Si $f$ y $g$ son diferencibles en $a$, entonces $f+g$ es también diferenciable en $a$, y
+    $$(f+g)'(a)=f'(a)+g'(a).$$\\
+	Demostración.-\; 
+	$$\begin{array}{rcl}
+	    (f+g)'(a) &=& \lim\limits_{h\to 0} \dfrac{(f+g)(a+h)-(f+g)(a)}{h}\\\\
+		      &=& \lim\limits_{h\to 0} \dfrac{f(a+h)+g(a+h)-\left[f(a)+g(a)\right]}{h}\\\\
+		      &=& \lim\limits_{h\to 0} \left[\dfrac{f(a+h)-f(a)}{h}+\dfrac{g(a+h)-g(a)}{h}\right]\\\\
+		      &=& \lim\limits_{h\to 0} \dfrac{f(a+h)-f(a)}{h} \lim\limits_{h\to 0}\dfrac{g(a+h)-g(a)}{h}\\\\
+		      &=& f'(a)+g'(a).\\\\
+	\end{array}$$
+\end{teo}
+
+% -------------------- teorema 4
+\begin{teo}
+    Si $f$ y $g$ son diferenciables en $a$, entonces $f\cdot g$ es también diferenciable en $a$, y
+    $$(f\cdot g)'(a)=f'(a)\cdot g(a)+f(a)\cdot g'(a).$$\\
+	Demostración.-\; 
+	$$\begin{array}{rcl}
+	    (f\cdot g)'(a) &=& \lim\limits_{h\to 0} \dfrac{(f\cdot g)(a+h)-(f\cdot g)(a)}{h}\\\\
+			   &=& \lim\limits_{h\to 0} \dfrac{f(a+h)g(a+h)-f(a)g(a)}{h}\\\\
+			   &=& \lim\limits_{h\to 0} \left[\dfrac{f(a+h)\left(g(a+h)-g(a)\right)}{h}+\dfrac{\left(f(a+h)-f(a)\right)g(a)}{h}\right]\\\\
+			   &=& \lim\limits_{h\to 0} f(a+h)\cdot \lim\limits_{h\to 0} \dfrac{g(a+h)-g(a)}{h}+\lim\limits_{h\to 0} \dfrac{f(a+h)-f(a)}{h} \cdot \lim\limits_{h\to 0} g(a)\\\\
+			   &=&f(a)\cdot g'(a)+f'(a)\cdot g(a).\\\\
+	\end{array}$$
+	Observemos que hemos utilizado el hecho de que $\lim\limits_{h\to 0}f(a+h)-f(a)=0\; \Rightarrow \; \lim\limits_{h\to 0}f(a+h)=f(a).$\\\\
+\end{teo}
+
+% -------------------- teorema 5
+\begin{teo}
+    Si $f(x)=cf(x)$ y $f$ es diferenciable en $a$, entonces $g$ es diferenciable en $a$, y
+    $$g'(a)=c\cdot f'(a).$$\\
+	Demostración.-\; Si $h(x)=c$, de manera que $g=h\cdot f$, entonces,
+	$$\begin{array}{rcl}
+	    g'(a)&=&(h\cdot f)'(a)\\
+		 &=&h(a)\cdot f'(a)+h'(a)\cdot f(a)\\
+		 &=&c\cdot f'(a)+0\cdot f(a)\\
+		 &=&c\cdot f'(a).\\\\
+	\end{array}$$
+	En particular, $(-f)'(a)=-f'(a)$, por tanto $(f-g)'(a)=\left(f+[-g]\right)'(a)=f'(a)-g'(a).$\\\\
+\end{teo}
+
+% -------------------- teorema 6
+\begin{teo}
+    Si $f(x)=x^n$ para algún número natural $n$, entonces
+    \begin{center}
+	$f'(x)=nx^{n-1}$ para todo número $a$.
+    \end{center}
+    \vspace{.5cm}
+    	Demostración.-\; La demostración la haremos por inducción sobre $n$. Para $n=1$ se aplica simplemente el teorema 2. Supongamos ahora que el teorema es cierto para $n$, de manera que si $f(x)=x^n$, entonces 
+	$$f'(a)=na^{n-1}\; \mbox{para todo}\; a.$$
+	Sea $g(x)=x^{n+1}$. Si $I(x)=x$, la ecuación $x^{n+1}=x^n\cdot x$ se puede escribir como
+	\begin{center}
+	    $g(x)=f(x)\cdot I(x)$ para todo $x$.
+	\end{center}
+	así, $g=f\cdot I$. A partir del teorema 4 deducimos que 
+	$$\begin{array}{rcl}
+	    g'(a)&=&\left(f\cdot I\right)'(a)\\
+		 &=&f'(a)\cdot I(a)+f(a)\cdot I'(a)\\
+		 &=&na^{n-1}\cdot a + a^n \cdot 1\\
+		 &=&na^n+a^n\\
+		 &=&(n+1)a^n,\; \mbox{para todo}\; a.\\\\
+	\end{array}$$
+	Este es precisamente el caso $n+1$ que queríamos demostrar.\\
+	Si $f(x)=x^{-n}=\dfrac{1}{x^n}$ para algún número natural $n$, entonces
+	$$f'(x)=\dfrac{-nx^{n-1}}{x^{2n}}=(-n)x^{-n-1};$$
+	así es válido tanto para enteros positivos como negativos. Si interpretamos $f(x)=x^0$ como $f(x)=1$ y $0\cdot x^{-1}$ como $f'(x)=0$, entonces se verifica también para $n=0$.\\\\
+\end{teo}
+
+% -------------------- teorema 7
+\begin{teo}
+    Si $g$ es diferenciable en $a$ y $g(a)\neq 0,$ entonces $1/g$ es diferenciable en $a$, y 
+    $$\left(\dfrac{1}{g}\right)'(a)=\dfrac{-g'(a)}{\left[g(a)\right]^2}.$$\\
+	Demostración.-\; Incluso antes de escribir
+	$$\dfrac{\left(\dfrac{1}{g}\right)(a+h)-\left(\dfrac{1}{g}\right)(a)}{h}$$
+	debemos asegurarnos que esta expresión tiene sentido; es necesario comprobar que $(1/g)(a+h)$ está definido para valores suficientemente pequeños de $h$. Para ello son necesarias solamente dos observaciones. Como $g$ es, por hipótesis, diferenciable en $a$, se deduce del teorema 9-1 que $g$ es continua en $a$. Como $g(a)\neq 0$, deducimos también, a partir del teorema 6-3, que existe un $\delta>0$ tal que $g(a+h)\neq 0$ para $|h|<\delta$. Por tanto, $(1/g)=(a+h)$ tiene sentido para valores de $h$ suficientemente pequeños, y así podemos escribir
+	$$\begin{array}{rcl}
+	    \lim\limits_{h\to 0} \dfrac{\left(\dfrac{1}{g}\right)(a+h)-\left(\dfrac{1}{g}\right)(a)}{h}&=& \lim\limits_{h\to 0} \dfrac{\dfrac{1}{g(a+h)}-\dfrac{1}{g(a)}}{h}\\\\			
+				 &=& \lim\limits_{h\to 0} \dfrac{g(a)-g(a+h)}{h\left[g(a)\cdot g(a+h)\right]}\\\\
+				 &=& \lim\limits_{h\to 0} \dfrac{-\left[g(a+h)-g(a)\right]}{h}\cdot \dfrac{1}{g(a)g(a+h)}\\\\
+				 &=& \lim\limits_{h\to 0} \dfrac{-\left[g(a+h)-g(a)\right]}{h}\cdot \lim\limits_{h\to 0}\dfrac{1}{g(a)\cdot g(a+h)}\\\\
+				 &=&-g'(a)\cdot \dfrac{1}{\left[g(a)\right]^2}.\\\\
+	\end{array}$$
+
+\end{teo}
+
+% -------------------- teorema 8
+\begin{teo}
+    Si $f$ y $g$ son diferenciables en $a$ y $g(a)\neq 0$, entonces $f/g$ es diferenciable en $a$, y
+    $$\left(\dfrac{f}{g}\right)'(a)=\dfrac{g(a)\cdot f'(a)-f(a)\cdot g'(a)}{\left[g(a)\right]^2}$$
+	Demostración.-\; Como $f/g=f\cdot (1/g)$ obtenemos
+	$$\begin{array}{rcl}
+	    \left(\dfrac{f}{g}\right)'(a) &=& \left(f\cdot \dfrac{1}{g}\right)'(a)\\\\
+					  &=& f'(a)\cdot \left(\dfrac{1}{g}\right)(a)+f(a)\cdot \left(\dfrac{1}{g}\right)'(a)\\\\
+					  &=& \dfrac{f'(a)}{g(a)}+\dfrac{f'(a)\cdot g(a)-f(a)\cdot g'(a)}{\left[g(a)\right]^2}\\\\
+					  &=& \dfrac{f'(a)\cdot g(a)-f(a)\cdot g'(a)}{\left[g(a)\right]^2}.\\\\
+	\end{array}$$
+\end{teo}
+
+% -------------------- teorema 9
+\begin{teo}[Regla de la cadena]
+    Si $g$ es diferenciable en $a$ y $f$ es diferenciable en $g(a)$, entonces $f\circ g$ es diferenciable en $a$ y 
+    $$\left(f\circ g\right)'(a)=f'\left[g(a)\right]\cdot g'(a).$$\\
+	Demostración.-\; Definamos una función $\phi$ de la manera siguiente:
+	$$\phi(h)=\left\{\begin{array}{ll}
+		\dfrac{f\left[g(a+h)\right]-f\left[g(a)\right]}{g(a+h)-g(a)}, & \mbox{si}\; g(a+h)-g(a)\neq 0\\\\
+		f'\left[g(a)\right], & \mbox{si}\; g(a+h)-g(a)=0.\\
+	\end{array}\right.$$
+	Se intuye fácilmente que $\phi$ es continua en $0$: cuando $h$ es pequeño, $g(a+h)-g(a)$ también es pequeño, de manera que si $g(a+h)-g(a)$ no es $0$, entonces $\phi(h)$ se aproximará a $f'\left[g(a)\right]$; y si es $0$ entonces $\phi(h)$ es igual a $f'\left[g(a)\right]$, lo que es mejor todavía. Ya que la continuidad de $\phi$ es el punto crucial de toda la demostración, vamos a desarrollar rigurosamente este argumento intuitivo.\\
+\end{teo}

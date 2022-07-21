@@ -1,5 +1,7 @@
 \chapter{Cálculo diferencial}
 
+\begin{comment}
+
 \setcounter{section}{3}
 \section{Derivada de una función}
 
@@ -943,5 +945,120 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 
 \end{enumerate}
 
+\end{comment}
 
 \section{Regla de la cadena para la derivación de funciones compuestas}
+
+\begin{teo}[Regla de la cadena]
+    Sea $f$ la función compuesta de dos funciones $u$ y $v$, expresado por $f=u\circ v.$ Suponga que ambas derivadas $v'(x)$ y $u'(y)$ existen, donde $y=v(x)$, entonces la derivada $f'(x)$ también existe y es dado por la fórmula 
+    $$f'(x)=u'(y)\cdot v'(x)\quad \mbox{o}\quad f'(x)=u'[v(x)]\cdot v'(x)\quad \mbox{o}\quad (u\circ v)'=(u'\circ v)\cdot v'\quad \mbox{o}\quad u(v)'=u'(v)\circ v'.$$
+    Dicho de otro modo, para calcular la derivada de $u\circ v$ respecto a $x$ se calcula primero la derivada de $u$ en el punto $y$ donde $y=v(x)$, y se multiplica ésta por $v'(x)$.\\\\
+	Demostración.-\;  Se trata aquí de demostrar $f'(x)=u'(v)\cdot v'(x)$. Se supone que $v$ tiene derivada en $x$ y $u$ tiene derivada en $v(x)$ y se trata de demostrar que $f$ tiene derivada en $x$ dada por el producto $u'\left[v(x)\right]\cdot v'(x)$. El cociente de diferencia para $f$ es:
+	$$\dfrac{f(x+h)-f(x)}{h}=\dfrac{u\left[v(x+h)\right]-y\left[v(x)\right]}{h}$$
+	Ahora es conveniente introducir la siguiente notación: Sean $y=v(x)$ y sea $k=v(x+h)-v(x)$. Es importante poner de manifiesto que $k$ depende de $h$. Entonces se tiene $v(x+h)=y+k$, por lo que el cociente de diferencias de $f$ se transforma en:
+	$$\dfrac{f(x+h)-f(x)}{h}=\dfrac{u(y+k)-u(y)}{h}$$
+	El segundo miembro sería el cociente de diferencias cuyo límite define $u'(y)$, si en el denominador en vez de $h$ apareciera $k$. Si $k\neq 0$ se completa fácilmente la demostración multiplicando el numerador y el denominador por $k$ toma la forma:
+	$$\dfrac{u(y+k)-u(y)}{k}\cdot \dfrac{k}{h}=\dfrac{u(y+k)-u(y)}{k}\cdot \dfrac{v(x+h)-v(x)}{h}.$$
+	Cuando $h\to 0$ el último cociente del segundo miembro tiende a $v'(x)$. Puesto que $k=v(x+h)-v(x)$ y $v$ es continua en $x$, al tender $h\to 0$ también $k\to 0$; por tanto, el primer cociente del segundo miembro tiende a $u'(y)$ cuando $h\to 0$.\\
+	Aunque el razonamiento precedente parece el camino más natural para la demostración, sin embargo no es completamente general. Como $k=v(x+h)-v(x)$, puede ocurrir que $k=0$ para infinitos valores de $h$ cuando $h\to 0$, en cuyo caso pasar a $\dfrac{u(y+k)-u(y)}{k}\cdot \dfrac{k}{h}=\dfrac{u(y+k)-u(y)}{k}\cdot \dfrac{v(x+h)-v(x)}{h}$ no es válido. Para soslayar esta dificultad es necesario modificar ligeramente la demostración.\\
+	Volviendo a la ecuación $\dfrac{f(x+h)-f(x)}{h}=\dfrac{u(y+k)-u(y)}{h}$ se expresa el cociente del segundo miembro de manera que no aparezca $k$ en el denominador, para lo cual se introduce la diferencia entre la derivada $u'(y)$ y el cociente de diferencias cuyo límite es $u'(y)$. Es decir, se define una nueva función $g$ como sigue:
+	$$g(t)=\dfrac{u(y+t)}{t}-u'(y)\, \mbox{si}\; t\neq 0.$$
+	Esta ecuación define $g(t)$ sólo si $t\neq 0$. Multiplicando por $t$ y transponiendo términos, se puede escribir en la forma:
+	$$u(y+t)-u(y)=t[g(t)+u'(y)].$$
+	Aunque esta última forma se había deducido en la hipótesis de ser $t\neq 0$, es válida también para $t=0$ mientras se asigne algún valor definido a $g(0)$. El valor que se asigne a $g(0)$ no tiene importancia para esta demostración, pero ya que $g(t)\to 0$ cuando $t\to 0$ parece natural definir $g(0)$ igual a $0$. Si ahora se sustituye $t$ por $k$, donde $k=v(x+h)-v(x)$ y se sustituye el segundo miembro de $u(y+t)-u(y)=t[g(t)+u'(y)]$ en $\dfrac{f(x+h)-f(x)}{h}=\dfrac{u(y+k)-u(y)}{h}$ se obtiene:
+	$$\dfrac{f(x+h)-f(x)}{k}=\dfrac{k}{h}[g(k)+u'(y)]$$
+	fórmula que es válida aun cuando $k=0$. Si $h\to 0$ el cociente $k/h\to v'(x)$ y $g(k)\to 0$; por lo tanto el segundo miembro tiende al límite $u'(y)\cdot v'(x).$ Queda pues completada la demostración de la regla de la cadena.\\\\
+\end{teo}
+
+\section{Aplicaciones de la regla de cadena. Coeficientes de variación ligados y derivación implícita}
+
+Introducimos los símbolos $$y=v(x)\qquad \mbox{y}\qquad z=u(y).$$
+
+Y designando con $dy/dx$ la derivada $v'(x)$ y con $dz/dy$ la de $u(y)$, la formación de la función compuesta queda indicada por:
+$$z=u(y)=u[v(x)]=f(x),$$
+siguiente lo notación de Leibniz, $dz/dx$ designa la derivada $f'(x)$, la regla de la cadena tal como estaba expresada se presenta ahora en la forma:
+$$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}$$
+
+Si $y=v(x)$ y $z=f(x)$, entonces $z=y^n$, $dz/dx=f'(x)$ y la regla de la cadena da:
+$$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}=ny^{n-1}v'(x)=n[v(x)]^{n-1}v'(x).$$
+
+
+\section{Ejercicios}
+En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se sobrentiende que $x$ toma sólo los valores para los que $f(x)$ tiene sentido.
+
+\begin{enumerate}[\bfseries 1.]
+
+    %--------------------1.
+    \item $f(x)\cos 2x-2\sen x$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+	$$f'(x)=(-\sen 2x )2-\left(0\cdot \sen x + 2\cos x\right) = -2\sen 2x-2\cos x.$$\\
+
+    %--------------------2.
+    \item $f(x)=\sqrt{1+x^2}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+	$$f'(x)=\dfrac{1}{2}(1+x^2)^{-\frac{1}{2}}\cdot 2x = \dfrac{x}{\sqrt{1+x^2}}.$$
+
+    %--------------------3.
+    \item $f(x)=(2-x^2)\cos x^2+2x\sen x^3.$\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+	$$\begin{array}{rcl}
+	    f'(x)&=&-2x\cos x^2+(2-x^2)(-2x\sen x^2)+2\sen x^3 \cdot 2\sen x^3+2x\cdot 3x^3\cdot \cos x^3\\
+		 &=&(2x^3-4x)\sen x^2 - 2x \cos x^2 + 2\sen x^2 + 6x^3\cos x^3.\\\\
+	\end{array}$$
+
+    %--------------------4.
+    \item $f(x)=\sen (\cos^2 x)\cdot \cos (\sen^2 x)$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+	$$\begin{array}{rcl}
+	    f'(x)&=&\cos\left(\cos^2 x\right)\left(-2\cos x \sen x\right)\cos\left(\sen^2 x\right)+\sen\left(\cos^2 x\right)\left[-\sen\left(\sen^2 x\right)\right]2\sen x \cos x\\
+		 &=&\left(-2\sen x \cos x\right)\left[\cos\left(\cos^2 x\right)\cos\left(\sen^2 x\right)+\sen \left(\cos^2 x\right)\sen \left(\sen^2 x\right)\right]\\
+		 &=&-\sen(2x)\left[\cos \left(\cos^2 x - \sen^2 x\right)\right]\\
+		 &=&-\sen(2x)\cos\left(\cos 2 x\right).\\\\
+	\end{array}$$
+
+
+    %--------------------5.
+    \item $f(x)=\sen^n x \cdot \cos nx$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+	$$f'(x)=$$
+
+    %--------------------6.
+    \item $f(x)=\sen [\sen(\sen x)]$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------7.
+    \item $f(x)=\dfrac{\sen^2 x}{\sen x^2}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------8.
+    \item $f(x)=\tan\dfrac{x}{2}-\cot\dfrac{x}{2}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------9.
+    \item $f(x)=\sec^2 x + csx^2 x$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------10.
+    \item $f(x)=x\sqrt{1+x^2}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------11.
+    \item $f(x)=\dfrac{x}{\sqrt{4-x^2}}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------12.
+    \item $f(x)=\left(\dfrac{1+x^3}{1-x^3}\right)^{1/3}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------13.
+    \item $f(x)=\dfrac{1}{\sqrt{1+x^2}\left(x+\sqrt{1+x^2}\right)}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------14.
+    \item $f(x)=\sqrt{x+\sqrt{x+\sqrt{x}}}$.\\\\
+	Respuesta.- Usando las reglas de derivación tenemos,
+
+    %--------------------15.
+    \item 
+
+\end{enumerate}

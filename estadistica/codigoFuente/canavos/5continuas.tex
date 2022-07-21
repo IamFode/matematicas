@@ -317,14 +317,59 @@ $$F(x;\alpha, \beta) \approx F_N(z_u;0,1)-F_N(z_l; 0,1),$$
 En donde:
 
 $$z_u=\dfrac{[\beta] - 0.5 - (\alpha+\beta-1)(1-x)}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
-$$z_u=\dfrac{(\alpha+\beta-1)(1-x)+0.5}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
+$$z_t=-\dfrac{(\alpha+\beta-1)(1-x)+0.5}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
 
 donde $[\beta]$ denota el entero más grande que no excede a $\beta$.
 
 
-\section{La distribución gamma}
+\section{La distribución gama}
 
+Supóngase que una pieza metálica se encuentra sometida a cierta fuerza, de manera que se romperá después de aplicar un número específico de ciclos de fuerza. Si los ciclos ocurren de manera independiente y a una frecuencia promedio, entonces el tiempo que debe transcurrir antes de que el material se rompa es una variable aleatoria que cumple con la distribución gama.
 
+\begin{tcolorbox}
+    \begin{def.}
+	se dice que la variable aleatoria $X$ tiene una distribución gama si su función de densidad de probabilidad está dada por:
+	$$f(x;\alpha,\theta)=\left\{\begin{array}{ll}
+		\dfrac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta} & x>0,\; \alpha,\theta>0\\\\
+		0 & \mbox{para cualquier otro resultado.}
+	\end{array}\right.$$
+	en donde $\Gamma(\alpha)$ es la función gama.\\\\
+    \end{def.}
+\end{tcolorbox}
+
+Demostraremos que la función dada es función de densidad de probabilidad. Para hacerlo, considére un cambio de variable de integración, tal que $u=x/\theta$, $x=\theta u$ y $dx=\theta du$; entonces:
+$$\dfrac{1}{\Gamma(\alpha)\theta^\alpha}\int_0^\infty x^{\alpha-1}e^{-x/\theta}\; dx = \dfrac{1}{\Gamma(\alpha)\theta^\alpha} \int_0^\infty \left(\theta u\right)^{\alpha-1} e^{-u}\theta\; du = \dfrac{1}{\Gamma(\alpha)}\int_0^\infty u^{\alpha -1 }e^{-u}\; du = 1.$$
+Dado que $\Gamma(\alpha)=\displaystyle\int_0^{\infty} u^{\alpha -1 }e^{-u}\; du.$\\\\
+
+Con este procedimiento similar se demuestra que el r-ésimo momento alrededor del cero es:
+
+$$\mu_r' = \dfrac{1}{\Gamma(\alpha)\theta^\alpha}\int_0^\infty x^{\alpha+r-1}e^{-x/\theta}\; dx = \dfrac{\theta^{\alpha+r}}{\Gamma(\alpha)\theta^{\alpha}}\int_0^\infty u^{\alpha+r-1}e^{-u}\; du = \dfrac{\theta^r\Gamma(\alpha+r)}{\Gamma(\alpha)}$$
+
+Se sigue, por tanto que:
+
+\begin{tcolorbox}
+    $$E(X)=\alpha\theta.$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    $$Var(X)=\alpha \theta^2.$$
+\end{tcolorbox}
+
+Ademas el \textbf{coeficiente de asimetría} es:
+\begin{tcolorbox}
+    $$\alpha_3(X)=2\sqrt{\alpha}.$$
+\end{tcolorbox}
+
+Y la \textbf{curtosis relativa} está dada por:
+\begin{tcolorbox}
+    $$\alpha_4(X)=3\left(1+\dfrac{2}{\alpha}\right).$$
+\end{tcolorbox}
+
+Para valores grandes de $\alpha$ la distribución gama puede aproximarse, en algún grado, por una distribución normal. Esto es, la variable aleatoria
+$$Z=\dfrac{X-\alpha\theta}{\theta\sqrt{\alpha}}$$
+es, de manera aproximada, igual a la normal estándar para valores grandes de $\alpha$.\\\\
+
+La función generadora de momentos para la variable aleatoria gama $X$ está dada por:
 
 
 
