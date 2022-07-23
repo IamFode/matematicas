@@ -980,7 +980,16 @@ siguiente lo notación de Leibniz, $dz/dx$ designa la derivada $f'(x)$, la regla
 $$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}$$
 
 Si $y=v(x)$ y $z=f(x)$, entonces $z=y^n$, $dz/dx=f'(x)$ y la regla de la cadena da:
-$$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}=ny^{n-1}v'(x)=n[v(x)]^{n-1}v'(x).$$
+$$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}=ny^{n-1}v'(x)=n[v(x)]^{n-1}v'(x).$$\\
+
+\begin{ejem}
+    Si $f(x)=[v(x)]^n$ donde $n$ es un entero positivo, calcular $f'(x)$ en función de $v(x)$ y $v'8x)$. \\\\
+	Respuesta.-\; La solución $f$ es una composición, $f(x)=u[v(x)]$, donde $y(x)=x^n$. Puesto que $u'(x)=nx^{n-1}$, se tiene $u'[v(x)]$ $u'[v(x)]=n[v(x)]^{n-1}v'(x).$ Y la regla de la cadena da:
+	$$f'(x)=n[v(x)]^{n-1}v'(x).$$
+	Si se omite la referencia a $x$ y se escribe como una igualdad entre funciones, se obtiene la importante fórmula:
+	$$(v^n)'=nv^{n-1}v'$$
+	que indica cómo se deriva la potencia n-ésima de $v$ cuando $v'$ existe. La fórmula es también válida para las potencias racionales si $v^n$ y $v^{n-1}$ están definidas.\\\\
+\end{ejem}
 
 
 \section{Ejercicios}
@@ -1020,7 +1029,7 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
     %--------------------5.
     \item $f(x)=\sen^n x \cdot \cos nx$.\\\\
 	Respuesta.- Usando las reglas de derivación tenemos,
-	$$f'(x)=$$
+	$$f'(x)=n\left(\sen^{n-1}x\right)$$
 
     %--------------------6.
     \item $f(x)=\sen [\sen(\sen x)]$.\\\\

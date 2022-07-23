@@ -131,4 +131,34 @@
 		f'\left[g(a)\right], & \mbox{si}\; g(a+h)-g(a)=0.\\
 	\end{array}\right.$$
 	Se intuye fácilmente que $\phi$ es continua en $0$: cuando $h$ es pequeño, $g(a+h)-g(a)$ también es pequeño, de manera que si $g(a+h)-g(a)$ no es $0$, entonces $\phi(h)$ se aproximará a $f'\left[g(a)\right]$; y si es $0$ entonces $\phi(h)$ es igual a $f'\left[g(a)\right]$, lo que es mejor todavía. Ya que la continuidad de $\phi$ es el punto crucial de toda la demostración, vamos a desarrollar rigurosamente este argumento intuitivo.\\
+	Sabemos que $f$ es diferenciable en $g(a)$. Esto significa que 
+	$$\lim_{k\to 0}\dfrac{f(g(a)+k)-f(g(a))}{k}=f'(g(a)).$$
+	Así, si $\epsilon>0$ existe algún número $\delta'>0$ tal que, para todo $k$,
+	\begin{center}
+	    si $0<|k|<\delta'$, entonces $\bigg|\dfrac{f(g(a)+k)-f(g(a))}{k}-f'(g(a))\bigg|<\epsilon.$
+	\end{center}
+	Pero $g$ es diferenciable en $a$ y  por lo tanto continua en $a$, de manera que existe un $\delta>0$ tal que para todo $h$,
+	\begin{center}
+	    si $|h|<\delta$, entonces $|g(a+h)-g(a)|<\delta'$
+	\end{center}
+	Consideremos ahora cualquier $h$ con $|h|<\delta$. Si $k=g(a+h)-g(a)\neq 0,$ entonces
+	$$\phi(h)=\dfrac{f(g(a+h))-f(g(a))}{g(a+h)-g(a)}=\dfrac{f(g(a)+k)-f(g(a))}{k};$$
+	se deduce que $|k|<\delta'$, y por tanto deducimos que 
+	$$|\phi(h)-f'(h(a))|<\epsilon.$$
+	Por otro lado, si $g(a+h)-g(a)=0$, entonces $\phi(g)=f'(g(a))$, de manera que se verifica ciertamente que 
+	$$|\phi(h)-f'(g(a))|<\epsilon.$$
+	Por tanto hemos demostrado que 
+	$$\lim_{h\to 0}\phi(h)=f'(g(a)),$$
+	o sea que $\phi$ es continua en $0$. El resto de la demostración es fácil. Si $h\neq 0$, entonces tenemos 
+	$$\dfrac{f(g(a+h))-f(g(a))}{h}=\phi(h)\cdot \dfrac{g(a+h)-g(a)}{h}$$
+	incluso aunque $g(a+h)-g(a)=0$ (ya que en este caso ambos miembros de la igualdad son iguales a $0$). Por tanto
+	$$(f\circ g)'(a)=\lim_{h\to 0}\dfrac{f(g(a+h))-f(g(a))}{h}\lim_{h\to 0}\phi(h)\cdot \lim_{h\to 0}\dfrac{g(a+h)-g(a)}{h}=f'(g(a))\cdot g'(a).$$
 \end{teo}
+
+\section{Problemas}
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item 
+
+\end{enumerate}
