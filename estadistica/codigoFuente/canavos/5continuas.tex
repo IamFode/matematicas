@@ -371,6 +371,36 @@ es, de manera aproximada, igual a la normal estándar para valores grandes de $\
 
 La función generadora de momentos para la variable aleatoria gama $X$ está dada por:
 
+$$E[e^{tX}]=\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}\int_{0}^x x^{\alpha-1}e^{-\frac{1-\theta t}{\theta}}\; dx.$$
+
+Sea $u=\frac{(1-\theta t)x}{\theta}$, $x=\dfrac{u\theta}{1-\theta t}$ y $dx=\left[\dfrac{\theta}{1-\theta t}\right]\; du$, entonces:
+
+$$\begin{array}{rcl}
+    E\left[e^{tX}\right] &=& \dfrac{1}{\Gamma(\alpha)\theta^{\theta}}\displaystyle\int_0^\infty \dfrac{u^{\alpha-1}\theta^{\alpha-1}}{(1-\theta t)^{\alpha-1}}e^{-u}\dfrac{\theta}{1-\theta t}\; du\\\\
+			 &=&\dfrac{1}{\Gamma(\alpha)(1-\theta t)^{\alpha}}\displaystyle\int_{0}^{\infty}u^{\alpha-1}e^{-y}\; du\\\\
+			 &=&(1-\theta t)^{-\alpha},\quad 0\leq t < \dfrac{1}{\theta}.\\\\
+\end{array}$$
+
+La \textbf{función de distribución acumulativa} se determina por la siguiente expresión:
+
+\begin{tcolorbox}
+    $$F(x;\alpha,\theta) = \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}} \int_0^x t^{\alpha-1}e^{-\frac{t}{\theta}} \; dt,\quad x>0.$$
+\end{tcolorbox}
+
+Si se efectua el cambio de variable $u=\dfrac{t}{\theta}$ de manera tal que $t=\theta u$ y $dt=\theta du$, entonces la función de distribución acumulativa toma la siguiente forma:
+
+\begin{tcolorbox}
+    $$F(x;\alpha,\theta)=\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}} \int_0^{x/\theta}(\theta u)^{\alpha-1}e^{-u}\; du=\dfrac{1}{\Gamma(\alpha)}\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du.$$
+\end{tcolorbox}
+
+La integral $\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du$ se conoce como la función gama incompleta y se denota generalmente por $\gamma(x/\theta;\alpha)$. De acuerdo con lo anterior la función gama de distribución acumulativa se escribe como:
+
+\begin{tcolorbox}
+    $$P(X\leq x)=F(x;\alpha,\theta)=\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}$$
+\end{tcolorbox}
+
+Cuando el parámetro de forma $\alpha$ es igual a $1$, la distribución de Erlang (gama) se reduce a lo que se conoce como la distribución exponencial negativa.
+
 
 
 

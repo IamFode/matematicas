@@ -1152,13 +1152,69 @@ Sea $X$ una variable aleatoria con distribución gama con $\alpha=2$ y $\beta=50
 
 Respuesta.- La media viene dada por $E(X)=\alpha \theta = 2\cdot 50 = 100.$ Por lo tanto 
 
+$$\begin{array}{rcl}
+  P(X\leq E(X))=P(X\leq50*2)&=&F(x;\alpha,\theta)=F(100,2,50)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(100/50;2)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{2}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.5939942.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = 100
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma(100,2,scale = 50)
+```
+
 ### b)
 ¿Cuál es la probabilidad de que $X$ tome un valor mayor de dos desviaciones estándar con respecto a la media?
 
-Respuesta.-
+Respuesta.- Sean $E(X)=\alpha \theta = 2\cdot 50 = 100$ y  $2\sqrt{Var(X)}=2\sqrt{\alpha\theta^2}=2\cdot 50\sqrt{2}=100\sqrt{2}$, entonces
 
+$$\begin{array}{rcl}
+  P(X\geq E(X)+2\sqrt{Var(X)})&=&P(X\geq 100+100\sqrt{2})\\\\
+  &=&F(x;\alpha,\theta)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma\left(\frac{100+100\sqrt{2}}{50};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{\frac{100+100\sqrt{2}}{50}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.04662213.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = 100+2*sqrt(2)*50
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+1-gammaI$value/gamma$value
+pgamma(100+2*sqrt(2)*50,2,scale = 50,lower.tail = FALSE)
+```
 ### c)
 ¿Cuál es la probabilidad de que $X$ tome un valor menor al de su moda?
 
-Respuesta.-
+Respuesta.- La moda viene dado por $(\alpha-1)\theta=(2-1)50=50$, de donde 
+
+$$\begin{array}{rcl}
+  P(X\leq Moda)=P(X\leq50)&=&F(x;\alpha,\theta)=F(50,2,50)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(50/50;2)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{1}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.2642411.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = (alpha-1)*theta
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma((2-1)*50,2,scale=50)
+```
+
+
+# 5.30.
+Sea $X$ una variable aleatoria con distribución gama y $\alpha=2$ y $\theta=100.$
+
 

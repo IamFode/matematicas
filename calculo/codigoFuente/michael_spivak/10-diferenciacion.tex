@@ -120,6 +120,7 @@
 					  &=& \dfrac{f'(a)\cdot g(a)-f(a)\cdot g'(a)}{\left[g(a)\right]^2}.\\\\
 	\end{array}$$
 \end{teo}
+\vspace{.7cm}
 
 % -------------------- teorema 9
 \begin{teo}[Regla de la cadena]
@@ -159,6 +160,87 @@
 \begin{enumerate}[\bfseries 1.]
 
     %-------------------- 1.
-    \item 
+    \item Como ejercicio de precalentamiento, halle $f'(x)$ para cada una de las siguientes $f$. (No se preocupe por el dominio de $f$ o de $f'$; obtenga tan sólo una fórmula para $f'(x)$ que dé la respuesta correcta cuando tenga sentido.)\\
+
+	\begin{enumerate}[(i)]
+
+	    %-------------------- (i) 
+	    \item $f(x)=\sen(x+x^2).$\\\\ 
+		Respuesta.-\; $f'(x)=\cos(x+x^2)\cdot (1+2x).$\\\\
+
+	    %-------------------- (ii)
+	    \item $f(x)=\sen x + \sen x^2$.\\\\
+		Respuesta.-\; $f'(x)=\cos x + \cos(x^2)\cdot 2x.$\\\\
+
+	    %-------------------- (iii)
+	    \item $f(x)=\sen(\cos x)$.\\\\
+		Respuesta.-\; $f'(x)=\cos(\cos x)\cdot (-\sen x)=-\sen x \cos(\cos x).$\\\\
+
+	    %-------------------- (iv)
+	    \item $f(x)=\sen(\sen x)$.\\\\
+		Respuesta.-\; $f'(x)=\cos(\sen x)\cdot \cos x = \cos x \cos(\sen x).$\\\\
+
+	    %-------------------- (v)
+	    \item $f(x)=\sen\left(\dfrac{\cos x}{x}\right)$.\\\\
+		Respuesta.-\; $f'(x)=\cos\left(\dfrac{\cos x}{x}\right)\cdot \dfrac{-x\sen x - \cos x}{x^2}$.\\\\
+
+	    %-------------------- (vi)
+	    \item $f(x)=\dfrac{\sen(\cos x)}{x}$.\\\\
+		Respuesta.-\; $f'(x)=\dfrac{\cos(\cos x)\cdot (-\sen x)}{x^2}=-\dfrac{\sen x \cos(\cos x)}{x^2}$.\\\\
+
+	    %-------------------- (vii)
+	    \item $f(x)=\sen(x+\sen x)$.\\\\
+		Respuesta.-\; $f'(x)=\cos(x+\sen x)\cdot (1+\cos x)$.\\\\
+
+	    %-------------------- (viii)
+	    \item $f(x)=\sen\left[\cos(\sen x)\right]$.\\\\
+		Respuesta.-\; $f'(x)=\cos\left[\cos(\sen x)\right]\left[-\sen(\sen x)\cos x\right]$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 2.
+    \item Halle $f(x)$ para cada una de las siguientes funciones $f.$ (El autor tardó 20 minutos en calcular las derivadas para la sección de soluciones, y al lector no debería costarle mucho más tiempo calcularlas. Aunque la rapidez en los cálculos no es un objetivo de las matemáticas, si se desea tratar con aplomo las aplicaciones teóricas de la Regla de la Cadena, estas aplicaciones concretas deberían ser un juego de niños; a los matemáticos les gusta hacer ver que ni siquiera saben sumar, pero la mayoría pueden hacerlo cuando lo necesitan.)\\
+
+	\begin{enumerate}[(i)]
+
+	    %-------------------- (i)
+	    \item $f(x)=\sen \left[(x+1)^2(x+2)\right]$.\\\\
+		Respuesta.-\; 
+		$$\begin{array}{rcl}
+		f'(x)&=&\cos\left[(x+1)^2(x+2)\right]\cdot \left[2(x+1)(x+2)+(x+1)^2\right]\\
+		     &=&(x+1)(3x+5)\cos\left[(x+1)^2(x+2)\right].\\
+		\end{array}$$
+		\vspace{0.7cm}
+
+	    %-------------------- (ii)
+	    \item $f(x)=\sen^3\left(x^2+\sen x\right)$.\\\\
+		Respuesta.-\; $f'(x)=3\sen^2\left(x^2+\sen x\right)\cdot \cos\left(x^2+\sen x\right)\cdot (2x+\cos x)$.\\\\
+
+
+	    %-------------------- (iii)
+	    \item $f(x)=\sen^2\left[(x+\sen x)^2\right]$.\\\\
+		Respuesta.-\; 
+		$$\begin{array}{rcl}
+		    f'(x)&=&2\sen \left[(x+\sen x)^2 \right] \cos \left[(x+\sen x)^2\right] \cdot 2(x+\sen x)(1+\cos x)\\
+			 &=&4(1+\cos x)(x+\sen x)\sen\left[(x+\sen x)^2\right]\cos \left[(x+\sen x)^2\right]\\
+		\end{array}$$
+		\vspace{0.7cm}
+
+	    %-------------------- (iv)
+	    \item $f(x)=\sen\left(\dfrac{x^3}{\cos x^3}\right)$.\\\\
+		Respuesta.-\; 
+		$$\begin{array}{rcl}
+		    f'(x)&=&\cos\left(\dfrac{x^3}{\cos x^3}\right)\cdot \dfrac{3x^2\cos\left(x^3\right)-x^3\left[-\sen\left(x^3\right)\right]3x^2}{\cos^2\left(x^3\right)}\\\\
+			 &=&\cos\left(\dfrac{x^3}{\cos x^3}\right)\cdot \dfrac{3x^2\cos\left(x^3\right)+x^3\sen\left(x^3\right)3x^2}{\cos^2\left(x^3\right)}
+		\end{array}$$
+		\vspace{0.7cm}
+
+
+	    %-------------------- (v)
+	    \item $f(x)=\sen(x\sen x)+\sen\left(\sen x^2\right)$.\\\\
+		Respuesta.-\;
+
+
+	\end{enumerate}
 
 \end{enumerate}
