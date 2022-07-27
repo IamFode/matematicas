@@ -328,7 +328,7 @@ Supóngase que una pieza metálica se encuentra sometida a cierta fuerza, de man
 
 \begin{tcolorbox}
     \begin{def.}
-	se dice que la variable aleatoria $X$ tiene una distribución gama si su función de densidad de probabilidad está dada por:
+	Se dice que la variable aleatoria $X$ tiene una distribución gama si su función de densidad de probabilidad está dada por:
 	$$f(x;\alpha,\theta)=\left\{\begin{array}{ll}
 		\dfrac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta} & x>0,\; \alpha,\theta>0\\\\
 		0 & \mbox{para cualquier otro resultado.}
@@ -399,7 +399,75 @@ La integral $\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du$ se conoce como la funció
     $$P(X\leq x)=F(x;\alpha,\theta)=\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}$$
 \end{tcolorbox}
 
-Cuando el parámetro de forma $\alpha$ es igual a $1$, la distribución de Erlang (gama) se reduce a lo que se conoce como la distribución exponencial negativa.
+Cuando el parámetro de forma $\alpha$ es igual a $1$, la distribución de Erlang (gama) se reduce a lo que se conoce como la distribución exponencial negativa.\\\\
+
+También se tiene la equivalencia de 
+$$I(u,p)=F(x;\alpha,\theta)$$
+donde $u=\dfrac{u}{\theta\sqrt{\alpha}}$ y $p=\alpha-1$. Debe notarse que si el parámetro de forma $\alpha$ es un entero positivo, $I(u,p)=F(x;\alpha,\theta)$ se puede expresar, en forma cerrada:
+
+$$F(x;\alpha,\theta)=1-\left[1+\dfrac{x}{\theta}+\dfrac{1}{2!}\left(\dfrac{x}{\theta}\right)^2+\ldots + \dfrac{1}{(\alpha-1)!}\left(\dfrac{x}{\theta}\right)^{\alpha-1}\right]e^{-x(\theta}$$
+
+Cuando $\alpha$ es entero positivo, la distribución gama también se conoce como \textbf{distribución de Erlang}. Existe una asociación entre los modelos de probabilidad de Poisson y Erlang. Esto es, la probabilidad de que ocurra a lo más $\alpha-1$ eventos de Poisson en un tiempo $x$ a una frecuencia constante $1/\theta$ se desprende de $P(X\leq x)=F(x;\lambda)=\sum\limits_{i=0}^x \dfrac{e^{-\lambda}\lambda^i}{i!}$ y está dada por:
+
+$$F_P(\alpha-1;x/\theta)=\left[1+\dfrac{x}{\theta}+\dfrac{1}{2!}\left(\dfrac{x}{\theta}\right)^2+\ldots + \dfrac{1}{(\alpha-1)!}\left(\dfrac{x}{\theta}\right)^{\alpha-1}\right]e^{-x/\theta}.$$
+
+Por otro lado, si se supone que el tiempo de espera sigue el modelo de Erland, la probabilidad de que el tiempo de espera hasta que ocurra el $\alpha$-ésimo evento exceda un lapso $x$ especifico, está determinado por:
+
+$$\begin{array}{rcl}
+    P(X>x)&=&1-F_P(x;\alpha,\theta)\\\\
+	  &=&1-\left\{1-\left[1+\dfrac{x}{\theta}+\dfrac{1}{2!}\left(\dfrac{x}{\theta}\right)^2+\ldots + \dfrac{1}{(\alpha-1)!}\left(\dfrac{x}{\theta}\right)^{\alpha-1}\right]e^{-x/\theta}\right\}\\\\
+	  &=&\left[1+\dfrac{x}{\theta}+\dfrac{1}{2!}\left(\dfrac{x}{\theta}\right)^2+\ldots + \dfrac{1}{(\alpha-1)!}\left(\dfrac{x}{\theta}\right)^{\alpha-1}\right]e^{-x/\theta}\\\\
+	  &=&F_P(\alpha-1;x/\theta)\\\\
+\end{array}$$
+
+Cuando el parámetro de forma $\alpha$ es igual a uno, la distribución de Erlang (gama) se reduce a lo que se conoce como la \textbf{distribución exponencial negativa}. Esta distribución se emplea de manera extensa para representar lapsos aleatorios de tiempo. Nótese que la variable aleatoria de una distribución exponencial negativa puede pensarse como el lapso que transcurre hasta el primer evento de Poisson. De acuerdo con lo anterior, la variable de Erlang es la suma de variables aleatorias independientes distribuidas exponencialmente.\\\\
+
+Otro caso especial del modelo de probabilidad gama es la distribución chi-cuadrado. Si se reemplazo en en 
+	$$f(x;\alpha,\theta)=\left\{\begin{array}{ll}
+		\dfrac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta} & x>0,\; \alpha,\theta>0\\\\
+		0 & \mbox{para cualquier otro resultado.}
+	\end{array}\right.$$
+
+el parámetro de forma $\alpha$ con $v/2$ y el parámetro de escala $\theta$ con $2$, el resultado es la \textbf{función de densidad de probabilidad de una variable aleatoria chi-cuadrado} y se determina por:
+\begin{tcolorbox}
+	$$f(x;\alpha,\theta)=\left\{\begin{array}{ll}
+		\dfrac{1}{\Gamma(v/2)2^{v/2}}x^{v/2-1}e^{-x/2} & x>0,\; \alpha,\theta>0\\\\
+		0 & \mbox{para cualquier otro resultado.}
+	\end{array}\right.$$
+	La distribución chi-cuadrado se encuentra caracterizada por un solo parámetro $v$, que recibe el nombre de grados de libertad. Su notación es:
+	$$X\sim \chi^2_v$$
+\end{tcolorbox}
+
+La \textbf{función de distribución acumulativa} está dada por:
+
+\begin{tcolorbox}
+    $$P(X\leq x)\dfrac{1}{\Gamma(v/2)2^{v/2}}\int_0^x t^{v/2-1}e^{-t/2}\; dt, \quad x>0.$$
+\end{tcolorbox}
+
+Los \textbf{cuantiles} $x_{1-\alpha,v}$ es
+
+\begin{tcolorbox}
+    $$P(X\leq x_{1-\alpha,v})=\int_0^{x_{1-\alpha,v}}f(x;v)\; dx=1-\alpha.$$
+\end{tcolorbox}
+
+Los momentos de distribución chi-cuadrado se obtienen a partir de $E(X)=\alpha \theta$, $Var(X)=\alpha\theta^2$, $\alpha_3(X)=2/\sqrt{\alpha}$ y $\alpha_4(X)=3\left(1+2/\alpha\right)$, dado por:
+
+\begin{tcolorbox}
+    $$E(X)=v$$
+    $$Var(X)=2v$$
+    $$\alpha_3(X)=\dfrac{4}{\sqrt{2v}}$$
+    $$\alpha_4(X)=3\left(1+\dfrac{4}{v}\right)$$
+\end{tcolorbox}
+
+Análogamente y a partir de $E(e^{tX})=(1-\theta t)^{-\alpha}$ la \textbf{función generadora de momentos} para la distribución chi-cuadrado es:
+
+\begin{tcolorbox}
+    $$m_X(t)=(1-2t)^{-v/2},\qquad 0\leq t<\dfrac{1}{2}.$$
+\end{tcolorbox}
+
+Su varianza es dos veces el valor de su media. Presenta un sesgo positivo y un pico mayor que el de una distribución normal, pero el coeficiente de asimetria tiende a cero y a una curtosis relativa igual a tres conforme a $v$ tiende al infinito.
+
+\section{La distribución de Weibull}
 
 
 

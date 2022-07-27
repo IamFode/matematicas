@@ -1091,7 +1091,7 @@ Graficar la función de densidad de probabilidad
 
 Respuesta.-
 
-```{r}
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
 curve(dbeta(x,10,6),xlim=c(0,1.3),col="blue",lwd=2,
 xlab="x",ylab="f(x)",main="Función de Densidad beta(x;10,6)")
 ```
@@ -1214,7 +1214,88 @@ pgamma((2-1)*50,2,scale=50)
 ```
 
 
-# 5.30.
+## 5.30.
 Sea $X$ una variable aleatoria con distribución gama y $\alpha=2$ y $\theta=100.$
 
+### a)
+Graficar la función de densidad de probabilidad.
+
+Respuesta.-
+
+```{r, fig.width=4, fig.height=3.5, fig.align='center'}
+curve(dgamma(x,2,scale = 100),xlim=c(0,750),col="blue",lwd=2,
+xlab="x",ylab="f(x)",main="Función de Densidad gama(x;2,100)")
+```
+
+### b)
+Encontrar la probabilidad de que, primero, $X$ tome un valor dentro de un intervalo igual a una desviación estándar de la media y, posteriormente, de un intervalo igual a dos desviaciones estándar de la media.
+
+Respuesta.- Sean $E(X)=\alpha\theta=2\cdot 100 = 200$  y $\sqrt{Var(X)}=\theta\sqrt{\alpha}=100\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(200-100\sqrt{2}\leq X\leq 200+100\sqrt{2}\right) &=& F\left(200+100\sqrt{2};2,100\right)-F\left(200-100\sqrt{2};2,100\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{200+100\sqrt{2}}{100};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{200-100\sqrt{2}}{100};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{200+100\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}
+  -\dfrac{\displaystyle\int_0^{\frac{200-100\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.7375188.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*100+100*sqrt(2),2,scale = 100) - pgamma(2*100-100*sqrt(2),2,scale = 100)
+```
+
+Por otro lado sea $2\sqrt{Var(X)}=200\sqrt{2}$, entonces
+$$\begin{array}{rcl}
+  P\left(200-200\sqrt{2}\leq X\leq 200+200\sqrt{2}\right) &=& F\left(200+200\sqrt{2};2,100\right)-F\left(200-200\sqrt{2},2,100\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{200+200\sqrt{2}}{100};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{200-200\sqrt{2}}{100};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{200+200\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}
+  -\dfrac{\displaystyle\int_0^{\frac{200-200\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.9533779.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*100+200*sqrt(2),2,scale = 100) - pgamma(2*100-200*sqrt(2),2,scale = 100)
+```
+
+### c)
+¿Cómo cambiarian sus respuestas a la parte b) si $\theta=200$?
+
+Respuesta.- Sean $E(X)=\alpha\theta=2\cdot 200 = 400$  y $\sqrt{Var(X)}=\theta\sqrt{\alpha}=200\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(400-200\sqrt{2}\leq X\leq 400+200\sqrt{2}\right) &=& F\left(400+200\sqrt{2};2,200\right)-F\left(400-200\sqrt{2};2,200\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{400+200\sqrt{2}}{200};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{400-200\sqrt{2}}{200};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{400+200\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du} -\dfrac{\displaystyle\int_0^{\frac{400-200\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.6644504.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*200+200*sqrt(2),2,scale = 100) - pgamma(2*200-200*sqrt(2),2,scale = 100)
+```
+
+Por otro lado sea $2\sqrt{Var(X)}=400\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(400-400\sqrt{2}\leq X\leq 400+400\sqrt{2}\right) &=& F\left(400+400\sqrt{2};2,200\right)-F\left(400-400\sqrt{2};2,200\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{400+400\sqrt{2}}{200};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{400-400\sqrt{2}}{200};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{400+400\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du} -\dfrac{\displaystyle\int_0^{\frac{400-400\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.9993181.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*200+400*sqrt(2),2,scale = 100) - pgamma(2*200-400*sqrt(2),2,scale = 100)
+```
+
+## 5.31.
+La edad a la que un hombre contrae matrimonio por primera vez es una variable aletoria con distribución gama. Si la edad promedio es de $30$ años y lo más común es que el hombre se case a los $22$ años, encontrar los valores de los parámetros $\alpha$ y $\theta$, apra esta distribución.
+
+Respuesta.- Sea $E(X)=\alpha\theta=30$ y $moda = (\alpha-1)\theta$, entonces
+
+$$\left\{\begin{array}{rcl}
+  \alpha\beta&=&30\\
+  (\alpha-1)\beta&=&22\\
+\end{array}\right.
+\quad \Rightarrow \quad \alpha=\dfrac{30}{8},\qquad \beta=8$$
+
+## 3.32.
 
