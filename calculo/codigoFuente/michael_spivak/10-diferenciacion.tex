@@ -328,10 +328,112 @@
 		f'(x)&=&\cos\left[\dfrac{x}{x-\sen\left(\dfrac{x}{x-\sen x}\right)}\right]\cdot \\\\
 		     && \dfrac{\left[x-\sen\left(\dfrac{x}{x-\sen x}\right)\right]-x\left[1-\cos\left(\dfrac{x}{x-\sen x}\right)\cdot \dfrac{(x-\sen x)-x(1-\cos x)}{(x-\sen x)^2}\right]}{\left[x-\sen\left(\dfrac{x}{x-\sen x}\right)\right]^2}
 	    \end{array}$$
+	    \vspace{.7cm}
 
 	\end{enumerate}
 
     %-------------------- 3.
+    \item Halle las derivadas de las funciones $\tan$, $\cotan$, $\sec$, $\cosec$. (No es necesario memorizar estas fórmulas, aunque se necesitarán de vez en cuando; si se expresan las soluciones de manera correcta, resultan sencillas y algo simétricas.)\\\\
+	Respuesta.-\; Sea $f(x)=\tan x = \dfrac{\sen x}{\cos x}$, entonces
+	$$f'(x)=\dfrac{\cos x \cos x  - \sen (-\sen x)}{\cos^2 x}=\dfrac{\cos^2 x + \sen^2 x}{\cos^2 x}=\dfrac{1}{\cos^2x}=\sec^2 x.$$
+
+	Sea $f(x)=\cotan x = \dfrac{1}{\tan x}=\dfrac{\cos x}{\sen x}$, entonces
+	$$f'(x)=\dfrac{-\sen x\sen x - \cos x \cos x}{\sen^2 x}=-\dfrac{1}{\sen^2 x}=\cosec^2 x.$$
+
+	Sea $f(x)=\sec x = \dfrac{1}{\cos x} = \cos^{-1}x$, entonces
+	$$f'(x)=-\cos^{-2}x\cdot (-\sen x)=\dfrac{\sen x}{\cos^2 x}=\tan x \sec x.$$
+
+	Sea $f(x)=\cosec = \dfrac{1}{\sen x} = \sen^{-1}x$, entonces
+	$$f'(x)=-\sen^{-2}x\cdot \cos x = -\dfrac{\cos x}{\sen^2 x} = -\cosec x \cotan x.$$\\
+
+    %-------------------- 4.
+    \item Para cada una de las siguientes funciones $f$, halle $f'(f(x))$ no $(f\circ f)(x)$.\\
+
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=\dfrac{1}{1+x}.$\\\\
+		Respuesta.-\;  Sea $f'(x)=-\dfrac{1}{(1+x)^2}$, entonces
+		$$f'\left(\dfrac{1}{1+x}\right)=-\dfrac{1}{\left(1+\dfrac{1}{1+x}\right)^2}=-\left(\dfrac{1+x}{2+x}\right)^2.$$\\
+
+	    %---------- (ii)
+	    \item $f(x)=\sen x.$\\\\
+		Respuesta.-\; Se tiene $f'(\sen x) = \cos(x) =\cos(\sen x).$\\\\
+
+	    %---------- (iii)
+	    \item $f(x)=x^2$.\\\\
+		Respuesta.-\; Se tiene $f'\left(x^2\right)=2x=2x^2.$\\\\
+
+	    %---------- (iv)
+	    \item $f(x)=17.$\\\\
+		Respuesta.-\; Se tiene $f'(17)=0.$\\\\
+
+	\end{enumerate}
+
+    %-------------------- 5.
+    \item Para cada una de las siguientes funciones $f$, halle $f\left[f'(x)\right]$.\\
+
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=\dfrac{1}{x}$.\\\\
+		Respuesta.-\; Sea $f'(x)=-\dfrac{1}{x^2}$, entonces
+		$f\left[f'(x)\right]=f\left(-\dfrac{1}{x^2}\right)=\dfrac{1}{-\dfrac{1}{x^2}}=-x^2.$\\\\
+
+	    %---------- (ii)
+	    \item $f(x)=x^2$.\\\\
+		Respuesta.-\; Sea $f'(x)=2x$, entonces
+		$f'\left(2x\right)=(2x)^2=4x^2.$\\\\
+
+	    %---------- (iii)
+	    \item $f(x)=17$.\\\\
+		Respuesta.-\; Sea $f'(17)=0$, entonces
+		$f'\left(17\right)=17$\\\\
+
+	    %---------- (iv)
+	    \item $f(x)=17x$.\\\\
+		Respuesta.-\; Sea $f'(17x)=17$, entonces $f'\left(17\right)=17\cdot 17=289$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item Halle $f'$ en función de $g'$ si
+
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=g(x+g(a))$.\\\\
+		Respuesta.-\; Por las reglas de derivación tenemos,
+		$$f'(x)=g'\left[x+g(a)\right]\cdot \left[x+g(a)\right]'=g'\left[x+g(a)\right].$$\\
+
+	    %---------- (ii)
+	    \item $f(x)=g(x\cdot g(a))$.\\\\
+		Respuesta.-\; Por las reglas de derivación tenemos,
+		$$f'(x)=g'\left[x\cdot g(a)\right]\cdot \left[x\cdot g(a)\right]'=g'\left[x\cdot g(a)\right]\cdot g(a).$$\\
+
+	    %---------- (iii)
+	    \item $f(x)=g(x+g(x))$.\\\\
+		Respuesta.-\; Por las reglas de derivación tenemos,
+		$$f'(x)=g'\left[x+g(x)\right]\left[x+g(x)\right]'=g'\left[x+g(x)\right]\left[1-g'(x)\right].$$\\
+
+	    %---------- (iv)
+	    \item $f(x)=g(x)(x-a)$.\\\\
+		Respuesta.-\; Por las reglas de derivación tenemos,
+		$$f'(x)=g'(x)(x-a)+g'(x).$$\\
+
+	    %---------- (v)
+	    \item $f(x)=g(a)(x-a)$.\\\\
+		Respuesta.-\; Por las reglas de derivación tenemos,
+		$$f'(x)=g'(a)(x-a)+g(a)(x-a)' = g(a).$$\\
+
+	    %---------- (vi)
+	    \item $f(x+3)=g\left(x^2\right)$.\\\\
+		Respuesta.-\; Sea $z=x+3\; \Rightarrow \; x=z-3$, entonces
+		$$f'(z)=g'\left[(z-3)^2\right]\cdot \left[(z-3)^2\right]'=g'\left[(z-3)^2\right](2(z-3)=2g'\left[(z-3)^2\right](z-3).$$\\
+
+	\end{enumerate}
+
+    %-------------------- 7.
     \item 
 
 \end{enumerate}

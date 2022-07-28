@@ -1377,20 +1377,103 @@ La duración de cierto componente es una variable aleatoria con distribución ga
 ### a)
 Obtener la función de confiabilidad
 
-Respuesta.-
-
 ### b)
 Para $\theta=20,$ obtener la frecuencia de falla y graficarla como una función de $t$.
-
-Respuesta.-
 
 ### c)
 Si $\theta=20$. ¿Cuál es la confianza del componente en $t=80$?
 
-Respuesta.-
-
-
 ## 5.35
 Para armar un artículo se necesita cuatro etapas. Si el tiempo total necesario para armar un artículo en horas, es una variable aleatoria con distribución gama y parámetro de escala $\theta=2$. ¿Cuál es la probabilidad de armar un artículo en menos de $15$ horas?
 
+Respuesta.- Sea $\alpha=4$, entonces 
+
+$$\begin{array}{rcl}
+  P(X\leq 15)&=&=F(15,4,2)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(15/2;4)}{\Gamma(4)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{\frac{15}{2}}u^{4-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{4-1}e^{-u}\; du}\\\\
+  &=&0.2642411.\\\\
+\end{array}$$
+
+```{r}
+alpha=4
+theta=2
+x = 15
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma(15,4,scale=2)
+```
+
+
+## 5.36.
+Sea $X$ una variable aleatoria con distribución de Weibull y parámetros $\alpha=2$ y $\theta=20.$
+
+### a)
+Graficar la función de densidad de probabilidad.
+
 Respuesta.-
+
+```{r, fig.width=4, fig.height=3.5, fig.align='center'}
+curve(dweibull(x,2,scale = 20),xlim=c(0,65),col="blue",lwd=2,
+xlab="x",ylab="f(x)",main="Función de Densidad Weibull(x;2,20)")
+```
+
+### b)
+Obtener la probabilidad de que $X$ tome un valor mayor que la media.
+
+Respuesta.- Sea la media 
+$$E(X)=\theta\Gamma\left(1+\dfrac{1}{\alpha}\right)=20 \int_0^\infty u^{1/2}e^{-u}\; du = 17.72453$$
+
+```{r}
+int = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+20*int$value
+```
+
+Entonces,
+
+$$P(X\geq E(X))=1-P(X\leq E(X))=1-F(E(X);\alpha,\theta)=1-\left[1-e^{-(E(X)/\theta)^\alpha}\right]=e^{-(E(X)/\theta)^\alpha}$$
+$$P(X \geq 17.72453)=e^{-(17.72453/20)^2}=0.4559385.$$
+```{r}
+int = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+EX=20*int$value
+exp(-(EX/20)^2)
+pweibull(EX,2,scale = 20,lower.tail = FALSE)
+```
+
+### c)
+Obtener la probabilidad de que $X$ tome un valor que se encuentre en un intervalo igual a una desviación estándar y después en un intervalo a dos desviaciones estándar de la media.
+
+Respuesta.- Sea la la desviación estándar como se detalla a continuación 
+
+$$\sqrt{Var(X)}=\sqrt{20^2\left[\int_0^\infty u^{2/2}e^{-u}\; du-\int_0^\infty u^{1/2}e^{-u}\; du\right]}=9.265045.$$
+
+```{r}
+int = integrate(function(u) u^(2/2)*exp(-u),lower = 0, upper = Inf)
+int1 = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+sqrt(20^2*(int$value-(int1$value)^2))
+```
+
+Entonces,
+
+$$P(X\leq 9.265045)=F(9.265045;2,20)=1-e^{-(9.265045/20)^2}=0.193138.$$
+
+```{r}
+1-exp(-(9.265045/20)^2)
+```
+
+Luego sean $E(X)=17.72453$ y $2\sqrt{Var(X)}=2*0.193138=0.386276$, entonces
+
+$$\begin{array}{rcl}
+  P(17.72453-0.386276\leq X \leq 17.72453+0.386276)&=&F(17.63158;2,20)-F(16.85902;2,20)\\\\
+  &=&1-e^{-(17.63158/20)^2}-\left[1-e^{(16.85902/20)^2}\right]\\\\
+  &=&0.03166598.\\\\
+\end{array}$$
+
+```{r}
+1-exp(-(17.63158/20)^2)-(1-exp(-(16.85902/20)^2))
+pweibull(17.63158,2,scale=20) - pweibull(16.85902,2,scale=20)
+```
+
+
+## 5.37

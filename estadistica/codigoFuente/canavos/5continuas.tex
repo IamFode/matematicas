@@ -468,6 +468,74 @@ Análogamente y a partir de $E(e^{tX})=(1-\theta t)^{-\alpha}$ la \textbf{funci�
 Su varianza es dos veces el valor de su media. Presenta un sesgo positivo y un pico mayor que el de una distribución normal, pero el coeficiente de asimetria tiende a cero y a una curtosis relativa igual a tres conforme a $v$ tiende al infinito.
 
 \section{La distribución de Weibull}
+El esfuerzo al que se someten los materiales pueden modelarse de manera adecuada mediante el empleo de esta distribución.En los últimos 25 años esta distribución se empleó como modelo para situaciones del tipo tiempo-falla y con el objetivo de lograr una amplia variedad de componentes mecánicos y eléctricos.
+
+\begin{tcolorbox}
+    \begin{def.}
+	Se dice que una variable aleatoria $X$ tiene una distribución de Weibull si su función de densidad de probabilidad está dada por:
+
+	$$f(x;\alpha,\beta)=\left\{\begin{array}{ll}
+		\dfrac{\alpha}{\theta^\alpha}x^{\alpha-1}e^{-(x/\theta)^\alpha} & x>0,\; \alpha,\beta>0\\\\
+		0 & \mbox{para cualquier otro resultado.}
+	\end{array}\right.$$
+
+    \end{def.}
+\end{tcolorbox}
+
+Se puede introducir un parámetro adicional al reemplazar la variable aleatoria de Weibull $X$ por $X-a$ en donde $a$ es un parámetro de localización que representa un valor umbral o tiempo de garantía.\\\\
+
+La \textbf{función de distribución acumulativa de Weibull} es:
+
+\begin{tcolorbox}
+    $$F(x;\alpha,\theta) = \dfrac{\alpha}{\theta^\alpha}\int_0^x t^{\alpha-1}e^{-(t/\theta)^\alpha}\; dt$$
+\end{tcolorbox}
+
+puede obtenerse en forma cerrada mediante la evaluación directa de la integral anterior. Esto es:
+
+\begin{tcolorbox}
+    $$F(x;\alpha,\theta)=\dfrac{\alpha}{\theta^\alpha}\left(-\dfrac{\theta^\alpha}{\alpha}\right)e^{-(t\theta)^\alpha}\bigg|_0^x=1-e^{-(x/\theta)^\alpha},\quad x\geq 0.$$
+\end{tcolorbox}
+
+De esta fórmula mencionada, el \textbf{\boldmath valor cuantil $x_q$} es:
+
+\begin{tcolorbox}
+    $$1-e^{(x_q/\theta)^\alpha}=q \quad \Rightarrow \quad x_q=-\theta[\ln(1-q)]^{1/\alpha}=\theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1/\alpha}$$
+\end{tcolorbox}
+
+En particular, la \textbf{mediana de una variable aleatoria de Weibull} es:
+\begin{tcolorbox}
+    $$x_{0.5}\theta[\ln(2)]^{1/\alpha}$$
+\end{tcolorbox}
+
+Los momentos y los factores de una variable aleatoria de Weibull se encuentran primero al determinar el r-ésimo momento central alrededor de cero:
+
+$$u_r'= E(X^r)=\int_0^\infty x^r f(x;\alpha,\theta)\; dx = \dfrac{\alpha}{\theta^\alpha}\int_0^\infty x^{\alpha+r-1}e^{-(x/\theta)^\alpha}\; dx$$
+
+Luego sea $u=(x/\theta)^\alpha$; entonces $x=\theta u^{1/\alpha}$ y $dx=(\theta/\alpha)u^{1/\alpha - 1}\; du$. El resultado es:
+
+$$u_r' = \dfrac{\alpha}{\theta^\alpha}\int_0^\infty (\theta u^{1/\alpha})^{\alpha+r-1}e^{-u}\dfrac{\theta}{\alpha}u^{1/\alpha-1}\; du = \theta^r\int_0^\infty u^{r/\alpha}e^{-u}\; du = \theta^r \Gamma\left(1+\dfrac{r}{\alpha}\right)$$
+
+Por lo que la \textbf{media} es:
+
+\begin{tcolorbox}
+    $$E(X)=\theta \Gamma\left(1+\dfrac{1}{\alpha}\right)$$
+\end{tcolorbox}
+
+Y la \textbf{varianza} es:
+
+\begin{tcolorbox}
+    $$Var(X)=\theta^2\left[\left(1+\dfrac{2}{\alpha}\right)-\Gamma^2\left(1+\dfrac{1}{\alpha}\right)\right]$$
+\end{tcolorbox}
+
+La distribución Weibull puede aproximarse, de manera adecuada, por una distribución normal cada que el factor de forma $\alpha$ se encuentre en $3.6$ y $5.83$.\\\\
+Cuando el parámetro de forma es igual a uno, la distribución de Weibull (al igual que la gama), se reduce a la distribución exponencial negativa. Cuando $\alpha=2$ y el parámetro de escala $\theta$ se reemplaza por $\sqrt{2}\sigma$, la función de densidad de Weibull se reduce a
+
+$$f\left(x;\sigma^2\right)=\dfrac{x}{\sigma^2}e^{-x^2/2\sigma^2},\quad x>0,$$
+que es la función de densidad de probabilidad de lo que se conoce como \textbf{distribución de Rayleigh}.\\\\
+
+\section{La distribución exponencial negativa}
+
+
 
 
 

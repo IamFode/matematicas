@@ -1252,9 +1252,29 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 
     %--------------------21.
     \item Un avión se desplaza en vuelo horizontal, a $8$ millas de altura. (En este Ejercicio se supone la Tierra llana.) La ruta de vuelo pasa por encima de un punto $P$ del suelo. La distancia entre el avión y el punto $P$ disminuye a razón de 4 millas por minuto en el instante en el que esta distancia es de 10 millas. Calcular la velocidad del avión en millas por hora.\\\\
+	Respuesta.-\; Sea $x$ la distancia desde el punto del avión en el suelo hasta el punto $P$ e $y$ sea la distancia desde el avión hasta el punto $P$.
+
+	\begin{center}
+	    \begin{tikzpicture}[scale=.7]
+		\draw[] (-2,0) -- (8,0);
+		\draw[dashed] (0,0) -- (0,4)--(6,0)node[below]{$P$};
+		\draw[](2.5,0)node[below]{$x$};
+		\draw[](0,4)node[above]{Avión};
+		\draw[](2.8,2.5)node[above]{$y$};
+		\draw[](0,2)node[left]{$8$};
+	    \end{tikzpicture}
+	\end{center}
+	Estamos tratando de calcular $\dfrac{dx}{dt}$ la velocidad del avión. Sabemos que la distancia desde el avión hasta el punto $P$ está cambiando a razón de $4$ millas por minuto cuando $y=4$. Por tanto tenemos,
+	$$\dfrac{dy}{dt}=4 \; \mbox{si}\; y=10.$$
+	Además por la identidad de Pitágoras podemos derivar,
+	$$x^2=y^2-64\quad \Rightarrow \quad \dfrac{dx}{dy}=\dfrac{y}{\sqrt{y^2-64}}.$$
+	Entonces en $10$ millas tenemos 
+	$$\dfrac{dx}{dy}=\dfrac{5}{3}.$$
+	De este modo,
+	$$\dfrac{dx}{dt}=\dfrac{dy}{dt}\dfrac{dx}{dy}=10\cdot \dfrac{5}{3}=\dfrac{50}{3}.$$\\
+
+    %--------------------22.
+    \item En campo de baseball es un cuadrado cuyo lado tiene 90 pies de longitud. Una pelota es lanzada por el bateador a lo largo de una línea que pasa por la tercera base con una velocidad constante de $100$ pies por segundo. ¿Cuál es la rapidez con que varía la distancia de la pelota a la primera base, (a) cuando la pelota se encuentra a mitad de camino de la tercera base, (b) cuando la pelota alcanza la tercera base.\\\\
 	Respuesta.-\; 
-
-
-
 
 \end{enumerate}
