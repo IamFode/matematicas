@@ -1152,7 +1152,109 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 	\end{array}$$
 	\vspace{.7cm}
 
+	Respuesta.-\;
+
+	$$h(x)=\left\{\begin{array}{rclclcl}
+	    h(0)&=&f(g(0))&=&f(2)&=&0\\
+	    h(1)&=&f(g(1))&=&f(0)&=&1\\
+	    h(2)&=&f(g(2))&=&f(3)&=&2\\
+	    h(3)&=&f(g(3))&=&f(1)&=&3\\
+	\end{array}\right. 
+	\qquad 
+	k(x)=\left\{\begin{array}{rclclcl}
+	    k(0)&=&g(f(0))&=&g(1)&=&0\\
+	    k(1)&=&g(f(1))&=&g(3)&=&1\\
+	    k(2)&=&g(f(2))&=&g(0)&=&2\\
+	    k(3)&=&g(f(3))&=&g(2)&=&3\\
+	\end{array}\right.$$
+
+	$$h'(x)=f'(g(x))g'(x)=\left\{\begin{array}{rclclcr}
+	    h'(0)&=&f'(g(0))g'(0)&=&f'(2)(-5)&=&-10\\
+	    h'(1)&=&f'(g(1))g'(1)&=&f'(0)(1)&=&5\\
+	    h'(2)&=&f'(g(2))g'(2)&=&f'(3)(1)&=&4\\
+	    h'(3)&=&f'(g(3))g'(3)&=&f'(1)(-6)&=&12\\
+	\end{array}\right.$$
+
+	$$k(x)=g'(f(x))f'(x)=\left\{\begin{array}{rclclcr}
+	    k'(0)&=&g'(f(0))f'(0)&=&g'(1)(5)&=&5\\
+	    k'(1)&=&g'(f(1))f'(1)&=&g'(3)(-2)&=&12\\
+	    k'(2)&=&g'(f(2))f'(2)&=&g'(0)(2)&=&-10\\
+	    k'(3)&=&g'(f(3))f'(3)&=&g'(2)(4)&=&4\\
+	\end{array}\right.$$
+	\vspace{.7cm}
+
+    %--------------------18.
+    \item Una función $f$ y sus dos primeras derivadas se han tabulado como se indica. Poner $g(x)=xf\left(x^2\right)$ y construir una tabla de $g$ y sus dos primeras derivadas para $x=0,1,2.$
+	$$\begin{array}{c|c|c|c}
+	    x&f(x)&f'(x)&f''(x)\\\\
+	    \hline\\
+	     0&0&1&2\\
+	     1&1&1&1\\
+	     2&3&2&1\\
+	     3&6&3&0\\
+	\end{array}$$
+	\vspace{.5cm}
+
+	Respuesta.-\; Sean $f'(x)=f\left(x^2\right)+2x^2f'\left(x^2\right)\quad$ y $\quad g''(x)=6xf'\left(x^2\right)+4x^3f''\left(x^2\right)$, entonces
+
+	$$\begin{array}{c|c|c|c}
+	    x&g(x)&g'(x)&g''(x)\\\\
+	    \hline\\
+	     0&0&0&0\\
+	     1&1&3&10\\
+	     2&30&2&36\\
+	\end{array}$$
+	\vspace{.7cm}
+
+    %--------------------19.
+    \item Determinar la derivada $g'(x)$ en función de $f'(x)$ si:
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $g(x)=f\left(x^2\right)$.\\\\
+		Respuesta.-\; Usando las reglas de derivación se tiene,
+		$$g'(x)=f'\left(x^2\right)\left(x^2\right)'=2xf'\left(x^2\right).$$\\
+
+	    %---------- (b)
+	    \item $g(x)=\left(\sen^2 x\right)+f\left(\cos^2 x\right)$.\\\\
+		Respuesta.-\; Usando las reglas de derivación se tiene,
+		$$g'(x)=f'\left(\sen^2 x\right)2\sen x \cos x+f'\left(\cos^2 x\right)2\cos x (-\sen x).$$\\
+
+	    %---------- (c)
+	    \item $g(x)=f[f(x)]$.\\\\
+		Respuesta.-\; Usando las reglas de derivación se tiene,
+		$$g'(x)=f'\left[f(x)\right]f'(x).$$\\
+
+	    %---------- (d)
+	    \item $g(x)=f\left\{f[f(x)]\right\}$.\\\\
+		Respuesta.-\; Usando las reglas de derivación se tiene,
+		$$g'(x)=f'\left\{f\left[f(x)\right]\right\}f'\left[f(x)\right]f'(x).$$\\
+
+	\end{enumerate}
+
+    %--------------------20.
+    \item Cada arista de un cubo se dilata a razón de $1$ cm por segundo. ¿Cuál es la razón de variación del volumen cuando la longitud de cada arista es (a) $5$ cm, (b) $10$ cm, (c) $x$ cm?.\\\\
+	Respuesta.-\; El volumen de un cubo está dado por:
+	$$V=a^3$$
+	donde $a$ es la longitud de la arista. Por tanto la razón de variación es,
+	$$\dfrac{dV}{da}=3a^2.$$
+	Así,
+	\begin{enumerate}[(a)]
+
+	    \item $\dfrac{dV}{da}=3(5)^2=75 \; cm^3/seg.$\\
+
+	    \item $\dfrac{dV}{da}=3(10)^2=300 \; cm^3/seg.$\\
+
+	    \item $\dfrac{dV}{da}=3x^2 \; cm^3/seg.$\\\\
+
+	\end{enumerate}
+
+    %--------------------21.
+    \item Un avión se desplaza en vuelo horizontal, a $8$ millas de altura. (En este Ejercicio se supone la Tierra llana.) La ruta de vuelo pasa por encima de un punto $P$ del suelo. La distancia entre el avión y el punto $P$ disminuye a razón de 4 millas por minuto en el instante en el que esta distancia es de 10 millas. Calcular la velocidad del avión en millas por hora.\\\\
 	Respuesta.-\; 
+
+
 
 
 \end{enumerate}

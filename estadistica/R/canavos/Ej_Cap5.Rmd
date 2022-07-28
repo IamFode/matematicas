@@ -1298,4 +1298,99 @@ $$\left\{\begin{array}{rcl}
 \quad \Rightarrow \quad \alpha=\dfrac{30}{8},\qquad \beta=8$$
 
 ## 3.32.
+La información que a continuación se presenta es una tabulación parcial de la función gama incompleta tal como se encuentra definida por $I(u,p)=F(x;\alpha,\theta)$ para $\alpha=16$
 
+$$\begin{array}{cc}
+  u&I(u,15)\\\\
+  \hline\\
+  2.0&0.0082\\
+  2.5&0.0487\\
+  3.0&0.1556\\
+  3.5&0.3306\\
+  4.0&0.5333\\
+  4.5&0.7133\\
+  5.0&0.8435\\
+  5.5&0.9231\\
+  6.0&0.9656\\
+  6.5&0.9858\\
+  7.0&0.9946\\
+\end{array}$$
+
+Para $\theta=10$, comparar estas probabilidades con las que se proporcionaron al emplear una aproximación normal.
+
+Respuestas.- Sean $\mu=E(X)=16\cdot 10=160$,  $\sigma=\sqrt{Var(X)}=\sqrt{16\cdot 10^2}=40$ y $u=\dfrac{x}{\theta\sqrt{\alpha}}\; \Rightarrow \; x=u\cdot \theta\sqrt{\alpha}$, entonces
+
+```{r}
+u = c(2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7)
+for(i in u){
+  x=i*10*sqrt(16)
+  print(pnorm(x,160,40))
+}
+```
+
+$$\begin{array}{ccc}
+  u&I(u,15)&F(x;\mu,\sigma)\\\\
+  \hline\\
+  2.0&0.0082&0.02275013\\
+  2.5&0.0487&0.0668072\\
+  3.0&0.1556&0.1586553\\
+  3.5&0.3306&0.3085375\\
+  4.0&0.5333&0.5\\
+  4.5&0.7133&0.6914625\\
+  5.0&0.8435&0.8413447\\
+  5.5&0.9231&0.9331928\\
+  6.0&0.9656&0.9772499\\
+  6.5&0.9858&0.9937903\\
+  7.0&0.9946&0.9986501\\
+\end{array}$$
+
+
+## 5.33.
+Mediante el empleo de la función generadora de momentos de la distribución gama, encontrar expresiones para la media y la varianza.
+
+Respuesta.-\; La función generadora de momentos para la variable aleatoria gama $X$ está dada por:
+
+$$E[e^{tX}]=\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}\int_{0}^x x^{\alpha-1}e^{-\frac{1-\theta t}{\theta}}\; dx.$$
+
+Sea $u=\frac{(1-\theta t)x}{\theta}$, $x=\dfrac{u\theta}{1-\theta t}$ y $dx=\left[\dfrac{\theta}{1-\theta t}\right]\; du$, entonces:
+
+$$\begin{array}{rcl}
+    E\left[e^{tX}\right] &=& \dfrac{1}{\Gamma(\alpha)\theta^{\theta}}\displaystyle\int_0^\infty \dfrac{u^{\alpha-1}\theta^{\alpha-1}}{(1-\theta t)^{\alpha-1}}e^{-u}\dfrac{\theta}{1-\theta t}\; du\\\\
+			 &=&\dfrac{1}{\Gamma(\alpha)(1-\theta t)^{\alpha}}\displaystyle\int_{0}^{\infty}u^{\alpha-1}e^{-y}\; du\\\\
+			 &=&(1-\theta t)^{-\alpha},\quad 0\leq t < \dfrac{1}{\theta}.\\\\
+\end{array}$$
+
+Sacando la primera y segunda derivada tenemos 
+
+$$\dfrac{dE[e^{tX}]}{dt}\bigg|_{t=0}=-\alpha(1-\theta t)^{-\alpha-1}\cdot (-\theta)\bigg|_{t=0}=\alpha\theta=E[X].$$
+
+
+$$\dfrac{d^2E[e^{tX}]}{dt^2}\bigg|_{t=0}=-\alpha(-\alpha-1)(1-\theta t)^{-\alpha-2}(-\theta)(-\theta)\bigg|_{t=0}=\alpha^2\theta^2+\alpha\theta^2=E[X^2]$$
+
+Por lo tanto ya que $\sigma=Var(X)=E[X^2]-E[X]^2$, entonces
+$$Var(X)=\alpha^2\theta^2+\alpha\theta^2-(\alpha\beta)^2=\alpha\beta^2.$$
+
+
+## 5.34.
+La duración de cierto componente es una variable aleatoria con distribución gama y parámetro $\alpha=2.$
+
+### a)
+Obtener la función de confiabilidad
+
+Respuesta.-
+
+### b)
+Para $\theta=20,$ obtener la frecuencia de falla y graficarla como una función de $t$.
+
+Respuesta.-
+
+### c)
+Si $\theta=20$. ¿Cuál es la confianza del componente en $t=80$?
+
+Respuesta.-
+
+
+## 5.35
+Para armar un artículo se necesita cuatro etapas. Si el tiempo total necesario para armar un artículo en horas, es una variable aleatoria con distribución gama y parámetro de escala $\theta=2$. ¿Cuál es la probabilidad de armar un artículo en menos de $15$ horas?
+
+Respuesta.-
