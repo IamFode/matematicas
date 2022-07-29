@@ -1275,6 +1275,43 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 
     %--------------------22.
     \item En campo de baseball es un cuadrado cuyo lado tiene 90 pies de longitud. Una pelota es lanzada por el bateador a lo largo de una línea que pasa por la tercera base con una velocidad constante de $100$ pies por segundo. ¿Cuál es la rapidez con que varía la distancia de la pelota a la primera base, (a) cuando la pelota se encuentra a mitad de camino de la tercera base, (b) cuando la pelota alcanza la tercera base.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Primero damos la configuración general para el problema.
+	\begin{center}
+	    \begin{tabular}{rcl}
+		x&=&La distancia de la pelota a la primera base.\\
+		y&=&La distancia de la pelota al plato de home.\\
+	    \end{tabular}
+	\end{center}
+
+	Por lo que 
+	$$\dfrac{dy}{dt}=100\, ft/s$$
+	Además $x^2=y^2+90^2$, así $x=\sqrt{y^2+90^2}$, de donde
+	    $$\dfrac{dx}{dy}=\dfrac{y}{\sqrt{y^2+90^2}}$$
+
+	Si la pelota está a medio camino de la tercera base, significa que $y=45$ pies, ya que el diamante es un cuadrado con lado de $90$ pies de largo. Entonces tenemos
+	$$\dfrac{x}{dt}=\dfrac{dy}{dt}\dfrac{dx}{dy}=100\dfrac{45}{\sqrt{45^2+90^2}}=\dfrac{100}{\sqrt{5}}=20\sqrt{5}\; ft/s.$$
+
+	Por último si la pelota está en la tercera base, significa que $y=90$ ya que $y$ es la distancia desde la pelota hasta el plato. Entonces tenemos,
+	$$\dfrac{x}{dt}=\dfrac{dy}{dt}\dfrac{dx}{dy}=100\dfrac{90}{\sqrt{90^2+90^2}}=\dfrac{100}{\sqrt{2}}=50\sqrt{2}\; ft/s.$$\\
+
+    %--------------------23.
+    \item Un barco navega paralelamente a una costa recta, a una velocidad de $12$ millas por hora y a una distancia de $4$ millas. ¿Cuál es su velocidad de aproximación a un faro de la costa en el instante en que diste precisamente $5$ millas del faro?.\\\\
+	Respuesta.-\; Sea 
+	\begin{center}
+	    \begin{tabular}{rcl}
+		x&=&la distancia a lo largo de la orilla hasta el faro.\\
+		y&=&la distancia del barco al faro.\\
+	    \end{tabular}
+	\end{center}
+	El problema nos da que la distancia a lo largo de la costa hasta el faro está cambiando a razón de $12$ millas por hora (ya que el bote se mueve a $12$ millas por hora y se mantiene paralelo a la línea de costa). Así, $\dfrac{dy}{dt} = 12$. Entonces, usando el teorema de Pitágoras, cuando $x = 5$ tenemos $y = 3$. Además, resolviendo $x$ en términos de $y$, derivando tenemos 
+	$$x=\sqrt{y^2+16}\quad \Rightarrow \quad \dfrac{dy}{dx}=\dfrac{y}{\sqrt{y^2+16}}$$
+	Por lo tanto, tenemos en $y=3$,
+	$$\dfrac{dx}{dt}=\dfrac{dy}{dt}\dfrac{dx}{dy}=12\dfrac{3}{\sqrt{9+16}}=\dfrac{36}{5}=7.5\, mph.$$\\
+
+
+    %--------------------24.
+    \item  Un recipiente tiene forma de cono circular. La altura es 10 pies y el radio de la base 4 pies. Se introduce agua en el recipiente a una velocidad constante de 5 pies cúbicos por minuto, ¿con qué velocidad se eleva el nivel del agua cuando la profundidad del agua es de 5 pies, si (a) el vértice del cono está hacia arriba, (b) lel vértice del cono está hacia abajo?.\\\\
+	Respuesta.-\;
+
 
 \end{enumerate}
