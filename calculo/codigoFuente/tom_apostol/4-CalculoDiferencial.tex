@@ -945,7 +945,6 @@ En los Ejercicios del 26 al 35. Calcular la derivada $f'(x)$. Se sobrentiende qu
 
 \end{enumerate}
 
-\end{comment}
 
 \section{Regla de la cadena para la derivación de funciones compuestas}
 
@@ -1311,7 +1310,130 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 
     %--------------------24.
     \item  Un recipiente tiene forma de cono circular. La altura es 10 pies y el radio de la base 4 pies. Se introduce agua en el recipiente a una velocidad constante de 5 pies cúbicos por minuto, ¿con qué velocidad se eleva el nivel del agua cuando la profundidad del agua es de 5 pies, si (a) el vértice del cono está hacia arriba, (b) lel vértice del cono está hacia abajo?.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Calculamos el radio del recipiente en terminos de altura $h$,
+	$$r=-\dfrac{4}{10}h=\dfrac{2}{5}h\quad \Rightarrow \quad \dfrac{dr}{dt}=-\dfrac{2}{5}\dfrac{dh}{dt}.$$
+	Luego, usando la fórmula para el volumen de un cono circular recto que tenemos y dejando $V$ que el volumen del agua que tenemos $V$ sea igual al volumen de todo el tanque menos el volumen del cono vacío (más pequeño) sobre el agua:
+	$$V=\dfrac{1}{3}\pi4^2 10^2 -\dfrac{1}{3}\pi r^2(10-h)=\dfrac{1600 \pi}{3}-\dfrac{10}{3}\pi r^2 + \dfrac{1}{3}\pi r^2 h = \dfrac{1600 \pi}{3}-r^2\left(\dfrac{10 \pi}{3}-\dfrac{\pi}{3}h\right)$$
+	que implica
+	$$\dfrac{dV}{dt}=-2 r \left(\dfrac{10 \pi}{3}-\dfrac{\pi}{3} h\right)\dfrac{dr}{dt}-r^2 \left(-\dfrac{\pi}{3}\dfrac{dh}{dt}\right).$$
+	(Aquí, necesitábamos usar la regla del producto para las derivadas, ya que ambos $r$ y $h$ son funciones de $t$, por lo que cuando diferenciamos su producto, debemos tener cuidado de usar la regla del producto y obtener los dos términos que se muestran arriba).\\
+	El problema nos da que la tasa de cambio en el volumen de agua es de $5$ pies cúbicos por minuto, entonces,
+	$$\dfrac{dV}{dt}=5.$$
+	Cuando $h=5$, tenemos $r=2$. Sustituyendo estos valores y se teniendo $\dfrac{dr}{dt}=-\dfrac{2}{5}\dfrac{dh}{dt}$,
+	$$5=-2\cdot 2 \left(\dfrac{10\pi}{3}-\dfrac{\pi}{3}5\right)\left(-\dfrac{2}{5}\dfrac{dh}{dt}\right)-2^2\left(-\dfrac{\pi}{3}\dfrac{dh}{dt}\right)=\dfrac{-20\pi}{3}\dfrac{-2}{5}\dfrac{dh}{dt}+\dfrac{4\pi}{3}\dfrac{dh}{dt}=\dfrac{60\pi}{15}\dfrac{dh}{dt}$$
+	entonces,
+	$$\dfrac{dh}{dt}=\dfrac{5}{4\pi}.$$\\
+	Para la parte (b) será casi igual que la parte (a). Ahora, el radio de la línea de flotación en términos de la altura del agua $h$ es
+	$$r=\dfrac{4}{10}h=\dfrac{2}{5} h \quad \Rightarrow \quad \dfrac{dr}{dt}=\dfrac{2}{5}\dfrac{dh}{dt}.$$
+	Luego, usando el volumen de un cono circular recto y dejando $V$ denotar el volumen del agua (las cosas son un poco más simples esta vez ya que el agua es un cono y no tenemos que restar nada) tenemos
+	$$V=\dfrac{1}{3}\pi r^2h\quad \Rightarrow \quad \dfrac{dV}{dt}=\dfrac{2}{3}\pi r h \dfrac{dr}{dt}+\dfrac{1}{3}\pi r^2 \dfrac{dh}{dt}.$$
+	(Como en la parte (a), tuvimos que tener cuidado al usar la regla del producto ya que ambas $h$ y $r$ son funciones de $t$). Entonces, el problema nos da que la tasa de cambio en el volumen de agua es de $5$ pies cúbicos por minuto, así que de nuevo,
+	$$\dfrac{dV}{dt}=5.$$
+	Cuando $h=5$ todavía tenemos $r=2$. Sustituyendo estos valores junto con $\dfrac{dr}{dt}=\dfrac{2}{5}\dfrac{dh}{dt}$ se tiene,
+	$$5=\dfrac{2}{3}\pi\cdot 2 \cdot 5 \left(\dfrac{2}{5}\dfrac{dh}{dt}\right)+\dfrac{1}{3}\pi 2^2 \dfrac{dh}{dt}=\dfrac{8\pi}{3}\dfrac{dh}{dt}+\dfrac{4\pi}{3}\dfrac{dh}{dt}=\dfrac{12\pi}{3}\dfrac{dh}{dt}\quad \Rightarrow \quad \dfrac{dh}{dt}=\dfrac{5}{4\pi}.$$\\
 
+    %--------------------25.
+    \item Un tanque de agua tiene la forma de un cono circular recto con su vértice hacia abajo. Su altura es de $10$ pies y el radio de la base es de $15$ pies. El agua se filtra por el fondo a una tasa constante de $1$ pie cúbico por segundo. Se vierte agua en el tanque a una tasa constante de c pies cúbicos por segundo. Calcule $c$ para que el nivel del agua aumente a razón de $4$ pies por segundo en el instante en que el agua tenga $2$ pies de profundidad.\\\\
+	Respuesta.-\; Se tiene,
+	$$\dfrac{H}{h}=\dfrac{R}{r}\quad \Rightarrow \quad \dfrac{10}{h}=\dfrac{15}{r} \quad \Rightarrow \quad r=\dfrac{3}{2} h.$$
+	Luego el volumen del cono está dando por,
+	$$V=\dfrac{1}{3}\pi r^2 h$$
+	substituyendo $r$,
+	$$V=\dfrac{1}{3}\pi \left(\dfrac{3}{2} h\right)^2 h$$
+	Luego, derivando con respecto de $t$, tenemos
+	$$\dfrac{dV}{dt}=\dfrac{9}{4}\pi h^2\dfrac{dh}{dt}$$
+	Se nos dice que el nivel del agua subirá a razón de 4 pies por segundo $\dfrac{dh}{dt}=4$, cuando el agua es $h=2$ pies de profundidad, por lo tanto
+	$$\dfrac{dV}{dt}=\dfrac{9}{4}\pi h^2 \dfrac{dh}{dt}\quad \Rightarrow \quad \dfrac{dV}{dt}=\dfrac{9}{4} \pi 2^2 4 = 36 \pi.$$
+	Finalmente,
+	$$\dfrac{dV}{dt}=c-1\quad \Rightarrow \quad 36\pi = c - 1 \quad \Rightarrow \quad c=36\pi +1.$$\\
+
+    %--------------------26.
+    \item El agua fluye hacia un tanque hemisférico de $10$ pies de radio (la parte plana hacia arriba). En cualquier instante, sea $h$ la profundidad del agua, medida desde el fondo, $r$ el radio de la superficie del agua y $V$ el volumen del agua en el tanque. Calcule $dV/dh$ en el instante en que $h = 5$ pies. Si el agua fluye a una tasa constante de $5\sqrt{3}$ pies cúbicos por segundo, calcule $dr/dt$, la tasa a la que $r$ está cambiando, en el instante $t$ cuando $h = 5$ pies.\\\\
+	Respuesta.-\; Primero encontramos una fórmula para el volumen del agua en el tanque en función de $h$. Hacemos esto considerando el sólido de revolución de $\sqrt{20y - y^2}$ alrededor del eje $y$:
+	$$V=\pi\int_0^h \sqrt{20 y -y^2}^2 \; dy = \pi \int_0^h 20y - y^2\; dy = \pi \left(10y^2-\dfrac{y^3}{3}\right)\bigg|_0^h = 10\pi h^2 - \dfrac{\pi h^3}{3}.$$
+	Diferenciando con respecto a $h$ tenemos
+	$$\dfrac{dV}{dh}=20\pi h - \pi h^2.$$
+	Entonces cuando $h=5$,
+	$$\dfrac{dV}{dh}=75\pi.$$
+	Luego nos dan $\dfrac{dV}{dt}=5\sqrt{3}$ pies cúbicos por segundo. Sabemos también $\dfrac{dV}{dh}=20\pi h - \pi h^2$. Así,
+	$$r^2+(10-h)^2=100\quad \Rightarrow \quad r=\sqrt{20h-h^2}\quad \Rightarrow \quad \dfrac{dr}{dh}=\dfrac{10-h}{\sqrt{20 h - h^2}}.$$
+	De este modo,
+	$$\dfrac{dr}{dt}=\dfrac{dh}{dt}\dfrac{dr}{dh}=\dfrac{5\sqrt{3}}{20\pi h - \pi h^2}\cdot \dfrac{10-h}{\sqrt{20 h -h^2}}.$$
+	Por lo tanto, si $h=5$ tenemos
+	$$\dfrac{dr}{dt}=\dfrac{\sqrt{3}}{15\pi}\dfrac{5}{\sqrt{75}}=\dfrac{1}{15\pi}\; \mbox{pies por segundo.}$$\\
+
+    %--------------------27.
+    \item Un triángulo rectángulo $ABC$ variable en el plano $xy$ tiene su ángulo recto en el vértice $B$, un vértice $A$ fijo en el origen y el tercer vértice $C$ restringido para estar en la parábola $y = 1 + \dfrac{7}{36}x^2$. El punto $B$ comienza en el punto $(0, 1)$ en el tiempo $t = 0$ y se desplaza hacia arriba a lo largo del eje $y$ a una velocidad constante de $2\; cm/seg$. ¿Qué tan rápido aumenta el área del triángulo cuando $t = 7/2 \;seg$?\\\\
+	Respuesta.-\; Se nos da que el vértice $B$ se mueve hacia arriba a lo largo del eje $y$ a una velocidad constante de $2$ centímetros por segundo, esto significa 
+	$$\dfrac{dy}{dt}=2.$$
+	Luego, calculamos el área del triángulo, la llamamos $A_{ABC}$, en términos de $x$ e $y$,
+	$$A_{ABC} = \dfrac{1}{2}xy\quad \Rightarrow \quad \dfrac{dA_{ABC}}{dt}=\dfrac{y}{2}\dfrac{dx}{dt}+\dfrac{x}{2}\dfrac{dy}{dt}.$$
+	Donde usamos la regla del producto para diferenciar con respecto a $t$, recordando que ambos $x$ e $y$ son funciones de $t$ también. Luego se nos da la fórmula para $y$ con respecto a $x$,
+	$$y=1+\dfrac{1}{36}x^2\quad \Rightarrow \quad \dfrac{dy}{dt}=\dfrac{14}{36} x \dfrac{dx}{dt}=\dfrac{7x}{18}\dfrac{dx}{dt} \quad \Rightarrow \quad \dfrac{dx}{dt}=\dfrac{18}{7x}\dfrac{dy}{dt}=\dfrac{36}{7x}.$$
+	Entonces, cuando $t=\frac{7}{2}$ tenemos $y=8$ lo que implica $x=6$. Por tanto,
+	$$\dfrac{dA_{ABC}}{dt}=4\dfrac{dx}{dt}+3\dfrac{dy}{dt}=\dfrac{24}{7}+6=\dfrac{66}{7}.$$\\
+
+    %--------------------28.
+    \item El radio de un cilindro circular recto aumenta a una tasa constante. Su altitud es una función lineal del radio y aumenta tres veces más rápido que el radio. Cuando el radio es de $1$ pie, la altura es de $6$ pies. Cuando el radio es de $6$ pies, el volumen aumenta a razón de $1$ pie cúbico por segundo. Cuando el radio es de $36$ pies, el volumen aumenta a razón de $n$ pies cúbicos por segundo, donde $n$ es un número entero. Calcula $n$.\\\\
+	Respuesta.-\; Dado que la altitud (que denotamos $h$) es una función lineal del radio y aumenta tres veces más rápido, tenemos
+	$$h=3r+c\quad \Rightarrow \quad \dfrac{dh}{dr}=3.$$
+	Cuando $r=1$, se nos da $h=6$. Por tanto, resolvemos para $c$ y obtenemos $c=3$. Cuando $r=6$, tenemos 
+	$$\dfrac{dV}{dt}=1\;\mbox{pies cubico por segundo.}$$
+	Entonces, dado que $r=6$ implica $h=3\cdot 6 + 3 = 21$ y 
+	$$V=\pi r^2 h \quad \Rightarrow \quad \dfrac{dV}{dt}=\pi r^2\dfrac{dh}{dt}+2\pi r h \dfrac{dr}{dt}=1,$$
+	luego,
+	$$\pi(36)\left(3\dfrac{dr}{dt}\right)+2\pi \cdot 6 \cdot 21 \dfrac{dr}{dt}=1.$$
+	Resolviendo para $\dfrac{dr}{dt}$ obtenemos,
+	$$\dfrac{dr}{dt}=\dfrac{1}{360\pi}.$$
+	Así, cuando $r=36 \;\Rightarrow \; h=111$, 
+	$$n=\pi \cdot 36^2 \cdot \dfrac{1}{120\pi} + 2\pi \cdot 36 \cdot 111 \cdot \dfrac{1}{360\pi}=\dfrac{54}{5}+\dfrac{111}{5}=33.$$\\
+
+    %--------------------29.
+    \item Una partícula está restringida a moverse a lo largo de una parábola cuya ecuación es $y = x^2$. (a) ¿En qué punto de la curva la abscisa y la ordenada cambian al mismo ritmo? (b) Encuentre esta velocidad si el movimiento es tal que en el tiempo $t$ tenemos $x = \sen t$ e $y = sen^2 t$.\\\\
+	Respuesta.-\; Ya que $y=x^2$ tenemos 
+	$$\dfrac{dy}{dt}=2x\dfrac{dx}{dt}.$$
+	Así, $\dfrac{dy}{dt}=\dfrac{dx}{dt}$ cuando $x=\dfrac{1}{2}$. Entonces $y=x^2$ implica $y=\dfrac{1}{4}.$.\\
+	Para (b). Si tenemos $x=\sen t$ y $\sen^2 t$ en el tiempo $t$ y $\dfrac{dx}{dt}=\dfrac{dy}{dt}$, entonces
+	$$x=\dfrac{1}{2}\quad \Rightarrow \quad t=\sen^{-1}\left(\dfrac{1}{2}\right)$$
+	$$\dfrac{dx}{dt}=\cos t \quad \Rightarrow \quad \dfrac{dx}{dt}=\cos\left[\sen^{-1}\left(\dfrac{1}{2}\right)\right]=\dfrac{\sqrt{3}}{2}.$$\\
+
+    %--------------------30.
+    \item La ecuación $x^3 + y^3 = 1$ define a $y$ como una o más funciones de $x$. (a) Suponiendo que existe la derivada $y'$, y sin intentar resolver para $y$, demuestre que $y'$ satisface la ecuación $x^2 + y^2 y' = 0$. (b) Suponiendo que existe la segunda derivada $y"$, demuestre que $y" = -2xy^{-5}$ siempre que $j\neq 0$.\\\\
+	Respuesta.-\; Para esta parte diferenciamos cada lado con respecto a $x$, teniendo en cuanta que $y$ es una función de $x$, por lo que necesitamos usar la regla de la cadena para diferenciar $y^3$.
+	$$x^3+y^3=1\quad \Rightarrow \quad 3x^2+3y^2 y' = 0 \quad \Rightarrow \quad x^2+y^2y'=0 \quad \Rightarrow \quad y'=-\dfrac{x^2}{y^2}$$
+	Luego ya que $y^2 = 2y\cdot y'$; derivamos $y'$ para encontrar $y''$,
+	$$y''=-\dfrac{y^2 2x - x^2 2yy'}{\left(y^2\right)^2}=\dfrac{-2xy^2+x^22y\left(-\dfrac{x^2}{y^2}\right)}{y^4}=\dfrac{-2xy^3-2x^4}{y^5}=\dfrac{-2x\left(y^3+x^3\right)}{y^5}=-2xy^{-5}.$$\\
+    %--------------------31.
+    \item Si $0 < x < 5$, la ecuación $x^{1/2} + y^{l/2} =5$ define a $y$ como una función de $x$. Sin resolver para $y$, demuestre que la derivada $y'$ tiene un signo fijo. (Puede asumir la existencia de $y'$.)\\\\
+	Demostración.-\; Diferenciando con respecto de $x$ se tiene,
+	$$\dfrac{1}{2}x^{-\frac{1}{2}}+\dfrac{1}{2}y^{-\frac{1}{2}}y'=0\quad \Rightarrow \quad \dfrac{1}{2\sqrt{x}}+\dfrac{1}{2\sqrt{y}}y'=0\quad \Rightarrow \quad \dfrac{2\sqrt{y}}{2\sqrt{x}}+y'=0 \quad \Rightarrow \quad y'=-\dfrac{\sqrt{y}}{\sqrt{x}}<0.$$\\
+
+    %--------------------32.
+    \item La ecuación $3x^2 + 3y^2 = 12$ define a $y$ implícitamente como dos funciones de $x$ si $|x| \leq 2$. Suponiendo que existe la segunda derivada $y"$, demuestre que satisface la ecuación $4y^3y" = - 9$.\\\\
+	Demostración.-\; Derivamos teniendo en cuenta que debemos usar la regla de la cadena para derivar $y$ ya que es función de $x$,
+	$$3x^2+4y^2=12\quad \Rightarrow \quad 6x+8yy'=0\quad \Rightarrow \quad y'=-\dfrac{3x}{4y}$$
+	de donde 
+	$$y''=\dfrac{-12y+12xy'}{16y^2}=\dfrac{-12y-\dfrac{9x^2}{4y}}{4y^2}=\dfrac{-12y^2-9x^2}{16y^2}=\dfrac{-3\left(4y^2+3x^2\right)}{16y^3}=-\dfrac{9}{4}y^{-3}.$$
+	Por lo tanto,
+	$$3y^3y''=9.$$\\
+
+    %--------------------33.
+    \item La ecuación $x \sen xy + 2x^2 = 0$ define a $y$ implícitamente como una función de $x$. Suponiendo que existe la derivada $y'$, demuestre que satisface la ecuación $y'x^2 \cos xy + xy \cos xy + \sen xy + 4x = 0$.\\\\
+	Demostración.-\; Derivamos la ecuación dada con respecto a $x$, teniendo en cuenta que $y$ es función de $x$, por lo que debemos usar la regla de la cadena,
+	$$\begin{array}{rcl}
+	    x\sen(xy)+2x^2=0&\Rightarrow&\left[x\sen (xy) + 2x^2\right]'=0\\
+			    &\Rightarrow&\sen (xy) +x\left(xy'+y\right)\cos(xy)+4x=0\\
+			    &\Rightarrow&y'x^2\cos(xy)+xy\cos(xy)+\sen(xy)+4x=0\\
+	\end{array}$$
+	\vspace{.7cm}
+
+    %--------------------34.
+    \item Si $y = x^r$, donde $r$ es un número racional, digamos $r = m/n$, entonces $y^n = x^m$. Suponiendo la existencia de la derivada $y'$, obtenga la fórmula $y' = rx^{r-1}$ utilizando la diferenciación implícita y la fórmula correspondiente para exponentes enteros.\\\\
+	Demostración.-\; Sean $y=r^r$, $y^n=x^m$ y $r=\dfrac{m}{n}\; \Rightarrow \; m=nr$, entonces
+	$$ny^{n-1}y'=mx^{m-1}\quad \Rightarrow \quad y'=\dfrac{mx^{m-1}}{ny^{n-1}}=\dfrac{m}{n} \dfrac{x^{m-1}}{\left(x^r\right)^{n-1}}=\dfrac{m}{n} \dfrac{x^{m-1}}{x^{nr-r}}=rx^{m-1-m+r}=rx^{r-1}.$$\\
 
 \end{enumerate}
+
+\end{comment}
+
+\section{Aplicaciones de la derivación a la determinación de los extremos de las funciones}

@@ -1375,14 +1375,40 @@ $$Var(X)=\alpha^2\theta^2+\alpha\theta^2-(\alpha\beta)^2=\alpha\beta^2.$$
 La duración de cierto componente es una variable aleatoria con distribución gama y parámetro $\alpha=2.$
 
 ### a)
-Obtener la función de confiabilidad
+Obtener la función de confiabilidad.
+
+Respuesta.- La función es está dada por
+
+$$R(t)=\dfrac{\lambda^\alpha}{\Gamma(\alpha)}\int_t^\infty t^{\alpha-1}e^{-\lambda t}\; dt = \dfrac{\lambda^2}{\Gamma(2)}\int_t^\infty t^{2-1}e^{-\lambda t}\; dt$$
+
 
 ### b)
 Para $\theta=20,$ obtener la frecuencia de falla y graficarla como una función de $t$.
 
+Respuesta.- Sea $\lambda = \dfrac{1}{\theta} = \dfrac{1}{20}$, entonces
+
+$$R(t)=\dfrac{\lambda^\alpha}{\Gamma(\alpha)}\int_t^\infty t^{\alpha-1}e^{-\lambda t}\; dt = \dfrac{\dfrac{1}{20^2}}{\Gamma(2)}\int_t^\infty t^{2-1}e^{-\frac{1}{20}t}\; dt=\dfrac{1}{20^2\Gamma(2)}\int_t^\infty t^{2-1}e^{-\frac{1}{20}t}\; dt$$
+
+```{r, fig.width=3, fig.height=3, fig.align='center'}
+F <- function(a) {
+        return((1/(20^2*integrate(function(x) (x)^{alpha-1}*exp(-x),
+                                  lower = 0, 
+                                  upper = Inf)$value))*integrate(function (x) x^(2-1)*exp(-1/20*x),a,Inf)$value)
+               }
+x<-c()
+for (i in seq(0,50,.01)) {
+  x<-c(x,F(i))
+}
+
+plot(seq(0,50,.01),x,xlab = "x", ylab="Density")
+```
+
 ### c)
 Si $\theta=20$. ¿Cuál es la confianza del componente en $t=80$?
 
+Respuesta.-
+
+$$R(t)=\dfrac{\dfrac{1}{20^2}}{\Gamma(2)}\int_{20}^\infty 20^{2-1}e^{-\frac{1}{20}t}\; dt$$
 ## 5.35
 Para armar un artículo se necesita cuatro etapas. Si el tiempo total necesario para armar un artículo en horas, es una variable aleatoria con distribución gama y parámetro de escala $\theta=2$. ¿Cuál es la probabilidad de armar un artículo en menos de $15$ horas?
 
@@ -1482,19 +1508,106 @@ El tiempo de duración de un sistema se encuentra aproximado por una distribuci�
 ### a)
 Obtener la media y los deciles de esta distribución.
 
-Respuesta.-
+Respuesta.- Sea $E(X)=\theta\Gamma\left(1+\dfrac{1}{\alpha}\right)$, entonces
+$$E(X)=50\int_0^\infty u^{1+\frac{1}{\alpha} -1}e^{-u}\; du=50\int_0^\infty u^{\frac{1}{\alpha}}e^{-u}\; du=44.31132.$$
+
+```{r}
+50*integrate(function(u) u^(1/2)*exp(-u), lower = 0, upper = Inf)$value
+```
+
+Los deciles estan dados por $x_q=\theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1-\alpha}$, entonces
+
+$$x_{0.1}=50\left[\ln\left(\dfrac{1}{1-0.1}\right)\right]^{1/2}=16.22964.$$
+
+```{r}
+50*((log(1/(1-0.1))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.2}\right)\right]^{1/2}=23.61904.$$
+
+```{r}
+50*((log(1/(1-0.2))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.3}\right)\right]^{1/2}=29.86113.$$
+
+```{r}
+50*((log(1/(1-0.3))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.4}\right)\right]^{1/2}=35.73603.$$
+
+```{r}
+50*((log(1/(1-0.4))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.5}\right)\right]^{1/2}=41.62773.$$
+
+```{r}
+50*((log(1/(1-0.5))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.6}\right)\right]^{1/2}=47.86154.$$
+
+```{r}
+50*((log(1/(1-0.6))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.7}\right)\right]^{1/2}=54.86285.$$
+
+```{r}
+50*((log(1/(1-0.7))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.8}\right)\right]^{1/2}=63.43181.$$
+
+```{r}
+50*((log(1/(1-0.8))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.9}\right)\right]^{1/2}=75.87136.$$
+
+```{r}
+50*((log(1/(1-0.9))))^(1/2)
+```
+
 
 ### b)
 Obtener la confiabilidad de este sistema en $t=75$.
 
-Respuesta.-
+Respuesta.- 
+$$P(X\geq 75) = 1-(1-e^{-(x/\theta)^\alpha})=1-(1-e^{-(75/50)^2})=0.1053992.$$
 
 ```{r}
+exp(-(75/50)^2)
 pweibull(75,2,scale=50,lower.tail = FALSE)
 ```
 
 
 ## 5.38.
-Un sistema está formado por dos componentes independientes $A$ y $B$. El sistema permenecerá operando mientras uno o ambos componentes funcionen. Si el tiempo de vida de la componente $A$ es una variable aleatoria de Weibull con $\alpha=1/2$ y $\theta=10$, y si el tiempo de vida de $B$ es también una variable de Weibull con $\alpha=2$ y $\theta=12$. ¿Cuál es la probabilidad de que el sistema trabaje más de $20$ horas?.
+Un sistema está formado por dos componentes independientes $A$ y $B$. El sistema permanecerá operando mientras uno o ambos componentes funcionen. Si el tiempo de vida de la componente $A$ es una variable aleatoria de Weibull con $\alpha=1/2$ y $\theta=10$, y si el tiempo de vida de $B$ es también una variable de Weibull con $\alpha=2$ y $\theta=12$. ¿Cuál es la probabilidad de que el sistema trabaje más de $20$ horas?.
+
+Respuesta.- Sabiendo que $A$ y $B$ son independientes entonces,
+
+$$P_A(X\geq 20)+P_B(X\geq 20)=1-\left[1-e^{-\left(\frac{20}{10}\right)^{1/2}}\right]+1-\left[1-e^{-\left(\frac{20}{12}\right)^2}\right] = e^{-\left(\frac{20}{10}\right)^{1/2}}+e^{-\left(\frac{20}{12}\right)^2}=0.3052933.$$
+
+```{r}
+exp(-(20/10)^(1/2))+exp(-(20/12)^2)
+pweibull(20,1/2,scale=10,lower.tail=FALSE) + pweibull(20,2,scale=12,lower.tail=FALSE)
+```
+
+
+## 5.39.
+Sea $X$ una variable aleatoria con distribución exponencial.
+
+### a)
+¿Cuál es la probabilidad de que $X$ tome un valor mayor que la media?
 
 Respuesta.-
+
+### b)
+¿Cuáles son las probabilidades de que $X$ tome un valor que se encuentre en un intervalo igual a una desviación estándar, primero y en un intervalo igual a dos desviación estándar de la media?
+
+Respuesta.-
+
+
