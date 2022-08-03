@@ -596,15 +596,32 @@
     %-------------------- 14.
      \item Demuestre análogamente que las tangentes a una elipse o a una hipérbola cortan a las gráficas correspondientes solamente una vez.\\\\
 	 Demostración.-\; La ecuación general de la elipse es,
-	 $$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1 \quad \Rightarrow \quad y=\pm b \sqrt{1-\dfrac{x^2}{a^2}} \quad \Rightarrow \quad y= b \sqrt{1-\dfrac{x^2}{a^2}}.$$
+	 $$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1 \quad \Rightarrow \quad y=\pm b \sqrt{1-\dfrac{x^2}{a^2}} \quad \Rightarrow \quad y= b \sqrt{1-\dfrac{x^2}{a^2}}.\qquad (1)$$
 	 Tomando la derivada de la elipse se tiene,
 	 $$y'=\dfrac{-\dfrac{b2x}{a^2}}{2\sqrt{1-\dfrac{x^2}{a^2}}}=\dfrac{-bx}{a^2\sqrt{1-\dfrac{x^2}{a^2}}}$$
-	 por lo que la pendiente de la tangente será con respecto de $k$ será,
+	 por lo que la pendiente de la tangente será con respecto de $k$ estará dada por,
 	 $$\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}$$
-	 Por otro lado la tangente estará dada por,
+	 Por otro lado, la ecuación de la tangente es,
 	 $$y=\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}x+c$$
 	 Reemplazando $x$ por $k$ e $y$ con $b\sqrt{1-\dfrac{k^2}{a^2}}$,
-	 $$b\sqrt{1-\dfrac{k^2}{a^2}}=\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}k+c\quad \Rightarrow \quad $$
+	 $$b\sqrt{1-\dfrac{k^2}{a^2}}=\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}k+c,$$
+	 de donde 
+	 $$c=b\sqrt{1-\dfrac{k^2}{a^2}}+\dfrac{bk^2}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}=\dfrac{a^2 b\left(\sqrt{ 1-\dfrac{k^2}{a^2}}\right)^2 - bk^2}{a^2 \sqrt{ 1- \dfrac{k^2}{a^2}} }=\dfrac{b}{\sqrt{1-\dfrac{k^2}{a^2}}}$$
+	 Por lo tanto la ecuación de la tangente viene dada por,
+	 $$y=\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}}x+\dfrac{b}{\sqrt{1-\dfrac{k^2}{a^2}}}\qquad (2)$$
+	 De (1) y (2), se tiene,
+	 $$b\sqrt{1-\dfrac{x^2}{a^2}}=\dfrac{-bk}{a^2\sqrt{1-\dfrac{k^2}{a^2}}} x + \dfrac{b}{\sqrt{1-\dfrac{k^2}{a^2}}}\quad \Rightarrow \quad x^2-2kx+k^2=0\; \Rightarrow \; (x-k)^2=0\; \Rightarrow \; x=k.$$\\
+
+    %-------------------- 15.
+     \item Si $f+g$ es diferenciable en $a$, ¿son $f$ y $g$ necesariamente diferenciables en $a$? Si $f\cdot g$ y $f$ son diferenciables en $a$, ¿qué condiciones debe cumplir $f$ para que $g$ sea diferenciable en $a$?.\\\\
+	 Respuesta.-\; Supongamos que $f$ no es diferenciable en ninguna parte. Sea $g=-f$, entonces  
+	 $$(f+g)(x)=f(x)-f(x)=0.$$
+	 Esta función cero, es diferenciable en cualquier parte.\\\\
+	 Por otro lado, supongamos que $f\cdot g$ y $f$ son diferenciables en $a$. Por el teorema 8 (Si $f$ y $g$ son diferenciables en $a$ y $f(a)\neq 0$, entonces $f/g$ es diferenciable en $a$), la condición que debe cumplir $f$ para que $g$ sea diferenciable en $a$ será, 
+	 $$g=\dfrac{f\cdot g}{f}.$$\\
+
+    %-------------------- 16.
+     \item 
 
 
 \end{enumerate}

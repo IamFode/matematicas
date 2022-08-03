@@ -534,6 +534,41 @@ $$f\left(x;\sigma^2\right)=\dfrac{x}{\sigma^2}e^{-x^2/2\sigma^2},\quad x>0,$$
 que es la función de densidad de probabilidad de lo que se conoce como \textbf{distribución de Rayleigh}.\\\\
 
 \section{La distribución exponencial negativa}
+Es un caso especial de la distribución de Gama (Erland). La variable exponencial es el tiempo que transcurre hasta que se da el primer evento de Poisson. Es decir, la distribución exponencial se puede modelar el lapso entre dos eventos consecutivos de Poisson que ocurren de manera independiente y a una frecuencia constante. Se emplea al modelar problemas del tipo tiempo-falla y como modelo para el intervalo en problemas de líneas de espera. Está distribución no tiene memoria. Es decir, la probabilidad de ocurrencia de eventos presentes o futuros no depende de lo que hayan ocurrido en el pasado. De esta forma, la probabilidad de que una unidad falle en un lapso específico depende nada más de la duración de este, no del tiempo en que la unidad ha estado en operación.
+
+\begin{tcolorbox}
+    \begin{def.}
+	Si un variable aleatoria $X$ tiene una distribución exponencial, su función de densidad de probabilidad está dada por:
+	$$f(x;\theta)=\left\{
+	    \begin{array}{ll}
+		\dfrac{1}{\theta}e^{-x/\theta} & x>0,\;\; \theta > 0,\\\\
+		0 & \mbox{para cualquier otro valor}.
+	    \end{array}
+	\right.$$
+    \end{def.}
+\end{tcolorbox}
+
+La distribución exponencial se caracteriza por un parámetro $\theta$, que representa el lapso promedio de tiempo entre dos eventos independientes de Poisson. En contexto de fiabilidad recibe el nombre de promedio entre gallas y $1/\theta$ es la frecuencia de falla.\\\\
+La \textbf{función acumulativa} se obtiene directamente de los modelos de Weibull o de Erland,
+
+\begin{tcolorbox}
+    $$P(X\leq x)=F(x;\theta)=1-e^{-x/\theta}$$
+\end{tcolorbox}
+
+Las expresiones para los valores cuantiles, momentos y factores de forma, se obtienen de la distribución Weibull con $\alpha=1$. Esto es:
+
+\begin{tcolorbox}
+    $$E(X)=\theta$$
+    $$Var(X)=\theta^2$$
+    $$\alpha_3(X)=2$$
+    $$\alpha_4(X)=9.$$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $T$ una variable aleatoria que representa el tiempo de vida de un sistema y sea $f(t)$ la función de densidad de probabilidad de $T$
+    \end{def.}
+\end{tcolorbox}
 
 
 
