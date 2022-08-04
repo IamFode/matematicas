@@ -1603,11 +1603,36 @@ Sea $X$ una variable aleatoria con distribución exponencial.
 ### a)
 ¿Cuál es la probabilidad de que $X$ tome un valor mayor que la media?
 
-Respuesta.-
+Respuesta.- La media viene dado por $E(X)=\theta$, de donde la probabilidad de que $X$ tome un valor mayor a la media vendrá dado por,
+
+$$P(X\geq E(X))=F(\theta;\theta)=1-\left(1-e^{-\theta/\theta}\right)=e^{-1}=0.3678794.$$
+
+```{r}
+exp(-1)
+```
 
 ### b)
 ¿Cuáles son las probabilidades de que $X$ tome un valor que se encuentre en un intervalo igual a una desviación estándar, primero y en un intervalo igual a dos desviación estándar de la media?
 
+Respuesta.- Sea $E(X)=\theta$ y $\sqrt{Var(X)}=\sqrt{\theta^2}=\theta$, entonces
+
+$$P(\theta-\theta\leq X\leq \theta+\theta)=F(2; X)-F(0;X) = 1-e^{-2\theta/\theta}-\left(1-e^{-0/\theta}\right)=-e^{-2}+e^{-1}=0.2325442.$$
+
+```{r}
+exp(-1)-exp(-2)
+```
+
+
+## 5.40.
+Si la frecuencia con que falla un componente es constante y la confiabilidad de este tiene un valor en $t=55$ de $0.4$,
+
+### a) 
+Obtener la función de densidad de probabilidad
+
 Respuesta.-
 
+### b)
+Si $500$ de estos dispositivos fallan de manera independiente, ¿cuál es el número esperado de fallas entre estos, después de $200$ horas?
+
+Respuesta.-
 
