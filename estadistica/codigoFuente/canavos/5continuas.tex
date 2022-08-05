@@ -566,10 +566,19 @@ Las expresiones para los valores cuantiles, momentos y factores de forma, se obt
 
 \begin{tcolorbox}
     \begin{def.}
-	Sea $T$ una variable aleatoria que representa el tiempo de vida de un sistema y sea $f(t)$ la función de densidad de probabilidad de $T$
+	Sea $T$ una variable aleatoria que representa el tiempo de vida de un sistema y sea $f(t)$ la función de densidad de probabilidad de $T$. La función de confiabilidad del sistema a tiempo $t$, $R(t)$, es la probabilidad de que el lapso de duración del sistema sea mayor que un tiempo $t$ dado. De acuerdo con lo anterior,
+	$$R(t)=P(T>1)=1-F(t),\qquad t>0.$$
     \end{def.}
 \end{tcolorbox}
 
+Otra cantidad muy útil para seleccionar una función de densidad de probabilidad para el lapso de vida medio de una unidad (o sistema) es la frecuencia de falla o función de riesgo, que se define de la siguiente forma:
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $f(t)$ y $R(t)$ las funciones de densidad de probabilidad y de confiabilidad, respectivamente, de una unidad en un tiempo dado $t$. La frecuencia de falla $h(t)$ se define como la proporción de unidades que fallan en el intervalo $(t,t+dt)$ con respecto a las que siguen funcionando a tiempo $t$, y está determinada por:
+	$$h(t)=\dfrac{f(t)}{R(t)}.$$
+    \end{def.}
+\end{tcolorbox}
 
 
 

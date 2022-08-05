@@ -1437,3 +1437,39 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 \end{comment}
 
 \section{Aplicaciones de la derivación a la determinación de los extremos de las funciones}
+
+Recordemos que se dice que una función $f$ de valores reales tiene un máximo absoluto en un conjunto $S$ si existe por lo menos un punto $c$ en $S$ tal que
+\begin{center}
+    $f(x)\leq f(c)$ para todo $x$ en $S$.
+\end{center}
+
+El concepto de máximo relativo se define así:
+
+%-------------------- Definición de máximo relativo
+\begin{tcolorbox}
+    \begin{def.}[Definición de máximo relativo]
+	Una función $f$, definida en un conjunto $S$, tiene un máximo relativo en un punto $c$ de $S$ si existe un cierto intervalo abierto $I$ que contiene $c$ tal que 
+	\begin{center}
+	    $f(x)\leq f(c)$ para todo $x$ situado en $I\cap S$.
+	\end{center}
+	el concepto de mínimo relativo se define del mismo modo con la desigualdad invertida.\\\\
+	Es decir, un máximo relativo en e es un máximo absoluto en un cierto entorno de $c$, si bien no es necesariamente un máximo absoluto en todo el conjunto $S$. Naturalmente, cualquier máximo absoluto es, en particular, un máximo relativo.
+    \end{def.}
+\end{tcolorbox}
+
+% -------------------- Definición de extremo
+\begin{tcolorbox}
+    \begin{def.}[Definición de extremo]
+	Un número que es o un máximo relativo o un mínimo relativo de un función $f$ se denomina valor extremo o un extremo de $f$.
+    \end{def.}
+\end{tcolorbox}
+
+%------------------- teorema 4.3.
+\begin{teo}[Anulación de la derivada en un estremo interior]
+    Sea $f$ definida en un intervalo abierto $I$ y supongamos que $f$ tiene un máximo relativo o un mínimo relativo en un punto $c$ interior a $I$. Si la derivada $f'(c)$ existe, es $f'(x)=0$.\\\\
+	Demostración.-\; Definamos en $I$ un función $Q$ como sigue:
+	\begin{center}
+	    $Q(x)=\dfrac{f(x)-f(c)}{x-c}\quad$ si $\quad x\neq c$, $\quad Q(c)=f'(c).$
+	\end{center}
+	Puesto que $f'(c)$ existe, $Q(x)\to Q(c)$ cuando $x\to c$
+\end{teo}
