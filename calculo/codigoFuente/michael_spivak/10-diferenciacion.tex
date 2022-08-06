@@ -626,11 +626,12 @@
 
 	     %---------- (a)
 	     \item Demuestre que si $f$ es diferenciable en $a$, entonces $|f|$ también es diferenciable en $a$, si $f(a)\neq 0.$\\\\
-		 Demostración.-\; 
+		 Demostración.-\; Al ser $f$ derivable en $a$ es continua en $a$. Luego al ser $f(a)\neq 0$, se sigue que $f(x)\neq 0$ para todos los $x$ de un intervalo entorno de $a$. Así pues, $f=|f|$ o $-f=|f|$ en este intervalo, con lo que $|f|'(a)=f'(a)$ o $|f|'(a)=-f'(a)$. Se puede hacer uso también de la regla de la cadena y del hecho que si $f(x)=\sqrt{x}\; \Rightarrow \; f'(a)=\dfrac{1}{2\sqrt{a}}$. Sea $|f|=\sqrt{f^2}$ con lo que 
+		 $$|f|'(x)=\dfrac{1}{2\sqrt{f(x)^2}} \cdot 2f(x)f'(x)=f'(x)\cdot \dfrac{f(x)}{|f(x)|}.$$\\
 
 	     %---------- (b)
 	     \item Dé un contraejemplo si $f(a)=0$.\\\\
-		 Respuesta.-\; 
+		 Respuesta.-\; Sea $f(x)=x$, entonces $f(0)=0$ y $|f|(x)=|x|.$ De donde sabemos que $|f|$ no es diferenciable en $0$.\\\\ 
 
 	     %---------- (c)
 	     \item Demuestre que si $f$ y $g$ son diferenciables en $a$, entonces las funciones $\max(f,g)$ y $\min(f,g)$ son diferenciables en $a$, si $f(a)\neq g(a)$.\\\\

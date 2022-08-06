@@ -548,7 +548,7 @@ Es un caso especial de la distribución de Gama (Erland). La variable exponencia
     \end{def.}
 \end{tcolorbox}
 
-La distribución exponencial se caracteriza por un parámetro $\theta$, que representa el lapso promedio de tiempo entre dos eventos independientes de Poisson. En contexto de fiabilidad recibe el nombre de promedio entre gallas y $1/\theta$ es la frecuencia de falla.\\\\
+La distribución exponencial se caracteriza por un parámetro $\theta$, que representa el lapso promedio de tiempo entre dos eventos independientes de Poisson. En contexto de fiabilidad recibe el nombre de promedio entre fallas y $1/\theta$ es la frecuencia de falla.\\\\
 La \textbf{función acumulativa} se obtiene directamente de los modelos de Weibull o de Erland,
 
 \begin{tcolorbox}
@@ -580,7 +580,28 @@ Otra cantidad muy útil para seleccionar una función de densidad de probabilida
     \end{def.}
 \end{tcolorbox}
 
+Si se conoce la frecuencia de falla, es posible determinar la función de densidad de probabilidad de la variable aleatoria. Dado que $R(t)=1-F(t)$, mediante diferenciación con respecto a $t$, se tiene que $R'(t)=-F'(t)$, pero $F(t)=f(t)$. Como resultado se tiene que la frecuencia de falla puede expresarse como:
+$$h(t)=-\dfrac{R'(t)}{R(t)}.$$
 
+Integrando ambos miembros desde $0$ hasta $t$, se tiene:
+$$\int_0^t h(x)\; dx = -\int_0^t \left[R'(x)R(x)\right]\; dx = - \ln\left[R(t)\right]+\ln\left[R(0)\right] = -\ln\left[R(t)\right],$$
+donde $x$ es una variable muda de integración. Dado que:
+$$-\ln\left[R(t)\right]=\int_0^t h(x)\; dx,$$
+se tiene
+$$R(t)=e^{\left[-\int_0^t h(x)\; dx\right]}.$$
+Mediante el empleo de $h(t)=\dfrac{-R'(x)}{R(t)}$, la función de densidad de probabilidad es:
+$$f(t)=h(t)e^{\left[-\int_0^t h(x)\; dx\right]}.$$
+
+Si la frecuencia de falla $\dfrac{1}{\theta}$, es constante, la función de densidad de probabilidad del tiempo de vida medio es la exponencial negativa. Esto es, si $h(t)=\dfrac{1}{\theta}$, entonces de la anterior ecuación se tiene:
+$$f(t)=\dfrac{1}{\theta}\cdot e^{-\int_0^t \frac{1}{\theta}\; dx} = \dfrac{1}{\theta}e^{\frac{-t}{\theta}}$$
+
+Dado que la función de confiabilidad a tiempo $t$ para un tiempo de vida medio distribuido exponencialmente es:
+$$R(t)=e^{-\frac{t}{\theta}},\qquad t>0.$$
+La frecuencia de falla está dada por:
+$$h(t)=\dfrac{\frac{1}{\theta}e^{-\frac{t}{\theta}}}{e^{-\frac{t}{\theta}}}=\dfrac{1}{\theta},\qquad t>0$$
+
+
+\section{La distribución de una función de variable aleatoria}
 
 
 

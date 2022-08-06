@@ -1465,11 +1465,35 @@ El concepto de máximo relativo se define así:
 \end{tcolorbox}
 
 %------------------- teorema 4.3.
-\begin{teo}[Anulación de la derivada en un estremo interior]
+\begin{teo}[Anulación de la derivada en un extremo interior]
     Sea $f$ definida en un intervalo abierto $I$ y supongamos que $f$ tiene un máximo relativo o un mínimo relativo en un punto $c$ interior a $I$. Si la derivada $f'(c)$ existe, es $f'(x)=0$.\\\\
 	Demostración.-\; Definamos en $I$ un función $Q$ como sigue:
 	\begin{center}
 	    $Q(x)=\dfrac{f(x)-f(c)}{x-c}\quad$ si $\quad x\neq c$, $\quad Q(c)=f'(c).$
 	\end{center}
-	Puesto que $f'(c)$ existe, $Q(x)\to Q(c)$ cuando $x\to c$
+	Puesto que $f'(c)$ existe, $Q(x)\to Q(c)$ cuando $x\to c$, entonces $Q$ es continua en $c$. Queremos probar que $Q(c)=0$. Esto lo conseguiremos demostrando que cada una de las desigualdades $q(c)>0$ y $Q(c)<0$ nos lleva a una contradicción.\\
+	Supongamos $Q(c)>0$. Según la propiedad de conservación del signo de las funciones continuas, existe un intervalo que contiene a $c$ en el que $Q(x)$ es positiva. Por tanto el numerador del cociente $Q(x)$ tiene el mismo signo que el denominador para todo $x\neq c$ en ese intervalo. Dicho de otro modo, $f(x)>f(c)$ cuando $x>c$ y $f(x)<f(c)$ cuando $x<c$. Esto contradice la hipótesis de que $f$ tiene un extremo en $c$. De similar manera se muestra que no puede ser $Q(c)<0.$ Por lo tanto $Q(c)=0$. Puesto que $Q(c)=f'(c)$, esto demuestra el teorema.\\
 \end{teo}
+
+Es importante notar que el hecho de ser derivada nula en $c$ no implica extremo en $c$. Por ejemplo sea $f(c)=x^3$. Puesto que $f'(x)=3x^2$, $f'(0)=0$. Sin embargo, esta función es creciente en todo intervalo que contenga el origen por lo cual no existe extremo en $c$. Cabe mencionar que el teorema anterior supone que hay un extremo, es decir, en ausencia de puntos angulosos, la derivada necesariamente debe anularse en un extremo, si éste se presenta en el interior de un intervalo. Este criterio se expone más adelante en el teorema 4.8 y nos dice que un extremo siempre se presenta en un punto en el que la derivada cambia de signo. Pero como no es difícil de demostrar deduciremos este resultado como una consecuencia del teorema del valor medio para derivadas.\\\\
+
+\section{Teorema del valor medio para derivadas}
+El teorema del valor medio para derivadas es importante en cálculo porque muchas de las propiedades de las funciones pueden deducirse fácilmente a partir de él. Antes de establecer el teorema del valor medio, examinaremos uno de sus casos particulares a partir del cual puede deducirse el teorema general. Este caso particular lo descubrió en 1690 Michel Rolle (1652-1719), matemático francés.\\
+
+%------------------- teorema 4.4.
+\begin{teo}[Teorema de Rolle]
+    Sea $f$a una función continua en todos los puntos de un intervalo cerrado $[a,b]$ y derivable en cada punto del intervalo abierto $(a,b)$. Supongamos también que 
+    $$f(a)=f(b)$$
+    Existe entonces por lo menos un punto $c$ en el intervalo abierto $(a,b)$ tal que $f'(c)=0.$\\
+
+    En este teorema se afirma tan sólo que la curva debe tener una tangente horizontal en algún punto entre $a$ y $b$.\\\\
+	Demostración.-\; Supongamos que $f'(x)\neq 0$ para todo $x$ en el intervalo abierto $(a,b)$ y llegamos a una contradicción como se ve a continuación. Según el teorema de los valores extremos para funciones continuas, $f$ debe alcanzar su máximo absoluto $M$ y su mínimo absoluto $m$ en algún punto del intervalo cerrado $[a,b]$. El teorema 4.3 nos dice que ningún extremo puede ser alcanzado en puntos interiores (de otra manera sería nula la derivada ahí). Luego, ambos valores extremos son alcanzados en los extremos $a$ y $b$. Pero como $f(a)=f(b)$, esto significa que $m=M$ y por tanto $f$ es constante en $[a,b]$. Esto contradice el hecho de que $f'(x)=0$ para todo $x$ en $(a,b)$. Resulta pues que $f'(x)=0$ por lo menos en un $c$ que satisfaga $a<c<b$, lo que demuestra el teorema.\\\\
+\end{teo}
+
+%------------------- teorema 4.5.
+\begin{teo}[Teorema del valor medio para derivadas]
+    Si $f$ es una función continua en todo un intervalo cerrado $[a,b]$ que tiene derivada en cada punto del intervalo abierto $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$ para el que 
+    $$f(b)-f(a)=f'(c)(b-a).$$\\
+	Demostración.-\; 
+\end{teo}
+

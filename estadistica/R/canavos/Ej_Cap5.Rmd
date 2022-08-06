@@ -1629,10 +1629,43 @@ Si la frecuencia con que falla un componente es constante y la confiabilidad de 
 ### a) 
 Obtener la función de densidad de probabilidad
 
-Respuesta.-
+Respuesta.-  Sean la función de confiabilidad $R(55)=0.4$ y la frecuencia de falla $h(t)=\dfrac{1}{\theta}$, entonces la función de densidad será,
+$$f(55)=\dfrac{1}{\theta}\cdot 0.4 = \dfrac{0.4}{\theta}.$$
+
+### b)
+Obtener la confiabilidad del componente para $t=100$.
+
+Respuesta.- Sea $R(t)=e^{-t/\theta}=0.4$ y sea $t=55$, entonces 
+$$\theta=\dfrac{-55}{\ln(0.4)}=60.02.$$
+De donde la confiabilidad vendrá dada por 
+
+$$P(T>100)=1-F(100)=1-\left(1-e^{-100/60.02}\right)=0.1889805.$$
+```{r}
+exp(-100/60.02)
+```
+
+
+## 5.41.
+Un dispositivo tiene una frecuencia de falla constante $h(t)=10^{-2}$ por hora.
+
+### a)
+¿Cuál es la confiabilidad del dispositivo para $t=200$ horas?
+
+Respuesta.- Sea $h(t)=\dfrac{1}{\theta} \;\Rightarrow \; \theta=\dfrac{1}{10^{-2}}=100$, entonces la función de densidad de probabilidad viene dada por,
+
+$$f(t)=\dfrac{1}{100}e^{-200/100}=0.001353353.$$
+
+Así la confiabilidad del dispositivo será,
+
+$$R(t)=f(t)/h(t)=0.001353353/10^{-2}=0.1353353.$$
 
 ### b)
 Si $500$ de estos dispositivos fallan de manera independiente, ¿cuál es el número esperado de fallas entre estos, después de $200$ horas?
 
-Respuesta.-
+Respuesta.-\; Estará dado por: $500*(1-0.1353353)=432.3324 = 433.$
+
+## 5.42.
+
+
+
 
