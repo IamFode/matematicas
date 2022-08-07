@@ -1662,10 +1662,45 @@ $$R(t)=f(t)/h(t)=0.001353353/10^{-2}=0.1353353.$$
 ### b)
 Si $500$ de estos dispositivos fallan de manera independiente, ¿cuál es el número esperado de fallas entre estos, después de $200$ horas?
 
-Respuesta.-\; Estará dado por: $500*(1-0.1353353)=432.3324 = 433.$
+Respuesta.-\; Estará dado por: $500(1-0.1353353)=432.3324 = 433.$
 
 ## 5.42.
+El compresor de una unidad de aire acondicionado tiene una frecuencia de falla $h(t)=2\cdot 10^{-8}t$ por hora.
+
+### a)
+¿Cuál es la función de confiabilidad del compresor?
+
+Respuesta.- Sea la función de confiabilidad $R(t)=f(t)/h(t)$, de donde
+
+$$f(t)=h(t)e^{-\int_0^t h(t)\; dt}=2\cdot 10^{-8}\cdot e^{-\int_0^t2\cdot 10^{-8}t\; dx}$$
+ entonces,
+ 
+ $$R(t)=\dfrac{2\cdot 10^{-8}e^{-\int_0^t2\cdot 10^{-8}t\; dx}}{2\cdot 10^{-8}}=e^{-\int_0^t2\cdot 10^{-8}t\; dx}.$$
+
+### b)
+¿Cuál es la confiabilidad del compresor para $t=15000$ horas?
+
+Respuesta.-
+
+$$R(t)=e^{-\int_0^t2\cdot 10^{-8}t\; dx}=e^{-\int_0^{15000} 2\cdot 10^{-8}15000\; dx} = e^{-6\cdot 10^{-4}}=0.9994002.$$
+
+### c)
+¿Cuál es la vida media del compresor?
+
+Respuesta.- Sea la frecuencia de falla $h(x)=\dfrac{1}{\theta}$, y sabiendo que $E(X)=\theta$, entonces
+
+$$E(X)=\theta=\dfrac{1}{h(t)}=\dfrac{1}{2\cdot 10^{-8}}=5\cdot 10^{7}.$$
+
+### d)
+¿Cuál es la mediana de su duración?
+
+Respuesta.- La mediana viene dada por el valor cuantil con $\alpha=1$,
+$$x_{0.5} = \theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1/\alpha}=5\cdot 10^7\left[\ln\left(\dfrac{1}{1-0.5}\right)\right]^{1}=34657359.$$
+
+```{r}
+5*10^7 * (log(1/(1-0.5)))
+```
 
 
-
+## 5.43.
 

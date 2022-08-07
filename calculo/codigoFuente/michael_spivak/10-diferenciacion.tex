@@ -635,13 +635,36 @@
 
 	     %---------- (c)
 	     \item Demuestre que si $f$ y $g$ son diferenciables en $a$, entonces las funciones $\max(f,g)$ y $\min(f,g)$ son diferenciables en $a$, si $f(a)\neq g(a)$.\\\\
-		 Demostración.-\;
+		 Demostración.-\; Sea $r>0$ para cualquier $x\in (a-r,a+r)$ y sea $f(x)>g(x)$, dados por $f(x)=\max{f,g}(x)=f(x)$ y $\min{f,g}(x)=g(x).$ entonces por definición de difernciabilidad existen $f'(a)$ y $g'(a)$ tal que
+		 $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}\quad \mbox{y}\quad g'(a)=\lim_{h\to 0}\dfrac{g(a+h)-g(a)}{h}.$$
+		 Luego por definición de límites se tiene que para todo $\epsilon>0$ existe algún $\delta_1>0$ de donde
+		 $$\bigg|\dfrac{f(a+h)-f(a)}{h}-f'(a)\bigg|<\epsilon\; \mbox{siempre que}|h|<\delta_1$$
+		 y sea $\epsilon>0$ con $\delta_2>0$,
+		 $$\bigg|\dfrac{g(a+h)-g(a)}{h}-g'(a)\bigg|<\epsilon\; \mbox{siempre que}|h|<\delta_2$$
+		 Pongamos a $\delta'=\dfrac{\min{\delta_1,\delta_2,r}}{2}$, entonces para cualquier $x\in\left(a-\delta',a+\delta'\right)$, tenemos $\max{f,g}(x)=f(x)$ y $\min{f-g}(x)=g(x)$ de la siguiente forma,
+		 $$\bigg|\dfrac{\max{f,g}(a+h)-\max{f,g}(a)}{h}-f'(a)\bigg|<\epsilon\; \mbox{siempre que }|h|<\delta'$$
+		 y
+		 $$\bigg|\dfrac{\min{f,g}(a+h)-\min{f,g}(a)}{h}-g'(a)\bigg|<\epsilon\; \mbox{siempre que }|h|<\delta'.$$
+		 Pero ya que $\max{f,g}(a+h)=f(a+h)$ y $\min{f,g}(a+h)=g(a+h)$ para $|h|<\delta'$, entonces $\max{f,g}$ y $\min{f,g}$ son diferenciables en $a$.\\\\  
 
 	     %---------- (d)
 	     \item Dé un contraejemplo si $f(a)=g(a)$.\\\\
-		 Respuesta.-\;
+		 Respuesta.-\; Sean $f(x)=x$ y $g(x)=0$ de donde $f(0)=g(0)$, entonces
+		 $$\max{f,g}(x)=\left\{\begin{array}{rcl}
+			 x & \mbox{si} & x>0\\
+			 0 & \mbox{si} & x\leq 0,\\
+		 \end{array}\right. \quad \mbox{y}\quad 
+		    \min{f,g}(x)=\left\{\begin{array}{rcl}
+			 0 & \mbox{si} & x\geq 0\\
+			 x & \mbox{si} & x< 0.\\
+		    \end{array}\right.
+		 $$
+		 Derivando la parte derecha $\max{f,g}(x)=x$ para $0$ se tiene $1$, la derivada $\max{f,g}(x)=0$ para $0$ es $0$. Con respecto a la parte izquierda se tiene las derivada de $\min{f,g}(x)=0$ y $\min{f,g}(x)=x$ cuando tiende a $0$ como $0$ y $1$ respectivamente. Por lo que se demuestra que $\max{f,g}$ y $\min{f,g}$ no son diferenciales en $a=0$.\\\\
 
 	 \end{enumerate}
+
+    %------------------- 17
+     \item 
 
 
 \end{enumerate}
