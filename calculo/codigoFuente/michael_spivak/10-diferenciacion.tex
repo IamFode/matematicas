@@ -664,7 +664,35 @@
 	 \end{enumerate}
 
     %------------------- 17
-     \item 
+     \item De un ejemplo de funciones $f$ y $g$ tales que $g$ toma todos los valores, y $f\circ g$ y $g$ son diferenciables, pero $f$ no es diferenciable. ((El problema es trivial si no se exige que $g$ tome todos los valores; en este caso $g$ podría ser una función constante, o una función que sólo tomara valores de un intervalo $(a,b)$, en cuyo caso el comportamiento de $f$ fuera de $(a,b)$ sería irrelevante.).\\\\
+	 Respuesta.-\; Sea $f(x)=\sqrt[3]{x^2}$ no diferenciable en $x=0$. Y sea $g(x)=x^3$ diferenciable en $x=0$, entonces
+	 $$(f\circ g)(x)=f(g)(x)=f\left(x^3\right)= \sqrt[3]{\left(x^3\right)^2} = \sqrt[3]{x^6}=x^2.$$
+	     donde $(f\circ g)(x)$ es diferenciable en $x=0.$\\\\
 
+    %-------------------- 18
+     \item 
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item Si $g=f^2$ halle una fórmula para $g'$ (que incluya a $f'$).\\\\
+		 Respuesta.- Aplicando la regla de la cadena, tenemos
+		 $$g'=2f\cdot f'.$$\\
+
+	     %---------- (b)
+	     \item Si $g=\left(f'\right)^2$, halle una fórmula para $g'$ (que incluya a $f''$).\\\\
+		 Respuesta.-  Aplicando la regla de la cadena, tenemos
+		 $$g'=2f'\cdot f''.$$\\
+
+	     %---------- (c)
+	     \item Suponga que la función $f>0$ verifica que 
+	     $$\left(f'\right)^2=f+\dfrac{1}{f^3}-$$
+	     Halle una fórmula para $f''$ en función de $f$. (En este apartado, además de cálculos sencillos, es necesario tener cuidado.)\\\\
+		 Respuesta.- Aplicando la regla de la cadena a los dos lados, tenemos
+		 $$2f'\cdot f''=f'+\dfrac{-3}{f^4}\dot f' \quad \Rightarrow \quad f''=\dfrac{1}{2}-\dfrac{3}{2f^4}.$$\\
+		 
+	 \end{enumerate}
+
+    %-------------------- 19
+     \item 
 
 \end{enumerate}

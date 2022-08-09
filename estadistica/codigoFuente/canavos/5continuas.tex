@@ -602,6 +602,21 @@ $$h(t)=\dfrac{\frac{1}{\theta}e^{-\frac{t}{\theta}}}{e^{-\frac{t}{\theta}}}=\dfr
 
 
 \section{La distribución de una función de variable aleatoria}
+Se examinará una técnica para determinar la distribución de una función de variable aleatoria, considerando el caso de una variable aleatoria continua. Sea $X$ una variable aleatoria con función de densidad de probabilidad $f_X(x),$ y sea $Y=g(X)$ una función definida de $X$. Supóngase que es posible resolver $y=g(x)$ para $x$ obteniendo de esta forma la función inversa $x=g^{-1}(y)$. Si $g(x)$ y $g^{-1}(y)$ son funciones univaluadas de $x$ e $y$, respectivamente, se dice que la transformación es uno a uno. Esto es, a cada punto en el espacio muestral de $X$ le corresponde un punto único del espacio muestral de $Y$ y viceversa. Si se supone la existencia de una transformación uno a uno y además que $y=g(x)$ es una creciente y diferenciable en $x$, se puede determinar la función de densidad de probabilidad de $X$ en la siguiente forma:\\
+Debido a la existencia de una transformación uno a uno:
+$$F_Y(y)=P(Y\leq y)=P\left[g(X)\leq y\right] = P\left[X\leq g^{-1}(y)\right].$$
+Entones:
+$$F_Y(y)=F_X\left[g^{-1}(y)\right].$$
+Al establecer la diferencia con respecto a $y$ y mediante el empleo de la regla de la cadena se tiene:
+$$f_Y(y)=\dfrac{dF_X\left[g^{-1}(y)\right]}{dx}\cdot \dfrac{dx}{dy}=f_X\left[g^{-1}(y)\right]\cdot \dfrac{dx}{dy}.$$
+
+Si $g(x)$ es una función decreciente de $x$, el resultado que se obtiene es el mismo con excepción de que la derivada de una función decreciente es negativa. De esta manera se puede formular la siguiente proposición:\\
+
+\begin{teo}
+    Sea $X$ una variable aleatoria continua con función de densidad de probabilidad $f_X(x)$ y definase $Y=g(X)$. Si $y=g(x)$ y $x=g^{-1}(y)$ son funciones univaluadas, continuas y diferenciables y si $y=g(x)$ es una función creciente o decreciente de $x$, la función de densidad de probabilidad de $Y$ está determinada por:
+    $$f_Y(y)=f_X\left[g^{-1}(y)\right]\bigg|\dfrac{dx}{dy}\bigg|,$$
+    en donde la cantidad $J=| dx/dy |$ recibe el nombre de Jacobiano de la transformación.
+\end{teo}
 
 
 

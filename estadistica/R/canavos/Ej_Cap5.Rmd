@@ -1703,4 +1703,22 @@ $$x_{0.5} = \theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1/\alpha}=5\cdot 
 
 
 ## 5.43.
+Sea $X$ una variable aleatoria con distribución uniforme en el intervalo $(0,1)$. Demostrar que la variable aleatoria $Y=-2\ln(X)$ tiene distribución chi-cuadrado con dos grados de libertad.
 
+Respuesta.-
+
+## 5.44.
+Si $X$ es una variable aleatoria con una distribución exponencial y parámetros $\theta$, obtener la distribución de $Y=\dfrac{X-\theta}{\theta}.$
+
+Respuesta.-
+
+## 5.45.
+Si $X$ es una variable aleatoria con una distribución de Weibull y parámetros $\alpha$ y $\theta$ obtener la distribución de $Y=X^\alpha.$
+
+Respuesta.-
+
+## 5.46.
+Seleccione una distribución de probabilidad discreta y una continua de la sección 5.9 y generar dos muestras aleatorias de $50$ números aleatorios cada una. Para cada caso agrupe los datos y obtenga las frecuencias relativas. Calcule la media y la desviación estándar de cada una de las muestras y compare los resultados con los que se obtienen de manera teórica.
+
+Respuesta.-
+  

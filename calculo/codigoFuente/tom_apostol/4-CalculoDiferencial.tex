@@ -1482,7 +1482,7 @@ El teorema del valor medio para derivadas es importante en cálculo porque mucha
 
 %------------------- teorema 4.4.
 \begin{teo}[Teorema de Rolle]
-    Sea $f$a una función continua en todos los puntos de un intervalo cerrado $[a,b]$ y derivable en cada punto del intervalo abierto $(a,b)$. Supongamos también que 
+    Sea $f$ una función continua en todos los puntos de un intervalo cerrado $[a,b]$ y derivable en cada punto del intervalo abierto $(a,b)$. Supongamos también que 
     $$f(a)=f(b)$$
     Existe entonces por lo menos un punto $c$ en el intervalo abierto $(a,b)$ tal que $f'(c)=0.$\\
 
@@ -1494,6 +1494,34 @@ El teorema del valor medio para derivadas es importante en cálculo porque mucha
 \begin{teo}[Teorema del valor medio para derivadas]
     Si $f$ es una función continua en todo un intervalo cerrado $[a,b]$ que tiene derivada en cada punto del intervalo abierto $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$ para el que 
     $$f(b)-f(a)=f'(c)(b-a).$$\\
-	Demostración.-\; 
+	Demostración.-\; Para aplicar el teorema de Rolle necesitamos una función que tenga valores iguales en los extremos $a$ y $b$. A fin de construirla, modificamos $f$ en la forma siguiente:
+	$$h(x)=f(x)(b-a)-x[f(b)-f(a)].$$
+	Entonces $h(a)=h(b)=bf(a)-af(b)$. También, $h$ es continua en $[a,b]$ y tiene derivada en el intervalo abierto $(a,b)$. Aplicando el teorema de Rolle a $h$, encontramos que $h'(c)=0$ para un cierto $c$ de $(a,b)$. Pero
+	$$h'(x)=f'(x)(b-a)-[f(b)-f(a)],$$
+	cuando $x=c$, se obtiene la igualdad $h(x)=f(x)(b-a)-x[f(b)-f(a)].$\\
 \end{teo}
+
+Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
+
+%------------------- teorema 4.6.
+\begin{teo}[Fórmula del valor medio de Cauchy]
+    Sean $f$ y $g$ dos funciones continuas en un intervalo cerrado $[a,b]$ y que admitan derivadas en todo el intervalo abierto $(a,b)$. Entonces, para un cierto $c$ de $(a,b)$, tenemos
+    $$f'(c)=[g(b)-g(a)]=g'(c)[f(b)-f(a)].$$\\
+	Demostración.- La demostración es parecida a la del teorema 4.5 (Tom Apostol). Pongamos 
+	$$h(x)=f(x)[g(b)-g(a)]-g(x)[f(b)-f(a)].$$
+	Entonces $h(a)=h(b)=f(a)g(b)-g(a)f(b)$. Aplicando el teorema de Rolle a $h$, encontramos que $h'(c)$ a partir de la fórmula que define $h$, obteniendo la fórmula del valor medio de Cauchy. El teorema 4.5 (Tom Apostol) es un caso particular de este teorema obtenido tomando $g(x)=x.$\\
+\end{teo}
+
+
+\section{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Probar  
+
+\end{enumerate}
+
+
+
 
