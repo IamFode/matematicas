@@ -1755,5 +1755,28 @@ $$f_Y(y;\alpha,\theta)=\dfrac{\alpha}{\theta}y^{(1/2)^{\alpha-1}}e^{-\left[\left
 ## 5.46.
 Seleccione una distribución de probabilidad discreta y una continua de la sección 5.9 y generar dos muestras aleatorias de $50$ números aleatorios cada una. Para cada caso agrupe los datos y obtenga las frecuencias relativas. Calcule la media y la desviación estándar de cada una de las muestras y compare los resultados con los que se obtienen de manera teórica.
 
-Respuesta.-
+Respuesta.- La función de densidad de probabilidad de una distribución Weibull es:
+$$f(x;\alpha,\theta)=\dfrac{\alpha}{\theta^\alpha} x^{\alpha-1}e^{-(x/\theta)^\alpha}, \qquad x>0.$$
+Para generar números aleatorios de Weibull $x>0$, se resuelve la ecuación
+$$\dfrac{\alpha}{\theta^\alpha}\int_0^x t^{\alpha-1}e^{-(t/\theta)^\alpha}\; dt = u \quad \Rightarrow \quad \left(\dfrac{\alpha}{\theta^\alpha}\right)\left(-\dfrac{\theta^\alpha}{\alpha}\right)e^{-(x/\theta)^\alpha}=u$$ 
+$$o\qquad 1-e^{-(x/\theta)^\alpha}=u, \qquad y \qquad x=\theta\left[\ln\left(\dfrac{1}{1-u}\right)\right]^{1/\alpha}.$$
+Dado que para $\alpha=1$, la distribución de Weibull se reduce a la exponencial, donde pueden generarse números aleatorios para una distribución.
+
+$$E(X)=\theta$$
+$$Var(X)=\theta^2$$
+
+```{r}
+u=runif(50,min=0,max=1)
+theta=4
+alpha=1
+x = c()
+for (i in u){
+  x=c(x,theta*(log(1/(1-i)))^(1/alpha))
+}
+freq = transform(table(cut(x, breaks = 7)))
+freq["Frec_rel"] = freq$Freq/length(x)
+freq
+mean(x)
+sd(x)
+```
   

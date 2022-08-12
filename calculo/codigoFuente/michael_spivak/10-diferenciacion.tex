@@ -741,9 +741,24 @@
 	 \end{enumerate}
 
     %-------------------- 20.
-     \item Suponga que existen $f^{(n)}(x)$ y $g^{(n)}(a)$. Demuestre la \textbf{fórmula de Leibniz}:
-	 $$(f\cdot g)^{(n)}(a)=\sum_{k=0}^n {n\choose k}f^{(k)}(a)\cdot g^{n-k}(a).$$\\
-	 Demostración.-\; 
+     \item Suponga que existen $f^{(n)}(a)$ y $g^{(n)}(a)$. Demuestre la \textbf{fórmula de Leibniz}:
+	 $$(f\cdot g)^{(n)}(a)=\sum_{k=0}^n {n\choose k}f^{(k)}(a)\cdot g^{(n-k)}(a).$$\\
+	 Demostración.-\; Demostraremos por inducción matemática. Sea $n=1$, entonces 
+	 $$(f\cdot g)'(a)=\sum_{k=0}^1 {1\choose k}f^{(k)}(a)\cdot g^{(1-k)}(a)= {1\choose 0} f(a)\cdot g'(a) + {1\choose 1}f'(a)\cdot g(a)=f'(a)g(a)+f(a)g'(a).$$
+	 El cual se cumple para $n=1$. Luego la hipótesis de inducción estará dada por,
+	 $$(f\cdot g)^{(n)}(a)=\sum_{k=0}^n {n\choose k}f^{(k)}(a)\cdot g^{(n-k)}(a),$$
+	 que es cierta para $n$ y por no tanto $f^{(n+1)}(a)$ y $g^{(n+1)}(a)$ existen. Así,
+	 $$\begin{array}{rcl}
+	     (f\cdot g)^{(n+1)}(a)&=&(f\cdot g)^{(n)}(a)(f\cdot g)'(a)\\\\
+				  &=&\displaystyle\left[\sum_{k=0}^n {n\choose k}f^{(k)}(a)\cdot g^{(n-k)}(a)\right]\left[f'(a)g(a)+f(a)g'(a)\right]\\\\
+				  &=&\displaystyle\sum_{k=0}^n{n \choose k}\left[f^{(k+1)}(a)g^{(n-k)}(a)+f^{(k)}g^{(n+1-k)}(a)\right]\\\\
+				  &=&\displaystyle\sum_{k=1}^{n+1}{n\choose k-1}f^{(k)}(a) g^{(n+1-k)}(a)+\sum_{k=0}^n {n\choose k}f^{(k)}(a)g^{(n+1-k)}(a)\\\\
+	 \end{array}$$	
+	 Ya que $\displaystyle{n+1\choose k}={n\choose k-1}+{n\choose k}$. Entonces,
+	 $$(f\cdot g)^{(n+1)}(a)=\sum_{k=0}^{n+1}{n+1\choose k}f^{(k)}(a)g^{[(n+1)-k]}(a).$$\\
+
+    %-------------------- 21.
+     \item 
     
 
 \end{enumerate}

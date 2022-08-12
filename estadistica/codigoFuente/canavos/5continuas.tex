@@ -621,3 +621,60 @@ Si $g(x)$ es una función decreciente de $x$, el resultado que se obtiene es el 
 
 \section{Conceptos básicos en la generación de números aleatorios por computadora}
 
+\begin{teo}
+    Para cualquier variable aleatoria continua $X$, la función de distribución acumulativa $F(x;\theta)$ con parámetro $\theta$ se puede representar por una variable aleatoria $U$, la cual encuentra uniformemente distribuida sobre el intervalo unitario.\\\\
+	Demostración.-\; Dado que por definición la función de distribución acumulativa de $X$ está dada por:
+	$$F(x;\theta)=\int_{-\infty}^\infty f(t;\theta)\; dt,$$
+	a cada valor de $x$ le corresponde un valor de $F(x;\theta)$ que necesariamente se encuentra en el intervalo $(0,1)$. Además, $f(X;\theta)$ también es una variable aleatoria en virtud de la aleatoriedad de $X$. Para cada valor $u$ de la variable aleatoria $U$, la función $u=F(x;\theta)$ define una correspondencia uno a uno entre $U$ y $X$ siendo la relación inversa $x=F^{-1}(u)$. Al tener $du=dF(x;\theta)=f(x; \theta)\; dx$, el Jacobiano de la transformada es:
+	$$J=\left|\dfrac{dx}{dy}\right|=[f(x;\theta)]^{-1}=\left[f\left(F^{-1}(u);\theta\right)\right]^{-1}.$$
+	La función de densidad de probabilidad de la variable aleatoria $U$, mediante el empleo de $$f_Y(y)=f_X\left[g^{-1}(y)\right]\left|\dfrac{dx}{dy}\right|,$$ es:
+	$$g(u)=f\left[F^{-1}(u);\theta\right]\left[F^{-1}(u);\theta\right]^{-1}=1,\qquad 0\leq u \leq 1.$$
+\end{teo}
+La esencia del teorema recae en el hecho de que, para muchos casos, es posible determinar de manera directa el valor de $x$ que corresponde al valor de $u$ de las variables aleatorias $X$ y $U$, respectivamente, de manera tal que $F(x;\theta)=u$. \\\\
+
+
+\subsection{Distribución uniforme sobre el intervalo (a,b)}
+
+La función de densidad de probabilidad es:
+$$f(x;a,b)=\dfrac{1}{b-a},\quad a\leq x \leq b.$$
+
+Para generar un número aleatorio $x$, $a\leq x \leq b$, primero se genera un valor aleatorio $u$ a partir de $(0,1)$, se iguala a la función de distribución acumulativa, se integra y se resuelve para el límite superior $x$. De forma que:
+\begin{tcolorbox}
+    $$(b-a)^{-1}\int_a^x \; dt = u \quad \Rightarrow \quad \dfrac{x-a}{b-a}=u, \quad o\qquad x=u(b-a)+a,\quad a\leq x \leq b.$$
+\end{tcolorbox}
+
+\subsection{La distribución de Weibull}
+La función de densidad de probabilidad es:
+$$f(x;\alpha,\theta)=\dfrac{\alpha}{\theta^\alpha} x^{\alpha-1}e^{-(x/\theta)^\alpha}, \qquad x>0.$$
+Para generar números aleatorios de Weibull $x>0$, se resuelve la ecuación
+$$\dfrac{\alpha}{\theta^\alpha}\int_0^x t^{\alpha-1}e^{-(t/\theta)^\alpha}\; dt = u \quad \Rightarrow \quad \left(\dfrac{\alpha}{\theta^\alpha}\right)\left(-\dfrac{\theta^\alpha}{\alpha}\right)e^{-(x/\theta)^\alpha}=u$$ 
+\begin{tcolorbox}
+$$o\qquad 1-e^{-(x/\theta)^\alpha}=u, \qquad y \qquad x=\theta\left[\ln\left(\dfrac{1}{1-u}\right)\right]^{1/\alpha}.$$
+\end{tcolorbox}
+Dado que para $\alpha=1$, la distribución de Weibull se reduce a la exponencial, donde pueden generarse números aleatorios para una distribución.
+
+\subsection{La distribución de Erlang}
+La función de densidad de probabilidad es:
+$$f(x;\alpha, \theta)=\dfrac{1}{\Gamma(\alpha)\theta^\alpha} x^{\alpha-1}e^{-x/\theta}, \qquad x>0,$$
+en donde $\alpha$ es un entero positivo. Recuérdese que la variable aleatoria de Erlang es la suma de $\alpha$ variables aleatorios independientes distribuidas exponencialmente. Por lo tanto, un número aleatorio de Erlang es la suma de $\alpha$ valores aleatorios exponenciales, en donde cada valor se genera mediante $x=\theta\left[\ln\left(\dfrac{1}{1-u}\right)\right]^{1/\alpha}$. 
+
+\subsection{La distribución normal}
+La función de distribución acumulativa normal es:
+$$\dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^x e^{-\frac{1}{2}\left(\frac{t-u}{\sigma}\right)^2}\; dt = u$$
+no puede resolverse, en forma cerrada, para $x$. De manera alternativa, puede demostrarse que si $U_1$ y $U_2$ son dos variables aleatorias independientes con distribución uniforme sobre le intervalo unitario, entonces
+$$Z_1=(-2\ln U_1)^{1/2}\sen(2\pi U_2)\qquad \mbox{y}\qquad Z_2=(-2\ln U_1)^{1/2}\cos(2\pi U_2)$$
+son dos variables aleatorias normales estandarizadas e independientes.
+
+\subsection{La distribución binomial}
+Para generar números aleatorios a partir de una distribución binomial con función de probabilidad se considerará lo siguiente: la variable aleatoria binomial es vista como la suma de $n$ resultados de un proceso de Bernoulli descrito por:
+$$p(x;n,p)=\dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x},\qquad x=0,1,2,\ldots,n$$
+$$y=\left\{\begin{array}{rcl}
+	1 & \mbox{si} & 0\leq u \leq p,\\\\
+	0 & \mbox{si} & p<u\leq 1.\\
+\end{array}\right.$$
+donde $u$ es un número aleatorio uniforme sobre el intervalo unitario. Esto es, se generan $n$ números aleatorios a partir del intervalo unitario, se convierten a unos y ceros de acuerdo con $y$ y la suma de los unos en esta secuencia es el número aleatorio binomial.
+
+\subsection{La distribución Poisson}
+Recuérdese que la probabilidad de tener $x$ ocurrencias en un intervalo de tiempo $t$ está definida por:
+$$p(x;t)=\dfrac{(vt)^x e^{-vt}}{x!},\qquad x=0,1,2,\ldots,$$
+donde $v$ es la frecuencia constante de ocurrencia, y $\lambda=vt$ es el número promedio de éstas. Como la ocurrencia en el tiempo de dos eventos independientes de Poisson se encuentra distribuida exponencialmente, se puede generar un número aleatorio de Poisson $x$ mediante la generación sucesiva de números aleatorios exponenciales por $x=\theta\left[\ln\left(\dfrac{1}{1-u}\right)\right]^{1/\alpha}$ para $\alpha=1$. El proceso se continúa hasta que la suma de los valores $x+1$ sea mayor que el intervalo de tiempo $t$. Por lo tanto, el número aleatorio de Poisson es $x$.

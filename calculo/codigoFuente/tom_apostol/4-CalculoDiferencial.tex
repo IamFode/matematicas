@@ -1483,8 +1483,8 @@ El teorema del valor medio para derivadas es importante en cálculo porque mucha
 %------------------- teorema 4.4.
 \begin{teo}[Teorema de Rolle]
     Sea $f$ una función continua en todos los puntos de un intervalo cerrado $[a,b]$ y derivable en cada punto del intervalo abierto $(a,b)$. Supongamos también que 
-    $$f(a)=f(b)$$
-    Existe entonces por lo menos un punto $c$ en el intervalo abierto $(a,b)$ tal que $f'(c)=0.$\\
+    $$f(a)=f(b).$$
+    Entonces existe por lo menos un punto $c$ en el intervalo abierto $(a,b)$ tal que $f'(c)=0.$\\
 
     En este teorema se afirma tan sólo que la curva debe tener una tangente horizontal en algún punto entre $a$ y $b$.\\\\
 	Demostración.-\; Supongamos que $f'(x)\neq 0$ para todo $x$ en el intervalo abierto $(a,b)$ y llegamos a una contradicción como se ve a continuación. Según el teorema de los valores extremos para funciones continuas, $f$ debe alcanzar su máximo absoluto $M$ y su mínimo absoluto $m$ en algún punto del intervalo cerrado $[a,b]$. El teorema 4.3 nos dice que ningún extremo puede ser alcanzado en puntos interiores (de otra manera sería nula la derivada ahí). Luego, ambos valores extremos son alcanzados en los extremos $a$ y $b$. Pero como $f(a)=f(b)$, esto significa que $m=M$ y por tanto $f$ es constante en $[a,b]$. Esto contradice el hecho de que $f'(x)=0$ para todo $x$ en $(a,b)$. Resulta pues que $f'(x)=0$ por lo menos en un $c$ que satisfaga $a<c<b$, lo que demuestra el teorema.\\\\
@@ -1528,7 +1528,46 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
  
     %-------------------- 2.
     \item Aplicando el teorema de Rolle, demostrar que la ecuación cúbica $x^3-3x+b=0$ no puede tener más de una raíz en el intervalo $-1\leq x\leq 1$, cualquiera que sea el valor de $b$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Supongamos que existe en $x^3-3x+b=0$ dos puntos $c_1$ y $c_2$ en el intervalo $[-1,1]$ por el cual $f(c_1)=f(c_2)=0$ tal que,
+	$$-1\leq c_1 < c_2 \leq 1.$$
+	Dado que $f(x)=x^3-3x+b$ es continua en $[-1,1]$, derivable en $(-1,1)$ donde aplicamos el teorema de Rolle en el intervalo $[c_1,c_2]$ para concluir que existe $c\in(c_1,c_2)$ tal que
+	$$f'(c)=0\quad \Rightarrow \quad 3c^2-3=0 \quad \Rightarrow \quad c^2=1 \quad \Rightarrow \quad c=\pm 1.$$
+	Pero esto contradice que $c\in (-1,1)$. Por lo tanto, puede haber a lo sumo un punto $x\in [-1,1]$ tal que $f(x)=0.$\\\\
+
+    %-------------------- 3.
+    \item Se define la función $f$ como sigue:
+	\begin{center}
+	    $f(x)=\dfrac{3-x^2}{2}$ si $x\leq 1$, $\quad f(x)=\dfrac{1}{x}$ si $x\geq 1.$
+	\end{center}
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Dibujar la gráfica de $f(x)$ para $x$ en el intervalo $0\leq x\leq 2.$\\\\
+		Respuesta.-\; 
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.6,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, % no box around the plot, only x and y axis
+		  axis y line=center, % the * suppresses the arrow tips
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=0,xmax=2,ymin=0,ymax=2,
+		  enlargelimits=upper] % extend the axes a bit to the right and top
+		  \addplot[black,opacity=1,domain=0:1]{(3-x^2)/2};
+		  \addplot[black,opacity=1,domain=1:2]{1/x};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	    %---------- (b)
+	    \item Probar que $f$ satisface las condiciones del teorema del valor medio en el intervalo $[0,2]$ y determinar todos los valores medios dados por el teorema.\\\\
+		Demostración.-\; 
+
+	\end{enumerate}
 
 \end{enumerate}
 
