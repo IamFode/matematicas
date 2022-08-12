@@ -685,7 +685,7 @@
 
 	     %---------- (c)
 	     \item Suponga que la función $f>0$ verifica que 
-	     $$\left(f'\right)^2=f+\dfrac{1}{f^3}-$$
+	     $$\left(f'\right)^2=f+\dfrac{1}{f^3}.$$
 	     Halle una fórmula para $f''$ en función de $f$. (En este apartado, además de cálculos sencillos, es necesario tener cuidado.)\\\\
 		 Respuesta.- Aplicando la regla de la cadena a los dos lados, tenemos
 		 $$2f'\cdot f''=f'+\dfrac{-3}{f^4}\dot f' \quad \Rightarrow \quad f''=\dfrac{1}{2}-\dfrac{3}{2f^4}.$$\\
@@ -693,6 +693,57 @@
 	 \end{enumerate}
 
     %-------------------- 19
-     \item 
+     \item Si $f$ es tres veces diferenciable y $f'(x)\neq 0$, la \textbf{derivada de Schwarz} de $f$ en $x$ se define mediante 
+	 $$\mathscr{D}f(x)=\dfrac{f'''(x)}{f'(x)}-\dfrac{3}{2}\left(\dfrac{f''(x)}{f'(x)}\right)^2.$$
+
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item Demuestre que $\mathscr{D}(f\circ g)=\left[\mathscr{D}f\circ g\right]\cdot g^{'^2}\mathscr{D}g.$\\\\
+		 Demostración.-\; Primeramente calculemos $(f\cdot g)'$, $(f\cdot g)''$ y $(f\cdot g)'''$.
+		 $$\begin{array}{rcl}
+		     (f\circ g)'(x)&=&f'\left[g(x)\right]\cdot g'(x).\\\\
+		     (f\circ g)''(x)&=&\left\{f'\left[g(x)\right]\cdot g'(x)\right\}'\\
+				    &=&f''\left[g(x)\right]g'(x)^2+f'\left[g(x)\right]g''(x)\\\\
+		     (f\circ g)'''(x)&=&\left\{f''\left[g(x)\right]g'(x)^2+f'\left[g(x)\right]g''(x)\right\}\\
+				     &=&f'''\left[g(x)\right]g'(x)^3 + 2f''\left[g(x)\right]g''(x)g'(x)+f''\left[g(x)\right]g''(x)g'(x)+f'\left[g(x)\right]g'''(x)\\
+				     &=&f'''\left[g(x)\right]g'(x)^3+3f''\left[g(x)\right]g''(x)g'(x)+f'\left[g(x)\right]g'''(x).\\
+		 \end{array}$$
+
+		 Por último calculamos la derivada de Schwarz para $f\circ g$,
+		 $$\begin{array}{rcl}
+		     \mathscr{D}(f\circ g)(x)&=&\dfrac{(f\circ g)'''(x)}{(f\circ g)'(x)}-\dfrac{3}{2}\left[\dfrac{(f\circ g)''(x)}{(f\circ g)'(x)}\right]^2\\\\
+					     &=&\dfrac{f'''\left[g(x)\right]g'(x)^3}{f'\left[g(x)\right]\cdot g'(x)}+\dfrac{2f''\left[g(x)\right]g''(x)g'(x)}{f'\left[g(x)\right]\cdot g'(x)}+\dfrac{f'\left[g(x)\right]g'''(x)}{f'\left[g(x)\right]\cdot g'(x)}\\\\
+					     &-&\dfrac{3}{2}\left\{\dfrac{f''\left[g(x)\right]g'(x)^2}{f'\left[g(x)\right]\cdot g'(x)}+\dfrac{f'\left[g(x)\right]g''(x)}{f'\left[g(x)\right]\cdot g'(x)}\right\}^2\\\\
+					     &=&\dfrac{f'''\left[g(x)\right]g'(x)^2}{f'\left[g(x)\right]}+\dfrac{2f''\left[g(x)\right]g''(x)}{f'\left[g(x)\right]}+\dfrac{g'''(x)}{g'(x)}-\dfrac{3}{2}\left[\dfrac{f''\left[g(x)\right]g'(x)}{f'\left[g(x)\right]}+\dfrac{g''(x)}{g'(x)}\right]^2\\\\
+					     &=&\dfrac{f'''\left[g(x)\right]g'(x)^2}{f'\left[g(x)\right]}+\dfrac{2f''\left[g(x)\right]g''(x)}{f'\left[g(x)\right]}+\dfrac{g'''(x)}{g'(x)}\\\\
+					     &-&\dfrac{2}{3}\left\{\dfrac{f''\left[g(x)\right]g'(x)}{f'\left[g(x)\right]}\right\}^2-3\dfrac{f''\left[g(x)\right]g''(x)}{f'\left[g(x)\right]}-\dfrac{3}{2}\left[\dfrac{g''(x)}{g'(x)}\right]^2\\\\
+					     &=&\left[\dfrac{f'''}{f'}\circ g(x)-\dfrac{3}{2}\dfrac{(f''\circ g)(x)}{(f'\circ g)(x)}\right]\cdot g'(x)^2+\dfrac{g'''(x)}{g'(x)}-\dfrac{3}{2}\dfrac{g''(x)}{g'(x)}\\\\
+					     &=&\left[\mathscr{D}f\circ g(x)\right]\cdot g'(x)^2+\mathscr{D}g(x).\\\\
+		 \end{array}$$
+		 \vspace{.5cm}
+
+	     %---------- (b)
+	     \item Demuestre que si $f(x)=\dfrac{ax+b}{cx+d},$ con $ad-bc\neq 0$, entonces $\mathscr{D}f=0.$ Por consiguiente, $\mathscr{D}(f\circ g)=\mathscr{D}g.$\\\\
+		 Demostración.-\; Usando la regla de la cadena de Leibniz se tiene,
+		 $$\begin{array}{rcl}
+		     f'(x)&=&\dfrac{a(cx+d)-(ax+b)c}{(cx+d)^2} = \dfrac{ad-bc}{(cx+d)^2}\\\\
+		     f''(x)&=&-\dfrac{2c(ad-bc)}{(cx+d)^3}\\\\
+		     f'''(x)&=&\dfrac{6c^2(ad-bc)}{(cx+d)^4}\\\\
+		 \end{array}$$
+		 Luego utilizamos la definición de la derivada de Schwarz, de la siguiente manera:
+		 $$\begin{array}{rcl}
+		     \mathscr{D}f(x)&=&\dfrac{f'''(x)}{f'(x)}-\dfrac{3}{2}\left[\dfrac{f''(x)}{f'(x)}\right]^2=\dfrac{\dfrac{6c^2(ad-bc)}{(cx+d)^4}}{\dfrac{ad-bc}{(cx+d)^2}}-\dfrac{3}{2}\left[-\dfrac{\dfrac{2c(ad-bc)}{(cx-d)^3}}{\dfrac{ad-bc}{(cx+d)^2}}\right]^2\\\\
+				    &=&\dfrac{6c^2}{(cx+d)^2}-\dfrac{3}{2}\left(-\dfrac{2c}{cx+d}\right)^2=\dfrac{6c^2}{(cx+d)^2}-\dfrac{6c^2}{(cx+d)^2}=0.\\\\
+		 \end{array}$$
+		 Sea $\left[\mathscr{D}f\circ g(x)\right]\cdot g'(x)^2+\mathscr{D}g(x)$, entonces $\mathscr{D}(f\circ g)=\mathscr{D}g.$\\\\
+
+	 \end{enumerate}
+
+    %-------------------- 20.
+     \item Suponga que existen $f^{(n)}(x)$ y $g^{(n)}(a)$. Demuestre la \textbf{fórmula de Leibniz}:
+	 $$(f\cdot g)^{(n)}(a)=\sum_{k=0}^n {n\choose k}f^{(k)}(a)\cdot g^{n-k}(a).$$\\
+	 Demostración.-\; 
+    
 
 \end{enumerate}
