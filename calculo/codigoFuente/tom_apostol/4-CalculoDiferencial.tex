@@ -1565,9 +1565,22 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 
 	    %---------- (b)
 	    \item Probar que $f$ satisface las condiciones del teorema del valor medio en el intervalo $[0,2]$ y determinar todos los valores medios dados por el teorema.\\\\
-		Demostración.-\; 
+		Demostración.-\; Dado que $\frac{3-x^2}{2}$ y $\frac{1}{x}$ son continuos en $[0,1]$ y $[1,2]$ respectivamente y diferenciables en $(0,1)$ y $(1,2)$. Donde el único punto donde la función podría ser discontinua y no diferenciable es en $x=1$. Analicemos este punto. Sea $x=1$ por lo que,
+		$$\lim_{x\to 1-}\dfrac{3-x^2}{2}=1,\qquad \lim_{x\to 1^+}\dfrac{1}{1}=1.$$
+		Ya que los límites por la izquierda y la derecha son iguales, entonces $f$ es continua en $x=1.$ Luego verifiquemos que la derivada existe en $x=1$. Sea $f'(1)=\left(\frac{3-x^2}{2}\right)'=-x=-1=-\frac{1}{x^2}=\left(\frac{1}{x}\right)'$, entonces la derivada existe.\\
+		Sabiendo esto, podemos aplicar el teorema del valor medio en el intervalo $[0,2]$, como sigue:
+		$$f(2)-f(0)=f'(c)(2-0) \quad \Rightarrow \quad \dfrac{1}{2}-\dfrac{3-0^2}{2}=2\cdot f'(c) \quad \Rightarrow \quad f'(c)=-\dfrac{1}{2}.$$
+		Por último hallemos $c$ para $x\leq 1$ y para $x\geq 1$, de la siguiente manera.
+		$$f'(c)=-c \quad \Rightarrow \quad -\dfrac{1}{2}=-c \quad \Rightarrow \quad c=\dfrac{1}{2}.$$
+		y
+		$$f'(c)=-\dfrac{1}{c^2}\quad \Rightarrow \quad -\dfrac{1}{2}=-\dfrac{1}{c^2} \quad \Rightarrow \quad c=\pm \sqrt{2}.$$
+		Por lo tanto los valores medios serán,
+		$$c=\dfrac{1}{2} \quad \mbox{y}\quad c=\sqrt{2}.$$\\
 
 	\end{enumerate}
+
+    %-------------------- 4.
+    \item 
 
 \end{enumerate}
 

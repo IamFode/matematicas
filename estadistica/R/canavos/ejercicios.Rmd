@@ -1639,7 +1639,1776 @@ Respuesta.- no consideraría a las distribuciones hipergeométrica y Poisson.
 
 Respuesta.- No se consideraría a las distribuciones binomial, binomial negativa y Poisson
 
+\newpage
+
+# Ejercicios Capítulo 5
+
+## 5.1.
+
+En la misma gráfica, dibujar las distribuciones normales $N(0,5)$ y
+$N(0,4)$
+
+Respuesta.-
+
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
+curve(dnorm(x, mean=0, sd=5), ylim =c(0,.11) ,from = -18, to = 18, ylab = "normal")
+curve(dnorm(x, mean=0, sd=4),  add = TRUE, col = 2)
+legend(7, .1, legend=c("N(0,5)", "N(0,4)"),
+       col=c("black", "red"), lty=1:1, cex=0.4)
+```
+
+## 5.2.
+
+Sea $X\sim N(50,10).$ Determinar las siguientes probabilidades
+
+### a)
+
+$P(X<40)$
+
+Respuesta.-
+$$P(X<40) = P[Z<(40-50)/10] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{40-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.1586553.$$
+
+```{r}
+pnorm(40,50,10)
+integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(40-50)/10)
+1/(sqrt(2*pi))*(-exp(-((-1)^2/2)) + exp(-(-Inf)^2/2))
+```
+
+### b)
+
+$P(X<65)$
+
+Respuesta.-
+$$P(X<40) = P[Z<(65-50)/10] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{65-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.9331928$$
+
+```{r}
+pnorm(65,50,10)
+integrate(function(x) (1/sqrt(2*pi))*exp(-x^2/2),-Inf,(65-50)/10)
+```
+
+### c)
+
+$P(X>55)$
+
+Respuesta.-
+$$P(X<40) = P[Z>(55-50)/10] = 1 - P[Z\leq (55-50)/10] = 1-\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{55-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.3085375$$
+
+```{r}
+pnorm(55,50,10,lower.tail = FALSE)
+```
+
+### d)
+
+$P(X>35)$
+
+Respuesta.-
+$$P(X<40) = P[Z>(35-50)/10] = 1 - P[Z\leq (35-50)/10] = 1-\dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{35-50}{10}} e^{\frac{-z^2}{2}}\; dz = 0.93319285$$
+
+```{r}
+pnorm(35,50,10,lower.tail = FALSE)
+```
+
+### e)
+
+$P(40<X<45)$
+
+Respuesta.-
+$$P(40<X<45) = P\left(\dfrac{40-50}{10}<Z<\dfrac{45-50}{10}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{45-50}{10}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{40-50}{10}} e^{\frac{-z^2}{2}}\; dz =0.1498823.$$
+
+```{r}
+pnorm(45,50,10) - pnorm(40,50,10)
+```
+
+### f)
+
+$P(38<X<62)$
+
+Respuesta.-
+$$P(38<X<62) = P\left(\dfrac{38-50}{10}<Z<\dfrac{62-50}{10}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{62-50}{10}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{38-50}{10}} e^{\frac{-z^2}{2}}\; dz =0.7698607.$$
+
+```{r}
+pnorm(62,50,10) - pnorm(38,50,10)
+```
+
+## 5.3.
+
+Sea $X\sim N(200,20)$. Determinar las siguientes probabilidades:
+
+### a)
+
+P(185\<X\<210)
+
+Respuesta.-
+$$P\left(\dfrac{185-200}{20}<Z<\dfrac{210-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{210-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{185-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.4648351.$$
+
+```{r}
+pnorm(210,200,20)-pnorm(185,200,20)
+```
+
+### b)
+
+P(215\<X\<250)
+
+Respuesta.-
+$$P\left(\dfrac{215-200}{20}<Z<\dfrac{250-200}{20}\right) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{250-200}{20}} e^{\frac{-z^2}{2}}\; dz - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{215-210}{20}} e^{\frac{-z^2}{2}}\; dz = 0.2204177.$$
+
+```{r}
+pnorm(250,200,20)-pnorm(215,200,20)
+```
+
+### c)
+
+P(X\>240)
+
+Respuesta.-
+$$P\left(Z>\dfrac{240-200}{20}\right) = P 1-\left(Z\leq\dfrac{240-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{240-200}{20}} e^{\frac{-z^2}{2}}\; dz = 0.02275013.$$
+
+```{r}
+pnorm(240,200,20,lower.tail = FALSE)
+```
+
+### d)
+
+P(X\>178)
+
+Respuesta.-
+$$P\left(Z>\dfrac{178-200}{20}\right) = P 1-\left(Z\leq\dfrac{178-200}{20}\right) = 1 - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{\frac{178-200}{20}} e^{\frac{-z^2}{2}}\; dz =0.8643339.$$
+
+```{r}
+pnorm(178,200,20,lower.tail = FALSE)
+```
+
+## 5.4.
+
+Sea $X\sim N(-25,10)$. Encontrar los valores de $x$ que corresponden a
+las siguientes probabilidades:
+
+### a)
+
+$P(X<x)=0.1251$. Respuesta.- Viendo la tabla z tenemos
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -1.15\cdot 10 - 25 = -35.5$$
+
+```{r}
+qnorm(0.1251)*10-25
+```
+
+### b)
+
+$P(X<x) = 0.9382$ Respuesta.-
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 1.54\cdot 10 - 25 = -9.6$$
+
+```{r}
+qnorm(0.9382)*10-25
+```
+
+### c)
+
+$P(X>x) 0 0.3859$ Respuesta.-
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = -0.29\cdot 10 - 25 = -27.9$$
+
+```{r}
+qnorm(0.3859)*10-25
+```
+
+### d)
+
+$P(X>x) 0 0.8340$ Respuesta.-
+$$z=\dfrac{x+25}{10}\quad \Rightarrow \quad x = 0.97\cdot 10 - 25 = .15.3$$
+
+```{r}
+qnorm(0.8340)*10-25
+```
+
+## 5.5.
+
+Sea $X\sim N(10,5)$. Encontrar los valores de $x$ que corresponden a las
+siguientes probabilidades:
+
+### a)
+
+$P(X<x)=0.05$ Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.645\cdot 5+10 = 1.775$$
+
+```{r}
+qnorm(0.05)*5+10
+```
+
+### b)
+
+$P(X<x)=0.95$ Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.645\cdot 5+10=18.225$$
+
+```{r}
+qnorm(0.95)*5+10
+```
+
+### c)
+
+$P(X<x)=0.99$ Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 2.33\cdot 5+10 = 21.65$$
+
+```{r}
+qnorm(0.99)*5+10
+```
+
+### d)
+
+$P(X<x)=0.01$ Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -2.33\cdot 5+10=-1.65$$
+
+```{r}
+qnorm(0.01)*5+10
+```
+
+### e)
+
+$P(X<x)=0.025$ Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = -1.96\cdot 5+10 = 0.2$$
+
+```{r}
+qnorm(0.025)*5+10
+```
+
+### f)
+
+$P(X<x)=0.975$
+
+Respuesta.-
+$$z = \dfrac{x-10}{5}\quad \Rightarrow \quad x = 1.96\cdot 5+10 = 19.8$$
+
+```{r}
+qnorm(0.975)*5+10
+```
+
+## 5.6.
+
+Sea $X\sim N(\mu,\sigma)$. Determinar la media y la varianza de $X$ si
+los cuantiles son $x_{0.4} = 50$ y $x_{0.8}=100$.
+
+Respuesta.- Sea
+$z_1=\dfrac{x_{0.4}-\mu}{\sigma} \qquad z_2= \dfrac{z_{0.8}-\mu}{\sigma}$,
+entonces
+
+$$\dfrac{50-\mu}{z_1}=\dfrac{100-\mu}{z_2}$$
+
+Así,
+$$\mu = \dfrac{100z_1 - 50z_2}{z_1-z_2} = \dfrac{100\cdot (-0.225)-50\cdot 0.845}{-0.225-0.845} = 60.51402$$
+
+Luego reemplazamos $\mu$ en $z_1$ para hallar $\sigma$,
+
+$$\sigma=\dfrac{x_{0.4}-\mu}{z_1} = \dfrac{50-60.51402}{-0.225} = 46.72898 $$
+
+```{r}
+mu = (100*qnorm(0.4)-50*qnorm(0.8))/(qnorm(0.4)-qnorm(0.8))
+mu
+(50-mu)/qnorm(0.4)
+```
+
+## 5.7.
+
+Una universidad espera recibir, para el siguiente año escolar, 16000
+solicitudes de ingreso el primer año de licenciatura. Se supone que las
+calificaciones obtenidas por los aspirantes en la prueba SAT se pueden
+calcular, de manera adecuada, por una distribución normal con media 950
+y desviación estándar 100. Si la universidad decide admitir al $25\%$ de
+todos los aspirantes que obtengan las calificaciones más altas en la
+prueba SAT, ¿cuál es la mínima calificación que es necesario obtener en
+esta prueba, para ser admitido por la universidad?
+
+Respuesta.- Sea $P(X>x_{0.25})$ entonces $P(X<x_{0.75}) = -1.96$ así
+$$x_{0.75} = 0.675*100+950 = 1017.5 \simeq 1018$$
+
+```{r}
+qnorm(0.75)*100+950
+```
+
+## 5.8.
+
+Una fábrica produce pistones cuyos diámetros se encuentran adecuadamente
+clasificados por una distribución normal con un diámetro promedio de $5$
+cm y una desviación estándar igual a $0.001$ cm. Para que un pistón
+sirva, su diámetro debe encontrarse entre $4.998$ y $5.002$ cm. Si el
+diámetro del pistón es menor que $4.998$ se desecha; si es mayor que
+$5.002$ el pistón puede reprocesarse. ¿Qué porcentaje de pistones
+servirá? ¿Qué porcentaje será desechado? ¿Qué porcentaje será
+reprocesado?.
+
+Respuesta.- Sea $X\sim N(\mu,\sigma)$ de donde, el porcentaje que
+servirá vendrá dado por
+$$P \left( \dfrac{4.998-5}{0.001} \leq Z \leq \dfrac{5.002-5}{0.001} \right)$$
+entonces,
+
+$$P(-2\leq Z\leq 2) = F_Z(2,0,1)-F_Z(-2,0,1) = 0.9772-0.0228 = 0.9544.$$
+
+```{r}
+pnorm((5.002-5)/0.001)-pnorm((4.998-5)/0.001)
+```
+
+El porcentaje que será desechado viene dado por:
+$$P(Z\leq -2) = F_Z(-2;0,1) = 0.0228.$$
+
+```{r}
+pnorm((4.998-5)/0.001)
+```
+
+El porcentaje que será reprocesado está dado por:
+
+$$P(Z\geq 2) = 1 - F_Z(2;0,1) = 1 - 0.9772 = 0.0228.$$
+
+```{r}
+pnorm((5.002-5)/0.001, lower.tail = FALSE)
+```
+
+## 5.9.
+
+La demanda mensual de cierto producto $A$ tiene una distribución normal
+con una media de $200$ unidades y desviación estándar igual a $40$
+unidades. La demanda de otro producto $B$ también tiene una distribución
+normal con media de $500$ unidades y desviación estándar igual a $80$
+unidades. Un comerciante que vende estos productos tiene en su almacén
+$280$ unidades de $A$ y $650$ de $B$ al comienzo de un mes, ¿cuál es la
+probabilidad de que, en el mes, se vendan todas las unidades de ambos
+productos? Puede suponerse independencia entre ambos eventos.
+
+Respuesta.- Sea $z_A=\dfrac{280-200}{40}=2$ y
+$z_B=\dfrac{650-500}{80}=1.875$, entonces para hallar la probabilidad de
+que se vendan ambos productos estará dado por
+$$P(Z_A\geq 2)\cdot P(Z_B\geq 1.875) = \left[1-F_{Z_A}(2;0,1)\right]\cdot\left[1-F_{Z_B}(1.875;0,1)\right] = (1-0.9772)(1-0.9696) = 0.00069312$$
+
+```{r}
+pnorm((280-200)/40,lower.tail = FALSE)*pnorm((650-500)/80,lower.tail = FALSE)
+```
+
+## 5.10.
+
+El peso de cereal que contiene una caja se aproxima a una distribución
+normal con una media de $600$ gramos. El proceso de llenado de las cajas
+está diseñado para que de entre 100 cajas, el peso de una se encuentre
+fuera del intervalo 590-610 gramos. ¿Cuál es el valor máximo de la
+desviación estándar para alcanzar este requerimiento?
+
+Respuesta.- Si una caja de entre 100 (1/100) queda fuera del intervalo
+$590-610$ entonces lo que queda dentro estará dado por $(99/100)=0.99$.
+Sabemos que la distribución Normal estandarizada es simétrica respecto
+al 0, por lo que,
+$$P\left(\dfrac{-10}{\sigma}\leq Z\leq \dfrac{10}{\sigma}\right)=P\left(\dfrac{-10}{\sigma}\leq Z\leq 0\right)+P\left(0\leq Z \leq \dfrac{10}{\sigma}\right)$$
+
+Luego, ya que
+$$P\left(\dfrac{-10}{\sigma}\leq Z\leq 0\right)=P\left(0\leq Z \leq \dfrac{10}{\sigma}\right)$$
+
+entonces,
+
+$$P\left(\dfrac{-10}{\sigma}\leq Z\leq 0\right)+P\left(0\leq Z \leq \dfrac{10}{\sigma}\right) = 2P\left(0\leq Z \leq \dfrac{10}{\sigma}\right) \geq 0.99\quad \Rightarrow \quad P\left(0\leq Z\leq \dfrac{10}{\sigma}\right)\geq 0.495$$
+
+Pero $P(Z\geq 0)=-F_Z(Z\leq 0)=-0.5$ de donde
+
+$$P\left(Z\leq \dfrac{10}{\sigma}\right)-0.5 \geq 0.495 \quad \Rightarrow \quad P\left(Z\leq \dfrac{10}{\sigma}\right) \geq 0.995$$
+
+Así,
+$$ z\geq 2.58 \quad \Rightarrow \quad \dfrac{10}{\sigma}\geq 2.58 \quad \Rightarrow \quad \sigma \leq 3.876.$$
+
+Por lo que el valor máximo de $\sigma$ para alcanzar el requerimiento
+estará dado por $3.876.$
+
+## 5.11
+
+En una tienda de descuento la demanda diaria de acumuladores para
+automóvil se calcula mediante una distribución normal con una media de
+50 acumuladores que tienen una desviación estándar de $10$. En dos días
+consecutivos se venden $80$ y $75$ acumuladores respectivamente. Si
+estos días son típicos, ¿qué tan probable es, bajo las suposiciones
+dadas, vender $80$ o más y $75$ o más acumuladores?
+
+Respuesta.- Sea $X\sim N(50,10)$ entonces
+
+$$\begin{array}{rcl}
+  P(X_{1}\geq 80)\cdot P(X_2\geq 75) &=& \left(Z_1\geq \dfrac{80-50}{10} \right)\cdot P\left(Z_2\geq \dfrac{75-50}{10}\right)\\\\
+  &=&\left[1- F_{Z_1}(3;0,1) \right] \cdot \left[1-F_{Z_2}(2.5;0,1)\right]\\\\
+  &=& (1-0.9987)\cdot (1-0.9938)\\\\
+  &=& 0.00000806.\\\\
+\end{array}$$
+
+```{r}
+pnorm((80-50)/10,lower.tail = FALSE) * pnorm((75-50)/10,lower.tail = FALSE)
+```
+
+## 5.12.
+
+Un fabricante de aviones desea obtener remaches para montar los
+propulsores de sus aviones. El esfuerzo a la tensión mínimo necesario de
+cada remache es de $25000$ lb. Se pide a tres fabricantes de remaches
+(A,B y C) que proporcionen toda la información pertinente con respecto a
+los remaches que producen. Los tres fabricantes aseguran que la
+resistencia a la tensión de sus remaches se encuentran distribuida, de
+manera aproximada, normalmente con un valor medio de $28000,30000$ y
+$29000$ lb, respectivamente.
+
+### a)
+
+¿Tiene el fabricante la suficiente información para hacer una selección?
+
+Respuesta.- No, ya qua no se definio la desviación estándar.
+
+### b)
+
+Supóngase que las desviaciones estándar para A, B y C son $1000, 1800$ y
+$1200$, respectivamente. ¿Cuál es la probabilidad de que un remache
+producido ya sea por A, B o C no reúna los requisitos mínimos?
+
+Respuesta.- Para $X_A \sim N(28000,1000)$ se tiene
+$$P(X_A\leq 25000) = P\left(Z_A\leq \dfrac{25000-28000}{1000}\right) = F_{Z_A}(-3;0,1) = 0.0013.$$
+
+```{r}
+pnorm((25000-28000)/1000)
+```
+
+Para $X_B \sim N(30000,1800)$ se tiene
+
+$$P(X_B\leq 25000) = P\left(Z_B\leq \dfrac{25000-30000}{1800}\right) = F_{Z_B}(-2.78;0,1) = 0.0027$$
+
+```{r}
+pnorm((25000-30000)/1800)
+```
+
+Para $X_C \sim N(29000,1200)$ se tiene
+
+$$P(X_C\leq 25000) = P\left(Z_C\leq \dfrac{25000-29000}{1200}\right) = F_{Z_C}(-3.33;0,1) = 0.0004$$
+
+```{r}
+pnorm((25000-29000)/1200)
+```
+
+### c)
+
+Si usted fuera el fabricante de aviones, ¿podría elegir entre A, B y C,
+con base a sus respuesta al inciso b)? ¿Por qué?.
+
+Respuesta.- Escogería a $C$ ya que tiene la probabilidad más baja de que
+se rompa un remache.
+
+## 5.13.
+
+Un fabricante de escapes para automóviles desea garantizar su producto
+durante un periodo igual al de la duración del vehículo. El fabricante
+supone que el tiempo de duración de su producto es una variable
+aleatoria con una distribución normal, con una vida promedio de tres
+años y una desviación estándar de seis meses. Si el costo de reemplazo
+por unidad es de $\$ 10$, ¿cuál puede ser el costo total de reemplazo
+para los primeros dos años, si se instalan 1000000 unidades?
+
+Respuesta.- Sea $\mu = 3$ y $\sigma = 0.5$, entonces
+
+$$P(X\leq 2) = P(Z\leq \dfrac{2-3}{0.5}) = P(Z\leq -2) = F_Z(-2;0,1) = 0.0228.$$
+
+Ahora ya que el costo de reemplazo es de $\% 10$, de donde sólo el
+$2.28\%$ de $1000000$ será cambiado entonces el costo total de reemplazo
+estará dado por:
+
+$$1000000*0.0228*10=228000.$$
+
+```{r}
+pnorm((2-3)/0.5)*1000000*10
+```
+
+## 5.14.
+
+El tiempo necesario para armar cierta unidad es una variable aleatoria
+normalmente distribuida con una media de $30$ minutos y desviación
+estándar igual a dos minutos. Determinar el tiempo de armado de manera
+tal que la probabilidad de exceder este sea de $0.02$.
+
+Respuesta.- Sea $\mu = 30$ y $\sigma=2$, entonces
+
+$$P\left( Z\geq \dfrac{T-30}{2}\right) = 0.02 \; \Rightarrow \; 1-F_Z(T) = 0.02  \; \Rightarrow \; F_Z(T)=0.98 \; \Rightarrow \; \dfrac{T-30}{2}=2.06\; \Rightarrow \; T=34.12.$$
+
+```{r}
+2*qnorm(0.02,lower.tail = FALSE)+30
+```
+
+## 5.15.
+
+Un periódico llevó a cabo una encuesta entre $400$ personas
+seleccionadas aleatoriamente, en un estado, sobre el control de armas.
+De las $400$ personas, 220 se pronunciaron en favor de un estricto
+control.
+
+### a)
+
+¿Qué tan probable resulta el hecho de tener $220$ o más personas a favor
+del control de armas, si la población en este estado se encuentra
+dividida en opinión de igual manera?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=400\cdot 0.5 = 200$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{400\cdot 0.5\cdot 0.5} = 10$, entonces
+
+$$P\left(Z\geq \dfrac{220-200}{10}\right) = P(Z\geq 2) = 1-F_Z(2;0,1) = 0.0228.$$
+
+```{r}
+pnorm((220-200)/10,lower.tail = FALSE)
+```
+
+### b)
+
+Supóngase que se encuesta a $2000$ personas teniendo la misma proporción
+de estas a favor del control de armas, que la del inciso anterior. ¿Cómo
+cambiaría su respuesta al inciso a)?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=2000\cdot 0.5 = 1000$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{2000\cdot 0.5\cdot 0.5} = \sqrt{500}$,
+entonces dado que la proporción es de $220/400=0.55$
+
+$$P(X\geq 1100) = P\left(Z\geq \dfrac{1100-1000}{\sqrt{500}}\right) = P(Z\geq 4.47) = 1-F_Z(4.47;0,1) = 0$$
+
+```{r}
+pnorm((1100-1000)/sqrt(500),lower.tail = FALSE)
+```
+
+### c)
+
+Si el número de personas encuestadas es de $10000$, ¿cuál es la
+probabilidad de tener una ocurrencia diferente al del inciso b)?.
+
+Respuesta.- Sea, $p=0.5$, $\mu=np=10000\cdot 0.5 = 5000$ y
+$\sigma = \sqrt{np(1-p)} = \sqrt{10000\cdot 0.5\cdot 0.5} = 50$,
+entonces dado que la proporción es de $220/400=0.55$
+
+$$P(X\geq 5500) = P\left(Z\geq \dfrac{5500-5000}{50}\right) = P(Z\geq 10) = 1-F_Z(10;0,1) = 0$$
+
+```{r}
+pnorm((5500-5000)/50,lower.tail = FALSE)
+```
+
+## 5.16.
+
+Una prueba de opción múltiple contiene $25$ preguntas y cada una de
+estas cinco opciones. ¿Cuál es la probabilidad de que, al contestar de
+manera aleatoria cada pregunta, más de la mitad de las respuetas sea
+incorrecta?
+
+Respuesta.- Sea $p=4/5$ la probabilidad de contestar una pregunta mal y
+dado que $\mu = np = 25\cdot \dfrac{4}{5} = 20$ y
+$\sigma = \sqrt{25\cdot \dfrac{4}{5}\cdot \dfrac{1}{5}} = 2$, entonces
+
+$$P(X\geq13) = P\left(Z\geq \dfrac{13-20}{2} \right) = 1-F_Z(-3.5) = 1-0.0002 = 0.9998$$
+
+```{r}
+pnorm((13-20)/2,lower.tail = FALSE)
+```
+
+## 5.17.
+
+Una organización llevó a cabo una encuesta entre $1600$ personas,
+seleccionadas de manera aleatoria de toda la población del país, para
+conocer su opinión con respecto a la seguridad en las plantas de energía
+nuclear. De este grupo, el $60\%$ opinó que las plantas de energía
+nuclear tienen muy poca seguridad. Con base en estos resultados ¿existe
+alguna razón para dudar que la población en general tiene una opinión
+neutral con respecto a este asunto?.
+
+Respuesta.- Sea $\mu = 1600\cdot 0.6 = 960$ y
+$\sigma = \sqrt{1600*0.4*(1-0.4)}=\sqrt{384}$, entonces
+
+$$P(X\leq 800) = P\left(Z\leq \dfrac{800-960}{\sqrt{384}}\right) = P(-160/\sqrt{384};0,1) = 0.$$
+
+```{r}
+pnorm((800-1600*0.6)/sqrt(1600*0.4*(1-0.4)))
+```
+
+Si existe ya que la probabilidad es prácticamente $0$.
+
+## 5.18.
+
+Sea $X$ una variable aleatoria distribuida binomialmente.
+
+### a)
+
+Para $n=15,\; p=0.25$ y $n=15$ y $p=0.5$, calcular las siguientes
+probabilidades:
+
+Respuesta.-
+
+#### P(X=8)
+
+$$P(X=8) = p(8;15,0.25) = {15\choose 8}\cdot 0.25^{8} \cdot(1-0.25)^{15-8} = 0.01310682$$
+
+```{r}
+choose(15,8)*0.25^(8)*(1-0.25)^(15-8)
+dbinom(8,15,0.25)
+```
+
+$$P(X=8) = p(8;15,0.5) = {15\choose 8}\cdot 0.5^{8} \cdot(1-0.5)^{15-8}=0.1963806$$
+
+```{R}
+choose(15,8)*0.5^(8)*(1-0.5)^(15-8)
+dbinom(8,15,0.5)
+```
+
+#### P(X\<=3)
+
+$$P(X\leq 3) = F(3;15,0.25) = \sum_{i=0}^3 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} =0.4612869$$
+
+```{r}
+pbinom(3,15,0.25)
+```
+
+$$P(X\leq 3) = F(3;15,0.5) = \sum_{i=0}^3 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.01757813$$
+
+```{R}
+pbinom(3,15,0.5)
+```
+
+#### P(X\<=7)
+
+$$P(X\leq 7) = F(7;15,0.25) = \sum_{i=0}^7 {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.9827002 $$
+
+```{r}
+pbinom(7,15,0.25)
+```
+
+$$P(X\leq 7) = F(8;15,0.5) = \sum_{i=0}^7 {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.5$$
+
+```{R}
+pbinom(7,15,0.5)
+```
+
+#### P(X\>=9)
+
+$$P(X\geq 9) =1-P(X< 9)=1-P(X\leq 8) = 1-F(8;15,0.25) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0.004193014$$
+
+```{r}
+pbinom(8,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 9) = F(9;15,0.5) =1-P(X<9)= 1-P(X\leq 8) = 1-\sum_{i=0}^{8} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}= 0.3036194$$
+
+```{R}
+pbinom(8,15,0.5,lower.tail = FALSE)
+```
+
+#### P(X\>=12)
+
+$$P(X\geq 12) =1-P(X< 12)=1-P(X\leq 11) = 1-F(11;15,0.25) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.25^{i} \cdot(1-0.25)^{15-i} = 0$$
+
+```{r}
+pbinom(12,15,0.25,lower.tail = FALSE)
+```
+
+$$P(X\geq 12) = F(12;15,0.5) =1-P(X<12)= 1-P(X\leq 11) = 1-\sum_{i=0}^{11} {15\choose i}\cdot 0.5^{i} \cdot(1-0.5)^{15-i}=0.01757813$$
+
+```{R}
+pbinom(11,15,0.5,lower.tail = FALSE)
+```
+
+### b)
+
+Aproxímense los valores de las probabilidades anteriores mediante el
+empleo de la distribución normal.
+
+#### P(X=8)
+
+$$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(2.53;0,1) = 0$$
+
+```{r}
+dnorm((8-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X=8) = P\left(Z=\dfrac{8-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(2.25;0,1) = 0$$
+
+#### P(X\<=3)
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(-0.447;0,1) = 0.328$$
+
+```{r}
+pnorm((3-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X\leq 3)=P\left(Z\leq \dfrac{3-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-2.32;0,1) = 0.0102$$
+
+```{r}
+pnorm((3-15*0.5)/(sqrt(15*0.5*(1-0.5))))
+```
+
+#### P(X\<=7)
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = p(1.937;0,1) = 0.9735$$
+
+```{r}
+pnorm((7-15*0.25)/(sqrt(15*0.25*(1-0.25))))
+```
+
+$$P(X\leq 7)=P\left(Z\leq \dfrac{7-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = p(-0.258;0,1) = 0.397$$
+
+```{r}
+pnorm((7-15*0.5)/(sqrt(15*0.5*(1-0.5))))
+```
+
+#### P(X\>=9)
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(3.13;0,1) = 0$$
+
+```{r}
+pnorm((9-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(0.77;0,1) = 1-0.7794=0.2206$$
+
+```{r}
+pnorm((9-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+#### P(X\>=12)
+
+$$P(X\geq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.25}{\sqrt{15\cdot 0.25\cdot (1-0.25)}}\right) = 1-p(4.91;0,1) = 0$$
+
+```{r}
+pnorm((12-15*0.25)/(sqrt(15*0.25*(1-0.25))),lower.tail = FALSE)
+```
+
+$$P(X\leq 9)=1-P\left(Z\leq \dfrac{9-15\cdot 0.5}{\sqrt{15\cdot 0.5\cdot (1-0.5)}}\right) = 1-p(2.32;0,1) = 1-0.9898 = 0.0102$$
+
+```{r}
+pnorm((12-15*0.5)/(sqrt(15*0.5*(1-0.5))),lower.tail = FALSE)
+```
+
+## 5.19.
+
+Sea $X$ una variable aleatoria con distribución uniforme sobre el
+intervalo $(a,b)$
+
+### a)
+
+¿Cuál es la probabilidad de que $X$ tome un valor que se encuentre a una
+desviación estándar de la media?
+
+Respuesta.- Sea $\sigma=\dfrac{b-a}{2\sqrt{3}}$ la desviación estándar de una distribución uniforme. Cabe mencionar que $\sigma$ es la longitud de del subintervalo que queremos calcular. Dado que existe $\sigma$ a la derecha y a la izquierda se tiene,
+
+$$P(\sigma^- \leq X\leq \sigma^+) = 2\cdot \dfrac{b-a}{2\sqrt{3}}\cdot \dfrac{1}{b-a} = \dfrac{1}{\sqrt{3}} = 0.5773503$$
 
 
+```{r}
+punif(1/(sqrt(3)))
+```
+
+### b) 
+
+¿Puede tomar $X$ un valor que se encuentre a dos desviaciones estándar
+de la media?
+
+Repuesta.- No puedo, dado que tendríamos que multiplicar $\dfrac{1}{\sqrt{3}}$ por $4$ el cual es mayor a $1$.
+
+
+## 5.20
+Sea $X$ una variable aleatoria con distribución uniforme sobre el intervalo $(a,b)$. ¿Cuál es la máxima distancia, en términos de la desviación estándar, a la que puede encontrarse un valor $X$ a partir de la media?
+
+Respuesta.- Sea $x$ la máxima distnacia en terminos de la desviación estándar, entonces como se vio en el anterior ejercicio se tiene,
+
+$$x\cdot \dfrac{1}{2\sqrt{3}}=1 \quad \Rightarrow \quad x=2\sqrt{3}$$
+
+donde la distnacia máxima estará dada por $2\sqrt{3}.$
+
+
+## 5.21
+Sea $X$ una variable aleatoria con distribución uniforme sobre el intrevalo $(a,b).$ Si $E(X)=10$ y $Var(X)=12$, encontrar los valores de $a$ y de $b$.
+
+Respuesta.- Sean $E(X)=\dfrac{a+b}{2}=10$ y $Var(X)=\dfrac{(b-a)^2}{12}$, entonces
+
+$$\left\{\begin{array}{ccc}\dfrac{a+b}{2}&=&10\\\dfrac{(b-a)^2}{12}&=&12\end{array}\right. \quad \Rightarrow \quad \left\{\begin{array}{ccc} a+b&=&20\\ b-a&=&12\end{array}\right. \quad \Rightarrow \quad a=4,\quad b=16.$$
+
+## 5.22
+Supóngase que la concentración de cierto contaminante se encuentra distribuida de manera uniforme en el intervalo de $4$ a $20$ ppm (partes por millón). Si se considera como tóxica una concentración de $15$ ppm o más ¿Cuál es la probabilidad de que al tomarse una muestra la concentración de ésta sea tóxica?
+
+Respuesta.- Sea $a=4$ y $b=20$ entonces,
+$$P(X\geq 15) = 1 - P(X < 15) = 1 - F(15;3,20) = 1 - \dfrac{15-4}{20-4} = 0.3125$$
+
+```{r}
+punif(15,4,20,lower.tail = FALSE)
+```
+
+
+## 5.23
+Sea $X$ una variable aleatoria con distribución beta y parámetros $\alpha=3$ y $\beta=1$.
+
+### a)
+Graficar la función de densidad de probabilidad.
+
+Respuesta.-
+
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
+curve(dbeta(x,3,1),xlim=c(0,1),col="blue",lwd=2,
+      xlab="x",ylab="f(x)",main="Función de Densidad beta(x;3,1)")
+```
+
+### b)
+Obtener la media, la varianza, la desviación media, el coeficiente de asimetría y a curtosis relativa.
+
+Respuesta.- La media de la distribución beta viene dada por 
+$$=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{3}{3+1}=0.75$$
+
+La varianza viene dada por
+$$Var(x)=\dfrac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta + 1)}=\dfrac{3\cdot 1}{(3+1)^2(3+1+1)}=0.0375$$
+
+```{r}
+alpha=3
+beta = 1
+alpha*beta/((alpha+beta)^2*(alpha+beta+1))
+```
+
+Coeficiente de asimetría.
+
+$$\alpha_3(X)=\dfrac{2(\beta-\alpha)\sqrt{\alpha+\beta+1}}{\sqrt{\alpha\beta}(\alpha+\beta+2)}=\dfrac{2(1-3)\sqrt{3+1+1}}{\sqrt{3\cdot 1}(3+1+2)}=-0.860663.$$
+
+```{r}
+alpha=3
+beta = 1
+(2*(beta-alpha)*sqrt(alpha+beta+1))/(sqrt(alpha*beta)*(alpha+beta+2))
+```
+
+Curtosis relativa
+
+$$\alpha_3(X)=\dfrac{3(\alpha+\beta+1)\left[2(\alpha+\beta)^2+\alpha\beta(\alpha+\beta-6)\right]}{\alpha\beta(\alpha+\beta+2)(\alpha+\beta +3)}=\dfrac{3(3+1+1)\left[2(3+1)^2+3\cdot 1(3+1-6)\right]}{3\cdot 1(3+1+2)(3+1+3)}=3.095238.$$
+
+```{r}
+alpha=3
+beta = 1
+(3*(alpha+beta+1)*(2*(alpha+beta)^2+alpha*beta*(alpha+beta-6)))/
+  (alpha*beta*(alpha+beta+2)*(alpha+beta+3))
+```
+
+### c)
+¿Cual es la probabilidad de que $X$ tome un valor que se encuentre dentro de una desviación estándar a partir de la media? ¿A dos desviaciónes estándar?
+
+Respuesta.- Sean $\alpha=3$, $\beta=1$, $\sqrt{Var(x)}=\sqrt{\dfrac{3\cdot 1}{(3+1)^2(3+1+1)}}=\sqrt{0.0375}$ y $=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{3}{3+1}=0.75$, entonces
+
+$$\begin{array}{rcl}
+  P\left(0.75-\sqrt{0.0375}\leq X \leq 0.75+\sqrt{0.0375}\right)&=&F\left(0.75+\sqrt{0.0375};3,1\right)-F\left(0.75-\sqrt{0.0375};3,1\right)\\\\
+  &=&\dfrac{\Gamma(3+1)}{\Gamma(3)\Gamma(1)}\displaystyle\int_0^{0.75+\sqrt{0.0375}}t^{3-1}(1-t)^{1-1}\; dt \\\\
+  &-& \dfrac{\Gamma(3+1)}{\Gamma(3)\Gamma(1)}\displaystyle\int_0^{0.75-\sqrt{0.0375}}t^{3-1}(1-t)^{1-1}\; dt \\\\
+  &=&0.6680896\\
+  \end{array}$$
+
+```{r}
+pbeta(sqrt(0.0375)+0.75,3,1) - pbeta(0.75-sqrt(0.0375),3,1)
+```
+
+$$\begin{array}{rcl}
+  P\left(0.75-2\sqrt{0.0375}\leq X \leq 0.75+2\sqrt{0.0375}\right)&=&F\left(0.75+2\sqrt{0.0375};3,1\right)-F\left(0.75-2\sqrt{0.0375};3,1\right)\\\\
+  &=&\dfrac{\Gamma(3+1)}{\Gamma(3)\Gamma(1)}\displaystyle\int_0^{0.75+2\sqrt{0.0375}}t^{3-1}(1-t)^{1-1}\; dt \\\\
+  &-& \dfrac{\Gamma(3+1)}{\Gamma(3)\Gamma(1)}\displaystyle\int_0^{0.75-2\sqrt{0.0375}}t^{3-1}(1-t)^{1-1}\; dt \\\\
+  &=&0.9522857.\\
+  \end{array}$$
+  
+```{r}
+pbeta(2*sqrt(0.0375)+0.75,3,1) - pbeta(0.75-2*sqrt(0.0375),3,1)
+```
+
+## 5.24.
+Si los parámetros de la distribución beta son enteros, puede demostrarse que la función de distribución acumulativa beta se encuentra relacionada con la distribución binomial en la siguiente forma:
+$$P(X<p)=I_p(\alpha,\beta)=\sum_{y=\alpha}^n \dfrac{n!}{(n-y)!y!}p^y(1-p)^{n-y},$$
+
+en donde $n=\alpha+\beta-1$ y $0<p<1$. Si $X$ es una variable aleatoria con una distribución beta con parámetros $\alpha=2$ y $\beta=3,$ emplear la relación anterior para obtener $P(X<0.1)$, $P(X<0.25)$ y $P(X<0.5)$.
+
+Respuesta.- Sea $n=2+3-1=4$ entonces
+
+#### Para P(X<0.1)
+$$P(X<0.1)=I_{0.1}(\alpha,\beta)=\sum_{y=2}^{4}\dfrac{4!}{(4-2)2!}0.1^2(1-0.1)^{n-2}=0.0523.$$
+
+```{r}
+a=2
+b=3
+n=a+b-1
+p = 0.1
+sum=0
+for(y in a:n){
+  sum = sum + ( factorial(n) / (factorial(n-y)*factorial(y) )*p^(y)*(1-p)^(n-y))
+}
+sum
+pbeta(p,a,b)
+```
+
+#### Para P(X<0.25)
+$$P(X<0.1)=I_{0.25}(\alpha,\beta)=\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}0.25^2(1-0.25)^{n-2}=0.267188.$$
+
+```{r}
+a=2
+b=3
+n=a+b-1
+p = 0.25
+sum=0
+for(y in a:n){
+  sum = sum + ( factorial(n) / (factorial(n-y)*factorial(y) )*p^(y)*(1-p)^(n-y))
+}
+sum
+pbeta(p,a,b)
+```
+
+
+#### Para P(X<0.5)
+$$P(X<0.1)=I_{0.5}(\alpha,\beta)=\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}0.5^2(1-0.5)^{n-2}=0.6875.$$
+
+```{r}
+a=2
+b=3
+n=a+b-1
+p = 0.5
+sum=0
+for(y in a:n){
+  sum = sum + ( factorial(n) / (factorial(n-y)*factorial(y) )*p^(y)*(1-p)^(n-y))
+}
+sum
+pbeta(p,a,b)
+```
+
+## 5.25.
+Tomando como referencia el ejercicio anterior, determinar la probabilidad de que $X$ tome un valor que se encuentre dentro de un intervalo igual a una desviación estándar de la media y posteriormente, de un intervalo igual a dos desviaciones estándar.
+
+Respuesta.-  Sean $n=3+2-1=4$ y 
+$$=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{3}{3+2}=0.6$$
+$$Var(X)=\dfrac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta + 1)}=\dfrac{3\cdot 2}{(3+2)^2(3+2+1)}=0.04,\qquad \sqrt{Var(X)}=0.2$$
+
+```{r}
+alpha = 3
+beta = 2
+sqrt(alpha*beta/((alpha+beta)^2*(alpha+beta+1)))
+```
+
+$$\begin{array}{rcl}
+  P(0.6-0.2<X<0.6+0.2)&=&I_{0.8}(3,2)-I_{0.4}(3,2)\\\\
+  &=&\displaystyle\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}0.8^2(1-0.8)^{n-2}-\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}0.4^2(1-0.4)^{n-2}\\\\
+  &=&0.64.
+  \end{array}$$
+
+```{r}
+beta=function(p,a,b){
+  sum=0
+  n=a+b-1
+  for(y in a:n){
+    sum = sum + ( factorial(n) / (factorial(n-y)*factorial(y) )*p^(y)*(1-p)^(n-y))
+}
+  return(sum)
+}
+beta(0.8,3,2)-beta(0.4,3,2)
+pbeta(0.8,3,2)-pbeta(0.4,3,2)
+```
+Y para dos desviaciones estándar se tiene,
+
+$$\begin{array}{rcl}
+  P(0.6-2\cdot 0.2<X<0.6+2\cdot 0.2)&=&I_{1}(3,2)-I_{0.2}(3,2)\\\\
+  &=&\displaystyle\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}1^2(1-1)^{n-2}-\sum_{y=2}^{4}\dfrac{n!}{(n-2)2!}0.2^2(1-0.2)^{n-2}\\\\
+  &=&0.9728.
+  \end{array}$$
+
+```{r}
+beta=function(p,a,b){
+  sum=0
+  n=a+b-1
+  for(y in a:n){
+    sum = sum + ( factorial(n) / (factorial(n-y)*factorial(y) )*p^(y)*(1-p)^(n-y))
+}
+  return(sum)
+}
+beta(1,3,2)-beta(0.2,3,2)
+pbeta(1,3,2)-pbeta(0.2,3,2)
+```
+## 5.26.
+La proporción de unidades defectuosas en un proceso de fabricación es una variable aleatoria que se encuentra aproximada por una distribución beta con $\alpha=1$ y $\beta=20$.
+
+### a)
+¿Cuál es el valor de la media y de la desviación estándar?
+
+Respuesta.-
+
+$$=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{1}{1+20}=0.04761905$$
+
+$$Var(X)=\dfrac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta + 1)}=\dfrac{1\cdot 20}{(1+20)^2(1+20+1)}=0.002061431,\qquad \sqrt{Var(X)}=0.04540298$$
+
+```{r}
+alpha = 1 
+beta = 20
+sqrt(alpha*beta/((alpha+beta)^2*(alpha+beta+1)))
+```
+
+### b)
+¿Cuál es la probabilidad de que la proporción de artículos defectuosos sea mayor que un $10\%$? ¿Mayor que un $15%$?.
+
+Respuesta.- 
+
+#### Mayor que un 10%
+
+$$\begin{array}{rcl}
+  P(X\geq 0.1) &=& 1-F(x;\alpha,\beta)=1-\dfrac{\displaystyle\int_0^xt^{\alpha-1}(1-t)^{\beta-1}\; dt}{\displaystyle\int_0^1 t^{\alpha-1}(1-t)^{\beta-1}\; dt}\\\\
+  &=&1-F(0.1;1,20)=1-\dfrac{\displaystyle\int_0^{0.1}t^{1-1}(1-t)^{20-1}\; dt}{\displaystyle\int_0^1 t^{1-1}(1-t)^{20-1}\; dt}= 0.1215767.\\\\
+  \end{array}$$
+
+```{r}
+bx = integrate(function(x) x^{1-1}*(1-x)^{20-1},0,0.1)
+b = integrate(function(x) x^{1-1}*(1-x)^{20-1},0,1)
+1-bx$value/b$value
+pbeta(0.1,1,20,lower.tail = FALSE)
+```
+
+#### Mayor a 15%
+
+$$\begin{array}{rcl}
+  P(X\geq 0.1) &=& 1-F(x;\alpha,\beta)=1-\dfrac{\displaystyle\int_0^xt^{\alpha-1}(1-t)^{\beta-1}\; dt}{\displaystyle\int_0^1 t^{\alpha-1}(1-t)^{\beta-1}\; dt}\\\\
+  &=&1-F(0.15;1,20)=1-\dfrac{\displaystyle\int_0^{0.15}t^{1-1}(1-t)^{20-1}\; dt}{\displaystyle\int_0^1 t^{1-1}(1-t)^{20-1}\; dt}= 0.03875953.\\\\
+  \end{array}$$
+
+```{r}
+bx = integrate(function(x) x^{1-1}*(1-x)^{20-1},0,0.15)
+b = integrate(function(x) x^{1-1}*(1-x)^{20-1},0,1)
+1-bx$value/b$value
+pbeta(0.15,1,20,lower.tail = FALSE)
+```
+
+## 5.27.
+Aproxime su respuesta al inciso b) del ejercicio anterior mediante el empleo de la aproximación normal dada por la expresión 
+$$F(x;\alpha,\beta)=F_N(x_u,0,1)-F_N(z_t;0,1)$$
+tal que 
+
+$$z_u=\dfrac{[\beta] - 0.5 - (\alpha+\beta-1)(1-x)}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
+$$z_t=-\dfrac{(\alpha+\beta-1)(1-x)+0.5}{\left[x(\alpha+\beta - 1)(1-x)\right]^{1/2}},$$
+
+y $[\beta]$ denota el entero más grande que no excesa a $\beta$.
+
+Respuesta.- Sean $p=0.1$,
+
+$$z_u=\dfrac{[20] - 0.5 - (1+20-1)(1-0.1)}{\left[0.1(1+20 - 1)(1-0.1)\right]^{1/2}}=1.118034$$
+y
+$$z_t=-\dfrac{(1+20-1)(1-0.1)+0.5}{\left[0.1(1+20 - 1)(1-0.1)\right]^{1/2}}-13.78909$$
+
+$$\begin{array}{rcl}
+  P(X\geq 1) &=&1-F(x;1,20)\\
+             &=&1-F_N(1.118034;0,1)-F_N(-13.78909,0,1)\\
+             &=&0.1317762\\
+\end{array}$$
+
+```{r}
+a = 1
+b = 20
+x = 0.1
+zu = (floor(b)-0.5-(a+b-1)*(1-x)) / ((x*(a+b-1)*(1-x))^(1/2))
+zt = -((a+b-1)*(1-x)+0.5)/((x*(a+b-1)*(1-x))^(1/2))
+1-(pnorm(zu)-pnorm(zt))
+```
+
+Sean $p=0.15$,
+
+$$z_u=\dfrac{[20] - 0.5 - (1+20-1)(1-0.15)}{\left[0.15(1+20 - 1)(1-0.1)\right]^{1/2}}=1.565561$$
+y
+$$z_t=-\dfrac{(1+20-1)(1-0.1)+0.5}{\left[0.1(1+20 - 1)(1-0.1)\right]^{1/2}}=-10.95893$$
+
+$$\begin{array}{rcl}
+  P(X\geq 1) &=&1-F(x;1,20)\\
+             &=&1-F_N(1.565561;0,1)-F_N(-10.95893,0,1)\\
+             &=&0.05872575.\\
+\end{array}$$
+
+```{r}
+a = 1
+b = 20
+x = 0.15
+zu = (floor(b)-0.5-(a+b-1)*(1-x)) / ((x*(a+b-1)*(1-x))^(1/2))
+zt = -((a+b-1)*(1-x)+0.5)/((x*(a+b-1)*(1-x))^(1/2))
+1-(pnorm(zu)-pnorm(zt))
+```
+## 5.28.
+La comptencia en el mercado de una compañia de computadoras varía de manera aleatoria de acuerdo con una distribución beta con $\alpha=10$ y $\beta=6$.
+
+### a)
+Graficar la función de densidad de probabilidad
+
+Respuesta.-
+
+```{r, fig.width=3.5, fig.height=3, fig.align='center'}
+curve(dbeta(x,10,6),xlim=c(0,1.3),col="blue",lwd=2,
+xlab="x",ylab="f(x)",main="Función de Densidad beta(x;10,6)")
+```
+
+### b)
+Encontrar la media y la desviación estándar.
+
+Respuesta.-
+
+$$=E(X)=\dfrac{\alpha}{\alpha+\beta} = \dfrac{10}{10+6}=0.625$$
+
+$$Var(X)=\dfrac{\alpha \beta}{(\alpha+\beta)^2(\alpha+\beta + 1)}=\dfrac{10\cdot 6}{(10+6)^2(10+6+1)}=0.01378676,\qquad \sqrt{Var(X)}=0.1174171.$$
+
+```{r}
+alpha = 10 
+beta = 6
+sqrt(alpha*beta/((alpha+beta)^2*(alpha+beta+1)))
+```
+
+### c)
+Obtener la probabilidad de que la competencia en el mercado sea menor que la media.
+
+Respuesta.-
+
+$$\begin{array}{rcl}
+  P(X\leq 0.625) &=& F(x;\alpha,\beta)=\dfrac{\displaystyle\int_0^xt^{\alpha-1}(1-t)^{\beta-1}\; dt}{\displaystyle\int_0^1 t^{\alpha-1}(1-t)^{\beta-1}\; dt}\\\\
+  &=&F(0.625;10,6)=\dfrac{\displaystyle\int_0^{0.625}t^{10-1}(1-t)^{6-1}\; dt}{\displaystyle\int_0^1 t^{10-1}(1-t)^{6-1}\; dt}= 0.4826844.\\\\
+  \end{array}$$
+
+```{r}
+bx = integrate(function(x) x^{10-1}*(1-x)^{6-1},0,0.625)
+b = integrate(function(x) x^{10-1}*(1-x)^{6-1},0,1)
+bx$value/b$value
+pbeta(0.625,10,6)
+```
+
+### d)
+Encontrar la probabilidad de que la competencia en el mercado se encuentre dentro de una desviación estándar de la media, y posteriormente de un intervalo igual a dos desviaciones estándar de la media.
+
+Respuesta.- Para una desviación estándar se tiene, $\sqrt{Var(X)}=0.1174171$ entonces
+
+$$\begin{array}{rcl}
+  P(0.625-0.1174171\leq X \leq 0.625+0.1174171) &=& F(X\leq 0.7424171;10,6) - F(X\leq 0.5075829;10,6)\\\\
+  &=&\dfrac{\displaystyle\int_0^{0.7424171}t^{10-1}(1-t)^{6-1}\; dt}{\displaystyle\int_0^1 t^{10-1}(1-t)^{6-1}\; dt}\\\\
+  &+& \dfrac{\displaystyle\int_0^{0.5075829}t^{10-1}(1-t)^{6-1}\; dt}{\displaystyle\int_0^1 t^{10-1}(1-t)^{6-1}\; dt}\\\\
+  &=&0.6692339.\\\\
+\end{array}$$
+
+```{r}
+pbeta(0.7424171,10,6) - pbeta(0.5075829,10,6)
+```
+
+## 5.29.
+Sea $X$ una variable aleatoria con distribución gama con $\alpha=2$ y $\beta=50$
+
+### a)
+¿Cuál es la probabilidad de que $X$ tome un valor menor al valor de la media?
+
+Respuesta.- La media viene dada por $E(X)=\alpha \theta = 2\cdot 50 = 100.$ Por lo tanto 
+
+$$\begin{array}{rcl}
+  P(X\leq E(X))=P(X\leq50*2)&=&F(x;\alpha,\theta)=F(100,2,50)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(100/50;2)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{2}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.5939942.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = 100
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma(100,2,scale = 50)
+```
+
+### b)
+¿Cuál es la probabilidad de que $X$ tome un valor mayor de dos desviaciones estándar con respecto a la media?
+
+Respuesta.- Sean $E(X)=\alpha \theta = 2\cdot 50 = 100$ y  $2\sqrt{Var(X)}=2\sqrt{\alpha\theta^2}=2\cdot 50\sqrt{2}=100\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P(X\geq E(X)+2\sqrt{Var(X)})&=&P(X\geq 100+100\sqrt{2})\\\\
+  &=&F(x;\alpha,\theta)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma\left(\frac{100+100\sqrt{2}}{50};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{\frac{100+100\sqrt{2}}{50}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.04662213.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = 100+2*sqrt(2)*50
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+1-gammaI$value/gamma$value
+pgamma(100+2*sqrt(2)*50,2,scale = 50,lower.tail = FALSE)
+```
+### c)
+¿Cuál es la probabilidad de que $X$ tome un valor menor al de su moda?
+
+Respuesta.- La moda viene dado por $(\alpha-1)\theta=(2-1)50=50$, de donde 
+
+$$\begin{array}{rcl}
+  P(X\leq Moda)=P(X\leq50)&=&F(x;\alpha,\theta)=F(50,2,50)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(50/50;2)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{1}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.2642411.\\\\
+\end{array}$$
+
+```{r}
+alpha=2
+theta=50
+x = (alpha-1)*theta
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma((2-1)*50,2,scale=50)
+```
+
+
+## 5.30.
+Sea $X$ una variable aleatoria con distribución gama y $\alpha=2$ y $\theta=100.$
+
+### a)
+Graficar la función de densidad de probabilidad.
+
+Respuesta.-
+
+```{r, fig.width=4, fig.height=3.5, fig.align='center'}
+curve(dgamma(x,2,scale = 100),xlim=c(0,750),col="blue",lwd=2,
+xlab="x",ylab="f(x)",main="Función de Densidad gama(x;2,100)")
+```
+
+### b)
+Encontrar la probabilidad de que, primero, $X$ tome un valor dentro de un intervalo igual a una desviación estándar de la media y, posteriormente, de un intervalo igual a dos desviaciones estándar de la media.
+
+Respuesta.- Sean $E(X)=\alpha\theta=2\cdot 100 = 200$  y $\sqrt{Var(X)}=\theta\sqrt{\alpha}=100\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(200-100\sqrt{2}\leq X\leq 200+100\sqrt{2}\right) &=& F\left(200+100\sqrt{2};2,100\right)-F\left(200-100\sqrt{2};2,100\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{200+100\sqrt{2}}{100};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{200-100\sqrt{2}}{100};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{200+100\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}
+  -\dfrac{\displaystyle\int_0^{\frac{200-100\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.7375188.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*100+100*sqrt(2),2,scale = 100) - pgamma(2*100-100*sqrt(2),2,scale = 100)
+```
+
+Por otro lado sea $2\sqrt{Var(X)}=200\sqrt{2}$, entonces
+$$\begin{array}{rcl}
+  P\left(200-200\sqrt{2}\leq X\leq 200+200\sqrt{2}\right) &=& F\left(200+200\sqrt{2};2,100\right)-F\left(200-200\sqrt{2},2,100\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{200+200\sqrt{2}}{100};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{200-200\sqrt{2}}{100};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{200+200\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}
+  -\dfrac{\displaystyle\int_0^{\frac{200-200\sqrt{2}}{100}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.9533779.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*100+200*sqrt(2),2,scale = 100) - pgamma(2*100-200*sqrt(2),2,scale = 100)
+```
+
+### c)
+¿Cómo cambiarian sus respuestas a la parte b) si $\theta=200$?
+
+Respuesta.- Sean $E(X)=\alpha\theta=2\cdot 200 = 400$  y $\sqrt{Var(X)}=\theta\sqrt{\alpha}=200\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(400-200\sqrt{2}\leq X\leq 400+200\sqrt{2}\right) &=& F\left(400+200\sqrt{2};2,200\right)-F\left(400-200\sqrt{2};2,200\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{400+200\sqrt{2}}{200};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{400-200\sqrt{2}}{200};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{400+200\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du} -\dfrac{\displaystyle\int_0^{\frac{400-200\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.6644504.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*200+200*sqrt(2),2,scale = 100) - pgamma(2*200-200*sqrt(2),2,scale = 100)
+```
+
+Por otro lado sea $2\sqrt{Var(X)}=400\sqrt{2}$, entonces
+
+$$\begin{array}{rcl}
+  P\left(400-400\sqrt{2}\leq X\leq 400+400\sqrt{2}\right) &=& F\left(400+400\sqrt{2};2,200\right)-F\left(400-400\sqrt{2};2,200\right)\\\\
+  &=&\dfrac{\gamma\left(\dfrac{400+400\sqrt{2}}{200};2\right)}{\Gamma(2)}-\dfrac{\gamma\left(\dfrac{400-400\sqrt{2}}{200};2\right)}{\Gamma(2)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{\frac{400+400\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du} -\dfrac{\displaystyle\int_0^{\frac{400-400\sqrt{2}}{200}}u^{2-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{2-1}e^{-u}\; du}\\\\
+  &=&0.9993181.\\\\
+\end{array}$$
+
+```{r}
+pgamma(2*200+400*sqrt(2),2,scale = 100) - pgamma(2*200-400*sqrt(2),2,scale = 100)
+```
+
+## 5.31.
+La edad a la que un hombre contrae matrimonio por primera vez es una variable aletoria con distribución gama. Si la edad promedio es de $30$ años y lo más común es que el hombre se case a los $22$ años, encontrar los valores de los parámetros $\alpha$ y $\theta$, apra esta distribución.
+
+Respuesta.- Sea $E(X)=\alpha\theta=30$ y $moda = (\alpha-1)\theta$, entonces
+
+$$\left\{\begin{array}{rcl}
+  \alpha\beta&=&30\\
+  (\alpha-1)\beta&=&22\\
+\end{array}\right.
+\quad \Rightarrow \quad \alpha=\dfrac{30}{8},\qquad \beta=8$$
+
+## 3.32.
+La información que a continuación se presenta es una tabulación parcial de la función gama incompleta tal como se encuentra definida por $I(u,p)=F(x;\alpha,\theta)$ para $\alpha=16$
+
+$$\begin{array}{cc}
+  u&I(u,15)\\\\
+  \hline\\
+  2.0&0.0082\\
+  2.5&0.0487\\
+  3.0&0.1556\\
+  3.5&0.3306\\
+  4.0&0.5333\\
+  4.5&0.7133\\
+  5.0&0.8435\\
+  5.5&0.9231\\
+  6.0&0.9656\\
+  6.5&0.9858\\
+  7.0&0.9946\\
+\end{array}$$
+
+Para $\theta=10$, comparar estas probabilidades con las que se proporcionaron al emplear una aproximación normal.
+
+Respuestas.- Sean $\mu=E(X)=16\cdot 10=160$,  $\sigma=\sqrt{Var(X)}=\sqrt{16\cdot 10^2}=40$ y $u=\dfrac{x}{\theta\sqrt{\alpha}}\; \Rightarrow \; x=u\cdot \theta\sqrt{\alpha}$, entonces
+
+```{r}
+u = c(2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7)
+for(i in u){
+  x=i*10*sqrt(16)
+  print(pnorm(x,160,40))
+}
+```
+
+$$\begin{array}{ccc}
+  u&I(u,15)&F(x;\mu,\sigma)\\\\
+  \hline\\
+  2.0&0.0082&0.02275013\\
+  2.5&0.0487&0.0668072\\
+  3.0&0.1556&0.1586553\\
+  3.5&0.3306&0.3085375\\
+  4.0&0.5333&0.5\\
+  4.5&0.7133&0.6914625\\
+  5.0&0.8435&0.8413447\\
+  5.5&0.9231&0.9331928\\
+  6.0&0.9656&0.9772499\\
+  6.5&0.9858&0.9937903\\
+  7.0&0.9946&0.9986501\\
+\end{array}$$
+
+
+## 5.33.
+Mediante el empleo de la función generadora de momentos de la distribución gama, encontrar expresiones para la media y la varianza.
+
+Respuesta.-\; La función generadora de momentos para la variable aleatoria gama $X$ está dada por:
+
+$$E[e^{tX}]=\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}\int_{0}^x x^{\alpha-1}e^{-\frac{1-\theta t}{\theta}}\; dx.$$
+
+Sea $u=\frac{(1-\theta t)x}{\theta}$, $x=\dfrac{u\theta}{1-\theta t}$ y $dx=\left[\dfrac{\theta}{1-\theta t}\right]\; du$, entonces:
+
+$$\begin{array}{rcl}
+    E\left[e^{tX}\right] &=& \dfrac{1}{\Gamma(\alpha)\theta^{\theta}}\displaystyle\int_0^\infty \dfrac{u^{\alpha-1}\theta^{\alpha-1}}{(1-\theta t)^{\alpha-1}}e^{-u}\dfrac{\theta}{1-\theta t}\; du\\\\
+			 &=&\dfrac{1}{\Gamma(\alpha)(1-\theta t)^{\alpha}}\displaystyle\int_{0}^{\infty}u^{\alpha-1}e^{-y}\; du\\\\
+			 &=&(1-\theta t)^{-\alpha},\quad 0\leq t < \dfrac{1}{\theta}.\\\\
+\end{array}$$
+
+Sacando la primera y segunda derivada tenemos 
+
+$$\dfrac{dE[e^{tX}]}{dt}\bigg|_{t=0}=-\alpha(1-\theta t)^{-\alpha-1}\cdot (-\theta)\bigg|_{t=0}=\alpha\theta=E[X].$$
+
+
+$$\dfrac{d^2E[e^{tX}]}{dt^2}\bigg|_{t=0}=-\alpha(-\alpha-1)(1-\theta t)^{-\alpha-2}(-\theta)(-\theta)\bigg|_{t=0}=\alpha^2\theta^2+\alpha\theta^2=E[X^2]$$
+
+Por lo tanto ya que $\sigma=Var(X)=E[X^2]-E[X]^2$, entonces
+$$Var(X)=\alpha^2\theta^2+\alpha\theta^2-(\alpha\beta)^2=\alpha\beta^2.$$
+
+
+## 5.34.
+La duración de cierto componente es una variable aleatoria con distribución gama y parámetro $\alpha=2.$
+
+### a)
+Obtener la función de confiabilidad.
+
+Respuesta.- La función es está dada por
+
+$$R(t)=\dfrac{\lambda^\alpha}{\Gamma(\alpha)}\int_t^\infty t^{\alpha-1}e^{-\lambda t}\; dt = \dfrac{\lambda^2}{\Gamma(2)}\int_t^\infty t^{2-1}e^{-\lambda t}\; dt$$
+
+
+### b)
+Para $\theta=20,$ obtener la frecuencia de falla y graficarla como una función de $t$.
+
+Respuesta.- Sea $\lambda = \dfrac{1}{\theta} = \dfrac{1}{20}$, entonces
+
+$$R(t)=\dfrac{\lambda^\alpha}{\Gamma(\alpha)}\int_t^\infty t^{\alpha-1}e^{-\lambda t}\; dt = \dfrac{\dfrac{1}{20^2}}{\Gamma(2)}\int_t^\infty t^{2-1}e^{-\frac{1}{20}t}\; dt=\dfrac{1}{20^2\Gamma(2)}\int_t^\infty t^{2-1}e^{-\frac{1}{20}t}\; dt$$
+
+```{r, fig.width=3, fig.height=3, fig.align='center'}
+F <- function(a) {
+        return((1/(20^2*integrate(function(x) (x)^{alpha-1}*exp(-x),
+                                  lower = 0, 
+                                  upper = Inf)$value))*integrate(function (x) x^(2-1)*exp(-1/20*x),a,Inf)$value)
+               }
+x<-c()
+for (i in seq(0,50,.01)) {
+  x<-c(x,F(i))
+}
+
+plot(seq(0,50,.01),x,xlab = "x", ylab="Density")
+```
+
+### c)
+Si $\theta=20$. ¿Cuál es la confianza del componente en $t=80$?
+
+Respuesta.-
+
+$$R(t)=\dfrac{\dfrac{1}{20^2}}{\Gamma(2)}\int_{20}^\infty 20^{2-1}e^{-\frac{1}{20}t}\; dt$$
+## 5.35
+Para armar un artículo se necesita cuatro etapas. Si el tiempo total necesario para armar un artículo en horas, es una variable aleatoria con distribución gama y parámetro de escala $\theta=2$. ¿Cuál es la probabilidad de armar un artículo en menos de $15$ horas?
+
+Respuesta.- Sea $\alpha=4$, entonces 
+
+$$\begin{array}{rcl}
+  P(X\leq 15)&=&=F(15,4,2)\\\\
+  &=&\dfrac{\gamma(x/\theta;\alpha)}{\Gamma(\alpha)}=\dfrac{\gamma(15/2;4)}{\Gamma(4)}\\\\
+  &=&\dfrac{\displaystyle\int_0^{x/\theta}u^{\alpha-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{\alpha-1}e^{-u}\; du}=\dfrac{\displaystyle\int_0^{\frac{15}{2}}u^{4-1}e^{-u}\; du}{\displaystyle\int_0^{\infty}u^{4-1}e^{-u}\; du}\\\\
+  &=&0.2642411.\\\\
+\end{array}$$
+
+```{r}
+alpha=4
+theta=2
+x = 15
+gammaI = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = x/theta)
+gamma = integrate(function(u) (u)^{alpha-1}*exp(-u),lower = 0, upper = Inf)
+gammaI$value/gamma$value
+pgamma(15,4,scale=2)
+```
+
+
+## 5.36.
+Sea $X$ una variable aleatoria con distribución de Weibull y parámetros $\alpha=2$ y $\theta=20.$
+
+### a)
+Graficar la función de densidad de probabilidad.
+
+Respuesta.-
+
+```{r, fig.width=4, fig.height=3.5, fig.align='center'}
+curve(dweibull(x,2,scale = 20),xlim=c(0,65),col="blue",lwd=2,
+xlab="x",ylab="f(x)",main="Función de Densidad Weibull(x;2,20)")
+```
+
+### b)
+Obtener la probabilidad de que $X$ tome un valor mayor que la media.
+
+Respuesta.- Sea la media 
+$$E(X)=\theta\Gamma\left(1+\dfrac{1}{\alpha}\right)=20 \int_0^\infty u^{1/2}e^{-u}\; du = 17.72453$$
+
+```{r}
+int = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+20*int$value
+```
+
+Entonces,
+
+$$P(X\geq E(X))=1-P(X\leq E(X))=1-F(E(X);\alpha,\theta)=1-\left[1-e^{-(E(X)/\theta)^\alpha}\right]=e^{-(E(X)/\theta)^\alpha}$$
+$$P(X \geq 17.72453)=e^{-(17.72453/20)^2}=0.4559385.$$
+```{r}
+int = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+EX=20*int$value
+exp(-(EX/20)^2)
+pweibull(EX,2,scale = 20,lower.tail = FALSE)
+```
+
+### c)
+Obtener la probabilidad de que $X$ tome un valor que se encuentre en un intervalo igual a una desviación estándar y después en un intervalo a dos desviaciones estándar de la media.
+
+Respuesta.- Sea la la desviación estándar como se detalla a continuación 
+
+$$\sqrt{Var(X)}=\sqrt{20^2\left[\int_0^\infty u^{2/2}e^{-u}\; du-\int_0^\infty u^{1/2}e^{-u}\; du\right]}=9.265045.$$
+
+```{r}
+int = integrate(function(u) u^(2/2)*exp(-u),lower = 0, upper = Inf)
+int1 = integrate(function(u) u^(1/2)*exp(-u),lower = 0, upper = Inf)
+sqrt(20^2*(int$value-(int1$value)^2))
+```
+
+Entonces,
+
+$$P(X\leq 9.265045)=F(9.265045;2,20)=1-e^{-(9.265045/20)^2}=0.193138.$$
+
+```{r}
+1-exp(-(9.265045/20)^2)
+```
+
+Luego sean $E(X)=17.72453$ y $2\sqrt{Var(X)}=2*0.193138=0.386276$, entonces
+
+$$\begin{array}{rcl}
+  P(17.72453-0.386276\leq X \leq 17.72453+0.386276)&=&F(17.63158;2,20)-F(16.85902;2,20)\\\\
+  &=&1-e^{-(17.63158/20)^2}-\left[1-e^{(16.85902/20)^2}\right]\\\\
+  &=&0.03166598.\\\\
+\end{array}$$
+
+```{r}
+1-exp(-(17.63158/20)^2)-(1-exp(-(16.85902/20)^2))
+pweibull(17.63158,2,scale=20) - pweibull(16.85902,2,scale=20)
+```
+
+
+## 5.37.
+El tiempo de duración de un sistema se encuentra aproximado por una distribución Wiebull con $\alpha=2$ y $\theta=50.$
+
+### a)
+Obtener la media y los deciles de esta distribución.
+
+Respuesta.- Sea $E(X)=\theta\Gamma\left(1+\dfrac{1}{\alpha}\right)$, entonces
+$$E(X)=50\int_0^\infty u^{1+\frac{1}{\alpha} -1}e^{-u}\; du=50\int_0^\infty u^{\frac{1}{\alpha}}e^{-u}\; du=44.31132.$$
+
+```{r}
+50*integrate(function(u) u^(1/2)*exp(-u), lower = 0, upper = Inf)$value
+```
+
+Los deciles estan dados por $x_q=\theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1-\alpha}$, entonces
+
+$$x_{0.1}=50\left[\ln\left(\dfrac{1}{1-0.1}\right)\right]^{1/2}=16.22964.$$
+
+```{r}
+50*((log(1/(1-0.1))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.2}\right)\right]^{1/2}=23.61904.$$
+
+```{r}
+50*((log(1/(1-0.2))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.3}\right)\right]^{1/2}=29.86113.$$
+
+```{r}
+50*((log(1/(1-0.3))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.4}\right)\right]^{1/2}=35.73603.$$
+
+```{r}
+50*((log(1/(1-0.4))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.5}\right)\right]^{1/2}=41.62773.$$
+
+```{r}
+50*((log(1/(1-0.5))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.6}\right)\right]^{1/2}=47.86154.$$
+
+```{r}
+50*((log(1/(1-0.6))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.7}\right)\right]^{1/2}=54.86285.$$
+
+```{r}
+50*((log(1/(1-0.7))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.8}\right)\right]^{1/2}=63.43181.$$
+
+```{r}
+50*((log(1/(1-0.8))))^(1/2)
+```
+
+$$x_{0.2}=50\left[\ln\left(\dfrac{1}{1-0.9}\right)\right]^{1/2}=75.87136.$$
+
+```{r}
+50*((log(1/(1-0.9))))^(1/2)
+```
+
+
+### b)
+Obtener la confiabilidad de este sistema en $t=75$.
+
+Respuesta.- 
+$$P(X\geq 75) = 1-(1-e^{-(x/\theta)^\alpha})=1-(1-e^{-(75/50)^2})=0.1053992.$$
+
+```{r}
+exp(-(75/50)^2)
+pweibull(75,2,scale=50,lower.tail = FALSE)
+```
+
+
+## 5.38.
+Un sistema está formado por dos componentes independientes $A$ y $B$. El sistema permanecerá operando mientras uno o ambos componentes funcionen. Si el tiempo de vida de la componente $A$ es una variable aleatoria de Weibull con $\alpha=1/2$ y $\theta=10$, y si el tiempo de vida de $B$ es también una variable de Weibull con $\alpha=2$ y $\theta=12$. ¿Cuál es la probabilidad de que el sistema trabaje más de $20$ horas?.
+
+Respuesta.- Sabiendo que $A$ y $B$ son independientes entonces,
+
+$$P_A(X\geq 20)+P_B(X\geq 20)=1-\left[1-e^{-\left(\frac{20}{10}\right)^{1/2}}\right]+1-\left[1-e^{-\left(\frac{20}{12}\right)^2}\right] = e^{-\left(\frac{20}{10}\right)^{1/2}}+e^{-\left(\frac{20}{12}\right)^2}=0.3052933.$$
+
+```{r}
+exp(-(20/10)^(1/2))+exp(-(20/12)^2)
+pweibull(20,1/2,scale=10,lower.tail=FALSE) + pweibull(20,2,scale=12,lower.tail=FALSE)
+```
+
+
+## 5.39.
+Sea $X$ una variable aleatoria con distribución exponencial.
+
+### a)
+¿Cuál es la probabilidad de que $X$ tome un valor mayor que la media?
+
+Respuesta.- La media viene dado por $E(X)=\theta$, de donde la probabilidad de que $X$ tome un valor mayor a la media vendrá dado por,
+
+$$P(X\geq E(X))=F(\theta;\theta)=1-\left(1-e^{-\theta/\theta}\right)=e^{-1}=0.3678794.$$
+
+```{r}
+exp(-1)
+```
+
+### b)
+¿Cuáles son las probabilidades de que $X$ tome un valor que se encuentre en un intervalo igual a una desviación estándar, primero y en un intervalo igual a dos desviación estándar de la media?
+
+Respuesta.- Sea $E(X)=\theta$ y $\sqrt{Var(X)}=\sqrt{\theta^2}=\theta$, entonces
+
+$$P(\theta-\theta\leq X\leq \theta+\theta)=F(2; X)-F(0;X) = 1-e^{-2\theta/\theta}-\left(1-e^{-0/\theta}\right)=-e^{-2}+e^{-1}=0.2325442.$$
+
+```{r}
+exp(-1)-exp(-2)
+```
+
+
+## 5.40.
+Si la frecuencia con que falla un componente es constante y la confiabilidad de este tiene un valor en $t=55$ de $0.4$,
+
+### a) 
+Obtener la función de densidad de probabilidad
+
+Respuesta.-  Sean la función de confiabilidad $R(55)=0.4$ y la frecuencia de falla $h(t)=\dfrac{1}{\theta}$, entonces la función de densidad será,
+$$f(55)=\dfrac{1}{\theta}\cdot 0.4 = \dfrac{0.4}{\theta}.$$
+
+### b)
+Obtener la confiabilidad del componente para $t=100$.
+
+Respuesta.- Sea $R(t)=e^{-t/\theta}=0.4$ y sea $t=55$, entonces 
+$$\theta=\dfrac{-55}{\ln(0.4)}=60.02.$$
+De donde la confiabilidad vendrá dada por 
+
+$$P(T>100)=1-F(100)=1-\left(1-e^{-100/60.02}\right)=0.1889805.$$
+```{r}
+exp(-100/60.02)
+```
+
+
+## 5.41.
+Un dispositivo tiene una frecuencia de falla constante $h(t)=10^{-2}$ por hora.
+
+### a)
+¿Cuál es la confiabilidad del dispositivo para $t=200$ horas?
+
+Respuesta.- Sea $h(t)=\dfrac{1}{\theta} \;\Rightarrow \; \theta=\dfrac{1}{10^{-2}}=100$, entonces la función de densidad de probabilidad viene dada por,
+
+$$f(t)=\dfrac{1}{100}e^{-200/100}=0.001353353.$$
+
+Así la confiabilidad del dispositivo será,
+
+$$R(t)=f(t)/h(t)=0.001353353/10^{-2}=0.1353353.$$
+
+### b)
+Si $500$ de estos dispositivos fallan de manera independiente, ¿cuál es el número esperado de fallas entre estos, después de $200$ horas?
+
+Respuesta.-\; Estará dado por: $500(1-0.1353353)=432.3324 = 433.$
+
+## 5.42.
+El compresor de una unidad de aire acondicionado tiene una frecuencia de falla $h(t)=2\cdot 10^{-8}t$ por hora.
+
+### a)
+¿Cuál es la función de confiabilidad del compresor?
+
+Respuesta.- Sea la función de confiabilidad $R(t)=f(t)/h(t)$, de donde
+
+$$f(t)=h(t)e^{-\int_0^t h(t)\; dt}=2\cdot 10^{-8}\cdot e^{-\int_0^t2\cdot 10^{-8}t\; dx}$$
+ entonces,
+ 
+ $$R(t)=\dfrac{2\cdot 10^{-8}e^{-\int_0^t2\cdot 10^{-8}t\; dx}}{2\cdot 10^{-8}}=e^{-\int_0^t2\cdot 10^{-8}t\; dx}.$$
+
+### b)
+¿Cuál es la confiabilidad del compresor para $t=15000$ horas?
+
+Respuesta.-
+
+$$R(t)=e^{-\int_0^t2\cdot 10^{-8}t\; dx}=e^{-\int_0^{15000} 2\cdot 10^{-8}15000\; dx} = e^{-6\cdot 10^{-4}}=0.9994002.$$
+
+### c)
+¿Cuál es la vida media del compresor?
+
+Respuesta.- Sea la frecuencia de falla $h(x)=\dfrac{1}{\theta}$, y sabiendo que $E(X)=\theta$, entonces
+
+$$E(X)=\theta=\dfrac{1}{h(t)}=\dfrac{1}{2\cdot 10^{-8}}=5\cdot 10^{7}.$$
+
+### d)
+¿Cuál es la mediana de su duración?
+
+Respuesta.- La mediana viene dada por el valor cuantil con $\alpha=1$,
+$$x_{0.5} = \theta\left[\ln\left(\dfrac{1}{1-q}\right)\right]^{1/\alpha}=5\cdot 10^7\left[\ln\left(\dfrac{1}{1-0.5}\right)\right]^{1}=34657359.$$
+
+```{r}
+5*10^7 * (log(1/(1-0.5)))
+```
+
+
+## 5.43.
+Sea $X$ una variable aleatoria con distribución uniforme en el intervalo $(0,1)$. Demostrar que la variable aleatoria $Y=-2\ln(X)$ tiene distribución chi-cuadrado con dos grados de libertad.
+
+Respuesta.- Notemos que $y=-2\ln(x)$ es una función decreciente en el intrevalo $[0,1]$. Luego la relación inversa es,
+$$x=e^{-y/2}$$
+
+De donde el Jacobiano estará dado por 
+
+$$\bigg|\dfrac{dx}{dy}\bigg|=\bigg|-\dfrac{1}{2}e^{-y/2}\bigg|=\dfrac{1}{\Gamma(2/2)\cdot 2^{\frac{2}{2}}}y^{\frac{2}{2}-1}e^{-y/2}$$
+
+Así, 
+$$f_Y(y;a,b)=f_X\left(e^{-y/2},b,a\right)\bigg|\dfrac{dx}{dy}\bigg|=\dfrac{1}{1-0}\cdot \dfrac{1}{\Gamma(2/2)\cdot 2^{2/2}}y^{2/2-1}e^{-y/2}=\dfrac{1}{\Gamma(2/2)\cdot 2^{2/2}}y^{2/2-1}e^{-y/2}$$
+
+
+## 5.44.
+Si $X$ es una variable aleatoria con una distribución exponencial y parámetros $\theta$, obtener la distribución de $Y=\dfrac{X-\theta}{\theta}.$
+
+Respuesta.- Sea $f(x;\theta)=\dfrac{1}{\theta}e^{-x/\theta}$ una distribución exponencial. De donde 
+$$f_Y\left(y;\theta\right)=f_X\left[g^{-1}(y);\theta\right]\left|\dfrac{dx}{dy}\right|.$$
+
+Por hipotesis $$y=\dfrac{x-\theta}{\theta}\quad \Rightarrow \quad x=\theta y + \theta.$$
+
+y 
+
+$$\left|\dfrac{dx}{dy}\right|=\theta$$
+
+Por lo tanto
+
+$$f_Y(y;\theta)=\dfrac{1}{\theta}e^{-\frac{\theta y + \theta}{\theta}}\cdot \theta = e^{-\frac{\theta y + \theta}{\theta}}.$$
+
+## 5.45.
+Si $X$ es una variable aleatoria con una distribución de Weibull y parámetros $\alpha$ y $\theta$ obtener la distribución de $Y=X^\alpha.$
+
+Respuesta.- Sea $\dfrac{\alpha}{\theta^\alpha}x^{\alpha-1}e^{-(x/\theta)^\alpha}$ la distribución de Weibull. De donde 
+
+$$ f_Y\left(y;\alpha,\theta\right)=f_X\left[g^{-1}(y);\alpha,\theta\right]\left|\dfrac{dx}{dy}\right|.$$
+
+Por hipótesis,
+
+$$y=x^\alpha\quad \Rightarrow \quad x=y^{1/2}$$
+
+y
+$$\left|\dfrac{dx}{dy}\right|=\dfrac{1}{2}y^{-1/2}$$
+
+Por lo tanto,
+
+$$f_Y(y;\alpha,\theta)=\dfrac{\alpha}{\theta}y^{(1/2)^{\alpha-1}}e^{-\left[\left(y^{1/2}\right)/\theta\right]^\alpha}\cdot \dfrac{1}{2}y^{-1/2}$$
+
+
+
+## 5.46.
+Seleccione una distribución de probabilidad discreta y una continua de la sección 5.9 y generar dos muestras aleatorias de $50$ números aleatorios cada una. Para cada caso agrupe los datos y obtenga las frecuencias relativas. Calcule la media y la desviación estándar de cada una de las muestras y compare los resultados con los que se obtienen de manera teórica.
+
+Respuesta.- La función de densidad de probabilidad de una distribución Weibull es:
+$$f(x;\alpha,\theta)=\dfrac{\alpha}{\theta^\alpha} x^{\alpha-1}e^{-(x/\theta)^\alpha}, \qquad x>0.$$
+Para generar números aleatorios de Weibull $x>0$, se resuelve la ecuación
+$$\dfrac{\alpha}{\theta^\alpha}\int_0^x t^{\alpha-1}e^{-(t/\theta)^\alpha}\; dt = u \quad \Rightarrow \quad \left(\dfrac{\alpha}{\theta^\alpha}\right)\left(-\dfrac{\theta^\alpha}{\alpha}\right)e^{-(x/\theta)^\alpha}=u$$ 
+$$o\qquad 1-e^{-(x/\theta)^\alpha}=u, \qquad y \qquad x=\theta\left[\ln\left(\dfrac{1}{1-u}\right)\right]^{1/\alpha}.$$
+Dado que para $\alpha=1$, la distribución de Weibull se reduce a la exponencial, donde pueden generarse números aleatorios para una distribución.
+
+$$E(X)=\theta$$
+$$Var(X)=\theta^2$$
+
+```{r}
+u=runif(50,min=0,max=1)
+theta=4
+alpha=1
+x = c()
+for (i in u){
+  x=c(x,theta*(log(1/(1-i)))^(1/alpha))
+}
+freq = transform(table(cut(x, breaks = 7)))
+freq["Frec_rel"] = freq$Freq/length(x)
+freq
+mean(x)
+sd(x)
+```
+  
+  
+Esto también es válido para la distribución Poisson.
 
 

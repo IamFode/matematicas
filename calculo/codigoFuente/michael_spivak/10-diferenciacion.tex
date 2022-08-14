@@ -758,6 +758,23 @@
 	 $$(f\cdot g)^{(n+1)}(a)=\sum_{k=0}^{n+1}{n+1\choose k}f^{(k)}(a)g^{[(n+1)-k]}(a).$$\\
 
     %-------------------- 21.
+     \item Demuestre que si $f^{(n)}\left[g(a)\right]$ y $g^{(n)}(a)$ existen ambas, entonces también existe $(f\circ g)^{(n)}(a)$. Con un poco de práctica el lector debería convencerse que no es sensato tratar de encontrar una fórmula para $(f \circ g)^{(n)}(a)$. Para demostrar que $(f \circ g)^{(n)}(a)$ existe, es necesario, por tanto, encontrar una proposición razonable acerca de $(f \circ g)^{(n)}(a)$ que pueda ser demostrada por inducción. Se puede intentar algo como: existe $(f \circ g)^{(n)}(a)$ y es una suma de términos, cada uno de los cuales es un producto de términos de la forma $\ldots$.\\\\ 
+	 Demostración.-\; La fórmulas,
+	 $$\begin{array}{rcl}
+	     (f\circ g)'(x) &=& f'\left[g(x)\right]\cdot g'(x)\\
+	     (f\circ g)''(x) &=& f''\left[g(x)\right] \cdot g'(x) + f'\left[g(x)\right]\cdot g''(x)\\
+	     (f\circ g)'''(x) &=& f'''\left[g(x)\right]\cdot g'(x)^3 + 3f''\left[g(x)\right]\cdot g'(x)g''(x)+f'\left[g(x)\right]g'''(x),\\
+	 \end{array}$$
+	 Llevan a la siguiente conjetura: Si $f^{(n)}\left[g(a)\right]$ y $g^{(a)}(a)$ existen, entonces también existe $(f\circ g)^{(n)}(a)$ y es una suma de términos de la forma
+	 $$c\cdot \left[\right]^{m_1}\cdots \left[\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],$$
+	 para algún número $c$, enteros no negativos $m_1,\ldots , m_n$ y un número natural $k\leq n$. Para probar esta proposición utilizaremos el método de inducción, de donde notamos que es verdadero para $n=1$ con $a=m_1=k=1$. Ahora supóngase que para un cierto $n$, es cierto para todo número $a$ tal que $f^{(n)}\left[g(a)\right]$ y $g^{(n)}(a)$ existan. Supóngase también que $f^{(n+1)}\left[g(a)\right]$ y $g^{(n+1)}(a)$ existen. Entonces $g^{(k)}(x)$ podría existe para todo $k\leq n$ y todo $x$ en algún intervalo alrededor de $a$, y $f^{(k)}(y)$  debe existe para todo $k\leq n$ y todo $y$ en algún intervalo alrededor de $g(a)$. Ya que $g$ es continua en $a$, esto implica que $f^{(k)}\left[g(x)\right]$ exista para todo $x$ en algún intervalo alrededor de $a$. Así la proposición es verdadera para todo $x$, esto es, $(f\}circ g)^{(n)}$ es una suma de términos de la forma:
+	 $$c\left[g'(x)\right]^{m_1}\cdots \left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],\quad m_1,\ldots, m_n \geq 0,\quad 1\leq k \leq n.$$
+	 Como consecuencia, $(f\circ g)^{(n+1)}(a)$ es una suma de términos de la forma
+	 $$cm_\alpha \left[g'(x)\right]^{m_1}\cdots \left[g^{(n)}(x)\right]^{m_\alpha - 1} \cdots \left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right]\qquad m_\alpha>0$$
+	 o de la forma
+	 $$c\left[g'(x)\right]^{m_1+1} \cdots \left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k+1)}\left[g(a)\right].$$\\
+
+    %-------------------- 22.
      \item 
     
 

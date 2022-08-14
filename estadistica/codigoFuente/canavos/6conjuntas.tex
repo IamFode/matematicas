@@ -1,0 +1,35 @@
+\chapter{Distribuciones conjuntas de probabilidad}
+
+\section{Distribución de probabilidad bivariadas}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias discretas. La probabilidad de que $X=x$ e $Y=y$ está determinada por la función de probabilidad bivariada
+	$$p(x,y)=P(X=x, Y=x),$$
+	en donde $P(x,y)\geq 0$ para toda $x,y,$ de $X$, $Y,$ y $\sum_x \sum_y p(x,y)=1.$
+    \end{def.}
+\end{tcolorbox}
+
+La \textbf{función de distribución acumulativa bivariada} es la probabilidad conjunta de que $X\leq x$ y $Y\leq y,$ dada por
+\begin{tcolorbox}
+    $$F(x,y)=P(X\leq x, Y\leq y) = \sum_{x_i\leq x}\sum_{y_i\leq y} p(x_i,y_i).$$
+\end{tcolorbox}
+
+La \textbf{función de distribución trinomial} viene dado por:
+
+\begin{tcolorbox}
+    $$p(x,y,n,p_1,p_2)=\dfrac{n!}{x!y!(n-x-y)!}p_1^x p_2^y (1-p_1-p_2)^{n-x-y}$$
+\end{tcolorbox}
+ 
+y su generalización llamada \textbf{función de distribución multinomial} viene dada por:
+
+\begin{tcolorbox}
+    $$p(x_1,x_2,\ldots, x_{k-1};n,p_1,p_2,\ldots,p_{k-1})=\dfrac{n!}{x_1!x_2!\ldots x_k!}p_1^{x_1}p_2^{x_2}\cdots p_k^{x_k}, \quad x_1=0,1,\ldots, n\; \mbox{para}\; i=1,2,\ldots, k$$
+    en donde $x_k=n-x_1-x_2-\cdots - x_{k-1}$ y $p_k=1-p_1-p_2-\cdots - p_{k-1}.$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{def.}
+    \end{def.}
+\end{tcolorbox}
+

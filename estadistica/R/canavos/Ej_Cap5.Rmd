@@ -1780,3 +1780,5 @@ mean(x)
 sd(x)
 ```
   
+  
+Esto también es válido para la distribución Poisson.
