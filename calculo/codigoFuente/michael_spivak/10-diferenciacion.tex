@@ -766,15 +766,79 @@
 	     (f\circ g)'''(x) &=& f'''\left[g(x)\right]\cdot g'(x)^3 + 3f''\left[g(x)\right]\cdot g'(x)g''(x)+f'\left[g(x)\right]g'''(x),\\
 	 \end{array}$$
 	 Llevan a la siguiente conjetura: Si $f^{(n)}\left[g(a)\right]$ y $g^{(a)}(a)$ existen, entonces también existe $(f\circ g)^{(n)}(a)$ y es una suma de términos de la forma
-	 $$c\cdot \left[\right]^{m_1}\cdots \left[\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],$$
+	 $$c\cdot \left[g'(a)\right]^{m_1}\cdots \left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],$$
 	 para algún número $c$, enteros no negativos $m_1,\ldots , m_n$ y un número natural $k\leq n$. Para probar esta proposición utilizaremos el método de inducción, de donde notamos que es verdadero para $n=1$ con $a=m_1=k=1$. Ahora supóngase que para un cierto $n$, es cierto para todo número $a$ tal que $f^{(n)}\left[g(a)\right]$ y $g^{(n)}(a)$ existan. Supóngase también que $f^{(n+1)}\left[g(a)\right]$ y $g^{(n+1)}(a)$ existen. Entonces $g^{(k)}(x)$ podría existe para todo $k\leq n$ y todo $x$ en algún intervalo alrededor de $a$, y $f^{(k)}(y)$  debe existe para todo $k\leq n$ y todo $y$ en algún intervalo alrededor de $g(a)$. Ya que $g$ es continua en $a$, esto implica que $f^{(k)}\left[g(x)\right]$ exista para todo $x$ en algún intervalo alrededor de $a$. Así la proposición es verdadera para todo $x$, esto es, $(f\}circ g)^{(n)}$ es una suma de términos de la forma:
 	 $$c\left[g'(x)\right]^{m_1}\cdots \left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],\quad m_1,\ldots, m_n \geq 0,\quad 1\leq k \leq n.$$
 	 Como consecuencia, $(f\circ g)^{(n+1)}(a)$ es una suma de términos de la forma
-	 $$cm_\alpha \left[g'(x)\right]^{m_1}\cdots \left[g^{(n)}(x)\right]^{m_\alpha - 1} \cdots \left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right]\qquad m_\alpha>0$$
+	 $$c\cdot m_\alpha \left[g'(x)\right]^{m_1}\cdot \ldots \cdot\left[g^{(n)}(x)\right]^{m_\alpha - 1}\cdot \ldots \cdot\left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right]\qquad m_\alpha>0$$
 	 o de la forma
-	 $$c\left[g'(x)\right]^{m_1+1} \cdots \left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k+1)}\left[g(a)\right].$$\\
+	 $$c\left[g'(x)\right]^{m_1+1} \cdot \ldots \cdot\left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k+1)}\left[g(a)\right].$$
+	 Para un número $c$.\\\\
 
     %-------------------- 22.
+     \item 
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item Si $f(x)=a_n x^n + a_{n-1} x^{n-1}+\ldots + a_0,$ halle una función $g$ tal que $g'=f$. Encuentre otra.\\\\
+		 Respuesta.-\; Sea 
+		 $$g(x)=\dfrac{a_n}{n+1}x^{n+1}+\dfrac{a_{n-1}}{n}x^n+\ldots + \dfrac{a_1}{2}x^2+a_0 x.$$
+		 Derivando $g$ tenemos,
+		 $$\begin{array}{rcl}
+		     g'(x)&=&\dfrac{a_n}{n+1}(n+1)x^n + \dfrac{a_{n-1}}{n}\cdot n x^{n-1}+\ldots + \dfrac{a_1}{2}2x+a_0\\\\
+			  &=& a_nx^n+a_{n-1}x^{n-1}+\ldots + a_0\\\\
+			  &=&f(x).\\\\
+		\end{array}$$
+		Otro $g_1$ tal que $g_1'=f$ sería,
+		$$g_1(x)=g(x)+c.$$\\
+
+
+	     %---------- (b)
+	     \item Si $$f(x)=\dfrac{b_2}{x^2}+\dfrac{b_3}{x^3}+\ldots + \dfrac{b_m}{x^m}$$
+	     halle una función $g$ que verifique $g'=f.$\\\\
+		 Respuesta.-\; Sea
+		 $$g(x)=-\left[\dfrac{b_2}{x}+\dfrac{b_3}{2x^2}+\ldots + \dfrac{b_m}{(m-1)x^{m-1}}\right].$$
+		 Derivando $g$ tenemos,
+		 $$\begin{array}{rcl}
+		     g'(x)&=&-\left[-\dfrac{b_2}{x^2}-\dfrac{2b_3 x}{2x^4}+\ldots + \dfrac{b_m(m-1)x^{m-2}}{(m-1)x^{2(m-1)}}\right]\\\\
+			  &=&\dfrac{b_2}{x^2}+\dfrac{b_3}{x^3}+\ldots + \dfrac{b_m}{x^m}\\\\
+			  &=&f(x).\\\\
+		 \end{array}$$
+		 \vspace{.5cm}
+
+
+	     %---------- (c)
+	     \item ¿Existe una función 
+	     $$f(x)=a_nx^n + \ldots + a_0 + \dfrac{b_1}{x}+\ldots + \dfrac{b_m}{x^m}$$
+	     tal que $f'(x)=1/x$?.\\\\
+		 Respuesta.-\; No, ya que la derivada de $f$ es
+		 $$f'(x)=na_n x^{n-1}+\ldots + a_1 - \dfrac{b_1}{x^2}-\dfrac{2b_2}{x_3}-\ldots - \dfrac{mb_m}{x^{m+1}}.$$\\
+
+	 \end{enumerate}
+
+    %-------------------- 23.
+     \item Demuestre que existe una función polinómica $f$ de grado $n$ tal que\\
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item $f'(x)=0$ para exactamente $n-1$ números $x$.\\\\
+		 Demostración.-\; 
+
+	     %---------- (b)
+	     \item $f'(x)=0$ para ningún $x$, si $n$ es impar.\\\\
+		 Demostración.-\; 
+
+	    %---------- (c)
+	     \item $f'(x)=0$ para exactamente un $x$, si $n$ es par.\\\\
+		 Demostración.-\;
+
+	    %---------- (d)
+	     \item $f'(x)=0$ para eaxctamente $k$ números $x$, si $n-k$ es impar.\\\\
+		 Demostración.-\;
+
+	 \end{enumerate}
+
+    %-------------------- 24.
      \item 
     
 

@@ -26,4 +26,56 @@ dmultinom(c(27,18,15),60,c(1/3,1/3,1/3))
 
 
 ## 6.2.
+Supóngase que de un proceso de producción se seleccionan, de manera aleatoria, $25$ artículos. Este proceso de producción por lo general produce un $90\%$ de artículos listos para venderse y un $7\%$ reprocesables. ¿Cuál es la probabilidad de que $22$ de los $25$ artículos estén listos para venderse y que dos sean reprocesables?.
 
+Respuesta.- Sea la función de distribución trinomial 
+$$p(x,y;n,p_i,p_2)=\dfrac{n!}{x!y!(n-x-y)!}p_1^x p_2^y(1-p_1-p_2)^{n-x-y}.$$
+
+Entonces,
+
+$$p(22,2;25,0.9,0.07) = \dfrac{25!}{22! 2! (25-22-2)!}0.9^{22} 0.07^{2}(1-0.9-0.07)^{25-22-2}=0.09988531.$$
+
+
+```{r}
+(factorial(25)/(factorial(22)*factorial(2)*factorial(25-22-2))*
+   0.9^(22)*0.07^(2)*(1-0.9-0.07)^(25-22-2))
+```
+
+
+## 6.3.
+Sean $X$ y $Y$ dos variables aleatorisa continuas con una función de densidad conjunta de probabilidad dada por:
+$$f(x,y)=\left\{\begin{array}{ll}
+  \dfrac{3x-y}{5} & 1<x<2,\quad 1<y<3,\\\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+Obtener la función de distribución conjunta acumulativa.
+
+Respuesta.- 
+$$\begin{array}{rcl}
+  F(x,y)&=&\displaystyle\int_0^x \int_0^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \displaystyle\int_0^x \int_0^y \left(\dfrac{3u}{5}-\dfrac{v}{5}\right)\; dvdu\\\\
+  &=& \displaystyle \int_0^x \left(\dfrac{3u}{5}v-\dfrac{v^2}{10}\right) \bigg|_0^y \; du = \displaystyle \int_0^x \left(\dfrac{3u}{5}y-\dfrac{y^2}{10}\right) \bigg|_0^y \; du\\\\
+  &=& \left(\dfrac{3u^2y}{10}-\dfrac{uy^2}{10}\right)\bigg|_0^x = \dfrac{3x^2y}{10}-\dfrac{xy^2}{10} \\\\
+  &=& \dfrac{3x^2y-xy^2}{10}.\\\\
+\end{array}$$
+
+Esto podemos comprobarlo de la siguiente forma:
+
+$$\dfrac{\partial F(x,y)}{\partial x} = \dfrac{6xy}{10}-\dfrac{y^2}{10} \qquad \mbox{y}\qquad  \dfrac{\partial^2 F(x,y)}{\partial y} = \dfrac{6x}{10}-\dfrac{2y}{10} = \dfrac{3x-y}{5}.$$
+
+
+### b)
+¿Cuál es la probabilidad conjunta de que $X<3/2$ e $Y<2$?.
+
+Respuesta.- Ya que $\displaystyle\int_0^x \int_0^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \dfrac{3x^2y-xy^2}{10}$, entonces
+
+$$P(X<3/2,Y<2) = \int_0^{3/2} \int_0^2 \left(\dfrac{3u-v}{5}\right)\; dvdu =\dfrac{3(3/2)^2\cdot 2-(3/2)\cdot 2^2}{10} = 0.75.$$
+
+```{r}
+x=3/2
+y=2
+(3*x^2*y-x*y^2)/10
+```
+
+### c)

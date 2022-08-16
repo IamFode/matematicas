@@ -30,6 +30,21 @@ y su generalización llamada \textbf{función de distribución multinomial} vien
 
 \begin{tcolorbox}
     \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias continuas. Si existe una función $f(x,y)$ tal que la probabilidad conjunta:
+	$$P(a<X<b,c<Y<d)=\int_a^b \int_c^d f(x,y)\; dy dx$$
+	para cualquier valor de $a,b,c$ y $d$ en donde $f(x,y)\geq 0,$ $-\infty<x, y<\infty$ y $\int_{\infty}^\infty \int_{-\infty}^\infty f(x,y)\; dy dx=1$, entonces $f(x,y)$ es la función de densidad de probabilidad bivariada de $X$ e $Y$. 
     \end{def.}
 \end{tcolorbox}
 
+La \textbf{función de distribución bivariada acumulativa} de $X$ e $Y$ es la probabilidad conjunta de que $X\leq x$ e $Y\leq y$, dada por:
+\begin{tcolorbox}
+    $$P(X\leq x, Y\leq y)=F(x,y)=\int_{-\infty}^x \int_{-\infty}^y f(u,v)\; dvdu.$$
+\end{tcolorbox}
+Por lo tanto, la función de densidad bivariada se encuentra diferenciando $F(x,y)$ con respecto a $x$ e $y$; es decir,
+
+\begin{tcolorbox}
+    $$f(x,y)=\dfrac{\partial^2 F(x,y)}{\partial x \partial y}$$
+\end{tcolorbox}
+
+
+\section{Distribuciones marginales de probabilidad}

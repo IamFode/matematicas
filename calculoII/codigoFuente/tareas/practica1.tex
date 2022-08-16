@@ -77,7 +77,35 @@
 
     %-------------------- problema 6
     \item \textbf{\boldmath Demuestre que todo triángulo inscrito en una semicircunferencia es recto.\\\\
-	Demostración.-}\;
+	Demostración.-}\; Representamos la idea con la siguiente gráfica.
+	\begin{center}
+	    \begin{tikzpicture}[scale=1.5]
+		\draw(0,0)circle(1);
+		\draw[<-](-1,0)--(0,0);
+		\draw[->](0,0)--(1,0);
+		\draw[->](-1,0)--(.6,.8);
+		\draw[->](1,0)--(.6,.8);
+		\draw[->](.6,.8)--(0,0);
+		\draw(-0.1,.6)node[]{$a$};
+		\draw(-.4,-.15)node[]{$b$};
+		\draw(.2,.4)node[]{$c$};
+		\draw(.5,-.15)node[]{$d$};
+		\draw(1,.5)node[]{$e$};
+		\draw(0,0)node[below]{\tiny$O$};
+	    \end{tikzpicture}
+	\end{center}
+	Donde $a,b,c,d,e\in \mathbb{R}^n$ y $O$ el centro de la circunferencia, por lo tanto los vectores $b,d,c$ son iguales e inscritos en una semicircunferencia. Debemos demostrar que $\langle a,e\rangle=0$.\\ 
+
+	Sean
+	$$a=c+b, \quad  e=c+d \quad \mbox{y}\quad \|b\|=\|c\|=\|d\|$$
+
+	Entonces por las propiedades de producto interno tenemos,
+	$$\langle a,e\rangle = \langle c+b,c+d\rangle =\langle c+b, c\rangle + \langle c+b, d\rangle = \langle c,c \rangle +\langle c,b\rangle +\langle c,d\rangle +\langle b,d \rangle.$$
+
+    	Ya que $\langle x,x \rangle = \|x\|^2\;$ y $\; b=-d$, nos queda:
+
+	$$\langle a,e\rangle = \|c\|^2 -\langle c,d\rangle +\langle c,d\rangle -\|d\|^2 = 0.$$\\
+
 
     %-------------------- problema 7
     \item \textbf{\boldmath Demuestre que uniendo los puntos medios de los lados de un cuadrilátero se obtiene un paralelogramo.\\\\
@@ -104,9 +132,9 @@
 	Demostración.-}\;
 
     %-------------------- problema 13
-    \item \textbf{\boldmath Si $x,y,z \in \mathbb{R},$ entonces demostrar que:
+    \item \textbf{\boldmath Si $x,y,z \in \mathbb{R}^3,$ entonces demostrar que:
 	$$x\times (y \times z) = \langle x,z\rangle y - \langle x,y\rangle z.$$\\
-	Demostración.-}\;
+	Demostración.-}\; La demos
 
     %-------------------- problema 14
     \item \textbf{\boldmath Sean $x,y\in \mathbb{R}^3$ con $x,y\neq 0.$ Si $\dfrac{\|x\times y\|}{\|x\|^3}=3,$ entonces hallar $\dfrac{\| \langle x,x\rangle y - \langle x,y\rangle x \|}{\|x\|^4}$.\\\\
@@ -120,7 +148,13 @@
     %-------------------- problema 16
     \item \textbf{\boldmath Si $x,y,z \in \mathbb{R}^3,$ entonces demostrar que:
     $$x\times (y\times z) + y \times (z\times x)+z\times(x\times y)=0.$$\\
-	Demostración.-}\;
+	Demostración.-}\; Por el problema 13, sabemos que $x\times (y \times z) = \langle x,z\rangle y - \langle x,y\rangle z$. Por lo tanto,
+	$$x\times (y\times z) + y \times (z\times x)+z\times(x\times y) = \langle x,z\rangle y- \langle x,y\rangle z + \langle y,x\rangle z -\langle y,z \rangle x +\langle z,y\rangle x -\langle z,x\rangle y.$$
+
+	Luego, por la propiedad de conmutatividad concluimos que:
+
+	$$\langle x,z\rangle y- \langle x,y\rangle z + \langle x,y\rangle z -\langle y,z \rangle x +\langle y,z\rangle x -\langle x,z\rangle y = 0.$$\\
+
 
 
 \end{enumerate}

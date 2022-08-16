@@ -1580,7 +1580,26 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 	\end{enumerate}
 
     %-------------------- 4.
-    \item 
+    \item Sea $f(x)=1-x^{2/3}$. Probar que $f(1)=f(-1)=0$, pero que $f'(x)$ no es nunca cero en el intervalo $[-1,1]$. Explicar por qué este resultado contradice aparentemente el teorema de Rolle.\\\\
+	Demostración.-\; Calculemos directamente para $f(1)$ y $f(-1)$.
+	$$f(1)=1-1^{2/3}=0=1-(-1)^{2/3}=f(-1).$$
+	Luego calculamos su derivada,
+	$$f'(x)=-\dfrac{2}{3}x^{-1/3}.$$
+	Para mostrar que $f'(x)\neq 0$ en $[-1,1]$ consideraremos tres casos:
+	\begin{itemize}
+	    \item Si $x<0$ entonces $x^{-1/3}$ implica $f'(x)>0$, ya que $-\frac{2}{3}$ veces un negativo es positivo.
+	    \item Si $x>0$ entonces $x^{-1/3}>0$ implica $f'(x)<0$, ya que $-\frac{2}{3}$ veces un positivo es negativo.
+	    \item Si $x=0$, entonces $f'(x)$ no está definida, ya que $x^{-1/3}=\frac{1}{x^{1/3}}.$
+	\end{itemize}
+
+	Por lo tanto, $f'(x)\neq 0$ para cualquier $x$ en $[-1,1]$.\\
+	Esto no es una violación del teorema de Rolle, ya que el teorema requiere que $f(x)$ sea diferenciable para todo $x$ en el intervalo abierto $(-1,1)$. Como $f'(x)$ no está definido en $x=0$, tenemos que $f(x)$ no es derivable en todo el intervalo.\\\\
+
+    %-------------------- 5.
+    \item Probar que la fórmula del valor medio se puede expresar en la forma:
+    $$f(x+h)=f(x)+hf'(x+\theta h)\quad \mbox{donde} quad 0<\theta < 1.$$
+    Determinar $\theta$ en función de $x$ y $h$ cuando (a) $f(x)=x^2,$ (b) $f(x)=x^3.$ Dejar $x$ fijo, $x\neq 0$ y determinar en cada caso el límite de $\theta$ cuando $h\to 0$.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
 
