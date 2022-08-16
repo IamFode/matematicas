@@ -62,8 +62,8 @@
 		\draw[](1,1,1)--(1,1,0);
 		\draw[](0,1,1)--(0,1,0);
 		\draw[](1,0,1)--(1,0,0);
-		\draw[blue,->](0,1,1)--(1,0,1);
-		\draw[blue,->](0,1,1)--(1,1,0);
+		\draw[line width=1.2pt,-stealth](0,1,1)--(1,0,1);
+		\draw[line width=1.2pt,-stealth](0,1,1)--(1,1,0);
 	    \end{tikzpicture}
     \end{center}
     Luego se tiene al vector $x=(1,0,1)-(0,1,1)=(1,-1,0)$ y $y = (1,1,0)-(0,1,1)=(1,0,-1)$, por lo tanto el angulo será:
@@ -81,11 +81,11 @@
 	\begin{center}
 	    \begin{tikzpicture}[scale=1.5]
 		\draw(0,0)circle(1);
-		\draw[<-](-1,0)--(0,0);
-		\draw[->](0,0)--(1,0);
-		\draw[->](-1,0)--(.6,.8);
-		\draw[->](1,0)--(.6,.8);
-		\draw[->](.6,.8)--(0,0);
+		\draw[line width=1.2pt,stealth-](-1,0)--(0,0);
+		\draw[line width=1.2pt,-stealth](0,0)--(1,0);
+		\draw[line width=1.2pt,-stealth](-1,0)--(.6,.8);
+		\draw[line width=1.2pt,-stealth](1,0)--(.6,.8);
+		\draw[line width=1.2pt,-stealth](.6,.8)--(0,0);
 		\draw(-0.1,.6)node[]{$a$};
 		\draw(-.4,-.15)node[]{$b$};
 		\draw(.2,.4)node[]{$c$};
@@ -129,7 +129,35 @@
 
     %-------------------- problema 12
     \item \textbf{\boldmath Demuestre que las diagonales de un rombo son ortogonales entre si.\\\\
-	Demostración.-}\;
+	Demostración.-}\; Sea $a,b,c,d,e,f\in \mathbb{R}^n.$, se tiene:
+	\begin{center}
+	    \begin{tikzpicture}[scale=1.2]
+	      \tikzstyle{every node}=[font=\scriptsize]
+	      \draw[line width=1.2pt,-stealth](0,0)--(3,0) node[rotate=0,pos=0.5,below]{$a$};
+	      \draw[line width=1.2pt,-stealth](3,0)--(5,2) node[rotate=50,pos=0.5, below]{$b$};
+	      \draw[line width=1.2pt,-stealth](5,2)--(2,2) node[rotate=0,pos=0.5, above]{$c$};
+	      \draw[line width=1.2pt,-stealth](2,2)--(0,0) node[rotate=45,pos=0.45, above]{$d$};
+	      \draw[line width=1.2pt,-stealth](0,0)--(5,2) node[rotate=23,pos=0.4, below]{$e$};
+	      \draw[line width=1.2pt,-stealth](2,2)--(3,0) node[rotate=-50,pos=0.3, above]{$f$};
+	      \draw(2.65,.65) arc (-80:40:.3);
+	      \draw(2.7,.9)node[]{$\theta$};
+	    \end{tikzpicture}
+	\end{center}
+	De donde,  $$\cos (\theta) = \dfrac{\langle e,f\rangle}{\|e\|\|f\|} \quad \Rightarrow \quad \theta = \cos^{-1}\left(\dfrac{\langle a+b, d+a\rangle}{\|e\|\|f\|}\right).$$
+
+	Luego, ya que $a,b,c,d$ es un rombo. Es decir, un paralelogramo de lados iguales, entonces $d=-b$ y $\|a\|=\|b\|$ así:
+	$$\theta = \cos^{-1}\left(\dfrac{\langle a+b, -b+a\rangle}{\|e\|\|f\|}\right).$$
+	Por las propiedades de producto interno,
+	$$\begin{array}{rcl}
+	    \theta&=&\cos^{-1}\left(\dfrac{\langle a,-b\rangle+\langle b,-b\rangle+\langle a,a\rangle+\langle b,a\rangle}{\|e\|\|f\|}\right)\\\\
+		  &=&\cos^{-1}\left(\dfrac{-\langle a,b\rangle-\langle b,b\rangle+\langle a,a\rangle+\langle a,b\rangle}{\|e\|\|f\|}\right)\\\\
+		  &=&\cos^{-1}\left(\dfrac{\langle a,a\rangle-\langle b,b\rangle}{\|e\|\|f\|}\right)\\\\
+		  &=&\cos^{-1}\left(\dfrac{\|a\|^2-\|b\|^2}{\|e\|\|f\|}\right)\\\\
+		  &=& \cos^{-1}\left(\dfrac{0}{\|e\|\|f\|}\right) = \dfrac{\pi}{2}.\\\\
+	\end{array}$$
+	Por lo tanto,
+	$$e\perp f.$$\\
+
 
     %-------------------- problema 13
     \item \textbf{\boldmath Si $x,y,z \in \mathbb{R}^3,$ entonces demostrar que:

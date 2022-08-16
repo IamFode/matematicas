@@ -1596,8 +1596,16 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 	Esto no es una violación del teorema de Rolle, ya que el teorema requiere que $f(x)$ sea diferenciable para todo $x$ en el intervalo abierto $(-1,1)$. Como $f'(x)$ no está definido en $x=0$, tenemos que $f(x)$ no es derivable en todo el intervalo.\\\\
 
     %-------------------- 5.
+    \item Probar que $x^2=x\sen x+\cos x$ se verifica exactamente para dos valores de $x$.\\\\
+	Demostración.-\; Queremos encontrar los ceros de esta función ya que serán los puntos que satisfacen a la ecuación. Sea $f(x)=x^2-x\sen x -\cos x$, entonces
+	$$f'(x)=2x-\sen x-x\cos x+\sen x = x(2-\cos x).$$
+	Ya que $2-\cos x \neq 0$ para cualquier $x$ con $\cos x\leq 1$, tenemos
+	$$f'(x)=0\quad \Leftrightarrow \quad  x=0.$$
+	Por lo tanto $f$ es continua y derivable en todas partes. Por el teorema de Rolle sabemos que $f$ tiene como máximo dos ceros. (Si hubiera tres o más, por ejemplo $x_1,x_2$ y $x_3$ entonces debe haber números distintos $c_1$ y $c_2$ con $x_1<c_1<x_2<c_2<x_3$ tal que $f'(c_1)=f'(c_2)=0$, pero sabemos que solo hay un $c$ tal que $f'(c)=0$). Además, $f$ tiene al menos dos ceros desde $f(-\pi)=\pi^2+1>0,\; f(0)=-1<0$ y $f(\pi)=\pi^2+1>0$. Así por el teorema de Bolzano hay ceros entre cada uno de estos puntos. Tenemos que el número de ceros de $f$ es como máximo dos y como mínimo dos. Por lo tanto, el número de ceros debe ser exactamente dos.\\\\
+
+    %-------------------- 6.
     \item Probar que la fórmula del valor medio se puede expresar en la forma:
-    $$f(x+h)=f(x)+hf'(x+\theta h)\quad \mbox{donde} quad 0<\theta < 1.$$
+    $$f(x+h)=f(x)+hf'(x+\theta h)\quad \mbox{donde} \quad 0<\theta < 1.$$
     Determinar $\theta$ en función de $x$ y $h$ cuando (a) $f(x)=x^2,$ (b) $f(x)=x^3.$ Dejar $x$ fijo, $x\neq 0$ y determinar en cada caso el límite de $\theta$ cuando $h\to 0$.\\\\
 	Demostración.-\; 
 

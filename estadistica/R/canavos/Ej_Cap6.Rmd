@@ -79,3 +79,7 @@ y=2
 ```
 
 ### c)
+Mediante el empleo de sus respuesta a la parte $a$, obtener las distribuciones acumulativas marginales de $X$ e $Y$.
+
+Respuesta.-
+

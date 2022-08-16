@@ -48,3 +48,36 @@ Por lo tanto, la función de densidad bivariada se encuentra diferenciando $F(x,
 
 
 \section{Distribuciones marginales de probabilidad}
+Es posible determinar varias distribuciones marginales para cualquier distribución de probabilidad que contenta más de dos variables aleatorias.
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias discretas con una función de probabilidad conjunta $p(x-y)$. Las funciones marginales de probabilidad de $X$ y de $Y$ están dadas por
+	$$p_X(x)=\sum_y p(x,y)\qquad \mbox{y}\qquad p_Y(y)=\sum_x p(x,y),$$
+	respectivamente.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias continuas con una función de densidad de probabilidad conjunta $f(x,y)$. Las funciones de densidad de probabilidad de $X$ e $Y$ están dadas por
+	$$f_X(x)=\int_{-\infty}^\infty f(x,y)\; dy \qquad \mbox{y} \qquad f_Y(y)=\int_{-\infty}^\infty f(x,y)\; dx,$$
+	respectivamente.
+    \end{def.}
+\end{tcolorbox}
+
+Para variables aleatorias continuas conjuntas, si se conoce \textbf{\boldmath la función de distribución acumulativa $F(x,y)$}, las distribuciones acumulativas marginales de $X$ e $Y$ se obtienen de la siguiente forma:
+
+\begin{tcolorbox}
+    $$P(X\leq x)=F_X(x)=\int_{\infty}^x \int_{-\infty}^\infty f(t,y)\; dydt,\qquad \mbox{y}\qquad F_X(x)=\int_{-\infty}^x f_X(t)\; dt = F(x,\infty)$$
+\end{tcolorbox}
+
+De manera similar
+
+\begin{tcolorbox}
+    $$P(Y\leq y)=F_Y(y)=\int_{\infty}^y \int_{-\infty}^\infty f(x,t)\; dxdt=\int_{-\infty}^y f_Y(t)\; dt = F(\infty,y).$$
+\end{tcolorbox}
+
+
+\section{Valores esperados y momentos para distribuciones bivariadas}
+
