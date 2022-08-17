@@ -54,28 +54,28 @@ Obtener la función de distribución conjunta acumulativa.
 
 Respuesta.- 
 $$\begin{array}{rcl}
-  F(x,y)&=&\displaystyle\int_0^x \int_0^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \displaystyle\int_0^x \int_0^y \left(\dfrac{3u}{5}-\dfrac{v}{5}\right)\; dvdu\\\\
-  &=& \displaystyle \int_0^x \left(\dfrac{3u}{5}v-\dfrac{v^2}{10}\right) \bigg|_0^y \; du = \displaystyle \int_0^x \left(\dfrac{3u}{5}y-\dfrac{y^2}{10}\right) \; du\\\\
-  &=& \left(\dfrac{3u^2y}{10}-\dfrac{uy^2}{10}\right)\bigg|_0^x = \dfrac{3x^2y}{10}-\dfrac{xy^2}{10} \\\\
-  &=& \dfrac{3x^2y-xy^2}{10}, \qquad 1<x<2,\;\;\; 1<y<3.\\\\
+  F(x,y)&=&\displaystyle\int_1^x \int_1^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \displaystyle\int_1^x \int_1^y \left(\dfrac{3u}{5}-\dfrac{v}{5}\right)\; dvdu\\\\
+  &=&\displaystyle\int_1^x\left(\dfrac{3u}{5}v-\dfrac{v^2}{10}\right)\bigg|_1^y\; du=\int_1^x \dfrac{3uy}{5}-\dfrac{3u}{5}-\dfrac{y^2}{10}+\dfrac{1}{10} \;du\\\\
+  &=&\left(\dfrac{3u^2y}{10}-\dfrac{3u^2}{10}-\dfrac{y^2u}{10} -\dfrac{u}{10}\right)\bigg|_1^x\\\\
+  &=&\dfrac{3x^2y}{10}-\dfrac{3y}{10}-\left(\dfrac{3x^2}{10}-\dfrac{3}{10}\right)-\left(\dfrac{y^2x}{10}-\dfrac{y^2}{10}\right)+\dfrac{x}{10}-\dfrac{1}{10}\\\\
+  &=&\dfrac{3x^2y-xy^2-3x^2+x-3y+y^2+2}{10}\\\\
 \end{array}$$
-
-Esto podemos comprobarlo de la siguiente forma:
-
-$$\dfrac{\partial F(x,y)}{\partial x} = \dfrac{6xy}{10}-\dfrac{y^2}{10} \qquad \mbox{y}\qquad  \dfrac{\partial^2 F(x,y)}{\partial y} = \dfrac{6x}{10}-\dfrac{2y}{10} = \dfrac{3x-y}{5}.$$
-
 
 ### b)
 ¿Cuál es la probabilidad conjunta de que $X<3/2$ e $Y<2$?.
 
-Respuesta.- Ya que $\displaystyle\int_0^x \int_0^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \dfrac{3x^2y-xy^2}{10}$, entonces
+Respuesta.- Ya que $\displaystyle\int_1^x \int_1^y \left(\dfrac{3u-v}{5}\right)\; dvdu=\dfrac{3x^2y-xy^2-3x^2+x-3y+y^2+2}{10}$, entonces
 
-$$P(X<3/2,Y<2) = \int_0^{3/2} \int_0^2 \left(\dfrac{3u-v}{5}\right)\; dvdu =\dfrac{3(3/2)^2\cdot 2-(3/2)\cdot 2^2}{10} = 0.75.$$
+$$\begin{array}{rcl}
+  P(X<3/2,Y<2) &=& \displaystyle\int_1^{3/2} \int_1^2 \left(\dfrac{3u-v}{5}\right)\; dvdu\\\\
+  &=& \dfrac{3\cdot (3/2)^2 \cdot 2 -(3/2)\cdot 2^2-3(3/2)^2+3/2-3\cdot 2+2^2+2}{10}\\\\
+  &=&0.225.\\\\
+  \end{array}$$
 
 ```{r}
 x=3/2
 y=2
-(3*x^2*y-x*y^2)/10
+(3*x^2*y-3*y-3*x^2+x-3*y+y^2+2)/10
 ```
 
 ### c)
@@ -83,13 +83,32 @@ Mediante el empleo de sus respuesta a la parte $a$, obtener las distribuciones a
 
 Respuesta.- Dado que $2$ y $3$ son los límite superior para $x$ e $y$ respectivamente, entonces
 
-$$P(X\leq x ) = F_X(x)=F(x,3)=\dfrac{3x^2\cdot 3-x\cdot 3^2}{10} = \dfrac{9\left(x^2-x\right)}{10}. \qquad 1<x<2.$$
+$$\begin{array}{rcl}
+  P(X\leq x) &=& F_X(x)=F(x,3)\\\\
+  &=&\dfrac{3x^2\cdot 3-x\cdot 3^2-3x^2+x-3\cdot 3+3^2+2}{10}\\\\
+  &=& \dfrac{9x^2-9x-3x^2+x-9+9+2}{10} \\\\
+  &=&\dfrac{3x^2-4x+1}{5},\quad 1<x<2.\\\\
+  \end{array}$$
 
 $$\mbox{Y}$$
 
-$$P(Y\leq y ) = F_Y(y)=F(2,y)=\dfrac{3\cdot 2^2\cdot y-2\cdot y^2}{10} = \dfrac{2\left(6y-y^2\right)}{10} = \dfrac{6y-y^2}{5}, \qquad 1<y<3.$$
+$$\begin{array}{rcl}
+  P(Y\leq y ) &=& F_Y(y)=F(2,y)\\\\
+  &=&\dfrac{3\cdot 2^2y-2\cdot y^2-3\cdot 2^2+2-3y+y^2+2}{10}\\\\
+  &=&\dfrac{12y-2y^2-12+2-3y+y^2+2}{10}\\\\
+  &=&\dfrac{9y-y^2-8}{10}, \qquad 1<y<3.\\\\
+\end{array}$$
 
 ### d)
 Obtener las funciones de densidad marginales de $X$ y de $Y$.
 
-Respuesta.-
+Respuesta.- Sea $F(x,3)=P(X\leq x)=\dfrac{3x^2-4x+1}{5}$, entonces
+$$f_X(x)=\dfrac{\partial F(x,3)}{\partial x}=\dfrac{(6x^2-4)5}{5^2} = \dfrac{6x^2-4}{5}.$$
+
+Y para $F(2,y)=P(Y\leq y)=\dfrac{9y-y^2-8}{10}$, se tiene
+
+$$f_Y(y)=\dfrac{\partial F(2,y)}{\partial y} = \dfrac{(9-2y)10}{10^2} = \dfrac{9-2y}{10}.$$
+
+
+## 6.4.
+

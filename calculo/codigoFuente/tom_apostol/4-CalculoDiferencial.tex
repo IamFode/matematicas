@@ -1607,7 +1607,40 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
     \item Probar que la fórmula del valor medio se puede expresar en la forma:
     $$f(x+h)=f(x)+hf'(x+\theta h)\quad \mbox{donde} \quad 0<\theta < 1.$$
     Determinar $\theta$ en función de $x$ y $h$ cuando (a) $f(x)=x^2,$ (b) $f(x)=x^3.$ Dejar $x$ fijo, $x\neq 0$ y determinar en cada caso el límite de $\theta$ cuando $h\to 0$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Si $f$ es continua en $[a,b]$ y derivable en $(a,b)$, entonces por el teorema del valor medio tenemos
+	$$f(b)-f(a)=f'(c)(b-a), \quad \mbox{para algún}\; c\in [a,b].$$
+
+	Sea $a=x$ y $b=x+h$ para algún $h>0$ con $b>a$, entonces
+	$$c\in [a,b]\quad \Rightarrow \quad c=x+\theta h\quad \mbox{para algún}\; \theta \in (0,1)$$
+
+	Esto se deduce de nuestras definiciones, ya que $h$ es la distancia desde $b-a$. Entonces, dado que $c$ está en algún lugar del intervalo $[a,b]$, su valor debe ser $a$ más una parte de la distancia hasta $b$. Esta parte es $\theta$, con $0 < \theta < 1$. Luego sustituyendo $x = a$, $x + h = b$ y $c = x + \theta h$, se tiene
+	$$f(b)-f(a)=f'(c)(b-a)\quad \rightarrow \quad f(x+h)-f(x)=f'(x+\theta h)(x+h-x) \quad \Rightarrow \quad f(x+h)=f(x)+hf'(x+\theta h),$$
+	donde $0<\theta <1$ y $h>0.$\\
+
+	\begin{enumerate}[(a)]
+	    \item Si $f(x)=x^2$, tenemos $f'(x)=2x$. Entonces,
+		$$f(x+h)=f(x)+hf'(x+\theta h)\; \Rightarrow \; (x+h)^2=x^2+2h(x+\theta h) \; \Rightarrow \; h^2=2\theta h^2 \; \Rightarrow \; \theta = \dfrac{1}{2} \; \Rightarrow \; \lim_{h\to 0}\dfrac{1}{2}.$$
+
+	    \item Si $f(x)=x^3$, tenemos $f'(x)=3x^2$. Entonces,
+		$$\begin{array}{rcl}
+		    f(x+h)=f(x)+hf'(x+\theta h) &\Rightarrow& x^3+3x^3h+3xh^2+h^3 = x^3+3hx^2+6 \theta x h^2 + 3\theta^2 h^3\\\\
+						&\Rightarrow&0=\left(3h^3\right) \theta^2 + \left(6xh^2\right)\theta - \left(3xh^2+h^3\right)\\\\
+						&\Rightarrow&0=h\theta^2 + 2x\theta + \left(-x-\dfrac{h^2}{3}\right)\\\\
+		\end{array}$$
+		Por lo tanto,\\
+		$$\begin{array}{rcl}
+		    \theta &=&\dfrac{-2x+\sqrt{4x^2+4hx+\frac{4h^2}{3}}}{2h}\\\\
+		    \theta &=& \dfrac{\sqrt{x^2+xh+\frac{h^2}{3}}-x}{h}\\\\
+		    \theta &=& \dfrac{\left(\sqrt{x^2+xh+\frac{h^2}{3}}-x\right)\left(\sqrt{x^2+xh+\frac{h^2}{3}}+x\right)}{h\left(\sqrt{x^2+hx+\frac{h^2}{3}}+x\right)}\\\\
+		    \theta &=& \dfrac{x^2+xh+\frac{h^2}{3}-x^2}{h\left(\sqrt{x^2+hx+\frac{h^2}{3}}+x\right)}\\\\
+		    \theta &=& \dfrac{x+\frac{h}{3}}{x+\sqrt{x^2+xh+\frac{h^2}{3}}}\\\\
+		    \theta &=& \lim\limits_{h\to 0}\theta = \dfrac{1}{2}.\\\\
+		\end{array}$$
+	\end{enumerate}
+	\vspace{.5cm}
+
+    %-------------------- 7.
+    \item 
 
 \end{enumerate}
 
