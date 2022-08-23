@@ -1492,7 +1492,7 @@ El teorema del valor medio para derivadas es importante en cálculo porque mucha
 
 %------------------- teorema 4.5.
 \begin{teo}[Teorema del valor medio para derivadas]
-    Si $f$ es una función continua en todo un intervalo cerrado $[a,b]$ que tiene derivada en cada punto del intervalo abierto $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$ para el que 
+    Si $f$ es una función continua en todo un intervalo cerrado $[a,b]$ que tiene derivada en cada punto del intervalo abierto $(a,b)$, existe por lo menos un punto $c$ interior a $(a,b)$, para el que 
     $$f(b)-f(a)=f'(c)(b-a).$$\\
 	Demostración.-\; Para aplicar el teorema de Rolle necesitamos una función que tenga valores iguales en los extremos $a$ y $b$. A fin de construirla, modificamos $f$ en la forma siguiente:
 	$$h(x)=f(x)(b-a)-x[f(b)-f(a)].$$
@@ -1614,7 +1614,7 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 	$$c\in [a,b]\quad \Rightarrow \quad c=x+\theta h\quad \mbox{para algún}\; \theta \in (0,1)$$
 
 	Esto se deduce de nuestras definiciones, ya que $h$ es la distancia desde $b-a$. Entonces, dado que $c$ está en algún lugar del intervalo $[a,b]$, su valor debe ser $a$ más una parte de la distancia hasta $b$. Esta parte es $\theta$, con $0 < \theta < 1$. Luego sustituyendo $x = a$, $x + h = b$ y $c = x + \theta h$, se tiene
-	$$f(b)-f(a)=f'(c)(b-a)\quad \rightarrow \quad f(x+h)-f(x)=f'(x+\theta h)(x+h-x) \quad \Rightarrow \quad f(x+h)=f(x)+hf'(x+\theta h),$$
+	$$f(b)-f(a)=f'(c)(b-a)\; \Rightarrow \; f(x+h)-f(x)=f'(x+\theta h)(x+h-x) \; \Rightarrow \; f(x+h)=f(x)+hf'(x+\theta h)$$
 	donde $0<\theta <1$ y $h>0.$\\
 
 	\begin{enumerate}[(a)]
@@ -1640,7 +1640,63 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 	\vspace{.5cm}
 
     %-------------------- 7.
-    \item 
+    \item Sea $f$ un polinomio. Se dice que un número real $\alpha$ es un cero de $f$ de multiplicidad $m$ si $f(x)=(x-\alpha)^m g(x)$, donde $g(\alpha)\neq 0$.
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $f$ tiene $r$ ceros en el intervalo $[a,b]$, probar que $f'$ tiene por lo menos $r-1$ ceros, y que en general la derivada k-ésima $f^{(k)}$ tiene por lo menos $r-k$ ceros en $[a,b]$. (Los ceros se cuentan tantas veces como indica su multiplicidad.)\\\\
+		Demostración.-\; Sea $\alpha_1,\ldots,\alpha_k$ los $k$ distintos ceros de $f$ en $[a,b]$ y sea $m_1,\ldots , m_k$ sus multiplicidades. Por lo tanto el número total de ceros está dado por:  
+		$$r=\sum\limits_{i=1}^n m_i.$$ 
+		Si $\alpha_i$ es un cero de $f$ multiplicidad $m_i$ entonces,
+		$$f'(x)=r(x-\alpha_i)^{m_i-1}g(x)-(x-\alpha_i)^{m_i} g'(x)=m_i(x-\alpha_i)^{m_i-1}\left[m_ig(x)+(x-\alpha)g'(x)\right].$$
+		Luego pongamos $g_1(x)=m_ig(x)+(x-\alpha_i)g'(x)$, de donde
+		$$f'(x)=m_i(x-\alpha_i)^{m_i-1}g_1(x).$$
+		Ya que $g_1(\alpha_i)=m_ig(\alpha_i)\neq 0$. Por lo tanto, $\alpha_i$ es un cero de multiplicidad $m_i-1$ para $f'(x).$\\
+
+		Demostremos la generalización. La función $f$ es una función continua en $[\alpha_i,\alpha_j]$ tal que $\alpha_i<\alpha_j$ que tiene derivada en $(\alpha_i,\alpha_j)$. Además,
+		$$f(\alpha_i)=f(\alpha_j).$$
+		Entonces por el teorema de Rolle, existe al menos un punto $c_1$ en $(\alpha_i,\alpha_j)$ tal que $f'(c_1)=0.$ Por lo tanto, si $f$ tiene $k$ distintos ceros, entonces por el teorema del valor medio tenemos al menos $k-1$ números $c$ tal que $f'(c)=0.$ Así $f'$ tiene al menos:
+	    $$\left[\sum_{i=1}^k (m_i-1)\right]+k-1 = \left(\sum_{i=1}^k m_i\right)-1=r-1$$
+	    Después derivamos la función $k$ veces, donde tenemos $k(k-1)$ de ceros. Entonces los números ceros para $f'$ son al menos,
+	    $$k(k-1)+\sum_{i=1}^k (m_i-k)=k^2-k+\sum_{i=1}^k m_i-k\sum_{i=1}^k 1 = k^2-k+\sum_{i=1}^k m_i-k^2=\sum_{i=1}^k - k = r-k.$$
+		Por lo que la $k$-ésima  derivada $f^{(k)}(x)$ tiene al menos $r-k$ ceros en $[a,b]$.\\\\
+
+	    %---------- (b)
+	    \item Si la derivada k-ésima $f^{(k)}$ tiene exactamente $r$ ceros en $[a,b]$ ¿qué se puede decir acerca del número de ceros de $f$ en $[a,b]$?.\\\\
+		Respuesta.-\; Si la $k$-ésima $f^{(k)}$ tiene exactamente $r$ ceros en $[a,b]$, entonces podemos concluir que $f$ tiene como máximo $r+k$ ceros en $[a,b]$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 8.
+    \item Utilizar el teorema del valor medio para deducir las desigualdades siguientes:\\
+	\begin{enumerate}[a)]
+
+	    %---------- (a)
+	    \item $|\sen x - \sen y|\leq |x-y|$.\\\\
+		Respuesta.-\; Definamos $f(t)=\sen t$ y $g(t)=t$. Entonces $f$ y $g$ son continuos y diferenciables donde sea. Aplicando el teorema de valor medio se tiene para algún $c\in (x-y)$,
+		$$\begin{array}{rcl}
+		    f'(c)\left[g(x)-g(y)\right]&=&g'(c)\left[f(x)-f(y)\right]\\
+		    (\cos c)(x-y)&=&\sen x-\sen y\\
+				 |\cos c||x-y|&=&|\sen x -\sen y|\\
+		\end{array}$$
+		Ya que $|\cos c|\leq 1$ para todo $c$, entonces
+		$$|x-y|\geq|\sen x-\sen y|.$$\\
+
+	    %---------- (b)
+	    \item $ny^{n-1}(x-y)\leq x^n -y^n \leq nx^{n-1}(x-y)$ si $n=1,2,3,\ldots.$\\\\
+		Respuesta.-\; Sea $f(t)=t^n$ y $g(t)=t$. Entonces $f'(t)=nt^{n-1}$ y $g'(t)=1$. Así por el teorema de valor medio tenemos que existe un $c\in (x,y)$ tal que,
+		$$f'(c)=\left[g(x)-g(y)\right]=g'(c)\left[f(x)-f(y)\right]$$
+		Ya que $x^{n-1}$ es una función creciente en los reales positivos, y  $0<y\leq c \leq x$, se sigue que
+		$$y^{n-1}\leq c^{n-1}\leq x^{n-1}.$$
+		Por lo tanto sustituyendo $nc^{n-1}(x-y)=x^n-y^n$ obtenemos
+		$$ny^{n-1}(x-y)\leq x^n -y^n\leq nx^{n-1}(x-y).$$\\
+
+	\end{enumerate}
+
+    %-------------------- 9.
+    \item Una función $f$, continua en $[a, b]$, tiene derivada segunda $f''$ en todo punto del intervalo abierto $(a, b)$. El segmento de recta que une $(a, f(a)$ y $(b, f(b))$ corta la gráfica de $f$ en un tercer punto $(c, f(c))$, siendo $a < c < b$, Demostrar que $f''(t) = 0$ por lo menos en un punto $t$ de $(a, b)$.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
 

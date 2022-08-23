@@ -3,7 +3,9 @@
     %-------------------- problema 1
     \item Sean \textbf{\boldmath $x,y \in \mathbb{R}$ con $x,y\neq 0$. Si $\|x\|=\|y\|,$ entonces hallar la medida del ángulo entre $\frac{1}{2}(x+y)$ e $y-x$.\\\\
 	Respuesta.-}\; Ya que $x,y\neq 0$ y por el teorema de los cosenos se tiene,
-	$$\left\langle \frac{1}{2}(x+y),y-x \right\rangle = \|x\|\|y\|\cos \theta \qquad (1)$$
+	\begin{equation}
+	\left\langle \frac{1}{2}(x+y),y-x \right\rangle = \|x\|\|y\|\cos \theta 
+	\end{equation}
 	Por definición de producto interno y la parte izquierda de $(1)$,
 	$$\sum_{i=1}^n \left[\dfrac{1}{2}(x_i+y_i)\cdot (y_i-x_i) \right]= -\dfrac{1}{2}\left(\sum_{i=1}^n x_i^2+\sum_{i=1}^n y_i^2\right) = -\dfrac{1}{2}\left(\langle x,x\rangle + \langle y,y\rangle \right).$$
 
@@ -66,7 +68,8 @@
 		\draw[line width=1.2pt,-stealth](0,1,1)--(1,1,0);
 	    \end{tikzpicture}
     \end{center}
-    Luego se tiene al vector $x=(1,0,1)-(0,1,1)=(1,-1,0)$ y $y = (1,1,0)-(0,1,1)=(1,0,-1)$, por lo tanto el angulo será:
+    Luego se tiene los vectores $$x=(1,0,1)-(0,1,1)=(1,-1,0) \quad \mbox{e} \quad y = (1,1,0)-(0,1,1)=(1,0,-1).$$ 
+    Así, el ángulo $\theta$ estará dado por,
     $$\begin{array}{rcl}
 	\cos \theta &=& \dfrac{\langle (1,-1,0),(1,0,-1)\rangle}{\|(1,-1,0)\|\|(1,0,-1)\|}\\\\ 
 		    &=& \dfrac{1\cdot 1 + (-1)\cdot 0 + 0\cdot (-1)}{\sqrt{1^2+(-1)^2+0^2}\cdot \sqrt{1^2+0^2+(-1)^2}}\\\\
@@ -117,7 +120,28 @@
 
     %-------------------- problema 9
     \item \textbf{\boldmath Demuestre que el segmento que une los puntos medios de dos lados de un triángulo es paralelo al tercer lado y tiene la mitad de su longitud.\\\\
-	Demostración.-}\;
+	Demostración.-}\; Consideremos el siguiente gráfico. Sean $a,b,c,d\in \mathbb{R}^n$ 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.9]
+		\draw[line width=1.2pt,-stealth](0,0)--(4,0) node[rotate=0,pos=0.5, below]{$a$};
+		\draw[line width=1.2pt,-stealth](0,0)--(3,2) node[rotate=35,pos=0.5, above]{$b$};
+		\draw[line width=1.2pt,-stealth](4,0)--(3,2) node[rotate=20,pos=0.5, right]{$c$};
+		\draw[line width=1.2pt,-stealth](1.5,1)--(3.5,1) node[rotate=0,pos=0.5, below]{$d$};
+	    \end{tikzpicture}
+	\end{center}
+	de donde podemos deducir las siguientes ecuaciones:
+
+	$$\left\{\begin{array}{rcl}
+		\dfrac{b}{2}-\dfrac{c}{2}-d&=&0\\\\
+		a+\dfrac{c}{2}-d-\dfrac{b}{2}&=&0\\
+	\end{array}\right. \quad \Rightarrow \quad 
+	\left\{\begin{array}{rcl}
+		\dfrac{c}{2}&=&\dfrac{b}{2}-a\\\\
+		\dfrac{c}{2}&=&d+\dfrac{b}{2}-a\\\\
+	\end{array}\right.$$
+
+	Entonces $a=2d$ si y sólo si $a \parallel d$. Así tomando la norma nos queda:
+	$$\|a\|=\|2d\| \quad \Longrightarrow \quad \|d\|=\dfrac{1}{2}\|a\|.$$\\
 
     %-------------------- problema 10
     \item \textbf{\boldmath Pruebe la ley de senos utilizando vectores.\\\\
@@ -133,16 +157,16 @@
 	    \end{tikzpicture}
 	\end{center}
 	Sea $a,b,c \in \mathbb{R}^3$. Notemos que $b=c+a$ por lo que utilizaremos la proposición $$\|x \times y\| = \|x\|\|y\| \sen(\theta)$$
-	de la siguiente manera. Sea $x\times x = 0$ entonces,
+	de la siguiente manera. Sea $x\times x = 0$ de donde,
 	\begin{itemize}
 
 	    \item $\sen(\theta) = \dfrac{\|b\times c\|}{\|b\|\|c\|}=\dfrac{\|(c+a)\times c|\|}{\|b\|\|c\|}=\dfrac{\|c\times c + a\times c\|}{\|b\|\|c\|}=\dfrac{\|a\times c\|}{\|b\|\|c\|}.$ Entonces,
 		$$\dfrac{\sen(\theta)}{\|a\|}=\dfrac{\|a\times c\|}{\|a\|\|b\|\|c\|}$$
 
-	    \item $\sen(\alpha) = \dfrac{\|c\times a\|}{\|a\|\|c\|}=\dfrac{\|(b-a)\times a|\|}{\|a\|\|c\|}=\dfrac{\|a\times b - a\times a\|}{\|a\|\|c\|}=\dfrac{\|a\times b\|}{\|a\|\|c\|}.$ Entonces
+	    \item $\sen(\alpha) = \dfrac{\|c\times a\|}{\|a\|\|c\|}=\dfrac{\|(b-a)\times a|\|}{\|a\|\|c\|}=\dfrac{\|a\times b - a\times a\|}{\|a\|\|c\|}=\dfrac{\|a\times b\|}{\|a\|\|c\|}.$ Entonces,
 		$$\dfrac{\sen(\alpha)}{\|b\|}=\dfrac{\|a\times c\|}{\|a\|\|b\|\|c\|}$$
 
-	    \item $\sen(\beta) = \dfrac{\|b\times a\|}{\|a\|\|b\|}=\dfrac{\|(c+a)\times a|\|}{\|a\|\|b\|}=\dfrac{\|c\times a - a\times a\|}{\|a\|\|b\|}=\dfrac{\|a\times c\|}{\|a\|\|b\|}.$ Entonces
+	    \item $\sen(\beta) = \dfrac{\|b\times a\|}{\|a\|\|b\|}=\dfrac{\|(c+a)\times a|\|}{\|a\|\|b\|}=\dfrac{\|c\times a - a\times a\|}{\|a\|\|b\|}=\dfrac{\|a\times c\|}{\|a\|\|b\|}.$ Entonces,
 		$$\dfrac{\sen(\beta)}{\|c\|}=\dfrac{\|a\times c\|}{\|a\|\|b\|\|c\|}$$
 
 	\end{itemize}
@@ -190,16 +214,55 @@
     %-------------------- problema 13
     \item \textbf{\boldmath Si $x,y,z \in \mathbb{R}^3,$ entonces demostrar que:
 	$$x\times (y \times z) = \langle x,z\rangle y - \langle x,y\rangle z.$$\\
-	Demostración.-}\; La demos
+	Demostración.-}\; Calculemos $y\times z$.
+	$$y\times z = \left|\begin{array}{ccc}
+	    e_1 & e_2 & e_3 \\
+	    y_1 & y_2 & y_3 \\
+	    z_1 & z_2 & z_3
+	\end{array}\right| = \left(y_2z_3-y_3z_2,y_3z_1-y_1z_3, y_1z_2-y_2z_1\right)$$
+
+	Luego, calculemos $x\times (y \times z)$
+
+	$$\begin{array}{rcl}
+	    x\times (y\times z) &=& \left|\begin{array}{ccc}
+	    e_1 & e_2 & e_3 \\
+	    x_1 & x_2 & x_3 \\
+	    y_2z_3-y_3z_2 & y_3z_1-y_1z_3 & y_1z_2-y_2z_1
+	\end{array}\right|\\\\
+	&=& \left[x_2\left(y_1z_2-y_2z_1\right)-x_3\left(y_3z_1-y_1z_3\right)\; , \; x_3\left(y_2z_3-y_3z_2\right)-x_1\left(y_1z_2-y_2z_1\right),\right.\\
+	&&\left.x_1\left(y_3z_1-y_1z_3\right)-x_2\left(y_2z_3-y_3z_2\right)\right]\\\\
+	&=& \left(x_2y_1z_2-x_2y_2z_1-x_3y_3z_1+x_3y_1z_3\; , \; x_3y_2z_3-x_3y_3z_2-x_1y_1z_2+x_1y_2z_1\right.\\
+	&&\left.x_1y_3z_1-x_1y_1z_3-x_2y_2z_3+x_2y_3z_2\right).\qquad (1)\\\\
+	\end{array}$$
+
+	Por otro lado calculamos $\langle x,z\rangle y - \langle x,y\rangle z$.
+
+	$$\begin{array}{rcl}
+	    &&(x_1z_1+x_2z_2+x_3z_3)(y_1,y_2,y_3)-(x_1y_1+x_2y_2+x_3y_3)(z_1,z_2,z_3)\\\\
+	    &=& (x_1y_1z_1+x_2y_1z_2+x_3y_1z_3\; ,\; x_1y_2z_1+x_2y_2z_2+x_3y_2z_3\; , \; x_1y_3z_1+x_2y_3z_2+x_3y_3z_3)\\
+	    &-&(x_1y_1z_1+x_2y_2z_1+x_3y_3z_1\; , \; x_1z_1z_2+x_2y_2z_2+x_3y_3z_2\; ,\; x_1y_1z_3+x_2y_2z_3+x_3y_3z_3)\\\\
+	    &=&(x_2y_1z_2+x_3y_1z_3-x_2y_2z_1-x_3y_3z_1\; , \; x_1y_2z_2+x_3y_2z_3-x_1y_1z_2-x_3y_3z_2 ,\\
+	    &=& x_1y_3z_1+x_2y_3z_2-x_1y_1z_3-x_2y_2z_3). \qquad (2)\\\\
+	\end{array}$$
+	Igualando (1) y (2) concluimos que,
+	$$x\times (y \times z) = \langle x,z\rangle y - \langle x,y\rangle z.$$\\
 
     %-------------------- problema 14
     \item \textbf{\boldmath Sean $x,y\in \mathbb{R}^3$ con $x,y\neq 0.$ Si $\dfrac{\|x\times y\|}{\|x\|^3}=3,$ entonces hallar $\dfrac{\| \langle x,x\rangle y - \langle x,y\rangle x \|}{\|x\|^4}$.\\\\
-	Demostración.-}\;
+	Respuesta.-}\;
 
     %-------------------- problema 15
     \item \textbf{\boldmath Si $x,y\in \mathbb{R}^3$, entonces demostrar que:
     $$\|x\times y\|^2 = \|x\|^2 \|y\|^2 - \langle x,y \rangle^2.$$\\
 	Demostración.-}\;
+	Dado que $\langle x,y\rangle =\|a\|\|b\|\cos \theta,$ entonces
+	$$\|x\|^2\|y\|^2-\langle x, y\rangle^2=\|x\|^2\|y\|^2-\|x\|^2\|y\|^2\cos^2\theta = \|x\|^2\|y\|^2\left(1-\cos^2 \theta\right).$$
+	Ya que $1-\cos^2\theta = \sen^2\theta$, se sigue
+	$$\|x\|^2\|y\|^2-\langle x, y\rangle^2=\left(\|x\|\|y\|\sen \theta\right)^2$$
+	Luego por el hecho de que $\|x\times y\|=\|x\|\|y\|\sen \theta$, nos queda:
+	$$\|x\|^2\|y\|^2-\langle x, y\rangle^2=\|x\times y\|^2.$$\\
+	
+
 
     %-------------------- problema 16
     \item \textbf{\boldmath Si $x,y,z \in \mathbb{R}^3,$ entonces demostrar que:
@@ -210,7 +273,5 @@
 	Luego, por la propiedad de conmutatividad concluimos que:
 
 	$$\langle x,z\rangle y- \langle x,y\rangle z + \langle x,y\rangle z -\langle y,z \rangle x +\langle y,z\rangle x -\langle x,z\rangle y = 0.$$\\
-
-
 
 \end{enumerate}

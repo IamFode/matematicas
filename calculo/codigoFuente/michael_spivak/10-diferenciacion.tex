@@ -845,13 +845,54 @@
 
 	     %---------- (a)
 	     \item El número $a$ se denomina una raíz doble de la función polinómica $f$ si $f(x)=(x-a)^2g(x)$ para alguna función polinómica $g$. Demuestre que $a$ es una raíz doble de $f$ si y sólo si $a$ es una raíz de $f$ y de $f'$.\\\\
-		 Demostración.-\; 
+		 Demostración.-\; Primero demostremos que $f=f'=0$. Para $f$ tenemos,
+		 $$f(a)=(a-a)^2g(x)=0.$$
+		 Luego por la regla de la cadena para $f'$ obtenemos,
+		 $$f'(a)=2(a-a)g(a)+(a-a)^2g'(a)=0.$$
+		 Por lo tanto $a$ es una raíz doble de $f$.\\
+
+		 Demostramos ahora que si $f(a)=f'(a)=0$, entonces, $a$ es una raíz doble de $f$ si 
+		 $$f(x)=(x-a)^2g(x)$$ 
+		 para alguna función polinómica $g$. Ya que $f$ es un polinomio y $f(a)=0$, entonces por la división polinomial, existe una función polinómica $g_1$ tal que 
+		 \begin{align} \tag{1}
+		 f(x)=(x-a)g_1(x).
+		 \end{align}
+		 Luego calculamos la derivada de esta función,
+		 $$f'(x)=g(x)+(x-a)g'(x),$$
+		 Se sigue $f'(a)=0$ implica que $g_1(a)=0.$ Luego, por el hecho de que $g_1$ es un polinomio, podemos utilizar la división polinomial para construir otro polinomio, como sigue:
+		 $$g_1(x)=(x-a)g_2(x).$$
+		 Luego reemplazamos en (1), de donde
+		 $$f(x)=(x-a)^2g_1(x)g_2(x).$$
+		 Ya que $g_1$ y $g_2$ son polinomios, ponemos  $g=g_1\cdot g_2$, Por lo tanto
+		 $$f(x)(x-a)^2g(x).$$\\
 
 	    %---------- (b)
 	     \item ¿Cuándo tiene $f(x)=ax^2+bx+c\; (a\neq 0)$ una raíz doble? ¿Cuál es la interpretación geométrica de esta condición?.\\\\
-		 Respuesta.-\;
+		 Respuesta.-\; Sea $f(x)=ax^2+bx+c$ una función polinómica con $a\neq 0$ e $y$ una raíz doble de $f$. Entonces por la parte (a) debemos encontrar $f(y)=f'(y)=0$ como sigue:
+		 $$f'(y)=2ay+b=0 \quad \Rightarrow \quad y=-\dfrac{b}{2a},\quad a\neq 0.$$
+		 Por otro lado, ya que $f(y)$ también es cero, la condición que se requerirá será:
+		 $$a\cdot \dfrac{b^2}{4a^2}-\dfrac{b^2}{2a}+c=0 \quad \Rightarrow \quad 4ac-b^2=0$$
+		 Geométrica, significa que la gráfica de $f$ toca al eje horizontal en el punto $-\dfrac{b}{2a}.$\\\\
 
 	 \end{enumerate}
-    
+
+    %-------------------- 25.
+     \item Si $f$ es diferenciable en $a$, sea $d(x)=f(x)-f'(a)(x-a)-f(a).$ Halle $d'(a).$\\\\
+	 Respuesta.-\; Podemos ver que 
+	 $$d'(a)=f'(a)-f'(a)(a-a)-f'(a)=f'(a)-f'(a)=0.$$\\
+
+    %-------------------- 26.
+     \item Este problema es parecido al problema 3-6 (spivak). Sean $a_1,\ldots , a_n$ y $b_1,\ldots, b_n$ números dados.\\
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item Si $x_1,\ldots , x_n$ son números distintos, demuestre que existe una función polinómica $f$ de grado $2n-1$, tal que $f\left(x_j\right)=f'\left(x_j\right)=0$ para $j\neq i$, y $f(x_i)=a_i$ y $f'(x_i)=b_i$.\\\\
+		 Demostración.-\; 
+
+	     %---------- (b)
+	     \item Demuestre que existe una función polinómica $f$ de grado $2n-1$ con $f(x_i)=a_i$ y $f'(x_i)=b_i$ para todo $i$.\\\\
+		 Demostración.-\;
+	    
+	 \end{enumerate}
 
 \end{enumerate}

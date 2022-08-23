@@ -1,0 +1,286 @@
+\begin{enumerate}[\bfseries \mbox{Ejercicio} 1.]
+
+    %-------------------- section 1.2 6
+    \item \textbf{Demostrar que si dos sistemas homogéneos de ecuaciones lineales con dos incógnitas tienen las mismas soluciones, son equivalentes.\\\\
+	Demostración.-}\; Consideremos los dos sistemas homogéneos con dos incógnitas $(x_1,x_2)$.
+	$$\left\{\begin{array}{ccc}
+		a_{11} x_1 + a_{12} x_2 &=& 0\\
+		a_{21} x_1 + a_{22} x_2 &=& 0\\
+		\vdots\\
+		a_{m1} x_1 + a_{m2} x_2 &=& 0\\
+	\end{array}\right. \qquad \mbox{y} \qquad 
+	\left\{\begin{array}{ccc}
+		b_{11} x_1 + b_{12} x_2 &=& 0\\
+		b_{21} x_1 + b_{22} x_2 &=& 0\\
+		\vdots\\
+		b_{m1} x_1 + b_{m2} x_2 &=& 0\\
+	\end{array}\right.$$
+
+	Sean los escalares $c_1,c_2,\ldots c_m$. De donde multiplicamos $k$ ecuaciones del primer sistemas por $c_k$ y sumamos por columnas,
+	$$\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2=0$$
+
+	Luego comparando esta ecuación con todas las ecuaciones del segundo sistema y utilizando también el hecho de que ambos sistemas tiene las mismas soluciones, obtenemos
+	$$c_1a_{11}+c_2a_{21}+\ldots + c_m a_{m1}=b_{11}, b_{21}, \ldots, b_{m1}$$
+	$$\mbox{y}$$
+	$$c_1a_{12}+c_2a_{22}+\ldots + c_m a_{m2}=b_{12}, b_{22}, \ldots, b_{m2}.$$
+
+	Lo que demuestra que el segundo sistema es una combinación lineal del primer sistema.\\
+
+	De manera similar podemos demostrar que el primer sistema es una combinación lineal del segundo sistema. Sean los escalares $c_1,c_2,\ldots c_m$, entonces
+	$$\left(c_1b_{11}+\ldots + c_m b_{m1}\right)x_1 + \left(c_1 b_{12}+\ldots + c_m b_{m2}\right)x_2=0$$
+	Después, se tiene
+	$$c_1b_{11}+c_2b_{21}+\ldots + c_m b_{m1}=a_{11}, a_{21}, \ldots, a_{m1}$$
+	$$\mbox{y}$$
+	$$c_1b_{12}+c_2b_{22}+\ldots + c_m b_{m2}=a_{12}, a_{22}, \ldots, a_{m2}.$$
+
+	Así concluimos que ambos sistemas son equivalentes.\\\\
+
+
+    %-------------------- section 1.2 7
+    \item \textbf{Demostrar que todo subcuerpo del cuerpo de los números complejos contiene a todo número racional.\\\\
+	Demostración.-}\; Sea $F$ un subcampo en $\mathbb{C}$. De donde tenemos $0\in F$ y $1\in F$. Luego ya que $F$ es un subcampo y cerrado bajo la suma, se tiene
+	$$1+1+\ldots + 1 = n\in F.$$
+	De este modo $\mathbb{Z}\subseteq F$. Ahora, sabiendo que $F$ es un subcampo, todo elemento tiene un inverso multiplicativo, por lo tanto $\dfrac{1}{n}\in F$. Por otro lado vemos también que $F$ es cerrado bajo la multiplicación. Es decir, para $m,n\in \mathbb{Z}$ y $n\neq 0$ tenemos
+	$$m\cdot \dfrac{1}{n}\in F\quad \Rightarrow \quad \dfrac{m}{n}\in F.$$
+	Así, concluimos que $\mathbb{Q}\subseteq F.$\\\\
+
+
+    %-------------------- section 1.3 2
+    \item \textbf{\boldmath Si
+    $$A=\left[\begin{array}{rrr}
+	    3 & -1 & 2 \\
+	    2 & 1 & 1 \\
+	    1 & -3 & 0
+    \end{array}\right]$$
+    Hallar todas las soluciones de $AX=0$ reduciendo $A$ por filas.\\\\
+    	Respuesta.-}\; Se efectuará una sucesión finita de operaciones elementales de filas en $A$, indicando el tipo de operación realizada.
+
+	$$\begin{array}{ccccc}
+
+	    \begin{bmatrix*}[r]
+		3 & -1 & 2 \\
+		2 & 1 & 1 \\
+		1 & -3 & 0
+	    \end{bmatrix*} 
+	    &R_1 \to R_3 &
+	    \begin{bmatrix*}[r]
+		1 & -3 & 0\\
+		2 & 1 & 1 \\
+		3 & -1 & 2 
+	    \end{bmatrix*}
+	    &R_2-2R_1 \to R_2&
+	    \begin{bmatrix*}[r]
+		1 & -3 & 0\\
+		0 & 7 & 1 \\
+		3 & -1 & 2 
+	    \end{bmatrix*}\\\\
+	    &R_3-3R_1\to R_3&
+	    \begin{bmatrix*}[r]
+		1 & -3 & 0\\
+		0 & 7 & 1 \\
+		0 & 8 & 2 
+	    \end{bmatrix*}
+	    &R_3-\dfrac{8}{7} R_2 \to R_3&
+	    \begin{bmatrix*}[r]
+		1 & -3 & 0\\
+		0 & 7 & 1 \\
+		0 & 0 & \frac{6}{7} 
+	    \end{bmatrix*}\\\\
+
+	\end{array}$$
+
+	Por lo tanto tenemos: $\;\dfrac{6}{7}x_3=0,\;\; 7x^2+x^3=0 \; \; \mbox{y} \;\; x_1-3x_2=0.$ De donde 
+	$$x_1=x_2=x_3=0.$$\\
+
+
+    %-------------------- section 1.3 3
+    \item \textbf{\boldmath Si
+    $$A=\left[\begin{array}{rrr}
+	    6 & -4 & 0 \\
+	    4 & -2 & 0 \\
+	    -1 & 0 & 3 
+    \end{array}\right]$$
+    Hallar todas las soluciones de $AX=2X$ y todas las soluciones de $AX=3X$ (el símbolo $cX$ representa la matriz, cada elemento de la cual es $c$ veces el correspondiente elemento de $X$).\\\\
+	Demostración.-}\; Sea $AX=2X$, entonces
+	$$AX=2X\quad \Rightarrow \quad AX-2X=0\quad \Rightarrow \quad (A-2I)X=0.$$
+	De donde,
+
+	$$A-2I=\begin{bmatrix*}[r]
+	    6 & -4 & 0 \\
+	    4 & -2 & 0 \\
+	    -1 & 0 & 3
+	\end{bmatrix*}-2
+	\begin{bmatrix*}[r]
+	    1 & 0 & 0 \\
+	    0 & 1 & 0 \\
+	    0 & 0 & 1 
+	\end{bmatrix*} = 
+	\begin{bmatrix*}[r]
+	    4 & -4 & 0 \\
+	    4 & -4 & 0 \\
+	    -1 & 0 & 1 
+	\end{bmatrix*}$$
+
+	Resolviendo tenemos,
+
+	$$\begin{array}{ccccc}
+
+	    \begin{bmatrix*}[r]
+		4 & -4 & 0 \\
+		4 & -4 & 0 \\
+		-1 & 0 & 1 
+	    \end{bmatrix*} 
+	    &R_2 - R_1 \to R_2&
+	    \begin{bmatrix*}[r]
+		4 & -4 & 0 \\
+		0 & 0 & 0 \\
+		-1 & 0 & 1 
+	    \end{bmatrix*} 
+	    &R_3 + \dfrac{1}{4} R_1 \to R_3&
+	    \begin{bmatrix*}[r]
+		4 & -4 & 0 \\
+		0 & 0 & 0 \\
+		0 & -1 & 1 
+	    \end{bmatrix*}\\\\
+	    &R_2 \leftrightarrow R_3&
+	    \begin{bmatrix*}[r]
+		4 & -4 & 0 \\
+		0 & -1 & 1 \\
+		0 & 0 & 0
+	    \end{bmatrix*} & & \\
+
+	\end{array}$$
+
+	Luego, las soluciones estarán dadas por, 
+	$$-x_2+x_3=0\quad \Rightarrow \quad x_2=x_3 \qquad \mbox{y}\qquad 4x_1-4x_2=0 \quad \Rightarrow \quad x_1=x_2.$$
+	Por lo tanto,
+	$$x_1=x_2=x_3.$$\\
+	Por otro lado si $AX=3X$, entonces
+	$$AX=3X\quad \Rightarrow \quad AX-3X=0\quad \Rightarrow \quad (A-3I)X=0.$$
+	De donde,
+
+	$$A-2I=\begin{bmatrix*}[r]
+	    6 & -4 & 0 \\
+	    4 & -2 & 0 \\
+	    -1 & 0 & 3
+	\end{bmatrix*}-2
+	\begin{bmatrix*}[r]
+	    1 & 0 & 0 \\
+	    0 & 1 & 0 \\
+	    0 & 0 & 1 
+	\end{bmatrix*} = 
+	\begin{bmatrix*}[r]
+	    3 & -4 & 0 \\
+	    4 & -5 & 0 \\
+	    -1 & 0 & 0 
+	\end{bmatrix*}$$
+
+	Resolviendo tenemos,
+
+	$$\begin{array}{ccccc}
+
+	    \begin{bmatrix*}[r]
+		3 & -4 & 0 \\
+		4 & -5 & 0 \\
+		-1 & 0 & 0 
+	    \end{bmatrix*} 
+	    &R_1 \leftrightarrow R_3&
+	    \begin{bmatrix*}[r]
+		-1 & 0 & 0 \\
+		4 & -5 & 0 \\
+		3 & -4 & 0 
+	    \end{bmatrix*} 
+	    &R_2 + 4 R_1 \to R_2&
+	    \begin{bmatrix*}[r]
+		-1 & 0 & 0 \\
+		0 & -5 & 0 \\
+		3 & -4 & 0 
+	    \end{bmatrix*}\\\\
+	    &R_3 +3R_1 \to R_3&
+	    \begin{bmatrix*}[r]
+		-1 & 0 & 0 \\
+		0 & -5 & 0 \\
+		0 & -4 & 0 
+	    \end{bmatrix*} 
+	    &R_3-\dfrac{4}{5}R_2 \to R_3& 
+	    \begin{bmatrix*}[r]
+		-1 & 0 & 0 \\
+		0 & -5 & 0 \\
+		0 & 0 & 0 
+	    \end{bmatrix*} 
+
+	\end{array}$$
+
+	Luego,  $0x_3=0\; \Rightarrow \; x_3\in \mathbb{R}$, $x_1=0$ y $x_2=0$ por lo tanto,
+	$$x_3\in \mathbb{R}, x_1=x_2=0.$$\\
+
+
+    %-------------------- section 1.3 6 
+    \item \textbf{\boldmath Sea
+    $$\left[\begin{array}{rr}
+	    a & b  \\
+	    c & d  
+    \end{array}\right]$$
+    es una matriz $2\times 2$ con elementos complejos. Supóngase que $A$ es reducida por filas y también que $a+b+c+d=0$. Demostrar que existen exactamente tres de estas matrices.\\\\
+    	Demostración.-}\;
+
+    %-------------------- section 1.3 7
+    \item \textbf{\boldmath Demostrar que el intercambio de dos filas en una matriz puede hacerse por medio de un número finito de operaciones elementales con filas de los otros tipos.\\\\
+	Demostración.-}\;
+
+    %-------------------- section 1.4 1
+    \item \textbf{\boldmath Hallar, mediante reducción por filas de la matriz de coeficientes todas las soluciones del siguiente sistema de ecuaciones:
+    $$\begin{array}{rrrrrcc}
+	\frac{1}{3}x_1&+&2x_2&-&6x_3&=&0\\
+		      -4x_1&&&+&5x_3&=&0\\
+			   -3x_1&+&6x_2&-&13x_3&=&0\\
+			   -\frac{7}{3}x_1&+&2x_2&-&\frac{8}{3}x_3&=&0\\
+   \end{array}.$$\\\\
+	Respuesta.-}\; 
+
+    %-------------------- section 1.4 2
+    \item \textbf{\boldmath Hallar una matriz escalón reducida por filas que sea equivalente a
+    $$\left[\begin{array}{rr}
+	1 & -i \\
+	2 & 2 \\
+	i & 1+i\\
+    \end{array}\right]$$\\
+    ¿Cuales son las soluciones de $AX=0$?.\\\\
+    	Respuesta.-}\;
+
+    %-------------------- section 1.4 5
+    \item \textbf{Dar un ejemplo de un sistema de dos ecuaciones lineales con dos incógnitas que no tengan solución.\\\\
+	Respuesta.-}\;
+
+    %-------------------- section 1.4 6
+    \item \textbf{\boldmath Mostrar que el sistema
+    $$\begin{array}{ccccccccc}
+	x_1&-&2x_2&+&x_3&+&2x_4&=&1\\
+	   x_1&+&x_2&-&x_3&+&x_4&=&2\\
+	   x_1&+&7x_2&-&5x_3&-&x_4&=&3\\
+    \end{array}$$
+    No tiene solución.\\\\
+	Demostración.-}\; 
+
+    %-------------------- section 1.4 7
+    \item \textbf{\boldmath Hallar todas las soluciones de
+    $$\begin{array}{ccccccccccr}
+	2x_1&-&3x_2&-&7x_3&+&5x_4&+&2x_5&=&-2\\
+	x_1&-&2x_2&-&4x_3&+&3x_4&+&x_5&=&-2\\
+	2x_1&&&-&4x_3&+&2x_4&+&x_5&=&3\\
+	x_1&-&5x_2&-&7x_3&+&6x_4&+&2x_5&=&-7\\
+    \end{array}$$
+	Respuesta.-}\;
+
+    %-------------------- section 1.4 8
+    \item \textbf{\boldmath Sea 
+    $$\left[\begin{array}{rrr}
+	3 & -1 & 2 \\
+	2 & 1 & 1 \\
+	1 & -3 & 0
+    \end{array}\right]$$
+    ¿Para cuáles ternas $(y_1,y_2,y_3)$ tiene una solución el sistema $AX=Y$?.\\\\
+    	Respuesta.-}\;
+
+
+\end{enumerate}
