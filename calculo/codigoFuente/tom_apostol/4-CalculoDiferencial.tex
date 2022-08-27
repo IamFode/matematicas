@@ -1434,7 +1434,6 @@ En los ejercicios del 1 al 14, determinar la derivada $f'(x)$. En cada caso se s
 
 \end{enumerate}
 
-\end{comment}
 
 \section{Aplicaciones de la derivación a la determinación de los extremos de las funciones}
 
@@ -1696,9 +1695,56 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 
     %-------------------- 9.
     \item Una función $f$, continua en $[a, b]$, tiene derivada segunda $f''$ en todo punto del intervalo abierto $(a, b)$. El segmento de recta que une $(a, f(a)$ y $(b, f(b))$ corta la gráfica de $f$ en un tercer punto $(c, f(c))$, siendo $a < c < b$, Demostrar que $f''(t) = 0$ por lo menos en un punto $t$ de $(a, b)$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Sea $g(x)$ la ecuación de la recta que une $\left[a,f(a)\right]$ y $\left[b,f(b)\right]$. Luego definimos una función
+	$$h(x)=f(x)-g(x).$$
+	Dado que $f$ y $g$ se intersecan en los valores $a,b$ y $c$ se tiene
+	$$f(a)=g(a),\qquad f(b)=g(b),\qquad f(c)=g(c).$$
+	Luego por la definición que construimos de $h$ tenemos que
+	$$h(a)=h(b)=h(c)=0.$$
+	Además, dado que $f'$ y $g'$ son continuas y derivables en $(a,b)$. Aplicando el teorema de Rolle, en los intervalos $[a,c]$ y $[c,b]$ se tiene dos puntos $c_1$ y $c_2$ tales que
+	$$h'(c_1)=c'(c_2)=0,\quad \mbox{con}\; a<c_1<c<c_2<b.$$
+	Así, aplicando una vez más el teorema de Rolle a la función $h'$ en $[c_1,c_2]$ sabremos que existe $t\in (c_1,c_2)$ tal que $h''(t)=0$. Por último, ya que  $t\in (a,b)$ entonces
+	$$h(x)=f(x)-g(x)\quad \Rightarrow \quad h'(x)=f'(x)-g'(x)\quad \Rightarrow \quad h''(x)=f''(x).$$
+	Por lo tanto concluimos que $f''(x)=0$ para algunos $t\in (a,b)$.\\\\
+
+    %-------------------- 10.
+    \item Este ejercicio es un esbozo de demostración del teorema del valor intermedio para derivadas. Supongamos que $f$ posee derivada en todo punto de un intervalo abierto $I$. Elijamos $a<b$ en $I$. La derivada $f'$ toma cualquier valor comprendido entre $f'(a)$ y $f'(b)$ en algún punto de $(a,b)$.\\
+	\begin{enumerate}[a)]
+
+	    %---------- (a)
+	    \item Definir una nueva función $g$ en $[a,b]$ del modo siguiente:
+	    \begin{center}
+		$g(x)=\dfrac{f(x)-f(a)}{x-a}\quad $ si $x\neq a,\quad g(a)=f'(a).$ 
+	    \end{center}
+	    Demostrar que g toma cualquier valor comprendido entre $f'(a)$ y $g(b)$ en el intervalo abierto $(a, b)$. Utilizar el teorema del valor medio para derivadas, para demostrar que $f'$ toma cualquier valor comprendido entre $f'(a)$ y $g(b)$ en el intervalo abierto $(a, b)$.\\\\
+		Demostración.-\; Por el hecho de que $f$ es diferenciable en todo intervalo $I$. Sabemos que $f$ es continuo en $[a,b]$ y diferenciable en $(a,b)$. Así, si $x\in [a,b]$ y $x\neq a$ entonces $g$ es continuo en $x$. Ahora si $x=a$, entonces
+		$$\lim_{x\to a}g(x)=\lim_{x\to a}\dfrac{f(x)-f(a)}{x-a}=f'(a)=g(a),$$
+		Por lo tanto $g$ es continua en $x=a$ también, el cual implica que $g$ es continua en $[a,b]$ tal que $g(a)\neq g(b)$. Luego por el teorema del valor intermedio para funciones continuas, sabemos que $g$ toma todos los valores entre $g(a)$ y $g(b)$ en algún lugar del intervalo $(a,b)$. Dado que $g(a)=f'(a)$, esta media toma todos los valores entre $f'(a)$ y $g(b)$ en algún intervalo $(a,b)$.\\
+		Por el teorema del valor medio, sabemos que existe algún $c\in (a,b)$tal que 
+		$$f(x)-f(a)=f'(c)(x-a)\; \Rightarrow \; f'(x)=\dfrac{f(x)-f(a)}{x-a}\;\Rightarrow \; f'(c)=g(x), \; \mbox{para algunos } c \in (a,x).$$
+		Como la función $g$ toma todos los valores entre $f'(a)$ y $g(b)$ en algún lugar del intervalo $(a,b)$, entonces la función $f'$ toma todos los valores entre $f'(a)$ y $g(b)$ en algún lugar del intervalo $(a,b)$.\\\\
+
+	    %---------- (b)
+	    \item Definir una nueva función $h$ en $[a,b]$ del modo siguiente:
+	    \begin{center}
+		$g(x)=\dfrac{f(x)-f(b)}{x-b}\quad $ si $x\neq a,\quad g(b)=f'(b).$ 
+	    \end{center}
+	    Razonando en forma parecida a la que se ha seguido en la parte a), demostrar que $f'$ toma cualquier valor comprendido entre $f'(b)$ y $h(a)$ en $(a, b)$. Puesto que $h(a) = g(b)$, queda demostrado el teorema del valor intermedio para derivadas.\\\\
+		Demostración.-\; Por el hecho de que $f$ es diferenciable en todo intervalo $I$. Sabemos que $f$ es continuo en $[a,b]$ y diferenciable en $(a,b)$. Así, si $x\in [a,b]$ y $x\neq b$ entonces $g$ es continuo en $x$. Ahora si $x=b$, entonces
+		$$\lim_{x\to b} h(x)=\lim_{x\to a}\dfrac{f(x)-f(b)}{x-b}=f'(b)=h(b),$$
+		Por lo tanto $h$ es continua en $x=b$ también, el cual implica que $g$ es continua en $[a,b]$ tal que $h(a)\neq h(b)$. Luego por el teorema del valor intermedio para funciones continuas, sabemos que $h$ toma todos los valores entre $h(a)$ y $h(b)$ en algún lugar del intervalo $(a,b)$. Dado que $h(a)=f'(b)$, esta media toma todos los valores entre $h(a)$ y $f'(b)$ en algún intervalo $(a,b)$.\\
+		Por el teorema del valor medio, sabemos que existe algún $c\in (a,b)$tal que 
+		$$f(x)-f(b)=f'(c)(b-a)\; \Rightarrow \; f'(c)=\dfrac{f(x)-f(b)}{x-b}\;\Rightarrow \; f'(c)=h(x), \; \mbox{para algunos } c \in (a,x).$$
+		Como la función $h$ toma todos los valores entre $h(a)$ y $f'(b)$ en algún lugar del intervalo $(a,b)$, entonces la función $f'$ toma todos los valores entre $h(a)$ y $f'(b)$ en algún lugar del intervalo $(a,b)$.\\
+		Dado que $h(a) = g(b)$, esto prueba el teorema del valor intermedio para las derivadas.\\\\
+
+	\end{enumerate}
 
 \end{enumerate}
+
+\end{comment}
+
+\section{Aplicación del teorema del valor medio a propiedades geométricas de las funciones}
 
 
 

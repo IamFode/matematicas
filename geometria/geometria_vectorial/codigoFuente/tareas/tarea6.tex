@@ -1,0 +1,28 @@
+
+\begin{enumerate}[\bfseries \mbox{Ejercicio} 1.]
+
+    %--------------------- 1.
+    \item \textbf{\boldmath $\forall \vec{a},\vec{b},\vec{c} \in \mathbb{R}^3$: Si $\vec{a} \perp \vec{b}$ y $\vec{a}\perp \vec{c}\; \Rightarrow \; \vec{a} \parallel \vec{b}\times \vec{c}$.\\\\
+	Demostración.-}\; Ya que $\vec{a}\perp \vec{b}$ y $\vec{a}\perp\vec{c}$. Entonces 
+	$$a\circ b=0\qquad \mbox{y}\qquad a\circ c = 0.$$
+	Luego sabemos que $a\parallel \vec{b}\times \vec{c} \;\Leftrightarrow\; a\circ(a\times c)$, así por propiedades de producto triple tenemos
+	$$a\circ (b\times c) = c\circ (a\times b)=b\circ (c\times a) = b\circ \left[-(a\times c)\right]=0.$$
+	Por lo tanto,
+	$$a\circ (b\times c) = c\circ (0) = b\circ \left[-(0)\right]=0.$$
+	De esta manera $\vec{a}\parallel \vec{b}\times \vec{c}.$\\\\
+
+    %--------------------- 2.
+    \item \textbf{\boldmath Si $\vec{b}$ y $\vec{c}$ son linealmente independientes y $\vec{a},\vec{b}$ y $\vec{c}$ son linealmente dependientes. Entonces existen números reales $s$ y $t$ tal que $\vec{a}=s\vec{b}+t\vec{c}.$\\\\
+	Demostración.-}\; Ya que $\vec{b}$ y $\vec{c}$ son linealmente independientes, entonces 
+	$$s_1\vec{b}+t_1\vec{c}=0. \qquad \mbox{para}\; r_1,r_2=0.$$
+	Por otro lado se sabe que $\vec{a},\vec{b}$ y $\vec{c}$ son linealmente dependientes, de esta manera obtenemos: 
+	$$r\vec{a}+s_2\vec{b}+t_2\vec{c}=0,\qquad \mbox{para todo real}\;\; r \mbox{ o } s_2 \mbox{ o } t_2\neq 0$$
+	Luego, sea $r=-1$. De donde, 
+	$$-\vec{a}+s_2\vec{b}+t_2\vec{c}=s_1\vec{b}+s_1\vec{c}$$
+	Por lo tanto 
+	$$\vec{a}=(s_2-s_1)\vec{b}+(t_2-t_1)\vec{c}$$
+
+	Así, concluimos que existe números reales $s=(s_2-s_1)\;$ y $\;t=(t_2-t_1)$ tal que 
+	$$\vec{a}=s\vec{b}+t\vec{c}.$$\\
+
+\end{enumerate}

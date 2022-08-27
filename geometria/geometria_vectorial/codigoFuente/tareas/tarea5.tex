@@ -1,0 +1,27 @@
+\begin{enumerate}[\bfseries \mbox{Ejercicio} 1.]
+
+    %---------- Ejercicio 1 ----------
+    \item \textbf{Demuestre que \boldmath $\Proy_{\vec{c}}=\Proy_{\vec{c}}\vec{a}+\Proy_{\vec{c}}\vec{b}$.\\\\
+	Demostración.-}\; Sean $\vec{a},\vec{b},\vec{c}\in V_n$. Por definición se tiene,
+	$$\begin{array}{rcl}
+	    \Proy_{\vec{c}}(\vec{a}+\vec{b})&=&\dfrac{(\vec{a}+\vec{b}\circ \vec{c}}{\|\vec{c}\|^2}\cdot \vec{c}\\\\
+					    &=&\dfrac{\vec{a}\circ \vec{c}+\vec{b}\circ \vec{c}}{\|\vec{c}\|^2}\cdot \vec{c}\\\\
+					    &=&\left(\dfrac{\vec{a}\circ \vec{c}}{\|\vec{c}\|^2}+\dfrac{\vec{b}\circ \vec{c}}{\|\vec{c}\|^2}\right)\cdot \vec{c}\\\\
+					    &=&\dfrac{\vec{a}\circ \vec{c}}{\|\vec{c}\|^2}\cdot \vec{c}+\dfrac{\vec{b}\circ \vec{c}}{\|\vec{c}\|^2}\cdot \vec{c}\\\\
+			   &=&\Proy_{\vec{c}} \vec{a}+\Proy_{\vec{c}} \vec{b}.\\\\
+	\end{array}$$
+	\vspace{.6cm}
+
+    %---------- Ejercicio 2 ----------
+    \item \textbf{\boldmath Si $\vec{b} \parallel \vec{c} \neq \vec{0}$. Muestre que $\Proy_{\vec{b}} \vec{a} = \Proy_{\vec{b}} \vec{a}$.\\\\
+	Demostración.-}\; Sean $\vec{a},\vec{b},\vec{c}\in V_n$. Por definición y dado que $\vec{b}=r\vec{c}$ para $r\in V\;r\neq 0$ se tiene,
+	$$\begin{array}{rcl}
+	    \Proy_{\vec{b}} \vec{a} &=& \dfrac{\vec{a}\circ \vec{b}}{\|\vec{b}\|^2}\cdot \vec{b}\\\\
+				    &=&\dfrac{\vec{a}\circ (r\vec{c})}{\|r\vec{c}\|^2}\cdot (r\vec{c})\\\\
+				    &=&\dfrac{r^2(\vec{a}\circ \vec{c})}{|r^2|\|\vec{c}\|^2}\cdot \vec{c}\\\\
+				    &=&\dfrac{\vec{a}\circ \vec{c}}{\|\vec{c}\|^2}\cdot \vec{c}\\\\
+				    &=&\Proy_{\vec{c}}\vec{a}.\\\\
+	\end{array}$$
+
+
+\end{enumerate}

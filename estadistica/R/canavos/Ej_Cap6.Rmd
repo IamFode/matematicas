@@ -193,3 +193,38 @@ Diremos que $X$ e $Y$ no son estadísticamente independientes.
 
 # 6.5.
 Sean $X$ e $Y$ dos variables aleatorias discretas en donde los posibles valores que estas pueden tomar son $-1$, $0$ y $1.$ En la siguiente tabla se dan las probabilidades conjuntas para todos los posibles valores de $X$ e $Y$.
+
+$$\begin{array}{c|r|ccc|}
+  &&&X&\\
+  \hline
+  && -1 & 0 & 1 \\
+  \hline
+  &-1&1/16&3/16&1/16\\
+  Y&0&3/16&0&3/16\\
+  &1&1/16&3/16&1/16
+\end{array}$$
+
+### a)
+Obtener las funciones de probabilidad marginal $p_X(X)$ y $P_Y(y)$.
+
+Respuesta.- Para $p_X(x)$ se tiene al sumar las tres columnas de la tabla. Lo propio con $p_Y(y)$.
+$$p_X(x)=p_Y(y)=\dfrac{5}{16},\dfrac{6}{16},\dfrac{5}{16},\; x=y=-1,0,1.$$
+
+### b)
+¿Las variables aleatorias $X$ e $Y$ son estadísticamente independientes?
+
+Respuesta.- No, ya que $p_{XY}(x,y)\neq p_X(x)p_X(y)$.
+
+### c)
+Obtener $Cov(X,Y)$
+
+Respuesta.- 
+
+```{r}
+(-1*-1*1/16+-1*1*1/16+1*-1*1/16+1/16)-(5/16*-1+6/16*0+5/16*1)*2 
+```
+
+## 6.6.
+Para las funciones de densidad conjuntas de probabilidad del ejercicio 6.3., obtener $Cov(X,Y)$ y $\rho(X,Y)$.
+
+Respuesta.-

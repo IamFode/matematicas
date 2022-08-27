@@ -82,3 +82,134 @@ Así puede determinarse la distribución acumulativa marginal de $X$ dejando que
 
 \section{Valores esperados y momentos para distribuciones bivariadas}
 
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias que se distribuyen conjuntamente. El valor esperado de una función de $X$ y de $Y$, $g(x,y)$, se define como
+	$$E\left[g(X,Y)\right] = \sum_x \sum_y g(x,y) p(x,y)$$
+	si $X$ e $Y$ son discretas, o
+	$$E\left[g(X,Y)\right]=\int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)f(x,y)\; dy \, dx$$
+	si $X$ e $Y$ son continuas, en donde $p(x,y)$ y $f(x,y)$ son las funciones de probabilidad y de densidad de probabilidad conjuntas, respectivamente.\\
+    \end{def.}
+\end{tcolorbox}
+
+Como consecuencia de la definición anterior, el \textbf{\boldmath r-ésimo momento de $X$ alrededor del cero es}
+
+\begin{tcolorbox}
+    $$E\left(X^r\right)=\int_{-\infty}^\infty x^r f(x,y)\; dy\,dx = \int_{-\infty}^\infty x^r f_X(x)\; dx.$$
+\end{tcolorbox}
+
+De manera similar
+
+\begin{tcolorbox}
+    $$E\left(Y^r\right)= \int_{-\infty}^\infty y^r f_Y(y)\; dy.$$
+\end{tcolorbox}
+
+El \textbf{\boldmath r y s-ésimo momento producto de $X$ e $Y$ alrededor del origen} es:
+
+\begin{tcolorbox}
+    $$\E\left(X^r Y^s\right) = \int_{-\infty}^\infty \int_{-\infty}^\infty x^r y^s f(x,y)\; dy\; dx.$$
+\end{tcolorbox}
+
+
+
+y \textbf{alrededor de las medias} es
+\begin{tcolorbox}
+    $$\E\left[(X-\mu_X)^r(Y-u_Y)^s\right] = \int_{-\infty}^\infty \int_{-\infty}^\infty (x-\mu_X)^r (y-\mu_Y)^s f(x,y)\; dy\, dx.$$
+\end{tcolorbox}
+
+De particular importancia es el momento producto alrededor de las medias cuando $r=s=1$. Este momento producto recibe el nombre de \textbf{\boldmath covarianza de $X$ e $Y$}, y se encuentra definido por
+\begin{tcolorbox}
+    $$\Cov(X,Y) = \E\left[(X-\mu_X)(Y-\mu_Y)\right].$$
+\end{tcolorbox}
+
+Al igual que la varianza, que es un medida de dispersión de una variable aleatoria, la covarianza es una medida de la variabilidad conjunta de $X$ e $Y$. De esta forma, la covarianza es una medida de asociación entre los valores de $X$ e $Y$ y sus respectivas dispersiones.\\
+
+Desarrollando el miembro derecho de $\Cov(X,Y) = \E\left[(X-\mu_X)(Y-\mu_Y)\right]$ se tiene
+
+$$\E\left[(X-\mu_X)(Y-\mu_Y)\right]=\E\left[XY-X\mu_X - Y\mu_X + \mu_X \mu Y_Y\right] = E(XY)-\mu_X\mu_Y;$$
+de esta forma
+\begin{tcolorbox}
+    $$\Cov(X,Y) = \E(XY)-\E(X)\E(Y).$$
+\end{tcolorbox}
+
+Si la covarianza de $X$ e $Y$ se divide por el producto de las desviaciones estándar de $X$ e $Y$, el resultado es una cantidad sin dimensiones que recibe el nombre de \textbf{coeficiente de correlación} y que se denota por $\rho(X,Y)$:
+
+\begin{tcolorbox}
+    $$\rho(X,Y)=\dfrac{\Cov(X,Y)}{\sigma_X \sigma_Y}.$$
+\end{tcolorbox}
+
+Se puede demostrar que el coeficiente de correlación se encuentra contenido en el intervalo $-1\leq \rho\leq 1.$ De hecho $\rho$ es la covarianza de dos variables aleatorias estandarizadas $X'$ e $Y'$ en donde 
+$$X'=\dfrac{X-\mu_X}{\sigma_X} \quad \mbox{e} \quad Y'=\dfrac{Y-\mu_Y}{\sigma_Y}.$$
+
+Esto significa que el coeficiente de correlación es sólo una medida estandarizada de la asociación lineal que existe entre las variables aleatorias $X$ e $Y$ en relación con sus dispersiones. El valor $\rho=0$ indica la ausencia de cualquier asociación lineal, mientras que los valores $-1$ y $1$ indican relaciones lineales perfectas negativas y positivas, respectivamente. 
+
+
+\section{Variables aleatorias estadísticamente independientes}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias con una distribución conjunta. Se dice que $X$ e $Y$ son estadísticas independientes si y sólo si,
+	\begin{center}
+	    $p(x,y)=p_X(x)p_Y(y)$ si $X$ e $Y$ son discretas
+	\end{center}
+	o bien 
+	\begin{center}
+	    $f(x,y)=f_X(x)f_Y(y)$ si $X$ e $Y$ son continuas, 
+	\end{center}
+	para todo $x$ e $y$, en donde $p(x,y)$ y $f(x,y)$ son las funciones bivariadas de probabilidad y de densidad de probabilidad, respectivamente, y en donde $p_X(x),\; p_Y(y),\; f_X(x)$ y $f_Y(y)$ son las funciones de probabilidad marginal o de densidad de probabilidad marginal apropiadas.
+    \end{def.}
+\end{tcolorbox}
+
+Se desprende de esta definición que si $X$ e $Y$ son estadísticamente independientes, la probabilidad conjunta
+$$\begin{array}{rcl}
+    P(a<X<b,c<Y<d) &=& \displaystyle\int_a^b \int_c^d f(x,y)\; dy\, dx\\\\
+		   &=& \displaystyle\int_a^b \int_c^d f_X(x)f_Y(y)\; dy \, dx\\\\
+		   &=& \displaystyle\int_a^b f_X(x)\; dx \int_c^d f_Y(y)\; dy\\\\
+		   &=& P(a<X<b) P(c<Y<d).\\\\
+\end{array}$$
+
+Por la misma condición,
+$$\begin{array}{rcl}
+    \E(XY) &=& \displaystyle\int_{-\infty}^\infty \int_{-\infty}^\infty xyf(x,y)\; dy\, dx\\\\
+	   &=& \displaystyle\int_a^b \int_c^d xyf_X(x)f_Y(y)\; dy \, dx\\\\
+	   &=& \displaystyle\int_c^d xf_X(x)\; dy \int_a^b yf_Y(y)\; dx\\\\
+	   &=& \E(X)\E(Y).\\\\
+\end{array}$$
+
+Si $X$ e $Y$ son estadísticamente independientes, entonces $\Cov(X,Y)=\rho(X,Y)=0.$ Sin embargo la proposición inversa no es cierta.\\\\
+Sean $X$ e $Y$ dos variables aleatorias continuas con una función de densidad conjunta de probabilidad $f(x,y)$. El \textbf{valor esperado de una función lineal} de $X$ e $Y$ es
+$$\begin{array}{rcl}
+    E(eX+bY) &=& \displaystyle \int_{-\infty}^\infty \int_{-\infty}^\infty (ax+by) f(x,y)\; dy\, dx\\\\
+	     &=& a\displaystyle \int_{-\infty}^\infty \int_{-\infty}^\infty xf(x,y)\; dy\; dx + b\displaystyle \int_{-\infty}^\infty \int_{-\infty}^\infty yf(x,y)\; dy\, dx \\\\
+	     &=& a\E(X) + b\E(Y).\\\\
+\end{array}$$
+para cualquier valor de las constantes $a$ y $b$.\\
+
+La varianza de una función lineal de $X$ e $Y$ es
+$$\begin{array}{rcl}
+    \Var(aX+bY)&=&\E(aX+bY)^2 - E^2(aX+bY)\\
+	       &=&\E(a^2X^2+2abXY + b^2Y^2)- \left[a\E(X)+b\E(Y)\right]^2\\
+	       &=&a^2E\left(X^2\right)+2ab\E(XY)+b^2\E\left(Y^2\right)-a^2\E^2(X)-2ab\E(X)\E(XY)-b^2\E^2(Y)\\
+	       &=&a^2\Var(X)+b^2\Var(Y)+2ab\Cov(X,Y).\\
+\end{array}$$
+
+Además \textbf{\boldmath si $X$ e $Y$ son estadísticamente independientes,}
+
+\begin{tcolorbox}
+    $$\Var(aX+bY)=a^2\Var(X)+b^2\Var(Y).$$
+\end{tcolorbox}
+
+La generalización de estos resultados a $n$ variables aleatorias se hace por inducción y se establece en el siguiente teorema:
+
+\begin{teo}
+    Sean $X_1,X_2,\ldots,X_n$ $n$ variables aleatorias con una función de densidad conjunta de probabilidad $f(x_1,f_2,\ldots,x_n)$. Entonces
+    $$\begin{array}{rcl}
+	\E\left[\displaystyle\sum_{i=1}^n a_iX_i\right]&=&\displaystyle \sum_{i=1}^n\left[a_i\E(X_i)\right]\\\\
+	\Var\left[\displaystyle\sum_{i=1}^n a_iX_i\right]&=&\displaystyle \sum_{i=1}^n a_i^2 \Var(X_i)+\sum_{i=1}^n \sum_{i=1}^n a_ia_j \Cov(x_i,X_j)\\\\\
+    \end{array}$$
+    para cualquier constante $a_i,\; i=1,2,\ldots,n.$
+\end{teo}
+
+
+\section{Distribuciones de probabilidad condicional}
+

@@ -887,12 +887,88 @@
 
 	     %---------- (a)
 	     \item Si $x_1,\ldots , x_n$ son números distintos, demuestre que existe una función polinómica $f$ de grado $2n-1$, tal que $f\left(x_j\right)=f'\left(x_j\right)=0$ para $j\neq i$, y $f(x_i)=a_i$ y $f'(x_i)=b_i$.\\\\
-		 Demostración.-\; 
+		 Demostración.-\; Notemos que  $f$ tiene la forma siguiente,
+		 $$f(x)=\prod_{j=1,j\neq i}^n (x-x_j)^2g(x)$$
+		 para alguna función polinómica $g$ (cada $x_j$, $j\neq i$ es una raíz doble según el problema 24, capítulo 10, Spivak). Ahora, ya que $f$ es de grado $2n-1$ entonces $g$ es de grado $1$. Por lo tanto, $g$ tiene que ser de la forma $g(x)=ax+b$ para algún $a,b\in \mathbb{R}$. Por lo que se tiene
+		 $$f(x)=\prod_{j=1, j\neq i}^n (x-x_j)^2(ax+b)=h(x)(ax+b)$$
+		 donde $\displaystyle h(x)=\prod_{j=1, j\neq i}^n (x-x_j)^2$. Luego, usando la regla de la cadena  se tiene,
+		 $$f'(x)=h'(x) g(x)+h(x)g'(x).$$
+		 se sigue que
+		 $$f(x_i)=h(x_i)(ax_i+b)=a_i \quad \mbox{y} \quad f'(x_i)=h'(x_i)(ax_i+b)+h(x_i)a=b_i$$
+		 de donde, se tiene
+		 $$\begin{array}{rcl}
+		     \left[h(x_i)x_i\right]a+h(x_i)b&=&a_i\\
+		     \left[h'(x_i)x_i+h(x_i)\right]a+h'(x_i)b&=&b_i\\
+		 \end{array}$$
+
+		 Será siempre posible resolver estas ecuaciones, ya que 
+		 $$\left[h(x_i)x_i\right]h'(x_i)-\left[h'(x_i)x_i+h(x_i)\right]h(x_i)=\left[-h(x_i)\right]^2\neq 0.$$
+		 Es decir, se mantiene la última desigualdad desde $\displaystyle h(x_i)=\prod_{j=1,j\neq i}(x_i-x_j)^2\neq 0$. Por lo tanto las ecuaciones lineales tienen solución, digamos $(a,b)\in \mathbb{R}^2$. Entonces existe tal $g$ por lo que terminamos la prueba.\\\\
 
 	     %---------- (b)
 	     \item Demuestre que existe una función polinómica $f$ de grado $2n-1$ con $f(x_i)=a_i$ y $f'(x_i)=b_i$ para todo $i$.\\\\
-		 Demostración.-\;
+		 Demostración.-\; Para $\leq i \leq n$ sea $f_i$ una función polinomial como se construyo en la parte (a). Entonces para cada $i=1,\ldots,n$ se tiene
+		 $$f_(x_i)\quad \mbox{y}\quad f_i'(x_i)=b_i$$
+		 como también $f_j(x_i)=f_j(x_i)=0$ para $j\neq i$. Ahora definamos la función polinomial
+		 $$f=f_1+\ldots f_n.$$
+		 Dado que dos funciones polinómicas también es una función polinomial entonces
+		 $$f(x_i)=f_1(x_i)+\ldots + f_n(x_i)=f_i(x_i)=a_i$$
+		 Para $j\neq i$ donde se cumple la penúltima igualdad ya que $f_j(x_i)=0$, tanto como
+		 $$f(x_i)=f'_1(x_i)+\ldots + f'_n(x_i)=f'_i(x_i)=b_i,$$
+		 también se cumple la penúltima igualdad ya que $f'(x_i)=0$. Por lo que se completa la prueba.\\\\
 	    
 	 \end{enumerate}
+
+    %-------------------- 27.
+     \item Suponga que $a$ y $b$ son dos raíces consecutivas de una función polinómica $f$, pero que $a$ y $b$ no son raíces dobles, de manera que podemos escribir $f(x)=(x-a)(x-b)g(x)$ donde $g(a)\neq 0$ y $g(b)\neq 0.$
+
+     Este teorema fue demostrado por el matemático francés Rolle, en relación con el problema de la aproximación de raíces de polinomios, pero el resultado no se definió en un principio en términos de derivadas. De hecho, Rolle fue uno de los matemáticos que nunca aceptó las nuevas ideas del cálculo infinitesimal. Su actitud no debe juzgarse como demasiado obstinada, ya que durante un período de cien años nadie fue capaz de definir los límites en otros términos que no fueran los que lindaban con la mística, pero en general la historia ha sido particularmente benévola con Rolle; su nombre se ha vinculado con un resultado mucho más general que aparecerá en el próximo capítulo y que constituye la base de los resultados teóricos más importantes del cálculo infinitesimal.
+
+	 \begin{enumerate}[(a)]
+
+	     %---------- (a)
+	     \item Demuestre que $g(a)$ y $g(b)$ tienen el mismo signo. (Recuerde que $a$ y $b$ son raíces consecutivas.)\\\\
+		 Demostración.-\; Ya que $f(x)$ no tiene raíces en $(a,b)$, por ende $g(x)$ no tiene raíces en $(a,b)$ y por el hecho de que $g(a),g(b)\neq 0$, que implica que no tendrá raíces en el intervalo cerrado $[a,b]$. Entonces $g(x)$ será positivo o negativa en $[a,b]$ y por lo tanto $g(a)$ y $g(b)$ tienen el mismo signo.\\\\
+
+	     %---------- (b)
+	     \item Demuestre que existe algún número $x$ con $a<x<b$ y $f'(x)=0$. (Dibuje un esquema para lustrar este hecho.)\\\\
+		 Demostración.-\; Derivando $f$ tenemos
+		 $$f'(x)=(x-b)g(x)+(x-a)g(x)+(x-a)(x-b)g'(x),$$
+		 con lo que 
+		 $$f'(a)=(a-b)g(a),$$
+		 $$f'(b)=(b-a)g(b).$$
+		 Por el inciso a) sabemos que $g(a)$ y $g(b)$ tienen el mismo signo, pero $f'(a)$ y $f'(b)$ tendrán signos distintos. Así pues, $f'(x)=0$ para algún $x$ de $(a,b)$ ya que $f'$ es una función continua.\\\\
+
+	     %---------- (c)
+	     \item Demuestre ahora el mismo hecho, incluso si $a$ y $b$ son raíces múltiples. Indicación: Si $f(x)=(x-a)^m (x-b)^n g(x)$ donde $g(a)\neq 0$ y $g(b)\neq 0$, considere la función polinómica $h(x)=f'(x)/(x-a)^{m-1}(x-b)^{n-1}.$\\\\
+		 Demostración.-\; Similar al inciso b) Puesto que,
+		 $$f'(x)=m(x-a)^{m-1}(x-b)^n g(x) + (x-a)^m n(x-b)^{n-1}g(x)+(x-a)^m (x-b)^n g'(x).$$
+		 De donde tenemos
+		 $$h(a)=m(a-b)g(a),$$
+		 $$h(b)=n(a-b)g(a),$$
+		 con lo que $h(a)$ y $h(b)$ tienen signos distintos y por lo tanto $h(x)=0$ para algún $x$ de $(a,b)$, lo cual implica que $f'(x)=0.$\\\\
+
+	 \end{enumerate}
+
+    %-------------------- 28.
+     \item Supóngase que $f(x)=xg(x)$ para alguna función $g$ que es continua en $0$. Demuestre que $f$ es diferenciable en $0$, y halle $f'(0)$ en función de $g$.\\\\
+	 Demostración.-\; Por la definición de diferenciabilidad de $f$ en $0$ se tiene,
+	 $$f'(0)=\lim_{h\to 0} \dfrac{(x+h)g(x+h)-xg(x)}{h} =\lim_{h\to 0} \dfrac{(0+h)g(0+h)-0g(0)}{h} = \lim_{h\to 0} =\dfrac{hg(h)}{h} = g(0).$$
+	 Luego debido a que $g$ es continuo en $0$. Demostramos que $f$ es diferenciable en $0$ tal que 
+	 $$f'(0)=g(0).$$\\
+
+    %-------------------- 29.
+     \item Supongase que $f$ es diferenciable en $0$ y que $f(0)=0$. Demuestre que $f(x)=xg(x)$ para alguna función $g$ continua en $0$. Indicación: ¿Qué ocurre si intenta escribir $g(x)=f(x)/x$?.\\\\
+	 Demostración.-\; Definamos $g:\mathbb{R}\to \mathbb{R}$ como sigue,
+	 $$g(x)=\left\{\begin{array}{rcl}
+	    \dfrac{f(x)}{x} & \mbox{si} & x\neq 0,\\\\
+	    f'(0) & \mbox{si} & x=0.
+	 \end{array}\right.$$
+	 Notemos que $g$ está bien definida. Luego $g$ es continua en $0$, por lo tanto
+	 $$\lim_{x\to 0}g(x)=\lim_{x\to 0}\dfrac{f(x)}{x}=f'(0).$$
+	 donde se cumple la última igualdad ya que $f$ es diferenciable en $0$ y $f(0)=0$, así pues por el hecho de que $g=(0)=f'(0)$ concluimos que $g$ es continuo en $0$.\\\\
+
+    %-------------------- 30.
+     \item 
 
 \end{enumerate}
