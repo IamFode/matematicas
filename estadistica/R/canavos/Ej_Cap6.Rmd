@@ -227,4 +227,33 @@ Respuesta.-
 ## 6.6.
 Para las funciones de densidad conjuntas de probabilidad del ejercicio 6.3., obtener $Cov(X,Y)$ y $\rho(X,Y)$.
 
-Respuesta.-
+Respuesta.- Para poder hallar la covarianza y el coeficiente de correlación tenemos que hallar $E(X),E(Y),E\left(x^2\right),E\left(Y^2\right)$ y $E(XY)$.
+
+$$\begin{array}{rcl}
+  E(X)&=&\displaystyle\int_1^2\int_1^3 x\left(\dfrac{3x-y}{5}\right)\; dy\, dx = \displaystyle\int_1^2\dfrac{x}{5} \left(3xy-\dfrac{y^2}{2}\right)\bigg|_1^3 \; dx\\\\
+  &=&\dfrac{1}{5}\displaystyle\int_1^2 6x^2-4x  \; dx=\dfrac{1}{5}\left(\dfrac{6x^3}{3}-\dfrac{4x^2}{2}\right)\bigg|_1^2\\\\
+  &=&\dfrac{1}{5}\left(16-2-8+2\right)=\dfrac{8}{5}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+$$\begin{array}{rcl}
+  E(Y)&=&\displaystyle\int_1^2\int_1^3 y\left(\dfrac{3x-y}{5}\right)\; dy\, dx=\dfrac{1}{5}\displaystyle\int_1^2\int_1^3 3xy-y^2 \;dy\, dx\\\\
+  &=&\dfrac{1}{5}\displaystyle\int_1^2 \left(\dfrac{3xy^2}{2}-\dfrac{y^3}{3}\right)\bigg|_1^3 \; dx=\dfrac{1}{5}\displaystyle\int_1^212x-\dfrac{26}{3} \; dx\\\\
+  &=&\dfrac{1}{5}\left(6x^2-\dfrac{26x}{3}\right)\bigg|_1^2=\dfrac{28}{15}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) y*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+

@@ -3,24 +3,18 @@
 %----------1.
 \item \textbf{\boldmath Encontrar el punto final de $\vec{a}=(7,6)$ si el punto inicial es $P_0(2,-1)$.\\\\
     Respuesta.-}\; Sea $\vec{a}=P_1-P_0$ y $P_1=(x,y)$, entonces podemos hallar los vectores de la siguiente manera,
-    \begin{center}
-    \begin{tabular}{rcl}
-	$x-2$&$=$&$7$\\
-	$y+1$&$=$&$6$\\
-    \end{tabular}
-    \end{center}
+	$$x-2=7 \quad ; \quad y+1=6$$
     de donde $x=9, \; y=5$ y por lo tanto $$P_1=(9,5)$$\\
 
 %----------2.
 \item \textbf{\boldmath Sean $\vec{u}=(1,3)$,  $\vec{v}=(2,1)$ y $\vec{w}=(4,-1)$. Encontrar las componentes del vector $\vec{x}$ que satisfacen $2\vec{u}-\vec{v}+\vec{x}=7\vec{x}+\vec{w}$.\\\\
-    Respuesta.-}\; Despejando $\vec{x}$ obtenemos $$6\vec{x}=2\vec{u}-\vec{v}-\vec{w} \quad \Longrightarrow\quad 6\vec{x}=(2,6)-(2,1)-(4,-1)$$ 
-    de donde $$6\vec{x}=(0,5)-(4,-1)\quad \Longrightarrow \quad 6\vec{x}=(-4,6) \quad \Longrightarrow \quad \vec{x}=\left(-\dfrac{2}{3},1\right)$$\\
+    Respuesta.-}\; Despejando $\vec{x}$ obtenemos $$6\vec{x}=2\vec{u}-\vec{v}-\vec{w} \quad \Rightarrow\quad 6\vec{x}=(2,6)-(2,1)-(4,-1)$$ 
+    de donde $$6\vec{x}=(0,5)-(4,-1)\quad \Rightarrow \quad 6\vec{x}=(-4,6) \quad \Rightarrow \quad \vec{x}=\left(-\dfrac{2}{3},1\right)$$\\
 
 %----------3.
 \item \textbf{\boldmath Demuéstrese que: $0\vec{x}=\vec{0}$ y $r\vec{0}=\vec{0}$.\\\\
     Demostración.-}\; sea $\vec{x}\in V_n$ entonces $0\vec{x}=0(x_1,x_2,...,x_n)$, luego por la multiplicación de un número real por un vector tenemos, $$0\vec{x}=(0\cdot x_1,0\cdot x_2,...,0\cdot x_n)=(0,0,...,0)$$
-    y por lo tanto se demuestra que $$0\vec{x}=\vec{0}$$\\
-    Por otro lado sea $r\in \mathbb{R}$, por lo tanto $$r\vec{0}=r(0,0,...,0)=(r\cdot 0,r\cdot 0,...,r\cdot)=(0,0,...,0)$$
+    y por lo tanto se demuestra que $0\vec{x}=\vec{0}.$ Por otro lado sea $r\in \mathbb{R}$, por lo tanto $$r\vec{0}=r(0,0,...,0)=(r\cdot 0,r\cdot 0,...,r\cdot)=(0,0,...,0)$$
     de modo que $$r\vec{0}=\vec{0}$$\\
 
 %----------4.
@@ -28,30 +22,32 @@
 \begin{enumerate}[\bfseries a)]
 
     %-----a)
-    \item \textbf{\boldmath Si $\vec{a}+\vec{b}=\vec{a}+\vec{c} \quad \Longrightarrow \quad \vec{b}=\vec{c}$.\\\\
-	Demostración.-}\; Sea $\vec{a},\vec{b},\vec{c} \in V_n$, entonces por el inverso aditivo en vectores e hipótesis tenemos ,
+    \item \textbf{\boldmath Si $\vec{a}+\vec{b}=\vec{a}+\vec{c} \quad \Rightarrow \quad \vec{b}=\vec{c}$.\\\\
+	Demostración.-}\; Sea $\vec{a},\vec{b},\vec{c} \in V_n$, entonces por el inverso aditivo e hipótesis tenemos ,
 	\begin{center}
-	    \begin{tabular}{rcl}
-		$\vec{b}$&$=$&$(\vec{b}+\vec{a})-\vec{a}$\\
-		&$=$&$(\vec{a}+\vec{b})-\vec{a}$\\
-		&$=$&$(\vec{a}+\vec{c})-\vec{a}$\\
-		&$=$&$\vec{c}+(\vec{a}-\vec{a})$\\
+	    \begin{tabular}{rcl|l}
+		$\vec{b}$&$=$&$(\vec{b}+\vec{a})-\vec{a}$&\\
+			 &$=$&$(\vec{a}+\vec{b})-\vec{a}$&\\
+			 &$=$&$(\vec{a}+\vec{c})-\vec{a}$&$\vec{a}+\vec{b}=\vec{a}+\vec{c}$\\
+			 &$=$&$\vec{c}+(\vec{a}-\vec{a})$&\\
 		&$=$&$\vec{c}$\\\\
 	    \end{tabular}
 	\end{center}
+	\vspace{0.5cm}
 
     %-----b)
-    \item \textbf{\boldmath Si $r\vec{x}=\vec{0}\quad \Longrightarrow \quad r=0 \lor \vec{x}=\vec{0}$.\\\\
-	Demostración.-}\; Será lo mismo demostrar $r\vec{x}=\vec{0}  \land r\neq 0\;\Longrightarrow\;\vec{x}=\vec{0}$. Esto por leyes lógicas.\\\\
+    \item \textbf{\boldmath Si $r\vec{x}=\vec{0}\quad \Rightarrow \quad r=0 \lor \vec{x}=\vec{0}$.\\\\
+	Demostración.-}\; Será lo mismo demostrar $r\vec{x}=\vec{0}  \land r\neq 0\;\Rightarrow\;\vec{x}=\vec{0}$.\\ 
+
 	Sea $r\in \mathbb{R}$ y $\vec{x} \in V_n$, entonces $$r\vec{x}=0 \;\; \mbox{implica que}\;\;  \vec{x}=\dfrac{\vec{0}}{r}, \;\; \mbox{ya que}\;\; r\neq 0.$$ Luego se sigue que $$\vec{x}=\vec{0}$$\\
 
     %-----c)
-    \item \textbf{\boldmath Si $r\vec{x}=s\vec{x}\;\land\; \vec{x}\neq 0 \quad \Longrightarrow \quad r=s$.\\\\
-	Demostración.-}\; Reescribiendo la proposición se tiene: Si $r\vec{x}=s\vec{x}\; \land \; r\neq s \;\; \Longrightarrow \; \; \vec{x}=0$.\\\\ 
-	De donde se tiene $$\vec{x}=(r-s)\vec{x} \; \Longrightarrow \; \vec{x}=r\vec{x}-s\vec{x} \; \; \mbox{ya que }\; r\neq s$$ 
-	y por lo tanto $$\vec{x}=r(\vec{x}-\vec{x})$$
-	se sigue $$\vec{x}=r(0) \; \Longrightarrow \; \vec{x}=0$$
-	debido a la unicidad y existencia del inverso aditivo. Con esto se demuestra la proposición dada.\\\\
+    \item \textbf{\boldmath Si $r\vec{x}=s\vec{x}\;\land\; \vec{x}\neq 0 \quad \Rightarrow \quad r=s$.\\\\
+	Demostración.-}\; Reescribiendo se tiene: Si $r\vec{x}=s\vec{x}\; \land \; r\neq s \;\; \Rightarrow \; \; \vec{x}=0$.\\\\ 
+	De donde se tiene $$\vec{x}=(r-s)\vec{x} \; \Rightarrow \; \vec{x}=r\vec{x}-s\vec{x} \; \; \mbox{ya que }\; r\neq s,$$ 
+	por lo tanto $$\vec{x}=r(\vec{x}-\vec{x}).$$
+	Aplicando la unicidad y existencia del inverso aditivo, se sigue 
+	$$\vec{x}=r(0) \; \Rightarrow \; \vec{x}=0.$$\\
 
 \end{enumerate}
 
@@ -67,12 +63,12 @@
     \item \textbf{\boldmath $(3,6)$\\\\
 	Respuesta.-}\; Sea $(r_1,r_1)$ un vector, entonces para hallar vectores paralelos a $(3,6)$ utilizamos la definición como sigue,
 	\begin{center}	
-	    \begin{tabular}{rcl}
+	    \begin{tabular}{rcr}
 		$(3,6)\circ (r_1,r_2)$&$=$&$0$\\
-		$3r_1+6r_2$&$=$&$0 \qquad$ producto escalar\\
+		$3r_1+6r_2$&$=$&$0$\\
 		$3(r_1+2r_2)$&$=$&$0$\\
 		$r_1+2r_2$&$=$&$0$\\
-		$r_1$&$=$&$-2r_2$\qquad (1)\\
+		$r_1$&$=$&$-2r_2$\\
 	    \end{tabular}
 	\end{center}
 	de donde tomamos valores para $r_2$, reemplazamos en (1) y obtendremos $n$ vectores paralelos a $(3,6)$.\\\\
@@ -104,8 +100,8 @@
     %-----d)
     \item \textbf{\boldmath $(a_1,a_2)$\\\\
 	Respuesta.-}\; Análogo a los anteriores incisos se tiene,
-	    $$(a_1,a_2)\circ (r_1,r_2)=0 \quad \Longrightarrow \quad 
-	    a_1r_1 + a_2r_2=0 \quad \Longrightarrow \quad
+	    $$(a_1,a_2)\circ (r_1,r_2)=0 \quad \Rightarrow \quad 
+	    a_1r_1 + a_2r_2=0 \quad \Rightarrow \quad
 	    \left\{ \begin{array}{l} a_1=-a_2r_2/r_1 \\ a_2=-a_1r_1/r_2 \\ r_1=-a_2r_2/a_1 \\ r_2=-a_1r_1/a_1 \end{array}\right.$$
 
 	    \vspace{.6cm}
@@ -118,13 +114,16 @@
 
     %-----a)
     \item \textbf{\boldmath $\vec{u}=-7i+3j+k, \quad \vec{v}=2i+4k$.\\\\
-	Respuesta.-}\;
-	$$\vec{u}\times \vec{v} = \left|\begin{array}{ccc}
+	Respuesta.-}
+	$$\begin{array}{rcl}
+	    \vec{u}\times \vec{v} &=& \left|\begin{array}{ccc}
 	    i&j&k\\
 	    7&3&1\\
 	    2&0&4\\
-	\end{array}\right|=\left|\begin{array}{cc}3&1\\ 0&4 \end{array}\right|i - \left|\begin{array}{cc} 7&1\\2&4 \end{array}\right|j + \left|\begin{array}{cc} 7&3\\2&0 \end{array}\right|k=(3\cdot 4 - 1\cdot 0)i - (7\cdot 4-2\cdot 1)j+(7\cdot 0 - 3\cdot 2)k$$
-	y por lo tanto el vector que deseamos encontrar es $$\vec{u}\times \vec{v}=(12,-26,-6)$$\\
+	    \end{array}\right|=\left|\begin{array}{cc}3&1\\ 0&4 \end{array}\right|i - \left|\begin{array}{cc} 7&1\\2&4 \end{array}\right|j + \left|\begin{array}{cc} 7&3\\2&0 \end{array}\right|k\\\\
+			      &=&(3\cdot 4 - 1\cdot 0)i - (7\cdot 4-2\cdot 1)j+(7\cdot 0 - 3\cdot 2)k.
+    \end{array}$$
+	Por lo tanto el vector que deseamos encontrar es $$\vec{u}\times \vec{v}=(12,-26,-6)$$\\
 
     %-----b)
     \item \textbf{\boldmath $\vec{u}=(-1,-1,-1), \quad \vec{v}=(2,0,2)$\\\\
@@ -140,16 +139,19 @@
 
 %----------8.
 \item \textbf{\boldmath Encontrar todos los vectores posibles de longitud $1$ ortogonales tanto a $\vec{a}=(3,-2,1)$ como a $\vec{b}=(-2,1,-3)$.\\\\
-    Respuesta.-}\;  Primeramente encontraremos el producto vectorial para luego utilizar el teorema $\dfrac{\vec{a}\times \vec{b}}{|\vec{a}\times \vec{b}|}=1$
+    Respuesta.-}\; Partamos encontrando el producto vectorial de los vectores $\vec{a}$ y $\vec{b}.$ 
+
     $$\vec{a}\times \vec{b} = \left|\begin{array}{rrr}
 	i&j&k\\
 	3&-2&1\\
 	-2&1&-3\\
     \end{array}\right|=5i+7j-k=(5,7,-1).$$
-    Luego $$|\vec{a}\times \vec{b}|=\sqrt{5^2+7^2+1^2}=5\sqrt{3}$$
-    de donde, $$\dfrac{\vec{a}\times \vec{b}}{|\vec{a}\times \vec{b}|}=\left(\dfrac{1}{\sqrt{3}},\dfrac{7}{5\sqrt{3}},-\dfrac{1}{5\sqrt{3}}\right)$$
-    por lo tanto los vectores de longitud $1$ ortogonales a $\vec{a}$ y $\vec{b}$, son $$\left(\dfrac{1}{\sqrt{3}},\dfrac{7}{5\sqrt{3}},-\dfrac{1}{5\sqrt{3}}\right) \qquad \mbox{y}\qquad \left(-\dfrac{1}{\sqrt{3}},-\dfrac{7}{5\sqrt{3}},\dfrac{1}{5\sqrt{3}}\right)$$
-    El segundo vector cumple con la condición dada ya que es el vector contrario al encontrado primeramente.\\\\
+
+    Esto nos garantiza que el vector $\vec{a}\times \vec{b}$ es ortogonal tanto a $\vec{a}$, como a $\vec{b}$. Luego podemos encontrar cualquier vector de longitud $1$ dividiendo el vector por su modulo. Es decir, 
+    $$\dfrac{\vec{a}\times \vec{b}}{\|\vec{a}\times \vec{b}\|}=1.$$ 
+    de donde, $$\dfrac{\vec{a}\times \vec{b}}{|\vec{a}\times \vec{b}|}=\dfrac{(5,7,-1)}{\sqrt{5^2+7^2+1^2}} = \dfrac{(5,7,-1)}{5\sqrt{3}} = \left(\dfrac{1}{\sqrt{3}},\dfrac{7}{5\sqrt{3}},-\dfrac{1}{5\sqrt{3}}\right).$$
+    Por lo tanto los vectores de longitud $1$ ortogonales a $\vec{a}$ y $\vec{b}$, son $$\left(\dfrac{1}{\sqrt{3}},\dfrac{7}{5\sqrt{3}},-\dfrac{1}{5\sqrt{3}}\right) \qquad \mbox{y}\qquad \left(-\dfrac{1}{\sqrt{3}},-\dfrac{7}{5\sqrt{3}},\dfrac{1}{5\sqrt{3}}\right)$$
+    El segundo vector cumple con la condición, ya que es el vector contrario a $\left(\dfrac{1}{\sqrt{3}},\dfrac{7}{5\sqrt{3}},-\dfrac{1}{5\sqrt{3}}\right)$.\\\\
 
 %----------9.
 \item \textbf{\boldmath Sean $\vec{a}=ti + j$ y $\vec{b}=4i+3j$. Encontrar el valor de $t$ tal que }
@@ -159,23 +161,23 @@
     %-----a)
     \item \textbf{\boldmath $\vec{a}$ y $\vec{b}$ sean ortogonales.\\\\
 	Respuesta.-}\; Sea $\vec{a}=ti + j=(t,1)$ y $\vec{b}=4i+3j=(4,3)$, entonces por definición de ortogonalidad tenemos 
-	$$\vec{a}\circ \vec{b} = 0 \;\; \Longrightarrow \; \; 4t+3=0 \;\; \Longrightarrow \; \; t=-3/4$$\\
+	$$\vec{a}\circ \vec{b} = 0 \;\; \Rightarrow \; \; 4t+3=0 \;\; \Rightarrow \; \; t=-3/4$$\\
 
     %-----b)
     \item \textbf{\boldmath El ángulo entre $\vec{a}$ y $\vec{b}$ sea $\pi/4$.\\\\
 	Respuesta.-}\; Aplicando $\vec{a}\circ \vec{b}=|\vec{a}||\vec{b}|\cos(\pi/4)$ tenemos, 
-	$$4t+3=\sqrt{t^2+1}\cdot \sqrt{25}\cdot \dfrac{\sqrt{2}}{2} \;\; \Longrightarrow \; \; (4t^2+3)^2=(t^2+1)\cdot\dfrac{25}{2}\cdot \dfrac{1}{2}$$
-	de donde se tiene $$7t^2+48-7=0$$
-	se sigue $$t=\dfrac{1}{7} \quad \mbox{o}\quad t=-7$$\\
+	$$4t+3=\sqrt{t^2+1}\cdot \sqrt{25}\cdot \dfrac{\sqrt{2}}{2} \;\; \Rightarrow \; \; (4t^2+3)^2=(t^2+1)\cdot\dfrac{25}{2}\cdot \dfrac{1}{2}$$
+	de donde,  $$7t^2+48-7=0.$$
+	Por lo tanto, $$t=\dfrac{1}{7} \quad \mbox{o}\quad t=-7$$\\
 
     %-----c)
     \item \textbf{\boldmath El ángulo entre $\vec{a}$ y $\vec{b}$ sea $\pi/6$.\\\\
-	Respuesta.-}\; Análogo al anterior ejercicio tenemos $$4t+3=\sqrt{t^2+1}\cdot \sqrt{25}\cdot \dfrac{\sqrt{3}}{2}\;\; \Longrightarrow \; \; (4t^2+3)^2=(t^2+1)\cdot\dfrac{25}{2}\cdot \dfrac{3}{4}\;\; \Longrightarrow \; \; -11t^2+96t-39=0$$
+	Respuesta.-}\; Análoga al anterior ejercicio tenemos $$4t+3=\sqrt{t^2+1}\cdot \sqrt{25}\cdot \dfrac{\sqrt{3}}{2}\;\; \Rightarrow \; \; (4t^2+3)^2=(t^2+1)\cdot\dfrac{25}{2}\cdot \dfrac{3}{4}\;\; \Rightarrow \; \; -11t^2+96t-39=0$$
 	de donde $$t=\dfrac{48+25\sqrt{3}}{11} \quad \mbox{o} \quad t=\dfrac{48-25\sqrt{3}}{11}$$\\
 
     %-----d)
     \item \textbf{\boldmath $\vec{a}$ y $\vec{b}$ sean paralelos.\\\\
-	Respuesta.-}\; Sea $\vec{a}=(t,1)$ y $\vec{b}=(4,3)$ entonces por definición de vectores paralelos tenemos que $$\vec{a}=c\vec{b} \quad \Longrightarrow \quad (t,1)=c(4,3) \quad \Longrightarrow \quad (t,1)=(4c,3c)$$
+	Respuesta.-}\; Sea $\vec{a}=(t,1)$ y $\vec{b}=(4,3)$ entonces por definición de vectores paralelos tenemos que $$\vec{a}=c\vec{b} \quad \Rightarrow \quad (t,1)=c(4,3) \quad \Rightarrow \quad (t,1)=(4c,3c)$$
 	de donde $$t=4c \qquad \mbox{y} \qquad 1=3c$$
 	por lo tanto $c=\dfrac{1}{3}$. Se sigue $$t=\dfrac{4}{3}$$\\
 
@@ -270,15 +272,44 @@
     \begin{enumerate}[a)]
 
 	%---------- a)
-	\item 
+	\item \textbf{\boldmath $\vec{a}\circ \left(\vec{b}\circ \vec{c}\right)=\left(\vec{a}\circ \vec{b}\right)\circ \vec{c}l.$\\\\
+	    Respuesta.-}\;
+
+	%---------- b)
+	\item \textbf{\boldmath $\|\vec{a}\circ\vec{b}\|.$\\\\
+	    Respuesta.-}\;
+
+	%---------- c)
+	\item \textbf{\boldmath $(\vec{a}\circ \vec{b})+\vec{c}$.\\\\
+	    Respuesta.-}\; 
+
+	%---------- d)
+	\item \textbf{\boldmath $k\circ \left(\vec{a}+\vec{b}.\right)$.\\\\
+	    Respuesta.-}\; 
 
     \end{enumerate}
 
 %----------22.
-\item 
+\item \textbf{ \boldmath Dado el punto fijo $A(1, 3, 5)$, el punto $P(x, y, z)$ y el vector $vec{n} = i - j + 2k$, utilice el producto escalar como ayuda para escribir una ecuación en $x, y$ y $z$ que diga lo siguiente: $\vec{n}$ y $\vec{AP}$ son perpendiculares. Simplifique entonces esta ecuación y dé una descripción geométrica del conjunto de tales puntos $P(x, y, z)$.\\\\
+    Respuesta.-}\;
 
 %----------23.
-\item 
+\item \textbf{Para \boldmath $\vec{a},\vec{b},\vec{c},\vec{d}\in \mathbb{R}^3$ demuestre que:}
+
+	\begin{enumerate}[a)]
+
+	    %---------- a)
+	    \item \textbf{\boldmath $\vec{a}\times \vec{a}=0.$\\\\
+		Respuesta.-}\;
+
+	    %---------- b)
+	    \item \textbf{\boldmath $\vec{a}\circ \left(\vec{a}\times \vec{b}\right)=0$
+		Respuesta.-}\;
+
+	    %---------- c)
+	    \item \textbf{\boldmath $\vec{a}\times \left(\vec{a}\circ \vec{b}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}.$\\\\
+		Respuesta.-}\;
+	\end{enumerate}
 
 %----------24.
 \item 

@@ -1746,6 +1746,34 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 
 \section{Aplicación del teorema del valor medio a propiedades geométricas de las funciones}
 
+\begin{teo}
+    Sea $f$ una función continua en un intervalo $[a,b]$ y que admite derivada en cada punto de un intervalo abierto $(a,b)$. Tenemos entonces:
+
+    \begin{enumerate}[a)]
+	\item Si $f'(x)>0$ para todo $x$ de $(a,b)$, $f$ es estrictamente creciente en $[a,b]$.
+	\item Si $f'(x)<0$ para todo $x$ de $(a,b)$, $f$ es estrictamente decreciente en $[a,b]$.
+	\item Si $f'(x)=0$ para algún $x$ de $(a,b)$, entonces $f$ es constante en $[a,b]$.\\
+    \end{enumerate}
+
+	Demostración.-\; Para probar a) tenemos que demostrar que $f(x)<f(y)$ siempre que $a\leq x<y\leq b$. Por consiguiente, supongamos $x<y$ y apliquemos el teorema del valor medio al intervalo cerrado $[x,y]$. Obtenemos
+	$$f(y)-f(x)=f'(c)(y-x),\quad \mbox{donde}\quad x<c<y.$$
+	Puesto que $f'(c)$ e $y-x$ son positivos, lo mismo le ocurre a $f(y)-f(x)$, y esto significa $f(x)<f(y)$, como se afirmó. La demostración de b) es parecida. Para demostrar c), utilizamos la igualdad dada haciendo $x=a$. Ya que $f'(c)=0,$ tenemos $f(y)=f(a)$ para todo $y$ en $[a,b]$, con lo que $f$ es constante en $[a,b]$.\\\\
+	Este teorema podemos emplearlo para demostrar que se presenta un extremo siempre que la derivada cambia de signo.\\\\
+\end{teo}
+
+\begin{teo}
+    Supongamos $f$ continua en un intervalo cerrado $[a,b]$ y que existe la derivada $f'$ en todo punto del intervalo abierto $(a,b)$, excepto posiblemente en un punto $c$.
+
+    \begin{enumerate}[a)]
+	\item Si $f'(x)$ es positiva para todo $x<c$ y negativa para todo $x>c$, $f$ tiene un máximo relativo en $c$.
+	\item Si, por otra parte, $f'(x)$ es negativa para todo $x<c$, y positiva para todo $x>c$, $f$ tiene un mínimo relativo en $c$.\\
+    \end{enumerate}
+    Demostración.-\; En el caso a), el teorema 4.7 nos dice que $f$ es estrictamente creciente en $[a,c]$ y estrictamente decreciente en $[c,b]$. Luego $f(x)<f(c)$ para todo $x\neq c$ en $(a,b)$, con lo que $f$ tiene un máximo relativo en $c$. Esto demuestra a) y la demostración de b) es completamente análoga.
+\end{teo}
+
+\section{Criterio de la derivada segunda para los extremos}
+
+
 
 
 

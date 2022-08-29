@@ -969,6 +969,47 @@
 	 donde se cumple la última igualdad ya que $f$ es diferenciable en $0$ y $f(0)=0$, así pues por el hecho de que $g=(0)=f'(0)$ concluimos que $g$ es continuo en $0$.\\\\
 
     %-------------------- 30.
-     \item 
+     \item Si $f(x)=x^{-n}$ para $n$ en $\mathbb{N}$, demuestre que 
+	 $$f^{(k)}(x)=(-1)^k \dfrac{(n+k-1)!}{(n-1)!}x^{-n-k}=(-1)^k k!{n+k-1 \choose k}x^{-n-k}, \quad \mbox{para } x\neq 0.$$\\
+	 Demostración.-\; Primero sacamos la derivada de $f(x)=x^{-n}$,
+	 $$f'(x)=-nx^{-n-1}.$$
+	 Demostremos por inducción. Para $k=1$ tenemos que
+	 $$f(x)=(-1) \dfrac{(n+1-1)!}{(n-1)!}x^{-n-1}=(-1) \dfrac{n(n-1)!}{(n-1)!}x^{-n-1}=-nx^{-n-1}.$$
+	 Definamos la hipótesis de inducción para $k\in \mathbb{N}$ y $x\neq 0$,
+	 $$f^{(k)} = (-1)^{k}\dfrac{(n+k-1)!}{(n-1)!}x^{-n-k}.$$
+	 Entonces, derivando una vez más tenemos que:
+	 $$\begin{array}{rcl}
+	     f^{(k+1)}&=&(-1)^k(-n-k)\dfrac{(n+k-1)!}{(n-1)!}x^{-n-k-1}\\\\
+		      &=&(-1)^{k}(-1)(n+k)\dfrac{(n+k-1)!}{(n-1)!}x^{-n-k-1}\\\\
+		      &=&(-1)^{k+1}(n+k)\dfrac{(n+k-1)!}{(n-1)!}x^{-n-k-1}\\\\
+		      &=&(-1)^{k+1}\dfrac{(n+k)!}{(n-1)!}x^{-n-(k+1)}\\\\
+		      &=&(-1)^{k+1}\dfrac{(k+1)!}{(k+1)!}\dfrac{(n+k)!}{(n+1)!}x^{-n-(k+1)}\\\\
+		      &=&(-1)^{k+1}(k+1)!\dfrac{(n+k)!}{(k+1)!(n+1)!}x^{-n-(k+1)}\\\\
+		      &=&(-1)^{k+1}(k+1)!\displaystyle{n+k\choose k+1}x^{-n-(k+1)}, \qquad \mbox{para}\; x\neq 0.\\\\
+	 \end{array}$$
+
+    %-------------------- 31.
+     \item Demuestre que es imposible expresar $x=f(x)g(x)$ donde $f$ y $g$ son diferenciables y $f(0)=g(0)=0.$ Indicación: Derive.\\\\
+	 Demostración.-\; Derivando por la regla de la cadena se tiene,
+	 $$1=f'(x)g(x)+f(x)g'(x).$$
+	 Ya que $f(0)=g(0)=0$, entonces
+	 $$1=f'(0)g(0)+f(0)g'(0)=0.$$
+	 Lo cual es absurdo. Por lo tanto es imposible escribir $x=f(x)g(x)$ para $f$ y $g$ diferenciables tal que $f(0)=g(0)=0.$\\\\ 
+
+    %-------------------- 32.
+     \item ¿Qué es $f^{(k)}$ si
+
+	 \begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $f(x)=1/(x-a)^n$?.\\\\
+		Respuesta.-\;
+
+	    %---------- (b)
+	    \item $f(x)=1(x^2-1)$?.\\\\
+		Respuesta.-\;
+
+	 \end{enumerate}
+    
 
 \end{enumerate}
