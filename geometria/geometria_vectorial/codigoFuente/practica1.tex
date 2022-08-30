@@ -191,37 +191,62 @@
 
 %----------11.
 \item \textbf{\boldmath Los vectores $\vec{a}$ y $\vec{b}$ forman un ángulo de $30^\circ$ con $\|\vec{a}\|=1$, $\|\vec{b}\|=\sqrt{3}$. Calcular el ángulo formado por los vectores $\vec{a}+\vec{b}, \vec{a}-\vec{b}$.\\\\
-    Respuesta.-}\; Primero calculemos $$|\vec{a}-\vec{b}|^2 = 1^2 + \sqrt{3}^2 - 2\sqrt{3} \cos 30 = 1$$
-    Luego calculamos el ángulo $\alpha$ asociado a $\vec{a}$ y $\vec{a}-\vec{b}$ de donde nos queda $$\alpha= \arccos \left(\dfrac{1^2+1^2-\sqrt{3}}{2}\right) = \arccos\left(\dfrac{2-\sqrt{3}}{2}\right) = 82\mbox{.}3$$
-    Sea  $a+b$ la diagonal del paralelogramo formado por los lados $\vec{a}$ y $\vec{b}$ de donde el ángulo de $a+b$ será $15^\circ$. Por lo tanto  $a+b$ y  $a-b$ forman un ángulo de, $$180-82\mbox{.}3-15=82\mbox{.}7$$\\
+    Respuesta.-}\; Por el teorema de los cosenos, calculamos $$\|\vec{a}-\vec{b}\|^2 = 1^2 + \sqrt{3}^2 - 2\sqrt{3} \cos 30 = 4 \quad \Rightarrow \quad \|\vec{a}-\vec{b}\|=2.$$
+    Luego calculamos el ángulo $\alpha$ asociado a $\vec{a}$ y $\vec{a}-\vec{b}$ de donde, 
+    $$\cos\alpha = \dfrac{\|\vec{a}\|}{\|\vec{a}-\vec{b}\|} \quad \Rightarrow \quad \alpha =\arccos \left(\dfrac{\|\vec{a}\|}{\|\vec{a}-\vec{b}\|}\right) = \arccos\dfrac{1}{2}=\dfrac{\pi}{3}=60^\circ.$$
+    Sea  $a+b$ la diagonal del paralelogramo formado por los lados $\vec{a}$ y $\vec{b}$ entonces, el ángulo de $a+b$ estará dado por $15^\circ$. Por lo tanto  $a+b$ y  $a-b$ forman un ángulo de, 
+    $$180-60-15=105^\circ.$$\\
 
 %----------12.
-\item \textbf{\boldmath Dados dos vectores $\vec{a},\vec{b},\vec{c}$ que satisfacen la condición $\vec{a}+\vec{b}+\vec{c} = \vec{0}$ y sabiendo que $\|\vec{a}\|=3, \|\vec{b}\|=1,\|\vec{a}\|=4$. Calcular $\vec{a}\cdot \vec{b}+\vec{b}\cdot \vec{c}+\vec{a}\cdot \vec{c}$\\\\
-    Respuesta.-}\; Si $\vec{a}+\vec{b}+\vec{c}=0$ entonces $$0=\|\vec{0}\|^2=\|\vec{a}+\vec{b}+\vec{c}\|^2.$$ Luego $$\|\vec{a}\|^2 + \|\vec{b}\|^2 + \|\vec{c}\|^2 + 2(\vec{a}\cdot \vec{b} + \vec{a}\cdot \vec{c} + \vec{b}\vec{c}) = 0$$
-    de donde se tiene, $$ \vec{a}\cdot \vec{b} + \vec{a}\cdot \vec{c} + \vec{b}\vec{c} = 3^2 + 1^2 + 4^2 = 13.$$\\
+\item \textbf{\boldmath Dados dos vectores $\vec{a},\vec{b},\vec{c}$ que satisfacen la condición $\vec{a}+\vec{b}+\vec{c} = \vec{0}$ y sabiendo que $\|\vec{a}\|=3, \|\vec{b}\|=1,\|\vec{a}\|=4$. Calcular $\vec{a}\circ \vec{b}+\vec{b}\circ \vec{c}+\vec{a}\circ \vec{c}$\\\\
+    Respuesta.-}\; Si $\vec{a}+\vec{b}+\vec{c}=0$ entonces $$0=\|\vec{0}\|^2=\|\vec{a}+\vec{b}+\vec{c}\|^2.$$ 
+    Luego, 
+    $$\begin{array}{rcl}
+	0=\|\vec{a}+\vec{b}+\vec{c}\|^2 &=& \|\vec{a}+(\vec{b}+\vec{c})\|^2\\
+				      &=& \|\vec{a}\|^2+2[\vec{a}\circ(\vec{b}+\vec{c})]+\|\vec{b}+\vec{c}\|^2\\
+				      &=& \|\vec{a}\|^2+2\vec{a}\circ \vec{b}+2\vec{a}\circ \vec{b}+\|\vec{b}\|^2+2\vec{b}\circ \vec{c}+\|\vec{c}\|^2\\
+				      &=& \|\vec{a}\|^2 + \|\vec{b}\|^2 + \|\vec{c}\|^2 + 2(\vec{a}\circ \vec{b} + \vec{a}\circ \vec{c} + \vec{b}\circ \vec{c}) 
+    \end{array}$$
+    Por lo tanto,
+    $$\vec{a}\circ \vec{b} + \vec{a}\circ \vec{c} + \vec{b}\circ \vec{c} = -\dfrac{\|\vec{a}\|^2 + \|\vec{b}\|^2 + \|\vec{c}\|^2}{2} = -\dfrac{3^2+1^2+4^2}{2}=-13.$$\\
+
 
 %----------13.
 \item \textbf{\boldmath Dados los puntos $P(3,4)$, $Q(1,1)$ y $R(5,2)$, usar métodos vectoriales para encontrar las coordenadas del cuarto vértice del paralelogramo cuyo lados adyacentes son $\vec{PQ}$ y $\vec{QR}$.\\\\
-    Respuesta.-}\; Sea $S$ vértice a encontrar entonces por ser un paralelogramo se tiene que $\vec{QR}=vec{PS}$, por lo tanto $$(1-1)-(5,2)=(3,4)-S \; \Longrightarrow \; S=(3,4)-(-4,-1)$$
-    $$S=(7,5)$$
-    El gráfico corrobora el resultado.
+    Respuesta.-}\; Grafiquemos la idea. 
     \begin{center}
-	\begin{tikzpicture}[scale=.7]
-	    \draw(3,4)node[above]{R}--(1,1)node[left]{Q}--(5,2)node[below]{R}--(7,5)node[right]{S}--(3,4);
+	\begin{tikzpicture}[scale=.5]
+	    \draw[line width=1.2pt,stealth-](3,4)node[above]{R}--(1,1)node[left]{Q};
+	    \draw[line width=1.2pt,stealth-](1,1)node[left]{Q}--(5,2)node[below]{P};
+	    \draw[line width=1.2pt,-stealth](5,2)node[below]{P}--(7,5)node[right]{S};
+	    \draw[line width=1.2pt,stealth-](7,5)node[right]{S}--(3,4);
 	\end{tikzpicture}
     \end{center}
-    \vspace{.5cm}
+    Sea $S$ el vértice a encontrar. Entonces, por las características de un paralelogramo tenemos 
+    $$\vec{QR}=\vec{PS},$$ 
+    por lo tanto $$(1-1)-(5,2)=(3,4)-S \quad \Rightarrow \quad S=(3,4)-(-4,-1)$$
+    $$S=(7,5).$$\\
+
 
 %----------14.
 \item \textbf{\boldmath Demostrar que $(4,5,2),(4,7,9),(8,5,-6)$ son los vértices de un triángulo equilátero.\\\\
-    Respuesta.-}\; Supongamos que las distancias entre $A,B$ y $C$ son iguales, lo que implica que $|A-B|=|B-C|=|B-C|$, de donde 
-    \begin{center}
-	\begin{tabular}{ccccccc} 
-	    $|A-B|$ & $=$ & $|(0,-2,-7)|$ & $=$ & $\sqrt{0^2+(-2)^2 + (-7)^2}$ & $=$ &$\sqrt{53}$\\\\
-	    $|A-C|$ & $=$ & $|(-4,0,8)|$ & $=$ & $\sqrt{(-4)^2+0^2+8^2}$ & $=$ & $\sqrt{80}$\\\\  
-	\end{tabular}
-    \end{center}
-    ya que $|A-B|\neq |A-C|$ se concluye que los puntos dado no son los vertices de un triangulo equilátero.\\\\ 
+    Respuesta.-}\; Si $(4,5,2),(4,7,9),(8,5,-6)$ son los vértices de un triángulo equilátero, podemos hallar las longitudes de la siguiente manera: 
+
+    $$\begin{array}{rcccccl}
+	\|\vec{a}\| &=& \|(4,7,9)-(4,5,2)\|&=&\|(0,2,7)\| &=& \sqrt{53}.\\\\
+	\|\vec{b}\| &=& \|(8,5,-6)-(4,7,9)\| &=& \|(4,-2,-15)\| &=& \sqrt{245}.\\\\
+	\|\vec{c}\| &=& \|(8,5,-6)-(4,5,2)\| &=& \|(4,0,-8)\| &=& \sqrt{80}.\\\\
+    \end{array}$$
+    Luego, calculando el ángulo entre dos de los vectores encontrados, tenemos
+    $$\cos(\theta)=\dfrac{\vec{a}\circ \vec{b}}{\|\vec{a}\|\|\vec{b}\|}=\dfrac{0\cdot 4 + 2\cdot(-2)+7\cdot(-15)}{\sqrt{53}\sqrt{245}}\quad \Rightarrow \quad \theta=\arccos\left(\dfrac{-109}{\sqrt{53}\sqrt{245}}\right)=163^\circ$$
+
+    El cual contradice la proposición dada, ya que un triangulo equilatero tiene sus angulos igual a $60^\circ$.\\
+
+    Podemos refutar la proposición dada de otra forma.\\
+    Supongamos que las distancias entre $A,B$ y $C$ son iguales, lo que implica que 
+    $$\|\vec{a}\|=\|\vec{b}\|=\|\vec{a}\|.$$ 
+    Ya que $\|\vec{a}\|\neq \|\vec{b}\|$ se concluye que los puntos dado no son los vertices de un triangulo equilátero.\\\\
+
 
 %----------15.
 \item \textbf{\boldmath Demostrar que}
@@ -229,42 +254,114 @@
 
 	%---------- a)
 	\item \textbf{\boldmath $(2,1,6), (4,7,9)$ y $(8,5,-6)$ son los vértices de un triángulo rectángulo.\\\\
-	    Respuesta.-}\; 
+	    Respuesta.-}\; Para demostrar que los puntos dados son vértices de un triángulo rectángulo, primero hallemos los vectores asociados, de la siguiente manera:
+	    $$\begin{array}{rcccl}
+		\vec{a} &=& (4,7,9)-(2,1,6) &=& (2,6,3)\\\\
+		\vec{b} &=& (8,5,-6)-(4,7,9) &=& (4,-2,-15)\\\\
+		\vec{c} &=& (8,5,-6)-(2,1,6) &=& (6,4,-12)\\
+	    \end{array}$$
+	    Luego, por definición de paralelismo de vectores, vemos que no existe un escalar $r\in \mathbb{Z}$ tal que 
+	    $$\vec{a}=r\vec{b}.$$
+	    Es decir,
+	    $$\left\{\begin{array}{crr}
+		    2&=&4r\\
+		    1&=&-2r\\
+		    6&=&-15r
+		\end{array}\right. \quad \Rightarrow \quad
+		\left\{\begin{array}{rcr}
+		    r&=&\frac{1}{2}\\\\
+		    r&=&-\frac{1}{2}\\\\
+		    r&=&-\frac{6}{15}
+		\end{array}\right.$$
+
+	Así, podemos afirmar que los puntos dados corresponden a los vértices de un triángulo. Luego, para saber si este triángulo es rectángulo solo debemos hallar dos vectores ortogonales, como sigue:
+	$$\vec{a}\circ \vec{c} =  (2,6,3)\circ (6,4,-12) = 2\cdot 6 + 6\cdot 4+3\cdot (-12) = 0$$
+	Por lo tanto, los puntos dados son vértices de un triángulo rectángulo.\\\\
 
 	%---------- b)
 	\item \textbf{\boldmath ¿En cuál de los vértices está el ángulo de $90^\circ$?.\\\\
-	    Respuesta.-}\; 
+	    Respuesta.-}\; Se encuentra en el vértice $(2,1,6)$. Esto por el desarrollo del anterior ejercicio.\\\\
 
 	%---------- c)
 	\item \textbf{Encontrar el área del triángulo.\\\\
-	    Respuesta.-}\;
+	    Respuesta.-}\; Se sabe que el área de un triángulo rectángulo es igual a la mitad del productos de sus catetos. Por lo tanto, el área del triángulo es igual a:
+	    $$A=\dfrac{1}{2}\|\vec{a}\times \vec{c}\|$$
+	    De donde,
+	    $$\|\vec{a}\times \vec{c}\| = \| \left[ 6\cdot (-12)-3\cdot 4;3\cdot 6 - 2\cdot (-12);2\cdot 4 - 6\cdot 6\right]\| = \|-84,42,-28\| = 98.$$
+
+	    Por lo tanto,
+	    $$A=\dfrac{98}{2}=49.$$\\
 
     \end{enumerate}
 
-
 %----------16.
-\item \textbf{\boldmath Sean $\vec{a},\vec{b}\in \mathbb{R}$. Demuéstrese que $\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=4\vec{a}\cdot \vec{b}$.\\\\
-    Demostración.-}\; Se tiene que $$\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=|\vec{a}|^2 + 2\vec{a}\cdot \vec{b} + | \vec{b} |^2 - \left(|\vec{a}|^2 - 2\vec{a} \cdot \vec{b} + |\vec{b}^2|\right)=4\vec{a} \cdot \vec{b}$$\\
+\item \textbf{\boldmath Sean $\vec{a},\vec{b}\in \mathbb{R}$. Demuéstrese que $\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=4\vec{a}\circ \vec{b}$.\\\\
+    Demostración.-}\; Sabemos que 
+    $$\|\vec{a}\pm \vec{b}\|^2=\|\vec{a}\|^2\pm 2\vec{a}\circ \vec{b}+\|\vec{b}\|^2$$
+    Por lo tanto se tiene,
+    $$\|\vec{a}+\vec{b}\|^2-\|\vec{a}^2-\vec{b}\|^2=|\vec{a}|^2 + 2\vec{a}\circ \vec{b} + | \vec{b} |^2 - \left(|\vec{a}|^2 - 2\vec{a} \circ \vec{b} + |\vec{b}^2|\right)=4\vec{a} \circ \vec{b}.$$\\
 
 %----------17.
 \item \textbf{\boldmath Demuéstrese que $\vec{a}+\vec{b}$ y $\vec{a}-\vec{b}$ son ortogonales si y sólo si $\|\vec{a}\|=\|\vec{b}\|.$ ¿Cuál es la interpretación geométrica del problema?.\\\\
     Demostración.-}\; 
+    La interpretación geométrica viene dada por:
+    \begin{center}
+	\begin{tikzpicture}[scale=1]
+	    \draw[line width=1.2pt,-stealth](0,0)--(3,0);
+	    \draw[dashed,line width=1.2pt,-stealth](1,2.8)--(4,2.8);
+	    \draw[line width=1.2pt,-stealth](0,0)--(1,2.8);
+	    \draw[dashed,line width=1.2pt,-stealth](3,0)--(4,2.8);
+	    \draw[line width=1.2pt,-stealth](0,0)--(4,2.8);
+	    \draw[line width=1.2pt,-stealth](1,2.8)--(3,0);
+	    \draw(1.5,0)node[below]{$\|\vec{a}\|$};
+	    \draw(.4,1.5)node[left]{$\|\vec{b}\|$};
+	    \draw(1.5,1.3)node[left,rotate=33]{\scriptsize$\vec{a}+\vec{b}$};
+	    \draw(1.8,2)node[left,rotate=-55]{\scriptsize$\vec{a}-\vec{b}$};
+	\end{tikzpicture}
+    \end{center}
+
+    Por definición de vectores ortogonales tenemos que:
+    $$\begin{array}{rcl}
+	\left(\vec{a}+\vec{b}\right)\circ\left(\vec{a}-\vec{b}\right) = 0 &\Leftrightarrow&(\vec{a}+\vec{b})\circ \vec{a}+(\vec{a}+\vec{b})\circ (-\vec{b})\\\\
+									  &\Leftrightarrow& \vec{a}\circ \vec{a}+\vec{a}\circ (-\vec{b})+\vec{b}\circ \vec{a}+\vec{b}\circ (-\vec{b})\\\\
+									  &\Leftrightarrow& \|\vec{a}\|^2-\vec{a}\circ \vec{b}+\vec{a}\circ \vec{b}-\|\vec{b}\|\\\\
+									  &\Leftrightarrow& \|\vec{a}\|^2-\|\vec{b}\|^2=0\\\\
+									  &\Leftrightarrow& \|\vec{a}\|=\|\vec{b}\|.
+    \end{array}$$
+    \vspace{.4cm}\\
+
 
 %----------18.
-\item \textbf{\boldmath Demostrar que: $$\|\vec{a}+\vec{b}\|^2 + \|\vec{a}-\vec{b}\|^2 = 2\|\vec{u}\|^2+2\|\vec{v}\|^2$$\\
-    Demostración.-}\; Análogamente al ejercicio 16 se tiene, 
-    $$\|\vec{a}+\vec{b}\|^2 + \|\vec{a}-\vec{b}\|^2 = |\vec{a}|^2 + 2\vec{a}\cdot \vec{b} + |\vec{b}|^2 + |\vec{a}|^2 - 2\vec{a} \cdot \vec{b} + |\vec{b}^2| = 2|\vec{a}^2 + 2\|\vec{b}|^2$$\\
+\item \textbf{\boldmath Demostrar que: $$\|\vec{u}+\vec{v}\|^2 + \|\vec{u}-\vec{v}\|^2 = 2\|\vec{u}\|^2+2\|\vec{v}\|^2$$\\
+    Demostración.-}\; Similar al ejercicio 16 se tiene, 
+    $$\begin{array}{rcl}
+	\|\vec{u}+\vec{v}\|^2 + \|\vec{u}-\vec{v}\|^2 &=& \|\vec{u}\|^2 + 2\vec{u}\circ \vec{v} + \|\vec{v}\|^2 + \|\vec{u}\|^2 - 2\vec{u} \circ \vec{v} + \|\vec{v}^2\|\\\\
+						      &=& 2\|\vec{u}\|^2 + 2\|\vec{v}\|^2.\\
+    \end{array}$$\\
 
 %----------19.
 \item \textbf{\boldmath Demostrar que 
-    $$\vec{u}\cdot \vec{v} = \dfrac{1}{4} \|\vec{u}+\vec{v}\|^2 - \dfrac{1}{4} \|\vec{u}-\vec{v}\|^2.$$\\
-    Demostración.-}\;
+    $$\vec{u}\circ \vec{v} = \dfrac{1}{4} \|\vec{u}+\vec{v}\|^2 - \dfrac{1}{4} \|\vec{u}-\vec{v}\|^2.$$\\
+    Demostración.-}\; Partamos de la parte derecha de la igualdad,
+    $$\begin{array}{rcl}
+	\dfrac{1}{4} \|\vec{u}+\vec{v}\|^2 - \dfrac{1}{4} \|\vec{u}-\vec{v}\|^2&=&\dfrac{1}{4}\left[(\vec{u}+\vec{v})\circ(\vec{u}+\vec{v})\right]-\dfrac{1}{4}\left[(\vec{u}-\vec{v})\circ(\vec{u}-\vec{v})\right]\\\\
+									       &=&\dfrac{1}{4}\left(\vec{u}\circ \vec{u}+\vec{u}\circ \vec{v}+\vec{v}\circ \vec{u}+\vec{v}\circ\vec{v}\right)\\\\
+									       &-&\dfrac{1}{4}\left(\vec{u}\circ \vec{u}-\vec{u}\circ \vec{v}-\vec{v}\circ \vec{u}+\vec{v}\circ\vec{v}\right)\\\\
+									       &=&\dfrac{1}{4}\left[4\left(\vec{u}\circ\vec{v}\right)\right]\\\\
+									       &=&\vec{u}\circ \vec{v}.
+    \end{array}$$
+    \vspace{.4cm}\\
 
 
 %----------20.
-\item \textbf{\boldmath Supóngase que $\vec{a}\cdot \vec{b} = \vec{a}\cdot \vec{c}$ y que $\vec{a}\neq 0$. Es posible inferir que $\vec{b}=\vec{c}$?. Explicar la respuesta.\\\\
-    Respuesta.-}\; Esta proposición es falsa ya que si $A=(1,1,1)$, $B=(1,-1,0)$ y $C=(0,-1,1)$ entonces $$A\cdot B = 1\cdot 1 + 1\cdot(-1)+1\cdot 0 = 0,$$ $$A\cdot C = 1\cdot 0 + 1\cdot(-1)+1\cdot 1 = 0$$
-    de donde $B\neq C$.\\\\ 
+\item \textbf{\boldmath Supóngase que $\vec{a}\circ \vec{b} = \vec{a}\circ \vec{c}$ y que $\vec{a}\neq 0$. Es posible inferir que $\vec{b}=\vec{c}$?. Explicar la respuesta.\\\\
+    Respuesta.-}\; Sean $A=(1,1,1)$, $B=(1,-1,0)$ y $C=(0,-1,1)$. Entonces, $$A\circ B = 1\circ 1 + 1\cdot(-1)+1\cdot 0 = 0,$$ 
+    $$A\circ C = 1\cdot 0 + 1\cdot(-1)+1\cdot 1 = 0.$$
+    Es decir, 
+    $$A\circ B = A\circ C$$
+    Pero $$B\neq C.$$
+
+    Por lo tanto, el supuesto no es suficiente para concluir que $B=C$ se cumpla todas las veces.\\\\ 
 
 %----------21.
 \item \textbf{\boldmath Explicar por qué las expresiones siguientes no tienen sentido}
@@ -272,7 +369,7 @@
     \begin{enumerate}[a)]
 
 	%---------- a)
-	\item \textbf{\boldmath $\vec{a}\circ \left(\vec{b}\circ \vec{c}\right)=\left(\vec{a}\circ \vec{b}\right)\circ \vec{c}l.$\\\\
+	\item \textbf{\boldmath $\vec{a}\circ \left(\vec{b}\circ \vec{c}\right)=\left(\vec{a}\circ \vec{b}\right)\circ \vec{c}.$\\\\
 	    Respuesta.-}\;
 
 	%---------- b)
@@ -290,7 +387,7 @@
     \end{enumerate}
 
 %----------22.
-\item \textbf{ \boldmath Dado el punto fijo $A(1, 3, 5)$, el punto $P(x, y, z)$ y el vector $vec{n} = i - j + 2k$, utilice el producto escalar como ayuda para escribir una ecuación en $x, y$ y $z$ que diga lo siguiente: $\vec{n}$ y $\vec{AP}$ son perpendiculares. Simplifique entonces esta ecuación y dé una descripción geométrica del conjunto de tales puntos $P(x, y, z)$.\\\\
+\item \textbf{ \boldmath Dado el punto fijo $A(1, 3, 5)$, el punto $P(x, y, z)$ y el vector $\vec{n} = i - j + 2k$, utilice el producto escalar como ayuda para escribir una ecuación en $x, y$ y $z$ que diga lo siguiente: $\vec{n}$ y $\vec{AP}$ son perpendiculares. Simplifique entonces esta ecuación y dé una descripción geométrica del conjunto de tales puntos $P(x, y, z)$.\\\\
     Respuesta.-}\;
 
 %----------23.
@@ -347,7 +444,37 @@
 \item 
 
 %----------35.
-\item 
+\item \textbf{ Demostrar que las diagonales de un rombo son ortogonales entre si.\\\\ 
+    Demostración.-}\; Sean $\vec{a},\vec{b},\vec{c},\vec{d},\vec{e},\vec{f}\in V_n $. De donde gráficamente se tiene:
+	    \begin{center}
+		\begin{tikzpicture}[scale=1]
+		  \tikzstyle{every node}=[font=\scriptsize]
+		  \draw[line width=1.2pt,-stealth](0,0)--(3,0) node[rotate=0,pos=0.5,below]{$\vec{a}$};
+		  \draw[line width=1.2pt,-stealth](3,0)--(5,2) node[rotate=50,pos=0.5, below]{$\vec{b}$};
+		  \draw[line width=1.2pt,-stealth](5,2)--(2,2) node[rotate=0,pos=0.5, above]{$\vec{c}$};
+		  \draw[line width=1.2pt,-stealth](2,2)--(0,0) node[rotate=45,pos=0.45, above]{$\vec{d}$};
+		  \draw[line width=1.2pt,-stealth](0,0)--(5,2) node[rotate=23,pos=0.4, below]{$\vec{e}$};
+		  \draw[line width=1.2pt,-stealth](2,2)--(3,0) node[rotate=-50,pos=0.3, above]{$\vec{f}$};
+		  \draw(2.65,.65) arc (-80:40:.3);
+		  \draw(2.7,.9)node[]{$\theta$};
+		\end{tikzpicture}
+	    \end{center}
+	    Así,  $$\cos (\theta) = \dfrac{\vec{e}\circ \vec{f}}{\|\vec{e}\|\|\vec{f}\|} \quad \Rightarrow \quad \theta = \cos^{-1}\left[\dfrac{ (\vec{a}+\vec{b})\circ(\vec{d}+\vec{a})}{\|\vec{e}\|\|\vec{f}\|}\right].$$
+
+	    Luego, ya que $\vec{a},\vec{b},\vec{c},\vec{d}$ forman un rombo. Es decir, un paralelogramo de lados iguales, entonces $\vec{d}=-\vec{b}$, por lo que:
+	    $$\theta = \cos^{-1}\left[\dfrac{(\vec{a}+\vec{b})\circ(-\vec{b}+\vec{a})}{\|\vec{e}\|\|\vec{f}\|}\right].$$
+
+	    Por las propiedades de producto interno y $\|\vec{a}\|=\|\vec{b}\|$,
+
+	    $$\begin{array}{rcl}
+		\theta&=&\cos^{-1}\left[\dfrac{\vec{a}\circ (-\vec{b})+ \vec{b}\circ(-\vec{b})+ \vec{a}\circ \vec{a}+ \vec{b}\circ \vec{a}}{\|\vec{e}\|\|\vec{f}\|}\right]\\\\
+		      &=&\cos^{-1}\left[\dfrac{-(\vec{a}\circ \vec{b})- (\vec{b}\circ \vec{b}) + \vec{a}\circ \vec{a}+ \vec{a}\circ \vec{b}}{\|\vec{e}\|\|\vec{f}\|}\right]\\\\
+		      &=&\cos^{-1}\left(\dfrac{ \vec{a}\circ \vec{a}- \vec{b}\circ \vec{b}}{\|\vec{e}\|\|\vec{f}\|}\right)\\\\
+		      &=&\cos^{-1}\left(\dfrac{\|\vec{a}\|^2-\|\vec{b}\|^2}{\|\vec{e}\|\|\vec{f}\|}\right)\\\\
+		      &=& \cos^{-1}\left(\dfrac{0}{\|\vec{e}\|\|\vec{f}\|}\right) = \dfrac{\pi}{2}.\\\\
+	    \end{array}$$
+	    Por lo tanto,
+	    $$\vec{e}\perp \vec{f}.$$\\
 
 %----------36.
 \item 
@@ -356,7 +483,29 @@
 \item 
 
 %----------38.
-\item 
+\item \textbf{ Demostrar que el segmento que une los puntos medios de dos lados de un triángulo, es paralelo al tercer lado y tiene la mitad de su longitud.\\\\
+    Demostración.-}\; Consideremos el siguiente gráfico. Sean $a,b,c,d\in \mathbb{R}^n$ 
+	\begin{center}
+	    \begin{tikzpicture}[scale=.9]
+		\draw[line width=1.2pt,-stealth](0,0)--(4,0) node[rotate=0,pos=0.5, below]{$a$};
+		\draw[line width=1.2pt,-stealth](0,0)--(3,2) node[rotate=35,pos=0.5, above]{$b$};
+		\draw[line width=1.2pt,-stealth](4,0)--(3,2) node[rotate=20,pos=0.5, right]{$c$};
+		\draw[line width=1.2pt,-stealth](1.5,1)--(3.5,1) node[rotate=0,pos=0.5, below]{$d$};
+	    \end{tikzpicture}
+	\end{center}
+	de donde podemos deducir las siguientes ecuaciones:
+
+	$$\left\{\begin{array}{rcl}
+		\dfrac{b}{2}-\dfrac{c}{2}-d&=&0\\\\
+		a+\dfrac{c}{2}-d-\dfrac{b}{2}&=&0\\
+	\end{array}\right. \quad \Rightarrow \quad 
+	\left\{\begin{array}{rcl}
+		\dfrac{c}{2}&=&\dfrac{b}{2}-a\\\\
+		\dfrac{c}{2}&=&d+\dfrac{b}{2}-a\\\\
+	\end{array}\right.$$
+
+	Entonces $a=2d$ si y sólo si $a \parallel d$. Así tomando la norma nos queda:
+	$$\|a\|=\|2d\| \quad \Rightarrow \quad \|d\|=\dfrac{1}{2}\|a\|.$$\\
 
 %----------39.
 \item

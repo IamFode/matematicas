@@ -227,7 +227,7 @@ Respuesta.-
 ## 6.6.
 Para las funciones de densidad conjuntas de probabilidad del ejercicio 6.3., obtener $Cov(X,Y)$ y $\rho(X,Y)$.
 
-Respuesta.- Para poder hallar la covarianza y el coeficiente de correlación tenemos que hallar $E(X),E(Y),E\left(x^2\right),E\left(Y^2\right)$ y $E(XY)$.
+Respuesta.- Para poder hallar la covarianza y el coeficiente de correlación tenemos que hallar $E(X),E(Y),E\left(X^2\right),E\left(Y^2\right)$ y $E(XY)$.
 
 $$\begin{array}{rcl}
   E(X)&=&\displaystyle\int_1^2\int_1^3 x\left(\dfrac{3x-y}{5}\right)\; dy\, dx = \displaystyle\int_1^2\dfrac{x}{5} \left(3xy-\dfrac{y^2}{2}\right)\bigg|_1^3 \; dx\\\\
@@ -257,3 +257,73 @@ integrate(function(x) {
  }, 1, 2)$value
 ```
 
+$$\begin{array}{rcl}
+  E\left(X^2\right) &=& \displaystyle\int_1^2 \int_1^3 x^2\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\displaystyle  \int_1^2 x^2 \left(3xy-\dfrac{y^2}{2}\right) \bigg|_1^3\\\\
+  &=&\dfrac{1}{5}\displaystyle \int_1^2 6x^3-8x^2\; dx=\dfrac{1}{5}\left(\dfrac{3x^4}{2}-\dfrac{8x^3}{3}\right)\bigg|_1^2\\\\
+  &=&\dfrac{79}{30}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x^2*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+
+$$\begin{array}{rcl}
+  E\left(Y^2\right) &=& \displaystyle\int_1^2 \int_1^3 y^2\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\int_1^2 \left(xy^3-\dfrac{y^4}{4}\right)\bigg|_1^3\; dx\\\\
+  &=&\displaystyle\dfrac{1}{5}\int_1^2 26x-20\; dx = \dfrac{1}{5}\left(13x^2-20x\right)\bigg|_1^2\\\\
+  &=&\dfrac{19}{5}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) y^2*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+
+$$\begin{array}{rcl}
+  E\left(XY\right) &=& \displaystyle\int_1^2 \int_1^3 xy\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\int_1^2 x\left(\dfrac{xy^2}{2}-\dfrac{y^3}{3}\right)\bigg|_1^3\; dx\\\\
+  &=&\dfrac{1}{5}\displaystyle \int_1^2 12x^2-\dfrac{26x}{3}\; dx = \dfrac{1}{5}\left(4x^3-\dfrac{13x^2}{3}\right)\bigg|_1^2\\\\
+  &=&3.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x*y*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+La covarianza viene dado por:
+
+$$Cov(X,Y) = E(XY)-E(X)E(Y) = 3-\dfrac{8}{5}\cdot \dfrac{28}{15}=\dfrac{1}{75}=0.01333333.$$
+
+Dado que:
+
+$$Var(X)=E\left(X^2\right)-E^2(X)=\dfrac{79}{30}-\left(\dfrac{8}{5}\right)^2 = \dfrac{11}{150}.$$
+
+y
+
+$$Var(Y)=E\left(Y^2\right)-E^2(Y) = \dfrac{19}{5} - \left(\dfrac{28}{15}\right)^2 = \dfrac{71}{225}.$$
+El coeficiente de correlación es:
+
+$$\rho(X,Y) = \dfrac{Cov(X,Y)}{\sigma_x\sigma_y} = \dfrac{\dfrac{1}{75}}{\sqrt{\dfrac{11}{150}\cdot \dfrac{71}{225}}} = 0.08764963.$$
+
+```{r}
+cov = 3-(8/5)*(28/15)
+cov
+varX = 79/30-(8/5)^2
+varY = 19/5 - (28/15)^2
+cov/(sqrt(varX*varY))
+```
+
+
+## 6.7.
+Un función de su prioridad, un programa para computadora espera en la fila de entrada cierto tiempo, después del cual lo ejecuta el procesador central en un lapso dado. La función de densidad conjunta para los tiempos de espera y ejecución se determina por

@@ -767,7 +767,7 @@
 	 \end{array}$$
 	 Llevan a la siguiente conjetura: Si $f^{(n)}\left[g(a)\right]$ y $g^{(a)}(a)$ existen, entonces también existe $(f\circ g)^{(n)}(a)$ y es una suma de términos de la forma
 	 $$c\cdot \left[g'(a)\right]^{m_1}\cdots \left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],$$
-	 para algún número $c$, enteros no negativos $m_1,\ldots , m_n$ y un número natural $k\leq n$. Para probar esta proposición utilizaremos el método de inducción, de donde notamos que es verdadero para $n=1$ con $a=m_1=k=1$. Ahora supóngase que para un cierto $n$, es cierto para todo número $a$ tal que $f^{(n)}\left[g(a)\right]$ y $g^{(n)}(a)$ existan. Supóngase también que $f^{(n+1)}\left[g(a)\right]$ y $g^{(n+1)}(a)$ existen. Entonces $g^{(k)}(x)$ podría existe para todo $k\leq n$ y todo $x$ en algún intervalo alrededor de $a$, y $f^{(k)}(y)$  debe existe para todo $k\leq n$ y todo $y$ en algún intervalo alrededor de $g(a)$. Ya que $g$ es continua en $a$, esto implica que $f^{(k)}\left[g(x)\right]$ exista para todo $x$ en algún intervalo alrededor de $a$. Así la proposición es verdadera para todo $x$, esto es, $(f\}circ g)^{(n)}$ es una suma de términos de la forma:
+	 para algún número $c$, enteros no negativos $m_1,\ldots , m_n$ y un número natural $k\leq n$. Para probar esta proposición utilizaremos el método de inducción, de donde notamos que es verdadero para $n=1$ con $a=m_1=k=1$. Ahora supóngase que para un cierto $n$, es cierto para todo número $a$ tal que $f^{(n)}\left[g(a)\right]$ y $g^{(n)}(a)$ existan. Supóngase también que $f^{(n+1)}\left[g(a)\right]$ y $g^{(n+1)}(a)$ existen. Entonces $g^{(k)}(x)$ podría existe para todo $k\leq n$ y todo $x$ en algún intervalo alrededor de $a$, y $f^{(k)}(y)$  debe existe para todo $k\leq n$ y todo $y$ en algún intervalo alrededor de $g(a)$. Ya que $g$ es continua en $a$, esto implica que $f^{(k)}\left[g(x)\right]$ exista para todo $x$ en algún intervalo alrededor de $a$. Así la proposición es verdadera para todo $x$, esto es, $(f\circ g)^{(n)}$ es una suma de términos de la forma:
 	 $$c\left[g'(x)\right]^{m_1}\cdots \left[g^{(n)}(x)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right],\quad m_1,\ldots, m_n \geq 0,\quad 1\leq k \leq n.$$
 	 Como consecuencia, $(f\circ g)^{(n+1)}(a)$ es una suma de términos de la forma
 	 $$c\cdot m_\alpha \left[g'(x)\right]^{m_1}\cdot \ldots \cdot\left[g^{(n)}(x)\right]^{m_\alpha - 1}\cdot \ldots \cdot\left[g^{(n)}(a)\right]^{m_n}\cdot f^{(k)}\left[g(a)\right]\qquad m_\alpha>0$$
@@ -1003,13 +1003,60 @@
 
 	    %---------- (a)
 	    \item $f(x)=1/(x-a)^n$?.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Observamos que $f$ es diferenciable en todas sus derivadas de orden superior. Por lo que podemos utilizar la regla de la cadena. Sea $g(x)=(x-a)$, para $x\neq a.$ Entonces $g$ es una función diferenciable. Es más, $g'(x)=1$ y $g^{(k)}(x)=0$ para todo $k\geq 2$. Consideremos la función $h(x)=x^{-n}$ para $x\neq 0$. Por lo que vemos que $f(x)=h\left[g(x)\right]$ para $x\neq a.$\\
+		Se sigue que $(h\circ g)^{(n)}(a)=c\circ \left[g'(a)\right]^{m_1}\ldots \left[g^{(n)}(a)\right]^{m_n}\cdot h^{(k)}\left[g(a)\right]$ (Problema 21 Spivak, chapter 10, v 4), para algún $c$, enteros no negativos $m_1,\ldots , m_n$ para $k\leq n.$ Ahora sabiendo que $g'(x)=1$ y $g^{(k)}=0$ para todo $k\geq 2$ se tiene que $(h\circ g)^{(n)}(x)$ es suma de la forma $c\cdot h^{(k)}\left[g(x)\right]$ para $x\neq a$. Por último usamos el problema 30, Spivak , capitulo 10, v4. Se tiene:
+		$$f^{(k)}=(-1)^k \dfrac{(n+k-1)!}{(n-1)!}(x-a)^{-n-k}.$$\\
 
 	    %---------- (b)
-	    \item $f(x)=1(x^2-1)$?.\\\\
-		Respuesta.-\;
+	    \item $f(x)=1/(x^2-1)$?.\\\\
+		Respuesta.-\; Observemos que,
+		$$f(x)=\dfrac{1}{x^2-1}=\dfrac{1}{2}\left(\dfrac{1}{x-1}-\dfrac{1}{x+1}\right).$$
+		Por lo que,
+		$$f^{(k)}(x)=\dfrac{1}{2}\left[g^{(k)}(x)-h^{(k)}(x)\right]$$
+		donde $g(x)=\dfrac{1}{x-1}$ y $h(x)=\dfrac{1}{x+1}$. Usando la parte (a) se tiene,
+		$$g^{(k)}=(-1)^k \dfrac{(n+k-1)!}{(n-1)!}(x-1)^{-n-k} \qquad \mbox{y}\qquad h^{(k)}(x)=(-1)^k \dfrac{(n+k-1)!}{(n-1)!}(x+1)^{-n-k}.$$
+		Así, tenemos que,
+		$$\begin{array}{rcl}
+		    f^{(k)}(x)&=&\dfrac{1}{2}\left[(-1)^k \dfrac{(n+k-1)!}{(n-1)!}(x-1)^{-n-k}-(-1)^k \dfrac{(n+k-1)!}{(n-1)!}(x+1)^{-n-k}\right]\\\\
+			      &=&\dfrac{1}{2}(-1)^k \dfrac{(n+k-1)!}{(n-1)!}\left[(x-1)^{-n-k}-(x+1)^{-n-k}\right].\\\\
+		\end{array}$$
+		\vspace{.5cm}
 
 	 \end{enumerate}
-    
+
+    %-------------------- 33.
+     \item Sea $f(x)=x^{2n}\sen 1/x$ si $x\neq 0,$ y $f(0)=0$. Demuestre que existe $f'(0),\ldots , f^{(n)}(0)$ y que $f^{(n)}$ no es continua en $0$. (Se encontrará la misma dificultad básica en el problema 21.)\\\\
+	 Demostración.-\; 
+
+    %-------------------- 34.
+     \item Sea $f(x)=x^{2n+1}\sen 1/x$ si $x\neq 0,$ y $f(0)=0$. Demuestre que existe $f'(0),\ldots , f^{(n)}(0)$ es continua en $0$, y que $f^{(n)}$ no es diferenciable en $0$.\\\\
+	 Demostración.-\; 
+
+    %-------------------- 35.
+     \item Con la notación de Leibniz la Regla de la Cadena debería escribirse:
+	 $$\dfrac{df\left[g(x)\right]}{dx}=\dfrac{df(y)}{dy}\bigg|_{y=g(x)}\cdot \dfrac{dg(x)}{dx}.$$
+	 En vez de esto, se suele encontrar generalmente la siguiente proposición: Sea $y=g(x)$ y $z=f(y)$. Entonces
+	 $$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}.$$
+	 Observe que $z$ en $dz/dx$ denota la función compuesta $f\circ g,$ mientras que la $z$ de $dz/dy$ denota la función $f$; se sobreentiende también que $dz/dy$ será una expresión que incluye $y$ y de que en la solución final $g(x)$ debe sustituir por $y$. En cada de los siguientes casos halle $dz/dx$ aplicando esta fórmula, después compare el resultado con el problema 1.
+
+	 \begin{enumerate}[(i)]
+
+	     %---------- (i)
+	     \item $z=\sen y$, $\quad y=x+x^2.$\\\\
+		 Respuesta.-\; 
+
+	     %---------- (ii)
+	     \item $z=\sen y,$ $\quad y=\cos x.$\\\\
+		 Respuesta.-\;
+	     
+	     %---------- (iii)
+	     \item $z=\sen u,$ $\quad u=\sen x.$\\\\
+		 Respuesta.-\;
+
+	     %---------- (iv)
+	     \item $z=\sen v,$ $\quad v=\cos u,$ $\quad u=\sen x.$\\\\
+		 Respuesta.-\;
+
+	 \end{enumerate}
 
 \end{enumerate}

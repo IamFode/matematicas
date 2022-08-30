@@ -141,7 +141,7 @@
 	\end{array}\right.$$
 
 	Entonces $a=2d$ si y sólo si $a \parallel d$. Así tomando la norma nos queda:
-	$$\|a\|=\|2d\| \quad \Longrightarrow \quad \|d\|=\dfrac{1}{2}\|a\|.$$\\
+	$$\|a\|=\|2d\| \quad \Rightarrow \quad \|d\|=\dfrac{1}{2}\|a\|.$$\\
 
     %-------------------- problema 10
     \item \textbf{\boldmath Pruebe la ley de senos utilizando vectores.\\\\
@@ -181,7 +181,7 @@
 
     %-------------------- problema 12
     \item \textbf{\boldmath Demuestre que las diagonales de un rombo son ortogonales entre si.\\\\
-	Demostración.-}\; Sea $a,b,c,d,e,f\in \mathbb{R}^n.$, se tiene:
+	Demostración.-}\; Sean $a,b,c,d,e,f\in \mathbb{R}^n.$ De donde gráficamente se tiene:
 	\begin{center}
 	    \begin{tikzpicture}[scale=1.2]
 	      \tikzstyle{every node}=[font=\scriptsize]
@@ -195,11 +195,11 @@
 	      \draw(2.7,.9)node[]{$\theta$};
 	    \end{tikzpicture}
 	\end{center}
-	De donde,  $$\cos (\theta) = \dfrac{\langle e,f\rangle}{\|e\|\|f\|} \quad \Rightarrow \quad \theta = \cos^{-1}\left(\dfrac{\langle a+b, d+a\rangle}{\|e\|\|f\|}\right).$$
+	Así,  $$\cos (\theta) = \dfrac{\langle e,f\rangle}{\|e\|\|f\|} \quad \Rightarrow \quad \theta = \cos^{-1}\left(\dfrac{\langle a+b, d+a\rangle}{\|e\|\|f\|}\right).$$
 
-	Luego, ya que $a,b,c,d$ es un rombo. Es decir, un paralelogramo de lados iguales, entonces $d=-b$ y $\|a\|=\|b\|$ así:
+	Luego, ya que $a,b,c,d$ forman un rombo. Es decir, un paralelogramo de lados iguales, entonces $d=-b$, por lo que:
 	$$\theta = \cos^{-1}\left(\dfrac{\langle a+b, -b+a\rangle}{\|e\|\|f\|}\right).$$
-	Por las propiedades de producto interno,
+	Por las propiedades de producto interno y $\|a\|=\|b\|$,
 	$$\begin{array}{rcl}
 	    \theta&=&\cos^{-1}\left(\dfrac{\langle a,-b\rangle+\langle b,-b\rangle+\langle a,a\rangle+\langle b,a\rangle}{\|e\|\|f\|}\right)\\\\
 		  &=&\cos^{-1}\left(\dfrac{-\langle a,b\rangle-\langle b,b\rangle+\langle a,a\rangle+\langle a,b\rangle}{\|e\|\|f\|}\right)\\\\

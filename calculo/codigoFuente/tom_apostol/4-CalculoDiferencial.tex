@@ -1773,7 +1773,52 @@ Con frecuencia es útil la siguiente extensión del teorema del valor medio.\\
 
 \section{Criterio de la derivada segunda para los extremos}
 
+Si una función $f$ es continua en un intervalo cerrado $[a, b]$, el teorema de los valores extremos nos dice que tiene un máximo absoluto y un mínimo absoluto en algún punto de $[a, b]$. Si $f$ tiene derivada en cada punto interior, entonces los únicos puntos en los que pueden presentarse los extremos son:
+\begin{enumerate}[1)]
+    \item En los extremos del intervalo a y b;
+    \item en aquellos puntos interiores x en los que $f'(x) = O$.
+\end{enumerate}
+Los puntos del tipo 2) se llaman con frecuencia puntos críticos de $f$. Para decidir si en un punto crítico $c$ existe un máximo o un mínimo (o ni uno ni otro), necesitamos más información acerca de la función $f$. Ordinariamente el comportamiento de $f$ en un punto crítico puede determinarse a partir del signo algebraico de la derivada en las proximidades de $c$. El teorema que sigue hace ver que un estudio del signo de la derivada segunda en las cercanías de e puede también sernos de utilidad.\\
 
+%-------------------- teorema 4.9
+\begin{teo}[Criterio de la derivada segunda para extremos en un punto crítico]
+    Sea $c$ un punto crítico de $f$ en un intervalo abierto $(a,b)$; esto es, supongamos $a<c<b$ y que $f'(c)=0$. Supongamos también que exista la derivada segunda $f''$ en $(a,b)$. Tenemos entonces:
+    \begin{enumerate}[a)]
+	\item Si $f''$ es negativa en $(a,b)$, $f$ tiene un máximo relativo en $c$.
+	\item Si $f''$ es positiva en $(a,b)$, $f$ tiene un mínimo relativo en $c$.\\
+    \end{enumerate}
+	Demostración.-\; Consideremos el caso $a)$, $f''<0$ en $(a,b)$. Según el teorema 4.7 Tom Apostol (aplicado a $f'$), la función $f'$ es estrictamente decreciente en $(a,b)$. Pero $f'(c)=0$, con lo que $f'$ cambia su signo de positivo a negativo en $c$. Luego, según el teorema 4.8 Tom Apostol, $f$ tiene un máximo relativo en $c$. La demostración en el caso b) es completamente análoga.\\
+\end{teo}
+
+El signo de la derivada segunda también está relacionado con la concavidad o la convexidad de $f$. El siguiente teorema demuestra que la función es convexa en los intervalos en los que $f"$ es positiva, $f$ es cóncava ya que $f"$ es negativa. Basta discutir tan sólo el caso de la convexidad, ya que si $f$ es convexa, $-f$ es cóncava.\\
+
+%-------------------- teorema 4.10
+\begin{teo}[Criterio de la derivada para la convexidad]
+    Supongamos $f$ continua en $[a,b]$ y que tenga derivada en el intervalo abierto $(a,b)$. Si $f'$ es creciente en $(a,b)$ entonces $f$ es convexa en $[a,b]$. En particular, $f$ es convexa si $f''$ existe y es no negativa en $(a,b)$.\\\\
+    Demostración.-\;  Consideremos $x<y$ en $[a,b]$ y pongamos $z=\alpha y + (1-\alpha)x$, donde $0<\alpha < 1.$ Queremos demostrar que $f(z)\leq \alpha f(y)+(1-\alpha)f(x)$. Puesto que $f(z)=\alpha f(z)+(1-\alpha) f(z)$, esto es lo mismo que demostrar que 
+    $$(1-\alpha)[f(z)-f(x)]\leq \alpha [f(y)-f(z)].$$
+    Según el teorema del valor medio (aplicando dos veces), existen puntos $c$ y $d$ que satisfacen $x<c<z$ y $z<d<y$ tales que
+    \begin{center}
+	$f(z)-f(x)=f'(c)(z-x), \quad $ y $\quad f(y)-f(z)=f'(d)(y-z).$ 
+    \end{center}
+    Puesto que $f'$ es creciente, tenemos $f'(c)\leq f'(d).$ Así mismo, tenemos $(1-\alpha)(z-x)=\alpha(y-z)$, de modo que podemos escribir
+    $$(1-\alpha)[f(z)-f(x)]=(1-\alpha)f'(c)(z-x)\leq \alpha f'(d)(y-z)=\alpha[f(y)-f(z)],$$
+    lo que demuestra la desigualdad exigida por la convexidad.\\
+\end{teo}
+
+
+\setcounter{section}{18}
+\section{Ejercicios}
+
+En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = O$; b) examinar el signo de $f'$ determinar aquellos intervalos en los que $f$ es monótona; c) examinar el signo de $f''$ y determinar aquellos intervalos en los que $f'$ es monótona; d) construir un boceto de la gráfica de $f$. En cada caso, la función está definida para todos los $x$ para los cuales tiene sentido $f(x)$.\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item $f(x)=x^2-3x+2.$\\\\
+	Respuesta.-\; 
+
+\end{enumerate}
 
 
 
