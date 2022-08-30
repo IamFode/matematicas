@@ -1026,11 +1026,75 @@
 
     %-------------------- 33.
      \item Sea $f(x)=x^{2n}\sen 1/x$ si $x\neq 0,$ y $f(0)=0$. Demuestre que existe $f'(0),\ldots , f^{(n)}(0)$ y que $f^{(n)}$ no es continua en $0$. (Se encontrará la misma dificultad básica en el problema 21.)\\\\
-	 Demostración.-\; 
+	 Demostración.-\; Encontraremos las primeras tres derivadas de la función dada.
+	 $$\begin{array}{rcl}
+	     f'(x)&=&2nx^{2n-1}\sen\dfrac{1}{x}-x^{2n-2}\cos\dfrac{1}{x}.\\\\
+	     f''(x)&=&\left[2n(2n-1)x^{2n-2}\sen \dfrac{1}{x}-2nx^{2n-3}\cos \dfrac{1}{x}\right]-\left[(2n-2)x^{2n-3}\cos \dfrac{1}{x}-x^{2n-4}\sen\dfrac{1}{x}\right]\\\\
+	     f''(x)&=&2n(2n-1)e^{2n-2}\sen \dfrac{1}{x}+(2-4n)x^{2n-3}\cos \dfrac{1}{x}-x^{2n-4}\sen \dfrac{1}{x}.\\\\
+	     f'''(x) &=& 2n(2n-1)(2n-2)x^{2n-3}\sen \dfrac{1}{x}-2n(2n-1)x^{2n-4}\cos \dfrac{1}{x} + (2n-3)(2-4n)x^{2n-4}\cos \dfrac{1}{x}\\\\
+		     &+&(2-4n)x^{2n-5}\sen \dfrac{1}{x}-(2n-4)x^{2n-4}x^{2n-5}\sen \dfrac{1}{x}+x^{2n-6}\cos \dfrac{1}{x}.\\\\
+	     f'''(x)&=&2n(2n-1)(2n-2)x^{2n-3}\sen \dfrac{1}{x}+\left[-2n(2n-1)+(2n-3)(2-4n)\right]x^{2n-4}\cos \dfrac{1}{x}\\\\
+		    &+&\left[(2-4n)-(2n-4)\right]x^{2n-5}\sen \dfrac{1}{x}+x^{2n-6}\cos \dfrac{1}{x}.\\\\
+	 \end{array}$$
+
+	 En general, para el $k$-esima derivada se tiene,
+	 $$f^{(k)}(x)=ax^{2n-k}\sen \dfrac{1}{x}+\sum_{l=k+1}^{2k-1}\left(a_l x^{2n-l}\sen \dfrac{1}{x}+b_lx^{2n-(l+1)}\cos \dfrac{1}{x}\right)\pm \left\{\begin{array}{ll}
+		 x^{2n-2k}\sen \dfrac{1}{x},&k\mbox{ par}\\\\
+		 x^{2n-2k}\cos \dfrac{1}{x},&k\mbox{ impar}\\
+	 \end{array}\right.$$
+	 para $a,a_l,b_l$ constantes.\\
+
+	 Ahora cuando $k$ es menor que $n$ (hasta $n-1$), la expresión general de $f^{(k)}(x)$ muestra que, tendrá un término de al menos $x^2$,
+	 $$x^{2n-2(n-1)}=x^2$$
+	 El término con esto es $\sen 1/x$, que está acotado en el intervalo alrededor de $0$.\\
+
+	 Después encontremos las dos primeras derivadas en $0$.
+	 $$\begin{array}{rcl}
+	     f'(0)&=&\lim\limits_{h\to 0}\dfrac{f(h)-f(0)}{h}=\lim\limits_{h\to 0}\dfrac{f(h)}{h}=\lim\limits_{h\to 0}\dfrac{h^2g(h)}{h}=0.\\\\
+	     f''(0) &=& \lim\limits_{h\to 0}\dfrac{f'(h)-f'(0)}{h}=\lim\limits_{h\to 0}\dfrac{f'(h)}{h}=\lim\limits_{h\to 0}\dfrac{f'(h)-f'(0)}{h}=\lim\limits_{h\to 0}\dfrac{h^2g(h)}{h}=0.\\\\
+	 \end{array}$$
+	 El proceso puede repetirse hasta $k=n$,
+	 $$f^{(n)}(0)=\lim_{h\to 0}\dfrac{f^{n-1}(h)-f^{n-1}(0)}{h}=\lim_{h\to 0}\dfrac{f^{n-1}(h)}{h}=\lim_{h\to 0}\dfrac{h^2g(h)}{h}=0.$$
+	 Por lo tanto por la primera parte se prueba que 
+	 $$f'(0)=f''(0)=f^{(n)}=0.$$
+	 Así, encontramos que para $k< n$, todas las derivadas tienen un término de $x^2$. Sin embargo para $k=n$, no se tiene el termino $x^2$, también teniendo términos de $\cos 1/x$ o $\sen 1/x$, esto hace que la función sea discontinua en $x=0.$\\\\
+
 
     %-------------------- 34.
      \item Sea $f(x)=x^{2n+1}\sen 1/x$ si $x\neq 0,$ y $f(0)=0$. Demuestre que existe $f'(0),\ldots , f^{(n)}(0)$ es continua en $0$, y que $f^{(n)}$ no es diferenciable en $0$.\\\\
-	 Demostración.-\; 
+	 Demostración.-\; Encontraremos las primeras tres derivadas de la función dada.
+	 $$\begin{array}{rcl}
+	     f'(x)&=&2nx^{2n-1}\sen\dfrac{1}{x}-x^{2n-2}\cos\dfrac{1}{x}.\\\\
+	     f''(x)&=&\left[2n(2n-1)x^{2n-2}\sen \dfrac{1}{x}-2nx^{2n-3}\cos \dfrac{1}{x}\right]-\left[(2n-2)x^{2n-3}\cos \dfrac{1}{x}-x^{2n-4}\sen\dfrac{1}{x}\right]\\\\
+	     f''(x)&=&2n(2n-1)e^{2n-2}\sen \dfrac{1}{x}+(2-4n)x^{2n-3}\cos \dfrac{1}{x}-x^{2n-4}\sen \dfrac{1}{x}.\\\\
+	     f'''(x) &=& 2n(2n-1)(2n-2)x^{2n-3}\sen \dfrac{1}{x}-2n(2n-1)x^{2n-4}\cos \dfrac{1}{x} + (2n-3)(2-4n)x^{2n-4}\cos \dfrac{1}{x}\\\\
+		     &+&(2-4n)x^{2n-5}\sen \dfrac{1}{x}-(2n-4)x^{2n-4}x^{2n-5}\sen \dfrac{1}{x}+x^{2n-6}\cos \dfrac{1}{x}.\\\\
+	     f'''(x)&=&2n(2n-1)(2n-2)x^{2n-3}\sen \dfrac{1}{x}+\left[-2n(2n-1)+(2n-3)(2-4n)\right]x^{2n-4}\cos \dfrac{1}{x}\\\\
+		    &+&\left[(2-4n)-(2n-4)\right]x^{2n-5}\sen \dfrac{1}{x}+x^{2n-6}\cos \dfrac{1}{x}.\\\\
+	 \end{array}$$
+
+	 En general, para el $k$-esima derivada se tiene,
+	 $$f^{(k)}(x)=ax^{2n-k}\sen \dfrac{1}{x}+\sum_{l=k+1}^{2k-1}\left(a_l x^{2n-l}\sen \dfrac{1}{x}+b_lx^{2n-(l+1)}\cos \dfrac{1}{x}\right)\pm \left\{\begin{array}{ll}
+		 x^{2n-2k}\sen \dfrac{1}{x},&k\mbox{ par}\\\\
+		 x^{2n-2k}\cos \dfrac{1}{x},&k\mbox{ impar}\\
+	 \end{array}\right.$$
+	 para $a,a_l,b_l$ constantes.\\
+
+	 Ahora cuando $k$ es menor que $n$ (hasta $n-1$), la expresión general de $f^{(k)}(x)$ muestra que, tendrá un término de al menos $x^2$,
+	 $$x^{2n-2(n-1)}=x^2$$
+	 El término con esto es $\sen 1/x$, que está acotado en el intervalo alrededor de $0$.\\
+
+	 Después encontremos las dos primeras derivadas en $0$.
+	 $$\begin{array}{rcl}
+	     f'(0)&=&\lim\limits_{h\to 0}\dfrac{f(h)-f(0)}{h}=\lim\limits_{h\to 0}\dfrac{f(h)}{h}=\lim\limits_{h\to 0}\dfrac{h^2g(h)}{h}=0.\\\\
+	     f''(0) &=& \lim\limits_{h\to 0}\dfrac{f'(h)-f'(0)}{h}=\lim\limits_{h\to 0}\dfrac{f'(h)}{h}=\lim\limits_{h\to 0}\dfrac{f'(h)-f'(0)}{h}=\lim\limits_{h\to 0}\dfrac{h^2g(h)}{h}=0.\\\\
+	 \end{array}$$
+	 El proceso puede repetirse hasta $k=n$,
+	 $$f^{(n)}(0)=\lim_{h\to 0}\dfrac{f^{n-1}(h)-f^{n-1}(0)}{h}=\lim_{h\to 0}\dfrac{f^{n-1}(h)}{h}=\lim_{h\to 0}\dfrac{h^2g(h)}{h}=0.$$
+	 Por lo tanto por la primera parte se prueba que 
+	 $$f'(0)=f''(0)=f^{(n)}=0.$$
+	 Encontramos que hasta que $k$ es igual a $n$, todas las derivadas tienen un término de $x^2$ con términos de $\cos 1/x$ o $\sen 1/x$. Esto hace que la función sea continua en $x=0$ pero no diferenciable.\\\\
+
 
     %-------------------- 35.
      \item Con la notación de Leibniz la Regla de la Cadena debería escribirse:
@@ -1043,19 +1107,27 @@
 
 	     %---------- (i)
 	     \item $z=\sen y$, $\quad y=x+x^2.$\\\\
-		 Respuesta.-\; 
+		 Respuesta.-\; Aplicando la regla de la cadena tenemos,
+		 $$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}\quad \Rightarrow \quad \dfrac{dz}{dx}=\cos y \cdot (1-2x)\quad \Rightarrow \quad \left[\cos\left(x+x^2\right)\right](1+2x).$$\\
 
 	     %---------- (ii)
 	     \item $z=\sen y,$ $\quad y=\cos x.$\\\\
-		 Respuesta.-\;
+		 Respuesta.-\; Aplicando la regla de la cadena tenemos,
+		 $$\dfrac{dz}{dx}=\dfrac{dz}{dy}\cdot \dfrac{dy}{dx}\quad \Rightarrow \quad \dfrac{dz}{dx}=\cos y \cdot (-\sen x)\quad \Rightarrow \quad \left[\cos\left(\cos x\right)\right](\sen x).$$\\
 	     
 	     %---------- (iii)
 	     \item $z=\sen u,$ $\quad u=\sen x.$\\\\
-		 Respuesta.-\;
+		 Respuesta.-\; Aplicando la regla de la cadena tenemos,
+		 $$\dfrac{dz}{dx}=\dfrac{dz}{du}\cdot \dfrac{du}{dx}\quad \Rightarrow \quad \dfrac{dz}{dx}=\cos u \cdot \cos x\quad \Rightarrow \quad \left[\cos\left(\sen x\right)\right](\cos x).$$\\
 
 	     %---------- (iv)
 	     \item $z=\sen v,$ $\quad v=\cos u,$ $\quad u=\sen x.$\\\\
-		 Respuesta.-\;
+		 Respuesta.-\; Aplicando la regla de la cadena tenemos,
+		 $$\begin{array}{rcl}
+		     \dfrac{dz}{dx}=\dfrac{dz}{dv}\cdot \dfrac{dv}{du}\cdot \dfrac{du}{dx}&\Rightarrow&\dfrac{dz}{dx}=\cos v \cdot (-\sen u) \cdot \cos x\\\\
+		     &\Rightarrow& \dfrac{dz}{dx}=-\left[\cos \left(\cos u\right)\right]\cdot \sen u \cos x \\\\
+		     &\Rightarrow& \left[\cos\left(\cos\left(\sen x\right)\right)\right](\sen x).\\
+		 \end{array}$$\\
 
 	 \end{enumerate}
 

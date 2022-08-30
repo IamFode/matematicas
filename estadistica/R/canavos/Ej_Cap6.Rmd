@@ -327,3 +327,88 @@ cov/(sqrt(varX*varY))
 
 ## 6.7.
 Un función de su prioridad, un programa para computadora espera en la fila de entrada cierto tiempo, después del cual lo ejecuta el procesador central en un lapso dado. La función de densidad conjunta para los tiempos de espera y ejecución se determina por
+
+$$f(t_1,t_2)=\left\{\begin{array}{ll}
+  2e^{-\left(\frac{t_1}{5}+10t^2\right)}&t_1,t_2>0,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+Dada la distribución conjunta acumulativa:
+
+$$F(t_1,t_2)=\left\{\begin{array}{ll}
+  \left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10t^2}\right] & t_1,t_2>0\\\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+Obtener la probabilidad conjunta de que el tiempo de espera no sea mayor de ocho minutos y el de ejecución no sea mayor de 12 segundos.
+
+Respuesta.-
+$$\begin{array}{rcl}
+  P(X\leq 8,Y\leq 0.2) = \displaystyle \int_0^8 \int_0^{0.2} 2e^{-\left(\frac{t_1}{5}+10t_2\right)} \; dt_2\, dt_1&=& 2 \displaystyle \int_0^8 \left[\dfrac{e^{-\left(\frac{t_1}{5}+10t_2\right)}}{-10}\right]\bigg|_0^{0.2} \; dt_1\\\\
+  &=&-\dfrac{1}{5}\displaystyle \int_0^8 e^{-\left(\frac{t_1}{5}+2\right)} -e^{-\frac{t_1}{5}}\;dt_1\\\\
+  &=&-\dfrac{1}{5}\left[\dfrac{e^{-\left(\frac{t_1}{5}+2\right)}}{-\frac{1}{5}}\right]\bigg|_0^8 + \dfrac{1}{5}\left(\dfrac{e^{-\frac{t_1}{5}}}{-\frac{1}{5}}\right)\bigg|_0^8 \\\\
+  &=&e^{-\left(\frac{t_1}{5}+2\right)}\bigg|_0^8-e^{-\frac{t_1}{5}}\bigg|_0^8\\\\
+  &=&e^{-\frac{18}{5}}-e^{-2}-e^{-\frac{8}{5}}+e^0\\\\
+  &=&0.6900919.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(t1) {
+  sapply(t1, function(t1) {
+    integrate(function(t2) 2*exp(-(t1/5+10*t2)), 0, 0.2)$value
+   })
+ }, 0, 8)$value
+```
+
+Podemos encontrar el resultado mediante la distribución conjunta acumulativa:
+
+$$F(8,0.2)=\left[1-e^{-\frac{8}{5}}\right]\left[1-e^{-10\cdot 0.2}\right] = 0.6900919.$$
+
+
+```{r}
+t1=8
+t2=0.2
+(1-exp(-t1/5))*(1-exp(-10*t2))
+```
+
+
+
+### b)
+Obtener las funciones de densidad marginal y deducir que estos lapsos son variables aleatorias independientes.
+
+Respuesta.- Sea $F(x,y)=\left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10t^2}\right]$, entonces
+
+$$F(t_1,\infty) = \left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10\cdot \infty}\right] = 1-e^{\left(\frac{-t_1}{5}\right)}. \quad \Rightarrow \quad f_{T_1}(t_2)=\dfrac{\partial F(\infty,t_2)}{\partial y}=-\left(-\dfrac{1}{5}\right)e^{\frac{-t_1}{5}}=\dfrac{1}{5}e^{\frac{-t_1}{5}}$$
+
+$$F(\infty,t_2) = \left[1-e^{\left(\frac{-\infty}{5}\right)}\right]\left[1-e^{-10t_2}\right] = 1-e^{-10t_2}\quad \Rightarrow \quad f_{T_2}(t_1)=\dfrac{\partial F(t_1,\infty)}{\partial x}=10e^{-10t_2}.$$
+
+Por último, comprobemos la independencia. Sea $f(x,y)=f_X(x)f_Y(y)$, entonces en lo particular:
+
+$$f(t_1,t_2) = f_{T_1}(t_1)\cdot f_{T_2}(t_2)\quad \Rightarrow \quad 2e^{-\left(\frac{t_1}{5}+10t^2\right)}=\dfrac{1}{5}e^{\frac{-t_1}{5}}\cdot 10e^{-10t_2}.$$
+
+Por lo tanto, se comprueba que estos lapsos son variables aleatorias independientes.
+
+
+## 6.8.
+Las variables aleatorias $X$ e $Y$ representan las proporciones de los mercados correspondientes a dos productos distintos fabricados por la misma compañia y cuya función de densidad conjunta de probabilidad está dada por
+
+$$f(x,y)=\left\{\begin{array}{ll}
+  x+y & 0\leq x, y\leq 1,\\
+  0& \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+Obtener las funciones de densidad marginal de $X$ e $Y$.
+
+Respuesta.-
+
+### b)
+¿Las variables aleatorias $X$ e $Y$ son estadísticamente independientes?.
+
+Respuesta.-
+
+### c)
+Si $X=0.2$, obtener la función de densidad de probabilidad condicional de $Y$.
+
+Respuesta.-

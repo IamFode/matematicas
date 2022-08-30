@@ -1810,13 +1810,42 @@ El signo de la derivada segunda también está relacionado con la concavidad o l
 \setcounter{section}{18}
 \section{Ejercicios}
 
-En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = O$; b) examinar el signo de $f'$ determinar aquellos intervalos en los que $f$ es monótona; c) examinar el signo de $f''$ y determinar aquellos intervalos en los que $f'$ es monótona; d) construir un boceto de la gráfica de $f$. En cada caso, la función está definida para todos los $x$ para los cuales tiene sentido $f(x)$.\\
+En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$; b) examinar el signo de $f'$ y determinar aquellos intervalos en los que $f$ es monótona; c) examinar el signo de $f''$ y determinar aquellos intervalos en los que $f'$ es monótona; d) construir un boceto de la gráfica de $f$. En cada caso, la función está definida para todos los $x$ para los cuales tiene sentido $f(x)$.\\
 
 \begin{enumerate}[\bfseries 1.]
 
     %-------------------- 1.
     \item $f(x)=x^2-3x+2.$\\\\
 	Respuesta.-\; 
+	\begin{enumerate}
+	    \item Derivando $f(x)$, tenemos $f'(x)=2x-3$. Luego igualando a $0$ se tiene,
+		$$2x-3=0\quad \Rightarrow \quad x=\dfrac{3}{2}.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que $f'$ es creciente si $x>\dfrac{3}{2}$ y decreciente si $x<\dfrac{3}{2}.$ 
+	    \item Sea $f''(x)=2$. Ya que $2>0$, entonces por el teorema 4.9 (tom Apostol, capítulo 4) $f'$ es creciente para todo $x$. 
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-1,xmax=3.5,ymin=-1,ymax=4,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1,domain=-2:5]{x^2-3*x+2};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 2.
+    \item 
 
 \end{enumerate}
 
