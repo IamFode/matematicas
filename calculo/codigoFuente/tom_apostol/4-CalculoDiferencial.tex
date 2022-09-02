@@ -1818,14 +1818,14 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
     \item $f(x)=x^2-3x+2.$\\\\
 	Respuesta.-\; 
 	\begin{enumerate}
-	    \item Derivando $f(x)$, tenemos $f'(x)=2x-3$. Luego igualando a $0$ se tiene,
+	    \item Derivando $f(x)$, tenemos $f'(x)=2x-3$. Luego igualando a $0$,
 		$$2x-3=0\quad \Rightarrow \quad x=\dfrac{3}{2}.$$
 	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que $f'$ es creciente si $x>\dfrac{3}{2}$ y decreciente si $x<\dfrac{3}{2}.$ 
-	    \item Sea $f''(x)=2$. Ya que $2>0$, entonces por el teorema 4.9 (tom Apostol, capítulo 4) $f'$ es creciente para todo $x$. 
+	    \item Sea $f''(x)=2$. Ya que $2>0$, entonces por el mismo criterio del teorema 4.7 (tom Apostol, capítulo 4) $f'$ es creciente para todo $x$. 
 	    \item \;
 	    \begin{center}
 		\begin{tikzpicture}
-		\begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
+		\begin{axis}[scale=.4,draw opacity =.5,samples=100,smooth, 
 		  axis x line=center, 
 		  axis y line=center,
 		  ylabel = {$f(x)$},
@@ -1845,6 +1845,105 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 	\end{enumerate}
 
     %-------------------- 2.
+    \item $f(x)=x^3-4x$.\\\\
+    	Respuesta.-\;
+
+	\begin{enumerate}
+	    \item Derivando $f(x)$, tenemos $f'(x)=3x^2-4$. Luego igualando a $0$,
+		$$3x^2-4=0\quad \Rightarrow \quad x=\pm \dfrac{2}{\sqrt{3}}.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que $f'$ es creciente si $|x|>\dfrac{2}{\sqrt{3}}$ y decreciente si $|x|<\dfrac{2}{\sqrt{3}}.$ 
+	    \item Sea $f''(x)=6x$. Por lo tanto, $f'$ es creciente para $x>0$ y decreciente para $x<0$.
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-3,xmax=3.5,ymin=-4,ymax=4,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{x^3-4*x};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item $f(x)=(x-1)^2(x+2)$.\\\\
+	Respuesta.-\;
+	\begin{enumerate}
+	\item Derivando $f(x)$, tenemos 
+	    $$f'(x)=2(x-1)(x+2)+(x-1)^2=3(x^2-1)$$ 
+	    Luego igualando a $0$,
+		$$3(x^2-1)=0\quad \Rightarrow \quad x=\pm 1.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que $f'$ es creciente si $|x|>1$ y decreciente si $|x|<-1.$ 
+	    \item Sea $f''(x)=6x$. Por lo tanto, $f'$ es creciente para $x>0$ y decreciente para $x<0$.
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-3,xmax=3.5,ymin=-4,ymax=6,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{((x-1)^2)*(x+2)};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
+
+    %-------------------- 4.
+    \item $f(x)=x^3-6x^2+9x+5.$\\\\
+	Respuesta.-\;
+	\begin{enumerate}
+	\item Derivando $f(x)$, tenemos 
+	    $$f'(x)=3x^2-12x+9.$$
+	    Luego igualando a $0$,
+		$$3(x^2-4x+3)=0\quad \Rightarrow \quad x_1=1,\quad x_2=3.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que:
+		$$\begin{array}{ccclcl}
+		    \mbox{Si } &x<1 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &1<x<3 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
+		    \mbox{Si } &x>3 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		\end{array}$$
+	    \item Sea $f''(x)=2x-4$. Entonces,
+		$$2x-4>0 \; \Rightarrow \; x>2 \qquad \mbox{y} \qquad 2x-4<0 \; \Rightarrow \;x<2.$$
+		Por lo tanto por el mismo criterio del teorema 4.7 (Tom Apostol, capítulo 4), se tiene que $f'$ es creciente si $x>2$ y decreciente si $x<2$.
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-3,xmax=5,ymin=-5,ymax=15,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{x^3-6*x^2+9*x+5};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
+
+    %-------------------- 5.
     \item 
 
 \end{enumerate}

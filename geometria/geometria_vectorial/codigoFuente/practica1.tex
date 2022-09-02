@@ -245,8 +245,20 @@
     Podemos refutar la proposición dada de otra forma.\\
     Supongamos que las distancias entre $A,B$ y $C$ son iguales, lo que implica que 
     $$\|\vec{a}\|=\|\vec{b}\|=\|\vec{a}\|.$$ 
-    Ya que $\|\vec{a}\|\neq \|\vec{b}\|$ se concluye que los puntos dado no son los vertices de un triangulo equilátero.\\\\
+    Ya que $\|\vec{a}\|\neq \|\vec{b}\|$ se concluye que los puntos dado no son los vertices de un triangulo equilátero.\\
 
+    Veamos este hecho gráficamente.
+    \begin{center}
+	\begin{tikzpicture}[scale=.5]
+	    \draw[line width=1.2pt,-stealth](4,7,9)--(4,4,2);
+	    \draw[](2.3,3,0)node[left]{\scriptsize$\|\vec{a}\|$};
+	    \draw[line width=1.2pt,-stealth](8,5,-6)--(4,7,9);
+	    \draw[](5,6,0)node[left,rotate=17]{\scriptsize$\|\vec{b}\|$};
+	    \draw[line width=1.2pt,-stealth](8,5,-6)--(4,4,2);
+	    \draw[](7,4.3,0)node[left,rotate=0]{\scriptsize$\|\vec{c}\|$};
+	\end{tikzpicture}
+    \end{center}
+    \vspace{.5cm}
 
 %----------15.
 \item \textbf{\boldmath Demostrar que}
@@ -370,25 +382,42 @@
 
 	%---------- a)
 	\item \textbf{\boldmath $\vec{a}\circ \left(\vec{b}\circ \vec{c}\right)=\left(\vec{a}\circ \vec{b}\right)\circ \vec{c}.$\\\\
-	    Respuesta.-}\;
+	    Respuesta.-}\; Sean $\vec{a},\vec{b},\vec{c}\in V_n$. Luego, ya que $\circ:V\times V \to F$. Entonces,
+	    $$\begin{array}{rcl}
+		\vec{a}\circ \left(b_1c_1+b_2c_2+\ldots + b_nc_n\right)&=&\left(a_1b_1+a_2b_2+\ldots + a_nb_n\right)\circ \vec{c}\\
+	    \end{array}$$
+	    Pero como, $F \times V_n$ con $F\in \mathbb{R}\; \mbox{o}\; \mathbb{C}$ se concluye que no se puede definir el producto escalar de un vector y un escalar.\\\\
+
 
 	%---------- b)
 	\item \textbf{\boldmath $\|\vec{a}\circ\vec{b}\|.$\\\\
-	    Respuesta.-}\;
+	    Respuesta.-}\; Sean $\vec{a},\vec{b}\in V_n$. Por definición de norma $(\circ : V\times V \to F)$ o módulo tenemos,
+	    $$\|\vec{a}\circ \vec{b}\| = \sqrt{(a\circ b)\circ (a\circ b)}.$$
+	    Dado que lo anterior es $F\times F \to F$, entonces no se tiene sentido definir la norma de dos escalar.\\\\
+	    
 
 	%---------- c)
 	\item \textbf{\boldmath $(\vec{a}\circ \vec{b})+\vec{c}$.\\\\
-	    Respuesta.-}\; 
+	    Respuesta.-}\; Ya que $(\vec{a}\circ \vec{b})$ solo está definida para la suma de vectores de un mismo espacio. Entonces concluimos que $(\vec{a}\circ \vec{b})+\vec{c}$ no tiene sentido.\\\\
 
 	%---------- d)
 	\item \textbf{\boldmath $k\circ \left(\vec{a}+\vec{b}.\right)$.\\\\
-	    Respuesta.-}\; 
+	    Respuesta.-}\; Supongamos que $k\in F$. Por el hecho de que $\circ : V\times V \to F$ no podemos definir $k\circ \left(\vec{a}+\vec{b}.\right)$.\\\\
 
     \end{enumerate}
 
 %----------22.
 \item \textbf{ \boldmath Dado el punto fijo $A(1, 3, 5)$, el punto $P(x, y, z)$ y el vector $\vec{n} = i - j + 2k$, utilice el producto escalar como ayuda para escribir una ecuación en $x, y$ y $z$ que diga lo siguiente: $\vec{n}$ y $\vec{AP}$ son perpendiculares. Simplifique entonces esta ecuación y dé una descripción geométrica del conjunto de tales puntos $P(x, y, z)$.\\\\
-    Respuesta.-}\;
+    Respuesta.-}\; Sean $\vec{n}=(1-1,2)$ y el vector $\vec{AP}=(x-1,y-3,z-5)$. Entonces, la perpendicularidad de estos dos vectores estará dada por:
+    $$\begin{array}{rcl}
+	\vec{n}\circ \vec{AP}&=&0\\\\
+	(1,-1,2)\circ (x-1,y-3,z-5)&=&0\\\\
+	1\cdot(x-1)+(-1)\cdot(y-3)+2\cdot(z-5)&=&0\\\\
+	x-1-y+3+2z-10&=&0\\\\
+	x-y+2z-8&=&0\\\\
+    \end{array}$$
+    \vspace{.4cm}
+
 
 %----------23.
 \item \textbf{Para \boldmath $\vec{a},\vec{b},\vec{c},\vec{d}\in \mathbb{R}^3$ demuestre que:}
@@ -397,45 +426,200 @@
 
 	    %---------- a)
 	    \item \textbf{\boldmath $\vec{a}\times \vec{a}=0.$\\\\
-		Respuesta.-}\;
+		Demostración.-}\; Por definición de producto vectorial tenemos,
+		$$\begin{array}{rcl}
+		    \vec{a}\times \vec{a}&=&\left(a_2b_3-a_3b_2\right)+\left(a_3b_1-a_1b_3\right)+\left(a_1b_2-a_2b_1\right)\\\\
+		    &=&\left(a_2a_2-a_3a_3\right)+\left(a_3a_1-a_1a_3\right)+\left(a_1a_2-a_2a_1\right)\\\\
+		    &=&\left(a_2^2-a_3^2\right)+\left(a_3^2-a_1^2\right)+\left(a_1^2-a_2^2\right)\\\\
+		    &=&\left(a_1^2-a_1^2\right)+\left(a_2^2-a_2^2\right)+\left(a_3^2-a_2^3\right)\\\\
+		    &=&0\\
+		\end{array}$$
+		\vspace{.4cm}
 
 	    %---------- b)
-	    \item \textbf{\boldmath $\vec{a}\circ \left(\vec{a}\times \vec{b}\right)=0$
-		Respuesta.-}\;
+	    \item \textbf{\boldmath $\vec{a}\circ \left(\vec{a}\times \vec{b}\right)=0$.\\\\
+		Demostración.-}\; Por definición de producto escalar y producto vectorial tenemos,
+		$$\begin{array}{rcl}
+		    \vec{a}\circ \left(\vec{a}\times \vec{b}\right)&=&a\circ \left(a_2b_3-a_3b_2,a_3b_1-a_1b_3,a_1b_2-a_2b_1\right)\\\\
+		    &=&a_1\left(a_2b_3-a_3b_2\right)+a_2\left(a_3b_1-a_1b_3\right)+a_3\left(a_1b_2-a_2b_1\right)\\\\
+		    &=&\left(a_1a_2b_3-a_1a_3b_2\right) + \left(a_2a_3b_1-a_2a_1b_3\right) + \left(a_3a_1b_2-a_3a_2b_1\right)\\\\
+		    &=&(a_1a_2b_3-a_1a_2b_3)+(a_2a_3b_1-a_2a_3b_1)+(a_3a_1b_2-a_3a_1b_2)\\\\
+		    &=&0\
+		\end{array}$$
+		\vspace{.4cm}
 
 	    %---------- c)
-	    \item \textbf{\boldmath $\vec{a}\times \left(\vec{a}\circ \vec{b}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}.$\\\\
-		Respuesta.-}\;
+	    \item \textbf{\boldmath $\vec{a}\times \left(\vec{b}\times \vec{c}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}.$\\\\
+		Demostración.-}\; Calculemos $\vec{b}\times \vec{c}$.
+		$$\begin{array}{rcl}
+		    \vec{b}\times \vec{c}&=&\left(b_2c_3-b_3c_2,b_3c_1-b_1c_3,b_1c_2-b_2c_1\right)\\\\
+		\end{array}$$
+		Luego, calculemos $\vec{a}\times \left(\vec{b}\times \vec{c}\right)$.
+		$$\begin{array}{rcl}
+		    \vec{a}\times \left(\vec{b}\times \vec{c}\right)&=&\left[\vec{a}_2\left(\vec{b}_1\vec{c}_2-\vec{b}_2\vec{c}_1\right)-\vec{a}_3\left(\vec{b}_3\vec{c}_1-\vec{b}_1\vec{c}_3\right)\; , \; \vec{a}_3\left(\vec{b}_2\vec{c}_3-\vec{b}_3\vec{c}_2\right)-\vec{a}_1\left(\vec{b}_1\vec{c}_2-\vec{b}_2\vec{c}_1\right),\right.\\
+								    &&\left.\vec{a}_1\left(\vec{b}_3\vec{c}_1-\vec{b}_1\vec{c}_3\right)-\vec{a}_2\left( \vec{b}_2\vec{c}_3-\vec{b}_3\vec{c}_2\right)\right]\\\\
+								    &=& \left(\vec{a}_2\vec{b}_1\vec{c}_2-\vec{a}_2\vec{b}_2\vec{c}_1-\vec{a}_3\vec{b}_3\vec{c}_1+\vec{a}_3\vec{b}_1\vec{c}_3\; , \; \vec{a}_3\vec{b}_2\vec{c}_3-\vec{a}_3\vec{b}_3\vec{c}_2-\vec{a}_1\vec{b}_1\vec{c}_2+\vec{a}_1\vec{b}_2\vec{c}_1\right.\\
+								    &&\left.\vec{a}_1\vec{b}_3\vec{c}_1-\vec{a}_1\vec{b}_1\vec{c}_3-\vec{a}_2\vec{b}_2\vec{c}_3+\vec{a}_2\vec{b}_3\vec{c}_2\right).\qquad (1)\\\\
+		\end{array}$$
+
+		Por otro lado calculamos $\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}$.
+
+		$$\begin{array}{rcl}
+		    &&\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}\\\\
+		    &&(\vec{a}_1\vec{c}_1+\vec{a}_2\vec{c}_2+\vec{a}_3\vec{c}_3)(\vec{b}_1,\vec{b}_2,\vec{b}_3)-(\vec{a}_1\vec{b}_1+\vec{a}_2\vec{b}_2+\vec{a}_3\vec{b}_3)(\vec{c}_1,\vec{c}_2,\vec{c}_3)\\\\
+		    &=& (\vec{a}_1\vec{b}_1\vec{c}_1+\vec{a}_2\vec{b}_1\vec{c}_2+\vec{a}_3\vec{b}_1\vec{c}_3\; ,\; \vec{a}_1\vec{b}_2\vec{c}_1+\vec{a}_2\vec{b}_2\vec{c}_2+\vec{a}_3\vec{b}_2\vec{c}_3\; , \; \vec{a}_1\vec{b}_3 \vec{c}_1+\vec{a}_2\vec{b}_3\vec{c}_2+\vec{a}_3\vec{b}_3\vec{c}_3)\\
+		    &-&(\vec{a}_1\vec{b}_1\vec{c}_1+\vec{a}_2\vec{b}_2\vec{c}_1+\vec{a}_3\vec{b}_3\vec{c}_1\; , \; \vec{a}_1\vec{b}_1\vec{z}_2+\vec{a}_2\vec{b}_2\vec{c}_2+\vec{a}_3\vec{b}_3\vec{c}_2\; ,\; \vec{a}_1\vec{b}_1\vec{c}_3+\vec{a}_2\vec{b}_2\vec{c}_3+\vec{a}_3\vec{b}_3\vec{c}_3)\\\\
+		    &=&(\vec{a}_2\vec{b}_1\vec{c}_2+\vec{a}_3\vec{b}_1\vec{c}_3-\vec{a}_2\vec{b}_2\vec{c}_1-\vec{a}_3\vec{b}_3\vec{c}_1\; , \; \vec{a}_1\vec{b}_2\vec{c}_2+\vec{a}_3\vec{b}_2\vec{c}_3-\vec{a}_1\vec{b}_1\vec{c}_2-\vec{a}_3\vec{b}_3\vec{z}_2 ,\\
+		    &=& \vec{a}_1\vec{b}_3\vec{c}_1+ \vec{a}_2\vec{b}_3\vec{c}_2-\vec{a}_1\vec{b}_1\vec{c}_3- \vec{a}_2\vec{b}_2\vec{c}_3). \qquad (2)\\\\
+		\end{array}$$
+
+	    Igualando (1) y (2) concluimos que,
+	    $$\vec{a}\times \left(\vec{b}\times \vec{c}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}.$$\\
+
 	\end{enumerate}
 
 %----------24.
-\item 
+\item \textbf{\boldmath Suponga que los tres vectores $\vec{a},\vec{b},\vec{c}$ son perpendiculares entre si. Demuestre que $\vec{a}\times (\vec{b}\times \vec{c})=0$.\\\\
+    Demostración.-}\; Dado que, 
+    $$\vec{a}\circ \vec{c}=0\quad \mbox{y} \quad\vec{a}\circ \vec{b}=0.$$
+    Por el ejercicio anterior sabemos que,
+	$$\vec{a}\times \left(\vec{b}\times \vec{c}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}.$$\\
+	Por lo tanto,
+	$$\vec{a}\times \left(\vec{b}\times \vec{c}\right)=\left(\vec{a}\circ \vec{c}\right)\vec{b}-\left(\vec{a}\circ \vec{b}\right)\vec{c}=0\cdot \vec{b}-0\cdot \vec{c}=0.$$\\
+
 
 %----------25.
-\item 
+\item \textbf{\boldmath Encuentre vectores distintos de cero $\vec{a},\vec{b}$ y $\vec{c}$ tales que $\vec{a}\times \vec{b} = \vec{a}\times \vec{c},$ pero $\vec{b}\neq \vec{c}.$\\\\
+    Respuesta.-}\; Ya que cada lado de la igualdad es un vector de $V_3$. Se tiene,
+    $$\vec{a}\times  \vec{b} - \vec{a}\times \vec{c}=0.$$
+    Después, por la propiedad distributiva,
+    $$\vec{a}\times (\vec{b}-\vec{c})=0.$$
+    Sabemos que $\vec{a}\parallel (\vec{b}-\vec{c}) \; \Leftrightarrow \; \vec{a}\times (\vec{b}-\vec{c})=0.$ De donde, 
+    $$\vec{a}=r(b-c)\quad \mbox{para algún} \; r\in \mathbb{R}.$$
+    Así, los vectores $\vec{a},\vec{b},\vec{c}$ tal que $\vec{a}\times \vec{b}=\vec{a}\times \vec{c}$ serán de la forma:  
+    $$\vec{a}=r(\vec{b}-\vec{c}),\qquad \vec{b}=\dfrac{\vec{a}-r\vec{c}}{r},\qquad \vec{c}=\dfrac{r\vec{b}-\vec{a}}{r}, \qquad \vec{b}\neq \vec{c}.$$
+    De hecho, sólo hará falta encontrar un vector que cumpla la condición $\vec{a}=r(\vec{b}-\vec{c}).$\\\\
 
 %----------26.
-\item 
+\item Supóngase que $\vec{u}\circ\left(\vec{v}\times \vec{w}\right)=3$. Encontrar
+
+    \begin{enumerate}[a)]
+	\item \textbf{\boldmath $\vec{u}\circ (\vec{w}\times \vec{v})$.\\\\
+	    Respuesta.-}\; Por la propiedad anticonmutativa para el producto vectorial, tenemos que
+	    $$\vec{u}\circ\left(-\vec{w}\times \vec{v}\right)=3$$
+	    Luego, Por las propiedades de multiplicación por un escalar nos queda,
+	    $$-\vec{u}\circ\left(\vec{w}\times \vec{v}\right)=3\quad \Rightarrow\quad \vec{u}\circ\left(\vec{w}\times \vec{v}\right)=-3.$$\\
+
+	\item \textbf{\boldmath $(\vec{v}\times \vec{w})\circ \vec{u}$.\\\\
+	    Respuesta.-}\; Por la propiedad conmutativa para el producto escalar, tenemos que
+	    $$(\vec{v}\times \vec{w})\circ \vec{u} = \vec{u}\circ (\vec{v}\times \vec{w}) =3.$$\\
+
+	\item \textbf{\boldmath $\vec{w}\circ (\vec{u}\times \vec{v})$.\\\\
+	    Respuesta.-}\; Por definción de producto vectorial y escalar, tenemos que
+	    $$\begin{array}{rcl}
+		\vec{w}\circ (\vec{u}\times \vec{v}) &=& \vec{w}\circ \left(\vec{u}_2\vec{v}_3-\vec{u}_3\vec{v}_2,\vec{u}_3\vec{v}_1-\vec{u}_1\vec{v}_3,\vec{u}_1\vec{v}_2-\vec{u}_2\vec{v}_1\right)\\\\
+						     &=&\vec{w}_1\vec{u}_2\vec{v}_3-\vec{w}_1\vec{u}_3\vec{v}_2+\vec{w}_2\vec{u}_3\vec{v}_1-\vec{w}_2\vec{u}_1\vec{v}_3+\vec{w}_3\vec{u}_1\vec{v}_2-\vec{w}_3\vec{u}_2\vec{v}_1\\\\
+	    \end{array}$$
+
+    \end{enumerate}
 
 %----------27.
-\item 
+\item \textbf{\boldmath Encontrar el área del triángulo que tiene vértices $P(1,5,-2),Q(0,0,0),R(3,5,1)$.\\\\
+    Respuesta.-}\; Grafiquemos.
+    \begin{center}
+	\begin{tikzpicture}[scale=.6]
+	    \draw[line width=1.2pt,-stealth](0,0,0)node[below]{\scriptsize$Q$}--(1,5,-2)node[above]{\scriptsize$P$};
+	    \draw[line width=1.2pt,-stealth](0,0,0)--(3,5,1)node[right]{\scriptsize$R$};
+	    \draw[line width=1.2pt,-stealth](3,5,1)--(1,5,-2);
+	\end{tikzpicture}
+    \end{center}
+
+    Podemos calcular el área de dicho triángulo mediante la fórmula siguiente,
+    \begin{center}
+    \begin{equation}
+    A(\triangle) = \dfrac{1}{2}\|\vec{a}\times \vec{b}\|
+    \end{equation}
+    \end{center}
+
+    Calculemos los vectores asociados al triangulo.
+    $$\begin{array}{rcl}
+	\vec{a} &=& P-Q = (1,5,-2)-(0,0,0) = (1,5,-2).\\\\
+	\vec{b} &=& R-Q = (3,5,1)-(0,0,0) = (3,5,1).\\\\
+    \end{array}$$
+
+    Aplicando (1), tenemos 
+    $$\begin{array}{rcl}
+	A(\triangle)&=&\dfrac{1}{2}\|\vec{a}\times \vec{b}\|\\\\
+		    &=&\dfrac{1}{2}\|\left(5\cdot 1 - 5\cdot (-2),-2\cdot 3 - 1\cdot 1, 1\cdot 5 - 5\cdot 3\right)\|\\\\
+		    &=&\dfrac{1}{2}\|15,-7,-10\|\\\\
+		    &=&\dfrac{1}{2}\sqrt{15^2+(-7)^2+(-10)^2}\\\\
+		    &=&\dfrac{\sqrt{374}}{2}.\\\\
+    \end{array}$$
 
 %----------28.
-\item 
+\item \textbf{\boldmath Encontrar el volumen del paralelepípedo de lados $\vec{a}=(2,-6,2),\vec{b}=(0,4,-2),\vec{c}=(2,2,-4)$.\\\\
+    Respuesta.-}
+    Podemos ver que un paralelepípedo viene dado por:
+    $$V = |\vec{c}\circ (\vec{a}\times \vec{b})|$$
+    Primero calculemos $\vec{a}\times \vec{b}$.
+
+    $$\begin{array}{rcl}
+	\vec{a}\times \vec{b} &=& \left(-6\cdot (-2) - 2\cdot 4, 2\cdot 0 - 2\cdot (-2), 2\cdot 4 - (-6)\cdot 0\right)\\\\
+			      &=& (4,4,8).\\\\
+    \end{array}$$
+    Luego, calculemos $\vec{c}\circ (\vec{a}\times \vec{b})$
+    $$|c\circ (\vec{a}\times \vec{b})|=(2,2,-4)\circ (4,4,8) = 2\cdot 4 + 2\cdot 4 + (-4)\cdot 8 = |-16|=16.$$\\
+
+
 
 %----------29.
-\item 
+\item \textbf{\boldmath Determinar si $\vec{u},\vec{v}$ y $\vec{w}$ están en el mismo plano.}
+
+    \begin{enumerate}[(a)]
+
+	\item \textbf{\boldmath $\vec{u}=(1,-2,1),(3,0,-2),\vec{w}=(5,-4,0).$\\\\
+	    Respuesta.-}\; Esperamos que los tres vectores estén en un plano. Por lo tanto no podrían formar un volumen. Esto significa que el producto triple tendría que ser igual a cero. Es decir,
+	    $$\begin{array}{rcl}
+		\vec{a}\circ \| \vec{b} \times \vec{c} \|&=&\begin{bmatrix*}[r]
+		1 & -2 & 1\\
+		3 & 0 & -2\\
+		5 & -4 & 0
+	    \end{bmatrix*}\\\\
+							 &=&1\left[0\cdot 0 - (-2)\cdot (-4)\right]-2(-2\cdot 5-3\cdot 0)+1\left[3\cdot (-4)-0\cdot 5\right]\\\\
+							 &=&0\\\\
+	    \end{array}$$
+	    Por lo tanto los tres vectores están en el mismo plano.\\\\
+
+	\item \textbf{\boldmath $\vec{u} = 5i-2j+k,\vec{v}=4i-j+k,\vec{w}=i-j.$\\\\
+	    Respuesta.-}\; La misma lógica del inciso (a).
+	    $$\begin{array}{rcl}
+		\vec{a}\circ \| \vec{b} \times \vec{c} \|&=&\begin{bmatrix*}[r]
+		5 & -2 & 1\\
+		4 & -1 & 1\\
+		1 & -1 & 0
+	    \end{bmatrix*}\\\\
+	    							 &=&5\left[-1\cdot 0 - 1\cdot (-1)\right]-2(1\cdot 1-4\cdot 0)+1\left[4\cdot (-1)-(-1)\cdot 1\right]\\\\
+							 &=&0\\\\
+	    \end{array}$$
+	    Por lo tanto los tres vectores están en el mismo plano.\\\\
+
+    \end{enumerate}
 
 %----------30.
-\item 
+\item \textbf{\boldmath Es un teorema de geometría tridimensional que el volumen de un tetraedro es $1/3$ (área de la base)$\cdot$ (altura). Usar este resultado para demostrar que el volumen de un tetraedro cuyos lados son los vectores $\vec{a},\vec{b}$ y $\vec{c}$ es $\frac{1}{6}\left|\vec{a}\circ \left(\vec{b}\times \vec{c}\right)\right|$.\\\\
+    Respuesta.-}\; Vemos que la base de un tetraedro es un triángulo, de donde podemos hallar el área de la siguiente manera,
+    $$A=\dfrac{1}{2}\|\vec{a}\times \vec{b}\|.$$
+    Sabemos que el volumen de un sólido es: el área de la base por la altura como se dijo en el enunciado. Y dado que el volumen de un tetraedro equivale a la tercera parte del volumen del prisma. Entonces,
+    $$\dfrac{1}{3}\left(\dfrac{1}{2}\vec{c}\circ \|\vec{a}\times \vec{b}\|\right)=\dfrac{1}{6}\vec{c}\circ \|\vec{a}\times \vec{b}\|.$$\\
 
 %----------31.
 \item \textbf{\boldmath Demostrar que $Comp_{\vec{b}}\left(\vec{a_1}+\vec{a_2}\right) = Comp_{\vec{b}}\vec{a_1} + Comp_{\vec{b}}\vec{a_2}$\\\\
     Demostración.-}\; Por definición de la componente, al ser la norma del vector $b$ un escalar y por propiedades del producto escalar se tiene, 
-    $$Comp_{\vec{b}}\left(\vec{a_1}+\vec{a_2}\right) = \dfrac{\left(\vec{a_1}+\vec{a_2}\right)\circ \vec{b}}{|\vec{b}|}=\dfrac{\vec{a_1}\circ \vec{b} + \vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} = \dfrac{\vec{a_1}\circ \vec{b}}{\vec{b}} + \dfrac{\vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} =  Comp_{\vec{b}}\vec{a_1} + Comp_{\vec{b}}\vec{a_2}$$\\
+    $$\Comp_{\vec{b}}\left(\vec{a_1}+\vec{a_2}\right) = \dfrac{\left(\vec{a_1}+\vec{a_2}\right)\circ \vec{b}}{|\vec{b}|}=\dfrac{\vec{a_1}\circ \vec{b} + \vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} = \dfrac{\vec{a_1}\circ \vec{b}}{\vec{b}} + \dfrac{\vec{a_2} \circ \vec{\vec{b}}}{|\vec{b}|} =  \Comp_{\vec{b}}\vec{a_1} + \Comp_{\vec{b}}\vec{a_2}$$\\
 
 %----------32.
-\item 
+\item \textbf{\boldmath Mostrar que si $\vec{b}_1$ y $\vec{b}_2$ son vectores paralelos no nulos, entonces $\Proy_{\vec{b}_1}\vec{a}=-\Comp_{\vec{b}_2}\vec{a}.$\\\\
+    Demostración.-}\;\\\\
 
 %----------33.
 \item 
@@ -511,29 +695,64 @@
 \item
 
 %----------40.
-\item 
+\item \textbf{Mostrar que el triángulo cuyos vértices están en los extremos de un diámetro de una circunferencia y sobre la circunferencia es triángulo rectángulo.\\\\
+	Demostración.-}\; Representamos la idea con la siguiente gráfica.
+	\begin{center}
+	    \begin{tikzpicture}[scale=1.5]
+		\draw(0,0)circle(1);
+		\draw[line width=1.2pt,stealth-](-1,0)--(0,0);
+		\draw[line width=1.2pt,-stealth](0,0)--(1,0);
+		\draw[line width=1.2pt,-stealth](-1,0)--(.6,.8);
+		\draw[line width=1.2pt,-stealth](1,0)--(.6,.8);
+		\draw[line width=1.2pt,-stealth](.6,.8)--(0,0);
+		\draw(-0.1,.6)node[]{$\vec{a}$};
+		\draw(-.4,-.15)node[]{$\vec{b}$};
+		\draw(.2,.4)node[]{$\vec{c}$};
+		\draw(.5,-.15)node[]{$\vec{d}$};
+		\draw(1,.5)node[]{$\vec{e}$};
+		\draw(0,0)node[below]{\tiny$O$};
+	    \end{tikzpicture}
+	\end{center}
+	Donde $\vec{a},\vec{b},\vec{c},\vec{d},\vec{e}\in \mathbb{R}^n$ y $O$ el centro de la circunferencia, por lo tanto los vectores $\vec{b},\vec{d},\vec{c}$ son iguales e inscritos en una semicircunferencia. Debemos demostrar que $\vec{a}\circ \vec{e}=0$.\\ 
+
+	Sean
+	$$\vec{a}=\vec{c}+\vec{b}, \quad  \vec{e}=\vec{c}+\vec{d} \quad \mbox{y}\quad \|\vec{b}\|=\|\vec{c}\|=\|\vec{d}\|$$
+
+	Entonces por las propiedades de producto interno tenemos,
+	$$ \vec{a}\circ \vec{e} =  \vec{c}+\vec{b}\circ \vec{c}+\vec{d} = \vec{c}+\vec{b}\circ  \vec{c} +  \vec{c}+\vec{b}\circ  \vec{d} = \vec{c}\circ \vec{c} + \vec{c}\circ \vec{b} + \vec{c}\circ \vec{d} + \vec{b}\circ \vec{d}.$$
+
+    	Ya que $ x\circ x  = \|x\|^2\;$ y $\; b=-d$, nos queda:
+
+	$$a\circ e = \|c\|^2 - c\circ d + c\circ d -\|d\|^2 = 0.$$\\
 
 %----------41.
 \item \textbf{\boldmath Demostrar vectorialmente la ley de cosenos.\\\\
     Demostración.-}\; Supongamos que $\vec{a},\vec{b} \in V_n$ y, 
+
     \begin{center}
 	\begin{tikzpicture}
-	    \draw[->](0,0)--(3,0);
+	    \draw[line width=1.2pt,-stealth](0,0)--(3,0);
 	    \draw(1.5,0)node[below]{$\vec{a}$};
-	    \draw[->](3,0)--(2.3,2);
+	    \draw[line width=1.2pt,-stealth](3,0)--(2.3,2);
 	    \draw(1.1,1.3)node[]{$\vec{b}$};
-	    \draw[<-](2.3,2)--(0,0);
+	    \draw[line width=1.2pt,stealth-](2.3,2)--(0,0);
 	    \draw(2.7,1)node[right]{$\vec{b}-\vec{a}$};
 	    \draw[dashed](2.3,2)--(2.3,0);
-	    \draw(1.3,.3)node[]{$|\vec{b}|\cos \theta$};
+	    \draw(1.3,.3)node[]{$\|\vec{b}\|\cos \theta$};
 	    \draw(2.3,.9)node[left]{$h$};
 	    \draw(.4,.17)node[]{$\theta$};
 	    \draw (0:.6cm) arc (0:32:.8cm);
 	\end{tikzpicture}
     \end{center}
-    entonces por el teorema de Pitágoras se tiene $$h^2=|\vec{b}|^2 - \left(|\vec{b}|\cos \theta\right)^2 \qquad y \qquad |\vec{b}-\vec{a}|^2 = \left(|\vec{b}|\cos \theta - |\vec{a}|\right)^2+h^2$$
-    de donde $$|\vec{b}-\vec{a}|^2 = \left(|\vec{b}|\cos \theta - |\vec{a}|\right)^2+|\vec{b}|^2 - \left(|\vec{b}|\cos \theta\right)^2 = \left(|\vec{b}|\cos \theta\right)^2 - 2|\vec{a}||\vec{b}|\cos \theta + |\vec{a}|^2 + |\vec{b}|^2 - \left(|\vec{b}|\cos \theta\right)^2$$
-    por lo tanto, $$|\vec{b}-\vec{a}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2|\vec{a}||\vec{b}|\cos \theta $$\\
+
+    Entonces por el teorema de Pitágoras se tiene $$h^2=|\vec{b}|^2 - \left(|\vec{b}|\cos \theta\right)^2 \qquad y \qquad |\vec{b}-\vec{a}|^2 = \left(|\vec{b}|\cos \theta - |\vec{a}|\right)^2+h^2$$
+    de donde 
+    $$\begin{array}{rcl}
+	\|\vec{b}-\vec{a}\|^2 &=& \left(\|\vec{b}\|\cos \theta - \|\vec{a}|\right)^2+\|\vec{b}\|^2 - \left(\|\vec{b}\|\cos \theta\right)^2\\\\
+			      &=& \left(\|\vec{b}\|\cos \theta\right)^2 - 2\|\vec{a}\|\|\vec{b}\|\cos \theta + \|\vec{a}|^2 + \|\vec{b}\|^2 - \left(\|\vec{b}\|\cos \theta\right)^2\\
+    \end{array}$$
+    por lo tanto, 
+    $$\|\vec{b}-\vec{a}\|^2 = \|\vec{a}|^2 + \|\vec{b}\|^2 - 2\|\vec{a}\|\|\vec{b}\|\cos \theta $$\\
 
 %----------42.
 \item 

@@ -213,3 +213,62 @@ La generalización de estos resultados a $n$ variables aleatorias se hace por in
 
 \section{Distribuciones de probabilidad condicional}
 
+Considere la función 
+$$\dfrac{f(x,y)}{f_Y(y)},$$
+en donde $f_Y(y)$ es la densidad marginal de $Y$. Si se mantiene constante a la variable aleatoria $Y$ en el valor observado y de manera tal que $f_Y(y)>0$, entonces $\frac{f(x,y)}{f_Y(y)}$ define una función no negativa de $X$  cuya integral es $1$, dado que por definción
+$$\int_{-\infty}^{\infty}\dfrac{f(x,y)}{f_Y(y)}\; dx = \dfrac{1}{f_Y(y)}\int_{-\infty}^\infty f(x,y)\; dx = \dfrac{f_Y(y)}{f_Y(y)}=1.$$
+De esta forma, $\dfrac{f(x,y)}{f_Y(y)}$ es una función de densidad de probabilidad y la probabilidad de que $a<X<b$, dado que el nivel de concentración de $Y$ es $y$, está dada por:
+$$P(a<X<b/y)=\int_a^b \dfrac{f(x,y)}{f_Y(y)}\; dx.$$
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sean $X$ e $Y$ dos variables aleatorias con una función de densidad conjunta de probabilidad $f(x,y)$. La función de densidad de probabilidad condicional de la variable aleatoria $X$, denotada por $f(x|y)$, para un valor fijo $y$ de $Y$, está definida por
+	$$f(x|y)=\dfrac{f(x,y)}{f_Y(y)}.$$
+	En donde $f_Y(x)$ es la función de densidad de probabilidad de $Y$ de manera tal que $F_Y(y(>0.$\\
+
+	De manera análoga, la función de densidad de probabilidad condicional de $Y$ para un valor fijo $x$ de $X$ se define como
+	$$f(y|x)=\dfrac{f(x,y)}{f_X(x)}\qquad f_X(x)>0.$$
+	En donde $f_X(x)$ es la densidad marginal de $X$. 
+    \end{def.}
+\end{tcolorbox}
+
+Nótese que si la densidad condicional $f(x|y)$ por ejemplo, no contiene a $y$, entonces $X$ es estadísticamente independientes de $Y$. Esto es, si $X$ son estadísticamente independientes entonces
+$$f(x,y)=f_X(x) f_Y(y)$$
+y
+$$f(x|y)=\dfrac{f(x,y)}{f_Y(y)}=\dfrac{f_X(x)f_Y(y)}{f_Y(y)}=f_X(x).$$
+
+De manera similar, si 
+$$f(x,y)=f_X(x)f_Y(y),$$
+entonces
+$$f(y|x)=\dfrac{f_X(x)f_Y(y)}{f_X(x)}=f_Y(y)$$
+
+Los \textbf{valores esperados condicionales} se definen de manera análoga a la señalada en la definición 6.5. Por ejemplo, los valores esperados condicionales de $X$ puesto que $Y=y)$, $y$ de $Y$, ya que $X=x$, se definen como 
+
+\begin{tcolorbox}
+    $$E(X|y)=\int_{-\infty}^\infty xf(x|y)\; dx.$$
+\end{tcolorbox}
+
+Y 
+
+\begin{tcolorbox}
+    $$E(Y|x)=\int_{-\infty}^\infty yf(y|x)\; dy.$$
+\end{tcolorbox}
+
+De manera similar,
+
+\begin{tcolorbox}
+    $$Var(X|y)=E\left(X^2|y\right)-E^2(X|y).$$
+\end{tcolorbox}
+
+Y 
+
+\begin{tcolorbox}
+    $$Var(Y|x)=E\left(Y^2|x\right)-E^2(Y|x).$$
+\end{tcolorbox}
+
+En donde 
+
+$$E\left(X^2|y\right)\int_{-\infty}^\infty x^2 f(x|y)\; dx \qquad \mbox{y}\qquad E\left(Y^2|x\right)=\int_{-\infty}^\infty y^2f(y|x)\; dx.$$
+
+
+\section{Análisis bayesiano: las distribuciones a priori y a posteriori.}

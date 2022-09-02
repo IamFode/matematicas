@@ -1,0 +1,238 @@
+\chapter{Ecuaciones lineales}
+
+\section{Cuerpos}
+Se designa por $F$ el conjunto de los números reales o el conjunto de los números complejos.
+
+\begin{tcolorbox}
+    \begin{enumerate}[\bfseries 1.]
+	%---------- 1.
+	\item La adición es conmutativa,
+	    $$x+y=y+x$$
+	para cualquiera $x$ e $y$ de $F$.
+
+	%---------- 2.
+	\item La adición es asociativa,
+	    $$x+(y+z)=(x+y)+z$$
+	para cualquiera $x,y$ y $z$ de $F$.
+
+	%---------- 3.
+	\item Existe un elemento único $0$ (cero) de $F$ tal que $x+0=x$, para todo $x$ en $F$.
+
+	%---------- 4.
+	\item A cada $x$ de $F$ corresponde un elemento único $(-x)$ de $F$ tal que $x+(-x)=0$.
+
+	%---------- 5.
+	\item La multiplicación es conmutativa,
+	    $$xy=yx.$$
+
+	%---------- 6.
+	\item La multiplicación es asociativa,
+	    $$x(yz)=(xy)z.$$
+
+	%---------- 7.
+	\item Existe un elemento no nulo único de $F$ tal que $x1=x$, para todo $x$ en $F$.
+
+	%---------- 8.
+	\item A cada elemento no nulo $x$ de $F$ corresponde un único elemento $x^{-1}$ (o ($1/x$)) de $F$ tal que $xx^{-1}=1.$
+
+	%---------- 9.
+	\item La multiplicación es distributiva respecto de la adición, esto es, $x(y+z)=xy+xz$, para cualquiera $x,y$ y $z$ de $F$.
+	
+    \end{enumerate}
+\end{tcolorbox}
+
+\section{Sistema de ecuaciones lineales}
+Supóngase que $F$ es un cuerpo. Se considera el problema de encontrar $n$ escalares (elementos de $F$) $x_1,\ldots,x_n$ que satisfagan las condiciones 
+
+\begin{equation}
+    \begin{array}{ccc}
+	A_{11}x_1+A_{12}x_2+\ldots + A_{1n}x_n&=&y_1\\
+	A_{21}x_1+A_{22}x_2+\ldots + A_{2n}x_n&=&y_2\\
+	\vdots &&\vdots\\
+	A_{m1}x_1+A_{m2}x_2+\ldots + A_{mn}x_n&=&y_m
+    \end{array}
+\end{equation}
+donde $y_1,\ldots , y_{m}$ y $A_{ij}$, $1\leq i \leq m$, $1\leq j \leq n,$ son elementos de $F$. A (1-1) se le llama un \textbf{\boldmath sistema de $m$ ecuaciones lineales con $n$ incógnitas}. Todo n-tuple $(x_1,\ldots,x_n)$ de elementos de $F$ que satisface cada una de las ecuaciones de (1-1) se llama una \textbf{solución} del sistema. Si $y_1=y_2=\ldots = y_m=0$, se dice que el sistema es homogéneo, o que cada una de las ecuaciones es homogénea.\\
+
+Para el sistema lineal (1-1), supóngase que seleccionamos $m$ escalares $c_1,\ldots, c_m$, que se multiplica la j-ésima ecuación por $c_j$ y que luego se suma. Se obtiene la ecuación
+$$(c_1 A_{11}+\ldots +c_m A_{m1})x_1+\ldots+(c_1A_{1n}+\ldots + c_mA_{mn})x_n=c_1y_1+\ldots+c_my_m$$
+A tal ecuación se le llama \textbf{combinación lineal} de las ecuaciones (1-1).\\ 
+
+Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si cada ecuación de cada sistema es combinación lineal de las ecuaciones del otro sistema.\\
+
+\begin{teo}
+    Sistemas equivalentes de ecuaciones lineales tiene exactamente las mismas soluciones.
+\end{teo}
+
+\section*{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %---------- 1.
+    \item 
+
+    %---------- 2.
+    \item Sea $F$ el cuerpo de los números complejos. ¿Son equivalentes los dos sistemas de ecuaciones lineales siguientes? Si es así, expresar cada ecuación de cada sistema como combinación lineal de las ecuaciones del otro sistema.
+    $$\begin{array}{rcl}
+	x_1-x_2&=&0\\
+	2x_1+x_2&=&0
+    \end{array} \qquad 
+    \begin{array}{rcl}
+	3x_1+x_2&=&0\\
+	x_1+x_2&=&0
+    \end{array}$$
+    \vspace{.4cm}
+
+	Respuesta.-\; Sí, los sistemas dados son equivalentes ya que cada ecuación en un sistema se puede escribir como una combinación lineal de las ecuaciones del otro sistema de la siguiente manera:
+
+	$$\begin{array}{rcr}
+	    3x_1+x_2&=&\dfrac{1}{3}x_1+\dfrac{4}{3}(2x_1)-\dfrac{1}{3}x_2+\dfrac{4}{3}x_2\\\\
+	    x_1+x_2 &=& -\dfrac{1}{3}x_1+\dfrac{2}{3}(2x_1)+\dfrac{1}{3}x_2+\dfrac{2}{3}x_2\\\\
+		    &&\\
+		    x_1-x_2&=&1(3x_1)-2x_1 + 1x_2-2x_2\\\\
+	    2x_1+x_2&=&\dfrac{1}{2}(3x_1)+\dfrac{1}{2}x_1+\dfrac{1}{2}x_2+\dfrac{1}{2}x_2\\\\
+	\end{array}$$ 
+
+    %---------- 3.
+    \item Examine los siguientes sistemas como en el ejercicio 2.
+	$$\begin{array}{rcl}
+	    -x_1+x_2+4x_3&=&0\\
+	    x_1+3x_282x_3&=&0\\
+	    \frac{1}{2}x_1+x_2+\frac{5}{2}x_3&=&0
+	\end{array} \qquad
+	\begin{array}{rcl}
+	    x_1 \qquad -x_3&=&0\\
+	    \qquad x_2+3x_3&=&0
+	\end{array}$$
+	\vspace{.4cm}
+	Respuesta.-\;
+
+	$$\begin{array}{rcr}
+	    -x_1+x_2+4x_3 &=& -(x_1-x_3)+(x_2+3x_3)\\\\
+	    x_1+3x_2+8x_3 &=& (x_1-x_3)+3(x_2+3x_3)\\\\
+	    \dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3 &=& \dfrac{1}{2}(x_1-x_3)+(x_2+3x_3)\\\\
+	\end{array}$$
+
+	$$\begin{array}{rcr}
+	    x_1-x_3&=&-\dfrac{3}{4}(-x_1+x_2+4x_3) + \dfrac{1}{4}(x_1+3x_2+8x_3)+0\left(\dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3\right)\\\\
+	    x_2+3x_3&=&\dfrac{1}{4}(-x_1+x_2+4x_3)+\dfrac{1}{4}(x_1+3x_2+8x_3)+0\left(\dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3\right)
+	\end{array}$$
+
+    %---------- 4.
+    \item 
+
+    %---------- 5.
+    \item 
+
+    %---------- 6.
+    \item \textbf{Demostrar que si dos sistemas homogéneos de ecuaciones lineales con dos incógnitas tienen las mismas soluciones, son equivalentes.\\\\
+	Demostración.-}\; Consideremos los dos sistemas homogéneos con dos incógnitas $(x_1,x_2)$.
+	$$\left\{\begin{array}{ccc}
+		a_{11} x_1 + a_{12} x_2 &=& 0\\
+		a_{21} x_1 + a_{22} x_2 &=& 0\\
+		\vdots\\
+		a_{m1} x_1 + a_{m2} x_2 &=& 0\\
+	\end{array}\right. \qquad \mbox{y} \qquad 
+	\left\{\begin{array}{ccc}
+		b_{11} x_1 + b_{12} x_2 &=& 0\\
+		b_{21} x_1 + b_{22} x_2 &=& 0\\
+		\vdots\\
+		b_{m1} x_1 + b_{m2} x_2 &=& 0\\
+	\end{array}\right.$$
+
+	Sean los escalares $c_1,c_2,\ldots c_m$. De donde multiplicamos $k$ ecuaciones del primer sistemas por $c_k$ y sumamos por columnas,
+	$$\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2=0$$
+
+	Luego comparando esta ecuación con todas las ecuaciones del segundo sistema y utilizando también el hecho de que ambos sistemas tiene las mismas soluciones, obtenemos
+	$$b_{11}x_1+b_{12}x_2=\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2$$
+	$$c_1a_{11}+c_2a_{21}+\ldots + c_m a_{m1}=b_{11}, b_{21}, \ldots, b_{m1}$$
+	$$\mbox{y}$$
+	$$c_1a_{12}+c_2a_{22}+\ldots + c_m a_{m2}=b_{12}, b_{22}, \ldots, b_{m2}.$$
+
+	Lo que demuestra que el segundo sistema es una combinación lineal del primer sistema.\\
+
+	De manera similar podemos demostrar que el primer sistema es una combinación lineal del segundo sistema. Sean los escalares $c_1,c_2,\ldots c_m$, entonces
+	$$\left(c_1b_{11}+\ldots + c_m b_{m1}\right)x_1 + \left(c_1 b_{12}+\ldots + c_m b_{m2}\right)x_2=0$$
+	Después, se tiene
+	$$c_1b_{11}+c_2b_{21}+\ldots + c_m b_{m1}=a_{11}, a_{21}, \ldots, a_{m1}$$
+	$$\mbox{y}$$
+	$$c_1b_{12}+c_2b_{22}+\ldots + c_m b_{m2}=a_{12}, a_{22}, \ldots, a_{m2}.$$
+
+	Así concluimos que ambos sistemas son equivalentes.\\\\
+
+
+    %-------------------- section 1.2 7
+    \item \textbf{Demostrar que todo subcuerpo del cuerpo de los números complejos contiene a todo número racional.\\\\
+	Demostración.-}\; Sea $F$ un subcampo en $\mathbb{C}$. De donde tenemos $0\in F$ y $1\in F$. Luego ya que $F$ es un subcampo y cerrado bajo la suma, se tiene
+	$$1+1+\ldots + 1 = n\in F.$$
+	De este modo $\mathbb{Z}\subseteq F$. Ahora, sabiendo que $F$ es un subcampo, todo elemento tiene un inverso multiplicativo, por lo tanto $\dfrac{1}{n}\in F$. Por otro lado vemos también que $F$ es cerrado bajo la multiplicación. Es decir, para $m,n\in \mathbb{Z}$ y $n\neq 0$ tenemos
+	$$m\cdot \dfrac{1}{n}\in F\quad \Rightarrow \quad \dfrac{m}{n}\in F.$$
+	Así, concluimos que $\mathbb{Q}\subseteq F.$\\\\
+
+\end{enumerate}
+
+\section{Matrices y operaciones elementales de fila}
+Deseamos ahora considerar operaciones sobre las filas de la matriz $A$ que corresponden a la formación de combinaciones lineales de las ecuaciones del sistema $AX=Y$. Se limitará nuestra atención a \textbf{tres operaciones elementales de filas} en una matriz $m\times n$, sobre el cuerpo $F$:
+
+\begin{tcolorbox}
+    \begin{enumerate}[\bfseries 1.]
+	\item Multiplicación de una fila de $A$ por un escalar $c$ no nulo;
+	\item Remplazo de la r-ésima fila de $A$ por la fila $r$ más $c$ veces la fila $s$, donde $c$ es cualquier escalar y $r\neq s$;
+	\item Intercambio de dos filas de $A$.
+    \end{enumerate}
+\end{tcolorbox}
+
+Una operación elemental de filas es, pues, un tipo especial de función (regla) $e$ que asocia a cada matriz $m\times n$, $A$, una matriz $m\times n$, $e(A)$. Se puede describir $e$ en forma precisa en los tres casos como sigue:
+
+\begin{tcolorbox}
+    \begin{enumerate}[\bfseries 1.]
+	\item $e(A)_{ij}$ si $i\neq r,$ $e(A)_{rj}=cA_{rj}$.
+	\item $e(A)_{ij}$ si $i\neq r,$ $e(A)_{rj}=A_{rj}+cA_{sj}.$
+	\item $e(A)_{ij}$ si $i$ es diferente de $r$ y $s$, $e(A)_{rj}=A_{sj},$ $e(A)_{sj}=A_{rj}.$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{teo}
+    A cada operación elemental de filas $e$ corresponde una operación elemental de filas $e_1$, del mismo tipo de $e$, tal que $e_i(e(A))=e(e_1(A))=A$ para todo $A$. Es decir, existe la operación (función) inversa de una operación elemental de filas y es una operación elemental de filas del mismo tipo.\\\\
+    Demostración.-\; (1) Supóngase que $e$ es la operación que multiplica la r-ésima fila de una matriz por un escalar no nulo $c$. Sea $e_1$ la operación que multiplica la fila $r$ por $c^{-1}$. (2) Supóngase que $e$ sea la operación que remplaza la fila $r$ por la misma fila $r$ a la que le sumo la fila $s$ multiplicada por $c$, $r\neq s$. Sea $e_1$ la operación que reemplaza la fila $r$ por la fila $r$ a la que se le ha sumado la fila $s$ multiplicada por $(-c)$. (3) Si $e$ intercambia las filas $r$ y $s$, sea $e_1=e$. En cada uno de estos casos es claro que $e_1(e(A))=e(e_1(A))=A$ para todo $A$.
+\end{teo}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Si $A$ y $B$ son dos matrices $m\times n$ sobre el cuerpo $F$, se dice que $B$ es equivalente por filas a $A$ si $B$ se obtiene de $A$ por una sucesión finita de operaciones elementales de filas.
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Si $A$ y $B$ son matrices equivalentes por filas, los sistemas homogeneos de ecuaciones lineales $AX=0$ y $BX=0$ tienen exactamente las mismas soluciones.\\\\
+	Demostración.-\; Supóngase que se pasa de $A$ a $B$ por una sucesión finita de operaciones elementales de filas:
+	$$A=A_0\to A_1 \to \ldots \to A_k = B.$$
+	Basta demostrar que los sistemas $A_jX=0$ y $A_{j+1}X=0$ tienen las mismas soluciones, es decir, que una operación elemental por filas no altera el conjunto de soluciones.\\
+	así, supóngase que $B$ se obtiene de $A$ por una sola operación elemental de filas. Sin que importe cuál de los tres tipos (1), (2) o (3) de operaciones sea, cada ecuación del sistema $BX=0$ será combinación lineal de las ecuaciones del sistema $AX=0$. Dado que la inversa de una operación elemental de filas es una operación elemental de filas, toda ecuación de $AX=0$ será también combinación lineal de las ecuaciones de $BX=0$. Luego estos dos sistemas son equivalente y, por el teorema 1, tienen las mismas soluciones.
+\end{teo}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Una matriz $m\times n$, $R$, se llama \textbf{reducida por filas} si:
+	\begin{enumerate}[(a)]
+	    \item el primer elemento no nulo de cada fila no nula de $R$ es igual a $1$;
+	    \item cada columna de $R$ que tiene el primer elemento no nulo de alguna fila tiene todos sus otros elementos $0$.
+	\end{enumerate}
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Toda matriz $m\times n$ sobre el cuerpo $F$ es equivalente por filas a una matriz reducida por filas.\\\\
+    Demostración.-\; Sea $A$ una matriz $m\times n$ sobre $F$. Si todo elemento de la primera fila $A$ es $0$, la condición (a) se cumple en lo que concierne a la fila $1$. Si la fila $1$ tiene un elemento no nulo, sea $k$ el menor entero positivo $j$ para el que $A_{1j}\neq 0$. Multiplicando la fila $1$ por $A_{1k}^{-1}$ la condición (a) se cumple con respecto a esa fila. Luego, para todo $i\geq 2,$ se suma $(-A_{ik})$ veces la fila $1$  a la fila $i$. Y ahora el primer elemento no nulo de la fila $1$ está en la columna $k$, ese elemento es $1$, y todo otro elemento de la columna $k$ es $0$.\\
+    Considérese ahora la matriz que resultó de lo anterior. Si todo elemento de la fila $2$ es $0$, se deja tal cual. Si algún elemento de la fila $2$ es diferente de $0$, se multiplica esa fila por un escalar de modo que el primer elemento no nulo sea $1$. En caso de que la fila $1$ haya tenido un primer elemento no nulo en la columna $k$, este primer elemento no nulo de la fila $2$ no puede estar en la columna $k$, supóngase que esté en la columna $k_r\neq k$. Sumando múltiplos apropiados de la fila $2$ a las otras filas, se puede lograr que todos los elementos de la columna $k_r$ sean $0$, excepto el $1$ en la fila $2$. Lo que es importante observar es lo siguiente: Al efectuar etas operaciones, no se alteran los elementos de la fila $1$ el alas columnas $1,\ldots, k$ ni ningún elemento de la columna $k$. Es claro que, si la fila $1$ era idénticamente nula, las operaciones con la fila $2$ no afecta la fila $1$.\\
+    Si se opera, como se indicó, con una fila cada vez, es evidente que después de un número finito de etapas se llegará a una matriz reducida por filas.
+\end{teo}
+
+\section*{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %---------- 1.
+    \item 
+
+\end{enumerate}

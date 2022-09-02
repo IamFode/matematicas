@@ -103,7 +103,7 @@ $$\begin{array}{rcl}
 Obtener las funciones de densidad marginales de $X$ y de $Y$.
 
 Respuesta.- Sea $F(x,3)=P(X\leq x)=\dfrac{3x^2-4x+1}{5}$, entonces
-$$f_X(x)=\dfrac{\partial F(x,3)}{\partial x}=\dfrac{(6x^2-4)5}{5^2} = \dfrac{6x^2-4}{5}.$$
+$$f_X(x)=\dfrac{\partial F(x,3)}{\partial x}=\dfrac{(6x-4)5}{5^2} = \dfrac{6x-4}{5}.$$
 
 Y para $F(2,y)=P(Y\leq y)=\dfrac{9y-y^2-8}{10}$, se tiene
 
@@ -401,14 +401,60 @@ $$f(x,y)=\left\{\begin{array}{ll}
 ### a)
 Obtener las funciones de densidad marginal de $X$ e $Y$.
 
-Respuesta.-
+Respuesta.- Sólo hará falta integrar la función de densidad para cada variable aleatoria. No está de más observar que si $x$ o $y$ no tienen una cota superior, entonces tomamos la cota superior de la otra variable   .
+
+$$f_X(x)=\int_0^1 x+y\; dy = \left(xy+\dfrac{y^2}{2}\right)\bigg|_0^1 = x+\dfrac{1}{2}.$$
+
+$$f_Y(y)=\int_0^1 x+y\; dx = \left(\dfrac{x^2}{2}+xy\right)\bigg|_0^1 = \dfrac{1}{2}+y.$$
+
 
 ### b)
 ¿Las variables aleatorias $X$ e $Y$ son estadísticamente independientes?.
 
-Respuesta.-
+Respuesta.- Para tal efecto necesitaremos asber si se cumple la igualdad $f(x,y)=f_X(x) \cdot f_Y(y).$
+
+$$x+y=\left(x+\dfrac{1}{2}\right)\cdot \left(\dfrac{1}{2}+y\right)$$
+
+Por lo tanto podemos deducir que las variables aleatorias $X$ e $Y$ no son estadísticamente significativas.
+
 
 ### c)
 Si $X=0.2$, obtener la función de densidad de probabilidad condicional de $Y$.
 
-Respuesta.-
+Respuesta.- Se define como: 
+
+$$f(y|x)=\dfrac{f(x,y)}{f_X(x)}$$
+
+Por lo tanto,
+
+$$f(y|X=0.2)=\dfrac{x+y}{x+\frac{1}{2}}=\dfrac{\frac{1}{5}+y}{\frac{1}{5}+\frac{1}{2}}=\dfrac{10(1+y)}{7}.$$
+
+
+## 6.9.
+Las variables aleatorias $X$ e $Y$ representan el largo y ancho (en cm) de una hoja de acero. Si $X$ e $Y$ son independientes con funciones de densidad de probabilidad dadas por
+$$f_X(x)=\left\{\begin{array}{ll}
+  1, & 99<x<100,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right. \qquad 
+f_Y(y)=\left\{\begin{array}{ll}
+  1, & 49<y<50,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+Usesé la definición de varianza para obtener la varianza del área de la hoja de acero $XY$.
+
+Respuesta.- Ya que son variables aleatorias independientes. Es decir, $E(XY)=E(X)E(Y)$, entonces
+
+$$Var(XY) = E(X^2Y^2)-E^2(EX)$$
+
+Luego por las funciones de densidad de probabilidad dada, se tiene
+
+$$E(XY)=\int_{99}^{100}\int_{49}^{50} xy\; dydx = \int_{99}^{100}x\left(\dfrac{y^2}{2}\right)\bigg|_{49}^{50}\; dx=\dfrac{99}{2}\left(\dfrac{x^2}{2}\right)\bigg|_{99}^{100} = \dfrac{19701}{4}$$
+
+$$E(X^2Y^2)=\int_{99}^{100}\int_{49}^{50} x^2y^2\; dydx = \int_{99}^{100}x^2\left(\dfrac{y^3}{3}\right)\bigg|_{49}^{50}\; dx=\dfrac{7351}{3}\left(\dfrac{x^3}{3}\right)\bigg|_{99}^{100} = \dfrac{218332051}{9}$$
+Por lo tanto,
+
+$$Var(XY) = \dfrac{218332051}{9}-\left(\dfrac{19701}{4}\right)^2=1029.215.$$
+
+
+## 6.10.

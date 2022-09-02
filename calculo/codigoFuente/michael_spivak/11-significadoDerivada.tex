@@ -1,1 +1,110 @@
 \chapter{Significado de la derivada}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $f$ una función y $A$ un conjunto de números contenido en el dominio de $f$. Un punto $x$ de $A$ es un punto máximo de $f$ en $A$ si
+	$$f(x)\geq f(y)\qquad \mbox{para todo} \; y \; \mbox{de}\; A.$$
+	El número $f(x)$ se denomina el \textbf{valor máximo} de $f$ en $A$ (y también diremos que $f$ alcanza su valor máximo en el punto $x$ de $A$).\\\\
+	$f$ tiene un \textbf{mínimo} en el punto $x$ de $A$ si $-f$ tiene un máximo en el punto $x$ de $A$.
+    \end{def.}
+\end{tcolorbox}
+
+En general, nos interesará el caso en que $A$ es un intervalo cerrado $[a,b];$ si $f$ es continua, entonces el Teorema 7-3 garantiza que $f$ alcanza realmente dicho valor máximo en $[a,b].$\\
+
+Ahora ya estamos en condiciones para enunciar un teorema que ni siquiera depende de la existencia de cotas superiores mínimas.\\
+
+\begin{teo}
+    Sea $f$ cualquier función definida en $(a,b)$. Si $x$ es un punto máximo (o mínimo) de $f$ en $(a,b)$ y $f$ es diferenciable en $x$, entonces $f'(x)=0.$ (Observemos que no hemos supuesto la diferenciabilidad, ni siquiera la continuidad, de $f$ en otros puntos.)\\\\
+	Demostración.-\; Consideremos el caso en que $f$ tiene un máximo en $x$. Si $h$ es cualquier número tal que $x+h$ pertenece a $(a,b)$, entonces
+	$$f(x)\geq f(x+h),$$
+	ya que $f$ tiene un máximo en el punto $x$ de $(a,b)$. Esto significa que 
+	$$f(x+h)-f(x)\leq 0.$$
+	De manera que, si $h>0$ tenemos
+	$$\dfrac{f(x+h)-f(x)}{h}\leq 0,$$
+	y por tanto
+	$$\lim_{h\to 0^+}\dfrac{f(x+h)-f(x)}{h}\leq 0.$$
+	Por otra parte, si $h<0$, tenemos
+	$$\dfrac{f(x+h)-f(x)}{h}\geq 0,$$
+	o sea
+	$$\lim_{h\to 0^-}\dfrac{f(x+h)-f(x)}{h}\geq 0.$$
+	Por hipótesis, $f$ es diferenciable en $x$, de manera que ambos límites deben ser iguales (de hecho son iguales a $f'(x)$). Esto significa que
+	$$f'(x)\leq 0\quad \mbox{y}\quad f'(x)\geq 0,$$
+	de lo cual se deduce que $f'(x)=0.$\\
+\end{teo}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Sea $f$ una función, y $A$ un conjunto de números contenido en el dominio de $f$. Un punto $x$ de $A$ es un \textbf{punto máximo [mínimo] local} de $f$ en $A$ si existe algún $\delta>0$ tal que $x$ es un punto máximo [mínimo] de $f$ en $A\cap (x-\delta,x+\delta.)$
+    \end{def.}
+\end{tcolorbox}
+
+\begin{teo}
+    Si $x$ es un máximo o mínimo local de $f$ en $(a,b)$ y $f$ es diferenciable en $x$, entonces $f'(x)=0$.\\\\
+	Demostración.-\; Se trata de una aplicación del teorema 1 (capítulo 11, Spivak).
+\end{teo}
+
+El recíproco del teorema 2 no es cierto; la condición $f'(0)$ no implica que $x$ sea un punto máximo o mínimo local en $f$. Precisamente por esta razón, se ha adoptado una terminología especial para describir a aquellos números $x$ que satisfacen la condición $f'(0)$.
+
+\begin{tcolorbox}
+    \begin{def.}
+	Un \textbf{punto critico} de una función $f$ es un número $x$ tal que 
+	$$f'(x)=0.$$
+	Al número $f(x)$ se le denomina \textbf{valor critico} de $f$.
+    \end{def.}
+\end{tcolorbox}
+
+Consideremos en primer lugar el problema de hallar el máximo o el mínimo de $f$ en un intervalo cerrado $[a,b]$. (En este caso, si $f$ es continua, sabemos que dicho valor máximo y mínimo debe existir.) Para localizarlos, deben considerarse tres clases de puntos:
+
+\begin{enumerate}[(1)]
+    \item Los puntos críticos de $f$ en $[a,b]$.
+    \item Los puntos extremos $a$ y $b$.
+    \item Aquellos puntos $x$ de $[a,b]$ tales que $f$ no es diferenciable en $x$.
+\end{enumerate}
+
+Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe pertenecer al primero.
+
+
+\begin{obs}
+    En el capítulo 7 ya resolvimos el problema de este tipo cuando demostramos que si $n$ es par, la función
+    $$f(x)=x^n+a_{n-1}x^{n-1}+\ldots + a_0$$
+    tiene un valor mínimo en toda la recta real. Dicho valor mínimo se puede encontrar resolviendo la ecuación, si es posible, y comparando los valores de $f(x)$ en dichos $x$.
+\end{obs}
+
+\begin{teo}[Teorema de Rolle]
+    Si $f$ es continua en $[a,b]$ y deiferenciable en $(a,b)$, y $f(a)=f(b)$, entonces existe un número $x$ en $(a,b)$ tal que $f'(x)=0$.\\\\
+	Demostración.-\;
+\end{teo}
+
+
+
+\section{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Para cada una de las siguientes funciones, halle los valores máximos y mínimos en los intervalos indicados, determinando aquellos puntos del intervalo en los que la derivada es igual a $0$ y comparando los valores de la función en estos puntos con sus valores en los extremos del intervalo.
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=x^3-x^2-8x+1$ en $[-2,2]$.\\\\
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=3x^2-2x-8.$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$3x^2-2x-8=0 \quad \Rightarrow \quad x_1=2,\quad x_2=-\dfrac{4}{3}$$
+		Ambos número $x_1=2$ y $x_2=-\dfrac{4}{3}$ pertenecen al intervalo $[-2,2]$, de manera que el primer grupo de candidatos para localizar el máximo y el mínimo es
+		$$x_1=2,\qquad x_2=-\dfrac{4}{3}$$
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$-2,2$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(2\right) &=& 2^3-2^2-8\cdot 2+1&=&-11.\\\\
+		    f\left(-\dfrac{4}{3}\right) &=& \left(-\dfrac{4}{3}\right)^3-\left(-\dfrac{4}{3}\right)^2-8\cdot \left(-\dfrac{4}{3}\right)+1&=&\dfrac{203}{27}.\\\\
+		    f\left(-2\right) &=& -2^3-2^2-8\cdot (-2)+1&=&5.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $-11$ y el máximo viene dado por $\dfrac{203}{27}.$\\\\
+
+	    %---------- (ii)
+	    \item 
+
+	\end{enumerate}
+\end{enumerate}
