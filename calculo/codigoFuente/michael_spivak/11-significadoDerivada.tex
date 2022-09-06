@@ -61,19 +61,92 @@ Consideremos en primer lugar el problema de hallar el máximo o el mínimo de $f
     \item Aquellos puntos $x$ de $[a,b]$ tales que $f$ no es diferenciable en $x$.
 \end{enumerate}
 
-Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe pertenecer al primero.
+Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe pertenecer al primero.\\
 
 
 \begin{obs}
     En el capítulo 7 ya resolvimos el problema de este tipo cuando demostramos que si $n$ es par, la función
     $$f(x)=x^n+a_{n-1}x^{n-1}+\ldots + a_0$$
-    tiene un valor mínimo en toda la recta real. Dicho valor mínimo se puede encontrar resolviendo la ecuación, si es posible, y comparando los valores de $f(x)$ en dichos $x$.
+    tiene un valor mínimo en toda la recta real. Dicho valor mínimo se puede encontrar resolviendo la ecuación, si es posible, y comparando los valores de $f(x)$ en dichos $x$.\\
 \end{obs}
 
 \begin{teo}[Teorema de Rolle]
-    Si $f$ es continua en $[a,b]$ y deiferenciable en $(a,b)$, y $f(a)=f(b)$, entonces existe un número $x$ en $(a,b)$ tal que $f'(x)=0$.\\\\
+    Si $f$ es continua en $[a,b]$ y diferenciable en $(a,b)$, y $f(a)=f(b)$, entonces existe un número $x$ en $(a,b)$ tal que $f'(x)=0$.\\\\
+	Demostración.-\; A partir de la continuidad en $f$ en $[a,b]$ deducimos que $f$ tiene valor máximo y mínimo en $[a,b]$. Supongamos primero que el valor máximo se presenta en un punto $x$ de $(a,b)$. Entonces $f'(x)=0$ según el teorema 1, y la demostración queda completa. Supongamos ahora que el valor mínimo de $f$ se presenta en algún punto $x$ de $(a,b)$. Entonces, de nuevo $f'(x)=0$ según el teorema 1. Finalmente, supongamos que los valores máximo y mínimo se presentan ambos en los extremos del intervalo. Como $f(a)=f(b),$ dichos valores coinciden, de manera que $f$ es una función constante, y en este caso se puede elegir cualquier valor $x$ de $(a,b)$.
+\end{teo}
+
+\begin{teo}[Teorema del valor medio]
+    Si $f$ es continua en $[a,b]$ y diferenciable en $(a,b)$, existe un número $x$ en $(a,b)$ tal que 
+    $$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$\\
+	Demostración.-\; Sea 
+	$$h(x)=f(x)-\left[\dfrac{f(b)-f(a)}{b-a}\right](x-a).$$
+	Evidentemente, $h$ es continua en $[a,b]$ y diferenciable en $(a,b)$, y 
+	$$h(a)=f(a),\qquad h(b)=f(b)-\left[\dfrac{f(b)-f(a)}{b-a}\right](b-a)=f(a).$$
+	Por tanto, se puede aplicar el teorema de Rolle a la función $h$ y deducir que existe algún $x$ en $(a,b)$ tal que
+	$$0=h'(x)=f'(x)-\dfrac{f(b)-f(a)}{b-a},$$
+	de modo que 
+	$$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$\\
+\end{teo}
+
+\begin{cor}
+    Si $f$ está definida en un intervalo y $f'(x)=0$ en todo $x$ del intervalo, entonces $f$ es constante en dicho intervalo.\\\\
+	Demostración.-\; Sean $a$ y $b$ dos puntos del intervalo con $a\neq b$. Entonces existe algún $x$ de $(a,b)$ tal que 
+	$$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$
+	Pero $f'(x)=0$ para todo $x$ del intervalo, por tanto
+	$$0=\dfrac{f(b)-f(a)}{b-a},$$
+	y por consiguiente $f(a)=f(b)$. Así pues, el valor de $f$ en dos puntos cualesquiera del intervalo es el mismo, lo cual significa que $f$ es constante en el intervalo.\\\\
+\end{cor}
+
+\begin{cor}
+    Si $f$ y $g$ están definidas en el mismo intervalo y $f'(x)=g'(x)$ para todo $x$ del intervalo, entonces existe algún número $c$ tal que $f=g+c.$\\\\
+	Demostración.-\; Para todo $x$ del intervalo se verifica que $(f-g)'(x)=f'(x)-g'(x)=0,$ de manera que, según el corolario 1, existe un número $c$ tal que $f-g=c.$
+\end{cor}
+
+\begin{tcolorbox}
+    \begin{def.}
+	Una función es \textbf{creciente} en un intervalo si $f(a)<f(b)$ siendo $a$ y $b$ dos números del intervalo con $a<b$. La función $f$ es \textbf{decreciente} en un intervalo si $f(a)>f(b)$ para todo $a$ y $b$ del intervalo con $a<b$. (A menudo se dice simplemente que $f$ es creciente o decreciente, en cuyo caso se deduce que el intervalo es el dominio de $f$.)
+    \end{def.}
+\end{tcolorbox}
+
+\begin{cor}
+    Si $f'(x)>0$ para todo $x$ de un intervalo, entonces $f$ es creciente en dicho intervalo; si $f'(x)<0$ para todo $x$ del intervalo, entonces $f$ es decreciente en dicho intervalo.\\\\
+	Demostración.-\; Consideremos el caso en que $f'(x)>0$. Sean $a$ y $b$ dos puntos del intervalo con $a<b$. Entonces existe algún punto $x$ en $(a,b)$ que verifica
+	$$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$
+	Pero $f'(x)>0$ para todo $x$ en $(a,b)$, por tanto 
+	$$\dfrac{f(b)-f(a)}{b-a}>0.$$
+	Como $b-a>0$ se deduce que $f(b)>f(a).$\\\\
+	Consideremos ahora el caso en que $f'(x)<0$. Sean $a$ y $b$ dos puntos del intervalo con $a<b$. Entonces existe algún punto $x$ en $(a,b)$ que verifica
+	$$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$
+	Pero $f'(x)<0$ para todo $x$ en $(a,b)$, por tanto 
+	$$\dfrac{f(b)-f(a)}{b-a}<0.$$
+	De donde se deduce que $f(b)<f(a).$\\
+\end{cor}
+
+Podemos dar un esquema general para decidir si un punto crítico es un máximo local, un mínimo local o ninguna de las dos cosas:
+
+\begin{enumerate}[(1)]
+    \item Si $f'>0$ en algún intervalo a la izquierda de $x$ y $f'<0$ en algún intervalo a la derecha de $x$, entonces $x$ es un punto máximo local.
+    \item  Si $f'<0$ en algún intervalo a la izquierda de $x$ y $f'>0$ en algún intervalo a la derecha de $x$, entonces $x$ es un punto mínimo local.
+    \item Si $f'$ tiene el mismo signo en algún intervalo a la izquierda de $x$ que en algún intervalo a la derecha, entonces $x$ no es ningún punto máximo ni mínimo local.
+\end{enumerate}
+
+En varios problemas de este capítulo y de capítulos sucesivos se pide hacer una representación gráfica de funciones. En cada caso debe determinar
+
+\begin{enumerate}[(1)]
+    \item los puntos críticos de $f$,
+    \item el valor de $f$ en los puntos críticos,
+    \item el signo de $f'$ en las regiones entre los puntos críticos (si esto no está claro ya),
+    \item los números $x$ tales que $f(x)=0$ (si es posible),
+    \item el comportamiento de $f(x)$ cuando $x$ se hace grande o grande negativo (si es posible).
+\end{enumerate}
+
+Existe un criterio popular para hallar los máximos y mínimos locales, que depende del comportamiento de la función sólo en los puntos críticos.\\
+
+\begin{teo}
+    Supongamos que $f'(a)=0.$ Si $f''(a)>0,$ entonces $f$ tiene un mínimo local en $a$; si $f''(a)<0,$ entonces $f$ tiene un máximo local en $a.$\\\\
 	Demostración.-\;
 \end{teo}
+
 
 
 
@@ -104,7 +177,94 @@ Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe per
 		Por lo tanto el mínimo viene dado por $-11$ y el máximo viene dado por $\dfrac{203}{27}.$\\\\
 
 	    %---------- (ii)
-	    \item 
+	    \item $f(x)=x^5+x+1$ en $[-1,1]$.\\\\
+		Respuesta.-\; 
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=5x^4+1.$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$5x^4+1=0 \quad \Rightarrow \quad x^4=-\dfrac{1}{5}.$$
+		El cual no es posible para ningún $x$ real.\\\\
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$-1,1$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(1\right) &=& 1^5+1+1&=&3.\\\\
+		    f\left(-1\right) &=& (-1)^5-1+1 &=&-1.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $-1$ y el máximo viene dado por $3.$\\\\
+
+	    %---------- (iii)
+	    \item $f(x)=3x^4-8x^3+6x^2$ en $\left[-\frac{1}{2},\frac{1}{2}.\right]$\\\\\
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=4x^3-24x^2+12x.$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$12x^3-24x^2+12x=0 \quad \Rightarrow \quad x(x^2-2x+1)=0\quad \Rightarrow \quad \left\{\begin{array}{rcl}x_1&=&0\\ x_2 &=& 1. \end{array}\right.$$
+		Sólo el número $x_1=0$  pertenece al intervalo $[-\frac{1}{2},\frac{1}{2}]$, de manera que el primer grupo de candidatos para localizar el máximo y el mínimo es sólo el número:
+		$$x_1=0.$$
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$-\dfrac{1}{2},\;\dfrac{1}{2}.$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(-\dfrac{1}{2}\right) &=& 3\left(-\dfrac{1}{2}\right)^4-8\left(-\dfrac{1}{2}\right)^3+ 6\left(-\dfrac{1}{2}\right)^2 &=&\dfrac{43}{16}.\\\\
+		    f\left(0\right) &=& 3\cdot 0^4-8\cdot 0^3 + 6\cdot 0^2&=&0.\\\\
+		    f\left(\dfrac{1}{2}\right) &=& 3\left(\dfrac{1}{2}\right)^4-8\left(\dfrac{1}{2}\right)^3+ 6\left(\dfrac{1}{2}\right)^2 &=&\dfrac{11}{16}.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $0$ y el máximo viene dado por $\dfrac{43}{16}.$\\\\
+
+	    %---------- (iv)
+	    \item $f(x)=\dfrac{1}{x^5+x+1}$ en $\left[-\dfrac{1}{2},1\right]$.\\\\
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=5x^4+1.$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$35x^4+1=0 \quad \Rightarrow \quad x_4=-\dfrac{1}{5}.$$
+		El cual no es posible para ningún $x$ real.\\\\
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$-\dfrac{1}{2},\;1$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(-\dfrac{1}{2}\right) &=& \dfrac{1}{\left(-\dfrac{1}{2}\right)^5+\left(-\dfrac{1}{2}\right)+1} &=&\dfrac{32}{15}.\\\\
+		    f\left(1\right) &=& \dfrac{1}{1^5+1+1} &=&\dfrac{1}{3}.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $\dfrac{32}{15}$ y el máximo viene dado por $\dfrac{1}{3}.$\\\\
+
+	    %---------- (v)
+	    \item $f(x)=\dfrac{x+1}{x^2+1}$ en $\left[-1,\dfrac{1}{2}\right]$.\\\\
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=\dfrac{x^2+1-2(x+1)}{\left(x^2+1\right)^2}.$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$\dfrac{x^2+1-2(x+1)}{\left(x^2+1\right)^2}=0 \quad \Rightarrow \quad x^2-2x-1=0\quad \Rightarrow \quad \left\{\begin{array}{rcl}x_1&=&-1+\sqrt{2}\\ x_2 &=& -1-\sqrt{2}. \end{array}\right.$$
+		Sólo el número $x_1=-1+\sqrt{2}$ pertenece al intervalo $[-1,\frac{1}{2}]$, de manera que el primer grupo de candidatos para localizar el máximo y el mínimo es sólo el número:
+		$$x_1=-1+\sqrt{2}.$$
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$-1,\;\dfrac{1}{2}.$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(-1\right) &=& \dfrac{-1+1}{\left(-1\right)^2+1}&=&0.\\\\
+		    f\left(1+\sqrt{2}\right) &=& \dfrac{\left(-1+\sqrt{2}\right)+1}{\left(-1+\sqrt{2}\right)^2+1} &=&\dfrac{\sqrt{2}}{2\left(\sqrt{2}+2\right)}.\\\\
+		    f\left(\dfrac{1}{2}\right) &=& \dfrac{\left(\dfrac{1}{2}\right)+1}{\left(\dfrac{1}{2}\right)^2+1} &=&\dfrac{6}{5}.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $0$ y el máximo viene dado por $\dfrac{6}{5}.$\\\\
+
+	    %---------- (vi)
+	    \item $f(x)=\dfrac{x}{x^2-1}$ en $[0,5]$.\\\\
+		Respuesta.-\; Primeramente derivemos la función $f$.
+		$$f'(x)=-\dfrac{x^2+1}{\left(x^2-1\right)^2}$$
+		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
+		$$-\dfrac{x^2+1}{\left(x^2-1\right)^2}=0 \quad \Rightarrow \quad x^2+1=0\quad  \Rightarrow \quad  x^2=-1.$$
+		El cual no es posible para ningún $x$ real.\\\\
+		El segundo grupo incluye a los extremos del intervalo. Es decir,
+		$$0,\;5$$
+		El tercer grupo es vacío, ya que $f$ es diferenciable en todas partes. Por último calculamos 
+		$$\begin{array}{ccccl}
+		    f\left(0\right) &=& \dfrac{0}{0^2-1} &=&0.\\\\
+		    f\left(5\right) &=& \dfrac{5}{5^2-1} &=&\dfrac{5}{24}.\\\\
+		\end{array}$$
+		Por lo tanto el mínimo viene dado por $0$ y el máximo viene dado por $\dfrac{5}{24}.$\\\\
 
 	\end{enumerate}
+
+    %------------------ 2.
+    \item Trace ahora la gráfica de cada una de las funciones del Problema 1 (spivak, capítulo 11.) y halle todos los puntos máximos y mínimos locales.\\\\
+	Respuesta.-\;
+
 \end{enumerate}

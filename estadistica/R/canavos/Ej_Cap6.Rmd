@@ -458,3 +458,23 @@ $$Var(XY) = \dfrac{218332051}{9}-\left(\dfrac{19701}{4}\right)^2=1029.215.$$
 
 
 ## 6.10.
+Sea $X$ una variable aleatoria continua e $Y$ discreta.
+
+### a)
+Si $f(x,y)=\dfrac{x^y e^{-2x}}{y!}>0$, $y=0,1,2,\ldots$ obtener la función de probabilidad marginal de $Y$.
+
+Respuesta.- Sea $\dfrac{1}{y!}\displaystyle\int_0^\infty x^y e^{-2x}\; dx$, entonces
+
+### b)
+Obtener la función de probabilidad condicional de $X$ para $Y=2$.
+
+Respuesta.-
+
+### c)
+Obtener $E(X|2)$ y $Var(X|2)$.
+
+Respuesta.-
+
+
+## 6.11.
+Sean $X$ e $Y$
