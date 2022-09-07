@@ -2054,24 +2054,109 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 	Respuesta.-\;
 	\begin{enumerate}
 	\item Derivando $f(x)$, tenemos 
-	    $$f'(x)=\dfrac{-2x+4}{(x-1)^2(x-3^2)}.$$
+	    $$f'(x)=-\dfrac{2x-4}{(x-1)^2(x-3)^2}.$$
 	    Luego igualando a $0$,
-	    $$\dfrac{-2x+4}{(x-1)^2(x-3^2)}=0\quad \Rightarrow \quad x=2.$$
-	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que:
+	    $$-\dfrac{2x-4}{(x-1)^2(x-3)^2}=0\quad \Rightarrow \quad x=2.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), y teniendo en cuenta qie la función no está definida en $x=1$ y $x=3$, podemos señalar que:
 		$$\begin{array}{ccclcl}
-		    \mbox{Si } &x<0 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
-		    \mbox{Si } &1<x<\sqrt[3]{2} &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
-		    \mbox{Si } &x>\sqrt[3]{2} &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &x<1 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &1<x<2 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &2<x<3 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
+		    \mbox{Si } &x>3 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
 		\end{array}$$
-	    \item Sea $f''(x)=\dfrac{6}{x^4}$. Entonces, $f'$ es creciente para todo $x\neq 0$ y $x=0$ no está definido.
+	    \item Sea $f''(x)=\dfrac{1}{(x-3)^3}-\dfrac{1}{(x-1)^3}$. Entonces, $f'$ es creciente para todo $x\neq 1$ y $x>3$ y $f'$ es decreciente para $1<x<3$.\\\\
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-1,xmax=5,ymin=-5,ymax=5,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{(1)/((x-1)*(x-3))};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
 
     %-------------------- 9.
     \item $f(x)=\dfrac{x}{1+x^2}$.\\\\
 	Respuesta.-\;
+	\begin{enumerate}
+	\item Derivando $f(x)$, tenemos 
+	    $$f'(x)=\dfrac{1-x^2}{(1+x^2)^2}$$
+	    Luego igualando a $0$,
+	    $$\dfrac{1-x^2}{(1+x^2)^2}=0\quad \Rightarrow \quad x=\pm 1.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que:
+		$$\begin{array}{ccclcl}
+		    \mbox{Si } &|x|<1 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &|x|>1 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
+		\end{array}$$
+	    \item Sea $f''(x)=\dfrac{2x(x^2-3)}{(1+x^2)^3}$. Entonces, $f'$ es creciente para todo $-\sqrt{3}<x<0$ o $x>\sqrt{3}$ y $f'$ es decreciente para $x<-\sqrt{3}$ o $0<x<\sqrt{3}.$
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-5,xmax=5,ymin=-.8,ymax=.8,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{(x)/(1+x^2)};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
 
     %-------------------- 10.
     \item $f(x)=\dfrac{x^2-4}{x^2-9}$.\\\\
 	Respuesta.-\;
+	\begin{enumerate}
+	    \item Derivando $f(x)$, tenemos 
+	    $$f'(x)=-\dfrac{10x}{(x^2-9)^2}$$
+	    Luego igualando a $0$,
+	    $$-\dfrac{10x}{(x^2-9)^2}=0\quad \Rightarrow \quad x=0.$$
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), podemos señalar que:
+		$$\begin{array}{ccclcl}
+		    \mbox{Si } &x<-3 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &-3<x<0 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
+		    \mbox{Si } &0<x<3 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
+		    \mbox{Si } &x>3 &\Rightarrow& f'(x)<0 &\Rightarrow& f\mbox{ es decreciente.}\\
+		\end{array}$$
+	    \item Sea $f''(x)=\dfrac{30(x^2+3)}{(x^2-9)^3}$. Entonces, $f'$ es creciente para $x<-3$ o $x>3$ y $f'$ es decreciente para $-3<x<3$.
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-5,xmax=5,ymin=-8,ymax=8,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1]{(x^2-4)/(x^2-9)};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
 
     %-------------------- 11.
     \item $f(x)=\sen^2 x$.\\\\

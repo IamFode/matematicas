@@ -477,4 +477,36 @@ Respuesta.-
 
 
 ## 6.11.
-Sean $X$ e $Y$
+Sean $X$ e $Y$ dos variables aleatorias. Demostrar que $Var(aX-bY)=a^2 Var(x)+b^2Var(Y)-2abCov(X,Y)$, en donde $a$ y $b$ son constantes.
+
+Respuesta.- La demostración es análoga a la que se da en el libro de Canavos página 195 (6.16). 
+
+$$\begin{array}{rcl}
+  Var(aX-bY)&=&E(aX-bY)^2-E^2(aX-bY)\\\\
+  &=&E\left(a^2X^2-2abXY+b^2Y^2\right)-\left[aE(X)-bE(Y)\right]^2\\\\
+  &=& a^2E(X^2)-2abE(XY)+b^2E(Y^2)-a^2E^2(X) +2abE(X)E(Y)-b^2E^2(Y)\\\\
+  &=&a^2\left[E(X^2)-E^2(X)\right] +b^2\left[E(Y^2)-E^2(Y)\right]-2ab\left[E(XY)-E(X)E(Y)\right]\\\\
+  &=&a^2Var(X)+b^2Var(Y)-2abCov(X,Y).\\\\
+\end{array}$$
+
+
+## 6.12.
+Sean $X$ e $Y$ dos variables aleatorias. Demostrar que $Cov(aX,bY)=abCov(X,Y)$, en donde $a$ y $b$ son constantes.
+
+Respuesta.-
+$$\begin{array}{rcl}
+  Cov(aX,bY) &=& E(aXbY)-E(aX)E(bY)\\\\
+  &=&abE(XY)-aE(X)bE(Y)\\\\
+  &=&ab\left[E(XY)-E(X)E(Y)\right]\\\\
+  &=&abCov(X,Y).\\\\
+\end{array}$$
+
+
+## 6.13.
+Si $X$ e $Y$ son dos variables aleatorias independientes $Var(X+Y)=Var(X-Y)=Var(x)+Var(Y)$. Comparar este resultado con $Var(X+Y)$ cuando $Var(X+Y)Cov(X,Y)>0$ o $Cov(X,Y)<0$. ¿Qué puede concluir?.
+
+Respuesta.- Si $Cov(X,Y)>0,$ $Var(X+Y)>Var(X)+Var(Y)$ y $Var(X-Y)<Var(X)+Var(Y).$
+
+Si $Cov(X,Y)<0,$ $Var(X+Y)<Var(X)+Var(Y),$ y $Var(X-Y)>Var(X)+Var(Y).$
+
+## 6.14.

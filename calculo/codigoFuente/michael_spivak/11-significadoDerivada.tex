@@ -144,7 +144,35 @@ Existe un criterio popular para hallar los máximos y mínimos locales, que depe
 
 \begin{teo}
     Supongamos que $f'(a)=0.$ Si $f''(a)>0,$ entonces $f$ tiene un mínimo local en $a$; si $f''(a)<0,$ entonces $f$ tiene un máximo local en $a.$\\\\
-	Demostración.-\;
+	Demostración.-\; Por definición,
+	$$f''(a)=\lim_{h\to 0}\dfrac{f'(a+h)-f'(a)}{h}.$$
+	Como $f'(a)=0$, esta igualdad puede escribirse como
+	$$f''(a)=\lim_{h\to 0}\dfrac{f'(a+h)}{h}.$$
+	Supongamos ahora que $f''(a)>0$. Entonces $\dfrac{f'(a+h)}{h}$ ha de ser positivo para valores suficientemente pequeños de $h$. Por tanto:
+	\begin{center}
+	    $f'(a+h)$ ha de ser positivo para valores de $h>0$ suficientemente pequeños. Y
+	    $f'(a+h)$ ha de ser negativo para valores de $h<0$ suficientemente pequeños.
+	\end{center}
+	Esto significa por el corolario 3 (Spivak, capitulo 11) que $f$ es creciente en algún intervalo a la derecha de $a$ y $f$ es decreciente en algún intervalo a la izquierda de $a$. Por consiguiente, $f$ tiene un mínimo local en $a$. La demostración es análoga en el caso de que $f''(a)<0.$\\
+\end{teo}
+
+Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para muchas otras funciones la segunda derivada es tan complicada que es más fácil considerar el signo de la primera derivada. Además, si a es un punto crítico de $f$ puede ocurrir que $f''(a)=0$. En este caso, el Teorema 5 no proporciona información: es posible que a sea un punto máximo local, un mínimo local o ninguna de las dos cosas.\\
+
+\begin{teo}
+    Supongamos que $f''(a)$ existe. Si $f$ tiene mínimo local en $a$, entonces $f''(a)\geq 0$; si $f$ tiene un máximo local en $a$, entonces $f''(a)\leq 0.$\\\\
+	Demostración.-\; Supongamos que $f$ tiene un mínimo local en $a$. Si $f''(a)<0$, entonces $f$ tendría también un máximo local en $a$, por el teorema $5$. Es decir, $f$ sería constante en algún intervalo que contiene a $a$, y por tanto $f''(a)=0$, lo cual es una contradicción. Por tanto, debe verificarse que $f''(a)\geq 0$. El caso de un máximo loca se trata de manera análoga.\\
+\end{teo}
+
+\begin{teo}
+    Supongamos que $f$ es continua en $a$ y que $f'(x)$ existe para todo $x$ de algún intervalo que contiene a $a$, excepto quizás en $x=a$. Supongamos, además, que $\lim\limits_{x\to 0}f'(x)$ existe. Entonces $f'(a)$ también existe y 
+    $$f'(a)=\lim\limits_{x\to a}f'(x).$$\\
+	Demostración.-\; Por definición,
+	$$f'(a)=\lim\limits{h\to 0}\dfrac{f(a+h)+f(a)}{h}.$$
+	Para valores de $h>0$ suficientemente pequeños, la función $f$ es continua en $[a,a+h]$ y diferenciables en $(a,a+h)$ (lo mismo ocurre para valores de $h<0$ suficientemente pequeños). Según el teorema del valor medio, existe un número $\alpha_h$ en $(a,a+h)$ tal que 
+	$$\dfrac{f(a+h)-f(a)}{h}=f'(\alpha_h).$$
+	Además $\alpha_h$ tiende a $a$ cuando $h$ tiende a $0$, ya que $\alpha_h$ pertenece al intervalo $(a,a+h)$; como $\lim\limits_{x\to a}f'(x)$ existe, se deduce que 
+	$$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=\lim_{h\to 0}f'(\alpha_h)=\lim_{x\to a}f'(x).$$
+
 \end{teo}
 
 
