@@ -167,12 +167,11 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
     Supongamos que $f$ es continua en $a$ y que $f'(x)$ existe para todo $x$ de algún intervalo que contiene a $a$, excepto quizás en $x=a$. Supongamos, además, que $\lim\limits_{x\to 0}f'(x)$ existe. Entonces $f'(a)$ también existe y 
     $$f'(a)=\lim\limits_{x\to a}f'(x).$$\\
 	Demostración.-\; Por definición,
-	$$f'(a)=\lim\limits{h\to 0}\dfrac{f(a+h)+f(a)}{h}.$$
+	$$f'(a)=\lim\limits_{h\to 0}\dfrac{f(a+h)+f(a)}{h}.$$
 	Para valores de $h>0$ suficientemente pequeños, la función $f$ es continua en $[a,a+h]$ y diferenciables en $(a,a+h)$ (lo mismo ocurre para valores de $h<0$ suficientemente pequeños). Según el teorema del valor medio, existe un número $\alpha_h$ en $(a,a+h)$ tal que 
 	$$\dfrac{f(a+h)-f(a)}{h}=f'(\alpha_h).$$
 	Además $\alpha_h$ tiende a $a$ cuando $h$ tiende a $0$, ya que $\alpha_h$ pertenece al intervalo $(a,a+h)$; como $\lim\limits_{x\to a}f'(x)$ existe, se deduce que 
 	$$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=\lim_{h\to 0}f'(\alpha_h)=\lim_{x\to a}f'(x).$$
-
 \end{teo}
 
 
@@ -292,7 +291,104 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 	\end{enumerate}
 
     %------------------ 2.
-    \item Trace ahora la gráfica de cada una de las funciones del Problema 1 (spivak, capítulo 11.) y halle todos los puntos máximos y mínimos locales.\\\\
+    \item Trace ahora la gráfica de cada una de las funciones del Problema 1 (Spivak, capítulo 11.) y halle todos los puntos máximos y mínimos locales.\\\\
 	Respuesta.-\;
+
+    %------------------ 3.
+    \item Trace las gráficas de las siguientes funciones:
+
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=x+\dfrac{1}{x}.$\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, 
+		      axis y line=center,
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-5,xmax=5,ymin=-8,ymax=8,
+		      label style={font=\tiny},
+		      tick label style={font=\tiny},
+		      enlargelimits=upper] 
+		      \addplot[black,opacity=1]{x+1/x};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	    %---------- (ii)
+	    \item $f(x)=x+\dfrac{3}{x^2}$.\\\\
+		Respuesta.-\;
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, 
+		      axis y line=center,
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-5,xmax=5,ymin=-7,ymax=20,
+		      label style={font=\tiny},
+		      tick label style={font=\tiny},
+		      enlargelimits=upper] 
+		      \addplot[black,opacity=1]{x+3/x^2};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	    %---------- (iii)
+	    \item $f(x)=\dfrac{x^2}{x^2-1}$.\\\\
+		Respuesta.-\;
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, 
+		      axis y line=center,
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-5,xmax=5,ymin=-8,ymax=8,
+		      label style={font=\tiny},
+		      tick label style={font=\tiny},
+		      enlargelimits=upper] 
+		      \addplot[black,opacity=1]{x^2/(x^2-1)};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	    %---------- (iv)
+	    \item $f(x)=\dfrac{1}{1+x^2}$.\\\\
+		Respuesta.-\;
+		\begin{center}
+		    \begin{tikzpicture}
+		    \begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, 
+		      axis y line=center,
+		      ylabel = {$f(x)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      xmin=-5,xmax=5,ymin=-.1,ymax=1.2,
+		      label style={font=\tiny},
+		      tick label style={font=\tiny},
+		      enlargelimits=upper] 
+		      \addplot[black,opacity=1]{1/(1+x^2)};
+		    \end{axis}
+		\end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+	\end{enumerate}
+
+    %------------------ 4.
+    \item 
 
 \end{enumerate}

@@ -2057,7 +2057,7 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 	    $$f'(x)=-\dfrac{2x-4}{(x-1)^2(x-3)^2}.$$
 	    Luego igualando a $0$,
 	    $$-\dfrac{2x-4}{(x-1)^2(x-3)^2}=0\quad \Rightarrow \quad x=2.$$
-	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), y teniendo en cuenta qie la función no está definida en $x=1$ y $x=3$, podemos señalar que:
+	    \item Por el teorema 4.7 (Tom Apostol, capítulo 4), y teniendo en cuenta que la función no está definida en $x=1$ y $x=3$, podemos señalar que:
 		$$\begin{array}{ccclcl}
 		    \mbox{Si } &x<1 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
 		    \mbox{Si } &1<x<2 &\Rightarrow& f'(x)>0 &\Rightarrow& f\mbox{ es creciente.}\\
@@ -2161,6 +2161,33 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
     %-------------------- 11.
     \item $f(x)=\sen^2 x$.\\\\
 	Respuesta.-\;
+	\begin{enumerate}
+	    \item Derivando $f(x)$, tenemos 
+	    $$f'(x)=2\sen x \cdot \cos x=\sen(2x).$$
+	    Luego igualando a $0$,
+	    $$\sen(2x)=0\quad \Rightarrow \quad x=\dfrac{n\pi}{2}\qquad \mbox{para } n \mbox{ entero.}$$
+	    \item $f$ es creciente si $n\pi < x < \left(n+\dfrac{1}{2}\right)\pi$ y decreciente si $\left(n-\dfrac{1}{2}\right)\pi<x<n\pi$
+	    \item Sea $f''(x)=-2\cos(2x)$. Entonces, $f'$ es creciente si $\left(n-\dfrac{1}{4}\right)<x<\left(n+\dfrac{1}{4}\right)\pi$ y $f'$ es decreciente si  $\left(n+\dfrac{1}{4}\right)\pi<x<\left(n+\ðfrac{3}{4}\right)\pi$.\\\\
+	    \item \;
+	    \begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  xmin=-30,xmax=360,ymin=-.1,ymax=1,
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1,domain=0:360]{(sin(x))^2};
+		\end{axis}
+	    \end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+	\end{enumerate}
 
     %-------------------- 12.
     \item $f(x)=x-\sen x$.\\\\

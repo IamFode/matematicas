@@ -1,7 +1,7 @@
 
-\begin{enumerate}[\bfseries \mbox{Ejercicio} 1.]
+\begin{enumerate}[\bfseries \mbox{Ejercicio.} 1.]
 
-    %-------------------- section 1.5 3
+    %-------------------- section 1.5 3 (1)
     \item \textbf{\boldmath Encontrar dos matrices $2\times 2,A$ diferentes tales que $A^2=0$ pero $A\neq 0.$\\\\
 	Respuesta.-}\; Consideremos las siguientes matrices
 	$$
@@ -45,7 +45,7 @@
 	De este modo encontramos dos matrices tal que $A^2=0$.\\\\
 
 
-    %-------------------- section 1.5 4
+    %-------------------- section 1.5 4 (2)
     \item \textbf{\boldmath Para cada $A$ del ejercicio 2, hallar matrices elementales $E_1,E_2,\ldots,E_k$ tal que 
 	$$E_k\cdot E_2E_1A=I.$$\\
     Respuesta.-}\; Considere la matriz $A$ dada y reduzca por filas de la siguiente manera y mencione correspondientemente las matrices elementales.
@@ -274,9 +274,9 @@
     \end{array}$$
 
     Por lo tanto, la sucesión de matrices elementales son $E_1,E_2,\ldots , E_8$ tal que
-    $$E_8 E_7 E_6 E_5 E_4 E_3 E_2 E_1 A = I.$$\\
+    $$E_8 E_7 E_6 E_5 E_4 E_3 E_2 E_1 A = I.$$\\\\
 
-    %-------------------- section 1.5 7
+    %-------------------- section 1.5 7 (3)
     \item \textbf{\boldmath Sean $A$ y $B$ matrices $2\times 2$ tales que $AB=I$. Demostrar que $BA=I.$\\\\
 	Demostración.-}\; Ya que $AB=I$, entonces $A,B\neq 0.$ Luego
 	$$\begin{array}{rcl}
@@ -288,7 +288,7 @@
 	\end{array}$$
 	\vspace{0.5cm}
 
-    %-------------------- section 1.6 1
+    %-------------------- section 1.6 1 (4)
     \item \textbf{\boldmath Sea,
 	$$A=\begin{bmatrix*}[r]
 	    1 & 2 & 1 & 0\\
@@ -296,18 +296,316 @@
 	    1 & -2 & 1 & 1
     \end{bmatrix*}$$
     Hallar una matriz escalón reducida por filas $R$ que sea equivalente a $A$, y una matriz inversible $3\times 3$, $P$ tal que $R=PA.$\\\\
-	Respuesta.-}\; Reducimos por filas AA aplicando las operaciones elementales por filas y, de manera equivalente, en cada operación determinamos la matriz elemental.
+	Respuesta.-}\; Reducimos por filas $A$ aplicando las operaciones elementales por filas y, de manera equivalente, en cada operación determinamos la matriz elemental.
+	$$\begin{bmatrix*}[r]
+	    1 & 2 & 1 & 0\\
+	    -1 & 0 & 3 & 5\\
+	    1 & -2 & 1 & 1
+	\end{bmatrix*}\to 
+	\begin{bmatrix*}[r]
+	    1 & 0 & 0\\
+	    0 & 1 & 0\\
+	    0 & 0 & 1
+	\end{bmatrix*}$$
 
-    %-------------------- section 1.6 3
-    \item \textbf{\boldmath Repetir el ejercicio 1, pero con 
-	$$A=\begin{bmatrix*}[r]
-	    2 & 0 & i\\
-	    1 & -3 & -i\\
-	    i & 1 & 1
+	$$\begin{array}{rcccl}
+	    &&R_2+R_1\to R_2 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 2 & 1 & 0\\
+		0 & 2 & 4 & 5\\
+		1 & -2 & 1 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		1 & 1 & 0\\
+		0 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    E_1 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		1 & 1 & 0\\
+		0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	    &&R_3+R_1\to R_2 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 2 & 1 & 0\\
+		0 & 2 & 4 & 5\\
+		0 & -4 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		1 & 1 & 0\\
+		-1 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    E_2 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		1 & 1 & 0\\
+		-1 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	    &&R_2/2 \to R_2 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 2 & 1 & 0\\
+		0 & 1 & 2 & \frac{5}{2}\\
+		0 & -4 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		\frac{1}{2} & \frac{1}{2} & 0\\
+		-1 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    E_3 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		1 & \frac{1}{2} & 0\\
+		0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	    &&R_1-2R_2 \to R_1 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 0 -3 & -5\\
+		0 & 1 & 2 & \frac{5}{2}\\
+		0 & -4 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & -1 & 0\\
+		\frac{1}{2} & \frac{1}{2} & 0\\
+		-1 & 0 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    E_4 = \begin{bmatrix*}[r]
+		1 & -2 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	\end{array}$$
+
+	$$\begin{array}{rcccl}
+
+	    &&R_3-4R_2 \to R_3 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 0 -3 & -5\\
+		0 & 1 & 2 & \frac{5}{2}\\
+		0 & 0 & 8 & 11
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & -1 & 0\\
+		\frac{1}{2} & \frac{1}{2} & 0\\
+		1 & 2 & 1
+	    \end{bmatrix*}
+	    &\to&
+	    E_5 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 4 & 1
+	    \end{bmatrix*}\\\\
+
+
+	    &&R_3/8 \to R_3 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 0 -3 & -5\\
+		0 & 1 & 2 & \frac{5}{2}\\
+		0 & 0 & 1 & \frac{11}{8}
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		1 & -1 & 0\\
+		\frac{1}{2} & \frac{1}{2} & 0\\
+		\frac{1}{8} & \frac{1}{4} & \frac{1}{8} 
+	    \end{bmatrix*}
+	    &\to&
+	    E_6 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & \frac{1}{8}
+	    \end{bmatrix*}\\\\
+
+	    &&R_2-2R_3 \to R_2 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 0 -3 & -5\\
+		0 & 1 & 0 & -\frac{1}{4}\\
+		0 & 0 & 1 & \frac{11}{8}
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		0 & -1 & 0\\
+		\frac{1}{4} & 0 & -\frac{1}{4}\\
+		\frac{1}{8} & \frac{1}{4} & \frac{1}{8} 
+	    \end{bmatrix*}
+	    &\to&
+	    E_7 = \begin{bmatrix*}[r]
+		1 & 0 & 0\\
+		0 & 1 & -2\\
+		0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	    &&R_1-3R_3 \to R_1 &&\\\\
+	    \begin{bmatrix*}[r]
+		1 & 0 & 0 & -\frac{7}{8}\\
+		0 & 1 & 0 & -\frac{1}{4}\\
+		0 & 0 & 1 & \frac{11}{8}
+	    \end{bmatrix*}
+	    &\to&
+	    \begin{bmatrix*}[r]
+		\frac{3}{8} & -\frac{1}{4} & \frac{3}{8}\\
+		\frac{1}{4} & 0 & -\frac{1}{4}\\
+		\frac{1}{8} & \frac{1}{4} & \frac{1}{8}
+	    \end{bmatrix*}
+	    &\to&
+	    E_7 = \begin{bmatrix*}[r]
+		1 & 0 & 3\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	\end{array}$$
+
+	Por lo tanto, la matriz escalonada reducida por filas que es equivalente por filas a $A$ es
+	$$R=\begin{bmatrix*}[r]
+	    1 & 0 & 0 & -\frac{7}{8}\\
+	    0 & 1 & 0 & -\frac{1}{4}\\
+	    0 & 0 & 1 & \frac{11}{8}
+	\end{bmatrix*}$$
+	Claramente, de los pasos mencionados anteriormente, $E_1, E_2, \ldots, E_8$ son las matrices elementales que transforman $A$ en $R$. De este modo,
+	$$E_8E_7E_6E_5E_4E_3E_2E_1A = R \quad \Rightarrow \quad P = E_8E_7E_6E_5E_4E_3E_2E_1.$$
+
+	Sabemos que las matrices elementales son invertibles y el producto de matrices invertibles es invertible, por lo tanto, $P=E_8E_7E_6E_5E_4E_3E_2E_1P=E$ es invertible.\\
+
+	De los pasos, obtenemos
+
+	$$P=\begin{bmatrix*}[r]
+	    \frac{3}{8} & -\frac{1}{4} & \frac{3}{8}\\
+	    \frac{1}{4} & 0 & -\frac{1}{4}\\
+	    \frac{1}{8} & \frac{1}{4} & \frac{1}{8}
+	\end{bmatrix*}$$
+
+	Así,
+
+	$$R=\begin{bmatrix*}[r]
+	    1 & 0 & 0 & -\frac{7}{8}\\
+	    0 & 1 & 0 & -\frac{1}{4}\\
+	    0 & 0 & 1 & \frac{11}{8}
+	\end{bmatrix*} \qquad \mbox{y}\qquad 
+	P=\begin{bmatrix*}[r]
+	    \frac{3}{8} & -\frac{1}{4} & \frac{3}{8}\\
+	    \frac{1}{4} & 0 & -\frac{1}{4}\\
+	    \frac{1}{8} & \frac{1}{4} & \frac{1}{8}
+	\end{bmatrix*}$$
+
+	Tal que $$R=PA.$$\\
+	
+
+    %-------------------- section 1.6 3 (5)
+    \item \textbf{\boldmath Para cada una de las dos matrices 
+	$$\begin{bmatrix*}[r]
+	    2 & 0 & -1\\
+	    4 & -1 & 2\\
+	    6 & 4 & 1
+	\end{bmatrix*},\qquad 
+	\begin{bmatrix*}[r]
+	    1 & -1 & 2\\
+	    3 & 2 & 4\\
+	    0 & 1 & -2
 	\end{bmatrix*}$$\\
-	Respuesta.-}\;
+	emplear operaciones elementales de fila para determinar cuando es invertible y encontrar la inversa en caso que lo sea.\\\\
+	Respuesta.-}\; Primero, considere la matriz $A$. Añadimos la matriz de identidad a $A$ para formar un sistema aumentado como $[A|I]$. Ahora, aplicando operaciones elementales de renglones y reducción de renglones $A$ de la siguiente manera:
+	$$\begin{array}{rcccc}
+	    &[A|I]&\\\\
+	    \begin{bmatrix*}[r]
+		2 & 5 & -1 && 1 & 0 & 0\\
+		4 & -1 & 2 && 0 & 1 & 0\\
+		6 & 4 & 1 && 0 & 0 & 1
+	    \end{bmatrix*} & 
+	    \begin{array}{rcl}
+		R_1/2 &\to & R_1\\
+	    \end{array}&
+	    \begin{bmatrix*}[r]
+		1 & \frac{5}{2} & -\frac{1}{2} && \frac{1}{2} & 0 & 0\\
+		4 & -1 & 2 && 0 & 1 & 0\\
+		6 & 4 & 1 && 0 & 0 & 1
+	    \end{bmatrix*}\\\\ 
+	    &\begin{array}{rcl}
+		R_2-4R_1 &\to & R_2\\
+		R_3-6R_1 &\to & R_3
+	    \end{array} &
+	    \begin{bmatrix*}[r]
+		1 & \frac{5}{2} & -\frac{1}{2} && \frac{1}{2} & 0 & 0\\
+		0 & -11 & 4 && -2 & 1 & 0\\
+		0 & -11 & 4 && -3 & 0 & 1
+	    \end{bmatrix*}\\\\ 
+	    &\begin{array}{rcl}
+		R_3-R_2 &\to & R_3\\
+		\end{array} &
+	    \begin{bmatrix*}[r]
+		1 & \frac{5}{2} & -\frac{1}{2} && \frac{1}{2} & 0 & 0\\
+		0 & -11 & 4 && -2 & 1 & 0\\
+		0 & 0 & 0 && -1 & -1 & 1
+	    \end{bmatrix*}\\\\ 
+	\end{array}$$
 
-    %-------------------- section 1.6 4
+	Dado que la última fila es cero. Por lo tanto, $A$ no puede reducirse por filas a la identidad. Es decir, $A$ no es equivalente por filas a la matriz identidad. Así, $A$ no es invertible.\\
+	Ahora, considere $B$ y añadimos una matriz identidad para formar un sistema aumentado $[B|I]$. Aplicando operaciones de fila y reducción de fila $B$ de la siguiente manera
+
+	$$\begin{array}{rcl}
+	    &[B|I]&\\\\
+
+	    \begin{bmatrix*}[r]
+		1 & -1 & 2 && 1 & 0 & 0\\
+		3 & 2 & 4 && 0 & 1 & 0\\
+		0 & 1 & -2 && 0 & 0 & 1
+	    \end{bmatrix*} & 
+		R_2-3R_1 \to  R_2
+	    &
+	    \begin{bmatrix*}[r]
+		1 & -1 & 2 && 1 & 0 & 0\\
+		0 & 5 & 0 && -3 & 1 & 0\\
+		0 & 1 & -2 && 0 & 0 & 1
+	    \end{bmatrix*}\\\\ 
+
+	    &R_2/5 \to  R_2&
+	    \begin{bmatrix*}[r]
+		1 & -1 & 2 && 1 & 0 & 0\\
+		0 & 1 & -\frac{2}{5} && -\frac{3}{5} & \frac{1}{5} & 0\\
+		0 & 1 & -2 && 0 & 0 & 1
+	    \end{bmatrix*}\\\\
+
+	    &\begin{array}{c}
+		R_1+R_2 \to  R_1\\\\
+		R_3-R_2 \to  R_3
+	    \end{array} &
+	    \begin{bmatrix*}[r]
+		1 & 0 & 1.6 && 0.4 & 0.2 & 0\\
+		0 & 1 & -0.4 && -0.6 & 0.2 & 0\\
+		0 & 0 & -1.6 && 0.6 & -0.2 & 1
+	    \end{bmatrix*}\\\\ 
+
+	    &R_3/(-1.6) \to  R_3&
+	    \begin{bmatrix*}[r]
+		1 & 0 & 1.6 && 0.4 & 0.2 & 0\\
+		0 & 1 & -0.4 && -0.6 & 0.2 & 0\\
+		0 & 0 & 1 && -.375 & .125 & -.625 
+	    \end{bmatrix*}\\\\ 
+	    &\begin{array}{c}
+		R_1-1.6R_3 \to  R_1\\\\
+		R_2+0.4R_3 \to  R_2
+	    \end{array} &
+	    \begin{bmatrix*}[r]
+		1 & 0 & 0 && 1 & 0 & 1\\
+		0 & 1 & 0 && -0.75 & 0.25 & -0.25\\
+		0 & 0 & 1 && -0.375 & 0.125 & -0.625
+	    \end{bmatrix*}\\\\ 
+	    &[I|C]&\\\\
+	\end{array}$$
+
+    %-------------------- section 1.6 4 (6)
     \item \textbf{\boldmath Sea 
 	$$A=\begin{bmatrix*}[r]
 	    5&0&0\\
@@ -315,9 +613,24 @@
 	    0&1&5
 	\end{bmatrix*}$$
 	¿Para qué $X$ existe un escalar $c$ tal que $AX=cX$?.\\\\
-	Respuesta.-}\;
+	Respuesta.-}\; Para $X=0$, $AX=cX$ se cumple trivialmente para todos los $c$. Ahora, considere $x \neq 0$, entonces
+	$$AX=cX\; \Rightarrow \; AX-cX=0\; \Rightarrow \; (A-cI)X=0\; \Rightarrow \; A-cI=0\; \Rightarrow \; A=cI.$$
+	Es decir,
+	$$\begin{bmatrix*}[r]
+	    5&0&0\\
+	    1&5&0\\
+	    0&1&5
+	\end{bmatrix*}=
+	\begin{bmatrix*}[r]
+	    c&0&0\\
+	    0&c&0\\
+	    0&0&c
+	\end{bmatrix*}.$$
 
-    %-------------------- section 1.6 5
+	Por lo de arriba tenemos $c=5$ y $1=0$ lo cual es absurdo. Por lo tanto, para cualquier $x\neq 0$ no existe un $c$ tal que $AX=cX.$ Así, para solo un $x=0$ eiste un $c$ tal que $AX=cX.$\\\\
+
+
+    %-------------------- section 1.6 5 (7)
     \item \textbf{\boldmath Determinar si
 	$$A=\begin{bmatrix*}[r]
 	    1&2&3&4\\
@@ -326,7 +639,50 @@
 	    0&0&0&4
 	\end{bmatrix*}$$
 	es inversible y hallar $A^{-1}$ si existe.\\\\
-	Respuesta.-}\;
+	Respuesta.-}\; Se tiene $|A|=1\cdot 2 \cdot 3 \cdot 4 = 24\neq 0$, por lo tanto $A$ es inversible. Para encontrar el inverso de A, agregar a $A$ la matriz identidad $I$ y forme un sistema aumentado $[A|I]$ y reduzcamos en filas usando operaciones elementales de filas de la siguiente manera:
+	$$\begin{array}{rcl}
+	    &[A|I]&\\\\
+	    \begin{bmatrix*}[r]
+		1&2&3&4&&1&0&0&0\\
+		0&2&3&4&&0&1&0&0\\
+		0&0&3&4&&0&0&1&0\\
+		0&0&0&4&&0&0&0&1
+	    \end{bmatrix*} 
+	    &\begin{array}{rcl}
+		R_1-R_2 &\to & R_1\\
+		R_2-R_3 &\to & R_2\\
+		R_3-R_4 &\to & R_3\\
+	    \end{array}&
+	    \begin{bmatrix*}[r]
+		1&0&0&0&&1&-1&0&0\\
+		0&2&0&0&&0&1&-1&0\\
+		0&0&3&0&&0&0&1&-1\\
+		0&0&0&4&&0&0&0&1
+	    \end{bmatrix*}\\\\
+
+	    &\begin{array}{rcl}
+		R_2/2 &\to & R_2\\
+		R_3/3 &\to & R_3\\
+		R_4/4 &\to & R_4\\
+	    \end{array}&
+	    \begin{bmatrix*}[r]
+		1&0&0&0&&1&-1&0&0\\
+		0&1&0&0&&0&\frac{1}{2}&-\frac{1}{2}&0\\
+		0&0&1&0&&0&0&\frac{1}{2}&-\frac{1}{3}\\
+		0&0&0&1&&0&0&0&\frac{1}{4}
+	    \end{bmatrix*}\\\\
+	    &[I|A^{-1}]&
+    \end{array}$$
+
+    Del sistema aumentado reducido, obtenemos
+	    $$\begin{bmatrix*}[r]
+		1&-1&0&0\\
+		0&\frac{1}{2}&-\frac{1}{2}&0\\
+		0&0&\frac{1}{2}&-\frac{1}{3}\\
+		0&0&0&\frac{1}{4}
+	    \end{bmatrix*}$$
+	    \vspace{0.5cm}
+
 
     %-------------------- section 1.6 6
     \item \textbf{\boldmath Supóngase que $A$ es una matriz $2\times 1$ y que $B$ es una matriz $1\times 2$. Demostrar que $C=AB$ no es inversible.\\\\
@@ -346,11 +702,36 @@
 
     %-------------------- section 1.6 9
     \item \textbf{\boldmath Una matriz $n\times n$, $A$, se llama triangular superior si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostrar que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
-	Demostración.-}\;
+	Demostración.-}\; Sea $A=\left[a_{ij}\right]_{n\times n}$ la matriz triangular superior. Por lo tanto, $a_{ij}=0$ para todo $i>j,i,j=1,2,\ldots, n$. Claramente $|A|=a_{11}a_{22}\cdots a_{nn}$. Ahora
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$A$ es invertible & $\Leftrightarrow$ & $A$ es fila equivalente a matriz de identidad\\\\
+				  & $\Leftrightarrow$ & $|A|\neq 0$\\\\
+				  & $\Leftrightarrow$ & $a_{11} a_{22} \cdots a_{nn}\neq 0$\\\\
+				  & $\Leftrightarrow$ & cada $a_{ii}\neq 0$ para todo $i=1,2,\ldots , n$
+	    \end{tabular}
+	\end{center}
+	Por lo tanto, Una matriz triangular superior $A$ de $n \times n$ es invertible si y solo si cada elemento de la diagonal es distinto de cero.\\\\
+
 
     %-------------------- section 1.6 10
     \item \textbf{\boldmath Demostrar la siguiente generalización del ejercicio 6. Si $A$ es una matriz $m\times n$, $B$ es una matriz $n\times m$ y $n<m$, entonces $AB$ no es inversible.\\\\
-	Demostración.-}\; Sea $A'$ una matriz $m\times m$ obtenido al unir $m-n$ columnas cero para $A$. Es decir,  
+	Demostración.-}\; Sea $A'$ una matriz $m\times m$ obtenido al unir $m-n$ columnas cero para $A$. Es decir, $A'=\left[A_{m\times n}|0_{m\times (m-n)}\right]_{m\times m}$ y sea $B'$ una matriz $m\times m$ obtenida al unir $m-n$ cero filas de $B$, en otras palabras
+	$$B'=\begin{bmatrix*}[c]
+	    B_{n\times m}\\
+	    ----\\
+	    0_{(m-n)\times m}
+	\end{bmatrix*}$$
+	Ahora,
+	$$A'B'=\left[A_{m\times n}|0_{m\times (m-n)}\right]
+	\begin{bmatrix*}[c]
+	    B_{n\times m}\\
+	    ----\\
+	    0_{(m-n)\times m}
+	\end{bmatrix*} =AB.$$
+	Utilizando la multiplicación de matrices. Así, producto $AB$ y $A'B'$ son idénticos. \\
+	Por construcción, $|A'|=0$ y $|B'|=0.$ Por lo tanto, $|A'B'|=|A'||B'|=0$. Así, $|AB|=0$ y por ende $AB$ es no invertible.\\\\
+
 
     %-------------------- section 1.6 12
     \item \textbf{\boldmath El resultado del ejemplo 16 sugiere que tal vez la matriz
@@ -361,7 +742,19 @@
 		  &\dfrac{1}{n}&\cdots&\dfrac{1}{2n-1}\\\\
 	\end{bmatrix*}$$
     es inversible y $A^{-1}$ tiene elementos enteros.¿Se puede demostrar esto?.\\\\
-	Respuesta.-}\;
+	Respuesta.-}\; Consideremos la matriz $I_n$ dada por:
+	$$I_n=\begin{bmatrix*}[r]
+	    1&0&\cdots&0\\\\
+	    0&1&\cdots&0\\\\
+	    \vdots&\vdots&&\vdots\\\\
+	    0&0&\cdots&1\\\\
+	\end{bmatrix*}$$
+	Vemos que la matriz $A$ es una matriz Hilbert, el cual tiene los elementos:
+	$$A_{ij}=\dfrac{1}{i+j-1}.$$
+	De donde se puede demostrar que su determinante es:
+	$$\det A = \dfrac{\left(\displaystyle\prod_{i=1}^{2n-1}i!\right)^4}{\displaystyle \prod_{i=1}^{n-1}i!}$$
+	Como el $\det A \neq 0$, la matriz es invertible. Su inversa estará dada por:
+	$$\left(A^{-1}\right)_{ij}=\left(-1\right)^{i+j}\left(i+j-1\right){n+i-1\choose n-j}{n+j-1 \choose n-i}{i+j-2 \choose i-1}^2.$$
 
 
 \end{enumerate}
