@@ -510,3 +510,19 @@ Respuesta.- Si $Cov(X,Y)>0,$ $Var(X+Y)>Var(X)+Var(Y)$ y $Var(X-Y)<Var(X)+Var(Y).
 Si $Cov(X,Y)<0,$ $Var(X+Y)<Var(X)+Var(Y),$ y $Var(X-Y)>Var(X)+Var(Y).$
 
 ## 6.14.
+Supóngase que la frecuencia $\Lambda$ a la que ocurren accidentes automovilísticos en un lapso fijo es una variable aleatoria con una distribución gama y parámetros de forma y escala igual a dos. Si para cada valor $\lambda$ de $\Lambda$ la distribución condicional del número de accidentes es una distribución de Poisson, obtener la función de probabilidad marginal de $X$ y calcular las probabilidades para $X=0,1,2,\ldots, 10.$ ¿Cómo son estas probabilidades al compararlas con las que se obtienen bajo la suposición de una frecuencia constante $\lambda=4$?.
+
+Respuesta.- Dado que $\Gamma(2)=\int_0^\infty u^{2-1}e^{-2}\; du = 1.$ La distribución gama viene dada por:
+
+$$f(x,2,2)=\left\{\begin{array}{ll}
+  \dfrac{1}{\Gamma(2)2^2}x^{2-1}e^{-\frac{x}{2}} & x>0,\\\\
+  0 & \mbox{para otro valor.}
+\end{array}\right.\quad \Rightarrow \quad 
+f(x,2,2)=\left\{\begin{array}{ll}
+  \dfrac{1}{4}xe^{-\frac{x}{2}} & x>0,\\\\
+  0 & \mbox{para otro valor.}
+\end{array}\right.
+$$
+
+
+$$f(x|y)=\dfrac{f(x,y)}{f_Y(y)}= \dfrac{e^{-\lambda}\lambda^y}{y!}$$
