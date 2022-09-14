@@ -2286,7 +2286,32 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 
 \end{comment}
 
-\setcounter{section}{20}
+\section{Ejemplos resueltos de problemas de extremos}
+
+\begin{ejem}[Principio del producto máximo con suma constante]
+    Dado un número positivo $S$. Demostrar que entre todos los pares de números positivos $x$ e $y$ tales que $x+y=S$, el producto $xy$ es el mayor cuando $x=y=\dfrac{1}{2}S.$\\\\
+	Demostración.-\; Si $x+y=S,$ $y=S-x$ y el producto $xy$ es igual a $x(S-x)=xS-x^2$. Pongamos $f(x)=xS-x^2$. Este polinomio cuadrático tiene como deriva primera $f'(x)=S-2x$ que es positiva para $x<\frac{1}{2}S$ y negativa para $x>\dfrac{1}{2}S$. Por tanto el máximo de $xy$ se presenta cuando $x=\dfrac{1}{2}S$, $y=S-x=\dfrac{1}{2}S$. Esto también se puede demostrar sin utilizar el Cálculo. Pongamos simplemente $f(x)=\dfrac{1}{4}-\left(x-\dfrac{1}{2}S\right)^2$ y observamos que $f(x)$ es máximo cuando $x=\dfrac{1}{2}S$.\\
+\end{ejem}
+
+\begin{ejem}[Principio de suma mínima, con producto constante]
+    Dado un número positivo $P$. Demostrar que entre todos los pares de números positivos $x$ e $y$ tales que $xy=P$, el que hace la suma $x+y$ mínima es $x=y=\sqrt{P}.$\\\\
+    Demostración.-\; Tenemos que determinar el mínimo de la función $f(x)=x+\dfrac{P}{x}$ para $x>0$. La primera derivada es $f'(x)=1-\dfrac{P}{x^2}$. Esta es negativa para $x^2<P$ y positiva para $x^2>P$, de manera que $f(x)$ tiene su mínimo en $x=\sqrt{P}$. Luego, la suma $x+y$ es mínima cuando $x=y=\sqrt{P}.$\\\\
+\end{ejem}
+
+\begin{ejem}
+    Entre los rectángulos de perímetro dado, el cuadrado es el de mayor área.\\\\
+	Demostración.-\; Utilizando el resultado del ejemplo 4.1 Tom Apostol. Sea $x$ e $y$ los lados de un rectángulo cualquiera. Si el perímetro está fijado, entonces $x+y$ es constante, con lo que el área $xy$ tiene mayor valor cuando $x=y$. Luego, el rectángulo máximo es el cuadrado.\\\\
+\end{ejem}
+
+\begin{ejem}
+    La media geométrica de dos números positivos no excede a su media aritmética. Esto es, $\sqrt{ab}\leq \frac{1}{2}(a+b).$\\\\
+    Demostración.-\; Dados $a>0$, $b>0$, sea $P=ab$. Entre todos los positivos $x$ e $y$ siendo $xy=P$, la suma $x+y$ es la menor cuando $x=y=\sqrt{P}.$ Es decir, si $xy=P$ entonces $x+y\geq \sqrt{P}+\sqrt{P}=2\sqrt{P}.$ En particular, $a+b\geq 2\sqrt{P}=2\sqrt{ab}$, con lo que $\sqrt{ab}\leq \frac{1}{2}(a+b)$. La igualdad se presenta si y sólo si $a=b.$\\\\
+\end{ejem}
+
+\begin{ejem}
+    Un bloque de peso $W$ es movido a lo largo de un plano por una fuerza que forma un ángulo $\theta$ con la recta de la dirección del movimiento, siendo $0\leq \theta \leq \frac{1}{2}\pi,$, como se ve en la figura 4.15 Tom Apostol. Supongamos que la resistencia por fricción es proporcional a la fuerza normal con la que el bloque presiona perpendicularmente contra el plano. Hallar el ángulo $\theta$ para el que la fuerza de propulsión necesaria para vencer la fricción sea lo más pequeña posible.\\\\
+	Demostración.-\; 
+\end{ejem}
 
 \section{Ejercicios}
 
@@ -2294,7 +2319,51 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 
     %-------------------- 1.
     \item Demostrar que entre todos los rectángulos de área dada, el cuadrado es el de perímetro mínimo.\\\\
-	Demostración.-\;
+	Demostración.-\; Sea $x$ e $y$ denotado por los lados del rectángulo. Si el área es fija, entonces $xy$ es una constante, tal que $xy=A$. El perímetro de un rectángulo viene dado por $P(x,y)=2x+2y$, de donde
+	$$P(x)=2x+2\dfrac{A}{x}.$$
+	Para encontrar el valor mínimo, tomamos la derivada de $P(x)$,
+	$$P'(x)=2-\dfrac{2A}{x^2}.$$
+	Luego igualamos a cero y resolvemos para $x$,
+	$$2-\dfrac{2A}{x^2}=0\quad \Rightarrow \quad x=\sqrt{A}.$$
+	Ya que, $P'(x)<0$, cuando $x<\sqrt{A}$ y $P'(x)>0$, cuando $x>\sqrt{A}$ por el teorema 4.8 Apostol, se tiene que $f$ tiene un mínimo relativo en $\sqrt{A}.$. Como $x=\sqrt{A}$ implica $y=\sqrt{A}$, tenemos que el perímetro es mínimo cuando $x=y$. Es decir, cuando el rectángulo es un cuadrado.\\\\
+
+    %-------------------- 2.
+    \item Un granjero tiene $L$ pies de alambre para cercar un terreno de pasto rectangular adyacente a un muro de piedra. ¿Qué dimensiones darán el área máxima al terreno cercado?.\\\\
+	Respuesta.-\; Sea $y$ el ancho de la pradera (es decir, la longitud de los lados perpendiculares a la pared) y sea $x$ la longitud de la pradera (es decir, la longitud del lado del rectángulo que es paralelo a la pared). Entonces, tenemos lo $2y + x = L$ que implica $x = L - 2$.  Entonces queremos maximizar
+	$$A(y)=(L-2y)y=Ly-2y^2.$$
+	Derivando se tiene,
+	$$A'(y)=L-4y.$$
+	Igualando a cero,
+	$$L-4y=0\quad \Rightarrow \quad y=\dfrac{L}{4}y.$$ 
+	Así, $A'(y)>0$ cuando $y<\dfrac{L}{4}$ y $A'(y)<0$ cuando $y>\dfrac{L}{4}$. Por el teorema 4.8 Apostol, $A(y)$ toma el valor máximo cuando $y=\dfrac{L}{4}.$ Luego,
+	$$x=L-2y=L2\dfrac{L}{4}=\dfrac{L}{2}.$$
+	De donde las dimensiones serán $\dfrac{L}{2}$ por $\dfrac{L}{4}.$\\\\
+
+    %-------------------- 3.
+    \item Un granjero quiere cercar un terreno de pasto rectangular de área $A$ adyacente a un muro de piedra. ¿Qué dimensiones exigen la mínima cantidad de alambre de cerca?.\\\\
+	Respuesta.-\; Sea $x$ la longitud del lado paralelo al muro de piedra e $y$ la longitud de los lados perpendiculares al muro de piedra. Entonces, $A = xy$ fija, por lo que $y = \frac{A}{x}$. La función que queremos minimizar es $P = x + 2y = x + \frac{2A}{x}$. Luego, tomando la derivada que tenemos,
+	$$P'(x)=1-\dfrac{2A}{x^2}.$$
+	Igualando a cero,
+	$$1-\dfrac{2A}{x^2}=0\quad \Rightarrow \quad x=\sqrt{2A}.$$
+	Así, $P'(x)<0$ cuando $x<\sqrt{2A}$ y $P'(x)>0$ cuando $x>\sqrt{2A}$. Por el teorema 4.8 Apostol, $P(x)$ toma el valor mínimo cuando $x=\sqrt{2A}$. De donde,
+	$$y=\dfrac{A}{x}\quad \rightarrow \quad y=\dfrac{A}{2\sqrt{2A}}=\dfrac{\sqrt{2A}}{2}.$$\\
+
+    %-------------------- 4.
+    \item Dado $S > O$. Probar que entre todos los números positivos $x$ e $y$ tales que $x + y = S$, la suma $x^2 + y^2$ es mínima cuando $x=y$.\\\\
+	Demostración.-\;  Ya que $x+y=S$ que implica $y=S-x$. Entonces, la función que queremos minimizar es 
+	$$f(x)=x^2+(S-x)^2.$$ 
+	Luego, tomando la derivada se tiene,
+	$$f'(x)=2x-2(S-x)=4x-2S.$$
+	Igualando a cero,
+	$$4x-2S=0\quad \Rightarrow \quad x=\dfrac{S}{2}.$$
+	Así, $f'(x)<0$ cuando $x<\dfrac{S}{2}$ y $f'(x)>0$ cuando $x>\dfrac{S}{2}$. Por el teorema 4.8 Apostol, $f(x)$ toma el valor mínimo cuando $x=\dfrac{S}{2}$. De donde,
+	$$y=S-x=S-\dfrac{S}{2}=\dfrac{S}{2}.$$
+	Por lo tanto la suma es mínima, cuando 
+	$$x=y.$$\\
+
+    %-------------------- 5.
+    \item 
+
 
 \end{enumerate}
 

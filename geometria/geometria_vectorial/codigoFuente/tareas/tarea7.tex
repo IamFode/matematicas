@@ -1,0 +1,33 @@
+
+
+\begin{itemize}
+    \item \textbf{\boldmath Sean $\alpha_1,\beta_2, \gamma_1$ y $\alpha_2,\beta_2,\gamma_2$, los ángulos directores de las rectas $\mathscr{L}_1$ y $\mathscr{L}_2$ respectivamente.\\
+	Si los ángulos de dirección de $\mathscr{L}_1$ y $\mathscr{L}_2$ están determinadas por los vectores $\vec{a}_1$ y $\vec{a}_2$, respectivamente y $\theta$ es el ángulo entre $\vec{a}_1$ y $\vec{a}_2$, entonces
+$$\cos \theta = \cos \alpha_1\cos \alpha_2 + \cos \beta_1 \cos \beta_2 + \cos \gamma_1 \cos \gamma_2.$$
+	Demostración.-}\; Sean $\vec{u}_1=\dfrac{\vec{a}_1}{\|\vec{a}_1\|}$ y $\vec{u}_2=\dfrac{\vec{a}_2}{\|\vec{a}_2\|}$, entonces por la parte a) del teorema se tiene,
+	$$\begin{array}{c|c}
+	    \cos\alpha_1=\vec{u}_1 \circ i&\cos \alpha_2=\vec{u}_2\circ i\\
+	    \cos\beta_1=\vec{u}_1 \circ j&\cos \beta_2=\vec{u}_2\circ j\\
+	    \cos\gamma_1=\vec{u}_1 \circ k&\cos \gamma_2=\vec{u}_2\circ k.\\
+	\end{array}$$
+	De donde,
+
+	$$\begin{array}{rcl}
+	    \cos \alpha_1\cos \alpha_2&=&\left(\vec{u}_1\circ i\right)\left(\vec{u}_2\circ i\right)\\
+	    \cos \beta_1\cos \beta_2&=&\left(\vec{u}_1\circ j\right)\left(\vec{u}_2\circ j\right)\\
+	    \cos \gamma_1\cos \gamma_2&=&\left(\vec{u}_1\circ k\right)\left(\vec{u}_2\circ k\right)\\
+	\end{array}.$$
+	Que implica,
+
+	$$\begin{array}{rcl}
+	    \cos \alpha_1\cos \alpha_2+\cos \beta_1\cos \beta_2+ \cos \gamma_1\cos \gamma_2 &=& \left(\vec{u}_1\circ i\right)\left(\vec{u}_2\circ i\right)+\left(\vec{u}_1\circ j\right)\left(\vec{u}_2\circ j\right)+\left(\vec{u}_1\circ k\right)\left(\vec{u}_2\circ k\right)\\\\
+											    &=&\left(\dfrac{\vec{a}_1}{\|\vec{a}_1\|}\circ i\right)\left(\dfrac{\vec{a}_2}{\|\vec{a}_2\|}\circ i\right)+ \left(\dfrac{\vec{a}_1}{\|\vec{a}_1\|}\circ j\right)\left(\dfrac{\vec{a}_2}{\|\vec{a}_2\|}\circ j\right)\\\\
+											    &+& \left(\dfrac{\vec{a}_1}{\|\vec{a}_1\|}\circ k\right)\left(\dfrac{\vec{a}_2}{\|\vec{a}_2\|}\circ k\right)\\\\
+											    &=&\dfrac{a_{1_1}a_{2_1}}{\|\vec{a}_1\|\|\vec{a}_2\|} + \dfrac{a_{1_2}a_{2_2}}{\|\vec{a}_1\|\|\vec{a}_2\|} + \dfrac{a_{1_3}a_{2_3}}{\|\vec{a}_1\|\|\vec{a}_2\|}\\\\
+											    &=&\dfrac{1}{\|\vec{a}_1\|\|\vec{a}_2\|}\left(a_{1_1}a_{2_1}+a_{1_2}a_{2_2}+a_{1_3}a_{2_3}\right)\\\\
+											    &=&\dfrac{\vec{a}_1\circ \vec{a}_2}{\|\vec{a}_1\|\|\vec{a}_2\|}\\\\
+	\end{array}$$
+	Dado que el $\cos \theta = \dfrac{\vec{a}_1\circ \vec{a}_2}{\|\vec{a}_1\|\|\vec{a}_2\|}$, se concluye que,
+	$$\cos \theta = \cos \alpha_1\cos \alpha_2+\cos \beta_1\cos \beta_2+ \cos \gamma_1\cos \gamma_2.$$
+
+\end{itemize}

@@ -172,6 +172,17 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 	$$\dfrac{f(a+h)-f(a)}{h}=f'(\alpha_h).$$
 	Además $\alpha_h$ tiende a $a$ cuando $h$ tiende a $0$, ya que $\alpha_h$ pertenece al intervalo $(a,a+h)$; como $\lim\limits_{x\to a}f'(x)$ existe, se deduce que 
 	$$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=\lim_{h\to 0}f'(\alpha_h)=\lim_{x\to a}f'(x).$$
+	En otras palabras, sean $L=\lim\limits_{x\to a}f'(x)$, por definición de límite se tiene 
+	\begin{center}
+	    Para todo $\epsilon>0$, existe un $\delta>0$ tal que, si $0<|x-a|<\delta$, entonces $|f'(x)-L|<\epsilon.$
+	\end{center}
+	Ahora, si $0<|x-a|<\delta$ podríamos utilizar el teorema del valor medio para encontrar un punto $c$ entre $a$ y $x$ que satisfaga,
+	$$\dfrac{f(x)-f(a)}{x-a}=f'(c).$$
+	Notemos que $c$ satisface también a $0<|c-a|<\delta,$ tal que $|f'(c)-L|<\epsilon.$ Como consecuencia 
+	$$\left|\dfrac{f(x)-f(a)}{x-a}-L\right|<\epsilon.$$ 
+	Es decir,
+	$$0<|x-a|<\delta \quad \Rightarrow \quad \left|\dfrac{f(x)-f(a)}{x-a}-L\right|<\epsilon.$$
+	Esto quiere decir que $f'(a)=L.$\\\\
 \end{teo}
 
 
@@ -221,7 +232,7 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 		Por lo tanto el mínimo viene dado por $-1$ y el máximo viene dado por $3.$\\\\
 
 	    %---------- (iii)
-	    \item $f(x)=3x^4-8x^3+6x^2$ en $\left[-\frac{1}{2},\frac{1}{2}.\right]$\\\\\
+	    \item $f(x)=3x^4-8x^3+6x^2$ en $\left[-\frac{1}{2},\frac{1}{2}.\right]$\\\\
 		Respuesta.-\; Primeramente derivemos la función $f$.
 		$$f'(x)=4x^3-24x^2+12x.$$
 		Luego igualemos a cero para hallar el grupo de candidatos para localizar el o los puntos máximos y mínimos.
@@ -294,6 +305,175 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
     \item Trace ahora la gráfica de cada una de las funciones del Problema 1 (Spivak, capítulo 11.) y halle todos los puntos máximos y mínimos locales.\\\\
 	Respuesta.-\;
 
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item $f(x)=x^3-x^2-8x+1$ en $[-2,2]$.\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=-2:2]{x^3-x^2-8*x+1};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=3x^2-2x-8$$
+		De donde los puntos críticos están dados por:
+		$$3x^2-2x-8=0 \quad \Rightarrow \quad (3x+4)(x-2)=0 \quad \Rightarrow \quad x_1=-\dfrac{4}{3},\quad x_2=2.$$
+		Ya que $f'$ existe, entonces podemos calcular $f''$.
+		$$f''(x)=6x-2.$$
+		Luego, calculamos $f''\left(-\dfrac{4}{3}\right)$ y $f''(2)$.
+		$$f''\left(-\dfrac{4}{3}\right)=6\left(-\dfrac{4}{3}\right)-2=-10<0\quad ;\quad  f''(2)=6\cdot 2 - 2=10>0$$
+		Por lo tanto, $-\dfrac{4}{3}$ es un punto máximo local y $2$ es un punto mínimo local.\\\\
+
+	    %---------- (ii)
+	    \item $f(x)=x^5+x+1$ en $[-1,1]$.\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=-1:1]{x^5+x+1};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=5x^4+1.$$
+		En este caso podemos ver que no existen puntos críticos, ya que
+		$$5x^4+1=0 \quad \Rightarrow \quad x^4=-\dfrac{1}{5}.$$
+		no tiene soluciones reales. Y por lo tanto no tiene máximos ni mínimos locales.\\\\
+
+	    %---------- (iii)
+	    \item $f(x)=3x^4-8x^3+6x^2$ en $\left[-\frac{1}{2},\frac{1}{2}.\right]$\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=-1/2:1/2]{3*x^4-8*x^3+6*x^2};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=12x^3-24x^2+12x.$$
+		De donde los puntos críticos están dados por:
+		$$12x^3-24x^2+12x=0 \quad \Rightarrow \quad 12x(x^2-2x+1)=0 \quad \Rightarrow \quad x_1=0, \quad x_2=1.$$
+		Ya que $f'$ existe, entonces podemos calcular $f''$.
+		$$f''(x)=36x^2-48x+12.$$
+		Luego, por el hecho de que $f''(1)$ no está contenido en el intervalo $\left[-\frac{1}{2},\frac{1}{2}.\right]$ solo calcularemos $f''\left(0\right)$.
+		$$f''\left(0\right)=36\cdot 0^2 - 48\cdot 0 + 12 = 12.$$
+		Por el teorema 11.6 de Spivak, vemos que $f''=12\geq 0$ en el intervalo $\left[-\frac{1}{2},\frac{1}{2}.\right]$, por lo tanto, $0$ es un punto máximo local.\\
+
+	    %---------- (iv)
+	    \item $f(x)=\dfrac{1}{x^5+x+1}$ en $\left[-\dfrac{1}{2},1\right]$.\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=-1/2:1]{1/(x^5+x+1)};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=-\dfrac{5x^4+1}{x^5+x+1}.$$
+		En este caso podemos ver que no existen puntos críticos, ya que
+		$$-\dfrac{5x^4+1}{x^5+x+1}=0 \quad \Rightarrow \quad 5x^4+1=0.$$
+		no tiene soluciones en el intervalo $\left[-\dfrac{1}{2},1\right]$. Y por lo tanto no tiene máximos ni mínimos locales.\\\\
+
+	    %---------- (v)
+	    \item $f(x)=\dfrac{x+1}{x^2+1}$ en $\left[-1,\dfrac{1}{2}\right]$.\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=-1:1/2]{(x+1)/(x^2+1)};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=\dfrac{1-2x-x^2}{\left(1+x^2\right)^2}.$$
+		De donde los puntos críticos están dados por:
+		$$\dfrac{1-2x-x^2}{\left(1+x^2\right)^2}=0 \quad \Rightarrow \quad 1-2x-x^2=0 \quad \Rightarrow \quad x=-1\pm \sqrt{2}.$$
+		Ya que $f'$ existe, entonces podemos calcular $f''$.
+		$$f''(x)=\dfrac{-2\left[(x^2+1)(x+1)+2x(1-2x-x^2)\right]}{\left(1+x^2\right)^3}.$$
+		Luego, por el hecho de que $f''(-1-\sqrt{2})$ no está contenido en el intervalo $\left[-1,\frac{1}{2}.\right]$ solo calcularemos $f''\left(-1+\sqrt{2}\right)$. Así, dado que 
+		$$f''\left(-1+\sqrt{2}\right)<0$$
+		Entonces $-1+\sqrt{2}$ es un máximo local.\\\\
+
+	    %---------- (vi)
+	    \item $f(x)=\dfrac{x}{x^2-1}$ en $[0,5]$.\\\\
+		Respuesta.-\; 
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, 
+			  axis y line=center,
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  label style={font=\tiny},
+			  tick label style={font=\tiny},
+			  enlargelimits=upper] 
+			  \addplot[black,opacity=1,domain=0:5]{(x)/(x^2-1)};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+		Para calcular los puntos máximos y mínimos locales, primero calculamos la derivada de $f$.
+		$$f'(x)=-\dfrac{x^2+1}{\left(x^2-1\right)^2}.$$
+		En este caso podemos ver que no existen puntos críticos, ya que
+		$$-\dfrac{x^2+1}{\left(x^2-1\right)^2}=0 \quad \Rightarrow \quad x^2-1=0.$$
+		no tiene soluciones reales. Y por lo tanto no tiene máximos ni mínimos locales.\\\\
+
+	\end{enumerate}
+
     %------------------ 3.
     \item Trace las gráficas de las siguientes funciones:
 
@@ -311,7 +491,6 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 		      xlabel = {$x$},
 		      xlabel style={below right},
 		      ylabel style={above left},
-		      xmin=-5,xmax=5,ymin=-8,ymax=8,
 		      label style={font=\tiny},
 		      tick label style={font=\tiny},
 		      enlargelimits=upper] 
@@ -355,7 +534,6 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 		      xlabel = {$x$},
 		      xlabel style={below right},
 		      ylabel style={above left},
-		      xmin=-5,xmax=5,ymin=-8,ymax=8,
 		      label style={font=\tiny},
 		      tick label style={font=\tiny},
 		      enlargelimits=upper] 
@@ -377,7 +555,6 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 		      xlabel = {$x$},
 		      xlabel style={below right},
 		      ylabel style={above left},
-		      xmin=-5,xmax=5,ymin=-.1,ymax=1.2,
 		      label style={font=\tiny},
 		      tick label style={font=\tiny},
 		      enlargelimits=upper] 
@@ -390,5 +567,15 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 
     %------------------ 4.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $a_1<\ldots < a_n$ halle el valor mínimo de $f(x)=\sum\limits_{i=1}^n (x-a_i)^2$.\\\\
+		Respuesta.-\;
+
+	    %---------- (b)
+	    \item 
+
+	\end{enumerate}
 
 \end{enumerate}
