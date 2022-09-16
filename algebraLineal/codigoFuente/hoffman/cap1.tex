@@ -41,6 +41,37 @@ Se designa por $F$ el conjunto de los números reales o el conjunto de los núme
     \end{enumerate}
 \end{tcolorbox}
 
+% ---------- def. ----------
+\begin{tcolorbox}
+    El conjunto $F$, junto con  las operaciones de suma y multiplicación, se llama entonces \textbf{cuerpo}.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    Un \textbf{subcuerpo} de un cuerpo $C$ es un conjunto $F$ de números complejos que es a su vez un cuerpo respecto de las operaciones usuales de adición y multiplicación  de números complejos. Esto significa que el $0$ y el $1$ están en el conjunto $F$, y que si $x$ e $y$ son elementos de $F$, también lo son $(x+y), -x,xy-x^{-1}$ si $(x\neq 0)$.
+\end{tcolorbox}
+
+
+%------------------- ejemplo 1 ----------------------
+\begin{ejem}
+    El conjunto de los enteros positivos: $1,2,3,\ldots$ no es un subcuerpo de $C$ por varias razones. Por ejemplo, $0$ no es un entero positivo; para ningún entero positivo $n$, es $-n$ un entero positivo; para ningún entero positivo $n$, excepto $1$, es $1/n$ un entero positivo.\\
+\end{ejem}
+
+%------------------- ejemplo 2 ----------------------
+\begin{ejem}
+    El conjunto de los enteros: $\ldots,-2,-1,0,1,2,\ldots$ no es un subcuerpo de $C$, porque para un entero $n$, $1/n$ no es un entero al menos que $n$ sea $1$ o $-1$. Con las operaciones usuales de adición y multiplicación, el conjunto de los enteros satisface todas las condiciones (1)-(9), con excepción de la condición (8).\\
+\end{ejem}
+
+%------------------- ejemplo 3 ----------------------
+\begin{ejem}
+    El conjunto de los números racionales, esto es, números de la forma $p/q$, donde $p$ y $q$ son enteros y $q\neq 0$, es un subcuerpo del cuerpo de los complejos. La división que no es posible en el conjunto de los enteros es posible en el conjunto de los números racionales.\\
+\end{ejem}
+
+%------------------- ejemplo 4 ----------------------
+\begin{ejem}
+    El conjunto de todos los números complejos de la forma $x+y\sqrt{2}$, donde $x$ e $y$ son racionales, es un subcuerpo de $C$.\\\\
+	Demostración.-\; La multiplicación y la suma de un número racional y un número irracional siempre da un irracional. Estos números cumplen las condiciones (1)-(9), por lo que podemos concluir que este conjunto es un subcuerpo de $C$.\\
+\end{ejem}
+
 \section{Sistema de ecuaciones lineales}
 Supóngase que $F$ es un cuerpo. Se considera el problema de encontrar $n$ escalares (elementos de $F$) $x_1,\ldots,x_n$ que satisfagan las condiciones 
 
@@ -52,9 +83,9 @@ Supóngase que $F$ es un cuerpo. Se considera el problema de encontrar $n$ escal
 	A_{m1}x_1+A_{m2}x_2+\ldots + A_{mn}x_n&=&y_m
     \end{array}
 \end{equation}
-donde $y_1,\ldots , y_{m}$ y $A_{ij}$, $1\leq i \leq m$, $1\leq j \leq n,$ son elementos de $F$. A (1-1) se le llama un \textbf{\boldmath sistema de $m$ ecuaciones lineales con $n$ incógnitas}. Todo n-tuple $(x_1,\ldots,x_n)$ de elementos de $F$ que satisface cada una de las ecuaciones de (1-1) se llama una \textbf{solución} del sistema. Si $y_1=y_2=\ldots = y_m=0$, se dice que el sistema es homogéneo, o que cada una de las ecuaciones es homogénea.\\
+donde $y_1,\ldots , y_{m}$ y $A_{ij}$, $1\leq i \leq m$, $1\leq j \leq n,$ son elementos de $F$. A (1-1) se le llama un \textbf{\boldmath sistema de $m$ ecuaciones lineales con $n$ incógnitas}. Todo n-tuple $(x_1,\ldots,x_n)$ de elementos de $F$ que satisface cada una de las ecuaciones de (1-1) se llama una \textbf{solución} del sistema. Si $y_1=y_2=\ldots = y_m=0$, se dice que el sistema es \textbf{homogéneo}, o que cada una de las ecuaciones es homogénea.\\
 
-Para el sistema lineal (1-1), supóngase que seleccionamos $m$ escalares $c_1,\ldots, c_m$, que se multiplica la j-ésima ecuación por $c_j$ y que luego se suma. Se obtiene la ecuación
+Para el sistema general (1-1), supóngase que seleccionamos $m$ escalares $c_1,\ldots, c_m$, que se multiplica la j-ésima ecuación por $c_j$ y que luego se suma. Se obtiene la ecuación
 $$(c_1 A_{11}+\ldots +c_m A_{m1})x_1+\ldots+(c_1A_{1n}+\ldots + c_mA_{mn})x_n=c_1y_1+\ldots+c_my_m$$
 A tal ecuación se le llama \textbf{combinación lineal} de las ecuaciones (1-1).\\ 
 
@@ -1017,4 +1048,4 @@ Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta
 \end{enumerate}
 
 
-\begin{Matrices inversibles}
+\section{Matrices inversibles}

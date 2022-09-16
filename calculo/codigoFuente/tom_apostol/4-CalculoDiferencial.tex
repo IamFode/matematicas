@@ -2362,8 +2362,57 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 	$$x=y.$$\\
 
     %-------------------- 5.
-    \item 
+    \item Dado $R > 0$. Probar que entre todos los números positivos $x$ e $y$ tales que $x^2 + y^2 = R$, la suma $x + y$ es máxima cuando $x = y$.\\\\
+	Demostración.-\; Por la ecuación $x^2+y^2=R$ se tiene,
+	$$y=\sqrt{R-x^2}.$$
+	Entonces, encontramos el máximo de la función de la siguiente manera,
+	$$f(x)=x+\sqrt{R-x^2}\quad \Rightarrow \quad f'(x)=1-\dfrac{x}{\sqrt{R-x^2}}.$$
+	Luego, igualamos a cero,
+	$$\dfrac{x}{\sqrt{R-x^2}}=1\quad \Rightarrow \quad x=\sqrt{\dfrac{R}{2}}.$$
+	Así, $f'(x)>0$ cuando $x<\sqrt{\dfrac{R}{2}}$ y $f'(x)<0$ cuando $x>\sqrt{\dfrac{R}{2}}$. Por el teorema 4.8 Apostol, $f(x)$ toma el valor máximo cuando $x=\sqrt{\dfrac{R}{2}}$. De donde,
+	$$y=\sqrt{R-x^2}=\sqrt{R-\dfrac{R}{2}}=\sqrt{\dfrac{R}{2}}=x.$$
+	Por lo tanto la suma $x+y$ es máxima, cuando $x=y$.\\\\
 
+    %-------------------- 6.
+    \item Cada lado de un cuadrado tiene una longitud $L$. Demostrar que entre todos los cuadrados inscritos en el cuadrado dado, el de área mínima tiene lados de longitud $\frac{1}{2}L\sqrt{2}$.\\\\
+	Respuesta.-\; Sea un cuadrado con aristas de longitud $L$ de donde $x+y=L$. Vemos que $x$ e $y$ son longitudes de las dos secciones de $L$ creadas por el punto en el que la esquina del cuadrado inscrito se encuentra con el borde del cuadrado exterior. Sea $e$ la longitud de la arista del cuadrado inscrito. Entonces, $x+y=L$ implica $y=L-x$. Pongamos $f(x)=e^2$, por lo que 
+	$$\mbox{Área}=f(x)=e^2=x^2+y^2=x^2+(L-x)^2=2x^2-2Lx+L^2.$$
+	Sacando la derivada,
+	$$f'(x)=4x-2L.$$
+	Igualando a cero,
+	$$4x-2L=0\quad \Rightarrow \quad x=\dfrac{L}{2}.$$
+	Así, $f'(x)<0$ cuando $x<\dfrac{L}{2}$ y $f'(x)>0$ cuando $x>\dfrac{L}{2}$. Por el teorema 4.8 Apostol, $f(x)$ toma el valor mínimo cuando $x=\dfrac{L}{2}$. Usando nuestra ecuación para $y$, tenemos 
+	$$y=L-x=L-\dfrac{L}{2}=\dfrac{L}{2}.$$
+	Finalmente, resolviendo para la longitud de la arista $e$,
+	$$e^2=\left(\dfrac{L}{2}\right)^2+\left(\dfrac{L}{2}\right)^2=\dfrac{L^2}{2} \quad \Rightarrow \quad e=\dfrac{L}{\sqrt{2}}=\dfrac{\sqrt{2}}{2}L.$$\\
+
+    %-------------------- 7.
+    \item Cada lado de un cuadrado tiene una longitud $L$. Hallar el tamaño del cuadrado de máxima área que puede circunscribirse al cuadrado dado.\\\\
+	Respuesta.-\; Sea la longitud de la arista del cuadrado circunscrito. Después $e=x+y$. Además, si $L$ es la longitud de la arista del cuadrado dado, tenemos
+	$$x^2+y^2=L^2\quad \Rightarrow \quad y=\sqrt{L^2-x^2}.$$
+	Sea $f(x)=\mbox{Área}=(x+y)^2$, entonces
+	$$\mbox{Área}=f(x)=(x+y)^2=\left(L^2+x^2\right)^2=x^2+2x\sqrt{L^2-x^2}+L^2-x^2=2x\sqrt{L^2-x^2}+L^2.$$
+	Sacando la derivada,
+	$$f'(x)=2\sqrt{L^2-x^2}-\dfrac{2x}{\sqrt{L^2-x^2}}=2\dfrac{L^2-x^2-x}{\sqrt{L^2-x^2}}.$$
+	Igualando a cero,
+	$$2\dfrac{L^2-x^2-x}{\sqrt{L^2-x^2}}=0\quad \Rightarrow \quad x=\dfrac{L}{\sqrt{2}}.$$
+	Así, $f'(x)>0$ cuando $x<\dfrac{L}{\sqrt{2}}$ y $f'(x)<0$ cuando $x>\dfrac{L}{\sqrt{2}}$. Por el teorema 4.8 Apostol, $f(x)$ toma el valor máximo cuando $x=\dfrac{L}{\sqrt{2}}$. Usando nuestra ecuación para $y$, tenemos
+	$$y=\sqrt{L^2-\dfrac{L^2}{2}}=\sqrt{\dfrac{L^2}{2}}=\dfrac{L}{\sqrt{2}}.$$
+	Finalmente, dado que $e=x+y$ tenemos el área del cuadrado circunscrito dada por
+	$$\mbox{Área}=e^2=(x+y)^2=\left(\dfrac{L}{\sqrt{2}}+\dfrac{L}{\sqrt{2}}\right)^2=\left(\dfrac{2L}{\sqrt{2}}\right)^2=2L^2.$$\\
+
+    %-------------------- 8.
+    \item Demostrar que entre todos los rectángulos que pueden inscribirse en un círculo dado, el cuadrado tiene el área máxima.\\\\
+	Demostración.-\; Sean $x$ e $y$ que denotan las longitudes de los lados del rectángulo inscrito, y $r$ denota el radio del círculo. Entonces $x^2+y^2=4r^2$ que implica $y=\sqrt{4r^2-x^2}$. Sea $f(x)=x\cdot y$. Entonces, derivando se tiene,
+	$$\mbox{Área}=f(x)=xy=x\sqrt{4r^2-x^2}\quad \Rightarrow \quad f(x)=\dfrac{4r^2-2x^2}{\sqrt{4r^2-x^2}}.$$
+	Luego, Igualando a cero,
+	$$\dfrac{4r^2-2x^2}{\sqrt{4r^2-x^2}}=0\quad \Rightarrow \quad x=\sqrt{2}r.$$
+	Así, $f'(x)<0$ cuando $x<\sqrt{2}r$ y $f'(x)>0$ cuando $x>\sqrt{2}r$. Por el teorema 4.8 Apostol, $f(x)$ toma el valor máximo cuando $x=\sqrt{2}r$. Usando nuestra ecuación para $y$, tenemos
+	$$y=\sqrt{4r^2-x^2}=\sqrt{4r^2-2r^2}=\sqrt{2r^2}=\sqrt{2}r.$$
+	Finalmente, $x=y$ por lo que el rectángulo es un cuadrado.\\\\
+
+    %-------------------- 9.
+    \item 
 
 \end{enumerate}
 

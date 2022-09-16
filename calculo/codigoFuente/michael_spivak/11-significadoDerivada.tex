@@ -142,6 +142,7 @@ En varios problemas de este capítulo y de capítulos sucesivos se pide hacer un
 
 Existe un criterio popular para hallar los máximos y mínimos locales, que depende del comportamiento de la función sólo en los puntos críticos.\\
 
+%------------------- teorema 5 ----------------------------
 \begin{teo}
     Supongamos que $f'(a)=0.$ Si $f''(a)>0,$ entonces $f$ tiene un mínimo local en $a$; si $f''(a)<0,$ entonces $f$ tiene un máximo local en $a.$\\\\
 	Demostración.-\; Por definición,
@@ -158,11 +159,13 @@ Existe un criterio popular para hallar los máximos y mínimos locales, que depe
 
 Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para muchas otras funciones la segunda derivada es tan complicada que es más fácil considerar el signo de la primera derivada. Además, si a es un punto crítico de $f$ puede ocurrir que $f''(a)=0$. En este caso, el Teorema 5 no proporciona información: es posible que a sea un punto máximo local, un mínimo local o ninguna de las dos cosas.\\
 
+%-------------------- teorema 6 -----------------------------
 \begin{teo}
     Supongamos que $f''(a)$ existe. Si $f$ tiene mínimo local en $a$, entonces $f''(a)\geq 0$; si $f$ tiene un máximo local en $a$, entonces $f''(a)\leq 0.$\\\\
 	Demostración.-\; Supongamos que $f$ tiene un mínimo local en $a$. Si $f''(a)<0$, entonces $f$ tendría también un máximo local en $a$, por el teorema $5$. Es decir, $f$ sería constante en algún intervalo que contiene a $a$, y por tanto $f''(a)=0$, lo cual es una contradicción. Por tanto, debe verificarse que $f''(a)\geq 0$. El caso de un máximo loca se trata de manera análoga.\\
 \end{teo}
 
+%-------------------- teorema 7. -----------------------------
 \begin{teo}
     Supongamos que $f$ es continua en $a$ y que $f'(x)$ existe para todo $x$ de algún intervalo que contiene a $a$, excepto quizás en $x=a$. Supongamos, además, que $\lim\limits_{x\to 0}f'(x)$ existe. Entonces $f'(a)$ también existe y 
     $$f'(a)=\lim\limits_{x\to a}f'(x).$$\\
@@ -182,10 +185,60 @@ Aunque el Teorema 5 es muy útil en el caso de funciones polinómicas, para much
 	$$\left|\dfrac{f(x)-f(a)}{x-a}-L\right|<\epsilon.$$ 
 	Es decir,
 	$$0<|x-a|<\delta \quad \Rightarrow \quad \left|\dfrac{f(x)-f(a)}{x-a}-L\right|<\epsilon.$$
-	Esto quiere decir que $f'(a)=L.$\\\\
+	Por lo tanto, $$f'(a)=L.$$\\
 \end{teo}
 
+Incluso si $f$ es una función diferenciable en todo punto, es posible que $f'$ sea discontinua. Por ejemplo
+$$f(x)=\left\{\begin{array}{ll}
+    x^2\sen\dfrac{1}{x},&x\neq 0\\\\
+    0,&x=0\\
+\end{array}\right.$$
 
+Ahora veremos una generalización del teorema del valor medio.\\\\
+
+%-------------------- teorema 8. -----------------------------
+\begin{teo}[Torema del valor medio de Cauchy]
+    Si $f$ y $g$ son continuas en $[a,b]$ y diferenciables en $(a,b)$, entonces existe un número $x$ en $(a,b)$ tal que 
+    $$[f(b)-f(a)]g'(x)=[g(b)-g(a)]f'(x).$$
+    (Si $g(b)\neq g(a)$ y $g'(x)\neq 0$, esta ecuación puede escribirse como
+    $$\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f'(x)}{g'(x)}.$$
+    Observemos que si $g(x)=x$ para todo $x$, entonces $g'(x)=1$, y se obtiene el teorema del valor medio. Por otra parte aplicando el Teorema del valor medio a $f$ y a $g$ por separado, se deduce que existen un $x$ e $y$ en $(a,b)$ que verifican
+    $$\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f'(x)}{g'(y)};$$
+    pero no existe ninguna garantía de que los $x$ e $y$ hallados de esta manera sean iguales.
+    Estas consideraciones pueden hacer pensar que el Teorema del Valor Medio de Cauchy es muy difícil de demostrar, pero en realidad basta aplicar uno de los artilugios más simples.)\\\\
+	Demostración.-\; Sea 
+	$$h(x)=f(x)\left[g(b)-g(a)\right]-g(x)\left[f(b)-f(a)\right].$$
+	Entonces $h$ es continua en $[a,b]$, diferenciable en $(a,b)$ y 
+	$$h(a)=f(a)g(b)-g(a)f(b)=h(b).$$
+	Según el teorema de Rolle, $h'(x)=0$ para algún $x$ de $(a,b)$, lo que significa que 
+	$$0=f'(x)\left[g(b)-g(a)\right]-f'(x)\left[f(b)-f(a)\right].$$
+\end{teo}
+
+El Teorema del Valor Medio de Cauchy es la herramienta básica necesaria para demostrar un teorema que facilita el cálculo de límites de la forma
+$$\lim_{x\to a}\dfrac{f(x)}{g(x)}.$$
+cuando
+$$\lim_{x\to a}f(x)=0\quad \mbox{y}\quad \lim_{x\to a}g(x)=0.$$
+En este caso no es aplicable el Teorema 5.2.\\\\
+
+%-------------------- teorema 9. -----------------------------
+\begin{teo}[Regla de L'Hopital]
+    Supongamos que 
+    $$\lim_{x\to a}f(x)=0 \quad \mbox{y}\quad \lim_{x\to a}g(x)=0,$$
+    y supongamos también que $\lim\limits_{x\to a}f'(x)/g'(x)$ existe. Entonces $\lim\limits_{x\to a}f(x)/g(x)$ existe y 
+    $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(x)}{g'(x)}.$$
+    (Observe que el teorema 7 es un caso particular.)\\\\
+	Demostración.-\; La hipótesis de que el $\lim\limits_{x\to a}f'(x)/g'(x)$ existe contiene dos suposiciones implícitas:
+	\begin{enumerate}[(1)]
+	    \item existe un intervalo $(a-\delta,a+\delta)$ tal que $f'(x)$ y $g'(x)$ existen para todo $x$ de $(a-\delta,a+\delta)$ excepto quizás para $x=a$,
+	    \item en este intervalo $g'(x)\neq 0$ excepto quizás, de nuevo, en $x=a.$
+	\end{enumerate}
+\end{teo}
+Por otra parte, no se supone ni siquiera que $f$ y $g$ estén definidas en el punto $a$. Si definimos $f(a)=g(a)=0$ (cambiando, si es necesario, los valores previos de $f(a)$ y $g(a)$), entonces $f$ y $g$ son continuas en el punto $a$. Si $a<x<a+\delta$, puede aplicarse a $f$ y a $g$ el Teorema del Valor Medio y el Teorema del Valor Medio de Cauchy en el intervalo $[a,x]$ (y lo mismo ocurre en el caso de que $a-\delta < x < a$). Aplicando en primer lugar el Teorema del Valor Medio a $g$, vemos que $g(x)\neq 0$, ya que si $f(x)=0$ entonces existiría algún $x_1$ en $(a,x)$ tal que $g'(x_1)=0$, lo que contradice (2). Aplicando ahora el Teorema del Valor Medio de Cauchy a $f$ y a $g$, vemos que existe un número $\alpha_x$ en $(a,x)$ tal que 
+$$\left[f(x)-0\right]g'(\alpha_x)=\left[g(x)-0\right]f'(\alpha_x)$$
+o
+$$\dfrac{f(x)}{g(x)}=\dfrac{f'(\alpha_x)}{g'(\alpha_x)}.$$
+Pero $\alpha_x$ se aproxima a $a$ cuando $x$ se aproxima a $a$, ya que $\alpha_x$ está en el intervalo $(a,x)$; como estamos suponiendo que $\lim\limits_{y\to a}f'(y)/g'(y)$ existe, se deduce que
+$$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)}=\lim_{y\to a}\dfrac{f'(y)}{g'(y)}.$$
 
 
 \section{Ejercicios}
