@@ -624,10 +624,26 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Si $a_1<\ldots < a_n$ halle el valor mínimo de $f(x)=\sum\limits_{i=1}^n (x-a_i)^2$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Primero calculamos la derivada de $f$.
+		$$f'(x)=2(x-a_1)\cdot 1 + 2(x-a_2)\cdot 1 + \ldots + 2(x-a_n)\cdot 1=2\sum\limits_{i=1}^n (x-a_i).$$
+		Luego encontremos los puntos críticos igualando $f'(x)$ cero.
+		$$\begin{array}{rcl}
+		    2\displaystyle\sum_{i=1}^n (x-a_i)=0 &\Rightarrow& (x-a_1)+(x-a_2)+\ldots + (x-a_n) = 0\\\\
+							 &\Rightarrow& nx=a_1+a_2+\ldots + a_n\\\\
+							 &\Rightarrow& x=\dfrac{1}{n}\displaystyle\sum_{i=1}^n a_i.
+		\end{array}$$
+		Veamos ahora si este punto crítico es un mínimo o un máximo local. Para ello calculamos la segunda derivada de $f$.
+		$$\begin{array}{rcl}
+		    f''(x)&=&2'\left[\displaystyle\sum_{i=1}^n (x-a_i)\right]+2\left[\displaystyle\sum_{i=1}^n (x-a_i)\right]'\\\\
+			  &=&2(1+1+\ldots +1)\\\\
+			  &=&2n.
+		\end{array}$$
+		Ya que $2n>0$, entonces podemos decir que el punto crítico $x=\dfrac{1}{n}\displaystyle\sum_{i=1}^n a_i$ es un mínimo local de $f$. Por lo tanto,
+		$$f\left(\dfrac{1}{n}\sum_{i=1}^n a_i\right)=\sum_{i=1}^n \left[\dfrac{1}{n}\sum_{i=1}^n \left(a_i-a_i\right)\right]^2.$$\\
 
 	    %---------- (b)
-	    \item 
+	    \item Halle ahora el valor mínimo de $f(x)=\sum\limits_{i=1}^n |x-a_i|$. Este es un problema en el que el cálculo infinitesimal no nos puede ayudar. En los intervalos entre los $a_i$ la función $f$ es lineal, por tanto el valor mínimo se localiza en uno de los $a_i$, y estos son, precisamente, los puntos en los cuales la función $f$ no es diferenciable. Sin embargo, la solución es fácil de encontrar si se considera como varía $f(x)$ al pasar de un intervalo a otro.\\\\
+		Respuesta.-\; 
 
 	\end{enumerate}
 

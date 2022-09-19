@@ -273,3 +273,20 @@ $$E\left(X^2|y\right)\int_{-\infty}^\infty x^2 f(x|y)\; dx \qquad \mbox{y}\qquad
 
 \section{Análisis bayesiano: las distribuciones a priori y a posteriori.}
 
+\begin{teo}
+    Sea $p_Y(y)$ o $f_Y(y)$ la función de probabilidad o de densidad de probabilidad a priori de $Y$, respectivamente, y sea $f(x|y)$ la función de verosimilitud. Entonces la probabilidad a posperiori o función de probabilidad a posteriori de $Y$ dada la evidencia muestral $x$, es
+    $$p(y|x)=\dfrac{f(x|y)p_Y(y)}{\sum\limits_{Y}f(x|y)pY(y)} \mbox{ si } Y \mbox{ es discreta },$$
+    $$p(y|x)=\dfrac{f(x|y)p_Y(y)}{\int\limits_{-\infty}^\infty f(x|y)p_Y(y)\; dy} \mbox{ si } Y \mbox{ es continua }.$$
+\end{teo}
+
+Es interesante notar que el denominador de es la función de densidad de probabilidad marginal o no condicional de $X$; esto es,
+$$f_X(x)=\sum_Y f(x|y)p_Y(y)$$
+o 
+$$f_X(x)=\int_Y f(x|y)f_Y(y)\; dy.$$
+
+Dependiendo de cuando $Y$ es discreta o continua. Además, el numerador es el producto de la función de verosimilitud y la función de probabilidad a priori y, de ésta manera, es la probabilidad conjunta de $X$ e $Y$ expresado como
+$$f(x,y)=f(|y)p_Y(y) \mbox{ si } Y \mbox{ es discreta,}$$
+o
+$$f(x,y)=f(x|y)f_Y(y)\; dy \mbox{ si } Y \mbox{ es continua.}$$
+
+Nótese que para la penúltima ecuación la función $f(x,y)$ es una mezcla bivariada de una variable aleatoria continua y otra discreta.

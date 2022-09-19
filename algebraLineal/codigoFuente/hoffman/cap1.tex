@@ -83,11 +83,24 @@ Supóngase que $F$ es un cuerpo. Se considera el problema de encontrar $n$ escal
 	A_{m1}x_1+A_{m2}x_2+\ldots + A_{mn}x_n&=&y_m
     \end{array}
 \end{equation}
+
 donde $y_1,\ldots , y_{m}$ y $A_{ij}$, $1\leq i \leq m$, $1\leq j \leq n,$ son elementos de $F$. A (1-1) se le llama un \textbf{\boldmath sistema de $m$ ecuaciones lineales con $n$ incógnitas}. Todo n-tuple $(x_1,\ldots,x_n)$ de elementos de $F$ que satisface cada una de las ecuaciones de (1-1) se llama una \textbf{solución} del sistema. Si $y_1=y_2=\ldots = y_m=0$, se dice que el sistema es \textbf{homogéneo}, o que cada una de las ecuaciones es homogénea.\\
 
 Para el sistema general (1-1), supóngase que seleccionamos $m$ escalares $c_1,\ldots, c_m$, que se multiplica la j-ésima ecuación por $c_j$ y que luego se suma. Se obtiene la ecuación
 $$(c_1 A_{11}+\ldots +c_m A_{m1})x_1+\ldots+(c_1A_{1n}+\ldots + c_mA_{mn})x_n=c_1y_1+\ldots+c_my_m$$
 A tal ecuación se le llama \textbf{combinación lineal} de las ecuaciones (1-1).\\ 
+
+Si se tiene otro sistema de ecuaciones lineales
+
+\begin{equation}
+    \begin{array}{ccc}
+	B_{11}x_1+\ldots + B_{1n}x_n&=&z_1\\
+	\vdots &&\vdots\\
+	B_{k1}x_1+\ldots + B_{kn}x_n&=&z_k
+    \end{array}
+\end{equation}
+
+en que cada una de las $k$ ecuaciones sea combinación lineal de las ecuaciones de (1-1), entonces toda solución de (1-1) es solución de este nuevo sistema.\\ 
 
 Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si cada ecuación de cada sistema es combinación lineal de las ecuaciones del otro sistema.\\
 
@@ -97,15 +110,15 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 
 \section*{Ejercicios}
 
-\begin{comment}
-
 \begin{enumerate}[\bfseries 1.]
 
     %---------- 1.
-    \item 
+    \item Verificar que el conjunto de número complejos descritos en el Ejemplo 4 es un subcuerpo de $\bf{C}$.\\\\
+	Demostración.-\; La multiplicación y la suma de un número racional y un número irracional siempre da un irracional. Estos números cumplen las condiciones (1)-(9), por lo que podemos concluir que este conjunto es un subcuerpo de $C$.\\
 
     %---------- 2.
     \item Sea $F$ el cuerpo de los números complejos. ¿Son equivalentes los dos sistemas de ecuaciones lineales siguientes? Si es así, expresar cada ecuación de cada sistema como combinación lineal de las ecuaciones del otro sistema.
+
     $$\begin{array}{rcl}
 	x_1-x_2&=&0\\
 	2x_1+x_2&=&0
@@ -116,43 +129,110 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
     \end{array}$$
     \vspace{.4cm}
 
-	Respuesta.-\; Sí, los sistemas dados son equivalentes ya que cada ecuación en un sistema se puede escribir como una combinación lineal de las ecuaciones del otro sistema de la siguiente manera:
+	Respuesta.-\; Sí, los sistemas dados son equivalentes ya que cada ecuación en un sistema se puede escribir como una combinación lineal de las ecuaciones del otro sistema.\\
 
-	$$\begin{array}{rcr}
-	    3x_1+x_2&=&\dfrac{1}{3}x_1+\dfrac{4}{3}(2x_1)-\dfrac{1}{3}x_2+\dfrac{4}{3}x_2\\\\
-	    x_1+x_2 &=& -\dfrac{1}{3}x_1+\dfrac{2}{3}(2x_1)+\dfrac{1}{3}x_2+\dfrac{2}{3}x_2\\\\
-		    &&\\
-		    x_1-x_2&=&1(3x_1)-2x_1 + 1x_2-2x_2\\\\
-	    2x_1+x_2&=&\dfrac{1}{2}(3x_1)+\dfrac{1}{2}x_1+\dfrac{1}{2}x_2+\dfrac{1}{2}x_2\\\\
+	Sean $c_1=1$ y $c_2=-2$ tal que
+
+	$$\begin{array}{rcl}
+	    x_1-x_2&=&(c_1\cdot 3+ c_2)x_1 + (c_1+c_2)x_2\\\\
+		   &=&\left[1\cdot 3+(-2)\right]x_1+\left[1+(-2)\right]x_2\\\\
+		   &=&x_1-x_2
 	\end{array}$$ 
+
+	Sean $c_1=\dfrac{1}{2}$ y $c_2=\dfrac{1}{2}$ tal que 
+
+	$$\begin{array}{rcl}
+	    2x_1+x_2&=&(c_1\cdot 3+ c_2)x_1 + (c_1+c_2)x_2\\\\
+		    &=&\left[\dfrac{1}{2}\cdot 3+\dfrac{1}{2}\right]x_1+\left[\dfrac{1}{2}+\dfrac{1}{2}\right]x_2\\\\
+		    &=&2x_1+x_2
+	\end{array}$$ 
+	Por lo que podemos decir que la primera ecuación es combinación lineal  de la segunda ecuación. Luego,\\
+
+	Sean $c_1=\dfrac{1}{3}$ y $c_2=\dfrac{4}{3}$ tal que
+
+	$$\begin{array}{rcl}
+	    3x_1+x_2&=&\left(c_1+c_2\cdot 2\right)x_1+\left(c_1\cdot(-1)+c_2\right)x_2\\\\
+		    &=&\left[\dfrac{1}{3}+\dfrac{4}{3}\cdot 2\right]x_1+\left[\dfrac{1}{3}\cdot(-1)+\dfrac{4}{3}\right]x_2\\\\
+		    &=&3x_1+1x_2\\\\
+	\end{array}$$
+
+	Sean $c_1=-\dfrac{1}{3}$ y $c_2=\dfrac{2}{3}$ tal que
+
+	$$\begin{array}{rcl}
+	    x_1+x_2&=&\left(c_1+c_2\cdot 2\right)x_1+\left(c_1\cdot(-1)+c_2\right)x_2\\\\
+		   &=&\left[-\dfrac{1}{3}+\dfrac{2}{3}\cdot 2\right]x_1+\left[-\dfrac{1}{3}\cdot(-1)+\dfrac{2}{3}\right]x_2\\\\
+		    &=&1x_1+1x_2\\\\
+	\end{array}$$
+	Por lo que podemos decir que la segunda ecuación es combinación lineal de la primera ecuación. Así, los sistemas dados son equivalente.\\\\
 
     %---------- 3.
     \item Examine los siguientes sistemas como en el ejercicio 2.
 	$$\begin{array}{rcl}
 	    -x_1+x_2+4x_3&=&0\\
-	    x_1+3x_282x_3&=&0\\
+	    x_1+3x_2 + 8x_3&=&0\\
 	    \frac{1}{2}x_1+x_2+\frac{5}{2}x_3&=&0
 	\end{array} \qquad
 	\begin{array}{rcl}
 	    x_1 \qquad -x_3&=&0\\
 	    \qquad x_2+3x_3&=&0
 	\end{array}$$
-	\vspace{.4cm}
-	Respuesta.-\;
+	\vspace{.5cm}
 
-	$$\begin{array}{rcr}
-	    -x_1+x_2+4x_3 &=& -(x_1-x_3)+(x_2+3x_3)\\\\
-	    x_1+3x_2+8x_3 &=& (x_1-x_3)+3(x_2+3x_3)\\\\
-	    \dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3 &=& \dfrac{1}{2}(x_1-x_3)+(x_2+3x_3)\\\\
+	Respuesta.-\; Sean $c_1=-1$ y $c_2=1$. Entonces,
+
+	$$\begin{array}{rcl}
+	    -x_1+x_2+4x_3 &=& (c_1\cdot 1+c_2\cdot 0)x_1+(c_1\cdot 0 + c_2\cdot 1)x_2 + (c_1(-1)+c_23)x_3\\\\
+			  &=& \left[(-1)\cdot 1+1\cdot 0\right]x_1+\left[(-1)\cdot 0+1\cdot 1\right]x_2+\left[-1(-1)+1\cdot 3\right]x_3\\\\
+			  &=& -x_1+x_2+4x_3\\\\
 	\end{array}$$
 
-	$$\begin{array}{rcr}
-	    x_1-x_3&=&-\dfrac{3}{4}(-x_1+x_2+4x_3) + \dfrac{1}{4}(x_1+3x_2+8x_3)+0\left(\dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3\right)\\\\
-	    x_2+3x_3&=&\dfrac{1}{4}(-x_1+x_2+4x_3)+\dfrac{1}{4}(x_1+3x_2+8x_3)+0\left(\dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3\right)
+	Sean $c_1=1$ y $c_2=3$. Entonces,
+
+	$$\begin{array}{rcl}
+	    x_1+3x_2+8x_3 &=& (c_1\cdot 1+c_2\cdot 0)x_1+(c_1\cdot 0 + c_2\cdot 1)x_2 + (c_1(-1)+c_23)x_3\\\\
+			  &=& \left[1\cdot 1+3\cdot 0\right]x_1+\left[1\cdot 0+3\cdot 1\right]x_2+\left[1(-1)+3\cdot 3\right]x_3\\\\
+			  &=& x_1+3x_2+8x_3\\\\
 	\end{array}$$
+
+	Sean $c_1=\dfrac{1}{2}$ y $c_2=1$ Entonces,
+
+	$$\begin{array}{rcl}
+	    \dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3 &=& (c_1\cdot 1+c_2\cdot 0)x_1+(c_1\cdot 0 + c_2\cdot 1)x_2 + (c_1(-1)+c_23)x_3\\\\
+	    			  &=& \left[\dfrac{1}{2}\cdot 1+1\cdot 0\right]x_1+\left[\dfrac{1}{2}\cdot 0+1\cdot 1\right]x_2+\left[\dfrac{1}{2}(-1)+1\cdot 3\right]x_3\\\\
+				  	    			  &=& \dfrac{1}{2}x_1+x_2+\dfrac{5}{2}x_3\\\\
+	\end{array}$$
+
+	Luego. Sean $c_1=-\dfrac{3}{4}$, $c_2=\dfrac{1}{4}$ y $c_3=0$. Entonces, 
+
+	$$\begin{array}{rcl}
+	    x_1-x_3 &=& \left[c_1(-1)+c_2\cdot 1 + c_3\cdot \dfrac{1}{2}\right]x_1+(c_1\cdot 1 + c_2\cdot 3 + c_3\cdot 1)x_2+\left(c_1 \cdot 4+c_2\cdot 8 + c_3\cdot \dfrac{5}{2}\right)x_3\\\\
+	    		    &=& \left[-\dfrac{3}{4}(-1)+\dfrac{1}{4}\cdot 1 + 0\cdot \dfrac{1}{2}\right]x_1+\left[-\dfrac{3}{4}\cdot 1 + \dfrac{1}{4}\cdot 3 + 0\cdot 1\right]x_2+\left(-\dfrac{3}{4} \cdot 4+\dfrac{1}{4}\cdot 8 + 0\cdot \dfrac{5}{2}\right)x_3\\\\
+			    &=&x_1-x_3\\\\
+	\end{array}$$ 
+
+	Por último, sean $c_1=c_2=\dfrac{1}{4}$, $c_3=0$. Entonces,
+
+	$$\begin{array}{rcl}
+	    x_2+3x_3 &=& \left[c_1(-1)+c_2\cdot 1 + c_3\cdot \dfrac{1}{2}\right]x_1+(c_1\cdot 1 + c_2\cdot 3 + c_3\cdot 1)x_2+\left(c_1 \cdot 4+c_2\cdot 8 + c_3\cdot \dfrac{5}{2}\right)x_3\\\\
+	    		    &=& \left[\dfrac{1}{4}(-1)+\dfrac{1}{4}\cdot 1 + 0\cdot \dfrac{1}{2}\right]x_1+\left[\dfrac{1}{4}\cdot 1 + \dfrac{1}{4}\cdot 3 + 0\cdot 1\right]x_2+\left(\dfrac{1}{4} \cdot 4+\dfrac{1}{4}\cdot 8 + 0\cdot \dfrac{5}{2}\right)x_3\\\\
+			    &=&x_2+3x_3\\\\
+	\end{array}$$ 
+	Por lo tanto las dos ecuaciones dadas son equivalentes.\\\\
+
 
     %---------- 4.
-    \item 
+    \item Examine los siguientes sistemas como en el ejercicio 2.\\\\
+    $$\begin{array}{rcl}
+	2x_1+(-1+i)x_2 \qquad \quad\;\, + x_4 &=& 0\\\\
+	\qquad 3x_2-2ix_3+5x_4 &=& 0\\
+    \end{array}\qquad 
+    \begin{array}{rcl}
+	\left(1+\dfrac{i}{2}\right)x_1+8x_2-ix_3-x_4&=&0\\\\
+	\dfrac{2}{3}x_1-\dfrac{1}{2}x_2+x_3+7x_4&=&0\\\\
+    \end{array}$$ 
+    \vspace{0.4cm}
+
+	Respuesta.-\; 
 
     %---------- 5.
     \item 
@@ -204,7 +284,6 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 
 \end{enumerate}
 
-\end{comment}
 
 \section{Matrices y operaciones elementales de fila}
 Deseamos ahora considerar operaciones sobre las filas de la matriz $A$ que corresponden a la formación de combinaciones lineales de las ecuaciones del sistema $AX=Y$. Se limitará nuestra atención a \textbf{tres operaciones elementales de filas} en una matriz $m\times n$, sobre el cuerpo $F$:

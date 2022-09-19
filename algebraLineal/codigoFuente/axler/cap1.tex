@@ -3,7 +3,8 @@
 
 \section{\boldmath $R^n$ y $C^n$}
 
-\begin{tcolorbox}[colback=white]
+%--------------------- Definición 1.1
+\begin{tcolorbox}
     \begin{def.}[Números complejos] \hfill
 	\begin{itemize}
 	    \item Un número complejo es un par ordenado $(a,b)$, donde $a,b\in \bf{R}$, pero lo escribimos como $a+bi$.
@@ -26,7 +27,7 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 		$\alpha + \beta = \beta + \alpha\quad \mbox{y}\quad \alpha \beta = \beta \alpha \quad \mbox{para todo }\; \alpha,\beta \in \bf{C};$
 
 	    \item \textbf{Asociatividad:}\;
-		$(\alpha + \beta )+\lambda = \alpha + (\beta + \lambda) \quad \mbox{para todo}\; \alpha,\beta,\lambda \in \bf{C};$
+		$(\alpha + \beta )+\lambda = \alpha + (\beta + \lambda) \;\;\mbox{y}\;\; (\alpha\beta)\lambda =\alpha(\beta\lambda) \quad \mbox{para todo}\; \alpha,\beta,\lambda \in \bf{C};$
 
 	    \item \textbf{Identidad:}\;
 		$\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \bf{C}$
@@ -43,16 +44,16 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
     \end{prop}
 \end{tcolorbox}
 
-Demostración de conmutatividad.-\; Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \bf{R}$. Entonces por definición de suma de números complejos se muestra que
+\textbf{Demostración de conmutatividad.-}\; Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \bf{R}$. Entonces por definición de suma de números complejos se muestra que
 $$\alpha + \beta = (a+bi) + (c+di) = (a+c) + (b+d)i = (c+a) + (d+b)i = \beta + \alpha.$$
 
 Luego, por la definición de multiplicación de números complejos se muestra que
 $$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
 y
 $$\beta \alpha = (c+di)(a+bi) = (ca-db)+(ad+bc)i.$$
-Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\\\
+Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\
 
-Demostración de Asociatividad.-\; Sean,
+\textbf{Demostración de Asociatividad.-}\; Sean,
 $$\begin{array}{rcl}
     \alpha & = & a+bi\\
     \beta & = & c+di\\
@@ -68,11 +69,91 @@ $$\begin{array}{rcl}
 			      & = & (a+bi) + \left[(c+di)+(e+di)\right]\\
 			      & = & \alpha + (\beta + \lambda)
 \end{array}$$
+
+Y
+
+$$\begin{array}{rcl}
+    (\alpha\beta)\lambda &=& \left[(a+bi)(c+di)\right](e+fi)\\
+			 &=&\left[(ac-bd)+(ad+bc)i\right](e+fi)\\
+			 &=&\left[(ac-bd)e-(ad+bc)f\right]+\left[(ac-bd)f+(ad+bc)e\right]i\\
+			 &=&\left[(ac)e-(bd)e-(ad)f-(bc)f\right]+\left[(ac)f-(bd)f+(ad)e+(bc)e\right]i\\
+			 &=&\left[a(ce)-a(df)-b(cf)-b(de)\right]+\left[a(cf)+a(de)+b(ce)-b(df)\right]i\\
+			 &=&\left[a(ce-df)-b(cf+de)\right]+\left[a(cf+de)+b(ce-df)\right]i\\
+			 &=&(a+bi)\left[(ce-df)+(cf+de)i\right]\\
+			 &=&(a+bi)\left[(c+di)(e+fi)\right]\\
+			 &=&\alpha(\beta\lambda)
+\end{array}$$
+
+
+
 \vspace{0.5cm}
 
-Demostración de la identidad.-\; 
+\textbf{Demostración de la identidad.-}\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \mathbb{R}$. Entonces,
+$$\begin{array}{rcl}
+    \lambda +0 & = & (a+bi) + (0+0i)\\
+	       & = & (a+0) + (b+0)i\\
+	       & = & a + bi\\
+	       & = & \lambda
+\end{array}$$
 
-Demostración de Inverso aditivo.-\; 
+Luego sea $1=(1+0i)$, entonces
+$$\begin{array}{rcl}
+    \lambda 1 & = & (a+bi)(1+0i)\\
+	      & = & (a1-b0)+(a0+b1)i\\
+	      & = & (1a + 1bi)\\
+	      & = & (a+bi)\\
+	      & = & \lambda
+\end{array}$$
+\vspace{0.5cm}
+
+\textbf{Demostración de Inverso aditivo.-}\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \mathbb{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
+$$\begin{array}{rcl}
+    \alpha+\beta &=& (a+bi)+(c+di)\\
+		 &=& (a+c)+(b+d)i\\
+		 &=& 0 + 0i\\
+		 &=& 0
+\end{array}$$
+
+Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \mathbb{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
+$$\begin{array}{rcl}
+    \alpha+\beta&=&\alpha+\beta'\\
+    (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
+    (a+c)+(b+d)i&=&(a+c')+(b+d')i\\
+\end{array}$$
+
+Supongamos $c=c'$ y $d=d'$. Entonces,
+$$(b+d)i=(b+d')i$$
+Dada que la igualdad $\alpha+\beta=\alpha+\beta'$ se cumple siempre que $c=c'$ y $d=d'$, concluimos que,
+$$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
+
+\textbf{Demostración de Inverso multiplicativo.-}\;  Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \mathbb{R}$. Entonces,
+$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
+Supongamos que:
+$$\left\{\begin{array}{rcl}
+    ac-db & = & 1\\
+    ad+bc & = & 0
+\end{array}\right.$$
+De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
+$$c=\dfrac{a}{a^2+b^2}.$$
+Luego,
+$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$
+Por lo tanto, existe un $\beta$ tal que,
+$$\beta=\dfrac{a}{a^2+b^2}-\dfrac{b}{a^2+b^2}i=\dfrac{a}{a^2+b^2}+\dfrac{-bi}{a^2+b^2}=\dfrac{a-bi}{a^2+b^2}=\dfrac{1}{a+bi}.$$\\
+Ahora, demostremos la unicidad. Sean $\beta=c+di$ y $\beta'=c'd'i$ tales que, $(a+bi)(c+di)=1$ y $(a+bi)(c'+d'i)=1$. Entonces, por las propiedades de conmutatividad y asociatividad,
+$$c+di=(c+di)\cdot 1 = (c+di)\cdot(a+bi)(c'+d'i)=\left[(a+bi)(c+di)\right](c'+d'i)=c'+d'i.$$
+Por lo que queda demostrado que $\beta=\beta'.$ Y así concluimos que $\alpha$ tiene inverso multiplicativo.\\\\
+
+\textbf{Demostración de la distributividad.-}\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \mathbb{R}$. Entonces,
+$$\begin{array}{rcl}
+    \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
+			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
+			 & = & \left[ac+ae-bd-bf\right]+\left[ad+af+bc+be\right]i\\
+			 & = & ac+ae-bd-bf+adi+afi+bci+bei\\
+			 & = & \left[(ac-bd)+(ad+bc)i\right] + \left[(ae-bf)+(af+be)i\right]\\
+			 & = & (a+bi)(c+di)+(a+bi)(e+fi)\\
+			 & = & \alpha\beta + \alpha\gamma\\
+\end{array}$$
+\vspace{0.5cm}
 
 
 \begin{tcolorbox}
@@ -93,6 +174,8 @@ Demostración de Inverso aditivo.-\;
 	\end{itemize}
     \end{def.}
 \end{tcolorbox}
+
+Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\
 
 \subsection{Listas}
 
