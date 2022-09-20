@@ -1,12 +1,12 @@
 \begin{enumerate}[\bfseries \textbf{Ejercicio} 1.]
 
     %--------------------1.
-    \item Hallar la ecuación vectorial de la recta que pasa por el punto con vector direccional $\vec{v}$, cuando 
+    \item \textbf{\boldmath Hallar la ecuación vectorial de la recta que pasa por el punto con vector direccional $\vec{v}$, cuando}
 	\begin{enumerate}[\bfseries a)]
 	    
 	    %----------a)
-	    \item $P_0=(5,3,-2); \; \vec{v}=(2,-3,3)$.\\\\
-		Respuesta.-\; La ecuación vectorial estará dada por, $$ X = (5,3,-2) + t(2,-3,3) ;\;  t \in \mathbb{R}$$ 
+	    \item \textbf{\boldmath $P_0=(5,3,-2); \; \vec{v}=(2,-3,3)$.\\\\
+		Respuesta.-}\; La ecuación vectorial estará dada por, $$ X = (5,3,-2) + t(2,-3,3) ;\;  t \in \mathbb{R}$$ 
 		Luego la ecuación cartesiana estará dada por, 
 		$$\left\{\begin{array}{rcr}
 		    x&=&5+2t\\
@@ -75,28 +75,60 @@
 
     %--------------------4.
     \item Calcular la distancia del punto $P_0$ a la recta que pasa por los puntos $P_1$ y $P_2$.\\ $P_0 = (5,-3,1); \; P_1=(4,0,2);\; P_2=(5,0,0)$.\\\\
-	Respuesta.-\; Primero encontramos la recta asociada a los dos puntos dados de la siguiente forma, $$\mathcal{L} = \lbrace (4,0,2) + t(1,0,-2) / t \in \mathbb{R} \rbrace.$$
-	Luego calculamos la distancia del punto a la recta como sigue, 
-	$$d(P_0,\mathcal{L}) = \bigg| (P_0 - P_1) - \dfrac{(P_0-P_1)\circ \vec{v}}{\vec{v}^2}\bigg| = \bigg| [(5,-3,1)-(4,0,2)] - \dfrac{\left[(5,-3,1)-(4,0,2)\right]\circ (1,0,-2)}{|(1,0,-2)|^2} \cdot (1,0,-2)\bigg|$$
-	    de donde $$d(P_0,\mathcal{L}) = \sqrt{\dfrac{300}{25}} = 3\mbox{.}0331$$\\
+    Respuesta.-\; Primero encontramos la recta asociada a los dos puntos dados de la siguiente forma, $$\mathscr{L} = \left\{P_1 +(P_2-P_1)t | t \in \mathbb{R}\right\} \quad \Rightarrow \quad \mathscr{L} = \lbrace (4,0,2) + t(1,0,-2) | t \in \mathbb{R} \rbrace.$$
+    Luego,
+    $$(5,-3,1)=(4,0,2)+t(1,0,-2),$$
+    de donde,
+    $$\left\{\begin{array}{rcl}
+	5&=&4+1t\\
+	-3&=&0+0t\\
+	1&=&2-2t
+    \end{array}\right.$$
+    Dado que no existe un $t$ tal que $(5,-3,1)=(4,0,2)+t(1,0,-2)$, entonces $P_0$ no pertenece a $\mathscr{L}$. Por lo que podemos calcular la distancia del punto $P_0$ a la recta $\mathscr{L}$ como sigue, 
+    $$\begin{array}{rcl}
+	d(P_0,\mathscr{L}) &=& \bigg\| (P_0 - P_1) - \dfrac{(P_0-P_1)\circ \vec{v}}{\|\vec{v}\|^2}\cdot \vec{a}\bigg\| \\\\
+			   &=& \bigg\| [(5,-3,1)-(4,0,2)] - \dfrac{\left[(5,-3,1)-(4,0,2)\right]\circ (1,0,-2)}{\|(1,0,-2)\|^2} \cdot (1,0,-2)\bigg\|
+    \end{array}$$
+
+	    de donde $$d(P_0,\mathcal{L}) = \sqrt{\dfrac{230}{25}} = 3.0331$$\\
 
     %--------------------5.
-    \item Hallar la ecuación paramétrica de la recta que pasa por $(-1,2-4)$ y que es paralela a $3i+4j+k$.\\\\
-	Respuesta.-\; Ya que la recta que pasa por $(-1,2,-4$ es paralela a $3i+4j+k$ entonces,  $$\mathcal{L}={(-1,2,-4)+t(3,4,1)/t\in\mathbb{R}}$$\\
+    \item Hallar la ecuación paramétrica de la recta que pasa por $(-1,2,-4)$ y que es paralela a $3i-4j+k$.\\\\
+	Respuesta.-\; Sean, el punto $P(-1,2,-4)$ y el vector $\vec{a}=3i-4j+k=(3,-4,1)$. Podemos construir la recta de la siguiente manera,
+	$$\mathscr{L}=\left\{P-t\vec{a} | t\in \mathbb{R}\right\}$$
+
+	Luego, la a ecuación paramétrica paralela a $(3i-4j+k)$ estará dada por,
+	$$\left\{\begin{array}{rcrcr}
+		x &=& -1 &+& 3t\\
+		y &=& 2 &+& 4t\\
+		z &=& -4 &+& t
+	\end{array}\right.$$
+	\vspace{0.5cm}
 
 	
     %--------------------6.
     \item Hallar la ecuación vectorial de la recta que pasa por $(-2,0,5)$ y que es paralela a la recta $x=1+2t$, $y=4-t$, $z=6+2t$.\\\\
-	Respuesta.-\; Sea $\left\{\begin{array}{rcr}
-		x&=&1+2t\\
-		y&=&4-t\\
-		z&=&6+2t\\
-	\end{array}\right.$
-Intuitivamente tenemos que $$\mathcal{L}_1 = {(1,4,6)+t(2,-1,2)/t\in \mathbb{R}}$$, luego como $L_1 || L_2$ entonces $$\mathcal{L}_2 = {(-2,0,5)+r(2,-1,2)/s\in \mathbb{R}}$$\\\\
+	Respuesta.-\; Sea, 
+	$$\left\{\begin{array}{rcrcr}
+		x&=&1&+&2t\\
+		y&=&4&-&t\\
+		z&=&6&+&2t\\
+	\end{array}\right.$$
+De donde,
+$$\mathscr{L}_1 = \left\{(1,4,6)+t(2,-1,2)|t\in \mathbb{R}\right\}.$$ 
+Así, podemos construir otra recta paralela a $\mathscr{L}$, de la siguiente forma:
+$$\mathscr{L}_2 = {(-2,0,5)+r(2,-1,2)/s\in \mathbb{R}}.$$\\\\
 
 
     %--------------------7.
-    \item 
+    \item \textbf{\boldmath ¿Dónde interseca la recta $x=-1+2t,y=3+t,z=4-t$?}
+	\begin{enumerate}[\bfseries a)]
+	    \item \textbf{\boldmath al plano $xy$.}
+	    \item \textbf{\boldmath al plano $xz$.}
+	    \item \textbf{\boldmath al plano $yz$.}\\\\
+	\end{enumerate}
+	\textbf{Respuesta.-}\; 
+
 
 
 \end{enumerate}
