@@ -643,8 +643,59 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (b)
 	    \item Halle ahora el valor mínimo de $f(x)=\sum\limits_{i=1}^n |x-a_i|$. Este es un problema en el que el cálculo infinitesimal no nos puede ayudar. En los intervalos entre los $a_i$ la función $f$ es lineal, por tanto el valor mínimo se localiza en uno de los $a_i$, y estos son, precisamente, los puntos en los cuales la función $f$ no es diferenciable. Sin embargo, la solución es fácil de encontrar si se considera como varía $f(x)$ al pasar de un intervalo a otro.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Tomemos dos puntos $a$ y $b$ en $[a_{i-1},a_i]$ y $[a_i,a_{i+1}]$ respectivamente. Tal que 
+		$$|a-a_i|=|b-a_i|.$$
+		Notemos que
+		$$\begin{array}{rclr}
+		    |b-a_j| &=& |a-a_j|+|a-b| & \mbox{si } j\leq i-1\\
+		    |b-a_j| &=& |a-a_j|-|a-b| & \mbox{si } j\geq i+1
+		\end{array}$$
+		Luego, vemos que
+		$$\begin{array}{rcl}
+		    f(b) &=& \displaystyle \sum_{j=1}^n |b-a_j|\\\\
+			 &=& \displaystyle \sum_{j=1}^{i-1} |b-a_j|+|b-a_i|+\sum_{j=i+1}^n|b-a_j|\\\\
+			 &=& \displaystyle \sum_{j=1}^{i-1} \left(|a-a_j|+|a-b|\right)+|b-a_i|+\sum_{j=i+1}^n\left(|a-a_j|-|a-b|\right)\\\\
+			 &=& \displaystyle \sum_{j=1}^{i-1} |a-a_j|+(i-1)|a-b|+|b-a_i|+\sum_{j=i+1}^n|a-a_j|-(n-i)|a-b|\\\\
+			 &=& \displaystyle \sum_{j=1}^{i-1} |a-a_j|+|b-a_i|+\sum_{j=i+1}^n|a-a_j|(i-1)-(n-i)|a-b|\\\\
+			 &=& \displaystyle \sum_{j=1}^{i-1} |a-a_j|+|b-a_i|+\sum_{j=i+1}^n|a-a_j|+(2i-n-1)|a-b|\\\\
+		\end{array}$$
+		Se sigue que $f(b)\geq f(a)$ siempre que
+		$$2i-n-1\geq 0 \quad \mbox{o}\quad i\geq \dfrac{n+1}{2}.$$
+		Por otro lado, de manera similar, $f(b)\leq f(a)$ siempre que
+		$$2i-n-1\leq 0 \quad \mbox{o}\quad i\leq \dfrac{n+1}{2}.$$
+		Así, tenemos a $f$ decreciente si $i\leq \dfrac{n+1}{2}$ y $f$ creciente si $i\geq \dfrac{n+1}{2}.$ De esta manera $f$ alcanza su mínimo en $a_{\frac{n+1}{2}}$ si $n$ es impar y está en el intervalo $\left[a_{\frac{n}{2}},a_{\frac{n}{2}+1}\right]$. Por lo tanto, el valor mínimo de $f$ es $f\left(a_{\frac{n+1}{2}}\right)$ si $n$ es impar y $f\left(a_{\frac{n}{2}}\right)$ si $n$ es par.\\\\
+
+	    %---------- (c)
+	    \item Sea $a>0$. Demuestre que el valor máximo de 
+	    $$f(x)=\dfrac{1}{1+|x|}+\dfrac{1}{1+|x-a|}$$
+	    es $(2+a)/(1+a)$. (Puede hallarse por separado la derivada en cada uno de los intervalos $(-\infty,0),(0,a)$ y $(a,\infty)$).\\\\
+		Respuesta.-\; La función dada se puede escribir como sigue:
+		$$f(x)=\left\{\begin{array}{rclcl}
+			\dfrac{1}{1-x}+\dfrac{1}{1-x+a} &\mbox{si}& x<0\\\\
+			\dfrac{1}{1+x}+\dfrac{1}{1-x+a} &\mbox{si}& 0<x<a\\\\
+			\dfrac{1}{1+x}+\dfrac{1}{1+x-a} &\mbox{si}& x>a
+		\end{array}\right.$$
+		Notemos que $f$ es diferenciable en cada intervalo $(-\infty,0),(0,a)$ y $(a,\infty)$. Por lo que podemos hallar sus respectivas derivadas,
+		$$f'(x)=\left\{\begin{array}{rclcl}
+			\dfrac{1}{(1-x)^2}+\dfrac{1}{(1-x+a)^2} &\mbox{si}& x<0\\\\
+			\dfrac{1}{(1+x)^2}+\dfrac{1}{(1-x+a)^2} &\mbox{si}& 0<x<a\\\\
+			\dfrac{1}{(1+x)^2}+\dfrac{1}{(1+x-a)^2} &\mbox{si}& x>a
+		\end{array}\right.$$
+		el cual demuestra que $f'(x)>0$ si $(-\infty,0)$ y $f'(x)<0$ si $(a,\infty)$, esto ya que $(1-x)^2$ y $(1\pm x+a)^2$ son positivos. Además, vemos que
+		$$f(0)=1+\dfrac{1}{1+a}=f(a)>0$$
+		ya que $a>0.$ Así, $f$ es creciente en $(-\infty,0]$ y decreciente en $[a,\infty]$, donde se concluye que $f$ en $\mathbb{R}$ alcanza su punto máximo en algún punto del intervalo $[0,a]$. Ahora, verificamos si el máximo de $f$ se alcanza en algún punto en $(0,a)$. Si $b$ es tal punto, entonces 
+		$$-\dfrac{1}{(1+b)^2}+\dfrac{1}{(1-b+a)^2}=0,$$
+		el cual implica,
+		$$(1+x)^2-(1-x+a)^2=(2+a)(2b-a)=0.$$
+		Así, $b=\dfrac{a}{2}.$ Es más,
+		$$f(0)=f(a)=1+\dfrac{1}{1+a}=\dfrac{2+a}{1+a}.$$
+		Por lo tanto, se tiene que
+		$$f\left(\dfrac{a}{2}\right)=\dfrac{2}{1+\dfrac{a}{2}}=\dfrac{4}{2+a}<\dfrac{2+a}{1+a}$$
+		lo que muestra que $\dfrac{2+a}{1+a}$ es el máximo valor de $f$ en $[0,a]$.\\\\
 
 	\end{enumerate}
+
+    %-------------------- 5.
+    \item 
 
 \end{enumerate}

@@ -88,7 +88,7 @@ $$\begin{array}{rcl}
 
 \vspace{0.5cm}
 
-\textbf{Demostración de la identidad.-}\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \mathbb{R}$. Entonces,
+\textbf{Demostración de la identidad.-}\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \bf{R}$. Entonces,
 $$\begin{array}{rcl}
     \lambda +0 & = & (a+bi) + (0+0i)\\
 	       & = & (a+0) + (b+0)i\\
@@ -106,7 +106,7 @@ $$\begin{array}{rcl}
 \end{array}$$
 \vspace{0.5cm}
 
-\textbf{Demostración de Inverso aditivo.-}\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \mathbb{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
+\textbf{Demostración de Inverso aditivo.-}\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \bf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
 $$\begin{array}{rcl}
     \alpha+\beta &=& (a+bi)+(c+di)\\
 		 &=& (a+c)+(b+d)i\\
@@ -114,7 +114,7 @@ $$\begin{array}{rcl}
 		 &=& 0
 \end{array}$$
 
-Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \mathbb{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
+Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \bf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
 $$\begin{array}{rcl}
     \alpha+\beta&=&\alpha+\beta'\\
     (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
@@ -126,7 +126,7 @@ $$(b+d)i=(b+d')i$$
 Dada que la igualdad $\alpha+\beta=\alpha+\beta'$ se cumple siempre que $c=c'$ y $d=d'$, concluimos que,
 $$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
 
-\textbf{Demostración de Inverso multiplicativo.-}\;  Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \mathbb{R}$. Entonces,
+\textbf{Demostración de Inverso multiplicativo.-}\;  Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
 $$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
 Supongamos que:
 $$\left\{\begin{array}{rcl}
@@ -143,7 +143,7 @@ Ahora, demostremos la unicidad. Sean $\beta=c+di$ y $\beta'=c'd'i$ tales que, $(
 $$c+di=(c+di)\cdot 1 = (c+di)\cdot(a+bi)(c'+d'i)=\left[(a+bi)(c+di)\right](c'+d'i)=c'+d'i.$$
 Por lo que queda demostrado que $\beta=\beta'.$ Y así concluimos que $\alpha$ tiene inverso multiplicativo.\\\\
 
-\textbf{Demostración de la distributividad.-}\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \mathbb{R}$. Entonces,
+\textbf{Demostración de la distributividad.-}\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \bf{R}$. Entonces,
 $$\begin{array}{rcl}
     \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
 			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
@@ -155,21 +155,21 @@ $$\begin{array}{rcl}
 \end{array}$$
 \vspace{0.5cm}
 
-
+%------------------- Definición 1.2 -------------------
 \begin{tcolorbox}
     \begin{def.}[$-\alpha$, sustracción, $1/\alpha$] 
-	Sea $\alpha, \beta \in \mathbb{C}$
+	Sea $\alpha, \beta \in \bf{C}$
 	\begin{itemize}
 	    \item Sea $-\alpha$ que denota el inverso aditivo de $\alpha$. Por lo tanto $-\alpha$ es el único número complejo tal que 
 		$$\alpha + (-\alpha) = 0.$$
 
-	    \item \textbf{Sustracción} en $\mathbb{C}$ es definido por:
+	    \item \textbf{Sustracción} en $\bf{C}$ es definido por:
 		$$\beta - \alpha = \beta + (-\alpha).$$
 
 	    \item Para $\alpha\neq 0$, sea $1/\alpha$ denotado por el inverso multiplicativo de $\alpha$. Por lo tanto $1/\alpha$ es el único número complejo tal que
 		$$\alpha (1/\alpha)=1.$$
 
-	    \item \textbf{División} en $\mathbb{C}$ es definido por:
+	    \item \textbf{División} en $\bf{C}$ es definido por:
 		$$\beta/\alpha = \beta(1/\alpha).$$
 	\end{itemize}
     \end{def.}
@@ -179,7 +179,9 @@ Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\
 
 \subsection{Listas}
 
-\begin{tcolorbox}[colback=white]
+%------------------- Definición 1.3 -------------------
+%------------------- Definición 1.8 -------------------
+\begin{tcolorbox}
     \begin{def.}[Listas, longitud] 
 	Supóngase que $n$ es un entero no negativo. Una lista de longitud $n$ es una colección ordenada de $n$ elementos (el cual podría ser números, otras listas, o mas entidades abstractas) separadas por comas y cerradas por paréntesis. Una lista de longitud $n$ se muestra de la siguiente manera:
 	$$(x_1,\ldots,x_n)$$
@@ -188,26 +190,32 @@ Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\
 \end{tcolorbox}
 Las listas difieren de los conjuntos de dos maneras: en las listas, el orden importa y las repeticiones tienen significado; en conjuntos, el orden y las repeticiones son irrelevantes.\\\\
 
-\subsection{\boldmath $F^n$}
 
-\begin{tcolorbox}[colback=white]
+\subsection{\boldmath $F^n$}
+%------------------- Definición 1.4 -------------------
+%------------------- Definición 1.10 -------------------
+\begin{tcolorbox}
     \begin{def.} 
-	$\mathbb{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\mathbb{F}$
-	$$\mathbb{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \mathbb{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
-	Para $(x_1,\ldots, x_n)\in \mathbb{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
+	$\bf{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\bf{F}$
+	$$\bf{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \bf{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
+	Para $(x_1,\ldots, x_n)\in \bf{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
     \end{def.}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[\boldmath Adición en $\mathbb{F}^n$]
-	La adición en $F^n$ es definido añadiendo las correspondientes coordenadas: 
+%------------------- Definición 1.5 -------------------
+%------------------- Definición 1.12 -------------------
+\begin{tcolorbox}
+    \begin{def.}[\boldmath Adición en $\bf{F}^n$]
+	La adición en $\bf{F}^n$ es definido añadiendo las correspondientes coordenadas: 
 	$$(x_1,\ldots,x_n)+(y_1,\ldots, y_n)=(x_1+y_1,\ldots, x_n + y_n)$$
     \end{def.}
 \end{tcolorbox}
 
-\begin{teo}
-    Si $x,y \in F^n,$ entonces $x+y=y+x$.\\\\
-    Demostración.-\; $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces
+%-------------------- Teorema 1.1 ---------------------
+%-------------------- Teorema 1.13 ---------------------
+\begin{teo}[Conmutatividad para la adición en $\bf{F}^n$]
+    Si $x,y \in \bf{F}^n,$ entonces $x+y=y+x$.\\\\
+    Demostración.-\; Suponga $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces por la definción de adición e $\bf{F}^n$,
     $$\begin{array}{rcl}
 	x+y&=&(x_1,\ldots,x_n)+(y_1,\ldots,y_n)\\
 	   &=&(x_1+y_1,\ldots, x_n + y_n)\\
@@ -215,23 +223,33 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 	   &=&(y_1,\ldots,y_n)+(x_1,\ldots,x_n)\\
 	   &=&y+x\\
     \end{array}$$
+    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$. \blacksquare\\
 \end{teo}
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
+    si $x \in \bf{F}^n$, entonces hacer que $x$ sea igual a $(x_1,\ldots,x_n)$ es una buena notación, como se muestra en la demostración anterior.
+\end{tcolorbox}
+
+%------------------- Definición 1.6 -------------------
+%------------------- Definición 1.14 -------------------
+\begin{tcolorbox}
     \begin{def.}[$0$]
 	Sea $0$ la lista de longitud n cuyas coordenadas son todas 0: 
 	$$0=(0,\ldots,0)$$
     \end{def.}
 \end{tcolorbox}
 
+%------------------- Definición 1.7 -------------------
+%------------------- Definición 1.16 -------------------
 \begin{tcolorbox}[colback=white]
-    \begin{def.}[\boldmath Inverso aditivo en $\mathbb{F}^n$]
+    \begin{def.}[\boldmath Inverso aditivo en $\bf{F}^n$]
 	Para $x\in \mathbb{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \mathbb{F}^n$ tal que $$x+(-x) =0$$
 	En otras palabras, si $x=(x_1,\ldots,x_n)$, entonces $-x=(-x_1,\ldots,-x_n).$
     \end{def.}
 \end{tcolorbox}
 
-
+%-------------------- Definición 1.8 ---------------------
+%-------------------- Definición 1.17 ---------------------
 \begin{tcolorbox}[colback=white]
     \begin{def.}[Multiplicación scalar en $\mathbb{F}^n$]
 	El producto de un número $\lambda$ y un vector en $\mathbb{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
@@ -240,7 +258,19 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
     \end{def.}
 \end{tcolorbox}
 
+\subsection{Digresión sobre campos}
+Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\bf{R}$ y $\bf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.
+
 \subsection{Ejercicios 1.A}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1. --------------------
+    \item Supongase $a$ y $b$ números reales, no ambos $0$. Encuentre números reales $c$ y $d$ tales que
+    $$\dfrac{1}{(a+bi)}=c+di.$$\\
+	Respuesta.-\;  Ya que $a+bi\neq 0$ 
+
+\end{enumerate}
 
 
 \section{Definición de espacio vectorial}

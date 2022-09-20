@@ -2550,7 +2550,48 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 	$$b_1=2r,\qquad b_2=r.$$\\
 
     %-------------------- 17.
+    \item Una caja abierta está construida con un rectángulo de cartón quitando cuadrados iguales en cada esquina y doblando hacia arriba los bordes. Hallar las dimensiones de la caja de mayor volumen que puede construirse de tal modo si el rectángulo tiene como lados a) $10$ y $10$; b) $12$ y $18$.\\\\
+	Respuesta.-\; Comenzamos con un rectángulo con lados cada uno de longitud $10$. Entonces, los bordes de la base de la caja tienen cada uno, una longitud de $l=w=10-2x$, y la altura $x$; por lo tanto, el volumen es
+	$$V=x(10-2x)^2=4x^3-40x^2+100x.$$
+	Derivando con respecto a $x$,
+	$$f'(x)=\dfrac{dV}{dx}=12x^2-80x+100.$$
+	Igualamos a cero para encontrar los puntos críticos,
+	$$12x^2-80x+100=0 \quad \Rightarrow \quad x_1=5 \quad \text{y} \quad x_2=4.$$
+	Luego, $f'(x)>0$ cuando $0<x<\dfrac{5}{4}$ y $f'(x)<0$ cuando $\dfrac{5}{3}<x<5$. Por el teorema 4.8 Tom Apostol, $V$ toma el valor máximo cuando $x=\dfrac{5}{3}$. Resolviendo para la longitud y el ancho de la base de la caja tenemos, entonces
+	$$l=w=10-2x=10-2\left(\dfrac{5}{3}\right)=\dfrac{20}{3}.$$
+	Para el inciso b) comencemos con un rectángulo de 18 de largo y 12 de ancho. Entonces, los bordes de la base de la caja tienen longitudes $w=12-2x$ y $l=18-2x,$ y la altura de la caja es $x$. Por tanto, el volumen es
+	$$V=x(12-2x)(18-2x)=4x^3-60x^2+216x.$$
+	Derivando con respecto a $x$,
+	$$f'(x)=\dfrac{dV}{dx}=12x^2-120x+216.$$
+	Igualamos a cero para encontrar los puntos críticos,
+	$$12x^2-120x+216=0 \quad \Rightarrow \quad x_1=5-\sqrt{7} \quad \text{y} \quad x_2=5+\sqrt{7}.$$
+	Luego, $f'(x)>0$ cuando $0<x<\dfrac{5-\sqrt{7}}{2}$ y $f'(x)<0$ cuando $\dfrac{5-\sqrt{7}}{2}<x<5+\sqrt{7}$. Por el teorema 4.8 Tom Apostol, $V$ toma el valor máximo cuando $x=\dfrac{5-\sqrt{7}}{2}$. Resolviendo para $l$ y $w$ se tiene,
+	$$l=w=18-2(5-\sqrt{7})=8-2\sqrt{7}, \qquad w=12-2(5-\sqrt{7})=2+2\sqrt{7}.$$\\
+
+    %-------------------- 18.
+    \item Si $a$ y $b$ son los catetos de un triángulo rectángulo cuya hipotenusa es $1$, hallar el mayor valor de $2a + b$.\\\\
+	Respuesta.-\; Por el teorema de Pitágoras, se tiene
+	$$a^2+b^2=1\quad \Rightarrow \quad a=\sqrt{1-b^2}.$$
+	Recordemos que queremos maximizar,
+	$$2a+b=2\sqrt{1-b^2}+b.$$
+	Llamemos a esta función $f(b)$ y derivemos con respecto a $b$ tenemos,
+	$$f'(b)=-\dfrac{2b}{\sqrt{1-b^2}}+1.$$
+	Igualamos a cero para encontrar los puntos críticos,
+	$$\begin{array}{rcl}
+	    -\dfrac{2b}{\sqrt{1-b^2}}+1=0 &\Rightarrow& -2b+\sqrt{1-b^2}=0\\\\
+	    &\Rightarrow& 5b^2=1-b^2.\\\\
+	    &\Rightarrow& b=\dfrac{\sqrt{5}}{5}.
+	\end{array}$$
+	Luego, $f'(b)>0$ cuando $b<\dfrac{\sqrt{5}}{5}$ y $f'(b)<0$ cuando $b>\dfrac{\sqrt{5}}{5}$. Por el teorema 4.8 Tom Apostol, $f(b)$ toma el valor máximo cuando $b=\dfrac{\sqrt{5}}{5}$. 
+	Dado que $a=\sqrt{1-b^2}$, se tiene
+	$$a=\dfrac{2\sqrt{5}}{5}.$$
+	Por lo tanto, el máximo valor de $2a+b$ es
+	$$2a+b=\dfrac{4\sqrt{5}}{5}+\dfrac{\sqrt{5}}{5}=\sqrt{5}.$$\\
+
+    %-------------------- 19.
     \item 
+
+
 
 \end{enumerate}
 

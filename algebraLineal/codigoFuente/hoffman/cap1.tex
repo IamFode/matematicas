@@ -232,10 +232,92 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
     \end{array}$$ 
     \vspace{0.4cm}
 
-	Respuesta.-\; 
+	Respuesta.-\;Ya que  $c_1$ y $c_2$ no existen, para
+	$$\begin{array}{rcl}
+	    2x_1+(-1+i)x_2 + x_4 &=& \left[c_1\left(1+\dfrac{i}{2}\right)+c_2\cdot\dfrac{2}{3}\right]x_1 +  \left[c_1\cdot 8+c_2\cdot\left(-\dfrac{1}{2}\right)\right]x_2 \\\\
+				 &+& \left[c_1\cdot (-1)+c_2\right]x_3 + \left[c_1\cdot (-1)+c_2\cdot 7\right]x_4\\\\
+	\end{array}$$
+	Entonces, las ecuaciones no son equivalentes.\\\\
 
     %---------- 5.
-    \item 
+    \item Sea $F$ un conjunto que contiene exactamente dos elementos, $0$ y $1$. Se define una adición y multiplicación por las tablas:
+    $$\begin{array}{c|cc}
+	+ & 0 & 1 \\
+	\hline
+	0 & 0 & 1 \\
+	1 & 1 & 0 \\
+    \end{array} \qquad \qquad 
+    \begin{array}{c|cc}
+	\cdot & 0 & 1 \\
+	\hline
+	0 & 0 & 0 \\
+	1 & 0 & 1 \\
+    \end{array}$$
+    Verificar que el conjunto $F$, juntamente con estas operaciones, es un cuerpo.\\\\
+	Demostración.-\; Para verificar que $F$ es un cuerpo, demostraremos las distintas operaciones de suma y multiplicación (Pag. 1.).
+	\begin{enumerate}[\scriptsize 1.]
+	    \item La conmutatividad para la adición es cierta, ya que
+		$$\begin{array}{rcl}
+		    0+0 &=& 0+0\\
+		    0+1 &=& 0+1\\
+		    1+0 &=& 1+0\\
+		    1+1 &=& 1+1\\
+		\end{array}$$
+
+	    \item La adición es asociativa, ya que 
+		$$\begin{array}{rcl}
+		    0+(0+1) &=& (0+0)+1\\
+		    0+(0+0) &=& (0+0)+0\\
+		    0+(1+1) &=& (0+1)+1\\
+		    0+(1+0) &=& (0+1)+0\\
+		    1+(0+1) &=& (1+0)+1\\
+		    1+(1+0) &=& (1+1)+0\\
+		    1+(1+1) &=& (1+1)+1\\
+		    1+(0+0) &=& (1+0)+0\\
+		\end{array}$$
+
+	    \item Ya que $0+0=0$ y $0+1=1$. Entonces, existe un elemento único $0$ de $F$ tal que $x+0=x$, para todo $x$ en $F$.
+
+	    \item Ya que el inverso aditivo de $0$ es $0$ y el inverso aditivo de $1$ es $1$. Entonces, a cada $x$ en $F$, corresponde un elemento único $-x$ de $F$ tal que $x+(-x)=0$.
+
+	    \item La multiplicación es conmutativa, ya que
+		$$\begin{array}{rcl}
+		    0\cdot 0 &=& 0\cdot 0\\
+		    0\cdot 1 &=& 1\cdot 0\\
+		    1\cdot 0 &=& 0\cdot 1\\
+		    1\cdot 1 &=& 1\cdot 1\\
+		\end{array}$$
+
+	    \item La multiplicación es asociativa, ya que
+		$$\begin{array}{rcl}
+		    0\cdot (0\cdot 1) &=& (0\cdot 0)\cdot 1\\
+		    0\cdot (0\cdot 0) &=& (0\cdot 0)\cdot 0\\
+		    0\cdot (1\cdot 1) &=& (0\cdot 1)\cdot 1\\
+		    0\cdot (1\cdot 0) &=& (0\cdot 1)\cdot 0\\
+		    1\cdot (0\cdot 1) &=& (1\cdot 0)\cdot 1\\
+		    1\cdot (1\cdot 0) &=& (1\cdot 1)\cdot 0\\
+		    1\cdot (1\cdot 1) &=& (1\cdot 1)\cdot 1\\
+		    1\cdot (0\cdot 0) &=& (1\cdot 0)\cdot 0\\
+		\end{array}$$
+
+	    \item Ya que $1\cdot 0=0$ y $1\cdot 1 = 1$. Entonces, existe un elemento no nulo único de $F$ tal que $x1=x,$ para todo $x$ en $F$.
+
+	    \item Ya que $1\neq 0 \in F$. El inverso multiplicativo de $1$ es $1$.
+
+	    \item La multiplicación es distributiva respecto de la adición, ya que
+		$$\begin{array}{rcl}
+		    0\cdot (0+1) &=& (0\cdot 0)+(0\cdot 1)\\
+		    0\cdot (0+0) &=& (0\cdot 0)+(0\cdot 0)\\
+		    0\cdot (1+1) &=& (0\cdot 1)+(0\cdot 1)\\
+		    0\cdot (1+0) &=& (0\cdot 1)+(0\cdot 0)\\
+		    1\cdot (0+1) &=& (1\cdot 0)+(1\cdot 1)\\
+		    1\cdot (1+0) &=& (1\cdot 1)+(1\cdot 0)\\
+		    1\cdot (1+1) &=& (1\cdot 1)+(1\cdot 1)\\
+		    1\cdot (0+0) &=& (1\cdot 0)+(1\cdot 0)\\
+		\end{array}$$
+	\end{enumerate}
+	Por lo tanto, el conjunto $F$ es un cuerpo.\\\\
+
 
     %---------- 6.
     \item \textbf{Demostrar que si dos sistemas homogéneos de ecuaciones lineales con dos incógnitas tienen las mismas soluciones, son equivalentes.\\\\
