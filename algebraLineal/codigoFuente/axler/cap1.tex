@@ -44,116 +44,36 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
     \end{prop}
 \end{tcolorbox}
 
-\textbf{Demostración de conmutatividad.-}\; Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \bf{R}$. Entonces por definición de suma de números complejos se muestra que
-$$\alpha + \beta = (a+bi) + (c+di) = (a+c) + (b+d)i = (c+a) + (d+b)i = \beta + \alpha.$$
+\begin{ejem}
+    Demostrar que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \bf{C}$.\\\\
+	Demostración.-\; Por la definición de multiplicación de números complejos se muestra que
+	$$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
+	y
+	$$\beta \alpha = (c+di)(a+bi) = (ca-db)+(ad+bc)i.$$
+	Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\
+\end{ejem}
 
-Luego, por la definición de multiplicación de números complejos se muestra que
-$$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
-y
-$$\beta \alpha = (c+di)(a+bi) = (ca-db)+(ad+bc)i.$$
-Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\
+\begin{ejem}
+   Demostrar que $\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \bf{C}$.\\\\
+	Demostración.-\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \bf{R}$. Entonces,
+		$$\begin{array}{rcl}
+		    \lambda +0 & = & (a+bi) + (0+0i)\\
+			       & = & (a+0) + (b+0)i\\
+			       & = & a + bi\\
+			       & = & \lambda
+		\end{array}$$
 
-\textbf{Demostración de Asociatividad.-}\; Sean,
-$$\begin{array}{rcl}
-    \alpha & = & a+bi\\
-    \beta & = & c+di\\
-    \lambda & = & e+fi
-\end{array}$$
-para $a,b,c,d,e,f \in \bf{R}.$ Entonces,
-$$\begin{array}{rcl}
-    (\alpha + \beta )+\lambda & = & \left[(a+bi)+(c+di)\right]+(e+fi)\\
-			      & = & \left[(a+c)+(b+d)i\right] + (e+fi)\\
-			      & = & \left[(a+c)+e\right]+\left[(b+d)+f\right]i\\
-			      & = & \left[a+(c+e)\right]+\left[b+(d+f)\right]i\\
-			      & = & (a+bi) + \left[(c+e)+(d+e)i\right]\\
-			      & = & (a+bi) + \left[(c+di)+(e+di)\right]\\
-			      & = & \alpha + (\beta + \lambda)
-\end{array}$$
+		Luego sea $1=(1+0i)$, entonces
+		$$\begin{array}{rcl}
+		    \lambda 1 & = & (a+bi)(1+0i)\\
+			      & = & (a1-b0)+(a0+b1)i\\
+			      & = & (1a + 1bi)\\
+			      & = & (a+bi)\\
+			      & = & \lambda
+		\end{array}$$
+		\vspace{0.5cm}
+\end{ejem}
 
-Y
-
-$$\begin{array}{rcl}
-    (\alpha\beta)\lambda &=& \left[(a+bi)(c+di)\right](e+fi)\\
-			 &=&\left[(ac-bd)+(ad+bc)i\right](e+fi)\\
-			 &=&\left[(ac-bd)e-(ad+bc)f\right]+\left[(ac-bd)f+(ad+bc)e\right]i\\
-			 &=&\left[(ac)e-(bd)e-(ad)f-(bc)f\right]+\left[(ac)f-(bd)f+(ad)e+(bc)e\right]i\\
-			 &=&\left[a(ce)-a(df)-b(cf)-b(de)\right]+\left[a(cf)+a(de)+b(ce)-b(df)\right]i\\
-			 &=&\left[a(ce-df)-b(cf+de)\right]+\left[a(cf+de)+b(ce-df)\right]i\\
-			 &=&(a+bi)\left[(ce-df)+(cf+de)i\right]\\
-			 &=&(a+bi)\left[(c+di)(e+fi)\right]\\
-			 &=&\alpha(\beta\lambda)
-\end{array}$$
-
-
-
-\vspace{0.5cm}
-
-\textbf{Demostración de la identidad.-}\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \bf{R}$. Entonces,
-$$\begin{array}{rcl}
-    \lambda +0 & = & (a+bi) + (0+0i)\\
-	       & = & (a+0) + (b+0)i\\
-	       & = & a + bi\\
-	       & = & \lambda
-\end{array}$$
-
-Luego sea $1=(1+0i)$, entonces
-$$\begin{array}{rcl}
-    \lambda 1 & = & (a+bi)(1+0i)\\
-	      & = & (a1-b0)+(a0+b1)i\\
-	      & = & (1a + 1bi)\\
-	      & = & (a+bi)\\
-	      & = & \lambda
-\end{array}$$
-\vspace{0.5cm}
-
-\textbf{Demostración de Inverso aditivo.-}\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \bf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
-$$\begin{array}{rcl}
-    \alpha+\beta &=& (a+bi)+(c+di)\\
-		 &=& (a+c)+(b+d)i\\
-		 &=& 0 + 0i\\
-		 &=& 0
-\end{array}$$
-
-Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \bf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
-$$\begin{array}{rcl}
-    \alpha+\beta&=&\alpha+\beta'\\
-    (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
-    (a+c)+(b+d)i&=&(a+c')+(b+d')i\\
-\end{array}$$
-
-Supongamos $c=c'$ y $d=d'$. Entonces,
-$$(b+d)i=(b+d')i$$
-Dada que la igualdad $\alpha+\beta=\alpha+\beta'$ se cumple siempre que $c=c'$ y $d=d'$, concluimos que,
-$$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
-
-\textbf{Demostración de Inverso multiplicativo.-}\;  Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
-$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
-Supongamos que:
-$$\left\{\begin{array}{rcl}
-    ac-db & = & 1\\
-    ad+bc & = & 0
-\end{array}\right.$$
-De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
-$$c=\dfrac{a}{a^2+b^2}.$$
-Luego,
-$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$
-Por lo tanto, existe un $\beta$ tal que,
-$$\beta=\dfrac{a}{a^2+b^2}-\dfrac{b}{a^2+b^2}i=\dfrac{a}{a^2+b^2}+\dfrac{-bi}{a^2+b^2}=\dfrac{a-bi}{a^2+b^2}=\dfrac{1}{a+bi}.$$\\
-Ahora, demostremos la unicidad. Sean $\beta=c+di$ y $\beta'=c'd'i$ tales que, $(a+bi)(c+di)=1$ y $(a+bi)(c'+d'i)=1$. Entonces, por las propiedades de conmutatividad y asociatividad,
-$$c+di=(c+di)\cdot 1 = (c+di)\cdot(a+bi)(c'+d'i)=\left[(a+bi)(c+di)\right](c'+d'i)=c'+d'i.$$
-Por lo que queda demostrado que $\beta=\beta'.$ Y así concluimos que $\alpha$ tiene inverso multiplicativo.\\\\
-
-\textbf{Demostración de la distributividad.-}\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \bf{R}$. Entonces,
-$$\begin{array}{rcl}
-    \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
-			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
-			 & = & \left[ac+ae-bd-bf\right]+\left[ad+af+bc+be\right]i\\
-			 & = & ac+ae-bd-bf+adi+afi+bci+bei\\
-			 & = & \left[(ac-bd)+(ad+bc)i\right] + \left[(ae-bf)+(af+be)i\right]\\
-			 & = & (a+bi)(c+di)+(a+bi)(e+fi)\\
-			 & = & \alpha\beta + \alpha\gamma\\
-\end{array}$$
-\vspace{0.5cm}
 
 %------------------- Definición 1.2 -------------------
 \begin{tcolorbox}
@@ -223,7 +143,7 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 	   &=&(y_1,\ldots,y_n)+(x_1,\ldots,x_n)\\
 	   &=&y+x\\
     \end{array}$$
-    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$. \blacksquare\\
+    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$. $\blacksquare$\\
 \end{teo}
 
 \begin{tcolorbox}
@@ -268,7 +188,194 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
     %-------------------- 1. --------------------
     \item Supongase $a$ y $b$ números reales, no ambos $0$. Encuentre números reales $c$ y $d$ tales que
     $$\dfrac{1}{(a+bi)}=c+di.$$\\
-	Respuesta.-\;  Ya que $a+bi\neq 0$ 
+	Respuesta.-\; Supongamos $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
+	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
+	Luego, por el hecho de que dos números complejos son iguales si sus correspondientes partes reales e imaginarias son iguales, entonces
+	$$\left\{\begin{array}{rcl}
+	    ac-db & = & 1\\
+	    ad+bc & = & 0
+	\end{array}\right.$$
+	De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
+	$$c=\dfrac{a}{a^2+b^2}.$$
+	Luego,
+	$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$\\
+
+    %-------------------- 2. --------------------
+    \item Demuestre que 
+    $$\dfrac{-1+\sqrt{3}i}{2}$$
+    es una raíz cúbica de $1$ (significa que su cubo es igual a $1$).\\\\
+	Demostración.-\; Algebraicamente queremos demostrar que,
+	$$\dfrac{-1+\sqrt{3}i}{2}=\sqrt[3]{1} \quad \mbox{o}\quad \left(\dfrac{-1+\sqrt{3}i}{2}\right)^3=1$$\\
+	Por las propiedades de números complejos, sabemos que
+	$$\dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1}{2}+\dfrac{\sqrt{3}i}{2}.$$
+	Luego, por el binomio al cubo podemos deducir que
+	$$\begin{array}{rcl}
+	    \left(\dfrac{-1}{2}+\dfrac{\sqrt{3}i}{2}\right)^3 &=&\left(\dfrac{-1}{2}\right)^3 + 3\cdot \left(\dfrac{-1}{2}\right)^2 \dfrac{\sqrt{3}i}{2} + 3\cdot \dfrac{-1}{2}\left(\dfrac{\sqrt{3}i}{2}\right)^2+\left(\dfrac{\sqrt{3}i}{2}\right)^3\\\\
+							      &=&\dfrac{-1}{8}+\dfrac{3\sqrt{3}i}{8}+\dfrac{-3(\sqrt{3})^2(\sqrt{-1})^2}{8}+\dfrac{(\sqrt{3})^2\sqrt{3}(\sqrt{-1})^2\sqrt{-1}}{8}\\\\
+							      &=&-\dfrac{1}{8}+\dfrac{3\sqrt{3}i}{8}+\dfrac{9}{8}-\dfrac{3\sqrt{3}i}{8}\\\\
+							      &=&1.
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 3. --------------------
+    \item Encuentre dos raíces cuadradas distintas de $i$.\\\\
+	Respuesta.-\; Queremos encontrar raíces distintas de $i$ tal que
+	$$x^2=i.$$
+	Supongamos que $x=a+bi$ para $a,b\in \bf{R}$. Resolvemos la ecuación cuadrática, se tiene 
+	$$x^2=(a+bi)^2=(a^2-b^2)+(ab+ba)i=(a^2-b^2)+2abi.$$
+	Luego, ya que $x^2=i=0+1i$, entonces
+	$$(a^2-b^2)+2abi=(0+1i)\quad \Rightarrow \quad \left\{\begin{array}{rcl}
+		a^2-b^2&=&0\\
+		2ab&=&1
+	    \end{array}\right.$$
+	para $a$ y $b$ números reales. Resolvamos este sistema de ecuaciones, se tiene 
+	$$\left\{\begin{array}{rcl}
+		b&=&\pm \sqrt{\dfrac{1}{2}}\\\\
+		a&=&\pm \sqrt{\dfrac{1}{2}}
+	\end{array}\right.$$
+	Ya que, $x^2=(a+bi)^2=(a^2-b^2)-2abi=i$. Entonces, 
+	$$\begin{array}{rcl}
+	    \left[\left(\dfrac{1}{\sqrt{2}}\right)^2-\left(\dfrac{1}{\sqrt{2}}\right)^2\right]+2\cdot\dfrac{1}{\sqrt{2}}\cdot\dfrac{i}{\sqrt{2}}i&=&i\\\\
+	    \left[\left(-\dfrac{1}{\sqrt{2}}\right)^2-\left(-\dfrac{1}{\sqrt{2}}\right)^2\right]+2\left(-\dfrac{1}{\sqrt{2}}\right)\left(-\cdot\dfrac{i}{\sqrt{2}}\right)i&=&i\\\\
+	    \left[\left(-\dfrac{1}{\sqrt{2}}\right)^2-\left(\dfrac{1}{\sqrt{2}}\right)^2\right]+2\left(-\dfrac{1}{\sqrt{2}}\right)\cdot\dfrac{i}{\sqrt{2}}i&\neq&i\\\\
+	    \left[\left(\dfrac{1}{\sqrt{2}}\right)^2-\left(-\dfrac{1}{\sqrt{2}}\right)^2\right]+2\cdot \dfrac{1}{\sqrt{2}}\left(-\dfrac{i}{\sqrt{2}}\right)i&\neq&i\\\\
+	\end{array}$$
+	De las que solo satisface $x^2=i$ las dos primeras ecuaciones. Por lo tanto, las dos raíces distintas de $i$ son:
+	$$\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{2}}i\qquad \mbox{y}\qquad -\dfrac{1}{\sqrt{2}}-\dfrac{1}{\sqrt{2}}i.$$\\
+
+
+
+    %-------------------- 4. --------------------
+    \item Demuestre que $\alpha+\beta=\beta+\alpha$ para todo $\alpha,\beta\in \bf{C}$.\\\\
+	Demostración.-\;  Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \bf{R}$. Entonces por definición de suma de números complejos se muestra que
+	$$\alpha + \beta = (a+bi) + (c+di) = (a+c) + (b+d)i = (c+a) + (d+b)i = \beta + \alpha.$$\\
+
+
+    %-------------------- 5. --------------------
+    \item Demuestre que $(\alpha+\beta)+\lambda=\alpha+(\beta+\lambda)$ para todo $\alpha,\beta,\lambda\in \bf{C}$.\\\\
+	Demostración.-\; Sean,
+	$$\begin{array}{rcl}
+	    \alpha & = & a+bi\\
+	    \beta & = & c+di\\
+	    \lambda & = & e+fi
+	\end{array}$$
+	para $a,b,c,d,e,f \in \bf{R}.$ Entonces,
+	$$\begin{array}{rcl}
+	    (\alpha + \beta )+\lambda & = & \left[(a+bi)+(c+di)\right]+(e+fi)\\
+				      & = & \left[(a+c)+(b+d)i\right] + (e+fi)\\
+				      & = & \left[(a+c)+e\right]+\left[(b+d)+f\right]i\\
+				      & = & \left[a+(c+e)\right]+\left[b+(d+f)\right]i\\
+				      & = & (a+bi) + \left[(c+e)+(d+e)i\right]\\
+				      & = & (a+bi) + \left[(c+di)+(e+di)\right]\\
+				      & = & \alpha + (\beta + \lambda)
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 6. --------------------
+    \item Demuestre que $(\alpha\beta)\lambda = \alpha(\beta\lambda)$ para todo $\alpha,\beta,\lambda\in \bf{C}$.\\\\
+	Demostración.-\; Sean,
+	$$\begin{array}{rcl}
+	    \alpha & = & a+bi\\
+	    \beta & = & c+di\\
+	    \lambda & = & e+fi
+	\end{array}$$
+	para $a,b,c,d,e,f \in \bf{R}.$ Entonces,
+	$$\begin{array}{rcl}
+	    (\alpha\beta)\lambda &=& \left[(a+bi)(c+di)\right](e+fi)\\
+				 &=&\left[(ac-bd)+(ad+bc)i\right](e+fi)\\
+				 &=&\left[(ac-bd)e-(ad+bc)f\right]+\left[(ac-bd)f+(ad+bc)e\right]i\\
+				 &=&\left[(ac)e-(bd)e-(ad)f-(bc)f\right]+\left[(ac)f-(bd)f+(ad)e+(bc)e\right]i\\
+				 &=&\left[a(ce)-a(df)-b(cf)-b(de)\right]+\left[a(cf)+a(de)+b(ce)-b(df)\right]i\\
+				 &=&\left[a(ce-df)-b(cf+de)\right]+\left[a(cf+de)+b(ce-df)\right]i\\
+				 &=&(a+bi)\left[(ce-df)+(cf+de)i\right]\\
+				 &=&(a+bi)\left[(c+di)(e+fi)\right]\\
+				 &=&\alpha(\beta\lambda)
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 7. --------------------
+    \item Demuestre que para cada $\alpha \in \bf{C}$, existe un único $\beta\in \bf{C}$ tal que $\alpha+\beta=0$.\\\\
+	Demostración.-\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \bf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
+	$$\begin{array}{rcl}
+	    \alpha+\beta &=& (a+bi)+(c+di)\\
+			 &=& (a+c)+(b+d)i\\
+			 &=& 0 + 0i\\
+			 &=& 0
+	\end{array}$$
+
+	Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \bf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
+	$$\begin{array}{rcl}
+	    \alpha+\beta&=&\alpha+\beta'\\
+	    (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
+	    (a+c)+(b+d)i&=&(a+c')+(b+d')i\\
+	\end{array}$$
+
+	Supongamos $c=c'$ y $d=d'$. Entonces,
+	$$(b+d)i=(b+d')i$$
+	Dada que la igualdad $\alpha+\beta=\alpha+\beta'$ se cumple siempre que $c=c'$ y $d=d'$, concluimos que,
+	$$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
+
+    %-------------------- 8. --------------------
+    \item Demuestre que para cada $\alpha \in \bf{C}$ con $\alpha\neq 0$, existe un único $\beta\in \bf{C}$ tal que $\alpha\beta=1$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
+	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
+	Supongamos que:
+	$$\left\{\begin{array}{rcl}
+	    ac-db & = & 1\\
+	    ad+bc & = & 0
+	\end{array}\right.$$
+	De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
+	$$c=\dfrac{a}{a^2+b^2}.$$
+	Luego,
+	$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$
+	Por lo tanto, existe un $\beta$ tal que,
+	$$\beta=\dfrac{a}{a^2+b^2}-\dfrac{b}{a^2+b^2}i=\dfrac{a}{a^2+b^2}+\dfrac{-bi}{a^2+b^2}=\dfrac{a-bi}{a^2+b^2}=\dfrac{1}{a+bi}.$$\\
+	Ahora, demostremos la unicidad. Sean $\beta=c+di$ y $\beta'=c'd'i$ tales que, $(a+bi)(c+di)=1$ y $(a+bi)(c'+d'i)=1$. Entonces, por las propiedades de conmutatividad y asociatividad,
+	$$c+di=(c+di)\cdot 1 = (c+di)\cdot(a+bi)(c'+d'i)=\left[(a+bi)(c+di)\right](c'+d'i)=c'+d'i.$$
+	Por lo que queda demostrado que $\beta=\beta'.$ Y así concluimos que $\alpha$ tiene inverso multiplicativo.\\\\
+
+
+
+    %-------------------- 9. --------------------
+    \item Demuestre que $\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma$ para todo $\alpha,\beta,\gamma\in \bf{C}$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \bf{R}$. Entonces,
+$$\begin{array}{rcl}
+    \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
+			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
+			 & = & \left[ac+ae-bd-bf\right]+\left[ad+af+bc+be\right]i\\
+			 & = & ac+ae-bd-bf+adi+afi+bci+bei\\
+			 & = & \left[(ac-bd)+(ad+bc)i\right] + \left[(ae-bf)+(af+be)i\right]\\
+			 & = & (a+bi)(c+di)+(a+bi)(e+fi)\\
+			 & = & \alpha\beta + \alpha\gamma\\
+\end{array}$$
+\vspace{0.5cm}
+
+    %-------------------- 10. --------------------
+    \item Encuentre $x\in \bf{R}^4$ tal que 
+    $$(4,-3,1,7)+2x=(5,9,-6,8).$$\\
+	Respuesta.-\; Sea $x = (x_1,x_2,x_3,x_4)$ con $x_1,x_2,x_3,x_4\in \bf{R}$. Por definición de adición y multiplicación por un escalar en $\bf{F}$ propiedades  Entonces,
+	$$\begin{array}{rcl}
+	    (4,-3,1,7)+2(x_1,x_2,x_3,x_4)&=&(5,9,-6,8)\\
+	    (4,-3,1,7)+(2x_1,2x_2,2x_3,2x_4)&=&(5,9,-6,8)\\
+	    (4+2x_1,-3+2x_2,1+2x_3,7+2x_4)&=&(5,9,-6,8)\\
+	\end{array}$$
+
+	Por la igualdad dada, podemos formar un sistema de ecuaciones como sigue:
+	$$\left\{\begin{array}{rcccr}
+	    4&+&2x_1&=&5\\
+	    -3&+&2x_2&=&9\\
+	    1&+&2x_3&=&-6\\
+	    7&+&2x_4&=&8	
+	\end{array}\right.$$
+	Resolviendo, obtenemos
+	$$x=(x_1,x_2,x_3,x_4)=\left(\dfrac{1}{2},2,-\dfrac{7}{2},\dfrac{1}{2}\right).$$\\
+
+
+    %-------------------- 11. --------------------
+    \item Explique porque no existe $\lambda\in \bf{C}$ tal que
+    $$\lambda(2-3i,5+4i,-6+7i)=(12-5i,7+22i,-32-9i).$$\\\\
+	Respuesta.-\; 
+
 
 \end{enumerate}
 

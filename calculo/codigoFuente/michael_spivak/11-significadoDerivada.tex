@@ -696,6 +696,121 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	\end{enumerate}
 
     %-------------------- 5.
+    \item Para cada una de las siguientes funciones, halle todos los puntos máximos y mínimos locales.
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item \;
+	    $$f(x)=\left\{\begin{array}{rl}
+		    x, & x\neq 3,5,7,9\\
+		    5, & x=3\\
+		    -3, & x=5\\
+		    9, & x=7\\
+		    7, & x=9
+	    \end{array}\right.$$
+	    \vspace{0.4cm}
+
+		Respuesta.-\; Notemos que todos los puntos locales máximo y mínimos deben estar en el conjunto $\left\{3,5,7,9\right\}$, ya que, aparte de estos puntos, $f$ cumple la función identidad. Ahora vemos por la definición de $f$ que 
+		\begin{center}
+		    $f(3)=5>3$ y $5>x$, para todo $x\in (3-\delta,3+\delta)$, para $0<\delta<1.$
+		\end{center}
+		Así, $3$ es un punto máximo local.\\
+
+		Para $x=5$ tenemos por la definición de $f$ que
+		\begin{center}
+		    $f(5)=-3<x$ para todo $x\geq 0.$
+		\end{center}
+		Así, $5$ es un punto mínimo local.\\
+
+		También vemos por la definición de $f$ que
+		\begin{center}
+		    $f(7)=9>7$ y $9>x$, para todo $x\in (7-\delta,7+\delta)$, para $0<\delta<1.$
+		\end{center}
+		Así, $7$ es un punto máximo local.\\
+
+		Para $x=5$ tenemos por la definición de $f$ que
+		\begin{center}
+		    $f(9)=7<9$ y $7<x,$ para todo $x\in (9-\delta,9+\delta)$, para $0<\delta<1.$
+		\end{center}
+		Así, $9$ es un punto mínimo local.\\\\
+
+	    %---------- (ii)
+	    \item \;
+	    $$f(x)=\left\{\begin{array}{rl}
+		    0, & x \mbox{ irracional}\\
+		    1/q, & x=p/q \mbox{ fracción irreducible}.
+	    \end{array}\right.$$
+	    \vspace{0.4cm}
+
+		Respuesta.-\; Notemos que cada número irracional $x$ es un mínimo local de $f$ ya que , en el caso de que $f(x)=0$ y $f(y)=\dfrac{1}{q}>0,$ para cualquier racional $y=p/q$. Por otro lado, no existe un punto máximo local. De hecho, vemos por la definición de $f$ que el máximo local sólo puede ocurrir para los números racionales. Pero para cualquier racional $x=p/q$, $f(x)=1/q<p/q=x$ si $p>0$ y $f(x)=1/q>p/q=x$  si $p<0$ pero $f(x)>0=f(y)$, para cualquier número racional $y$.\\\\
+
+	    %---------- (iii)
+	    \item \;
+	    $$f(x)=\left\{\begin{array}{rl}
+		    x,& x \mbox{ racional}\\
+		    0, x& \mbox{ irracional}.
+	    \end{array}\right.$$
+	    \vspace{0.4cm}
+
+		Respuesta.-\; Observamos que todo número irracional positivo $x$ es un mínimo local de $f$. Ya que, en este caso, $f(x)=0$ y $f(y)=y>0$, para cualquier racional $y\geq0$. Por otro lado, para cualquier racional $y\leq 0$, tenemos $f(y)=y\leq 0$ y por lo tanto cualquier número irracional estrictamente negativo es un máximo local de $f$.\\\\
+
+	    %---------- (iv)
+	    \item \;
+	    $$f(x)=\left\{\begin{array}{rl}
+		    1, & x=1/n \mbox{ para algún } n\in \mathbb{N}\\
+		    0, &x \mbox{ en los demás casos}.
+	    \end{array}\right.$$
+	    \vspace{0.4cm}
+
+	    Respuesta.-\; Notemos que, para cada $n\in \mathbb{N}, 1/n$ es un punto local máximo a partir de la definición de $f$, $f(\frac{1}{n})=1,$ y $f(x)=0.$ Similarmente, vemos que para cada número real tal que $\left\{\frac{1}{n}:n\in \mathbb{N}\right\}$ es un punto mínimo local, ya que en este conjunto $f$ es idénticamente $0$. Además si $f$ es constante para cada número real tal que $\left\{\frac{1}{n}:n\in \mathbb{N}\right\}$, entonces es un punto máximo y mínimo local a la vez, excepto el punto $0$, ya que para cada $\epsilon>0$, $(-\delta, \delta)$ contiene infinitos $1/n$, esto por la propiedad Arquimediana de los números reales.\\\\
+
+	    %---------- (v)
+	    \item \;
+	    $$f(x)=\left\{\begin{array}{rl}
+		    1, & x \mbox{ si el desarrollo decimal de } x \mbox{contiene un } 5\\
+		    0, &x \mbox{ en los demás casos}.
+	    \end{array}\right.$$
+	    \vspace{0.4cm}
+
+		Respuesta.-\; Notemos que para cada
+		$$x\in \left\{x\in \mathbb{R}:\mbox{el desarrollo decimal de } x \mbox{contiene a } 5\right\}$$
+		es un punto máximo local a partir de la definición de $f$. Es este caso, $f(x)=1$ y $f$ es $0$. Similarmente, vemos que cada número real tal que, 
+		$$\left\{x\in \mathbb{R}:\mbox{el desarrollo decimal de } x \mbox{contiene a } 5\right\}$$
+		es un punto mínimo local, ya que en este conjunto $f$ es idénticamente $0$. Además, ya que $f$ es constante, tenemos que cada número en el conjunto 
+		$$\left\{x\in \mathbb{R}:\mbox{el desarrollo decimal de } x \mbox{contiene a } 5\right\}$$
+		es un punto máximo local y un punto mínimo local, excepto el punto $0$, ya que para cada $\delta>0,$ $(-\delta,\delta)$ contiene infinitos puntos con al menos un $5$ en su expansión decimal, esto por la propiedad Arquimediana de los números reales\\\\
+
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item Demuestre la siguiente propiedad (que se utiliza muchas veces de manera implícita): si $f$ es creciente en $(a, b)$ y continua en $a$ y $b$, entonces $f$ es creciente en $[a, b]$. En particular, si $f$ es continua en $[a, b]$ y $f > 0$ en $(a, b)$, entonces $f$ es creciente en $[a, b]$.\\\\
+	Demostración.-\; Sea $x,y\in [a,b]$ tal que x<y. Ya que $f$ es creciente en $(a,b)$, entonces $f$ es también creciente en $(x,y)$. Por el teorema de valor medio, existe un $c\in (x,y)$ tal que 
+	$$f(y)-f(x)=f'(c)(y-x)>0.$$
+	Si $f$ es creciente en $(x,y)$,
+	$$f'(c)\geq 0 \mbox{ para todo } c\in (x,y).$$
+	Por el hecho de que $y-x>0$, entonces
+	$$f(x)<f(y).$$
+	De esta manera, $x$ e $y$ son número arbitrarios en $[a,b]$ y por lo tanto $f$ es creciente en $[a,b]$.\\\\
+
+    %-------------------- 7.
+    \item Se traza una recta desde el punto $(0, a)$ hasta el eje horizontal y desde allí otra a $(1, b)$, tal como se indica en la Figura 23 (Spivak). Demuestre que la longitud total es mínima cuando los ángulos $\alpha$ y $\beta$ son iguales. (Naturalmente, deberá entrar en juego una función: expresar la longitud en términos de $x$, donde $(x, 0)$ es el punto del eje horizontal. La línea a trazos de la Figura 23 sugiere una demostración geométrica; tanto en un caso como en otro puede resolverse el problema sin necesidad de hallar el punto $(x, 0)$.)\\\\
+	Demostración.-\; De la figura dada, encontramos que la longitud total del camino está dada por: 
+	$$f(x)=\sqrt{x^2+a^2}+\sqrt{(1-x)^2+b^2}.$$
+	Para la longitud más corta, obtenemos la primera derivada y la igualamos con cero
+	$$\dfrac{x}{\sqrt{x^2+a^2}}-\dfrac{1-x}{\sqrt{(1-x)^2+b^2}}=0.$$
+	Reemplazando $\dfrac{x}{\sqrt{x^2+a^2}}$ con $\cos \alpha$ y $\dfrac{1-x}{\sqrt{(1-x)^2+b^2}}$ con $\cos \beta$, obtenemos
+	$$\cos \alpha-\cos \beta=0 \quad \Rightarrow \quad \cos \alpha = \cos \beta \quad \Rightarrow \quad \alpha = \beta.$$\\
+
+    %-------------------- 8.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $(x_0,y_0)$ un punto del plano, y sea $L$ la gráfica de la función $f(x)=mx+b.$ Halle el punto $\overline{x}$ tal que la distancia de $(x_0,y_0)$ a $(\overline{x},f(\overlone{x}))$ sea mínima. [Observe que minimizar esta distancia equivale a minimizar su cuadrado. Esto puede simplificar, en cierta medida, los cálculos.]
+		Respuesta.-\;
+
+	\end{enumerate}
+
+
 
 \end{enumerate}

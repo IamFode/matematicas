@@ -319,9 +319,9 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 	Por lo tanto, el conjunto $F$ es un cuerpo.\\\\
 
 
-    %---------- 6.
-    \item \textbf{Demostrar que si dos sistemas homogéneos de ecuaciones lineales con dos incógnitas tienen las mismas soluciones, son equivalentes.\\\\
-	Demostración.-}\; Consideremos los dos sistemas homogéneos con dos incógnitas $(x_1,x_2)$.
+    %-------------------- 6. --------------------
+    \item Demostrar que si dos sistemas homogéneos de ecuaciones lineales con dos incógnitas tienen las mismas soluciones, son equivalentes.\\\\
+	Demostración.-\; Consideremos los dos sistemas homogéneos con dos incógnitas $(x_1,x_2)$.
 	$$\left\{\begin{array}{ccc}
 		a_{11} x_1 + a_{12} x_2 &=& 0\\
 		a_{21} x_1 + a_{22} x_2 &=& 0\\
@@ -335,36 +335,63 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 		b_{m1} x_1 + b_{m2} x_2 &=& 0\\
 	\end{array}\right.$$
 
-	Sean los escalares $c_1,c_2,\ldots c_m$. De donde multiplicamos $k$ ecuaciones del primer sistemas por $c_k$ y sumamos por columnas,
+	Se dirá que dos sistemas de ecuaciones lineales son equivalentes si cada ecuación de cada sistema es combinación lineal de las ecuaciones del otro sistema. Por lo que por definición de combinación lineal se tiene $m$ escalares $c_1,\ldots,c_m$ que se multiplica la j-ésima ecuación por $c_j$ y que luego se suma. 
+
+	Sean los escalares $c_1,c_2,\ldots c_m$. De donde multiplicamos $m$ ecuaciones del primer sistemas por $c_m$ y sumamos por columnas,
 	$$\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2=0$$
 
 	Luego comparando esta ecuación con todas las ecuaciones del segundo sistema y utilizando también el hecho de que ambos sistemas tiene las mismas soluciones, obtenemos
-	$$b_{11}x_1+b_{12}x_2=\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2$$
-	$$c_1a_{11}+c_2a_{21}+\ldots + c_m a_{m1}=b_{11}, b_{21}, \ldots, b_{m1}$$
-	$$\mbox{y}$$
-	$$c_1a_{12}+c_2a_{22}+\ldots + c_m a_{m2}=b_{12}, b_{22}, \ldots, b_{m2}.$$
+	$$b_{11}x_1+b_{12}x_2=\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2.$$
 
-	Lo que demuestra que el segundo sistema es una combinación lineal del primer sistema.\\
+	Lo mismo ocurre con las demás ecuaciones del segundo sistema. Sean otros escalares $c_1,c_2,\ldots, c_m$, tal que  
+	$$b_{21}x_1+b_{22}x_2=\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2$$
+
+	Así, sucesivamente hasta 
+	$$b_{m1}x_1+b_{m2}x_2=\left(c_1a_{11}+\ldots + c_m a_{m1}\right)x_1 + \left(c_1 a_{12}+\ldots + c_m a_{m2}\right)x_2$$
+	con $m$ escalares $c_1,c_2,\ldots, c_m$. Por lo que demostramos que el segundo sistema es una combinación lineal del primer sistema.\\
 
 	De manera similar podemos demostrar que el primer sistema es una combinación lineal del segundo sistema. Sean los escalares $c_1,c_2,\ldots c_m$, entonces
-	$$\left(c_1b_{11}+\ldots + c_m b_{m1}\right)x_1 + \left(c_1 b_{12}+\ldots + c_m b_{m2}\right)x_2=0$$
-	Después, se tiene
-	$$c_1b_{11}+c_2b_{21}+\ldots + c_m b_{m1}=a_{11}, a_{21}, \ldots, a_{m1}$$
-	$$\mbox{y}$$
-	$$c_1b_{12}+c_2b_{22}+\ldots + c_m b_{m2}=a_{12}, a_{22}, \ldots, a_{m2}.$$
+	$$a_{11}x_1+a_{12}x_2=\left(c_1b_{11}+\ldots + c_m b_{m1}\right)x_1 + \left(c_1 b_{12}+\ldots + c_m b_{m2}\right)x_2.$$
+	$$\vdots$$
+	$$a_{m1}x_1+a_{m2}x_2=\left(c_1b_{11}+\ldots + c_m b_{m1}\right)x_1 + \left(c_1 b_{12}+\ldots + c_m b_{m2}\right)x_2.$$
 
 	Así concluimos que ambos sistemas son equivalentes.\\\\
 
 
     %-------------------- section 1.2 7
-    \item \textbf{Demostrar que todo subcuerpo del cuerpo de los números complejos contiene a todo número racional.\\\\
-	Demostración.-}\; Sea $F$ un subcampo en $\mathbb{C}$. De donde tenemos $0\in F$ y $1\in F$. Luego ya que $F$ es un subcampo y cerrado bajo la suma, se tiene
+    \item Demostrar que todo subcuerpo del cuerpo de los números complejos contiene a todo número racional.\\\\
+	Demostración.-\; Sea $F$ un subcampo en $\mathbb{C}$, por este hecho,  tenemos $0\in F$ y $1\in F$. Luego ya que $F$ es un subcampo y cerrado bajo la suma, se tiene
 	$$1+1+\ldots + 1 = n\in F.$$
 	De este modo $\mathbb{Z}\subseteq F$. Ahora, sabiendo que $F$ es un subcampo, todo elemento tiene un inverso multiplicativo, por lo tanto $\dfrac{1}{n}\in F$. Por otro lado vemos también que $F$ es cerrado bajo la multiplicación. Es decir, para $m,n\in \mathbb{Z}$ y $n\neq 0$ tenemos
 	$$m\cdot \dfrac{1}{n}\in F\quad \Rightarrow \quad \dfrac{m}{n}\in F.$$
 	Así, concluimos que $\mathbb{Q}\subseteq F.$\\\\
 
+    %-------------------- section 1.2 8
+    \item Demostrar que todo cuerpo de características cero contiene una copia del cuerpo de los números racionales.\\\\
+	Demostración.-\; Sea $F$ cualquier campo de caracterización cero. Ahora, $0\in F$ y $1\in F$. Ya que la caracteristica de $F$ es cero, se tiene
+	$$1\neq 1+1\neq 1+1+1\neq1+1+1+1\ldots \neq 0.$$
+	Ahora, $F$ es un campo y por ende cerrado bajo la suma, se obtiene
+	$$1+1+\ldots + 1 = n\in F \mbox{ con } n\neq 0.$$
+	De este modo, $\mathbb{Z}\subseteq F$. Ahora, dado que $F$ es un cuerpo, todo elemento tiene un inversio multiplicativo, por lo tanto $\dfrac{1}{n}\in F$. Además, $F$ es cerrado bajo la multiplicación, así, para $m, n \in \mathbb{Z}$ y $n \neq 0$, tenemos
+	$$m\cdot \dfrac{1}{n}\in F\quad \Rightarrow \quad \dfrac{m}{n}\in F.$$
+	Por lo que $\mathbb{Q}\in F$. Concluimos que $F$ contiene una copia del campo de número racional.\\\\
+
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Matrices y operaciones elementales de fila}
