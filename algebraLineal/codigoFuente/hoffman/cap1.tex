@@ -379,22 +379,40 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 \end{enumerate}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Matrices y operaciones elementales de fila}
+El sistema (1-1) se abreviará ahora así:
+$$AX=Y$$
+donde 
+$$
+\begin{bmatrix*}[c]
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &  & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix*} 
+\begin{bmatrix*}[c]
+	x_1 \\
+	\vdots \\
+	x_n
+\end{bmatrix*} = 
+\begin{bmatrix*}[c]
+	y_1 \\
+	\vdots \\
+	y_m
+\end{bmatrix*}
+$$
+
+\begin{tcolorbox}
+$A$ se llama \textbf{matriz de los coeficientes} del sistema.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    Una \textbf{matriz} $m\times n$ \textbf{sobre el cuerpo} $F$ es una función $A$ del conjunto de los pares enteros $(i,j)$, $1\leq i \leq m,$ $1\leq j \leq n,$ en el cuerpo $F$.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    Los \textbf{elementos} de la matriz $A$ son los escalares $A(i,j)=A_{ij}$, con frecuencia, suele ser más conveniente describir la matriz disponiendo sus elementos en un arreglo rectangular con $m$ filas y $n$ columnas.
+\end{tcolorbox}
+
 Deseamos ahora considerar operaciones sobre las filas de la matriz $A$ que corresponden a la formación de combinaciones lineales de las ecuaciones del sistema $AX=Y$. Se limitará nuestra atención a \textbf{tres operaciones elementales de filas} en una matriz $m\times n$, sobre el cuerpo $F$:
 
 \begin{tcolorbox}
@@ -415,6 +433,25 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
     \end{enumerate}
 \end{tcolorbox}
 
+\begin{tcolorbox}
+    Una función $e$ particular estpa definida en la clase de todas las matrices sobre $F$ que tiene $m$ filas.
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%-------------------- Teorema 1.2
 \begin{teo}
     A cada operación elemental de filas $e$ corresponde una operación elemental de filas $e_1$, del mismo tipo de $e$, tal que $e_i(e(A))=e(e_1(A))=A$ para todo $A$. Es decir, existe la operación (función) inversa de una operación elemental de filas y es una operación elemental de filas del mismo tipo.\\\\
     Demostración.-\; (1) Supóngase que $e$ es la operación que multiplica la r-ésima fila de una matriz por un escalar no nulo $c$. Sea $e_1$ la operación que multiplica la fila $r$ por $c^{-1}$. (2) Supóngase que $e$ sea la operación que remplaza la fila $r$ por la misma fila $r$ a la que le sumo la fila $s$ multiplicada por $c$, $r\neq s$. Sea $e_1$ la operación que reemplaza la fila $r$ por la fila $r$ a la que se le ha sumado la fila $s$ multiplicada por $(-c)$. (3) Si $e$ intercambia las filas $r$ y $s$, sea $e_1=e$. En cada uno de estos casos es claro que $e_1(e(A))=e(e_1(A))=A$ para todo $A$.

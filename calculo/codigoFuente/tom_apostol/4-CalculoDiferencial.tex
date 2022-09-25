@@ -2690,13 +2690,141 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 
 	    %---------- (a)
 	    \item Un triángulo isósceles está inscrito en una circunferencia de radio $r$ como se indica en la figura 4.18 (Tom Apostol). Suponiendo el ángulo $2\alpha$ en el vértice, comprendido entre $O$ y $\frac{1}{2}\pi$, hallar el valor medio y el valor menor del perímetro del triángulo. Dar todos los detalles del razonamiento seguido.
-		Respuesta.-\; 
+		Respuesta.-\; Podemos imaginar seis líneas radiales, que dividen el triángulo en seis triángulos congruentes, cada uno con hipotenusa de longitud $r$ y catetos de longitud $r\sen \alpha$. Dos de los lados del triángulo isósceles inscrito tienen longitudes $2r\cos \alpha$ y el tercer cateto tiene longitudes $2r\sen (2\alpha)$. Por lo tanto, el perímetro es,
+		$$P=4r\sen\alpha +2r\sen(2\alpha).$$
+		Sacando la derivada,
+		$$P'=-4\sen \alpha + 4r\cos(2\alpha).$$
+		Ahora, debemos notar que los valores extremos de la función ocurren cuando la derivada es $0$ o en un punto final del intervalo que estamos viendo; en este caso, $0\leq \alpha\leq \frac{\pi}{4}$ es el intervalo estipulado en el problema. Primero, igualemos la derivada a cero y encontremos los valores de en el intervalo en el que la derivada es $0$.
+		$$\begin{array}{rcl}
+		    -4r\sen \alpha + 4r\cos(2\alpha)=0 &\Rightarrow& 4r\cos(2\alpha)=4r\sen \alpha\\\\
+		    &\Rightarrow&\cos(2\alpha)=\sen \alpha\\\\
+		    &\Rightarrow&1-2\sen^2\alpha=\sen \alpha\\\\
+		    &\Rightarrow&2\sen^2\alpha+\sen \alpha - 1=0\\\\
+		    &\Rightarrow&\sen \alpha =\dfrac{-1\pm \sqrt{1+8}}{4}\\\\
+		    &\Rightarrow&\sen \alpha = \dfrac{1}{2},\quad \mbox{y}\quad -1
+		\end{array}$$
+		Entonces, el único de $\alpha$ en el intervalo $\left[0,\frac{\pi}{4}\right]$ tal que $\sen\alpha=\frac{1}{2}$ y $\alpha=-1$ es 
+		$$\alpha=\dfrac{\alpha}{6}.$$
+		Reemplazando esto en nuestra expresión para el perímetro del triángulo isósceles, encontramos,
+		$$\begin{array}{rcl}
+		    P_{max} &=& 4r\cos \alpha + 2r\sen(2\alpha)\\\\
+			    &=& 3r\cos\left(\dfrac{\pi}{6}\right)+2r\sen\left(\dfrac{\pi}{3}\right)\\\\
+			    &=& 2\sqrt{3}r+\sqrt{3}r\\\\
+			    &=& 3\sqrt{3}r.
+		\end{array}$$
+		Examinando el signo de la derivada de la función perimetral a medida que $\alpha$ cambia, vemos que se trata de un máximo. Además, vemos que el mínimo ocurre en el punto final, $\alpha = 0$. Entonces el perímetro mínimo es
+		$$P_{min}=4r\cos \alpha + 2r\sen(2\alpha)=4r\cos 0 + 2r\sen 0 = 4r.$$\\
 
 	    %---------- (b)
 	    \item ¿Cuál es el radio del menor disco circular suficientemente grande para cubrir todo triángulo isósceles de perímetro dado $L$? Dar todos los detalles del razonamiento.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Primero, identificamos el valor $\alpha$ en el que el radio necesario para cubrir el triángulo isósceles es máximo (el peor de los casos para cubrir el triángulo, si lo desea). De la parte (a) sabemos que el perímetro $L$ debe satisfacer la ecuación
+		$$L=4r\cos \alpha + 2r\sen(2\alpha).$$
+		Como $L$ ahora es una constante fija, podemos escribir $r$ como una función de $\alpha$,
+		$$r=\dfrac{L}{4\cos \alpha + 2\sen(2\alpha)}.$$
+		Ahora, el valor de $r$ es máximo cuando el denominador es mínimo, por lo que estamos buscando un mínimo de la función
+		$$f(\alpha)=4\cos \alpha + 2\sen (2\alpha).$$
+		Tomando la derivada,
+		$$f'(\alpha)=-4\sen \alpha + 4\cos(2\alpha).$$
+		Igualamos esto a cero para encontrar los puntos críticos.
+		$$-4\sen \alpha + 4\cos(2\alpha) = 0 \quad \Rightarrow \quad \sen \alpha=\cos(2\alpha).$$
+		De la parte (a) sabemos que esto implica $\alpha = 0$ o $\alpha = \frac{\pi}{6}$. Nuevamente, de la parte (a) sabemos que esto es mínimo cuando $\alpha = 0$. Ya que estamos tratando de minimizar esto, queremos el valor $\alpha = 0$.\\
+		Finalmente, hay un pequeño problema con $\alpha=0$, ya que corresponde solo a una línea, no realmente a un triángulo. Podemos ignorar ese problema y simplemente conectar $\alpha=0$ o (lo que equivaldrá a lo mismo) podemos encontrar el valor mínimo de como límite como:
+		$$r=\lim_{\alpha\to 0}\dfrac{L}{4\cos \alpha + 2\sen(2\alpha)}=\dfrac{L}{4}.$$
+		donde podemos calcular el límite simplemente evaluando en $\alpha=0$ ya que la función es continua.\\\\
 
 	\end{enumerate}
+
+
+    %-------------------- 23.
+    \item Una ventana tiene forma de rectángulo terminando por un semicírculo con diámetro igual a la base del rectángulo. La parte rectangular debe ser de vidrio transparente y la parte semicircular debe ser de vidrio coloreado que admita solo la mitad de luz por pie cuadrado que el vidrio transparente. El perímetro total del marco de la ventana debe tener una longitud fija $P$. Encuentre, en términos de $P$, las dimensiones de la ventana que admitirán la mayor cantidad de luz.\\\\
+	Respuesta.-\; Sea $r$ la longitud del radio del semicírculo. Entonces, el perímetro está dado por la ecuación,
+	$$P=2r+2x+\pi r \quad \Rightarrow \quad x=\dfrac{P-2r-\pi r}{2}.$$
+	La cantidad total de luz que entra por la ventana es el área de la parte rectangular multiplicada por $1$, más el área de la región semicircular multiplicada por $1/2$:
+	$$L=2rx+\dfrac{1}{2}\left(\dfrac{\pi r^2}{2}\right)=2rx+\dfrac{\pi r^2}{4}.$$
+	Reemplazando nuestra expresión para $x$ obtenemos una expresión para la cantidad total de luz en términos del radio (y la constante $P$),
+	$$L=2r\left(\dfrac{P-2r-\pi r}{2}\right)+\dfrac{\pi r^2}{4}=Pr-2r^2-\pi r^2 + \dfrac{\pi r^2}{4} = Pr-2r^2 - \dfrac{3\pi r^2}{4}.$$
+	Diferenciando con respecto a $r$ tenemos
+	$$L'=P-4r-\dfrac{3\pi r}{2}.$$
+	Igualando esto a $0$ y resolviendo para $r$,
+	$$P-4r-\dfrac{3\pi r}{2}=0\quad \Rightarrow \quad r=\dfrac{2P}{8+3\pi}.$$
+	Como la longitud de la base de la región rectangular es 2r, la base del rectángulo tiene una longitud
+	$$\mbox{Base}=2r=\dfrac{4P}{8+3\pi}.$$
+	Entonces, usando la expresión anterior para X, la altura de la región rectangular, tenemos,
+	$$\begin{array}{rcl}
+	    x &=& \dfrac{P-2r-\pi r}{2}\\\\
+	      &=& \dfrac{P-\frac{4P}{8+3\pi}-\frac{2P\pi}{8+3\pi}}{2}\\\\
+	      &=& \dfrac{P}{2}-\dfrac{2P}{8+3\pi}-\dfrac{P\pi}{8+3\pi}\\\\
+	      &=& \dfrac{(8+3\pi)P-4P-2\pi P}{16+6\pi}\\\\
+	      &=& \dfrac{P(4+\pi)}{16+6\pi}.
+	\end{array}$$
+	Estas son las dimensiones solicitadas en cuanto al perímetro.\\\\
+
+
+    %-------------------- 24.
+    \item Un trozo de madera de $12$ pies de largo tiene la forma de un tronco de cono circular recto con diámetros de $4$ pies y $(4 + h)$ pies en sus extremos, donde $h > 0$. Determine, en función de $h$, el volumen del rectángulo más grande Cilindro circular que se puede cortar del tronco, si su eje coincide con el del tronco.\\\\
+	Respuesta.-\; Denotemos $r$ el radio del cilindro circular recto y $a$ su altura. Entonces, el volumen está dado por
+	$$V=\pi r^2a.$$ 
+	Primero, encontramos una ecuación para $a$ en términos de $r$. Supongamos que $a$ se encuentra en la línea que conecta el origen con el borde superior del tronco. La ecuación de esta línea es $y = \frac{24}{h}x$ porque tiene pendiente $\frac{24}{h}$ (ya que la altura del tronco es de $12$ pies y la distancia horizontal entre el borde inferior y el borde superior es $\frac{h}{2}$). Por lo tanto,
+	$$a=\dfrac{24}{h}\left(2+\dfrac{h}{2}-r\right).$$
+	Por lo tanto, tenemos el volumen $V$ del cilindro que estamos cortando dado por
+	$$V=\pi r^2a=\pi r^2\left(\dfrac{48}{h}-\dfrac{24r}{h}+12\right).$$
+	Como queremos maximizar este volumen, tomamos la derivada con respecto a $r$ y buscamos los puntos críticos,
+	$$\dfrac{dV}{dr}=\dfrac{96\pi r}{h}-\dfrac{72 \pi r^2}{h}+24\pi r.$$
+	Igualando esto a $0$ tenemos,
+	$$\begin{array}{rcl}
+	    \dfrac{96\pi r}{h}-\dfrac{72\pi r^2}{r}+24\pi r=0&\Rightarrow&96\pi r - 72\pi r^2 + 24\pi rh =0\\\\
+	    &\Rightarrow&4-3r+h=0\\\\
+	    &\Rightarrow&r=\dfrac{4+h}{3}.
+	\end{array}$$
+	También tenemos una restricción adicional del problema que es que deberíamos requerir $r \geq 2$ ya que la altura máxima del cilindro que estamos cortando es de $12$ pies y
+	$$a=\dfrac{24}{h}\left(2+\dfrac{h}{2}-r\right)\leq 12 \quad \Rightarrow \quad r\geq 2.$$
+	Ya que $r = \frac{4+h}{3}$ esto implica que este valor es válido para $h \geq 2$. Entonces si $h \geq 2$ tenemos
+	$$a=\dfrac{24}{h}\left(2+\dfrac{h}{2}-r\right)=\dfrac{24}{h}\left(\dfrac{4+h}{6}\right).$$
+	Reemplazando esto en la fórmula para el volumen del cilindro obtenemos un máximo para el volumen de
+	$$V=\pi r^2 a = \pi \left(\dfrac{4+3}{3}\right)^2\left(\dfrac{24}{h}\right)\left(\dfrac{4+h}{6}\right)=\dfrac{4\pi}{9h}(4+h)^3.$$
+	Si $0 \leq h < 2$, entonces tenemos $r = 2$ y así $a = \frac{24}{h} \cdot \frac{h}{2} = 12$. Por lo tanto,
+	$$V=\pi r^2 a = 48\pi.$$
+	Poniendo esto junto en una ecuación tenemos
+	$$V=\left\{\begin{array}{ll}
+	    48\pi & \mbox{si } 0 \leq h < 2\\\\
+	    \dfrac{4\pi}{9h}(4+h)^3 & \mbox{si } h \geq 2.
+	\end{array}\right.$$
+	\vspace{.5cm}
+
+    %-------------------- 25.
+    \item Dados $n$ números reales $a_1,..., a_n$. Demuestre que la suma $\sum\limits_{k=1}^n(x-a_k)^2$ es mínima cuando $x$ es la media aritmética de $a_1, . . ., a_n$.\\\\
+	Respuesta.-\; Recordemos que la media aritmética de $a_1,...,a_n$ está dada por,
+	$$x=\dfrac{a_1+\ldots + a_n}{n}.$$
+	Para encontrar el mínimo, primero tomamos la derivada, usando la linealidad de la derivada sobre esta suma (finita), (es decir, usando eso $(f+g)' = f' + g'$),
+	$$\begin{array}{rcl}
+	    \left[\displaystyle\sum_{k=1}^n (x-a_k)^2\right]' &=& \left[\displaystyle\sum_{k=1}^n \left(x^2-2a_kx+a_k^2\right)\right]'\\\\
+							      &=&\left[ \left(x^2-2a_1x+a_1^2\right)+\left(x^2-2a_2x+a^2_2\right)+\ldots + \left(x^2-2a_nx+a_n^2\right)\right]'\\\\
+							      &=&\left[nx^2-2\left(a_1+a_2+\ldots + a_n\right)x+\left(a_1^2+\ldots + a_n^2\right)\right]'\\\\
+							      &=&2nx-2\left(a_1+a_2+\ldots + a_n\right)\\\\
+						 &=& 2 \displaystyle\sum_{k=1}^n (x-a_k).
+	\end{array}$$
+	Igualando esto a $0$ y resolviendo tenemos
+	$$\begin{array}{rcl}
+	    2\displaystyle\sum_{k=1}^n (x-a_k) = 0 &\Rightarrow& 2\displaystyle\left(\sum_{k=1}x-\sum_{k=1}^n a_k\right)=0\\\\
+						   &\Rightarrow&nx-\displaystyle\sum_{k=1}^n a_k=0\\\\
+						   &\Rightarrow&nx=\sum_{k=1}^n a_k\\\\
+						   &\Rightarrow&x=\dfrac{a_1+\ldots+a_n}{n}.
+	\end{array}$$
+	\vspace{.5cm}
+
+
+
+    %-------------------- 26.
+    \item Si $x > 0$, sea $f(x) = 5x^2 + Ax^{-5}$, donde $A$ es una constante positiva. Encuentre el $A$ más pequeño tal que $f(x) \geq 24$ para todo $x > 0$.\\\\
+	Respuesta.-\; 
+
+    %-------------------- 27.
+    \item Para cada $t$ real, sea $f(x) = -\frac{1}{3}x_3 + t^2x$, y sea $m(t)$ el mínimo de $f(x)$ sobre el intervalo $0 \leq x \leq 1$. Determine el valor de $m(t)$ para cada $t$ en el intervalo $—1 \leq t \leq 1$. Recuerde que para algunos valores de $t$ el mínimo de $f(x)$ puede ocurrir en los extremos del intervalo $0 \leq x \leq 1$.\\\\
+	Respuesta.-\; 
+
+    %-------------------- 28.
+    \item Se sabe que un número $x$ está en un intervalo $a \leq x \leq b$, donde $a > 0$. Deseamos aproximar $x$ por otro número $t$ en $[a, b]$ para que el error relativo, $|t — x|/x$, sea lo más pequeño posible. Sea $M(t)$ el valor máximo de $|t — x|/x$ cuando $x$ varía de $a$ a $b$. a) Demuestre que este máximo ocurre en uno de los extremos $x = a$ o $x = b$. (b Demuestre que $M(t)$ es menor cuando $t$ es la media armónica de $a$ y $b$, es decir, cuando $1/t =\frac{1}{2} (1/a + 1/b)$.\\\\
+	Respuesta.-\; 
 
 
 
