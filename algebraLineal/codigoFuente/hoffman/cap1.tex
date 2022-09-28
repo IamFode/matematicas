@@ -3,7 +3,6 @@
 \section{Cuerpos}
 Se designa por $F$ el conjunto de los números reales o el conjunto de los números complejos.
 
-\begin{tcolorbox}
     \begin{enumerate}[\bfseries 1.]
 	%---------- 1.
 	\item La adición es conmutativa,
@@ -39,16 +38,11 @@ Se designa por $F$ el conjunto de los números reales o el conjunto de los núme
 	\item La multiplicación es distributiva respecto de la adición, esto es, $x(y+z)=xy+xz$, para cualquiera $x,y$ y $z$ de $F$.
 	
     \end{enumerate}
-\end{tcolorbox}
 
 % ---------- def. ----------
-\begin{tcolorbox}
     El conjunto $F$, junto con  las operaciones de suma y multiplicación, se llama entonces \textbf{cuerpo}.
-\end{tcolorbox}
 
-\begin{tcolorbox}
     Un \textbf{subcuerpo} de un cuerpo $C$ es un conjunto $F$ de números complejos que es a su vez un cuerpo respecto de las operaciones usuales de adición y multiplicación  de números complejos. Esto significa que el $0$ y el $1$ están en el conjunto $F$, y que si $x$ e $y$ son elementos de $F$, también lo son $(x+y), -x,xy-x^{-1}$ si $(x\neq 0)$.
-\end{tcolorbox}
 
 
 %------------------- ejemplo 1 ----------------------
@@ -384,72 +378,46 @@ El sistema (1-1) se abreviará ahora así:
 $$AX=Y$$
 donde 
 $$
-\begin{bmatrix*}[c]
+\begin{matrix}
     a_{11} & a_{12} & \cdots & a_{1n} \\
     \vdots & \vdots &  & \vdots \\
     a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix*} 
-\begin{bmatrix*}[c]
+\end{matrix} 
+\begin{matrix}[c]
 	x_1 \\
 	\vdots \\
 	x_n
-\end{bmatrix*} = 
-\begin{bmatrix*}[c]
+\end{matrix} = 
+\begin{matrix}
 	y_1 \\
 	\vdots \\
 	y_m
-\end{bmatrix*}
+\end{matrix}
 $$
 
-\begin{tcolorbox}
 $A$ se llama \textbf{matriz de los coeficientes} del sistema.
-\end{tcolorbox}
 
-\begin{tcolorbox}
     Una \textbf{matriz} $m\times n$ \textbf{sobre el cuerpo} $F$ es una función $A$ del conjunto de los pares enteros $(i,j)$, $1\leq i \leq m,$ $1\leq j \leq n,$ en el cuerpo $F$.
-\end{tcolorbox}
 
-\begin{tcolorbox}
     Los \textbf{elementos} de la matriz $A$ son los escalares $A(i,j)=A_{ij}$, con frecuencia, suele ser más conveniente describir la matriz disponiendo sus elementos en un arreglo rectangular con $m$ filas y $n$ columnas.
-\end{tcolorbox}
 
 Deseamos ahora considerar operaciones sobre las filas de la matriz $A$ que corresponden a la formación de combinaciones lineales de las ecuaciones del sistema $AX=Y$. Se limitará nuestra atención a \textbf{tres operaciones elementales de filas} en una matriz $m\times n$, sobre el cuerpo $F$:
 
-\begin{tcolorbox}
     \begin{enumerate}[\bfseries 1.]
 	\item Multiplicación de una fila de $A$ por un escalar $c$ no nulo;
 	\item Remplazo de la r-ésima fila de $A$ por la fila $r$ más $c$ veces la fila $s$, donde $c$ es cualquier escalar y $r\neq s$;
 	\item Intercambio de dos filas de $A$.
     \end{enumerate}
-\end{tcolorbox}
 
 Una operación elemental de filas es, pues, un tipo especial de función (regla) $e$ que asocia a cada matriz $m\times n$, $A$, una matriz $m\times n$, $e(A)$. Se puede describir $e$ en forma precisa en los tres casos como sigue:
 
-\begin{tcolorbox}
     \begin{enumerate}[\bfseries 1.]
 	\item $e(A)_{ij}$ si $i\neq r,$ $e(A)_{rj}=cA_{rj}$.
 	\item $e(A)_{ij}$ si $i\neq r,$ $e(A)_{rj}=A_{rj}+cA_{sj}.$
 	\item $e(A)_{ij}$ si $i$ es diferente de $r$ y $s$, $e(A)_{rj}=A_{sj},$ $e(A)_{sj}=A_{rj}.$
     \end{enumerate}
-\end{tcolorbox}
 
-\begin{tcolorbox}
-    Una función $e$ particular estpa definida en la clase de todas las matrices sobre $F$ que tiene $m$ filas.
-\end{tcolorbox}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Una función $e$ particular esta definida en la clase de todas las matrices sobre $F$ que tiene $m$ filas.
 
 %-------------------- Teorema 1.2
 \begin{teo}
@@ -457,12 +425,14 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
     Demostración.-\; (1) Supóngase que $e$ es la operación que multiplica la r-ésima fila de una matriz por un escalar no nulo $c$. Sea $e_1$ la operación que multiplica la fila $r$ por $c^{-1}$. (2) Supóngase que $e$ sea la operación que remplaza la fila $r$ por la misma fila $r$ a la que le sumo la fila $s$ multiplicada por $c$, $r\neq s$. Sea $e_1$ la operación que reemplaza la fila $r$ por la fila $r$ a la que se le ha sumado la fila $s$ multiplicada por $(-c)$. (3) Si $e$ intercambia las filas $r$ y $s$, sea $e_1=e$. En cada uno de estos casos es claro que $e_1(e(A))=e(e_1(A))=A$ para todo $A$.
 \end{teo}
 
-\begin{tcolorbox}
+%-------------------- Definición 1.1
     \begin{def.}
 	Si $A$ y $B$ son dos matrices $m\times n$ sobre el cuerpo $F$, se dice que $B$ es equivalente por filas a $A$ si $B$ se obtiene de $A$ por una sucesión finita de operaciones elementales de filas.
     \end{def.}
-\end{tcolorbox}
 
+Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a ella misma. Si $B$ es equivalente por filas a $A$, entonces $A$ es equivalente por filas a $B$; si $B$ es equivalente por filas a $A$ y $C$ es equivalente por filas a $B$, entonces $C$ es equivalente por filas a $A$. O sea, que la equivalencia por filas es una relación de equivalencia.
+
+%-------------------- Teorema 1.3
 \begin{teo}
     Si $A$ y $B$ son matrices equivalentes por filas, los sistemas homogeneos de ecuaciones lineales $AX=0$ y $BX=0$ tienen exactamente las mismas soluciones.\\\\
 	Demostración.-\; Supóngase que se pasa de $A$ a $B$ por una sucesión finita de operaciones elementales de filas:
@@ -471,7 +441,7 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 	así, supóngase que $B$ se obtiene de $A$ por una sola operación elemental de filas. Sin que importe cuál de los tres tipos (1), (2) o (3) de operaciones sea, cada ecuación del sistema $BX=0$ será combinación lineal de las ecuaciones del sistema $AX=0$. Dado que la inversa de una operación elemental de filas es una operación elemental de filas, toda ecuación de $AX=0$ será también combinación lineal de las ecuaciones de $BX=0$. Luego estos dos sistemas son equivalente y, por el teorema 1, tienen las mismas soluciones.
 \end{teo}
 
-\begin{tcolorbox}
+%-------------------- Definición 1.2
     \begin{def.}
 	Una matriz $m\times n$, $R$, se llama \textbf{reducida por filas} si:
 	\begin{enumerate}[(a)]
@@ -479,8 +449,8 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 	    \item cada columna de $R$ que tiene el primer elemento no nulo de alguna fila tiene todos sus otros elementos $0$.
 	\end{enumerate}
     \end{def.}
-\end{tcolorbox}
 
+%-------------------- Teorema 1.4
 \begin{teo}
     Toda matriz $m\times n$ sobre el cuerpo $F$ es equivalente por filas a una matriz reducida por filas.\\\\
     Demostración.-\; Sea $A$ una matriz $m\times n$ sobre $F$. Si todo elemento de la primera fila $A$ es $0$, la condición (a) se cumple en lo que concierne a la fila $1$. Si la fila $1$ tiene un elemento no nulo, sea $k$ el menor entero positivo $j$ para el que $A_{1j}\neq 0$. Multiplicando la fila $1$ por $A_{1k}^{-1}$ la condición (a) se cumple con respecto a esa fila. Luego, para todo $i\geq 2,$ se suma $(-A_{ik})$ veces la fila $1$  a la fila $i$. Y ahora el primer elemento no nulo de la fila $1$ está en la columna $k$, ese elemento es $1$, y todo otro elemento de la columna $k$ es $0$.\\
@@ -490,12 +460,17 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 
 \section*{Ejercicios}
 
-\begin{comment}
 
 \begin{enumerate}[\bfseries 1.]
 
     %---------- 1.
-    \item 
+    \item Hallar todas las soluciones del sistema de ecuaciones
+    $$\begin{array}{rcrcl}
+	(1-i)x_1&-&ix_2 &=& 0\\
+	2x_1&+&(1-i)x_2 &=& 0.
+    \end{array}$$
+    \vspace{.4cm}
+	Respuesta.-\;
 
     %----------  2.
     \item Si
@@ -509,35 +484,35 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		3 & -1 & 2 \\
 		2 & 1 & 1 \\
 		1 & -3 & 0
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_1 \to R_3 &
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & -3 & 0\\
 		2 & 1 & 1 \\
 		3 & -1 & 2 
-	    \end{bmatrix*}
+	    \end{matrix}
 	    &R_2-2R_1 \to R_2&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		3 & -1 & 2 
-	    \end{bmatrix*}\\\\
+	    \end{matrix}\\\\
 	    &R_3-3R_1\to R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		0 & 8 & 2 
-	    \end{bmatrix*}
+	    \end{matrix}
 	    &R_3-\dfrac{8}{7} R_2 \to R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		0 & 0 & \frac{6}{7} 
-	    \end{bmatrix*}\\\\
+	    \end{matrix}\\\\
 
 	\end{array}$$
 
@@ -557,49 +532,49 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 	$$AX=2X\quad \Rightarrow \quad AX-2X=0\quad \Rightarrow \quad (A-2I)X=0.$$
 	De donde,
 
-	$$A-2I=\begin{bmatrix*}[r]
+	$$A-2I=\begin{matrix}
 	    6 & -4 & 0 \\
 	    4 & -2 & 0 \\
 	    -1 & 0 & 3
-	\end{bmatrix*}-2
-	\begin{bmatrix*}[r]
+	\end{matrix}-2
+	\begin{matrix}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1 
-	\end{bmatrix*} = 
-	\begin{bmatrix*}[r]
+	\end{matrix} = 
+	\begin{matrix}
 	    4 & -4 & 0 \\
 	    4 & -4 & 0 \\
 	    -1 & 0 & 1 
-	\end{bmatrix*}$$
+	\end{matrix}$$
 
 	Resolviendo tenemos,
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		4 & -4 & 0 \\
 		4 & -4 & 0 \\
 		-1 & 0 & 1 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_2 - R_1 \to R_2&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		4 & -4 & 0 \\
 		0 & 0 & 0 \\
 		-1 & 0 & 1 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_3 + \dfrac{1}{4} R_1 \to R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		4 & -4 & 0 \\
 		0 & 0 & 0 \\
 		0 & -1 & 1 
-	    \end{bmatrix*}\\\\
+	    \end{matrix}\\\\
 	    &R_2 \leftrightarrow R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		4 & -4 & 0 \\
 		0 & -1 & 1 \\
 		0 & 0 & 0
-	    \end{bmatrix*} & & \\
+	    \end{matrix} & & \\
 
 	\end{array}$$
 
@@ -611,55 +586,55 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 	$$AX=3X\quad \Rightarrow \quad AX-3X=0\quad \Rightarrow \quad (A-3I)X=0.$$
 	De donde,
 
-	$$A-2I=\begin{bmatrix*}[r]
+	$$A-2I=\begin{matrix}
 	    6 & -4 & 0 \\
 	    4 & -2 & 0 \\
 	    -1 & 0 & 3
-	\end{bmatrix*}-2
-	\begin{bmatrix*}[r]
+	\end{matrix}-2
+	\begin{matrix}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1 
-	\end{bmatrix*} = 
-	\begin{bmatrix*}[r]
+	\end{matrix} = 
+	\begin{matrix}
 	    3 & -4 & 0 \\
 	    4 & -5 & 0 \\
 	    -1 & 0 & 0 
-	\end{bmatrix*}$$
+	\end{matrix}$$
 
 	Resolviendo tenemos,
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		3 & -4 & 0 \\
 		4 & -5 & 0 \\
 		-1 & 0 & 0 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_1 \leftrightarrow R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		-1 & 0 & 0 \\
 		4 & -5 & 0 \\
 		3 & -4 & 0 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_2 + 4 R_1 \to R_2&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		3 & -4 & 0 
-	    \end{bmatrix*}\\\\
+	    \end{matrix}\\\\
 	    &R_3 +3R_1 \to R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		0 & -4 & 0 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_3-\dfrac{4}{5}R_2 \to R_3& 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		0 & 0 & 0 
-	    \end{bmatrix*} 
+	    \end{matrix} 
 
 	\end{array}$$
 
@@ -682,23 +657,23 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
     	Demostración.-\; Ya que $A$ es dado como una matríz reducida por filas, entonces se presentas los siguientes casos.
 	\begin{enumerate}[\bfseries \textbf{Caso} i.]
 	    \item Sea $a=b=c=d=0$ por lo tanto
-		$$\begin{bmatrix*}[r]
+		$$\begin{matrix}
 		    0 & 0 \\
 		    0 & 0
-		\end{bmatrix*}$$
+		\end{matrix}$$
 
 	    \item Sea $c=d=0\; \Rightarrow \; a+b=0 \; \Rightarrow \; b=-a$ con $a=1$, entonces
-		$$\begin{bmatrix*}[r]
+		$$\begin{matrix}
 		    1 & -1 \\
 		    0 & 0
-		\end{bmatrix*}$$
+		\end{matrix}$$
 
 	    Otra posibilidad podría ser que la fila $1$ sea cero. Es decir, $a=b=0\; \Rightarrow \; c+d=0\; \Rightarrow d=-c$ de donde tenemos
 
-		$$\begin{bmatrix*}[r]
+		$$\begin{matrix}
 		    0 & 0 \\
 		    1 & -1 
-		\end{bmatrix*}$$
+		\end{matrix}$$
 
 	    \item Dos filas distintas de cero. Es decir, $a\neq 0, d\neq 0$, $c=b=0\; \Rightarrow \; a+d=0 \; \Rightarrow \; d=-a$, de donde $A$ al ser reducido por fila implicará $a=1\; \rightarrow \; d=-1$. Pero $d$ es la entrada principal distinto de cero de la fila $2$ por lo tanto debe ser igual a uno. Así este caso no existe.
 	    \end{enumerate}
@@ -708,44 +683,44 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
     %---------- 7.
     \item Demostrar que el intercambio de dos filas en una matriz puede hacerse por medio de un número finito de operaciones elementales con filas de los otros tipos.\\\\
 	Demostración.-\; Consideremos la matriz identidad:
-	$$\begin{bmatrix*}[r]
+	$$\begin{matrix}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1
-	\end{bmatrix*}$$
+	\end{matrix}$$
 	Supongamos que se necesita el intercambio de las filas $1$ y $3$, entonces se puede realizar la siguiente secuencia para hacerlo:
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & 0 & 0 \\
 		0 & 1 & 0 \\
 		0 & 0 & 1
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_1 \to R_1+R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		0 & 0 & 1
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_3 \to R_3-R_1&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		-1 & 0 & 0
-	    \end{bmatrix*}\\\\
+	    \end{matrix}\\\\
 	    &R_3  \to -R_3&
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		1 & 0 & 0
-	    \end{bmatrix*} 
+	    \end{matrix} 
 	    &R_1 \to R_1-R_3& 
-	    \begin{bmatrix*}[r]
+	    \begin{matrix}
 		0 & 0 & 1 \\
 		0 & 1 & 0 \\
 		1 & 0 & 0
-	    \end{bmatrix*} 
+	    \end{matrix} 
 
 	\end{array}$$
 
@@ -762,11 +737,9 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 
 \end{enumerate}
 
-\end{comment}
 
 \section{Matrices escalón reducida por filas}
 
-\begin{tcolorbox}
     \begin{def.}
 	Una matriz $m\times n$, $R$, se llama matriz escalón reducida por filas si:
 	\begin{enumerate}[(a)]
@@ -781,7 +754,6 @@ Una operación elemental de filas es, pues, un tipo especial de función (regla)
 	    \item $k_1<\ldots < k_r$.
 	\end{enumerate}
     \end{def.}
-\end{tcolorbox}
 
 % -------------------- teorema 5
 \begin{teo}
@@ -1183,12 +1155,10 @@ $$A'_{i(n+1)}=y_i.$$
 
 \section{Multiplicación de matrices}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $A$ una matriz $m\times n$ sobre el cuerpo $F$ y sea $B$ una matriz $n\times p$ sobre $F$. El producto $AB$ es la matriz $m\times p$, $C$, cuyos elementos $i$, $j$ son
 	$$C_{ij} = \sum_{r=1}^n A_{ir}B_{rj}.$$
     \end{def.}
-\end{tcolorbox}
 
 El producto está definido si, y sólo si, el número de columnas de la primera matriz coincide con el número de filas de la segunda.\\
 
@@ -1208,11 +1178,9 @@ El producto está definido si, y sólo si, el número de columnas de la primera 
 
 Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta matriz se representa por $A^2$. En general el producto $AA\cdots A$ ($k$ veces) está definido y se representará por $A^k$.
 
-\begin{tcolorbox}
     \begin{def.}
 	Una matriz $m\times m$ se dice matriz elemental si se puede obtener de la matriz identidad $m\times m$ por medio de una sola operación elemental simple por filas.
     \end{def.}
-\end{tcolorbox}
 
 \begin{teo}
     Sea $e$ una operación elemental de fila y sea $E$ la matriz elemental $m\times m$, $E=e(I)$. Entonces para toda matriz $m\times n$, $A$

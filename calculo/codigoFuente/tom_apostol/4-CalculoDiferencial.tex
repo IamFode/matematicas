@@ -2284,8 +2284,6 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 \end{enumerate}
 
 
-\end{comment}
-
 \section{Ejemplos resueltos de problemas de extremos}
 
 \begin{ejem}[Principio del producto máximo con suma constante]
@@ -2816,19 +2814,186 @@ En los siguientes Ejercicios, a) hallar todos los puntos x tales que $f'(x) = 0$
 
     %-------------------- 26.
     \item Si $x > 0$, sea $f(x) = 5x^2 + Ax^{-5}$, donde $A$ es una constante positiva. Encuentre el $A$ más pequeño tal que $f(x) \geq 24$ para todo $x > 0$.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Primero encontraremos el mínimo de la función. Para luego establecer el mínimo encontrado e igualar a $24$. Para encontrar el mínimo tomamos la derivada de $f(x)$,
+	$$f'(x)=10x-5Ax^{-6}$$
+	Luego, igualando a cero y resolviendo tenemos
+	$$10x-5Ax^{-6}=0\quad \quad \Rightarrow \quad 10x^7=5A\quad \Rightarrow \quad x=\left(\dfrac{A}{2}\right)^{1/7}.$$
+	Por lo que $f(x)$ tiene un mínimo en este punto $x$. Ahora remplazando $x$, $f(x)$  e igualándolo a $24$, obtenemos
+	$$\begin{array}{rcl}
+	    5\left(\right)^{\frac{2}{7}}+A\left(\dfrac{A}{2}\right)^{-\frac{5}{7}}&=&24\\\\
+	    \left(\dfrac{A}{2}\right)^{\frac{2}{7}} \left[5+A\left(\dfrac{A}{2}\right)^{-1}\right]=24\\\\
+	    A=2\left(\dfrac{24}{7}\right)^{\frac{7}{2}}.
+	\end{array}$$
+	\vspace{.5cm}
 
     %-------------------- 27.
-    \item Para cada $t$ real, sea $f(x) = -\frac{1}{3}x_3 + t^2x$, y sea $m(t)$ el mínimo de $f(x)$ sobre el intervalo $0 \leq x \leq 1$. Determine el valor de $m(t)$ para cada $t$ en el intervalo $—1 \leq t \leq 1$. Recuerde que para algunos valores de $t$ el mínimo de $f(x)$ puede ocurrir en los extremos del intervalo $0 \leq x \leq 1$.\\\\
-	Respuesta.-\; 
+    \item Para cada $t$ real, sea $f(x) = -\frac{1}{3}x_3 + t^2x$, y sea $m(t)$ el mínimo de $f(x)$ sobre el intervalo $0 \leq x \leq 1$. Determine el valor de $m(t)$ para cada $t$ en el intervalo $-1 \leq t \leq 1$. Recuerde que para algunos valores de $t$ el mínimo de $f(x)$ puede ocurrir en los extremos del intervalo $0 \leq x \leq 1$.\\\\
+	Respuesta.-\; Dado que Apostol nos advierte específicamente que tengamos cuidado de que la solución mínima esté en los extremos de $[0,1]$, calculamos el valor en $0$ y $1$,
+	$$\begin{array}{rcl}
+	    f(0) &=& -\dfrac{1}{3}0^3 + t^2(0) = 0\\\\
+	    f(1) &=& -\dfrac{1}{3}1^3 + t^2(1) = t^2-\dfrac{1}{3}.
+	\end{array}$$
+	Derivando $f(x)$,
+	$$f'(x)=-x^2+t^2.$$
+	Igualando a $0$, encontramos que si f(x) tiene un extremo en el interior de [0,1], entonces
+	$$-x^2+t^2=0\quad \Rightarrow \quad x^2=t^2\quad \Rightarrow \quad x=|t|\quad (\mbox{ya que }x\geq 0).$$
+	Luego, evaluando $f(x)$ en $x=|t|$ se tiene,
+	$$f(|t|) = -\dfrac{1}{3}t^2|t|+t^2|t|=\dfrac{2}{3}t^2|t|.$$
+	Pero esto es mayor o igual a $0$ para todos los valores de $t \in [-1,1]$, por lo que no puede ser el mínimo (ya que sabemos $f(0) = 0$ que es al menos mayor que $f(0)$). Por lo tanto, el mínimo debe ocurrir en los puntos extremos. Es decir,
+	$$m(t)=\left\{\begin{array}{rcl}
+		0 &\mbox{si }& t^2\geq \dfrac{1}{3}\\\\
+		t^2-\dfrac{1}{3} &\mbox{si }& t^2<\dfrac{1}{3}.
+	\end{array}\right.$$
+	\vspace{.5cm}
+
 
     %-------------------- 28.
-    \item Se sabe que un número $x$ está en un intervalo $a \leq x \leq b$, donde $a > 0$. Deseamos aproximar $x$ por otro número $t$ en $[a, b]$ para que el error relativo, $|t — x|/x$, sea lo más pequeño posible. Sea $M(t)$ el valor máximo de $|t — x|/x$ cuando $x$ varía de $a$ a $b$. a) Demuestre que este máximo ocurre en uno de los extremos $x = a$ o $x = b$. (b Demuestre que $M(t)$ es menor cuando $t$ es la media armónica de $a$ y $b$, es decir, cuando $1/t =\frac{1}{2} (1/a + 1/b)$.\\\\
+    \item Se sabe que un número $x$ está en un intervalo $a \leq x \leq b$, donde $a > 0$. Deseamos aproximar $x$ por otro número $t$ en $[a, b]$ para que el error relativo, $|t - x|/x$, sea lo más pequeño posible. Sea $M(t)$ el valor máximo de $|t - x|/x$ cuando $x$ varía de $a$ a $b$. a) Demuestre que este máximo ocurre en uno de los extremos $x = a$ o $x = b$. (b Demuestre que $M(t)$ es menor cuando $t$ es la media armónica de $a$ y $b$, es decir, cuando $1/t =\frac{1}{2} (1/a + 1/b)$.\\\\
 	Respuesta.-\; 
+	\begin{enumerate}[(a)]
+	    \item Reescribimos el término de error como una función por partes (para que podamos considerar la derivada de cada parte),
+	    $$\dfrac{|t-x|}{x}=\left\{\begin{array}{ll}
+		\dfrac{t-x}{x} & \mbox{si } t \geq x\\\\
+		\dfrac{x-t}{x} & \mbox{si } t < x.
+	    \end{array}\right.$$
+	    Entonces, tomamos la derivada con respecto a $x$, se tiene
+	    $$\left(\dfrac{|t-x|}{x}\right)'=\left\{\begin{array}{rcl}
+				-\dfrac{t}{x^2} & \mbox{si } t \geq x\\\\
+		-\dfrac{t}{x^2} & \mbox{si } t < x.
+	    \end{array}\right.$$
+	    Pero sabemos que $a > 0$ y dado que ambos $x$ y $t$ están en el intervalo $[a,b]$, tenemos  $x, t > 0$. Por lo tanto, la derivada no es cero en ningún lugar del intervalo (ya que $-\frac{t}{x^2} \neq 0$ y $\frac{t}{x^2} \neq 0$  por lo que $t$ no es cero). Así, $M(t)$ no puede tener un máximo en $(a,b)$, por lo que el máximo debe estar en uno de los puntos extremos, $x = a $ o $x = b$.\\\\ 
 
-
+	    \item Ahora, queremos encontrar el valor de $t$ el cual $M(t)$ es menor (es decir, cuando el error máximo es menor). De la parte (a), sabemos que para cualquier $t$ fijo, el valor máximo del error debe ocurrir en un punto final, $x = a$ o $x = b$. Como $M(t)$ es la función que devuelve el máximo error, tenemos
+	    $$M(t)=\dfrac{|t-a|}{a}\quad \mbox{o}\quad M(t)=\dfrac{|t-b|}{b}.$$
+	    Se sabe que este es el máximo error, por lo que 
+	    $$M(t)=\dfrac{|t-a|}{a}\quad \mbox{si}\quad \dfrac{t-a}{a}>\dfrac{t-b}{b}$$
+	    y
+	    $$M(t)=\dfrac{|t-b|}{b}\quad \mbox{si}\quad \dfrac{t-a}{a}>\dfrac{t-b}{b}.$$
+	    Luego, ya que $a\leq t \leq b$, entonces $|t-a|=t-a$ y $|t-b|=b-t$. Ahora,
+	    $$\dfrac{t-a}{a}>\dfrac{b-t}{b}\quad \Rightarrow \quad t>\dfrac{2ab}{a+b}$$
+	    y
+	    $$\dfrac{b-t}{b}>\dfrac{t-a}{a}\quad \Rightarrow \quad t<\dfrac{2ab}{a+b}.$$
+	    Así, podemos dar una fórmula para $M(t)$,
+	    $$M(t)=\left\{\begin{array}{ll}
+		\dfrac{t-a}{a} & \mbox{si } t>\dfrac{2ab}{a+b}\\\\
+		\dfrac{b-t}{b} & \mbox{si } t<\dfrac{2ab}{a+b}.
+	    \end{array}\right.$$
+	\end{enumerate}
+	Derivando con respecto a $t$, tenemos
+	$$M'(t)=\left\{\begin{array}{ll}
+	    \dfrac{1}{a} & \mbox{si } t>\dfrac{2ab}{a+b}\\\\
+	    -\dfrac{1}{b} & \mbox{si } t<\dfrac{2ab}{a+b}.
+	\end{array}\right.$$
+	Por el hecho de que $a$ y $b$ son positivos. Es decir, $M'(t)$ es negativo si $t<\dfrac{2ab}{a+b}$ y $M'(t)$ es positivo si $x>\dfrac{2ab}{a+b}$; Entonces $M(t)$ es decreciente para $t<\dfrac{2ab}{a+b}$ y creciente para $t>\dfrac{2ab}{a+b}.$ Por lo tanto $M(t)$ tiene un mínimo en 
+	$$t=\dfrac{2ab}{a+b}\quad \Rightarrow \quad t=\dfrac{a+b}{2ab}=\dfrac{1}{2}\left(\dfrac{1}{a}+\dfrac{1}{b}\right).$$\\
 
 \end{enumerate}
 
+\end{comment}
+
+\section{Derivadas Parciales}
+
+\begin{tcolorbox}
+    Si $\dfrac{f(x_0+h,y_0)-f(x_0,y_0)}{h}$ tiende a un límite definido cuando $h\to 0$ este límite se denomina la derivada parcial de $f$ con respecto a $x$.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    Para asignar la derivada parcial con respecto de $x$, hay varios símbolos siendo algunos de los más corrientes:
+    $$\dfrac{\partial f(x_0,y_0)}{\partial x},\quad f_x'(x_0,y_0),\quad f_1(x_0,y_0)\quad, D_1f(x_0,y_0)$$
+    El subíndice en las dos últimas notaciones se refiere al hecho de que sólo la primera coordenada varía cuando se forma el cociente de diferencias.\\
+    Así se tiene
+    $$f_1(x_0,y_0)=\lim_{h\to 0}\dfrac{f(x_0+h,y_0)-f(x_0,y_0)}{h}.$$
+    Análogamente, se define la derivada partial respecto a $y$ en $(x_0,y_0)$ por
+    $$f_2(x_0,y_0)=\lim_{k\to 0}\dfrac{f(x_0,y_0+k)-f(x_0,y_0)}{k}.$$
+    Siendo las notaciones correspondientes
+    $$\dfrac{\partial f(x_0,y_0)}{\partial y},\quad f_y'(x_0,y_0),\quad f_2(x_0,y_0)\quad, D_2f(x_0,y_0)$$
+    Si se escribe $z=f(x,y)$, también se usan los símbolos $\partial z/\partial x$ y $\partial z / \partial y$ para designar las derivadas parciales.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    Geométricamente, la derivada parcial $f_1(x,y_o)$ representa la pendiente de la tangente en un punto de la curva.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    La derivación parcial es un proceso que da lugar a nuevas funciones $f_1=(\partial f/\partial x)$ y $f_2=\partial f/\partial y$ a partir de una función dada. Puesto que $f_1$ y $f_2$ son a us vez funciones de dos variables, se pueden considerar sus derivadas parciales. Estas se denominan derivadas parciales de segundo orden de $f$ y se indican como sigue:
+    $$f_{1,1}=f_{xx}=\dfrac{\partial^2 f}{\partial x^2},\quad f_{1,2}=f_{x,y}\dfrac{\partial^2 f}{\partial y \partial x}, \quad f_{2,1}=f_{yx}=\dfrac{\partial^2 f}{\partial x \partial y}, \quad f_{2,2}=f_{yy}=\dfrac{\partial^2 f}{\partial y^2}.$$
+    En la notación $\partial$ se indica el orden de derivación escribiendo,
+    $$\dfrac{\partial^2 f}{\partial y \partial x}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial f}{\partial x}\right).$$
+    Esta derivada no siempre coinciden con la derivada parcial que resulta al invertir el orden de derivación:
+    $$\dfrac{\partial^2 f}{\partial x\partial y}=\dfrac{\partial}{\partial x}\left(\dfrac{\partial f}{\partial y}\right)$$
+\end{tcolorbox}
 
 
+\section{Ejercicios}
+En los Ejercicios 1 al 8, calcular todas las derivadas parciales de primer y segundo orden. Comprobar en cada caso que las derivadas parciales $f_{1,2}(x,y)$ y $f_{2,1}(x,y)$ son iguales.\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item $f(x,y)=x^4+y^4-4x^2y^2$.\\\\
+	Respuesta.-\; Las derivada parcial de primer orden están dadas por:
+	$$\begin{array}{rcl}
+	    \dfrac{\partial f}{\partial x}&=&4x^3-8xy^2.\\\\
+	    \dfrac{\partial f}{\partial y}&=&4y^3-8x^2y.
+	\end{array}$$
+	Las derivadas parciales de segundo orden están dadas por:
+	$$\begin{array}{rcl}
+	    \dfrac{\partial^2 f}{\partial x^2}&=&12x^2-8y^2.\\\\
+	    f_{1,2}(x,y)=\dfrac{\partial^2 f}{\partial x\partial y}&=&\dfrac{\partial}{\partial x}\left(\dfrac{\partial f}{\partial y}\right)=\dfrac{\partial}{\partial x}\left(4y^3-8x^2y\right)=-16xy.\\\\
+	    f_{2,1}(x,y)=\dfrac{\partial^2 f}{\partial y\partial x}&=&\dfrac{\partial}{\partial y}\left(\dfrac{\partial f}{\partial x}\right)=\dfrac{\partial}{\partial y}\left(4x^3-8xy^2\right)=-16xy.\\\\
+	    \dfrac{\partial^2 f}{\partial y^2}&=&12y^2-8x^2.\\\\
+	\end{array}$$
+	Luego, vemos que $f_{1,2}(x,y)=f_{2,1}(x,y)$.
+	$$f_{1,2}(x,y)=\dfrac{\partial^2f}{\partial x \partial y}=-16xy=\dfrac{\partial^2 f}{\partial y \partial x}=f_{2,1}(x,y).$$\\
+
+    %------------------- 2.
+    \item $f(x,y)=x\sen(x+y)$.\\\\
+	Respuesta.-\; Las derivada parcial de primer orden están dadas por:
+	$$\begin{array}{rcl}
+	    \dfrac{\partial f}{\partial x}&=&\sen(x+y)+x\cos(x+y)1=\sen(x+y)+x\cos(x+y).\\\\
+	    \dfrac{\partial f}{\partial y}&=&0\sen(x+y)+x\cos(x+y)1=x\cos(x+y).
+	\end{array}$$
+	Las derivadas parciales de segundo orden están dadas por:
+	$$\begin{array}{rcl}
+	    \dfrac{\partial^2 f}{\partial x^2}&=&\cos(x+y)1+1\cos(x+y)+x\left[-\sen(x+y)\right]1=2\cos(x+y)-x\sen(x+y).\\\\
+	    f_{1,2}(x,y)=\dfrac{\partial^2 f}{\partial x\partial y}&=&\dfrac{\partial}{\partial x}\left(\dfrac{\partial f}{\partial y}\right)=\dfrac{\partial}{\partial x}\left[x\cos(x+y)\right]=\cos(x+y)-x\sen(x+y).\\\\
+	    f_{2,1}(x,y)=\dfrac{\partial^2 f}{\partial y\partial x}&=&\dfrac{\partial}{\partial y}\left(\dfrac{\partial f}{\partial x}\right)=\dfrac{\partial}{\partial y}\left[\sen(x+y)+x\cos(x+y)\right]=\cos(x+y)-x\sen(x+y).\\\\
+	    \dfrac{\partial^2 f}{\partial y^2}&=&0\cos(x+y)+x\left[-\sen(x+y)\right]1=-x\sen(x+y).
+	\end{array}$$
+	Luego, vemos que $f_{1,2}(x,y)=f_{2,1}(x,y)$.
+	$$f_{1,2}(x,y)=\dfrac{\partial^2f}{\partial x \partial y}=\cos(x+y)-x\sen(x+y)=\dfrac{\partial^2 f}{\partial y \partial x}=f_{2,1}(x,y).$$\\
+
+    %------------------- 3.
+    \item $f(x,y)=xy+\dfrac{x}{y},\quad (y\neq 0)$.\\\\
+	Respuesta.-\;
+
+    %------------------- 4.
+    \item $f(x,y)=\sqrt{x^2+y^2}$.\\\\
+	Respuesta.-\;
+
+    %------------------- 5.
+    \item $f(x,y)=\sen\left(x^2y^3\right)$.\\\\
+	Respuesta.-\;
+
+    %------------------- 6.
+    \item $f(x,y)=\sen\left[\cos(2x-3y)\right]$.\\\\
+	Respuesta.-\;
+
+    %------------------- 7.
+    \item $f(x,y)=\dfrac{x+y}{x-y}\quad (x\neq y)$.\\\\
+	Respuesta.-\;
+
+    %------------------- 8.
+    \item $f(x,y)=\dfrac{x}{\sqrt{x^2+y^2}}$.\\\\
+	Respuesta.-\;
+
+    %------------------- 9.
+    \item Demostrar que $x\left(\partial z / \partial x\right)+\left(\partial z / \partial y\right)=2z$ si (a) $z=(x-2y)^2$, (b) $z=\left(z^4+y^4\right)^{1/2}$.\\\\
+	Demostración.-\;
+
+    %------------------- 10.
+    \item Si $f(x,y)=xy/\left(x^2+y^2\right)^2$ para $(x,y)\neq (0,0)$, demostrar que
+    $$\dfrac{\partial^2}{\partial x^2}+\dfrac{\partial^2 f}{\partial y^2}=0.$$\\
+    	Demostración.-\; 
+
+\end{enumerate}

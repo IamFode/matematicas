@@ -1,9 +1,18 @@
-
 \documentclass[10pt]{book}
 
 % ------------------- Paquetes ----------------------
-\usepackage[text=17cm,left=2.8cm,right=2.4cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
-\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} %(símbolos de la AMS)
+\usepackage[text=17cm,
+	    left=3.4cm,
+	    right=2.5cm, 
+	    headsep=20pt, 
+	    top=2.5cm, 
+	    bottom = 2cm,
+	    onecolumn,
+	    twoside,
+	    letterpaper,
+	    asymmetric,
+	    showframe = false]{geometry} %configuración página
+\usepackage{latexsym,amsmath,xparse,amssymb,amsfonts,amsthm} %(símbolos de la AMS)
 \parindent = 0cm  %sangria
 \usepackage[T1]{fontenc} %acentos en español
 \usepackage{graphicx} %gráficos y figuras.
@@ -28,7 +37,7 @@
 \usepackage[htt]{hyphenat}
 \usepackage[fit]{truncate}
 \usepackage{titling,lipsum}
-\usepackage{mathtools}
+\usepackage{thmtools}
 
 %--------- encabezado y pie de paginas -----------------
 \usepackage{fancyhdr}
@@ -38,23 +47,142 @@
 
 %---------- configuración de separación de sección ------------ 
 \titlespacing*{\section}{0pt}{1.7cm}{.3cm}
-\titlespacing*{\subsection}{0pt}{1.7cm}{.3cm}
 
 %------------------------------------------
 
-\theoremstyle{definition}
-\newtheorem{axioma}{Axioma}[part]
-\newtheorem{teo}{Teorema}[chapter]%entorno para teoremas
-\newtheorem{def.}{Definición}[chapter]%entorno para definiciones
-\newtheorem{ejem}{Ejemplo}[chapter]%entorno para ejemplos
-\newtheorem{post}{Postulado}[chapter]%entorno de postulados
-\newtheorem{cor}{Corolario}[chapter]
-\newtheorem{ej}{Ejercicio}[chapter]
-\newtheorem{prop}{Propiedad}[chapter]
-\newtheorem{lema}{Lema}[chapter]
-\newtheorem{prob}{Problema}[chapter]
-\newtheorem{obs}{Obs:}[chapter]
-\newtheorem{nota}{Nota:}[chapter]
+%\theoremstyle{definition}
+%\newtheorem{axioma}{Axioma}[part]
+%\newtheorem{teo}{Teorema}[chapter]%entorno para teoremas
+%\newtheorem{def.}{Definición}[chapter]%entorno para definiciones
+%\newtheorem{ejem}{Ejemplo}[chapter]%entorno para ejemplos
+%\newtheorem{post}{Postulado}[chapter]%entorno de postulados
+%\newtheorem{cor}{Corolario}[chapter]
+%\newtheorem{ej}{Ejercicio}[chapter]
+%\newtheorem{prop}{Propiedad}[part]
+%\newtheorem{lema}{Lema}[chapter]
+%\newtheorem{prob}{Problema}[chapter]
+%\newtheorem{obs}{Obs:}[chapter]
+
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=20pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    shaded = {
+	textwidth =450pt,
+	bgcolor = black!2,
+	rulecolor=black!4,
+	rulewidth=2pt,
+	margin=3pt
+    },
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NAME \;\;\; \\ \NUMBER\;\;\;}}}\NOTE}%
+]{margindef}
+%hack to kill some extra space
+
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=margindef, numberwithin=part, title=Axioma]{axioma}
+\declaretheorem[style=margindef, numberwithin=chapter, title=Definición]{def.}
+\declaretheorem[style=margindef, numberwithin=chapter, title=Obs]{obs}
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=10pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    qed=$\blacksquare$,
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NAME \;\;\; \\ \NUMBER\;\;\;}}}\NOTE}%
+]{marginheads}
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Teorema]{teo}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Ejemplo]{ejem}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Postulado]{post}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Corolario]{cor}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Ejercicio]{ej}
+\declaretheorem[style=marginheads, numberwithin=part, title=Propiedad]{prop}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Lema]{lema}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Problema]{prob}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Nota]{nota}
+
+%-------------------------------------------------------------------------
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=20pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    shaded = {
+	textwidth =450pt,
+	bgcolor = black!2,
+	rulecolor=black!4,
+	rulewidth=2pt,
+	margin=3pt
+    },
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NUMBER\; \NAME\;\;\;}}}\NOTE}%
+]{mydef}
+%hack to kill some extra space
+
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=mydef, numberwithin=chapter,title=Definción]{mydef}
+\declaretheorem[style=mydef, sibling=mydef,title=Notación]{mynot}
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=10pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    qed=$\blacksquare$,
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NUMBER\; \NAME\;\;\;}}}\NOTE}%
+]{myteo}
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=myteo, sibling=mydef,title=Teorema]{myteo}
+\declaretheorem[style=myteo, sibling=mydef,title=Ejemplo]{myejem}
+
+\newcounter{mysection}
+\titleclass{\mysection}{straight}[\chapter]
+\titleformat{\mysection}[hang]
+  {\normalfont\bfseries}{\themysection}{1em}{}
+\titlespacing*{\mysection}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
+\renewcommand{\themysection}{\arabic{chapter}.\Alph{mysection}}
+\counterwithin{section}{mysection}
+
+%-------------------------------------------------------------------
 
 \makeatletter\renewcommand\theenumi{\@roman\c@enumi}\makeatother
 
@@ -62,6 +190,8 @@
 \def\sen{\mathop{\mbox{\normalfont sen}}\nolimits}
 \def\cotan{\mathop{\mbox{\normalfont cotan}}\nolimits}
 \def\cosec{\mathop{\mbox{\normalfont cosec}}\nolimits}
+\def\arcsen{\mathop{\mbox{\normalfont arcsen}}\nolimits}
+\def\arctan{\mathop{\mbox{\normalfont arctan}}\nolimits}
 
 %---------------------------------
 \titleformat*{\section}{\bfseries}
@@ -77,3 +207,14 @@
 {\filleft\Huge\thechapter}
 {2ex}
 {\filleft}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+
+\renewenvironment{bmatrix}
+{{\ifnum`}=0 \fi\left[\env@matrix}
+{\endmatrix\right]\ifnum`{=0 \fi}}
+\makeatother

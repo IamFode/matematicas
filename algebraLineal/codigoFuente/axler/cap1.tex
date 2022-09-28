@@ -1,11 +1,11 @@
 \pagenumbering{arabic} 
 \chapter{Espacios Vectoriales}
 
-\section{\boldmath $R^n$ y $C^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1.B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mysection{\boldmath $R^n$ y $C^n$}
 
-%--------------------- Definición 1.1
-\begin{tcolorbox}
-    \begin{def.}[Números complejos] \hfill
+%--------------------- 1.1
+    \begin{mydef}[Números complejos] \hfill
 	\begin{itemize}
 	    \item Un número complejo es un par ordenado $(a,b)$, donde $a,b\in \bf{R}$, pero lo escribimos como $a+bi$.
 	    \item El conjunto de todos los números complejos es denotado por $\bf{C}$:
@@ -15,13 +15,13 @@
 		$$(a+bi)+(c+di)=(a+c)+(b+d)i$$
 		$$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$$
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
 Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podemos decir que $\bf{R}$ es un subconjunto de $\bf{C}.$
 
-\begin{tcolorbox}
-    \begin{prop}[Propiedades aritmeticas de los complejos.]\;\\
+%--------------------- 1.3
+\setcounter{mydef}{2}
+    \begin{mydef}[Propiedades aritmeticas de los complejos]\;\\
 	\begin{itemize}
 	    \item \textbf{Conmutatividad:}\;
 		$\alpha + \beta = \beta + \alpha\quad \mbox{y}\quad \alpha \beta = \beta \alpha \quad \mbox{para todo }\; \alpha,\beta \in \bf{C};$
@@ -41,18 +41,19 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 	    \item \textbf{Propiedad distributiva:}\;
 		$\lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta \quad \mbox{para todo}\; \lambda, \alpha, \beta \in \bf{C}$
 	\end{itemize}
-    \end{prop}
-\end{tcolorbox}
+    \end{mydef}
 
-\begin{ejem}
+%--------------------- 1.4
+\begin{myteo}
     Demostrar que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \bf{C}$.\\\\
 	Demostración.-\; Por la definición de multiplicación de números complejos se muestra que
 	$$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
 	y
 	$$\beta \alpha = (c+di)(a+bi) = (ca-db)+(ad+bc)i.$$
 	Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\
-\end{ejem}
+\end{myteo}
 
+%--------------------- Ejemplo aparte --------------------
 \begin{ejem}
    Demostrar que $\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \bf{C}$.\\\\
 	Demostración.-\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \bf{R}$. Entonces,
@@ -75,9 +76,8 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 \end{ejem}
 
 
-%------------------- Definición 1.2 -------------------
-\begin{tcolorbox}
-    \begin{def.}[$-\alpha$, sustracción, $1/\alpha$] 
+%------------------- 1.5 -------------------
+    \begin{mydef}\textbf{\boldmath Definición $\qquad -\alpha$, sustracción, $1/\alpha$ división}\;\\\\ 
 	Sea $\alpha, \beta \in \bf{C}$
 	\begin{itemize}
 	    \item Sea $-\alpha$ que denota el inverso aditivo de $\alpha$. Por lo tanto $-\alpha$ es el único número complejo tal que 
@@ -92,48 +92,49 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 	    \item \textbf{División} en $\bf{C}$ es definido por:
 		$$\beta/\alpha = \beta(1/\alpha).$$
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\
+%------------------- 1.6 -------------------
+    \begin{mynot}\textbf{F}\;\\\\
+	$\bf{F}$ significa cualquier $\bf{R}$ o $\bf{C}$.
+    \end{mynot}
 
-\subsection{Listas}
+Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\\\
 
-%------------------- Definición 1.3 -------------------
-%------------------- Definición 1.8 -------------------
-\begin{tcolorbox}
-    \begin{def.}[Listas, longitud] 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Listas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Listas}
+
+%-------------------- 1.8 ---------------------
+\setcounter{mydef}{7}
+    \begin{mydef}[Listas, longitud] 
 	Supóngase que $n$ es un entero no negativo. Una lista de longitud $n$ es una colección ordenada de $n$ elementos (el cual podría ser números, otras listas, o mas entidades abstractas) separadas por comas y cerradas por paréntesis. Una lista de longitud $n$ se muestra de la siguiente manera:
 	$$(x_1,\ldots,x_n)$$
 	Dos listas son iguales si y sólo si tienen la misma longitud y los mismos elementos en el mismo orden.
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 Las listas difieren de los conjuntos de dos maneras: en las listas, el orden importa y las repeticiones tienen significado; en conjuntos, el orden y las repeticiones son irrelevantes.\\\\
 
 
-\subsection{\boldmath $F^n$}
-%------------------- Definición 1.4 -------------------
-%------------------- Definición 1.10 -------------------
-\begin{tcolorbox}
-    \begin{def.} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% F^n %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{\boldmath $F^n$}
+
+\setcounter{mydef}{9}
+%------------------- 1.10 -------------------
+    \begin{mydef} 
 	$\bf{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\bf{F}$
 	$$\bf{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \bf{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
 	Para $(x_1,\ldots, x_n)\in \bf{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-%------------------- Definición 1.5 -------------------
-%------------------- Definición 1.12 -------------------
-\begin{tcolorbox}
-    \begin{def.}[\boldmath Adición en $\bf{F}^n$]
+%------------------- 1.12 -------------------
+\setcounter{mydef}{11}
+    \begin{mydef}[\boldmath Adición en $\bf{F}^n$]
 	La adición en $\bf{F}^n$ es definido añadiendo las correspondientes coordenadas: 
 	$$(x_1,\ldots,x_n)+(y_1,\ldots, y_n)=(x_1+y_1,\ldots, x_n + y_n)$$
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-%-------------------- Teorema 1.1 ---------------------
-%-------------------- Teorema 1.13 ---------------------
-\begin{teo}[Conmutatividad para la adición en $\bf{F}^n$]
+%------------------- 1.13 -------------------
+\begin{myteo}[Conmutatividad para la adición en $\bf{F}^n$]
     Si $x,y \in \bf{F}^n,$ entonces $x+y=y+x$.\\\\
     Demostración.-\; Suponga $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces por la definción de adición e $\bf{F}^n$,
     $$\begin{array}{rcl}
@@ -143,45 +144,37 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 	   &=&(y_1,\ldots,y_n)+(x_1,\ldots,x_n)\\
 	   &=&y+x\\
     \end{array}$$
-    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$. $\blacksquare$\\
-\end{teo}
+    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$. \\
+\end{myteo}
 
-\begin{tcolorbox}
-    si $x \in \bf{F}^n$, entonces hacer que $x$ sea igual a $(x_1,\ldots,x_n)$ es una buena notación, como se muestra en la demostración anterior.
-\end{tcolorbox}
+    Si $x \in \bf{F}^n$, entonces hacer que $x$ sea igual a $(x_1,\ldots,x_n)$ es una buena notación, como se muestra en la demostración anterior.
 
-%------------------- Definición 1.6 -------------------
-%------------------- Definición 1.14 -------------------
-\begin{tcolorbox}
-    \begin{def.}[$0$]
+%------------------- 1.14 -------------------
+    \begin{mydef}[$0$]
 	Sea $0$ la lista de longitud n cuyas coordenadas son todas 0: 
 	$$0=(0,\ldots,0)$$
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-%------------------- Definición 1.7 -------------------
-%------------------- Definición 1.16 -------------------
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[\boldmath Inverso aditivo en $\bf{F}^n$]
-	Para $x\in \mathbb{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \mathbb{F}^n$ tal que $$x+(-x) =0$$
+%------------------- 1.16 -------------------
+\setcounter{mydef}{15}
+    \begin{mydef}[\boldmath Inverso aditivo en $\bf{F}^n$]
+	Para $x\in \bf{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \bf{F}^n$ tal que $$x+(-x) =0$$
 	En otras palabras, si $x=(x_1,\ldots,x_n)$, entonces $-x=(-x_1,\ldots,-x_n).$
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-%-------------------- Definición 1.8 ---------------------
-%-------------------- Definición 1.17 ---------------------
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Multiplicación scalar en $\mathbb{F}^n$]
-	El producto de un número $\lambda$ y un vector en $\mathbb{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
+%------------------- 1.17 -------------------
+    \begin{mydef}[Multiplicación scalar en $\bf{F}^n$]
+	El producto de un número $\lambda$ y un vector en $\bf{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
 	$$\lambda(x_1,\ldots,x_n) = (\lambda x_1,\ldots, \lambda x_n)$$
-	donde $\lambda \in \mathbb{F}$ y $(x_1,\ldots,x_n)\in \mathbb{F}^n$.
-    \end{def.}
-\end{tcolorbox}
+	donde $\lambda \in \bf{F}$ y $(x_1,\ldots,x_n)\in \bf{F}^n$.
+    \end{mydef}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Digresión sobre campos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Digresión sobre campos}
 Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\bf{R}$ y $\bf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.
 
-\subsection{Ejercicios 1.A}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Ejercicios 1.A}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -477,38 +470,26 @@ $$\begin{array}{rcl}
 
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Definción de espacio vectorial %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mysection{Definición de espacio vectorial}
 
+La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\bf{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
 
-
-
-
-
-
-
-
-
-
-
-
-\section{Definición de espacio vectorial}
-La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\mathbb{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
-
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Adición y multiplicación escalar]\hfill
+%-------------------- 1.18 --------------------
+    \begin{mydef}[Adición y multiplicación escalar]\hfill
 	\begin{itemize}
 	    \item Una adición en un conjunto $V$ es una función que asigna un elemento $u+v\in V$ para cada par de elementos $u,v\in V$.
-	    \item Una multiplicación escalar en un conjunto $V$ es una función que asigna un elemento $\lambda  v\in V$ para cada $\lambda \in \mathbb{F}$ y cada $v\in V$.
+	    \item Una multiplicación escalar en un conjunto $V$ es una función que asigna un elemento $\lambda  v\in V$ para cada $\lambda \in \bf{F}$ y cada $v\in V$.
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Espacio vectorial] Un espacio vectorial es un conjunto $V$ junto con una suma en $V$ y una multiplicación escalar en $V$ tal que se cumplen las siguientes propiedades: 
+%-------------------- 1.19 ---------------------
+    \begin{mydef}[Espacio vectorial] Un espacio vectorial es un conjunto $V$ junto con una suma en $V$ y una multiplicación escalar en $V$ tal que se cumplen las siguientes propiedades: 
 	\begin{itemize}
 	    \item \textbf{Conmutatividad}
 		$$u+v=v+u\; \mbox{para todo}\; u,v\in V;$$
 	    \item \textbf{Asociatividad}
-		$$(u+v)+w=u+(v+w)\; \mbox{y}\; (ab)v=a(bv)\; \mbox{para todo}\; u,v,w \in V\; \mbox{y todo}\; a,b\in \mathbb{F};$$
+		$$(u+v)+w=u+(v+w)\; \mbox{y}\; (ab)v=a(bv)\; \mbox{para todo}\; u,v,w \in V\; \mbox{y todo}\; a,b\in \bf{F};$$
 	    \item \textbf{Identidad aditiva}
 		\begin{center}
 		    Existe un elemento $0\in V$ tal que $v+0=v$ para todo $v\in V$;
@@ -524,100 +505,157 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 
 	    \item \textbf{Propiedad distributiva}
 		\begin{center}
-		    $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $a,b\in \mathbb{F}$ y todo $u,v \in V$.
+		    $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $a,b\in \bf{F}$ y todo $u,v \in V$.
 		\end{center}
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Vector, punto]
+%-------------------- 1.20 --------------------
+    \begin{mydef}[Vector, punto]
 	Elementos de un espacio vectorial son llamados vectores o puntos.
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Espacio vectorial real, espacio vectorial complejo]\hfill
+%-------------------- 1.21 --------------------
+    \begin{mydef}[Espacio vectorial real, espacio vectorial complejo]\hfill
 	\begin{itemize}
-	    \item Un espacio vectorial sobre $\mathbb{R}$ es llamado un espacio vectorial real.
-	    \item Un espacio vectorial sobre $\mathbb{C}$ es llamado un espacio vectorial complejo.
+	    \item Un espacio vectorial sobre $\bf{R}$ es llamado un espacio vectorial real.
+	    \item Un espacio vectorial sobre $\bf{C}$ es llamado un espacio vectorial complejo.
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[\boldmath $F^S$]\hfill
+    El espacio vectorial más simple contiene sólo un punto. En otras palabras, $\left\{0\right\}$ es un espacio vectorial.
+
+% -------------------- 1.23 --------------------
+\setcounter{mynot}{22}
+    \begin{mynot}[\boldmath $\bf{F}^S$]\hfill
 	\begin{itemize}
-	    \item Si $S$ es un conjunto, entonces $F^S$ se denota como el conjunto de funciones de $S$ para $F$.
-	    \item Para $f,g\in F^S$, la suma $f+g\in F_S$ es la función definida por $$(f+g)(x)=f(x)+g(x)$$ para todo $x\in S$
-	    \item Para $\lambda \in F$ y $f\in F^S$, el producto $\lambda f \in F^S$ es una función definida por $$(\lambda f)(x)=\lambda f(x)$$
+	    \item Si $S$ es un conjunto, entonces $\bf{F}^S$ se denota como el conjunto de funciones de $S$ para $\bf{F}$.
+	    \item Para $f,g\in \bf{F}^S$, la suma $f+g\in \bf{F}^S$ es la función definida por $$(f+g)(x)=f(x)+g(x)$$ para todo $x\in S$
+	    \item Para $\lambda \in \bf{F}$ y $f\in \bf{F}^S$, el producto $\lambda f \in \bf{F}^S$ es una función definida por $$(\lambda f)(x)=\lambda f(x)$$
 		para todo $x\in S$.
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mynot}
 
-La definición de un espacio vectorial requiere que tenga una identidad aditiva. El siguiente resultado establece que esta identidad es única.
+La definición de un espacio vectorial requiere que tenga una identidad aditiva. El siguiente resultado establece que esta identidad es única.\\
 
-\begin{teo}
+%-------------------- 1.25 --------------------
+\setcounter{myteo}{24}
+\begin{myteo}[Identidad aditiva única]
     Un espacio vectorial tiene una única identidad aditiva.\\\\
 	Demostración.-\; Supóngase $0$ y $0^{'}$ ambos identidades aditivas para algún espacio vectorial $V$ entonces,
 	$$0^{'}=0^{'}+0=0+0^{'}=0$$
 	donde se cumple la primera igualdad porque $0$ es una identidad aditiva, la segunda igualdad viene de la conmutatividad, y la tercera igualdad se cumple porque $0^{'}$ es una identidad aditiva. Por lo tanto $0^{'}=0$ y queda probado que $V$ tiene una sola identidad aditiva.\\
-\end{teo}
+\end{myteo}
 
 Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento $w$ en el espacio vectorial tal que $v + w = 0$. El siguiente resultado muestra que cada elemento en un espacio vectorial tiene solo un inverso aditivo. \\
 
-\begin{teo}
+% -------------------- 1.26 --------------------
+\begin{myteo}
     Cada elemento en un espacio vectorial tiene un único inverso aditivo.\\\\
 	Demostración.-\; Supóngase que $V$ es un espacio vectorial. Sea $v\in V$,  $w$ y $w^{'}$ inversos aditivos de $v$. Entonces
 	$$w=w+0=w+(v+w^{'}) = (w+v)+w^{'}=0+w^{'}=w^{'}$$
-	Así $w=w^{'}$.\\
-\end{teo}
+	Así $w=w^{'}$. \\
+\end{myteo}
 
-\begin{tcolorbox}[colback=white]
-    \begin{nota}[$-v,w-v$]
+%-------------------- 1.27 --------------------
+\begin{mynot}[$\bf{-v,w-v}$]\,\\\\
 	Sea $v,w \in V$. Entonces
 	\begin{itemize}
 	    \item $-v$ se denota como el inverso aditivo de $v$;
 	    \item $w-v$ es definido como $w+(-v)$.
 	\end{itemize}
-    \end{nota}
-\end{tcolorbox}
+    \end{mynot}
 
-\begin{tcolorbox}[colback=white]
-    \begin{nota}[$V$]
+%-------------------- 1.28 --------------------
+    \begin{mynot}[$\bf{V}$]\;\\\\
 	Por el resto del libro, $V$ se define como el espacio vectorial sobre $F$.
-    \end{nota}
-\end{tcolorbox}
+    \end{mynot}
 
-\begin{teo}
+% -------------------- 1.29 --------------------
+\begin{myteo}[El número 0 por un vector]
     $0v=0$ para cada $v\in V$.\\\\
 	Demostración.-\; Para $v\in V$, tenemos
 	$$0v=(0+0)v=0v+0v$$
-	Luego añadiendo el inverso aditivo de $0v$ para ambos lados de la ecuación de arriba tenemos $0=0v$.\\
-
-\end{teo}
+	Luego añadiendo el inverso aditivo de $0v$ para ambos lados de la ecuación de arriba tenemos $0=0v$. \\
+\end{myteo}
 
 Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igual al vector $0$.\\
 
-\begin{teo}
-    $a0=0$ para cada $a\in \mathbb{F}$.\\\\
-	Demostración.-\; Para $a\in \mathbb{F}$, tenemos 
+% -------------------- 1.30 --------------------
+\begin{myteo}[Un número por el vector $\bf{0}$]
+    $a0=0$ para cada $a\in \bf{F}$.\\\\
+	Demostración.-\; Para $a\in \bf{F}$, tenemos 
 	$$a0=a(0+0)=a0+a0$$
-	Luego añadiendo el inverso aditivo de $a0$ para ambos lados de la ecuación de arriba tenemos $0=a0$.\\
-\end{teo}
+	Luego añadiendo el inverso aditivo de $a0$ para ambos lados de la ecuación de arriba tenemos $0=a0$. \\
+\end{myteo}
 
 Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, entonces el resultado es el inverso aditivo del elemento de $V$.\\
-\begin{teo}
+
+% -------------------- 1.31 --------------------
+\begin{myteo}[El número $\bf{-1}$ por un vector]
     $(-1)v=-v$ para cada $v\in V$.\\\\
     	Demostración.-\; Para $v\in V$, tenemos
 	$$v+(-1)v=1v+(-1)v=[1+(-1)]v=0v=0.$$
-	Esta ecuación nos dice que $(-1)v$, cuando se suma a $v$ da $0$. Así $(-1)v$ es el inverso aditivo de $v$.\\
-\end{teo}
+	Esta ecuación nos dice que $(-1)v$, cuando se suma a $v$ da $0$. Así $(-1)v$ es el inverso aditivo de $v$. \\
+\end{myteo}
 
-\subsection{Ejercicio 1.B}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Ejercicio 1.B}
 
-\section{Subespacios}
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Demostrar que $-(-v)=v$ para cada $v\in V$.\\\\
+	Demostración.-\; Ya que $(-1)v=-v$ para cada $v\in V$ (apartado 1.31, Axler, Linear algebra), $(-a)(-a)=a, \forall a \in \bf{R}$ y la identidad multiplicativa de espacio vectorial tenemos que 
+	$$\begin{array}{rcl}
+	v &=& 1v \\
+	&=& (-1)(-1)v \\
+	&=& (-1)(-v) \\
+	&=& -(-v)
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 2.
+    \item Supóngase $a\in \bf{F}$, $v\in V$ y $av=0$. Demostrar que $a=0$ o $v=0$.\\\\
+	Demostración.-\; Por propiedades de lógica ($p \Rightarrow q \lor r \equiv p\land \sim q \Rightarrow r$). Entonces será suficiente demostrar que,
+	$$av=0 \land a\neq 0 \Rightarrow v=0 \qquad a\in \bf{F}, v\in V.$$
+	Sea $av=0$. Dado que $a\neq 0$ y $a\in \bf{F}$, podemos multiplicar ambos lados por $\dfrac{1}{a}$,
+	$$\dfrac{1}{a}(av) = 0\dfrac{1}{a}.$$
+	Luego por propiedades en $\bf{F}$ tenemos que
+	$$\left(\dfrac{1}{a}\cdot a\right)v=0\quad \Rightarrow \quad 1v=0 \quad \Rightarrow \quad v=0.$$\\
+
+    %-------------------- 3.
+    \item Supóngase $v,w\in V$. Explique porque existe un único $x$ tal que $v+3x=w$.\\\\
+	Respuesta.-\; 
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Subespacios %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mysection{Subespacios}
 
 \begin{tcolorbox}[colback=white]
     \begin{def.}[Subespacio]

@@ -1,13 +1,11 @@
 \chapter{Significado de la derivada}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $f$ una función y $A$ un conjunto de números contenido en el dominio de $f$. Un punto $x$ de $A$ es un punto máximo de $f$ en $A$ si
 	$$f(x)\geq f(y)\qquad \mbox{para todo} \; y \; \mbox{de}\; A.$$
 	El número $f(x)$ se denomina el \textbf{valor máximo} de $f$ en $A$ (y también diremos que $f$ alcanza su valor máximo en el punto $x$ de $A$).\\\\
 	$f$ tiene un \textbf{mínimo} en el punto $x$ de $A$ si $-f$ tiene un máximo en el punto $x$ de $A$.
     \end{def.}
-\end{tcolorbox}
 
 En general, nos interesará el caso en que $A$ es un intervalo cerrado $[a,b];$ si $f$ es continua, entonces el Teorema 7-3 garantiza que $f$ alcanza realmente dicho valor máximo en $[a,b].$\\
 
@@ -32,11 +30,9 @@ Ahora ya estamos en condiciones para enunciar un teorema que ni siquiera depende
 	de lo cual se deduce que $f'(x)=0.$\\
 \end{teo}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $f$ una función, y $A$ un conjunto de números contenido en el dominio de $f$. Un punto $x$ de $A$ es un \textbf{punto máximo [mínimo] local} de $f$ en $A$ si existe algún $\delta>0$ tal que $x$ es un punto máximo [mínimo] de $f$ en $A\cap (x-\delta,x+\delta.)$
     \end{def.}
-\end{tcolorbox}
 
 \begin{teo}
     Si $x$ es un máximo o mínimo local de $f$ en $(a,b)$ y $f$ es diferenciable en $x$, entonces $f'(x)=0$.\\\\
@@ -45,13 +41,11 @@ Ahora ya estamos en condiciones para enunciar un teorema que ni siquiera depende
 
 El recíproco del teorema 2 no es cierto; la condición $f'(0)$ no implica que $x$ sea un punto máximo o mínimo local en $f$. Precisamente por esta razón, se ha adoptado una terminología especial para describir a aquellos números $x$ que satisfacen la condición $f'(0)$.
 
-\begin{tcolorbox}
     \begin{def.}
 	Un \textbf{punto critico} de una función $f$ es un número $x$ tal que 
 	$$f'(x)=0.$$
 	Al número $f(x)$ se le denomina \textbf{valor critico} de $f$.
     \end{def.}
-\end{tcolorbox}
 
 Consideremos en primer lugar el problema de hallar el máximo o el mínimo de $f$ en un intervalo cerrado $[a,b]$. (En este caso, si $f$ es continua, sabemos que dicho valor máximo y mínimo debe existir.) Para localizarlos, deben considerarse tres clases de puntos:
 
@@ -75,7 +69,7 @@ Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe per
 	Demostración.-\; A partir de la continuidad en $f$ en $[a,b]$ deducimos que $f$ tiene valor máximo y mínimo en $[a,b]$. Supongamos primero que el valor máximo se presenta en un punto $x$ de $(a,b)$. Entonces $f'(x)=0$ según el teorema 1, y la demostración queda completa. Supongamos ahora que el valor mínimo de $f$ se presenta en algún punto $x$ de $(a,b)$. Entonces, de nuevo $f'(x)=0$ según el teorema 1. Finalmente, supongamos que los valores máximo y mínimo se presentan ambos en los extremos del intervalo. Como $f(a)=f(b),$ dichos valores coinciden, de manera que $f$ es una función constante, y en este caso se puede elegir cualquier valor $x$ de $(a,b)$.
 \end{teo}
 
-\begin{teo}[Teorema del valor medio]
+\begin{teo}[Teorema del valor medio] \hypertarget{def1}
     Si $f$ es continua en $[a,b]$ y diferenciable en $(a,b)$, existe un número $x$ en $(a,b)$ tal que 
     $$f'(x)=\dfrac{f(b)-f(a)}{b-a}.$$\\
 	Demostración.-\; Sea 
@@ -102,11 +96,9 @@ Si $x$ no pertenece al segundo no al tercer grupo entonces forzosamente debe per
 	Demostración.-\; Para todo $x$ del intervalo se verifica que $(f-g)'(x)=f'(x)-g'(x)=0,$ de manera que, según el corolario 1, existe un número $c$ tal que $f-g=c.$
 \end{cor}
 
-\begin{tcolorbox}
     \begin{def.}
-	Una función es \textbf{creciente} en un intervalo si $f(a)<f(b)$ siendo $a$ y $b$ dos números del intervalo con $a<b$. La función $f$ es \textbf{decreciente} en un intervalo si $f(a)>f(b)$ para todo $a$ y $b$ del intervalo con $a<b$. (A menudo se dice simplemente que $f$ es creciente o decreciente, en cuyo caso se deduce que el intervalo es el dominio de $f$.)
+	Una función es \textbf{creciente} en un intervalo si $f(a)<f(b)$ siendo $a$ y $b$ dos números del intervalo con $a<b$. La función $f$ es \textbf{decreciente} en un intervalo si $f(a)>f(b)$ para todo $a$ y $b$ del intervalo con $a<b$. (A menudo se dice simplemente que $f$ es creciente o decreciente, en cuyo caso se deduce que el intervalo es el dominio de $f$.) 
     \end{def.}
-\end{tcolorbox}
 
 \begin{cor}
     Si $f'(x)>0$ para todo $x$ de un intervalo, entonces $f$ es creciente en dicho intervalo; si $f'(x)<0$ para todo $x$ del intervalo, entonces $f$ es decreciente en dicho intervalo.\\\\
@@ -807,9 +799,99 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Sea $(x_0,y_0)$ un punto del plano, y sea $L$ la gráfica de la función $f(x)=mx+b.$ Halle el punto $\overline{x}$ tal que la distancia de $(x_0,y_0)$ a $(\overline{x},f(\overline{x}))$ sea mínima. [Observe que minimizar esta distancia equivale a minimizar su cuadrado. Esto puede simplificar, en cierta medida, los cálculos.]\\\\
-		Respuesta.-\;
+		Respuesta.-\; La distancia entre $(x_0,y_0)$ y algún punto $x$ que satisfaga $f(x)=mx+b$ es:
+		$$d^2=\left(x_0-x\right)^2+\left(y_0-mx-b\right)^2$$
+		Derivando a ambos lados con respecto a $x$, 
+		$$2dd'=-2\left(x_0-x\right)+2m\left(y_0+mx-b\right)$$
+		Por la distancia más corta, entonces $d'=0$. Luego,
+		$$-x_0+x-my_0+m^2x+bm=0 \quad \Rightarrow \quad x=\dfrac{x_0+my_0-bm}{m^2+1}.$$\\
+
+	    %---------- (b)
+	    \item Halle también $\overline{x}$ observando que la recta que va de $(x_0.y_0)$ a $\left(\overline{x},f(\overline{x})\right)$ es perpendicular a $L$.\\\\
+		Respuesta.-\; La distancia más corta ocurre cuando la linea de $(x_0,y_0)$ es perpendicular a $L$,
+		$$x=\dfrac{x_0+my_0-bm}{m^2+1}.$$\\
+
+	    %---------- (c)
+	    \item Halle la distancia de $(x_0,y_0)$ de $L$. Es decir, la distancia de $(x_0,y_0)$ a $\left(\overline{x},f(\overline{x})\right)$. [Facilitará los cálculos suponer primero que $b=0$; luego aplicar el resultado a la gráfica de $f(x)=mx+b$ y el punto $(x_0,y_0-b)$].\\\\
+		Respuesta.-\; Sea la ecuación dada en el inciso (a),
+		$$d=\sqrt{\left(x_0-x\right)^2+\left(y_0-mx-b\right)^2}.$$
+		Supongamos $b=0$, entonces
+		$$d=\sqrt{x_0^2-2x_0x+x^2+y_0^2-2my_0x+m^2x^2}\quad \Rightarrow \quad d=\sqrt{\left(m^2+1\right)x^2-2\left(x_0+my_0\right)x+x_0^2+y_0^2}.$$
+		Reemplazando $x$ con $\dfrac{x_0+my_0}{m^2+1}$,
+		$$\begin{array}{rcl}
+		    d&=&\sqrt{\left(\dfrac{x_0+my_0}{m^2+1}\right)^2-2\dfrac{\left(x_0+my_0\right)^2}{m^2+1}+x_0^2+y_0^2}\\
+		     &=&\sqrt{-\dfrac{\left(x_0+my_0\right)^2}{m^2+1}+x_0^2+y_0^2}\\\\
+		     &=&\sqrt{\dfrac{-x_0^2-2mx_0y_0-m^2y_0^2+x_0^2m^2+y_0^2m^2+x_0^2+y_0^2}{m^2+1}}\\\\
+		     &=&\sqrt{\dfrac{\left(y_0-mx_0\right)^2}{m^2+1}}\\\\
+		\end{array}$$
+		Reemplazando $y_0$ con $y_0-b$, concluimos que,
+		$$\begin{array}{rcl}
+		    d&=&\dfrac{\left(y_0-b-mx_0\right)^2}{m^2+1}\\\\
+		     &=&\dfrac{y_0-b-mx_0}{\sqrt{m^2+1}}
+		\end{array}$$
+		\vspace{0.5cm}\\\\
+
+	    %---------- (d)
+	    \item Considere una recta descrita mediante la ecuación $Ax+By+C=0$. Demuestre que la distancia de $\left(x_0,y_0\right)$ a esta recta es $\left(Ax_0+By_0+C\right)/\sqrt{A^2+B^2}$.\\\\
+		Demostración.-\; Sea la ecuación:
+		$$Ax+By+C=0$$
+		de donde, encontrar la pendiente $m=-\dfrac{A}{B}.$
+		Substituyendo en la ecuación de la parte (c), se tiene
+		$$d=\dfrac{y_0-b+\dfrac{A}{B}x_0}{\sqrt{\left(-\dfrac{A}{B}\right)^2}+1}$$
+		Luego, multiplicando ambos lados por $\dfrac{B}{B}$,
+		$$\begin{array}{rcll}
+		    d&=&\dfrac{Ax_0+By_0-bB}{\sqrt{A^2+B^2}}&\\\\
+		     &=&\dfrac{Ax_0+By_0+C}{\sqrt{A^2+B^2}}&\mbox{supongamos } bB=-C.
+		\end{array}$$
+		\vspace{0.5cm}\\\\
 
 	\end{enumerate}
+
+    %-------------------- 9.
+    \item El problema anterior (8, Michael Spivak, capítulo 11) sugiere la siguiente cuestión: ¿cuál es la relación entre los puntos críticos de $f$ y los de $f^2$?.\\\\
+	Respuesta.-\; Los puntos críticos de una función son los puntos en los que la función no es diferenciable o su primera derivada es cero. Sabemos que para definir los puntos críticos se iguala  $f'$ a cero y para los puntos críticos podemos igualar también $\left(f^2\right)'$ a cero, lo que implica
+	$$\left(f^2\right)'=2ff'$$
+	Por lo tanto, los puntos críticos de $f$ son subconjuntos de los puntos críticos de $f^2$.\\\\
+
+    %-------------------- 10.
+    \item Demuestre que entre todos los rectángulos de igual perímetro, el de mayor área es el cuadrado.\\\\
+	Demostración.-\; Sean $l$ el largo, $a$ el ancho y $p$ el perímetro del rectángulo. Entonces,
+	$$p=2(l+a)\quad \Rightarrow \quad a=\dfrac{p}{2}-l.$$
+	Sabemos que el área, llamémosla $A$, está dada por:
+	$$A=l \cdot a$$
+	De donde,
+	$$A=l\left(\dfrac{p}{2}-l\right)=\dfrac{p}{2}l-l^2.$$
+	Derivando con respecto a $l$, se tiene
+	$$A'=\dfrac{p}{2}-2l.$$
+	Luego igualando a cero, se tiene
+	$$\dfrac{p}{2}-2l=0\quad \Rightarrow \quad l=\dfrac{p}{4}.$$
+	Por el corolario 1.3 y sabiendo que si $f'<0$ en $\left(-\infty,\frac{p}{4}\right)$  y $f'>0$ en $\left(\frac{p}{4},\infty\right)$. Entonces, $\frac{p}{4}$ es un punto mínimo local.\\
+
+	Luego, reemplazando $l=\frac{p}{4}$ en $a=\frac{p}{2}-l$, se tiene
+	$$a=\dfrac{p}{2}-\frac{p}{4}=l.$$
+	Por lo tanto, el área del rectángulo es la más pequeña cuando su largo es igual a su ancho y se convierte en un cuadrado.\\\\
+
+    %-------------------- 11.
+    \item Entre todos los cilindros circulares rectos de volumen fijo $V$, halle el de menor superficie (incluyendo las superficies de las caras superior e inferior como en la Figura 24, Spivak, capítulo 11.).\\\\
+	Respuesta.-\; El volumen $V$ de un cilindro con radio $r$ y altura $h$ es:
+	$$V=\pi r^2h \quad \Rightarrow \quad h=\dfrac{V}{\pi r^2}.$$
+	Luego, el área total $A$ de un cilindro está dada por:
+	$$A=2\pi r^2+2\pi rh.$$
+	Reemplazado $h$  en esta ecuación, se tiene
+	$$A=2\pi r^2+2\pi r\dfrac{V}{\pi r^2}=2\pi r^2+\dfrac{2V}{r}.$$
+	Derivando con respecto a $r$, se tiene
+	$$A'=4\pi r - \dfrac{2V}{r^2}.$$
+	Luego igualando a cero,
+	$$4\pi r - \dfrac{2V}{r^2}=0\quad \Rightarrow \quad r=\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}.$$
+	Por el corolario 1.3 y sabiendo que si $f'<0$ en $\left(-\infty,\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}\right)$  y $f'>0$ en $\left(\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2},\infty\right)$. Entonces, $\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}$ es un punto mínimo local.\\
+	Reemplazando $r$ en $h=\dfrac{V}{\pi r^2}$, obtenemos 
+	$$h=\dfrac{V}{\pi\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}.$$
+	Por lo tanto, el área superficial del cilindro es la más pequeña cuando su radio es $\sqrt[3]{\dfrac{V}{2\pi}}$ y su altero es $\dfrac{V}{\pi\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}$.\\\\
+
+    %-------------------- 12.
+    \item 
+
+
 
 
 

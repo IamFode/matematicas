@@ -1,7 +1,17 @@
 \documentclass[10pt]{book}
 
 % ------------------- Paquetes ----------------------
-\usepackage[text=17cm,left=2.8cm,right=2.4cm, headsep=20pt, top=2.5cm, bottom = 2cm,letterpaper,showframe = false]{geometry} %configuración página
+\usepackage[text=17cm,
+	    left=3cm,
+	    right=2.5cm, 
+	    headsep=20pt, 
+	    top=2.5cm, 
+	    bottom = 2cm,
+	    onecolumn,
+	    twoside,
+	    letterpaper,
+	    asymmetric,
+	    showframe = false]{geometry} %configuración página
 \usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} %(símbolos de la AMS)
 \parindent = 0cm  %sangria
 \usepackage[T1]{fontenc} %acentos en español
@@ -27,6 +37,7 @@
 \usepackage[htt]{hyphenat}
 \usepackage[fit]{truncate}
 \usepackage{titling,lipsum}
+\usepackage{thmtools}
 
 %--------- encabezado y pie de paginas -----------------
 \usepackage{fancyhdr}
@@ -39,18 +50,78 @@
 
 %------------------------------------------
 
-\theoremstyle{definition}
-\newtheorem{axioma}{Axioma}[part]
-\newtheorem{teo}{Teorema}[chapter]%entorno para teoremas
-\newtheorem{def.}{Definición}[chapter]%entorno para definiciones
-\newtheorem{ejem}{Ejemplo}[chapter]%entorno para ejemplos
-\newtheorem{post}{Postulado}[chapter]%entorno de postulados
-\newtheorem{cor}{Corolario}[chapter]
-\newtheorem{ej}{Ejercicio}[chapter]
-\newtheorem{prop}{Propiedad}[part]
-\newtheorem{lema}{Lema}[chapter]
-\newtheorem{prob}{Problema}[chapter]
-\newtheorem{obs}{Obs:}[chapter]
+%\theoremstyle{definition}
+%\newtheorem{axioma}{Axioma}[part]
+%\newtheorem{teo}{Teorema}[chapter]%entorno para teoremas
+%\newtheorem{def.}{Definición}[chapter]%entorno para definiciones
+%\newtheorem{ejem}{Ejemplo}[chapter]%entorno para ejemplos
+%\newtheorem{post}{Postulado}[chapter]%entorno de postulados
+%\newtheorem{cor}{Corolario}[chapter]
+%\newtheorem{ej}{Ejercicio}[chapter]
+%\newtheorem{prop}{Propiedad}[part]
+%\newtheorem{lema}{Lema}[chapter]
+%\newtheorem{prob}{Problema}[chapter]
+%\newtheorem{obs}{Obs:}[chapter]
+
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=10pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    qed=$\blacksquare$,
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NAME \;\;\; \\ \NUMBER\;\;\;}}}\NOTE}%
+]{marginheads}
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Teorema]{teo}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Ejemplo]{ejem}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Postulado]{post}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Corolario]{cor}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Ejercicio]{ej}
+\declaretheorem[style=marginheads, numberwithin=part, title=Propiedad]{prop}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Lema]{lema}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Problema]{prob}
+
+\declaretheoremstyle[%
+    spaceabove=0pt,spacebelow=20pt,%
+    headfont=\small\bfseries,% 
+    notefont=\bfseries,%
+    notebraces={}{. },%
+    headpunct={},%
+    preheadhook={\hspace{0mm}\newline},%
+    postheadhook={},%
+    shaded = {
+	%textwidth =450pt,
+	bgcolor = black!2,
+	rulecolor=black!4,
+	rulewidth=2pt,
+	margin=3pt
+    },
+    postheadspace=0pt,%
+    headindent=0pt,%
+    bodyfont=\normalfont,%
+    headformat={\llap{\smash{\parbox[t]{1.3in}{\raggedleft \NAME \;\;\; \\ \NUMBER\;\;\;}}}\NOTE}%
+]{margindef}
+%hack to kill some extra space
+
+\makeatletter
+\renewcommand\thmt@space{}
+\makeatother
+
+\declaretheorem[style=margindef, numberwithin=part, title=Axioma]{axioma}
+\declaretheorem[style=margindef, numberwithin=chapter, title=Definición]{def.}
+\declaretheorem[style=margindef, numberwithin=chapter, title=Obs:]{obs}
+
+%-------------------------------------------------------------------
 
 \makeatletter\renewcommand\theenumi{\@roman\c@enumi}\makeatother
 
