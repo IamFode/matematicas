@@ -17,11 +17,9 @@
 \end{teo}
 
 %----------nota 2.1
-\begin{tcolorbox}
     \begin{nota} En los intervalos $[a,b]$ puede descomponerse en un número de subintervalos en cada uno de los cuales $f\leq g$ o $g\leq f$ la fórmula (2.1) del teorema 2.1 adopta la forma 
     $$a(S) = \int_a^b |g(x) -f(x)| \; dx$$
     \end{nota}
-\end{tcolorbox}
 
     %--------------------lema 2.1
     \begin{lema}[Área de un disco circular] Demostrar que $A(r) = r^2 A(1)$. Esto es, el área de un disco de radio $r$ es igual al producto del área de un disco unidad (disco de radio $1$) por $r^2$.\\\\
@@ -34,19 +32,15 @@
     \end{lema}
 
 %---------------------definición 2.1
-\begin{tcolorbox}
     \begin{def.} Se define el número $\pi$ como el área de un disco unidad.
 	$$\pi = 2 \int_{-1}^1 \sqrt{1-x^2}\; dx$$
     \end{def.}
-\end{tcolorbox}
 \begin{center}
     La formula que se acaba de demostrar establece que $A(r) = \pi r^2$\\
 \end{center}
 
-\begin{tcolorbox}
 Generalizando el anterior lema se tiene 
     $$a(kS) = \int_{ka}^{kb} g(x)\; dx = k \int_{ka}^{kb} f(x/k) \; dx = k^2 \int_a^b f(x) \; dx$$
-\end{tcolorbox}
 
 %--------------------teorema 2.1
 \begin{teo} Para $a>0$, $b>0$ y $n$ entero positivo, se tiene $$\int_a^b x^{\frac{1}{n}} \; dx = \dfrac{b^{1-1/n} - a^{1-\frac{1}{n}}}{1+\frac{1}{n}}$$\\
@@ -239,7 +233,9 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
     %----------(a)
     \item $\displaystyle\int_{-3}^3 \sqrt{9-x^2}\; dx$.\\\\
-	Respuesta.-\; Por el teorema 19 de dilatación, $\dfrac{1}{\frac{1}{3}}\displaystyle\int_{-3\frac{1}{3}}^{3\frac{1}{3}} \sqrt{9 - \left(\dfrac{x}{\frac{1}{3}}\right)^2} \; dx$, de donde nos queda $9 \displaystyle\int_{-1}^1 \sqrt{1-x^2}\; dx$, por lo tanto y en función de $\pi$ se tiene $\dfrac{9}{2} \pi$.\\\\
+	Respuesta.-\; Por el teorema 19 de dilatación, $\dfrac{1}{\frac{1}{3}}\displaystyle\int_{-3\frac{1}{3}}^{3\frac{1}{3}} \sqrt{9 - \left(\dfrac{x}{\frac{1}{3}}\right)^2} \; dx$, de donde nos queda 
+	$$9 \displaystyle\int_{-1}^1 \sqrt{1-x^2}\; dx,$$ 
+	por lo tanto y en función de $\pi$ se tiene $\dfrac{9}{2} \pi$.\\\\
 
     %----------(b)
     \item $\displaystyle\int_0^2 \sqrt{1-\frac{1}{4}x^2}\; dx$.\\\\
@@ -248,7 +244,9 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 
     %----------(c)
     \item $\displaystyle\int_{-2}^2 (x-3)\sqrt{4-x^2}\; dx$.\\\\
-	Respuesta.-\; Comencemos usando la linealidad respecto al integrando de donde tenemos $\displaystyle\int_{-2}^2 x\sqrt{4-x^2}\; dx - 3\int_{-2}^2 \sqrt{4-x^2}\; dx$. Luego por el problema 25 de la sección 1.26, $\displaystyle\int_{-2}^2 x\sqrt{4-x^2}\; dx = 0$, de donde $$ -6\displaystyle\int_{-1}^1 \sqrt{4-4x^2}\; dx = -12 \int_{-1}^1 \sqrt{1-x^2}\; dx = -6\pi$$\\
+	Respuesta.-\; Comencemos usando la linealidad respecto al integrando de donde tenemos 
+	$$\displaystyle\int_{-2}^2 x\sqrt{4-x^2}\; dx - 3\int_{-2}^2 \sqrt{4-x^2}\; dx.$$ 
+	Luego por el problema 25 de la sección 1.26, $\displaystyle\int_{-2}^2 x\sqrt{4-x^2}\; dx = 0$, de donde $$ -6\displaystyle\int_{-1}^1 \sqrt{4-4x^2}\; dx = -12 \int_{-1}^1 \sqrt{1-x^2}\; dx = -6\pi$$\\
 
 \end{enumerate}
 
@@ -318,7 +316,6 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 \section{Las funciones trigonométricas}
 
 %--------------------Propiedades fundamentales del seno y del coseno
-\begin{tcolorbox}
     \begin{prop}\; \\
 	\begin{enumerate}[\bfseries 1.]
 	    \item Dominio de definición. Las funciones seno y coseno están definidas en toda la recta real.
@@ -329,7 +326,6 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 		$$0<\cos x < \dfrac{\sen x}{x} < \dfrac{1}{\cos x}$$
 	\end{enumerate}
     \end{prop}
-\end{tcolorbox}
 
 %--------------------teorema 2.3
 \begin{teo} Si dos funciones $\sen$ y $\cos$ satisfacen las propiedades 1 a 4, satisfacen también las siguientes:
@@ -365,7 +361,13 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 	\item Fórmulas de adición. Para $x$ e $y$ cualesquiera, se tiene 
 	    $$\cos (x+y) = \cos x \cos y - \sen x \sen y$$
 	    $$\sen (x+y) = \sen x \cos x + \cos x \sen y$$\\
-	    Demostración.-\; Para demostrar basta reemplazar $x$ por $-x$ en  $\cos(y-x) = \cos y \cos x + \sen y \sen x$ y tener en cuenta la paridad o imparidad. Luego utilizando la parte (d) y la fórmula de adición para el coseno se obtiene $$\sen(x+y) = -\cos \left(x+y+\frac{\pi}{2}\right) = =-\cos x \cos \left(y+\dfrac{\pi}{2}\right) + \sen x \sen \left(y + \dfrac{\pi}{2}\right) = \cos x\sen y + \sen x \cos y$$ \\
+	    Demostración.-\; Para demostrar, basta reemplazar $x$ por $-x$ en  $\cos(y-x) = \cos y \cos x + \sen y \sen x$ y tener en cuenta la paridad o imparidad. Luego utilizando la parte (d) y la fórmula de adición para el coseno se obtiene 
+	    $$\begin{array}{rcl}
+		\sen(x+y) &=& -\cos \left(x+y+\frac{\pi}{2}\right)\\\\
+			  &=&-\cos x \cos \left(y+\dfrac{\pi}{2}\right) + \sen x \sen \left(y + \dfrac{\pi}{2}\right)\\\\
+			  &=& \cos x\sen y + \sen x \cos y
+	    \end{array}$$
+	    \vspace{.5cm}
 
 	%----------(g)
 	\item  Fórmulas de diferencias. Para todo los valores $a$ y $b$, se tiene 
@@ -429,7 +431,6 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     Esto demuestra que la igualdad (2.13) implica (2.14).\\\\
 \end{teo}
 
-\begin{tcolorbox}
     \begin{nota} Usando (2.13) y (2.14) junto con la propiedad aditiva $$\int_a^b f(x) \; dx = \int_0^b f(x)\; dx - \int_0^a f(x)\; dx $$
     llegamos a las fórmulas de integración más generales
     $$\int_a^b \cos x \; dx = \sen b - \sen a$$
@@ -437,23 +438,18 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
 	Si nuevamente utilizamos el símbolo especial $f(x)\left|_a^b\right.$ para indicar la diferencia $f(b)-f(a)$, podemos escribir esas fórmulas de integración en la forma 
 	$$\int_a^b \cos x \;dx = \sen x \bigg|_a^b \qquad y \qquad \int_a^b \sen x\; dx = -\cos x \bigg|_a^b$$
     \end{nota}
-\end{tcolorbox}
 
-\begin{tcolorbox}
     \begin{nota} 
 	Con los resultados del ejemplo 1 y la propiedad de dilatación $$\int_a^b f(x)\; dx = \dfrac{1}{c}\int_{ca}^{cb} f(x/c)\; dx,$$
 	obtenemos las fórmulas siguientes, válidas para $c\neq 0$;
 	$$\int_a^b \cos cx \; dx = \dfrac{1}{c}\int_{ca}^{cb} \cos x \; dx = \dfrac{1}{c}(\sen cb - \sen ca)$$
 	y $$\int_a^b \sen cx \; dx = \dfrac{1}{c} \int_{ca}^{cb} \sen x \; dx = -\dfrac{1}{c}(\cos cb -\cos ca).$$
     \end{nota}
-\end{tcolorbox}
 
-\begin{tcolorbox}
     \begin{nota} 
 	La identidad $\cos 2x = 1-2\sen^2 x$ implica $\sen^2 x = \frac{1}{2}(1-\cos 2x)$ con lo que, a partir del ejemplo 2, obtenemos $$\int_a^b \sen^2 x \; dx = \dfrac{1}{2}\int_0^a (1-\cos 2x)\; dx = \dfrac{a}{2}-\dfrac{1}{4}\sen 2a$$
 	Puesto que $\sen^2 x + \cos^2 x = 1,$ encontramos también $$\int_0^a \cos^2 x \; dx = \int_0^a(1-\sen^2 x)\; dx = a - \int_0^a \sen^2 x\; dx = \dfrac{a}{2}+\dfrac{1}{4}\sen 2a$$
     \end{nota}
-\end{tcolorbox}
 
 \setcounter{section}{7}
 \section{Ejercicios}
@@ -634,8 +630,12 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 	\end{tabular}
     \end{center}
     en consecuencia,
-    $$C\sen(x+\alpha) = C \sen x \cos \alpha + C \sen \alpha \cos x = (A^2+B^2)^{1/2} \dfrac{A}{(A^2+B^2)^{1/2}} \sen x + (A^2 + B^2)^{1/2} \dfrac{B}{(A^2+B^2)^{1/2}} \cos x  $$
-    $$=A\sen x + B\cos x$$\\
+    $$\begin{array}{rcl}
+	C\sen(x+\alpha) &=& C \sen x \cos \alpha + C \sen \alpha \cos x\\\\
+			&=& (A^2+B^2)^{1/2} \dfrac{A}{(A^2+B^2)^{1/2}} \sen x + (A^2 + B^2)^{1/2} \dfrac{B}{(A^2+B^2)^{1/2}} \cos x\\\\ 
+			&=&A\sen x + B\cos x
+    \end{array}$$
+    \vspace{.5cm}
 
 %--------------------10.
 \item Determinar $C$ y $ \alpha$, siendo $C>0$, tales que $C \sen (x+\alpha) = -2\sen x-2\cos x$ para todo $x$.\\\\
@@ -744,7 +744,8 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     Demostración.-\; Usando el seno y coseno para la suma y diferencia, se sigue,
     \begin{center}
 	\begin{tabular}{rcl}
-	    $\dfrac{\sen(x+h)-\sen x}{h}$&$=$&$\dfrac{\sen(x+\frac{h}{2}+\frac{h}{2})-\sen(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
+	    &&$\dfrac{\sen(x+h)-\sen x}{h}$\\\\
+	    &$=$&$\dfrac{\sen(x+\frac{h}{2}+\frac{h}{2})-\sen(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
 					 &$=$&$\dfrac{\sen(x+\frac{h}{2})\cos(\frac{h}{2})+\sen(\frac{h}{2})\cos(x+\frac{h}{2})-\sen(x+\frac{h}{2})\cos (\frac{h}{2})+\sen(\frac{h}{2})\cos(x+\frac{h}{2})}{h}$\\\\
 					 &$=$&$\dfrac{2\sen \frac{h}{2}}{h}\cos\left(x+\dfrac{h}{2}\right)$\\\\
 					 &$=$&$\dfrac{\sen \frac{h}{2}}{h/2}\cos\left(x+\dfrac{h}{2}\right)$\\\\
@@ -753,7 +754,8 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     y
     \begin{center}
 	\begin{tabular}{rcl}
-	    $\dfrac{\cos(x+h)-\cos x}{h}$&$=$&$\dfrac{\cos(x+\frac{h}{2}+\frac{h}{2})-\cos(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
+	    &&$\dfrac{\cos(x+h)-\cos x}{h}$\\\\
+	    &$=$&$\dfrac{\cos(x+\frac{h}{2}+\frac{h}{2})-\cos(x+\frac{h}{2}-\frac{h}{2})}{h}$\\\\
 					 &$=$&$\dfrac{\cos(x+\frac{h}{2})\cos(\frac{h}{2})-\sen(x+\frac{h}{2})\sen(\frac{h}{2})-\cos(x+\frac{h}{2})\cos(\frac{h}{2})-\sen(x+\frac{h}{2})\sen(\frac{h}{2})}{h}$\\\\
 					 &$=$&$\dfrac{2\sen(x+\frac{h}{2})\sen(\frac{h}{2})}{h}$\\\\
 					 &$=$&$-\dfrac{\sen(\frac{h}{2})}{h/2}\sen\left(x+\dfrac{h}{2}\right)$\\\\
@@ -837,7 +839,8 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     \begin{center}
 	\begin{tabular}{rcl}
 	    $\displaystyle\int_0^{\pi/2} |\sen x - \cos x|\; dx$&$=$&$\displaystyle\int_0^{\pi/4}(\cos x - \sen x)\; dx + \int_{\pi/4}^{\pi/2}(\sen x - \cos x)\; dx$\\\\
-								&$=$&$\sen\left(\dfrac{\pi}{4}\right)-\left[1-\cos\left(\dfrac{\pi}{4}\right)\right]  -\left[\cos\left(\dfrac{\pi}{2}\right)-\cos\left(\dfrac{\pi}{4}\right)\right]+\left[\sen\left(\dfrac{\pi}{2}\right)-\sen \left(\dfrac{\pi}{4}\right)\right]$\\\\
+								&$=$&$\sen\left(\dfrac{\pi}{4}\right)-\left[1-\cos\left(\dfrac{\pi}{4}\right)\right]  -\left[\cos\left(\dfrac{\pi}{2}\right)-\cos\left(\dfrac{\pi}{4}\right)\right]$\\\\
+								&$+$&$\left[\sen\left(\dfrac{\pi}{2}\right)-\sen \left(\dfrac{\pi}{4}\right)\right]$\\\\
 								&$=$&$\dfrac{\sqrt{2}}{2}+\dfrac{\sqrt{2}}{2}-1+\dfrac{\sqrt{2}}{2}-0-1+\dfrac{\sqrt{2}}{2}$\\\\
 	      &$=$&$2\sqrt{2}-2$\\\\
 	  \end{tabular}
@@ -868,7 +871,8 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
     Ahora consideremos dos casos. Si $0\leq x \leq \dfrac{2\pi}{3},$ entonces 
     \begin{center}
 	\begin{tabular}{rcl}
-	    $\displaystyle\int_{-\pi}^x \bigg|\dfrac{1}{2}+\cos t\bigg|\; dt$&$=$&$-\displaystyle\int_{-\i}^{-\frac{2\pi}{3}}\left(\dfrac{1}{2}+\cos t\right)\; dt + \int_{-\frac{2\pi}{3}}^x \left(\dfrac{1}{2}+\cos t\right)\; dt$\\\\ &$=$&$-\left(-\dfrac{\pi}{3}+\dfrac{\pi}{2}\right)-\left[\sen\left(-\dfrac{2\pi}{3}\right)-\sen(-\pi)\right]+\left(\dfrac{x}{2}+\dfrac{\pi}{3}\right)+\left[\sen x - \sen \left(-\dfrac{2\pi}{3}\right)\right]$\\\\
+	    $\displaystyle\int_{-\pi}^x \bigg|\dfrac{1}{2}+\cos t\bigg|\; dt$&$=$&$-\displaystyle\int_{-\i}^{-\frac{2\pi}{3}}\left(\dfrac{1}{2}+\cos t\right)\; dt + \int_{-\frac{2\pi}{3}}^x \left(\dfrac{1}{2}+\cos t\right)\; dt$\\\\ &$=$&$-\left(-\dfrac{\pi}{3}+\dfrac{\pi}{2}\right)-\left[\sen\left(-\dfrac{2\pi}{3}\right)-\sen(-\pi)\right]+\left(\dfrac{x}{2}+\dfrac{\pi}{3}\right)$\\\\
+									     &$+$&$\left[\sen x - \sen \left(-\dfrac{2\pi}{3}\right)\right]$\\\\
 									     &$=$&$\dfrac{\pi}{6}+\sqrt{3}+\dfrac{x}{2}+\sen x$\\\\
 	\end{tabular}
     \end{center}
@@ -963,7 +967,7 @@ En este conjunto de ejercicios, se pueden emplear las propiedades del seno y del
 	\displaystyle\int_{a}^{a+p}f(x) \; dx&=&\displaystyle\int_{a}^{(n+1)p}f(x) \; dx + \displaystyle\int_{(n+1)p}^{a+p}f(x) \; dx &\\\\
 					     &=&\displaystyle\int_{a-np}^{(n+1)p-np} f(x+np) \; dx + \displaystyle\int_{(n+1)p-(n+1)p}^{a+p-(n+1)p} f(x+(n+1)p)  \; dx &\\\\
 					     &=&\displaystyle\int_{a-np}^{p} f(x) \; dx + \displaystyle\int_{0}^{a-np} f(x) \; dx & periodicidad \; de \; p\\\\
-					     &=&\displaystyle\int_{0}^{p} f(x) \; dx & ya \; que\;  0\leq a-np<p\\\\
+					     &=&\displaystyle\int_{0}^{p} f(x) \; dx &  0\leq a-np<p\\\\
     \end{array}$$
 
 %--------------------31.
@@ -1337,7 +1341,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \end{enumerate}
 
 \section{Aplicación de la integración al cálculo de volúmenes}
-\begin{tcolorbox}
     \begin{enumerate}[\bfseries 1.]
 
 	%----------1.
@@ -1361,7 +1364,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	\item Todo conjunto convexo pertenece a $\mathscr{A}$. 
 
     \end{enumerate}
-\end{tcolorbox}
 
 % -------------------- teorema 2.7 --------------------
 \begin{teo}
@@ -1513,7 +1515,12 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	\end{center}
 
 	Calculamos el volumen del sólido de revolución.
-	$$V=\int_0^\pi \pi (\sen x + \cos x)^2 \; dx = \pi\left(\int_0^\pi \sen^2 x \;dx + \int_0^\pi 2\sen x \cos x + \int_0^\pi \cos^2 x \; dx\right) = \pi \left(\dfrac{\pi}{2}+0+\dfrac{\pi}{2}\right) = \pi^2.$$\\
+	$$\begin{array}{rcl}
+	    V&=&\int_0^\pi \pi (\sen x + \cos x)^2 \; dx\\\\
+	     &=& \pi\left(\int_0^\pi \sen^2 x \;dx + \int_0^\pi 2\sen x \cos x + \int_0^\pi \cos^2 x \; dx\right)\\\\
+	     &=& \pi \left(\dfrac{\pi}{2}+0+\dfrac{\pi}{2}\right)\\\\
+	     &=& \pi^2.
+	\end{array}$$
 
     En cada uno de los ejercicios 8 al 11, dibujar la región entre las gráficas de $f$ y $g$ y calcular el volumen del sólido obtenido al girar dicha región alrededor del eje $x$.\\\\
 
@@ -1724,7 +1731,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 \section{Aplicación de la integración al concepto del trabajo}
 
 %---------------------Propiedades fundamentales del trabajo
-\begin{tcolorbox}
     \begin{prop}[Propiedades fundamentales del trabajo]
 	Designemos con $W_a(f)$ el trabajo realizado por una función fuerza $f$ al mover una partícula desde $a$ hasta $b$. Entonces el trabajo tiene las siguientes propiedades:
 	\begin{enumerate}[\bfseries 1.]
@@ -1747,7 +1753,6 @@ En cada uno de los ejercicios del 5 al 15, trazar la gráfica de $f$ en coordena
 	$$W_a^b (s) = \sum_{k=0} s_k \cdot (x_k-x_{k-1}) = \int_a^b s(x)\; dx$$
 	Así pues, para funciones escalonadas, el trabajo se expresa como una integral. Es fácil demostrar que esto es cierto en casos más generales.
     \end{prop}
-\end{tcolorbox}
 
 %--------------------- Teorema 2.8
 \begin{teo}
@@ -1840,7 +1845,6 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
 \section{Valor medio de una función}
 
 %-------------------- definición de valor medio de una función en un intervalo.
-\begin{tcolorbox}
     \begin{def.}[Definición del valor medio de una función en un intervarlo]
 	Si $f$ es integrable en un intervalo $[a,b]$, definimos $A(f)$, el valor medio de $f$ en $[a,b]$, por la siguiente fórmula
 	$$A(f) = \dfrac{1}{b-a} \int_a^b f(x) \; dx$$\\
@@ -1849,28 +1853,21 @@ En los ejercicios 1 y 2 se supone que la fuerza que actúa sobre el resorte obed
     Así pues, para funciones escalonadas, el promedio $A(f)$ coincide con la media aritmética de los valores $f(x_1),\ldots , f(x_k)$ tomados en los intervalos en los que la función es constante.
     
     \end{def.}
-\end{tcolorbox}
 
 % --------------------- Definición de media ponderada.
-\begin{tcolorbox}
     \begin{def.}[Definición del valor medio de una función en un intervarlo]
 	$$A(f) = \dfrac{\int_a^b w(x)f(x)\; dx}{f_a^b w(x)\; dx}$$
     \end{def.}
-\end{tcolorbox}
 
 % --------------------- Primer momento al rededor de 0 
-\begin{tcolorbox}
     \begin{def.}[Primer momento al rededor de 0]
 	$$\overline{x}=\dfrac{\int_0^b xp(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
     \end{def.}
-\end{tcolorbox}
 
 %--------------------- Segundo momento al rededor de 0
-\begin{tcolorbox}
     \begin{def.}[Segundo momento al rededor de 0 o momento de inercia]
 	$$r^2=\dfrac{\int_0^b x^2p(x)\; dx}{\int_0^a p(x)\; dx} \; \mbox{para}\; p \; \mbox{llamada densidad de masa}.$$
     \end{def.}
-\end{tcolorbox}
 
 
 \section{Ejercicios}
@@ -2239,13 +2236,11 @@ $$A(y)-A(x)=\int_a^y f(t)\; dx - \int_a^x f(t)\; dx = \int_x^y f(t)\; dx \geq 0$
 siempre que $a\leq x \leq b.$\\\\
 
 %-------------------- Definición de función convexa
-\begin{tcolorbox}
     \begin{def.}[Definición de función convexa] Una función $g$ se llama convexa en un intervalo $[a,b]$ si, para todo $x$ e $y$ en $[a,b]$ y para cada $\alpha$ tal que $0<\alpha<1$, tenemos 
 	$$g(z)\leq \alpha g(y) + (1-\alpha)g(x),\; \mbox{donde}\; =\alpha y + (1-\alpha)x$$
 	Decimos que $g$ es cóncava en $[a,b]$ si es válida la desigualdad invertida,
 	$$g(z)\geq \alpha g(y) + (1-\alpha)g(x),\; \mbox{donde}\; =\alpha y + (1-\alpha)x$$
     \end{def.}
-\end{tcolorbox}
 
 %-------------------- teorema 2.9
 \begin{teo}

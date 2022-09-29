@@ -102,7 +102,7 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
     Sistemas equivalentes de ecuaciones lineales tiene exactamente las mismas soluciones.
 \end{teo}
 
-\section*{Ejercicios}
+\section{Ejercicios}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -378,21 +378,21 @@ El sistema (1-1) se abreviará ahora así:
 $$AX=Y$$
 donde 
 $$
-\begin{matrix}
+\left[\begin{array}{cccc}
     a_{11} & a_{12} & \cdots & a_{1n} \\
     \vdots & \vdots &  & \vdots \\
     a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{matrix} 
-\begin{matrix}[c]
+\end{array}\right]
+\left[\begin{array}{c}
 	x_1 \\
 	\vdots \\
 	x_n
-\end{matrix} = 
-\begin{matrix}
+\end{array}\right] = 
+\left[\begin{array}{c}
 	y_1 \\
 	\vdots \\
 	y_m
-\end{matrix}
+\end{array}\right]
 $$
 
 $A$ se llama \textbf{matriz de los coeficientes} del sistema.
@@ -458,7 +458,7 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     Si se opera, como se indicó, con una fila cada vez, es evidente que después de un número finito de etapas se llegará a una matriz reducida por filas.
 \end{teo}
 
-\section*{Ejercicios}
+\section{Ejercicios}
 
 
 \begin{enumerate}[\bfseries 1.]
@@ -470,7 +470,40 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	2x_1&+&(1-i)x_2 &=& 0.
     \end{array}$$
     \vspace{.4cm}
-	Respuesta.-\;
+	Respuesta.-\; Colocando en su forma matricial tenemos,
+	$$\left[\begin{array}{*{2}{c}}
+	    1-i & -i\\
+	    2 & 1-i
+	\end{array}\right]$$
+
+	Reduciendo por filas,
+
+	$$\begin{array}{*{5}{c}}
+	    \left[\begin{array}{*{2}{c}}
+		1-i & -i\\
+		2 & 1-i
+	    \end{array}\right]
+	    &R_1\leftrightarrow R_2&
+	    \left[\begin{array}{*{2}{c}}
+		2 & 1-i\\
+		1-i & -i
+	    \end{array}\right]
+	    &\dfrac{R_1}{2}\to R_1&
+	    \left[\begin{array}{*{2}{c}}
+		1 & \dfrac{1-i}{2}\\\\
+		1-i & -i
+	    \end{array}\right]\\\\
+	    &R_2-(1-i)R_1\to R_2&
+	    \left[\begin{array}{*{2}{c}}
+		1 & \dfrac{1-i}{2}\\\\
+		0 & 0
+	    \end{array}\right]
+	\end{array}$$
+	Sustituyendo se tiene,
+	$$x_1+\dfrac{1-i}{2}x_2=0\quad \Rightarrow \quad x_1=\dfrac{-1+i}{2}x_2.$$
+	Supongamos $x_2=t\in \mathbb{C}$, por lo que el conjunto de soluciones estará dado por
+	$$\left\{\left(\dfrac{-1+i}{2}t,t\right)|t\in\mathbb{C}\right\}.$$\\
+
 
     %----------  2.
     \item Si
@@ -484,35 +517,35 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 
 	$$\begin{array}{ccccc}
 
-	    \begin{matrix}
+	    \left[\begin{array}{rrr}
 		3 & -1 & 2 \\
 		2 & 1 & 1 \\
 		1 & -3 & 0
-	    \end{matrix} 
+	    \end{array}\right]
 	    &R_1 \to R_3 &
-	    \begin{matrix}
+	    \left[\begin{array}{rrr}
 		1 & -3 & 0\\
 		2 & 1 & 1 \\
 		3 & -1 & 2 
-	    \end{matrix}
+	    \end{array}\right]
 	    &R_2-2R_1 \to R_2&
-	    \begin{matrix}
+	    \left[\begin{array}{rrr}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		3 & -1 & 2 
-	    \end{matrix}\\\\
+	    \end{array}\right]\\\\
 	    &R_3-3R_1\to R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{rrr}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		0 & 8 & 2 
-	    \end{matrix}
+	    \end{array}\right]
 	    &R_3-\dfrac{8}{7} R_2 \to R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		1 & -3 & 0\\
 		0 & 7 & 1 \\
 		0 & 0 & \frac{6}{7} 
-	    \end{matrix}\\\\
+	    \end{array}\right]\\\\
 
 	\end{array}$$
 
@@ -532,49 +565,49 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	$$AX=2X\quad \Rightarrow \quad AX-2X=0\quad \Rightarrow \quad (A-2I)X=0.$$
 	De donde,
 
-	$$A-2I=\begin{matrix}
+	$$A-2I=\left[\begin{array}{*{3}{r}}
 	    6 & -4 & 0 \\
 	    4 & -2 & 0 \\
 	    -1 & 0 & 3
-	\end{matrix}-2
-	\begin{matrix}
+	\end{array}\right]-2
+	\left[\begin{array}{*{3}{r}}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1 
-	\end{matrix} = 
-	\begin{matrix}
+	\end{array}\right] = 
+	\left[\begin{array}{*{3}{r}}
 	    4 & -4 & 0 \\
 	    4 & -4 & 0 \\
 	    -1 & 0 & 1 
-	\end{matrix}$$
+	\end{array}\right]$$
 
 	Resolviendo tenemos,
 
 	$$\begin{array}{ccccc}
 
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		4 & -4 & 0 \\
 		4 & -4 & 0 \\
 		-1 & 0 & 1 
-	    \end{matrix} 
+	    \end{array} \right]
 	    &R_2 - R_1 \to R_2&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		4 & -4 & 0 \\
 		0 & 0 & 0 \\
 		-1 & 0 & 1 
-	    \end{matrix} 
+	    \end{array} \right]
 	    &R_3 + \dfrac{1}{4} R_1 \to R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		4 & -4 & 0 \\
 		0 & 0 & 0 \\
 		0 & -1 & 1 
-	    \end{matrix}\\\\
+	    \end{array}\right]\\\\
 	    &R_2 \leftrightarrow R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		4 & -4 & 0 \\
 		0 & -1 & 1 \\
 		0 & 0 & 0
-	    \end{matrix} & & \\
+	    \end{array} \right]& & \\
 
 	\end{array}$$
 
@@ -586,55 +619,55 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	$$AX=3X\quad \Rightarrow \quad AX-3X=0\quad \Rightarrow \quad (A-3I)X=0.$$
 	De donde,
 
-	$$A-2I=\begin{matrix}
+	$$A-2I=\left[\begin{array}{*{3}{r}}
 	    6 & -4 & 0 \\
 	    4 & -2 & 0 \\
 	    -1 & 0 & 3
-	\end{matrix}-2
-	\begin{matrix}
+	\end{array}\right]-2
+	\left[\begin{array}{*{3}{r}}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1 
-	\end{matrix} = 
-	\begin{matrix}
+	\end{array} \right]= 
+	\left[\begin{array}{*{3}{r}}
 	    3 & -4 & 0 \\
 	    4 & -5 & 0 \\
 	    -1 & 0 & 0 
-	\end{matrix}$$
+	\end{array}\right]$$
 
 	Resolviendo tenemos,
 
 	$$\begin{array}{ccccc}
 
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		3 & -4 & 0 \\
 		4 & -5 & 0 \\
 		-1 & 0 & 0 
-	    \end{matrix} 
+	    \end{array} \right]
 	    &R_1 \leftrightarrow R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		-1 & 0 & 0 \\
 		4 & -5 & 0 \\
 		3 & -4 & 0 
-	    \end{matrix} 
+	    \end{array}\right] 
 	    &R_2 + 4 R_1 \to R_2&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		3 & -4 & 0 
-	    \end{matrix}\\\\
+	    \end{array}\right]\\\\
 	    &R_3 +3R_1 \to R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		0 & -4 & 0 
-	    \end{matrix} 
+	    \end{array}\right] 
 	    &R_3-\dfrac{4}{5}R_2 \to R_3& 
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		-1 & 0 & 0 \\
 		0 & -5 & 0 \\
 		0 & 0 & 0 
-	    \end{matrix} 
+	    \end{array}\right] 
 
 	\end{array}$$
 
@@ -642,7 +675,15 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	$$x_3\in \mathbb{R}, x_1=x_2=0.$$\\
 
     %---------- 4.
-    \item 
+    \item Hallar una matrix reducida por filas que sea equivalente por filas a 
+    $$A=\left[\begin{array}{*{3}{c}}
+	i & -(1+i) & 0 \\
+	1 & -2 & 1 \\
+	1 & 2i & -1
+    \end{array}\right]$$
+    \vspace{0.4cm}
+	Respuesta.-\;
+
 
     %---------- 5.
     \item 
@@ -657,23 +698,23 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     	Demostración.-\; Ya que $A$ es dado como una matríz reducida por filas, entonces se presentas los siguientes casos.
 	\begin{enumerate}[\bfseries \textbf{Caso} i.]
 	    \item Sea $a=b=c=d=0$ por lo tanto
-		$$\begin{matrix}
+		$$\left[\begin{array}{*{2}{r}}
 		    0 & 0 \\
 		    0 & 0
-		\end{matrix}$$
+		\end{array}\right]$$
 
 	    \item Sea $c=d=0\; \Rightarrow \; a+b=0 \; \Rightarrow \; b=-a$ con $a=1$, entonces
-		$$\begin{matrix}
+		$$\left[\begin{array}{*{2}{r}}
 		    1 & -1 \\
 		    0 & 0
-		\end{matrix}$$
+		\end{array}\right]$$
 
 	    Otra posibilidad podría ser que la fila $1$ sea cero. Es decir, $a=b=0\; \Rightarrow \; c+d=0\; \Rightarrow d=-c$ de donde tenemos
 
-		$$\begin{matrix}
+		$$\left[\begin{array}{*{2}{r}}
 		    0 & 0 \\
 		    1 & -1 
-		\end{matrix}$$
+		\end{array}\right]$$
 
 	    \item Dos filas distintas de cero. Es decir, $a\neq 0, d\neq 0$, $c=b=0\; \Rightarrow \; a+d=0 \; \Rightarrow \; d=-a$, de donde $A$ al ser reducido por fila implicará $a=1\; \rightarrow \; d=-1$. Pero $d$ es la entrada principal distinto de cero de la fila $2$ por lo tanto debe ser igual a uno. Así este caso no existe.
 	    \end{enumerate}
@@ -683,44 +724,44 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     %---------- 7.
     \item Demostrar que el intercambio de dos filas en una matriz puede hacerse por medio de un número finito de operaciones elementales con filas de los otros tipos.\\\\
 	Demostración.-\; Consideremos la matriz identidad:
-	$$\begin{matrix}
+	$$\left[\begin{array}{*{3}{r}}
 	    1 & 0 & 0 \\
 	    0 & 1 & 0 \\
 	    0 & 0 & 1
-	\end{matrix}$$
+	\end{array}\right]$$
 	Supongamos que se necesita el intercambio de las filas $1$ y $3$, entonces se puede realizar la siguiente secuencia para hacerlo:
 
 	$$\begin{array}{ccccc}
 
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 0 \\
 		0 & 1 & 0 \\
 		0 & 0 & 1
-	    \end{matrix} 
+	    \end{array}\right] 
 	    &R_1 \to R_1+R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		0 & 0 & 1
-	    \end{matrix} 
+	    \end{array}\right] 
 	    &R_3 \to R_3-R_1&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		-1 & 0 & 0
-	    \end{matrix}\\\\
+	    \end{array}\right]\\\\
 	    &R_3  \to -R_3&
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		1 & 0 & 0
-	    \end{matrix} 
+	    \end{array}\right] 
 	    &R_1 \to R_1-R_3& 
-	    \begin{matrix}
+	    \left[\begin{array}{*{3}{r}}
 		0 & 0 & 1 \\
 		0 & 1 & 0 \\
 		1 & 0 & 0
-	    \end{matrix} 
+	    \end{array}\right] 
 
 	\end{array}$$
 
@@ -778,9 +819,8 @@ $$A'_{ij}=A_{ij},\mbox{ si } j \leq n.$$
 $$A'_{i(n+1)}=y_i.$$
 
 
-\section*{Ejercicios}
+\section{Ejercicios}
 
-\begin{comment}
 
 \begin{enumerate}[1.] 
 
@@ -796,48 +836,48 @@ $$A'_{i(n+1)}=y_i.$$
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{3}{r}}
 		\frac{1}{3} & 2 & -6 \\
 		-4 & 0 & 5 \\
 		-3 & 6 & -13 \\
 		-\frac{7}{3} & 2 & -\frac{8}{3}
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &3R_1\to R_1&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{3}{r}}
 		1 & 6 & -18 \\
 		-4 & 0 & 5 \\
 		-3 & 6 & -13 \\
 		-\frac{7}{3} & 2 & -\frac{8}{3}
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &\begin{array}{rcl}
 		R_2 + 4R_1 &\to& R_2 \\
 		R_3 + 3R_1 &\to& R_3 \\
 		R_4+\frac{7}{3}R_1&\to&R_4
 		\end{array}&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{3}{r}}
 		1 & 6 & -18 \\
 		0 & 24 & -67 \\
 		0 & 24 & -67 \\
 		0 & 16 & -\frac{134}{3}
-	    \end{bmatrix*}\\\\
+	    \end{array}\right]\\\\
 	    &\frac{1}{24}R_2  \to R_2&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{3}{r}}
 		1 & 6 & -18 \\
 		0 & 1 & -\frac{67}{24} \\
 		0 & 24 & -67 \\
 		0 & 16 & -\frac{134}{3}
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &\begin{array}{rcl}
 		R_1-6r_2 &\to&R_1 \\
 		R_3-24R_2&\to&R_3 \\
 		R_4-16R_2&\to&R_4
 	    \end{array}&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{3}{r}}
 		1 & 6 & -18 \\
 		0 & 1 & -\frac{67}{24} \\
 		0 & 0 & 0 \\
 		0 & 0 & 0 \\
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 
 	\end{array}$$
 
@@ -862,41 +902,41 @@ $$A'_{i(n+1)}=y_i.$$
 
 	$$\begin{array}{ccccc}
 
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{2}{r}}
 		1 & -i\\
 		2 & 2 \\
 		i & 1+i
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &\begin{array}{rcl}
 		R_2-2R_1 &\to& R_2 \\
 		R_3-iR_1 &\to& R_3 \\
 	    \end{array}&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{2}{r}}
 		1 & -i \\
 		0 & 2+2i \\
 		0 & i 
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &\frac{1}{i}R_3 \to R_3&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{2}{r}}
 		1 & -i \\
 		0 & 2+2i \\
 		0 & 1
-	    \end{bmatrix*}\\\\
+	    \end{array}\right]\\\\
 	    &\begin{array}{rcl}
 		R_1+iR_3 &\to& R_1 \\
 		R_2-(2+2i)R_3&\to&R_2
 	    \end{array}&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{2}{r}}
 		1 & 0 \\
 		0 & 0 \\
 		0 & 1 
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 	    &R_2\leftrightarrow R_3&
-	    \begin{bmatrix*}[r]
+	    \left[\begin{array}{*{2}{r}}
 		1 & 0 \\
 		0 & 1 \\
 		0 & 0
-	    \end{bmatrix*} 
+	    \end{array}\right] 
 
 	\end{array}$$
 
@@ -933,23 +973,23 @@ $$A'_{i(n+1)}=y_i.$$
     \end{array}$$
     No tiene solución.\\\\
 	Demostración.-\; Se tiene la matriz 
-	$$AX=b \quad \Rightarrow \quad \begin{bmatrix*}[r]
+	$$AX=b \quad \Rightarrow \quad \left[\begin{array}{*{4}{r}}
 	    1 & -2 & 1 & 2 \\
 	    1 & 1 & -1 & 1 \\
 	    1 & 7 & -5 & -1
-	\end{bmatrix*}
-	\begin{bmatrix*}[r]
+	\end{array}\right]
+	\left[\begin{array}{r}
 	    x_1 \\
 	    x_2 \\
 	    x_3 \\
 	    x_4
-	\end{bmatrix*}
+	\end{array}\right]
 	= 
-	\begin{bmatrix*}[r]
+	\left[\begin{array}{r}
 	    1 \\
 	    2 \\
 	    3
-	\end{bmatrix*}$$
+	\end{array}\right]$$
 	Entonces,
 
 	$$\begin{array}{ccc}
@@ -959,10 +999,10 @@ $$A'_{i(n+1)}=y_i.$$
 		1 & 1 & -1 & 1 & 2 \\
 		1 & 7 & -5 & -1 & 3
 	    \end{array}\right]
-	    &\begin{array}{rcl}
+	    &\left[\begin{array}{rcl}
 		R_2-R_1 &\to& R_2 \\
 		R_3-R_1 &\to& R_3 \\
-	    \end{array}&
+	    \end{array}\right]&
 	    \left[\begin{array}{rrrr|r}
 		1 & -2 & 1 & 2 & 1 \\
 		0 & 3 & -2 & -1 & 1 \\
@@ -974,10 +1014,10 @@ $$A'_{i(n+1)}=y_i.$$
 		0 & 1 & -\frac{2}{3} & -\frac{1}{3} & \frac{1}{3} \\
 		0 & 9 & -6 & -3 & 2
 	    \end{array}\right]\\\\
-	    &\begin{array}{rcl}
+	    &\left[\begin{array}{rcl}
 		R_1+2R_2 &\to& R_1 \\
 		R_3-9R_2&\to&R_3
-	    \end{array}&
+	    \end{array}\right]&
 	    \left[\begin{array}{rrrr|r}
 		1 & 0 & -\frac{1}{3} & \frac{4}{3} & \frac{5}{3} \\
 		0 & 1 & -\frac{2}{3} & -\frac{1}{3} & \frac{1}{3} \\
@@ -998,26 +1038,26 @@ $$A'_{i(n+1)}=y_i.$$
 	x_1&-&5x_2&-&7x_3&+&6x_4&+&2x_5&=&-7\\
     \end{array}$$
 	Respuesta.-\; Sea la matriz,
-	$$AX=b \quad \Rightarrow \quad \begin{bmatrix*}[r]
+	$$AX=b \quad \Rightarrow \quad \left[\begin{array}{*{5}{r}}
 	    2 & -3 & -7 & 5 & 2 \\
 	    1 & -2 & -4 & 3 & 1 \\
 	    2 & 0 & -4 & 2 & 1 \\
 	    1 & -5 & -7 & 6 & 2
-	\end{bmatrix*}
-	\begin{bmatrix*}[r]
+	\end{array}\right]
+	\left[\begin{array}{r}
 	    x_1 \\
 	    x_2 \\
 	    x_3 \\
 	    x_4 \\
 	    x_5
-	\end{bmatrix*}
+	\end{array}\right]
 	= 
-	\begin{bmatrix*}[r]
+	\left[\begin{array}{r}
 	    -2 \\
 	    -2 \\
 	    3 \\
 	    -7
-	\end{bmatrix*}$$
+	\end{array}\right]$$
 	Entonces,
 
 	$$\begin{array}{ccl}
@@ -1150,8 +1190,6 @@ $$A'_{i(n+1)}=y_i.$$
 
 \end{enumerate}
 
-\end{comment}
-
 
 \section{Multiplicación de matrices}
 
@@ -1206,7 +1244,7 @@ Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta
 \end{cor}
 
 
-\section*{Ejercicios}
+\section{Ejercicios}
 
 \begin{enumerate}[1.]
 

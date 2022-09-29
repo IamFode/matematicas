@@ -3,16 +3,13 @@
 \section{Definición de límite de una función}
 La continuidad existe si existe  continuidad por la izquierda y por la derecha.
 
-\begin{tcolorbox}
     \begin{def.}[Definición de entorno de un punto]
 	Cualquier intervalo abierto que contenga un punto $p$ como su punto medio se denomina entorno de $p$.
     \end{def.}
-\end{tcolorbox}
 
 \textbf{Notación.-} Designemos los entornos con $N(p), N_1(p), N_2(p),$ etc. Puesto que un entorno $N(p)$ es un intervalo abierto simétrico respecto a $p$, consta de todos los números reales $x$ que satisfagan $p-r<x<p+r$ para un cierto $r>0$. El número positivo $r$ se llama radio del entorno. En lugar de $N(p)$ ponemos $N(p;r)$ si deseamos especificar su radio. Las desigualdades $p-r<x<p+r$ son equivalentes a $-r<x-p<r$, y a $|x-p|<r$. Así pues, $N(p;r)$ consta de todos los puntos $x$ , cuya distancia a $p$ es menor que $r$.\\
 En la definición que sigue suponemos que $A$ es un número real y que $f$ es una función definida en un cierto entorno de un punto $p$ (excepción hecha acaso del mismo $p$). La función puede estar definida en $p$ pero esto no interviene en la definición.\\
 
-\begin{tcolorbox}
     \begin{def.}[Definición de límite de una función]
 	El simbolismo $$\lim_{x\to p}f(x)=A\qquad [\mbox{o}\; {f(x)\to A}\quad {x\to p}]$$
 	significa que para todo entorno $N_1(A)$ existe un cierto entorno $N_2(p)$ tal que 
@@ -24,7 +21,6 @@ En la definición que sigue suponemos que $A$ es un número real y que $f$ es un
 	Decir que $f(x)\in N_1(A)$ es equivalente a la desigualdad $|f(x)-A|<\epsilon$ y poner que $x\in N_2(p),\; x\neq p$ es lo mismo que escribir $0<|x-p|<\delta$. Por lo tanto, la definición de límite puede también expresarse así:\\\\
 	El símbolo $\lim\limits_{x\to p}f(x)=A$ significa que para todo $\epsilon > 0$, existe un $\delta >0$ tal que $$|f(x)-A|<\epsilon \quad \mbox{siempre que}\quad 0<|x-p|<\delta.$$
     \end{def.}
-\end{tcolorbox}
 
 Observamos que las tres desigualdades,
 
@@ -39,7 +35,6 @@ Son equivalentes. También son equivalentes las desigualdades,
 \end{center}
 
 Todas estas se derivan de la definición de límite.\\
-\begin{tcolorbox}
     \begin{def.}[Límites laterales]
 	Los límites laterales pueden definirse en forma parecida. Por ejemplo, si ${f(x)\to A}$ cuando ${x\to p}$ con valores mayores que $p$, decimos que $A$ es el límite por la derecha de $f$ en $p$, indicamos esto poniendo
 	$$\lim_{x\to p^+}f(x)=A.$$
@@ -47,11 +42,9 @@ Todas estas se derivan de la definición de límite.\\
 	$$f(x)\in N_1(A)\; \mbox{siempre que}\; x \in N_2(p)\quad \mbox{y}\quad x>p.$$
 	Los límites a la izquierda, que indican poniendo ${x\to p^-}$, se definen del mismo modo restringiendo $x$ a valores menores que $p$.
     \end{def.}
-\end{tcolorbox}
 
 \section{Definición de continuidad de una función}
 
-\begin{tcolorbox}
     \begin{def.}[Definición de continuidad de una función en un punto]
 	Se dice que una función $f$ es continua en un punto $p$ si 
 	\begin{enumerate}[\bfseries a)]
@@ -66,12 +59,10 @@ Todas estas se derivan de la definición de límite.\\
 	    $|f(x)-f(p)|<\epsilon$ siempre que $|x-p|<\delta$.
 	\end{center}
     \end{def.}
-\end{tcolorbox}
 
 \section{Teoremas fundamentales sobre límites. Otros ejemplos de funciones continuas.}
 
 %-------------------- teorema 3.1 --------------------------
-\begin{tcolorbox}
     \begin{teo}
 	Sean $f$ y $g$ dos funciones tales que 
 	$$\lim_{x\to p} f(x)=A,\qquad \lim_{x\to p}g(x)=B$$
@@ -84,7 +75,6 @@ Todas estas se derivan de la definición de límite.\\
 	\end{enumerate}
 	Las demostraciones estarán dadas en la sección 3.5.
     \end{teo}
-\end{tcolorbox}
 
 
 Observemos primero que las afirmaciones del teorema pueden escribirse en forma un poco distinta. Por ejemplo, (i) puede ponerse como sigue:
@@ -761,13 +751,11 @@ En los ejercicios del 1 al 10, calcular los límites y explicar cuáles han sido
 
 \section{funciones compuestas y continuas}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sean $u$ y $v$ dos funciones dadas cualquiera. La compuesta o la composición de $u$ y $v$ en ese orden se define como la función $f$ para la cual
 	$$f(x)=u[v(x)]$$
 	Es decir, para calcular el valor de $f$ en $x$ primero se calcula $v(x)$ y luego se calcula $u$ e el punto $v(x)$. Naturalmente que para que este cálculo tenga sentido, es necesario que los valores de $v(x)$ entren en el dominio de la función $u$, y $f$ estará sólo definida en aquellos puntos $x$ para los cuales $v(x)$ está en el dominio de $u$.
     \end{def.}
-\end{tcolorbox}
 
 La notación para indicar composición es: 
 $$f=u\circ v$$
@@ -1147,7 +1135,6 @@ Consecuencia inmediata edl teorema de Bolzano es el teorema del valor intermedio
 
 \section{El proceso de inversión}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $f$ con dominio $A$ y recorrido $B$. A cada $x$ de $A$ corresponde un $y$ de $B$ tal que $y=f(x)$. Para cada $y$ de $B$, existe por lo menos un $x$ de $A$ tal que $f(x)=y.$ Supongamos que existe uno sólo de esos $x$. Entonces podemos definir una nueva función $g$ de $B$ del modo siguiente:
 	\begin{center}
@@ -1159,7 +1146,6 @@ Consecuencia inmediata edl teorema de Bolzano es el teorema del valor intermedio
 	\end{center}
 	El proceso de inversión puede aplicarse a cualquier función $f$ que tenga la propiedad de que para cada $y$ en el recorrido de $f$, existe un sólo $x$ en el dominio de $f$ tal que $f(x)=y$.
     \end{def.}
-\end{tcolorbox}
 
 \begin{lema}
     Toda función continua estrictamente monótona tiene inversa.\\\\
@@ -1308,7 +1294,6 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
 
 \section{teorema de los valores extremos para funciones continuas}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $f$ una función de valores reales definida en un conjunto $S$ de números reales. Se dice que la función $f$ tiene un máximo absoluto en el conjunto $S$ si existe por lo menos un punto $c$ en $S$ tal que 
 	\begin{center}
@@ -1316,16 +1301,13 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
 	\end{center}
 	El número $f(c)$ se llama máximo absoluto de $f$ en $S$. 
     \end{def.}
-\end{tcolorbox}
 
-\begin{tcolorbox}
     \begin{def.}
 	Decimos que $f$ es mínimo absoluto en $S$ si existe un punto $d$ en $S$ tal que
 	\begin{center}
 	    $f(x)\geq f(d)$ para todo $x$ en $S$.
 	\end{center}
     \end{def.}
-\end{tcolorbox}
 
 \begin{teo}[Teorema de acotación para funciones continuas]
     Sea $f$ continua en un intervalo cerrado $[a,b]$. Entonces $f$ es acotada en $[a,b]$. Esto es, existe un número $C\geq 0$ tal que $|f(x)|\leq C$ para todo $x$ en $[a,b]$.\\\\
@@ -1347,13 +1329,11 @@ En cada uno de los ejercicios 1 al 5, demostrar que $f$ es estrictamente monóto
 
 \section{Teorema de la continuidad uniforme}
 
-\begin{tcolorbox}
     \begin{def.}
 	Sea $f$ una función de valores reales y continua en un intervalo cerrado $[a,b]$ y sean $M(f)$ y $m(f)$ los valores máximos y mínimos respectivamente de $f$ en $[a,b]$. Llamaremos a la diferencia 
 	$$M(f)-m(f)$$
 	la oscilación de $f$ en el intervalo $[a,b]$. Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares. en el inte Se podría utilizar la palabra extensión, en lugar de oscilación, ya que esta palabra tiene el inconveniente de sugerir funciones ondulares.
     \end{def.}
-\end{tcolorbox}
 
 \begin{teo}
     Sea $f$ continua en un intervalo cerrado $[a,b]$. Para todo $\epsilon>0$ existe una partición de $[a,b]$, en un número finito de subintervalos, tal que la oscilación de $f$ en todo subintervalo es menor que $\epsilon$.\\\\

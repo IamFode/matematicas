@@ -1,5 +1,4 @@
 \chapter*{Introducción}
-
 \setcounter{chapter}{1}
 \setcounter{section}{2}
 
@@ -33,7 +32,6 @@ Por tanto,cada número $A$ que satisfaga $(7)$ ha de satisfacer también: $$\dfr
 \setcounter{section}{1}
 \section{Axiomas de cuerpo}
 %axioma1
-\begin{tcolorbox}
 \begin{axioma}[Propiedad conmutativa] $x+y=y+x, \; xy=yx$\\
 \end{axioma}
 
@@ -57,7 +55,6 @@ $0+x=x+0=x \;$ y $1\cdot x = x\cdot 1 = 1$ \\
 %axioma6
 \begin{axioma}[Existena del recíproco] Para cada número real $x\neq 0$ existe un número real y tal que $xy=yx=1$ \\
 \end{axioma}
-\end{tcolorbox}
 
 %teorema 1.1
 \begin{teo}[Ley de simplificación para la suma]
@@ -163,11 +160,11 @@ Por definición, $(ab^{-1})(cd^{-1})$, propiedades conmutativa y asociativa $(ac
 \end{teo}
 
 %corolario 1.1
-\begin{col.}
+\begin{cor}
 Si $c\neq 0$ y $d\neq 0$ entonces $(cd^{-1})=c^{-1}d$\\\\
 Demostración.- \;
 Por definición de $a^{-1}$ tenemos que $(cd^{-1})^{-1}=\displaystyle\frac{1}{cd^{-1}}$, por el teorema de posibilidad de la división $1=(c^{-1}d)(cd^{-1})$ y en virtud de los axiomas de conmutatividad y asociatividad $1=(c^{1}c)(dd^{-1})$, luego $1=1$. quedando demostrado el corolario.\\\\
-\end{col.}
+\end{cor}
 
 %teorema 1.15 
 \begin{teo}
@@ -225,7 +222,6 @@ Sea $b\neq 0$ y $d\neq 0$ y por definición $ab^{-1}-cd^{-1}$, luego por axiomas
 \end{enumerate}
 
 \section{Axiomas de orden}
-\begin{tcolorbox}
 \begin{axioma}Si $x$ e $y$ pertenecen a $\mathbb{R}^+$, lo mismo ocurre a $x+y$ y $xy$\\
 \end{axioma}
 \begin{axioma}
@@ -234,9 +230,7 @@ Para todo real $x\neq 0$, ó $x \in \mathbb{R}^+$ ó $-x \in \mathbb{R}^+$, pero
 \begin{axioma}
 $0 \not\subset \mathbb{R}^+$\\
 \end{axioma}
-\end{tcolorbox}
 
-\begin{tcolorbox}
 \begin{def.}
 $x<y $ significa que $y-x$ es positivo. \\
 \end{def.}
@@ -249,7 +243,6 @@ $x \geq y$ significa que ó $x<y$ ó $x=y$\\
 \begin{def.}
 $y \leq x$ significa que $x \leq y$ 
 \end{def.}
-\end{tcolorbox}
 
 \section{Ejercicios}
 \begin{enumerate}[\bfseries  1.]
@@ -363,10 +356,10 @@ Si $a>0$ entonces $a^{-1}>0$, dado que $a<b$ y por teorema  \; $a\cdot a^{-1}< a
 Demostración.- \; Si $a<b$ ó $a=b$ y $b<c$ ó $b=c$ demostremos por casos: Si $a<b$ y $b<c$ por la propiedad transitiva $a<c$, después si $a<b$ y $b=c$ entonces $a<c$, luego si $a=b$ y $b<c$ entonces $a<c$,  por último si $a=b$ y $b=c$ entonce $a=c$, por lo tanto $a\leq c$\\\\
 
 %corolario 
-\begin{col.}
+\begin{cor}
 Si $c\leq b$ y $b \leq c$ entonces $c=b$\\\\
 Demostración .- \; Si $b-c>0$ y $c-b>0$ entonces $(b-c)+(c-b)>0$ y $0<0$ es Falso, entonces queda que $c=b$ (Usted puede comprobar para cada uno de los casos que se suscita parecido al teorema anterior.)\\\\
-\end{col.}
+\end{cor}
 
 %---------------------------7----------------------------
 \item Si $a\leq b$ y $b \leq c$ y $a=c$ entonces $b=c$\\\\
@@ -393,7 +386,6 @@ Por hipótesis $a^2>b$ y $a^2-b>0$, luego \; $(a-\sqrt{b})(a+\sqrt{b})>0$, y por
 \end{enumerate}
 
 \section{Números enteros y racionales}
-\begin{tcolorbox}
 %definición de conjunto inductivo
 \begin{def.}[Definción de conjunto inductivo]
 Un conjunto de números reales se denomina conjunto inductivo si tiene las propiedades siguientes:
@@ -405,11 +397,9 @@ Un conjunto de números reales se denomina conjunto inductivo si tiene las propi
 \begin{def.}[Definición de enteros positivos]
 Un número real se llama entero positivo si pertenece a todo conjunto inductivo.
 \end{def.}
-\end{tcolorbox}
 
 \setcounter{section}{7}
 \section{Cota superior de un conjunto, elemento máximo, extremo superior}
-\begin{tcolorbox}
 \begin{def.}[definición de extremo superior]
 Un número $B$ se denomina extremo superior de un conjunto no vacío $S$ si $B$ tiene las dos propiedades siguientes:
 \begin{enumerate}[\bfseries a)]
@@ -417,7 +407,6 @@ Un número $B$ se denomina extremo superior de un conjunto no vacío $S$ si $B$ 
 \item Ningún número menor que $B$ es cota superior para $S$.
 \end{enumerate}
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.26
 \begin{teo}
@@ -427,14 +416,11 @@ Demostración.- \; Sean $B$ y $C$ dos extremos superiores para un conjunto $S$. 
 
 \section{Axioma del extremo superior (axioma de completitud)}
 
-\begin{tcolorbox}
 %axioma 10
 \begin{axioma}
 Todo conjunto no vacío $S$ de números reales acotado superiormente posee extremo superior; esto es, existe un número real $B$ tal que $B=sup S$
 \end{axioma}
-\end{tcolorbox}
 
-\begin{tcolorbox}
 %definición de extremo inferior
 \begin{def.}[Definición de extremo inferior (Ínfimo)]
 Un número $L$ se llama extremo inferior (o ínfimo) de $S$ si:
@@ -446,7 +432,6 @@ $$Si \; t\leq x, \, \; \forall x \in S, \, \, entonces \, t\leq L $$
 \end{enumerate}
 El extremo inferior de $S$, cuando existe, es único y se designa por $infS$. Si $S$ posee mínimo, entonces $minS=infS$\\
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.27
 \begin{teo}
@@ -645,11 +630,9 @@ Por otra parte sea $S$ el conjunto de todos los racionales y supongase que esta 
 \section{Existencia de raíces cuadradas de los números reales no negativos}
 \paragraph{Nota}
 Los números negativos no pueden tener raíces cuadradas, pues si $x^2=a$, al ser $a$ un cuadrado ha de ser no negativo (en virtud del teorema 2.5). Además, si $a=0$, $x=0$ es la única raíz cuadrada (por el teorema 1.11). Supóngase, pues $a>0$. Si $x^2=a$ entonces $x\leq 0$ y $(-x)^2=a$, por lo tanto, $x$ y su opuesto son ambos raíces cuadradas. Pero a lo sumo tiene dos, porque si $x^2=a$ e $y^2=a$, entonces $x^2=y^2$ \; y \; $(x+y)(x-y)=0$, en virtud del teorema 1.11, \; ó $x=y$ ó $x=-y$. Por lo tanto, si $a$ tiene raíces cuadradas, tiene exactamente dos.
-\begin{tcolorbox}
 \begin{def.}
 Si $a\geq 0$, su raíz cuadrada no negativa se indicará por $a^{1/2}$ o por $\sqrt{a}$. Si $a>0$, la raíz cuadrada negativa es $-a^{1/2}$ ó $-\sqrt{a}$
 \end{def.}
-\end{tcolorbox}
 %teorema 1.35
 \begin{teo}
 Cada número real no negativo $a$ tiene una raíz cuadrada no negativa única.\\\\
@@ -661,22 +644,17 @@ Supóngase $b^2<a$. Puesto que $b>0$ se puede elegir un número positivo $c$ tal
  
 \section{Raíces de orden superior. Potencias racionales}
 El axioma del extremo superior se puede utilizar también para probar la existencia de raíces de orden superior. Por ejemplo, si $n$ es un entero positivo impar, para cada real $x$ existe un número real $y$, y uno sólo tal que $x^n=x$. Esta $y$ se denomina raíz n-sima de $x$ y se indica por:
-\begin{tcolorbox}
 \begin{def.}
 $$y=x^{\frac{1}{n}} \; \; ó \; \; y=\sqrt[n]{x}$$
 \end{def.}
-\end{tcolorbox}
 Si $n$ es par, la situación es un poco distinta. En este caso, si $x$ es negativo, no existe un número real $y$ tal que $y^n = x$, puesto que $y^n\geq 0$ para cada número real $y$. Sin embargo, si $x$ es positivo, se puede probar que existe un número positivo y sólo uno tal que $y^n = x$. Este $y$ se denomina la raíz n-sima positiva de $x$ y se indica por los símbolos anteriormente mencionados. Puesto que $n$ es par, $(-y)^n = y^n$ y, por tanto, cada $x > 0$ tiene dos raíces n-simas reales, $y$ e $-y$. Sin embargo, los símbolos $x^{\frac{1}{n}}$ y $\sqrt[n]{x}$; se reservan para la raíz n-sima positiva.\\
-\begin{tcolorbox}
 \begin{def.}
 Si $r$ es un número racional positivo, sea $r = m/n$, donde $m$ y $n$ son enteros positivos, se define como: $$x^r= x^{m/n }=(x^m)^{\frac{1}{n}},$$ es decir como raíz n-sima de $x^m$, siempre que ésta exista.\\ 
 \end{def.}
 \begin{def.}  
 Si $x\neq 0$, se define $$x^{-r} = \dfrac{1}{x^r},$$ con tal que $x^r$ esté definida.
 \end{def.}
-\end{tcolorbox}
  Partiendo de esas definiciones, es fácil comprobar que las leyes usuales de los exponentes son válidas para exponentes racionales: 
-\begin{tcolorbox}
 \begin{prop} Propiedades de potencia.\\
 \begin{center}
 \begin{enumerate}[\bfseries 1.]
@@ -687,19 +665,16 @@ Si $x\neq 0$, se define $$x^{-r} = \dfrac{1}{x^r},$$ con tal que $x^r$ esté def
 \end{enumerate}
 \end{center}
 \end{prop}
-\end{tcolorbox}
 
 \setcounter{chapter}{4}
 \setcounter{section}{2}
 \section{El principio de la inducción matemática}
-\begin{tcolorbox}
 \paragraph{Método de demostración por inducción}Sea $A(n)$ una afirmación que contiene el entero $n$. Se puede concluir que $A(n)$ es verdadero para cada $n\geq n_1$ si es posible:
 \begin{enumerate}[\bfseries a)]
 \item Probar que $A(n_1)$ es cierta.
 \item Probar, que supuesta $A(k)$ verdadera, siendo $k$ un entero arbitrario pero fijado $\geq n_1$, que $A(k+1)$ es verdadera.\\
 \end{enumerate}
 En la práctica, $n_1$ es generalmente igual a $1$.
-\end{tcolorbox}
 
 %teorema 1.36
 \begin{teo}[Principio de inducción matemática]
@@ -938,7 +913,7 @@ $\displaystyle\sum_{k=1}^{n} (ca_k)$&$=$&$ca_1 + ca_2 + ... + ca_n$&\\\\
 \begin{tabular}{r c l l}
 $\displaystyle\sum_{k=1}^{n} (a_k - a_{k-1})$&$=$&$(a_1-a_0)+(a_2-a_1)+...+(a_n-a_{n-1})$&\\
 &$=$&$(a_1+a_2+...+a_{n-1})-(a_0+a_1+...+a_{n-1})+a_n$&\\\\
-&$=$&$a_n + \displaystyle\sum_{k=1}^{n-1} a_k - \sum_{k=0}^{n-1} a_k$&Reindexando la 2da suma\\\\
+&$=$&$a_n + \displaystyle\sum_{k=1}^{n-1} a_k - \sum_{k=0}^{n-1} a_k$&Reindexar la 2da suma\\\\
 &$=$&$a_n + \displaystyle\sum_{k=1}^{n-1} a_k - a_0 - \sum_{k=1}^{n-1} a_k$&\\\\
 &$=$&$a_n - a_0$&\\\\
 \end{tabular}
@@ -1131,7 +1106,6 @@ Por lo tanto la desigualdad correcta se aplica a todo $m \in \mathbb{Z} k \geq 2
 \textbf{Cabe recalcar que el libro menciona que $m\geq 2$} pero este último solo se cumple para los extremos de la desigualdad y no así para $\sum\limits_{n=1}^m \dfrac{1}{\sqrt{2}}$\\\\
 
 \section{Valor absoluto y desigualdad triangular}
-\begin{tcolorbox}
 %definición valor absoluto
 \begin{def.}
 $$|x| = \left\lbrace
@@ -1141,7 +1115,6 @@ $$|x| = \left\lbrace
 \end{array}
 \right.$$
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.38
 \begin{teo}
@@ -1270,14 +1243,12 @@ $\left( \sum\limits_{k=1}^n a_k b_k \right)$&$=$&$\left[ -x \left( \sum\limits_{
 
 \section{Ejercicios varios referentes al método de inducción}
 %definición coeficiente factorial y binomial
-\begin{tcolorbox}
 \begin{def.}[Coeficiente factorial y binomial]
 El símbolo $n!$ (que se lee $n$ factorial) se puede definir por inducción como sigue: $0!=1, \; n!=(n-1!n$ si $n\geq 1$\\
 Obsérvese que $n!=1\cdot 2 \cdot 3 \cdot \cdot \cdot n.$\\
 Si $0\leq k \leq n$ el coeficiente binomial ${n \choose k}$ se define por 
 $${n \choose k} = \dfrac{n!}{k!(n-k)!}$$
 \end{def.}
-\end{tcolorbox}
 \begin{enumerate}[ \bfseries 1.]
 
 %------------------------------------------1--------------------------------------
@@ -1376,11 +1347,9 @@ Para la segunda fórmula aplicamos una vez mas pero con $a=-1$ y $b=1$, entonces
 $$(a+b)^n = (-1+1)^n = 0^n = 0 = \sum\limits_{k=0}^n {n \choose k} (-1)^k$$\\\\
 
 %definición 4.15
-\begin{tcolorbox}
 \begin{def.}[Símbolo producto.] El producto de $n$ números reales $a_i, a_2,...,a_n$ se indica por el símbolo $\prod\limits_{k=1}^n a_k,$ que se puede definir por inducción. El símbolo $a_1 a_2 \cdot \cdot \cdot a_n$ es otra forma de escribir este producto. Obsérvese que:
 $$n! = \displaystyle\prod_{k=1}^n k$$\\
 \end{def.}
-\end{tcolorbox}
 
 %-------------------------------------------5---------------------------------------
 \item Dar una definición por inducción del producto $\displaystyle\prod_{k=1}^n a_k$\\\\
@@ -1628,13 +1597,11 @@ $\Rightarrow$&$a_{k+1}$&$<$&$\left( \dfrac{1 + \sqrt{5}}{2} \right)^{k-1} \cdot 
 \end{center}
 Por lo tanto la desigualdad es válida para $n \in \mathbb{Z}_{\geq 1}$\\\\
 
-\begin{tcolorbox}
 \begin{def.}[Desigualdades que relacionan distintos tipos de promedios]
 Sean $x_1,x_2,...,x_n$ $n$ números reales positivos. Si $p$ es un entero no nulo, la media de potencias p-énesimas $M_p$ se define como sigue.
 $$M_p = \left( \dfrac{x_1^{p} + ... + x_{n}^{p}}{n} \right)^{1/p}$$
 El número $M_1$ se denomina media aritmética, $M_2$ media cuadrática y $M_{-1}$ media armónica.\\
 \end{def.}
-\end{tcolorbox}
 \vspace{1cm}
 %---------------------------------17------------------------------------
 \item Si $p>0$ demostrar que $M_p< M_{2p}$ cuando $x_1,x_2,...,x_n$ no son todos iguales.\\\\
@@ -1696,11 +1663,9 @@ $$b+a_2+...+a_k\geq k \Rightarrow a_1 + a_2 +...+a_k + a_{k+1} \geq k+1$$
 Por lo tanto, la desigualdad es válida para $k+1$ y en consecuencia es verdadera para $n\in \mathbb{Z}^+$\\\\
 \end{enumerate}
 
-\begin{tcolorbox}
 \begin{def.}
 La media geométrica $G$ de $n$ números reales positivos $x_1,...,x_n$ está definida por la fórmula $G=(x_1 x_2 \cdot \cdot \cdot x_n)^{1/n}$
 \end{def.}
-\end{tcolorbox}
 %----------------------------------20-----------------------------------
 \item 
 \begin{enumerate}[\bfseries (a)]

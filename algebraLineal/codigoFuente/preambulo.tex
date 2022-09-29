@@ -12,7 +12,7 @@
 	    letterpaper,
 	    asymmetric,
 	    showframe = false]{geometry} %configuración página
-\usepackage{latexsym,amsmath,xparse,amssymb,amsfonts,amsthm} %(símbolos de la AMS)
+\usepackage{latexsym,xparse,amssymb,amsfonts,amsthm,amsmath} %(símbolos de la AMS)
 \parindent = 0cm  %sangria
 \usepackage[T1]{fontenc} %acentos en español
 \usepackage{graphicx} %gráficos y figuras.
@@ -49,20 +49,6 @@
 \titlespacing*{\section}{0pt}{1.7cm}{.3cm}
 
 %------------------------------------------
-
-%\theoremstyle{definition}
-%\newtheorem{axioma}{Axioma}[part]
-%\newtheorem{teo}{Teorema}[chapter]%entorno para teoremas
-%\newtheorem{def.}{Definición}[chapter]%entorno para definiciones
-%\newtheorem{ejem}{Ejemplo}[chapter]%entorno para ejemplos
-%\newtheorem{post}{Postulado}[chapter]%entorno de postulados
-%\newtheorem{cor}{Corolario}[chapter]
-%\newtheorem{ej}{Ejercicio}[chapter]
-%\newtheorem{prop}{Propiedad}[part]
-%\newtheorem{lema}{Lema}[chapter]
-%\newtheorem{prob}{Problema}[chapter]
-%\newtheorem{obs}{Obs:}[chapter]
-
 
 \declaretheoremstyle[%
     spaceabove=0pt,spacebelow=20pt,%
@@ -180,7 +166,7 @@
   {\normalfont\bfseries}{\themysection}{1em}{}
 \titlespacing*{\mysection}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
 \renewcommand{\themysection}{\arabic{chapter}.\Alph{mysection}}
-\counterwithin{section}{mysection}
+%\counterwithin{section}{mysection}
 
 %-------------------------------------------------------------------
 
@@ -193,6 +179,7 @@
 \def\arcsen{\mathop{\mbox{\normalfont arcsen}}\nolimits}
 \def\arctan{\mathop{\mbox{\normalfont arctan}}\nolimits}
 
+%----------Formato título de capítulos-------------
 %---------------------------------
 \titleformat*{\section}{\bfseries}
 \titleformat*{\subsection}{\bfseries}
@@ -200,7 +187,6 @@
 \titleformat*{\paragraph}{\bfseries}
 \titleformat*{\subparagraph}{\bfseries}
 
-%----------Formato título de capítulos-------------
 
 \titleformat{\chapter}[display]
 {\vspace{4ex}\bfseries\huge}
@@ -208,13 +194,3 @@
 {2ex}
 {\filleft}
 
-\makeatletter
-\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{#1}}
-
-\renewenvironment{bmatrix}
-{{\ifnum`}=0 \fi\left[\env@matrix}
-{\endmatrix\right]\ifnum`{=0 \fi}}
-\makeatother
