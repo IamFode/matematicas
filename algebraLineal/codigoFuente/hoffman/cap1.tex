@@ -47,23 +47,23 @@ Se designa por $F$ el conjunto de los números reales o el conjunto de los núme
 
 %------------------- ejemplo 1 ----------------------
 \begin{ejem}
-    El conjunto de los enteros positivos: $1,2,3,\ldots$ no es un subcuerpo de $C$ por varias razones. Por ejemplo, $0$ no es un entero positivo; para ningún entero positivo $n$, es $-n$ un entero positivo; para ningún entero positivo $n$, excepto $1$, es $1/n$ un entero positivo.\\
+    El conjunto de los enteros positivos: $1,2,3,\ldots$ no es un subcuerpo de $C$ por varias razones. Por ejemplo, $0$ no es un entero positivo; para ningún entero positivo $n$, es $-n$ un entero positivo; para ningún entero positivo $n$, excepto $1$, es $1/n$ un entero positivo.
 \end{ejem}
 
 %------------------- ejemplo 2 ----------------------
 \begin{ejem}
-    El conjunto de los enteros: $\ldots,-2,-1,0,1,2,\ldots$ no es un subcuerpo de $C$, porque para un entero $n$, $1/n$ no es un entero al menos que $n$ sea $1$ o $-1$. Con las operaciones usuales de adición y multiplicación, el conjunto de los enteros satisface todas las condiciones (1)-(9), con excepción de la condición (8).\\
+    El conjunto de los enteros: $\ldots,-2,-1,0,1,2,\ldots$ no es un subcuerpo de $C$, porque para un entero $n$, $1/n$ no es un entero al menos que $n$ sea $1$ o $-1$. Con las operaciones usuales de adición y multiplicación, el conjunto de los enteros satisface todas las condiciones (1)-(9), con excepción de la condición (8).
 \end{ejem}
 
 %------------------- ejemplo 3 ----------------------
 \begin{ejem}
-    El conjunto de los números racionales, esto es, números de la forma $p/q$, donde $p$ y $q$ son enteros y $q\neq 0$, es un subcuerpo del cuerpo de los complejos. La división que no es posible en el conjunto de los enteros es posible en el conjunto de los números racionales.\\
+    El conjunto de los números racionales, esto es, números de la forma $p/q$, donde $p$ y $q$ son enteros y $q\neq 0$, es un subcuerpo del cuerpo de los complejos. La división que no es posible en el conjunto de los enteros es posible en el conjunto de los números racionales.
 \end{ejem}
 
 %------------------- ejemplo 4 ----------------------
 \begin{ejem}
     El conjunto de todos los números complejos de la forma $x+y\sqrt{2}$, donde $x$ e $y$ son racionales, es un subcuerpo de $C$.\\\\
-	Demostración.-\; La multiplicación y la suma de un número racional y un número irracional siempre da un irracional. Estos números cumplen las condiciones (1)-(9), por lo que podemos concluir que este conjunto es un subcuerpo de $C$.\\
+	Demostración.-\; La multiplicación y la suma de un número racional y un número irracional siempre da un irracional. Estos números cumplen las condiciones (1)-(9), por lo que podemos concluir que este conjunto es un subcuerpo de $C$.
 \end{ejem}
 
 \section{Sistema de ecuaciones lineales}
@@ -101,8 +101,9 @@ Se dirá que dos sistemas de ecuaciones lineales son \textbf{equivalentes} si ca
 \begin{teo}
     Sistemas equivalentes de ecuaciones lineales tiene exactamente las mismas soluciones.
 \end{teo}
+\vspace{.5cm}
 
-\section{Ejercicios}
+\subsection*{Ejercicios}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -457,8 +458,9 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     Considérese ahora la matriz que resultó de lo anterior. Si todo elemento de la fila $2$ es $0$, se deja tal cual. Si algún elemento de la fila $2$ es diferente de $0$, se multiplica esa fila por un escalar de modo que el primer elemento no nulo sea $1$. En caso de que la fila $1$ haya tenido un primer elemento no nulo en la columna $k$, este primer elemento no nulo de la fila $2$ no puede estar en la columna $k$, supóngase que esté en la columna $k_r\neq k$. Sumando múltiplos apropiados de la fila $2$ a las otras filas, se puede lograr que todos los elementos de la columna $k_r$ sean $0$, excepto el $1$ en la fila $2$. Lo que es importante observar es lo siguiente: Al efectuar etas operaciones, no se alteran los elementos de la fila $1$ el alas columnas $1,\ldots, k$ ni ningún elemento de la columna $k$. Es claro que, si la fila $1$ era idénticamente nula, las operaciones con la fila $2$ no afecta la fila $1$.\\
     Si se opera, como se indicó, con una fila cada vez, es evidente que después de un número finito de etapas se llegará a una matriz reducida por filas.
 \end{teo}
+\vspace{.5cm}
 
-\section{Ejercicios}
+\subsection*{Ejercicios}
 
 
 \begin{enumerate}[\bfseries 1.]
@@ -549,8 +551,15 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 
 	\end{array}$$
 
-	Por lo tanto tenemos: $\;\dfrac{6}{7}x_3=0,\;\; 7x^2+x^3=0 \; \; \mbox{y} \;\; x_1-3x_2=0.$ De donde 
-	$$x_1=x_2=x_3=0.$$\\
+	Por lo tanto tenemos las ecuaciones,
+	$$\left\{\begin{array}{rcl}
+	    \dfrac{6}{7}x_3=0\\\\
+	    7x^2+x^3=0\\\\
+	    x_1-3x_2=0. 
+	\end{array}\right.$$
+	De donde 
+	$$x_1=x_2=x_3=0.$$
+	Por lo tanto, $AX=0$ tiene una solución trivial.\\\\
 
 
     %---------- 3.
@@ -561,132 +570,265 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	    -1 & 0 & 3 
     \end{array}\right]$$
     Hallar todas las soluciones de $AX=2X$ y todas las soluciones de $AX=3X$ (el símbolo $cX$ representa la matriz, cada elemento de la cual es $c$ veces el correspondiente elemento de $X$).\\\\
-	Demostración.-\; Sea $AX=2X$, entonces
-	$$AX=2X\quad \Rightarrow \quad AX-2X=0\quad \Rightarrow \quad (A-2I)X=0.$$
-	De donde,
-
-	$$A-2I=\left[\begin{array}{*{3}{r}}
-	    6 & -4 & 0 \\
-	    4 & -2 & 0 \\
-	    -1 & 0 & 3
-	\end{array}\right]-2
+	Demostración.-\; El sistema $AX=2X$ será
+	$$\begin{array}{*{3}{r}}
+	    6x_1-4x_2 &=& 2x_1\\
+	    4x_1-2x_2 &=& 2x_2\\
+	    -x_1 +3x_3&=& 2x_3
+	\end{array}$$
+	El cual es equivalente a
+	$$\begin{array}{*{3}{r}}
+	    4x_1-4x_2 &=& 0\\
+	    4x_1-4x_2 &=& 0\\
+	    -x_1 +x_3&=& 0
+	\end{array}$$
+	Reduciendo por filas, la matriz de coeficientes nos queda
+	$$
+	\begin{array}{*{5}{c}}
 	\left[\begin{array}{*{3}{r}}
-	    1 & 0 & 0 \\
-	    0 & 1 & 0 \\
-	    0 & 0 & 1 
-	\end{array}\right] = 
+	    4 & -4 & 0\\
+	    4 & -4 & 0\\
+	    -1 & 0 & 1
+	\end{array}\right] & \begin{array}{rcl}
+		    \frac{1}{4}R_1&\to& R_1\\\\
+		    \frac{1}{4}R_2&\to& R_2 
+		\end{array} &
 	\left[\begin{array}{*{3}{r}}
-	    4 & -4 & 0 \\
-	    4 & -4 & 0 \\
-	    -1 & 0 & 1 
-	\end{array}\right]$$
+	    1 & -1 & 0\\
+	    1 & -1 & 0\\
+	    -1 & 0 & 1
+    \end{array}\right]  & 
+	\begin{array}{rcl}
+	    R_3+R_1\to R_3 \\\\
+	    -R_1+R_2\to R_2
+	\end{array}
+	&
+	\left[\begin{array}{*{3}{r}}
+	    1 & -1 & 0\\
+	    0 & 0 & 0\\
+	    0 & -1 & 1
+	\end{array}\right]\\\\
+	& R_2\to R_3&
+	\left[\begin{array}{*{3}{r}}
+	    1 & -1 & 0\\
+	    0 & -1 & 1\\
+	    0 & 0 & 0
+	\end{array}\right] 
+	& R_2+R_1\to R_1&
+	\left[\begin{array}{*{3}{r}}
+	    1 & 0 & 1\\
+	    0 & -1 & 1\\
+	    0 & 0 & 0
+	\end{array}\right]\\\\
 
-	Resolviendo tenemos,
+	\end{array}
+	$$
+	De donde tenemos las ecuaciones
+	$$
+	\left\{\begin{array}{rcl}
+	    x_1-x_3=0\\
+	    -x_2+x_3=0
+	\end{array}\right. \quad \Rightarrow \quad
+	\left\{\begin{array}{rcl}
+		x_1=x_3\\
+		x_3=x_2
+	\end{array}\right.
+	$$
+	Por lo tanto, el conjunto solución será
+	$$\left\{(t,t,t)|t\in \mathbb{R}\right\}.$$\\
 
-	$$\begin{array}{ccccc}
-
+	Para el sistema $AX=3X$ se tiene
+	$$\begin{array}{*{3}{r}}
+	    6x_1-4x_2 &=& 3x_1\\
+	    4x_1-2x_2 &=& 3x_2\\
+	    -x_1 +3x_3&=& 3x_3
+	\end{array}$$
+	El cual es equivalente a
+	$$\begin{array}{*{3}{r}}
+	    3x_1-4x_2 &=& 0\\
+	    x_1-2x_2 &=& 0\\
+	    -x_1 &=& 0
+	\end{array}$$
+	Reduciendo por filas, la matriz de coeficientes nos queda
+	$$
+	\begin{array}{*{5}{c}}
 	    \left[\begin{array}{*{3}{r}}
-		4 & -4 & 0 \\
-		4 & -4 & 0 \\
-		-1 & 0 & 1 
-	    \end{array} \right]
-	    &R_2 - R_1 \to R_2&
+		3 & -4 & 0\\
+		1 & -2 & 0\\
+		-1 & 0 & 0
+	    \end{array}\right] & \begin{array}{rcl}
+	    -R_3\to R_3\\\\
+	    R_3\leftrightarrow R_1
+	    \end{array} &
 	    \left[\begin{array}{*{3}{r}}
-		4 & -4 & 0 \\
-		0 & 0 & 0 \\
-		-1 & 0 & 1 
-	    \end{array} \right]
-	    &R_3 + \dfrac{1}{4} R_1 \to R_3&
+		1 & 0 & 0\\
+		1 & -2 & 0\\
+		3 & -4 & 0
+	    \end{array}\right]  &
+	    \begin{array}{rcl}
+		-R_1+R_2\to R_2 \\\\
+		-3R_1+R_3\to R_3
+	    \end{array}
+	    &
 	    \left[\begin{array}{*{3}{r}}
-		4 & -4 & 0 \\
-		0 & 0 & 0 \\
-		0 & -1 & 1 
+		1 & 0 & 0\\
+		0 & -2 & 0\\
+		0 & -4 & 0
 	    \end{array}\right]\\\\
-	    &R_2 \leftrightarrow R_3&
+	    &-\dfrac{1}{2} R_2\to R_2&
 	    \left[\begin{array}{*{3}{r}}
-		4 & -4 & 0 \\
-		0 & -1 & 1 \\
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & -4 & 0
+	\end{array}\right]&
+	4R_2+R_3\to R_3&
+	\left[\begin{array}{*{3}{r}}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
 		0 & 0 & 0
-	    \end{array} \right]& & \\
+	\end{array}\right]\\\\
+	\end{array}
+    	$$
+	De donde tenemos las ecuaciones
+	$$\left\{\begin{array}{rcl}
+	    x_1=0\\
+	    x_2=0
+	\end{array}\right.$$ 
+	Así, el conjunto de soluciones viene dado por
+	$$\left\{(0,0,t)|t\in \mathbb{R}\right\}.$$\\
 
-	\end{array}$$
 
-	Luego, las soluciones estarán dadas por, 
-	$$-x_2+x_3=0\quad \Rightarrow \quad x_2=x_3 \qquad \mbox{y}\qquad 4x_1-4x_2=0 \quad \Rightarrow \quad x_1=x_2.$$
-	Por lo tanto,
-	$$x_1=x_2=x_3.$$\\
-	Por otro lado si $AX=3X$, entonces
-	$$AX=3X\quad \Rightarrow \quad AX-3X=0\quad \Rightarrow \quad (A-3I)X=0.$$
-	De donde,
-
-	$$A-2I=\left[\begin{array}{*{3}{r}}
-	    6 & -4 & 0 \\
-	    4 & -2 & 0 \\
-	    -1 & 0 & 3
-	\end{array}\right]-2
-	\left[\begin{array}{*{3}{r}}
-	    1 & 0 & 0 \\
-	    0 & 1 & 0 \\
-	    0 & 0 & 1 
-	\end{array} \right]= 
-	\left[\begin{array}{*{3}{r}}
-	    3 & -4 & 0 \\
-	    4 & -5 & 0 \\
-	    -1 & 0 & 0 
-	\end{array}\right]$$
-
-	Resolviendo tenemos,
-
-	$$\begin{array}{ccccc}
-
-	    \left[\begin{array}{*{3}{r}}
-		3 & -4 & 0 \\
-		4 & -5 & 0 \\
-		-1 & 0 & 0 
-	    \end{array} \right]
-	    &R_1 \leftrightarrow R_3&
-	    \left[\begin{array}{*{3}{r}}
-		-1 & 0 & 0 \\
-		4 & -5 & 0 \\
-		3 & -4 & 0 
-	    \end{array}\right] 
-	    &R_2 + 4 R_1 \to R_2&
-	    \left[\begin{array}{*{3}{r}}
-		-1 & 0 & 0 \\
-		0 & -5 & 0 \\
-		3 & -4 & 0 
-	    \end{array}\right]\\\\
-	    &R_3 +3R_1 \to R_3&
-	    \left[\begin{array}{*{3}{r}}
-		-1 & 0 & 0 \\
-		0 & -5 & 0 \\
-		0 & -4 & 0 
-	    \end{array}\right] 
-	    &R_3-\dfrac{4}{5}R_2 \to R_3& 
-	    \left[\begin{array}{*{3}{r}}
-		-1 & 0 & 0 \\
-		0 & -5 & 0 \\
-		0 & 0 & 0 
-	    \end{array}\right] 
-
-	\end{array}$$
-
-	Luego,  $0x_3=0\; \Rightarrow \; x_3\in \mathbb{R}$, $x_1=0$ y $x_2=0$ por lo tanto,
-	$$x_3\in \mathbb{R}, x_1=x_2=0.$$\\
 
     %---------- 4.
     \item Hallar una matrix reducida por filas que sea equivalente por filas a 
-    $$A=\left[\begin{array}{*{3}{c}}
+    $$A=\left[\begin{array}{*{3}{r}}
 	i & -(1+i) & 0 \\
 	1 & -2 & 1 \\
 	1 & 2i & -1
     \end{array}\right]$$
-    \vspace{0.4cm}
-	Respuesta.-\;
+    \vspace{0.5cm}
+	Respuesta.-\; Reducimos por filas de la siguiente manera,
+	$$
+	\begin{array}{*{3}{c}}
+	    \left[\begin{array}{*{3}{r}}
+		i & -(1+i) & 0 \\
+		1 & -2 & 1 \\
+		1 & 2i & -1
+	    \end{array}\right]
+	&
+	R_1 \leftrightarrow R_2
+	&
+	\left[\begin{array}{*{3}{r}}
+		1 & -2 & 1 \\
+		i & -(1+i) & 0 \\
+		1 & 2i & -1
+	    \end{array}\right]\\\\
+	&
+	\begin{array}{rcl}
+	    R_2-R_1&\to& R_2\\\\
+	    R_3-R_1&\to& R_3
+	\end{array}
+	&
+	\left[\begin{array}{*{3}{r}}
+		1 & -2 & 1 \\
+		0 & -1+i & -i \\
+		0 & 2i+2 & -2
+	    \end{array}\right] \\\\
+	&
+	\begin{array}{rcl}
+	    R_3-\dfrac{2i+2}{-1+i}R_2&\to& R_3
+	\end{array}
+	&
+	\left[\begin{array}{*{3}{r}}
+		1 & -2 & 1 \\
+		0 & -1+i & -i \\
+		0 & 0 & 0
+	\end{array}\right]
+	\end{array}
+	$$
+	\vspace{.5cm}
 
 
     %---------- 5.
-    \item 
+    \item Demostrar que las siguientes dos matrices no son equivalentes por filas.
+    $$
+    \left[\begin{array}{*{3}{r}}
+	    2&0&0\\
+	    a&-1&0\\
+	    b&c&3
+    \end{array}\right] ,
+    \qquad
+    \left[\begin{array}{*{3}{r}}
+	    1&1&2\\
+	    -2&0&-1\\
+	    1&3&5
+    \end{array}\right]
+    $$
+    \vspace{0.5cm}
+	Demostración.-\; Reduzcamos por filas la primera matriz,
+	$$
+	\begin{array}{*{5}{c}}
+	    \left[\begin{array}{*{3}{r}}
+		2&0&0\\
+		a&-1&0\\
+		b&c&3
+	    \end{array}\right]
+	    &
+	    \begin{array}{rcl}
+		R_2-\dfrac{a}{2}R_1&\to& R_2\\\\
+		R_3-\dfrac{b}{2}R_1&\to& R_3
+	    \end{array}
+	    &
+	    \left[\begin{array}{*{3}{r}}
+		2&0&0\\
+		0&-1&0\\
+		0&c&3
+	    \end{array}\right]
+	    &
+	    \begin{array}{rcl}
+		R_3+cR_2&\to& R_3
+	    \end{array}
+	    &
+	    \left[\begin{array}{*{3}{r}}
+		2&0&0\\
+		0&-1&0\\
+		0&0&3
+	    \end{array}\right]
+	\end{array}
+	$$
+	Ahora, reduzcamos por filas la segunda matriz,
+	$$
+	\begin{array}{*{5}{c}}
+	    \left[\begin{array}{*{3}{r}}
+		1&1&2\\
+		-2&0&-1\\
+		1&3&5
+	    \end{array}\right]
+	    &
+	    \begin{array}{rcl}
+		R_2-2R_1&\to& R_2\\\\
+		R_3-R_1&\to& R_3
+	    \end{array}
+	    &
+	    \left[\begin{array}{*{3}{r}}
+		1&1&2\\
+		0&2&3\\
+		0&2&3
+	    \end{array}\right]
+	    &
+	    \begin{array}{rcl}
+		R_3-R_2&\to& R_3
+	    \end{array}
+	    &
+	    \left[\begin{array}{*{3}{r}}
+		1&1&2\\
+		0&2&3\\
+		0&0&0
+	    \end{array}\right]
+	\end{array}
+	$$
+	Dado que las dos matrices tiene diferentes formas. Es decir uno de ellos tiene dos filas distintas de cero mientras que la otra matriz tiene tres filas distintas de cero. Por lo tanto, ninguna puede obtenerse de la otra mediante una secuencia de operaciones por fila. Así las dos matrices no son equivalentes por filas.\\\\
+
 
     %---------- 6.
     \item Sea
@@ -716,10 +858,10 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 		    1 & -1 
 		\end{array}\right]$$
 
-	    \item Dos filas distintas de cero. Es decir, $a\neq 0, d\neq 0$, $c=b=0\; \Rightarrow \; a+d=0 \; \Rightarrow \; d=-a$, de donde $A$ al ser reducido por fila implicará $a=1\; \rightarrow \; d=-1$. Pero $d$ es la entrada principal distinto de cero de la fila $2$ por lo tanto debe ser igual a uno. Así este caso no existe.
+	    \item Dos filas distintas de cero. Es decir, $a\neq 0, d\neq 0$, $c=b=0\; \Rightarrow \; a+d=0 \; \Rightarrow \; d=-a$, de donde $A$ al ser reducido por fila implicará $a=1\; \Rightarrow \; d=-1$. Pero $d$ es la entrada principal distinto de cero de la fila $2$ por lo tanto debe ser igual a uno. Así este caso no existe.
 	    \end{enumerate}
 
-	    De donde concluimos que existe dos matrices que satisfacen la condición dada.\\\\
+	    Por lo tanto, concluimos que existe tres matrices que satisfacen la condición dada.\\\\
 
     %---------- 7.
     \item Demostrar que el intercambio de dos filas en una matriz puede hacerse por medio de un número finito de operaciones elementales con filas de los otros tipos.\\\\
@@ -774,7 +916,27 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	\end{enumerate}
 
     %---------- 8.
-    \item 
+    \item Considere el sistema de ecuaciones $AX=0$, donde
+	$$\left[\begin{array}{*{2}{r}}
+	    a&b\\
+	    c&d
+	\end{array}\right]$$
+	es una matriz $2\times 2$ sobre el cuerpo $F$. Demostrar lo siguiente:
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si todo elemento de $A$ es $0$, entonces cada par $(x_1,x_2)$ es una solución de $AX=0$.\\\\
+		Demostración.-\;
+
+	    %---------- (b)
+	    \item Si $ad-bc\neq 0$, el sistema $AX=0$ tiene solamente la solución trivial $x_1=x_2=0$.\\\\
+		Demostración.-\;
+
+	    %---------- (c)
+	    \item Si $ad-bc= 0$ y algún elemento de $A$ es diferente de $0$, entonces existe una solución $\left(x_1^0,x_2^0 \right)$ tal que $(x_1,x_2)$ es una solución si, y sólo si, existe un escalar y tal que $x_1=yx_1^0, x=yx_2^0.$\\\\
+		Demostración.-\;
+	\end{enumerate}
 
 \end{enumerate}
 
@@ -799,19 +961,19 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 % -------------------- teorema 5
 \begin{teo}
     Toda matriz $m\times n$, $A$, es equivalente por filas a una matriz escalón por filas.\\\\
-	Demostración.-\; Sabemos que $A$ es equivalente por filas a una matriz reducida por filas. Todo lo que se necesita observar es que, efectuando un número finito de intercambios de filas en una matriz reducida por filas, se la puede llevar a la forma escalón reducida por filas.\\
+	Demostración.-\; Sabemos que $A$ es equivalente por filas a una matriz reducida por filas. Todo lo que se necesita observar es que, efectuando un número finito de intercambios de filas en una matriz reducida por filas, se la puede llevar a la forma escalón reducida por filas.
 \end{teo}
 
 % -------------------- teorema 6
 \begin{teo}
     Si $A$ es una matriz $m\times n$ con $m<n$, el sistema homogéneo de ecuaciones lineales $AX=0$ tiene una solución trivial.\\\\
-	Demostración.-\; Sea $R$ una matriz escalón reducida por fila que sea equivalente por fila a $A$. Entonces los sistemas $AX=0$ y $RX=0$ tienen las mismas soluciones por el teorema 3. Si $r$ es el número de filas no nulas de $R$, entonces ciertamente $r\leq m$, y como $m<n$ tenemos que $r<n$. Se sigue inmediatamente de las observaciones anteriores que $AX=0$ tiene una solución trivial.\\
+	Demostración.-\; Sea $R$ una matriz escalón reducida por fila que sea equivalente por fila a $A$. Entonces los sistemas $AX=0$ y $RX=0$ tienen las mismas soluciones por el teorema 3. Si $r$ es el número de filas no nulas de $R$, entonces ciertamente $r\leq m$, y como $m<n$ tenemos que $r<n$. Se sigue inmediatamente de las observaciones anteriores que $AX=0$ tiene una solución trivial.
 \end{teo}
 
 % -------------------- teorema 7
 \begin{teo}
     Si $A$ es una matriz $n\times n$ (cuadrada), $A$ es equivalente por filas a la matriz identidad $n\times n$, si, y sólo si, el sistema de ecuaciones $AX=0$ tiene solamente la solución trivial.\\\\
-	Demostración.-\; Si $A$ es equivalentes por filas a $I$, entonces $AX=0$ e $IX=0$ tienen las mismas soluciones. Recíprocamente, supóngase que $AX=0$ tiene solamente la solución trivial $X=0$. Sea $R$ una matriz escalón reducida por filas $n\times n$, que es equivalente por filas a $A$, y sea $r$ el número de filas no nulas de $R$. Entonces $RX=0$ carece de solución no trivial. Con lo que $r\geq n.$ Pero como $R$ tiene un $1$ como primer elemento no nulo en cada una de sus $n$ filas y como estos $1$ están en las diferentes columnas $n$, $R$ debe ser la matriz identidad $n\times n$.\\
+	Demostración.-\; Si $A$ es equivalentes por filas a $I$, entonces $AX=0$ e $IX=0$ tienen las mismas soluciones. Recíprocamente, supóngase que $AX=0$ tiene solamente la solución trivial $X=0$. Sea $R$ una matriz escalón reducida por filas $n\times n$, que es equivalente por filas a $A$, y sea $r$ el número de filas no nulas de $R$. Entonces $RX=0$ carece de solución no trivial. Con lo que $r\geq n.$ Pero como $R$ tiene un $1$ como primer elemento no nulo en cada una de sus $n$ filas y como estos $1$ están en las diferentes columnas $n$, $R$ debe ser la matriz identidad $n\times n$.
 \end{teo}
 
 Se construye la matriz aumentada $A'$ del sistema $AX=Y$. Esta es la matrix $m\times (n+1)$ cuyas primeras $n$ columnas son las columnas de $A$ y cuya última columna es $Y$; más precisamente,

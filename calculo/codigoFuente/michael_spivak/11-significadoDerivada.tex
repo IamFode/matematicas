@@ -916,8 +916,246 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$sum=1+1=2.$$\\
 
     %-------------------- 14.
+    \item Halle el trapezoide de mayor área que puede ser inscrito en un semicírculo de radio $a$, con una base situada a lo largo del diámetro.\\\\
+	Respuesta.- \; Tracemos primero una gráfica.
+	\begin{center}
+	    \begin{tikzpicture}[baseline=(current bounding box.north)]
+	      \def\Radius{1.8}
+	      \path
+		(-\Radius, 0) coordinate (A)
+		-- coordinate (M)
+		(\Radius, 0) coordinate (B)
+		(M) +(60:\Radius) coordinate (C)
+		+(120:\Radius) coordinate (D)
+	      ;
+	      % Draw semicircle
+		  \draw
+		    (B) arc(0:180:\Radius) -- cycle
+		  ;
+		  % Annotations
+		  \path[inner sep=0pt];
+		  \draw(-1.8,0)--(-1,1.5)--(1,1.5)--(1.8,0);
+		  \draw(0,0)--(0,1.5)node[above]{\tiny$b_2$};
+		  \draw(1,1.5)--(0,0)node[below]{\tiny$b_1=2a$}--(-1,1.5);
+		  \draw(.6,.6)node[]{\tiny$a$};
+		  \draw(0,.85)node[right]{\tiny$h$};
+		  \draw(.25,1.3)node[right]{\tiny$\frac{b_2}{2}$};
+	    \end{tikzpicture}
+	\end{center}
+
+	Por la esta figura, tenemos:
+	$$b_2=2\sqrt{a^2-h^2}.$$
+	Sabemos que el área del trapezoide está dado por:
+	$$A=\dfrac{1}{2}(b_1+b_2)h.$$
+	Reemplazando $b_1$ con $2a$ y $b_2$ con $2\sqrt{a^2-h^2}$, se tiene:
+	$$\begin{array}{rcl}
+	    A&=&\dfrac{1}{2}\left(2a+2\sqrt{a^2-h^2}\right)h\\\\
+	     &=&ah+\sqrt{a^2h^2-h^4}.
+	\end{array}$$
+	Derivando con respecto a $x$,
+	$$\begin{array}{rcl}
+	    A'&=&a+\dfrac{2a^2h-4h^3}{2\sqrt{a^2h^2-h^4}}\\\\
+	      &=&\dfrac{a\sqrt{a^2h^2-h^4}+a^2h-2h^3}{\sqrt{a^2h^2-h^4}}.
+	\end{array}$$
+	Luego igualando a cero,
+	$$\begin{array}{rcl}
+	    a\sqrt{a^2h^2-h^4}+a^2h-2h^3&=&0\\\\
+	    a\sqrt{a^2-h^2}+a^2-2h^2&=&0\\\\
+	    a^2\left(a^2-h^2\right) &=& 4h^4-4a^2h^2+a^4\\\\
+	    h&=&\dfrac{\sqrt{3}}{2}a
+	\end{array}$$
+
+	Evaluando $h$ en $A=ah+\sqrt{a^2h^2-h^4}$, obtenemos:
+	$$\begin{array}{rcl}
+	    A&=&\dfrac{\sqrt{3}}{2}a^2+\sqrt{\dfrac{3}{4}a^4-\dfrac{9}{16}a^4}\\\\
+	     &=&\dfrac{\sqrt{3}}{2}a^2+\dfrac{\sqrt{3}}{4}a^2\\\\
+	     &=&\dfrac{3\sqrt{3}}{4}a^2
+	\end{array}.$$
+	\vspace{.5cm}
+
+    %-------------------- 15.
+    \item Dos pasillos de anchuras $a$ y $b$, forman un ángulo recto (Figura 25,Spivak, capítulo 11). ¿Cuál es la longitud máxima de una escalera que puede ser transportada horizontalmente alrededor de la esquina?.\\\\
+	Respuesta.-\; Por la figura dada, tenemos:
+	$$\sen \theta = \dfrac{b}{x}\quad \Rightarrow \quad x=\dfrac{b}{\sen \theta}.$$
+	Y
+	$$\cos \theta = \dfrac{a}{L-x}\quad \Rightarrow \quad L-x=\dfrac{a}{\cos \theta}.$$
+	De donde, reemplazando la primera ecuación en la segunda, se tiene:
+	$$L=\dfrac{a}{\cos \theta}+\dfrac{b}{\sen \theta}.$$
+	Derivando con respecto a $\theta$,
+	$$\begin{array}{rcl}
+	    L'&=&\dfrac{a\sen \theta}{\cos^2\theta}-\dfrac{b\cos \theta}{\sen^2 \theta}\\\\
+	      &=&\dfrac{a\sen^3\theta-b\cos^3\theta}{\cos^2\theta\sen^2\theta}.
+	\end{array}$$
+	Para la mayor longitud posible, igualamos $L'$ a cero,
+	$$\begin{array}{rcl}
+	    a\sen^3\theta-b\cos^3\theta&=&0\\\\
+	    a\sen^3\theta&=&b\cos^3\theta\\\\
+	    \dfrac{\sen^3\theta}{\cos^3\theta}&=&\dfrac{b}{a}\\\\
+	    \tan^3\theta&=&\dfrac{b}{a}\\\\
+	    \tan \theta &=& \sqrt[3]{\dfrac{b}{a}}\\\\
+	    \sen\theta &=&\dfrac{\sqrt[3]{\dfrac{b}{a}}}{\sqrt{1+\left(\sqrt[3]{\dfrac{b}{a}}\right)^2}}\\\\
+	    \cos\theta &=& \dfrac{1}{\sqrt{1+\left(\sqrt[3]{\dfrac{b}{a}}\right)^2}}\\\\
+	\end{array}$$
+	Reemplazando los valores de $\sen$ y $\cos$ en $L=\dfrac{a}{\cos \theta}+\dfrac{b}{\sen \theta}$, para obtener la mayor longitud posible, se tiene:
+	$$L=a\sqrt{1+\left(\sqrt[3]{\dfrac{b}{a}}\right)^2}+b\dfrac{\sqrt{1+\left(\sqrt[3]{\dfrac{b}{a}}\right)^2}}{\sqrt[3]{\dfrac{b}{a}}}.$$\\
+
+    %-------------------- 16.
+    \item Se diseña un jardín en forma de un sector circular (Figura 26, Spivak, capítulo 11), de radio $R$ y ángulo central $\theta$ . El jardín debe tener un área fija $A$. ¿Para qué valor de $R$ y $\theta$ (en radianes) será mínima la longitud de la valla alrededor del perímetro del jardín?.\\\\
+	Respuesta.-\; El área del jardín es:
+	$$A=\dfrac{1}{2}r^2\theta\quad \Rightarrow \quad \theta=\dfrac{2A}{r^2}.$$
+	Después, el perímetro del jardín está dado por:
+	$$P=r\theta+2r.$$
+	Luego, reemplazando por $\theta=\dfrac{2A}{r^2}$:
+	$$P=\dfrac{2A}{r}+2r.$$
+	Derivando con respecto a $r$,
+	$$P'=\dfrac{-2A}{r^2}+2.$$
+	Para hallar el valor de $r$ que minimiza $P$, igualamos $P'$ a cero,
+	$$\begin{array}{rcl}
+	    \dfrac{-2A}{r^2}+2&=&0\\\\
+	    \dfrac{2A}{r^2}&=&-2\\\\
+	    r^2&=&A\\\\
+	    r&=&\sqrt{A}.
+	\end{array}$$
+	Reemplazando en $\theta=\dfrac{2A}{r^2}$, se tiene:
+	$$\theta=\dfrac{2A}{(\sqrt{A})^2}=\dfrac{2A}{A}=2.$$\\
+
+    %-------------------- 17.
+    \item Un ángulo recto se desplaza a lo largo del diámetro de un círculo de radio a, tal como se muestra en la Figura 27 (Spivak, Capítulo 11). ¿Cuál es la mayor longitud posible $(A + B)$ interceptada por el círculo sobre el ángulo?.\\\\
+	Respuesta.-\; Complementando el dibujo dado, podríamos construir:
+	\begin{center}
+	    \begin{tikzpicture}[scale=1]
+		\draw[thick] (0,0) circle (2);
+		\draw[thick] (-2,0) -- (2,0);
+		\draw[thick] (-1.4,0) -- (-1.4,1.4)--(-.1,0);
+		\draw(-1.4,0.7)node[left]{$A$};
+		\draw(-.8,0)node[below]{$B-a$};
+		\draw(-.8,1)node[below right]{$a$};
+		\draw(.8,0)node[below]{$a$};
+	    \end{tikzpicture}
+	\end{center}
+	Donde podemos definir lo siguiente:
+	$$A=\sqrt{a^2-(B-a)^2}=\sqrt{2aB-B^2}$$
+	$$S=A+B=\sqrt{2aB-B^2}+B.$$
+	Derivando con respecto a $B$,
+	$$S'=\dfrac{2a-2B}{\sqrt{2aB-B^2}}+1.$$
+	Para la mayor longitud posible, igualamos $S'$ a cero,
+	$$\begin{array}{rcl}
+	    \dfrac{2a-2B}{2\sqrt{2aB-B^2}}&=&0\\\\
+	    B-a&=&\sqrt{2aB-B^2}\\\\
+	    B^2-2aB+a^2&=&2aB-B^2\\\\
+	    2B^2-4aB+a^2&=&0\\\\
+	    B&=&\dfrac{4a\pm \sqrt{16a^2-4\cdot 2a^2}}{2\cdot 2}\\\\
+	    B&=&\dfrac{2a\pm \sqrt{2}a}{2}=\left(1+\pm \dfrac{\sqrt{2}}{2}\right)a.
+	\end{array}$$
+	Luego, sea $B=a\left(1+\dfrac{\sqrt{2}}{2}\right)$, entonces reemplazando en $A=\sqrt{2aB-B^2}$, se tiene
+	$$\begin{array}{rcl}
+	    A&=&\sqrt{2a^2\left(1+\dfrac{\sqrt{2}}{2}\right)-\left[a\left(1+\dfrac{\sqrt{2}}{2}\right)\right]^2}\\\\
+	    A&=&\dfrac{\sqrt{2}a}{2}.
+	\end{array}$$
+	Sea ahora $B=a\left(1-\dfrac{\sqrt{2}}{2}\right)$, entonces reemplazando en $A=\sqrt{2aB-B^2}$, se tiene
+	$$\begin{array}{rcl}
+	    A&=&\sqrt{2a^2\left(1-\dfrac{\sqrt{2}}{2}\right)-\left[a\left(1-\dfrac{\sqrt{2}}{2}\right)\right]^2}\\\\
+	    A&=&\dfrac{\sqrt{2}a}{2}.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 18.
+    \item El ecólogo Ed debe cruzar un lago circular de $1$ milla de radio. Puede remar a través del lago a una velocidad de $2$ millas por hora, o caminar alrededor del lago a una velocidad de $4$ millas por hora; también puede remar un cierto trecho y completar el itinerario caminando (Figura 28, Spivak, capítulo 11). ¿Qué ruta debe tomar de manera que:
+
+	\begin{enumerate}[(i)]
+
+	    %---------- (i)
+	    \item pueda ver la mayor cantidad de paisaje posible?.\\\\
+		Respuesta.-\; Sea,
+		\begin{center}
+		    \begin{tikzpicture}[baseline=(current bounding box.north)]
+		      \def\Radius{1.8}
+		      \path
+			(-\Radius, 0) coordinate (A)
+			-- coordinate (M)
+			(\Radius, 0) coordinate (B)
+			(M) +(60:\Radius) coordinate (C)
+			+(120:\Radius) coordinate (D)
+		      ;
+		      % Draw semicircle
+			  \draw
+			    (B) arc(0:180:\Radius) -- cycle
+			  ;
+			  % Annotations
+			  \path[inner sep=0pt];
+			  \draw(-1.8,0)--(1,1.5)--(0,0);
+			  \draw(-1.5,-.1)node[above right]{$\theta$};
+			  \draw(-.8,.7)node[above right]{$R$};
+			  \draw(.1,-.1)node[above right]{$2\theta$};
+			  \draw(.5,.5)node[above right]{$1m$};
+			  \draw(1.5,.7)node[above right]{$w$};
+		    \end{tikzpicture}
+		\end{center}
+		Sea $R$ que representa la distancia que el hombre recorrerá y $W$ la distancia que caminerá como se muestra en la figura anterior, de donde
+		$$W=2r\theta = 2\theta$$
+		Y
+		$$R^2=1^2+1^2=-2\cdot 1\cdot 1 \cdot \cos(\pi-2\theta).$$
+		Aplicando la identidad trigonométrica $\cos(\pi - \theta)=-\cos(\theta)$,
+		$$R^2=2+2\cos(2\theta)\quad \Rightarrow \quad R=\sqrt{2+2\cos(2\theta)}.$$
+		Luego, la longitud $D$ del camino total viene dada por:
+		$$D=R+W=2\theta+\sqrt{2+2\cos(2\theta)}.$$
+		Derivando con respecto a $\theta$,
+		$$D'=2-\dfrac{4\sen(2\theta)}{2\sqrt{2+2\cos(2\theta)}}$$
+		Para hallar la mayor longitud posible, igualamos $D'$ a cero,
+		$$\begin{array}{rclr}
+		    2-\dfrac{4\sen(2\theta)}{2\sqrt{2+2\cos(2\theta)}}&=&0&\\\\
+		    \dfrac{\sen(2\theta)}{\sqrt{2+2\cos(2\theta)}}&=&1&\\\\
+		    \sen(2\theta)&=&\sqrt{2+2\cos(2\theta)}&\\\\
+		    \sen^2(2\theta)&=&2+2\cos(2\theta)&\\\\
+			1-\cos^2(2\theta)-2\cos(2\theta)+1&=&0&\sen^2(\theta)=1-\cos^2(\theta)\\\\
+							  \cos^2(2\theta)+2\cos(2\theta)+1&=&0&\\\\
+							  \left[\cos(2\theta)+1\right]^2&=&0&\\\\
+							  \cos(2\theta)&=&-1&\\\\
+							  2\theta&=&\pi&2\theta=\arccos(-1)\\\\
+							  \theta&=&\dfrac{\pi}{2}&
+		\end{array}$$
+		Reemplazando $\theta=\dfrac{\pi}{2}$ en $W=2\theta$ y $R=\sqrt{2+2\cos(2\theta)}$ se tiene
+		$$W=\pi \qquad \mbox{y}\qquad R=\sqrt{2+2\cos(\pi)}=0.$$\\\\
+
+	    %---------- (ii)
+	    \item pueda cruzar tan rápida como sea posible?
+		Respuesta.-\; Aplicando la fórmula,
+		$$tiempo=\dfrac{distancia}{velocidad}$$
+		Se tiene que el tiempo total es:
+		$$T=\dfrac{W}{4}+\dfrac{R}{2}.$$
+		Reeemplazando $W$ con $2\theta$ y $R$ con $\sqrt{2+2\cos(2\theta)}$,
+		$$T=\dfrac{\theta}{2}+\dfrac{1}{2}\sqrt{2+2\cos(2\theta)}.$$
+		Derivando con respecto a $\theta$,
+		$$T'=\dfrac{1}{2}-\dfrac{\sen(2\theta)}{\sqrt{2+2\cos(2\theta)}}.$$
+		Para el tiempo mínimo, igualamos $T'$ a cero,
+		$$\begin{array}{rclr}
+		    \dfrac{1}{2}-\dfrac{\sen(2\theta)}{\sqrt{2+2\cos(2\theta)}}&=&0&\\\\
+		    2\sen(2\theta)&=&\sqrt{2+2\cos(2\theta)}&\\\\
+		    4\sen^2(2\theta)&=&2+2\cos(2\theta)&\\\\
+		    4-4\cos^2(2\theta)-2\cos(2\theta)-2&=&0&\sen^2(\theta)=1-\cos^2(\theta)\\\\
+		    2\left[2-2\cos^2(2\theta)-\cos(2\theta)-1\right]&=&0\\\\
+		    \left[2\cos(2\theta)-1\right]\left[\cos(2\theta)+1\right]&=&0&\\\\
+		    \cos(2\theta)=\dfrac{1}{2}&\mbox{o}&\cos(2\theta)=-1&\\\\
+		    2\theta=\arccos\left(\dfrac{1}{2}\right)&\mbox{o}&2\theta=\arccos(-1)&\\\\
+		    \theta=\dfrac{\pi}{6}&\mbox{o}&\theta=\dfrac{\pi}{2}&
+		\end{array}$$
+
+		Para $\theta=\dfrac{\pi}{6},$
+		$$W=\dfrac{\pi}{3}\qquad \mbox{y}\qquad R=\sqrt{2+2\cos\left(\dfrac{\pi}{3}\right)}=\sqrt{3}.$$
+		Por lo tanto,
+		$$T=\dfrac{\pi}{12}+\dfrac{\sqrt{3}}{2}.$$
+
+		Para $\theta=\dfrac{\pi}{2},$
+		$$W=\pi \qquad \mbox{y}\qquad R=\sqrt{2+2\cos(\pi)}=0.$$
+		Por lo tanto,
+		$$T=\dfrac{\pi}{4}.$$\\
+
+	\end{enumerate}
+
+
+    %-------------------- 19.
     \item 
 
 
-
 \end{enumerate}
+

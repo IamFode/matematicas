@@ -1,1 +1,69 @@
 \chapter{Relación entre integración y derivación}
+
+\section{La derivada de una integral indefinida. Primer teorema fundamental del cálculo}
+
+\begin{teo}[Primer Teorema fundamental del cálculo]
+    Sea $f$ una función que es integrable en $[a,x]$ para cada $x$ en $[a,b]$. Sea $c$ tal que $a\leq c \leq b$ y definamos una nueva función $A$ del siguiente modo:
+    $$A(x)=\int_c^x f(t)\;dt \quad \mbox{si}\quad a\leq x \leq b$$
+    Existe entonces la derivada $A'(x)$ en cada punto $x$ del intervalo abierto $(a,b)$ donde $f$ es continua, y para tal $x$ tenemos
+    \begin{equation}
+	A'(x)=f(x)
+    \end{equation}
+    Interpretación geométrica: La figura 5.1 (Apostol, capítulo 5) muestra la gráfica de una función $f$ en un intervalo $[a,b]$. En la figura, $h$ es positivo y
+    $$\int_x^{x+h}f(t)\; dt=\int_0^{x+h}f(t)\; dt -\int_0^x f(t)\; dt= A(x+h)-A(x).$$
+    El ejemplo es el de una función continua en todo el intervalo $[x,x+h]$. Por consiguiente, por el teorema del valor medio para integrales, tenemos
+    $$A(x+h)-A(x)=hf(z),\quad \mbox{donde}\; x\leq z \leq x+h.$$
+    Luego, resulta
+    \begin{equation}
+	\dfrac{A(x+h)-A(x)}{h}=f(z).
+    \end{equation}
+    Puesto que $x\leq z \leq x+h,$ encontramos que $f(z)\to f(x)$ cuando $h\to 0$ con valores positivos. Si $h\to 0$ con valores negativos, se razona en forma parecida. Por consiguiente, $A'(x)$ existe y es igual a $f(x)$.\\
+	Demostración.-\; Sea $x$ un punto en el que $f$ es continua y supuesta $x$ fija, se forma el cociente:
+	$$\dfrac{A(x+h)-A(x)}{h}.$$
+	Para demostrar el teorema se ha de probar que este cociente tiende a $f(x)$ cuando $h\to 0$. El numerador es:
+	$$A(x+h)-A(x)=\int_0^{x+h}f(t)\; dt-\int_c^x f(t)\; dt = \int_x^{x+h}f(t)\; dt.$$
+	Si en la última integral se escribe $f(t)=f(x)-[f(t)-f(x)]$ resulta:
+	$$\begin{array}{rcl}
+	    A(x+h)-A(x) & = & \displaystyle \int_x^{x+h}f(x)\; dt + \int_x^{x+h}\left[f(t)-f(x)\right]\; dt\\\\
+			& = & \displaystyle hf(x) + \int_x^{x+h} \left[f(t)-f(x)\right]\; dt,
+	\end{array}$$
+	de donde
+	\begin{equation}
+	    (5.3) \qquad \qquad \dfrac{A(x+h)-A(x)}{h}=f(x)+\dfrac{1}{h}\int_{x}^{x+h}\left[f(t)-f(x)\right]\; dt.
+	\end{equation}
+	Por tanto, para completar la demostración de (5.1) es necesario demostrar que 
+	$$\lim_{h\to 0}\dfrac{1}{h}\int_x^{x+h}\left[f(t)-f(x)\right]\; dt = 0.$$
+	En esta parte de la demostración es donde se hace uso de la continuidad de $f$ en $x$.\\
+	Si se designa por $G(h)$ el último término del segundo miembro de (5.3), se trata de demostrar que $G(h)\to 0$ cuando $h\to 0$. Aplicando la definición de límite, se ha de probar que para cada $\epsilon>0$ existe un $\delta>0$ tal que
+	\begin{equation}
+	    G(h)<\epsilon \mbox{ siempre que } 0<h<\delta.
+	\end{equation}
+	En virtud de la continuidad de $f$ en $x$, dado un $\epsilon$ existe un número positivo $\delta$ tal que:
+	\begin{equation}
+	|f(t)-f(x)|<\dfrac{1}{2}\epsilon.
+	\end{equation}
+	siempre que 
+	\begin{equation}
+	x-\delta<t<x+\delta.
+	\end{equation}
+	Si se elige $h$ de manera que $0<h<\delta$, entonces cada $t$ en el intervalo $[x,x+h]$ satisface (5.6) y por tanto (5.5) se verifica para cada $t$ de este intervalo. Aplicando la propiedad $|\int_x^{x+h}|\leq \int_x^{x+h}|g(t)|\; dt$, cuando $g(t)=g(t)-f(x)$, de la desigualdad en (5.5) se pasa a la relación:
+	$$\left|\right|\leq \int_x^{x+h}|f(t)-f(x)|\; dt \leq \int_x^{x+h}\dfrac{1}{2} \epsilon \; dt = \dfrac{1}{2}h\epsilon < h\epsilon.$$
+	Dividiendo por $h$ se ve que (5.4) se verifica para $0<h<\delta$. Si $h<0$, un razonamiento análogo demuestra que (5.4) se verifica siempre que $0<|h|<\delta$, lo que completa la demostración.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% 5.2. Teorema de la derivada nula %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teorema de la derivada nula}
+
+Si una función 1 es constante en un intervalo $(a, b)$, su derivada es nula en todo el intervalo $(a, b)$. Ya hemos demostrado este hecho como una consecuencia inmediata de la definición de derivada. También se demostró, como parte c) del teorema 4.7, el recíproco de esa afirmación que aquí se presenta como teorema independiente.
+
+\begin{teo}[Teorema de la derivada nula]
+    Si $f'(x)=0$ para cada $x$ en un intervalo abierto $I$, es $f$ constante en $I$.
+\end{teo}
+\vspace{0.5cm}
+
+Este teorema, cuando se utiliza combinando con el primer teorema fundamental del cálculo, nos conduce al segundo teorema fundamental.
+
+\section{Funciones primitivas y segundo teorema fundamental del cálculo}
+
+\begin{def.}[Definición de función primitiva]
+\end{def.}
