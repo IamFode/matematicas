@@ -1,0 +1,27 @@
+---
+title: "Contraste de hipótesis paramétricos"
+author: "Christian Limbert Paredes Aguilera"
+date: "2022-10-06"
+output: pdf_document
+---
+
+Sea $\sigma = 1.8$ y $n=25$. Luego $\overline{x}=20.25$, queremos saber que:
+$$\begin{array}{rcl}
+  H_0 &:& \mu=20\\
+  H_1 &:& \mu>20
+\end{array}$$
+
+El nivel de significación es $\alpha=0.05$. Entonces debemos hallar:
+
+$$P\left(Z>z_{1-\alpha}\right)$$
+
+Para rechazar $H_0$. Hallemos $Z$
+
+$$Z=\dfrac{\overline{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}=\dfrac{20.25-20}{\dfrac{1.8}{\sqrt{25}}}=0.6944444.$$
+
+```{r}
+qnorm(0.95)
+(20.25-20)/(1.8/sqrt(25))
+```
+Dado que $Z=0.69$ es menor la umbral $z_{1-\alpha}=1.644854$ no podemos rechazar $H_0$.
+

@@ -832,17 +832,17 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 
     %---------- 6.
     \item Sea
-    $$\left[\begin{array}{rr}
+    $$A=\left[\begin{array}{rr}
 	    a & b  \\
 	    c & d  
     \end{array}\right]$$
     es una matriz $2\times 2$ con elementos complejos. Supóngase que $A$ es reducida por filas y también que $a+b+c+d=0$. Demostrar que existen exactamente tres de estas matrices.\\\\
     	Demostración.-\; Ya que $A$ es dado como una matríz reducida por filas, entonces se presentas los siguientes casos.
 	\begin{enumerate}[\bfseries \textbf{Caso} i.]
-	    \item Sea $a=b=c=d=0$ por lo tanto
+	    \item Sea $a=b=c=d=0+0i$ por lo tanto
 		$$\left[\begin{array}{*{2}{r}}
-		    0 & 0 \\
-		    0 & 0
+		    0+0i & 0+0i \\
+		    0+0i & 0+0i
 		\end{array}\right]$$
 
 	    \item Sea $c=d=0\; \Rightarrow \; a+b=0 \; \Rightarrow \; b=-a$ con $a=1$, entonces
@@ -880,25 +880,25 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 		0 & 1 & 0 \\
 		0 & 0 & 1
 	    \end{array}\right] 
-	    &R_1 \to R_1+R_3&
+	    &R_1 + R_3 \to R_1&
 	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		0 & 0 & 1
 	    \end{array}\right] 
-	    &R_3 \to R_3-R_1&
+	    &R_3-R_1 \to R_3&
 	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		-1 & 0 & 0
 	    \end{array}\right]\\\\
-	    &R_3  \to -R_3&
+	    &-R_3  \to R_3&
 	    \left[\begin{array}{*{3}{r}}
 		1 & 0 & 1 \\
 		0 & 1 & 0 \\
 		1 & 0 & 0
 	    \end{array}\right] 
-	    &R_1 \to R_1-R_3& 
+	    &R_1-R_3\to R_1& 
 	    \left[\begin{array}{*{3}{r}}
 		0 & 0 & 1 \\
 		0 & 1 & 0 \\
@@ -910,9 +910,9 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	Generalizando obtenemos que para realizar el intercambio de $R_i$ y $R_j$, la secuencia de operaciones elementales de los otros tipos es: 
 
 	\begin{enumerate}[a)]
-	    \item $R_j\to R_j-R_i$. Restar fila $i$ de la fila $j$, que da como resultado una fila $j$ como el negativo de la fila original $i$.
-	    \item $R_j\to -R_j$. Fila negativa $j$ lo que resultará en la fila $j$ cambiando a fila $i$.
-	    \item $R_j\to R_i-R_j$. Restar fila $j$ de la fila $i$ que resultará en la fila $i$ cambiando a la fila original $j$.\\\\
+	    \item $R_j-R_i\to R_j$. Restar fila $i$ de la fila $j$, que da como resultado una fila $j$ como el negativo de la fila original $i$.
+	    \item $-R_j\to R_j$. Fila negativa $j$ lo que resultará en la fila $j$ cambiando a fila $i$.
+	    \item $R_i-R_j\to R_j$. Restar fila $j$ de la fila $i$ que resultará en la fila $i$ cambiando a la fila original $j$.\\\\
 	\end{enumerate}
 
     %---------- 8.
@@ -939,6 +939,36 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 	\end{enumerate}
 
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Matrices escalón reducida por filas}

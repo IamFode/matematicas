@@ -54,7 +54,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%% 5.2. Teorema de la derivada nula %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Teorema de la derivada nula}
 
-Si una función 1 es constante en un intervalo $(a, b)$, su derivada es nula en todo el intervalo $(a, b)$. Ya hemos demostrado este hecho como una consecuencia inmediata de la definición de derivada. También se demostró, como parte c) del teorema 4.7, el recíproco de esa afirmación que aquí se presenta como teorema independiente.
+Si una función $f$ es constante en un intervalo $(a, b)$, su derivada es nula en todo el intervalo $(a, b)$. Ya hemos demostrado este hecho como una consecuencia inmediata de la definición de derivada. También se demostró, como parte c) del teorema 4.7, el recíproco de esa afirmación que aquí se presenta como teorema independiente.
 
 \begin{teo}[Teorema de la derivada nula]
     Si $f'(x)=0$ para cada $x$ en un intervalo abierto $I$, es $f$ constante en $I$.
@@ -64,6 +64,102 @@ Si una función 1 es constante en un intervalo $(a, b)$, su derivada es nula en 
 Este teorema, cuando se utiliza combinando con el primer teorema fundamental del cálculo, nos conduce al segundo teorema fundamental.
 
 \section{Funciones primitivas y segundo teorema fundamental del cálculo}
-
 \begin{def.}[Definición de función primitiva]
+    Una función $P$ se llama primitiva (o antiderivada) de una función $f$ en un intervalo abierto $I$ si la derivada de $P$ es $f$, esto es, si $P'(x)=f(x)$ para todo $x$ en $I.$
 \end{def.}
+
+Decimos una primitiva y no la primitiva, porque si $P$ es una primitiva de $f$ también lo es $P+k$ para cualquier constante $k$. Recíprocamente, dos primitivas cualesquiera $P$ y $Q$ de la misma función $f$ sólo pueden diferir en una constante por que su diferencia $P-Q$ tiene la derivada
+$$P'(x)-Q'(x)=f(x)-f(x)=0.$$
+para toda $x$ en $I$ y por tanto, según el teorema $5.2$
+
+%-------------------- Teorema 5.3. Segundo teorema fundamental del cálculo --------------------
+\begin{teo}[Segundo teorema fundamental del cálculo]
+    Supongamos $f$ continua en un intervalo abierto $I$, y sea $P$ una primitiva cualquiera de $f$ en $I$. Entonces, para cada $c$ y cada $x$ en $I$, tenemos 
+    $$P(x)=P(c)+\int_c^x f(t)\; dt.$$
+	Demostración.-\; Sea $A(x)=\int_c^x f(t)\; dt$. Puesto que $f$ es continua en cada $x$ de $I$, el primer teorema fundamental nos dice que $A'(x)=f(x)$ para todo $x$ de $I$. Es decir, $A$ es primitiva de $f$ en $I$. Luego, ya que dos primitivas de $f$ pueden diferir tan sólo en una constante, debe ser $A(x)-P(x)=k$ para una cierta constante $k$. Cuando $x=c$ esta fórmula implica $-P(c)=k,$ ya que $A(c)=0.$ Por consiguiente, $A(x)-P(x)=-P(c)$, de lo que obtenemos $P(x)=P(c)+\int_c^x f(t)\; dt.$ es constante en $I$.
+\end{teo}
+
+El teorema 5.3 nos indica cómo encontrar una primitiva $P$ de una función continua $f$. Integrando $f$ desde un punto fijo $c$ a un punto arbitrario $x$ y sumando la constante $P(c)$ obtenemos $P(x)$. Pero la importancia real del teorema radica en que poniendo $P(x)=P(c)+\int_c^x f(t)\; dt$ en la forma
+$$\int_c^x f(t)\; dt = P(x)-P(c).$$
+
+Se ve que podemos calcular el valor de una integral mediante una simple substracción si conocemos una primitiva $P$.\\\\
+
+Como consecuencia del segundo teorema fundamental, se pueden deducir las siguientes fórmulas de integración.
+
+\begin{ejem}[Integración de potencias recionales]
+    La fórmula de integración
+    $$\int_a^b x^n\; dx = \dfrac{b^{n+1}-a^{n+1}}{n+1}\qquad (n=0,1,2,\ldots)$$
+    se demostró directamente en la Sección 1.23 (Spivak) a partir de la definición de integral. Aplicando el segundo teorema fundamental, puede hallarse de nuevo este resultado y además generalizarlo para exponentes racionales. En primer lugar se observa que la función $P$ definida por
+    $$P(x)=\dfrac{x^{n+1}}{n+1}$$
+    tiene como derivada $P'(x)=x^n$ para cada $n$ entero no negativo. De esta igualdad válida para todo número real $x$, aplicando $\int_c^x f(t)\; dt = P(x)-P(c)$ se tiene
+    $$\int_a^b x^n\; dx  = P(b)-P(a)=\dfrac{b^{n+1}-a^{n+1}}{n+1}$$
+    para cualquier intervalo $[a,b]$. Esta fórmula, demostrada para todo entero $n\geq 0$ conserva su validez para todo entero negativo excepto $n=-1$, que se excluye puesto que el denominador aparece $n+1$. Para demostrar $\int_a^b x^n\; dx = \dfrac{b^{n+1}-a^{n+1}}{n+1}\qquad (n=0,1,2,\ldots)$ para $n$ negativo, basta probar que $P(x)=\dfrac{x^{n+1}}{n+1}$ implica $P'(x)=x^n$ cuando $n$ es negativo $x\neq -1$, lo cual es fácil de verificar derivando $P$ como función racional. Hay que tener en cuenta que si $n$ es negativo se deben excluir aquellos intervalos $[a,b]$ que contienen el punto $x=0.$
+\end{ejem}
+
+
+
+\section{Propiedades de una función deducida de propiedades de su derivada}
+
+
+
+
+\section{Ejercicios}
+
+En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es decir, encontrar una función $P$ tal que $P'(x)=f(x)$ y aplicar el segundo teorema fundamental para calcular $\int_a^b f(x)\; dx.$\\
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item $f(x)=5x^3$.\\\\
+	Respuesta.-\; Por el ejemplo 5.1 (Apostol) se define a $P$ como,
+	$$P(x)=\dfrac{x^{n+1}}{n+1}.$$
+	Por lo que la función primitiva de $5x^3$, esta dada por:
+	$$P(x)=5\dfrac{x^{3+1}}{3+1}=5\dfrac{x^4}{4}.$$
+	Luego, aplicando el segundo teorema fundamental para calcular $\int_a^b f(x)\; dx$, tenemos
+	$$\begin{array}{rcl}
+	    \displaystyle\int_a^b 5x^3\; dx &=&P(b)-P(a)\\\\
+					    &=&\dfrac{5}{4}b^4-\dfrac{5}{3}a^4.\\\\
+					    &=&\dfrac{5}{4}(b^4-a^4).
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 2.
+    \item $f(x)=4x^4-12x$.\\\\
+	Respuesta.-\; Por el ejemplo 5.1 (Apostol) se define a $P$ como,
+	$$P(x)=\dfrac{x^{n+1}}{n+1}.$$
+	Por lo que la función primitiva de $4x^4-12x$, esta dada por:
+	$$\begin{array}{rcl}
+	    P(x)&=&4\dfrac{x^{4+1}}{4+1}-12\dfrac{x^{1+1}}{1+1}\\\\
+		&=&\dfrac{4}{5}x^5-6x^2.
+	\end{array}$$
+    	Luego, aplicando el segundo teorema fundamental para calcular $\int_a^b f(x)\; dx$, tenemos
+	$$\begin{array}{rcl}
+	    \displaystyle\int_a^b 4x^4-12x\; dx &=&P(b)-P(a)\\\\
+					    &=&\dfrac{4}{5}b^5-6b^2-\left(\dfrac{4}{5}a^5-6a^2\right)\\\\
+					    &=&\dfrac{4}{5}(b^5-a^5)-6(b^2-a^2).
+	\end{array}$$
+
+    %-------------------- 3.
+    \item $f(x)=(x+1)(x^3-2).$\\\\
+	Respuesta.-\; Por el ejemplo 5.1 (Apostol) se define a $P$ como,
+	$$P(x)=\dfrac{x^{n+1}}{n+1}.$$
+	Por lo que la función primitiva de $(x+1)(x^3-2)=x^4+x^3-2x-2$, esta dada por:
+	$$\begin{array}{rcl}
+	    P(x)&=&\dfrac{x^{4+1}}{4+1}+\dfrac{x^{3+1}}{3+1}-2\dfrac{x^{1+1}}{1+1}-2\dfrac{x^{0+1}}{0+1}\\\\
+		&=&\dfrac{x^5}{5}+\dfrac{x^4}{4}-2x^2-2x.
+	\end{array}$$
+	Luego, aplicando el segundo teorema fundamental para calcular $\int_a^b f(x)\; dx$, tenemos
+	$$\begin{array}{rcl}
+	    \displaystyle\int_a^b (x+1)(x^3-2)\; dx &=&P(b)-P(a)\\\\
+					    &=&\dfrac{b^5}{5}+\dfrac{b^4}{4}-2b^2-2b-\left(\dfrac{a^5}{5}+\dfrac{a^4}{4}-2a^2-2a\right)\\\\
+					    &=&\dfrac{1}{5}\left(b^5-a^5\right) + \dfrac{1}{4}\left(b^4-a^4\right)-\left(b^2-a^2\right)-2(b-a).
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 4.
+    \item 
+
+
+\end{enumerate}
+
+

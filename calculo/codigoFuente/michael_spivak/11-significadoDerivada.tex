@@ -865,7 +865,7 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$A'=\dfrac{p}{2}-2l.$$
 	Luego igualando a cero, se tiene
 	$$\dfrac{p}{2}-2l=0\quad \Rightarrow \quad l=\dfrac{p}{4}.$$
-	Por el corolario 1.3 y sabiendo que si $f'<0$ en $\left(-\infty,\frac{p}{4}\right)$  y $f'>0$ en $\left(\frac{p}{4},\infty\right)$. Entonces, $\frac{p}{4}$ es un punto mínimo local.\\
+	Por el corolario 11.3 y sabiendo que si $f'<0$ en $\left(-\infty,\frac{p}{4}\right)$  y $f'>0$ en $\left(\frac{p}{4},\infty\right)$. Entonces, $\frac{p}{4}$ es un punto mínimo local.\\
 
 	Luego, reemplazando $l=\frac{p}{4}$ en $a=\frac{p}{2}-l$, se tiene
 	$$a=\dfrac{p}{2}-\frac{p}{4}=l.$$
@@ -883,7 +883,7 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$A'=4\pi r - \dfrac{2V}{r^2}.$$
 	Luego igualando a cero,
 	$$4\pi r - \dfrac{2V}{r^2}=0\quad \Rightarrow \quad r=\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}.$$
-	Por el corolario 1.3 y sabiendo que si $f'<0$ en $\left(-\infty,\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}\right)$  y $f'>0$ en $\left(\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2},\infty\right)$. Entonces, $\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}$ es un punto mínimo local.\\
+	Por el corolario 11.3 y sabiendo que si $f'<0$ en $\left(-\infty,\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}\right)$  y $f'>0$ en $\left(\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2},\infty\right)$. Entonces, $\dfrac{V}{\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}$ es un punto mínimo local.\\
 	Reemplazando $r$ en $h=\dfrac{V}{\pi r^2}$, obtenemos 
 	$$h=\dfrac{V}{\pi\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}.$$
 	Por lo tanto, el área superficial del cilindro es la más pequeña cuando su radio es $\sqrt[3]{\dfrac{V}{2\pi}}$ y su altero es $\dfrac{V}{\pi\pi\left(\sqrt[3]{\dfrac{V}{2\pi}}\right)^2}$.\\\\
@@ -912,7 +912,7 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$sum'=1-\dfrac{1}{a^2}.$$
 	Luego igualando a cero,
 	$$1-\dfrac{1}{a^2}=0\quad \Rightarrow \quad a^2=1 \quad \Rightarrow \quad a=\pm 1.$$
-	Ya que $a$ es un número positivo, solo se evaluará en $a=1$. Por el corolario 1.3, y sabiendo que si $sum'<0$ cuando $(0,1)$ y $sum'>0$ cuando $(1,\infty)$. Es decir $sum$ es decreciente cuando $(0,1)$ y creciente cuando $(1,\infty)$. Entonces $a$ es un punto mínimo. Luego reemplazando $a$ en $sum=a+\dfrac{1}{a}$ se tiene,
+	Ya que $a$ es un número positivo, solo se evaluará en $a=1$. Por el corolario 11.3, y sabiendo que si $sum'<0$ cuando $(0,1)$ y $sum'>0$ cuando $(1,\infty)$. Es decir $sum$ es decreciente cuando $(0,1)$ y creciente cuando $(1,\infty)$. Entonces $a$ es un punto mínimo. Luego reemplazando $a$ en $sum=a+\dfrac{1}{a}$ se tiene,
 	$$sum=1+1=2.$$\\
 
     %-------------------- 14.
@@ -939,7 +939,7 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		  \draw(1,1.5)--(0,0)node[below]{\tiny$b_1=2a$}--(-1,1.5);
 		  \draw(.6,.6)node[]{\tiny$a$};
 		  \draw(0,.85)node[right]{\tiny$h$};
-		  \draw(.25,1.3)node[right]{\tiny$\frac{b_2}{2}$};
+		  \draw(.25,11.3)node[right]{\tiny$\frac{b_2}{2}$};
 	    \end{tikzpicture}
 	\end{center}
 
@@ -1154,6 +1154,202 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 
     %-------------------- 19.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Considere los puntos $A$ y $C$ de un círculo, con cetro $O$, formando un ángulo $\alpha=\angle AOC$ (figura 29, Spivak, capítulo 11). ¿Cómo debe elegirse el punto $B$ de manera que la suma de las áreas del triángulo $\triangle AOB$ y del triángulo $\triangle BOC$ sea máxima? Indicación: Exprese todo en función de $\theta = \angle AOB.$\\\\
+		Respuesta.-\; La suma de las áreas de los dos triángulos es:
+		$$\begin{array}{rcl}
+		    S&=&\dfrac{1}{2}r^2\sen(\theta) + \dfrac{1}{2}r^2\sen(\alpha-\theta).\\\\
+		     &=&\dfrac{1}{2}r^2\left[\sen(\theta)+\sen(\alpha-\theta)\right].\\\\
+		\end{array}$$
+		Diferenciando con respecto a $\theta$ se tiene,
+		$$S'=\dfrac{1}{2}r^2\left[\cos(\theta)-\cos(\alpha-\theta)\right].$$
+		Para que la suma de las áreas sea máxima, igualamos $S'$ a cero,
+		$$\begin{array}{rcl}
+		    \cos(\theta)-\cos(\alpha-\theta)&=&0\\\\
+		    \cos(\theta)&=&\cos(\alpha-\theta)\\\\
+		    \theta&=&\alpha-\theta\\\\
+		    2\theta&=&\alpha
+		\end{array}$$
+		Por lo que el área máxima se tendra que poner $\theta=\dfrac{\alpha}{2}.$\\\\
+
+	    %---------- (b)
+	    \item Demuestre que para $n\geq 3$, de todos los n-ágonos inscritos en un círculo, el n-ágono regular es el de área máxima.\\\\
+		Demostración.-\; Todo polígono inscrito en una circunferencia se puede dividir en triángulos isósceles como los del apartado (a) de este problema en el que probamos que el área máxima se da cuando los ángulos centrales son iguales.\\
+		Generalizando este resultado para cualquier número de triángulos, encontramos que para el área máxima, todos los ángulos de los vértices deben ser iguales, por lo tanto, las bases son iguales y el polígono es regular.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 20.
+    \item Se dobla la esquina inferior derecha de una página de manera que coincida con el margen izquierdo del papel, como se muestra en la Figura 30 (Spivak, capítulo 11). Si la anchura del papel es $\alpha$ y la página es muy larga, demuestre que la longitud mínima del pliegue es $3\sqrt{3}\alpha/4$.\\\\
+	Demostración.-\; Completando la figura 30, tenemos:
+	\begin{center}
+	    \begin{tikzpicture}[scale=1]
+	    \end{tikzpicture}
+	\end{center}
+	Sea $\theta$ la medida del ángulo $BGF$. Como $\triangle BGF$ tiene un ángulo recto en $B$, entonces $m\angle BFG=90^{\circ}-\theta$. Luego, como $\triangle BGF$ es congruente con $\triangle EGF$, entonces $m\angle EFG=90^{\circ}-\theta.$ Se sigue,
+	$$\begin{array}{rcl}
+	    m\angle AFE&=&180^{\circ}-m\angle BFG-m\angle EFG\\
+		       &=&180^{\circ}-(90^{\circ}-\theta)-(90^{\circ}-\theta)\\
+		       &=&2\theta\\\\
+	\end{array}$$
+	Después podemos hallar el $\cos(2\theta)$, y hallar la longitud $L$.
+	$$\begin{array}{rcl}
+	    \cos(2\theta)&=&\dfrac{AF}{EF}=\dfrac{\alpha-L\sen \theta}{L\sen \theta}\\\\
+			 L\sen(\theta)\cos(2\theta)&=&\alpha-L\sen(\theta)\\\\
+			 L\sen(\theta)+L\sen(\theta)\cos(2\theta)&=&\alpha-L\sen(\theta)+L\sen(\theta)\\\\
+			 L\sen(\theta)\left[\cos(2\theta)+1\right]&=&\alpha\\\\
+			 \mbox{Aplicando el hecho de } && \cos(2\theta)=2\cos^2\theta-1 \Rightarrow 1+\cos(2\theta)=2\cos^2(\theta)\\\\ 
+			 2L\sen(\theta)\cos^2(\theta)&=&\alpha\\\\
+			 L&=&\dfrac{\alpha}{2\sen(\theta)\cos^2(\theta)}
+	\end{array}$$
+
+	Ahora diferenciando con respecto a $\theta$ se tiene,
+	$$\begin{array}{rcl}
+	    L'&=&-\dfrac{2\alpha\left[\cos(\theta)\cos^2(\theta)-2\sen^2(\theta)\cos(\theta)\right]}{\left[2L\sen(\theta)\cos^2(\theta)\right]^2}\\\\
+	      &=&-\dfrac{2\alpha\left[\cos^3(\theta)-2\sen^2(\theta)\cos(\theta)\right]}{\left[2L\sen(\theta)\cos^2(\theta)\right]^2}\\\\
+	\end{array}$$
+	Para que la longitud sea mínima, igualamos $L'$ a cero,
+	$$\begin{array}{rccl}
+	    -\dfrac{2\alpha\left[\cos^3(\theta)-2\sen^2(\theta)\cos(\theta)\right]}{\left[2L\sen(\theta)\cos^2(\theta)\right]^2}&=&0&\\\\
+	    \cos^3-2\sen^2(\theta)\cos(\theta)&=&0&\\\\
+	    \cos^2(\theta)-2\sen^2(\theta)&=&0&\\\\\
+							    1-3\sen^2\theta&=&0&\cos^2(\theta)=1+\sen^2(\theta)\\\\
+							    \sen^2(\theta)&=&\dfrac{1}{3}&\\\\
+							    \sen(\theta)&=&\dfrac{1}{\sqrt{3}}&\\\\
+	\end{array}$$
+	Luego, para hallar $\cos^2(\theta)$ podemos utilizar la identidad trigonométrica, $\cos^2(\theta)=1-\sen^2(\theta)$ y reemplazar $\sen^2(\theta)=\dfrac{1}{3}$, tenemos
+	$$\cos^2(\theta)=1-\dfrac{1}{3}=\dfrac{2}{3}.$$
+	Reemplazando en la expresión de $L$ se tiene,
+	$$L=\dfrac{\alpha}{2\cdot\dfrac{1}{\sqrt{3}}\cdot\dfrac{2}{3}}=\dfrac{3\sqrt{3}\alpha}{4}.$$\\
+
+    %-------------------- 21.
+    \item La Figura 31 (Spivak, capítulo 11) muestra la gráfica de la derivada de $f$. Halle todos los puntos máximos y mínimos locales de $f$.\\\\
+	Respuesta.-\; Por la gráfica notemos que:
+	$$f'(1)=0.$$
+	Por el corolario 11.3 y sus respectivas reglas de máximo y mínimo locales, podemos deducir que $f'$ es positivo cuando $x<1$ y negativo cuando $x>1$. Entonces $f(x)$ tiene un máximo local en $x=1$.\\
+	Por otro lado vemos que:
+	$$f'(3)=0.$$
+	Ya que $f'$ es negativa cuando $x<3$ y positivo cuando $x>3$. Entonces por el corolario 11.3 y sus respectivas reglas de máximo y mínimo $f$ tiene un mínimo local en $x=3$.\\\\
+
+    %-------------------- 22.
+    \item Supongamos que $f$ es una función polinómica $f(x)=x^n+a_{n-1}x^{n-1}+\ldots + a_0$ con puntos críticos $-1,1,2,3,4$ y sus correspondientes valores críticos $6,1,2,4,3$. Trace la gráfica distinguiendo los casos $n$ par y $n$ impar.\\\\
+	Respuesta.-\; Cuando $n$ es par, se tiene
+	\begin{center}
+	    \begin{tikzpicture}[scale=0.7]
+		% abscisa y ordenada
+		\tkzInit[xmax= 5,xmin=-3,ymax=8,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=x,right=0.3]
+		\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		%puntos
+		\filldraw[black](-1,6)node[below left]{$(-1,6)$} circle(2pt);
+		\filldraw[black](1,1)node[below]{$(1,1)$} circle(2pt);
+		\filldraw[black](2,2)node[above left]{$(2,2)$} circle(2pt);
+		\filldraw[black](3,4)node[above]{$(3,4)$} circle(2pt);
+		\filldraw[black](4,3)node[below]{$(3,4)$} circle(2pt);
+		%lineas
+		\draw[](-2.5,8)..controls(-1.3,6.1)..(-1,6)..controls(0,5.8)and(0,1)..(1,1);
+		\draw[](1,1)..controls(1.3,1)and(1.5,2)..(2,2);
+		\draw[](2,2)..controls(2.5,2)and(2.5,4)..(3,4);
+		\draw[](3,4)..controls(3.3,4)and(3.5,3)..(4,3);
+		\draw[](4,3)..controls(4.3,3)..(5,6);
+	    \end{tikzpicture}
+	\end{center}
+
+	Para $n$ impar, se tiene
+	
+	\begin{center}
+	    \begin{tikzpicture}[scale=0.7]
+		% abscisa y ordenada
+		\tkzInit[xmax= 5,xmin=-3,ymax=8,ymin=-1]
+		\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+		% label x, f(x)
+		\tkzDrawX[opacity= .6,label=x,right=0.3]
+		\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+		%puntos
+		\filldraw[black](-1,6)node[below left]{$(-1,6)$} circle(2pt);
+		\filldraw[black](1,1)node[below]{$(1,1)$} circle(2pt);
+		\filldraw[black](2,2)node[above left]{$(2,2)$} circle(2pt);
+		\filldraw[black](3,4)node[above]{$(3,4)$} circle(2pt);
+		\filldraw[black](4,3)node[below]{$(3,4)$} circle(2pt);
+		%lineas
+		\draw[](-2.5,3)..controls(-1.3,6)..(-1,6)..controls(0,5.8)and(0,1)..(1,1);
+		\draw[](1,1)..controls(1.3,1)and(1.5,2)..(2,2);
+		\draw[](2,2)..controls(2.5,2)and(2.5,4)..(3,4);
+		\draw[](3,4)..controls(3.3,4)and(3.5,3)..(4,3);
+		\draw[](4,3)..controls(4.3,3)..(5,6);
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    %-------------------- 23.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Suponga que los puntos críticos de la función polinómica $f(x)=x^n+a_{n-1}x^{n-1}+\ldots+a_0$ son $-1,1,2,3$ y que $f''(-1)=0$, $f''(2)<0$, $f''(3)=0$. Trace la gráfica de $f$ tan exacatamente como sea posible basándose en esta información.\\\\
+		Respuesta.-\; Ya que, la segunda derivada de $x=1$ es positiva, entonces por el teorema 11.5 se tiene un mínimo local. Luego, como la segunda derivada en $x=2$ es positiva, entonces por el teorema 11.5 es un máximo local. Los puntos x=-1 y -3 son puntos de inflexión.
+		Cuando $n$ es par, se tiene
+		\begin{center}
+		    \begin{tikzpicture}[scale=0.7]
+			% abscisa y ordenada
+			\tkzInit[xmax= 5,xmin=-3,ymax=8,ymin=-1]
+			\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+			% label x, f(x)
+			\tkzDrawX[opacity= .6,label=x,right=0.3]
+			\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+			%puntos
+			\filldraw[black](-1,6) circle(2pt);
+			\filldraw[black](1,1) circle(2pt);
+			\filldraw[black](2,2) circle(2pt);
+			\filldraw[black](3,4) circle(2pt);
+			\filldraw[black](4,3) circle(2pt);
+			%lineas
+			\draw[](-2.5,8)..controls(-1.3,6.1)..(-1,6)..controls(0,5.8)and(0,1)..(1,1);
+			\draw[](1,1)..controls(1.3,1)and(1.5,2)..(2,2);
+			\draw[](2,2)..controls(2.5,2)and(2.5,4)..(3,4);
+			\draw[](3,4)..controls(3.3,4)and(3.5,3)..(4,3);
+			\draw[](4,3)..controls(4.3,3)..(5,6);
+		    \end{tikzpicture}
+		\end{center}
+
+		Para $n$ impar, se tiene
+		
+		\begin{center}
+		    \begin{tikzpicture}[scale=0.7]
+			% abscisa y ordenada
+			\tkzInit[xmax= 5,xmin=-3,ymax=8,ymin=-1]
+			\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+			% label x, f(x)
+			\tkzDrawX[opacity= .6,label=x,right=0.3]
+			\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+			%puntos
+			\filldraw[black](-1,6) circle(2pt);
+			\filldraw[black](1,1) circle(2pt);
+			\filldraw[black](2,2) circle(2pt);
+			\filldraw[black](3,4) circle(2pt);
+			\filldraw[black](4,3) circle(2pt);
+			%lineas
+			\draw[](-2.5,3)..controls(-1.3,6)..(-1,6)..controls(0,5.8)and(0,1)..(1,1);
+			\draw[](1,1)..controls(1.3,1)and(1.5,2)..(2,2);
+			\draw[](2,2)..controls(2.5,2)and(2.5,4)..(3,4);
+			\draw[](3,4)..controls(3.3,4)and(3.5,3)..(4,3);
+			\draw[](4,3)..controls(4.3,3)..(5,6);
+		    \end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+	    %---------- (b)
+	    \item ¿Existe una función polinómica con las propiedades anteriores, excepto que $3$ no sea un punto crítico?.\\\\
+		Respuesta.-\; Si $3$ no es uno de los puntos críticos, y $x=2$ es el máximo, entonces la función decrecerá en el intervalo $3$ hasta el infinito. Por lo tanto, la segunda derivada en $3$ no puede ser cero. Así, no es posible que exista una función polinómica con las propiedades anteriores.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 24.
     \item 
 
 

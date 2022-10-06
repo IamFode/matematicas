@@ -470,7 +470,7 @@ $$\begin{array}{rcl}
 
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Definción de espacio vectorial %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Definición de espacio vectorial %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Definición de espacio vectorial}
 
 La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\bf{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
@@ -652,51 +652,62 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 	Respuesta.-\; Un espacio vectorial debe contener la identidad aditiva $0$, el cual no está presente en el conjunto vacío.\\\\
 
     %-------------------- 5.
-    \item Demuestre que en la definición de un espacio vectorial (1.19), la condición inversa aditiva se puede reemplazar con la condición de que
+    \item Demuestre que en la definición de un espacio vectorial (1.19), la condición inversa aditiva se puede sustituir por la condición de que
     $$0v=0\mbox{ para todo } v\in V.$$
-    Aquí, el $0$ en el lado izquierdo es el número $0$, y el $0$ en el lado derecho es la identidad aditiva de $V$. (La frase una condición puede ser reemplazada en una definición significa que la colección de objetos que satisfacen la definición no cambia si la condición original se reemplaza con la nueva condición).\\\\
-	Demostración.-\;
+    Aquí, el $0$ del lado izquierdo es el número $0$, y el $0$ en el lado derecho es la identidad aditiva de $V$. (La frase $"$ una condición puede ser sustituida $"$ en una definición significa que la colección de objetos que satisfacen la definición no cambia si la condición original se sustituye con la nueva condición).\\\\
+	Demostración.-\;  El teorema 1.29 (Axler, Linear algebra, capítulo 1), nos dice que $0v=0$ para todo $v\in V$, satisface la definición 1.19. Por lo tanto, debemos demostrar que esta propiedad junto con todas las demás que componen la Definición 1.19, excepto la condición inversa aditiva, implican la condición inversa aditiva. Es decir, debemos demostrar que para todo $v\in V$, existe $w\in V$ tal que $v+w=0.$\\ 
+	Suponemos que $v$ es algún vector arbitrario en $V$. Entonces,
+	$$\begin{array}{rcl}
+	    0 &=& 0v \\
+	      &=& (-1+1)v\\
+	      &=& (-1)v + 1v\\
+	      &=& (-1)v + v\\
+	\end{array}$$
+	Pongamos $w=(-1)v$ para cualquier vector $v\in V$, donde vemos que existe un vector $w$ que satisface la ecuación $v+w=0$, demostrando nuestro resultado.\\\\
+
+
+    %-------------------- 6.
+    \item Sea $\infty$ y $-\infty$ dos objetos distintos, ninguno de los cuales está en $\bf{R}$. Definir una suma y una multiplicación escalar en $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ como se puede adivinar la notación. Específicamente, la suma y el producto de dos números reales son los habituales, y  para $t\in \bf{R}$ definir
+    $$
+    t\infty = \left\{\begin{array}{rcl}
+	    -\infty & \mbox{si} & t<0,\\
+	    0 & \mbox{si} & t=0,\\
+	    \infty & \mbox{si} & t>0
+    \end{array}\right.,\qquad 
+    t(-\infty) = \left\{\begin{array}{rcl}
+	    \infty & \mbox{si} & t<0,\\
+	    0 & \mbox{si} & t=0,\\
+	    -\infty & \mbox{si} & t>0
+    \end{array}\right.
+    $$
+    $$t+\infty=\infty+t=\infty,\qquad t+(-\infty)=(-\infty)+t=-\infty,\qquad \infty+\infty=\infty,$$
+    $$(-\infty)+(-\infty)=-\infty,\qquad \infty+(-\infty)=0.$$
+    Es $\bf{R}\cup \left\{\infty\right\}\cup \left\{-\infty\right\}$ un espacio vectorial sobre $\bf{R}$?. Explique.\\\\
+    Respuesta.-\; Para que $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ se convierta en un espacio vectorial sobre $\bf{R}$,  debe satisfacer todas las propiedades dadas en la definición 1.19. Ahora bien, este conjunto satisface algunas de estas propiedades. Por ejemplo, la adición es conmutativa en este conjunto. Sin embargo, no las satisface todas.\\
+    Una propiedad que no se cumple es la asociatividad de la suma. Por ejemplo, observe que $1,\infty$ y $-\infty$ son todos vectores en $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ y por tanto deberíamos tener lo siguiente:
+    $$1+\left[\infty+(-\infty)\right]=(1+\infty)+(-\infty)$$
+    Sin embargo, cuando evaluamos los lados izquierdo y derecho de esta ecuación usando las definiciones dadas en el enunciado del ejercicio, encontramos que
+    $$\begin{array}{rcl}
+    1+\left[\infty+(-\infty)\right] &=& (1+\infty)+(-\infty)\\
+    1+0&=& \infty+(-\infty)\\
+    1&=&0
+    \end{array}$$
+    Pero esto es claramente falso. Así que nuestra suposición de que $1 + \left[\infty + (-\infty)\right] = (1+\infty) + (-\infty)$ también es falsa y, por tanto, este conjunto no satisface la asociatividad aditiva.\\\\
 
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Subespacios %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Subespacios}
 
-\begin{tcolorbox}[colback=white]
     \begin{def.}[Subespacio]
-	Un subconjunto $U$ de $V$ es llamado un subespacio de $V$ si $U$ es también un espacio vectorial (Usando la misma adición y multiplicación escalar como en $V$).\\\\
+	Un subconjunto $U$ de $V$ es llamado un subespacio de $V$ si $U$ es también un espacio vectorial (Usando la misma adición y multiplicación escalar como en $V$).
     \end{def.}
-\end{tcolorbox}
 \vspace{.5cm}
 
 El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.\\
 
 \begin{teo}
-
     Un subconjunto $U$ de $V$ es un subespacio de $V$ si y sólo si $U$ satisface las siguientes tres condiciones:
     \begin{itemize}
 	\item \textbf{Identidad aditiva.} $$0\in U;$$
@@ -712,14 +723,13 @@ El siguiente resultado brinda la forma más fácil de verificar si un subconjunt
 
 \end{teo}
 
+
 \subsection{Suma de subespacios}
 
-\begin{tcolorbox}[colback=white]
     \begin{def.}[Suma de subespacios]
 	Supóngase $U_1,\ldots ,U_m$ son subconjuntos de $V$. La suma de $U_1,\ldots, U_m$, denotado por $U_1 + \ldots+U_m$, es el conjunto de todas los posibles  sumas de los elementos de $U_1,\ldots,U_m$. Más precisamente,
 	$$U_1+\ldots+U_m = \lbrace u_1+\ldots +u_m\; :\; u_1\in U_1,\ldots, u_m \in U_m \rbrace$$
     \end{def.}
-\end{tcolorbox}
 \vspace{.5cm}
 
 El siguiente resultado establece que la suma de subespacios es un subespacio y, de hecho, es el subespacio más pequeño que contiene todos los sumandos.
