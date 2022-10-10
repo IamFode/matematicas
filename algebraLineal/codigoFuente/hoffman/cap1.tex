@@ -927,7 +927,24 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 
 	    %---------- (a)
 	    \item Si todo elemento de $A$ es $0$, entonces cada par $(x_1,x_2)$ es una solución de $AX=0$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $A=0$, entonces
+		$$AX=0 \quad \Rightarrow \quad \left[\begin{array}{*{2}{r}}
+		    0 & 0 \\
+		    0 & 0
+		\end{array}\right]
+		\left[\begin{array}{c}
+		    x_1 \\
+		    x_2
+		\end{array}\right] = 
+		\left[\begin{array}{c}
+		    0 \\
+		    0
+		\end{array}\right] \quad \Rightarrow \quad 
+		\left\{\begin{array}{rcl}
+		    0x_1+0x_2 & = & 0 \\
+		    0x_1+0x_2 & = & 0 
+		\end{array}\right.$$
+		Por lo que cada par $(x_1,x_2)$ es una solución de $AX=0$.\\\\
 
 	    %---------- (b)
 	    \item Si $ad-bc\neq 0$, el sistema $AX=0$ tiene solamente la solución trivial $x_1=x_2=0$.\\\\

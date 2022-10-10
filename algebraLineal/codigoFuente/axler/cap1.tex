@@ -698,44 +698,45 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Subespacios %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mysection{Subespacios}
 
-    \begin{def.}[Subespacio]
+%-------------------- 1.32
+\mysection{Subespacios}
+    \begin{mydef}[Subespacio]\;\\
 	Un subconjunto $U$ de $V$ es llamado un subespacio de $V$ si $U$ es también un espacio vectorial (Usando la misma adición y multiplicación escalar como en $V$).
-    \end{def.}
+    \end{mydef}
 \vspace{.5cm}
 
 El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.\\
 
-\begin{teo}
-    Un subconjunto $U$ de $V$ es un subespacio de $V$ si y sólo si $U$ satisface las siguientes tres condiciones:
+%-------------------- 1.34
+\setcounter{myteo}{33}
+\begin{myteo}[Condiciones para un subespacio]\;\\\\
+    Un subconjunto $U$ de $V$ es un subespacio de $V$ si y sólo si $U$ satisface las siguientes tres condiciones:\\
     \begin{itemize}
 	\item \textbf{Identidad aditiva.} $$0\in U;$$
-	\item \textbf{Cerrado bajo adición.}$$u,w\in U\; \mbox{implica}\; u+w\in U;$$
-	\item \textbf{Cerrado bajo multiplicación escalar.}
+	\item \textbf{Cerrado por adición.}$$u,w\in U\; \mbox{implica}\; u+w\in U;$$
+	\item \textbf{Cerrado por multiplicación escalar.}
 	    $$a\in F \; \mbox{y}\; u\in U\; \mbox{implica}\; au\in U;$$
     \end{itemize}
-
+    \vspace{.4cm}
 	Demostración.-\; Si $U$ es un subespacio de $V$, entonces $U$ satisface las tres condiciones de arriba por la definición de espacio vectorial.\\
-	Por el contrario, suponga que $U$ satisface las tres condiciones anteriores. La primera condición anterior asegura que la identidad aditiva de $V$ está en $U$. La segunda condición de arriba asegura que la adición tenga sentido en $U$. La tercera condición asegura que la multiplicación escalar tenga sentido en $U$.\\
-	Si $u\in U$, entonces $-u$ es también en $U$ por la tercera condición de arriba. Por lo tanto cada elemento de $U$ tiene un inverso aditivo en $U$.\\
-	Las otras partes de la definición de un espacio vectorial,como la asociatividad y conmutatividad, se satisfacen automáticamente para $U$ porque sostienen el espacio más grande de $V$. Así $U$ es un espacio vectorial y por ende es un subespacio de $V$.\\
-
-\end{teo}
-
+	A la inversa, suponga que $U$ satisface las tres condiciones anteriores. La primera condición anterior asegura que la identidad aditiva de $V$ está en $U$. La segunda condición de arriba asegura que la adición tenga sentido en $U$. La tercera condición asegura que la multiplicación escalar tenga sentido en $U$.\\
+	Si $u\in U$, entonces $-u$ [el cual es igual a $(-1)u$ por 1.31] es también en $U$ por la tercera condición de arriba. Por lo tanto cada elemento de $U$ tiene un inverso aditivo en $U$.\\
+	Las otras partes de la definición de un espacio vectorial,como la asociatividad y conmutatividad, se satisfacen automáticamente para $U$ porque sostienen el espacio más grande de $V$. Así $U$ es un espacio vectorial y por ende es un subespacio de $V$.
+\end{myteo}
+\vspace{.5cm}
 
 \subsection{Suma de subespacios}
 
-    \begin{def.}[Suma de subespacios]
+    \begin{def}[Suma de subespacios]
 	Supóngase $U_1,\ldots ,U_m$ son subconjuntos de $V$. La suma de $U_1,\ldots, U_m$, denotado por $U_1 + \ldots+U_m$, es el conjunto de todas los posibles  sumas de los elementos de $U_1,\ldots,U_m$. Más precisamente,
 	$$U_1+\ldots+U_m = \lbrace u_1+\ldots +u_m\; :\; u_1\in U_1,\ldots, u_m \in U_m \rbrace$$
     \end{def.}
 \vspace{.5cm}
 
-El siguiente resultado establece que la suma de subespacios es un subespacio y, de hecho, es el subespacio más pequeño que contiene todos los sumandos.
+El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.
 
-\begin{teo}[Suma de subespacios es el contenedor más pequeño de subespacios] \hfill
-
+\begin{myteo}[Suma de subespacios es el contenedor más pequeño de subespacios] \hfill
     Supóngase que $U_1,\ldots,U_m$ son subespacios de $V$. Entonces $U_1+\ldots +U_m$ es el subepsacio más pequeño de $V$ que contiene $U_1,\ldots, U_m$.\\\\
 	Demostración.-\; Es fácil ver que $0\in U_1+\ldots + U_m$ y que $U_1+\ldots +U_m$ es cerrado sobre la adición y la multiplicación escalar, es decir, por las tres condiciones dadas anteriormente podemos afirmar que $U_1+\ldots + U_m$ es un subespacio de $V$.\\
 	Claramente $U_1,\ldots, U_m$ están todos contenidos en $U_1 + \ldots + U_m$ (para ver esto, considere las sumas $u_1+\ldots + u_m$ donde todas menos una de las $u^{'}s$ son $0$). Por el contrario, todo subespacio de $V$ que contenga $U_1,\ldots , U_m$ contiene $U_1 + \ldots + U_m$ (porque los subespacios deben contener todas las sumas finitas de sus elementos). Por lo tanto $U_1+\ldots + U_m$ es el subespacio más pequeño de $V$ que contiene a $U_1,\ldots , U_m$.
