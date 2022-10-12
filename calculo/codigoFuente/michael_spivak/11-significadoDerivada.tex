@@ -1363,7 +1363,46 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
     %-------------------- 25.
     \item 
+	\begin{enumerate}[(a)]
 
+	    %---------- (a)
+	    \item Demuestre que dos funciones polinómicas de grados $m$ y $n$, respectivamente, se cortan a lo sumo en $\max(m,n)$ puntos.\\\\
+		Demostración.-\; Sean dos funciones polinómicas $f$ de grado $n$ y $g$ de grado $m$ tal que $m\geq n$. Es decir,
+		$$f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots + a_1x+a_0, \qquad g(x)=b_mx^m + b_{m-1}x^{m-1}+\ldots + b_1x+b_0,$$
+		para $a_n\neq 0$ y $a_m\neq 0$. Luego vemos que,
+		$$\begin{array}{rcl}
+		    (f-g)(x) &=& f(x)-g(x)\\
+			     &=& a_nx^n+a_{n-1}x^{n-1}+\ldots + a_1x+a_0 - \left(b_mx^m + b_{m-1}x^{m-1}+\ldots + b_1x+b_0\right)\\
+			     &=& a_nx^n + \ldots +a_{m+1}x^{m+1} - b_mx^m + (a_m-b_m)x^m+\ldots + (a_1-b_1)x+(a_0+b_0)\\
+		\end{array}$$
+		Este  último ya que $n\geq m.$ Acá mostramos que $f-g$ es también un polinomio de grado $n=\max(m,n)$. Ahora, supongamos que $a$ es un punto de intersección de $f$ y $g$, si y sólo si, $f(a)=f(b)$. Podemos reescribir de la siguiente manera,
+		$$(f-g)(a)=0.$$
+		De esto, podemos deducir que los puntos de intersección de $f$ y $g$ son los ceros de $f-g$. Así, por el problema 7 parte (c) del capitulo 3 de Spivak tenemos que $f-g$ puede tener por lo mucho $n$ ceros. Como $n\geq m$, entonces $n=\max(m,n)$. Lo que demuestra que $f$ y $g$ se intersecan como máximo en $\max(m,n)$ puntos.\\\\
+		
+
+	    %---------- (b)
+	    \item Para cada $m$ y $n$ muestre dos funciones polinómicas de grados $m$ y $n$ que se corten $\max(m,n)$ veces.\\\\
+		Demostración.-\; Sea $p$ un polinomio de grado $n$ y $q(x)=x^m$ un polinomio de grado $m$ con $n\geq m$. Supongamos otro polinomio $f=p+q$, de la parte (a) tenemos que el grado de $f$ es $n$ ya que $n\geq m$. Luego, observemos que $p=f-q$ y el grado de $p$ es $n$. Así, $p=f-q$ pueden tener por lo mucho $n$ raíces, esto es, $f$ y $q$ se intersecan por lo mucho en $n=\max(m,n)$ veces.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 26.
+    \item Suponga que $f$ es una función polinómica de grado $n$ con $f\geq 0$ (por tanto $n$ debe ser par). Demuestre que $f+f'+f''+\ldots + f^{(n)}\geq 0.$\\\\
+	Demostración.-\; Sea 
+	$$h(x)=f(x)+f'(x)+\ldots + f^{(n)}(x).$$
+	Diferenciando se tiene,
+	$$h'(x)=f'(x)+f''(x)+\ldots + f^{(n)}(x)+f^{(n+1)}(x).$$
+	Ya que, $f^{(n+1)}(x)=0$, entonces
+	$$h'(x)=f'(x)+f''(x)+\ldots + f^{(n)}(x).$$
+	Luego, supongamos
+	$$g(x)=e^{-x}h(x).$$
+	Diferenciando se tiene,
+	$$\begin{array}{rcl}
+	    g'(x)&=&e^{-x}\left[h'(x)-h(x)\right]\\\\
+		 &=&-e^{-x}\left[h(x)-h'(x)\right]\\\\
+		 &=&-e^{-x}f(x)\leq 0.
+	\end{array}$$
+	Entonces $g(x)$ es decreciente. Después, por el hecho de que $h(x)$ implica $\lim\limits_{x\to \infty} g(x)=0$, tenemos $g(x)\geq 0$. Por lo tanto $h(x)\geq 0$.\\\\
 
 \end{enumerate}
 

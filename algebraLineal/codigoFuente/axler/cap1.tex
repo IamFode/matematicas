@@ -726,38 +726,50 @@ El siguiente resultado brinda la forma más fácil de verificar si un subconjunt
 \end{myteo}
 \vspace{.5cm}
 
+%%%%%%%%%%%%%%%%%%%% Suma de Subespacios %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Suma de subespacios}
 
-    \begin{def}[Suma de subespacios]
-	Supóngase $U_1,\ldots ,U_m$ son subconjuntos de $V$. La suma de $U_1,\ldots, U_m$, denotado por $U_1 + \ldots+U_m$, es el conjunto de todas los posibles  sumas de los elementos de $U_1,\ldots,U_m$. Más precisamente,
-	$$U_1+\ldots+U_m = \lbrace u_1+\ldots +u_m\; :\; u_1\in U_1,\ldots, u_m \in U_m \rbrace$$
-    \end{def.}
+La unión de subespacios rara vez es un subespacio (ver Ejercicio 12), por lo que solemos trabajar con sumas en lugar de uniones.
+
+%-------------------- 1.36
+\setcounter{mydef}{35}
+\begin{mydef}[Suma de subespacios]\,\\\\
+    Supóngase $U_1,\ldots ,U_m$ son subconjuntos de $V$. La suma de $U_1,\ldots, U_m$, denotado por $U_1 + \ldots+U_m$, es el conjunto de todas los posibles  sumas de elementos de $U_1,\ldots,U_m$. Más precisamente,
+    $$U_1+\ldots+U_m = \lbrace u_1+\ldots +u_m\; :\; u_1\in U_1,\ldots, u_m \in U_m \rbrace$$
+\end{mydef}
 \vspace{.5cm}
 
 El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.
 
-\begin{myteo}[Suma de subespacios es el contenedor más pequeño de subespacios] \hfill
-    Supóngase que $U_1,\ldots,U_m$ son subespacios de $V$. Entonces $U_1+\ldots +U_m$ es el subepsacio más pequeño de $V$ que contiene $U_1,\ldots, U_m$.\\\\
-	Demostración.-\; Es fácil ver que $0\in U_1+\ldots + U_m$ y que $U_1+\ldots +U_m$ es cerrado sobre la adición y la multiplicación escalar, es decir, por las tres condiciones dadas anteriormente podemos afirmar que $U_1+\ldots + U_m$ es un subespacio de $V$.\\
-	Claramente $U_1,\ldots, U_m$ están todos contenidos en $U_1 + \ldots + U_m$ (para ver esto, considere las sumas $u_1+\ldots + u_m$ donde todas menos una de las $u^{'}s$ son $0$). Por el contrario, todo subespacio de $V$ que contenga $U_1,\ldots , U_m$ contiene $U_1 + \ldots + U_m$ (porque los subespacios deben contener todas las sumas finitas de sus elementos). Por lo tanto $U_1+\ldots + U_m$ es el subespacio más pequeño de $V$ que contiene a $U_1,\ldots , U_m$.
-\end{teo}
+%-------------------- 1.39
+\setcounter{mydef}{38}
+\begin{myteo}[La suma de subespacios es el subespacio más pequeño que contiene]\,\\\\ 
+    Supóngase que $U_1,\ldots,U_m$ son subespacios de $V$. Entonces $U_1+\ldots +U_m$ es el subespacio más pequeño de $V$ que contiene $U_1,\ldots, U_m$.\\\\
+	Demostración.-\; Es fácil ver que $0\in U_1+\ldots + U_m$ y que $U_1+\ldots +U_m$ es cerrado por la adición y la multiplicación escalar, es decir, por las tres condiciones dadas anteriormente podemos afirmar que $U_1+\ldots + U_m$ es un subespacio de $V$.\\
+	Claramente $U_1,\ldots, U_m$ están todos contenidos en $U_1 + \ldots + U_m$ (para ver esto, considere las sumas $u_1+\ldots + u_m$ donde todas menos una de las $u^{'}s$ son $0$). A la vez, cada subespacio de $V$ que contenga $U_1,\ldots , U_m$ contiene $U_1 + \ldots + U_m$ (porque los subespacios deben contener todas las sumas finitas de sus elementos). Por lo tanto $U_1+\ldots + U_m$ es el subespacio más pequeño de $V$ que contiene a $U_1,\ldots , U_m$.\\
+	Esta segunda parte, podríamos demostrarla también de la siguiente manera: Supongamos que $W\subseteq V$ es algún subespacio que contiene a $U_1,\ldots,U_n$, para todo $u_1,\ldots,u_n\in W$. Ya que $W$ es un subespacio se sigue también $u_1+\ldots+u_n\in W$ (porque $W$ es cerrado por la suma finita). Por lo tanto
+	$$U_1+\ldots+U_n = \left\{u_i+\ldots + u_n : u_1\in U_i,\ldots , u_n \in U_n\right\}\subseteq W.$$
+\end{myteo}
+Las sumas de subespacios en la teoría de espacios vectoriales son análogas a las uniones de subconjuntos en la teoría de conjuntos. Dados dos subespacios de un espacio vectorial, el subespacio más pequeño que los contiene es su suma. Análogamente, dados dos subconjuntos de un conjunto, el subconjunto más pequeño que los contiene es su unión.\\\\
+
 
 \subsection{Sumas directas}
 
-\begin{tcolorbox}[colback=white]
-    \begin{def.}[Suma directa]
+%-------------------- 1.40
+    \begin{mydef}[Suma directa]\,\\\\
 	Supóngase que $U_1,\ldots, U_m$ son subespacios de $V$.
 	\begin{itemize}
 	    \item La suma $U_1+\ldots + U_m$ es llamada una suma directa si cada elemento de $U_1+\ldots + U_m$ se puede escribir de una sola manera como una suma  $u_1 + \ldots + u_m$ donde cada $u_j$ esta en $U_j$.
 	    \item Si $U_1 + \ldots + U_m$ es una suma directa, entonces $U_1 \oplus \ldots \oplus U_m$ denota $U_1 + \ldots + U_m$ con la notación $\oplus$ sirviendo como una indicación de que se trata de una suma directa.
 	\end{itemize}
-    \end{def.}
-\end{tcolorbox}
+    \end{mydef}
 \vspace{.5cm}
 
-El siguiente resultado muestra que al decidir si una suma de subespacios es una suma directa, solo necesitamos considerar si 0 se puede escribir únicamente como una suma apropiada.\\
+La definición de suma directa requiere que cada vector de la suma tenga una representación única como suma adecuada. El siguiente resultado muestra que al decidir si una suma de subespacios es una suma directa, sólo tenemos que considerar si 0 puede escribirse de forma única como una suma correspondiente.
 
-\begin{teo}[Condición para una suma directa]
+%-------------------- 1.44
+\setcounter{myteo}{43}
+\begin{myteo}[Condición para una suma directa]\,\\\\
     Supóngase que $U_1,\ldots, U_m$ son subespacios de $V$. Entonces $U_1+\ldots + U_m$ es una suma directa si y sólo si la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$.\\\\
 	Demostración.-\; Supóngase que $U_1+\ldots + U_m$ es una suma directa. Entonces la definición de suma directa implica que la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$. Para mostrar que $U_1 + \ldots + U_m$ es una suma directa, sea $v \in U_1 + \ldots + U_m$. Podemos escribir:
 	$$v = u_1 + \ldots + u_m$$
@@ -765,17 +777,18 @@ El siguiente resultado muestra que al decidir si una suma de subespacios es una 
 	$$v = v_1 + \ldots + v_m$$
 	donde $v_1 \in U_1,\ldots , v_m \in U_m$. Restando estas dos ecuaciones, tenemos,
 	$$0=(u_1-v_1)+\ldots + (u_m - v_m).$$
-	Porque $u_1-v_1\in U_1,\ldots U_m$, la ecuación dada implica que cada $u_j - v_j$ es igual a $0$. Por lo tanto $u_1 = v_1, \ldots , u_m = v_m$.\\
+	Porque $u_1-v_1\in U_1,\ldots U_m$, la ecuación dada implica que cada $u_j - v_j$ es igual a $0$. Por lo tanto $u_1 = v_1, \ldots , u_m = v_m$.
+\end{myteo}
+\vspace{.5cm}
 
-\end{teo}
+El siguiente resultado da una condición simple para probar qué pares de subespacios dan una suma directa.
 
-El siguiente resultado da una condición simple para probar qué pares de subespacios dan una suma directa.\\
-
-\begin{teo}[Suma directa de dos subespacios]
+%-------------------- 1.45
+\begin{myteo}[Suma directa de dos subespacios]\,\\\\
     Supóngase que $U$ y $W$ son subespacios de $V$. Entonces $U+W$ es una suma directa si y sólo si $U \cap W = \lbrace 0 \rbrace$.\\\\
     Demostración.-\; Primero supóngase que $U+W$ es una suma directa. Si $v \in U\cap W,$ entonces $0=v+(-v),$ donde $v\in U$ y $-v\in W$. Por la única representación de $0$ como la suma de un vector en $U$ y un vector en $W$, tenemos $v=0$. 
-\end{teo}
+\end{myteo}
 
-
+\section*{Ejercicios 1.C}
 
 

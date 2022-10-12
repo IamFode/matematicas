@@ -948,68 +948,93 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
 
 	    %---------- (b)
 	    \item Si $ad-bc\neq 0$, el sistema $AX=0$ tiene solamente la solución trivial $x_1=x_2=0$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $ad-bc\neq 0$, entonces
+		$$\begin{array}{rcl}
+		    AX=0 &\Rightarrow&  \left[\begin{array}{*{2}{r}}
+		    a & b \\
+		    c & d
+		\end{array}\right]
+		\left[\begin{array}{c}
+		    x_1 \\
+		    x_2
+		\end{array}\right] = 0\\\\
+			 &\Rightarrow& 
+		\left\{\begin{array}{rcl}
+		    ax_1+bx_2 & = & 0 \\
+		    cx_1+dx_2 & = & 0
+		\end{array}\right.\\\\
+			 & \Rightarrow &
+		    x_2  =  \dfrac{-cx_1}{d}\\\\
+			 & \Rightarrow &
+			 ax_1+b\left(\dfrac{-cx_1}{d}\right)=0\\\\
+			 & \Rightarrow &
+			 x_1=0 \quad \mbox{y}\quad x_2=0\\\\
+		\end{array}
+		$$
+		Por lo tanto $x_1=x_2=0$ es la única solución trivial $AX=0$.\\\\
 
 	    %---------- (c)
-	    \item Si $ad-bc= 0$ y algún elemento de $A$ es diferente de $0$, entonces existe una solución $\left(x_1^0,x_2^0 \right)$ tal que $(x_1,x_2)$ es una solución si, y sólo si, existe un escalar y tal que $x_1=yx_1^0, x=yx_2^0.$\\\\
-		Demostración.-\;
+	    \item Si $ad-bc= 0$ y algún elemento de $A$ es diferente de $0$, entonces existe una solución $\left(x_1^0,x_2^0 \right)$ tal que $(x_1,x_2)$ es una solución si, y sólo si, existe un escalar $y$ tal que $x_1=yx_1^0, x=yx_2^0.$\\\\
+		Demostración.-\; Supóngase $a\neq 0$ y $b\neq 0$. Dado que $ad-bc=0$, entonces $c=d=0$. Por lo que nos queda la ecuación $ax_1+bx_2=0$. Ya que $(x_1^0,x_2^0)$ resuelve el sistema, tenemos
+		\begin{equation}
+		    ax_1^{0}+bx_2^{0}=0.
+		\end{equation}
+		Ahora, $(x_1,x_2)$ es una solución del sistema si y sólo si 
+		\begin{equation}
+		    ax_1+bx_2=0.
+		\end{equation}
+		Multiplicando $x_1$ en $(1.3)$ y $(1.4)$ y luego restandolos, obtenemos
+
+		$$\begin{array}{rcll}
+		    b\left(x_1^0x_2-x_2^0x_1\right)=0&\Rightarrow&x_1^0x_2-x_2^0x_1=0&\\\\
+						     &\Rightarrow&x_1^0x_2=x_2^0x_1&\\\\
+						     &\Rightarrow&\dfrac{x_1^0}{x_1}=\dfrac{x_2^0}{x_2}=\dfrac{1}{y}&\mbox{supongamos }\dfrac{1}{y}\\\\
+						     &\Rightarrow&x_1=yx_1^0 \mbox{ y } x_2=yx_2^0.\\\\
+		\end{array}$$
+		\vspace{0.5cm}
+
 	\end{enumerate}
 
 \end{enumerate}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Matrices escalón reducida por filas}
 
-    \begin{def.}
-	Una matriz $m\times n$, $R$, se llama matriz escalón reducida por filas si:
-	\begin{enumerate}[(a)]
-	    \item $R$ es reducida por filas;
-	    \item toda fila de $R$ que tiene todos los elementos $0$ está debajo de todas las filas que tienen elementos no nulos;
-	    \item si las filas $1,\ldots, r$ son las filas no nulas de $R$, y si el primer elemento no nulo de la fila $i$ está en la columna $k_i, i=1,\ldots, r$, entonces $k_1<k_2<\ldots,k_r.$
-	\end{enumerate}
-	Se puede describir también una matriz escalón $R$ reducida por filas como sigue. Todo elemento de $R$ es $0$, o existe un número positivo $r$, $l\leq r \leq m$, y $r$ entero positivo $k_1,\ldots ,k_r$ con $1\leq k_i\leq n$ y
-	\begin{enumerate}[(a)]
-	    \item $R_{ij}=0$ para $i>r,$ y $R_{ij}=0$ si $j<k_i$.
-	    \item $R_{ik_j}=\delta_{ij}$, $1\leq i \leq r,$ $1\leq j\leq r$.
-	    \item $k_1<\ldots < k_r$.
-	\end{enumerate}
-    \end{def.}
+\begin{def.}
+    Una matriz $m\times n$, $R$, se llama \textbf{matriz escalón reducida por filas} si:
+    \begin{enumerate}[(a)]
+	\item $R$ es reducida por filas;
+	\item toda fila de $R$ que tiene todos los elementos $0$ está debajo de todas las filas que tienen elementos no nulos;
+	\item si las filas $1,\ldots, r$ son las filas no nulas de $R$, y si el primer elemento no nulo de la fila $i$ está en la columna $k_i, i=1,\ldots, r$, entonces $k_1<k_2<\ldots,k_r.$
+    \end{enumerate}
+    Se puede describir también una matriz escalón $R$ reducida por filas como sigue. Todo elemento de $R$ es $0$, o existe un número positivo $r$, $l\leq r \leq m$, y $r$ entero positivo $k_1,\ldots ,k_r$ con $1\leq k_i\leq n$ y
+    \begin{enumerate}[(a)]
+	\item $R_{ij}=0$ para $i>r,$ y $R_{ij}=0$ si $j<k_i$.
+	\item $R_{ik_j}=\delta_{ij}$, $1\leq i \leq r,$ $1\leq j\leq r$.
+	\item $k_1<\ldots < k_r$.
+    \end{enumerate}
+\end{def.}
 
 % -------------------- teorema 5
 \begin{teo}
     Toda matriz $m\times n$, $A$, es equivalente por filas a una matriz escalón por filas.\\\\
 	Demostración.-\; Sabemos que $A$ es equivalente por filas a una matriz reducida por filas. Todo lo que se necesita observar es que, efectuando un número finito de intercambios de filas en una matriz reducida por filas, se la puede llevar a la forma escalón reducida por filas.
 \end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 % -------------------- teorema 6
 \begin{teo}

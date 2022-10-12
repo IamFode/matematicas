@@ -25,3 +25,19 @@ qnorm(0.95)
 ```
 Dado que $Z=0.69$ es menor la umbral $z_{1-\alpha}=1.644854$ no podemos rechazar $H_0$.
 
+## Ejemplo iris
+
+```{r}
+set.seed(1)
+n=40
+muestra = iris$Sepal.Length[sample(1:nrow(iris),size=n,replace = TRUE)]
+mean = mean(muestra)
+x_0 = 5
+sigma = sd(iris$Sepal.Length)
+alpha=0.05
+Z = (mean-x_0)/(sigma/sqrt(n))
+Z
+qnorm(1-alpha)
+
+mean-qnorm(1-alpha)*sigma/sqrt(n)
+```
