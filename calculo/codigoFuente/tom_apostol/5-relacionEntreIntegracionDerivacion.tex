@@ -322,7 +322,78 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	\vspace{0.5cm}
 
     %-------------------- 11.
+    \item Demostrar que no existe ningún polinomio $f$ cuya derivada esté dada por la fórmula $f'(x)=\dfrac{1}{x}.$\\\\
+	Demostración.-\; Supongamos lo contrario. Sea $f'(x)=\dfrac{1}{x},\; x\in \mathbb{R}$, entonces podemos hallar su primitiva de la siguiente manera:
+	$$P(x)=\dfrac{x^{n+1}}{n+1}, n\in \mathbb{N}\quad \Rightarrow \quad f(x)=\dfrac{x^{-1+1}}{-1+1}=\dfrac{x^0}{0}.$$
+	Lo cual es un absurdo. Por lo tanto no existe ningún polinomio $f$ cuya derivada esté dada por la fórmula $f'(x)=\dfrac{1}{x}.$\\\\
+
+    %-------------------- 12.
+    \item Demostrar que $\int_0^x |t| \; dt = \frac{1}{2}x|x|$ para todo número real $x$.\\\\
+	Demostración.-\; Consideremos tres casos.
+	\begin{enumerate}[\textit{Caso} 1.]
+	    \item Si $x=0$, entonces para ambos lados de la ecuación el resultado será $0$, por lo que el resultado se cumple.
+	    \item Si $x>0$, entonces $|t|=t$ para todo $t\in [0,x]$, así
+		$$\int_0^x |t|\; dt = \int_0^x t \; dt = \dfrac{1}{2}x^2=\dfrac{1}{2}x|x|.$$
+	    \item Si $x<0$, entonces $|t|=-t$ para todo $t\in [x,0]$, así
+		$$\int_0^x |t|\; dt = -\int_0^x t \; dt=\int_x^0 t \; dt = \dfrac{1}{2}t^2\bigg|_x^0=-\dfrac{1}{2}x^2=\dfrac{1}{2}x|x|.$$
+	\end{enumerate}
+	\vspace{0.5cm}
+
+    %-------------------- 13.
+    \item Demostrar que 
+    $$\int_0^x \left(t+|t|\right)^2\; dt = \dfrac{2x^2}{3}(x+|x|) \mbox{ para todo } x \mbox{ real.}$$\\
+    	Demostración.-\; Consideremos dos casos.
+	\begin{enumerate}[\textit{Caso} 1.]
+	    \item Si $x\geq 0$ entonces $t=|t|$ para todo $t\in[0,x]$ así,
+		$$\int_0^x (t+|t|)^2 \; dt= \int_0^x 4t^2\; dt = \dfrac{4}{3}x^3=\dfrac{2}{3}x^2(2x)=\dfrac{2}{3}x^2(x+|x|).$$
+	    \item Si $x<0$ entonces $|t|=-t$ para todo $t\in[x,0]$ así,
+		$$\int_0^x (t+|t|)^2 \; dt = \int_0^x (t-t)^2\; dt = 0 = \dfrac{2}{3}x^2(x-x)= \dfrac{2}{3}x^2(x+|x|).$$\\ 
+	\end{enumerate}
+
+    %-------------------- 14.
+    \item Una función $f$ es continua para cualquier $x$ y satisface la ecuación
+    $$\int_0^x f(t)\; dt = -\dfrac{1}{2}+x^2+x\sen2x + \dfrac{1}{2}\cos 2x.$$
+    para todo $x$. Calcular $f\left(\frac{1}{4}\pi\right)$ y $f'\left(\frac{1}{4}\pi\right).$\\\\
+	Respuesta.-\; Sea,
+	$$A(x)=\int_0^x f(t)\; dt = -\dfrac{1}{2}+x^2+x\sen2x + \dfrac{1}{2}\cos 2x.$$
+	Por el primer teorema fundamental del cálculo la derivada de $A(x)$ existe. Es decir,
+	$$A'(x)=f(x).$$
+	De donde,
+	$$f(x)=A'(x)=2x+\sen(2x)+2x\cos(2x)-\sen(2x)=2x+2x\cos(2x).$$
+	Luego, evaluando en $x=\frac{\pi}{4}$ tenemos
+	$$f\left(\dfrac{\pi}{4}\right)=A'\left(\dfrac{\pi}{4}\right)=\dfrac{\pi}{2}+\dfrac{\pi}{2}\cos\left(\dfrac{\pi}{2}\right)=\dfrac{\pi}{2}.$$
+	Por otro lado, derivamos $f(x)$ y obtenemos
+	$$f(x)=2x+2x\cos(2x)\quad \Rightarrow \quad f'(x)=2+2\cos(2x)-4x\sen(2x).$$
+	Así, 
+	$$f'\left(\dfrac{\pi}{4}\right)=2+2\cos\left(\dfrac{\pi}{2}\right)-\pi\sen\left(\dfrac{\pi}{2}\right)=2-\pi.$$\\
+
+    %-------------------- 15.
+    \item Encontrar una función $f$ y un valor de la constante $c$, tal que:
+    $$\int_c^x f(t)\; dt = \cos x - \dfrac{1}{2}\mbox{ para todo } x \mbox{ real. }$$\\
+	Respuesta.-\; Sea $f(t)=-\sen t$ y $c=\frac{\pi}{3}$. Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_c^x f(t)\; dt &=& \displaystyle\int_{\frac{\pi}{3}}^x (-\sen t)\; dt\\\\ 
+					    &=&\cos t \bigg|_{\frac{\pi}{3}}^x\\\\
+					    &=&\cos x - \cos \left(\dfrac{\pi}{3}\right)\\\\
+					    &=&\cos x - \dfrac{1}{2}.
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 16.
+    \item Encontrar una función $f$ y un valor de la constante $c$, tal que:
+    $$\int_c^x t f(t)\; dt = \sen x-x\cos x-\dfrac{1}{2}x^2 \mbox{ para todo } x \mbox{ real. }$$\\
+	Respuesta.-\; Sea $f(t)=\sen t-1$ y $c=0$. Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_c^x tf(t)\; dt &=& \displaystyle \int_0^x (t\sen t - t)\; dt\\\\
+					     &=& \left(\sen t - t \cos t - \dfrac{1}{2}t^2\right)\bigg|_0^x\\\\
+					     &=& \sen x - x\cos x - \dfrac{1}{2}x^2.
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 17.
     \item 
+	
+
 
 
 \end{enumerate}

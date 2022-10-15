@@ -739,11 +739,11 @@ La unión de subespacios rara vez es un subespacio (ver Ejercicio 12), por lo qu
 \end{mydef}
 \vspace{.5cm}
 
-El siguiente resultado brinda la forma más fácil de verificar si un subconjunto de un espacio vectorial es un subespacio.
+El siguiente resultado afirma que la suma de subespacios es un subespacio, y es de hecho el subespacio más pequeño que contiene todos los sumandos.\\
 
 %-------------------- 1.39
 \setcounter{mydef}{38}
-\begin{myteo}[La suma de subespacios es el subespacio más pequeño que contiene]\,\\\\ 
+\begin{myteo}[La suma de subespacios es el subespacio más pequeño que lo contiene]\,\\\\ 
     Supóngase que $U_1,\ldots,U_m$ son subespacios de $V$. Entonces $U_1+\ldots +U_m$ es el subespacio más pequeño de $V$ que contiene $U_1,\ldots, U_m$.\\\\
 	Demostración.-\; Es fácil ver que $0\in U_1+\ldots + U_m$ y que $U_1+\ldots +U_m$ es cerrado por la adición y la multiplicación escalar, es decir, por las tres condiciones dadas anteriormente podemos afirmar que $U_1+\ldots + U_m$ es un subespacio de $V$.\\
 	Claramente $U_1,\ldots, U_m$ están todos contenidos en $U_1 + \ldots + U_m$ (para ver esto, considere las sumas $u_1+\ldots + u_m$ donde todas menos una de las $u^{'}s$ son $0$). A la vez, cada subespacio de $V$ que contenga $U_1,\ldots , U_m$ contiene $U_1 + \ldots + U_m$ (porque los subespacios deben contener todas las sumas finitas de sus elementos). Por lo tanto $U_1+\ldots + U_m$ es el subespacio más pequeño de $V$ que contiene a $U_1,\ldots , U_m$.\\
@@ -765,7 +765,7 @@ Las sumas de subespacios en la teoría de espacios vectoriales son análogas a l
     \end{mydef}
 \vspace{.5cm}
 
-La definición de suma directa requiere que cada vector de la suma tenga una representación única como suma adecuada. El siguiente resultado muestra que al decidir si una suma de subespacios es una suma directa, sólo tenemos que considerar si 0 puede escribirse de forma única como una suma correspondiente.
+La definición de suma directa requiere que cada vector de la suma tenga una representación única como suma adecuada. El siguiente resultado muestra que al decidir si una suma de subespacios es una suma directa, sólo tenemos que considerar si 0 puede escribirse de forma única como una suma correspondiente.\\
 
 %-------------------- 1.44
 \setcounter{myteo}{43}
@@ -789,6 +789,20 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
     Demostración.-\; Primero supóngase que $U+W$ es una suma directa. Si $v \in U\cap W,$ entonces $0=v+(-v),$ donde $v\in U$ y $-v\in W$. Por la única representación de $0$ como la suma de un vector en $U$ y un vector en $W$, tenemos $v=0$. 
 \end{myteo}
 
+
 \section*{Ejercicios 1.C}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Para cada de los siguientes subconjuntos de $\bf{F}^3$, determinar si es un subespacio de $\bf{F}^3:$
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $\left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1+2x_2+3x_3=0\right\}$.\\\\
+		Respuesta.-\; 
+
+	\end{enumerate}
+\end{enumerate}
 
 

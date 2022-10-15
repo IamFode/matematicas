@@ -1005,7 +1005,7 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     \begin{enumerate}[(a)]
 	\item $R$ es reducida por filas;
 	\item toda fila de $R$ que tiene todos los elementos $0$ está debajo de todas las filas que tienen elementos no nulos;
-	\item si las filas $1,\ldots, r$ son las filas no nulas de $R$, y si el primer elemento no nulo de la fila $i$ está en la columna $k_i, i=1,\ldots, r$, entonces $k_1<k_2<\ldots,k_r.$
+	\item si las filas $1,\ldots, r$ son las filas no nulas de $R$, y si el primer elemento no nulo de la fila $i$ está en la columna $k_i, i=1,\ldots, r$, entonces $k_1<k_2<\ldots<k_r.$
     \end{enumerate}
     Se puede describir también una matriz escalón $R$ reducida por filas como sigue. Todo elemento de $R$ es $0$, o existe un número positivo $r$, $l\leq r \leq m$, y $r$ entero positivo $k_1,\ldots ,k_r$ con $1\leq k_i\leq n$ y
     \begin{enumerate}[(a)]
@@ -1020,20 +1020,20 @@ Usando el teorema 2, se verificará que: Cada matriz es equivalente por filas a 
     Toda matriz $m\times n$, $A$, es equivalente por filas a una matriz escalón por filas.\\\\
 	Demostración.-\; Sabemos que $A$ es equivalente por filas a una matriz reducida por filas. Todo lo que se necesita observar es que, efectuando un número finito de intercambios de filas en una matriz reducida por filas, se la puede llevar a la forma escalón reducida por filas.
 \end{teo}
+\vspace{0.5cm}
 
+Examinaremos el sistema $RX=0$, donde $R$ es una matriz escalón reducida por filas. Sean las filas $1,\ldots , r$ las no nulas de $R$, y supóngase que el elemento principal no nulo de la fila $i$ está e la columna $k_i$. El sistema $RX=0$ consta entonces de $r$ ecuaciones no triviales. Además, la incógnita $x_{k_i}$ aparecerá (con coeficiente no nulo) solamente en la i-ésima ecuación. Si $u_1,\ldots , u_{n-r}$ representan las $(n-r)$ incógnitas que son diferentes de $x_{k_1},\ldots , x_{k_r}$, entonces las $r$ ecuaciones no triviales de $RX=0$ son de la forma
+\begin{equation}
+    \begin{array}{ccccc}
+	x_{k_1}&+&\sum\limits_{j=1}^{n-r}C_{1j} u_j&=&0\\
+	       &\vdots&&&\vdots\\
+	x_{k_r}&+&\sum\limits_{j=1}^{n-r}C_{rj} u_j&=&0.
+    \end{array}
+\end{equation}
 
+Todas las soluciones del sistema de ecuaciones $RX=0$ se obtienen dando valores arbitrarios a $u_1,\ldots,u_{n-r}$ y calculando entonces los correspondientes valores de $x_{k_1},\ldots , x_{k_r}$ de (1-3).\\
 
-
-
-
-
-
-
-
-
-
-
-
+Observemos una cosa más, en relación con el sistema de ecuaciones $RX=0$. Si el número $r$ de filas no nulas de $R$ es menor que $n$, entonces el sistema $RX=0$ tiene una solución no trivial, esto es, una solución $(x_1,\ldots , x_n)$ en que no todo $x_j$ es $0$. En efecto, como $r<n,$ se puede elegir algún $x_j$ que no esté entre las $r$ incógnitas $x_{k_1},\ldots , x_{k_r}$ y se puede entonces construir una solución como antes, en que este $x_j$ es $1$.
 
 
 % -------------------- teorema 6
