@@ -1419,6 +1419,48 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		Demostración.-\; Supongamos que para algunos números naturales $n$ y $k$, $n-k$ es impart. Esto significa que $n-k-1$ será par. De la parte discusión previa a la parte (a) se deduce que existe alguna función polinómica $g$ de grado $n-1$ con exactamente $k$ raíces. Sea $f$ la función tal que $f'=g$. De donde no es difícil deducir que esta función $f$ tiene grado $n$ y $k$ puntos críticos, que son en realidad raíces de la función $g$. Por lo tanto, la función $f$ es la función requerida.\\\\
 
 	    %---------- (c)
+	    \item Suponga que la función polinómica $f(x)=x^n+a_{n-1}x^{n-1}+\ldots + a_0$ tiene $k_1$ puntos máximos locales y $k_2$ puntos mínimos locales. Demuestre que $k_2=k_1+1$ si $n$ es par y $k_2=k;$ si $n$ es impar.\\\\
+		Demostración.-\; Sea 
+		$$f(x)=x^n+a_{n-1}x^{n-1}+\ldots + a_1x+a_0,$$
+		un polinomio con $k_1$ puntos máximos locales y $k_2$ puntos mínimos locales. Notemos que $k=k_1+k_2$, que podemos ordenarlas en secuencias crecientes $a_1<a_2<\ldots < a_k$. Como el coeficiente principal de los polinomios es positivo, tenemos que $\lim_{x\to \infty} f(x)=\infty.$ Esto significa que la función es creciente a medida que tiende al infinito. Luego el punto crítico final $a_k$ debe ser el mínimo local, ya que la función es creciente a la derecha del mismo. De aquí se deduce que la función será decreciente a la izquierda de $a_k$. Decimos que el penúltimo punto crítico $a_{k-1}$ a  $k_1$ será máximo local ya que la función disminuirá a la derecha de él, y por tanto aumentará a la izquierda del mismo. Repitiendo esta deducción podemos deducir que los máximos y los mínimos cambiarán periódicamente. Es decir, los mínimos y máximos locales se distribuirán como en el gráfico siguiente.
+
+		\begin{center}
+		    \begin{tikzpicture}[scale=0.7]
+			% abscisa y ordenada
+			\tkzInit[xmax= 7,xmin=-1,ymax=4,ymin=-3]
+			\tiny\tkzLabelXY[opacity=0.6,step=1, orig=false]
+			% label x, f(x)
+			\tkzDrawX[opacity= .6,label=x,right=0.3]
+			\tkzDrawY[opacity= .6,label=f(x),below = -0.6]
+			%puntos
+			\filldraw[black](1.4,3) circle(2pt);
+			\filldraw[black](2.63,-.5) circle(2pt);
+			\filldraw[black](4.1,3) circle(2pt);
+			\filldraw[black](5.52,-1.97) circle(2pt);
+			%lineas
+			%\draw[](-2.5,3)..controls(-1.3,6)..(-1,6)..controls(0,5.8)and(0,1)..(1,1);
+			\draw[](0.7,-2)..controls(1.25,4.4)..(2.5,-.3);
+			\draw[](2.5,-.3)..controls(2.65,-.8)..(3.5,2);
+			\draw[](3.5,2)..controls(4.25,3.8)..(5.3,-1.5);
+			\draw[](5.3,-1.5)..controls(5.6,-2.5)..(6.5,3);
+		    \end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+		Ahora observaremos dos casos distintos, cuando $n$ es par y es impar.\\
+		\begin{enumerate}[\textit{Caso} 1.]
+		    \item Supongamos que $n$ es par. No es difícil deducir que $\lim_{x\to -\infty}f(x)=\infty.$ Si aplicamos la misma lógica que la anterior, podemos decir que $a_1$ será el mínimo local, ya que la función es creciente a la izquierda y decreciente a la derecha de $a_1$, así podremos deducir que $a_2$ será un máximo local. Por lo que es cierto que:
+			$$a_n=\left\{\begin{array}{rr}
+				\mbox{máximo local} & n=2m\\
+				\mbox{mínimo local} & n=2m+1.
+			\end{array}\right.$$
+			Ya que $a_k$ es un mínimo local, basado en el anterior análisis, se sigue que $k$ es impar, es decir $k=2m+1$. Por lo tanto, los mínimos locales son $a_1,a_3,\ldots , a_k$ mientras que los máximos locales son $a_2,a_4,\ldots , a_{k_1}$.\\
+		    \item Supongamos que $n$ es impar. No es difícil deducir que $\lim_{x\to -\infty}f(x)=-\infty.$ Si aplicamos la misma lógica que la anterior, podemos decir que $a_1$ será el máximo local, ya que la función es decreciente a la izquierda y creciente a la derecha de $a_1$, así podremos deducir que $a_2$ será un mínimo local. Por lo que es cierto que:
+			$$a_n=\left\{\begin{array}{rr}
+			    \mbox{máximo local} & n=2m+1\\
+			    \mbox{mínimo local} & n=2m.
+			\end{array}\right.$$
+		Ya que $a_k$ es un mínimo local, basado en el anterior análisis, se sigue que $k$ es par, es decir $k=2m$. Por lo tanto, los mínimos locales son $a_1,a_3,\ldots , a_{k_1}$ mientras que los máximos locales son $a_2,a_4,\ldots , a_{k}$.\\\\
+		\end{enumerate}
 	    \item 
 	\end{enumerate}
 

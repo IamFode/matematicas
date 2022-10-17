@@ -391,9 +391,27 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	\vspace{0.5cm}
 
     %-------------------- 17.
+    \item Existe una función $f$ definida y continua para todo número real $x$ que satisface una ecuación de la forma:
+    $$\int_0^x f(t)\; dt = \int_x^1 t^2f(t)\; dt + \dfrac{x^{16}}{8}+\dfrac{x^{18}}{9}+c,$$
+    donde $c$ es constante. Encontrar una fórmula explícita para $f(x).$ y hallar el valor de la constante $c$.\\\\
+	Respuesta.-\; Sea $P(x)=\int_x^1 t^2 f(t)\; dt.$ Entonces, usando los teoremas fundamentales del calculo, se tiene\\
+	$$\begin{array}{rcl}
+	    f(x)=\left[P(1)-P(x)\right]'+2x^{15}+2x^{17}+0&\Rightarrow&f(x)=-x^2f(x)+2x^{15}+2x^{17}\\\\
+							  &\Rightarrow& f(x)\left(x^2+1\right)=2x^{15}\left(x^2+1\right).\\\\
+							  &\Rightarrow& f(x)=2x^{15}.
+	\end{array}$$
+
+	Ahora, reemplazando $f(x)$ en la ecuación inicial, se tiene
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^x 2t^{15}\; dt &=& \displaystyle\int_x^1 t^{2}\cdot 2t^{15}\; dt + \dfrac{x^{16}}{8}+\dfrac{x^{18}}{9}+c\\\\
+	    \dfrac{t^{16}}{8}\bigg|_0^x &=& \dfrac{t^{18}}{9}\bigg|_x^1+\dfrac{x^{16}}{8}+\dfrac{x^{18}}{9}+c\\\\
+	    \dfrac{16}{8}&=&\dfrac{1}{9}-\dfrac{x^{18}}{9}+\dfrac{x^{16}}{8}+\dfrac{x^{18}}{9}+c\\\\
+	    c&=&-\dfrac{1}{9}.
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 18.
     \item 
+
 	
-
-
-
 \end{enumerate}
