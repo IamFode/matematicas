@@ -1179,10 +1179,112 @@ $$A'_{i(n+1)}=y_i.$$
 
     %-------------------- 3.
     \item Describir explícitamente todas las matrices escalón $2\times 2$ reducidas por filas.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Por la definición 1.3 tenemos las siguientes matrices escalón reducidas por filas:
+	$$
+	\left[\begin{array}{cc}
+		0&0\\
+		0&0
+	\end{array}\right],\quad 
+	\left[\begin{array}{cc}
+		1&0\\
+		0&1
+	\end{array}\right], \quad
+	\left[\begin{array}{cc}
+		1&0\\
+		0&0
+	\end{array}\right], \quad
+	\left[\begin{array}{cc}
+		0&1\\
+		0&0
+	\end{array}\right], \quad
+	\left[\begin{array}{cc}
+		1&1\\
+		0&0
+	\end{array}\right].
+	$$
+	\vspace{.5cm}
+
 
     %-------------------- 4.
-    \item 
+    \item Considérese el sistema de ecuaciones
+	$$\begin{array}{ccccccl}
+	    x_1&-&x_2&+&2x_3&=&1\\
+	    2x_1&&&+&2x_3&=&1\\
+	    x_1&-&3x_2&+&4x_3&=&2.
+	\end{array}$$
+	¿Tiene este sistema solución? Si es así, determinar todas sus soluciones.\\\\
+	Respuesta.-\; Sea $AX=b$, entonces
+	$$
+	\left[\begin{array}{*{3}{r}}
+	    1 & -1 & 2 \\
+	    2 & 0 & 2 \\
+	    1 & -3 & 4
+	\end{array}\right]
+	\left[\begin{array}{c}
+	    x_1 \\
+	    x_2 \\
+	    x_3
+	\end{array}\right] = 
+	\left[\begin{array}{c}
+	    1 \\
+	    1 \\
+	    2
+	\end{array}\right].
+	$$
+	Luego, aplicando la definición 1.3 tenemos 
+	$$
+	\begin{array}{rcl}
+	\left[\begin{array}{rrr|r}
+	    1 & -1 & 2 & 1 \\
+	    2 & 0 & 2 & 1 \\
+	    0 & -3 & 4 & 2 
+	\end{array}\right] 
+	&
+	\begin{array}{rcl}
+	    R_2-2R_1 &\to& R_2 \\
+	    R_3-R_1 &\to& R_3
+	\end{array}
+	&
+	\left[\begin{array}{rrr|r}
+	    1 & -1 & 2 & 1 \\
+	    0 & 2 & -2 & -1 \\
+	    0 & -2 & 2 & 1 
+	\end{array}\right]\\\\
+	&
+	\dfrac{R_2}{2} \to R_2
+	&
+	\left[\begin{array}{rrr|r}
+	    1 & -1 & 2 & 1 \\
+	    0 & 1 & -1 & -\frac{1}{2} \\
+	    0 & -2 & 2 & 1
+	\end{array}\right]\\\\
+	&
+	\begin{array}{rcl}
+	    R_3+R_2 &\to& R_1\\
+	    R_3+2R_2 &\to& R_3
+	\end{array}
+	&
+	\left[\begin{array}{rrr|r}
+	    1 & 0 & 1 & \frac{1}{2} \\
+	    0 & 1 & -1 & -\frac{1}{2} \\
+	    0 & 0 & 0 & 0
+	\end{array}\right]
+	\end{array}
+	$$
+	De esta última matriz podemos asegurar que existe una solución. Como veremos a continuación:
+	$$\left\{
+	\begin{array}{rcl}
+	    x_1+x_3 &=& \dfrac{1}{2}\\\\
+	    x_2-x_3 &=& \dfrac{1}{2}
+	\end{array}\right. 
+	\quad \Rightarrow \quad
+	\left\{\begin{array}{rcl}
+	    x_1 &=& \dfrac{1}{2}-x_3\\\\
+	    x_2 &=& \dfrac{1}{2}+x_3
+	\end{array}\right.
+	$$
+	Por lo tanto, las soluciones estarán dadas por,
+	$$\left(\dfrac{1}{2}-x_3,\dfrac{1}{2}+x_3,x_3\right).$$\\
 
     %-------------------- 5.
     \item Dar un ejemplo de un sistema de dos ecuaciones lineales con dos incógnitas que no tengan solución.\\\\
@@ -1424,6 +1526,19 @@ $$A'_{i(n+1)}=y_i.$$
     \item 
 
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Multiplicación de matrices}

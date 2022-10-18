@@ -411,6 +411,30 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	\vspace{0.5cm}
 
     %-------------------- 18.
+    \item Una función $f$ está definida para todo real $x$ por la fórmula
+    $$f(x)=3+\int_0^x \dfrac{1+\sen t}{2+t^2}\; dt.$$
+    Sin intentar el cálculo de esta integral, hallar un polinomio cuadrado $p(x)=a+bx+cx^2$ tal que $p(0)=f(0),\; p'(0)$ y $p''(0)=f''(0).$\\\\
+	Respuesta.-\; Sea $p(0)=a+b\cdot 0 + c \cdot 0^2=a$. Luego calculemos $f(0)$, como sigue
+	$$f(0)=3+\int_0^0 \dfrac{1+\sen t}{2+t^2}\; dt=3.$$
+	Dado que $f(0)=p(0)$ tenemos
+	$$a=3.$$
+	Después, sea 
+	$$p'(x)=b+2cx \quad \Rightarrow \quad p'(0)=b$$
+	Por el primer teorema fundamental del cálculo, 
+	$$f'(x)=\displaystyle\left(3+\int_0^x \dfrac{1+\sen t}{2+t^2}\; dt\right)'=\dfrac{1+\sen x}{2+x^2}.$$
+	Luego, $f'(0)=\dfrac{1}{2}$. Ya que $f'(0)=p'(0)$, entonces $b=\dfrac{1}{2}$.\\
+	Finalmente, 
+	$$p''(x)=2c\quad \Rightarrow \quad f''(0)=2c.$$
+	Calculemos $f''(0)$, como sigue
+	$$f''(0)=\dfrac{\cos x(2+x^2)-2x(1+\sen x)}{\left(2+x^2\right)^2}$$
+	De donde 
+	$$f''(0)=\dfrac{1\cdot (2+0)-0(1+0)}{(2+0)^2}=\dfrac{1}{2}.$$
+	Dado que $f''(0)=p''(0)$, entonces 
+	$$c=\dfrac{1}{4}.$$
+	Así,
+	$$p(x)=3+\dfrac{1}{2}x+\dfrac{1}{4}x^2.$$\\
+
+    %-------------------- 19.
     \item 
 
 	

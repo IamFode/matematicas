@@ -7,45 +7,45 @@
 %--------------------- 1.1
     \begin{mydef}[Números complejos] \hfill
 	\begin{itemize}
-	    \item Un número complejo es un par ordenado $(a,b)$, donde $a,b\in \bf{R}$, pero lo escribimos como $a+bi$.
-	    \item El conjunto de todos los números complejos es denotado por $\bf{C}$:
-		$$\bf{C}=\lbrace a+bi:a,b\in \bf{R}\rbrace.$$
+	    \item Un número complejo es un par ordenado $(a,b)$, donde $a,b\in \textbf{R}$, pero lo escribimos como $a+bi$.
+	    \item El conjunto de todos los números complejos es denotado por $\textbf{C}$:
+		$$\textbf{C}=\lbrace a+bi:a,b\in \textbf{R}\rbrace.$$
 
-	    \item La adición y la multiplicación en $\bf{C}$ esta definida por:
+	    \item La adición y la multiplicación en $\textbf{C}$ esta definida por:
 		$$(a+bi)+(c+di)=(a+c)+(b+d)i$$
 		$$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$$
 	\end{itemize}
     \end{mydef}
 
-Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podemos decir que $\bf{R}$ es un subconjunto de $\bf{C}.$
+Si $a\in \textbf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podemos decir que $\textbf{R}$ es un subconjunto de $\textbf{C}.$
 
 %--------------------- 1.3
 \setcounter{mydef}{2}
     \begin{mydef}[Propiedades aritmeticas de los complejos]\;\\
 	\begin{itemize}
 	    \item \textbf{Conmutatividad:}\;
-		$\alpha + \beta = \beta + \alpha\quad \mbox{y}\quad \alpha \beta = \beta \alpha \quad \mbox{para todo }\; \alpha,\beta \in \bf{C};$
+		$\alpha + \beta = \beta + \alpha\quad \mbox{y}\quad \alpha \beta = \beta \alpha \quad \mbox{para todo }\; \alpha,\beta \in \textbf{C};$
 
 	    \item \textbf{Asociatividad:}\;
-		$(\alpha + \beta )+\lambda = \alpha + (\beta + \lambda) \;\;\mbox{y}\;\; (\alpha\beta)\lambda =\alpha(\beta\lambda) \quad \mbox{para todo}\; \alpha,\beta,\lambda \in \bf{C};$
+		$(\alpha + \beta )+\lambda = \alpha + (\beta + \lambda) \;\;\mbox{y}\;\; (\alpha\beta)\lambda =\alpha(\beta\lambda) \quad \mbox{para todo}\; \alpha,\beta,\lambda \in \textbf{C};$
 
 	    \item \textbf{Identidad:}\;
-		$\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \bf{C}$
+		$\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \textbf{C}$
 
 	    \item \textbf{Inverso aditivo:}\;
-		    Para cada $\alpha \in \bf{C}$, existe un único $\beta \in \bf{C}$ tal que $\alpha + \beta = 0;$
+		    Para cada $\alpha \in \textbf{C}$, existe un único $\beta \in \textbf{C}$ tal que $\alpha + \beta = 0;$
 
 	    \item \textbf{Inverso multiplicativo:}\;
-		    Para cada $\alpha \in \bf{C}$ con $\alpha \neq 0$, existe un único $\beta \in \bf{C}$ tal que $\alpha \beta = 1;$
+		    Para cada $\alpha \in \textbf{C}$ con $\alpha \neq 0$, existe un único $\beta \in \textbf{C}$ tal que $\alpha \beta = 1;$
 
 	    \item \textbf{Propiedad distributiva:}\;
-		$\lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta \quad \mbox{para todo}\; \lambda, \alpha, \beta \in \bf{C}$
+		$\lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta \quad \mbox{para todo}\; \lambda, \alpha, \beta \in \textbf{C}$
 	\end{itemize}
     \end{mydef}
 
 %--------------------- 1.4
 \begin{myteo}
-    Demostrar que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \bf{C}$.\\\\
+    Demostrar que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \textbf{C}$.\\\\
 	Demostración.-\; Por la definición de multiplicación de números complejos se muestra que
 	$$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
 	y
@@ -55,8 +55,8 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 
 %--------------------- Ejemplo aparte --------------------
 \begin{ejem}
-   Demostrar que $\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \bf{C}$.\\\\
-	Demostración.-\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \bf{R}$. Entonces,
+   Demostrar que $\lambda +0=\lambda $ y $\lambda 1 = \lambda$ para todo $\lambda \in \textbf{C}$.\\\\
+	Demostración.-\; Sean $\lambda=(a+bi)$ y $0=(0+0i)$, para $a,b\in \textbf{R}$. Entonces,
 		$$\begin{array}{rcl}
 		    \lambda +0 & = & (a+bi) + (0+0i)\\
 			       & = & (a+0) + (b+0)i\\
@@ -77,28 +77,28 @@ Si $a\in \bf{R}$, identificamos $a+0i$ con el número real $a$. Por lo que podem
 
 %------------------- 1.5 -------------------
     \begin{mydef}\textbf{\boldmath Definición $\qquad -\alpha$, sustracción, $1/\alpha$ división}\;\\\\ 
-	Sea $\alpha, \beta \in \bf{C}$
+	Sea $\alpha, \beta \in \textbf{C}$
 	\begin{itemize}
 	    \item Sea $-\alpha$ que denota el inverso aditivo de $\alpha$. Por lo tanto $-\alpha$ es el único número complejo tal que 
 		$$\alpha + (-\alpha) = 0.$$
 
-	    \item \textbf{Sustracción} en $\bf{C}$ es definido por:
+	    \item \textbf{Sustracción} en $\textbf{C}$ es definido por:
 		$$\beta - \alpha = \beta + (-\alpha).$$
 
 	    \item Para $\alpha\neq 0$, sea $1/\alpha$ denotado por el inverso multiplicativo de $\alpha$. Por lo tanto $1/\alpha$ es el único número complejo tal que
 		$$\alpha (1/\alpha)=1.$$
 
-	    \item \textbf{División} en $\bf{C}$ es definido por:
+	    \item \textbf{División} en $\textbf{C}$ es definido por:
 		$$\beta/\alpha = \beta(1/\alpha).$$
 	\end{itemize}
     \end{mydef}
 
 %------------------- 1.6 -------------------
     \begin{mynot}\textbf{F}\;\\\\
-	$\bf{F}$ significa cualquier $\bf{R}$ o $\bf{C}$.
+	$\textbf{F}$ significa cualquier $\textbf{R}$ o $\textbf{C}$.
     \end{mynot}
 
-Los elementos de $\bf{F}$ son llamados \textbf{escalares.}\\\\
+Los elementos de $\textbf{F}$ son llamados \textbf{escalares.}\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Listas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,22 +120,22 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 \setcounter{mydef}{9}
 %------------------- 1.10 -------------------
     \begin{mydef} 
-	$\bf{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\bf{F}$
-	$$\bf{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \bf{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
-	Para $(x_1,\ldots, x_n)\in \bf{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
+	$\textbf{F}^n$ es el conjunto de todas las listas de longitud $n$ de elementos de $\textbf{F}$
+	$$\textbf{F}^n = \lbrace (x_1,\ldots, x_n)\; : \; x_j \in \textbf{F} \; \mbox{para cada}\; j = 1,\ldots, n\rbrace.$$
+	Para $(x_1,\ldots, x_n)\in \textbf{F}$ y $j\in \lbrace 1, \ldots, n\rbrace,$ decimos que $x_j$ es la j-enesima coordenada de $(x_1,\ldots, x_n)$.
     \end{mydef}
 
 %------------------- 1.12 -------------------
 \setcounter{mydef}{11}
-    \begin{mydef}[\boldmath Adición en $\bf{F}^n$]
-	La adición en $\bf{F}^n$ es definido añadiendo las correspondientes coordenadas: 
+    \begin{mydef}[\boldmath Adición en $\textbf{F}^n$]
+	La adición en $\textbf{F}^n$ es definido añadiendo las correspondientes coordenadas: 
 	$$(x_1,\ldots,x_n)+(y_1,\ldots, y_n)=(x_1+y_1,\ldots, x_n + y_n)$$
     \end{mydef}
 
 %------------------- 1.13 -------------------
-\begin{myteo}[Conmutatividad para la adición en $\bf{F}^n$]
-    Si $x,y \in \bf{F}^n,$ entonces $x+y=y+x$.\\\\
-    Demostración.-\; Suponga $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces por la definción de adición e $\bf{F}^n$,
+\begin{myteo}[Conmutatividad para la adición en $\textbf{F}^n$]
+    Si $x,y \in \textbf{F}^n,$ entonces $x+y=y+x$.\\\\
+    Demostración.-\; Suponga $x=(x_1,\ldots, x_n)$ y $y=(y_1,\ldots, y_n)$. Entonces por la definción de adición e $\textbf{F}^n$,
     $$\begin{array}{rcl}
 	x+y&=&(x_1,\ldots,x_n)+(y_1,\ldots,y_n)\\
 	   &=&(x_1+y_1,\ldots, x_n + y_n)\\
@@ -143,11 +143,11 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 	   &=&(y_1,\ldots,y_n)+(x_1,\ldots,x_n)\\
 	   &=&y+x\\
     \end{array}$$
-    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\bf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\bf{F}$.
+    donde la segunda y cuarta igualdades anteriores se cumplen debido a la definición de suma en $\textbf{F}^n$ y la tercera igualdad se cumple debido a la conmutatividad habitual de la suma en $\textbf{F}$.
 \end{myteo}
 \vspace{0.3cm}
 
-    Si $x \in \bf{F}^n$, entonces hacer que $x$ sea igual a $(x_1,\ldots,x_n)$ es una buena notación, como se muestra en la demostración anterior.
+    Si $x \in \textbf{F}^n$, entonces hacer que $x$ sea igual a $(x_1,\ldots,x_n)$ es una buena notación, como se muestra en la demostración anterior.
 
 %------------------- 1.14 -------------------
     \begin{mydef}[$0$]
@@ -157,21 +157,21 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 
 %------------------- 1.16 -------------------
 \setcounter{mydef}{15}
-    \begin{mydef}[\boldmath Inverso aditivo en $\bf{F}^n$]
-	Para $x\in \bf{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \bf{F}^n$ tal que $$x+(-x) =0$$
+    \begin{mydef}[\boldmath Inverso aditivo en $\textbf{F}^n$]
+	Para $x\in \textbf{F}^n$, el inverso aditivo de $x$, denota por $-x$, es el vector $-x\in \textbf{F}^n$ tal que $$x+(-x) =0$$
 	En otras palabras, si $x=(x_1,\ldots,x_n)$, entonces $-x=(-x_1,\ldots,-x_n).$
     \end{mydef}
 
 %------------------- 1.17 -------------------
-    \begin{mydef}[Multiplicación scalar en $\bf{F}^n$]
-	El producto de un número $\lambda$ y un vector en $\bf{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
+    \begin{mydef}[Multiplicación scalar en $\textbf{F}^n$]
+	El producto de un número $\lambda$ y un vector en $\textbf{F}^n$ es calculado por la multiplicación de cada coordenada del vector por $\lambda$:
 	$$\lambda(x_1,\ldots,x_n) = (\lambda x_1,\ldots, \lambda x_n)$$
-	donde $\lambda \in \bf{F}$ y $(x_1,\ldots,x_n)\in \bf{F}^n$.
+	donde $\lambda \in \textbf{F}$ y $(x_1,\ldots,x_n)\in \textbf{F}^n$.
     \end{mydef}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Digresión sobre campos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Digresión sobre campos}
-Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\bf{R}$ y $\bf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.
+Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\textbf{R}$ y $\textbf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Ejercicios 1.A}
@@ -181,7 +181,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
     %-------------------- 1. --------------------
     \item Supongase $a$ y $b$ números reales, no ambos $0$. Encuentre números reales $c$ y $d$ tales que
     $$\dfrac{1}{(a+bi)}=c+di.$$\\
-	Respuesta.-\; Supongamos $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
+	Respuesta.-\; Supongamos $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \textbf{R}$. Entonces,
 	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
 	Luego, por el hecho de que dos números complejos son iguales si sus correspondientes partes reales e imaginarias son iguales, entonces
 	$$\left\{\begin{array}{rcl}
@@ -214,7 +214,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
     \item Encuentre dos raíces cuadradas distintas de $i$.\\\\
 	Respuesta.-\; Queremos encontrar raíces distintas de $i$ tal que
 	$$x^2=i.$$
-	Supongamos que $x=a+bi$ para $a,b\in \bf{R}$. Resolvemos la ecuación cuadrática, se tiene 
+	Supongamos que $x=a+bi$ para $a,b\in \textbf{R}$. Resolvemos la ecuación cuadrática, se tiene 
 	$$x^2=(a+bi)^2=(a^2-b^2)+(ab+ba)i=(a^2-b^2)+2abi.$$
 	Luego, ya que $x^2=i=0+1i$, entonces
 	$$(a^2-b^2)+2abi=(0+1i)\quad \Rightarrow \quad \left\{\begin{array}{rcl}
@@ -239,20 +239,20 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 
 
     %-------------------- 4. --------------------
-    \item Demostrar que $\alpha+\beta=\beta+\alpha$ para todo $\alpha,\beta\in \bf{C}$.\\\\
-	Demostración.-\;  Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \bf{R}$. Entonces por definición de suma de números complejos se muestra que
+    \item Demostrar que $\alpha+\beta=\beta+\alpha$ para todo $\alpha,\beta\in \textbf{C}$.\\\\
+	Demostración.-\;  Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \textbf{R}$. Entonces por definición de suma de números complejos se muestra que
 	$$\alpha + \beta = (a+bi) + (c+di) = (a+c) + (b+d)i = (c+a) + (d+b)i = \beta + \alpha.$$\\
 
 
     %-------------------- 5. --------------------
-    \item Demuestre que $(\alpha+\beta)+\lambda=\alpha+(\beta+\lambda)$ para todo $\alpha,\beta,\lambda\in \bf{C}$.\\\\
+    \item Demuestre que $(\alpha+\beta)+\lambda=\alpha+(\beta+\lambda)$ para todo $\alpha,\beta,\lambda\in \textbf{C}$.\\\\
 	Demostración.-\; Sean,
 	$$\begin{array}{rcl}
 	    \alpha & = & a+bi\\
 	    \beta & = & c+di\\
 	    \lambda & = & e+fi
 	\end{array}$$
-	para $a,b,c,d,e,f \in \bf{R}.$ Entonces,
+	para $a,b,c,d,e,f \in \textbf{R}.$ Entonces,
 	$$\begin{array}{rcl}
 	    (\alpha + \beta )+\lambda & = & \left[(a+bi)+(c+di)\right]+(e+fi)\\
 				      & = & \left[(a+c)+(b+d)i\right] + (e+fi)\\
@@ -265,14 +265,14 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	\vspace{0.5cm}
 
     %-------------------- 6. --------------------
-    \item Demostrar que $(\alpha\beta)\lambda = \alpha(\beta\lambda)$ para todo $\alpha,\beta,\lambda\in \bf{C}$.\\\\
+    \item Demostrar que $(\alpha\beta)\lambda = \alpha(\beta\lambda)$ para todo $\alpha,\beta,\lambda\in \textbf{C}$.\\\\
 	Demostración.-\; Sean,
 	$$\begin{array}{rcl}
 	    \alpha & = & a+bi\\
 	    \beta & = & c+di\\
 	    \lambda & = & e+fi
 	\end{array}$$
-	para $a,b,c,d,e,f \in \bf{R}.$ Entonces,
+	para $a,b,c,d,e,f \in \textbf{R}.$ Entonces,
 	$$\begin{array}{rcl}
 	    (\alpha\beta)\lambda &=& \left[(a+bi)(c+di)\right](e+fi)\\
 				 &=&\left[(ac-bd)+(ad+bc)i\right](e+fi)\\
@@ -287,8 +287,8 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	\vspace{0.5cm}
 
     %-------------------- 7. --------------------
-    \item Demostrar que para cada $\alpha \in \bf{C}$, existe un único $\beta\in \bf{C}$ tal que $\alpha+\beta=0$.\\\\
-	Demostración.-\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \bf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
+    \item Demostrar que para cada $\alpha \in \textbf{C}$, existe un único $\beta\in \textbf{C}$ tal que $\alpha+\beta=0$.\\\\
+	Demostración.-\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \textbf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
 	$$\begin{array}{rcl}
 	    \alpha+\beta &=& (a+bi)+(c+di)\\
 			 &=& (a+c)+(b+d)i\\
@@ -296,7 +296,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 			 &=& 0
 	\end{array}$$
 
-	Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \bf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
+	Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \textbf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
 	$$\begin{array}{rcl}
 	    \alpha+\beta&=&\alpha+\beta'\\
 	    (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
@@ -309,8 +309,8 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	$$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
 
     %-------------------- 8. --------------------
-    \item Demostrar que para cada $\alpha \in \bf{C}$ con $\alpha\neq 0$, existe un único $\beta\in \bf{C}$ tal que $\alpha\beta=1$.\\\\
-	Demostración.-\; Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \bf{R}$. Entonces,
+    \item Demostrar que para cada $\alpha \in \textbf{C}$ con $\alpha\neq 0$, existe un único $\beta\in \textbf{C}$ tal que $\alpha\beta=1$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \textbf{R}$. Entonces,
 	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
 	Supongamos que:
 	$$\left\{\begin{array}{rcl}
@@ -330,8 +330,8 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 
 
     %-------------------- 9. --------------------
-    \item Demostrar que $\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma$ para todo $\alpha,\beta,\gamma\in \bf{C}$.\\\\
-	Demostración.-\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \bf{R}$. Entonces,
+    \item Demostrar que $\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma$ para todo $\alpha,\beta,\gamma\in \textbf{C}$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \textbf{R}$. Entonces,
 $$\begin{array}{rcl}
     \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
 			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
@@ -344,9 +344,9 @@ $$\begin{array}{rcl}
 \vspace{0.5cm}
 
     %-------------------- 10. --------------------
-    \item Encuentre $x\in \bf{R}^4$ tal que 
+    \item Encuentre $x\in \textbf{R}^4$ tal que 
     $$(4,-3,1,7)+2x=(5,9,-6,8).$$\\
-	Respuesta.-\; Sea $x = (x_1,x_2,x_3,x_4)$ con $x_1,x_2,x_3,x_4\in \bf{R}$. Por definición de adición y multiplicación por un escalar en $\bf{F}$ propiedades  Entonces,
+	Respuesta.-\; Sea $x = (x_1,x_2,x_3,x_4)$ con $x_1,x_2,x_3,x_4\in \textbf{R}$. Por definición de adición y multiplicación por un escalar en $\textbf{F}$ propiedades  Entonces,
 	$$\begin{array}{rcl}
 	    (4,-3,1,7)+2(x_1,x_2,x_3,x_4)&=&(5,9,-6,8)\\
 	    (4,-3,1,7)+(2x_1,2x_2,2x_3,2x_4)&=&(5,9,-6,8)\\
@@ -365,9 +365,9 @@ $$\begin{array}{rcl}
 
 
     %-------------------- 11. --------------------
-    \item Explique porque no existe $\lambda\in \bf{C}$ tal que
+    \item Explique porque no existe $\lambda\in \textbf{C}$ tal que
     $$\lambda(2-3i,5+4i,-6+7i)=(12-5i,7+22i,-32-9i).$$\\\\
-	Respuesta.-\; Sean $\lambda=a+bi, \; a,b\in \bf{R}$ y $x=(12-5i,7+22i,-32-9i)$. Entonces, por definición de multiplicación por un escalar en $\bf{C}$ y las propiedades de número complejos,
+	Respuesta.-\; Sean $\lambda=a+bi, \; a,b\in \textbf{R}$ y $x=(12-5i,7+22i,-32-9i)$. Entonces, por definición de multiplicación por un escalar en $\textbf{C}$ y las propiedades de número complejos,
 	$$\begin{array}{rcl}
 	    \lambda(2-3i,5+4i,-6+7i) & = & x\\
 	    \left[\lambda(2-3i),\lambda(5+4i),\lambda(-6+7i)\right] & = & x\\
@@ -406,8 +406,8 @@ $$\begin{array}{rcl}
 
 
     %-------------------- 12. --------------------
-    \item Demostrar que $(x+y)+z=x+(y+z)$ para todo $x,y,z\in \bf{F}^n.$\\\\
-	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $z=(z_1,\ldots , z_n)$. Entonces por definición de adición en $\bf{F}^n$ y los axiomas de números reales,
+    \item Demostrar que $(x+y)+z=x+(y+z)$ para todo $x,y,z\in \textbf{F}^n.$\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $z=(z_1,\ldots , z_n)$. Entonces por definición de adición en $\textbf{F}^n$ y los axiomas de números reales,
 	$$\begin{array}{rcl}
 	    (x+y)+z & = & \left[(x_1+\ldots+x_n)+(y_1+\ldots + y_n)\right]+(z_1,\ldots , z_n)\\
 		    & = & (x_1+y_1,\ldots ,x_n+y_n)+(z_1+\ldots, z_n)\\
@@ -420,8 +420,8 @@ $$\begin{array}{rcl}
 	\vspace{.5cm}
 
     %-------------------- 13. --------------------
-    \item Demostrar que $(ab)x=a(bx)$ para todo $x\in \bf{F}^n$ y todo $a,b\in \bf{F}$.\\\\
-	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$ y $a,b\in \bf{F}$. Entonces por definición de multiplicación escalar en $\bf{F}^n$ y los axiomas de números reales,
+    \item Demostrar que $(ab)x=a(bx)$ para todo $x\in \textbf{F}^n$ y todo $a,b\in \textbf{F}$.\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$ y $a,b\in \textbf{F}$. Entonces por definición de multiplicación escalar en $\textbf{F}^n$ y los axiomas de números reales,
 	$$\begin{array}{rcl}
 	    (ab)x&=&(ab)(x_1,\ldots,x_n)\\
 		 &=&\left[(ab)x_1,\ldots,(ab)x_n)\right]\\
@@ -433,8 +433,8 @@ $$\begin{array}{rcl}
 	\vspace{.5cm}
 
     %-------------------- 14. --------------------
-    \item Demostrar que $1x=x$ para todo $x\in \bf{F}^n$.\\\\
-	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$. Entonces, por definición de multiplicación escalar en $\bf{F}^n$ y por el hecho de que $1a=a$ para $a\in \bf{F}$
+    \item Demostrar que $1x=x$ para todo $x\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$. Entonces, por definición de multiplicación escalar en $\textbf{F}^n$ y por el hecho de que $1a=a$ para $a\in \textbf{F}$
 	$$\begin{array}{rcl}
 	    1x&=&1(x_1,\ldots,x_n)\\
 		 &=&\left[1x_1,\ldots,1x_n\right]\\
@@ -444,8 +444,8 @@ $$\begin{array}{rcl}
 	\vspace{.5cm}
 
     %-------------------- 15. --------------------
-    \item Demostrar que $\lambda (x+y)=\lambda x+\lambda y$ para todo $\lambda\in \bf{F}$ y todo $x,y\in \bf{F}^n$.\\\\
-	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $\lambda\in \bf{F}$. Entonces, por definición de adición y multiplicación escalar en $\bf{F}^n$ 
+    \item Demostrar que $\lambda (x+y)=\lambda x+\lambda y$ para todo $\lambda\in \textbf{F}$ y todo $x,y\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $\lambda\in \textbf{F}$. Entonces, por definición de adición y multiplicación escalar en $\textbf{F}^n$ 
 	$$\begin{array}{rcl}
 	    \lambda (x+y)&=&\lambda\left[(x_1,\ldots,x_n)+(y_1,\ldots , y_n)\right]\\
 		 &=&\lambda\left[(x_1+y_1,\ldots ,x_n+y_n)\right]\\
@@ -457,8 +457,8 @@ $$\begin{array}{rcl}
 	\vspace{.5cm}
 
     %-------------------- 16. --------------------
-    \item Demostrar que $(a+b)x=ax+bx$  para todo $a,b\in \bf{F}$ y todo $x\in \bf{F}^n$.\\\\
-	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$ y $a,b\in \bf{F}$. Entonces, por definición de multiplicación escalar en $\bf{F}^n$
+    \item Demostrar que $(a+b)x=ax+bx$  para todo $a,b\in \textbf{F}$ y todo $x\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$ y $a,b\in \textbf{F}$. Entonces, por definición de multiplicación escalar en $\textbf{F}^n$
 	$$\begin{array}{rcl}
 	    (a+b)x&=&(a+b)(x_1,\ldots,x_n)\\
 		 &=&\left[(a+b)x_1,\ldots,(a+b)x_n\right]\\
@@ -473,13 +473,13 @@ $$\begin{array}{rcl}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Definición de espacio vectorial %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Definición de espacio vectorial}
 
-La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\bf{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
+La motivación para la definición de un espacio vectorial proviene de las propiedades de la suma y la multiplicación escalar en $\textbf{F}^n$: la suma es conmutativa, asociativa y tiene una identidad. Todo elemento tiene un inverso aditivo. La multiplicación escalar es asociativa. La multiplicación escalar por 1 actúa como se esperaba. La suma y la multiplicación escalar están conectadas por propiedades distributivas. Definiremos un espacio vectorial como un conjunto V con una suma y una multiplicación escalar en V que satisfagan las propiedades del párrafo anterior.
 
 %-------------------- 1.18 --------------------
     \begin{mydef}[Adición y multiplicación escalar]\hfill
 	\begin{itemize}
 	    \item Una adición en un conjunto $V$ es una función que asigna un elemento $u+v\in V$ para cada par de elementos $u,v\in V$.
-	    \item Una multiplicación escalar en un conjunto $V$ es una función que asigna un elemento $\lambda  v\in V$ para cada $\lambda \in \bf{F}$ y cada $v\in V$.
+	    \item Una multiplicación escalar en un conjunto $V$ es una función que asigna un elemento $\lambda  v\in V$ para cada $\lambda \in \textbf{F}$ y cada $v\in V$.
 	\end{itemize}
     \end{mydef}
 
@@ -489,7 +489,7 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 	    \item \textbf{Conmutatividad}
 		$$u+v=v+u\; \mbox{para todo}\; u,v\in V;$$
 	    \item \textbf{Asociatividad}
-		$$(u+v)+w=u+(v+w)\; \mbox{y}\; (ab)v=a(bv)\; \mbox{para todo}\; u,v,w \in V\; \mbox{y todo}\; a,b\in \bf{F};$$
+		$$(u+v)+w=u+(v+w)\; \mbox{y}\; (ab)v=a(bv)\; \mbox{para todo}\; u,v,w \in V\; \mbox{y todo}\; a,b\in \textbf{F};$$
 	    \item \textbf{Identidad aditiva}
 		\begin{center}
 		    Existe un elemento $0\in V$ tal que $v+0=v$ para todo $v\in V$;
@@ -505,7 +505,7 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 
 	    \item \textbf{Propiedad distributiva}
 		\begin{center}
-		    $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $a,b\in \bf{F}$ y todo $u,v \in V$.
+		    $a(u+v)=au+av$ y $(a+b)v=av+bv$ para todo $a,b\in \textbf{F}$ y todo $u,v \in V$.
 		\end{center}
 	\end{itemize}
     \end{mydef}
@@ -518,8 +518,8 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 %-------------------- 1.21 --------------------
     \begin{mydef}[Espacio vectorial real, espacio vectorial complejo]\hfill
 	\begin{itemize}
-	    \item Un espacio vectorial sobre $\bf{R}$ es llamado un espacio vectorial real.
-	    \item Un espacio vectorial sobre $\bf{C}$ es llamado un espacio vectorial complejo.
+	    \item Un espacio vectorial sobre $\textbf{R}$ es llamado un espacio vectorial real.
+	    \item Un espacio vectorial sobre $\textbf{C}$ es llamado un espacio vectorial complejo.
 	\end{itemize}
     \end{mydef}
 
@@ -527,11 +527,11 @@ La motivación para la definición de un espacio vectorial proviene de las propi
 
 % -------------------- 1.23 --------------------
 \setcounter{mynot}{22}
-    \begin{mynot}[\boldmath $\bf{F}^S$]\hfill
+    \begin{mynot}[\boldmath $\textbf{F}^S$]\hfill
 	\begin{itemize}
-	    \item Si $S$ es un conjunto, entonces $\bf{F}^S$ se denota como el conjunto de funciones de $S$ para $\bf{F}$.
-	    \item Para $f,g\in \bf{F}^S$, la suma $f+g\in \bf{F}^S$ es la función definida por $$(f+g)(x)=f(x)+g(x)$$ para todo $x\in S$
-	    \item Para $\lambda \in \bf{F}$ y $f\in \bf{F}^S$, el producto $\lambda f \in \bf{F}^S$ es una función definida por $$(\lambda f)(x)=\lambda f(x)$$
+	    \item Si $S$ es un conjunto, entonces $\textbf{F}^S$ se denota como el conjunto de funciones de $S$ para $\textbf{F}$.
+	    \item Para $f,g\in \textbf{F}^S$, la suma $f+g\in \textbf{F}^S$ es la función definida por $$(f+g)(x)=f(x)+g(x)$$ para todo $x\in S$
+	    \item Para $\lambda \in \textbf{F}$ y $f\in \textbf{F}^S$, el producto $\lambda f \in \textbf{F}^S$ es una función definida por $$(\lambda f)(x)=\lambda f(x)$$
 		para todo $x\in S$.
 	\end{itemize}
     \end{mynot}
@@ -559,7 +559,7 @@ Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento 
 \end{myteo}
 
 %-------------------- 1.27 --------------------
-\begin{mynot}[$\bf{-v,w-v}$]\,\\\\
+\begin{mynot}[$\textbf{-v,w-v}$]\,\\\\
 	Sea $v,w \in V$. Entonces
 	\begin{itemize}
 	    \item $-v$ se denota como el inverso aditivo de $v$;
@@ -568,7 +568,7 @@ Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento 
     \end{mynot}
 
 %-------------------- 1.28 --------------------
-    \begin{mynot}[$\bf{V}$]\;\\\\
+    \begin{mynot}[$\textbf{V}$]\;\\\\
 	Por el resto del libro, $V$ se define como el espacio vectorial sobre $F$.
     \end{mynot}
 
@@ -584,9 +584,9 @@ Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento 
 Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igual al vector $0$.\\
 
 % -------------------- 1.30 --------------------
-\begin{myteo}[Un número por el vector $\bf{0}$]
-    $a0=0$ para cada $a\in \bf{F}$.\\\\
-	Demostración.-\; Para $a\in \bf{F}$, tenemos 
+\begin{myteo}[Un número por el vector $\textbf{0}$]
+    $a0=0$ para cada $a\in \textbf{F}$.\\\\
+	Demostración.-\; Para $a\in \textbf{F}$, tenemos 
 	$$a0=a(0+0)=a0+a0$$
 	Luego añadiendo el inverso aditivo de $a0$ para ambos lados de la ecuación de arriba tenemos $0=a0$. 
 \end{myteo}
@@ -595,7 +595,7 @@ Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igua
 Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, entonces el resultado es el inverso aditivo del elemento de $V$.\\
 
 % -------------------- 1.31 --------------------
-\begin{myteo}[El número $\bf{-1}$ por un vector]
+\begin{myteo}[El número $\textbf{-1}$ por un vector]
     $(-1)v=-v$ para cada $v\in V$.\\\\
     	Demostración.-\; Para $v\in V$, tenemos
 	$$v+(-1)v=1v+(-1)v=[1+(-1)]v=0v=0.$$
@@ -609,7 +609,7 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 
     %-------------------- 1.
     \item Demostrar que $-(-v)=v$ para cada $v\in V$.\\\\
-	Demostración.-\; Ya que $(-1)v=-v$ para cada $v\in V$ (apartado 1.31, Axler, Linear algebra), $(-a)(-a)=a, \forall a \in \bf{R}$ y la identidad multiplicativa de espacio vectorial tenemos que 
+	Demostración.-\; Ya que $(-1)v=-v$ para cada $v\in V$ (apartado 1.31, Axler, Linear algebra), $(-a)(-a)=a, \forall a \in \textbf{R}$ y la identidad multiplicativa de espacio vectorial tenemos que 
 	$$\begin{array}{rcl}
 	v &=& 1v \\
 	&=& (-1)(-1)v \\
@@ -619,12 +619,12 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 	\vspace{0.5cm}
 
     %-------------------- 2.
-    \item Supóngase $a\in \bf{F}$, $v\in V$ y $av=0$. Demostrar que $a=0$ o $v=0$.\\\\
+    \item Supóngase $a\in \textbf{F}$, $v\in V$ y $av=0$. Demostrar que $a=0$ o $v=0$.\\\\
 	Demostración.-\; Por propiedades de lógica ($p \Rightarrow q \lor r \equiv p\land \sim q \Rightarrow r$). Entonces será suficiente demostrar que,
-	$$av=0 \land a\neq 0 \Rightarrow v=0 \qquad a\in \bf{F}, v\in V.$$
-	Sea $av=0$. Dado que $a\neq 0$ y $a\in \bf{F}$, podemos multiplicar ambos lados por $\dfrac{1}{a}$,
+	$$av=0 \land a\neq 0 \Rightarrow v=0 \qquad a\in \textbf{F}, v\in V.$$
+	Sea $av=0$. Dado que $a\neq 0$ y $a\in \textbf{F}$, podemos multiplicar ambos lados por $\dfrac{1}{a}$,
 	$$\dfrac{1}{a}(av) = 0\dfrac{1}{a}.$$
-	Luego por propiedades en $\bf{F}$ tenemos que
+	Luego por propiedades en $\textbf{F}$ tenemos que
 	$$\left(\dfrac{1}{a}\cdot a\right)v=0\quad \Rightarrow \quad 1v=0 \quad \Rightarrow \quad v=0.$$\\
 
     %-------------------- 3.
@@ -667,7 +667,7 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 
 
     %-------------------- 6.
-    \item Sea $\infty$ y $-\infty$ dos objetos distintos, ninguno de los cuales está en $\bf{R}$. Definir una suma y una multiplicación escalar en $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ como se puede adivinar la notación. Específicamente, la suma y el producto de dos números reales son los habituales, y  para $t\in \bf{R}$ definir
+    \item Sea $\infty$ y $-\infty$ dos objetos distintos, ninguno de los cuales está en $\textbf{R}$. Definir una suma y una multiplicación escalar en $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ como se puede adivinar la notación. Específicamente, la suma y el producto de dos números reales son los habituales, y  para $t\in \textbf{R}$ definir
     $$
     t\infty = \left\{\begin{array}{rcl}
 	    -\infty & \mbox{si} & t<0,\\
@@ -682,9 +682,9 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
     $$
     $$t+\infty=\infty+t=\infty,\qquad t+(-\infty)=(-\infty)+t=-\infty,\qquad \infty+\infty=\infty,$$
     $$(-\infty)+(-\infty)=-\infty,\qquad \infty+(-\infty)=0.$$
-    Es $\bf{R}\cup \left\{\infty\right\}\cup \left\{-\infty\right\}$ un espacio vectorial sobre $\bf{R}$?. Explique.\\\\
-    Respuesta.-\; Para que $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ se convierta en un espacio vectorial sobre $\bf{R}$,  debe satisfacer todas las propiedades dadas en la definición 1.19. Ahora bien, este conjunto satisface algunas de estas propiedades. Por ejemplo, la adición es conmutativa en este conjunto. Sin embargo, no las satisface todas.\\
-    Una propiedad que no se cumple es la asociatividad de la suma. Por ejemplo, observe que $1,\infty$ y $-\infty$ son todos vectores en $\bf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ y por tanto deberíamos tener lo siguiente:
+    Es $\textbf{R}\cup \left\{\infty\right\}\cup \left\{-\infty\right\}$ un espacio vectorial sobre $\textbf{R}$?. Explique.\\\\
+    Respuesta.-\; Para que $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ se convierta en un espacio vectorial sobre $\textbf{R}$,  debe satisfacer todas las propiedades dadas en la definición 1.19. Ahora bien, este conjunto satisface algunas de estas propiedades. Por ejemplo, la adición es conmutativa en este conjunto. Sin embargo, no las satisface todas.\\
+    Una propiedad que no se cumple es la asociatividad de la suma. Por ejemplo, observe que $1,\infty$ y $-\infty$ son todos vectores en $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ y por tanto deberíamos tener lo siguiente:
     $$1+\left[\infty+(-\infty)\right]=(1+\infty)+(-\infty)$$
     Sin embargo, cuando evaluamos los lados izquierdo y derecho de esta ecuación usando las definiciones dadas en el enunciado del ejercicio, encontramos que
     $$\begin{array}{rcl}
@@ -795,67 +795,116 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 \begin{enumerate}[\bfseries 1.]
 
     %-------------------- 1.
-    \item Para cada de los siguientes subconjuntos de $\bf{F}^3$, determinar si es un subespacio de $\bf{F}^3:$
+    \item Para cada de los siguientes subconjuntos de $\textbf{F}^3$, determinar si es un subespacio de $\textbf{F}^3:$
 	\begin{enumerate}[(a)]
 
 	    %---------- (a)
-	    \item $\left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1+2x_2+3x_3=0\right\}$.\\\\
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=0\right\}$.\\\\
 		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
 		\begin{itemize}
 		    \item Identidad aditiva.- \; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
 			$$x_1+2x_2+3x_3=0 \quad \Rightarrow \quad 0+2\cdot 0+3\cdot 0 = 0.$$
 
 		    \item Cerrado por adición.-\; Sean 
-		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1+2x_2+3x_3=0\right\}.$$ 
+		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=0\right\}.$$ 
 		    Es decir,
 		    $$a_1+2a_2+3a_3=0 \quad \Rightarrow \quad b_1+2b_2+3b_3=0.$$
 		    Para probar que la adición se cumple, pongamos $a+b$ tal que $x1+2x_2+3x_3=0$, como sigue
 		    $$a+b=(a_1+b_1)+2(a_2+b_2)+3(a_3+b_3)=0$$
 		    Si $(x_1,x_2,x_3)= \left[(a_1+b_1),(a_2+b_2),(a_3+b_3)\right]$. Entonces,
 		    $$x_1+2x_2+3x_3=0.$$
-		    Así, el conjunto dado es un subespacio de $\bf{F}^3$.\\
+		    Así, el conjunto dado es un subespacio de $\textbf{F}^3$.\\
 
-		    \item Cerrado por multiplicación escalar.-\; Sea $k\in \bf{F}$. Entonces,
+		    \item Cerrado por multiplicación escalar.-\; Sea $k\in \textbf{F}$. Entonces,
 			$$k\left(x_1+2x_2+3x_3\right)=k\cdot 0\quad \Rightarrow \quad k\left(x_1+2x_2+3x_3\right)=0.$$
-			Por lo tanto, el conjunto dado es un subespacio de $\bf{F}^3$.\\\\
+			Por lo tanto, el conjunto dado es un subespacio de $\textbf{F}^3$.\\\\
 		\end{itemize}
 
 	    %---------- (b)
-	    \item $\left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1+2x_2+3x_3=4\right\}$.\\\\
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=4\right\}$.\\\\
 		Respuesta.-\; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
 		$$x_1+2x_2+3x_3=4\quad \Rightarrow \quad 0+2\cdot 0 + 3\cdot 0 \neq 0.$$
 		Ya que no cumple la primera condición de 1.34, decimos que el conjunto dado no es un subespacio.\\\\
 
 	    %---------- (c)
-	    \item $\left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1x_2x_3=0\right\}$.\\\\
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1x_2x_3=0\right\}$.\\\\
 		Respuesta.-\; Vemos que no se cumple la condición de adición. Observemos que $a=(1,1,0)$ y $b=(0,1,1)$, están en el conjunto dado. Es decir, se cumple la condición establecida:
 		$$1\cdot 1 \cdot 0 = 0 \quad \text{y} \quad 0\cdot 1 \cdot 1 = 0.$$
 		Pero no así, para $a+b=(1,1,0)+(0,1,1)=(1,2,1)$, ya que
 		$$1\cdot 2\cdot 1 \neq 0.$$\\
 
 	    %---------- (d)
-	    \item $\left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1=5x_3\right\}$.\\\\
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}$.\\\\
 		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
 		\begin{itemize}
 		    \item Identidad aditiva.- \; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
 			$$x_1=5x_3 \quad \Rightarrow \quad 0=5\cdot 0.$$
 
 		    \item Cerrado por adición.-\; Sean 
-		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1=5x_3\right\}.$$
+		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}.$$
 		    Pongamos $x_1=(a_1+b_1)$ y $x_3=(a_3+b_3)$. Por lo tanto,
 		    $$a_1+b_1=5(a_3+b_3) \quad \Rightarrow \quad x_1=5x_3.$$
 
-		    \item Cerrado por multiplicación escalar.-\; Sean $k\in \bf{F}$ y $a\in \left\{(x_1,x_2,x_3)\in \bf{F}^3 : x_1=5x_3\right\}$. Entonces,
+		    \item Cerrado por multiplicación escalar.-\; Sean $k\in \textbf{F}$ y $a\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}$. Entonces,
 		    $$k\left(a_1\right)=k\left(5a_3\right)\quad \Rightarrow \quad ka_1=5\left(ka_3\right).$$
 		    Pongamos $x_1 = ka_1$ y $x_3=ka_3$, por lo que 
 		    $$x_1=5x_3.$$
-		    Así, el conjunto dado es un subespacio de $\bf{F}^3$.\\\\
+		    Así, el conjunto dado es un subespacio de $\textbf{F}^3$.\\\\
 		\end{itemize}
 
 	\end{enumerate}
 
     %-------------------- 2.
-    \item 
+    \item Verificar todas las afirmaciones del ejemplo 1.35.\\
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $b\in \textbf{F}$, entonces
+	    $$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$
+	    es un subespacio de $\textbf{F}^4$ si y sólo si $b=0$.\\\\
+		Demostración.-\; Supongamos que 
+		$$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$
+		es un subespacio de $\textbf{F}^4$. Entonces por la primera condición del teorema 1.34, sabemos que $(0,0,0,0)$ es un elemento del conjunto dado, por lo tanto
+		$$0=5\cdot 0 + b$$
+		de donde,
+		$$b=0.$$
+		Ahora supongamos que $b=0$. Tendremos que verificar que se cumple las condiciones del teorema 1.34 para 
+		$$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$\\
+
+		\begin{itemize}
+		    \item Identidad aditiva.-\; Sea $(x_1,x_2,x_3,x_4)=(0,0,0,0)$. Entonces,
+			$$x_3=5x_4+0 \quad \Rightarrow \quad 0=5\cdot 0.$$
+
+		    \item Cerrado por adición.-\; Sean $u=(u_1,u_2,u_3,u_4)$ y $v=(v_1,v_2,v_3,v_4)$ donde vectores en el conjunto dado. Por la adición sabemos que $u+v\in \textbf{F}^4$, así
+			$$u+v=(u_1,u_2,u_3,u_4)+(v_1,v_2,v_3,v_4)=(u_1+v_1,u_2+v_2,u_3+v_3,u_4+v_4).$$
+			Y por lo tanto,
+			$$(u_3+v_3)=5(u_4+v_4).$$
+
+		    \item Sea $u=(u_1,u_2,u_3,u_4)$ un vector en el conjunto dado y sea $k\in \textbf{F}$. Entonces, por multiplicación escalar en $\textbf{F}^n$ se tiene, 
+			$$ku=(ku_1,ku_2,ku_3,ku_4)$$
+			Por lo tanto, vemos que se cumple la condición de multiplicación escalar, ya que
+			$$ ku_3 = 5(ku_4).$$
+			Así el conjunto dado es un subespacio de $\textbf{F}^4$ si y sólo si $b=0$.\\\\
+		\end{itemize}
+
+	    %---------- (b)
+	    \item El conjunto de funciones continuas de valor real en el intervalo $[0,1]$ es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
+		Demostración.-\; 
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{R}^{[0,1]}$ es una función que asigna cada número a cero, esto es
+			$$O(x)=0,\quad \forall x \in [0,1].$$
+			Como es una función constante y todas las funciones constantes son continuas, es un elemento del conjunto de funciones continuas de valor real en $[0,1]$.
+
+		    \item Cerrado por adición.-\; Por el cálculo elemental, sabemos que la suma de dos funciones continuas es también continua. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo adición de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Por cálculo elemental, sabemos que si $f$ es una función continua, entonces $kf$ es también una función continua para todos los números reales $k$. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo la multiplicación escalar.
+		\end{itemize}
+		Por lo tanto este conjunto es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
+
+	    %---------- (c)
+	    \item 
+
+	\end{enumerate}
 
 \end{enumerate}
 

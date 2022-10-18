@@ -1461,7 +1461,19 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 			\end{array}\right.$$
 		Ya que $a_k$ es un mínimo local, basado en el anterior análisis, se sigue que $k$ es par, es decir $k=2m$. Por lo tanto, los mínimos locales son $a_1,a_3,\ldots , a_{k_1}$ mientras que los máximos locales son $a_2,a_4,\ldots , a_{k}$.\\\\
 		\end{enumerate}
-	    \item 
+	    \item Queremos encontrar la función polinómica de grado $n$ con $k_1$ mínimos locales y $k_2$ máximos locales, donde $n,k_1,k_2$ son números dados. Sean $k=k_1+k_2$ y los números reales arbitrarios $a_1<a_2<\ldots < a_k$. Luego observemos la función
+		$$g(x)=\prod_{i=i}^k (x-a_i)\left(1+x^2\right)^m$$
+		donde $m=\frac{n-1-k}{2}$. No es difícil deducir que esta función tiene grado $n-1$. La razón por la que elegimos este tipo de funciones es porque $1+x^2>0$ para todo número real $x$ lo que implica que $(1+x^2)^m > 0$ y el signo de la función sólo depende del producto $\prod_{i=1}^k (x-a_i)$. Podemos notar que este producto es positivo siempre que $x\in(a_k,\infty)\cup (a_{k-1},a_k)\cup (a_{k-3},a_{k-2})\cup \ldots$. Mientras que será negativo si $x\in (a_{k-2},a_{k-1})\cup (a_{k-4},a_{k-3})\cup \ldots$. Sea la función $f$ tal que $f'(x)=g(x)$, de donde tenemos que $a_{k},a_{k-2},\ldots$ son mínimos locales mientras que $a_{k-1},a_{k-3},\ldots$ son máximos locales de la función $f$.\\\\
+	\end{enumerate}
+
+    %-------------------- 28.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f'(x)>M$ para todo $x$ de $[a,b]$, entonces $f(b)\geq f(a)+M(b-a)$.\\\\
+		Demostración.-\; 
+
 	\end{enumerate}
 
 \end{enumerate}
