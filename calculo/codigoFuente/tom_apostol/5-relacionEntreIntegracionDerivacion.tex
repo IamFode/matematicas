@@ -47,7 +47,7 @@
 	x-\delta<t<x+\delta.
 	\end{equation}
 	Si se elige $h$ de manera que $0<h<\delta$, entonces cada $t$ en el intervalo $[x,x+h]$ satisface (5.6) y por tanto (5.5) se verifica para cada $t$ de este intervalo. Aplicando la propiedad $|\int_x^{x+h}|\leq \int_x^{x+h}|g(t)|\; dt$, cuando $g(t)=g(t)-f(x)$, de la desigualdad en (5.5) se pasa a la relación:
-	$$\left|\right|\leq \int_x^{x+h}|f(t)-f(x)|\; dt \leq \int_x^{x+h}\dfrac{1}{2} \epsilon \; dt = \dfrac{1}{2}h\epsilon < h\epsilon.$$
+	$$\left|\int_x^{x+h}\left[f(t)-f(x)\right]\; dt\right|\leq \int_x^{x+h}|f(t)-f(x)|\; dt \leq \int_x^{x+h}\dfrac{1}{2} \epsilon \; dt = \dfrac{1}{2}h\epsilon < h\epsilon.$$
 	Dividiendo por $h$ se ve que (5.4) se verifica para $0<h<\delta$. Si $h<0$, un razonamiento análogo demuestra que (5.4) se verifica siempre que $0<|h|<\delta$, lo que completa la demostración.
 \end{teo}
 
@@ -435,7 +435,101 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	$$p(x)=3+\dfrac{1}{2}x+\dfrac{1}{4}x^2.$$\\
 
     %-------------------- 19.
+    \item Dada una función $g$, continua para todo $x$, tal que $g(1)=5$ e $\int_0^1 g(t)\; dt =2$. Póngase $f(x)=\frac{1}{2}\int_0^x (x-t)^2\; dt,$ demostrar que
+    $$f'(x)=x\int_0^xg(t)\; dt-\int_0^x tg(t)\; dt,$$
+    y calcular $f''(1)$ y $f'''(1)$.\\\\
+	Demostración.-\; Podemos reescribir $f$ de la siguiente manera,
+	$$\begin{array}{rcl}
+	    f(x)&=&\displaystyle\dfrac{1}{2}\int_0^x (x-t)^2\; dt\\\\
+		&=&\displaystyle\dfrac{1}{2} \int_0^x\left[x^2g(t)-2xtg(t)+t^2g(t)\right]\; dt\\\\
+		&=&\displaystyle\dfrac{1}{2}\int_0^x x^2g(t)\; dt-\int_0^x xtg(t)\; dt+\int_0^x t^2g(t)\; dt\\\\
+		&=&\displaystyle\dfrac{x^2}{2}\int_0^x g(t)\; dt-x\int_0^x tg(t)\; dt+\dfrac{1}{2}\int_0^x t^2g(t)\; dt.
+	\end{array}$$
+	\vspace{0.2cm}
+	De donde sacamos $x$ de la integral ya que no depende de $t$. Después, usando la regla del producto y el teorema 1.1, sacamos la derivada de $x$.\\
+	$$\begin{array}{rcl}
+	    f'(x)&=&\displaystyle \left(\dfrac{x^2}{2}\right)' \displaystyle \int_0^x g(t)+\dfrac{x^2}{2}\left(\int_0^x g(t)\; dt\right)' - x' \int_0^x tg(t)\; dt - x\left(\int_0^x tg(t)\; dt\right)' + \dfrac{1}{2}\left(\int_0^x t^2g(t)\right)'\\\\
+		 &=&\displaystyle x\int_0^x g(t)\; dt + \dfrac{x^2}{2} g(x) - \int_0^x tg(t)\; dt - x^2 g(x) + \dfrac{x^2}{2}g(x)\\\\
+		 &=&\displaystyle x\int_0^x g(t)\; dt - \int_0^x tg(t)\; dt.
+	\end{array}$$
+	\vspace{0.2cm}
+
+	Luego, calculamos $f''$ y $f'''$:
+	$$\begin{array}{rcl}
+	    f''(x)&=&\displaystyle \int_0^x g(t)\; dt + xg(x)-xg(x)\\\\
+		  &=&\displaystyle \int_0^x g(t)\; dt\\\\
+		  &&\\
+	    f'''(x)&=&\displaystyle\left(\int_0^x g(t)\right)'\\\\
+		   &=&g(x).
+	\end{array}$$
+	\vspace{0.2cm}
+
+	Por lo tanto,
+
+	$$\begin{array}{rcl}
+	    f''(1)&=&\displaystyle \int_0^1 g(t)\; dt=2\\\\
+		  &&\\
+	    f'''(1)&=&\displaystyle g(1)=4.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 20.
+    \item Sin calcular las siguientes integrales indefinidas, hallar la derivada $f'(x)$ en cada caso si $f(x)$ es igual a 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $\displaystyle\int_0^x (1+t^2)^{-3}\; dt$.\\\\ 
+		Respuesta.-\; Sea $$A(x)=\int_0^x (1+t^2)^{-3}\; dt.$$
+		Entonces por el primer teorema fundamental del calculo (teorema 1.1), 
+		$$f'(x)=A'(x)=\left(1+x^2\right)^{-3}.$$\\
+
+	    %---------- (b)
+	    \item $\displaystyle\int_0^{x^2} (1+t^2)^{-3}\; dt$.\\\\ 
+		Respuesta.-\; Sea $$A(x)=\int_0^{x^2} (1+t^2)^{-3}\; dt.$$
+		Entonces, por teorema 1.1 
+		$$f'(x)=A'\left(x^2\right)=2xA'\left(x^2\right) = (2x)\left[1+\left(x^2\right)^2\right]^{-3}=2x\left(1+x^4\right)^{-3}.$$
+
+	    %---------- (c)
+	    \item $\displaystyle\int_{x^3}^{x^2} (1+t^2)^{-3} \; dt$.\\\\ 
+		Respuesta.-\; Reescribamos la integral como,
+		$$f(x)=\int_{x^3}^{x^2}\left(1+t^2\right)^{-3}\; dt=\int_0^{x^2}-\int_0^{x^3}\left(1+t^2\right)^{-3}\; dt.$$
+		Así, 
+		    $$f(x)=A\left(x^2\right)-A\left(x^3\right).$$
+		Por lo tanto,
+		$$\begin{array}{rcl}
+		    f'(x)&=&\left[A\left(x^2\right)\right]'-\left[A\left(x^3\right)\right]'\\\\
+			 &=&(2x)A'\left(x^2\right) +\left(3x^2\right)A'\left(x^3\right)\\\\
+			 &=&(2x)\left(1+x^4\right)^{-3}-\left(3x^2\right)\left(1+x^6\right)^{-3}
+		\end{array}$$
+
+	\end{enumerate}
+	\vspace{.5cm}
+
+    %-------------------- 21.
+    \item Sin calcular la integral, calcular $f'(x)$ si $f$ está definida por la fórmula
+    $$f(x)=\int_{x^3}^{x^2}\dfrac{t^6}{1+t^4}\; dt.$$\\
+	Respuesta.-\; Sea 
+	$$A(x)=\int_0^x \dfrac{t^6}{1+t^4}\; dt.$$
+	Entonces, por el primer teorema fundamental del calculo (teorema 1.1),
+	$$A'(x)=\dfrac{x^6}{1+x^4}.$$
+	Así, usando la linealidad de la integral
+	$$\begin{array}{rcl}
+	    f(x)&=&\displaystyle\int_{x^3}^{x^2}\dfrac{t^6}{1+t^4}\; dt\\\\
+		&=&\displaystyle\int_0^{x^2}\dfrac{t^6}{1+t^4}\; dt - \int_0^{x^3}\dfrac{t^6}{1+t^4}\; dt\\\\
+		&=&A\left(x^2\right)-A\left(x^3\right).
+	\end{array}$$
+	Por lo tanto, usando la regla de la cadena concluimos que,
+	$$\begin{array}{rcl}
+	    f'(x)&=&\displaystyle\left[A\left(x^2\right)\right]' - \left[A\left(x^3\right)\right]'\\\\
+		 &=&\displaystyle\left(2x\right)A'\left(x^2\right) - \left(3x^2\right)\left(x^3\right)\\\\
+		 &=&\displaystyle\left(2x\right)\dfrac{x^{12}}{1+x^8} - \left(3x^2\right)\dfrac{x^{18}}{1+x^{12}}\\\\
+		 &=&\displaystyle\dfrac{2x^{13}}{1+x^8} - \dfrac{3x^{20}}{1+x^{12}}.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 22.
     \item 
+
 
 	
 \end{enumerate}

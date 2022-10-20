@@ -413,13 +413,13 @@ En los ejercicios del 1 al 14, calcular el área de la región $S$ entre las gr�
     el segundo miembro de (2.11) es igual a $$\sen 2n\theta \left(\cos \theta + \sen \theta \dfrac{\sen n \theta}{\cos n\theta}\right) = \sen 2 n\theta \dfrac{\cos \theta \cos n\theta + \sen \theta \sen n \theta}{\cos n \theta} = \sen 2n\theta \dfrac{\cos (n-1) \theta}{\cos n \theta}$$
     Por consiguiente, para completar la demostración de (2.9), necesitamos tan sólo demostrar que 
     $$\dfrac{\cos(n-1)\theta}{\cos n\theta}>\dfrac{\sen \theta}{\theta} \qquad \mbox{(2.12)}$$
-    Pero tenemos $$\cos n\theta = \cos(n-1)\cos theta - \sen(n-1)\theta \sen \theta < \cos(n-1)\theta \cos \theta < \cos(n-1)\theta \dfrac{\theta}{\sen \theta},$$
-    en donde otra vez hemos utilizado la desigualdad fundamental $\cos \theta < \theta/sen \theta.$ ya que $\left(\cos x < \dfrac{x}{\sen x}\right)$, esta último relación implica (2.12), con lo que se completa la demostración del teorema 2.4.\\\\
+    Pero tenemos $$\cos n\theta = \cos(n-1)\cos \theta - \sen(n-1)\theta \sen \theta < \cos(n-1)\theta \cos \theta < \cos(n-1)\theta \dfrac{\theta}{\sen \theta},$$
+    en donde otra vez hemos utilizado la desigualdad fundamental $\cos \theta < \theta\sen \theta.$ ya que $\left(\cos x < \dfrac{x}{\sen x}\right)$, esta último relación implica (2.12), con lo que se completa la demostración del teorema 2.4.\\\\
 
 \end{teo}
 
 %--------------------teorema 2.5
-\begin{teo} Si dos funciones $\sen$ y $\cos$ satisfacen las propiedades fundamentales de la 1 a la 4, para todo $a$ real se tiene $$\int_0^a \cos x\; dx = \sen a, \qquad \mbox{(2.13)}$$ $$\int_0^a x\; dx = 1-\cos a. \qquad \mbox{(2.14)}$$\\
+\begin{teo} Si dos funciones $\sen$ y $\cos$ satisfacen las propiedades fundamentales de la 1 a la 4, para todo $a$ real se tiene $$\int_0^a \cos x\; dx = \sen a, \qquad \mbox{(2.13)}$$ $$\int_0^a sen x\; dx = 1-\cos a. \qquad \mbox{(2.14)}$$\\
     Demostración.-\; Primero se demuestra (2.13), y luego usamos (2.13) para deducir (2.14). Supongamos que $0<a\leq \frac{1}{2}\pi$. Ya que el coseno es decreciente en $[0,a]$ podemos aplicar el teorema 1.14 y las desigualdades del teorema 2.4 obteniendo (2.13). La fórmula es valida también para $a=0$, ya que ambos miembros son cero. Pueden ahora  utilizarse las propiedades de la integral para ampliar su validez todos los valores reales $a$.\\
     Por ejemplo, si $-\frac{1}{2}\pi \leq a \leq 0$, entonces $0\leq -a\leq \frac{1}{2}\pi$, y la propiedad de reflexión nos da $$\int_0^a \cos x\; dx = -\int_0^{-a} \cos (-x) \; dx = - \int_0^{-a} \cos x \; dx = -\sen (-a) = \sen a.$$
     Así, pues, (2.13) es válida en el intervalo $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$. Supongamos ahora que $\frac{1}{2}\pi \leq a \leq \frac{3}{2}\pi$. Entonces $-\frac{1}{2}\pi\leq a-\pi\leq \frac{1}{2}\pi$, de modo que $$\int_0^a \cos x \; dx = \int_{0}^{\pi/2} \cos x \; dx + \int_{\pi/2}^a \cos x \; dx = \sen\frac{1}{2}\pi + \int_{-\pi/2}^{a-\pi} \cos(x+\pi)\; dx = 1-\int_{-\pi/2}^{a-\pi} \cos x \; dx = $$ $$=1 - \sen(a-\pi) + \sen\left(-\frac{1}{2}\pi\right) = \sen a$$

@@ -171,10 +171,11 @@ Las listas difieren de los conjuntos de dos maneras: en las listas, el orden imp
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Digresión sobre campos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Digresión sobre campos}
-Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\textbf{R}$ y $\textbf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.
+Un campo es un conjunto que contiene al menos dos elementos distintos llamados $0$ y $1$, junto con operaciones de suma y multiplicación que satisfacen todas las propiedades enumeradas en 1.3. Por lo tanto, $\textbf{R}$ y $\textbf{C}$ son campos, como lo es el conjunto de números racionales junto con las operaciones habituales de suma y multiplicación. Otro ejemplo de campo es el conjunto $\left\{0,1\right\}$ con las operaciones habituales de suma y multiplicación excepto que $1 + 1$ se define como igual a $0$.\\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Ejercicios 1.A}
+\setcounter{mysection}{0}
+\mysection{Ejercicios}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -601,9 +602,11 @@ Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, ent
 	$$v+(-1)v=1v+(-1)v=[1+(-1)]v=0v=0.$$
 	Esta ecuación nos dice que $(-1)v$, cuando se suma a $v$ da $0$. Así $(-1)v$ es el inverso aditivo de $v$. 
 \end{myteo}
+\vspace{0.5cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Ejercicio 1.B}
+\setcounter{mysection}{1}
+\mysection{Ejercicio}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -788,9 +791,11 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
     Supóngase que $U$ y $W$ son subespacios de $V$. Entonces $U+W$ es una suma directa si y sólo si $U \cap W = \lbrace 0 \rbrace$.\\\\
     Demostración.-\; Primero supóngase que $U+W$ es una suma directa. Si $v \in U\cap W,$ entonces $0=v+(-v),$ donde $v\in U$ y $-v\in W$. Por la única representación de $0$ como la suma de un vector en $U$ y un vector en $W$, tenemos $v=0$. 
 \end{myteo}
+\vspace{.5cm}
 
 
-\section*{Ejercicios 1.C}
+\setcounter{mysection}{2}
+\mysection{Ejercicios}
 
 \begin{enumerate}[\bfseries 1.]
 
@@ -902,9 +907,52 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 		Por lo tanto este conjunto es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
 
 	    %---------- (c)
-	    \item 
+	    \item El conjunto de funciones diferenciables de valor real en $\textbf{R}$ es un subespacio de $\textbf{R}^{\textbf{R}}.$\\\\
+		Demostración.-\; 
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{R}^{\textbf{R}}$ es una función que asigna cada número a cero, esto es
+		    $$O(x)=x\mbox{ para todo }x\in \textbf{R}.$$
+		    Como es una función constante y todas las funciones constantes son continuas, es un elemento del conjunto de funciones continuas de valor real en $\textbf{R}$.
+
+		    \item Cerrado por adición.-\; Por el cálculo elemental, sabemos que la suma de dos funciones diferenciables es diferenciable. Por lo tanto, el conjunto de funciones diferenciables de valor real en $\textbf{R}$ es cerrado bajo adición de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Por cálculo elemental, sabemos que si $f$ es una función diferenciable, entonces $kf$ es también una función diferenciable para todos los números reales $k$. Por lo tanto, el conjunto de funciones diferenciables de valor real en $\textbf{R}$ es cerrado bajo la multiplicación escalar.\\\\
+		\end{itemize}
+
+	    %---------- (d)
+	    \item El conjunto de funciones diferenciables de valor real $f$ en el intervalo $[0,3]$ tal que $f'(2)=b$ es un subespacio de $\textbf{R}^{(0,3)}$ si y sólo si $b=0$.\\\\
+		Demostración.-\; Si $b=0$, entonces consideremos el conjunto de todas las funciones diferenciables de valor real $f$ en el intervalo $(0,3)$ tales que $f'(2)=b=0$.\\
+		$O(x)$ es un elemento de este conjunto, ya que es diferenciable en este intervalo y su derivada es la misma, por lo tanto $O'(2)=0$. Luego suponga que $f$ y $g$ son elementos de este conjunto. Ya sabemos que la suma de dos funciones diferenciables es de nuevo diferenciables, por lo que $f+g$ es una función diferenciable. Notemos que $(f+g)'(2)=f'(2)+g'(2)=0+0=0$, así el conjunto es cerrado por adición de vectores.\\
+		Ahora, suponga que $f$ es un elemento de este conjunto y $k$ es algún número real. Sabemos que cualquier múltiplo escalar de una función diferenciable es diferenciable, por lo que $kf$ es diferenciable. Es decir, $(kf)'(2)=k\left[f'(2)\right]=k\cdot 0 = 0.$ Así el conjunto es cerrado por la multiplicación escalar. Así $b=0$, implica que el conjunto de funciones diferenciables de valor real en el intervalo $(0,3)$ tal que $f'(2)=0$ es un subespacio de $\textbf{R}^{(0,3)}$.\\
+		Por otro lado, suponga que el conjunto de funciones diferenciables de valor real $f$ en el intervalo $(0,3)$ tal que $f'(2)=b$ es un subespacio de $\textbf{R}^{(0,3)}$. Por el teorema 1.34 sabemos que este conjunto debe contener el vector cero en $\textbf{R}^{(0,3)}$. Esto es, debe contener la función $O(x)$. Pero sabemos que
+		$$O'(x)-O(x)=0$$
+		para todos los valores de $x$ en $(0,3)$. En particular $O'(2)=0$. Por tanto, $b$ debe ser igual a $0$.\\\\
+
+	    %---------- (e)
+	    \item El conjunto de todas las secuencias de número complejos con límite $0$ es un subespacio de $\textbf{C}^{\infty}$.\\\\
+		Demostración.-\;
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{C}^{\infty}$ es la secuencia $O_n=(0,0,\ldots,0)$. Por lo que
+			$$\lim_{n\to \infty}=0.$$
+		    Ya que $O_n$ es un elemento del conjunto de todas las secuencias de número complejos con límite $0$.
+
+		    \item Cerrado por adición.-\; Sean $a_n$ y $b_n$ dos elementos del conjunto dado. Esto es,
+			$$\lim_{n\to \infty}a_n=0\quad \mbox{y}\quad \lim_{n\to \infty}=0.$$
+		    Por el calculo elemental, sabemos que si $c_n\to L$ y $d_n\to M$ con $n\to \infty$, entonces $c_n+d_n\to L+M$. Por lo tanto,
+		    $$\lim_{n\to \infty}a_n+b_n=0+0=0$$
+		    Así, $a_n+b_n$ es un elemento del conjunto dado. Por lo que es cerrado por la suma de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Sean $a_n$ un elemento del conjunto dado y $k\in \textbf{C}$. Lo que significa que,
+			$$\lim_{n\to \infty}a_n=0.$$
+			Por el calculo elemental, sabemos que si $c_n\to L$ con $n\to \infty$, entonces $kc_n\to kL$ para $n\to \infty$. Es decir,
+			$$\lim_{n\to \infty}ka_n = k\cdot 0 = 0.$$
+			Así, $ka_n$ es un elemento del conjunto dado. Por lo que es cerrado por la multiplicación escalar. Concluimos por el teorema 1.34, que este conjunto es un subespacio de $\textbf{C}^{\infty}$.\\\\
+		\end{itemize}
 
 	\end{enumerate}
+
+    %-------------------- 3.
+    \item 
 
 \end{enumerate}
 

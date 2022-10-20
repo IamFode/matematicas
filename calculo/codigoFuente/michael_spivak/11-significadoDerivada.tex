@@ -1472,7 +1472,92 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Demuestre que si $f'(x)>M$ para todo $x$ de $[a,b]$, entonces $f(b)\geq f(a)+M(b-a)$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Sea $h:[a,b]\to \mathbb{R}$ como sigue:
+		$$h(x)=f(x)-\left[\dfrac{f(b)-f(a)}{b-a}\right](x-a).$$
+		De donde notamos que $h$ es una función continua en $[a,b]$ ya que ambos, $f$ y $(x-a)$ son continuas. Además, $h$ es diferenciable en $(a,b)$, porque también $f$ y $(x-a)$ lo son. Luego observemos que,
+		$$h(a)=f(a)-\left[\dfrac{f(b)-f(a)}{b-a}\right](a-a)=f(a)$$ 
+		$$\mbox{y}\quad$$
+		$$h(b)=f(b)-\left[\dfrac{f(b)-f(a)}{b-a}\right](b-a)=f(b)-f(b)+f(a)=f(a).$$
+		Por lo que podemos utilizar el teorema de Rolle de la siguiente manera. Ya que $h$ es continua en $[a,b]$, diferenciable en $(a,b)$ y $h(a)=h(b)$, entonces existe un número $c$ en $(a,b)$ tal que $h'(c)=0$. Es decir,
+		$$\begin{array}{rcl}
+		    h(x)&=&f(x)-\dfrac{f(b)-f(a)}{b-a}x-a\dfrac{f(b)-f(a)}{b-a}\\\\
+		    h'(x)&=&f'(x)-\dfrac{f(b)-f(a)}{b-a}\\\\
+		    h'(c)&=&f'(c)-\dfrac{f(b)-f(a)}{b-a}=0.
+		\end{array}$$
+		Lo que implica por hipótesis que,
+		$$\dfrac{f(b)-f(a)}{b-a}=f(c)\geq M \quad \Rightarrow \quad \dfrac{f(b)-f(a)}{b-a}\geq M.$$
+		Así,
+		$$f(b)\geq f(a)+M(b-a).$$\\
+
+	    %---------- (b)
+	    \item Demuestre que si $f'(x)\leq M$ para todo $x$ de $[a,b]$ entonces $f(b)\leq f(a)+M(b-a)$.\\\\
+		Demostración.-\; Sea $h:[a,b]\to \mathbb{R}$ como sigue:
+		$$h(x)=f(x)-\left[\dfrac{f(b)-f(a)}{b-a}\right](x-a).$$
+		De donde notamos que $h$ es una función continua en $[a,b]$ ya que ambos, $f$ y $(x-a)$ son continuas. Además, $h$ es diferenciable en $(a,b)$, porque también $f$ y $(x-a)$ lo son. Luego observemos que,
+		$$h(a)=f(a)-\left[\dfrac{f(b)-f(a)}{b-a}\right](a-a)=f(a)$$ 
+		$$\mbox{y}\quad$$
+		$$h(b)=f(b)-\left[\dfrac{f(b)-f(a)}{b-a}\right](b-a)=f(b)-f(b)+f(a)=f(a).$$
+		Por lo que podemos utilizar el teorema de Rolle de la siguiente manera. Ya que $h$ es continua en $[a,b]$, diferenciable en $(a,b)$ y $h(a)=h(b)$, entonces existe un número $c$ en $(a,b)$ tal que $h'(c)=0$. Es decir,
+		$$\begin{array}{rcl}
+		    h(x)&=&f(x)-\dfrac{f(b)-f(a)}{b-a}x-a\dfrac{f(b)-f(a)}{b-a}\\\\
+		    h'(x)&=&f'(x)-\dfrac{f(b)-f(a)}{b-a}\\\\
+		    h'(c)&=&f'(c)-\dfrac{f(b)-f(a)}{b-a}=0.
+		\end{array}$$
+		Lo que implica por hipótesis que,
+		$$\dfrac{f(b)-f(a)}{b-a}=f(c)\leq M \quad \Rightarrow \quad \dfrac{f(b)-f(a)}{b-a}\leq M.$$
+		Así,
+		$$f(b)\leq f(a)+M(b-a).$$\\
+
+	    %---------- (c)
+	    \item Formule un teorema análogo cuando $|f'(x)|\leq M$ para todo $x$ en $[a,b]$.\\\\
+		Respuesta.-\; Para algún $M\in \mathbb{R}$, queremos hallar, 
+		$$-M\leq f'(x)\leq M.$$
+		Usando la parte (a) y (b) deducimos que,
+		$$f(b)\geq f(a)-M(b-a)\quad \mbox{y}\quad f(b)\leq f(a)+M(b-a).$$
+		Lo que implica,
+		$$-M(b-a)\leq f(b)-f(a)\quad \mbox{y}\quad f(b)-f(a)\leq M(b-a).$$
+		Así,
+		$$-M(b-a)\leq f(b)-f(a)\leq M(b-a).$$
+		Y por lo tanto,
+		$$|f(b)-f(a)|\leq M|b-a|.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 29.
+    \item Suponga que $f'(x)\geq M>0$ para todo $x$ de $[0,1]$. Demuestre que existe un intervalo de longitud $\frac{1}{4}$ en el cual $|f|\geq M/4$.\\\\
+	Demostración.-\; Ya que $f'>0$ en $[0,1]$, entonces sabemos que es continuo y estrictamente creciente, y  puede tomar el valor $0$ como máximo una vez. Se sigue que $f(x)\geq 0$ en $[1/2,1]$ o $f(x)\leq 0$ en $[0,1/2]$. Lo primero ocurre si toma el valor $0$ en algún punto menor que o igual a $1/2$; la segunda ocurre si toma el valor $0$ en algún punto mayor que o igual a $1/2$; y si no toma nunca el valor $0$, entonces o bien es siempre negativo en cuyo caso ocurre lo segundo, o siempre es positivo, en cuyo caso ocurre lo primero.\\
+	Luego, suponga que $f(x)\geq 0$ en $[1/2,1]$, así por el teorema del valor medio, 
+	$$\dfrac{f(3/4)-f(1/2)}{1/4}\geq M,$$ 
+	así $f(3/4)-f(1/2)\geq M/4$, y ya que $f(1/2)\leq 0$ se sigue que $-f(1/4)\geq M/4$ o $f(1/4)\leq -M/4$. Pero sabiendo que $f$ es estrictamente creciente, tenemos $f(x)\leq-M/4$ para todo $x\in[0,1/4]$, por lo tanto $|f|>M/4$ en un intervalo de longitud $1/4$.\\\\
+
+    %-------------------- 30.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Suponga que $f'(x)>g'(x)$ para todo $x$, y que $f(a)=g(a)$. Demuestre que $f(x)>g(x)$ para $x>a$ y $f(x)<g(x)$ para $x<a$.\\\\
+		Demostración.-\; Consideremos la función $h=f-g$, la cual es una función diferenciables. Ya que $f'(x)>g'(x)$ para todo $x$, entonces $h'(x)=f'(x)-g'(x)$, así  $h'(x)>0$ para todo $x$.\\
+		Sea $x>a$. Por el teorema del valor medio, existe $c\in(a,x)$ tal que
+		$$\dfrac{h(x)-h(a)}{x-a}=h'(c)>0,$$
+		de donde $h(x)>h(a)$. Por el hecho de que $f(a)=g(a)$, se tiene $h(a)=0$, lo que implica $h(x)>0$. Por lo tanto concluimos que $f(x)>g(x)$.\\
+		Por otro lado, sea $x<a$. Por el teorema del valor medio, existe $c\in(x,a)$ tal que
+		$$\dfrac{h(a)-h(x)}{a-x}=h'(c)>0,$$
+		así $h(x)<h(a)=0$ y $f(x)<g(x)$.\\\\
+
+
+	    %---------- (b)
+	    \item Demuestre mediante un ejemplo que estas conclusiones no son válidas sin la hipótesis $f(a)=g(a)$.\\\\
+		Demostración.-\; Sea $f(x)=10x$, $g(x)=5x+100$ y tomemos $a=0$. Tenemos,
+		$$f'(x)10>5=g'(x),\; \forall x.$$
+		Pero no se cumple para todo $x$ tal que $f(x)>g(x)$, ya que $f$ comienza a ser mayor que $g$ cuando $x=20$.\\
+		De manera similar, se cumplirá que $f(x)<g(x)$ cuando $x=-20$.\\
+		No es posible encontrar un sólo ejemplo de un par de funciones $f$ y $g$ con un número $a$ tal que $f'(x)>g'(x)$ para todo $x$, ambos
+		$$f(x)>g(x),\;\forall x>a\qquad \mbox{y}\qquad f(x)<g(x),\; \forall x<a$$
+		siendo falsos. En su lugar, si $f(a)=g(a)$ entonces ambas afirmaciones son verdaderas. Si $f(a)>g(a)$, entonces 
+
+	    %---------- (c)
+	    \item Suponga que $f(a)=g(a)$, que $f'(x)\geq g'(x)$ para todo $x$ y que $f'(x_0)>g'(x_0)$ para algún $x_0>a$. Demuestre que $f(x)>g(x)$ para todo $x\geq x_0$.\\\\
+		Demostración.-\; Si $f(x_0)=g(x_0)$, entonces la prueba nos será la misma que la parte (a), donde inmediatamente nos permite concluir que $f(x)>g(x)$ para todo $x>x_0$.\\ 
 
 	\end{enumerate}
 
