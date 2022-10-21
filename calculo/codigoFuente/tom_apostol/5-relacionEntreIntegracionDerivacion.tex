@@ -528,8 +528,66 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	\vspace{.5cm}
 
     %-------------------- 22.
-    \item 
+    \item En cada caso, calcular $f(2)$ si $f$ es continua y satisface la fórmula dada para todo $x\geq 0$.
+	\begin{enumerate}
 
+	    %---------- (a)
+	    \item $\displaystyle\int_0^x f(t)\; dt = x^2(1+x)$.\\\\
+		Respuesta.-\; Ya que,
+		$$\int_0^x f(t)\; dt = x^2(1+x)=x^3+x^2.$$
+		Tomemos la derivada de ambos lados,
+		$$f(x)=3x^2+2x.$$
+		Por lo tanto,
+		$$f(2)=16.$$\\
+
+	    %---------- (b)
+	    \item $\displaystyle \int_0^{x^2} f(t)\; dt = x^2(1+x)$.\\\\
+		Respuesta.-\; Ya que,
+		$$\int_0^{x^2}f(t)\; dt = x^2(1+x)=x^3+x^2.$$
+		Tomamos la derivada de ambos lados como se observa en la parte (b) del ejercicio 20, Spivak, capítulo 5. Para obtener
+		$$2xf\left(x^2\right)=3x^2+2x\quad \Rightarrow \quad f\left(x^2\right)=\dfrac{3}{2}x+1.$$
+		Por lo tanto,
+		$$f(2)=f\left(\sqrt{2}^2\right)=\dfrac{3\sqrt{2}}{2}+1.$$\\
+
+	    %---------- (c)
+	    \item $\displaystyle \int_0^{f(x)} t^2\; dt = x^2(1+x)$.\\\\
+		Respuesta.-\; Tenemos,
+		$$\int_0^{f(x)}t^2\; dt = x^2(1+x)=x^3+x^2.$$
+		Evaluando la integral de la parte izquierda,
+		$$\int_0^{f(x)}t^2\; dt = \dfrac{1}{3}\bigg|_0^{(x)} = \dfrac{1}{3}\left[f(x)\right]^3.$$
+		Por lo tanto,
+		$$f(2)=36^{\frac{1}{3}}.$$\\
+
+	    %---------- (d)
+	    \item $\displaystyle \int_0^{x^2(1+x)} f(t)\; dt = x$.\\\\
+		Respuesta.-\; Tenemos,
+		$$\int_0^{x^2(1+x)}f(t)\; dt = x.$$
+		Tomando la derivada de ambos lados,
+		$$\left(3x^2+2x\right)f\left(x^3+x^2\right)=1\quad \Rightarrow \quad f\left(x^3+x^2\right)=\dfrac{1}{3x^2+2x}.$$
+		Entonces, por el hecho de que
+		$$x^3+x^2=2\quad \Leftrightarrow \quad x=1,$$
+		ya que que el polinomio cúbico $x^3+x^2-2=0$ tiene sólo una raíz real en $x=1$. Entonces,
+		$$f(2)=\dfrac{1}{5}.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 23.
+    \item La base de un sólido es el conjunto de ordenadas de una función no negativa $f$ en el intervalo $[0,a]$. Todas las secciones perpendiculares a ese intervalo son cuadrados. El volumen del sólido es 
+    $$a^3-2a\cos a + \left(2-a^2\right)\sen a$$
+    para todo $a\geq 0$. Suponiendo que $f$ es continua en $[0,a]$, calcular $f(a)$.\\\\
+	Respuesta.-\; Tenemos la expresión,
+	$$V=a^3-2a\cos a + \left(2-a^2\right)\sen a.$$
+	Sabemos que podemos calcular el volumen como la integral de $0$ a $a$ del área de cada sección transversal. Dado que las secciones transversales son cuadrados y la longitud del borde en la base está dada por $f(x)$ (ya que la base es el conjunto ordenado de $f$, la longitud de la base de una sección transversal en un punto $x$ es $f(x)-0=f(x)$). Sabemos que el área de cada sección transversal es $\left[f(x)\right]^2$. Por lo tanto, tenemos otra expresión para el volumen del sólido dada por
+	$$V=\int_0^a \left[f(x)\right]^2\; dx.$$
+	Igualando estas dos expresiones para el volumen y diferenciando ambos lados tenemos
+	$$\begin{array}{rcl}
+	    a^3-2a\cos a + \left(2-a^2\right)\sen a = \displaystyle \int_0^x \left[f(x)\right]^2\; dx &\Rightarrow& 3a^2-a^2\cos a = \left[f(a)\right]^2\\
+														  &\Rightarrow& f(a)=a(3-\cos a)^{\frac{1}{2}}.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 24.
+    \item 
 
 	
 \end{enumerate}
