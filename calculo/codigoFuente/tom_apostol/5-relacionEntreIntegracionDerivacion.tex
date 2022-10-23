@@ -587,7 +587,64 @@ En cada uno de los Ejercicios del 1 al 10, encontrar una primitiva de $f$; es de
 	\vspace{.5cm}
 
     %-------------------- 24.
-    \item 
+    \item Un mecanismo impulsa una partícula a lo largo de una recta. Está concebido de manera que la posición de la partícula en el instante $t$ a partir del punto inicial $0$ en la recta está dado por la fórmula $f(t) = \frac{1}{2}t^2 + 2t \sen t$. El mecanismo trabaja perfectamente hasta el instante $t = \pi$ en surge una avería inesperada. A partir de ese momento la partícula se mueve con velocidad constante (1a velocidad adquirida en el instante $t=\pi$). Calcular : a) su velocidad en el instante $t=\pi$; b) su aceleración en el instante $t=\frac{1}{2}\pi$; c) su aceleración en el instante $\frac{3}{2}\pi$; d) su posición a partir de $O$ en el instante $t=\frac{5}{2}\pi$; e) Hallar el instante $t>\pi$ en el que la partícula vuelve al punto inicial $O$, o bien demostrar que nunca regresa a $O$.\\\\
+	Respuesta.-\; 
+	\begin{enumerate}[a)]
+	    \item Ya que la velocidad de la partícula es dada por la derivada de la posición, tenemos
+	$$v(t)=f'(t)=t+2\sen t + 2t\cos t.$$
+	$$v(\pi) = \pi + 2\sen(\pi)+2\pi\cos(\pi)=\pi -2\pi = -\pi.$$\\
+	    \item La aceleración es la derivad de la velocidad del inciso a). Por lo tanto,
+		$$\begin{array}{rcl}
+		    a(t) = v'(t) &=& 1+2\cos t + 2\cos t -2t\sen t.\\
+			 &=& 1+4\cos t -2t\sen t.
+		\end{array}$$
+		para $a\left(\dfrac{\pi}{2}\right)$,	
+
+		$$\begin{array}{rcl}
+		    a\left(\dfrac{\pi}{2}\right) &=& 1+4\cos\left(\dfrac{\pi}{2}\right) -\pi\sen\left(\dfrac{\pi}{2}\right).\\
+						 &=&1+\pi.
+		\end{array}$$
+		\vspace{.5cm}
+
+	    \item Sabemos por el enunciado del problem que  $v(t)=c$ para $t>\pi$, donde $c$ es una constante. Ya que $v'(t)=0$ para $t>\pi$, se sigue que la aceleración en el tiempo $t=\dfrac{3}{2}\pi$ es $0$.\\\\
+
+	    \item Para encontrar la posición en el tiempo $t=\frac{5}{2}\pi$, consideremos el movimiento de la partícula en dos intervalos de tiempo: El tiempo de $0$ a $\pi$ y el tiempo desde $\pi$ hasta $\frac{5}{2}\pi$. Durante el intervalo de tiempo $[0,\pi]$ la posición es dado por la siguiente función 
+		$$f(t)=\dfrac{1}{2}t^2+2t\sen t.$$
+		Para el tiempo $t=\pi$, sabemos que la partícula se mueve con velocidad constante de $f'(\pi)$. Por lo que su posición cambia por $\frac{3}{2}\pi f'(\pi)$, durante el intervalo de tiempo $[\pi,\frac{5}{2}\pi]$. Por lo tanto, la posición en el tiempo $t=\frac{5}{2}\pi$ viene dado por 
+		$$\begin{array}{rcl}
+		    f\left(\dfrac{5\pi}{2}\right) &=& f(\pi) + \left(\dfrac{3\pi}{2}\right) f'(\pi)\\\\
+						  &=&\dfrac{\pi^2}{2}-\dfrac{3\pi^2}{2}\\\\
+						  &=& -\pi^2.
+		\end{array}$$
+		\vspace{.5cm}
+
+	    \item Se nos pide encontrar $t>\pi$ tal que $g(t)=0$, donde 
+		$$g(t)=f(\pi)+(t-\pi)v(\pi).$$
+		En la parte d), obtuvimos $f(\pi)=\frac{1}{2}\pi^2$ y $v(\pi)=-\pi$. Por lo tanto, 
+		$$\begin{array}{rcl}
+		    \dfrac{1}{2}\pi^2-\pi(t-\pi)&=&0\\\\
+		    \dfrac{1}{2}\pi^2-\pi t + \pi^2&=&0\\\\
+		    t\pi &=&\dfrac{3}{2}\pi^2\\\\
+		    t&=&\dfrac{3}{2}\pi.
+		\end{array}$$
+		\vspace{.5cm}
+	\end{enumerate}
+
+    %-------------------- 25.
+    \item Una partícula se desplaza a lo largo de una recta. Su posición en el instante $t$ en $f(t)$. Cuando $0\leq t \leq 1$, la posición viene dada por la integral
+    $$f(t)=\int_0^t \dfrac{1+2\sen \pi x \cos \pi x}{1+x^2}\; dx.$$
+    (No intente el cálculo de esta integral.) Para $t\geq 1$, la partícula se mueve con aceleración constante (la aceleración adquirida en el instante $t=1$). Calcular: a) su aceleración en el instante $t=2$; b) su velocidad cuando $t=1$; c) su velocidad cuando $t>1$; d) la distancia $f(t)-f(1)$ cuando $t>1$.\\\\
+    	Respuesta.-\;
+
+    %-------------------- 26.
+    \item En cada uno de los casos siguientes encontrar una función $f$ (con segunda derivada $f''$ continua) que satisfaga a todos las condiciones indicadas, o bien explicar por qué no es posible encontrar una tal función.
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item 
+
+	\end{enumerate}
+
 
 	
 \end{enumerate}

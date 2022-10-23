@@ -1564,5 +1564,92 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	\end{enumerate}
 
+    %-------------------- 31.
+    \item Halle las funciones $f$ tales que
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $f'(x)=\sen x.$\\\\
+		Respuesta.-\; Podemos considerar la función $f(x)=-\cos x + c$, para alguna $c$ constante. Luego,
+		$$f'(x)=-(-\sen x)=\sen x.$$\\
+
+	    %---------- (b)
+	    \item $g''(x)=x^3$.\\\\
+		Respuesta.-\; Consideremos la función $g(x)=\dfrac{x^5}{15}+x+c$ para alguna $c$ constante. Luego, tenemos la primera diferenciación como:
+		$$g'(x)=\dfrac{5x^4}{15}+1=\dfrac{x^4}{3}+1$$
+		La segunda diferenciación será:
+		$$g''(x)=\dfrac{3x^3}{3}=x^3.$$\\
+
+	    %---------- (c)
+	    \item $f'''(x)=x+x^2$.\\\\
+		Respuesta.-\; Podemos considerar la función $f(x)=\dfrac{x^4}{24}+\dfrac{x^5}{60}+x^2+x+c$ para alguna $c$ constante. Luego, tenemos la primera diferenciación como:
+		$$f'(x)=\dfrac{x^3}{6}+\dfrac{x^4}{12}+x+1.$$
+		La segunda diferenciación será:
+		$$f''(x)=\dfrac{x^2}{2}+\dfrac{x^3}{3}+1.$$
+		Y la tercera diferenciación será:
+		$$f'''(x)=x+x^2.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 32.
+    \item Si bien es verdad que un peso que se suelta partiendo del reposo caerá $s(t) = 16r^2$ pies en $t$ segundos, este hecho experimental no menciona el comportamiento de los pesos que son lanzados hacia arriba o hacia abajo. Por otra parte, la ley $s''(t) = 32$ se cumple siempre y tiene la ambigüedad suficiente para explicar el comportamiento de un peso soltado desde cualquier altura y con cualquier velocidad inicial. Para mayor sencillez convengamos en medir las alturas hacia arriba desde el nivel del suelo; en este caso las velocidades son positivas para cuerpos que se elevan y negativas para cuerpos que caen, y todos los cuerpos caen según la ley $s''(t) = -32$.\\
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que $s$ es de la forma $s(t)=-16t^2+\alpha t + \beta.$\\\\
+		Demostración.-\; Se tiene,
+		$$\begin{array}{rcl}
+		    s''(t)&=&-32\\
+		    s'(t)&=&-32t + \alpha\\
+		    s(t)&=&-16t^2+\alpha t + \beta.
+		\end{array}$$
+		\vspace{.5cm}
+
+	    %---------- (b)
+	    \item Haciendo $t=0$ en la fórmula para $s$, y después en la fórmula para $s'$, demuestre que $s(t)=-16t^2+v_0 t + s_0$, donde $s_0$ es la altura desde la cual el cuerpo es soltado en el tiempo $0$, y $v_0$ es la velocidad con el cual se suelta.\\\\
+		Demostración.-\; Reemplazando $t=0$ en la ecuación para $s'(t)$ tenemos
+		$$s'(0)=v_0=\alpha.$$
+		Luego, reemplazando $t=0$ en la ecuación para $s(t)$ se tiene
+		$$s(0)=s_0=\beta.$$
+		Substituyendo los valores de $\alpha$ y $\beta$ en la ecuación para $s(t)$,
+		$$s(t)=-16t^2+v_0t+s_0.$$\\
+
+	    %---------- (c)
+	    \item Se lanza un peso hacia arriba con una velocidad de $v$ pies por segundo desde el nivel del suelo. ¿A qué altura llegará? (A qué altura significa ¿cuál es la máxima altura para todos los tiempos?) ¿Cuál es su velocidad en el momento en que alcanza su altura máxima? ¿Cuál es la aceleración en dicho momento? ¿Cuándo llegará otra vez al suelo? ¿Cuál será su velocidad en el momento de alcanzar el suelo?.\\\\
+		Respuesta.-\; Sea $s_0=0$ y $v_0=v$,
+		$$\begin{array}{rcl}
+		    s(t)&=&-16t^2+vt\\
+		    s'(t)&=&-32t+v.
+		\end{array}$$
+		Para la altura máxima. Sea $s'(t)=0$, de donde
+		$$\begin{array}{rcl}
+		    -32t+v=0 &\Rightarrow & 32t=v\\
+			     &\Rightarrow& t=\dfrac{v}{32}.
+		\end{array}$$
+		Reemplazando $t=\dfrac{v}{32}$ en la ecuación para $s(t)$ conseguimos la distancia máxima,
+		$$\begin{array}{rcl}
+		    s\left(\dfrac{v}{32}\right) &=& -16\left(\dfrac{v}{32}\right)^2 + v\left(\dfrac{v}{32}\right)\\\\
+						&=& -\dfrac{v^2}{64} + \dfrac{v^2}{32}\\\\
+						&=& \dfrac{v^2}{64}.
+		\end{array}$$
+
+		La velocidad en la altura máxima será:
+		$$s'\left(\dfrac{v}{32}\right)=-\dfrac{32v}{32}+v=0.$$
+
+		La aceleración en la altura máxima será:
+		$$s''\left(\dfrac{v}{32}\right)=-32.$$
+
+		Para encontrar el momento en el que el peso vuelve a tocar el suelo, sea $s(t)=0$, es decir
+		$$-16t^2+vt=0.$$
+		de donde,
+		$$t(-16t+v)=0\quad \Rightarrow \quad t=0\quad \mbox{o} \quad t=\dfrac{v}{16}.$$
+		Por lo tanto el peso tocará el suelo de nuevo en 
+		$$t=\dfrac{v}{16}.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 33.
+    \item 
+
 \end{enumerate}
 

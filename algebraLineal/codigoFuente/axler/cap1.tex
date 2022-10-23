@@ -972,7 +972,19 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 
     %-------------------- 4.
     \item Suponga $b\in \textbf{R}$. Demuestre que el conjunto de funciones continuas de valores reales $f$ en el intervalo $[0,1]$ tal que $\int_0^1 f = b$ es un subespacio de $\textbf{R}^{[0,1]}$ si y sólo si $b=0$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Primero demostremos que si el conjunto es un subespacio, entonces $b=0$. Notemos que este conjunto contiene la función cero el cual es definido por $f_0(x)=0$ para $x\in[0,1]$. Porque es un subespacio y $f_0$ es la identidad aditiva. Entonces, debe ser:
+	$$b=\int_0^1 f_0=0\quad \Rightarrow \quad b=0.$$
+	Ahora, sea $b=0$ probaremos que el conjunto dado es un subespacio. Como la primera parte del ejercicio, tenemos que $\int_0^1 f_0=0$, así $f_0$ esta en el conjunto descrito y por lo tanto queda demostrado la identidad aditiva. Luego, sean $f$ y $g$ funciones continuas de valor real en $[0,1]$, tal que 
+	$$\int_0^1 f=0\quad \mbox{y}\quad \int_0^1 g = 0.$$
+	Entonces,
+	$$\int_0^1 (f+g)=\int_0^1 f + \int_0^1 g = 0+0=0.$$
+	Así, $f+g$ se cumple para el conjunto dado y por lo tanto, queda demostrado la cerradura por adición. Por último, sea $k\in \textbf{F}$, con $f$ y $g$ definida arriba, entonces
+	$$\int_0^1 kf = k\int_0^1 f = c\cdot 0 = 0.$$
+	Así, $kf$ también está en el conjunto descrito y por lo tanto se cumple la cerradura por multiplicación escalar. Por lo que podemos concluir que el conjunto es un subespacio.\\\\
+
+    %-------------------- 5.
+    \item Es $\textbf{R}^2$ un subespacio del espacio vectorial complejo $\textbf{C}^2$.\\\\
+	Demostración.-\;
 
 \end{enumerate}
 
