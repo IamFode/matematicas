@@ -1649,7 +1649,57 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	\end{enumerate}
 
     %-------------------- 33.
+    \item Una bala de cañón se lanza desde el suelo con velocidad v y según un ángulo a (Figura 32) de modo que su componente vertical de velocidad es $v \sen \alpha$ y la componente horizontal $v\cos \alpha$. Su distancia $s(t)$ sobre el nivel del suelo obedece a la ley $s(t) = -16t^2 + (v \sen \alpha)t$, mientras que su velocidad horizontal se mantiene con el valor constante $v \cos \alpha$.\\
+	\begin{enumerate}
+
+	    %---------- (a)
+	    \item Demuestre que la trayectoria de la bala es una parábola (halle la posición para cada tiempo $t$, y demuestre que estos puntos están sobre una parábola).\\\\
+		Demostración.-\; Sea $x$ el desplazamiento horizontal en el tiempo $t$, entonces
+		$$x=(v\cos \alpha)t \quad \Rightarrow \quad t=\dfrac{x}{v\cos \alpha}.$$
+		Dado que la distancia vertical sobre el suelo es,
+		$$s(t9=-16t^2+(v\sen \alpha)t.$$
+		Reemplazando $t$ con $\dfrac{x}{v\cos \alpha}$, se tiene:
+		$$\begin{array}{rcl}
+		    s(t) &=& -16\left(\dfrac{x}{v\cos \alpha}\right)^2 + (v\sen \alpha)\left(\dfrac{x}{v\cos \alpha}\right)\\\\
+			 &=& -\dfrac{16}{v^2\cos^2 \alpha}x^2 + (\tan \alpha)x.
+		\end{array}$$
+		El cual tiene la forma 
+		$$y=ax^2+bx+c$$
+		Lo que $-\dfrac{16}{v^2\cos^2 \alpha}x^2 + (\tan \alpha)x$ representa una parábola.\\\\
+
+	    %---------- (b)
+	    \item Halle el ángulo $\alpha$ que hace máxima la distancia horizontal recorrida por la bala antes de alcanzar el suelo.\\\\
+		Respuesta.-\; La distancia horizontal $x$ viene dado por:
+		$$x=(v\cos \alpha)t.$$
+		Diferenciando ambos lados con respecto a $\alpha$, obtenemos:
+		$$x'=-(v\sen \alpha)t.$$
+		Para poder minimizar la distancia horizontal, igualemos $x'=0$,
+		$$\begin{array}{rcl}
+		    -(v\sen \alpha)t &=& 0\\
+			  \sen \alpha&=&0\\
+			  \alpha&=&0.
+		\end{array}$$
+		\vspace{0.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 34.
     \item 
+	\begin{enumerate}
+
+	    %---------- (a)
+	    \item Dé un ejemplo de una función $f$ para la cual exista el $\lim\limits_{x\to \infty}f(x)$, pero no exista el $\lim\limits_{x\to \infty}f'(x)$.\\\\
+		Respuesta.-\; 
+
+	    %---------- (b)
+	    \item Demuestre que si existen el $\lim\limits_{x\to \infty} f(x)$ y el $\lim\limits_{x\to \infty}f'(x)$, entonces $\lim\limits_{x\to \infty}f'(x)=0$.\\\\
+		Demostración.-\; 
+
+	    %---------- (c)
+	    \item Demuestre que si existe el $\lim\limits_{x\to \infty}f(x)$ y existe el $\lim\limits_{x\to \infty} f''(x)$, entonces el $\lim\limits_{x\to \infty}f''(x)=0$. (Vea también el problema 20-22).\\\\
+		Demostración.-\;
+
+	\end{enumerate}
 
 \end{enumerate}
 
