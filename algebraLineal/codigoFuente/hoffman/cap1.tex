@@ -1632,10 +1632,11 @@ $$C_{ij}=\sum_{r=1}^n A_{ir}B_{rj}.$$
     $$C_{ij} = \sum_{r=1}^n A_{ir}B_{rj}.$$
 \end{def.}
 
-El producto está definido si, y sólo si, el número de columnas de la primera matriz coincide con el número de filas de la segunda.\\
+El producto está definido si, y sólo si, el número de columnas de la primera matriz coincide con el número de filas de la segunda. \\\\
+Aunque los productos $AB$ y $BA$ estén definidos, no es necesariamente $AB=BA$; es decir, la multiplicación de matrices no es conmutativa.
 
 \begin{teo}
-    Si $A,B, C$ son matrices sobre el cuerpo $F$, tales que los productos $BC$ y $A(BC)$ están definidos, entonces también lo están los productos $AB$, $(AB)C$ y 
+    Si $A,B,C$ son matrices sobre el cuerpo $F$, tales que los productos $BC$ y $A(BC)$ están definidos, entonces también lo están los productos $AB$, $(AB)C$ y 
     $$A(BC)=(AB)C.$$
 	Demostración.-\; Supóngase que $B$ es una matriz $n\times p$. Como $BC$ está definida, $C$ es una matriz con $p$ filas y $BC$ tiene $n$ filas. Como $A(BC)$ está definida, se puede suponer que $A$ es una matriz $m\times n$. Así el producto $AB$ existe y es una matriz $m\times p$, de lo que se sigue que el producto $(AB)C$ existe. para ver que $A(BC)=(AB)C$ se debe demostrar que
 	$$\left[A(BC)\right]_{ij}=\left[(AB)C\right]_{ij}$$
@@ -1644,11 +1645,14 @@ El producto está definido si, y sólo si, el número de columnas de la primera 
 	    \left[A(BC)\right]_{ij} &=& \displaystyle\sum_{r} A_{ir}(BC)_{rj} &=& \displaystyle\sum_{r} A_{ir}\sum_{s} B_{rs}C_{sj}\\\\
 				    &=& \displaystyle\sum_{s}\sum_{r} A_{ir}B_{rs}C_{sj} &=& \displaystyle\sum_{r}\sum_{s} A_{ir}B_{rs}C_{sj}\\\\
 				    &=& \displaystyle\sum_{r}\left(\sum_{s} AB_{ir}\right)C_{sj} &=& \displaystyle\sum_{r} (AB)_{is}C_{sj}\\\\
-				    &=& \left[(AB)C\right]_{ij} &&\\\\
+				    &=& \left[(AB)C\right]_{ij}.&&
 	\end{array}$$
 \end{teo}
+\vspace{0.3cm}
 
-Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta matriz se representa por $A^2$. En general el producto $AA\cdots A$ ($k$ veces) está definido y se representará por $A^k$.
+Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta matriz se representa por $A^2$. En general el producto $AA\cdots A$ ($k$ veces) está definido y se representará por $A^k$.\\\\
+Obsérvese que la relación $A(BC)=(AB)C$ implica, entre otras cosas, que combinaciones lineales de combinaciones lineales de filas de $C$ son otra vez combinaciones lineales de fila de $C$.\\\\
+Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación elemental de filas, entonces toda fila de $C$ es combinación lineal de las filas de $B$, y por tanto, existe una matriz $A$ tal que $AB=C$. En general, existen muchas de estas matrices $A$, y entre todas ellas es conveniente y posible escoger una que tenga algunas propiedades especiales. Antes de ver esto se necesita introducir una clase de matrices.\\
 
     \begin{def.}
 	Una matriz $m\times m$ se dice matriz elemental si se puede obtener de la matriz identidad $m\times m$ por medio de una sola operación elemental simple por filas.
@@ -1668,8 +1672,7 @@ Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta
 			A_{ij} + cA_{sj}, & i=r.
     \end{array}\right.$$
 
-    Es decir, $EA=e(A).$\\
-
+    Es decir, $EA=e(A).$
 \end{teo}
 
 \begin{cor}
@@ -1683,32 +1686,726 @@ Si $A$ es una matriz cuadrada $n\times n$, el producto $AA$ está definido. Esta
 \begin{enumerate}[1.]
 
     %-------------------- 1.
-    \item 
+    \item Sean
+    $$
+    A=
+    \left[\begin{array}{rrr}
+	2 & -1 & 1\\
+	1 & 2 & 1
+    \end{array}\right],
+    \quad 
+    B=
+    \left[\begin{array}{r}
+	3\\
+	1\\
+	-1
+    \end{array}\right],
+    \quad
+    C=[1\;\;-1].
+    $$
+    Calcular $ABC$ y $CAB$.\\\\
+	Respuesta.-\; Dado que $A_{2\times 3}$, $B_{3\times 1}$ y $C_{1\times 2}$. Entonces por el teorema 8, tenemos $(AB)C$. Luego, utilizando la definición de producto de matrices, calculemos primero $(AB)_{2\times 1}$.
+	$$
+	\begin{array}{rcl}
+	    C_{11} &=& \displaystyle\sum_{i=1}^3 A_{1i}B_{i1}\\\\
+		   &=& A_{11}B_{11} + A_{12}B_{21} + A_{13}B_{31}\\\\
+		   &=& 2\cdot 3 + (-1)\cdot 1 + 1\cdot (-1)\\\\
+		   &=& 4.
+	\end{array} \vline
+	\begin{array}{rcl}
+	    C_{21} &=& \displaystyle\sum_{i=1}^3 A_{2i}B_{i1}\\\\
+		   &=& A_{21}B_{11} + A_{22}B_{21} + A_{23}B_{31}\\\\
+		   &=& 1\cdot 3 + 2\cdot 1 + 1\cdot (-1)\\\\
+		   &=& 4.
+       \end{array}
+       $$
+       Por lo tanto, 
+       $$
+       (AB)=
+       \left[\begin{array}{r}
+	   4\\
+	   4
+       \end{array}\right]
+       $$
+
+       Luego, Multipliquemos $\left[(AB)C\right]_{2\times2}$
+       $$
+       \begin{array}{c|c}
+
+	   \begin{array}{rcl}
+	       C_{11} &=& (AB)_{11} C_{11}\\\\
+		      &=& 4  \cdot 1\\\\
+		      &=& 4.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{12} &=& (AB)_{11} C_{12}\\\\
+		      &=& 4  (-1)\\\\
+		      &=& -4.
+	   \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{21} &=& (AB)_{21} C_{11}\\\\
+		      &=& 4  \cdot1\\\\
+		      &=& 4.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{22} &=& (AB)_{21} C_{12}\\\\
+		      &=& 4  (-1)\\\\
+		      &=& -4.
+	    \end{array}
+
+       \end{array}
+       $$
+
+       De donde,\\
+
+       $$ 
+       (AB)C=
+       \left[\begin{array}{rr}
+	   4 & -4\\
+	   4 & -4
+       \end{array}\right].
+       $$
+
+       Por último, multipliquemos $C(AB)_{1\times 1}$
+
+       $$
+	\begin{array}{rcl}
+	       C_{11} &=& \displaystyle\sum_{i=1}^2 C_{1i} (AB)_{i1}\\\\
+		      &=& C_{11} (AB)_{11} + C_{12} (AB)_{21}\\\\
+		      &=& 1\cdot 4 + (-1)\cdot 4\\\\
+		      &=& 0.
+       \end{array}
+       $$
+       Por lo tanto,
+
+       $$C(AB)=0.$$\\
+
 
     %-------------------- 2.
-    \item 
+    \item Sean 
+
+    $$
+    A=
+    \left[\begin{array}{rrr}
+	1 & -1 & 1\\
+	2 & 0 & 1\\
+	3 & 0 & 1
+    \end{array}\right],
+    \quad
+    B=
+    \left[\begin{array}{rr}
+	2 & -2 \\
+	1 & 3 \\
+	4 & 4
+    \end{array}\right].
+    $$
+    Verificar directamente que $A(AB)=A^2B.$\\\\
+    	Respuesta.-\; Primero multipliquemos $AB_{3\times 2}$
+
+       $$
+       \begin{array}{c|c}
+
+	   \begin{array}{rcl}
+	       C_{11} &=& \displaystyle \sum_{i=1}^3 A_{1i}B_{i1}\\\\
+		      &=& A_{11}B_{11} + A_{12}B_{21} + A_{13}B_{31}\\\\
+		      &=& 1\cdot 2 + (-1)\cdot 1 + 1\cdot 4\\\\
+		      &=& 5.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{12} &=& \displaystyle \sum_{i=1}^3 A_{1i}B_{i2}\\\\
+		      &=& A_{11}B_{12} + A_{12}B_{22} + A_{13}B_{32}\\\\
+		      &=& 1\cdot (-2) + (-1)\cdot 3 + 1\cdot 4\\\\
+		      &=& -1.
+	   \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{21} &=& \displaystyle \sum_{i=1}^3 A_{2i}B_{i1}\\\\
+		      &=& A_{21}B_{11} + A_{22}B_{21} + A_{23}B_{31}\\\\
+		      &=& 2\cdot 2 + 0\cdot 1 + 1\cdot 4\\\\
+		      &=& 8.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{22} &=& \displaystyle \sum_{i=1}^3 A_{2i}B_{i2}\\\\
+		      &=& A_{21}B_{12} + A_{22}B_{22} + A_{23}B_{32}\\\\
+		      &=& 2\cdot (-2) + 0\cdot 3 + 1\cdot 4\\\\
+		      &=& 0.
+	    \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{31} &=& \displaystyle \sum_{i=1}^3 A_{3i}B_{i1}\\\\
+		      &=& A_{31}B_{11} + A_{32}B_{21} + A_{33}B_{31}\\\\
+		      &=& 3\cdot 2 + 0\cdot 1 + 1\cdot 4\\\\
+		      &=& 10.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{32} &=& \displaystyle \sum_{i=1}^3 A_{3i}B_{i2}\\\\
+		      &=& A_{31}B_{12} + A_{32}B_{22} + A_{33}B_{32}\\\\
+		      &=& 3\cdot (-2) + 0\cdot 3 + 1\cdot 4\\\\
+		      &=& -2.
+	   \end{array}
+
+       \end{array}
+       $$
+
+       De donde,
+
+       $$AB=\left[\begin{array}{rrr}
+	   5 & -1\\
+	   8 & 0\\
+	   10 & -2
+       \end{array}\right]$$
+
+       Ahora calculemos, $\left(A^2\right)_{3\times 3}$.
+
+       $$
+       \begin{array}{c|c}
+
+	   \begin{array}{rcl}
+	       C_{11} &=& \displaystyle \sum_{i=1}^3 A_{1i}A_{i1}\\\\
+		      &=& A_{11}A_{11} + A_{12}A_{21} + A_{13}A_{31}\\\\
+		      &=& 1\cdot 1 + (-1)\cdot 2 + 1\cdot 3\\\\
+		      &=& 2.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{12} &=& \displaystyle \sum_{i=1}^3 A_{1i}A_{i2}\\\\
+		      &=& A_{11}A_{12} + A_{12}A_{22} + A_{13}A_{32}\\\\
+		      &=& 1\cdot (-1) + (-1)\cdot 0 + 1\cdot 0\\\\
+		      &=& -1.
+	   \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{13} &=& \displaystyle \sum_{i=1}^3 A_{1i}A_{i3}\\\\
+		      &=& A_{11}A_{13} + A_{12}A_{23} + A_{13}A_{33}\\\\
+		      &=& 1\cdot 1 + (-1)\cdot 1 + 1\cdot 1\\\\
+		      &=& 1.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{21} &=& \displaystyle \sum_{i=1}^3 A_{2i}A_{i1}\\\\
+		      &=& A_{21}A_{11} + A_{22}A_{21} + A_{23}A_{31}\\\\
+		      &=& 2\cdot 1 + 0\cdot 2 + 1\cdot 3\\\\
+		      &=& 5.
+	    \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{22} &=& \displaystyle \sum_{i=1}^3 A_{2i}A_{i2}\\\\
+		      &=& A_{21}A_{12} + A_{22}A_{22} + A_{23}A_{32}\\\\
+		      &=& 2\cdot (-1) + 0\cdot 0 + 1\cdot 0\\\\
+		      &=& -2.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{23} &=& \displaystyle \sum_{i=1}^3 A_{2i}A_{i3}\\\\
+		      &=& A_{21}A_{13} + A_{22}A_{23} + A_{23}A_{33}\\\\
+		      &=& 2\cdot 1 + 0\cdot 1 + 1\cdot 1\\\\
+		      &=& 3.
+	    \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{31} &=& \displaystyle \sum_{i=1}^3 A_{3i}A_{i1}\\\\
+		      &=& A_{31}A_{11} + A_{32}A_{21} + A_{33}A_{31}\\\\
+		      &=& 3\cdot 1 + 0\cdot 2 + 1\cdot 3\\\\
+		      &=& 6.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{32} &=& \displaystyle \sum_{i=1}^3 A_{3i}A_{i2}\\\\
+		      &=& A_{31}A_{12} + A_{32}A_{22} + A_{33}A_{32}\\\\
+		      &=& 3\cdot (-1) + 0\cdot 0 + 1\cdot 0\\\\
+		      &=& -3.
+	    \end{array}
+
+       \end{array}
+       $$
+
+	   $$\begin{array}{rcl}
+	       C_{33} &=& \displaystyle \sum_{i=1}^3 A_{3i}A_{i3}\\\\
+		      &=& A_{31}A_{13} + A_{32}A_{23} + A_{33}A_{33}\\\\
+		      &=& 3\cdot 1 + 0\cdot 1 + 1\cdot 1\\\\
+		      &=& 4.
+	   \end{array}$$
+
+       Por lo tanto,
+
+       $$A^2=\left[\begin{array}{rrr}
+	   2 & -1 & 1\\
+	   5 & -2 & 3\\
+	   6 & -3 & 4
+	   \end{array}\right]$$
+
+       Luego calculemos, $A(AB)_{3\times 2}$.
+
+       $$
+       \begin{array}{c|c}
+	   \begin{array}{rcl}
+	       C_{11} &=& \displaystyle \sum_{i=1}^3 A_{1i}(AB)_{i1}\\\\
+		      &=& A_{11}AB_{11} + A_{12}AB_{21} + A_{13}AB_{31}\\\\
+		      &=& 1\cdot 5 + (-1)\cdot 8 + 1\cdot 10\\\\
+		      &=& 7.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{12} &=& \displaystyle \sum_{i=1}^3 A_{1i}(AB)_{i2}\\\\
+		      &=& A_{11}AB_{12} + A_{12}AB_{22} + A_{13}AB_{32}\\\\
+		      &=& 1\cdot (-1) + (-1)\cdot 0 + 1\cdot (-2)\\\\
+		      &=& -3.
+	   \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{21} &=& \displaystyle \sum_{i=1}^3 A_{2i}(AB)_{i1}\\\\
+		      &=& A_{21}AB_{11} + A_{22}AB_{21} + A_{23}AB_{31}\\\\
+		      &=& 2\cdot 5 + 0\cdot 8 + 1\cdot 10\\\\
+		      &=& 20.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{22} &=& \displaystyle \sum_{i=1}^3 A_{2i}(AB)_{i2}\\\\
+		      &=& A_{21}AB_{12} + A_{22}AB_{22} + A_{23}AB_{32}\\\\
+		      &=& 2\cdot (-1) + 0\cdot 0 + 1\cdot (-2)\\\\
+		      &=& -4.
+	    \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{31} &=& \displaystyle \sum_{i=1}^3 A_{3i}(AB)_{i1}\\\\
+		      &=& A_{31}AB_{11} + A_{32}AB_{21} + A_{33}AB_{31}\\\\
+		      &=& 3\cdot 5 + 0\cdot 8 + 1\cdot 10\\\\
+		      &=& 25.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{32} &=& \displaystyle \sum_{i=1}^3 A_{3i}(AB)_{i2}\\\\
+		      &=& A_{31}AB_{12} + A_{32}AB_{22} + A_{33}AB_{32}\\\\
+		      &=& 3\cdot (-1) + 0\cdot 0 + 1\cdot (-2)\\\\
+		      &=& -5.
+	    \end{array}
+       \end{array}
+       $$
+
+       Por lo tanto,
+
+       $$A(AB)=\left[\begin{array}{rr}
+	   7 & -3\\
+	   20 & -4\\
+	   25 & -5
+       \end{array}\right]$$
+       \vspace{.4cm}
+
+       Por último, calculemos, $\left(A^2B\right)_{3\times2}$.
+
+       $$
+       \begin{array}{c|c}
+	   \begin{array}{rcl}
+	       C_{11} &=& \displaystyle \sum_{i=1}^3 (A^2)_{1i}B_{i1}\\\\
+		      &=& (A^2)_{11}B_{11} + (A^2)_{12}B_{21} + (A^2)_{13}B_{31}\\\\
+		      &=& 2\cdot 2 + (-1)\cdot 1 + 1\cdot 4\\\\
+		      &=& 7.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{12} &=& \displaystyle \sum_{i=1}^3 (A^2)_{1i}B_{i2}\\\\
+		      &=& (A^2)_{11}B_{12} + (A^2)_{12}B_{22} + (A^2)_{13}B_{32}\\\\
+		      &=& 2\cdot (-2) + (-1)\cdot 3 + 1\cdot 4\\\\
+		      &=& -3.
+	   \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{21} &=& \displaystyle \sum_{i=1}^3 (A^2)_{2i}B_{i1}\\\\
+		      &=& (A^2)_{21}B_{11} + (A^2)_{22}B_{21} + (A^2)_{23}B_{31}\\\\
+		      &=& 5\cdot 2 + (-2)\cdot 1 + 3\cdot 4\\\\
+		      &=& 20.
+	   \end{array}
+	   &
+	   \begin{array}{rcl}
+	       C_{22} &=& \displaystyle \sum_{i=1}^3 (A^2)_{2i}B_{i2}\\\\
+		      &=& (A^2)_{21}B_{12} + (A^2)_{22}B_{22} + (A^2)_{23}B_{32}\\\\
+		      &=& 5\cdot (-2) + (-2)\cdot 3 + 3\cdot 4\\\\
+		      &=& -4.
+	    \end{array}\\\\
+	   \hline\\
+	   \begin{array}{rcl}
+	       C_{31} &=& \displaystyle \sum_{i=1}^3 (A^2)_{3i}B_{i1}\\\\
+		      &=& (A^2)_{31}B_{11} + (A^2)_{32}B_{21} + (A^2)_{33}B_{31}\\\\
+		      &=& 6\cdot 2 + (-3)\cdot 1 + 4\cdot 4\\\\
+		      &=& 25.
+	   \end{array} 
+	   &
+	   \begin{array}{rcl}
+	       C_{32} &=& \displaystyle \sum_{i=1}^3 (A^2)_{3i}B_{i2}\\\\
+		      &=& (A^2)_{31}B_{12} + (A^2)_{32}B_{22} + (A^2)_{33}B_{32}\\\\
+		      &=& 6\cdot (-2) + (-3)\cdot 3 + 4\cdot 4\\\\
+		      &=& -5.
+	    \end{array}
+       \end{array}
+       $$
+
+       Por lo tanto,
+
+       $$A(AB)=\left[\begin{array}{rr}
+	   7 & -3\\
+	   20 & -4\\
+	   25 & -5
+       \end{array}\right]
+       =
+       \left[\begin{array}{rr}
+	   7 & -3\\
+	   20 & -4\\
+	   25 & -5
+       \end{array}\right]
+       =A^2B$$
+       \vspace{.5cm}
+
 
     %-------------------- 3.
-    \item Encontrar dos matrices $2\times 2,A$ diferentes tales que $A^2=0$ pero $A\neq 0.$\\\\
-	Respuesta.-\;
+    \item Encontrar dos matrices $2\times 2,A$, diferentes tales que $A^2=0$ pero $A\neq 0.$\\\\
+	Respuesta.-\; Sea,
+	$$A=\left[\begin{array}{rr}
+	    0 & 1\\
+	    0 & 0 
+	\end{array}\right]\neq 0$$
+	Entonces,
+	$$
+	\begin{array}{c|c}
+	    \begin{array}{rcl}
+		C_{11} &=& \displaystyle \sum_{i=1}^2 A_{1i}A_{i1}\\\\
+		       &=& A_{11}A_{11} + A_{12}A_{21}\\\\
+		       &=& 0\cdot 0 + 1\cdot 0\\\\
+		       &=& 0.
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{12} &=& \displaystyle \sum_{i=1}^2 A_{1i}A_{i2}\\\\
+		       &=& A_{11}A_{12} + A_{12}A_{22}\\\\
+		       &=& 0\cdot 1 + 1\cdot 0\\\\
+		       &=& 0.
+	    \end{array}\\\\
+	\end{array}
+	$$
+	$$
+	\begin{array}{c|c}
+	    \begin{array}{rcl}
+		C_{21} &=& \displaystyle \sum_{i=1}^2 A_{2i}A_{i1}\\\\
+		       &=& A_{21}A_{11} + A_{22}A_{21}\\\\
+		       &=& 0\cdot 0 + 0\cdot 0\\\\
+		       &=& 0.
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{22} &=& \displaystyle \sum_{i=1}^2 A_{2i}A_{i2}\\\\
+		       &=& A_{21}A_{12} + A_{22}A_{22}\\\\
+		       &=& 0\cdot 1 + 0\cdot 0\\\\
+		       &=& 0.
+	    \end{array}\\\\
+	\end{array}
+	$$
+
+	Por lo tanto,
+
+	$$A^2=0$$
+
+	Por otro lado, sea
+
+	$$B=\left[\begin{array}{rr}
+	    0 & 0\\
+	    1 & 0
+	\end{array}\right]\neq 0$$
+
+	Entonces,
+
+	$$
+	\begin{array}{c|c}
+	    \begin{array}{rcl}
+		C_{11} &=& \displaystyle \sum_{i=1}^2 B_{1i}B_{i1}\\\\
+		       &=& B_{11}B_{11} + B_{12}B_{21}\\\\
+		       &=& 0\cdot 0 + 0\cdot 1\\\\
+		       &=& 0.
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{12} &=& \displaystyle \sum_{i=1}^2 B_{1i}B_{i2}\\\\
+		       &=& B_{11}B_{12} + B_{12}B_{22}\\\\
+		       &=& 0\cdot 0 + 0\cdot 0\\\\
+		       &=& 0.
+	    \end{array}\\\\
+	    \hline\\
+	    \begin{array}{rcl}
+		C_{21} &=& \displaystyle \sum_{i=1}^2 B_{2i}B_{i1}\\\\
+		       &=& B_{21}B_{11} + B_{22}B_{21}\\\\
+		       &=& 1\cdot 0 + 0\cdot 0\\\\
+		       &=& 0.
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{22} &=& \displaystyle \sum_{i=1}^2 B_{2i}B_{i2}\\\\
+		       &=& B_{21}B_{12} + B_{22}B_{22}\\\\
+		       &=& 1\cdot 0 + 0\cdot 0\\\\
+		       &=& 0.
+	    \end{array}\\\\
+	\end{array}
+	$$
+
+	Por lo tanto,
+
+	$$A^2=0.$$\\
+
 
     %-------------------- 4.
     \item  Para cada $A$ del ejercicio 2, hallar matrices elementales $E_1,E_2,\ldots,E_k$ tal que 
-	$$E_k\cdot E_2E_1A=1.$$\\
-    Respuesta.-\;
+	$$E_k\cdot E_2E_1A=I.$$\\
+    Respuesta.-\; Sea,
+    $$A=\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    2 & 0 & 1\\
+	    3 & 0 & 1
+    \end{array}\right]$$
+
+    Entonces,
+
+    $$\begin{array}{rcrcl}
+
+	E_1 A 
+	&=& 
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    -2 & 1 & 0\\
+	    0 & 0 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    2 & 0 & 1\\
+	    3 & 0 & 1
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 2 & -1\\
+	    0 & 3 & 0
+	\end{array}\right]\\\\
+	E_2(E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & 0\\
+	    -3 & 0 &1 
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 2 & -1\\
+	    3 & 0 &1 
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 2 & -1\\
+	    0 & 3 & 0
+	\end{array}\right]\\\\
+	E_3(E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & \frac{1}{2} & 0\\
+	    0 & 0 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 2 & -1\\
+	    0 & 3 & 0
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 3 & 0
+	\end{array}\right]\\\\
+	E_4(E_3E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 1 & 0\\
+	    0 & 1 & 0\\
+	    0 & 0 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & -1 & 1\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 3 & 0
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 1\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 3 & 0
+	\end{array}\right]\\\\
+	E_5(E_4E_3E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & 0\\
+	    0 & -3 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & 0 & \frac{1}{2}\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 3 & 0
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & \frac{1}{2}\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]\\\\
+	E_6(E_5E_4E_3E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & 0\\
+	    0 & 0 & \frac{2}{3} 
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & 0 & \frac{1}{2}\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & \frac{3}{2}
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & \frac{1}{2}\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]\\\\
+	E_7(E_6E_5E_4E_3E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & -\frac{1}{2}\\
+	    0 & 1 & 0\\
+	    0 & 0 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & 0 & \frac{1}{2}\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]\\\\
+	E_8(E_7E_6E_5E_4E_3E_2E_1A)
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & \frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & -\frac{1}{2}\\
+	    0 & 0 & 1
+	\end{array}\right]
+	&=&
+	\left[\begin{array}{rrr}
+	    1 & 0 & 0\\
+	    0 & 1 & 0\\
+	    0 & 0 & 1
+	\end{array}\right]
+
+    \end{array}$$
+    \vspace{.5cm}
 
     %-------------------- 5.
-    \item 
+    \item Sean
+    $$A=\left[\begin{array}{rr}
+	    1 & -1\\
+	    2 & 2\\
+	    1 & 0
+    \end{array}\right],\qquad 
+    \left[\begin{array}{rr}
+	    3 & 0\\
+	    -4 & 4
+    \end{array}\right]$$
+    ¿Existe una matriz $C$ tal que $CA=B$?.\\\\
+	Respuesta.-\; Está claro que la matriz $C$ tiene la forma $2\times 3$. Es decir,
+	$$C=\left[\begin{array}{rrr}
+		c_1 & c_2 & c_3\\
+		c_4 & c_5 & c_6
+	\end{array}\right].$$
+
+	Entonces,
+
+	$$
+	CA = B 
+	\Rightarrow
+	\left[\begin{array}{rrr}
+	    c_1 & c_2 & c_3\\
+	    c_4 & c_5 & c_6
+	\end{array}\right]
+	\left[\begin{array}{rr}
+	    1  & -1 \\
+	    2  & -2 \\
+	    1  & 0
+	\end{array}\right]
+	=
+	\left[\begin{array}{rr}
+	    c_1+2c_2+c_3 & -c_1+2c_2\\
+	    c_4+2c_5+c_6 & -c_4+2c_5
+	\end{array}\right]
+	=
+	\left[\begin{array}{rr}
+	    3 & 0\\
+	    -4 & 4
+	\end{array}\right]
+	$$
+
+	Por lo tanto,
+
+	$$
+	\left\{
+	    \begin{array}{rcr}
+		c_1+2c_2+c_3 &=& 3\\
+		-c_1+2c_2 &=& 1\\
+		c_4+2c_5+c_6 &=& -4\\
+		-c_4+2c_5 &=& 4
+	    \end{array}
+	\right.
+	\Rightarrow
+	\left\{
+	    \begin{array}{rcr}
+		c_2 &=& \frac{1+c_1}{2}\\
+		c_3 &=& 2-rc_1\\
+		c_4 &=& 2c_5-4\\
+		c_6 &=& -4c_5
+	    \end{array}
+	\right.
+	$$
+
+	Así, existen infinitas matrices para algunos $c_1$ y $c_5$. Una de estas tiene la forma de
+	$$
+	C = 
+	\left[\begin{array}{rrr}
+	    1 & 1 & 0\\
+	    -2 & 1 & -4
+	\end{array}\right]
+	$$\\
 
     %-------------------- 6.
-    \item 
+    \item Sea $A$ una matriz $m\times n$ y $B$ una matriz $n\times k$. Demostrar que las columnas de $C=AB$ sea combinaciones lineales de las columnas de $A$. Si $\alpha_1,\ldots , \alpha_n$ son las columnas de $A$ y $\gamma_1,\ldots , \gamma_k$ son las columnas de $C$, entonces
+    $$\gamma_i = \sum_{r=1}^n B_{rj}\alpha_{r}.$$\\
+	Demostración.-\; 
+
 
     %-------------------- 7.
     \item Sean $A$ y $B$ matrices $2\times 2$ tales que $AB=I$. Demostrar que $BA=I.$\\\\
 	Demostración.-\;
 
     %-------------------- 8.
-    \item 
+    \item Sea
+    $$\left[\begin{array}{cc}
+	    C_{11} & C_{12}\\
+	    C_{21} & C_{22}
+    \end{array}\right]$$
+    una matriz $2\times 2$. Se desea saber si es posible encontrar matrices $2\times 2$, $A$ y $B$, tales que $C=AB-BA$. Demostrar que tales matrices pueden hallarse si, y sólo si $C_{11}+C_{22}=0.$\\\\
+	Demostración.-\;
 
 \end{enumerate}
 

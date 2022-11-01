@@ -1689,17 +1689,141 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Dé un ejemplo de una función $f$ para la cual exista el $\lim\limits_{x\to \infty}f(x)$, pero no exista el $\lim\limits_{x\to \infty}f'(x)$.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Sea 
+		$$f(x)=\dfrac{\sen\left(x^2\right)}{x}.$$
+		De donde,
+		$$\lim_{x\to infty}f(x)=0,$$
+		Así,
+		$$\begin{array}{rcl}
+		    f'(x) &=& \dfrac{2x^2\sen\left(x^2\right)-\sen\left(x^2\right)}{x^2}\\\\
+			  &=& 2\sen\left(x^2\right)-\dfrac{\sen\left(x^2\right)}{x^2}.
+	    \end{array}$$
+	    pero, $\lim\limits_{x\to \infty}f'(x)$ no existe.\\\\
+
 
 	    %---------- (b)
 	    \item Demuestre que si existen el $\lim\limits_{x\to \infty} f(x)$ y el $\lim\limits_{x\to \infty}f'(x)$, entonces $\lim\limits_{x\to \infty}f'(x)=0$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Sea $f$ una función diferenciable tales que $\lim\limits_{x\to \infty} f(x)$ y $\lim\limits_{x\to \infty}f'(x)$ existe. Entonces se tiene que mostrar que
+		$$\lim_{x\to \infty}f'(x)=0.$$
+		Sea $\lim\limits_{x\to \infty}f'(x)=a.$ Entonces, por la definición de límite, tenemos que existe un número natural $n\in \mathbb{N}$ tal que, para todo $n\geq N$
+		$$|f'(x)-a|<\dfrac{|a|}{2},$$
+		el cual es equivalente a
+		$$-\dfrac{|a|}{2}<f'(x)-a<\dfrac{|a|}{2},\quad \mbox{para todo } n\geq N.$$
+		Ahora, sea $y\in \mathbb{R}$ tal que $y>N$. Entonces usando el teorema del valor medio para $f$ en el intervalo $[N,y]$ obtenemos que existe un número real $x_0\in [N,y]$ tal que
+		$$f(y)-f(N)=f'(x_0)(y-N),$$
+		lo que implica que
+		$$f(y)=f(N)+f'(x_0)(y-N)>f(N)+\left(a-\dfrac{|a|}{2}\right)(y-N).$$
+		Ahora, la desigualdad anterior se cumple para todo $y>N$. Así, como $y\to \infty$, $f(y)$ se vuelve sin límites si $a\neq 0$. Por lo tanto, $\lim\limits_{y\to \infty}$ no existe si $a\neq 0$. A partir de la hipótesis tenemos que $\lim\limits_{y\to \infty}f(y)$ existe, de donde concluimos que $a=0$. Lo que complementa la demostración.\\\\
 
 	    %---------- (c)
 	    \item Demuestre que si existe el $\lim\limits_{x\to \infty}f(x)$ y existe el $\lim\limits_{x\to \infty} f''(x)$, entonces el $\lim\limits_{x\to \infty}f''(x)=0$. (Vea también el problema 20-22).\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $f$ una función diferenciable tales que $\lim\limits_{x\to \infty}f(x)$ y $\lim\limits_{x\to \infty}f''(x)$ existe. Entonces, tenemos que demostrar que
+		$$\lim_{x\to \infty}f''(x)=0.$$
+		Luego, asumamos que
+		$$\lim_{x\to \infty}f'(x)=0.$$
+		Por la parte (b) tenemos que existe un número natural $N\in \mathbb{N}$ tal que 
+		$$f'(x)>f'(N)+\left(a-\dfrac{|a|}{2}\right)(x-N), \mbox{ para todo }x>N.$$
+		Esto muestra que
+		$$\lim_{x\to \infty}f'(x)=\infty.$$
+		Si $a\neq 0$. Por el teorema del valor medio para $f$ en el intervalo $[0,x]$ con $x\in \mathbb{R}$ y $x>N$ obtenemos
+		$$f(x)-f(0)=f'(x_0)x,\mbox{ para algún }x_0\in[0,x].$$
+		Lo que implica,
+		$$f(x)=f(0)+f'(x_0)x,\mbox{ para algún }x_0\in[0,x],$$
+		lo que a su vez se tiene
+		$$\lim_{x\to \infty}f(x)=f(0)+f'(x_0)\lim_{x\to \infty}x=\infty.$$
+		Pero esto contradice nuestra hipótesis en $f'$. Así tenemos que $a=0$, lo que completa la demostración.\\\\
 
 	\end{enumerate}
+
+    %-------------------- 35.
+    \item Suponga que $f$ y $g$ son dos funciones diferenciables que satisfacen $fg'-f'g=0$. Demuestre que si $f(a)=0$ y $g(a)\neq 0$, entonces $f(x)=0$ para todo $x$ de un intervalo alrededor de $a$. Indicación: Demuestre que en cualquier intervalo en el que $f/g$ esté definida, es constante.\\\\
+	Demostración.-\; Para cualquier intervalo en el que se defina $f/g$, se tiene
+	$$\left(\dfrac{f}{g}\right)'=\dfrac{f'g-fg'}{g^2}.$$
+	Por el hecho de que $fg'-f'g=0$, 
+	$$\left(\dfrac{f}{g}\right)'=0.$$
+	Por lo tanto, $f/g$ es constante.\\\\
+
+    %-------------------- 36.
+    \item Suponga que $|f(x)-f(y)|\leq |x-y|^n$ para $n>1$. Demuestre que $f$ es constante considerando $f'$. Compare con el problema 3.20.\\\\
+	Demostración.-\; Ya que $|f(x)-f(y)|\leq |x-y|^n$ para $n>1$, entonces
+	$$\dfrac{|f(x)-f(y)|}{|x-y|}\leq |x-y|^{n-1},\mbox{ para } n>1.$$
+	Lo que equivale a
+	$$0\leq \dfrac{|f(x)-f(y)|}{|x-y|}\leq |x-y|^m \mbox{ para }m>0.$$
+	Luego notemos que
+	$$\lim_{x\to x}\dfrac{|f(x)-f(y)|}{|x-y|}=0.$$
+	Ya que, la función es continua, entonces
+	$$\bigg|\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}\bigg|=0.$$
+	Lo que implica que 
+	$$\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}=0.$$
+	Por lo tanto,
+	$$f'(x)=0.$$\\
+
+    %-------------------- 37.
+    \item Una función $f$ es Lipschitz de orden $\alpha$ en $x$ si existe una constante $C$ tal que
+    $$(*)\qquad |f(x)-f(y)|\leq C|x-y|^\alpha$$
+    para todo $y$ de un intervalo alrededor de $x$. La función $f$ de Lipschitz de orden $\alpha$ en un intervalo si $(*)$ se verifica para todo $x$ e $y$ del intervalo.
+    \begin{enumerate}[(a)]
+
+	%---------- (a)
+	\item Si $f$ es Lipzchitz de orden $\alpha>0$ en $x$, entonces $f$ es continua en $x$.\\\\
+	    Demostración.-\; Ya que $f$ es una función de Lipschitz de orden $\alpha>0$ en $x$. Por definición, existe un $\delta'>0$ tal que 
+	    $$|f(x)-f(y)|\leq C|x-y|^\alpha, \mbox{ para todo } y \in (x-\delta',x+\delta')\qquad (1)$$
+	    para alguna constante $C\geq 0$ (dado que $|f(x)-f(y)|,\;|x-y|\geq 0$). Sea $\epsilon>0$, entonces tomamos $0<\delta<\frac{1}{2}\min\left\{\left(\frac{\epsilon}{C}\right)^{\frac{1}{\alpha}},\delta'\right\}$. Por (1) ya que $\delta<\delta'$, tenemos en $y\in(x-\delta,x+\delta)$, que
+	    $$|f(x)-f(y)|\leq C|x-y|^{\alpha}. \qquad (2)$$
+	    Además, vemos que si $y\in (x-\delta,x+\delta)$, entonces
+	    $$|x-y|<2\delta<2\dfrac{1}{2}\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}=\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}.$$
+	    Por lo tanto, por (2) tenemos que
+	    $$|f(x)-f(y)|\leq C |x-y|^{\alpha}<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha = \epsilon.$$
+	    Esto muestra que
+	    \begin{center}
+		$|f(x)-f(y)|<\epsilon$ cuando $|x-y|<\delta$.
+	    \end{center}
+	    Así, $f$ es continua en $x$.\\\\
+
+
+	%---------- (b)
+	\item Si $f$ es Lipzchitz de orden $\alpha>0$ en un intervalo, entonces $f$ es uniformemente continua en este intervalo. (Vea el Capítulo 8, Apéndice.)\\\\
+	    Demostración.-\; Sea $\epsilon>0$. Entonces tomemos $0<\delta<\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}$. Ahora ya que $f$ es Lipschitz de orden $\alpha>0$ en $[a,b]$ tenemos que 
+	    \begin{center}
+		$|f(x)-f(y)|\leq C|x-y|^\alpha$, para todo $x,y\in [a,b]. \qquad (3)$
+	    \end{center}
+	    Luego, sea $x,y$ cualesquiera puntos en $[a,b]$ tal que $|x-y|<\delta$. Entonces, vemos por (3), que
+	    $$|f(x)-f(y)|\leq C|x-y|^{\alpha}<C\delta^\alpha<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha=\epsilon,$$
+	    siempre que $|x-y|<\delta$. Así, $f$ es uniformemente continua en $[a,b]$.\\\\
+
+	%---------- (c)
+	\item Si $f$ es diferenciable en $x$, entonces $f$ es Lipzchitz de orden $1$ en $x$. ¿Es cierta la recíproca?.\\\\
+	    Demostración.-\; Como $f$ es una función diferenciable en $x$. Entonces, por definición de diferenciabilidad
+	    $$f'(x)=\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}=l, \mbox{ para algún } l\in \mathbb{R}.$$
+	    Después, por definición de límite,  para todo $\epsilon>0$, existe $\delta>0$ tal que
+	    $$\bigg|\dfrac{f(x)-f(y)}{x-y}-l\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
+	    Luego, por la desigualdad triangular
+	    $$\bigg|\dfrac{f(x)-f(y)}{x-y}-f'(x)\bigg| \geq \bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|.$$
+	    Por tanto,
+	    $$\bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
+	    De ello, se tiene que si $|x-y|<\delta,$ entonces
+	    $$\sqrt{\left(\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\right)^2}<\epsilon \quad \Rightarrow \quad \bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|<\sqrt{\epsilon^2}=|\epsilon|=\epsilon.$$
+	    Lo que implica 
+	    $$|f(x)-f(y)|<\left(|f'(x)|+\epsilon\right)|x-y|\mbox{ siempre que } |x-y|<\delta.$$
+	    Ahora, sea $C\geq\left(|f'(x)|+\epsilon\right)$, de donde
+	    $$|f(x)-f(y)|<C|x-y|\mbox{ siempre que } |x-y|<\delta,$$
+	    por lo tanto, $f$ es Lipschitz de orden $1$ en $x$.\\
+	    El recíproco no es cierto. Por ejemplo se puede tomar la función $f(x)=|x|$. Entonces $f$ es Lipschitz de orden $1$ en cualquier punto $x$, ya que
+	    $$|f(x)-f(y)|=||x|-|y||\leq |x-y|,$$
+	    donde la última desigualdad se cumple a partir de la desigualdad triangular. Pero $f$ no es diferenciable en $0$.\\\\
+
+    
+	%---------- (d)
+	\item Si $f$ es diferenciable en $[a,b]$. ¿es $f$ Lipschiz de orden $1$ en $[a,b]$?.\\\\
+	    Respuesta.-\; Si $f$ es diferenciable en $[a,b]$, entonces $f$ puede no ser Lipschitz de orden $1$ en $[a,b]$. Por ejemplo, sea 
+	    $$f(x)=x^2\sen \dfrac{1}{x^2}.$$
+	    Podemos observar que $f$ es diferenciable en $[0,1]$, pero no es Lipschitz de orden $1$ en $[0,1]$.\\\\
+
+	%---------- (e)
+	\item Si $f$ es Lipschitz de orden $\alpha>1$ en $[a,b]$, entonces $f$ es constante en $[a,b]$.\\\\
+	    Demostración.-\;
+
+    \end{enumerate}
 
 \end{enumerate}
 

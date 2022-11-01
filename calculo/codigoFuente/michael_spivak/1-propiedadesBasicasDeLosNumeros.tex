@@ -1,37 +1,32 @@
 \chapter{Propiedades básicas de los números}
 \pagenumbering{arabic} 
 \section{Propiedades, definiciones y Teoremas}
-\begin{tcolorbox}
 %propiedad 1
-\begin{prop}[Ley asociativa para la suma] 
-$$a+(b+c) = (a+b)+c$$
+\begin{prop} Si $a,b$ y $c$ son números cualesquiera, entonces
+$$a+(b+c) = (a+b)+c.$$
 \end{prop}
 
 %propiedad 2
-\begin{prop}[Existencia de una identidad] 
-$$a+0 = 0+a = a$$
+\begin{prop} Si $a$ es cualquier número, entonces
+$$a+0 = 0+a = a.$$
 \end{prop}
 
 %propiedad 3
-\begin{prop}[Existencia de inversos para la suma]
+\begin{prop} Para todo número $a$, existe un número $-a$ tal que
 $$a+(-a) = (-a) + a = 0$$
 \end{prop}
-\end{tcolorbox}
 
-\begin{tcolorbox}
 %definición 1.1
 \begin{def.}
 Conviene considerar la resta como una operación derivada de la suma: consideremos $a-b$ como una abreviación de $a+(-b)$\\
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.1
 \begin{teo}
 Si un número $x$ satisface $a+x=a$ para cierto número $a$, entonces es $x=0$ (y en consecuencia esta ecuación se satisface también para cualquier $a$)\\\\
-Demostración.- \; Si $a+x=a$ entonces $(-a)+(a+x)=(-a)+a=0$ de donde $\left[ (-a) + a \right] + x = 0$, por lo tanto $x=0$\\\\ 
+Demostración.- \; Si $a+x=a$ entonces $(-a)+(a+x)=(-a)+a=0$ de donde $\left[ (-a) + a \right] + x = 0$, por lo tanto $x=0$
 \end{teo}
 
-\begin{tcolorbox}
 
 %propiedad 4
 \begin{prop}[Ley conmutativa para la suma]
@@ -52,29 +47,25 @@ $$a \cdot 1 = 1 \cdot a = a; \; 1 \neq 0$$
 \begin{prop}[Existencia de inversos para la multiplicación]
 $$a\cdot a^{-1} = a^{-1} \cdot a = 1; \; para \; a\neq 0$$
 \end{prop}
-\end{tcolorbox}
 
 %teorema 1.2
 \begin{teo}
 Si es $a\cdot b = a \cdot c$ y $a\neq 0$, entonces $b=c$\\\\
-Demostración.- \; Si $a\cdot b = a\cdot c$ y $a\neq 0$ entonces $a^{-1} \cdot (a \cdot b) = a^{-1} \cdot (a \cdot c)$ de donde $(a^{-1} \cdot a) \cdot b = (a^{-1} \cdot a) \cdot c$, por lo tanto $b=c$\\\\
+Demostración.- \; Si $a\cdot b = a\cdot c$ y $a\neq 0$ entonces $a^{-1} \cdot (a \cdot b) = a^{-1} \cdot (a \cdot c)$ de donde $(a^{-1} \cdot a) \cdot b = (a^{-1} \cdot a) \cdot c$, por lo tanto $b=c.$
 \end{teo}
 
 %teorema 1.3
 \begin{teo}
 Si $a\cdot b =0$ entonces $a=0$ ó $b=0$\\\\
 Demostración.- \; Si $a\neq 0$ entonces $a^{-1} \cdot (a\cdot b) = 0$ de donde  $(a^{-1} \cdot a) \cdot b =0$ por lo tanto $b=0$\\
-(Puede ocurrir que sea a la vez $a=0$ y $b=0$;) esta posibilidad no se excluye cuando decimos $a=0$ y $b=0$. \\\\
+(Puede ocurrir que sea a la vez $a=0$ y $b=0$;) esta posibilidad no se excluye cuando decimos $a=0$ y $b=0$. 
 \end{teo}
 
-\begin{tcolorbox}
 %definición 1.2
 \begin{def.}
 Se define a la división en función de la multiplicación: el símbolo $a/b$ significa $a\cdot b^{-1}$. Puesto que $0^{-1}$ no tiene sentido, tampoco lo tiene $a/0;$la división por $0$ es siempre indefinida. 
 \end{def.}
-\end{tcolorbox}
 
-\begin{tcolorbox}
 %propiedad 8
 \begin{prop}[Ley conmutativa para la multiplicación] 
 $$a\cdot b = b\cdot a$$
@@ -84,30 +75,29 @@ $$a\cdot b = b\cdot a$$
 \begin{prop}[Ley distributiva]
 $$a\cdot (b+c) = a \cdot b + a \cdot c$$
 \end{prop}
-\end{tcolorbox}
 
 %teorema 1.4
 \begin{teo}
 Determinar cuando es $a-b=b-a$\\\\
-Demostración.- \; Si $a-b=b-a$ entonces $(a-b) + b = (b-a) + b = b+ (b-a)$ de donde $a=b+b-a$, luego $a+a = =(b+b-a)+a=b+b$, en consecuencia $a\cdot (1+1)=b\cdot (1+1)$ y por lo tanto $a=b$\\\\
+Demostración.- \; Si $a-b=b-a$ entonces $(a-b) + b = (b-a) + b = b+ (b-a)$ de donde $a=b+b-a$, luego $a+a = =(b+b-a)+a=b+b$, en consecuencia $a\cdot (1+1)=b\cdot (1+1)$ y por lo tanto $a=b$.
 \end{teo}
 
 %teorema 1.5
 \begin{teo}
 Demostrar que $a\cdot 0 = 0$\\\\
-Demostración.- \; Sea $0 + 0 = 0$ entones $a \cdot (0+0) =0 \cdot a$ de donde $a\cdot 0 = 0$\\\\ 
+Demostración.- \; Sea $0 + 0 = 0$ entones $a \cdot (0+0) =0 \cdot a$ de donde $a\cdot 0 = 0$.
 \end{teo}
 
 %teorema 1.6
 \begin{teo}
 Demostrar que $(-a)\cdot b = -(a\cdot b)$\\\\
-Demostración.- \; Notemos que $(-a)\cdot b = \left[ (-a)+a\right] \cdot b = 0\cdot b = 0$, por lo tanto  $(-a)\cdot b =0$. Se sigue inmediatamente [sumando $-(a\cdot b)$ a ambos miembros] que $(-a)\cdot b = -(a\cdot b)$\\\\
+Demostración.- \; Notemos que $(-a)\cdot b = \left[ (-a)+a\right] \cdot b = 0\cdot b = 0$, por lo tanto  $(-a)\cdot b =0$. Se sigue inmediatamente [sumando $-(a\cdot b)$ a ambos miembros] que $(-a)\cdot b = -(a\cdot b)$.
 \end{teo}
 
 %teorema 1.7
 \begin{teo}
 Demostrar que $(-a) \dot (-b)=a\cdot b$\\\\
-Demostración.- \; Notemos que  $(-a)\cdot (-b) + \left[ - (a \cdot b)\right] = (-a) \cdot (-b) + (-a) \cdot b = (-a)\cdot \left[ (-b)+b\right] = (-a)\cdot 0 =0$. En consecuencia sumando $(a \cdot b)$ a ambos lados se obtiene $(-a) \cdot (-b)=a \cdot b$\\\\
+Demostración.- \; Notemos que  $(-a)\cdot (-b) + \left[ - (a \cdot b)\right] = (-a) \cdot (-b) + (-a) \cdot b = (-a)\cdot \left[ (-b)+b\right] = (-a)\cdot 0 =0$. En consecuencia sumando $(a \cdot b)$ a ambos lados se obtiene $(-a) \cdot (-b)=a \cdot b$.
 \end{teo}
 
 %ejercicio 1.1
@@ -118,12 +108,11 @@ Resolver $x^2-3x+2 = (x-1)(x-2)$\\
 $(x-1)\cdot (x-2)$&$=$&$x\cdot (x-2)+ (-1) \cdot (x-2)$\\
 &$=$&$x\cdot x + x\cdot (-2) + (-1) \cdot x + (-1) \cdot (-2)$\\
 &$=$&$x^2+ x \left[(-2) + (-1)\right] + 2$\\
-&$=$&$x^2 - 2x + 2$\\\\
+&$=$&$x^2 - 2x + 2$.
 \end{tabular}
 \end{center}
 \end{ej}
 
-\begin{tcolorbox}
 %definición 1.3
 \begin{def.} Para los números $a$ que satisfagan:
 \begin{itemize}
@@ -137,9 +126,7 @@ $(x-1)\cdot (x-2)$&$=$&$x\cdot (x-2)+ (-1) \cdot (x-2)$\\
 $a<b$ puede interpretarse como $b-a>0$ \\
 \end{def.}
 Conviene considerar el conjunto de todos los números positivos, representados por $P$\\
-\end{tcolorbox}
 
-\begin{tcolorbox}
 %propiedad 10
 \begin{prop}[Ley de tricotomía] Para todo número $a$ se cumple una y sólo una de las siguientes igualdades:
 \begin{enumerate}[\bfseries i)]
@@ -156,9 +143,7 @@ Conviene considerar el conjunto de todos los números positivos, representados p
 %propiedad 12
 \begin{prop}[La multiplicación es cerrada] Si $a$ y $b$ pertenecen a $P$, entonces $a\cdot b$ pertenece a $P$
 \end{prop}
-\end{tcolorbox}
 
-\begin{tcolorbox}
 %definición 1.5
 \begin{def.} Estas tres propiedades deben complementarse con las siguientes definiciones.
 \begin{center}
@@ -187,28 +172,25 @@ De las definiciones dadas se cumple una y sólo una de las sigueintes igualdades
 \item $b>a.$
 \end{enumerate}
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.8
 \begin{teo}
 Si $a<b$ y $b<c$ si y sólo si  $a<c$\\\\
-Demostración.- \; Si $a<b$ de modo que $b-a$ pertenece a $P$, entonces evidentemente $(b+c)+(a+c)$ pertenece a $P$; así si $a<b$ entonces $a+c<b+c$. Igualmente, supongamos $a<b$ y $b<c$. Entonces $b-a$ y $c-b$ están en $P$ así que $(c-b)+(b-a)=c-a$ está en $P$.\\\\
+Demostración.- \; Si $a<b$ de modo que $b-a$ pertenece a $P$, entonces evidentemente $(b+c)+(a+c)$ pertenece a $P$; así si $a<b$ entonces $a+c<b+c$. Igualmente, supongamos $a<b$ y $b<c$. Entonces $b-a$ y $c-b$ están en $P$ así que $(c-b)+(b-a)=c-a$ está en $P$.
 \end{teo}
 
 %teorema 1.9
 \begin{teo}
 Si $a<0$ y $b<0$, entonces $ab>0$\\\\
-Demostración.- \; Por definición $0>a$ lo cual significa que $0-a=-a$ esta en $P$. Del mismo modo, $-b$ pertenece a $P$ y, en consecuencia por P12, $(-a)(-b)=ab$ está en $P$. Así pues $ab>0$  \\\\
+Demostración.- \; Por definición $0>a$ lo cual significa que $0-a=-a$ esta en $P$. Del mismo modo, $-b$ pertenece a $P$ y, en consecuencia por P12, $(-a)(-b)=ab$ está en $P$. Así pues $ab>0$. 
 \end{teo}
 
 %teorema 1.10
 \begin{teo}
 Si $a\neq0$ es $a^2>0$\\\\
-Demostremos por casos..- \;
-Si $a>0$, entonces  \; $a\cdot a >0$ \; y \; $a^2>0$. Por otro lado, si $a<0$, entonces $0-a>0$ de modo que $(-a)(-a)>0$ \; y por lo tanto \; $a^2>0$\\\\
+Demostración.-\; Demostraremos por casos. Si $a>0$, entonces  \; $a\cdot a >0$ \; y \; $a^2>0$. Por otro lado, si $a<0$, entonces $0-a>0$ de modo que $(-a)(-a)>0$ \; y por lo tanto \; $a^2>0$.
 \end{teo}
 
-\begin{tcolorbox}
 %definición 1.7
 \begin{def.}[Valor absoluto] Se define como:
 \begin{center}
@@ -220,7 +202,6 @@ a, & a\geq 0\\
 \right.$\\
 \end{center}
 \end{def.}
-\end{tcolorbox}
 
 %teorema 1.11
 \begin{teo}
@@ -249,7 +230,7 @@ $(|a+b|)^2$&$=$&$(a+b)^2$&$=$&$a^2+2ab+b^2$\\\\
 \end{center}
 De esto podemos concluir que $|a+b|\leq |a|+|b|$ porque $x^2<y^2$ implica $x<y$\\\\
 Hay una tercera forma de probar que es utilizando el teorema anterior.\\
-Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogamente $-|y| \leq y \leq |y|$. Sumando ambas desigualdades se tiene: $$-(|x|+|y|)\leq x+y \leq |x|+|y|$$ y por tanto en virtud del teorema 4.2 se concluye que: $|x+y|\leq |x|+|y|$\\\\
+Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogamente $-|y| \leq y \leq |y|$. Sumando ambas desigualdades se tiene: $$-(|x|+|y|)\leq x+y \leq |x|+|y|$$ y por tanto en virtud del teorema 4.2 se concluye que: $|x+y|\leq |x|+|y|$.
 \end{teo}
 
 %problemas capítulo 1
@@ -261,19 +242,19 @@ Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogame
 \begin{enumerate}[\bfseries i)]
 %i)
 \item Si $ax=a$ para algún número $a\neq 0$, entonces $x=1$\\\\
-Demostración.- \; Sea $a\neq 0$ entonces $(a^{-1}\cdot a)x=a\cdot a^{-1}$ por lo tanto $\cdot x = 1$\\\\
+Demostración.- \; Sea $a\neq 0$, entonces $(a^{-1}\cdot a)x=a\cdot a^{-1}$. Por lo tanto $x = 1$\\\\
  
 %ii)
 \item $x^2-y^2=(x-y)(x+y)$\\\\
-Demostración.- \; Partamos de $(x-y)(x+y)$ donde por la propiedad distributiva tenemos $(x-y)x+(x-y)y$, luego $x^2-xy+xy-y^2$, por lo tanto por las propiedades de inverso y  neutro $x^2-y^2$\\\\
+Demostración.- \; Partamos de $(x-y)(x+y)$, donde por la propiedad distributiva tenemos $(x-y)x+(x-y)y$: Luego $x^2-xy+xy-y^2$, por lo tanto por las propiedades de inverso y  neutro $x^2-y^2$\\\\
 
 %iii)
 \item Si $x^2=y^2$, entonces $x=y$ o $x=-y$\\\\
-Demostración.- \; Dada la hipótesis entonces $x^2+\left[ - (y^2) \right]=y+\left[ - (y^2) \right]$ y por propiedades de neutro y definición $x^2-y^2=0$, luego $(x-y)(x+y)$ y en virtud del teorema $ab=0$ entonces $a=0$ o $b=0$ no queda $x-y=0$ ó $x+y=0$, por lo tanto $x=y$ ó $x=-y$ \\\\ 
+Demostración.- \; Dada la hipótesis entonces $x^2+\left[ - (y^2) \right]=y+\left[ - (y^2) \right]$ y por propiedades de neutro y definición $x^2-y^2=0$. Luego $(x-y)(x+y)$ y en virtud del teorema $ab=0$, entonces $a=0$ o $b=0$ no queda $x-y=0$ ó $x+y=0$, por lo tanto $x=y$ ó $x=-y$ \\\\ 
 
 %iv)
 \item $(x^3-y^3)=(x-y)(x^2+xy+y^2)$\\\\
-Demostración.- \; Dado $(x-y)(x^2+xy+y^2)$ entonces por la propiedad distributiva $(x-y)x^2+(x-y)xy+(x-y)y^2 = x^3 -x^2y +x^2y-xy^2+xy^2-y^3$ por lo tanto en virtud de las propiedades de inverso y neutro $x^3-y^3$.\\\\
+Demostración.- \; Dado $(x-y)(x^2+xy+y^2)$, entonces por la propiedad distributiva $(x-y)x^2+(x-y)xy+(x-y)y^2 = x^3 -x^2y +x^2y-xy^2+xy^2-y^3$. Por lo tanto en virtud de las propiedades de inverso y neutro $x^3-y^3$.\\\\
 
 %v)
 \item $x^n-y^n=(x+y)(x^{n-1}+x^{n-2} y + ... + xy^{n-2}+y^{n-1})$\\\\
@@ -289,7 +270,7 @@ Demostración.- \;
 
 %vi)
 \item $x^3+y^3=(x+y)(x^2-xy+y^2)$\\\\
-Demostración.- \; Sea $(x+y)(x^2-xy+y^2)$ entonces por la propiedad distributiva $x^3 -x^2y + xy^2 + x^2y - xy^2 + y^2$, por lo tanto $x^3+y^3$\\\\
+Demostración.- \; Sea $(x+y)(x^2-xy+y^2)$, entonces por la propiedad distributiva $x^3 -x^2y + xy^2 + x^2y - xy^2 + y^2$. Por lo tanto $x^3+y^3$\\\\
 \end{enumerate}
 
 %---------------------------------2----------------------------------
@@ -325,11 +306,11 @@ Demostración.- \; Demostremos que  $a^{-1} b^{-1} (ab) = 1$, Sea $a^{-1} b^{-1}
 \item $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{db},$ si $b,d \neq 0$\\\\
 Demostración.- \; Sea por definición $ab^{-1} \cdot cd^{-1}$ entonces  por la propiedad conmutativa $ac \cdot b^{-1}d^{-1}$, por lo tanto $\dfrac{ac}{bd}$ si $b,d \neq 0$\\\\
 %corolario 1
-\begin{col.}
+\begin{cor}
 Si $c\neq 0$ y $d\neq 0$ entonces $(cd^{-1})^{-1}=c^{-1}d$\\\\
 Demostración.- \;
 Por definición de $a^{-1}$ tenemos que $(cd^{-1})^{-1}=\displaystyle\frac{1}{cd^{-1}}$, por el teorema de posibilidad de la división $1=(c^{-1}d)(cd^{-1})$ y en virtud de los axiomas de conmutatividad y asociatividad $1=(c^{1}c)(dd^{-1})$, luego $1=1$. quedando demostrado el corolario.\\\\
-\end{col.}
+\end{cor}
 
 %5
 \item $\dfrac{a}{b} / \dfrac{c}{d} = \dfrac{ad}{bc}$ si $b,c,d \neq 0$\\\\

@@ -988,6 +988,94 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 
     %-------------------- 6.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %-------------------- (a)
+	    \item ¿Es $\left\{(a,b,c) \in \textbf{R}^3 : a^3=b^3 \right\}$ un subespacio de $\textbf{R}^3$?.\\\\
+		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
+		\begin{itemize}
+		    \item Identidad aditiva: Sea $(a,b,c)=(0,0,0)$. Entonces,
+			$$0^3=0^3\quad \Rightarrow \quad 0=0.$$\\
+			Por lo tanto, se cumple la identidad aditiva.\\\\
+		    \item Cerradura por adición: Sea $(a_1,b_1,c_1)$ y $(a_2,b_2,c_2)$ elementos del conjunto dado. Entonces,
+			$$(a_1,b_1,c_1)+(a_2,b_2,c_2)=(a_1+a_2,b_1+b_2,c_1+c_2).$$
+			Luego,
+			$$\left(a_1+a_2\right)^3=\left(b_1+b_2\right)^3.$$
+			Sean $a=a_1+b_1$ y $b=b_1+b_2$. Por la asociatividad de la suma en $\textbf{R}$,
+			$$a^3=b^3.$$
+			Por lo tanto, se cumple la cerradura por adición.\\\\
+		    \item Cerradura por multiplicación escalar: Sea $k\in \textbf{R}$ y $(a_1,b_1,c_1)\in \textbf{R}^3$. Entonces,
+			$$k(a_1,b_1,c_1)=(ka_1,kb_1,kc_1).$$
+			Luego,
+			$$\left(ka_1\right)^3=\left(kb_1\right)^3.$$
+			Sean $ka_1=a$ y $kb_1$. Por la asociatividad de la multiplicación en $\textbf{R}$,
+			$$a^3=b^3.$$
+			Por lo tanto, se cumple la cerradura por multiplicación escalar.\\
+			Así, el conjunto dado es un subespacio de $\mathbb{R}^3$.\\\\
+		\end{itemize}
+
+	    %-------------------- (b)
+	    \item ¿Es $\left\{(a,b,c)\in \textbf{C}^3 : a^3=b^3 \right\}$ un subespacio de $\textbf{C}^3$?.\\\\
+		Respuesta.-\; Sea $W$ el conjunto definido. Entonces, $W$ no es un subespacio de $\textbf{C}^3$. Consideremos $x=(1,1,0)\in \textbf{C}^3$  y $y\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i,1,0\right)\in \textbf{C}^3$. Por lo que claramente $x+y\notin W$ ya que,
+		$$\left[1+\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)\right]^3=-1\neq 2^3=(1+1)^3.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 7.
+    \item Dé un ejemplo de un subconjunto no vacío $U$ de $\textbf{R}^2$ tal que $U$ sea cerrado bajo adición y bajo la medida de inversos aditivos (es decir, $-u\in U$ siempre que $u \in U$), pero $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+	Respuesta.-\; Denote que $U=\left\{(x,y)\in \textbf{R}^2 : x,y\in \textbf{Z}\right\}$ para $U$ es un conjunto no vacío. Si $(x_1,y_1)\in A$ y $(x_2,y_2)\in A$. Entonces, $x_1,x_2,y_1,y_2\in \textbf{Z}$, ya que $x_1+x_2$ y $y_1+y_2$ son enteros. Esto significa $(x_1+x_2,y_1+y_2)=(x_1,y_1)+(x_2,y_2)$. Es decir, $U$ es cerrado por adición. Del mismo modo, ya que $(-x_1,-y_2)\in U$, resulta que $U$ es cerrado bajo inverso aditivo. Sin embargo $U$ no es cerrado bajo la multiplicación escalar, esto por el hecho de que $(1,1)\in A$ mientras que $\frac{1}{2}(1,1)\notin U.$ Por lo tanto, $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+
+    %-------------------- 8.
+    \item Dé un ejemplo de un subconjunto no vacío $U$ de $\textbf{R}^2$ tal que $U$ es cerrado bajo la multiplicación escalar, pero $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+	Respuesta.-\; Denota que $U=\left\{(x,y)\in \textbf{R}^2 : x=0 \lor y=0\right\}$, luego $U$ no está vacío. Si $(x,0)\in U$, entonces para cualquier $\lambda \in \textbf{R}$, tenemos
+	$$\lambda(x,0)=(\lambda x, 0)\in U.$$
+	Similarmente, $\lambda(0,y)\in U$, por lo que $U$ es cerrada bajo la multiplicación escalar. Sin embargo,  $(1,0),(0,1)\in U$ mientras que $(1,1)=(1,0)+(0,1)\notin U.$ Esto implica que $U$ no es cerrado bajo la adición. Por lo tanto, no es subespacio de $\textbf{R}^2$.\\\\
+
+    %-------------------- 9.
+    \item Una función $f:\textbf{R}\to \textbf{R}$ es llamado \textbf{periódica} si existe un número positivo $p$ tal que $f(x)=f(x+p)$ para todo $x\in \textbf{R}$. ¿Es el conjunto de funciones periodicas $\textbf{R}$ a $\textbf{R}$ un subespacio de $\textbf{R}^{\textbf{R}}$?. Explique.\\\\
+	Respuesta.-\; No, el conjunto de las funciones periódicas $\textbf{R}$ a $\textbf{R}$ no es un espacio vectorial de $\textbf{R}^{\textbf{R}}$. Por ejemplo, la función $h(x)=\sen\left(\sqrt{2}x\right)+\cos x$ no es periódica aunque $f(x)=\sen\left(\sqrt{2}x\right)$ y $g(x)=\cos x$ lo son. Suponga que existe un número positivo $p$ tal que $h(x)=h(x+p)$ para todo $x\in \textbf{R}$, entonces $1=h(0)=h(p)=h(-p)$. Es equivalente a decir,
+	$$1=\cos p + \sen \sqrt{2}p = \cos p - \sen \sqrt{2}p,$$
+	que implica $\sen \sqrt{2}p=0$ y $\cos p=1$. De este último podemos deducir que $p=2k\pi$ para $k\in \textbf{Z}$. Sin embargo, $\sen\sqrt{2}p=0$ implica $\sqrt{2}p=l\pi$ para $l\in \textbf{Z}$. De donde,
+	$$\sqrt{2}=\dfrac{l\pi}{2k\pi}=\dfrac{l}{2k}\in \textbf{Q},$$
+	lo cual es imposible.\\\\
+
+    %-------------------- 10.
+    \item Suponga $U_1$ y $U_2$ son subespacios de $V$. Demostrar que la intersección $U_1\cap U_2$ es un subespacio de $V$.\\\\
+	Demostración.-\; Por las condiciones de un subespacio 1.34 se tiene
+	\begin{itemize}
+	    \item Identidad aditiva.-\; Por definición $0\in U_1$ y $0\in U_2$, entonces $0\in U_1\cap U_2.$
+	    \item Cerrado bajo adición.-\; Si $x\in U_1\cap U_2$ e $y\in U_1\cap U_2$, luego $x\in U_1$ e $y\in U_1$, de donde $x+y\in U_1$. Similarmente, $x+y\in U_2$. Por lo tanto $x+y\in U_1\cap U_2.$
+	    \item Cerrado bajo adición.-\; Si $x\in U_1\cap U_2$, entonces $x\in U_1$. Luego, para algún $\lambda \in \textbf{F}$, se tiene $\lambda x\in U_1$. Similarmente $\lambda x\in U_2$. Por lo tanto $\lambda x\in U_1\cap U_2$.\\\\
+	\end{itemize}
+
+    %-------------------- 11.
+    \item Demostrar que la intersección de toda colección de subespacios de $V$ es un subespacio de $V$.\\\\
+	Demostración.-\;  Sea $\left\{V_i : i\in I\right\}$ es una colección de subespcios de $V$. Queremos probar que 
+	$$\bigcap_{i\in I} V_i$$
+	es un subespacio de $V$. Primero, para todo $V_i$ subespacios de $V$, entonces $0\in V_i$. Así, 
+	$$V_i\in I \Rightarrow 0\in \bigcap_{i\in I}V_i.$$
+	Luego, sea $x,y\in \cap_{i\in I}V_i$. Entonces $x,y\in V_i, \; \forall i\in I$. Para todo $V_i$ son subespacios de $V$, donde $x+y\in V_i,\; \forall i\in I$. Por lo tanto 
+	$$x+y\in \bigcap_{i\in I} V_i.$$
+	Por último, para $x\in \cap_{i\in I}V_i$ y un escalar $\alpha$, entonces $x\in V_i,\; \forall i \in I$. Para todo $V_i$ son subespacios de $V$. Se sigue que $\alpha x\in V_i$, así 
+	$$\forall i \in I \quad \Rightarrow \quad \alpha x \in \bigcap_{i\in I} V_i.$$
+	Por lo tanto, $\cap_{i\in I} V_i$ es un subespacio de $V$.\\\\
+
+    %-------------------- 12.
+    \item Demostrar que la unión de dos subespacios de V es un subespacio de V si y sólo si uno de los subespacios está contenido en el otro.\\\\
+	Demostración.-\; Supongamos que $U_1\not\subseteq U_2$ y $U_2 \not\subseteq U_1$. Elegimos un $v\in U_1$ tal que $v\in U_2$. Ya que $v$ es un subespacio de $U_1$, entonces $(-v)$ también debe serlo, por definición. Del mismo modo $U_2\not\subseteq U_1$. Luego, elegimos un $u\in U_2$ tal que $u\in U_1$. Como $u$ está en el subespacio $U_2$, entonces (-u) también debe serlo, por definción.\\
+	Si $v+u\in U_1\cup U_2$, entonces $v+u$ está en $U_1$ o $U_2$. Pero, 
+	$$v+u\in U_1 \Rightarrow v+u+(-v)\in U_1\Rightarrow u\in U_1.$$
+	De la misma manera,
+	$$v+u\in U_2 \Rightarrow v+u+(-u)\in U_2\Rightarrow v\in U_2.$$
+	Lo que contradice el hecho de que cada elemento fue definido para no estar en estos subespacios.\\
+	Por otro lado, sea $U_1\subseteq U_2$. Lo que implica $U_1\subseteq U_2\Rightarrow U_1\cap U_2 = U_2.$ Luego, ya que $U_2$ es un susbespacio, $U_1\cap U_2$ también lo es.\\\\
+
+    %-------------------- 13.
+    \item 
+
+
+
+
 
 \end{enumerate}
 
