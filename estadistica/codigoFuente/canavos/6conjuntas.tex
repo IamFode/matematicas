@@ -290,3 +290,29 @@ o
 $$f(x,y)=f(x|y)f_Y(y)\; dy \mbox{ si } Y \mbox{ es continua.}$$
 
 Nótese que para la penúltima ecuación la función $f(x,y)$ es una mezcla bivariada de una variable aleatoria continua y otra discreta.
+
+
+\section{La distribución normal bivariada}
+
+\begin{def.}
+    Se dice que las variables aleatorias $X$ e $Y$ tienen una distribución normal bivariada si su función de densidad conjunta de probabilidad está dada por
+    $$f(x,y)=\dfrac{1}{2\pi\sigma_X \sigma_Y\sqrt{1-\rho^2}}e^{-\dfrac{1}{2(1-\rho^2)}\left[\left(\dfrac{x-\mu_X}{\sigma_X}\right)^2-2\rho \left(\dfrac{x-\mu_X}{\sigma_X}\right)\left(\dfrac{y-\mu_Y}{\sigma_Y}\right)+\left(\dfrac{y-\mu_Y}{\sigma_Y}\right)^2\right]}$$
+    con $-\infty < x,y<\infty$. Donde
+    $$\mu_X = E(X),\quad \mu_Y=E(Y),\quad \sigma_X^2 = Var(X),\quad \sigma_Y^2 = Var(Y),$$
+    y $\rho$ es el coeficiente de correlación de $X$ e $Y$.
+\end{def.}
+
+Es interesante notar que, a pesar de que $\rho=0$ es una condición necesaria de independencia, para la distribución normal bivariada también es un condición suficiente. Eso es, si $\rho=0$m entonces
+\begin{tcolorbox}
+    $$\begin{array}{rcl}
+	f(x,y)&=&\dfrac{1}{2\pi\sigma_X \sigma_Y\sqrt{1-\rho^2}}e^{-\dfrac{1}{2}\left(\dfrac{x-\mu_X}{\sigma_X}\right)^2-\dfrac{1}{2}\left(\dfrac{y-\mu_Y}{\sigma_Y}\right)^2}\\\\
+	      &=&\dfrac{1}{\sqrt{2\pi}\sigma_x} e^{\left[-\dfrac{(x-\mu_X)^2}{2\sigma^2_X}\right]}\cdot \dfrac{1}{2\pi\sigma_Y} e^{\left[-\dfrac{(y-\mu_Y)^2}{2\sigma^2_Y}\right]}\\\\
+	      &=&f_X(x)f_Y(y).
+    \end{array}$$
+\end{tcolorbox}
+
+Donde, $f_X(x)$ e $f_Y(y)$ son las  densidad normales univariadas de $X$ e $Y$, respectivamente.\\\\
+
+
+
+
