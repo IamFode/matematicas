@@ -2396,7 +2396,53 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 
     %-------------------- 7.
     \item Sean $A$ y $B$ matrices $2\times 2$ tales que $AB=I$. Demostrar que $BA=I.$\\\\
-	Demostración.-\;
+	Demostración.-\; Supongamos dos matrices $2\times 2$,
+	$$
+	\left[\begin{array}{rr}
+		a & b\\
+		c & d
+	    \end{array} 
+	\right] ,\qquad 
+	\left[
+	    \begin{array}{rr}
+		e & f\\
+		g & h
+	    \end{array}
+	\right]
+	$$
+	De donde
+	$$
+	\begin{array}{c|c}
+	    \begin{array}{rcl}
+		C_{11} &=& \displaystyle \sum_{i=1}^2 A_{1i}B_{i1}\\\\
+		       &=& A_{11}B_{11}+A_{12}B_{21}\\\\
+		       &=& a\cdot e + b\cdot g\\\\
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{12} &=& \displaystyle \sum_{i=1}^2 A_{1i}B_{i2}\\\\
+		       &=& A_{11}B_{12}+A_{12}B_{22}\\\\
+		       &=& a\cdot f + b\cdot h\\\\
+	    \end{array}\\\\
+	    \hline
+	    \begin{array}{rcl}
+		C_{21} &=& \displaystyle \sum_{i=1}^2 A_{2i}B_{i1}\\\\
+		       &=& A_{21}B_{11}+A_{22}B_{21}\\\\
+		       &=& c\cdot e + d\cdot g\\\\
+	    \end{array}&
+	    \begin{array}{rcl}
+		C_{22} &=& \displaystyle \sum_{i=1}^2 A_{2i}B_{i2}\\\\
+		       &=& A_{21}B_{12}+A_{22}B_{22}\\\\
+		       &=& c\cdot f + d\cdot h\\\\
+	    \end{array}\\\\
+	\end{array}
+	$$
+	$$AB=
+	\left[\begin{array}{rr}
+	    ae+bg & af+bh\\
+	    ce+dg & cf+dh
+	\end{array}\right]
+	$$
+	Luego, $AB=I$ implica que
 
     %-------------------- 8.
     \item Sea

@@ -1762,68 +1762,90 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
     \item Una función $f$ es Lipschitz de orden $\alpha$ en $x$ si existe una constante $C$ tal que
     $$(*)\qquad |f(x)-f(y)|\leq C|x-y|^\alpha$$
     para todo $y$ de un intervalo alrededor de $x$. La función $f$ de Lipschitz de orden $\alpha$ en un intervalo si $(*)$ se verifica para todo $x$ e $y$ del intervalo.
-    \begin{enumerate}[(a)]
+	\begin{enumerate}[(a)]
 
-	%---------- (a)
-	\item Si $f$ es Lipzchitz de orden $\alpha>0$ en $x$, entonces $f$ es continua en $x$.\\\\
-	    Demostración.-\; Ya que $f$ es una función de Lipschitz de orden $\alpha>0$ en $x$. Por definición, existe un $\delta'>0$ tal que 
-	    $$|f(x)-f(y)|\leq C|x-y|^\alpha, \mbox{ para todo } y \in (x-\delta',x+\delta')\qquad (1)$$
-	    para alguna constante $C\geq 0$ (dado que $|f(x)-f(y)|,\;|x-y|\geq 0$). Sea $\epsilon>0$, entonces tomamos $0<\delta<\frac{1}{2}\min\left\{\left(\frac{\epsilon}{C}\right)^{\frac{1}{\alpha}},\delta'\right\}$. Por (1) ya que $\delta<\delta'$, tenemos en $y\in(x-\delta,x+\delta)$, que
-	    $$|f(x)-f(y)|\leq C|x-y|^{\alpha}. \qquad (2)$$
-	    Además, vemos que si $y\in (x-\delta,x+\delta)$, entonces
-	    $$|x-y|<2\delta<2\dfrac{1}{2}\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}=\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}.$$
-	    Por lo tanto, por (2) tenemos que
-	    $$|f(x)-f(y)|\leq C |x-y|^{\alpha}<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha = \epsilon.$$
-	    Esto muestra que
-	    \begin{center}
-		$|f(x)-f(y)|<\epsilon$ cuando $|x-y|<\delta$.
-	    \end{center}
-	    Así, $f$ es continua en $x$.\\\\
+	    %---------- (a)
+	    \item Si $f$ es Lipzchitz de orden $\alpha>0$ en $x$, entonces $f$ es continua en $x$.\\\\
+		Demostración.-\; Ya que $f$ es una función de Lipschitz de orden $\alpha>0$ en $x$. Por definición, existe un $\delta'>0$ tal que 
+		$$|f(x)-f(y)|\leq C|x-y|^\alpha, \mbox{ para todo } y \in (x-\delta',x+\delta')\qquad (1)$$
+		para alguna constante $C\geq 0$ (dado que $|f(x)-f(y)|,\;|x-y|\geq 0$). Sea $\epsilon>0$, entonces tomamos $0<\delta<\frac{1}{2}\min\left\{\left(\frac{\epsilon}{C}\right)^{\frac{1}{\alpha}},\delta'\right\}$. Por (1) ya que $\delta<\delta'$, tenemos en $y\in(x-\delta,x+\delta)$, que
+		$$|f(x)-f(y)|\leq C|x-y|^{\alpha}. \qquad (2)$$
+		Además, vemos que si $y\in (x-\delta,x+\delta)$, entonces
+		$$|x-y|<2\delta<2\dfrac{1}{2}\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}=\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}.$$
+		Por lo tanto, por (2) tenemos que
+		$$|f(x)-f(y)|\leq C |x-y|^{\alpha}<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha = \epsilon.$$
+		Esto muestra que
+		\begin{center}
+		    $|f(x)-f(y)|<\epsilon$ cuando $|x-y|<\delta$.
+		\end{center}
+		Así, $f$ es continua en $x$.\\\\
 
 
-	%---------- (b)
-	\item Si $f$ es Lipzchitz de orden $\alpha>0$ en un intervalo, entonces $f$ es uniformemente continua en este intervalo. (Vea el Capítulo 8, Apéndice.)\\\\
-	    Demostración.-\; Sea $\epsilon>0$. Entonces tomemos $0<\delta<\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}$. Ahora ya que $f$ es Lipschitz de orden $\alpha>0$ en $[a,b]$ tenemos que 
-	    \begin{center}
-		$|f(x)-f(y)|\leq C|x-y|^\alpha$, para todo $x,y\in [a,b]. \qquad (3)$
-	    \end{center}
-	    Luego, sea $x,y$ cualesquiera puntos en $[a,b]$ tal que $|x-y|<\delta$. Entonces, vemos por (3), que
-	    $$|f(x)-f(y)|\leq C|x-y|^{\alpha}<C\delta^\alpha<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha=\epsilon,$$
-	    siempre que $|x-y|<\delta$. Así, $f$ es uniformemente continua en $[a,b]$.\\\\
+	    %---------- (b)
+	    \item Si $f$ es Lipzchitz de orden $\alpha>0$ en un intervalo, entonces $f$ es uniformemente continua en este intervalo. (Vea el Capítulo 8, Apéndice.)\\\\
+		Demostración.-\; Sea $\epsilon>0$. Entonces tomemos $0<\delta<\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}$. Ahora ya que $f$ es Lipschitz de orden $\alpha>0$ en $[a,b]$ tenemos que 
+		\begin{center}
+		    $|f(x)-f(y)|\leq C|x-y|^\alpha$, para todo $x,y\in [a,b]. \qquad (3)$
+		\end{center}
+		Luego, sea $x,y$ cualesquiera puntos en $[a,b]$ tal que $|x-y|<\delta$. Entonces, vemos por (3), que
+		$$|f(x)-f(y)|\leq C|x-y|^{\alpha}<C\delta^\alpha<C\left[\left(\dfrac{\epsilon}{C}\right)^{\frac{1}{\alpha}}\right]^\alpha=\epsilon,$$
+		siempre que $|x-y|<\delta$. Así, $f$ es uniformemente continua en $[a,b]$.\\\\
 
-	%---------- (c)
-	\item Si $f$ es diferenciable en $x$, entonces $f$ es Lipzchitz de orden $1$ en $x$. ¿Es cierta la recíproca?.\\\\
-	    Demostración.-\; Como $f$ es una función diferenciable en $x$. Entonces, por definición de diferenciabilidad
-	    $$f'(x)=\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}=l, \mbox{ para algún } l\in \mathbb{R}.$$
-	    Después, por definición de límite,  para todo $\epsilon>0$, existe $\delta>0$ tal que
-	    $$\bigg|\dfrac{f(x)-f(y)}{x-y}-l\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
-	    Luego, por la desigualdad triangular
-	    $$\bigg|\dfrac{f(x)-f(y)}{x-y}-f'(x)\bigg| \geq \bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|.$$
-	    Por tanto,
-	    $$\bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
-	    De ello, se tiene que si $|x-y|<\delta,$ entonces
-	    $$\sqrt{\left(\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\right)^2}<\epsilon \quad \Rightarrow \quad \bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|<\sqrt{\epsilon^2}=|\epsilon|=\epsilon.$$
-	    Lo que implica 
-	    $$|f(x)-f(y)|<\left(|f'(x)|+\epsilon\right)|x-y|\mbox{ siempre que } |x-y|<\delta.$$
-	    Ahora, sea $C\geq\left(|f'(x)|+\epsilon\right)$, de donde
-	    $$|f(x)-f(y)|<C|x-y|\mbox{ siempre que } |x-y|<\delta,$$
-	    por lo tanto, $f$ es Lipschitz de orden $1$ en $x$.\\
-	    El recíproco no es cierto. Por ejemplo se puede tomar la función $f(x)=|x|$. Entonces $f$ es Lipschitz de orden $1$ en cualquier punto $x$, ya que
-	    $$|f(x)-f(y)|=||x|-|y||\leq |x-y|,$$
-	    donde la última desigualdad se cumple a partir de la desigualdad triangular. Pero $f$ no es diferenciable en $0$.\\\\
+	    %---------- (c)
+	    \item Si $f$ es diferenciable en $x$, entonces $f$ es Lipzchitz de orden $1$ en $x$. ¿Es cierta la recíproca?.\\\\
+		Demostración.-\; Como $f$ es una función diferenciable en $x$. Entonces, por definición de diferenciabilidad
+		$$f'(x)=\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}=l, \mbox{ para algún } l\in \mathbb{R}.$$
+		Después, por definición de límite,  para todo $\epsilon>0$, existe $\delta>0$ tal que
+		$$\bigg|\dfrac{f(x)-f(y)}{x-y}-l\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
+		Luego, por la desigualdad triangular
+		$$\bigg|\dfrac{f(x)-f(y)}{x-y}-f'(x)\bigg| \geq \bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|.$$
+		Por tanto,
+		$$\bigg|\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\bigg|<\epsilon \mbox{ siempre que } |x-y|<\delta.$$
+		De ello, se tiene que si $|x-y|<\delta,$ entonces
+		$$\sqrt{\left(\bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|\right)^2}<\epsilon \quad \Rightarrow \quad \bigg|\dfrac{f(x)-f(y)}{x-y}\bigg|-|f'(x)|<\sqrt{\epsilon^2}=|\epsilon|=\epsilon.$$
+		Lo que implica 
+		$$|f(x)-f(y)|<\left(|f'(x)|+\epsilon\right)|x-y|\mbox{ siempre que } |x-y|<\delta.$$
+		Ahora, sea $C\geq\left(|f'(x)|+\epsilon\right)$, de donde
+		$$|f(x)-f(y)|<C|x-y|\mbox{ siempre que } |x-y|<\delta,$$
+		por lo tanto, $f$ es Lipschitz de orden $1$ en $x$.\\
+		El recíproco no es cierto. Por ejemplo se puede tomar la función $f(x)=|x|$. Entonces $f$ es Lipschitz de orden $1$ en cualquier punto $x$, ya que
+		$$|f(x)-f(y)|=||x|-|y||\leq |x-y|,$$
+		donde la última desigualdad se cumple a partir de la desigualdad triangular. Pero $f$ no es diferenciable en $0$.\\\\
 
-    
-	%---------- (d)
-	\item Si $f$ es diferenciable en $[a,b]$. ¿es $f$ Lipschiz de orden $1$ en $[a,b]$?.\\\\
-	    Respuesta.-\; Si $f$ es diferenciable en $[a,b]$, entonces $f$ puede no ser Lipschitz de orden $1$ en $[a,b]$. Por ejemplo, sea 
-	    $$f(x)=x^2\sen \dfrac{1}{x^2}.$$
-	    Podemos observar que $f$ es diferenciable en $[0,1]$, pero no es Lipschitz de orden $1$ en $[0,1]$.\\\\
+	
+	    %---------- (d)
+	    \item Si $f$ es diferenciable en $[a,b]$. ¿es $f$ Lipschiz de orden $1$ en $[a,b]$?.\\\\
+		Respuesta.-\; Si $f$ es diferenciable en $[a,b]$, entonces $f$ puede no ser Lipschitz de orden $1$ en $[a,b]$. Por ejemplo, sea 
+		$$f(x)=x^2\sen \dfrac{1}{x^2}.$$
+		Podemos observar que $f$ es diferenciable en $[0,1]$, pero no es Lipschitz de orden $1$ en $[0,1]$.\\\\
 
-	%---------- (e)
-	\item Si $f$ es Lipschitz de orden $\alpha>1$ en $[a,b]$, entonces $f$ es constante en $[a,b]$.\\\\
-	    Demostración.-\;
+	    %---------- (e)
+	    \item Si $f$ es Lipschitz de orden $\alpha>1$ en $[a,b]$, entonces $f$ es constante en $[a,b]$.\\\\
+		Demostración.-\; Sea $f$ una función Lipschitz de orden $\alpha>1$ en $[a,b]$. Entonces,tenemos que mostrar que $f$ es constante en $[a,b]$. Por definición de función Lipschitz se tiene,
+		$$|f(x)-f(y)|\leq C|x-y|^\alpha, \; \mbox{para todo }x,y\in[a,b]$$
+		con $C\geq 0$ constante. Como $|f(x)-f(y)|\leq |x-y|^{\alpha}$ para $\alpha>1$ tenemos
+		$$\dfrac{|f(x)-f(y)|}{|x-y|}\leq |x-y|^{\alpha-1},\; \mbox{para } \alpha>1$$
+		Que equivale a,
+		$$0\leq \dfrac{|f(x)-f(y)|}{|x-y|}\leq |x-y|^\beta,\mbox{ para }\beta>0.$$
+		Del problema 13 del capítulo 5 de Spivak, 
+		$$\lim_{y\to x}\dfrac{|f(x)-f(y)|}{|x-y|}=0.$$
+		De donde,
+		$$\bigg|\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}\bigg|=0,$$
+		lo que implica
+		$$\lim_{y\to x}\dfrac{f(x)-f(y)}{x-y}=0.$$
+		Por lo tanto, 
+		$$f'(x)=0$$
+		y $f$ es una función constante.\\\\
 
-    \end{enumerate}
+	\end{enumerate}
+
+    %-------------------- 38.
+    \item Demuestre que si
+    $$\dfrac{a_0}{1}+\dfrac{a_1}{2}+\ldots+\dfrac{a_n}{n+1}=0,$$
+    entonces
+    $$a_0+a_1x+\ldots + a_n x^n = 0$$
+    para algún $x$ de $(0,1)$.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
 

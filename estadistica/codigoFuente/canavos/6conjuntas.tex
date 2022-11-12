@@ -313,6 +313,14 @@ Es interesante notar que, a pesar de que $\rho=0$ es una condición necesaria de
 
 Donde, $f_X(x)$ e $f_Y(y)$ son las  densidad normales univariadas de $X$ e $Y$, respectivamente.\\\\
 
+Se puede demostrar que, mediante el empleo de la definición 6.8 e integrando con respecto a $y$, la densidad marginal de $X$ es normal con media $u_X$ y varianza $\sigma_X^2$. De manera similar, la densidad marginal de $Y$ es normal con media $\mu_Y$ y varianza $\sigma_Y^2$. por la definición 6.7, la densidad de probabilidad condicional de $X$ dado el valor $y$ de $Y$ es
+$$f(x|y) = \dfrac{1}{\sqrt{2\pi \sigma_X^2(1-\rho^2)}}\times e^{\left\{-\dfrac{1}{2\sigma_X^2(1-\rho^2)}\left[x-\mu_X - \dfrac{\rho \sigma_X}{\sigma_Y}(y-\mu_Y)\right]^2\right\}}.$$
+Esta expresión es una función de densidad de probabilidad normal con 
+\begin{center}
+    $E(X|y)=\mu_X + \dfrac{\rho \sigma_X}{\sigma_Y}(y-\mu_Y)\quad $ y $\quad Var(X|y)=\sigma_X^2(1-\rho)^2$. 
+\end{center}
+
+Se puede obtener una expresión similar para la densidad condicional de $Y$ dado el valor $x$ de $X$.
 
 
 
