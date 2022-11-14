@@ -1012,8 +1012,126 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 	\vspace{.5cm}
 
     %------------------ 13.
-    \item 
+    \item $\displaystyle\int x^{n-1}\sen x^n \; dx$.\\\\
+	Respuesta.-\; Sea,
+	$$u=x^n \quad \Rightarrow \quad du=nx^{n-1}\; dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int x^{n-1} \sen x^n \; dx &=& \dfrac{1}{n} \displaystyle\int \sen u \; du\\\\
+						     &=& -\dfrac{1}{n} \cos u + C\\\\
+						     &=& -\dfrac{1}{n} \cos x^n + C.
+	\end{array}$$
+	\vspace{.5cm}
 
+    %------------------ 14.
+    \item $\displaystyle\int  \dfrac{x^5\; dx}{\sqrt{1-x^6}}$.\\\\
+	Respuesta.-\; Sea,
+	$$u=1-x^6\quad \Rightarrow \quad du=-6x^5\; dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle \int \dfrac{x^5}{\sqrt{1-x^6}}&=& -\dfrac{1}{6}\displaystyle\int u^{-\frac{1}{2}}\; du\\\\
+						       &=&-\dfrac{1}{3}u^{\frac{1}{2}}+C\\\\
+						       &=& -\dfrac{1}{3}\left(1-x^6\right)^{\frac{1}{2}} + C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 15.
+    \item $\displaystyle\int t(1+t)^{\frac{1}{4}}\; dt$.\\\\
+	Respuesta.-\; Sea,
+	$$u=1+t\quad \Rightarrow \quad du=dt.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int t(1+t)^{\frac{1}{4}}\; dt &=& \displaystyle\int (u-1)u^{\frac{1}{4}}\; du\\\\
+							&=& \displaystyle\int u^{\frac{5}{4}}\; du - \int u^{\frac{1}{4}} \; du\\\\
+							&=& \dfrac{4}{9}u^{\frac{9}{4}} - \dfrac{4}{5}u^{\frac{5}{4}} + C\\\\
+							&=& \dfrac{4}{9}\left(1+t\right)^{\frac{9}{4}} - \dfrac{4}{5}\left(1+t\right)^{\frac{5}{4}} + C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 16.
+    \item $\displaystyle\int (x^2+1)^{-\frac{3}{2}}\; dx$.\\\\
+	Respuesta.-\; Sea, 
+	$$u=\left(x^2+1\right)^{-\frac{1}{2}}\quad \Rightarrow \quad du=-x\left(x^2+1\right)^{-\frac{3}{2}}\; dx.$$
+	De donde,
+	$$x=\dfrac{\sqrt{1-u^2}}{u}.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int (x^2+1)^{-\frac{3}{2}}\; dx &=& \displaystyle\int -\dfrac{1}{x}\; du\\\\
+							  &=&\displaystyle\int \dfrac{-u}{\sqrt{1-u^2}}\; du.
+	\end{array}$$
+	Luego, sustituimos por segunda vez
+	$$v=1-u^2\quad \Rightarrow \quad dv=-2u\; du$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int \dfrac{-u}{\sqrt{1-u^2}}\; du &=& \dfrac{1}{2}\displaystyle\int \dfrac{1}{\sqrt{v}}\; dv\\\\
+							    &=&\sqrt{v}+C\\\\
+							    &=&\sqrt{1-u^2}+C\\\\
+							    &=&\sqrt{1-\dfrac{1}{x^2+1}}+C\\\\
+							    &=&\dfrac{x}{\sqrt{x^2+1}}+C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 17.
+    \item $\displaystyle\int x^2(8x^3+27)^{\frac{2}{3}} \; dx$.\\\\
+	Respuesta.-\; Sea,
+	$$u=8x^3+27\quad \Rightarrow \quad du=24x^2\; dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int x^2\left(8x^3+27\right)\; dx &=&\dfrac{1}{24} \displaystyle\int u^{\dfrac{2}{3}}\; du\\\\
+							   &=&\dfrac{1}{40}u^{\frac{5}{3}}+C\\\\
+							   &=& \dfrac{1}{40}\left(8x^3+27\right)^{\frac{5}{3}}+C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 18.
+    \item $\displaystyle\int \dfrac{(\sen x + \cos x)\; dx}{(\sen x - \cos x)^{\frac{1}{3}}} $.\\\\
+	Respuesta.-\; Sea,
+	$$u=\sen x - \cos x\quad \Rightarrow \quad du=\sen x + \cos x\; dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\sen x + \cos x}{(\sen x - \cos x)^{\frac{1}{3}}}\; dx &=& \displaystyle\int u^{-\frac{1}{3}}\; du\\\\
+											    &=& \dfrac{3}{2}u^{\frac{2}{3}}+C\\\\
+											    &=& \dfrac{3}{2}\left(\sen x - \cos x\right)^{\frac{2}{3}}+C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 19.
+    \item $\displaystyle\int \dfrac{x\; dx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}} \; dx$.\\\\
+	Respuesta.-\; Simplifiquemos la integral como sigue,
+	$$\begin{array}{rcl}
+	    \displaystyle\int \dfrac{x\; dx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}} &=& \displaystyle\int \dfrac{x\; dx}{\sqrt{\left(1+x^2\right)\left(1+\sqrt{1+x^2}\right)}}\\\\
+									    &=& \displaystyle\int \dfrac{x\; dx}{\left(\sqrt{1+x^2}\right)\left(\sqrt{1+\sqrt{1+x^2}}\right)}.\\\\
+	\end{array}$$
+	Ahora, sea
+	$$u=\sqrt{1+x^2}\quad \Rightarrow \quad du=\dfrac{x\; dx}{\sqrt{1+x^2}}.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int \dfrac{x\; dx}{\left(\sqrt{1+x^2}\right)\left(\sqrt{1+\sqrt{1+x^2}}\right)} &=& \displaystyle\int u^{-\frac{1}{2}}\; du\\\\
+														      &=&2u^{\frac{1}{2}} +C\\\\
+																					      &=&2\sqrt{1+\sqrt{1+x^2}} + C.
+	\end{array}$$
+
+
+
+    %------------------ 20.
+    \item $\displaystyle\int \dfrac{\left(x^2+1-2x\right)^{\frac{1}{5}}\; dx}{1-x} $.\\\\
+	Respuesta.-\; Simplificando la integral, tenemos
+	$$\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\left(x^2+1-2x\right)^{\frac{1}{5}}}{1+x}\; dx &=& \displaystyle\int \dfrac{(x-1)^{\frac{2}{5}}}{1-x}\; dx\\\\
+										    &=&-\displaystyle\int (x-1)^{-\frac{3}{5}}\; dx.
+	\end{array}$$
+	Ahora, sea
+	$$u=x-1\quad \Rightarrow \quad du=dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    -\displaystyle\int (x-1)^{-\frac{3}{5}}\; dx &=& -\displaystyle\int u^{-\frac{3}{5}}\; du\\\\
+	    										      &=&- \dfrac{5}{2}u^{\frac{2}{5}}+C\\\\
+											      &=&- \dfrac{5}{2}\left(x-1\right)^{\frac{2}{5}}+C.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 21.
+    \item 
 
 
 \end{enumerate}

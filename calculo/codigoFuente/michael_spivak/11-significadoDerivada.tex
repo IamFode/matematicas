@@ -1845,7 +1845,19 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
     entonces
     $$a_0+a_1x+\ldots + a_n x^n = 0$$
     para algún $x$ de $(0,1)$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Consideremos la función $f:(0,1)\to (0,1)$ definida por:
+	$$f(x)=a_0x+\dfrac{a_1x^2}{2}+\ldots+\dfrac{a_nx^{n+1}}{n+1}.$$
+	Entonces, vemos que al ser una función polinomial $f$ es diferenciable en $(0,1)$. Es más,
+	$$f(0)=0=f(1)=\dfrac{a_0}{1}+\dfrac{a_1}{2}+\ldots + \dfrac{a_n}{n+1}.$$
+	Donde la última igualdad se cumple a partir de la hipótesis. Así, aplicando el teorema de Rolle a $f$ en $(0,1)$ se tiene
+	$$f'(x)=0$$
+	para algún $x\in(0,1)$. Ahora bien, calculamos que
+	$$f'(x)=a_0+a_1x+\ldots + a_n x^n.$$
+	Lo que completa la demostración.\\\\
+
+    %-------------------- 39.
+    \item 
+
 
 \end{enumerate}
 

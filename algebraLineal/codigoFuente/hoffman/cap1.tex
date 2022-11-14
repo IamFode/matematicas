@@ -2451,7 +2451,102 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 	    C_{21} & C_{22}
     \end{array}\right]$$
     una matriz $2\times 2$. Se desea saber si es posible encontrar matrices $2\times 2$, $A$ y $B$, tales que $C=AB-BA$. Demostrar que tales matrices pueden hallarse si, y sólo si $C_{11}+C_{22}=0.$\\\\
-	Demostración.-\;
+	Demostración.-\; Sea,
+	$$
+	A=
+	\left[\begin{array}{rr}
+		a_{11} & b_{12}\\
+		a_{21} & a_{22}
+	\end{array}\right],
+	\quad \mbox{y}\quad 	
+	B=
+	\left[\begin{array}{rr}
+		b_{11} & b_{12}\\
+		b_{21} & b_{22}
+	\end{array}\right]
+	$$
+	tal que $C=AB-BA$. Ahora,
+	$$
+	AB=
+	\left[\begin{array}{rr}
+	    a_{11} & a_{12}\\
+	    a_{21} & a_{22}
+	\end{array}\right]
+	\left[\begin{array}{rr}
+	    b_{11} & b_{12}\\
+	    b_{21} & b_{22}
+	\end{array}\right]
+	=
+	\left[\begin{array}{rr}
+	    a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22}\\
+	    a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22}
+	\end{array}\right]
+	$$
+	y
+	$$
+	BA = 
+	\left[\begin{array}{rr}
+	    b_{11} & b_{12}\\
+	    b_{21} & b_{22}
+	\end{array}\right]
+	\left[\begin{array}{rr}
+	    a_{11} & a_{12}\\
+	    a_{21} & a_{22}
+	\end{array}\right]
+	=
+	\left[\begin{array}{rr}
+	    b_{11}a_{11}+b_{12}a_{21} & b_{11}a_{12}+b_{12}a_{22}\\
+	    b_{21}a_{11}+b_{22}a_{21} & b_{21}a_{12}+b_{22}a_{22}
+	\end{array}\right]
+	$$
+	Luego,
+	$$
+	\begin{array}{rcl}
+	    AB-BA &=& 
+	    \left[\begin{array}{rr}
+		a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22}\\
+		a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22}
+	    \end{array}\right]
+	    -
+	    \left[\begin{array}{rr}
+		b_{11}a_{11}+b_{12}a_{21} & b_{11}a_{12}+b_{12}a_{22}\\
+		b_{21}a_{11}+b_{22}a_{21} & b_{21}a_{12}+b_{22}a_{22}
+	    \end{array}\right]\\\\
+	    &=& 
+	    \left[\begin{array}{rr}
+		    a_{12}b_{21}-b_{12}a_{21} & a_{11}b_{12}+a_{12}b_{22}-b_{11}a_{12}-b_{12}a_{22}\\
+		    a_{21}b_{11}+a_{22}b_{21}-b_{21}a_{11}-b_{22}a_{21} &a_{21}b_{12}-b_{21}a_{12}
+	    \end{array}\right]\\\\
+	\end{array}
+	$$
+	Después,
+	$$
+	\begin{array}{rcl}
+	    C &=& AB-BA\\\\ 
+	    \left[\begin{array}{rr}
+		C_{11} & C_{12}\\
+		C_{21} & C_{22}
+	    \end{array}\right]
+		&=&
+	    \left[\begin{array}{rr}
+		    a_{12}b_{21}-b_{12}a_{21}-b_{12}a_{21} & a_{11}b_{12}+a_{12}b_{22}-b_{11}a_{12}-b_{12}a_{22}\\
+		    a_{21}b_{11}+a_{22}b_{21}-b_{21}a_{11}-b_{22}a_{21} &a_{21}b_{12}-b_{21}a_{12}
+	    \end{array}\right]
+	\end{array}
+	$$
+	De donde,
+
+	$$\left\{
+	    \begin{array}{rcl}
+		c_{11}&=&a_{12}b_{21}-b_{12}a_{21}\\
+		c_{22}&=&a_{21}b_{12}-b_{21}a_{12}
+	    \end{array}
+	\right. 
+	\quad \Rightarrow \quad 
+	c_{11}+c_{22}=a_{12}b_{21}-b_{12}a_{21}+a_{21}b_{12}-b_{21}a_{12} = 0
+	$$
+
+	Por lo tanto, las matrices $A$ y $B$ existe, si y sólo si la suma de las entradas diagonales de $C$ suman cero.\\\\
 
 \end{enumerate}
 
