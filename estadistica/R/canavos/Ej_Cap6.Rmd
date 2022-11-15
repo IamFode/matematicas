@@ -620,3 +620,45 @@ Respuesta.-
 
 ## 6.17.
 Supóngase que el gerente de una planta descubre 
+
+## 6.18
+
+## 6.19
+La función de densidad conjunta de probabilidad para la demanda mensual de dos productos es una distribución normal bivariada dada por
+$$f(x,y)=\dfrac{1}{100\pi\sqrt{3}}e^{\left\{-\dfrac{2}{3}\left[\left(\dfrac{x-50}{10}\right)^2-\left(\dfrac{x-50}{10}\right)\left(\dfrac{y-25}{10}\right)+\left(\dfrac{y-25}{10}\right)^2\right]\right\}}$$
+
+### a) ¿Cuál es el coeficiente de correlación entre X e Y?.
+
+Respuesta.-
+
+### b) ¿Cuál es la covarianza entre X e Y?.
+
+Respuesta.-
+
+### c) Obtener la función de densidad de probabilidad condicional f(x|y).
+
+Respuesta.-
+
+### d) Supóngase que la demanda de $Y$ es 30. ¿Cuál es la probabilidad condicional de que $X$ sea mejor que 65?
+
+Respuesta.-
+
+
+## 6.20.
+Supóngase que el $CI(X)$ y la calificación promedio de estudiantes no gruadados de licenciatura $Y$ son variables aleatorias que se encuentran distribuidas de manera conjunta como una distribución normal bivariada $\mu_X=100,\; \sigma_X=10, \; \mu_Y=3,\; \sigma_Y=0.3$ y $Cov(X,Y)=2.25$.
+
+### a)
+Si algún estudiante posee un CI de $120$ ¿cuáles son los valores de la media y la desviación estándar condicionales para $Y$?.
+
+Respuesta.-
+
+### b)
+Dado que el CI es $120$, obtener la probabilidad de que $Y$ sea mayor de $3.5$.
+
+Respuesta.-
+
+### c)
+Supóngase que la calificación promedio de un estudiante es $2.8$. ¿Cuál es la probabilidad de que esta persona tenga un CI mayor de $115$?.
+
+Respuesta.-
+
