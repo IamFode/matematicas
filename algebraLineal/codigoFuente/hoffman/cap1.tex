@@ -2391,7 +2391,48 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
     %-------------------- 6.
     \item Sea $A$ una matriz $m\times n$ y $B$ una matriz $n\times k$. Demostrar que las columnas de $C=AB$ sea combinaciones lineales de las columnas de $A$. Si $\alpha_1,\ldots , \alpha_n$ son las columnas de $A$ y $\gamma_1,\ldots , \gamma_k$ son las columnas de $C$, entonces
     $$\gamma_i = \sum_{r=1}^n B_{rj}\alpha_{r}.$$\\
-	Demostración.-\; 
+	Demostración.-\; Por definición de multiplicación de matrices, tenemos
+	$$
+	\begin{array}{rcl}
+	\gamma_j &=& 
+	\left\{\begin{array}{*{7}{c}}
+		A_{11}B_{1j} &+& A_{12}B_{2j} &+& \cdots &+& A_{1n}B_{nj}\\
+		A_{21}B_{1j} &+& A_{22}B_{2j} &+& \cdots &+& A_{2n}B_{nj}\\
+			     &&&\vdots&&&\\
+		A_{m1}B_{1j} &+& A_{m2}B_{2j} &+& \cdots &+& A_{mn}B_{nj}
+	\end{array}\right.\\\\
+	&=&
+	B_{ij}
+	\left[\begin{array}{c}
+		A_{11}\\
+		A_{21}\\
+		\vdots \\
+		A_{m1}
+	\end{array}\right]
+	+
+	B_{2j}
+	\left[\begin{array}{c}
+		A_{12}\\
+		A_{22}\\
+		\vdots \\
+		A_{m2}
+	\end{array}\right]
+	+ \ldots + 
+	B_{nj}
+	\left[\begin{array}{c}
+		A_{1n}\\
+		A_{2n}\\
+		\vdots \\
+		A_{mn}
+	\end{array}\right]\\\\
+	&=&
+	B_{1j}\alpha_1 + B_{2j}\alpha_2 + \cdots + B_{nj}\alpha_n\\\\
+	&=&
+	\sum_{r=1}^n B_{rj}\alpha_{r}
+	\end{array}
+	$$
+
+	Por lo tanto, las columnas de $C=AB$ son combinaciones lineales de las columnas de $A$.\\\\
 
 
     %-------------------- 7.
@@ -2442,7 +2483,79 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 	    ce+dg & cf+dh
 	\end{array}\right]
 	$$
-	Luego, $AB=I$ implica que
+	Luego, $AB=I$ implica el siguiente sistema en $u,r,s,t$ tiene una solución
+	$$
+	\left\{
+	    \begin{array}{rcr}
+		au+bs &=& 1\\
+		cu+ds &=& 0\\
+		ar+bt &=& 0\\
+		cr+dt &=& 1
+	    \end{array}
+	\right.
+	$$
+	Ya que $(x,y,z,w)$ es una de esas soluciones. La matriz de coeficientes aumentada de este sistema es
+	$$
+	\left[\begin{array}{rrrr|r}
+	    a & 0 & b & 0 & 1\\
+	    c & 0 & d & 0 & 0\\
+	    0 & a & 0 & b & 0\\
+	    0 & c & 0 & d & 1
+	\end{array}\right]
+	$$
+	Mientras que $ad-bd\neq 0$ este sistema se reduce por filas a la siguiente forma escalonada reducida por filas
+	$$
+	\left[\begin{array}{rrrr|r}
+	    1 & 0 & 0 & 0 & \frac{d}{ad-bc}\\
+	    0 & 1 & 0 & 0 & \frac{-b}{ad-bc}\\
+	    0 & 0 & 1 & 0 & \frac{-c}{ad-bc}\\
+	    0 & 0 & 0 & 1 & \frac{a}{ad-bc}
+	\end{array}\right] \qquad (3)
+	$$
+	De donde, necesariamente $x=\dfrac{d}{ad-bc}$, $y=\dfrac{-b}{ad-bc}$, $z=\dfrac{-c}{ad-bc}$ y $w=\dfrac{a}{ad-bc}$. De este modo
+	$$
+	B=
+	\left[\begin{array}{rr}
+		\frac{d}{ad-bc} & \frac{-b}{ad-bc}\\
+		\frac{-c}{ad-bc} & \frac{a}{ad-bc}
+	\end{array}\right].
+	$$
+	Ahora, comprobaremos que 
+	$$
+	\left[\begin{array}{rr}
+		\frac{d}{ad-bc} & \frac{-b}{ad-bc}\\
+		\frac{-c}{ad-bc} & \frac{a}{ad-bc}
+	\end{array}\right]
+	\cdot
+	\left[\begin{array}{rr}
+		a & b\\
+		c & d
+	\end{array}\right]
+	=
+	\left[\begin{array}{rr}
+		1 & 0\\
+		0 & 1
+	\end{array}\right].
+	$$
+	Por otro lado, debemos ver que si $AB=I$ entonces $ad-bc\neq 0$. Sea $ad-bc=0$, por lo que demostraremos que no hay solución para (3), lo que contradice el hecho de que $(x,y,z,w)$ es una solución. Si $a=b=c=d=0$, entonces obviamente $AB\neq I$. Así, supongamos que $a\neq 0$ (porque mediante operaciones de fila elementales podemos mover cualquiera de los cuatro elementos para que sea la entrada superior izquierda). Restar $\frac{c}{a}$ veces la tercera fila de la cuarta fila de (3) da
+	$$
+	\left[\begin{array}{rrrr|r}
+	    a & 0 & b & 0 & 1\\
+	    c & 0 & d & 0 & 0\\
+	    0 & a & 0 & b & 0\\
+	    0 & c-\frac{c}{a}a & 0 & d-\frac{c}{a}b & 1
+	\end{array}\right]
+	$$
+	Ahora, $c-\dfrac{c}{a}a=0$,  $ad-bc=0$, además $d-\dfrac{c}{a}b=0$. Así obtenemos
+	$$
+	\left[\begin{array}{rrrr|r}
+	    a & 0 & b & 0 & 1\\
+	    c & 0 & d & 0 & 0\\
+	    0 & a & 0 & b & 0\\
+	    0 & 0 & 0 & 0 & 1
+	\end{array}\right]
+	$$
+	se sigue que (3) no tiene solución.\\\\
 
     %-------------------- 8.
     \item Sea

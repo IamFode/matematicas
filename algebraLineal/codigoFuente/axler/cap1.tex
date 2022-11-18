@@ -1074,7 +1074,7 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
     \item Demostrar que la unión de tres subespacios de $V$ es un subespacio de $V$ si y sólo si uno de los subespacios contiene a los otros dos. [Este ejercicio es sorprendentemente más difícil que el anterior, posiblemente porque este ejercicio no es cierto si sustituimos F por un campo que contenga sólo dos elementos].\\\\
 	Demostración.-\; Sean $U_1,U_2,U_3$ subespacios de $V$ y $E=U_1\cup U_2 \cup U_3$ un subespacio de $V$. Primero, suponga que ningún subespacio es un subconjunto de ninguno de los otros dos. Entonces, podemos elegir $w\in U_1$, con $w\notin U_2$ y $x\in U_2$ con $x\notin U_1$. Como $x,w\in E$, sabemos que $(w+x)\in E$ y $(w-x)\in E$, es un subespacio. Si $(w+x)\in U_1$, entonces $(w+x)-w=x\in U_1$, que es una contradicción. Si $(w+x)\in U_2$, entonces $(w+x)-x=w\in U_2$, también vemos que es un contradicción. Así, debemos tener $w+x\in U_3$.\\
 	Por otro lado, si $w-x\in U_1$, entonces $(w-x)-w=-x\in U_1$, lo que es imposible. Si $w-x\in U_2$, entonces $(w-x)+x=w\in U_2$, también es imposible. Así, $(w-x)\in U_3$. Pero $(w-x)+(w+x)=2w\in U_3$, que implica $w\in I_3$ lo que es una contradicción. Por lo tanto, este caso es imposible y al menos un subespacio debe ser un subconjunto de otro.\\
-	Si $U_1\subseteq U_2$, entonces $U_1\cup U_2=U_2$ es un subespacio, esto por el ejercicio anterior y ya que $E=U_1\cup U_2\cup U_3=u_2\cup U_3$ es un subespacio, ya que $U_2,$ o $U_3\subseteqU_2$ (por el ejercicio anterior.) E el primer caso, $U_1$ y $U_2$ son un subconjunto de $U_3$ y en el segundo caso $U_1$ y $U_3$ son un subconjunto de $U_2$. \\
+	Si $U_1\subseteq U_2$, entonces $U_1\cup U_2=U_2$ es un subespacio, esto por el ejercicio anterior y ya que $E=U_1\cup U_2\cup U_3=u_2\cup U_3$ es un subespacio, ya que $U_2,$ o $U_3\subseteq U_2$ (por el ejercicio anterior.) E el primer caso, $U_1$ y $U_2$ son un subconjunto de $U_3$ y en el segundo caso $U_1$ y $U_3$ son un subconjunto de $U_2$. \\
 	Por el contrario, suponga que  $U_1 \cup U_2 \subseteq U_3$.  Entonces $U_1 \cup U_2 \cup U_3 = U_3$, y la unión es un subespacio.\\\\
 
     %-------------------- 14.
@@ -1088,10 +1088,17 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 	por lo tanto $\left\{x,x,y,z:x,y,z\in \textbf{F}^4\right\}\subset U+W$. Combinando esto con el argumento anterior, se sigue que $U+W=\left\{(x,x,y,z):x,y,z \in \textbf{F}\right\}$.\\\\
 
     %-------------------- 15.
+    \item Supongamos que $U$ es un subespacio de $V$. ¿Qué es $U+U$?.\\\\
+	Respuesta.-\; Sea,
+	$$U+U=\left\{u+v:u,v\in U\right\}.$$
+	Esto significa que $U\subset U+U$, ya que $u\in U$ y $u$ es igual $u+0$. Luego, podríamos expresar $u$ como una suma de $2$ elementos de $U$. Por otro lado, $U+U\subset U$ ya que la suma de los dos elementos de $U$ podrían ser un elemento de $U$. Por lo tanto, $U+U=U$.\\\\
+
+    %-------------------- 16.
+    \item ¿La operación de adición en los subespacios de $V$ es conmutativa? En otras palabras, si $U$ y $W$ son subespacios de $V$, ¿es $U + W = W + U$?.\\\\
+	Respuesta.-\; Sea $x\in U$ e $y\in W$. Ya que la adición en $V$ es conmutativa, tenemos $x+y=y+e\in W+U$. Esto implica que $U+W\subset W+U$. Similarmente tenemos que $W+U\subset U+W$. Por lo tanto $U+W=W+U.$\\\\
+
+    %-------------------- 17.
     \item 
-
-
-
 
 
 \end{enumerate}

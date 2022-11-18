@@ -987,6 +987,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 11.
     \item $\displaystyle\int \dfrac{\sen x \; dx}{\sqrt{\cos^3 x}}$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=\cos x \quad \Rightarrow \quad du=-\sen x \; dx.$$
 	Entonces,
@@ -999,6 +1000,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 12.
     \item $\displaystyle\int_3^8 \dfrac{\sen \sqrt{x+1}\; dx}{\sqrt{x+1}}$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=\sqrt{x+1}\quad \Rightarrow \quad du=\dfrac{1}{2}(x+1)^{-\frac{1}{2}}\; dx.$$
 	Por el teorema 1.4,
@@ -1013,6 +1015,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 13.
     \item $\displaystyle\int x^{n-1}\sen x^n \; dx$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=x^n \quad \Rightarrow \quad du=nx^{n-1}\; dx.$$
 	Entonces,
@@ -1025,6 +1028,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 14.
     \item $\displaystyle\int  \dfrac{x^5\; dx}{\sqrt{1-x^6}}$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=1-x^6\quad \Rightarrow \quad du=-6x^5\; dx.$$
 	Entonces,
@@ -1037,6 +1041,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 15.
     \item $\displaystyle\int t(1+t)^{\frac{1}{4}}\; dt$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=1+t\quad \Rightarrow \quad du=dt.$$
 	Entonces,
@@ -1050,6 +1055,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 16.
     \item $\displaystyle\int (x^2+1)^{-\frac{3}{2}}\; dx$.\\\\
+
 	Respuesta.-\; Sea, 
 	$$u=\left(x^2+1\right)^{-\frac{1}{2}}\quad \Rightarrow \quad du=-x\left(x^2+1\right)^{-\frac{3}{2}}\; dx.$$
 	De donde,
@@ -1073,6 +1079,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 17.
     \item $\displaystyle\int x^2(8x^3+27)^{\frac{2}{3}} \; dx$.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=8x^3+27\quad \Rightarrow \quad du=24x^2\; dx.$$
 	Entonces,
@@ -1085,6 +1092,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 18.
     \item $\displaystyle\int \dfrac{(\sen x + \cos x)\; dx}{(\sen x - \cos x)^{\frac{1}{3}}} $.\\\\
+
 	Respuesta.-\; Sea,
 	$$u=\sen x - \cos x\quad \Rightarrow \quad du=\sen x + \cos x\; dx.$$
 	Entonces,
@@ -1097,6 +1105,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 19.
     \item $\displaystyle\int \dfrac{x\; dx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}} \; dx$.\\\\
+
 	Respuesta.-\; Simplifiquemos la integral como sigue,
 	$$\begin{array}{rcl}
 	    \displaystyle\int \dfrac{x\; dx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}} &=& \displaystyle\int \dfrac{x\; dx}{\sqrt{\left(1+x^2\right)\left(1+\sqrt{1+x^2}\right)}}\\\\
@@ -1115,6 +1124,7 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 
     %------------------ 20.
     \item $\displaystyle\int \dfrac{\left(x^2+1-2x\right)^{\frac{1}{5}}\; dx}{1-x} $.\\\\
+
 	Respuesta.-\; Simplificando la integral, tenemos
 	$$\begin{array}{rcl}
 	    \displaystyle\int \dfrac{\left(x^2+1-2x\right)^{\frac{1}{5}}}{1+x}\; dx &=& \displaystyle\int \dfrac{(x-1)^{\frac{2}{5}}}{1-x}\; dx\\\\
@@ -1131,7 +1141,62 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 	\vspace{.5cm}
 
     %------------------ 21.
+    \item Deducir las fórmulas de los teoremas 1.18 y 1.19 por medio del método de sustitución.\\\\
+	Demostración.-\; Deduzcamos el teorema 1.18 (invarianza bajo traslación). Para una función $f$ integrable en un intervalo $[a,b]$ y para todo $c\in \mathbb{R}$, tenemos
+	$$\int_a^b f(x)\; dx = \int_{a+c}^{b+c}f(x-c)\; dx.$$
+	Si $P$ es una primitiva de $f$, entonces
+	$$\int_a^b f(x)\; dx = P(b)-P(a).$$
+	Sea,
+	$$u=g(x)=x-c\quad \Rightarrow \quad du=g'(x)\; dx = dx.$$
+	Así,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_{a+c}^{b+c} f(x-c)\; dx &=& \displaystyle\int_{a+c}^{b+c} f\left[g(x)\right]g´(x)\; dx\\\\
+						      &=& P\left[g(b+c)\right]-P\left[g(a+c)\right]\\\\
+						      &=& P(b)-P(a).
+	\end{array}$$
+	De donde se deduce que
+	$$\int_a^b f(x)\; dx = \int_{a+c}^{b+c}f(x-c)\; dx.$$
+
+	Ahora, desduzcamos el teorema 1.19 (Expansión o contracción del intervalo de integración). Para una función $f$ integrable en un intervalo $[a,b]$ y para todo $k\in \mathbb{R}$ distinto de $0$, se tiene
+	$$\int_a^b f(x)=\dfrac{1}{k}\int_{ka}^{kb}f\left(\dfrac{x}{k}\right)\; dx.$$
+	Sea,
+	$$u=g(x)=\dfrac{x}{k}\quad \Rightarrow\quad du=g'(x)\; du=\dfrac{1}{k}\; dx.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \dfrac{1}{k}\displaystyle\int_{ka}^{kb} f\left(\dfrac{x}{k}\right)\; dx\\\\
+	    &=& \displaystyle\int_{ka}^{kb} f\left[g(x)\right]g'(x)\; dx\\\\
+	    &=&\displaystyle\int_{g(ka)}^{g(kb)} f(u)\; du\\\\
+	    &=&P\left[g(b)\right]-P\left[g(a)\right]\\\\
+	    &=& P(b)-P(a).
+	\end{array}$$
+
+	Así,
+
+	$$\int_a^b f(x)=\dfrac{1}{k}\int_{ka}^{kb}f\left(\dfrac{x}{k}\right)\; dx.$$\\
+
+
+    %------------------ 22.
+    \item Sea
+    $$F(x,a)=\int_0^x \dfrac{t^q}{(t^2+q^2)^q}\; dt,$$
+    donde $a>0$ y $p$ y $q$ son enteros positivos. Demostrar que $F(x,a)=a^{p+1-2q}F(x/a,1)$.\\\\
+	Respuesta.-\; Sea,
+	$$u=\dfrac{t}{a}\quad \Rightarrow \quad du=\dfrac{1}{a}\; dt.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_0^x \dfrac{t^p}{(t^2+a^2)^q}\; dt &=&\displaystyle a\int_{u(0)}^{u(x)} \dfrac{u^p a^p}{(u^2a^2+a^2)^q}\; du\\\\
+								&=& \displaystyle a^{p+1} \int_{u(0)}^{u(x)}\dfrac{u^p}{a^{2q}(u^2+1)^q}\; du\\\\
+								&=&a^{p+1-2q}\displaystyle\int_0^{\frac{x}{a}} \dfrac{u^p}{(u^2+1)^q}\; du\\\\
+								&=&a^{p+1-2q} F\left(\dfrac{x}{a},1\right).
+	\end{array}$$
+	\vspace{.5cm}
+
+    %------------------ 23.
     \item 
+
+
+
+
+
 
 
 \end{enumerate}

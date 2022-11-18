@@ -1856,7 +1856,36 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	Lo que completa la demostración.\\\\
 
     %-------------------- 39.
+    \item Demuestre que, cualquiera que sea $m$, la función polinómica $f_m(x) = x 3 - 3x + m$ no tiene nunca dos raíces en $[0, 1]$.(Esto es una consecuencia fácil del Teorema de Rolle. Resulta instructivo, una vez efectuada la demostración analítica, trace las gráficas de $f_0$ y $f_1$, y considerar la posición de la gráfica de $f_m$ en relación con ellas.)\\\\
+	Demostración.-\; Supongamos que $f_m$ tiene dos raíces in $[0,1]$, digamos $x_0$ y $x_1$ con $0\leq x_0<x_1\leq 1$. Entonces se tiene,
+	$$f_m(x_0)=f_m(x_1)=0.$$
+	Además, $f_m$ es diferenciable en $[0,1]$. Aplicando el teorema de Rolle, vemos que existe $x\in(x_0,x_1)$ tal que
+	$$f_m'(x)=0.$$
+	Ya que, $0\leq x_0<x_1\leq 1$ tenemos $x\in(0,1)$. Ahora, calculamos $f_m'(x)$ de donde,
+	$$f_m'(x)=3x^2-2=3\left(x_2-1\right),$$
+	lo que implica que $f_m'(x)=0$, si y sólo si $x=\pm 1$. Pero esto contradice la conclusión de que $x\in (0,1)$. Por lo tanto, la función polinómica $f_m(x)=x^3-3x+m$ no tiene dos raíces en $[0,1]$.\\\\
+
+    %-------------------- 40.
+    \item Suponga que $f$ es continua y diferenciable en $[0, 1]$, que $f(x)$ está en $[0, 1]$ para cada $x$, y que $f(x) \neq 1$ para todo $x$ de $[0, 1]$. Demuestre que existe exactamente un número $x$ en $[0,1]$ tal que $f(x) = x$. (La mitad de este problema ya ha sido resuelta en el Problema 7-11.)\\\\
+	Demostración.-\; Suponga que existe dos números, $x_1$ y $x_2$, en $[0,1]$ tal que $f(x_1)=x_1$ y $f(x_2)=x_2$. Luego, consideremos la función $g:[0,1]\to [0,1]$ definido por la fórmula
+	$$g(x)=f(x)-x.$$
+	Entonces, vemos que $g$ es también diferenciable en $[0,1]$, ya que, tanto la función identidad como $f$ lo son. Además,
+	$$g(x_i)=f(x_i)-x_i=x_i-x_i=0$$
+	para $i=1,2$. Así, por el teorema de Rolle, existe un número $x\in(x_1,x_2)$ tal que
+	$$g'(x)=0.$$
+	Pero, esto implica que
+	$$f'(x)=1$$
+	como,
+	$$g'(x)=f'(x)-1$$
+	el cual contradice la hipótesis. Por lo tanto, mostramos que existe exactamente un número $x\in[0,1]$ tal que $f(x)=x.$\\\\
+
+    %-------------------- 41.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item 
+	\end{enumerate}
 
 
 \end{enumerate}
