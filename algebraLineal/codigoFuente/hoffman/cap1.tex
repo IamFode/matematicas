@@ -2665,3 +2665,39 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 
 
 \section{Matrices inversibles}
+
+\begin{def.}
+    Sea $A$ una matriz (cuadrada) $n\times n$ sobre le cuerpo $F$. Una matriz $n\times n$, $B$, tal que $BA=I$ se llamada \textbf{inversa a la izquierda} de $A$; una matriz $n\times n$, $B$, tal que $AB=I$ se llamada \textbf{inversa a la derecha} de $A$. Si $AB=BA=I,$ entonces $B$ se llama inversa \textbf{bilátera} de $A$, y se dice que $A$ es \textbf{inversible}.
+\end{def.}
+
+\begin{lema}
+    Si $A$ tiene una inversa a la izquierda, $B$, y una inversa a la deracha, $C$, entonces $B=C$.\\\\
+	Demostración.-\; Supóngase que $BA=I$ y que $AC=I$. Entonces,
+	$$B=BI=B(AC)=(BA)C=IC=C.$$
+\end{lema}
+
+Así, si $A$ es inversa a la izquierda e inversa a la dercha, $A$ es inversible y tiene una inversa bílátera que se representará por $A^{-1}$ y se llamará simplemente \textbf{la inversa} de $A$.
+
+\begin{teo}
+    Sean $A$ y $B$ dos matrices $n\times n$ sobre $F$.
+
+    \begin{enumerate}[(i)]
+	\item Si $A$ es inversible, también lo es $A^{-1}$ y $\left(A^{-1}\right)^{-1}=A.$
+	\item Si $A$ y $B$ son inversibles, también lo es $AB$ y $(AB)^{-1}=B^{-1}A^{-1}.$\\
+    \end{enumerate}
+	Demostración.-\; La primera afirmación es evidente por la simetría de la definición. La segunda se desprende de las relaciones 
+	$$(AB)\left(B^{-1}A^{-1}\right)=\left(B^{-1}A^{-1}\right)(AB)=I.$$
+\end{teo}
+
+\begin{cor}
+    Un producto de matrices invresibles es inversibles.
+\end{cor}
+
+\begin{teo}
+    Una matriz elemental es inversible.\\\\
+    	Demostración.-\; Sea $E$ una matriz elemental correspindiente a la operación elemental de fila $e$. Si $e_1$ es la operación inversa de $e$ (teorema 2) y $E_1=e_1(I)$, entonces
+	$$EE_i=e(E_i)=e\left[e_i(I)\right]=I$$
+	y
+	$$E_iE=e_1(E)=e_1\left[e(I)\right]=I$$
+	con lo que $E$ es inversible y $E_1=E^{-1}.$
+\end{teo}
