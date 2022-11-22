@@ -1,0 +1,38 @@
+---
+title: "Ejercicios Capitulo 7"
+author: "Christian Limbert Paredes Aguilera"
+date: "2022-11-21"
+output: pdf_document
+---
+
+# Ejercicios capitulo 6
+
+## 7.1 
+Una forma de mercadotecnia envía un cuestionario a $1000$ residentes de cierto suburbio de una ciudad para determinar sus preferencias como compradores. De los $1000$ residentes, $80$ responden el cuestionario. ¿Lo anterior constituye una muestra aleatoria? Discutir los méritos de este procedimiento para obtener una muestra aleatoria.
+
+## 7.2
+En una planta de armado automotriz se seleccionarán $50$ de los primeros $1000$ automóviles de un nuevo modelo para ser inspeccionados por el departamento de control de calidad. El gerente de la planta decide inspeccionar un automóvil cada vez que terminan de armarse $20$. ¿Este proceso dará como resultado una muestra aleatoria? Comente.
+
+Respuesta.- Dado que el experimento se repite bajo las mismas condiciones, con variables aleatorias independientes e idénticamente distribuidas. Podemos decir que este experimento podría ser sin sesgo.
+
+## 7.3
+Si $X_1,X_2,\ldots,X_n$ constituye una muestra aleatoria, obtener las funciones de verosimilitud de las siguientes distribuciones:
+
+### a)
+De Poisson, con parámetro $\lambda$;
+
+Respuesta.- Sea $p(x,\lambda)=\dfrac{e^{-\lambda}\lambda^x}{x}$ para $x=0,1,2,\ldots$, entonces la función de verosimilitud será
+$$L(x_1,x_2,\ldots x_n)=\prod_{i=1}^n \dfrac{e^{-\lambda}\lambda^{x_i}}{x_i!}=\dfrac{e^{-\lambda}\lambda^{x_1}}{x_1!}\cdot \dfrac{e^{-\lambda}\lambda^{x_2}}{x_2!}\cdots \dfrac{e^{-\lambda}\lambda^{x_n}}{x_n!}=\dfrac{e^{-n\lambda}\lambda^{\sum_{i=1}^n x_i}}{\prod\limits_{i=1}^n x_i!},\; x=1,2,\ldots$$
+
+### b)
+Hipergeométrica, con parámetro $p$;
+
+Respuesta.- Si  p = k/N, puede escribirse la función de probabilidad hipergeométrica como una función de probabilidad binomial y dado que el único parámetro es $p$ entonces,  $p(x,n,p)=\dfrac{n!}{(n-x)!x!} p^x(1-p)^{n-x},\; x=0,1,2,\ldots$
+
+
+### c)
+Uniforme en el intervalo $(a,b)$;
+
+### d)
+$N(\mu,\sigma)$
+

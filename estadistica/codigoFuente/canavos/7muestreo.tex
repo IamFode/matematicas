@@ -4,6 +4,25 @@
     Si las variables aleatorias $X_1$, $X_2,\ldots, X_n$ tiene la misma función (densidad) de probabilidad que la de la distribución de la población y su función (distribución) conjunta de probabilidad es igual al producto de las marginales, entonces $X_1,X_2,\ldots , X_n$ forman un conjunto de $n$ variables aleatorias independientes e idénticamente distribuidas (IID) que constituyen una muestra aleatoria de la población.
 \end{def.}
 
+En el contexto ed la definición 7.1, la función (densidad) conjunta de probabilidad de $X_1,x_2,\ldots,X_n$ es la función de verosimilitud de la muestra dada por
+\begin{tcolorbox}
+    $$ L(x;\theta)=\prod\limits_{i=1}^n f(x_i; \theta),$$
+    en donde $x=\left\{x_1,x_2,\ldots.x_n\right\}$ denota los datos muestreados. Cunado las realizaciones $x$ se conocen, $L(x;\theta)$ es una función del parámetro desconocido $\theta$. 
+\end{tcolorbox}
+
+\begin{ejem}
+    Se ilustrará el concepto de muestra aleatoria dada en el definición 7.1 midiante lo siguiente: Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de $n$ variables aleatorias IID de una población cuya distribución de probabilidad es exponencial con densidad
+    $$f(x;\theta)=\dfrac{1}{\theta}e^{-x/\theta},\quad 0<x<\infty.$$
+    Cuando se observa $X_1$ y se registra su realización $x_1$,
+    $$f(x_1;\theta)=\dfrac{1}{\theta}e^{-x_1/\theta},\quad 0<x_1<\infty.$$
+    Ahora se observa $X_2$ y se registra su realización $x_2$. Dado que $X_1$ y $X_2$ son estadísticamente independientes y tienen las mismas densidades marginales,
+    $$f(x_2|x_1)=f(x_2\; \theta)=\dfrac{1}{\theta}e^{-x_2/\theta},\quad 0<x_2<\infty.$$
+    La función de densidad conjunta de $X_1$ y $X_2$ es
+    $$f(x_1,x_2;\theta)=f(x_1;\theta)f(x_2;\theta)=\dfrac{1}{\theta^2}e^{-(x_1+x_2)/\theta},\quad 0<x_i<\infty,\; i=1,2.$$
+    Por lo tanto, se desprende que para una muestra aleatoria de tamaño $n$
+    $$L(x_1,x_2,\ldots,x_n; \theta)=\dfrac{1}{\theta}e^{-(x1+x_2+\ldots +x_n)/\theta},\quad 0<x_1<\infty,\; i=1,2,\ldots,n.$$
+\end{ejem}
+
 \setcounter{section}{2}
 \section{Distribuciones de muestre de estadísticas}
 
@@ -27,3 +46,4 @@ Un parámetro es una constante pero una estadística es una variable aleatoria. 
 \begin{def.}
     La distribución de muestre de una estadística $T$ es la distribución de probabilidad de $T$ que puede obtenerse como resultado de un número infinito de muestras aleatorias independientes, cada una de tamaño $n$, provenientes de la población de interés.
 \end{def.}
+

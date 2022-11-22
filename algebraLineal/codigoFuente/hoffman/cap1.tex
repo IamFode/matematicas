@@ -2666,10 +2666,12 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 
 \section{Matrices inversibles}
 
+%-------------------- Definición
 \begin{def.}
-    Sea $A$ una matriz (cuadrada) $n\times n$ sobre le cuerpo $F$. Una matriz $n\times n$, $B$, tal que $BA=I$ se llamada \textbf{inversa a la izquierda} de $A$; una matriz $n\times n$, $B$, tal que $AB=I$ se llamada \textbf{inversa a la derecha} de $A$. Si $AB=BA=I,$ entonces $B$ se llama inversa \textbf{bilátera} de $A$, y se dice que $A$ es \textbf{inversible}.
+    Sea $A$ una matriz (cuadrada) $n\times n$ sobre el cuerpo $F$. Una matriz $n\times n$, $B$, tal que $BA=I$ se llamada \textbf{inversa a la izquierda} de $A$; una matriz $n\times n$, $B$, tal que $AB=I$ se llamada \textbf{inversa a la derecha} de $A$. Si $AB=BA=I,$ entonces $B$ se llama inversa \textbf{bilátera} de $A$, y se dice que $A$ es \textbf{inversible}.
 \end{def.}
 
+%-------------------- Lema
 \begin{lema}
     Si $A$ tiene una inversa a la izquierda, $B$, y una inversa a la deracha, $C$, entonces $B=C$.\\\\
 	Demostración.-\; Supóngase que $BA=I$ y que $AC=I$. Entonces,
@@ -2678,6 +2680,7 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 
 Así, si $A$ es inversa a la izquierda e inversa a la dercha, $A$ es inversible y tiene una inversa bílátera que se representará por $A^{-1}$ y se llamará simplemente \textbf{la inversa} de $A$.
 
+%-------------------- Teorema 10
 \begin{teo}
     Sean $A$ y $B$ dos matrices $n\times n$ sobre $F$.
 
@@ -2689,15 +2692,38 @@ Así, si $A$ es inversa a la izquierda e inversa a la dercha, $A$ es inversible 
 	$$(AB)\left(B^{-1}A^{-1}\right)=\left(B^{-1}A^{-1}\right)(AB)=I.$$
 \end{teo}
 
+%-------------------- Corolario
 \begin{cor}
-    Un producto de matrices invresibles es inversibles.
+    Un producto de matrices inversibles es inversible.
 \end{cor}
 
+%-------------------- Teorema 11
 \begin{teo}
     Una matriz elemental es inversible.\\\\
-    	Demostración.-\; Sea $E$ una matriz elemental correspindiente a la operación elemental de fila $e$. Si $e_1$ es la operación inversa de $e$ (teorema 2) y $E_1=e_1(I)$, entonces
+    	Demostración.-\; Sea $E$ una matriz elemental correspondiente a la operación elemental de fila $e$. Si $e_1$ es la operación inversa de $e$ (teorema 2) y $E_1=e_1(I)$, entonces
 	$$EE_i=e(E_i)=e\left[e_i(I)\right]=I$$
 	y
 	$$E_iE=e_1(E)=e_1\left[e(I)\right]=I$$
 	con lo que $E$ es inversible y $E_1=E^{-1}.$
 \end{teo}
+
+%-------------------- Teorema 12
+\begin{teo}
+    Si $A$ es una matriz $n\times n$, los siguientes enunciados son equivalentes:
+    \begin{enumerate}[(i)]
+	\item $A$ es inversible.
+	\item $A$ es equivalente por filas a la matriz identidad $n\times n$.
+	\item $A$ es un producto de matrices elemetales.\\
+    \end{enumerate}
+	Demostración.-\; Sea $R$ una matriz escalón reducida por filas, equivalentes por filas a $A$. Por el teorema 9 (o su corolario),
+	$$R=E_k\cdots E_2E_1A$$
+	donde $E_1,\ldots,E_k$ son matrices elementales. Cada $E_j$ es inversible, y así
+	$$A=E_1^{-1}\cdots E_k^{-1}R.$$
+	Como el producto de matrices inversibles es inversible, se ve que $A$ es inversible si, y sólo si, $R$ es inversible. Como $R$ es una matriz (cuadrada) escalón reducida por filas, $R$ es inversible si, y sólo si, toda fila de $R$ contiene un elemento no nulo, esto es, si, y sólo si, $R=I$. Hemos visto que $A$ es inversible si, y sólo si, $R=I$, y si $R=I$ entonces $A=E_k^{-1}, \ldots , E_1^{-1}$. Se ve ahora que (i), (ii) y (iii) son afirmaciones equivalentes respecto de $A$.
+\end{teo}
+
+%-------------------- corolario
+\begin{cor}
+    Si $A$ es una matriz inversible $n\times n$ y si una sucesión de operaciones elementales de fila reduce $A$ a la identidad, entonces la misma sucesión de operaciones, cuando se aplica a $I$, da $A^{-1}$. 
+\end{cor}
+

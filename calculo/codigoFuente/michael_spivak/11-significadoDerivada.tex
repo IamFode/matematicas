@@ -1885,16 +1885,35 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Demuestre que la función $f(x)=x^2-\cos x$ satisface $f(x)=0$ para exactamente dos números $x$.\\\\
-		Demostración.-\; 
+		Demostración.-\; La función $f$ tiene al menos dos ceros en $[-1,1]$, ya que $f(0)<0$, mientras que $f(\pm 1)>0.$ Si $f$ tuviese más de dos ceros, entonces $f'$ podría tener al menos dos ceros. Pero
+		$$f'(x)=2x+\sen x$$
+		es una función creciente, ya que
+		$$f''(x)=2+\cos x\geq 1$$
+		para todo $x$.\\\\
 
 	    %---------- (b)
 	    \item Demuestre lo mismo para la función $f(x)=x^2-x\sen x - \cos x$.\\\\
-		Demostración.-\;
+		Demostración.-\; La función $f$ tiene al menos dos ceros ya que $f(0)<0$ mientras $f(\pm)>0.$ Si $f$ tiene más de dos ceros, entonces $f'$ podría tener al menos dos ceros. Pero
+		$$f'(x)=2x-x\cos x = x(2-\cos x)$$
+		es $0$ sólo para $x=0$.\\\\
 
 	    %---------- (c)
 	    \item Demuéstrelo también para la función $f(x)=2x^2-x\sen x - \cos^2 x$. (Será útil hacer algunas estimaciones preliminares para restringir la posible localización de los ceros de $f$.)\\\\
-		Demostración.-\;
+		Demostración.-\; Tenemos $f(0)<0,$ mientras $f(x)$ será $>0$ para $|x|$ grande, ya que $|x\sen x|$ es pequeño en comparación con $2x^2$ y $|\cos^2 x|\leq 1.$ De hecho, escribiendo 
+		$$f(x)=2x(2x-\sen x)-\cos^2 x,$$
+		y notando que $2x-\sen x >1$ para $x>1$, vemos que $f(x)>0$ para $x>1$, y también para $x<-1$, pues $f$ es par. Así, $f$ tiene por lo menos dos zeros en $[-1,1]$, y sin ceros fuera de $[-1,1]$. Si $f$ tiene más de dos zeros, entonces $f'$ podría tener dos ceros en $[-1,1]$. Pero
+		$$\begin{array}{rcl}
+		    f'(x)&=&4x-\sen x-x\cos x + 2\cos x \sen x\\
+			 &=& 4x-\sen x - x\cos x+\sen 2x,
+		\end{array}$$
+		lo que, es creciente en $[-1,1]$, ya que
+		$$f''(x)=4-2\cos x+x\sen x+2\cos 2x$$
+		el cual, es $\geq 1$ en $[-1,1]$, donde $x\sen x>0$ en $[-1,1]$, mientras $|\cos x|,$ $|\cos 2x|\leq 1.$\\\\
+
 	\end{enumerate}
+
+    %-------------------- 42.
+    \item 
 
 
 \end{enumerate}

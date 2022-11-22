@@ -1191,12 +1191,122 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 	\vspace{.5cm}
 
     %------------------ 23.
-    \item 
+    \item Demostrar que
+    $$\int_x^1\dfrac{dt}{1+t^2}=\int_1^{1/x} \dfrac{dt}{1+t^2}, \mbox{ si } x>0.$$\\
+    	Demostración.-\; Sea 
+	$$u=g(t)=\dfrac{1}{t},\qquad du=\dfrac{1}{t^2}\; dt.$$
+	Lo que implica,
+	$$t=\dfrac{1}{u},\qquad dt=-t^2\; du = -\dfrac{1}{u^2}\; du.$$
+	Entonces,
+	$$\begin{array}{rcl}
+	    \displaystyle\int_x^1 \dfrac{dt}{1+t^2} &=&\displaystyle -\int_{g(x)}^{g(1)} \dfrac{\dfrac{1}{u^2}\; du}{1+\dfrac{1}{u^2}}\\\\
+						    &=&\displaystyle\int_{g(1)}^{g(x)} \dfrac{\dfrac{1}{u^2}\; du}{1+\dfrac{1}{u^2}}\\\\
+						    &=&\displaystyle\int_1^{\frac{1}{x}}\dfrac{du}{1+u^2}\\\\
+						    &=&\int_1^{\frac{1}{x}} \dfrac{dt}{1+t^2}.
+	\end{array}$$
+	\vspace{.5cm}
+
+	%------------------ 24.
+	\item Demostrar que
+	$$\int_0^1 x^m (1-x)^n\; dx = \int_0^1 x^n(1-x)^m\; dx.$$\\
+	    Demostración.-\; Sea,
+	    $$u=1-x\quad \Rightarrow \quad du=-dx.$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int_0^1 x^m (1-x)^n\; dx &=&-\displaystyle\int_{u(0)}^{u(1)} (1-u)^mu^n\; du\\\\
+						      &=&-\displaystyle\int_1^0 (1-u)^m u^n\; du\\\\
+						      &=&\displaystyle\int_0^1 (1-u)^m u^n\; du\\\\
+						      &=&\displaystyle\int_0^1 x^n (1-x)^m\; dx.
+	    \end{array}$$
+	    \vspace{.5cm}
+
+	%------------------ 25.
+	\item Demostrar que
+	$$\int_0^{\pi/2}\cos^m x\sen^m x\; dx = 2^{-m}\int_0^{\pi/2}\cos^m x\; dx.$$
+	si $m$ es un entero positivo.\\\\
+	    Demostración.-\; Primero, simplifiquemos la integral,
+	    $$\begin{array}{rcl}
+		\displaystyle \int_0^{\frac{\pi}{2}} \cos^m x \sen^m x\; dx &=& \displaystyle\int_0^{\frac{\pi}{2}} (\cos x \sen x)^m \; dx\\\\
+									    &=&\displaystyle\int_0^{\frac{\pi}{2}} \left[\dfrac{1}{2}\sen(2x)\right]^m\; dx\\\\
+									    &=&\dfrac{1}{2^m}\displaystyle\int_0^{\frac{\pi}{2}} \sen^m(2x)\; dx.
+	    \end{array}$$
+	    Luego, usamos el método de sustitución 
+	    $$u=2x,\qquad du=2\; dx.$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\dfrac{1}{2^m}\displaystyle\int_0^{\frac{\pi}{2}} \sen^m (2x)\; dx &=& \dfrac{1}{2^{m+1}} \displaystyle\int_{u(0)}^{u(\pi/2)} (\sen u)^m \; du\\\\
+										   &=& \dfrac{1}{2^{m+1}}\displaystyle \int_0^\pi (\sen u)^m \; du\\\\
+										   &=& \dfrac{1}{2^{m+1}} \displaystyle\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \left[\sen\left(u+\dfrac{\pi}{2}\right)\right]^m\; du\\\\
+										   &=&\dfrac{1}{2^{m+1}} \displaystyle\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos^m u\; du\\\\
+										   &=&\dfrac{1}{2^m}\displaystyle\int_0^{\frac{\pi}{2}}\cos^m x\; dx\\\\
+										   &=&2^{-m}\displaystyle\int_0^{\frac{\pi}{2}}\cos^m x\; dx.
+	    \end{array}$$
+	    \vspace{.5cm}
+	    \vspace{.5cm}
 
 
+	%------------------ 26.
+	\item 
+	    \begin{enumerate}[(a)]
 
+		%---------- (a)
+		\item Demustrar que
+		$$\int_0^\pi xf(\sen x)\; dx = \dfrac{\pi}{2}\int_0^\pi f(\sen x)\; dx.$$\\
+		    Demostración.-\; Sea,
+		    $$u=\pi-x \quad \Rightarrow \quad du=-dx.$$
+		    Entonces,
+		    $$\begin{array}{rcl}
+			\displaystyle\int_0^\pi xf(\sen x)\; dx &=& \displaystyle - \int_{u(0)}^{u(\pi)}(\pi-u)f\left[\sen(\pi-u)\right]\; du\\\\
+								&=&\displaystyle \int_\pi^0 (\pi-u)f(\sen u)\; du\\\\
+								&=&\displaystyle \int_0^\pi (\pi-u)f(\sen u)\; du\\\\
+								&=&\displaystyle \int_0^\pi \pi f(\sen u)\; du - \int_0^\pi uf(\sen u)\; du.
+		    \end{array}$$
+		    Aquí, cambiamos el nombre de la variable de integración de $u$ a $x$. (Siempre podemos cambiar el nombre de la variable de integración ya que integrar $f(t)\; dt$ es lo mismo que integrar $f(x)\; dx$, por ejemplo). Así que esto significa que tenemos
+		    $$\begin{array}{rcl}
+			\displaystyle\int_0^\pi xf(\sen x)\; dx &=& \displaystyle \int_0^\pi \pi f(\sen x)\; dx - \int_0^\pi xf(\sen x)\; dx\\\\
+								&=&\displaystyle \int_0^\pi xf(\sen x)\; dx\\\\
+								&=&\dfrac{\pi}{2} \displaystyle\int_0^\pi f(\sen x)\; dx.
+		    \end{array}$$
+		    \vspace{.5cm}
 
+		%---------- (b)
+		\item Aplicar (a) para deducir la fórmula:
+		$$\int_0^\pi \dfrac{x\sen x}{1+\cos^2 x}\; dx=\pi \int_0^1 \dfrac{dx}{1+x^2}.$$\\
+		    Demostración.-\; Usemos primero, la identidad trigonométrica $\cos^2 x+\sen^2 x = 1,$ lo que implica $1+\cos^2x=2-\sen^2x,$ para reescribir la integral
+		    $$\begin{array}{rcl}
+			\displaystyle\int_0^\pi \dfrac{x\sen x}{1+\cos^2 x}\; dx &=& \displaystyle \int_0^\pi \dfrac{x\sen x}{2-\sen^2 x}\; dx\\\\
+										 &=&\displaystyle\int_0^\pi xf(\sen x)\; dx \;\mbox{ donde }\; f(x)=\dfrac{2}{2-x^2}
+		    \end{array}$$
+		    Entonces, por (a) tenemos
+		    $$\begin{array}{rcl}
+			\displaystyle \int_0^\pi xf(\sen x)\; dx &=& \dfrac{\pi}{2} \displaystyle\int_0^\pi f(\sen x)\; dx\\\\
+								 &=& \dfrac{\pi}{2} \displaystyle\int_0^\pi \dfrac{\sen x}{2-\sen^2 x}\; dx\\\\
+								 &=& \dfrac{\pi}{2} \displaystyle\int_0^\pi \dfrac{\sen x}{1+\cos^2 x}\; dx.
+		    \end{array}$$
+		    Luego, sea
+		    $$u=\cos x,\qquad du=-\sen x\; dx.$$
+		    Así,
+		    $$\begin{array}{rcl}
+			\dfrac{\pi}{2}\displaystyle\int_0^\pi \dfrac{\sen x}{1+\cos^2 x}\; dx = -\dfrac{\pi}{2}\displaystyle\int_1^{-1}\dfrac{1}{1+u^2}\; du\\\\
+			&=&\dfrac{\pi}{2}\displaystyle\int_{-1}^1 \dfrac{1}{1+x^2}\; dx\\\\
+			&=&\pi \displaystyle\int_0^1 \dfrac{1}{1+x^2}\; dx.
+		    \end{array}$$
+	    \end{enumerate}
 
-
+	%------------------ 27.
+	\item Demostrar que $\int_0^1 (1-x^2)^{n-1/2}\; dx = \int_0^{\pi/2}\cos^{2n}u\; du$ si $n$ es un entero positivo. [Indicación: $x=\sen u.$] La integral del segundo miembro se puede calcular por el método de integración por partes.\\\\
+	    Demostración.-\; Sea,
+	    $$x=\sen x,\qquad dx=\cos u\; du.$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int_0^1 \left(1-x^2\right)^{n-\frac{1}{2}}\; dx &=& \displaystyle\int_0^{\frac{\pi}{2}} \left(1-\sen^2 u\right)^{n-\frac{1}{2}} \cos u\; du\\\\
+									      &=&\displaystyle \int_0^{\frac{\pi}{2}}\left(\cos^2 u\right)^{n-\frac{1}{2}} \cos u \; du\\\\
+									      &=&\displaystyle\int_0^{\frac{\pi}{2}} \left(\cos^{2n-1}u\right)\cos u\; \; du\\\\
+									      &=&\displaystyle\int_0^{\frac{\pi}{2}} \cos^{2n}u\; du.
+	    \end{array}$$
+	    La última igualdad sigue puesto $\frac{1}{1+(-x)^2} = \frac{1}{1+x^2}$ de modo que esta es una función par. Por lo tanto (por un ejercicio anterior ) la integral de $-1$ a $1$ es el doble de la integral de $0$ a $1$.\\\\
 
 \end{enumerate}
+
+
+\section{Integración por partes}
