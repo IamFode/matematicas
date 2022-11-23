@@ -1914,6 +1914,41 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
     %-------------------- 42.
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f$ es una función dos veces diferenciable con $f(0)=0$, $f(1)=1$ y $f'(0)=f'(1)=0$, entonces $|f''(x)|\geq 4$ para algún $x$ de $(0,1)$. En términos más pintorescos: una partícula que recorre una distancia unidad en la unidad de tiempo,y empieza y termina con velocidad $0$, tiene algún momento una aceleración $\geq 4$. Indicación: Demuestre que o bien $f''(x)\geq 4$ para algún $x$ de $\left(0,\frac{1}{2}\right)$, o bien $f''(x)\leq -4$ para algún $x$ de $\left(\frac{1}{2},1\right)$.\\\\
+		Demostración.-\; Suponga que $f''(x)<4$ para todo $x\in [0,\frac{1}{2}]$. Entonces, por el teorema de valor medio, para todo $x\in [0,\frac{1}{2}]$ tenemos
+		$$\dfrac{f'(x)-f'(0)}{x-0}=f''\left(x'\right)$$
+		para algún $x'\in [0,x]$. Así $f'(x)<4x$. Si establecemos $h(x)=2x^2,$ entonces $f(0)=h(0)$ y $f08x)<h'(x)$, y se sigue por el problema 30 que $f(x)<h(x)$ en $[0,\frac{1}{2}]$, por lo que $f(\frac{1}{2})=\dfrac{1}{2}$.\\
+		El mismo tipo de análisis puede ser aplicado para $f$ en $[\frac{1}{2},1]$, El cual mostraremos que si $f''(x)>-4$ en $[\frac{1}{2},1]$ entonces $f(\frac{1}{2})=\dfrac{1}{2}$, (o podemos considerar la función $f(x)=1-f(1-x).$). Es obvio que no podemos tener ambas posibilidades, por lo tanto $|f''(x)|\geq 4$ para $[0,1]$.\\\\
+
+	    %---------- (b)
+	    \item Demuestre que de hecho debe verificarse que $|f''(x)|>4$ para algún $x$ de $(0,1)$.\\\\
+		Demostración.-\; Note primero que no podemos tener $f''(x)=4$ para $0<x<\frac{1}{2}$ y también $f''(x)=-4$ para $\frac{1}{2}<x\leq 1,$ ya que esto podría implicar que $f'(x)=4x$ para $0\leq x \leq \frac{1}{2}$ y $f'(x)=-4x$ para $\frac{1}{2}\leq x\leq 1$, en cuyo caso $f''(\frac{1}{2})$ podría no existir. Por otro lado, si tenemos $f''(x)\leq 4$ para todo $x$ en $(0,\frac{1}{2})$ pero $f''(x)<4$ para al menos un $x$, entonces tenemos $f'(x_0)<3x_0$ para al menos un $x_0$, y en consecuencia $f(x)<2x^2$ para todo $x\geq x_0$, así que $f(\frac{1}{2})=\dfrac{1}{2}$; si tuviéramos también $f''(x)\geq -4$ para todo $x$ en $(\frac{1}{2},1)$, entonces $f(\frac{1}{2})\geq \dfrac{1}{2}$, es una contrdicción.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 43.
+    \item Suponga que $f$ es una función tal que $f'(x)=1/x$ para todo $x>0$ y $f(1)=0$. Demuestre que $f(xy)=f(x)-f(y)$ para todo $x,y>0$. Indicación: Halle $g'(x)$ cuando $g(x)=f(xy)$.\\\\
+	Demostración.-\; Consideremos la función $f$ definida como sigue:
+	$$g(x)=f(xy),\; y>0.$$
+	Entonces, usando la regla de Leibniz vemos que
+	$$g'(x)=yf'(xy)=y\dfrac{1}{xy}=\dfrac{1}{x}=f'(x).$$
+	Así, existe una constante $c$ tal que
+	$$g(x)=f(x)+c$$
+	para todo $x>0.$ Luego, evaluamos en $x=1$,
+	$$f(y)=g(1)=f(1)+c=c$$ 
+	Por lo tanto,
+	$$f(xy)=g(x)=f(x)+f(y)$$
+	para todo $x,y>0$.\\\\
+
+    %-------------------- 44.
+    \item Suponga que $f$ satisface
+    $$f''(x)+f'(x)g(x)-f(x)=0$$
+    para alguna función $g$. Demuestre que si $f$ es $0$ en dos puntos, entonces $f$ es $0$ en el intervalo entre ellos. Indicación: Utilice el teorema 6.\\\\
+	Demostración.-\; 
+	
 
 
 \end{enumerate}

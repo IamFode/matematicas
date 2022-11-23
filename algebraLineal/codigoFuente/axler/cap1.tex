@@ -1120,39 +1120,61 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
     \item Demuestre o dé un contraejemplo: Si $U_1$, $U_2$, $W$ son subespacios de $V$ tales que 
     $$U_1+W=U_2+W,$$
     entonces $U_1=U_2$.\\\\
-	Demostración.-\; 
+    Demostración.-\; Daremos un contraejemplo. Sean 
+    $$\begin{array}{rcl}
+	V=U_1&=&\left\{(a,b)\in \textbf{R}^2:a,b\in \textbf{R}\right\}\\
+	U_2&=&\left\{(a,0)\in \textbf{R}^2:a\in \textbf{R}\right\}\\
+	W&=&\left\{(0,b)\in \textbf{R}^2:b\in \textbf{R}\right\}. 
+    \end{array}$$
+	Entonces, es fácil ver que $U_1+W=U_2+W$, pero $U_1\neq U_2$.\\\\
 
     %-------------------- 20.
     \item Suponga
     $$U=\left\{(x,x,y,y)\in \textbf{F}^4:x,y\in \textbf{F}\right\}.$$
     Encuentre un subespacio $W$ de $\textbf{F}^4$ tal que $\textbf{F}^4=U \oplus W.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Tome $W=\left\{(0,z,0,w)\in \textbf{R}^4:z,w\in \textbf{F}\right\}$. Para cualquier $(x,y,z,w)\in\textbf{F}^4$, de donde tenemos
+	$$(x,y,z,w)=(x,x,z,z)+(0,y-x,0,w-z)\in U+W.$$
+	De donde, obtenemos $\textbf{F}^4=U+W$. Además, si $(x,y,z,w)\in U\cap W,$ entonces debemos tener $x=y$ y $z=w$, ya que $(x,y,x,w)\in U.$ Del mismo modo, puesto que $(x,y,z,w)\in W$, tenemos $x=0$ y $z=0$. Por lo tanto, $x=y=0$ y $z=w=0,$ que implica $(x,t,z,w)=(0,0,0,0)$. Resulta por 1.45 que $U\cap W = \left\{0\right\}$. Así, $F=U\oplus W$.\\\\
 
     %-------------------- 21.
     \item Suponga
     $$U=\left\{(x,y,x+y,x-y,2x)\in \textbf{F}^5: x,y\in \textbf{F}\right\}.$$
     Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{F}^5=U\oplus W.$\\\\
-	Respuesta.-\;
+    Respuesta.-\; Sea $W=\left\{(0,0,z,w,s)\in \textbf{F}^5: x,y\in \textbf{F}\right\}$. Si $(x,y,z,w,s)\in U\cap W,$ ya que $(x,y,z,w,s)\in W$ entonces $x=y=0$. Además, tenemos $z=x+y,w=x-y,s?2x$, esto porque $(x,t,z,w,s)\in U$. Por lo tanto $z=w=s=0$, por lo que $U\cap W=\left\{0\right\}.$ Del mismo modo, para cualquier $(x,y,z,w,s)\in \textbf{F}^5$. Puesto que $(x,y,x+y,2x)\in U$ y $(0,0,z-x-y,w-x+y,s-2x)\in W$, se tiene
+    $$(x,y,z,w,s)=(x,y,x+y,x-y,2x)+(0,0,z-x-y,w-x+y,s-2x)\in U+W.$$
+    Por lo tanto, $\textbf{F}^5=U+W$. Ya que, $U\cap W = 0$ de 1.45 se sigue que $\textbf{F}^5=U\oplus W.$\\\\
 
     %-------------------- 22.
     \item Suponga
     $$U=\left\{(x,y,x+y,x-y,2x)\right\}\in \textbf{F}^5: x,y \in \textbf{F}.$$
     Encuentre tres subespacios $W_1,W_2,W_3$ de $\textbf{F}^5$, ninguno de los cuales es igual a $\left\{0\right\}$, tal que $\textbf{F}^5=U\oplus W_1\oplus W_2 \oplus W_3.$\\\\
-    	Respuesta.-\;
+	Respuesta.-\; Sean $W_1=\left\{(0,0,0,z,0):x,y\in \textbf{F}\right\}$, $W_2=\left\{(0,0,0,z,0)\in \textbf{F}^5:x,y\in \textbf{F}\right\}$ y $W_3=\left\{(0,0,0,0,z)\in \textbf{F}^5:x,y\in \textbf{F}\right\}$. Por el mismo argumento del problema anterior (21), se tiene
+	$$\textbf{F}^5=U\oplus W_1 \oplus W_2 \oplus W_3.$$\\
 
     %-------------------- 23.
     \item Demostrar o dar un contraejemplo: Si $U_1,U_2,W$ son subespacios de $V$ tales que 
     $$V=U_1\oplus W \quad \mbox{u} \quad V=U_2\oplus W,$$
     Entonces, $U_1=U_2.$\\\\
-    	Demostración.-\;
+    Demostración.-\; Daremos un contraejemplo. Sean, $V=\textbf{R}^2$, $U_1=\left\{(x,0)\in \textbf{R}^2:x\in \textbf{R}\right\}$, $U_2=\left\{(0,y)\in \textbf{R}^2:y\in \textbf{R}\right\}$ y $W=\left\{(z,z)\in \textbf{R}^2:z\in \textbf{R}\right\}$. Por el mismo argumento del problema 21, se tiene 
+    $$V=U_1\oplus W\quad \mbox{y}\quad V=U_2\oplus W,$$
+    sin embargo, $U_1\neq U_2$.\\\\
 
     %-------------------- 24.
     \item Una función $f:\textbf{R}\to \textbf{R}$ es llamado par si
     $$f(-x)=f(x)$$
     para todo $x\in \textbf{R}.$ Sea $U_e$ el conjunto de funciones pares de valor real sobre $\textbf{R}$ y sea $U_o$ el conjunto de funciones impares de valor real sobre $\textbf{R}$. Demuestre que $\textbf{R}^{\textbf{R}}=U_e \oplus U_o.$\\\\
-	Demostración.-\; 
+    Demostración.-\; Para cada función de variable real $f$ sabemos que $f(x)=\dfrac{f(x)+f(-x)}{2}+\dfrac{f(x)-f(-x)}{2}$. Sea $g(x)=\dfrac{f(x)-f(-x)}{2}$ y $h(x)=\dfrac{f(x)-f(-x)}{2}$, así
+    $$f(x)=f(x)-h(x)$$. Probaremos que $g$ es par y $h$ es impar.\\
+    Para demostrar que $g$ es par, tenemos
+    $$g(-x)=\dfrac{f(-x)+f\left[-(-x)\right]}{2}=\dfrac{f(-x)+f(x)}{2}=g(x).$$
+    Luego, para demostrar que $h$ es impar, tenemos
+    $$h(-x)=\dfrac{f(-x)-f\left[-(-x)\right]}{2}=\dfrac{f(-x)-f(x)}{2}=-h(x).$$
+    Ahora, demostraremos que $U_e\cap U_o=\left\{0\right\}$. Sea $z\in U_e\cap U_o$. De donde, $z(-x)=z(x)$. Después, si $z\in U_o$ entonces $z(-x)=-z(x)$. Concluimos que 
+    $$z(x)=-z(x)\quad \Rightarrow \quad 2z(x)=0\quad \Rightarrow \quad z(x)=0$$
+
 
 	
+
 
 \end{enumerate}
 

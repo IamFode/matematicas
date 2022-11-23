@@ -33,6 +33,19 @@ Respuesta.- Si  p = k/N, puede escribirse la función de probabilidad hipergeom�
 ### c)
 Uniforme en el intervalo $(a,b)$;
 
+Respuesta.- Sea $\dfrac{1}{b-a}$ para $a\leq x \leq b$ una función de densidad de probabilidad uniforme. Entonces, la función de verosimilitud será:
+
+$$L(x_1,x_2,\ldots,x_n)=\prod_{i=1}^n \dfrac{1}{b-a}=\dfrac{1}{b-a}\cdot\dfrac{1}{b-a}\cdot\cdots \dfrac{1}{b-a}=\dfrac{1}{(b-a)^n}$$
+
 ### d)
 $N(\mu,\sigma)$
 
+Respuesta.- Sea $f(x;\mu,\sigma)=\dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$, la función de densidad de probabilidad. Entonces la función de verosimilitud será:
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\mu,\sigma)&=&\prod\limits_{i=1}^n \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2}\\\\
+  &=&\dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_1-\mu}{\sigma}\right)^2}\cdot \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_2-\mu}{\sigma}\right)^2} \cdots \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_n-\mu}{\sigma}\right)^2}\\\\
+  &=&\left(\dfrac{1}{\sqrt{2\pi}\sigma}\right)^n e^{-\sum \left[\frac{(x_i-\mu)^2}{2\sigma^2}\right]}
+\end{array}$$
+
+
+## 7.4

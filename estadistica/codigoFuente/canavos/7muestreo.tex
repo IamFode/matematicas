@@ -7,8 +7,8 @@
 En el contexto ed la definición 7.1, la función (densidad) conjunta de probabilidad de $X_1,x_2,\ldots,X_n$ es la función de verosimilitud de la muestra dada por
 \begin{tcolorbox}
     $$ L(x;\theta)=\prod\limits_{i=1}^n f(x_i; \theta),$$
-    en donde $x=\left\{x_1,x_2,\ldots.x_n\right\}$ denota los datos muestreados. Cunado las realizaciones $x$ se conocen, $L(x;\theta)$ es una función del parámetro desconocido $\theta$. 
 \end{tcolorbox}
+    en donde $x=\left\{x_1,x_2,\ldots.x_n\right\}$ denota los datos muestreados. Cunado las realizaciones $x$ se conocen, $L(x;\theta)$ es una función del parámetro desconocido $\theta$. 
 
 \begin{ejem}
     Se ilustrará el concepto de muestra aleatoria dada en el definición 7.1 midiante lo siguiente: Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de $n$ variables aleatorias IID de una población cuya distribución de probabilidad es exponencial con densidad
@@ -33,6 +33,8 @@ En el contexto ed la definición 7.1, la función (densidad) conjunta de probabi
     La oración describe de manera completa, sugiere que una vez que se conoce el valor de $\theta$ entonces, puede formularse cualquier proposición probabilistica de interes.
 \end{def.}
 
+Dado que los parámetros son prácticamente inherentes a todos los modelos de probabilidad, es imposible calcular las probabilidades deseadas sin un conocimiento del valor de estos. Es por esta razón que la noción de una estadística y su distribución de muestre es muy importante en inferencia estadística.
+
 Antes de dar la definición de una estadística, debe notarse que desde un punto de vista clásico (no bayesiano), un parámetro se considera como una cosntante fija cuyo valor se desconoce. Desde una perspectiva bayesiana un parámetro siempre es una variable aleatoria con algún tipo de distribución de probabilidad.
 
 \begin{def.}
@@ -43,7 +45,57 @@ De manera general, denótese una estadística por $T=u(X)$. Dado que $T$ es una 
 
 Un parámetro es una constante pero una estadística es una variable aleatoria. Además, un valor del parámetro descrito describe de manera completa un modelo de probabilidad; ningún valor de la estadística puede desempeñar tal papel si cada uno de estos depende del valor de las observaciones de las muestras. 
 
+%------------------- Definición 7.4
 \begin{def.}
     La distribución de muestre de una estadística $T$ es la distribución de probabilidad de $T$ que puede obtenerse como resultado de un número infinito de muestras aleatorias independientes, cada una de tamaño $n$, provenientes de la población de interés.
 \end{def.}
+
+La distribución de muestre de una estadística hace posible este tipo de análisis de probabilidad, esencial para valorar el riesgo inherente cuando se formulan ingerencias.
+
+%-------------------- Teorema 7.1
+\begin{teo}
+    Sea $X_1,X_2,\ldots, X_n$ un conjunto de $n$ variables aleatorias independientes cada una con función generadoras de momentos $m_{X_1}(t),m_{X_2}(t),\ldots , m_{X_n}(t).$
+    Si 
+    $$Y=a_1X_1+a_2X_2+\ldots + a_nX_n,$$
+    en donde $a_1,a_2,\ldots,a_n$ son constantes, entonces:
+    $$m_Y(t)=m_{X_i}(a_1t)m_{X_2}(a_2t)\cdots m_{X_n}(a_nt).$$
+	Demostración.-\; Mediante el empleo de la definición y la hipótesis de independencia, se tiene
+	$$\begin{array}{rcl}
+	    m_Y(t)&=&E\left\{e^{\left[t\left(a_1X_1+a_2X_2+\ldots + a_nX_n\right)\right]}\right\}\\\\
+		  &=&E\left\{e^{\left[t\left(a_1X_1\right)\right]}e^{\left[t\left(a_2X_2\right)\right]}\cdots e^{\left[t\left(a_nX_n\right)\right]}\right\}\\\\
+		  &=&E\left\{e^{\left[t\left(a_1X_1\right)\right]}\right\}E\left\{e^{\left[t\left(a_2X_2\right)\right]}\right\}\cdots E\left\{e^{\left[t\left(a_nX_n\right)\right]}\right\}\\\\
+		  &=&m_{X_1}(a_1t)m_{X_2}(a_2t)\cdots m_{X_n}(a_nt).
+	\end{array}$$
+\end{teo}
+
+De esta forma, la función generadora de momentos de una combinación lineal de $n$ variables aleatorias independientes es el producto de las correspondientes funciones generadoras de momentos con argumentos iguales a las constantes de tiempo $t$.
+
+%------------------- Teorema 7.2
+\begin{teo}
+    Sea $X_1,X_2,\ldots,X_n$ un conjunto de variables aleatorias independientes normalmente distribuidas con medias $E(X_i)=\mu_i$ y varianzas $Var(X_i)=\sigma^2_i$ para $i=1,2,\ldots n$. Si
+    $$Y=a_1X_1+a_2X_2+\ldots a_nX_n,$$
+    en donde $a_2,a_2,\ldots,a_n$ son constantes, entonces $Y$ es una variable aleatoria con distribución normal y media
+    $$E(Y)=a_1\mu_1+a_2\mu_2+\ldots + a_nX_n$$
+    y con varianza 
+    $$Var(Y)=a_1^2\sigma_1^2+a_2^2\sigma_2^2 + \ldots + a_n^2\sigma_n^2.$$
+	Demostración.-\; Dado que $X_i$ se encuentra normalmente distribuida, su función generadora de momentos es
+	$$m_{X_i}(t)=e^{\left(\mu_i t + \frac{\sigma_i^2t^2}{2}\right)}.$$
+	De acuerdo con el teorema 7.1, la función generadora de momentos de $Y$ es
+	$$\begin{array}{rcl}
+	    m_Y(t)&=&m_{X_1}(a_1t)m_{X_2}(a_2t)\cdots m_{X_n}(a_nt)\\\\
+		  &=&e^{\left(\mu_1 a_1t + \frac{a_1^2\sigma_1^2t^2}{2}\right)}e^{\left(\mu_2a_2t + \frac{a_2^2\sigma_2^2t^2}{2}\right)}\cdots e^{\left(\mu_n a_nt + \frac{a_n^2\sigma_n^2t^2}{2}\right)}\\\\
+		  &=&e^{\left[t\sum\limits_{i=1}^n a_i\mu_i+\frac{\left(t^2\sum\limits_{i=1}^n a_i^2\sigma_i^2\right)}{2}\right]}.
+      \end{array}$$
+      Por lo tanto, $Y$ se encuentra normalmente distribuida con media $\sum_{i=1}^na_i\mu_i$ y varianza $\sum_{i=1}^n a_i^2 \sigma_i^2.$
+\end{teo}
+
+Del teorema 7.2 se desprende que si $a_i=1$ para $i=1,2,\ldots,n$, entonces la suma de variables aleatorias independientes normalmente distribuidas también posee una distribución normal con media y varianza igual a la suma de las medias y las varianzas de cada una de las variables aleatorias. El resultado anterior se conoce como la propiedad aditiva de la distribución normal. Debe notarse que la hipótesis de normalidad no es necesaria para obtener las fórmulas de la media y la varianza de $Y$ en el teorema 7.2. De hecho, con base en el teorema 6.1, si $X_1,X_2,\ldots , X_n$ es un conjunto de $n$ variables aleatorias IID con medias $E(X_i)=\mu_i$ y varianzas $Var(X_i)=\sigma_i^2$, $i=1,2,\ldots , n$ entonces para $Y=a_1X_1+a_2X_2+\ldots +a_nX_n,$
+$$E(Y)=\sum_{i=1}^{n}a_i\mu_i$$
+y
+$$Var(Y)=\sum_{i=1}^n a_i^2 \sigma_i^2.$$
+en donde $a_1,a_2,\ldots,a_n$ son constantes.
+
+
+\section{\boldmath La distribución de muestre de $\overline{X}$}
+
 
