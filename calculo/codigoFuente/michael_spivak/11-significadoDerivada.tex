@@ -1947,9 +1947,40 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
     \item Suponga que $f$ satisface
     $$f''(x)+f'(x)g(x)-f(x)=0$$
     para alguna función $g$. Demuestre que si $f$ es $0$ en dos puntos, entonces $f$ es $0$ en el intervalo entre ellos. Indicación: Utilice el teorema 6.\\\\
-	Demostración.-\; 
+    Demostración.-\; Por el teorema 6 (spivak, capítulo 11), si $x\in [x_0,y_1]$ es un máximo local, entonces $f''(x)=f(x)\leq 0$. Luego, si $x\in [x_0,x_1]$ es un mínimo local, entonces $f''8x)=f(x)\geq 0$, ya que $f'(x)=0.$ Ahora, suponga que existe un $x\in [x_0,x_1]$ tal que $f(x)\neq 0$. Entonces, $f(x)>0$ o $f(x)<0$.
+
+    \begin{enumerate}[\text{Caso} 1.]
+
+	\item $[f(x)>0]$ Observemos que si $x$ no puede ser un punto máximo local. Esto implica que existe $x'\in [x_0,x_1)$ tal que $x'$ es un máximo local y $f(x')>0$ o existe $x''\in(x,x_1]$ tal que $x''$ es un máximo local, y $f(x'')>0$ ya que $f(x_0)=f(x_1)=0.$ Pero no es posible, puesto que $f''(x')=f(x')$ y $f''(x'')=f(x'')$ por la ecuación dada. Por lo tanto, $f(x)$ no puede ser estrictamente positivo.
+
+	\item $[f(x)<0]$ Similar al anterior caso, vemos que $f$ no es estricamente negativa en $[x_0,x_1]$. Por cierto, vemos que $x$ no puede ser un punto máximo local. Esto implica que que existe $x'\in[x_0,x)$ tal que $x'$ es un mínimo local y $f(x')<0$ o existe $x''\in (x,x_1]$ tal que $x''$ es un mínimo local y $f(x'')<0$, puesto que $f(x_0)=f(x_1)=0.$ Pero no es posible, ya que $f''(x')=f(x')$ y $f''(x'')=f(x'')$, por la ecuación dada. Por lo tanto, $f(x)$ po es estrictamente positivo.
+ 
+    \end{enumerate}
+
+    Así, $f(x)=0$ para todo $x\in [x_0,x_1]$.\\\\
+
+    %-------------------- 45.
+    \item  Suponga que $f$ es continua en $[a,b]$, n-veces diferenciable en $(a,b)$ y que $f(x)=0$ para $n+1$ puntos $x$ diferentes de $[a,b]$. Demuestre que $f^{(n)} (x)=0$ para algún $x$ de $(a,b)$.\\\\
+	Demostración.-\; Sea $x_1,x_2,\ldots,x_n,x_{n+1}$ son los distintos $n+1$ raíces de $f$ en $[a,b]$. Entonces, notemos que 
+	$$f(x_1)=0,\quad x_i=1,2,\ldots,n+1.$$
+	Ahora, consideremos que el conjunto de intervalos $\left\{[x,x_j]|1\leq i < j \leq n+1\right\}$. Luego, $f$ es diferenciable en todos los elementos del conjunto $\left\{[x_i,x_j] | 1\leq i < j \leq n+1\right\}$. Entonces, por el teorema del valor medio en cada intervalo $[x_i,x_j]$ para $1\leq i < j \leq n+1$, existe un elemento $\alpha_i\in (x,x_j)$ para $1,2,\ldots,n$ tal que
+	$$\dfrac{f(x_j)-f(x_i)}{x_j-x_i}=f'(\alpha_i).$$
+	Se sigue que para cada intervalo $[x_i,x_j]$ existe $\alpha_i$ tal que 
+	$$f'(\alpha_i)=0,\mbox{ ya que } f(x_i)=0 \mbox{ para cada }i.$$
+	Luego,
+	$$\alpha_i\in [a,b],\quad i=1,2,\ldots,n.$$
+	Este resulta que $f'$ tiene $n$ ceros distintos en $[a,b]$. De manera similar a lo anterior, supongamos que el conjunto de intervalo $\left\{[\alpha_i,\alpha_j]|1\leq i <j\leq n\right\}$. Entonces, por el teorema de valor medio en cada intervalo $[\alpha_i,\alpha_j]$ para $1\leq i <j\leq n$, existe un elemento $\beta_i\in(\alpha_i,\alpha_j)$ para $i=1,2,\ldots,n-1$ tal que 
+	$$\dfrac{f'(\alpha_j)-f'(\alpha_i)}{\alpha_j-\alpha_i}=f''(\beta_i).$$
+	Se sigue que para cada intervalo $[\alpha_i,\alpha_j]$ existe $\beta_i$ tal que
+	$$f''(\beta_i)=0,\mbox{ ya que } f'(\alpha_i)=0 \mbox{ para cada }i.$$
+	Luego,
+	$$\beta_i\in [a,b],\quad i=1,2,\ldots,n-1.$$
+	Esto resulta que $f''$ tiene $n-1$ ceros distintos en $[a,b]$. Procediendo por dicho argumento hasta la derivada $n-ésima$, de $f$, se sigue del principio de inducción que $f^{(n)}$ tiene al menos una raíz en $[a,b]$. Por el teorema del valor medio, se demuestra que
+	$$f^{(n)}(x)=0\mbox{ para algún } x\in[a,b].$$\\
+
+    %-------------------- 46.
+    \item
+
 	
-
-
 \end{enumerate}
 

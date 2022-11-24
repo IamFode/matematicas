@@ -1681,7 +1681,7 @@ Si $B$ es una matriz y $C$ se obtiene de $B$ por medio de una operación element
 \end{cor}
 
 
-\section{Ejercicios}
+\section*{Ejercicios}
 
 \begin{enumerate}[1.]
 
@@ -2737,9 +2737,31 @@ Así, si $A$ es inversa a la izquierda e inversa a la dercha, $A$ es inversible 
     Para una matriz $n\times n$, las siguientes afirmaciones son equivalentes:
     \begin{enumerate}[(i)]
 	\item $A$ es inversible.
-	\item El sistema homogéneo $Ax=0$ tiene solo la solución trivial $X=0$.
+	\item El sistema homogéneo $AX=0$ tiene solo la solución trivial $X=0$.
 	\item El sistema de ecuaciones $AX=Y$ tiene una solución $X$ para cada matriz $n\times 1$, $Y$.\\
     \end{enumerate}
-	Demostración.-\; 
+	Demostración.-\; De acuerdo con el teorema 7, la condición (ii) es equivalente al hecho de que $A$ es equivalente por filas a la matriz identidad. Por el teorema 12, (i) y (ii) son, por tanto, equivalente. Si $A$ es inversible, la solución de $AX=Y$ es $X=A^{-1}Y$. Recíprocamente, supóngase que $AX=Y$ tiene una solución para cada $Y$ dada. Sea $R$ una matriz reducida por filas que sea equivalente por filas a $A$. Se debe demostrar que $R=I$. Esto equivale a demostrar que la última fila de $R$ no es $0$ (idénticamente). Sea
+	$$
+	E = 
+	\left[
+	    \begin{array}{c}
+		0 \\
+		0 \\
+		\vdots \\
+		0 \\
+		1
+	    \end{array}
+	\right]
+	$$
+    Si el sistema $RX=E$ puede resolverse para $X$, la última fila de $R$ no puede ser $0$. Se sabe que $R=PA$, donde $P$ es inversible. Luego $RX=E$ si, y sólo si, $AX=P^{-1}E$. De acuerdo con (iii), el útimo sistema tiene una solución.
 \end{teo}
+
+%-------------------- Corolario 1.5
+\begin{cor}
+    Una matriz cuadrada que tiene una inversa a la izquierda o a la derecha es inversible.\\\\
+	Demostración.-\; Sea $A$ una matriz $m\times n$. Supóngase que $A$ tiene una inversa a la izquierda, es decir, una matriz $B$ tal que $BA=I$. Entonces $AX=0$ tiene solo la solución trivial, porque $X=IX=B(AX)$. Luego $A$ es inversible. Por otro lado, supóngase que $A$ tiene una inversa a la deracha, es decir, una matriz $C$ tal que $AC=I$. Entonces $C$ tiene una inversa a la izquierda y es, por tanto, inversa. Se sigue entonces que $A=C^{-1}$ y así $A$ es inversible con inversa $C$.
+\end{cor}
+
+
+\section*{Ejercicios}
 

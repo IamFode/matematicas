@@ -1339,10 +1339,10 @@ Como aplicación del método de integración por partes, se obtiene otra versió
     $$\int_a^b f(x)g(x)\; dx = f(a)\int_a^c g(x)\; dx + f(b)\int_c^b g(x)\; dx.$$\\
 	Demostración.-\; Sea $G(x)=\int_a^x g(t)\; dt$. Como que $g$ es continua, tenemos $G'(x)=g(x)$. Por consiguiente, la integración por partes nos da
 	$$\int_a^b f(x)g(x)\; dx = \int_a^b f(x)G'(x)\; dx = f(b)G(b)-\int_a^b f'(x)G(x)\; dx,$$
-	puesto que $G(a)=0$. Según el teorema del valor medio ponderado, se tiene
-	$$\int_a^b f'(x)G(x)=\; dx = G(c)\int_a^b f'(x)\; dx = G(c)[f(b)-f(a)]$$
+	puesto que $G(a)=0$ (hipótesis). Según el teorema del valor medio ponderado, se tiene
+	$$\int_a^b f'(x)G(x)\; dx = G(c)\int_a^b f'(x)\; dx = G(c)[f(b)-f(a)]$$
 	para un cierto $c$ en $[a,b]$. Por consiguiente $\int_a^b f(x)g(x)\; dx = \int_a^b f(x)G'(x)\; dx = f(b)G(b)-\int_a^b f'(x)G(x)\; dx$, se convierte en 
-	$$\int_a^b f(x)g(x)\; dx 0 f(b)G(b)-G(c)[f(b)-f(a)]=f(a)G(c)+f(b)[G(b)-G(c)].$$
+	$$\int_a^b f(x)g(x)\; dx = f(b)G(b)-G(c)[f(b)-f(a)]=f(a)G(c)+f(b)[G(b)-G(c)].$$
 	Esto demuestra $\int_a^b f(x)g(x)\; dx = f(a)\int_a^c g(x)\; dx + f(b)\int_c^b g(x)\; dx$ ya que $G(c)=\int_a^c g(x)\; dx$ y $G(b)-G(c)=\int_c^b g(x)\; dx.$
 \end{teo}
 
@@ -1369,6 +1369,117 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \vspace{0.5cm}
 
 	%------------------ 2.
-	\item 
+	\item $\displaystyle\int x^2\sen x \; dx$.\\\\
+	    Respuesta.-\; Aplicando la fórmula de integración por partes, se tiene
+	    $$\begin{array}{rcl}
+		u=x^2 &\Rightarrow& du=2x\; dx\\\\
+		dv=\sen x\; dx &\Rightarrow& v=-\cos x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^2\sen x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& -x^2\cos x + 2\displaystyle\int x \cos x\; dx.
+	    \end{array}$$
+	    Volviendo a utilizar la fórmula de integración por partes,
+	    $$\begin{array}{rcl}
+		u=x &\Rightarrow& du=dx\\\\
+		dv=\cos x\; dx &\Rightarrow& v=\sin x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x\cos x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& x\sin x - \displaystyle\int \sin x\; dx\\\\
+					       &=& x\sin x + \cos x + C.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 3.
+	\item $\displaystyle\int x^3\cos x\; dx$.\\\\
+	    Respuesta.-\; Aplicando la fórmula de integración por partes, se tiene
+	    $$\begin{array}{rcl}
+		u=x^3 &\Rightarrow& du=3x^2\; dx\\\\
+		dv=\cos x\; dx &\Rightarrow& v=\sin x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^3\cos x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& x^3\sin x - 3\displaystyle\int x^2\sin x\; dx.
+	    \end{array}$$
+	    Por el anterior ejercicio 2,
+	    $$\int x^2\sen \; dx = 2x\sen x + 2\cos x -x^2\cos x +C.$$
+	    Así, tenemos
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^3\cos x\; dx &=& x^3\sen x - \displaystyle\int x^2\sen x\; dx\\\\
+						 &=&x^3\sen x - 3(2x\sen x + 2\cos x -x^2\cos x)+C\\\\
+						 &=& x^3\sen x - 6x\sen x - 6\cos x + 3x^2\cos x + C.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 4.
+	\item $\displaystyle\int x^3 \sen x\; dx$.\\\\
+	    Respuesta.-\; Aplicando la fórmula de integración por partes, se tiene
+	    $$\begin{array}{rcl}
+		u=x^3 &\Rightarrow& du=3x^2\; dx\\\\
+		dv=\sen x\; dx &\Rightarrow& v=-\cos x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^3\sen x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& -x^3\cos x + 3\displaystyle\int x^2\cos x\; dx.
+	    \end{array}$$
+	    Aplicando la fórmula de integración por partes una vez más,
+	    $$\begin{array}{rcl}
+		u=x^2 &\Rightarrow& du=2x\; dx\\\\
+		dv=\cos x\; dx &\Rightarrow& v=\sin x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^2\cos x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& x^2\sin x - 2\displaystyle\int x \sin x\; dx.
+	    \end{array}$$
+	    Luego, por el ejercicio 1,
+	    $$\int x\sen x \; dx = \sen x - x\cos x + C,$$
+	    se tiene,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^2\cos x\; dx &=& x^2\sin x - 2\displaystyle\int x\sen x\; dx\\\\
+						 &=& x^2\sin x - 2(\sen x - x\cos x) + C\\\\
+						 &=& x^2\sin x - 2\sen x + 2x\cos x + C.
+	    \end{array}$$
+	    Por lo tanto,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x^3\sen x\; dx &=& -x^3\cos x + 3\displaystyle\int x^2\cos x\; dx\\\\
+						 &=& -x^3\cos x + 3(x^2\sin x - 2\sen x + 2x\cos x) + C\\\\
+						 &=& -x^3\cos x + 3x^2\sin x - 6\sen x + 6x\cos x + C.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 5.
+	\item $\displaystyle\int \sen x\cos x\; dx$.\\\\
+	    Respuesta.-\; Aplicando la fórmula de integración por partes, se tiene
+	    $$\begin{array}{rcl}
+		u=\sen x &\Rightarrow& du=\cos x\; dx\\\\
+		dv=\cos x\; dx &\Rightarrow& v=-\sen x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int \sen x\cos x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& \sen^2 x - \displaystyle\int \sen x \cos x\; dx.
+	    \end{array}$$
+	    De donde,
+	    $$\begin{array}{rcl}
+		2\displaystyle\int \sen x\cos x\; dx &=& \sen^2 x +C \\\\
+		\displaystyle\int \sen x\cos x\; dx &=& \frac{\sen^2 x+C}{2}.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 6.
+	\item $\displaystyle\int x\sen x \cos x\; dx$.\\\\
+	    Respuesta.-\;
 
     \end{enumerate}

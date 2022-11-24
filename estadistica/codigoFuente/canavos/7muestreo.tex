@@ -98,4 +98,34 @@ en donde $a_1,a_2,\ldots,a_n$ son constantes.
 
 \section{\boldmath La distribución de muestre de $\overline{X}$}
 
+Sea $X_1,X_2,\ldots , X_n$ una muestra aleatoria que consiste en $n$ variables aleatorias IID tales que $E(X_i)=\mu$ y $Var(X_i)=\sigma^2$ para toda $i=1,2,\ldots,n$. Entonces la estadística
+$$\overline{X}=\dfrac{X_1+X_2+\ldots + X_n}{n}$$
+se define como la media de las $n$ variables aleatorias IDD o, sencillamente, media muestral. Nótese que una vez que se conocen las realizaciones $x_1,x_2\ldots,x_n$ de $X_1,X_2,\ldots,X_n$, respectivamente, realización $\overline{x}$ de $\overline{X}$ se obtiene promediando los datos muestrales. \\
+Si en, $E(Y)=\sum_{i=1}^{n}a_i\mu_i$ y $Var(Y)=\sum_{i=1}^n a_i^2 \sigma_i^2$, $a_i=1/n$, $i=1,2,\ldots,n$ entonces el valor esperado y la varianza de $\overline{X}$ son
+$$E(\overline{X})=\sum_{i=1}^n \dfrac{1}{n}\mu=n\left(\dfrac{\mu}{n}\right)=\mu.$$
+y
+$$\Var(\overline{X}) = \sum_{i=1}^n \dfrac{1}{n^2} \sigma^2 = n \left(\dfrac{\sigma^2}{n^2}\right)=\dfrac{\sigma^2}{n},$$
+respectivamente, en donde $\mu$ y $\sigma^2$ son la media y la varianza de la distribución de la población a partir de la cual se obtuvo la muestra. Luego de esta última ecuación de $Var(\overline{X})$ la desviación estándar de $\overline{X}$ es
+\begin{tcolorbox}
+    $$d.e.(\overline{X})=\dfrac{\sigma}{\sqrt{n}}.$$
+\end{tcolorbox}
+la cual, en algunas ocasiones recibe el nombre de \textbf{error estándar de la media}. Si el tamaño de la muestra crece, la precisión de la media muestral para estimar la media poblacional aumenta. 
 
+%-------------------- Teorema 7.3
+\begin{teo}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria que consiste de $n$ variables aleatorias independientes y normalmente distribuidas con media $E(X_i)=\mu$ y varianzas $Var(X_i)=\sigma^2$, $i=1,2,\ldots,n$. Entonces la distribución de la media muestral $\overline{X}$ es normal con media $\mu$ y varianza $\sigma^2/n.$\\\\
+	Demostración.-\; Este teorema es un corolario del teorema 7.2. Esto es, sea $a_i=1/n$; dado que las medias y las varianzas son iguales, respectivamente, la función generadora de momentos de $\overline{X}$ es
+	$$\begin{array}{rcl}
+	    m\overline{X}(t) &=&  e^{\left(t\displaystyle\sum_{i=1}^n \dfrac{1}{n}\mu+\dfrac{t^2\displaystyle\sum_{i=1}^n \frac{1}{n^2}\sigma^2}{2}\right)}\\\\
+			     &=&e^{\left(t\mu+\dfrac{t^2\sigma^2}{2n}\right)},
+	\end{array}$$
+	que es la función generadora de momentos de una variable aleatoria normalmente distribuida con media $\mu$ y varianza $\sigma^2/n$. De esta forma, la \textbf{\boldmath función de densidad de probabilidad de $\overline{X}$ cuando se muestrea una población cuya distribución es normal}, está dada por
+	\begin{tcolorbox}
+	    $$f\left(\overline{x},\mu,\sigma/\sqrt{n}\right)=\dfrac{\sqrt{n}}{\sqrt{2\pi}\sigma}e^{\left[-\dfrac{n(\overline{x}-\mu)^2}{2\sigma^2}\right]}, \quad -\sigma<\overline{x}<\sigma.$$
+	\end{tcolorbox}
+\end{teo}
+
+% -------------------  ejemplo 
+\begin{ejem}
+    Demostrar que si 
+\end{ejem}
