@@ -1979,7 +1979,26 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$f^{(n)}(x)=0\mbox{ para algún } x\in[a,b].$$\\
 
     %-------------------- 46.
-    \item
+    \item Sean $x_1,\ldots, x_{n+1}$ puntos arbitrarios del intervalo $[a,b]$, y sea
+    $$Q(x)=\prod_{i=1}^{n+1}(x-x_i).$$
+    Suponga que $f$ es una función $(n+1)$-veces diferenciable y que $P$ es una función polinómica de grado $\leq n$ tal que $P(x_i)=f(x_i)$ para $i=1,\ldots,n+1$ (vea el problema 3-6). Demuestre que para cada $x$ de $[a,b]$ existe un número $c$ de $(a,b)$ tal que
+    $$f(x)-P(x)=Q(x)\cdot \dfrac{f^{(n+1)}(c)}{(n+1)!}.$$
+    Indicación: Considere la función 
+    $$F(t)=Q(x)[f(t)-P(t)]-Q(t)[f(x)-P(x)].$$
+    Demuestre que $F$ se anula en $n+2$ puntos diferentes de $[a,b]$ y utilices el problema 45.\\\\
+	Demostración.-\; Si $x$ esta en $x_i$, entonces $f(x)-P(x)=Q(x)$, así podemos escoger cualquier $c$. Por otra parte, sea
+	$$F(t)=Q(x)\left[f(t)-P(t)\right]-Q(t)\left[f(x)-P(x)\right].$$
+	Entonces, para $i=1,\ldots , n+1$ se tiene
+	\begin{center}
+	    $F(x_i)=0$, ya que $f(x_i)-P_i=0$ y $Q(x_i)=0,$
+	\end{center}
+	como también
+	$$F(x)=0.$$
+	Por el problema 45, tenemos $F^{(n+1)}(c)=0$ para algún $c$ en $(a,b)$. Esto es,
+	$$0=F^{(n+1)}(c)=Q(x)\left[f^{(n+1)}(c)-0\right]-(n+1)!\left[f(x)-P(x)\right].$$\\
+
+    %-------------------- 47.
+    \item 
 
 	
 \end{enumerate}

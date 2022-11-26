@@ -1480,6 +1480,24 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	%------------------ 6.
 	\item $\displaystyle\int x\sen x \cos x\; dx$.\\\\
-	    Respuesta.-\;
+	    Respuesta.-\; Por las propiedades trigonométricas se tiene,
+	    $$\sen x \cos x = \dfrac{1}{2}\sen 2x,$$
+	    por lo que evaluaremos 
+	    $$\dfrac{1}{2}\int x\sen 2x\; dx.$$
+	    Aplicando la fórmula de integración por partes, se tiene
+	    $$\begin{array}{rcl}
+		u=x &\Rightarrow& du=dx\\\\
+		dv=\sen 2x\; dx &\Rightarrow& v=-\dfrac{1}{2}\cos 2x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int x\sen 2x\; dx &=& \dfrac{1}{2}\left[x\left(-\dfrac{1}{2}\cos 2x\right)\right]- \dfrac{1}{2}\displaystyle\int \left(-\dfrac{1}{2}\cos 2 x\right)\; dx+C\\\\
+					       &=& -\dfrac{1}{4}x\cos 2x - \dfrac{1}{4}\displaystyle\int \cos 2x\; dx+C\\\\
+					       &=& -\dfrac{1}{4}x\cos 2x - \dfrac{1}{8}\sen 2x + C.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 7.
+	\item 
 
     \end{enumerate}
