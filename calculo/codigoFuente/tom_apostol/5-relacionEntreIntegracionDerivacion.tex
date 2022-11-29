@@ -1498,6 +1498,35 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \vspace{0.5cm}
 
 	%------------------ 7.
+	\item Con la integración por partes deducir la fórmula
+	$$\int \sen^2 x\; dx = -\sen x \cos x + \int \cos^2 x\; dx.$$
+	En la segunda integral, poner $\cos^2 x = 1-\sen^2 x$ y así deducir la fórmula
+	$$\int \sen^2 x \; dx = \dfrac{1}{2}-\dfrac{1}{4}\sen 2x.$$\\
+	    Respuesta.-\; Primero, usamos la fórmula de integración por partes,
+	    $$\begin{array}{rcl}
+		u=\sen x &\Rightarrow& du=\cos x\; dx\\\\
+		dv=\sen x\; dx &\Rightarrow& v=-\cos x.
+	    \end{array}$$
+	    Entonces,
+	    $$\begin{array}{rcl}
+		\displaystyle\int \sen^2 x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv - \displaystyle\int v\; du\\\\
+					       &=& -\sen x \cos x + \displaystyle\int \cos^2 x\; dx\\\\
+					       &=& -\sen x \cos x + \displaystyle\int (1-\sen^2 x)\; dx\\\\
+					       &=& -\sen x \cos x + \displaystyle\int 1\; dx - \int \sen^2 x\; dx\\\\
+
+	    \end{array}$$
+	    De donde,
+	    $$\begin{array}{rcl}
+		2\displaystyle\int \sen^2 x\; dx &=& -\sen x \cos x + x + C\\\\
+		\displaystyle\int \sen^2 x\; dx &=& \dfrac{1}{2}-\dfrac{1}{4}\sen(2x)+C.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 8.
 	\item 
+
+
+
 
     \end{enumerate}
