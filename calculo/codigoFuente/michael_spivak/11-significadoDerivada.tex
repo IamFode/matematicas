@@ -2009,7 +2009,30 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	$$\dfrac{1}{2\cdot 9}<\dfrac{\sqrt{66}-8}{2}<\dfrac{1}{2\cdot 8}.$$\\
 
     %-------------------- 48.
+\item Demuestre la siguiente generalización del Teorema del Valor Medio: si $f$ es continua y diferenciable en $(a,b)$ y $\lim\limits_{y\to a^+}f(y)$ y $\lim\limits_{y\to b^-} f(y)$ existen, entonces existe algún $x$ de $(a,b)$ tal que
+    $$f'(x)=\dfrac{\lim\limits_{y\to b^-} f(y)-\lim\limits_{y\to a^+}f(y)}{b-a}.$$
+    (La demostración debe empezar: esto es una consecuencia trivial del teorema del valor medio porque...).\\\\
+	Demostración.-\; Definamos la función $g:[a,b]\to \mathbb{R}$ como sigue:
+	$$
+	g(y) = 
+	    \left\{
+		\begin{array}{rcl}
+		    \lim\limits_{y\to a^+} f(y)&\mbox{si}& y=a;\\\\
+		    f(y)&\mbox{si}& a<y<b;\\\\
+		    \lim\limits_{y\to b^-} f(y)&\mbox{si}& y=b.
+		\end{array}
+	    \right.
+	$$
+	Entonces, observamos que $g$ es continua en $[a,b]$. En efecto, a partir de la definición de $g$ tenemos que, para cualquier $\left\{y_n\right\}$ con $y_n\to a$, $g(y_n)\to g(a)$, y para cualquier secuencia $\left\{z_n\right\}$ con $z_n\to b,$ $g(z_n)\to g(b)$. Por otro lado, si $y\in (a,b)$ entonces $g(y)=f(y)$ así $g$ es continua en $[a,b]$. Además, como $g(y)=f(y)$ para todo $y\in (a,b)$, $g$ es diferenciable en $(a,b)$. Por lo tanto, por el teorema del valor medio existe un número $x\in (a,b)$ tal que
+	$$g'(x)=\dfrac{g(b)-g(a)}{b-a}.$$
+	Pero, como $g(y)=f(y)$ para todo $y\in (a,b)$ tenemos por definición de $g(a)$ y $g(b)$ tenemos que
+	$$f'(x)=\dfrac{\lim\limits_{y\to b^-}f(y)-\lim\limits_{y\to a^+}f(y)}{b-a}.$$\\
+
+    %-------------------- 49.
     \item 
+
+
+
 
 
 	

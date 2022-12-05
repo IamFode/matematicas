@@ -5,7 +5,7 @@ date: "2022-11-21"
 output: pdf_document
 ---
 
-# Ejercicios capitulo 6
+# Ejercicios capitulo 7
 
 ## 7.1 
 Una forma de mercadotecnia envía un cuestionario a $1000$ residentes de cierto suburbio de una ciudad para determinar sus preferencias como compradores. De los $1000$ residentes, $80$ responden el cuestionario. ¿Lo anterior constituye una muestra aleatoria? Discutir los méritos de este procedimiento para obtener una muestra aleatoria.
@@ -49,3 +49,30 @@ $$\begin{array}{rcl}
 
 
 ## 7.4
+Repetir el ejercicio 7.3 para las siguientes distribuciones:
+
+### a)
+Gama con parámetro $\alpha$ y $\theta$.
+
+Respuesta.- Sea, $\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x/\theta}$ la distribución de densidad gama, entonces la función de verosimilitud será:
+
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\alpha,\theta)&=&\prod\limits_{i=1}^n \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_i/\theta}\\\\
+  &=& \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_1/\theta}\cdot  \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_2/\theta} \cdots \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_n/\theta}\\\\
+  &=& \left(\dfrac{x^{\alpha-1}}{\Gamma(\alpha)\theta^{\alpha}}\right)^n \cdot e^{\left(-\sum\limits_{i=1}^n\frac{x_i}{\theta}\right)}.
+\end{array}$$
+
+
+
+### b)
+Weibull con parámetro $\alpha$ y $\theta$.
+
+Respuesta.- Sea $f(x;\alpha,\theta)=\dfrac{\alpha}{\theta^{\alpha}}x^{\alpha-1}e^{-(x/\theta)^\alpha}$ la distribución de densidad de probabilidad Weibull, entonces la función de verosimilitud sera:
+
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\alpha,\theta)&=&\prod\limits_{i=1}^n \dfrac{\alpha}{\theta^{\alpha}}x_i^{\alpha-1}e^{-(x_i/\theta)^\alpha}\\\\
+  &=&\dfrac{\alpha}{\theta^{\alpha}}x_1^{\alpha-1}e^{-(x_1/\theta)^\alpha}\cdot \dfrac{\alpha}{\theta^{\alpha}}x_2^{\alpha-1}e^{-(x_2/\theta)^\alpha}\cdots \dfrac{\alpha}{\theta^{\alpha}}x_n^{\alpha-1}e^{-(x_n/\theta)^\alpha}\\\\
+  &=&\left(\dfrac{\alpha}{\theta^{\alpha}}\right)^n\cdot \prod\limits_{i=1}^n x_i^{\alpha-1}\cdot e^{\left[-\sum\limits_{i=1}^n \left(\frac{x_i}{\theta}\right)^\alpha\right]}.
+\end{array}$$
+
+## 7.5

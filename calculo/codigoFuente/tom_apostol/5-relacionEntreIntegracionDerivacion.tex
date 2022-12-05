@@ -1524,7 +1524,34 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \vspace{0.5cm}
 
 	%------------------ 8.
+	\item Integrando por partes deducir la fórmula
+	$$\int \sen^n x\; dx = -\sen^{n-1}x\cos x + (n-1)\int \sen^{n-2}x\cos^2 x\; dx.$$
+	En la segunda integral, poner $\cos^2 x= 1-\sen^2 x$ y con eso deducir la fórmula recurrente
+	$$\int \sen^n x\; dx = -\dfrac{\sen^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\int \sen^{n-2}x\; dx.$$\\
+	    Demostración.-\; Usando la fórmula de integración por partes,
+	    $$\begin{array}{rcl}
+		u=\sen^{n-1} x &\Rightarrow& du=(n-1)\cos^{n-2} x\; dx\\\\
+		dv=\sen x\; dx &\Rightarrow& v=-\cos x.
+	    \end{array}$$
+	    Entonces, 
+	    $$\begin{array}{rcl}
+		\displaystyle\int \sen^n x\; dx &=&u\; dx\\\\
+						&=&uv- \displaystyle\int v\; du\\\\
+						&=& -\sen^{n-1}x\cos x + (n-1)\displaystyle\int \sen^{n-2}x\cos^2 x\; dx\\\\
+	    \end{array}$$
+	    Luego, usando la identidad $\cos^2x=1-\sen^2 x$, tenemos
+	    $$\begin{array}{rcl}
+		\displaystyle\int \sen^n x\; dx &=& -\sen^{n-1}x\cos x - (n-1)\displaystyle\int \sen^{n-2}x\left(1-\sen^2 x\right)\; dx\\\\
+		\displaystyle\int \sen^n x\; dx &=& -\sen^{n-1}x\cos x + (n-1)\displaystyle\int \sen^{n-2}x\; dx - (n-1)\displaystyle\int \sen^{n}x\; dx\\\\
+		n\displaystyle\int \sen^n x\; dx &=& -\sen^{n-1}x\cos x + (n-1)\displaystyle\int \sen^{n-2}x\; dx\\\\
+		\displaystyle\int \sen^n x\; dx &=& -\dfrac{\sen^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\displaystyle\int \sen^{n-2}x\; dx.
+	    \end{array}$$
+	    \vspace{0.5cm}
+
+	%------------------ 9.
 	\item 
+
+
 
 
 
