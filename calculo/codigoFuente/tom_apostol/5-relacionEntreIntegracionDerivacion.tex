@@ -1549,7 +1549,53 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \vspace{0.5cm}
 
 	%------------------ 9.
-	\item 
+	\item Con los resultados de los Ejercicios 7 y 8 demostrar que
+	    \begin{enumerate}[(a)]
+
+		%---------- (a)
+		\item $\displaystyle\int_0^{\pi/2}\sen^2 x\; dx = \dfrac{\pi}{4}.$\\\\
+		    Demostración.-\; Usando la fórmula del Ejercicio 7,
+		    $$
+			\begin{array}{rcl}
+			    \displaystyle\int_0^{\frac{\pi}{2}} \sen^2 x\; dx &=& \left[\dfrac{1}{2}x-\dfrac{1}{4}\sen(2x)\right]\bigg|_0^{\frac{\pi}{2}}\\\\
+									      &=&\left(\dfrac{\pi}{4}-0\right)-0\\\\
+									      &=&\dfrac{\pi}{4}.
+
+			\end{array}
+		    $$
+		    \vspace{0.5cm}
+
+		%---------- (b)
+		\item $\displaystyle\int_0^{\pi/2} \sen^4 x\; dx = \dfrac{3}{4}\int_{0}^{\pi/2}\sen^2x\; dx = \dfrac{3\pi}{16}.$\\\\
+		    Demostración.-\; Usando la fórmula del Ejercicio 8 (b), tenemos
+		    $$
+			\begin{array}{rcl}
+			    \displaystyle\int_0^{\pi} \sen^4 x\; dx &=& -\dfrac{\sen^3x\cos x}{4}\bigg|_0^{\frac{\pi}{2}} + \dfrac{3}{4}\displaystyle\int_0^{\frac{\pi}{2}} \sen^2 x\; dx\\\\
+								    &=& 0+\dfrac{3}{4}\left(\dfrac{\pi}{4}\right)\\\\
+								    &=& \dfrac{3\pi}{16}.
+			\end{array}
+		    $$
+		    \vspace{0.5cm}
+
+		%---------- (c)
+		\item $\displaystyle\int_0^{\pi/2} \sen^6 x\; dx = \dfrac{5}{6}\int_0^{\pi/2} \sen^4x\; dx = \dfrac{5\pi}{32}$.\\\\	
+		    Demostración.-\;  Usando la fórmula del Ejercicio 8 (b), tenemos
+		    $$
+		    \begin{array}{rcl}
+			\displaystyle\int_0^{\frac{\pi}{2}} \sen^6 x\; dx &=& \displaystyle -\dfrac{\sen^5x\cos x}{6}\bigg|_0^{\frac{\pi}{2}} + \dfrac{5}{6}\int_0^{\frac{\pi}{2}} \sen^4 x\; dx\\\\
+									  &=& 0 + \dfrac{5}{6}\left(\dfrac{3\pi}{16}\right)\\\\
+									  &=& \dfrac{5\pi}{32}.
+		    \end{array}
+		    $$
+		    \vspace{0.5cm}
+
+	    \end{enumerate}
+
+    %------------------ 10.
+    \item 
+
+    
+
 
 
 
