@@ -2041,7 +2041,34 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	Lo que completa la demostración.\\\\
 
     %-------------------- 50.
+    \item Demuestre que si $f$ y $g$ son continuas en $[a,b]$ y diferenciables en $(a,b)$, y $g'(x)\neq 0$ para todo $x$ de $(a,b)$, entonces existe algún $x$ en $(a,b)$ con
+    $$\dfrac{f'(x)}{g'(x)}=\dfrac{f(x)-f(a)}{g(b)-g(x)}.$$
+    Indicación: Multiplique en cruz para ver lo que esto realmente significa.\\\\
+	Respuesta.-\; Sea $h:[a,b]\to \mathbb{R}$ como sigue:
+	$$h(x)=f(x)g(b)+f(x)g(a)-f(x)g(x).$$
+	Entonces, por hipótesis, vemos que $g$ es continua en $[a,b]$ y diferenciable en $(a,b)$. Además
+	$$h(a)=f(a)g(b)+f(a)g(a)-f(a)g(a)=f(a)g(b),$$
+	y
+	$$f(b)=f(b)g(b)+f(b)g(a)-f(b)g(b)=f(a)g(b).$$
+	Así, $h(a)=h(b)=f(a)g(b)$. Luego, usando el teorema de Rolle para la función $h$, existe un número $x\in (a,b)$ tal que
+	$$h'(x)=0.$$
+	Calculemos $h'$:
+	$$h'(x)=f'(x)g(b)+f(x)g'(x)-f'(x)g(x)-f(x)g'(x)=0$$
+	que implica,
+	$$f'(x)[g(b)-g(x)]=g'(x)[f(x)-f(a)].$$
+	Después, ya que $g'(x)\neq 0$ para todo $x\in (a,b)$, se tiene que $g(b)\neq g(x)$ para $x\in (a,b)$. Por otro lado, si tenemos $x\in (a,b)$ tal que $g(x)=g(b)$ aplicando una vez más el teorema de Rolle, podría implicar que $g'(x)=0$ para algún $x$ in $(x,b)$. Lo que contradice el hecho de que $g'(x)\neq 0$. Por lo que podemos escribir la ecuación de arriba como sigue,
+	$$\dfrac{f'(x)}{g'(x)}=\dfrac{f(x)-f(a)}{g(b)-g(x)}.$$\\
+
+
+    %-------------------- 51.
+    \item ¿Dónde se encuentra el error en la siguiente aplicación de la Regla de L'Hopital?:
+    $$\lim_{x\to 1}\dfrac{x^3+x-2}{x^2-3x+2}=\lim_{x\to 1}\dfrac{3x^2+1}{2x-3}=\lim_{x\to 1}\dfrac{6x}{2}=3.$$
+    (El límite es, en realidad, $-4$).\\\\
+	Respuesta.-\;
+
+    %-------------------- 52.
     \item 
+
 
 
 
