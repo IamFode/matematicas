@@ -2064,17 +2064,80 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
     \item ¿Dónde se encuentra el error en la siguiente aplicación de la Regla de L'Hopital?:
     $$\lim_{x\to 1}\dfrac{x^3+x-2}{x^2-3x+2}=\lim_{x\to 1}\dfrac{3x^2+1}{2x-3}=\lim_{x\to 1}\dfrac{6x}{2}=3.$$
     (El límite es, en realidad, $-4$).\\\\
-	Respuesta.-\;
+	Respuesta.-\; La regla de L'Hopital no es aplicable a la expresión
+	$$\lim_{x\to 1}\dfrac{3x^2+1}{2x-3}=\lim_{x\to 1}\dfrac{6x}{2}$$
+	puesto que $\lim\limits_{x\to 1}3x^2+1=3+1=4\neq 0$.\\\\
 
     %-------------------- 52.
     \item 
+	\begin{enumerate}[(i)]
 
+	    %---------- (i)
+	    \item $\lim\limits_{x\to 0}\dfrac{x}{\tan x}$.\\\\
+		Respuesta.-\; Dado que,
+		$$\lim_{x\to 0}\dfrac{\sen x}{x}=1.$$
+		Entonces,
+		$$
+		\begin{array}{rcl}
+		    \lim\limits_{x\to 0} \dfrac{x}{\tan x} &=& \lim\limits_{x\to 0} \dfrac{x\cos x}{\sen x}\\\\
+							   &=& \lim\limits_{x\to 0} \dfrac{x}{\sen x}\cdot \lim\limits_{x\to 0}\cos x\\\\
+							   &=& 1.
+		\end{array}
+		$$
+		Así, 
+		$$\lim_{x\to 0}\dfrac{x}{\tan x}=1.$$\\
 
+	    %---------- (ii)
+	    \item $\lim\limits_{x\to 0}\dfrac{\cos^2 x - 1}{x^2}$.\\\\
+		Respuesta.-\; 
+		$$
+		\begin{array}{rcl}
+		    \lim\limits_{x\to 0}\dfrac{\cos^2 x - 1}{x^2}&=& \lim\limits_{x\to 0} \dfrac{-\sen^2 x}{x^2}\\\\ 
+								 &=& -\lim\limits_{x\to 0}\left(\dfrac{\sen x}{x}\right)^2\\\\
+								 &=& - (2)^2\\\\
+								 &=& -1.
+		\end{array}
+		$$
+		\vspace{.5cm}
+		
+	\end{enumerate}
 
+    %-------------------- 53.
+    \item Halle $f'(0)$ si
+    $$
+    f(x)=
+    \left\{
+	\begin{array}{rc}
+	    \dfrac{g(x)}{x}, & x\neq 0\\\\
+	    0, & x=0.
+	\end{array}
+    \right.
+    $$
+    y $g(0)=g'(0)=0$ y $g''(0)=17$.\\\\
+	Respuesta.-\; Ya que $g(0)=0$ y $g$ es diferenciable, vemos que
+	$$\lim_{x\to 0}g(x)=0\quad \mbox{y}\quad \lim_{x\to 0}h(x)=0,$$
+	donde $h(x)=x.$ Después, $h'(x)=1$ y $\lim_{x\to 0}\dfrac{g'(x)}{h'(x)}$ existe. Luego, usando la regla de L'Hopital, 
+	$$\lim_{x\to 0}f(x)=\lim_{x\to 0}\dfrac{g(x)}{x}=\lim_{x\to 0}g'(0)=0.$$
+	Por lo que, $f$ es continua en $0$. Ahora, calculemos el límite
+	$$\lim_{x\to 0}\dfrac{f(x)-f(0)}{x}=\lim_{x\to 0}\dfrac{f(x)}{x}\lim_{x\to 0}\dfrac{g(x)}{x^2}.$$
+	Sea $u(x)=x^2$, entonces
+	$$\lim_{x\to 0}g(x)=0 \quad \mbox{y}\quad \lim_{x\to 0}u(x)=0.$$
+	De donde, $\lim\limits_{x\to 0}\frac{g'(x)}{u'(x)}$ existe ya que $u'(x)=2x$ y $\lim\limits_{x\to 0}\dfrac{g(x)}{x}=0$. Una vez más usando la regla de L'Hopital, se tiene
+	$$\lim_{x\to 0}\dfrac{g(x)}{x^2}=\lim_{x\to 0}\dfrac{g'(x)}{2x}=\lim_{x\to 0}\dfrac{g''(x)}{2}.$$
+	La última igualad se obtiene por la existencia de los $\lim\limits_{x\to 0}g'(x)=0$ y $\lim\limits_{x\to 0}2x=0$, así como $\lim\limits_{x\to 0}\frac{g''(x)}{2}$. Por último, sabemos que $g''(0)=17$, por lo tanto
+	$$\lim_{x\to 0}\dfrac{g''(x)}{2}=\dfrac{17}{2}.$$
+	Así,
+	$$f'(0)=\dfrac{17}{2}.$$\\
 
+    %-------------------- 54.
+    \item Demuestre las siguientes formas de la Regla de L'Hopital (ninguna de ellas require un razonamiento esencialmente nuevo.)\\
+	\begin{enumerate}[(a)]
 
-
-
+	    %---------- (a)
+	    \item Si $\lim\limits_{x\to a^+}f(x)=\lim\limits_{x\to a^+}=0$ y $\lim\limits_{x\to a^+}\dfrac{f'(x)}{g'(x)}=l$, entonces $\lim\limits_{x\to a^+}\dfrac{f(x)}{g(x)}=l$ (y análogamente para límites por la izquierda).\\\\
+		Demostración.-\;
+	\end{enumerate}
+	
 
 	
 \end{enumerate}

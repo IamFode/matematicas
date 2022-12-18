@@ -1,6 +1,8 @@
 # Multiplicación de matrices
 ## Sea A una matriz mxn sobre el cuerpo F y sea B una matriz nxp sobre F. El producto AB es la matriz mxp, C, cuyos elementos i,j son C_ij = sum_r=1^n A_ir B_rj.
 
+
+
 # 3x3 matrix
 X = [[12,7,3],
     [4 ,5,6],
@@ -22,5 +24,8 @@ for i in range(len(X)):
        for k in range(len(Y)):
            result[i][j] += X[i][k] * Y[k][j]
 
+"""
 for r in result:
    print(r)
+"""
+
