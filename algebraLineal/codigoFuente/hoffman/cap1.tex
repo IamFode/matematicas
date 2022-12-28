@@ -2763,6 +2763,8 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
 	Demostración.-\; Sea $A$ una matriz $m\times n$. Supóngase que $A$ tiene una inversa a la izquierda, es decir, una matriz $B$ tal que $BA=I$. Entonces $AX=0$ tiene solo la solución trivial, porque $X=IX=B(AX)$. Luego $A$ es inversible. Por otro lado, supóngase que $A$ tiene una inversa a la deracha, es decir, una matriz $C$ tal que $AC=I$. Entonces $C$ tiene una inversa a la izquierda y es, por tanto, inversa. Se sigue entonces que $A=C^{-1}$ y así $A$ es inversible con inversa $C$.
 \end{cor}
 
+Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la última sección pudo haberse hecho usando columnas en vez de filas. Si se define una operación elemental de columna y equivalencia por columna, es claro que toda matriz $m\times n$ será equivalente por columnas a una matriz escalón reducida por columnas. Así cada operación elemental de columna será de la forma $A\to AE$, donde $E$ es una matriz elemental $n\times n$, y así sucesivamente.
+
 
 \section*{Ejercicios}
 
@@ -2874,6 +2876,12 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
 		    0&4&1
 		\end{array}
 	    \right]\\\\
+
+	\end{array}
+	$$
+
+	$$
+	\begin{array}{rlrcl}
 	    \dfrac{R_3}{8}\to R_3&
 	    \left[
 		\begin{array}{rrrr|rrr}
@@ -2890,12 +2898,6 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
 		    0&0&\frac{1}{8}
 		\end{array}
 	    \right]\\\\
-
-	\end{array}
-	$$
-
-	$$
-	\begin{array}{rlrcl}
 	    R_2-2R_3\to R_2&
 	    \left[
 		\begin{array}{rrrr|rrr}
@@ -2959,7 +2961,7 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
 	$$
 	\vspace{.5cm}
 
-    %-------------------- 1.
+    %-------------------- 2.
     \item Repetir el Ejercicio 1, pero con
     $$
     A=
@@ -3032,7 +3034,11 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
 		    0&1&0\\
 		    -i&0&1
 		\end{array}
-	    \right]\\\\
+	    \right]
+	\end{array}
+	$$
+	$$
+	\begin{array}{rlrcl}
 	    \dfrac{R_2}{6} \to R_2&
 	    \left[
 		\begin{array}{rrr|rrr}
@@ -3184,7 +3190,194 @@ Así, si $A$ es inversa a la izquierda e inversa a la derecha, $A$ es inversible
     \right]
     $$
     emplear operaciones elementales de fila para determinar cuándo es invresible y encontrar la inversa en caso que lo sea.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Para la primera matriz, por el teorema 12, reducimos por filas la matriz aumentada de la siguiente manera:
+
+	$$
+	\begin{array}{rcl}
+	    \left[
+		\begin{array}{rrr|rrr}
+		    2 & 5 & -1 & 1 & 0 & 0\\
+		    4 & -1 & 2 & 0 & 1 & 0\\
+		    6 & 4 & 1 & 0 & 0 & 1
+		\end{array}
+	    \right]
+	    &\dfrac{R_1}{2}\to R_1&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & \frac{5}{2} & -\frac{1}{2} & \frac{1}{2} & 0 & 0\\
+		    4 & -1 & 2 & 0 & 1 & 0\\
+		    6 & 4 & 1 & 0 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &
+	    \begin{array}{rcl}
+		R_2-4R_1 &\to & R_2\\\\
+		R_3-6R_1 &\to & R_3
+	    \end{array}
+	    &
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & \frac{5}{2} & -\frac{1}{2} & \frac{1}{2} & 0 & 0\\
+		    0 & -11 & 4 & -2 & 1 & 0\\
+		    0 & -11 & 4 & -3 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    & R_3-R_2\to R_3&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & \frac{5}{2} & -\frac{1}{2} & \frac{1}{2} & 0 & 0\\
+		    0 & -11 & 4 & -2 & 1 & 0\\
+		    0 & 0 & 0 & -1 & -1 & 1
+		\end{array}
+	    \right]
+	\end{array}
+	$$
+	Puesto que la última fila es cero.Entonces, $A$ no puede ser reducida por filas a la identidad. Es decir, $A$ no es equivalente por fila a la matriz identidad, por lo tanto, $A$ no es invertible.\\
+
+	Para la segunda matriz, reducimos por filas la matriz aumentada de la siguiente manera:
+	$$
+	\begin{array}{rcl}
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & -1 & 2 & 1 & 0 & 0\\
+		    3 & 2 & 4 & 0 & 1 & 0\\
+		    0 & 1 & -2 & 0 & 0 & 1
+		\end{array}
+	    \right]
+	    &R_2-3R_1\to R_2&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & -1 & 2 & 1 & 0 & 0\\
+		    0 & 5 & -2 & -3 & 1 & 0\\
+		    0 & 1 & -2 & 0 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &R_2\leftrightarrow R_3&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & 0 & 0 & 4 & -1 & 0\\
+		    0 & 0 & 0 & 3 & -3 & 1\\
+		    0 & 5 & -2 & -3 & 1 & 0
+		\end{array}
+	    \right]\\\\
+	    &
+	    \begin{array}{rcl}
+		R_1-R_2 &\to & R_1\\\\
+		R_3-5R_2 &\to & R_3
+	    \end{array}
+	    &
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & 0 & 0 & 1 & 0 & 1\\
+		    0 & 1 & -2 & 0 & 0 & 1\\
+		    0 & 0 & 8 & -3 & 1 & -5
+		\end{array}
+	    \right] \\\\
+	    &\dfrac{R_3}{8}\to R_3&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & 0 & 0 & 1 & 0 & 1\\
+		    0 & 1 & -2 & 0 & 0 & 1\\
+		    0 & 0 & 1 & -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+		\end{array}
+	    \right]\\\\
+	    &2R_3+R_2 \to R_2&
+	    \left[
+		\begin{array}{rrr|rrr}
+		    1 & 0 & 0 & 1 & 0 & 1\\
+		    0 & 1 & 0 &-\frac{3}{4} & \frac{1}{4} & -\frac{1}{4} \\
+		    0 & 0 & 1 & -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+		\end{array}
+	    \right]\\\\
+
+	\end{array} $$
+	Por lo tanto la matriz inversa es:
+	$$
+	\left[
+	    \begin{array}{rrr}
+		 1 & 0 & 1\\
+		-\frac{3}{4} & \frac{1}{4} & -\frac{1}{4} \\
+		-\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+	    \end{array}
+	\right]
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 4.
+    \item Sea 
+    $$
+    A=
+    \left[
+	\begin{array}{rcl}
+	    5 & 0 & 0 \\
+	    1 & 5 & 0 \\
+	    0 & 1 & 5
+	\end{array}
+    \right].
+    $$
+    ¿Para que $X$ existe un escalar $c$ tal que $AX=cX$?.\\\\
+	Respuesta.-\; Sea,
+	$$
+	\left[
+	    \begin{array}{rcl}
+		5 & 0 & 0 \\
+		1 & 5 & 0 \\
+		0 & 1 & 5
+	    \end{array}
+	\right]
+	\left[
+	    \begin{array}{r}
+		x_1\\
+		x_2\\
+		x_3
+	    \end{array}
+	\right]
+	= c
+	\left[
+	    \begin{array}{r}
+		x_1\\
+		x_2\\
+		x_3
+	    \end{array}
+	\right]
+	$$
+	que implica
+	$$
+	\begin{array}{rcrcccc}
+	    5x&&&&&=&cx\\
+	    x&+&5y&&&=&cy\\	
+	     &&y&+&5z&=&cz
+	\end{array}
+	$$
+
+	Si $c\neq 5$, entonces $x=0$, lo que implica que $y=0$ y $z=0$. Por lo que es cierto para 
+	$$
+	\left[
+	    \begin{array}{r}
+		0\\
+		0\\
+		0
+	    \end{array}
+	\right] \mbox{ con } c=0.
+	$$
+
+	Por otro lado, si $c=5$, entonces por la ecuación 2, $x=0$; lo que implica que $y=0$. Por lo tanto, es cierto para
+	$$
+	\left[
+	    \begin{array}{r}
+		0\\
+		0\\
+		z
+	    \end{array}
+	\right] \mbox{ con } c=5.
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 5.
+    \item 
+
+
+
 
 
 \end{enumerate}
