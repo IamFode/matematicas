@@ -2135,7 +2135,45 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %---------- (a)
 	    \item Si $\lim\limits_{x\to a^+}f(x)=\lim\limits_{x\to a^+}=0$ y $\lim\limits_{x\to a^+}\dfrac{f'(x)}{g'(x)}=l$, entonces $\lim\limits_{x\to a^+}\dfrac{f(x)}{g(x)}=l$ (y análogamente para límites por la izquierda).\\\\
-		Demostración.-\;
+		Demostración.-\; Por la definición de límite notamos que
+		$$\lim_{x\to a^+}f(x)=0\lim_{x\to a^+}g(x)$$
+		implica que:
+		\begin{enumerate}[i.]
+		    \item existe un $\delta>0$ tal que $f'$ y $g'$ existen en el intervalo $(a,a+\delta)$,
+		    \item además, $g'(x)\neq 0$ en $(a,a+\delta)$.
+		\end{enumerate}
+		Supongamos, sin perdida de generalidad, que tanto $f$ como $g$ son continuas por la derecha en $0$. De hecho, si $f$ y $g$ no fueran continuas en $0$, entonces habríamos definido $f(a)=g(a)=0$ cambiando los valores de $f(a)$ y $g(a)$ si fueran necesarios. Ahora aplicando los teoremas de valor medio y del valor medio de Cauchy para $f$ y $g$ en el intervalo $[a,x]$ para $x\in (a,a+\delta)$. Después notemos que $g(x)\neq 0$. Además, si $g(x)=0$, entonces habría un número $x_1\in(a,x)$ tal que $g'(x_1)=0$ contradiciendo la propiedad ii. anterior. Luego aplicando el valor medio de Cauchy a $f$ y $g$ observamos que existe un número $c_x\in (a,x)$ tal que
+		$$\left[f(x)-f(a)\right]g'(c_x)=\left[g(x)-g(a)\right]f'(c_x),$$
+		que equivale a la ecuación
+		$$\dfrac{f(x)}{g(x)}=\dfrac{f'(c_x)}{g'(c_x)}.$$
+		Por último, vemos que a medida que $x$ tiende a $a$ también $c_x$ tiende a $a$ ya que $c_x\in (a,x)$. De lo que se deduce que 
+		$$\lim_{x\to a^+}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{c_x\to a^+}\dfrac{f'(c_x)}{g'(c_x)}.$$
+		Así, tenemos
+		$$\lim_{x\to a^+}\dfrac{f(x)}{g(x)}=\lim_{x\to a^+}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{c_x\to a^+}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{y\to a^+}\dfrac{f'(y)}{g'(y)}.$$\\
+
+	    %---------- (b)
+	    \item Si $\lim\limits_{x\to a}f(x)=\lim\limits_{x\to a}g(x)=0$ y $\lim\limits_{x\to a}\dfrac{f'(x)}{g'(x)}=\infty$, entonces $\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=\infty$ (y análogamente para $-\infty$), o si se sustituye $x\to a$ por $x\to a^+$ o $x\to a^-$.\\\\
+		Demostración.-\; Demostremos que $\lim\limits_{x\to a^+}\dfrac{f(x)}{g(x)}=\infty$. Por hipótesis se tiene,
+		$$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)$$
+		implica que:
+		\begin{enumerate}[i.]
+		    \item Existe un $\delta>0$ tal que $f'$ y $g'$ existen en el intervalo $(a-\delta,a+\delta) | \left\{a\right\}$,
+		    \item además, en el mismo intervalo, es decir $(a-\delta,a+\delta)|\left\{a\right\}$, $g'(x)\neq 0$.
+		\end{enumerate}
+		Supongamos sin pérdida de generalidad que tanto $f$ como $g$ son continuas a la derecha en $0$. De hecho si $f$ y $g$ no fueran continuas en $0$, entonces habríamos definido $f(a)=g(a)=0$ cambiando los valores de $f(a)$ y $g(a)$ si fuera necesario.\\
+		Ahora, aplicando el teorema de valor medio y el teorema del valor medio de Cauchy para $f$ y $g$ en el intervalo $[a,x]$ en $x\in (a,a+\delta)$. Notamos que $g(x)\neq 0$. Es más, si $g(x)=0$, entonces podría existir un número $x_1\in(a,x)$ tal que $g'(x_1)=0$ contradiciendo la propiedad ii). Ahora aplicando el teorema de valor medio de Cauchy para $f$ y $g$ observamos que existe un número $c_x\in(a,x)$ tal que
+		$$\left[f(x)-f(a)\right]g'(c_x)=\left[g(x)-g(a)\right]f'(c_x)$$
+		lo que equivale a la ecuación
+		$$\dfrac{f(x)}{g(x)}=\dfrac{f'(c_x)}{g'(c_x)}.$$
+		Luego, vemos que como $x$ tiende a $a$, $c_x$ también tiende a $a$ ya que $c_x\in(a,x)$. Entonces, se sigue que
+		$$\lim_{x\to a}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{c_x\to a}\dfrac{f'(c_x)}{g'(c_x)}.$$
+		Así, tenemos
+		$$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{c_x\to a}\dfrac{f'(c_x)}{g'(c_x)}=\lim_{y\to a}\dfrac{f'(y)}{g'(y)}=\infty.$$
+		Similarmente, tenemos para $x\in (a-\delta,a)$, que
+		$$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{y\to a}\dfrac{f'(y)}{g'(y)}=\infty.$$
+		Esto completa la demostración de la primera parte. Ahora siguiendo el argumento de la parte (a), en este caso con $l=\infty$  uno puede obtener los otros casos.\\\\
+		
+
 	\end{enumerate}
 	
 

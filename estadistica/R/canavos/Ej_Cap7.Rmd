@@ -76,3 +76,57 @@ $$\begin{array}{rcl}
 \end{array}$$
 
 ## 7.5
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una población cuya distribución es normal con media $\mu$ y varianza $\sigma^2$. De las siguientes, ¿cuáles son estadísticas?
+
+### a)
+$\sum X_i-\mu$.
+
+Respuesta.- No es estadística ya que no está definida $X_i$ ni se conoce el valor de $\mu$.
+
+### b)
+$\sigma X_1 + \sigma X_2$.
+
+Respuesta.- No es estadística ya que no se conoce el valor de sigma.
+
+### c)
+$X_i,i=1,2,\ldots,n$.
+
+Respuesta.- Es estadística porque $X_i$ está definida entre $1$ y $n$.
+
+### d)
+$X_1^2+X_2^2 - e^{X_3}$.
+
+Respuesta.- Es estadística.
+
+### e)
+$\dfrac{X_i}{\sigma},\; i=1,2,\ldots, n$.
+
+Respuesta.- No es estadística porque no se conoce el valor de $\sigma$.
+
+### f)
+$\sum \left(X_i-\overline{X}\right)^2$.
+
+Respuesta.- Es estadística porque es una función completa.
+
+
+## 7.6
+Sean $X_1,X_2,\ldots,X_n$ $n$ variables aleatorias independientes de Poisson con parámetros $\lambda_1,\lambda_2,\ldots,\lambda_n$ respectivamente. Mediante el empleo de la función generadora de momentos, demostrar que la suma de estas variables también es una variable aleatoria de Poisson con parámetros $\lambda_1+\lambda_2+\cdots + \lambda_n$.
+
+Respuesta.- Sea,
+$$m_{X_i}(t)=e^{\lambda_i(e^t-1)}$$
+la función generadora de momentos de la distribución Poisson, entonces por el teorema 7.1, con $a_i=1$. La suma de las variables también es una variable aleatoria de Poisson. Es decir, sea 
+$$Y=X_1+X_2+\ldots + X_n$$
+donde,
+$$
+\begin{array}{rcl}
+  m_{Y}(t)&=&m_{X_1}(t)m_{X_2}(t)\cdots m_{X_n}(t)\\\\
+  &=& e^{\lambda_1\left(e^t-1\right)}e^{\lambda_2\left(e^t-1\right)}\cdots e^{\lambda_n(e^t-1)}\\\\
+  &=& e^{\left[\lambda_1\left(e^t-1\right)+\lambda_2\left(e^t-1\right)+\ldots+ \lambda_n\left(e^t-1\right) \right]}\\\\
+  &=& e^{\left[\left(\lambda_1+\lambda_2+\ldots + \lambda_n\right)\left(e^t-1\right)\right]} 
+\end{array}
+$$
+
+## 7.7
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes de Poisson con parámetros $\lambda_1$ y $\lambda_2$, respectivamente. Demostrar que la diferencia entre $X_1$ y $X_2$ no es una variable aleatoria de Poisson.
+
+Respuesta.-

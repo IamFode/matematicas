@@ -20,11 +20,11 @@ En el contexto ed la definición 7.1, la función (densidad) conjunta de probabi
     La función de densidad conjunta de $X_1$ y $X_2$ es
     $$f(x_1,x_2;\theta)=f(x_1;\theta)f(x_2;\theta)=\dfrac{1}{\theta^2}e^{-(x_1+x_2)/\theta},\quad 0<x_i<\infty,\; i=1,2.$$
     Por lo tanto, se desprende que para una muestra aleatoria de tamaño $n$
-    $$L(x_1,x_2,\ldots,x_n; \theta)=\dfrac{1}{\theta}e^{-(x1+x_2+\ldots +x_n)/\theta},\quad 0<x_1<\infty,\; i=1,2,\ldots,n.$$
+    $$L(x_1,x_2,\ldots,x_n; \theta)=\dfrac{1}{\theta}e^{-(x_1+x_2+\ldots +x_n)/\theta},\quad 0<x_1<\infty,\; i=1,2,\ldots,n.$$
 \end{ejem}
 
 \setcounter{section}{2}
-\section{Distribuciones de muestre de estadísticas}
+\section{Distribuciones de muestreo de estadísticas}
 
 
 \begin{def.}
@@ -33,7 +33,7 @@ En el contexto ed la definición 7.1, la función (densidad) conjunta de probabi
     La oración describe de manera completa, sugiere que una vez que se conoce el valor de $\theta$ entonces, puede formularse cualquier proposición probabilistica de interes.
 \end{def.}
 
-Dado que los parámetros son prácticamente inherentes a todos los modelos de probabilidad, es imposible calcular las probabilidades deseadas sin un conocimiento del valor de estos. Es por esta razón que la noción de una estadística y su distribución de muestre es muy importante en inferencia estadística.
+Dado que los parámetros son prácticamente inherentes a todos los modelos de probabilidad, es imposible calcular las probabilidades deseadas sin un conocimiento del valor de estos. Es por esta razón que la noción de una estadística y su distribución de muestreo es muy importante en inferencia estadística.
 
 Antes de dar la definición de una estadística, debe notarse que desde un punto de vista clásico (no bayesiano), un parámetro se considera como una cosntante fija cuyo valor se desconoce. Desde una perspectiva bayesiana un parámetro siempre es una variable aleatoria con algún tipo de distribución de probabilidad.
 
@@ -47,10 +47,10 @@ Un parámetro es una constante pero una estadística es una variable aleatoria. 
 
 %------------------- Definición 7.4
 \begin{def.}
-    La distribución de muestre de una estadística $T$ es la distribución de probabilidad de $T$ que puede obtenerse como resultado de un número infinito de muestras aleatorias independientes, cada una de tamaño $n$, provenientes de la población de interés.
+    La distribución de muestreo de una estadística $T$ es la distribución de probabilidad de $T$ que puede obtenerse como resultado de un número infinito de muestras aleatorias independientes, cada una de tamaño $n$, provenientes de la población de interés.
 \end{def.}
 
-La distribución de muestre de una estadística hace posible este tipo de análisis de probabilidad, esencial para valorar el riesgo inherente cuando se formulan ingerencias.
+La distribución de muestreo de una estadística hace posible este tipo de análisis de probabilidad, esencial para valorar el riesgo inherente cuando se formulan ingerencias.
 
 %-------------------- Teorema 7.1
 \begin{teo}
@@ -77,7 +77,7 @@ De esta forma, la función generadora de momentos de una combinación lineal de 
     en donde $a_2,a_2,\ldots,a_n$ son constantes, entonces $Y$ es una variable aleatoria con distribución normal y media
     $$E(Y)=a_1\mu_1+a_2\mu_2+\ldots + a_nX_n$$
     y con varianza 
-    $$Var(Y)=a_1^2\sigma_1^2+a_2^2\sigma_2^2 + \ldots + a_n^2\sigma_n^2.$$
+    $$Var(Y)=a_1^2\sigma_1^2+a_2^2\sigma_2^2 + \ldots + a_n^2\sigma_n^2.$$\\
 	Demostración.-\; Dado que $X_i$ se encuentra normalmente distribuida, su función generadora de momentos es
 	$$m_{X_i}(t)=e^{\left(\mu_i t + \frac{\sigma_i^2t^2}{2}\right)}.$$
 	De acuerdo con el teorema 7.1, la función generadora de momentos de $Y$ es
@@ -96,15 +96,19 @@ $$Var(Y)=\sum_{i=1}^n a_i^2 \sigma_i^2.$$
 en donde $a_1,a_2,\ldots,a_n$ son constantes.
 
 
-\section{\boldmath La distribución de muestre de $\overline{X}$}
+\section{\boldmath La distribución de muestreo de $\overline{X}$}
 
 Sea $X_1,X_2,\ldots , X_n$ una muestra aleatoria que consiste en $n$ variables aleatorias IID tales que $E(X_i)=\mu$ y $Var(X_i)=\sigma^2$ para toda $i=1,2,\ldots,n$. Entonces la estadística
 $$\overline{X}=\dfrac{X_1+X_2+\ldots + X_n}{n}$$
 se define como la media de las $n$ variables aleatorias IDD o, sencillamente, media muestral. Nótese que una vez que se conocen las realizaciones $x_1,x_2\ldots,x_n$ de $X_1,X_2,\ldots,X_n$, respectivamente, realización $\overline{x}$ de $\overline{X}$ se obtiene promediando los datos muestrales. \\
 Si en, $E(Y)=\sum_{i=1}^{n}a_i\mu_i$ y $Var(Y)=\sum_{i=1}^n a_i^2 \sigma_i^2$, $a_i=1/n$, $i=1,2,\ldots,n$ entonces el valor esperado y la varianza de $\overline{X}$ son
+\begin{tcolorbox}
 $$E(\overline{X})=\sum_{i=1}^n \dfrac{1}{n}\mu=n\left(\dfrac{\mu}{n}\right)=\mu.$$
+\end{tcolorbox}
 y
+\begin{tcolorbox}
 $$\Var(\overline{X}) = \sum_{i=1}^n \dfrac{1}{n^2} \sigma^2 = n \left(\dfrac{\sigma^2}{n^2}\right)=\dfrac{\sigma^2}{n},$$
+\end{tcolorbox}
 respectivamente, en donde $\mu$ y $\sigma^2$ son la media y la varianza de la distribución de la población a partir de la cual se obtuvo la muestra. Luego de esta última ecuación de $Var(\overline{X})$ la desviación estándar de $\overline{X}$ es
 \begin{tcolorbox}
     $$d.e.(\overline{X})=\dfrac{\sigma}{\sqrt{n}}.$$
@@ -127,14 +131,50 @@ la cual, en algunas ocasiones recibe el nombre de \textbf{error estándar de la 
 
 % -------------------  ejemplo 
 \begin{ejem}
+
     Demostrar que si $X_1,X_2,\ldots,X_n$ son $n$ variables aleatorias independientes  exponencialmente distribuidas con función de densidad de probabilidad
     $$f(x;\theta)=\dfrac{1}{\theta}e^{-x/\theta}\qquad x>0,$$
     entre $\overline{X}$ tiene una distribución gama.\\\\
-	Demostración.-\;
+	Demostración.-\; Recuérdese que la función generadora de momentos de una variable aleatoria exponencialmente distribuida es $(1-\theta t)^{-1}$. De esta manera para cada $X_i$ de la muestra,
+	$$m_{X_i}(t)=(1-\theta t)^{-1}.$$
+	Del teorema 7.1 con $a_i=\frac{1}{n},\; i=1,2,\ldots , n$ se desprende que la función generadora de momentos de la media muestral $\overline{X}$ es 
+	$$
+	\begin{array}{rcl}
+	    m_{\overline{X}}(t) &=& m_{X_i}\left(\dfrac{t}{n}\right)m_{X_2}\left(\dfrac{t}{n}\right)\ldots m_{X_n}\left(\dfrac{t}{n}\right)\\\\
+				&=& \left[1-\left(\dfrac{\theta t}{n}\right)\right]^{-1}\left[1-\left(\dfrac{\theta t}{n}\right)\right]^{-1}\ldots \left[1-\left(\dfrac{\theta t}{n}\right)\right]^{-1}\\\\
+				&=& \left[1-\left(\dfrac{\theta t}{n}\right)\right]^{-n}.
+	\end{array}
+	$$
+	Pero la expresión anterior es la función generadora de momentos de una distribución gama con parámetro de forma $n$ y parámetro de escala $\theta/n$. De acuerdo con lo anterior, cuando se muestrea una población cuya distribución de probabilidad es exponencial, la densidad de probabilidad de $\overline{X}$ está dada por
+	$$f(\overline{x};n,\theta/n)=\dfrac{n^n}{\Gamma (n) \theta^n}\overline{x}^{n-1}e^{-n\overline{x}/\theta},\qquad \overline{x}>0.$$
+	Nótese que si en las expresiones $E(X)=\alpha\theta$ y $\Var(X)=\alpha\theta^2$ se reemplaza $\alpha$ con $n$ y $\theta$ con $\theta/n$ se obtiene
+	\begin{tcolorbox}
+	    $$E(\overline{X})=n\dfrac{\theta}{n}=\theta$$
+	\end{tcolorbox}
+	y
+	\begin{tcolorbox}
+	    $$Var(\overline{X})=n\dfrac{\theta^2}{n^2}=\dfrac{\theta^2}{n},$$
+	\end{tcolorbox}
+	como era de esperarse ya que $\theta$ y $\theta^2$ son la media y la varianza de una variable aleatoria con distribución exponencial.\\
+
+	De la sección 5.5, recuérdese que si el parámetro de forma de una distribución gama tiene un valor grande, entonces los valores de probabilidad para una variable aleatoria gama pueden aproximarse, en forma adecuada, por una distribución normal. Dado que $\Gamma^m,$ muestrear una distribución exponencial con parámetro $\theta$, $\overline{X}$ tiene una distribución gama con media $\theta$, y desviación estándar $\dfrac{\theta}{\sqrt{n}}$. Entonces, para $n$ grande
+	$$Z=\dfrac{\overline{X}-\theta}{\dfrac{\theta}{\sqrt{n}}}.$$
+	es, en forma aproximada, $N(0,1)$.
 \end{ejem}
+
+Para ser que para un valor grande $n$, la distribución de $\overline{X}$ es aproximadamente normal. De hecho, no importa el tipo de modelo de probabilidad a partir del cual se obtenga la muestra; muestras la media y la varianza existan, la distribución de muestreo de $\overline{X}$ se encontrará aproximada por $N\left(\mu, \sigma/\sqrt{n}\right)$ para valores grandes de $n$. Lo anterior constituye uno de los más importantes teoremas en inferencia estadística, y se conoce como \textbf{teorema central del límite}.
 
 % -------------------  Toeorema 7.4
 \begin{teo}
     Sean $X_1,X_2,\ldots , X_n$ variables aleatorias $IID$ con una distribución de probabilidad no especificada y que tiene una media $\mu$ y varianza $\sigma^2$ finita. El promedio muestral $\overline{X}=\left(X_1+X_2+\ldots + X_n\right)/n$ tiene una distribución con media $\mu$ y varianza $\sigma^2/n$ que tiende hacia una distribución normal conforme $n$ tiende a $\infty$. En otras palabras, la variable aleatoria $(\overline{X}-\mu)/(\sigma/\sqrt{n})$ tiene como límite una distribución normal estándar.\\\\
-	Demostración.-\;
+    Demostración.-\; Se quiere demostrar que la función generadora de momentos de $(\overline{X}-\mu)/(\sigma/\sqrt{n})$ tiende a la de una distribución normal estándar conforme $n$ tiende al infinito. Sean
+    $$Z_i=\dfrac{X_i-\mu}{\sigma},\qquad i=1,2,\ldots,n$$
+    y
+    $$Y=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}.$$
+    Dado que 
+    $$\dfrac{1}{n}\sum_{i=1}^n \left(\dfrac{X_i-\mu}{\dfrac{\sigma}{\sqrt{n}}}\right)=\dfrac{1}{n}\dfrac{1}{\dfrac{\sigma}{\sqrt{n}}}\sum_{i=1}^n (X_i-\mu)=\dfrac{1}{n}\dfrac{1}{\dfrac{\sigma}{\sqrt{n}}}(n\overline{X}-n\mu)=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}.$$
+    Entonces,
+    $$Y=\dfrac{1}{\sqrt{n}}\sum_{i=1}^n Z_i.$$
+    Como resultado se tiene que la función generadora de momentos de $Y$ es igual a la función generadora de moemtos de $(1/\sqrt{n})\sum_{i=1}^n Z_i$. Del teorema 7.1,
+    $$m_Y(t)=\left[m_{Z_i(t/\sqrt{n})}\right]^n$$
 \end{teo}
