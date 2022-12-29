@@ -3374,7 +3374,159 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
 	\vspace{.5cm}
 
     %-------------------- 5.
-    \item 
+    \item Determinar si
+    $$
+    A=
+    \left[
+	\begin{array}{rrrr}
+	    1 & 2 & 3 & 4 \\
+	    0 & 2 & 3 & 4 \\
+	    0 & 0 & 3 & 4 \\
+	    0 & 0 & 0 & 4
+	\end{array}
+    \right]
+    $$
+    es invertible y hallar $A^{-1}$ si existe.\\\\
+    	Respuesta.-\; Reduciendo por filas, tenemos:
+	$$
+	\begin{array}{rcl}
+
+	    \left[
+		\begin{array}{rrrr|rrrr}
+		    1 & 2 & 3 & 4 & 1 & 0 & 0 & 0\\
+		    0 & 2 & 3 & 4 & 0 & 1 & 0 & 0\\
+		    0 & 0 & 3 & 4 & 0 & 0 & 1 & 0\\
+		    0 & 0 & 0 & 4 & 0 & 0 & 0 & 1
+		\end{array}
+	    \right]
+	    &R_1-R_2\to R_1&
+	    \left[
+		\begin{array}{rrrr|rrrr}
+		    1 & 0 & 0 & 0 & 1 & -1 & 0 & 0\\
+		    0 & 2 & 3 & 4 & 0 & 1 & 0 & 0\\
+		    0 & 0 & 3 & 4 & 0 & 0 & 1 & 0\\
+		    0 & 0 & 0 & 4 & 0 & 0 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &R_2-R_3\to R_2&
+	    \left[
+		\begin{array}{rrrr|rrrr}
+		    1 & 0 & 0 & 0 & 1 & -1 & 0 & 0\\
+		    0 & 2 & 0 & 0 & 0 & 1 & -1 & 0\\
+		    0 & 0 & 3 & 4 & 0 & 0 & 1 & 0\\
+		    0 & 0 & 0 & 4 & 0 & 0 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &R_3-R_4\to R_3&
+	    \left[
+		\begin{array}{rrrr|rrrr}
+		    1 & 0 & 0 & 0 & 1 & -1 & 0 & 0\\
+		    0 & 2 & 0 & 0 & 0 & 1 & -1 & 0\\
+		    0 & 0 & 3 & 0 & 0 & 0 & 1 & -1\\
+		    0 & 0 & 0 & 4 & 0 & 0 & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &
+	    \begin{array}{rcl}
+		\dfrac{R_2}{2}&\to&R_2\\\\
+		\dfrac{R_3}{3}&\to&R_3\\\\
+		\dfrac{R_4}{4}&\to&R_4
+	    \end{array}
+	    &
+	    \left[
+		\begin{array}{rrrr|rrrr}
+		    1 & 0 & 0 & 0 & 1 & -1 & 0 & 0\\
+		    0 & 1 & 0 & 0 & 0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+		    0 & 0 & 1 & 0 & 0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+		    0 & 0 & 0 & 1 & 0 & 0 & 0 & \frac{1}{4}	
+		\end{array}
+	    \right]
+
+	\end{array}
+	$$
+	Por lo tanto, por el teorema 12, $A$ es invertible y su inversa es
+	$$
+	A^{-1}=
+	\left[
+	    \begin{array}{rrrr}
+		1 & -1 & 0 & 0\\
+		0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+		0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+		0 & 0 & 0 & \frac{1}{4}
+	    \end{array}
+	\right]
+	$$
+	\vspace{.5cm}
+
+
+    %-------------------- 6.
+    \item Supóngase que $A$ es una matriz $2\times 1$ y que $B$ es una matriz $1\times 2$. Demostrar que $C=AB$ no es inversible.\\\\
+	Demostración.-\; Sea 
+	$$
+	A=
+	\left[
+	    \begin{array}{r}
+		a_1\\
+		a_2
+	    \end{array}
+	\right]
+	\quad \mbox{y}\quad 
+	B=
+	\left[
+	    \begin{array}{rr}
+		b_1 & b_2
+	    \end{array}
+	\right]
+	$$
+	De donde,
+	$$
+	C=AB=
+	\left[
+	    \begin{array}{r}
+		a_1\\
+		a_2
+	    \end{array}
+	\right]
+	\left[
+	    \begin{array}{rr}
+		b_1 & b_2
+	    \end{array}
+	\right]
+	=
+	\left[
+	    \begin{array}{rr}
+		a_1b_1 & a_1b_2\\
+		a_2b_1 & a_2b_2
+	    \end{array}
+	\right]
+	$$
+	Luego, si sumamos $-\dfrac{a_2}{a_1}$ de la primera fila a la segunda fila se tiene:
+	$$
+	\left[
+	    \begin{array}{rr}
+		a_1b_1 & a_1b_2\\
+		0 & 0
+	    \end{array}
+	\right]
+	$$
+	Por lo tanto, por el teorema 12, de equivalencia por filas a la identidad, $C$ no es inversible.\\\\
+
+    %-------------------- 7.
+    \item Sea $A$ una matriz (cuadrada) $n\times n$. Demostrar que las siguientes dos afirmaciones:
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $A$ es inversible y $AB=0$ para alguna matriz $n\times n$, $B$, entonces $B=0$.\\\\
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item Si $A$ no es inversible, entonecs existe una matriz $n\times n$, $B$, tal que $AB=0$, pero $B\neq 0$.\\\\
+		Demostración.-\; 
+
+	\end{enumerate}
+
+
 
 
 

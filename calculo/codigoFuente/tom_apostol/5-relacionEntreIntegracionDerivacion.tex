@@ -1897,7 +1897,27 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    %---------- (a)
 	    \item Si $I_n(x)=\int_0^x t^n \left(t^2+a^2\right)^{-1/2}\; dt$, aplicar el método de integración por partes para demostrar que
 	    $$nI_n(x)=x^{n-1}\sqrt{x^2+a^2}=(n-1)a^2I_{n-2}(x)\qquad \mbox{si}\; n\geq 2.$$\\
-		Demostración.-\; 
+		Demostración.-\; Aplicando el método de integración por partes, se tiene
+		$$
+		\begin{array}{rcl}
+		    u = t^{n-1} &\Rightarrow& du = (n-1)t^{n-2}\; dt\\\\
+		    dv = t\left(t^2+a^2\right)^{-\frac{1}{2}} &\Rightarrow& v =  \left(t^2+a^2\right)^{\frac{1}{2}}\; dt.
+		\end{array}
+		$$
+		Entonces,
+		$$
+		\begin{array}{rcl}
+		    I_n(x)=\displaystyle \int_0^x t^n\left(t^2+a^2\right)^{-\frac{1}{2}}&=& \displaystyle\int_0^x u\; dv\\\\
+											&=& uv\bigg|_0^x - \int_0^x v\; du\\\\
+											&=& t^{n-1}\left(t^2+a^2\right)^{\frac{1}{2}}\bigg|_0^x - \displaystyle\int_0^x (n-1) t^{n-2}\left(t^2+a^2\right)^{\frac{1}{2}}\; dt\\\\
+											&=& x^{n-1}\left(x^2+a^2\right) - \displaystyle\int_0^x (n-1)t^{n-2} \left(t^2+a^2\right)\left(t^2+a^2\right)^{-\frac{1}{2}}\; dt\\\\
+											&=& x^{n-1}\left(x^2+a^2\right) - \displaystyle\int_0^x (n-1)t^{n-2} \left(t^2+a^2\right)^{-\frac{1}{2}}\; dt\\\\
+											&-& \displaystyle\int_0^x (n-1)t^{n-2}a^2\left(t^2+a^2\right)^{-\frac{1}{2}}\; dt\\\\
+											&=&x^{n-1}\left(x^2+a^2\right)^{\frac{1}{2}}-(u-1)I_n(x)-a^2(n-1)I_{n-2}(x).
+		\end{array}
+		$$
+		Luego añadiendo $(n-1)I_n(x)$ a ambos lados de la ecuación anterior tenemos
+		$$nI_n(x)=x^{n-1}\left(x^2+a^2\right)^{\frac{1}{2}}-a^2(n-1)I_{n-2}(x).$$\\
 
 	    %---------- (b)
 	    \item Aplicando (a) demostrar que $\int_0^2 x^5\left(x^2+5\right)^{-1/2}\; dx = \dfrac{168}{5}-40\sqrt{\frac{5}{3}}.$\\\\

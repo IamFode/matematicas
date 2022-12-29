@@ -2172,6 +2172,22 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		Similarmente, tenemos para $x\in (a-\delta,a)$, que
 		$$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{y\to a}\dfrac{f'(y)}{g'(y)}=\infty.$$
 		Esto completa la demostración de la primera parte. Ahora siguiendo el argumento de la parte (a), en este caso con $l=\infty$  uno puede obtener los otros casos.\\\\
+
+	    %---------- (c)
+	    \item Si $\lim\limits_{x\to \infty} f(x)=\lim\limits_{x\to \infty}g(x)=0$ y $\lim\limits_{x\to \infty}\dfrac{f'(x)}{g'(x)}=l$, entonces $\lim\limits_{x\to \infty}\dfrac{f(x)}{g(x)}=l$ (y análogamente para $-\infty$), Indicación: Considere $\lim\limits_{x\to 0^+} f\left(\dfrac{1}{x}\right)g\left(\dfrac{1}{x}\right)$.\\\\
+		Demostración.-\; Consideremos las funciones $\hat{f}(x)$ y $\hat{g}(x)$ definidas de la siguiente manera:
+		$$\hat{f}(x)=f\left(\dfrac{1}{x}\right)\mbox{ y } \hat{g}\left(\dfrac{1}{x}\right).$$
+		Notemos que como $x\to 0^+$, entonces $\dfrac{1}{x}\to \infty$ . Así, tenemos que
+		$$\lim_{x\to 0^+}\hat{f}(x)=0=\lim_{x\to 0^+}\hat{g}(x)$$
+		y $\lim\limits_{x\to 0^+}\dfrac{\hat{f}(x)}{\hat{g}(x)}$ existe y es igual a $l$. Por lo tanto, aplicando la parte (a) para $\hat{f}$ y $\hat{g}$, se tiene
+		$$\lim_{x\to^+}\dfrac{\hat{f}(x)}{\hat{g}(x)}=l.$$
+		Lo que implica que
+		$$\lim_{x\to \infty}\dfrac{f(x)}{g(x)}=\lim_{x\to 0^+}\dfrac{\hat{f}(x)}{\hat{g}(x)}=l.$$\\
+		El caso para $-\infty$ es análogo.\\\\
+
+	    %---------- (d)
+	    \item 
+		
 		
 
 	\end{enumerate}
