@@ -1150,14 +1150,14 @@ En los ejercicios del 1 al 20, aplicar el método de sustitución para calcular 
 	$$u=g(x)=x-c\quad \Rightarrow \quad du=g'(x)\; dx = dx.$$
 	Así,
 	$$\begin{array}{rcl}
-	    \displaystyle\int_{a+c}^{b+c} f(x-c)\; dx &=& \displaystyle\int_{a+c}^{b+c} f\left[g(x)\right]g´(x)\; dx\\\\
+	    \displaystyle\int_{a+c}^{b+c} f(x-c)\; dx &=& \displaystyle\int_{a+c}^{b+c} f\left[g(x)\right]g'(x)\; dx\\\\
 						      &=& P\left[g(b+c)\right]-P\left[g(a+c)\right]\\\\
 						      &=& P(b)-P(a).
 	\end{array}$$
 	De donde se deduce que
 	$$\int_a^b f(x)\; dx = \int_{a+c}^{b+c}f(x-c)\; dx.$$
 
-	Ahora, desduzcamos el teorema 1.19 (Expansión o contracción del intervalo de integración). Para una función $f$ integrable en un intervalo $[a,b]$ y para todo $k\in \mathbb{R}$ distinto de $0$, se tiene
+	Ahora, deduzcamos el teorema 1.19 (Expansión o contracción del intervalo de integración). Para una función $f$ integrable en un intervalo $[a,b]$ y para todo $k\in \mathbb{R}$ distinto de $0$, se tiene
 	$$\int_a^b f(x)=\dfrac{1}{k}\int_{ka}^{kb}f\left(\dfrac{x}{k}\right)\; dx.$$
 	Sea,
 	$$u=g(x)=\dfrac{x}{k}\quad \Rightarrow\quad du=g'(x)\; du=\dfrac{1}{k}\; dx.$$
@@ -1972,5 +1972,259 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	\end{enumerate}
 
 
+    \end{enumerate}
+
+
+\section{Ejercicios de repaso}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Sea $f$ un polinomio tal que $f(0)=1$ y sea $g(x)=x^nf(x)$. Calcular $g(0),g'(0),\ldots , g^(0)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 2.
+    \item Hallar un polinomio $P$ de grado $\leq 5$ tal que $P(0)=1$, $P(1)=2$, $P'(0)=P''(0)=P'(1)=P''(1)=0$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 3.
+    \item Si $f(x)=\cos x$ y $g(x)=\sen x$, demostrar que
+    $$f^{(n)}(x)=\cos\left(x+\dfrac{1}{2}n\pi\right)\quad \mbox{y}\quad g^{(n)}(x)=\sen\left(x+\dfrac{1}{2}n\pi\right).$$\\
+	Demostración.-\;
+
+    %-------------------- 4.
+    \item Si $h(x)=f(x)g(x)$, demostrar que la derivada n-ésima de $h$ viene dada por la fórmula
+    $$h^{(n)}(x)=\sum_{k=0}^n {n\choose k}f^{(k)}g^{(n-k)}(x),$$
+    en donde ${n\choose k}$ representa el coeficiente binomial. Esta es la llamada fórmula de Leibniz.\\\\
+	Demostración.-\;
+
+    %-------------------- 5.
+    \item Dadas las funciones $f$ y $g$ cuyas derivadas $f'$ y $g'$ satisfacen las ecuaciones
+    $$f'(x)=(x),\quad g'(x)=-f(x),\quad f(0)=0,\quad g(0)=1,$$
+    para todo $x$ en un cierto intervalo abierto $J$ que contiene el $0$. Por ejemplo, esas ecuaciones se satisfacen cuando $f(x)=\sen x$ y $g(x)=\cos x.$
+
+    \begin{enumerate}[a)]
+	
+	%---------- a)
+	\item Demostrar que $f^2(x)+g^2(x)=1$ para todo $x$ de $J$.\\\\
+	    Demostración.-\;
+	
+	%---------- b)
+	\item Sean $F$ y $G$ otro par de funciones que satisfagan (5.30). Demostrar que $F(x)=f(x)$ y $G(x)=g(x)$, para todo $x$ de $J$.\\\\
+	    Demostración.-\;
+	
+	%---------- c)
+	\item ¿Qué más se puede decir acerca de las funciones $f$ y $g$ que satisfacen (5.30)?.
+	    Respuesta.-\;
 
     \end{enumerate}
+
+    %-------------------- 6.
+    \item Una función $f$, definida para todo número real positivo, satisface la ecuación $f\left(x^2\right)=x^3$ para cada $x>0$. Determinar $f'(4)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 7.
+    \item Una función $g$ definida para todo número real positivo satisface las dos condiciones siguientes: $g(1)=1$ y $g'\left(x^2\right)=x^3$ para todo $x>0$. Calcular $g(4)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 8.
+    \item Demostrar que
+    $$\int_0^x \dfrac{\sen t}{t+1}\; dt \geq 0\mbox{ para todo }x\geq 0.$$\\\\
+	Demostración.-\;
+
+    %-------------------- 9.
+    \item Sean $C_1$ y $C_2$ dos curvas que pasan por el origen tal como se indica en la figura 5.2. Una curva $C$ se dice que biseca en área la región $C_1$ y $C_2$, si para cada punto $P$ de $C$ las dos regiones $A$ y $B$ sombreadas en la figura, tienen la misma área. Determinar la curva superior $C_2$, sabiendo que la curva bisectriz $C$ tiene de ecuación $y=x^2$ y que la curva inferior $C_1$ tiene de ecuación $y=\dfrac{1}{2}x^2.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 10.
+    \item Una función $f$ está definida para todo $x$ como sigue:
+    $$
+    f(x)=
+    \left\{
+	\begin{array}{rcl}
+	    x^2 & \mbox{si} & x \mbox{ es racional}\\
+	    0 & \mbox{si} & x \mbox{ es irracional}.\\
+	\end{array}
+    \right.
+    $$
+    Póngase $Q(h)=\frac{f(h)}{h}$ si $h\neq 0.$ 
+
+    \begin{enumerate}[a)]
+
+	%---------- a)
+	\item Demostrar que $Q(h)\to 0$ cuando $h\to 0.$\\\\
+	    Demostración.-\;
+
+	%---------- b)
+	\item Demostrar que $f$ tiene derivada en $0$ , y calcular $f'(0)$.\\\\
+	    Demostración.-\;
+
+    \end{enumerate}
+
+    %-------------------- 11.
+\item $\displaystyle\int (2+3x)\sen 5x\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 12.
+    \item $\displaystyle\int x \sqrt{1+x^2}\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 13.
+    \item $\displaystyle\int_{-2}^1 s\left(x^2-1\right)^9\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 14.
+    \item $\displaystyle\int_0^1 \dfrac{2x+3}{(6x+7)^3}\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 15.
+    \item $\displaystyle\int x^4\left(1+x^5\right)^5\; dx.$\\\\
+	Respuesta.-\; 
+
+    %-------------------- 16.
+    \item $\displaystyle\int_0^1 x^4(1-x)^{20}\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 17.
+    \item $\displaystyle\int_1^2 x^{-2} \sen \dfrac{1}{2}\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 18.
+    \item $\displaystyle\int x\sen x^2 \cos x^2\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 19.
+    \item $\displaystyle\int x\sen x^2 \cos x^2\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 20.
+    \item $\displaystyle\int \sqrt{1+3\cos^2 x \sen 2x}\; dx.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 21.
+    \item Demostrar que el valor de la integral $\int_0^2 375x^5\left(x^2+1\right)^{-4}\; dx$ es $2^n$ para un cierto entero $n$.\\\\
+	Demostración.-\;
+
+    %-------------------- 22.
+    \item Determinar un par de números $a$ y $b$ para los cuales $\in_0^1(ax+b)\left(x~ 2+3x+2\right)^{-2}\; dx=\frac{3}{2}$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 23.
+    \item Sea $I_n = \int_0^1 \left(1-x^2\right)^n\; dx$. Demostrar que $(2n+1)I_n=2nI_{n-1}$, y utilizar esta relación para $I_2$, $I_3$, $I_4$ e $I_5$.\\\\
+	Demostración.-\;
+
+    %-------------------- 24.
+    \item Sea $F(m,n)=\int_0^x t^m(1+t)^n \; dt,$ $m>0$, $n>0$. Demostrar que
+    $$(m+1)F(m,n)+nF(m+1,n-1)=x^{m+1}(1+x)^n.$$
+    Utilizar este resultado para calcular $F(10,2)$.\\\\
+	Demostración.-\;
+
+    %-------------------- 25.
+    \item Sea $f(n)=\int_0^{\pi/4}x\; dx$ donde $n\geq 1$. Demostrar que
+
+    \begin{enumerate}[(a)]
+
+	%---------- (a)
+	\item $f(n+1)<f(n)$.\\\\
+	    Demostración.-\;
+
+	%---------- (b)
+	\item $f(n)+f(n-2)=\dfrac{1}{n-1}\quad \mbox{si} n>2$.\\\\
+	    Demostración.-\;
+
+	%---------- (c)
+	\item $\dfrac{1}{n+1}<2f(n)<\dfrac{1}{n-1}\quad \mbox{si} n>2$.\\\\
+	    Demostración.-\;
+
+    \end{enumerate}
+
+    %-------------------- 26.
+    \item Calcular $f(0)$, sabiendo que $f(\pi)=2$ y que $\int_0^\pi \left[f(x)+f''(x)\right]\sen x\; dx = 5.$\\\\
+	Respuesta.-\;
+
+    %-------------------- 27.
+    \item Designar por $A$ el valor de la integral
+    $$\int_0^\pi \dfrac{\cos x}{\left(x+2\right)^2}\; dx.$$
+    Y calcular la siguiente inetegral en función de $A$:
+    $$\int_0^{\pi/2}\dfrac{\sen x\cos x}{x+1}\; dx.$$
+	Respuesta.-\;
+
+    %-------------------- 28.
+    \item $\displaystyle\int \dfrac{\sqrt{a+bx}}{x}\; dx = 2\sqrt{a+bx}+a\int \dfrac{dx}{x\sqrt{a+bx}}+C$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 29.
+    \item $\displaystyle\int x^n \sqrt{ax+b}\; dx = \dfrac{2}{a(2n+3)}\left[x^n(ax+b)^{3/2}-nb\int x^{n-1}\sqrt{ax+b}\; dx\right]+C\left(n\neq -\dfrac{3}{2}\right)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 30.
+    \item $\displaystyle\int \dfrac{x^m}{\sqrt{a+bx}}\; dx = \dfrac{2}{(2m+1)b}\left[x^m \sqrt{a+bx}-ma\int \dfrac{x^{m-1}}{\sqrt{a+bx}}\; dx\right]+C \left(m\neq -\dfrac{1}{2}\right)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 31.
+    \item $\displaystyle\int \dfrac{dx}{x^n\sqrt{ax+b}}\; dx = -dfrac{\sqrt{ax+b}}{(n-1)bx^{n-1}}-\dfrac{(2n-3)a}{(2n-2)b}\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}\; dx + C(n\neq 1)$.\\\\
+	Respuesta.-\; 
+
+    %-------------------- 32.
+    \item $\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx = \dfrac{\cos^{m-1}x}{(m-n)\sen^{n-1}x}+\dfrac{m-1}{m-n}\int \dfrac{\cos^{m-2}}{\sen^n x}\; dx + C (m\neq n)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 33.
+    \item $\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx = -\dfrac{\cos^{m+1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-n+2}{n-1}\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx + C (n\neq 1)$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 34.
+    \item 
+	\begin{enumerate}[a)]
+
+	    %---------- a)
+	    \item Encontrar un polinomio $P(x)$ tal que $P'(x)-3P(x)=4-5x+3x^2$. Demostrar que existe una sola solución.\\\\
+		Demostración.-\;
+
+	    %---------- b)
+	    \item Si $Q(x)$ es un polinomio dado, demostrar que existe uno y sólo un polinomio $P(x)$ tal que $P'(x)-3P(x)=Q(x)$.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+    %-------------------- 35.
+    \item Una sucesión de polinomios (llamados polinomios de Bernoulli) se define por inducción como sigue:
+
+	\begin{enumerate}[a)]
+
+	    %---------- a)
+	    \item Determinar fórmulas explícitas para $P_1(x),P_2(x),\ldots , P_5(x)$.\\\\
+		Respuesta.-\;
+
+	    %---------- b)
+	    \item Demostrar, por inducción, que $P_n(x)$ es un polinomio en $x$ de grado $n$, siendo el término de mayor grado $x_n$.\\\\
+		Demostración.-\;
+
+	    %---------- c)
+	    \item Demostrar que $P_n(0)=P_n(1)$ si $n\geq 2$.\\\\
+		Demostración.-\;
+
+	    %---------- d)
+	    \item Demostrar que $P_n(x+1)-P_n(x)=nx^{n-1}$ si $n\geq 1$.\\\\
+		Demostración.-\;
+
+	    %---------- e)
+	    \item Demostrar que para $n\leq 2$ tenemos 
+	    $$\sum_{r=1}^{k-1}r^n = \int_0^k P_n(x)\; dx = \dfrac{P_{n+1}(k)-P_{n+1}(0)}{n+1}.$$\\
+		Demostración.-\;
+
+	    %---------- f)
+	    \item  Demostrar que $P_n(1-x)=(-1)^n P_n(x)$ si $n\geq 1$.\\\\
+		Demostración.-\;
+
+	    %---------- g)
+	    \item Demostrar que $P_{2n+1}(0)=0$ y $P_{2n-1}\left(\dfrac{1}{2}\right)=0$ si $n\geq 1.$\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+    %-------------------- 36.
+    \item Suponiendo que $|f''(x)|\leq m$ para cada $x$ en el intervalo $[0,a]$, y que $f$ toma su mayor valor en un punto interno de este interval, demostrar que $|f'(0)|+|f'(a)|\leq am$. Puede ponerse que $f''$ sea continua en $[0,a]$.
+	Demostración.-\;
+
+\end{enumerate}

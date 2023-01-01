@@ -3518,18 +3518,58 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
 
 	    %---------- (a)
 	    \item Si $A$ es inversible y $AB=0$ para alguna matriz $n\times n$, $B$, entonces $B=0$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Por el teorema 8 y por la definción de matriz inversible, se tiene
+		$$0=A^{-1}0=A^{-1}AB=\left(A^{-1}A\right)B=IB=B.$$\\
 
 	    %---------- (b)
 	    \item Si $A$ no es inversible, entonecs existe una matriz $n\times n$, $B$, tal que $AB=0$, pero $B\neq 0$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Por el teorema 13(ii), ya que $A$ no es invertible, AX=0 debe tener una solución no trivial. Por lo que $X\neq 0$ tal que $x=0$. Ahora, consideremos la matriz $B$,
+		$$B=\left[b_1,b_2,\ldots,b_n\right]$$
+		donde $b_n$ respresenta las columnas de $B$. Luego, sea $b_1=x$ y $b_i=0$ para todo $i=2,3,\ldots,n$ obtenemos $B\neq 0$ y $b=0.$ Así cuando $A$ no es inverible, existe una matriz distinta de cero $B$ tal que $b=0$.\\\\
 
 	\end{enumerate}
 
+    %-------------------- 8.
+    \item Sea
+    $$
+    A=
+    \left[
+	\begin{array}{rcl}
+	    a & b \\
+	    c & d
+	\end{array}
+    \right]
+    $$
+    Demostrar, usando operaciones elementales de fila, que $A$ es inversible si, y sólo si, $(ad-bc)\neq 0.$\\\\
+	Demostración.-\;
 
+    %------------------ 9.
+    \item Una matriz $n\times n$, A, se llama \textbf{triangular superior} si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostra que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
+	Demostración.-\;
 
+    %------------------- 10.
+    \item Demostrar la siguiente generalización del Ejercicio 6. Si $A$ es una matriz $m\times n$, $B$ es una matriz $n\times m$ y $n<m$, entonces $AB$ no es inversible.\\\\
+	Demostración.-\;
 
+    %-------------------- 11.
+    \item Sea $A$ una matriz $m\times n$. Hacer ver que por medio de un número finito de operaciones elementales de fila y/o de collumna se puede pasar de $A$ a la matriz $R$ que es simultáneamente escalón reducida por filas y escalon reducida por columnas; es decir, $R_{ij}=0$ si $i\neq j$, $R_{ii=1}$, $1\leq i \leq r,$ $R_{ii}=0$ si $i>r$. Demostrar que $R=PAQ,$ donde $P$ es una matriz inversible $m\times m$ y $Q$ es una matriz inversible $n\times n$.\\\\
+	Respuesta.-\;
 
+    %-------------------- 12.
+    \item El resultado del ejemplo 16 sugiere que tal vez la matriz
+    $$
+    A=
+    \left[
+	\begin{array}{rrrr}
+	    1 & \frac{1}{2} & \cdots & \frac{1}{2}\\\\
+	    \frac{1}{2} & \frac{1}{3} & \cdots & \frac{1}{n+1}\\\\
+	    \vdots & \vdots && \vdots\\\\
+	    \frac{1}{n} & \frac{1}{n+1} & \cdots & \frac{1}{2n-1}
+	\end{array}
+    \right]
+    $$
+    es inversible y $A^{-1}$ tiene elementos enteros. ¿Se puede demostrar esto?.\\\\
+	Demostración.-\;
 
 
 \end{enumerate}
