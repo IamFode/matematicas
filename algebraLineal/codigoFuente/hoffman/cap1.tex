@@ -3190,7 +3190,7 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
     \right]
     $$
     emplear operaciones elementales de fila para determinar cuándo es invresible y encontrar la inversa en caso que lo sea.\\\\
-	Respuesta.-\; Para la primera matriz, por el teorema 12, reducimos por filas la matriz aumentada de la siguiente manera:
+	Respuesta.-\; Para la primera matriz, por el teorema 12 y el corolario 3, reducimos por filas la matriz aumentada de la siguiente manera:
 
 	$$
 	\begin{array}{rcl}
@@ -3232,7 +3232,7 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
 	    \right]
 	\end{array}
 	$$
-	Puesto que la última fila es cero.Entonces, $A$ no puede ser reducida por filas a la identidad. Es decir, $A$ no es equivalente por fila a la matriz identidad, por lo tanto, $A$ no es invertible.\\
+	Puesto que la última fila es cero. Entonces, $A$ no puede ser reducida por filas a la identidad. Es decir, por el teorema 12, $A$ no es equivalente por fila a la matriz identidad, por lo tanto, $A$ no es invertible.\\
 
 	Para la segunda matriz, reducimos por filas la matriz aumentada de la siguiente manera:
 	$$
@@ -3541,10 +3541,39 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
     \right]
     $$
     Demostrar, usando operaciones elementales de fila, que $A$ es inversible si, y sólo si, $(ad-bc)\neq 0.$\\\\
-	Demostración.-\;
+	Demostración.-\; Primero, si $A$ es invertible, entonces $a,b,c$ o $d$ debe ser distinto de cero. Por ejemplo $a\neq 0$, se sigue que
+
+	$$
+	\begin{array}{rcl}
+            A=
+	    \left[
+		\begin{array}{rr|rr}
+		    a & b & 1 & 0\\
+		    c & d & 0 & 1
+		\end{array}
+	    \right]
+	    &\dfrac{R_1}{a}\to R_1&
+	    \left[
+		\begin{array}{rr|rr}
+		    1 & \frac{b}{a} & \frac{1}{a} & 0 \\
+		    c & d & 0 & 1
+		\end{array}
+	    \right]\\\\
+	    &R_2-c R_1\to R_2&
+	    \left[
+		\begin{array}{rc|rr}
+		    1 & \frac{b}{a} & \frac{1}{a} & 0 \\
+		    0 & \frac{ad-bc}{a} & 0 & 1
+		\end{array}
+	    \right]
+	\end{array}
+	$$
+	    de donde, debemos tener $ad - bc \neq 0$ ya que de lo contrario $A$ no podría ser equivalente por filas a la matriz identidad, contradiciendo el Teorema 12.
+
+	Por lo que $A$ es invertible, 
 
     %------------------ 9.
-    \item Una matriz $n\times n$, A, se llama \textbf{triangular superior} si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostra que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
+    \item Una matriz $n\times n$, A, se llama \textbf{triangular superior} si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostrar que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
 	Demostración.-\;
 
     %------------------- 10.

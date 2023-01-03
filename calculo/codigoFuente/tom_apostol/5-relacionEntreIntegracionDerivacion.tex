@@ -1921,7 +1921,29 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	    %---------- (b)
 	    \item Aplicando (a) demostrar que $\int_0^2 x^5\left(x^2+5\right)^{-1/2}\; dx = \dfrac{168}{5}-40\sqrt{\frac{5}{3}}.$\\\\
-		Demostración.-\; 
+		Respuesta.-\; Primero por la definición de $I_n(x)$, se tiene
+		$$
+		\begin{array}{rcl}
+		    I_5(2)&=&\displaystyle\int_0^2 t^5\left(t^2+5\right)^{-\frac{1}{2}}\; dt\\\\
+		    I_5(2)&=&\displaystyle\int_0^2 t^3\left(t^2+5\right)^{-\frac{1}{2}}\; dt\\\\
+		\end{array}
+		$$
+		Luego, usando la fórmula de la parte (a) obtenemos
+		$$5I_5(2)=2^4\sqrt{4+5}-4\cdot 5 \cdot I_3(2) \quad \Rightarrow \quad I_5(2)=\dfrac{48}{5}-4I_3(2).$$
+		Usando una vez más la fórmula de la parte (a), tenemos
+		$$3I_(2)=2^2\sqrt{4+5}-5\cdot 2 \cdot I_1(2) \quad \Rightarrow \quad I_3(2)=4-\dfrac{10}{3}\cdot I_1(2)=4-\dfrac{10}{3}\int_0^2 t\left(t^2+5\right)^{-\frac{1}{2}\; dt}.$$
+		Luego, utilizando el método de sustitución para $u=t~ 2+5$ que implica $du=2t\; dt$, se tiene
+		$$
+		    \begin{array}{rcl}
+			\displaystyle\int_0^2 t\left(t^2+5\right)^{-\frac{1}{2}} \; dt &=& \dfrac{1}{2}\displaystyle\int_{u(0)}^{u(2)} u^{-\frac{1}{2}}\; du\\\\
+			&=& \dfrac{1}{2}2u^{\frac{1}{2}}\bigg|_5^9\\\\
+			&=& 3 - \sqrt{5}.
+		    \end{array}
+		$$
+		Introduciendo está solución a $I_3(2)$,
+		$$I_3(2)=4-\dfrac{10}{3}\left(3-\sqrt{5}\right)=\dfrac{10}{3}\sqrt{5}-6.$$
+		Y después, intruduciendo a $I_5(2)$, concluimos que 
+		$$I_5(2)=\dfrac{48}{5}-4\left(\dfrac{10}{3}\sqrt{5}-6\right)=\dfrac{168}{5}-\dfrac{40\sqrt{5}}{3}.$$\\
 
 	\end{enumerate}
 
