@@ -3541,36 +3541,149 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
     \right]
     $$
     Demostrar, usando operaciones elementales de fila, que $A$ es inversible si, y sólo si, $(ad-bc)\neq 0.$\\\\
-	Demostración.-\; Primero, si $A$ es invertible, entonces $a,b,c$ o $d$ debe ser distinto de cero. Por ejemplo $a\neq 0$, se sigue que
+	Demostración.-\; Primero, si $A$ es inversible, entonces $a,b,c$ o $d$ debe ser distinto de cero. Si $a\neq 0$, se sigue 
 
 	$$
+	\left[
+	    \begin{array}{rr}
+		a & b \\
+		c & d 
+	    \end{array}
+	\right]
+	\quad\dfrac{R_1}{a}\to R_1\quad
+	\left[
+	    \begin{array}{rr}
+		1 & \frac{b}{a} \\
+		c & d 
+	    \end{array}
+	\right]\\\\
+	\quad R_2-c R_1\to R_2\quad
+	\left[
+	    \begin{array}{rc}
+		1 & \frac{b}{a} \\
+		0 & \frac{ad-bc}{a}
+	    \end{array}
+	\right]
+	$$
+	de donde, debemos tener $ad - bc \neq 0$ ya que de lo contrario $A$ no podría ser equivalente por filas a la matriz identidad, contradiciendo el Teorema 12.\\
+	Si, en cambio, $a = 0$. Entonces, debemos tener $b\neq 0$ ya que de lo contrario $A$ tendría una fila de ceros y no podría ser equivalente por fila a la matriz identidad. Es decir,
+	$$
+	\left[
+	    \begin{array}{rr}
+		0 & b \\
+		c & d 
+	    \end{array}
+	\right]
+	\quad \dfrac{R_1}{b}\to R_1\quad
+	\left[
+	    \begin{array}{rr}
+		0 & 1 \\
+		c & d 
+	    \end{array}
+	\right]
+	\quad R_1\leftrightarrow R_2 \quad
+	\left[
+	    \begin{array}{rr}
+		c & d \\
+		0 & 1 
+	    \end{array}
+	\right]
+	\quad R_1 - dR_2\to R_1 \quad
+	\left[
+	    \begin{array}{rr}
+		c & 0 \\
+		0 & 1 
+	    \end{array}
+	\right]
+	$$
+	Vemos que debemos tener $c \neq 0$. Así, $ad - bc = - bc \neq 0$. Esto completa la primera mitad de la demostración.\\
+	Por el contrario, suponga que $ad - bc \neq 0$. Si $d \neq 0$, entonces $A$ puede reducirse para obtener
+	$$
 	\begin{array}{rcl}
-            A=
 	    \left[
-		\begin{array}{rr|rr}
-		    a & b & 1 & 0\\
-		    c & d & 0 & 1
+		\begin{array}{rr}
+		    a & b \\
+		    c & d
 		\end{array}
 	    \right]
-	    &\dfrac{R_1}{a}\to R_1&
+	    &dR_1\to R_1&
 	    \left[
-		\begin{array}{rr|rr}
-		    1 & \frac{b}{a} & \frac{1}{a} & 0 \\
-		    c & d & 0 & 1
+		\begin{array}{cc}
+		    ad & bd \\
+		    c & d
 		\end{array}
 	    \right]\\\\
-	    &R_2-c R_1\to R_2&
+	    &R_1-bR_2\to R_1&
 	    \left[
-		\begin{array}{rc|rr}
-		    1 & \frac{b}{a} & \frac{1}{a} & 0 \\
-		    0 & \frac{ad-bc}{a} & 0 & 1
+		\begin{array}{cc}
+		    ad-bc & 0 \\
+		    c & d
+		\end{array}
+	    \right]\\\\
+	    &\dfrac{R_1}{ad-bc}\to R_1&
+	    \left[
+		\begin{array}{rr}
+		    1 & 0 \\
+		    c & d
+		\end{array}
+	    \right]\\\\
+	    &R_2-cR_1\to R_2&
+	    \left[
+		\begin{array}{rr}
+		    1 & 0 \\
+		    0 & d
+		\end{array}
+	    \right]\\\\
+	    &\dfrac{R_2}{d}\to R_2&
+	    \left[
+		\begin{array}{rr}
+		    1 & 0 \\
+		    0 & 1
 		\end{array}
 	    \right]
 	\end{array}
 	$$
-	    de donde, debemos tener $ad - bc \neq 0$ ya que de lo contrario $A$ no podría ser equivalente por filas a la matriz identidad, contradiciendo el Teorema 12.
+	Por lo que, $A$ es equivalente por fila a la matriz identidad. Por otro lado, si $d = 0$, entonces $b$ y $c$ deben ser distintos de cero, lo que nos queda
+	$$
+	\begin{array}{rcl}
+	    \left[
+		\begin{array}{rr}
+		    a & b \\
+		    c & 0
+		\end{array}
+	    \right]
+	    &\dfrac{R_2}{c}\to R_2&
+	    \left[
+		\begin{array}{cc}
+		    a & b \\
+		    1 & 0
+		\end{array}
+	    \right]\\\\
+	    &R_1\leftrightarrow R_2&
+	    \left[
+		\begin{array}{cc}
+		    1 & 0 \\
+		    a & b 
+		\end{array}
+	    \right]\\\\
+	    &R_2-aR_1\to R_2&
+	    \left[
+		\begin{array}{rr}
+		    1 & 0 \\
+		    0 & b
+		\end{array}
+	    \right]\\\\
+	    &R_2-bR_1\to R_2&
+	    \left[
+		\begin{array}{rr}
+		    1 & 0 \\
+		    0 & 1
+		\end{array}
+	    \right]
+	\end{array}
+	$$
+	de modo que $A$ es nuevamente equivalente por filas a la matriz identidad. En cualquier caso, $A$ debe ser invertible por el Teorema 12.\\\\
 
-	Por lo que $A$ es invertible, 
 
     %------------------ 9.
     \item Una matriz $n\times n$, A, se llama \textbf{triangular superior} si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostrar que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
