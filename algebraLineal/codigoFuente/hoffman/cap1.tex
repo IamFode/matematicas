@@ -1,4 +1,5 @@
 \chapter{Ecuaciones lineales}
+\pagenumbering{arabic}
 
 \section{Cuerpos}
 Se designa por $F$ el conjunto de los números reales o el conjunto de los números complejos.
@@ -3687,15 +3688,26 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
 
     %------------------ 9.
     \item Una matriz $n\times n$, A, se llama \textbf{triangular superior} si $A_{ij}=0$ para $i>j$; esto es, si todo elemento por debajo de la diagonal principal es $0$. Demostrar que una matriz (cuadrada) triangular superior es inversible si, y sólo si, cada elemento de su diagonal principal es diferente de $0$.\\\\
-	Demostración.-\;
+	Demostración.-\; Sea $A$ una matriz triangular superior $n\times n$. Supóngase que cada elemento de la diagonal principal de $A$ es distinta de cero, luego considere el sistema lineal homogéneo $AX=0$,
+	$$
+	\begin{array}{ccccccccc}
+	    A_{11}x_1&+&A_{12}x_2&+&\ldots&+&A_{1n}x_n&=&0 \\
+	    &&A_{22}x_2&+&\ldots&+&A_{2n}x_n&=&0 \\
+	    &&&&&&&\vdots& \\
+	    &&&&&&A_{nn}x^n&=&0 \\
+	\end{array}
+	$$.
+	Ya que $A_{nn}\neq 0$, la última ecuación implica que $x_n=0.$. Dado que $A_{n-1,n_1}\neq 0$, la penultima ecuación implica que $x_{n-1}\neq 0$. Continuando de esta manera, vemos que $x_i = 0$ para cada $i = 1, 2, \ldots , n$. Por lo tanto, el sistema $AX = 0$ tiene solo la solución trivial, por lo que $A$ es invertible.\\
+	Por el contrario, supongamos que $A$ es invertible. Entonces $A$ no puede contener ninguna fila de ceros, ni puede ser equivalente por filas a una matriz con una fila de ceros. Esto implica que $A_{nn} \neq 0$. Después, considere $A_{n-1,n-1}$. Si $A_{n-1,n-1} = 0$, entonces dividiendo la fila  $n$ por $A_{nn}$, y sumando $-A_{n-1,n}$ por la fila $n$ a la fila $n-1$, vemos que $A$ es equivalente en filas a una matriz cuya $(n - 1)$ primera fila es todos ceros. Pero esto es una contradicción. Entonces, $A_{n-1,n-1} \neq 0$. De la misma manera, podemos mostrar que $A_{ii} \neq 0$ para cada $i = 1, 2, \ldots , n$. Por lo tanto, todas las entradas en la diagonal principal de $A$ son distintas de cero.\\\\
 
     %------------------- 10.
     \item Demostrar la siguiente generalización del Ejercicio 6. Si $A$ es una matriz $m\times n$, $B$ es una matriz $n\times m$ y $n<m$, entonces $AB$ no es inversible.\\\\
-	Demostración.-\;
+	Demostración.-\; Existen $n$ columnas en $A$ por lo que el espacio vectorial generado por esas columnas tiene una dimensión no mayor que $n$. Todas las columnas de $AB$ son combinaciones lineales de las columnas de $A$. Así, el espacio vectorial generado por las columnas de $AB$ están contenidos en el espacio vectorial generado por las columnas de $A$. Por lo que, el espacio columna de $AB$ tiene una dimensión no mayor que $n$. Por lo tanto, el espacio columna de la matriz, $m\times m$ $AB$ tiene una dimensión menor o igual a $n$ con $n<m$. De donde las columnas de $AB$ generan un espacio de dimensión estrictamente menor que $m$. Lo que se concluye que $AB$ no es invertible.\\\\
 
     %-------------------- 11.
-    \item Sea $A$ una matriz $m\times n$. Hacer ver que por medio de un número finito de operaciones elementales de fila y/o de collumna se puede pasar de $A$ a la matriz $R$ que es simultáneamente escalón reducida por filas y escalon reducida por columnas; es decir, $R_{ij}=0$ si $i\neq j$, $R_{ii=1}$, $1\leq i \leq r,$ $R_{ii}=0$ si $i>r$. Demostrar que $R=PAQ,$ donde $P$ es una matriz inversible $m\times m$ y $Q$ es una matriz inversible $n\times n$.\\\\
-	Respuesta.-\;
+    \item Sea $A$ una matriz $m\times n$. Hacer ver que por medio de un número finito de operaciones elementales de fila y/o de columna se puede pasar de $A$ a la matriz $R$ que es simultáneamente escalón reducida por filas y escalon reducida por columnas; es decir, $R_{ij}=0$ si $i\neq j$, $R_{ii=1}$, $1\leq i \leq r,$ $R_{ii}=0$ si $i>r$. Demostrar que $R=PAQ,$ donde $P$ es una matriz inversible $m\times m$ y $Q$ es una matriz inversible $n\times n$.\\\\
+	Demostración.-\; Por el teorema 5, $A$ es equivalente por filas a una matriz escalonada reducida por filas $R_0$. Luego, por el segundo corolario del teorema 12, existe una matriz invertible $m\times m$, $P$ tal que $R_o=PA$.\\
+	Los resultados que son análogos a los teoremas 5 y 12 (con demostraciones similares) se cumplen para matrices escalonadas reducidas en columnas, por lo que hay una matriz $R$ que es columna equivalente a $R_0$ y una matriz $Q$ invertible $n \times n$ tal que $R = R_0Q$. Entonces $R = PAQ$, después vemos que, a través de un número finito de operaciones elementales de filas y/o columnas, $A$ pasa a una matriz $R$ que es escalonada reducida tanto por filas como por columnas.\\\\
 
     %-------------------- 12.
     \item El resultado del ejemplo 16 sugiere que tal vez la matriz
@@ -3703,7 +3715,7 @@ Dado que, no hay ningún privilegio con respecto a las filas, lo tratado en la �
     A=
     \left[
 	\begin{array}{rrrr}
-	    1 & \frac{1}{2} & \cdots & \frac{1}{2}\\\\
+	    1 & \frac{1}{2} & \cdots & \frac{1}{n}\\\\
 	    \frac{1}{2} & \frac{1}{3} & \cdots & \frac{1}{n+1}\\\\
 	    \vdots & \vdots && \vdots\\\\
 	    \frac{1}{n} & \frac{1}{n+1} & \cdots & \frac{1}{2n-1}

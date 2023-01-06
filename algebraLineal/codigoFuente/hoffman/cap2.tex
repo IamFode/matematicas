@@ -11,7 +11,7 @@
 	\item una regla (u operación) llamada adición, que asocia a cada par de vectores $\alpha,\beta $ de $V$ un vector $\alpha+\beta$ de $V$, que se llama suma de $\alpha$ y $\beta$, de tal modo que:
 	   \begin{enumerate}[(a)]
 	       \item La adición es conmutativa, $\alpha+\beta=\beta+\alpha$;
-	       \item la adición es asociativa, $\alpha+(\beta+\gamma)=\alpha+\beta+\gamma$;
+	       \item la adición es asociativa, $\alpha+(\beta+\gamma)=(\alpha+\beta)+\gamma$;
 	       \item existe un único vector $0$ de $V$, llamado vector nulo tal que $\alpha+0=\alpha,$ para todo $\alpha$ de $V$;
 	       \item para cada vector $\alpha$ de $V$ existe un vector $-\alpha$ de $V$, tal que $\alpha+(-\alpha)=0$;
 	   \end{enumerate}
@@ -24,3 +24,28 @@
 	   \end{enumerate}
     \end{enumerate}
 \end{def.}
+
+
+%-------------------- ejemplo 1
+\begin{ejem}[El espacio de n-tuplas, \boldmath F_n]
+    Sea $F$ cualquier cuerpo y sea $V$ el conjunto de todos los n-tuples $\alpha=(x_1,x_2,\ldots,x_n)$ de escalares $x_i$ de $F$. Si $\beta = (y_1,y_2,\ldots , y_n)$ con $y_i$ de $F$, la suma de $\alpha$ y $\beta$ se define por
+    \begin{equation}
+	\alpha+\beta = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n).
+    \end{equation}
+    El producto de un escalar $c$ y el vector $\alpha$ se define por 
+    \begin{equation}
+	c\alpha = (c_x1,c_x_2,\ldots,cx_n).
+    \end{equation}
+    Que esta adición vectorial y multiplicación escalar cumplen las condiciones (3) y (4) es fácil de verificar, usando las propiedades semejantes de la adición y multiplicación de elementos de $F$.
+\end{ejem}
+
+%-------------------- ejemplo 2
+\begin{ejem}[El espacio de matrices \boldmath $m\times n, F^{m\times n}$] Sea F cualquier cuerpo y sean $m$ y $n$ enteros positivos. Sea $F^{m\times n}$ el conjunto de todas las matrices $m\times n$ sobre el cuerpo $F$. La suma de dos vectores $A$ y $B$ en $F^{m\times n}$ se define por 
+    $$(A+B)_{ij}=A_{ij}+B_{ij}.$$
+    El producto de un escalar $c$ y de la matriz $A$ se define por 
+    \begin{equation}
+	(cA)_{ij} = cA_{ij}.
+    \end{equation}
+    Obsérvece que $F^{i\times n}=F^n$.
+\end{ejem}
+
