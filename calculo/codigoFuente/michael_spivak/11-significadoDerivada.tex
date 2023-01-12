@@ -2186,9 +2186,36 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		El caso para $-\infty$ es análogo.\\\\
 
 	    %---------- (d)
-	    \item 
-		
-		
+	    \item Si $\lim\limits_{x\to \infty} f(x)=\lim\limits_{x\to \infty}=0$ y $\lim\limits_{x\to \infty}f'(x)/g'(x)=l$, entonces $\lim\limits_{x\to \infty}f(x)/g(x)=\infty.$\\\\
+		Demostración.-\; Consideremos las funciones $\hat{f}$ y $hat{g}$ definidas por:
+		$$\hat{f}(x)=f\left(\dfrac{1}{x}\right)\quad \mbox{y}\quad \hat{g}(x)=g\left(\dfrac{1}{x}\right).$$
+		Entonces, notemos que $x\to 0^+$, por lo que $\dfrac{1}{x}\to \infty.$ Así, se tiene
+		$$\lim_{x\to 0^+}\hat{f}(x)=0=\lim_{x\to 0^+}\hat{g}(x)$$
+		y  $\lim\limits_{x\to 0^+}\dfrac{\hat{f}'(x)}{\hat{g}'(x)}=\infty$. Por lo tanto, aplicando (b) a $\hat{f}$ y $\hat{g}$ se tiene
+		$$\lim_{x\to 0^+}\dfrac{\hat{f}(x)}{\hat{g}(x)}=\infty.$$
+		Lo que implica,
+		$$\lim_{x\to \infty}\dfrac{f(x)}{g(x)}=\lim_{x\to 0^+}\dfrac{\hat{g}(x)}{\hat{f}(x)}=\infty.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 55
+    \item Existe otra forma de la Regla de L'Hopital que exige más manipulaciones algebraicas: Si $\lim\limits_{x\to \infty}f(x)=\lim\limits_{x\to \infty}g(x)=\infty$, y $\lim\limits_{x\to \infty}f'(x)(g'(x)=l,$ entonces $\lim\limits_{x\to \infty}f(x)/g(x)=l$. Demuéstrelo de la manera siguiente:
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Para todo $\epsilon>0$ existe un número $a$ tal que
+	    $$\bigg|\dfrac{f'(x)}{g'(x)}-l\bigg|<\epsilon \quad \mbox{para }x>a.$$
+	    Aplique el Teorema del Valor Medio de Cauchy a $f$ y $g$ en $[a,x]$ para demostrar que
+	    $$\bigg|\dfrac{f'(x)}{g'(x)}-l\bigg|z\epsilon \quad \mbox{para }x>a.$$\\
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item Escriba ahora
+	    $$\dfrac{f(x)}{g(x)}=\dfrac{f(x)-f(a)}{g(x)-g(a)}\cdot \dfrac{f(x)}{f(x)-f(a)}\cdot \dfrac{g(x)-g(a)}{g(x)}$$
+	    (¿por qué se puede suponer que $f(x)-f(a)\neq 0$? para $x$ grandes?) y deduzca que
+	    $$\bigg|\dfrac{f(x)}{g(x)}-l\bigg|<2\epsilon\quad \mbox{para }x \mbox{ suficientemente grandes}.$$\\
+		Demostración.-\;
 
 	\end{enumerate}
 	

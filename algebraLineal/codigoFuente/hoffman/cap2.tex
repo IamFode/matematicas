@@ -27,25 +27,118 @@
 
 
 %-------------------- ejemplo 1
-\begin{ejem}[El espacio de n-tuplas, \boldmath F_n]
+\begin{ejem}[El espacio de n-tuplas, \boldmath $F_n$]
     Sea $F$ cualquier cuerpo y sea $V$ el conjunto de todos los n-tuples $\alpha=(x_1,x_2,\ldots,x_n)$ de escalares $x_i$ de $F$. Si $\beta = (y_1,y_2,\ldots , y_n)$ con $y_i$ de $F$, la suma de $\alpha$ y $\beta$ se define por
     \begin{equation}
 	\alpha+\beta = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n).
     \end{equation}
     El producto de un escalar $c$ y el vector $\alpha$ se define por 
     \begin{equation}
-	c\alpha = (c_x1,c_x_2,\ldots,cx_n).
+	c\alpha = (cx_1,cx_2,\ldots,cx_n).
     \end{equation}
     Que esta adición vectorial y multiplicación escalar cumplen las condiciones (3) y (4) es fácil de verificar, usando las propiedades semejantes de la adición y multiplicación de elementos de $F$.
 \end{ejem}
 
 %-------------------- ejemplo 2
 \begin{ejem}[El espacio de matrices \boldmath $m\times n, F^{m\times n}$] Sea F cualquier cuerpo y sean $m$ y $n$ enteros positivos. Sea $F^{m\times n}$ el conjunto de todas las matrices $m\times n$ sobre el cuerpo $F$. La suma de dos vectores $A$ y $B$ en $F^{m\times n}$ se define por 
-    $$(A+B)_{ij}=A_{ij}+B_{ij}.$$
+    \begin{equation}
+	(A+B)_{ij}=A_{ij}+B_{ij}.
+    \end{equation}
     El producto de un escalar $c$ y de la matriz $A$ se define por 
     \begin{equation}
 	(cA)_{ij} = cA_{ij}.
     \end{equation}
     Obsérvece que $F^{i\times n}=F^n$.
 \end{ejem}
+
+%------------------- ejemplo 3
+\begin{ejem}[El espacio de funciones de un conjunto en un cuerpo]
+    Sea $F$ cualquier cuerpo y sea $S$ cualquier conjunto no vacío. Sea $V$ el conjunto de todas las funciones de $S$ en $F$. La suma de dos vectores $f$ y $g$ de $V$ es el vector $f+g$; es decir, la función de $S$ en $F$ defina por
+    \begin{equation}
+	(f+g)(s)=f(s)+g(s).
+    \end{equation}
+    El producto del escalar $c$ y la función $f$ es la función $cf$ definida por
+    \begin{equation}
+	(cf)(s)=cf(s).
+    \end{equation}
+    Para este tercer ejemplo se indica cómo se puede verificar que las operaciones definidas satisfacen las condiciones (3) y (4). Para la adición vectorial:
+    \begin{enumerate}[(a)]
+	\item Como la adición en $F$ es conmutativa,
+	    $$f(s)+g(s)=g(s)+f(s)$$
+	    para todo $s$ de $S$, luego las funciones $f+g$ y $g+f$ son idénticas.
+	\item Como la adición en $F$ es asociativa,
+	    $$f(s)+[g(s)+h(s)]=[f(s)+g(s)]+h(s)$$
+	    para todo $s$, luego $f+(g+h)$ es la misma función que $(f+g)+h.$
+	\item El único vector nulo es la función cero, que asigna a cada elemento de $S$ el escalar $0$ de $F$.
+	\item Para todo $f$ de $V$, $(-f)$ es la función dada por
+	    $$(-f)=-f(s).$$
+    \end{enumerate}
+    El lector encontrará fácil verificar que la multiplicación escalar satisface las condiciones de (4), razonando como se hizo para la adición vectorial.
+
+\end{ejem}
+
+%-------------------- ejemplo 4.
+\begin{ejem}[El espacio de las funciones polinomios sobre el cuerpo $F$] Sea $F$ un cuerpo y sea $V$ el conjunto de todas las funciones $f$ de $F$ en $F$ definidas en la forma
+    \begin{equation}
+	f(x)=c_0+c_1x+\ldots + c_n x^n
+    \end{equation}
+    donde $c_0,c_1,\ldots , c_n$ son escalares fijos de $F$ (independiente de $x$). Una función de este tipo se llama \textbf{\boldmath función polinomio sobre $F$}. Sean la adición y la multiplicación escalar definidas sobre en el ejemplo 3. Se debe observar que si $f$ y $g$ son funciones polinomios y $c$ está en $F$, entonces $f+g$ y $cf$ son también funciones polinomios.
+\end{ejem}
+
+%-------------------- ejemplo 5
+\begin{ejem}
+    El cuerpo $C$ de los números complejos puede considerarse como un espacio vectorial sobre el cuerpo $R$ de los números reales. En forma más general, sea $F$ el cuerpo de los números reales y sea $V$ el conjunto de los n-tuples $\alpha=(x_1,\ldots,x_n)$ donde $x_1,\ldots , x_n$ son números complejos. Se define la adición vectorial y la multiplicación escalar por (2.1) y (2-2), como en el ejemplo 1. De este modo se obtiene un espacio vectorial sobre el cuerpo $R$ que es muy diferente del espacio $C^n$ y del espacio $R_n$.
+\end{ejem}
+
+\vspace{.5cm}
+
+Hay unos pocos hechos simples que se desprenden, casi inmediatamente, de la definición de espacio vectorial, y procederemos a derivarlos. Si $c$ es un escalar y $0$ es el vector nulo, entonces por 3(c) y 4(c)
+$$c0=c(0+0)=c0+c0.$$
+Sumando $-(c0)$ y por $3(d)$, se obtiene
+\begin{equation}
+    c0=0.
+\end{equation}
+
+Análogamente, para el escalar $0$ y cualquier vector $\alpha$ se tiene que
+
+\begin{equation}
+    0\alpha=0.
+\end{equation}
+
+Si $c$ es un escalar no nulo y $\alpha$ un vector tal que $c\alpha=0$, entonces por (2-8), $c^{-1}(c\alpha)=0.$ Pero
+$$c^{-1}(c\alpha)=(c^{-1}c)\alpha=1\alpha=\alpha$$
+luego, $\alpha=0$. Así se ve que si $c$ es un escalar y $\alpha$ un vector tal que $c\alpha=0$, entonces $c$ es el escalar cero o $\alpha$ es el vector nulo.\\
+
+Si $\alpha$ es cualquier vector de $V$, entonces
+$$0=0\alpha=(1-1)\alpha=1\alpha+(-1)\alpha=\alpha+(-1)\alpha$$
+de lo que se sigue que
+
+\begin{equation}
+    (-1)\alpha=-\alpha.
+\end{equation}
+
+Finalmente, las propiedades asociativa y conmutativa de la adición vectorial implican que la suma de varios vectores es independiente de cómo se combinen estos vectores y de cómo se asocien. Por ejemplo, si $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ son vectores de $V$, entonces
+$$(\alpha_1,\alpha_2)+(\alpha_3+\alpha_4)=\left[\alpha_2+(\alpha_1+\alpha_3)\right]+\alpha_4$$
+y tal suma puede ser escrita, sin confusión,
+
+$$\alpha_1+\alpha_2+\alpha_3+\alpha_4.$$
+
+%-------------------- Definición combinación lineal
+\begin{def.}
+    Un vector $\beta$ de $V$ se dice \textbf{combinación lineal} de los vectores $\alpha_1,\ldots , \alpha_n$ en $V$, si existen escalares $c_1,\ldots , c_n$ de $F$ tales que
+    $$\beta = c_1\alpha_1 + \ldots + c_n\alpha_n = \sum_{i=1}^n c_i\alpha_i.$$
+\end{def.}
+
+Otras extensiones de la propiedad asociativa de la adición vectorial y las propiedades distributivas 4(c) y 4(d) de la multiplicación escalar se aplican a las combinaciones lineales:
+$$\sum_{i=1}^n c_i\alpha_i + \sum_{i=1}^n d_i\alpha_i=\sum_{i=1}^n (c_i+d_i)\alpha_i$$
+$$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
+
+\section*{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Si $F$ es un cuerpo, verificar que $F^n$ (como se definio en el Ejemplo 1) es un espacio vectorial sobre el cuerpo $F$.\\\\
+	Respuesta.-\;
+\end{enumerate}
 

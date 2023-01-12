@@ -1973,25 +1973,133 @@ Con el método de integración por partes calcular las integrales de los Ejercic
     \item Integrando por partes deducir la fórmula
     $$\int \dfrac{\sen^{n+1}x}{\cos^{m+1}x}=\dfrac{1}{m}\dfrac{\sen^n x}{\cos^m x}-\dfrac{n}{m}\int \dfrac{\sen^{n-1}x}{\cos^{m-1}x}\; dx.$$
     Aplicar la fórmula para integrar $\int \tan^2 x\; dx$ y $\int \tan^4 x \; dx.$\\\\
-    	Respuesta.-\; Aplicando 
+    	Respuesta.-\; Aplicando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\sen^n x & \Rightarrow & du=n\sen^{n-1} x\cos x\; dx\\\\
+	    dv=\dfrac{\sen x}{\cos^{m+1}}\; dx & \Rightarrow & v=\dfrac{1}{m}\cdot \dfrac{1}{\cos^m x}.
+	\end{array}
+	$$
+	Luego, haciendo la sustitución $t = \cos x$ que implica $dt=-\sen x\; dx$. Por lo que tenemos
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\sen x}{\cos^{m+1}}\; dx &=& - \displaystyle\int \dfrac{1}{t^{m+1}}\; dt\\\\
+	    &=& \dfrac{1}{m}t^{-m}\\\\
+	    &=&\dfrac{1}{m}\cdot \dfrac{1}{\cos m}
+	\end{array}
+	$$
+	Después,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\sen^{n+1}x}{\cos^{m+1}x}\; dx &=& \displaystyle\int u \; dv\\\\
+	    &=& uv-\displaystyle\int v\; du\\\\
+	    &=& \dfrac{1}{m}\dfrac{\sen^n x}{\cos^m x}-\dfrac{n}{m}\displaystyle \int \dfrac{\sen^{n-1}x\cos x}{\cos^m x}\; dx\\\\
+	    &=& \dfrac{1}{m}\dfrac{\sen^n x}{\cos^m x}-\dfrac{n}{m}\displaystyle\int \dfrac{\sen^{n-1}x\cos x}{\cos^m x}\; dx.
+	\end{array}
+	$$
+	Ahora, aplicando la fórmula a $\int \tan^2 x$, y dado que $\tan^2 x = \dfrac{\sen^2 x}{\cos^2 x}$. Este es el caso de la formula de arriba con $n+1=m+1=2.$ Por lo que
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \tan^2 x\; dx &=& \displaystyle\int \dfrac{\sen^2 x}{\cos^2 x}\; dx\\\\
+	    &=& \dfrac{\sen x}{\cos x}-\displaystyle\int \; dx\\\\
+	    &=& \tan x - x + C.
+	\end{array}
+	$$
+	Entonces, para $\int \tan^4 x\; dx$ se tiene
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \tan^4 x \; dx &=& \displaystyle\int \dfrac{\sen^4}{\cos^4 x}\; dx\\\\
+	    &=& \dfrac{1}{3}\dfrac{\sen^3 x}{\cos^3 x} - \displaystyle\int \dfrac{\sen^2 x}{\cos^2 x}\; dx\\\\
+	    &=& \dfrac{1}{3}\tan^3 x - \tan x + x + C.
+	\end{array}
+	$$
+	\vspace{.5cm}
 
     %-------------------- 19
     \item Integrando por partes deducir la fórmula
     $$\int \dfrac{\cos^{m+1}x}{\sen^{n+1}x}\; dx = -\dfrac{1}{n}\dfrac{\cos^m x}{\sen^n x}-\dfrac{m}{n}\int \dfrac{\cos^{m-1}x}{\sen^{n-1}x}\; dx.$$
     Utilizar la fórmula para integrar $\int \cot^2 x \; dx$ y $\int \cot^4 x\; dx$.\\\\
-    	Respuesta.-\;
+    	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\cos^m x &\Rightarrow& du=-m\cos^{m-1} x\sen x\; dx\\\\
+	    dv=\dfrac{\cos x}{\sen^{n+1}}\; dx & \Rightarrow & v=-\dfrac{1}{n}\cdot \dfrac{1}{\sen^n x}.
+	\end{array}
+	$$
+	Donde la formula para $v$ con $t=\sen x$ y $dt=\cos x$ se tiene
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\cos x}{\sen^{n+1}}\; dx &=& \displaystyle\int \dfrac{1}{t^{n+1}}\; dt\\\\
+	    &=& -\dfrac{1}{n}t^{-n}\\\\
+	    &=& -\dfrac{1}{n}\cdot \dfrac{1}{\sen^n x}.
+	\end{array}
+	$$
+	Por lo que
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\cos^{m+1}x}{\sen^{n-1}x}\; dx &=& \displaystyle\int u \; dv\\\\
+	    &=& uv - \displaystyle\int v\; du\\\\
+	    &=& -\dfrac{1}{n}\cdot \dfrac{\cos^m x}{\sen^n x}-\dfrac{m}{n}\displaystyle\int \dfrac{\cos^{m-1}x\sen x}{\sen^n x}\; dx\\\\
+	    &=& -\dfrac{1}{n}\cdot \dfrac{\cos^m x}{\sen^n x}-\dfrac{m}{n}\displaystyle\int \dfrac{\cos^{m-1}x}{\sen^{n-1}x}\; dx.
+	\end{array}
+	$$
+	Luego, usamos esta solución para evaluar $\cot^2 x$ y $\cot^4 x$. Primero para $\cot^2 x$ usamos la formula con $m+1=n+1=2$, como sigue
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \cot^2 x\; dx &=& \displaystyle\int \dfrac{\cos^2 x}{\sen^2 x}\; dx\\\\
+	    &=& -\dfrac{\cos x}{\sen x} - \displaystyle\int \; dx\\\\
+	    &=& - \cot x - x + C.
+	\end{array}
+	$$
+	Para $\cot^4 x$ usamos la formula con $m+1=n+1=4,$
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \cot^4 x\; dx &=& \displaystyle \int \dfrac{\cos^4 x}{\sen^4 x}\; dx\\\\
+	    &=& -\dfrac{1}{3}\dfrac{\cos^3 x}{\sen^3 x} - \displaystyle \int \cot^2 x\; dx\\\\
+	    &=& -\dfrac{1}{3}\cot^3 x + \cot x + x + C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+	
 
     %-------------------- 20
     \item 
-	\begin{enumerate}{rcl}
+	\begin{enumerate}[(a)]
 
 	    %---------- (a)
 	    \item Hallar un entero $n$ tal que $n\int_0^1 x f''(2x)\; dx = \int_0^2 tf''(t)\; dt$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Utilicemos la propiedad de expansión contracción de la integral, de donde
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int t f''(t)\; dt &=& n\displaystyle\int_0^1 xf''(2x)\; dx\\\\
+		    &=& \dfrac{n}{2} \displaystyle\int_0^2 \dfrac{x}{2} f''(x)\; dx\\\\
+		    &=& \dfrac{n}{4}\displaystyle\int_0^2 xf''(x)\; dx\\\\
+		    &=& \dfrac{n}{4}\displaystyle\int_0^2 t f''(x)\; dt.
+		\end{array}
+		$$
+		Esta ecuación se cumple siempre que $n=4$.\\\\
 
 	    %---------- (b)
 	    \item Calcular $\int_0^1 xf''(2x)\; dx$, sabiendo que $f(0)=1,$ $f(2)=3$ y $f'(2)=5$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Utilizando la parte (a), se tiene
+		$$\int_0^1 xf''(2x)\; dx = \dfrac{1}{4}\int_0^2 xf''(x)\; dx.$$
+		Entonces, usamos la integración por partes con
+		$$
+		\begin{array}{rcl}
+		    u=x &\Rightarrow& du=dx\\\\
+		    dv=f''(x)\; dx &\Rightarrow& v=f'(x).
+		\end{array}
+		$$
+		Por lo tanto,
+		$$
+		\begin{array}{rcl}
+		    \dfrac{1}{4}\displaystyle\int xf''(x)\; dx &=& \dfrac{1}{4}\left(xf'(x)\bigg|_0^2 - \displaystyle\int_0^2 f'(x)\; dx\right)\\\\
+		    &=& \dfrac{1}{4}\left[2f'(2)-f(2)+f(0)\right]\\\\
+		    &=& \dfrac{1}{4}(10-3+1)\\\\
+		    &=& 2.
+		\end{array}
+		$$
+		\vspace{.5cm}
 
 	\end{enumerate}
 
@@ -2003,11 +2111,43 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \item Si $\phi''$ es continua y no nula en $[a,b]$, y si existe una constante $m>0$ tal que $\phi'(t)\geq m$ para todo $t$ en $[a,b]$, usar el teorema 5.5 para demostrar que
 	    $$\left|\int_a^b \sen \phi(t) \; dt\right|\leq \dfrac{4}{m}.$$
 	    [Indicación: Multiplicar y dividir el integrando por $\phi'(t).$]\\\\
-		Demostración.-\;
+		Demostración.-\; Ya que $\phi'(t)\geq m > 0$ para todo $t\in [a,b]$, podemos dividir por $\phi'(t)$ de donde obtenemos 
+		$$\bigg|\int_a^b \sen \phi(t)\; dt\bigg|=\bigg|\int_a^b \dfrac{\sen \phi(t)}{\phi'(t)}\cdot \phi'(t)\; dt\bigg|$$
+		Entonces, para aplicar el segundo teorema de valor medio para integrales (Teorema 5.5, Tom Apostol) se define las funciones siguientes
+		\begin{center}
+		    $f(t)=\dfrac{1}{\phi'(t)} y g(t)=\phi'(t)\sen \phi(t).$
+		\end{center}
+		La función $g$ es continua, ya que $\sen \phi(t)$ es una composición de funciones continuas (sabemos que $\phi(t)$ es continua ya que es derivable) y $\phi'(t)$ es continua (es derivable ya que $\phi''(t)$ existe y es continua). Entonces el producto de la función continua también es continuo, lo que establece que $g$ es continua. También sabemos que $f$ cumple las condiciones del teorema, puesto que tiene derivada dada por
+		$$f''(t)=-\dfrac{\phi''(t)}{\left[\phi'(t)\right]^2}.$$
+		Esta derivada es continua en $[a,b]$, pues $\phi''(t)$ y $\phi'(t)$ son continuas y $\phi'(t)$ no es cero. Además, $\phi''(x)\neq 0\in [a,b]$. Recordemos por el teorema de Bolzano que una función continua que cambia de signo debe tener un cero. Por lo que podemos aplicar el segundo teorema de valor medio:
+		$$
+		\begin{array}{rcl}
+		    \bigg|\displaystyle\int_a^b \dfrac{\phi'(t)\sen \phi(t)}{\phi'(t)}\; dt\bigg| &=& \bigg|\dfrac{1}{\phi'(a)}\displaystyle\int_a^c \phi'(t)\sen \phi(t) \; dt + \dfrac{1}{\phi'(b)}\displaystyle\int_c^b \phi'(t)\sen \phi(t)\; dt\bigg|\\\\
+		    &\leq& \bigg|\dfrac{1}{m}\displaystyle\int_a^c \phi'(t)\sen \phi(t)\; dt + \dfrac{1}{m}\displaystyle\int_c^b \phi'(t)\sen \phi(t)\; dt\bigg|\\\\
+		    &\leq & \Bigg|\left(-\dfrac{1}{m}\right)\cos \phi(t)\bigg|_a^c\Bigg| + \Bigg|\left(-\dfrac{1}{m}\right)\cos \phi(t)\bigg|_c^b\Bigg|\\\\
+		\end{array}
+		$$
+		Luego, por la desigualdad triangular
+		$$
+		\begin{array}{rcl}
+		    &\leq&\Bigg|-\dfrac{2}{m}\Bigg|+ \Bigg|-\dfrac{2}{m}\Bigg|\\\\
+		    &=& \dfrac{2}{m}+\dfrac{2}{m}\\\\
+		    &=& \dfrac{4}{m}.
+		\end{array}
+		$$
+		\vspace{.5cm}
 
 	    %---------- (b)
 	    \item Si $a>0$, demostrar que $\left|\int_a^x \sen\left(t^2\right)\; dt\right|\leq \frac{2}{a}$ para todo $x>a$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $\phi(t)=t^2$, por la parte (a) se tiene
+		$$
+		\begin{array}{rcl}
+		    \phi(t)=t^2 &\Rightarrow& \phi'(t)=2t\\
+				&\Rightarrow& \phi''(t)=2.
+		\end{array}
+		$$
+		Por lo tanto, $\phi''(t)$ es continua y no cambia de signo. Además, $\phi'\geq m=2a$ donde $a$ es una constante con $2a>0\; \Rightarrow \; a>0$. Así,
+		$$\Bigg|\int_a^x \sen\left(t^2\right)\; dt\Bigg|\leq \dfrac{4}{2a}=\dfrac{2}{a}\quad \mbox{para todo }x>a.$$\\
 
 	\end{enumerate}
 
