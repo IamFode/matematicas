@@ -2208,16 +2208,67 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	    $$\bigg|\dfrac{f'(x)}{g'(x)}-l\bigg|<\epsilon \quad \mbox{para }x>a.$$
 	    Aplique el Teorema del Valor Medio de Cauchy a $f$ y $g$ en $[a,x]$ para demostrar que
 	    $$\bigg|\dfrac{f'(x)}{g'(x)}-l\bigg|z\epsilon \quad \mbox{para }x>a.$$\\
-		Demostración.-\; 
+		Demostración.-\; Sea $\epsilon$ tal que $0<\epsilon<\frac{1}{2}$. Ya que $\lim\limits_{x\to \infty}\dfrac{f'(x)}{g'(x)}=l,$ existe un número positivo $a$ de modo que
+		$$\Bigg|\dfrac{f(x)}{g(x)}-l\Bigg|<\epsilon \quad \mbox{para }x>a.$$
+		Ahora, sea $c\in (a,\infty)$. Entonces, tenemos $a<c<\infty$. Luego, notemos que $g'(x)\neq 0$ para todo $x>a$. Por el teorema de valor medio se sigue que $g(x)\neq g(a)$ para todo $x>a$. \\
+		Consideremos la función $h:[a,c]\to \mathbb{R}$ definida de la siguiente manera:
+		$$h(x)=\dfrac{1-\dfrac{f(a)}{f(x)}}{1-\dfrac{g(a)}{g(x}},\quad \mbox{para }x\in[a,c].$$
+		Note que,
+		$$
+		\begin{array}{rcl}
+		    \lim\limits_{x\to \infty} h(x) &=& \lim\limits_{x\to \infty} \dfrac{1-\dfrac{f(a)}{f(x)}}{1-\dfrac{g(a)}{g(x)}}\\\\
+						   &=& 1.
+		\end{array}
+		$$
+		Esto ya que $\lim\limits_{x\to\infty}f(x)=\lim\limits_{x\to \infty}g(x)=\infty.$ Por lo tanto, existe $d\in [a,c]$ tal que
+		$$1-\epsilon < h(x)<1-\epsilon,\quad \forall x \in [a,c].$$
+		Se sigue que
+		$$\dfrac{1}{2}<h(x)<\dfrac{3}{2},\quad \forall x\in [ac].$$
+		Después, vemos que
+		$$\dfrac{f(x)}{g(x)}=\dfrac{f(x)-f(a)}{g(x)-g(a)}\cdot \dfrac{1}{h(x)},\quad \forall x\in [a,c].$$
+		Aplicando el teorema de valor medio de Cauchy a $f$ y $g$ en $[a,c]$ se tiene
+		$$\dfrac{f(x)-f(a)}{g(x)-g(a)}=\dfrac{f'(X_x)}{g'(X_x)},\quad \mbox{para algún }X_x\in(a,c)$$
+		Sabemos que $X_x$ depende de $x$. Así,
+		$$X_x\to \infty \mbox{ cuando }x\to \infty.$$
+		Dado que,
+		$$\lim_{x\to \infty}\dfrac{f'(x)}{g'(x)}=l,$$
+		entonces
+		$$\lim_{x\to \infty}\dfrac{f(x)-f(a)}{g(x)-g(a)}=\lim_{x\to \infty}\dfrac{f'(X_x)}{g'(X_x)}=l.$$
+		Por último, como $c$ es arbitraria mayor a $a$, entonces por definición de limite tenemos que
+		$$\Bigg|\dfrac{f(x)-f(a)}{g(x)-g(a)}-l\Bigg|<\epsilon,\quad\mbox{para }x>a.$$\\
 
 	    %---------- (b)
 	    \item Escriba ahora
 	    $$\dfrac{f(x)}{g(x)}=\dfrac{f(x)-f(a)}{g(x)-g(a)}\cdot \dfrac{f(x)}{f(x)-f(a)}\cdot \dfrac{g(x)-g(a)}{g(x)}$$
 	    (¿por qué se puede suponer que $f(x)-f(a)\neq 0$? para $x$ grandes?) y deduzca que
 	    $$\bigg|\dfrac{f(x)}{g(x)}-l\bigg|<2\epsilon\quad \mbox{para }x \mbox{ suficientemente grandes}.$$\\
-		Demostración.-\;
+		Demostración.-\; Notemos que
+		$$\lim_{x\to \infty}f(x)=\infty.$$
+		Entonces, existe un número positivo $M$ tal que
+		$$f(x)>M,\quad \forall x.$$
+		Recordemos que
+		$$\dfrac{f(x)}{g(x)}=\dfrac{f'(X_x)}{g'(X_x)}\cdot \dfrac{1}{h(x)},\quad \forall x\in [a,c].$$
+		Dado que,
+		$$
+		\begin{array}{rcl}
+		    \lim\limits_{x\to \infty}\dfrac{f(x)}{g(x)} &=& \lim\limits_{x\to \infty} \dfrac{f'(X_x)}{g'(X_x)}\cdot \dfrac{1}{h(x)}\\\\
+								&=&\lim\limits_{x\to \infty} \dfrac{f'(X_x)}{g'(X_x)}\lim\limits_{x\to \infty} \dfrac{1}{h(x)}\\\\
+								&=& l,
+		\end{array}
+		$$
+		ya que, $\lim\limits_{x\to \infty}h(x)=1,\; \lim\limits_{x\to \infty}\dfrac{f'(X_x)}{g'(X_x)}=l.$
+		Entonces, por la definición de límite, para cada $\epsilon>0$ tenemos
+		$$\Bigg|\dfrac{f(x)}{g(x)}-l\Bigg|<2\epsilon,\quad \mbox{para cada }x \mbox{ grande}.$$\\
 
 	\end{enumerate}
+
+    %-------------------- 56.
+    \item Para completar la orgía de variantes de la regla de L’Hópital, aplicar el Problema 55 para demostrar unos cuantos casos más de la siguiente proposición general (existen tantas posibilidades que el lector debe seleccionar aquellas, si las hay, que sean de su interés):
+    Si $\lim\limits_{x\to []}f(x)=\lim\limits_{x\to []}$ y $\lim\limits_{x\to []} \dfrac{f'(x)}{g'(x)}=(),$ entonces $\lim\limits_{x\to []} \dfrac{f(x)}{g(x)}=().$ Aquí $\left[\right]$ puede ser $a$ ó $a^+$ ó $a^-$ ó $-\infty$, $\left\{\right\}$ puede ser $0$ ó $\infty$ ó $-\infty$ y $()$ puede ser $l$ ó $\infty$ ó $-\infty$.\\\\
+	Respuesta.-\; Si $\lim\limits_{x\to [\infty]}f(x)=\lim\limits_{x\to [\infty]}$ y $\lim\limits_{x\to [\infty]} \dfrac{f'(x)}{g'(x)}=(a),$ entonces $\lim\limits_{x\to [\infty]} \dfrac{f(x)}{g(x)}=(a).$\\\\
+
+    %-------------------- 57.
+    \item 
 	
 
 	

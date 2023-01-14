@@ -139,6 +139,114 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 
     %-------------------- 1.
     \item Si $F$ es un cuerpo, verificar que $F^n$ (como se definio en el Ejemplo 1) es un espacio vectorial sobre el cuerpo $F$.\\\\
+	Respuesta.-\; Sean $\alpha=(x_1,x_2,\ldots,x_n)$,  $\beta=(y_1,y_2,\ldots,y_n)$ y $\gamma=(z_1,z_2,\ldots,z_n)$ elementos de $F^n$. Como también sean $c,d,c_1,c_2\in F$. Entonces,
+	\begin{enumerate}[(1)]
+	    \setcounter{enumii}{2}
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item Conmutatividad para la adición. 
+			$$
+			\begin{array}{rcl}
+			    \alpha+\beta & = & (x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n) \\
+			    & = & (x_1+x_2,\ldots,x_n+y_n)\\
+			    & = & (y_1+y_2,\ldots,y_n+x_n)\\
+			    & = & \beta+\alpha.
+			\end{array}
+			$$
+		    \item Asociatividad para la adición.
+			$$
+			\begin{array}{rcl}
+			    \alpha+(\beta+\gamma) & = & (x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n)+(z_1,z_2,\ldots,z_n) \\
+			    & = & (x_1+x_2,\ldots,x_n+y_n+z_n)\\
+			    & = & (x_1+x_2+z_1,\ldots,x_n+y_n+z_n)\\
+			    & = & (\alpha+\beta)+\gamma.
+			\end{array}
+			$$
+		    \item Existencia del elemento nulo.\\
+			$$
+			\begin{array}{rcl}
+			    \alpha+0 & = & (x_1,x_2,\ldots,x_n)+(0,0,\ldots,0)\\
+			    & = & (x_1+0,\ldots,x_n+0)\\
+			    & = & \alpha.
+			\end{array}
+			$$
+		    \item Existencia del inverso aditivo.
+			$$
+			\begin{array}{rcl}
+			    \alpha+(-\alpha) & = & (x_1,x_2,\ldots,x_n)+\left[-(x_1,x_2,\ldots,x_n)\right]\\
+			    & = & (x_1,x_2,\ldots,x_n)+(-x_1,-x_2,\ldots,-x_n)\\
+			    & = & (x_1-x_1,\ldots,x_n-x_n)\\
+			    & = & (0,0,\ldots,0)\\
+			    & = & 0.
+			\end{array}
+			$$
+
+		\end{enumerate}
+
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item Existencia del elemento neutro para la multiplicación escalar.
+			$$
+			\begin{array}{rcl}
+			    1\alpha & = & 1(x_1,x_2,\ldots,x_n)\\
+			    & = & (1x_1,1x_2,\ldots,1x_n)\\
+			    & = & \alpha.
+			\end{array}
+			$$
+		    \item Asoaciatividad para la multiplicación escalar.\\
+			$$
+			\begin{array}{rcl}
+			    (c_1c_2)\alpha & = & (c_1c_2)(x_1,x_2,\ldots,x_n)\\
+			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
+			    & = & (c_1(c_2x_1),c_1(c_2x_2),\ldots,c_1(c_2x_n))\\
+			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
+			    & = & c_1(c_2\alpha).
+			\end{array}
+			$$
+
+		    \item Distributividad de la multiplicación escalar sobre la adición.
+			$$
+			\begin{array}{rcl}
+			    c(\alpha+\beta) & = & c((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n))\\
+			    & = & c(x_1+x_2,\ldots,x_n+y_n)\\
+			    & = & (cx_1+cx_2,\ldots,cx_n+cy_n)\\
+			    & = & (c\alpha+c\beta).
+			\end{array}
+			$$
+
+		    \item Distributividad de la multiplicación sobre la adición de escalares
+			$$
+			\begin{array}{rcl}
+			    (c+d)\alpha & = & (c+d)(x_1,x_2,\ldots,x_n)\\
+			    & = & (cx_1+dx_1,\ldots,cx_n+dx_n)\\
+			    & = & c\alpha+d\alpha.
+			\end{array}
+			$$
+
+		\end{enumerate}
+		\vspace{.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 2.
+    \item Si $V$ es un espacio vectorial sobre un cuerpo $F$, verificar que
+    $$(\alpha_1+\alpha_2)+(\alpha_3+\alpha_4)=\left[\alpha_2+(\alpha_3+\alpha_1)\right]+\alpha_4$$
+    para todo los vectores $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ de $v$.\\\\
+	Respuesta.-\; Se tiene,
+	$$
+	\begin{array}{rcl}
+	    (\alpha_1+\alpha_2)+(\alpha_3+\alpha_4) &=& (\alpha_2+\alpha_1)+(\alpha_3+\alpha_4)\\
+						    &=& \alpha_2+\left[\alpha_1+(\alpha_3+\alpha_4)\right]\\
+						    &=& \alpha_2+\left[(\alpha_1+\alpha_3)+\alpha_4\right]\\
+						    &=& \alpha_2+\left[(\alpha_3+\alpha_1)+\alpha_4\right]\\
+						    &=& \left[\alpha_2+(\alpha_3+\alpha_1)\right]+\alpha_4.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 3.
+    \item Si $C$ es el cuerpo de los complejos, ¿qué vectores de $C^3$ son combinaciones lineales de $(1,0,-1),(0,1,1)$ y $(1,1,1)$?.\\\\
 	Respuesta.-\;
+
 \end{enumerate}
 
