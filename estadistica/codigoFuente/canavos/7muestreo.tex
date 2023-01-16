@@ -175,6 +175,136 @@ Para ser que para un valor grande $n$, la distribución de $\overline{X}$ es apr
     $$\dfrac{1}{n}\sum_{i=1}^n \left(\dfrac{X_i-\mu}{\dfrac{\sigma}{\sqrt{n}}}\right)=\dfrac{1}{n}\dfrac{1}{\dfrac{\sigma}{\sqrt{n}}}\sum_{i=1}^n (X_i-\mu)=\dfrac{1}{n}\dfrac{1}{\dfrac{\sigma}{\sqrt{n}}}(n\overline{X}-n\mu)=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}.$$
     Entonces,
     $$Y=\dfrac{1}{\sqrt{n}}\sum_{i=1}^n Z_i.$$
-    Como resultado se tiene que la función generadora de momentos de $Y$ es igual a la función generadora de moemtos de $(1/\sqrt{n})\sum_{i=1}^n Z_i$. Del teorema 7.1,
-    $$m_Y(t)=\left[m_{Z_i(t/\sqrt{n})}\right]^n$$
+    Como resultado se tiene que la función generadora de momentos de $Y$ es igual a la función generadora de momentos de $(1/\sqrt{n})\sum_{i=1}^n Z_i$. Del teorema 7.1,
+    $$
+    \begin{array}{rcl}
+	m_Y(t)&=&\left[m_{Z_i}(t/\sqrt{n})\right]^n\\\\
+	      &=& \left\{E\left[e^{\frac{tZ_i}{\sqrt{n}}}\right]\right\}^n,
+    \end{array}
+    $$
+    dado que las $Z_i$ son variables aleatorias independientes.\\
+    Al expandir $(tZ_i/\sqrt{n})$ en una serie de Taylor:
+    $$e^{\frac{tZ_i}{\sqrt{n}}}=1+\dfrac{t}{\sqrt{n}}Z_i + \dfrac{t^2}{2n}Z_i^2 + \dfrac{t^3}{3!n^{\frac{3}{2}}}Z_i^3 + \ldots .$$
+    Si se toma los valores esperados y se recuerda que $E(Z_i)=0$ y $Var(Z_i)=1$, $i=1,2,\ldots,n$ se tiene
+    $$E\left[e^{\frac{tZ_i}{\sqrt{n}}}\right]=1+\dfrac{t^2}{2n}+\dfrac{t^3}{3!n^{\frac{3}{2}}}E\left(Z_i^3\right)+\ldots.$$
+    De acuerdo con lo anterior
+    $$
+    \begin{array}{rcl}
+	m_Y(t) &=& \left[1+\dfrac{t^2}{2n}+\dfrac{t^3}{3!n^{\frac{3}{2}}}E\left(Z_i^3\right)+\ldots\right]^n\\\\
+	       &=& \left\{1+\dfrac{1}{n}\left[\dfrac{t^2}{2}+\dfrac{t^3}{3!\sqrt{n}}E\left(Z_i^3\right)+\ldots\right]\right\}^n\\\\
+	       &=& \left(1+\dfrac{u}{n}\right)^n
+    \end{array}
+    $$
+    donde
+    $$u=\dfrac{t^2}{2}+\dfrac{t^3}{3!\sqrt{n}}E\left(Z_i^3\right)+\ldots.$$
+    Ahora
+    $$\lim_{n\to \infty}m_Y(t)=\lim_{n\to \infty}\left(1+\dfrac{u}{n}\right)^n.$$
+    Pero por definición 
+    $$\lim_{n\to \infty}\left(1+\dfrac{u}{n}\right)=e^u.$$
+    Lo anterior da como resultado una situación idéntica a la que se tiene en la demostración del teorema 5.1. Esto es, conforme $n\to \infty$, todos los términos en $u$, excepto el primero, tienden hacia cero debido a que todos tienen potencias positivas de $n$ en sus denominadores. Por lo tanto, se puede deducir que
+    $$\lim_{x\to \infty}m_Y(t)=e^{\frac{t^2}{2}},$$
+    o la distribución límite de $Y=(\overline{X}-\mu)/(\sigma/\sqrt{n})$ es la normal estándar para valores grandes de $n$.
 \end{teo}
+
+La esencia del teorema central del límite recae en el hecho de que para $n$ grande, la distribución $(\overline{X}-\mu)/(\sigma/\sqrt{n})$es, en forma aproximada, normal con media cero y desviación estándar uno, sin importar cuál sea el modelo de probabilidad a partir del que se obtuvo la muestra. Debe notarse que si el modelo de probabilidad de la población es semejantes a una distribución normal (esto es, si es simétrico y existe una concentración relativamente alta alrededor del punto de simetría), la aproximación normal será buena aun para pequeñas muestras. Por otro lado, si el modelo de la población tiene muy poco parecido a una distribución normal (por ejemplo existe una alta asimetría), la aproximación normal sólo será adecuada para valores relativamente grandes a $n$. En muchas casos, puede concluirse de forma segura, que la aproximación será buena mientras $n>30$. Por lo tanto, la variable aleatoria
+$$Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
+se emplea para formular inferencias acerca de $\mu$ cuando se conoce el valor de la varianza población $\sigma^2la.$
+
+\section{La distribución de muestro de \boldmath$S^2$}
+
+Otra estadística importante empleada para formular inferencias con respecto a las varianzas de la población es la varianza denotada por $S^2$. Para comenzar, es necesario suponer que $\mu$ es conocida y $\sigma^2$ no. Así, $\sigma^2$ se encuentra definida por
+$$S^2=\sum_{i=1}^n \dfrac{(X_i-\mu)^2}{n},$$
+en donde $X_1,X_2,\ldots,X_n$ constituye una muestra aleatoria de una distribución normal con media $\mu$ y varianza $\sigma^2$ desconocida. Para determinar una distribución de muestreo que permita hacer inferencias sobre $\sigma^2$ con base en $S^2$ definida por (7.13), se enuncia y demuestra el siguiente teorema.
+
+%-------------------- teorema 7.5
+\begin{teo}
+    Sean $X_1,X_2,\ldots ,X_n$ una muestra aleatoria de una distribución normal con media $\mu$ y varianza $\sigma^2$. La distribución de la variable aleatoria 
+    $$Y=\sum_{i=1}^n \dfrac{(X_i-\mu)^2}{\sigma^2}$$
+    es del tipo chi-cuadrada con $n$ grados de libertad.\\\\
+	Demostración.-\; Dado que $X_i\sim N(\mu,\sigma)$, $i=1,2,\ldots,n$, $Z_i=\dfrac{X_i-\mu}{\sigma}$ define $n$ variables aleatorias normales estándar independientes, se tiene:
+	$$Y=\sum_{i=1}^n Z_i^2.$$
+	Del teorema 7.1,
+	$$
+	\begin{array}{rcl}
+	    m_Y(t)&=&m_{Z^2_i}(t)m_{Z^2_2}(t)\ldots m_{Z^2_n}(t)\\\\
+		  &=& (1-2t)^{-\frac{1}{2}}(1-2t)^{-\frac{1}{2}}\ldots (1-2t)^{-\frac{1}{2}}\\\\
+	\end{array}
+	$$
+	dado que el cuadrado de una variable aleatoria normal estándar tiene una distribución chi-cuadrada con un grado de libertad (véase el ejemplo 5.14). De esta forma se tiene
+	$$m_Y(t)=(1-2t)^{-\frac{n}{2}}$$
+	que es la función generadora de momentos de una distribución chi-cuadrada con $n$ grados de libertad. De acuerdo con lo anterior, $Y\sim X_n^2$.
+\end{teo}
+
+Desde un punto de vista práctica, la varianza muestra tal como se encuentra definida por 
+$$S^2=\sum\limits_{i=1}^n \dfrac{(X_i-\mu)^2}{n}$$
+tiene poco uso, ya que es muy raro que se conozca el valor de la media poblacional $\mu$. De acuerdo con lo anterior, si se muestra una distribución normal con media $\mu$ y varianza $\sigma^2$, la varianza muestral se define por
+\begin{tcolorbox}
+    $$S^2=\sum_{i=1}^n \dfrac{\left(X_i-\overline{X}\right)^2}{n-1}$$
+\end{tcolorbox}
+En el capítulo 8 se verá por qué se emplea el divisor $(n-1)$. Para determinar la distribución de muestreo de $S^2$, y con base en una muestra aleatoria proveniente de una distribución normal, debe tomarse en cuenta el promedio de la muestra $\overline{X}$. Como resultado se tiene que la distribución de muestreo de $\dfrac{(n-1)S^2}{\sigma^2}$ es también una distribución chi-cuadrada con $n-1$ grados de libertad. Para ello probaremos primero un teorema útil que involucra suma de dos variables aleatorias independientes chi-cuadrada y entonces se escribirá la anterior expresión en una forma equivalente, con objeto de aprovechar este teorema.
+
+%-------------------- teorema 7.6
+\begin{teo}
+    Si $X_1$ y $X_2$ son dos variables aleatorias independientes y cada una tiene una distribución chi-cuadrada con $v_1$ y $v_2$ grados de libertad respectivamente, entonces:
+    $$Y=X_1+X_2$$
+    también tiene una distribución chi-cuadrada con $v_1+v_2$ grados de libertad.\\\\
+	Demostración.-\; Del teorema 7.1, la función generadora de momentos de $Y$ es
+	$$
+	\begin{array}{rcl}
+	    m_Y(t) &=& m_{X_i}(t)m_{X_2}(t)\\\\
+		   &=& (1-2t)^{-v_1/2} (1-2t)^{-v_2/2}\\\\
+		   &=& (1-2t)^{-(v_1+v_2)/2}
+	\end{array}
+	$$
+	que es la función generadora de momentos de una variable aleatoria chi-cuadrada con $v_1+v_2$ grados de libertad.
+\end{teo}
+
+Ahora se deducirá la distribución de muestreo de $\dfrac{(n-1)S^2}{\sigma^2}$. De  
+$$S^2=\sum_{i=1}^n \dfrac{\left(X_i-\overline{X}\right)^2}{n-1}$$
+se tiene que
+$$(n-1)S^2=\sum_{i=1}^n \left(X_i-\overline{X}\right)^2$$
+pero
+$$
+\begin{array}{rcl}
+    \displaystyle\sum_{i=1}^n \left(X_i-\overline{X}\right)^2 &=& \displaystyle\sum_{i=1}^n \left(X_i-\mu-\overline{X}+\mu\right)^2\\\\
+							      &=& \displaystyle\sum_{i=1}^n \left[(X_i-\mu)-(\overline{X}-\mu)\right]^2\\\\
+							      &=& \displaystyle\sum_{i=1}^n \left[\left(X_i-\mu\right)^2-2\left(X_i-\mu\right)\left(\overline{X}-\mu\right)+\left(\overline{X}-\mu\right)^2\right]\\\\
+							      &=& \displaystyle\sum_{i=1}^n \left(X_i-\mu\right)^2-2\left(\overline{X}-\mu\right) \displaystyle\sum_{i=1}^n \left(X_i-\mu\right)+n\left(\overline{X}-\mu\right)^2\\\\
+							      &=&\displaystyle\sum_{i=1}^n\left(X_i-\mu\right)^2-2\left(\overline{X}-\mu\right)n\left(\overline{X}-\mu\right)+n\left(\overline{X}-\mu\right)^2\\\\
+							      &=& \displaystyle\sum_{i=1}^n \left(X_i-\mu\right)^2-n\left(\overline{X}-\mu\right)^2.
+\end{array}
+$$
+
+De esta forma
+
+$$(n-1)S^2+n\left(\overline{X}-\mu\right)^2=\sum_{i=1}^n \left(X_i-\mu\right)^2.$$
+
+Al dividir ambos miembros de la expresión anterior por la varianza poblacional $\sigma^2$ se tiene
+
+\begin{tcolorbox}
+    $$\dfrac{(n-1)S^2}{\sigma^2}+\dfrac{n\left(\overline{X}-\mu\right)^2}{\sigma^2}=\dfrac{(n-1)S^2}{\sigma^2}+\left(\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\right)^2=\dfrac{\displaystyle\sum_{i=1}^n \left(X_i-\mu\right)^2}{\sigma^2}$$
+\end{tcolorbox}
+
+Del teorema 7.5 se desprende que $\sum_{i=1}^n (X_i-\mu)^2/\sigma^2$ tiene una distribución chi-cuadrada con $n$ grados de libertad. De manera similar, $\left[(\overline{X}-\mu)/\sigma/\sqrt{n}\right]^2$ también posee una distribución chi-cuadrada con un grado de libertad, dado que $(\overline{X}-\mu)/(\sigma/\sqrt{n})$ es $N(0,1)$. Por lo tanto, si se supone que $(n-1)S^2/\sigma^2$ y $\left[(\overline{X}-\mu)/(\sigma/\sqrt{n})\right]^2$ son variables aleatorias independientes, entonces por el teorema 7.6, cuando se muestrea una población cuya distribución es normal con media y varianza desconocida, la distribución de $(n-1)S^2/\sigma^2$, es chi-cuadrada con $n$-grados de libertad. La función de densidad de probabilidad de $Y=(n-1)S^2/\sigma^2$ se desprende de (5.58) y está dada por:
+$$
+f(y;n-1)=
+\left\{
+    \begin{array}{lc}
+	\dfrac{1}{\Gamma\left[(n-1)/2\right]2^{(n-1)/2}}y^{\left[(n-1)/2\right]-1}e^{-y/2} & y>0,\\\\
+	0&\mbox{para cualquier otro valor.}
+    \end{array}
+\right.
+$$
+Nótese, que dado $Y\sim X_{n-1}^2$, $E(Y)=n-1$ y $Var(Y)=2(n-1)$. Además, ya que $Y=(n-1)S^2/\sigma^2$, $S^2=\sigma^2Y/(n-1)$. Por lo tanto
+\begin{tcolorbox}
+    $$\E\left(S^2\right)=E\left(\dfrac{\sigma^2 Y}{n-1}\right)=\dfrac{\sigma^2}{n-1}E(Y)=\sigma^2,$$
+\end{tcolorbox}
+
+y 
+
+\begin{tcolorbox}
+    $$\Var\left(S^2\right)=Var\left(\dfrac{\sigma^2Y}{n-1}\right)=\dfrac{\sigma^4}{(n-1)^2}Var(Y)=\dfrac{2\sigma^4}{n-1}.$$
+\end{tcolorbox}
+
+
+\section{La distribución t de Student}

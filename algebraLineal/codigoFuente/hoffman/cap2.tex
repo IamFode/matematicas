@@ -193,7 +193,7 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 			    & = & \alpha.
 			\end{array}
 			$$
-		    \item Asoaciatividad para la multiplicación escalar.\\
+		    \item Asociatividad para la multiplicación escalar.\\
 			$$
 			\begin{array}{rcl}
 			    (c_1c_2)\alpha & = & (c_1c_2)(x_1,x_2,\ldots,x_n)\\
@@ -204,7 +204,7 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 			\end{array}
 			$$
 
-		    \item Distributividad de la multiplicación escalar sobre la adición.
+		    \item Distributividad para la multiplicación escalar sobre la adición.
 			$$
 			\begin{array}{rcl}
 			    c(\alpha+\beta) & = & c((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n))\\
@@ -214,7 +214,7 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 			\end{array}
 			$$
 
-		    \item Distributividad de la multiplicación sobre la adición de escalares
+		    \item Distributividad para la multiplicación sobre la adición de escalares
 			$$
 			\begin{array}{rcl}
 			    (c+d)\alpha & = & (c+d)(x_1,x_2,\ldots,x_n)\\
@@ -246,6 +246,153 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 
     %-------------------- 3.
     \item Si $C$ es el cuerpo de los complejos, ¿qué vectores de $C^3$ son combinaciones lineales de $(1,0,-1),(0,1,1)$ y $(1,1,1)$?.\\\\
+	Respuesta.-\; Sea $(x,y,z)\in C^3$ una convinación lineal de los vectores $(1,0,-1),(0,1,1)$ y $(1,1,1)$. Entonces, existen escalares $a,b$ y $c\in C$ tal que
+	$$
+	\begin{array}{rcl}
+	    (x,y,z)&=&a(1,0,-1)+b(0,1,1)+c(1,1,1)\\
+		   &=& (a+c,b+c,c-a).
+	\end{array}
+	$$
+	De donde, 
+	$$
+	\left\{	
+	    \begin{array}{rcl}
+		a+c & = & x\\
+		b+c & = & y\\
+		c-a & = & z.
+	    \end{array}
+	\right.
+	$$
+	Resolviendo se tiene,
+	$$
+	\left\{	
+	    \begin{array}{rcl}
+		a & = & \dfrac{x-z}{2}\\\\
+		b & = & \dfrac{2z-x-y}{2}\\\\
+		c & = & \dfrac{x+z}{2}.
+	    \end{array}
+	\right.
+	$$
+
+	Por lo tanto, existen escalares $a,b$ y $c\in C$ tal que 
+	$$(x,y,z)=a(1,0,-1)+b(0,1,1)+c(1,1,1).$$
+	Así, todos los vectores en $C^3$ pueden ser expresados como una combinación lineal de los vectores $(1,0,-1),(0,1,1)$ y $(1,1,1)$.\\\\
+
+    %-------------------- 4.
+    \item Sea $V$ el conjunto de los pares $(x,y)$ de números reales, y sea $F$ el cuerpo de los números reales. Se define
+    $$
+    \begin{array}{rcl}
+	(x,y)+(x_1,y_1) &=& (x+x_1,y+y_1)\\
+	c(x,y) &=& (cx,y).
+    \end{array}
+    $$
+    ¿Es $V$, con estas operaciones, un espacio vectorial sobre el cuerpo de los números reales?.\\\\
+	Respuesta.-\; No es un espacio vectorial ya que, 
+	$$(0,2)=(0,1)+(0,1)=2(0,1)=(2\cdot 0,1)=(0,1).$$\\
+
+    %-------------------- 5.
+    \item En $\mathbb{R}^n$ se definen dos operaciones
+    $$\alpha \oplus \beta = \alpha-\beta$$
+    $$c\cdot \alpha=-c\alpha.$$
+    Las operaciones del segundo miembro son las usuales. ¿Qué axiomsa de espacio vectorial se cumplen para $\mathbb{R}^n,\oplus,\cdot$?.\\\\
+	Respuesta.-\; Sean $\alpha=(x_1,x_2,\ldots,x_n)$,  $\beta=(y_1,y_2,\ldots,y_n)$ y $\gamma=(z_1,z_2,\ldots,z_n)$ elementos de $F^n$. Como también sean $c,d,c_1,c_2\in F$. Entonces,
+	\begin{enumerate}[(1)]
+	    \setcounter{enumii}{2}
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item No es conmutativa para la adición. 
+			$$
+			\begin{array}{rcl}
+			    \alpha\oplus \beta &=& \alpha-\beta\\
+					       & = & (x_1,x_2,\ldots,x_n)-(y_1,y_2,\ldots, y_n) \\
+							      &=& (x_1-y_1,x_2-y_2,\ldots,x_n-y_n)\\
+							      &=& (-y_1+x_1,-y_2+x_2,\ldots,-y_n+x_n)\\
+							      &=& -\beta+ \alpha.\\
+							      &=& -(\beta-\alpha)\\
+							      &=& -(\beta\oplus \alpha)\\
+							      &\neq& \beta\oplus \alpha.
+			\end{array}
+			$$
+
+		    \item No es asociativa para la adición.
+			$$
+			\begin{array}{rcl}
+			    \alpha\oplus (\beta\oplus \gamma) &=& \alpha-(\beta-\gamma)\\
+							      &=& (\alpha-\beta)+\gamma \\
+							      &=& (\alpha\oplus \beta)+\gamma\\
+							      &\neq& \alpha\oplus (\beta\oplus \gamma).
+
+			\end{array}
+			$$
+		    \item No existe el elemento nulo.\\
+			$$
+			\begin{array}{rcl}
+			    \alpha\oplus 0 &=& \alpha-0\\
+					   &=&\alpha-(0,0,\ldots,0)\\
+					   &=& \alpha.
+			\end{array}
+			$$
+			Pero, como $\oplus$ no es conmutativa; es decir, $\alpha\oplus \neq 0\oplus \alpha$ decimos que no existe la identidad aditiva para $\oplus.$\\
+			
+		    \item No existe el inverso aditivo.
+			$$
+			\begin{array}{rcl}
+			    \alpha\oplus(-\alpha) & = & \alpha - (-\alpha)\\
+						  & = & \alpha + \alpha\\
+						  &\neq & 0
+			\end{array}
+			$$
+
+		\end{enumerate}
+
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item No existe el elemento neutro para la multiplicación escalar.\\
+			El elemento $1$ no satisface $1\cdot \alpha=\alpha$ para cualquier $\alpha\neq 0$, ya que de lo contrario tendríamos 
+			$$1\cdot(x_1,x_2,\ldots,x_n)=(-x_1,x_2\ldots,x_n)=(x_1,x_2,\ldots,x_n)$$
+			sólo si $x_i=0$ para todo $i$.\\
+
+		    \item No es asociativa para la multiplicación escalar.\\
+			$$
+			\begin{array}{rcl}
+			    c_1(c_2\alpha) & = & c_1(-c_2\alpha)\\
+					   & = & -c_1(-c_2\alpha)\\
+					   & = & -(c_1c_2)\alpha\\
+					   & \neq & (c_1c_2)\alpha.
+			\end{array}
+			$$
+
+		    \item No es distributiva para la multiplicación escalar sobre la adición.
+			$$
+			\begin{array}{rcl}
+			c(\alpha+\beta) & = & -c(\alpha+\beta)\\
+					&=& -c\alpha-c\beta\\
+					&=& -(c\alpha+c\beta)\\
+					&\neq& c\alpha+c\beta.
+			\end{array}
+			$$
+
+		    \item No es distributiva para la multiplicación sobre la adición de escalares
+			$$
+			\begin{array}{rcl}
+			    c\alpha + d\alpha & = & -c\alpha - d\alpha\\
+					      & = & -(c+d)\alpha\\
+					      & \neq & (c+d)\alpha.
+			\end{array}
+			$$
+
+		\end{enumerate}
+		\vspace{.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item Sea $V$ el conjunto de todas las funciones que tiene valor complejo sobre el eje real, tales que (para todo $t$ de $R$)
+    $$f-(t)=\overline{f(t)}$$.
+    La barra indica conjugación compleja. Demostrar que $V$, con las operaciones 
+    $$(f+g)(t)=f(t)+g(t)$$
+    $$cf(t)=cf(t)$$
+    es un espacio vectorial sobre el cuerpo de los números reales. Dar un ejemplo de una función en $V$ que no toma valores reales.\\\\
 	Respuesta.-\;
 
 \end{enumerate}

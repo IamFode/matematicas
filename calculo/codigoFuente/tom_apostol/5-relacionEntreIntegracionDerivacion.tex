@@ -2161,16 +2161,126 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 1.
     \item Sea $f$ un polinomio tal que $f(0)=1$ y sea $g(x)=x^nf(x)$. Calcular $g(0),g'(0),\ldots , g^{n}(0)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Usando la regla de la cadena, se tiene
+	$$
+	\begin{array}{rcl}
+	    g'(x) &=& nx^{n-1}f(x)+x^nf'(x)\\\\
+	    g''(x) &=& n(n-1)x^{n-2}f(x)+2nx^{n-1}f'(x)+x^nf''(x)\\\\
+	    g^{(3)}(x) &=& n(n-1)(n-2)x^{n-3}f(x)+\displaystyle{3\choose 2}n(n-1)x^{n-2}f'(x)+\displaystyle{3\choose 1}nx^{n-1}f''(x)+x^nf^{(3)}(x)\\\\
+	\end{array}
+	$$
+	$$
+	\begin{array}{rcl}
+	    g^{4}(x) &=& n(n-1)(n-2)(n-3)x^{n-4}f(x)+\displaystyle{4\choose 3}n(n-1)(n-2)x^{n-3}f'(x)+\displaystyle{4\choose 2}n(n-1)x^{n-2}f''(x)\\\\
+		     &+&\displaystyle{4\choose 1}nx^{n-1}f^{(3)}(x)+x^nf^{(4)}(x)\\\\
+	\end{array}
+	$$
+	Vemos que se cumple un patrón, por lo que podemos generalizarde la siguente manera:
+	$$
+	\begin{array}{rcl}
+	    g^{(n)}(x)&=&n!f(x)+\displaystyle{n\choose n-1}\dfrac{n!}{1!}xf'(x)+\displaystyle{n\choose n-2}x^2f''(x)+\ldots + \displaystyle{n\choose 2}\dfrac{n!}{(n-2)!}x^{n-2}f^{n-2}(x)\\\\
+		      &+& \displaystyle{n\choose 1}\dfrac{n!}{(n-1)!}x^{n-1} f^{(n-1)}(x)+x^n f^{(n)}(x).
+	\end{array}
+	$$
+	Luego, usando está fórmula para calcular $g(0),g'(0),\ldots, g^{(n)}(0)$ se tiene
+	$$
+	\begin{array}{rcl}
+	    g'(0)&=&g''(0)=\ldots = g^{n-1}(0)=0\\\\
+	    g^{n}(0)&=&n!f(0)=n!.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
 
     %-------------------- 2.
     \item Hallar un polinomio $P$ de grado $\leq 5$ tal que $P(0)=1$, $P(1)=2$, $P'(0)=P''(0)=P'(1)=P''(1)=0$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Como debe ser un polinomio de grado $\leq 5$ podemos escribir:
+	$$P(x)=a_5x^5+a_4x^4+a_3x^3+a^2x^2+a_1x+a_0$$
+	donde cualquiera de las $a_i$ podría ser $0$. Ya que podríamos tener un polinomio de grado menor a $5$. En primer lugar, apliquemos la condición $P(0)=1$ para obtener
+	$$P(0)=a_0=1.$$
+	Reemplazando esta condición en $P(x)$ y derivando, tenemos 
+
+	$$
+	\begin{array}{rcl}
+	    P(x)&=&a_5x^5+a_4x^4+a_3x^3+a^2x^2+a_1x+1\\\\
+	    P'(x)&=&5a_5x^4+4a_4x^3+3a_3x^2+2a^2x+a_1\\\\
+	    P''(x)&=&20a_5x^3+12a_4x^2+6a_3x+2a^2.
+	\end{array}
+	$$
+
+	Luego, podemos aplicar las condiciones $P'(0)$ y $P''(0)=0$, obteniendo
+
+	$$
+	\begin{array}{rcccl}
+	    P'(0)&=&a_1&=&0\\\\
+	    P''(0)&=&2a_2&=&0.
+	\end{array}
+	$$
+
+	Así, tenemos $a_0=1$ y $a_1=a_2=0$ de donde
+	$$P(x)=a_5x^5+a^4x^4+a^3x^3+1.$$
+
+	Después, necesitamos usar las otras tres condiciones dadas,
+	$$
+	\begin{array}{rcl}
+	    P(1)=2 &\Rightarrow& a_5+a^4+a^3=1\\\\
+	    P'(1)=0 &\Rightarrow& 5a_5+4a^4+3a^3=0\\\\
+	    P''(1)=0 &\Rightarrow& 20a_5+12a^4+6a^3=0.
+	\end{array}
+	$$
+
+	Por la primera ecuación se tiene
+	$$a_3=1-a_4-a_5$$
+
+	Reemplazando esta ecuación en la segunda
+
+	$$
+	\begin{array}{rcl}
+	    5a_5+4a_4+3(1-a_4-a_5)=0&\Rightarrow&2a_5+a_4+3=0\\\\
+				    &\Rightarrow&a_4=-3-2a_5.
+	\end{array}
+	$$
+	Introduciendo ahora nuestras expresiones para $a_3$ y $a_4$ en la tercera ecuación tenemos
+	$$20a_5+12(-3-2a_5)+6\left[1-(-3-2a_5)-a_5\right]\quad \Rightarrow \quad a_5=6.$$
+	Luego,
+	$$
+	\begin{array}{rcr}
+	    a_4&=&-15\\
+	    a_3&=&10
+	\end{array}
+	$$
+	Ahora que hemos calculado todas las constantes $a_i$, podemos escribir la fórmula del polinomio
+	$$P(x)=6x^5-15x^4+10x^3+1.$$\\
+
 
     %-------------------- 3.
     \item Si $f(x)=\cos x$ y $g(x)=\sen x$, demostrar que
     $$f^{(n)}(x)=\cos\left(x+\dfrac{1}{2}n\pi\right)\quad \mbox{y}\quad g^{(n)}(x)=\sen\left(x+\dfrac{1}{2}n\pi\right).$$\\
-	Demostración.-\;
+	Demostración.-\; Utilizaremos la prueba por inducción. Para $n=1$ tenemos
+	$$f'(x)=-\sen x = \cos \left(x+\dfrac{1}{2}\pi\right),\qquad g'(x)=\cos x = \sen\left(x+\dfrac{1}{2}\pi\right).$$
+	Estas igualdades se deducen de las correlaciones del seno y el coseno (Teorema 2.3 parte (d) en la página 96 de Apostol).  Por tanto, las fórmulas son verdaderas para el caso $n=1$. Supongamos entonces que son verdaderas para algún $n=k\in\mathbb{Z}^+$. Para $f(x)$ tenemos
+	$$
+	\begin{array}{rcl}
+	    f^{k+1}(x)&=&\left[f^{k}(x)\right]'\\\\
+		      &=&\left[\cos\left(x+\dfrac{1}{2}k\pi\right)\right]'\\\\
+		      &=&-\sen\left(x+\dfrac{1}{2}k\pi\right)\\\\
+		      &=&\cos\left[\left(x+\dfrac{1}{2} k \pi\right)+\dfrac{1}{2}\pi\right]\\\\
+		      &=&\cos\left[x+\dfrac{1}{2}(k+1)\pi\right].
+	\end{array}
+	$$
+
+	De las misma forma para $g(x)$
+
+	$$
+	\begin{array}{rcl}
+	    g^{k+1}(x)&=&\left[g^{k}(x)\right]'\\\\
+		      &=&\left[\sen\left(x+\dfrac{1}{2}k\pi\right)\right]'\\\\
+		      &=&\cos\left(x+\dfrac{1}{2}k\pi\right)\\\\
+		      &=&\sen\left[\left(x+\dfrac{1}{2} k \pi\right)+\dfrac{1}{2}\pi\right]\\\\
+		      &=&\sen\left[x+\dfrac{1}{2}(k+1)\pi\right].
+	\end{array}
+	$$
+	Por lo tanto, el teorema se sigue por inducción para todos los números enteros positivos.\\\\
 
     %-------------------- 4.
     \item Si $h(x)=f(x)g(x)$, demostrar que la derivada n-ésima de $h$ viene dada por la fórmula

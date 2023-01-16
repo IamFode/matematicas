@@ -116,7 +116,7 @@ Respuesta.- Sea,
 $$m_{X_i}(t)=e^{\lambda_i(e^t-1)}$$
 la función generadora de momentos de la distribución Poisson, entonces por el teorema 7.1, con $a_i=1$. La suma de las variables también es una variable aleatoria de Poisson. Es decir, sea 
 $$Y=X_1+X_2+\ldots + X_n$$
-donde,
+de donde,
 $$
 \begin{array}{rcl}
   m_{Y}(t)&=&m_{X_1}(t)m_{X_2}(t)\cdots m_{X_n}(t)\\\\
@@ -129,4 +129,18 @@ $$
 ## 7.7
 Sean $X_1$ y $X_2$ dos variables aleatorias independientes de Poisson con parámetros $\lambda_1$ y $\lambda_2$, respectivamente. Demostrar que la diferencia entre $X_1$ y $X_2$ no es una variable aleatoria de Poisson.
 
-Respuesta.-
+Respuesta.- Sea,
+$$Y=X_1-X_2$$
+Entonces por el teorema 7.1 con $a_i=1$, 
+
+$$
+\begin{array}{rcl}
+  m_Y(t) &=& E\left\{e^{\left[t(X_1-X_2)\right]}\right\}\\\\
+  &=& E\left\{\dfrac{e^{t(X_1)}}{e^{t(X_2)}}\right\}\\\\
+  &=& \dfrac{E\left\{e^{t(X_1)}\right\}}{E\left\{e^{t(X_2)}\right\}}\\\\
+  &=& \dfrac{m_{X_1}(t)}{m_{X_2}(t)}\\\\
+  &=& \dfrac{e^{\lambda_1(e^x-1)}}{e^{\lambda_2(e^x-1)}}
+\end{array}
+$$
+
+

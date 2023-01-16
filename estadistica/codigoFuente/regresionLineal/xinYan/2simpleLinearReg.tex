@@ -39,4 +39,162 @@ Matemáticamente, las estimaciones de mínimos cuadrados de la regresión lineal
 \begin{equation}
     \dfrac{\partial}{\partial\beta_1}\sum_{i=1}^n \left[y_i-\left(\beta_0+\beta_ix_i\right)\right]^2=0
 \end{equation}
+\vspace{0.5cm}
+
+Supongamos que $b_0$ y $b_1$ son soluciones del sistema de arriba, podemos describir la relación entre $x$ e $y$ por la regresión lineal $\hat{y}=b_0+b_1x$, el cual es llamado la \textbf{recta de regresión ajustada}. Es más conveniente resolver para $b_0$ y $b_1$ usando el modelo lineal centralizado:
+$$y_i= \beta_0+\beta_1\overline{x}-\beta_1\overline{x}+\beta_1x_i+\epsilon_i \quad \Rightarrow \quad y_i=\beta_0^* + \beta_1(x_i-\overline{x})+\epsilon_i,$$
+donde $\beta_0=\beta_0^*-\beta_1\overline{x}$. Necesitamos resolver para
+
+$$\dfrac{\partial}{\partial\beta_0^*}\sum_{i=1}^n \left[y_i-\left(\beta_0^*+\beta_1(x_i+\overline{x})\right)\right]^2=0$$
+
+$$\dfrac{\partial}{\partial\beta_1}\sum_{i=1}^n \left[y_i-\left(\beta_0^*+\beta_1(x_i+\overline{x})\right)\right]^2=0$$
+
+Realizando la derivada parcial para $\beta_0$ y $\beta_1$ tenemos
+
+$$\sum_{i=1}^n \left[y_i-(\beta_0^* + \beta_1(x_i-\overline{x}))\right]=0$$
+$$\sum_{i=1}^n \left[y_i-(\beta_0^* + \beta_1(x_i-\overline{x}))\right](x_i-\overline{x})=0$$
+
+Notemos que
+
+\begin{equation}
+    \sum_{i=1}^n y_i= n\beta_0^*+\sum_{i=1}^n \beta_1(x_i-\overline{x})=n\beta_0^*
+\end{equation}
+
+Por lo tanto, tenemos 
+
+$$\beta_0^*=\dfrac{1}{n}\sum\limits_{i=1}^n y_i=\overline{y}.$$
+
+Luego, sustituyendo $\beta_0^*$ por $\overline{y}$ en (2.3) obtenemos
+
+$$\sum_{i=1}^n \left[y_i-(\overline{y} + \beta_1(x_i-\overline{x}))\right](x_i-\overline{x})=0$$
+
+Después denotamos $b_0$ y $b_1$ las soluciones de los sistemas (2.1) y (2.2). Ahora, es fácil ver que
+\begin{tcolorbox}
+    \begin{equation}
+	b_1=\dfrac{\sum\limits_{i=1}^n (y_i-\overline{y})(x_i-\overline{x})}{\sum\limits_{i=1}^n (x_i-\overline{x})^2}=\dfrac{\dfrac{1}{n}\sum\limits_{i=1}^n (y_i-\overline{y})(x_i-\overline{x})}{\dfrac{1}{n}\sum\limits_{i=1}^n (x_i-\overline{x})^2}=\dfrac{S_{xy}}{S_{xx}}
+    \end{equation}
+\end{tcolorbox}
+
+y
+
+\begin{tcolorbox}
+    \begin{equation}
+	b_0=b_0^*-b_1\overline{x}=\overline{y}-b_1\overline{x}
+    \end{equation}
+\end{tcolorbox}
+\vspace{0.5cm}
+
+El valor ajustado de la regresión lineal simple es definida como $\hat{y}=\beta_0+\beta_1x_i.$ La diferencia entre $y_i$ y el valor ajustado $\hat{y}_i$ es $e_i=y_i-\hat{y}_i$, que se refiere al residuo de la regresión. Los residuos de regresión se pueden calcular a partir de las respuestas observadas $y_i$ y los valores ajustados $y_i$, por lo tanto, los residuos son observables. Cabe señalar que el término de error $\epsilon_i$ en el modelo de regresión no es observable. El error de regresión es la cantidad por la cual una observación difiere de su valor esperado; este último se basa en la población total de la que se eligió aleatoriamente la unidad estadística. El valor esperado, el promedio de toda la población, normalmente no es observable.\\
+
+Un residual, por otro lado, es una estimación observable de un error no observable. El caso más simple implica una muestra aleatoria de n hombres cuyas alturas se miden. El promedio de la muestra se utiliza como una estimación del promedio de la población. Entonces, la diferencia entre la altura de cada hombre de la muestra y el promedio de la población no observable es un error, y la diferencia entre la altura de cada hombre de la muestra y el promedio de la muestra observable es un residuo. Dado que los residuales son observables, podemos usar los residuales para estimar el error del modelo no observable. La discusión detallada se proporcionará más adelante.
+
+\section{Propiedades estadísticas de la estimación por mínimos cuadrados}
+
+Primero discutiremos las propiedades estadísticas sin el supuesto de distribución del termino de error. Pero asumiremos que $\E(\epsilon_i)=0$, $\Var(\epsilon_i)=\sigma^2$ y $\epsilon_i$ para $i=1,2,\ldots,n$ son independientes.\\
+
+
+%-------------------- Teorema 2.1
+\begin{teo}
+    El estimador de mínimos cuadrados $b_0$ es un estimador insesgado de $\beta_0$.\\\\
+
+	Demostración.-\; 
+
+	$$
+	\begin{array}{rcl}
+	    E(b_0) &=& E(\overline{y}-b_1\overline{x})\\\\
+	    &=& E\left(\dfrac{1}{n}\displaystyle\sum_{i=1}^n y_i\right)-E\left(b_1\overline{x}\right)\\\\
+		       &=& \dfrac{1}{n}\displaystyle\sum_{i=1}^n E(y_i)-\overline{x}E(b_1)\\\\
+		   &=&\dfrac{1}{n}\displaystyle\sum_{i=1}^n (\beta_0+\beta_1x_i)-\beta_1\overline{x}\\\\
+		   &=&\dfrac{1}{n} \displaystyle\sum_{i=1}^n \beta_0 + \beta_1 \dfrac{1}{n}\displaystyle\sum_{i=1}^nx_i-\beta_1\overline{x}\\\\
+		   &=&\dfrac{1}{n} \displaystyle\sum_{i=1}^n \beta_0 + \beta_1 \dfrac{1}{n}\displaystyle\sum_{i=1}^nx_i-\beta_1\dfrac{1}{n}\displaystyle\sum_{i=1}^n x_i\\\\
+		   &=& \dfrac{n\beta_0}{n}\\\\
+		       &=&\beta_0.
+	\end{array}
+	$$
+\end{teo}
+
+%-------------------- Teorema 2.2
+\begin{teo}
+    El estimador de mínimos cuadrados $b_1$ es un estimador insesgado  de $\beta_1$.\\\\
+	Demostración.-\;
+	$$
+	\begin{array}{rcll}
+	    \E(b_1) &=& \E\left(\dfrac{S_{xy}}{S_{xx}}\right)&\\\\
+		    &=& \dfrac{1}{S_{xx}} \E\left[\dfrac{1}{n}\displaystyle\sum_{i=1}^n(y_i-\overline{y})(x_i-\overline{x})\right]&\\\\
+		    &=& \dfrac{1}{s_{xx}}\dfrac{1}{n}\E\left[\displaystyle\sum_{i=1}^n(x_i-\overline{x})y_i-\displaystyle\sum_{i=1}^n(x_i-\overline{x})\overline{y}\right]&\\\\
+		    &=& \dfrac{1}{s_{xx}}\dfrac{1}{n}\E\left[\displaystyle\sum_{i=1}^n(x_i-\overline{x})y_i-\overline{y}\displaystyle\sum_{i=1}^n(x_i-\overline{x})\right]&\mbox{ya que } \overline{y} \mbox{ es constante}.\\\\
+	\end{array}
+	$$
+	Sabemos que $\sum\limits_{i=1}^n (x_i-\overline{x})=\sum\limits_{i=1}^n x_i - n\overline{x}=\sum\limits_{i=1}^n x_i-n\left(\dfrac{1}{n}\sum\limits_{i=1}^n x_i\right)=0$, por lo que
+	$$
+	\begin{array}{rcl}
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\displaystyle\sum_{i=1}^n (x_i-\overline{x}) \E(y_i)\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\displaystyle\sum_{i=1}^n (x_i-\overline{x}) (\beta_0+\beta_1x_i)\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\left[\beta_0\displaystyle\sum_{i=1}^n (x_i-\overline{x})  + \displaystyle\sum_{i=1}^n(x_i-\overline{x})\beta_1 x_i\right]\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\displaystyle\sum_{i=1}^n (x_i-\overline{x})\beta_1x_i\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\left[\displaystyle\sum_{i=1}^n\left(x_i-\overline{x}\right)\beta_1x_i-\displaystyle\sum_{i=1}^n\left(x_i-\overline{x}\right)\beta_1\overline{x}\right]\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\displaystyle\sum_{i=1}^n (x_i-\overline{x})\beta_1(x_i-\overline{x})\\\\
+		   &=& \dfrac{1}{S_{xx}}\dfrac{1}{n}\displaystyle\sum_{i=1}^n (x_i-\overline{x})^2\beta_1\\\\
+		   &=& \dfrac{S_{xx}}{S_{xx}}\beta_1\\\\
+		       &=&\beta_1.
+	\end{array}
+	$$
+\end{teo}
+
+%-------------------- Teorema 2.3
+\begin{teo}
+    $\Var(b_1) = \dfrac{\sigma^2}{nS_{xx}}.$\\\\
+
+	Demostración.-\; Usando la propiedad $Var(X)=a^2Var(X)$ con respecto a $y$, se tiene
+	$$
+	\begin{array}{rcl}
+	    \Var(b_1) &=& \Var\left(\dfrac{S_{xy}}{S_{xx}}\right)\\\\
+		      &=& \left(\dfrac{1}{S_{xx}}\right)^2\Var\left[\dfrac{1}{n}\displaystyle\sum_{i=1}^n(y_i-\overline{y})(x_i-\overline{x})\right]\\\\
+		      &=& \dfrac{1}{S_{xx}^2}\Var\left[\dfrac{1}{n}\displaystyle\sum_{i=1}^n y_i(x_i-\overline{x})\right]\\\\
+		      &=& \dfrac{1}{S_{xx}^2}\dfrac{1}{n^2}\displaystyle\sum_{i=1}^n (x_i-\overline{x})^2\Var(y_i)\\\\
+		      &=& \dfrac{1}{S_{xx}^2}\dfrac{1}{n^2}\displaystyle\sum_{i=1}^n (x_i-\overline{x})^2\sigma^2\\\\
+		      &=& \dfrac{\sigma^2}{nS_{xx}}.
+	\end{array}
+	$$
+\end{teo}
+
+%-------------------- Teorema 2.4
+\begin{teo}[\boldmath El estimador de mínimos cuadrados $b_1$ e $\overline{y}$ no están correlacionados] Bajo el supuesto de normalidad de $y_i$ para $i = 1, 2, \ldots , n$, $b_1$ e $\overline{y}$ se distribuyen normalmente y son independientes.\\\\
+    Demostración.-\;
+    $$
+    \begin{array}{rcl}
+	\Cov(b_1,\overline{y}) &=& \Cov\left(\dfrac{S_{xy}}{S_{xx}},\overline{y}\right)\\\\
+			       &=& \dfrac{1}{S_{xx}}\Cov(S_{xy},\overline{y})\\\\
+			       &=& \dfrac{1}{nS_{xx}}\Cov\left[\displaystyle\sum_{i=1}^n(x_i-\overline{x})(y_i-\overline{y}),\overline{y}\right]\\\\
+			       &=& \dfrac{1}{n^2S_{xx}}\Cov\left[\displaystyle\sum_{i=1}^n (x_i-\overline{x})y_i,\displaystyle\sum_{i=1}^n y_i\right]\\\\
+			       &=& \dfrac{1}{n^2S_{xx}}\displaystyle\sum_{i=1}^n (x_i-\overline{x})\Cov(y_i,y_j)\\\\
+    \end{array}
+    $$
+    Notemos que $E(\epsilon_i)=0$ y $\epsilon_i$ son independientes. De donde podemos escribir
+    $$\Cov(y_i,y_j)=E\left\{[y_i-E(y_j)][y_j-E(y_j)]\right\}=E(\epsilon_i,\epsilon_j)=
+    \left\{
+	\begin{array}{rcl}
+	    \sigma^2 &si& i=j\\\\
+	    0 &si& i\neq j.
+	\end{array}
+    \right.
+    $$
+    Concluimos que
+    $$\Cov(b_1,\overline{y})=\dfrac{1}{n^2}{S_{xx}}\sum_{i=1}^n (x_i-\overline{x})\sigma^2=0.$$
+    Recuerde que la correlación cero es equivalente a la independencia entre dos variables normales. Por lo tanto, concluimos que $b_1$ e $\overline{y}$ son independientes.
+\end{teo}
+
+%-------------------- Teorema 2.5
+\begin{teo}
+    $\Var(b_0) = \left(\dfrac{1}{n}+\dfrac{\overline{x}^2}{nS_{xx}}\right)\sigma^2$.\\\\
+	Demostración.-\;
+	$$
+	\begin{array}{rcl}
+	    \Var(b_0) &=& \Var(\overline{y}-b_1\overline{x})\\\\
+		      &=& \Var(\overline{y})+(\overline{x})^2\Var(b_1)\\\\
+		      &=& \dfrac{\sigma^2}{n}+ \overline{x}^2 \dfrac{\sigma^2}{nS_{xx}}\\\\
+		      &=& \left(\dfrac{1}{n}+\dfrac{\overline{x}^2}{nS_{xx}}\right)\sigma^2
+	\end{array}
+	$$
+\end{teo}
 

@@ -2268,8 +2268,76 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	Respuesta.-\; Si $\lim\limits_{x\to [\infty]}f(x)=\lim\limits_{x\to [\infty]}$ y $\lim\limits_{x\to [\infty]} \dfrac{f'(x)}{g'(x)}=(a),$ entonces $\lim\limits_{x\to [\infty]} \dfrac{f(x)}{g(x)}=(a).$\\\\
 
     %-------------------- 57.
+    \item Si $f$ y $g$ son diferenciables y existe el $\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}$, ¿puede concluirse que también existe el $\lim\limits_{x\to a}\dfrac{f'(x)}{g'(x)}$? (se trata del recíproco de la Regla de L'Hopital).\\\\
+	Respuesta.-\; No, por ejemplo, sea $a=0$, $g(x)=x$, de donde
+	$$
+	f(x)=
+	\left\{
+	    \begin{array}{rr}
+		x^2\sen \dfrac{1}{x}, & x\neq 0\\\\
+		0, & x=0.
+	    \end{array}
+	\right.
+	$$
+
+    %-------------------- 58.
+    \item Demuestre que si $f'$ es creciente, entonces toda tangente de $f$ corta a la gráfica de $f$ una sola vez. (En particular, esto se cumple en el caso de la función $f(x)=x^n$ si $n$ es par.)\\\\
+	Demostración.-\; La linea tangente  a través de $\left(a,f(a)\right)$ es la gráfica de
+	$$
+	\begin{array}{rcl}
+	    g(x) &=& f'(a)(x-a)+f(a)\\\\
+		 &=& f'(a)x+f(a)+af'(a).
+	\end{array}
+	$$
+	Si $g(x_o)=f(x_o)$ para algún $x_0\neq a$, entonces
+	$$0=g'(x)-f'(x)=f'(a)-f'(x)$$
+	para algún $x$ en $(a,x_o)$ o $(x_o,a).$ Lo que es imposible, ya que $f'$ es creciente.\\\\
+
+    %-------------------- 59.
+    \item Resuelva otra vez el problema 10-18 (c) cuando
+    $$(f')^2=f-\dfrac{1}{f^2}.$$
+    (¿Por qué está este problema en este capítulo?).\\\\
+	Respuesta.-\; Diferenciando la expresión se tiene
+	$$
+	\begin{array}{rcl}
+	    (f')^2 &=& f-\dfrac{1}{f^2}\\\\
+	    2f'\cdot f'' &=& f'-\dfrac{2}{f^3}\cdot f'\\\\
+	    f'' &=& \dfrac{f'-\dfrac{2}{f^3}\cdot f'}{2f'}\\\\
+	    f''&=&\dfrac{1}{2}-\dfrac{1}{f^3}.
+	\end{array}
+	$$
+	para todo $x$ donde $f'(x)\neq 0$. Luego, ya que $(f')^2=\dfrac{f^3-1}{f^2}$, tenemos $f'(x)=0$ solo para $f(x)=1$. Pero el teorema 7 (aplicando $f'$) implica que las formula vale en este caso, con $f''(x)=\dfrac{1}{2}-1=-\dfrac{1}{2}$.\\\\
+
+
+    %-------------------- 60.
     \item 
-	
+	\begin{enumerate}[(a)]
+
+	    %--------- (a)
+	    \item Suponga que $f$ es diferenciable en $[a,b]$. Demuestre que si el mínimo de $f$ en $[a,b]$ se encuentra en el punto $a$, entonces $f'(a)\geq 0$, y si se encuentra en el punto $b$, entonces $f'(b)\leq 0.$ (Deberá examinarse la mitad de la demostración del Teorema 1.)\\\\
+		Demostración.-\; Ya que $f$ tiene un mínimo en $a$, tenemos para todo $h>0$, que
+		$$f(a+h)-f(a)\geq 0$$
+		lo que equivale a 
+		$$\dfrac{f(a+h)-f(a)}{h}\geq 0.$$
+		De donde, tomamos el límite cuando $h\to 0^-$ y obtenemos
+		$$f'(a)=\lim_{x\to 0^-}\dfrac{f(a+h)-f(a)}{h}\geq 0.$$
+		Ya que $f$ tiene un mínimo en $b$, tenemos para todo $h>0$, que
+		$$f(b-h)-f(b)\leq 0$$
+		lo que equivale a 
+		$$\dfrac{f(b-h)-f(b)}{h}\leq 0.$$
+		Por lo que tomando el límite cuando $h\to 0^+$ obtenemos
+		$$f'(b)=\lim_{x\to 0^+}\dfrac{f(b-h)-f(b)}{h}\leq 0.$$\\
+
+	    %--------- (b)
+	    \item Suponga que $f'(a)<0$ y que $f'(b)>0.$ Demuestre que $f'(x)=0$ para algún $x$ de $(a,b)$. Indicación: Considere el mínimo de $f$ en $[a,b]$; ¿por qué debe estar en algún punto de $(a,b)$?.\\\\
+		Demostración.-\;
+
+	    %--------- (c)
+	    \item Demuestre que si $f'(a)<c<f'(b)$, entonces $f'(x)=c$ para algún $x$ de $(a,b)$. (Este resultado se conoce como el Teorema de Darboux. Advierta que no estamos suponiendo que $f'$ sea continua). Indicación: Construya una función adecuada a la cual se pueda aplicar la parte (b).\\\\ 
+		Demostración.-\;
+
+	\end{enumerate}
+
 
 	
 \end{enumerate}
