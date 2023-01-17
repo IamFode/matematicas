@@ -2320,7 +2320,7 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		lo que equivale a 
 		$$\dfrac{f(a+h)-f(a)}{h}\geq 0.$$
 		De donde, tomamos el límite cuando $h\to 0^-$ y obtenemos
-		$$f'(a)=\lim_{x\to 0^-}\dfrac{f(a+h)-f(a)}{h}\geq 0.$$
+		$$f'(a)=\lim_{x\to 0^{-}}\dfrac{f(a+h)-f(a)}{h}\geq 0.$$
 		Ya que $f$ tiene un mínimo en $b$, tenemos para todo $h>0$, que
 		$$f(b-h)-f(b)\leq 0$$
 		lo que equivale a 
@@ -2330,11 +2330,29 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %--------- (b)
 	    \item Suponga que $f'(a)<0$ y que $f'(b)>0.$ Demuestre que $f'(x)=0$ para algún $x$ de $(a,b)$. Indicación: Considere el mínimo de $f$ en $[a,b]$; ¿por qué debe estar en algún punto de $(a,b)$?.\\\\
-		Demostración.-\;
+		Demostración.-\; Ya que $f$ es diferenciable en $[a,b]$, entonces $f$ es diferenciable ahí. Por lo tanto, $f$ tiene que estar acotado, lo que implica que hay un número $x\in [a,b]$ tal que $f(x)$ es el mínimo en $[a,b]$. Pero por la parte (a) vemos que $f$ no puede tener un mínimo en $a$ o $b$, de lo contrario contradice la hipótesis. Entonces, el mínimo de $f$ debe estar en $(a,b)$; es decir, existe un número $x\in(a,b)$ tal que $f(x)$ es el mínimo. Por lo que tenemos 
+		$$f'(x)=0.$$\\
 
 	    %--------- (c)
 	    \item Demuestre que si $f'(a)<c<f'(b)$, entonces $f'(x)=c$ para algún $x$ de $(a,b)$. (Este resultado se conoce como el Teorema de Darboux. Advierta que no estamos suponiendo que $f'$ sea continua). Indicación: Construya una función adecuada a la cual se pueda aplicar la parte (b).\\\\ 
-		Demostración.-\;
+		Demostración.-\; Sea la función 
+		$$g(t)=f(t)-ct,$$
+		Entonces, ya que $f$ es diferenciable en $[a,b]$, 
+		$$g'(t)=f'(t)-c.$$
+		Por lo tanto, se tiene
+		$$g'(a)=f(a)-c<0\quad\mbox{y}\quad g'(b)f'(b)-c>0.$$
+		Ahora, aplicando la parte (b) para la función $g$, vemos que existe un número $x\in(a,b)$ tal que 
+		$$g'(x)=0\quad \Rightarrow \quad f'(x)-c=0.$$
+		Así, tenemos que $f'(x)=c$ para algún $x\in(a,b)$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 61.
+    \item
+	\begin{enumerate}[(a)]
+
+	    %--------- (a)
+	    \item 
 
 	\end{enumerate}
 

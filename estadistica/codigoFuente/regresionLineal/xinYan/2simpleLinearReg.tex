@@ -160,7 +160,7 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
 
 %-------------------- Teorema 2.4
 \begin{teo}[\boldmath El estimador de mínimos cuadrados $b_1$ e $\overline{y}$ no están correlacionados] Bajo el supuesto de normalidad de $y_i$ para $i = 1, 2, \ldots , n$, $b_1$ e $\overline{y}$ se distribuyen normalmente y son independientes.\\\\
-    Demostración.-\;
+    Demostración.-\; 
     $$
     \begin{array}{rcl}
 	\Cov(b_1,\overline{y}) &=& \Cov\left(\dfrac{S_{xy}}{S_{xx}},\overline{y}\right)\\\\
@@ -170,7 +170,7 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
 			       &=& \dfrac{1}{n^2S_{xx}}\displaystyle\sum_{i=1}^n (x_i-\overline{x})\Cov(y_i,y_j)\\\\
     \end{array}
     $$
-    Notemos que $E(\epsilon_i)=0$ y $\epsilon_i$ son independientes. De donde podemos escribir
+    Notemos que $E(\epsilon_i)=0$ y $\epsilon_i$ son independientes. De donde por definición de covarianza, podemos escribir
     $$\Cov(y_i,y_j)=E\left\{[y_i-E(y_j)][y_j-E(y_j)]\right\}=E(\epsilon_i,\epsilon_j)=
     \left\{
 	\begin{array}{rcl}
@@ -187,14 +187,25 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
 %-------------------- Teorema 2.5
 \begin{teo}
     $\Var(b_0) = \left(\dfrac{1}{n}+\dfrac{\overline{x}^2}{nS_{xx}}\right)\sigma^2$.\\\\
-	Demostración.-\;
+	Demostración.-\; Dado que, $\E(X)=\mu$ y $\Var(X)=\sigma^2$. Entonces para $Y=a_1X_i+a_2X_2+\ldots+a_nX_n$ tenemos
+	$$E(y)=\sum_{i=1}^n a_i\mu_i\quad \mbox{y}\quad Var(Y)=\sum_{i=1}^n a_i^2\sigma_i^2.$$, luego
 	$$
 	\begin{array}{rcl}
 	    \Var(b_0) &=& \Var(\overline{y}-b_1\overline{x})\\\\
 		      &=& \Var(\overline{y})+(\overline{x})^2\Var(b_1)\\\\
+		      &=& \displaystyle\sum_{i=1}^n \dfrac{1}{n^2}\sigma^2 + (\overline{x})^2\Var(b_1)\\\\
 		      &=& \dfrac{\sigma^2}{n}+ \overline{x}^2 \dfrac{\sigma^2}{nS_{xx}}\\\\
 		      &=& \left(\dfrac{1}{n}+\dfrac{\overline{x}^2}{nS_{xx}}\right)\sigma^2
 	\end{array}
 	$$
 \end{teo}
 
+Las varianzas de $b_0$ y $b_1$ son importantes cuando queremos hacer inferencias estdísticas sobre la intersección y la pendiente de la regresión.\\
+
+Dado que las varianzas de los estimadores de mínimos cuadrados $b_0$ y $b_1$ involucran la varianza del término de error en el modelo de regresión simple. Esta variación de error es desconocida para nosotros. Por lo tanto, necesitamos estimarlo. Ahora discutimos cómo estimar la varianza del término de error en el modelo de regresión lineal simple. Sea $y_i$ la variable de respuesta observada y $\hat{y}_i = b_0 + b_1x_i$ , el valor ajustado de la respuesta. Tanto $y_i$ como $\hat{y}_i$ están disponibles para nosotros. El verdadero error $\sigma_i$ en el modelo no es observable y nos gustaría estimarlo. La cantidad $y_i - \hat{y}_i$ es la versión empírica del error $\epsilon_i$ . Esta diferencia es un residuo de regresión que juega un papel importante en el diagnóstico del modelo de regresión. Proponemos la siguiente estimación de la varianza del error basada en $e_i$:
+$$s^2 = \dfrac{1}{n-2}\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2$$
+Tenga en cuenta que en el denominador es $n-2$. Esto hace que $s^2$ sea un estimador insesgado de la varianza del error $\sigma_2$. El modelo lineal tiene dos parámetros, por lo que, $n-2$ puede verse como $n-$ números de parámetros simples. En particular, en un modelo de regresión lineal múltiple con $p$ parámetros, el denominador debe ser $n - p$ para construir un estimador insesgado de la varianza del error $\sigma^2$.\\
+
+El estimador insesgado  $s^2$ para la regresión lineal simple será  demostrado en las siguientes derivaciones.
+
+$$y_i-\hat{y}_i=y_i-b_0-b_ix_i=y_i-(\overline{y}-b_i\overline{x})-b_ix_i$$

@@ -2286,7 +2286,48 @@ Con el método de integración por partes calcular las integrales de los Ejercic
     \item Si $h(x)=f(x)g(x)$, demostrar que la derivada n-ésima de $h$ viene dada por la fórmula
     $$h^{(n)}(x)=\sum_{k=0}^n {n\choose k}f^{(k)}g^{(n-k)}(x),$$
     en donde ${n\choose k}$ representa el coeficiente binomial. Esta es la llamada fórmula de Leibniz.\\\\
-	Demostración.-\;
+	Demostración.-\; La prueba es por inducción. Sean $h(x)=f(x)g(x)$ y $n=1$. Usemos la regla de la cadena, se tiene
+	$$h'(x)=f(x)g'(x)+f'(x)g(x)=\sum_{k=0}^1 {1\choose k}f^{(k)}(x)g^{(1-k)}(x).$$
+	Por lo que la fórmula es cierta para $n=1$. Suponiendo que es verdad para $n=m\in \mathbb{Z}^+$. Entonces, consideremos la $(m+1)$ derivada de la siguiente forma:
+	$$
+	\begin{array}{rcl}
+	    h^{(m+1)}(x) &=& \left[h^{(m)}(x)\right]'\\\\
+			 &=& \left[\displaystyle\sum_{k=0}^m {m\choose k}f^{(k)}g^{(m-k)}(x)\right]'\\\\
+			 &=& \displaystyle\sum_{k=0}^m \left[{m\choose k}f^{(k)}g^{(m-k)}(x)\right]'.
+	\end{array}
+	$$
+
+	Aquí utilizamos la linealidad de la derivada para diferenciar término a término sobre esta suma finita. Esta propiedad se estableció en el Teorema 4.1 (i) y en los comentarios que siguen al teorema. Luego, aplicamos la regla del producto,
+
+	$$
+	\begin{array}{rcl}
+	    &=& \displaystyle\sum_{k=0}^m \left[{m\choose k}\left(f^{(k+1)}(x)g^{(m-k)}(x)+f^{(k)}(x)g^{(m-k+1)}(x)\right)\right]\\\\
+	    &=& \displaystyle\sum_{k=0}^m {m\choose k} f^{(k+1)}(x)g^{(m-k)}(x)+\sum_{k=0}^m {m\choose k} f^{(k)}(x)g^{(m-k+1)}(x)\\\\
+	    &=& \displaystyle\sum_{k=1}^{m+1} {m\choose k-1} f^{(k+1)}(x)g^{(m-k)}(x)+\sum_{k=0}^m {m\choose k} f^{(k)}(x)g^{(m-k+1)}(x),\\\\
+	\end{array}
+	$$
+
+	donde hemos reindexado la primera suma desde $k=1$ a $m+1$ en lugar de $k=0$ para $m$. Entonces, sacamos el término $k=m+1$ de la primera suma y el término de la segunda,
+
+	$$
+	\begin{array}{rcl}
+	    &=& f^{(m+1)}(x)g(x)+\displaystyle\sum_{k=0}^m {m\choose k-1} f^{(k)}(x)g^{(m-k+1)}(x)+\displaystyle\sum_{k=0}^m {m\choose k}f^{(k)}(x)g^{(m-k+1)}(x)+f(x)g^{(m+1)}(x)\\\\
+	    &=& f^{(m+1)}(x)g(x)+f(x)g^{(m+1)}(x)+\displaystyle\sum_{k=0}^m \left[{m\choose k-1}{m\choose k}\right] f^{(k)}(x)g^{(m-k+1)}(x)\\\\
+	\end{array}
+	$$
+
+	Recordemos, la ley de triangulo de Pascal
+	$${m\choose k}+{m\choose k-1}={m+1\choose k}.$$
+	Por lo tanto,
+
+	$$
+	\begin{array}{rcl}
+	    &=& f^{(m+1)}(x)g(x)+f(x)g^{(m+1)}(x)+\displaystyle\sum_{k=0}^m \left[{m\choose k-1}{m\choose k}\right] f^{(k)}(x)g^{(m-k+1)}(x)\\\\
+	    &=& \displaystyle\sum_{k=0}^{m+1} {m+1\choose k} f^{(k)}(x)g^{(m+1-k)}(x).
+	\end{array}
+	$$
+	Por lo tanto, la fórmula es válida para $m+1$ si es válida para $m$.\\\\
+
 
     %-------------------- 5.
     \item Dadas las funciones $f$ y $g$ cuyas derivadas $f'$ y $g'$ satisfacen las ecuaciones

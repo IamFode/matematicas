@@ -140,6 +140,7 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
     %-------------------- 1.
     \item Si $F$ es un cuerpo, verificar que $F^n$ (como se definio en el Ejemplo 1) es un espacio vectorial sobre el cuerpo $F$.\\\\
 	Respuesta.-\; Sean $\alpha=(x_1,x_2,\ldots,x_n)$,  $\beta=(y_1,y_2,\ldots,y_n)$ y $\gamma=(z_1,z_2,\ldots,z_n)$ elementos de $F^n$. Como también sean $c,d,c_1,c_2\in F$. Entonces,
+
 	\begin{enumerate}[(1)]
 	    \setcounter{enumii}{2}
 	    \item 
@@ -393,7 +394,85 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
     $$(f+g)(t)=f(t)+g(t)$$
     $$cf(t)=cf(t)$$
     es un espacio vectorial sobre el cuerpo de los números reales. Dar un ejemplo de una función en $V$ que no toma valores reales.\\\\
-	Respuesta.-\;
+    Demostración.-\; Sea $f,g,h\in V$. Entonces, para todo $t\in \mathbb{R},$ se tiene
+
+	\begin{enumerate}[(1)]
+	    \setcounter{enumii}{2}
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item Conmutatividad para la adición. 
+			$$
+			\begin{array}{rcl}
+			    (f+g)(t) & = & f(t)+g(t)\\
+				     & = & g(t) + f(t)\\
+				     & = & (g+f)(t).
+			\end{array}
+			$$
+			Por lo tanto, $f+g=g+f$ para todo $f$ y $g\in V$.\\
+
+		    \item Asociatividad para la adición.
+			$$
+			\begin{array}{rcl}
+			    \left[(f+g)+h\right](t) &=& (f+g)(t)+h(t)\\
+						    &=& \left[f(t)+g(t)\right]+h(t)\\
+						    &=& f(t)+\left[g(t)+h(t)\right].
+			\end{array}
+			$$
+			Por lo tanto, $(f+g)+h=f+(g+h)$ para todo $f,g,h\in V$.\\
+
+		    \item Existencia del elemento nulo.\\
+			Considere la función cero $0(t)=0$ para todo $t\in \mathbb{R}$, entonces para todo $f\in V$, tenemos
+			$$(f+0)(t)=f(t)+0(t)=f(t)+0=f(t).$$
+			Ya que $+$ es conmutativo, se tiene $f=f=0+f.$\\
+			
+		    \item Existencia del inverso aditivo.
+
+		\end{enumerate}
+
+	    \item 
+		\begin{enumerate}[(a)]
+		    \item Existencia del elemento neutro para la multiplicación escalar.
+			$$
+			\begin{array}{rcl}
+			    1\alpha & = & 1(x_1,x_2,\ldots,x_n)\\
+			    & = & (1x_1,1x_2,\ldots,1x_n)\\
+			    & = & \alpha.
+			\end{array}
+			$$
+		    \item Asociatividad para la multiplicación escalar.\\
+			$$
+			\begin{array}{rcl}
+			    (c_1c_2)\alpha & = & (c_1c_2)(x_1,x_2,\ldots,x_n)\\
+			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
+			    & = & (c_1(c_2x_1),c_1(c_2x_2),\ldots,c_1(c_2x_n))\\
+			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
+			    & = & c_1(c_2\alpha).
+			\end{array}
+			$$
+
+		    \item Distributividad para la multiplicación escalar sobre la adición.
+			$$
+			\begin{array}{rcl}
+			    c(\alpha+\beta) & = & c((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n))\\
+			    & = & c(x_1+x_2,\ldots,x_n+y_n)\\
+			    & = & (cx_1+cx_2,\ldots,cx_n+cy_n)\\
+			    & = & (c\alpha+c\beta).
+			\end{array}
+			$$
+
+		    \item Distributividad para la multiplicación sobre la adición de escalares
+			$$
+			\begin{array}{rcl}
+			    (c+d)\alpha & = & (c+d)(x_1,x_2,\ldots,x_n)\\
+			    & = & (cx_1+dx_1,\ldots,cx_n+dx_n)\\
+			    & = & c\alpha+d\alpha.
+			\end{array}
+			$$
+
+		\end{enumerate}
+		\vspace{.5cm}
+
+	\end{enumerate}
 
 \end{enumerate}
 
