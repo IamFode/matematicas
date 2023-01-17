@@ -425,54 +425,90 @@ $$c\sum_{i=1}^n c_i\alpha_i = \sum_{i=1}^n (cc_i)\alpha_i.$$
 			$$(f+0)(t)=f(t)+0(t)=f(t)+0=f(t).$$
 			Ya que $+$ es conmutativo, se tiene $f=f=0+f.$\\
 			
-		    \item Existencia del inverso aditivo.
+		    \item Existencia del inverso aditivo.\\
+			Para $f\in V$, consideremos $g=(-f)$ como $(-f)(t)=-f(t)$. Claramente $g=-f$ existe en $V$. Luego,
+			$$\left[f+(-f)\right]=f(t)+(-f)(t)=f(t)-f(t)=0=0(t).$$
+			Ya que, $+$ es conmutativo, tenemos $f+(-f)=0=(-f)+f$ para todo $f\in V$. así, el inverso aditivo existe.\\
 
 		\end{enumerate}
 
 	    \item 
 		\begin{enumerate}[(a)]
-		    \item Existencia del elemento neutro para la multiplicación escalar.
-			$$
-			\begin{array}{rcl}
-			    1\alpha & = & 1(x_1,x_2,\ldots,x_n)\\
-			    & = & (1x_1,1x_2,\ldots,1x_n)\\
-			    & = & \alpha.
-			\end{array}
-			$$
+		    \item Existencia del elemento neutro para la multiplicación escalar.\\
+			$$1\cdot f =f.$$
+			Para $f\in V$, se tiene
+			$$(1\cdot f)(t)=1\cdot f(t)=f(t).$$
+			Así, $1\cdot f = f$ para todo $f\in V$.\\
+
 		    \item Asociatividad para la multiplicación escalar.\\
+			Sean $a,b\in R$ y $f\in V$, entonces
 			$$
 			\begin{array}{rcl}
-			    (c_1c_2)\alpha & = & (c_1c_2)(x_1,x_2,\ldots,x_n)\\
-			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
-			    & = & (c_1(c_2x_1),c_1(c_2x_2),\ldots,c_1(c_2x_n))\\
-			    & = & (c_1c_2x_1,c_1c_2x_2,\ldots,c_1c_2x_n)\\
-			    & = & c_1(c_2\alpha).
+			    (ab)f&=& \left[(ab)\cdot f\right](t)\\
+				 &=& (ab) f(t)\\
+				 &=& a\left[bf(t)\right]\\
+				 &=& a\left(b\cdot f\right)\\
+				 &=& a\left(bf\right).
+			\end{array}
+			$$
+			Por lo tanto, $(ab)\cdot f=a\left(b\cdot f\right)$ para todo $f\in V$ y $a,b\in R$.\\
+
+		    \item Distributividad para la multiplicación escalar sobre la adición.\\
+			Sean $a,b\in R$ y $f,g\in V$, entonces
+			$$
+			\begin{array}{rcl}
+			    \left[a\left(f+g\right)\right](t) &=& a\left[(f+g)(t)\right]\\
+							      &=& a\left[f(t)+g(t)\right]\\
+							      &=& \left(af\right)(t)+\left(ag\right)(t)\\
 			\end{array}
 			$$
 
-		    \item Distributividad para la multiplicación escalar sobre la adición.
+		    \item Distributividad para la multiplicación sobre la adición de escalares\\
+			Sean $a,b\in R$ y $f\in V$, entonces
 			$$
 			\begin{array}{rcl}
-			    c(\alpha+\beta) & = & c((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots, y_n))\\
-			    & = & c(x_1+x_2,\ldots,x_n+y_n)\\
-			    & = & (cx_1+cx_2,\ldots,cx_n+cy_n)\\
-			    & = & (c\alpha+c\beta).
-			\end{array}
-			$$
-
-		    \item Distributividad para la multiplicación sobre la adición de escalares
-			$$
-			\begin{array}{rcl}
-			    (c+d)\alpha & = & (c+d)(x_1,x_2,\ldots,x_n)\\
-			    & = & (cx_1+dx_1,\ldots,cx_n+dx_n)\\
-			    & = & c\alpha+d\alpha.
+			    \left[(a+b)f\right](t)&=& (a+b)(f(t)\\
+						  &=& af(t)+bf(t)\\
+						  &=& (af)(t)+(bf)(t).
 			\end{array}
 			$$
 
 		\end{enumerate}
-		\vspace{.5cm}
+		De esta manera, $V$ satiface todos las propiedades del espacio vectorial respecto a las operaciones de adición y multiplicación escalar.\\\\
 
 	\end{enumerate}
 
+    %-------------------- 7.
+    \item Sea $V$ el conjunto de pares $(x,y)$ de números reales y sea $F$ el cuerpo de los números reales. Se define
+    $$(x,y)+(x_1,y_1)=(x+x_1,0)$$
+    $$c(x,y)=(cx,0).$$
+    ¿Es $V$, con estas operaciones un espacio vectorial?.\\\\
+	Respuesta.-\; No es un espacio vectorial. Sea $u=(x_1,y_1)$ y  $0\in R$, $0=(0,0)\in V$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    u+0&=&(x_1,y_1)+(0,0)\\
+	      &=&(x_1+0,0)\\
+	      &=&(x_1,0)\\
+	      &\neq& u.
+	\end{array}
+	$$
+	Por lo tanto, no existe un inverso aditivo para $V$. Así $V$ no es un espacio vectorial.
+
 \end{enumerate}
+
+
+\section{Subespacios}
+
+%-------------------- Definición 1.1
+\begin{def.}
+    Sea $V$ un espacio vectorial sobre el cuerpo $F$. Un \textbf{subespacio} de $V$ es un subconjunto $W$ de $V$ que, con las operaciones de adición vectorial y multiplicación escalar sobre $V$, es el mismo un espacio vectorial sobre $F$.
+\end{def.}
+
+Esta definición se puede simplificar aún más.
+
+%-------------------- Teorema 1.1
+\begin{teo}
+    Un subconjunto no vacío $W$ de $V$ es un subespacio de $V$ si, y sólo si, para todo par de vectores $\alpha,\beta$ de $W$ y todo escalar $c$ de $F$, el vector $c\alpha+\beta$ está en $W$.\\\\
+	Demostración.-\;
+\end{teo}
 

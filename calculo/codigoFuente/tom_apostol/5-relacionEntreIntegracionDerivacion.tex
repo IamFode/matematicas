@@ -2331,22 +2331,57 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 5.
     \item Dadas las funciones $f$ y $g$ cuyas derivadas $f'$ y $g'$ satisfacen las ecuaciones
-    $$f'(x)=(x),\quad g'(x)=-f(x),\quad f(0)=0,\quad g(0)=1,$$
+    $$f'(x)=g(x),\quad g'(x)=-f(x),\quad f(0)=0,\quad g(0)=1,$$
     para todo $x$ en un cierto intervalo abierto $J$ que contiene el $0$. Por ejemplo, esas ecuaciones se satisfacen cuando $f(x)=\sen x$ y $g(x)=\cos x.$
 
     \begin{enumerate}[a)]
 	
 	%---------- a)
 	\item Demostrar que $f^2(x)+g^2(x)=1$ para todo $x$ de $J$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Primero probaremos que $f^2(x)+g^2(x)=c$ para alguna constante, y luego probaremos que esa constante es $1.$ Para demostrar $f^2+g^2$ es constante tomemos la derivada, como sigue
+	    $$
+	    \begin{array}{rcl}
+		\left[f^2(x)+g^2(x)\right]' &=& \left[f^2(x)\right]' + \left[g^2(x)\right]'\\\\
+			       &=& 2f(x)f'(x)+2g(x)g'(x)\\\\
+			       &=& 2f(x)g(x)-2g(x)f(x)\\\\
+			       &=& 0.
+	    \end{array}
+	    $$
+	    esto, para todo $x\in J$; por lo tanto, por el teorema 4.7 c en Tom Apostol, tenemos que $f^2(x)+g^2(x)=c,\; x\in I$ para algúna constante $c$. Después, por hipótesis, vemos que $0\in J$ de donde,
+	    $$f^2(0)+g^2(0)=0+1=1.$$
+	    Así, $f^2(x)+g^2(x)=1$ para todo $x\in J$.\\\\
 	
 	%---------- b)
 	\item Sean $F$ y $G$ otro par de funciones que satisfagan (5.30). Demostrar que $F(x)=f(x)$ y $G(x)=g(x)$, para todo $x$ de $J$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Sea,
+	    $$h(x)=\left[F(x)-f(x)\right]^2+\left[G(x)-g(x)\right]^2.$$
+	    que implica
+	    $$h'(x)=2\left[F(x)-f(x)\right]\left[F'(x)-f'(x)\right]+2\left[G(x)-g(x)\right]\left[G'(x)-g'(x)\right].$$
+	    luego, usando las relaciones de la hipótesis
+	    $$
+	    \begin{array}{rcl}
+		h'(x) &=& 2\left[F(x)-f(x)\right]\left[F'(x)-f'(x)\right]+2\left[F'(x)-f'(x)\right]\left[f(x)-F(x)\right]\\\\
+		      &=& 2\left[F(x)-f(x)\right]\left[F'(x)-f'(x)\right]-2\left[F(x)-f(x)\right]\left[F'(x)-f'(x)\right]\\\\
+		      &=& 0.
+	    \end{array}
+	    $$
+	    para todo $x\in J$. Por lo tanto, $h(x)=c$ para algúna cosntante $c$. Entonces, para $h(0)$, usando las relaciones $f(0)=F(0)=0$ y $g(0)=G(0)=1,$ tenemos
+	    $$
+	    \begin{array}{rcl}
+		h(0) &=& c\\\\
+		     &=& \left[F(0)-f(0)\right]^2+\left[G(0)-g(0)\right]^2\\\\
+		     &=& 0 + (1-1)^2\\\\
+		     &=& 0.
+	    \end{array}
+	    $$
+	    Así, $h(x)=0$ para todo $x\in J$. Luego, como es una suma de cuadrados (que deben ser no negativos), tenemos que $h(x)=0$ sí, y sólo si
+	    $$F(x)-f(x)=0\quad \mbox{y}\quad G(x)-g(x)=0$$
+	    para todo $x\in J$. Concluimos que
+	    $$F(x)=f(x)\quad \mbox{y}\quad G(x)=g(x).$$\\\\
 	
 	%---------- c)
-	\item ¿Qué más se puede decir acerca de las funciones $f$ y $g$ que satisfacen (5.30)?.
-	    Respuesta.-\;
+	\item ¿Qué más se puede decir acerca de las funciones $f$ y $g$ que satisfacen (5.30)?.\\\\
+	    Respuesta.-\; Dado que hemos establecido que $\sen x$ y $\cos x$ satisfacen estas propiedades y que cualquier función que satisfaga estas propiedades es única, podemos concluir que $\sen x$ y $\cos x$ son las únicas funciones que satisfacen las propiedades dadas.\\\\
 
     \end{enumerate}
 
