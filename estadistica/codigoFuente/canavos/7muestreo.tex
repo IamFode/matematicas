@@ -308,5 +308,70 @@ y
 
 
 \section{La distribución t de Student}
+Se recordará que cuando se muestrea una distribución normal con desviación estándar conocida $\sigma$, la distribución de $Z=(\overline{X}-\mu)/(\sigma/\sqrt{n})$ es $N(0,1)$. Desde un punto de vista práctico, la necesidad de conocer $\sigma$ impide formular inferencias con respecto a $\mu$ debido a que generalmente no se conoce el valor de la desviación estándar de la población. Dada la disponibilidad de una muestra aleatoria, el camino lógico que se sigue en este caso es reemplazar $\sigma$ con una estimación $s$, que es el valor de la desviación estándar muestral $S$. Desafortunadamente, cuando lo anterior se lleva acabo, la distribución $(\overline{X}-\mu)/(S/\sqrt{n})$ no es $N(0,1)$. Sin embargo es posible determinar la distribución de muestreo exacta cuando se muestra $N(\mu,\sigma)$, con $\mu$ y $\sigma^2$ desconocidos. Acá se examinará los aspectos teóricos de lo que se conoce como la distribución t de Student.\\
 
-Desde el punto de vista práctico, la necesidad de conocer $\sigma$ impide formular inferencias con respecto a $\mu$ debido a que generalmente no se conoce el valor de la desviación estándar de la población. El camino lógico será estimar $\sigma$ con una estimación $s$, que es el valor de la desviación estándar muestral $S$. Desafortunadamente, la distribución $('overline{X}-\mu)/(S/\sqrt{n})$ no es $N(0,1)$. Sin embargo es posible determinar la distribución de muestreo exacta cuando se muestra $N(\mu,\sigma)$, con $\mu$ y $\sigma^2$ desconocidos. Acá se examinará los aspectos teóricos de lo que se conoce como la distribución t de Student.
+Supóngase que se realiza un experimento en que se observan dos variables aleatorias $X$ y $Z$; $X$ tiene una distribución chi-cuadrada con $v$ grados de libertad y $Z$ una distribución normal con media cero y desviación estándar uno. Sea $T$ otra variable aleatoria que es función de $X$ y $Z$, de manera tal que
+$$T=\dfrac{Z}{\sqrt{\dfrac{X}{v}}}.$$
+Puesto que los valores de $Z$ se encuentran entre $(-\infty,\infty)$ y los valores de $X$ son positivos. El valor
+$$t=\dfrac{z}{\sqrt{\dfrac{x}{v}}}$$
+recibe el nombre de valor de la variable aleatoria de $t$ de Student. Lo anterior lleva al siguiente teorema.
+
+%-------------------- Teorema 7.7
+\begin{teo}
+    Sea $Z$ una variable aleatoria normal estándar y $X$ una variable aleatoria chi-cuadrada con $v$ grados de libertad. Si $Z$ y $X$ son independientes, entonces la variable aleatoria
+$$t=\dfrac{z}{\sqrt{\dfrac{x}{v}}}$$
+    tiene una distribución t de Student con $v$ grados de libertad y una función de densidad de probabilidad dada por
+    $$f(t,v)=\dfrac{\Gamma\left(\dfrac{v+1}{2}\right)}{\sqrt{\pi v}\Gamma\left(\dfrac{v}{2}\right)}\left[1+\left(\dfrac{t^2}{v}\right)\right]^{\frac{-(v+1)}{2}}, \quad -\infty<t<\infty,\; v<0.$$\\
+	Deducción.-\; Sea $T$ una variable aleatoria definida por  $T=\dfrac{Z}{\sqrt{X/v}}$. Considere la densidad de probabilidad  de $T$ cuando $X$ se mantiene fija en un valor $x$. Dado que
+	$$f_Z(z)=\dfrac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}},$$
+	la densidad de probabilidad condicional de 
+	$$T=\dfrac{Z}{(z/v)^{1/2}}$$
+	se obtiene al considerar la relación inversa
+	$$Z=(x/v)^{1/2}T$$
+	y al sustituir en $f_Z(z),$ en donde el jacobiano de la transformación es
+	$$\dfrac{dz}{dt}=(x/v)^{1/2}.$$
+	De esta forma
+	$$f(t|x)=\dfrac{(x/v)^{1/2}}{\sqrt{2\pi}}e^{-xt^2/2v},\quad -\infty t<\infty,\quad x>0.$$
+
+	Se sabe que la densidad conjunta de $T$ y $X$ es
+	$$f(t,x)=f(t|x)f_X(x).$$
+
+	Dado que $X\sim X_v^2$,
+	$$f_X(x)=\dfrac{1}{2^{v/2}\Gamma(v/2)}x^{(v-1)/2}e^{-x/2},\quad x>0.$$
+
+	De esta forma
+
+	$$
+	\begin{array}{rcl}
+	f(t,x)&=&\dfrac{1}{\sqrt{2\pi v} 2^{v/2}\Gamma(v/2)} x^{(v-1)/2}e^{-\frac{x}{2}-\frac{xt^2}{2v}}\\\\
+	      &=& c_1x^{(v-1)/2}e^{-c_2x/2},
+	\end{array}
+	$$
+
+	en donde $c_1=\dfrac{1}{\sqrt{2\pi v}2^{v/2}\Gamma(v/2)}$ y $c_2=\left[1+\left(t^2/v\right)\right]$. Integrando $f(t,x)$ con respecto a $x$, se obtiene la función de densidad de probabilidad de la distribución t de Student. De acuerdo con lo anterior
+	$$
+	\begin{array}{rcl}
+	f_T(t)&=&c_1\displaystyle\int_0^\infty x^{(v-1)/2} e^{-c_2/2}\; dx\\\\
+	&=& c_1 \displaystyle\int_0^\infty (2y/c_2)^{(v-1)/2}e^{-y}(2/c_2)\; dy, \mbox{ donde } y=c_2x/2 \mbox{ y } dx=(2/c_2)\; dy\\\\
+	&=& c_1(2/c_2)^{(v+1)/2} \displaystyle\int_0^\infty y^{(v-1)/2}e^{-y}\; dy\\\\
+	&=& c_1(2/c_2)^{(v+1)/2} \Gamma\left[(v+1)/2\right]\\\\
+	&=& \dfrac{1}{\sqrt{2\pi v}2^{v/2}\Gamma(v/2)}\cdot \dfrac{2^{(v+1)/2}}{\left[1+(t^2/v)\right]^{(v+1)/2}}\Gamma\left[(v+1)/2\right]\\\\
+	&=& \dfrac{\Gamma\left[(v+1)/2\right]}{\sqrt{\pi v}\Gamma\left[v/2\right]}\left[1+\left(\dfrac{t^2}{v}\right)\right]^{\frac{-(v+1)}{2}} \quad -\infty<t<\infty.
+	\end{array}
+	$$
+
+\end{teo}
+
+Conforme se tiene un número mayor de grados de libertad, la distribución t de Student tiende hacia la normal estándar. \\
+
+Puede demostrarse que el valor esperado de $T$ es
+$$E(t)=0,\qquad v>1$$
+
+y la varianza está dada por
+
+$$Var(T)=\dfrac{v}{v-2},\quad v>2.$$
+
+En la tabla $F$ se encuentra los valores cuantiles $t_{1-\alpha,2}$ tales que:
+$$P(T\leq t_{1-\alpha,v})=\int_{-\infty}^{t_{1-\alpha,v}}f(t;v)\; dt = 1-\alpha,\qquad 0\leq \alpha\leq 1.$$
+
+
