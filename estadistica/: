@@ -419,7 +419,7 @@ $$\dfrac{\dfrac{\overline{X}-\overline{Y}-\left(\mu_X-\mu_Y\right)}{\sigma}\sqrt
 
 o
 
-\begin{tcolorbox}
+\begin{tcolobox}
     $$T=\dfrac{\overline{X}-\overline{Y}-\left(\mu_X-\mu_Y\right)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}},$$
 \end{tcolorbox}
 
@@ -427,18 +427,6 @@ en donde
 
 $$S_P^2=\dfrac{\left(n_X-1\right)S_X^2+\left(n_Y-1\right)S_Y^2}{n_X+n_Y-2}.$$
 
-Que en general recibe el nombre de \textbf{estimador combinado de la varianza común \boldmath $\sigma^2$}. \\
-
-Si las varianzas $\sigma_X^2$ y $\sigma_Y^2$ no son iguales, pero conocen sus valores, el problema es sencillo. La distribución de
-\begin{tcolorbox}
-    $$Z=\dfrac{\overline{X}-\overline{Y}-\left(\mu_X-\mu_Y\right)}{\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}}}$$
-\end{tcolorbox}
-
-aún es $N(0,1)$. 
-
-
-\section{La distribución F}
-
-
+Que en general recibe el nombre de \textbf{estimador combinado de la varianza común \mathbold$\sigma^2$}
 
 

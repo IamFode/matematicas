@@ -2387,11 +2387,38 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 6.
     \item Una función $f$, definida para todo número real positivo, satisface la ecuación $f\left(x^2\right)=x^3$ para cada $x>0$. Determinar $f'(4)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Tomemos la derivada de ambos lados de la ecuación dada, usando la regla de la cadena.
+	$$
+	\begin{array}{rcl}
+	    f\left(x^2\right)=x^3 &\Rightarrow& \left[f\left(x\right)^2\right]' = \left(x^3\right)'\\\\
+	    &\Rightarrow& 2xf'\left(x^2\right) = 3x^2\\\\
+	    &\Rightarrow& f'\left(x^2\right) = \dfrac{3}{2} x.
+	\end{array}
+	$$
+	Asumiendo que $x$ es un nùmero no negativo. Entonces,
+	$$f'(4)=f'\left(2^2\right)=\dfrac{3}{2}\cdot 2=3.$$\\
 
     %-------------------- 7.
     \item Una función $g$ definida para todo número real positivo satisface las dos condiciones siguientes: $g(1)=1$ y $g'\left(x^2\right)=x^3$ para todo $x>0$. Calcular $g(4)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Primero mutipliquemos la ecuaciòn dada, por $2x$.
+	$$g'\left(x^2\right)=x^3\quad \Rightarrow \quad 2xg'\left(x^2\right)=2x^4.$$
+	Donde, 
+	$$g'\left[f(x)\right]'=\left[g\left(x^2\right)\right]'=2xg'\left(x^2\right).$$
+	Así, podemos integrar ambos lados de la ecuación,
+	$$
+	\begin{array}{rcl}
+	    2xg'\left(x^2\right) = 2x^4 &\Rightarrow & \displaystyle\int 2xg'\left(x^2\right)\; dx = \displaystyle\int 2x^4\; dx\\\\
+					&\Rightarrow & \displaystyle\int \left[g\left(x^2\right)\right]'\; dx = \dfrac{2}{5}x^5+C\\\\
+					&\Rightarrow & g\left(x^2\right) = \dfrac{2}{5}x^5+C.
+	\end{array}
+	$$
+	Ya que, $g(1)=1$. Entonces
+	$$g(1)=1=\dfrac{2}{5}\cdot 1^5+C\quad \Rightarrow \quad C=\dfrac{3}{5}.$$
+	De donde,
+	$$g\left(x^2\right)=\dfrac{2}{5}x^5+\dfrac{3}{5}.$$
+	Asì, calculando $g\left(4\right)=g\left(2^2\right)$, tenemos
+	$$g\left(4\right)=\dfrac{2}{5}2^5+\dfrac{3}{5}=\dfrac{67}{5}.$$\\
+
 
     %-------------------- 8.
     \item Demostrar que

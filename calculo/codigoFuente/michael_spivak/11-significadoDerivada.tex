@@ -2354,7 +2354,29 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 
 	    %--------- (a)|
 	    \item Ambos límites laterales $\lim\limits_{x\to a^+}f'(x)$ y $\lim\limits_{x\to a^-} f'(x)$ no pueden existir. (Se trata de una pequeña variación del Teorema 7.)\\\\
-		Demostración.-\; Sea $(x_1,x_2)$ alrededor de $a$ donde $f$ es diferenciable. 
+		Demostración.-\; Sea $(x_1,x_2)$ alrededor de $a$ donde $f$ es diferenciable. Demostraremos que $\lim\limits_{x\to a^+}$ y $\lim\limits_{x\to a^-}$ no existen. Sean
+		$$\lim_{x\to a^-}f'(x)=l_1\quad \mbox{y}\quad \lim_{x\to a^+}f'(x)=l_2.$$
+		Primero probaremos que $f'(a)=l_1$. Si es posible supongamos $l_1\neq f'(a)$
+
+		\begin{enumerate}[\textbf{Caso} 1.]
+		    \item Tomemos $l_1<f'(a)$. Sea $\epsilon>0$ tal que
+		    $$l_1-\epsilon<f'(a).$$
+		    Ya que, $\lim\limits_{x\to a^-}f'(x)=l_1$ existe un $\delta>0$ tal que
+		    $$l_1-\epsilon<f'(x)<l_1+\epsilon,\quad \forall x\in (a-\delta,a)\cap(x_1,x_2)$$
+		    Luego, sea $\alpha$ un elemento de $x\in (a-\delta,a)\cap(x_1,x_2)$. Entonces, tenemos
+		    $$l_1-\epsilon<f'(\alpha)<l_1+\epsilon<f'(a).$$
+		    Por el teorema de Darboux (Problema 60). Existe un punto $\mathcal{X}\in (\alpha,a)$ de modo que
+		    $$f'\left(\mathcal{X}\right)=l_1+\epsilon.$$
+		    Notemos que
+		    $$\mathcal{X}\in \left(\alpha,a\right)\quad\Rightarrow \quad \mathcal{X}\in (a-\delta,a)\cap (x_1,x_2).$$
+		    Se sigue que
+		    $$f'\left(\mathcal{X}\right)<l_1+\epsilon.$$
+		    Lo que es imposible. Por lo tanto, $l_1=f'(a)$.\\
+
+		    \item 
+
+		\end{enumerate}
+
 
 	    %--------- (b)
 	    \item Ambos límites laterales no pueden existir incluso si se acepta que puedan tener valores iguales $a+\infty$ o $-\infty$. Indicación: Utilice el teorema de Darboux (Problema 60).\\\\
