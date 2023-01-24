@@ -2373,16 +2373,90 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 		    $$f'\left(\mathcal{X}\right)<l_1+\epsilon.$$
 		    Lo que es imposible. Por lo tanto, $l_1=f'(a)$.\\
 
-		    \item 
+		    \item Tomemos $l_1>f'(a)$. Sea $\epsilon>0$ tal que
+		    $$l_1-\epsilon>f'(a).$$
+		    Ya que $\lim\limits_{x\to a^-}f'(x)=l_1$, entonces existe un $\delta>0$ tal que
+		    $$l_1-\epsilon<f'(x)<l_1+\epsilon,\quad \forall x\in (a-\delta,a)\cap(x_1,x_2).$$
+		    Luego, sea $\beta$ un elemento de $x\in (a-\delta,a)\cap(x_1,x_2)$. Entonces, tenemos
+		    $$f'(a)<l_1-\epsilon<f'(\beta).$$
+		    Por el teorema de Darboux (Problema 60). Existe un punto $\mathcal{X}\in (\alpha,a)$ de modo que
+		    $$f'\left(\mathcal{X}\right)=l_1-\epsilon.$$
+		    Notemos que
+		    $$\mathcal{X}\in \left(\beta,a\right)\quad\Rightarrow \quad \mathcal{X}\in (a-\delta,a)\cap (x_1,x_2).$$
+		    Se sigue que
+		    $$f'\left(\mathcal{X}\right)>l_1-\epsilon.$$
+		    Lo que es imposible. Así, de los dos casos se sigue que
+		    $$\lim_{x\to a^-}f'(x)=f'(a)=l_1.$$\\
+
+		    Ahora demostraremos que $f'(a)=l_2$. Supongamos $l_2\neq f'(a).$\\
+
+		    \begin{enumerate}[\textbf{Caso} 1.]
+			\item Tomemos $l_2<f'(a)$. Sea $\epsilon>0$ tal que
+			$$l_2+\epsilon<f'(a).$$
+			Ya que $\lim\limits_{x\to a^+}f'(x)=l_2$, entonces existe un $\delta>0$ tal que
+			$$l_2-\epsilon<f'(x)<l_2+\epsilon,\quad \forall x\in (a,a+\delta)\cap(x_1,x_2).$$
+			Luego, sea $\alpha$ un elemento de $x\in (a,a+\delta)\cap(x_1,x_2)$. Entonces, tenemos
+			$$l_2-\epsilon<f'(\alpha)<l_2+\epsilon<f'(a).$$
+			Por el teorema de Darboux (Problema 60). Existe un punto $\mathcal{X}\in (a,\alpha)$ de modo que
+			$$f'\left(\mathcal{X}\right)=l_2+\epsilon.$$
+			Pero, notemos que
+			$$\mathcal{X}\in \left(a,\alpha\right)\quad\Rightarrow \quad \mathcal{X}\in (a,a+\delta)\cap (x_1,x_2).$$
+			De donde, se sigue que
+			$$f'\left(\mathcal{X}\right)<l_2+\epsilon.$$
+			Lo que es imposible. Por lo tanto, $l_2<f'(a)$ es erróneo.\\
+
+			\item Tomemos $l_2>f'(a)$. Sea $\epsilon>0$ tal que
+			$$l_2-\epsilon>f'(a).$$
+			Ya que $\lim\limits_{x\to a^+}f'(x)=l_2$, entonces existe un $\delta>0$ tal que
+			$$l_2-\epsilon<f'(x)<l_2+\epsilon,\quad \forall x\in (a,a+\delta)\cap(x_1,x_2).$$
+			Luego, sea $\beta$ un elemento de $x\in (a,a+\delta)\cap(x_1,x_2)$. Entonces, tenemos
+			$$f'(a)<l_2-\epsilon<f'(\beta).$$
+			Por el teorema de Darboux (Problema 60). Existe un punto $\mathcal{X}\in (a,\beta)$ de modo que
+			$$f'\left(\mathcal{X}\right)=l_2-\epsilon.$$
+			Pero, notemos que
+			$$\mathcal{X}\in \left(a,\beta\right)\quad\Rightarrow \quad \mathcal{X}\in (a,a+\delta)\cap (x_1,x_2).$$
+			De donde, se sigue que
+			$$f'\left(\mathcal{X}\right)>l_2-\epsilon.$$
+			Lo que es imposible. Así, de los dos casos se sigue que
+			$$\lim_{x\to a^+}f'(x)=f'(a)=l_2.$$
+
+			En consecuencia tenemos 
+			$$\lim_{x\to a^+}f'(x)=\lim_{x\to a^-}f'(x)=f'(a).$$
+
+			Se sigue que $f'$ es continua en el punto $a$, lo que contradice la hipótesis. Así, nuestra suposición de que el límite de ambos lados existe es incorrecta . Que implica que $\lim\limits_{x\to a^+}f'(x)$ y $\lim\limits_{x\to a^-}f'(x)$ no existen.\\\\
+
+		    \end{enumerate}
 
 		\end{enumerate}
 
 
 	    %--------- (b)
 	    \item Ambos límites laterales no pueden existir incluso si se acepta que puedan tener valores iguales $a+\infty$ o $-\infty$. Indicación: Utilice el teorema de Darboux (Problema 60).\\\\
-		Demostración.-\;
+		Demostración.-\; Supongamos que el límite de $f'$ a ambos lados existe en el punto $a$si los valores se toman como infinitos; es decir, sin pérdida de generalidad. Supongamos
+		$$\lim_{x\to a^+}f'(x)=\infty\quad \mbox{y} \lim_{x\to a^-}f'(x)=-\infty.$$
+		y $f'(a)\neq 0$. Luego, sea $\epsilon>0$. Entonces, existe un $\delta>0$ y un número positivo $M$ tal que
+		$$
+		\begin{array}{rcr}
+		    f'(x)&>&M \quad \forall x\in (a,a+\delta)\\
+		    f'(x)&<&-M \quad \forall x\in (a-\delta,a)
+		\end{array}
+		$$
+		Luego, consideremos dos elementos $\alpha$ y $\beta$ de modo que
+		$$a\in(a,a+\delta)\quad \mbox{y}\quad \beta\in (a-\delta,a).$$
+		Entonces, se tiene
+		$$f'(a)>M\quad \mbox{y}\quad f'(\beta)<-M.$$
+		Después, sea $[\beta,\alpha]$ donde
+		$$f'(\beta)<0<f'(\alpha).$$
+		Por el teorema de Darboux (Problema 60). Existe un elemento $z \in [\beta,\alpha]$ de modo que
+		$$f'(z)=0.$$
+		Pero, vemos que
+		$$\left|f'(x)\right|>0\; \forall x\in [\beta,\alpha] \mbox{ donde } f'(a)\neq 0.$$
+		Así, llegamos a una contradicción. Por lo tanto, nuestra suposición de que tanto el límite lateral de $f'$ en el punto $a$ existe, está erróneo. \\\\
 
 	\end{enumerate}
+
+    %----------------- 62
+    \item 
 
 
 	

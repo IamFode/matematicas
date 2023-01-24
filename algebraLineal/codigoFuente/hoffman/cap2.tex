@@ -513,3 +513,51 @@ Esta definición se puede simplificar aún más.
 	Recíprocamente, si $W$ es un subespacio de $V$, $\alpha$ y $\beta$ están en $W$ y $c$ es un escalar, ciertamente $c\alpha+\beta$ está en $W$.
 \end{teo}
 
+\setcounter{ejem}{6}
+%-------------------- Ejemplo 2.7
+\begin{ejem}[El espacio solución de un sistema homogéneo de ecuaciones lineales.]
+Sea $A$ un matriz $m\times n$ sobre $F$. Entonces el conjunto de todas las matrices (columna) $n\times 1$, $X$, sobre $F$ tal que $AX=0$ es un subespacio del espacio de todas las matrices $n\times 1$ sobre $F$. Para demostrar esto se necesita probar que $A(cX+Y)=0$ si $AX=0,$ $AY=0$ y $c$ un escalar arbitrario  de $F$. Esto se desprende inmediatamente del siguiente hecho general.
+\end{ejem}
+
+%-------------------- Lema 2.1
+\begin{lema}
+    Si $A$ es una matriz $m\times n$ sobre $F$, y $B$, $C$ son matrices $n\times p$ sobre $F$, entonces
+    \begin{equation}
+	A(dB+C)=d(AB)+AC
+    \end{equation}
+    para todo escalar $d$ de $F$.\\\\
+	Demostración.-\;
+	$$
+	\begin{array}{rcl}
+	    \left[A(dB+C)\right]_{ij}&=&\displaystyle\sum_k A_{ik}(dB+C)_{kj}\\\\
+				     &=&\displaystyle\sum_k \left(dA_{ik}B_{kj}+A_{ik}C_{kj}\right)\\\\
+				     &=& d\displaystyle\sum_k A_{ik}B_{kj} + \sum_{k} A_{ik} C_{kj}\\\\
+				     &=& d(AB)_{ij} + (AC)_{ij}\\\\
+				     &=& \left[d(AB) + AC\right]_{ij}.
+	\end{array}
+	$$
+\end{lema}
+
+En forma semejante se puede ver que $(dB+C)A=d(BA)+CA$, si la suma y el producto de las matrices están definidos.
+
+%-------------------- Teorema 2.2
+\begin{teo}
+    Sea $V$ un espacio vectorial sobre el cuerpo $F$. La intersección de cualquier colección de subespacios de $V$ es un subespacio de $V$.\\\\
+	Demostración.-\; Sea $\left\{W_a\right\}$ una colección de subespacios de $V$, y sea $W=\cap W_a$ su intersección. Recuérdese que $W$ está definido como el conjunto de todos los elementos pertenecientes a cada $W_a$. Dado que todo $W_a$ es un subespacio, cada uno contiene el vector nulo. Así que el vector nulo está en la intersección $W$, y $W$ no es vacío. Sean $\alpha$ y $\beta$ vectores de $W$ y sea $c$ un escalar. Por definición de $W$ ambos. $\alpha$ y $\beta$ pertenecen a cada $W_a$, y por ser cada $W_a$ un subespacio el vector $(c\alpha+\beta)$ está en cada $W_a$. Así $(c\alpha+\beta)$ está también en $W$. Por el teorema 1, $W$ es un subespacio de $V$. 
+\end{teo}
+
+De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$, entonces existe un subespacio mínimo de $V$ que contiene a $S$; esto es, un subespacio que contiene a $S$ y que está contenido en cada uno de los otros subespacios que contienen a $S$.
+
+
+%-------------------- Definición 2.4
+\begin{def.}
+    Sea $S$ un conjunto de vectores de un espacio vectorial $V$, El \textbf{subespacio generado} por $S$ se define como intersección $W$ de todos los subespacios de $V$ que contienen a $S$. Cuando $S$ es un conjunto finito de vectores, $S=\left\{\alpha_1,\alpha_2,\ldots,\alpha_n\right\}$ se dice simplemente que $W$ es el \textbf{subespacio generado por los vectores} $\alpha_1,\alpha_2,\ldots,\alpha_n$.
+\end{def.}
+
+%-------------------- Teorema 2.3
+\begin{teo}
+    El subespacio generado por un subconjunto $S$ no vacío de un espacio vectorial $V$ es el conjunto de todas las combinaciones lineales de los vectores de $S$.\\\\
+	Demostración.-\; Sea $W$ el subespacio generado por $S$. Entonces, toda combinación lineal 
+	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_,\alpha_m$$
+	de vectores $\alpha_1,\alpha_2,\ldots,\alpha_m$ de $S$ pertenecen evidentemente a $W$ 
+\end{teo}

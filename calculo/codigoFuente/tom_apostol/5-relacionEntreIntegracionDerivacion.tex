@@ -2395,12 +2395,12 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    &\Rightarrow& f'\left(x^2\right) = \dfrac{3}{2} x.
 	\end{array}
 	$$
-	Asumiendo que $x$ es un nùmero no negativo. Entonces,
+	Asumiendo que $x$ es un número no negativo. Entonces,
 	$$f'(4)=f'\left(2^2\right)=\dfrac{3}{2}\cdot 2=3.$$\\
 
     %-------------------- 7.
     \item Una función $g$ definida para todo número real positivo satisface las dos condiciones siguientes: $g(1)=1$ y $g'\left(x^2\right)=x^3$ para todo $x>0$. Calcular $g(4)$.\\\\
-	Respuesta.-\; Primero mutipliquemos la ecuaciòn dada, por $2x$.
+	Respuesta.-\; Primero multipliquemos la ecuación dada, por $2x$.
 	$$g'\left(x^2\right)=x^3\quad \Rightarrow \quad 2xg'\left(x^2\right)=2x^4.$$
 	Donde, 
 	$$g'\left[f(x)\right]'=\left[g\left(x^2\right)\right]'=2xg'\left(x^2\right).$$
@@ -2416,14 +2416,29 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	$$g(1)=1=\dfrac{2}{5}\cdot 1^5+C\quad \Rightarrow \quad C=\dfrac{3}{5}.$$
 	De donde,
 	$$g\left(x^2\right)=\dfrac{2}{5}x^5+\dfrac{3}{5}.$$
-	Asì, calculando $g\left(4\right)=g\left(2^2\right)$, tenemos
+	Así, calculando $g\left(4\right)=g\left(2^2\right)$, tenemos
 	$$g\left(4\right)=\dfrac{2}{5}2^5+\dfrac{3}{5}=\dfrac{67}{5}.$$\\
 
 
     %-------------------- 8.
     \item Demostrar que
     $$\int_0^x \dfrac{\sen t}{t+1}\; dt \geq 0\mbox{ para todo }x\geq 0.$$\\\\
-	Demostración.-\;
+	Demostración.-\; Recordemos el segundo teorema de valor medio para las integrales (Teorema 5.5). Para una función continua $g$ en el intervalo $[a,b]$. Si $f$ tiene derivadas continuas el cual nunca cambian de signo, en dicho intervalo, entonces existe un $c\in[a,b]$ tal que
+	$$\int_a^b f(x)g(x)\;dx =f(a)\int_a^c g(x)\; dx + f(b)\int_c^b g(x)\; dx.$$\\
+	Apliquemos ahora lo dicho con $g(t)=\sen t$ y $f(t)=\dfrac{1}{t+1}$. Ya que $\sen t$ es continuo para todo los reales, es continuo para el intervalo $[a,x]$. De donde,
+	$$f'(t)=-\dfrac{1}{(1+t)^2}$$
+	es continua para todo $t\neq -1$, y por ende continuo para todo $t\geq 0$. Además, ya que $(1+t)^2>0$ para todo $t\geq 0$, tenemos que $f'(t)<0$ para todo $t\geq 0$. Por lo tanto, $f'(t)$ es continua y nunca cambia de signo en el intervalo $[0,x]$. Así, podemos aplicar el teorema de valor medio; Existe un $c\in[0,x]$ para cualquier $x\geq 0$ tal que
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^x \left(\dfrac{1}{1+t}\right)\sen t\; dt &=& \dfrac{1}{1+0}\displaystyle\int_0^c \sen t\; dt + \dfrac{1}{1+1}\int_c^x \sen t\; dt\\\\
+									 &=& (-\cos t)\bigg|_0^c+\dfrac{1}{2}(-\cos t)\bigg|_c^x\\\\
+									 &=& 1-\cos c+\dfrac{1}{2}\cos c-\dfrac{1}{2}\cos x\\\\
+									 &=&1-\dfrac{1}{2}(\cos c+\cos x).
+	\end{array}
+	$$
+	Pero como $\cos x\leq 1$ para todo $x$, sabemos que $c+\cos x\leq 2$ para cualesquier $c$ y $x$. Por lo tanto,
+	$$\int_0^x \dfrac{\sen t}{1+t}\; dt = 1-\dfrac{1}{2}(\cos x+\cos x)\geq 0.$$\\
+
 
     %-------------------- 9.
     \item Sean $C_1$ y $C_2$ dos curvas que pasan por el origen tal como se indica en la figura 5.2. Una curva $C$ se dice que biseca en área la región $C_1$ y $C_2$, si para cada punto $P$ de $C$ las dos regiones $A$ y $B$ sombreadas en la figura, tienen la misma área. Determinar la curva superior $C_2$, sabiendo que la curva bisectriz $C$ tiene de ecuación $y=x^2$ y que la curva inferior $C_1$ tiene de ecuación $y=\dfrac{1}{2}x^2.$\\\\

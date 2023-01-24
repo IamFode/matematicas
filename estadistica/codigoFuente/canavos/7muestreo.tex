@@ -439,6 +439,70 @@ aún es $N(0,1)$.
 
 \section{La distribución F}
 
+Recuérdese que las inferencias con respecto a $\sigma^2$ cuando se muestrea una distribución normal, se formulan con base en la estadística $\dfrac{(n-1)S^2}{\sigma^2}$, la que tiene una distribución chi-cuadrada con $n-1$ grados de libertad. En este apartado se formulará inferencias con respecto a las varianzas de dos distribuciones normales independientes con base en las muestras aleatorias de cada uno.\\
 
+Supóngase un experimento en que se observan dos variables aleatorias independientes $X$ e $Y$, cada una con una distribución chi-cuadrada con $v_1$ y $v_2$ grados de libertad respectivamente. Sea $F$ una variable aleatoria que es función de $X$ e $Y$, de manera tal que
+
+$$F=\dfrac{\frac{X}{v_1}}{\frac{Y}{v_2}}.$$
+
+Esto lleva al siguiente teorema
+
+%-------------------- Teorema 7.8
+\begin{teo}
+    Sean $X$ e $Y$ dos variables aleatorias independientes chi-cuadrada con $v_1$ y $v_2$ grados de libertad, respectivamente. La variable aleatoria
+
+$$F=\dfrac{\frac{X}{v_1}}{\frac{Y}{v_2}}.$$
+
+tiene una distribución $F$ con una función de densidad de probabilidad dada por
+
+$$
+g\left(f;v_1,v_2\right) = 
+\left\{
+    \begin{array}{ll}
+	\dfrac{\Gamma\left[\dfrac{v_1+v_2}{2}\right]v_1^{\frac{v_1}{2}}v_2^{\frac{v_2}{2}}}{\Gamma\left(\frac{v_1}{2}\right)\Gamma\left(\frac{v_2}{2}\right)}f^{\frac{v_1+v_2}{2}} & f>0,\\\\
+	0 & \mbox{para cualquier otro valor}.
+    \end{array}
+\right.
+$$
+\end{teo}
+
+El \textbf{valor esperado} es
+
+\begin{tcolorbox}
+    $$\E(F)=\dfrac{v_2}{v_2-2},\qquad v_2>2.$$
+\end{tcolorbox}
+
+y la \textbf{varianza} está dada por
+
+\begin{tcolorbox}
+    $$\Var(F)=\dfrac{v_2^2\left(2v_2+2v_1-4\right)}{v_1\left(v_2-2\right)^2\left(v_2-4\right)}\qquad v_2>4.$$
+\end{tcolorbox}
+
+La distribución $F$ tiene asimetría postiva para cualesquiera valores de $v_1$ y $v_2$, pero esta va disminuyendo conforme $v_1$ y $v_2$ toman valores cada vez más grandes.\\
+
+Los valores \textbf{cuantiles} $f_{1-\alpha,v_1,v_2}$ están dados dados por
+
+$$P(F\leq f_{1-\alpha,v_1,v_2})=\int_0^{f_{1-\alpha,v_1,v_2}}g\left(f;v_1,v_2\right)\; df=1-\alpha, \quad 0\leq a\leq 1.$$\\
+
+Regresando anuestro objetivo. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de variables independientes y normalmente distribuidas cada una con media $\mu_X$ y varianza $\sigma^2_X$. Tambièn sea $Y_1,Y_2,\ldots,Y_n$ un conjunto de $n_Y$ variables aleatorias independientes normalmente distribuidas, cada una con media $\mu_Y$ y varianza $\sigma_Y^2$. Si se supone que las $X$ y las $Y$ son independientes, las estadísticas
+
+$$\dfrac{(n_X-1)S_X^2}{\sigma_X^2}$$
+
+y
+
+$$\dfrac{(n_Y-1)S_Y^2}{\sigma_Y^2}$$
+
+son dos variables aleatorias chi-cuadrada independientes con $n_X-1$ y $n_Y-1$ grados de libertad respectivamente. Entonces, por el teorema 7.9, se despenrede que la variable aleatoria
+
+$$\dfrac{\dfrac{\dfrac{(n_X-1)S_X^2}{\sigma_X^2}}{n_X-1}}{\dfrac{\dfrac{(n_Y-1)S_Y^2}{\sigma_Y^2}}{n_Y-1}}=\dfrac{\dfrac{S_X^2}{\sigma_X^2}}{\dfrac{S_Y^2}{\sigma_Y^2}}.$$
+
+Si la suposición de que $\sigma_X^2=\sigma_Y^2$ es correcta, la estadística $F$, se deduce a
+$$F=\dfrac{S_X^2}{S_Y^2}.$$
+
+Si las dos varianzas son iguales, la probabilidad de observar un valor de $F$ distinto, de manera sufientes, es pequeña.
+
+tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad.\\
+
+Para finalizar debe notarse que en esta sección, así como en las secciones 7.5 y 7.7 se desarrolló el material que se presentó bajo la hipótesis de realizar un muestreo aleatorio sobre poblaciones que tienen una distribución normal.
 
 

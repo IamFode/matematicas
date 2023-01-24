@@ -274,7 +274,7 @@ $$
 \end{array}
 $$
 
-Ademàs, se tiene
+Además, se tiene
 
 $$
 \begin{array}{rcl}
@@ -353,4 +353,79 @@ Por lo tanto, la estimación de la varianza del error tiene $n - 2$ grados de li
 
 \section{Estimación de máxima verosimilitud}
 
+El estimador de màxima versimilitud de una regresiñon lineal simple puede ser desarrollado si se supone que la variable dependiente $y_i$ tiene una distribuciòn normal $y_i\sim N\left(\beta_0+\beta_1x_i,\sigma^2\right)$. La funciòn de similitud para $\left(y_1,y_2,\ldots,y_n\right)$ es dada por:
 
+$$L=\prod_{i=1}^n f\left(y_i\right)=\dfrac{1}{(2\pi)^{\frac{n}{2}}\sigma^n}e^{\left(-\frac{1}{2\sigma^2}\right)\sum\limits_{i=1}^n \left(y_i-\beta_0-\beta_1x_i\right)^2}$$
+
+Los estimadores de $\beta_0$ y $\beta_1$ que máximiza la función de similitud $L$ son equivalentes a los estimadores que minimizan la parte exponencial de la función de verosimilitud lo que produce los mismos estimadores que los estimadores de mìnimos cuadrados de la regresión lineal. Por lo tanto, bajo el supuesto de normalidad del término de error, los MLE de $\beta_0$ y $\beta_1$ y los estimadores de mínimos cuadrados de $\beta_0$ y $\beta_1$ son exactamente iguales.\\
+
+Después de obtener $b_0$ y $b_1$, los valores MLE de los parámetros $\beta_0$ y $\beta_1$, podemos calcular el valor ajustado $\hat{y}_i$ y la función de probabilidad en términos de los valores ajustados.
+
+$$L=\prod_{i=1}^n f\left(y_i\right)=\dfrac{1}{(2\pi)^{\frac{n}{2}}\sigma^n}e^{\left(-\frac{1}{2\sigma^2}\right)\sum\limits_{i=1}^n \left(y_i-\hat{y}_i\right)^2}.$$
+
+Luego, tomamos la derivada parcial con respecto a $\sigma^2$ en la función logarítmica de verosimilitud $\log(L)$ y la igualamos a cero:
+
+$$\dfrac{\partial \log(L)}{\partial \sigma^2}=-\dfrac{n}{2\sigma^2}+\dfrac{1}{2\sigma^4}\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2=0$$
+
+La estimación de máxima verosimilitud MLE de $\sigma^2$ es $\hat{\sigma}^2=\dfrac{1}{n}\displaystyle\sum_{i=1}^n\left(y_i-\hat{y}_i\right)^2$. Notemos que es un estimador sesgado de $\sigma^2$, ya que
+$s^2=\dfrac{1}{n-2}\displaystyle\sum_{i=1}^n\left(y_i-\hat{y}_i\right)^2$ es un estimador insesgado del error de la varianza $\sigma^2$. $\dfrac{n}{n-2}\hat{\sigma}^2$ es un estimador insesgado de $\sigma^2$. Observe también  que $\hat{\sigma}^2$ es una estimación asintóticamente insesgada de $\sigma^2$ , lo que coincide con la teoría clásica de MLE.
+
+
+\section{Intervalo de confianza sobre la media de regresión y la predicción de regresión}
+
+\begin{tcolorbox}
+    Los modelos de regresión suelen construirse basándose en determinadas condiciones que deben verificarse para que el modelo se ajuste bien a los datos y pueda predecir la respuesta para un determinado regresor con la mayor precisión posible. Uno de los principales objetivos del análisis de regresión es utilizar el modelo de regresión ajustado para realizar predicciones.
+\end{tcolorbox}
+
+El intervalo de confianza de la predicción de regresión permite evaluar la calidad de la predicción. A menudo interesan los siguientes intervalos de confianza de la predicción de regresión:
+
+\begin{itemize}
+    \item Un intervalo de confianza para una sola línea de regresión.  
+    \item Un intervalo de confianza para un solo valor futuro de y correspondiente a un valor elegido de $x$. 
+    \item Una región de confianza para la línea de regresión como un todo.
+\end{itemize}
+
+Para analizar el intervalo de confianza para la línea de regresión, consideramos el valor ajustado de la línea de regresión en $x=x_0$, que es $\hat{y}\left(x_0\right)=b_0+b_1x_0$ y el valor medio de $x=x_0$ es $E\left(\hat{y}|x_0\right)=\beta_0+\beta_1x_0$. Tenga en cuenta que $b_1$ es independiente de $\overline{y}$ de donde,
+
+$$
+\begin{array}{rcl}
+    \Var\left[\hat{y}\left(x_0\right)\right] &=& \Var\left(b_0+b_1x_0\right) \\\\
+					     &=& \Var\left[\overline{y}-b_1\left(x_0-\overline{x}\right)\right]\\\\
+					     &=& \Var\left(\overline{y}\right)+\left(x_0-\overline{x}\right)^2 \Var\left(b_1\right)\\\\
+					     &=& \dfrac{1}{n}\sigma^2+\left(x_0-\overline{x}\right)^2\dfrac{1}{S_{xx}}\sigma^2\\\\
+					     &=& \sigma^2\left[\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}\right]
+\end{array}
+$$
+
+Reemplazando $\sigma$ por $s$, el error estandar de la predicción de regresión en $x_0$ está dado por:
+
+$$s_{\hat{y}}\left(x_0\right)=s\sqrt{\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}}$$
+
+Si $\epsilon\sim N\left(0, \sigma^2\right)$ el $(1-\alpha)100\%$ del intervalo de confianza en $\E\left(\hat{y}|x_0\right)=\beta_0+\beta_1x_0$ puede escribirse como:
+
+
+$$\hat{y}\left(x_0\right)\pm t_{\alpha/2,n-2}\;s\sqrt{\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}}.$$
+
+Ahora, analicemos el intervalo de confianza en la predicción de la regresión. Denotemos la predicción de la regresión en $x_0$ por $y_0$ y supongamos que $y_0$ es independiente de $\hat{y}\left(x_0\right)$, donde $y\left(x_0\right)=b_0+b_1x_0$, y $\E\left[y-\hat{y}\left(x_0\right)\right]=0$. Ya que $\Var(X-Y)=\Var(X)+\Var(Y)-2\Cov(X,Y)$ con $\Cov(X,Y)=0$. Entonces,
+
+$$
+\begin{array}{rcl}
+    \Var\left[y_0-\hat{y}\left(x_0\right)\right] &=& \sigma^2+\sigma^2\left[\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}\right]\\\\
+						 &=& \sigma^2\left[1+\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}\right]
+\end{array}
+$$
+
+Bajo el supuesto de normalidad del término de error
+
+$$\dfrac{y_0-\hat{y}\left(x_0\right)}{\sigma\sqrt{1+\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}}}\sim N(0,1).$$
+
+Luego, sustituyendo $\sigma$ con $s$ se tiene
+
+$$\dfrac{y_0-\hat{y}\left(x_0\right)}{s\sqrt{1+\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}}}\sim t_{n-2}.$$
+
+Así, el $(1-\alpha)100\%$ del intervalo de confianza en la predicción de la regresión en $y_0$ puede ser expresada como
+
+$$\hat{y}_0\pm t_{\alpha/2,n-2}\; s \sqrt{1+\dfrac{1}{n}+\dfrac{\left(x_0-\overline{x}\right)^2}{S_{xx}}}$$
+
+
+\section{Inferencia estadística sobre parámetros de regresión}
