@@ -143,4 +143,116 @@ $$
 \end{array}
 $$
 
+## 7.8
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes binomial con parámetros $n_1$ y $p$, y $n_2$ y $p$, respectivamente. Demostrar que la suma  de $X_1$ y $X_2$ es una variable aleatoria binomial con parámetros $n_1+n_2$ y $p$.
+
+Respuesta.-
+
+
+## 7.9
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes distribuidas exponencialmente con el miemos parámetro $\theta$. Demostrar que la suma de $X_1$ y $X_2$ es una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
+
+Respuesta.-
+
+## 7.10
+Para un determinado nivel de ingresos, el Departamento de Hacienda sabe que las cantidades declaradas por concepto de deducciones médicas $(X_1)$, contribuciones caritativas $(X_2)$ y gastos varios $(X_3)$, son variables aleatorias independientes normalmente distribuidas con media $\$ 400, \$ 800$ y $\$100$ y desviaciones estándar $\&100, \$ 250$ y $\$40$, respectivamente.
+
+### a)
+¿Cuàl es la probabilidad de que la cantidad total declarada por concepto de estas tres deducciones, no sea mayor de $\$1600$?
+
+Respuesta.-
+
+### b)
+Si una persona con este nivel de ingresos declara por concepto de estas deducciones un total de $\$ 2100$, ¿qué tan probable es tener una cantidad igual o mayor a este monto bajo las condiciones dadas?
+
+Respuesta.-
+
+
+## 7.11
+Una tienda de artículos eléctronicos para el hogar vende tres diferentes marcas de refrigeradores. Sean $X_1,X_2$ y $X_3$ variables aleatorias las cuales representan el volumen de ventas mensuales para cada una de las tres marcas de refrigeradores. Si $X_1,X_2$ y $X_3$ son variables aleatorias independientes normalmente distribuidas con medias $\$ 8000$, $\$15000$ y $\$12000$, y desviación estándar $\$2000$ $\$5000$ y $\$3000$, respectivamente, obtener la probabilidad de que, para un mes en particular, el volumen de venta total para los tres refrigeradores sea mayor de $\$50000$.
+
+Respuesta.-
+
+
+## 7.12
+En una tienda de servicio el tiempo total del sistema consta de dos componentes (el lapso de tiempo que de esperar para que el servicio de comiento $(X_1)$ y el lapso de tiempo que este dura $(X_2)$). Si $X_1$ y $X_2$ son variables aleatorias independientes exponencialemente distribuidas con un tiempo medio de $4$ minutos cada una, ¿cuál es la probabilidad de que el tiempo total que tarda el sistema en proporcionar el servicio no sea mayor de $15$ minutos? (Sugerencia: consulte el ejercicio 7.9.)
+
+Respuesta.-
+
+
+## 7.13 
+Sea $X_1,X_2,\ldots, X_n$ una muestra aleatoria de una población que tiene una distribución gama con parámetros $\alpha$ y $\theta$. Mediante el uso de la función generadora de momentos, demostrar que la distribución dela media muestral $\overline{X}$ también es de tipo gama, con parámetros de escala y de forma iguales a $n\alpha$ y $\theta/n$ respectivamente.
+
+Respuesta.-
+
+
+## 7.14
+Miediante el emeplo de los resultados de la sección 5.9, generar números aleatorios para las distribuciones binomial y exponencial y usarlos para demostrar el teorema central del límite. De manera específica, para $n=10$ y $n=40$, generar $50$ muestras de una distribución binomial con $p=0.4$. Repetir el procedimiento anterior generando $50$ muestras de una distribución exponencial con parámetro $\theta=100$. ¿Se ha demostrado el teorema central del límite en un grado razonable?.
+
+Respuesta.-
+
+
+## 7.15
+Para cierta prueba de aptitud se sabe con base a la experiencia que el número e aciertos es $1000$ con una desviación estándar de $126$. Si se aplica la prueba a $100$ personas seleccionadas al azar, aproximar las siguientes probabilidades que involucran a la media muestra $\overline{X}$.
+
+### a)
+$P\left(985<\overline{X}<1015\right)$
+
+Respuesta.-
+
+### b)
+$P\left(960<\overline{X}<1040\right)$
+
+Respuesta.-
+
+### c)
+$P\left(\overline{X}>1020\right)$
+
+Respuesta.-
+
+### d)
+$P\left(\overline{X}<975\right)$
+
+Respuesta.-
+
+
+## 7.16
+Una contratista piensa comprar una gran cantidad de lámparas de alta intensidad a cierto fabricante. Este asegura al contratista que la duración promedio de las lámparas es de $1000$ horas con una desviación estándar igual a $80$ horas: El contratista decide comprar las lámparas sólo si una muestra aleatoria de $64$ de estas da como resultado una vida promedio de por lo menos $1000$ horas. ¿Cuàl es la probabilidad de que el contratista adquiera las lámparas?
+
+Respuesta.-
+
+
+## 7.17
+Un inspector federal de pesos y medidas visita una planta de empacado para verificar que el peso neto de las cajas sea el indicado en estas. El genente de la planta asegura al inspector que el peso promedio de cada caja es de $750$ gr. con una desviación estándar de $5$ gr. Bajo estas condiciones, ¿què tan probable es tener un peso de $748$ o menos? ¿Qué actitud debe tomar el inspector?
+
+Respuesta.-\; 
+
+
+## 7.18
+En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El preceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. EL proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
+
+Respuesta.-
+
+
+## 7.19
+En la producción de cierto material para soldar se sabe que la desviación estándar de a tensión de ruptura de este material de $25$ libras. ¿Cuál debe ser la tensión de ruptura promedio del proceso si, con base en una muestra aleatoria de $50$ especímenes, la probalidad de que la media muestral tenga un valor mayor que $250$ libras es de $0.95$?
+
+Respuesta.-
+
+
+## 7.20
+Genere $50$ muestras, cada una de tamaño $25$ a partir de una distribución normal con media $60$ y desviación estándar $10$. Calcule la varianza de cada muestra mediante el empleo de (7.14).
+
+### a)
+Obtener la media y la varianza de $S^2$ mediante el empleo de los $50$ valores calculados. ¿Cómo son estos valores al compararlos con los proporcionados por las extensiones (7.17) y (7.18)?.
+
+Respuesta.-
+
+### b)
+Agrupar los $50$ valores calculados de $S^2$ y graficar las frecuencias relativas. Coméntese sobre los resultados.
+
+Respuesta.-
+
+
+
 

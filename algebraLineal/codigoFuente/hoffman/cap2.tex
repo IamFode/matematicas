@@ -551,13 +551,44 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
 %-------------------- Definición 2.4
 \begin{def.}
-    Sea $S$ un conjunto de vectores de un espacio vectorial $V$, El \textbf{subespacio generado} por $S$ se define como intersección $W$ de todos los subespacios de $V$ que contienen a $S$. Cuando $S$ es un conjunto finito de vectores, $S=\left\{\alpha_1,\alpha_2,\ldots,\alpha_n\right\}$ se dice simplemente que $W$ es el \textbf{subespacio generado por los vectores} $\alpha_1,\alpha_2,\ldots,\alpha_n$.
+    Sea $S$ un conjunto de vectores de un espacio vectorial $V$, El \textbf{subespacio generado} por $S$ se define como la intersección $W$ de todos los subespacios de $V$ que contienen a $S$. Cuando $S$ es un conjunto finito de vectores, $S=\left\{\alpha_1,\alpha_2,\ldots,\alpha_n\right\}$ se dice simplemente que $W$ es el \textbf{subespacio generado por los vectores} $\alpha_1,\alpha_2,\ldots,\alpha_n$.
 \end{def.}
 
 %-------------------- Teorema 2.3
 \begin{teo}
     El subespacio generado por un subconjunto $S$ no vacío de un espacio vectorial $V$ es el conjunto de todas las combinaciones lineales de los vectores de $S$.\\\\
 	Demostración.-\; Sea $W$ el subespacio generado por $S$. Entonces, toda combinación lineal 
-	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_,\alpha_m$$
-	de vectores $\alpha_1,\alpha_2,\ldots,\alpha_m$ de $S$ pertenecen evidentemente a $W$ 
+	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_m,\alpha_m$$
+	de vectores $\alpha_1,\alpha_2,\ldots,\alpha_m$ de $S$ pertenecen evidentemente a $W$. Así que $W$ contiene el conjunto $L$ de todas las combinaciones lineales de vectores de $S$. El conjunto $L$, entonces, por otra parte, contiene a $S$ y no es, pues, vacío. Si $\alpha$ y $\beta$ pertencen a $L$, entonces $\alpha$ es una combinación lineal,
+	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_m,\alpha_m$$
+	de vectores $\alpha_i$ de $S$, y $\beta$ es una combinación lineal,
+	$$\beta=y_1\alpha_1+y_2\alpha_2+\ldots+y_n,\alpha_n$$
+	de vectores $\beta_j$ de $S$. Para cada escalar $c$,
+	$$c\alpha+\beta=\sum_{i=1}^n (cx_i)\alpha_i+\sum_{j=1}^n y_j\beta_j.$$
+	Luego, $c\alpha+\beta$ pertence a $L$. Con lo que $L$ es un subespacio de $V$.\\
+	Se demostró que $L$ es un subespacio de $V$ que contiene a $S$, y también que todo subespacio que contiene a $S$ contiene a $L$. Se sigue que $L$ es la intersección de todos los subespacios que contienen a $S$; es decir, que $L$ es el subespacio generado por el conjunto $S$.
 \end{teo}
+
+%-------------------- Definición 2.5
+\begin{def.}
+    Si $S_1,S_2,\ldots,S_k$ son subconjuntos de un espacio vectorial $V$, el conjunto de todas las sumas 
+    $$\alpha_1+\alpha_2+\cdots + \alpha_k$$
+    de vectores $\alpha_i$ de $S_i$ se llama \textbf{suma} de los subconjuntos $S_1,S_2,\ldots , S_k$ y se representa por
+    $$S_1+S_2+\cdots + S_k$$
+    o por
+    $$\sum_{i=1}^k S_i.$$
+    Si $W_1,W_2,\ldots,W_k$ son subespacios de $V$, entonces la suma
+    $$W=W_1+W_2+\cdots + W_k$$
+    como es fácil ver, es un subespacio de $V$ que contiene cada uno de los subespacios $W_i$. De esto se sigue, como en la demostración del Teorema 3, que $W$ es el subespacio generado por la unión de $W_1,W_2,\ldots , W_k$.
+\end{def.}
+
+
+\section*{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item 
+
+\end{enumerate}
+

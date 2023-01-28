@@ -84,7 +84,7 @@ y
 \end{tcolorbox}
 \vspace{0.5cm}
 
-El valor ajustado de la regresión lineal simple es definida como $\hat{y}=\beta_0+\beta_1x_i.$ La diferencia entre $y_i$ y el valor ajustado $\hat{y}_i$ es $e_i=y_i-\hat{y}_i$, que se refiere al residuo de la regresión. Los residuos de regresión se pueden calcular a partir de las respuestas observadas $y_i$ y los valores ajustados $y_i$, por lo tanto, los residuos son observables. Cabe señalar que el término de error $\epsilon_i$ en el modelo de regresión no es observable. El error de regresión es la cantidad por la cual una observación difiere de su valor esperado; este último se basa en la población total de la que se eligió aleatoriamente la unidad estadística. El valor esperado, el promedio de toda la población, normalmente no es observable.\\
+El valor ajustado de la regresión lineal simple es definida como $\hat{y}_i=b_0+b_1x_i.$ La diferencia entre $y_i$ y el valor ajustado $\hat{y}_i$ es $e_i=y_i-\hat{y}_i$, que se refiere al residuo de la regresión. Los residuos de regresión se pueden calcular a partir de las respuestas observadas $y_i$ y los valores ajustados $y_i$, por lo tanto, los residuos son observables. Cabe señalar que el término de error $\epsilon_i$ en el modelo de regresión no es observable. El error de regresión es la cantidad por la cual una observación difiere de su valor esperado; este último se basa en la población total de la que se eligió aleatoriamente la unidad estadística. El valor esperado, el promedio de toda la población, normalmente no es observable.\\
 
 Un residual, por otro lado, es una estimación observable de un error no observable. El caso más simple implica una muestra aleatoria de n hombres cuyas alturas se miden. El promedio de la muestra se utiliza como una estimación del promedio de la población. Entonces, la diferencia entre la altura de cada hombre de la muestra y el promedio de la población no observable es un error, y la diferencia entre la altura de cada hombre de la muestra y el promedio de la muestra observable es un residuo. Dado que los residuales son observables, podemos usar los residuales para estimar el error del modelo no observable. La discusión detallada se proporcionará más adelante.
 
@@ -329,7 +329,7 @@ Finalmente, $\E\left(\hat{\sigma}^2\right)$ es dado por:
 
 $$
 \begin{array}{rcl}
-    E\left[\displaystyle\sum_{i=1}^n \left(y_i-\hat{y}\right)^2\right] &=& \E\left[\displaystyle\sum_{i=1}^n\left(y_i-\overline{y}\right)^2\right]-\E\left[n\dfrac{S_{xy}^2}{S_{xx}}\right]\\\\
+    E\left[\displaystyle\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2\right] &=& \E\left[\displaystyle\sum_{i=1}^n\left(y_i-\overline{y}\right)^2\right]-\E\left[n\dfrac{S_{xy}^2}{S_{xx}}\right]\\\\
     &=&n\beta_1^2 S_{xx}+(n-1)\sigma^2-n\beta_1^2S_{xx}-\sigma^2\\\\
 								      &=&(n-2)\sigma^2.\\\\
 \end{array}
@@ -429,3 +429,160 @@ $$\hat{y}_0\pm t_{\alpha/2,n-2}\; s \sqrt{1+\dfrac{1}{n}+\dfrac{\left(x_0-\overl
 
 
 \section{Inferencia estadística sobre parámetros de regresión}
+
+Para dividir la varianza total $\sum\limits_{i=1}^n\left(y_i-\overline{y}\right)^2$, consideremos la ecuación de regresión ajustada $\hat{y}_i=b_0+b_1x_i$, donde $b_0=\overline{y}-b_1\overline{x}$ y $b_1=\dfrac{S_{xy}}{S_{xx}}.$ Podemos escribir
+
+$$
+\begin{array}{rcll}
+    \overline{\hat{y}}&=&\dfrac{1}{n}\displaystyle\sum_{i=1}^n\hat{y}_i&\\\\
+		      &=&\dfrac{1}{n}\displaystyle\sum_{i=1}^n\left[\left(\overline{y}-b_1\overline{x}\right)+b_1x_i\right]&\\\\
+		      &=&\dfrac{1}{n}\displaystyle\sum_{i=1}^n\left[\overline{y}+b_1\left(x_i-\overline{x}\right)\right]& \mbox{ ya que } \frac{1}{n}\sum\limits x_i-\frac{1}{n}\sum\limits \overline{x}=0\\\\
+		      &=&\overline{y}.&
+\end{array}
+$$
+
+Para la respuesta de la regresión $y_i$, la varianza total es $\dfrac{1}{n}\sum\limits_{i=1}^n\left(y_i-\overline{y}\right)^2$. Note que la varianza total puede ser dividida en dos partes:
+$$
+\begin{array}{rcl}
+    \dfrac{1}{n}\displaystyle\sum_{i=1}^n \left(y_i-\overline{y}\right)^2 &=& \dfrac{1}{n}\displaystyle\sum_{i=1}^n \left[\left(y_i-\hat{y}_i\right)+\left(\hat{y}_i-\overline{y}\right)\right]^2\\\\
+									  &=& \dfrac{1}{n}\displaystyle\sum_{i=1}^n \left[\left(y_i-\hat{y}_i\right)^2+\left(\hat{y}_i-\overline{y}\right)^2+2\left(\hat{y}_i-\overline{y}\right)\left(y_i-\hat{y}_i\right)\right]\\\\
+									  &=& \dfrac{1}{n}\displaystyle\sum_{i=1}^n \left(\hat{y}_i-\overline{y}\right)^2 + \dfrac{1}{n}\displaystyle\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2\\\\
+									  &=&SS_{Reg} + SS_{Res}\\\\
+									  &=& \mbox{Varianza explicada por la regresión + Varianza no explicada}
+\end{array}
+$$
+
+Se puede demostrar que $\left[2\left(y_i-\hat{y}_i\right)\left(\hat{y}_i-\overline{y}\right)\right]$ es cero. Usando el hecho de que $\sum\limits_{i=1}^n\left(y_i-\hat{y}_i\right)=0$, tenemos
+
+$$
+\begin{array}{rcl}
+    \displaystyle\sum_{i=1}^n \left(\hat{y}_i-\overline{y}\right)\left(y_i-\hat{y}_i\right) &=& \displaystyle\sum_{i=1}^n \hat{y}_i\left(y_i-\hat{y}_i\right)\\\\
+											    &=& \displaystyle\sum_{i=1}^n \left[\left(b_0+b_1x_i\right)\left(y_i-\hat{y}_i\right)\right]\\\\
+											    &=& b_0\displaystyle\sum_{i=1}^n \left(y_i-\hat{y}_i\right)+b_1\displaystyle\sum_{i=1}^n x_i\left(y_i-\hat{y}_i\right)\\\\
+											    &=& b_1\displaystyle\sum_{i=1}^n x_i\left(y_i-\hat{y}_i\right)\\\\
+											    &=& b_1\displaystyle\sum_{i=1}^n x_i\left(y_i-b_0-b_1x_i\right)\\\\
+											    &=& b_1\displaystyle\sum_{i=1}^n x_i\left[\left(y_i-\overline{y}\right)-b_1\left(x_i-\overline{x}\right)\right]\\\\
+											    &=& b_1\left[\displaystyle\sum_{i=1}^n x_i\left(y_i-\overline{y}\right)-\overline{x}\left(y_i-\overline{y}\right)-b_1x_i\left(x_i-\overline{x}\right)-b_1\overline{x}\left(x_i-\overline{x}\right)\right]\\\\
+											    &=& b_1\left[\displaystyle\sum_{i=1}^n\left[\left(x_i-\overline{x}\right)\left(y_i-\overline{y}\right)\right]-b_1 \displaystyle\sum_{i=1}^n \left(x_i-\overline{x}\right)^2\right]\\\\
+											    &=& b_1\left(S_{xy}-b_1S_{xx}\right)\\\\
+											    &=& b_1\left[S_{xy}-\left(\dfrac{S_{xy}}{S_{xx}}\right)S_{xx}\right]\\\\
+											    &=& 0.
+\end{array}
+$$
+
+Los grados de libertad para $SS_{Reg}$ y $SS_{Res}$ se muestran a continuación:
+
+$$
+\begin{array}{ccccc}
+    \hline\\
+    SS_{Total} & = & SS_{Reg} & + & SS_{Res}\\\\
+    n-1 & = & 1 & + & n-2\\\\
+    \hline
+\end{array}
+$$
+
+Para probar la hipótesis $H_0:\beta_1=0$ contra $H_1:\beta_1\neq 0$ es necesario asumir que $\epsilon_i\sim N\left(0,\sigma^2\right)$. La siguiente tabla contiene las distribuciones de $SS_{Reg}$, $SS_{Res}$ y $SS_{Total}$ bajo la hipótesis $H_0$.\\
+
+$$
+\begin{array}{ccc}
+    \hline\\
+    SS & df & distribución\\\\
+    \hline\\
+    SS_{Reg} & 1 & \sigma^2\mathcal{X}^2_1\\\\
+    SS_{Res} & n-2 & \sigma^2\mathcal{X}^2_{n-2}\\\\
+    SS_{Total} & n-1 & \sigma^2\mathcal{X}^2_{n-1}\\\\
+    \hline
+\end{array}
+$$
+
+El test estadístico está dado por:
+
+$$F=\dfrac{SS_{Reg}}{\dfrac{SS_{Res}}{n-1}}\sim F_{1,n-2},$$
+
+que es una prueba $F$ unilateral superior. La tabla de abajo muestra un típico análisis de varianza (anova) de regresión 
+
+$$
+\begin{array}{ccccc}
+    \hline\\
+    Fuente & SS & df & MS & F\\\\
+    \hline\\
+    Regresion & SS_{Reg} & 1 & \dfrac{SS_{Reg}}{1} & \dfrac{MS_{Reg}}{s^2}\\\\
+    Residuo & SS_{Res} & n-2 & s^2 & \\\\
+    Total & SS_{Total} & n-1 & \\\\
+    \hline
+\end{array}
+$$
+
+Para comprobar la pendiente de regresión $\beta_1$. Se observa que $b_1$ sigue la distribución normal
+
+$$b_1\sim N\left(\beta_1,\dfrac{\sigma^2}{SS_{xx}}\right)$$
+
+y
+
+$$\left(\dfrac{b_1-\beta_1}{s}\right)\sqrt{S_{xx}}\sim t_{n-2}$$
+
+que puede utilizarse para comprobar $H_0:\beta_1=\beta_{10}$ contra $H_1:\beta_1\neq\beta_{10}$. Se puede utilizar un enfoque similar para comprobar el intercepto de la regresión. Bajo el supuesto de normalidad normalidad del término de error
+
+$$b_0\sim N\left[\beta_0.\sigma^2\left(\dfrac{1}{n}+\dfrac{\overline{x}^2}{S_{xx}}\right)\right].$$
+
+Así, podemos usar el estadístico  t test con $H_0:\beta_0=\beta_{00}$ contra $H_1:\beta_0\neq\beta_{00}$.
+
+$$t=\dfrac{b_0-\beta_0}{s\sqrt{\dfrac{1}{n}+\left(\dfrac{\overline{x}^2}{S_{xx}}\right)}}\sim t_{n-2}$$
+
+Es sencillo usar las distribuciones de $b_0$ y $b_1$ para obtener los $(1 - \alpha)100\%$ intervalos de confianza de $\beta_0$ y $\beta_1$:
+
+$$b_0\pm t_{\alpha/2,n-2}\; s\sqrt{\dfrac{1}{n}+\dfrac{\overline{n}^2}{S_{xx}}},$$
+
+y 
+
+$$b_1\pm t_{\alpha/2,n-2}\; s\sqrt{\dfrac{1}{S_{xx}}}.$$
+
+Supongamos que la linea de regresión pasa a través de $(0,\beta_0)$. Es decir, el intercepto en $y$ es una constante conocida $\beta_0$. El modelo es dado por $y_i=\beta_0+\beta_1x_i+\epsilon_i$ con una constante conocida $\beta_0$. Usando el principio de mínimos cuadrados podemos estimar $\beta_1$:
+
+$$b_1=\dfrac{\displaystyle\sum x_iy_i}{\displaystyle\sum x_i^2}$$
+
+En consecuencia, el siguiente estadístico t test se puede utilizar para probar $H_0: \beta_1=\beta_{10}$ contra $H_1:\beta_1\neq \beta_{10}$. Bajo el supuesto de normalidad sobre $\epsilon_i$
+
+$$t=\dfrac{b_1-\beta_{10}}{s}\sqrt{\displaystyle\sum_{i=1}^nx_i^2}\sim t_{n-1}$$
+
+Tenga en cuenta que solo tenemos un parámetro para el modelo de regresión del intercepto $y$ donde la estadística de t test tiene $n-1$ grados de libertad, que es diferente del modelo lineal simple con $2$ parámetros.\\
+
+La cantidad $R^2$, definida a continuación, es una medida de ajusto de regresión:
+
+$$R^2=\dfrac{SS_{Reg}}{SS_{Total}}=\dfrac{\displaystyle\sum_{n=1}^n\left(\hat{y}_i-\overline{y}\right)^2}{\displaystyle\sum_{n=1}^n\left(y_i-\overline{y}\right)^2}=1-\dfrac{SS_{Res}}{SS_{Total}}$$
+
+Notemos que $0\leq R^2\leq 1$ que representa la proporción de variación total  explicada para el modelo de regresión.\\
+la cantidad $CV=\dfrac{s}{\overline{y}}\times 100$ se llama coeficiente de variación, que también es una medida de la calidad del ajuste y representa la dispersión del ruido alrededor de la línea de regresión. \\
+
+Ahora discutimos la inferencia simultánea en la regresión lineal simple. Tenga en cuenta que hasta ahora hemos discutido la inferencia estadística sobre $\beta_0$ y $\beta_1$ individualmente. La prueba individual significa que cuando probamos $H_0: \beta_0 = \beta_{00}$ solo probamos esta $H_0$ independientemente de los valores de $\beta_1$. Asimismo, cuando probamos $H_0: \beta_1 = \beta_{10}$ solo probamos $H_0$ independientemente de los valores de $\beta_0$. Si quisiéramos probar si una línea de regresión cae o no en cierta región, necesitamos probar la hipótesis múltiple: $H0: \beta_0 = \beta_{00}$, $\beta_1 = \beta_{10}$ simultáneamente. Esto cae en el ámbito de la inferencia múltiple. Para la inferencia múltiple sobre $\beta_0$ y $\beta_1$ notamos que
+
+$$
+\left(b_0-\beta_0,b_1-\beta_1\right)
+\left(
+    \begin{array}{cc}
+	n & \displaystyle\sum_{i=1}^n x_i\\\\
+	\displaystyle\sum_{i=1}^n x_i & \displaystyle\sum_{i=1}^n x_i^2
+    \end{array}
+\right)
+{b_0-\beta_0\choose b_1-\beta_1}
+\sim 2s^2F_{2,n-2}
+$$
+
+Así, la región de confianza $(1-\alpha)100\%$ de $\beta_0$ y $\beta_1$ es dado por
+
+$$
+\left(b_0-\beta_0,b_1-\beta_1\right)
+\left(
+    \begin{array}{cc}
+	n & \displaystyle\sum_{i=1}^n x_i\\\\
+	\displaystyle\sum_{i=1}^n x_i & \displaystyle\sum_{i=1}^n x_i^2
+    \end{array}
+\right)
+{b_0-\beta_0\choose b_1-\beta_1}
+\leq 2s^2F_{2,n-2},
+$$
+
+donde $F_{\alpha,2,n-2}$ es a cola superior del $\alpha$-ésimo punto porcentual de la distribución $F$. Tenga en cuenta que esta región de confianza es una elipse.
+
+
+\section{Análisis residual y diagnóstico del modelo}

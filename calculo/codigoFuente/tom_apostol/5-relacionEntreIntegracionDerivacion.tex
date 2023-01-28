@@ -2442,7 +2442,43 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 9.
     \item Sean $C_1$ y $C_2$ dos curvas que pasan por el origen tal como se indica en la figura 5.2. Una curva $C$ se dice que biseca en área la región $C_1$ y $C_2$, si para cada punto $P$ de $C$ las dos regiones $A$ y $B$ sombreadas en la figura, tienen la misma área. Determinar la curva superior $C_2$, sabiendo que la curva bisectriz $C$ tiene de ecuación $y=x^2$ y que la curva inferior $C_1$ tiene de ecuación $y=\dfrac{1}{2}x^2.$\\\\
-	Respuesta.-\;
+	Respuesta.-\; Primero, calculemos el área $A$ dada por:
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^t x^2\; dx - \int_0^t \dfrac{x^2}{2}\;dx &=& \displaystyle\int_0^t\left(x^2-\dfrac{x^2}{2}\right)\; dx\\\\
+									 &=& \displaystyle\int_0^t\dfrac{x^2}{2}\; dx\\\\
+									 &=& \dfrac{x^3}{6}\Bigg|_0^t\\\\
+									 &=& \dfrac{t^3}{6}.
+	\end{array}
+	$$
+	Ahora, supongamos que la ecuación para $C_2$ es de la forma $kx^2$ para $k\in \mathbb{R}^+$. Entonces, encontremos el área de la región $B$, encontrando el área de las curvas $C$ y $C_2$ en terminos de $y$, de la siguiente manera:
+	$$
+	\begin{array}{rcl}
+	    C:y=x^2 &\Rightarrow & x=\sqrt{y}\\\\
+	    C_2:y=kx^2 &\Rightarrow & x=\dfrac{1}{\sqrt{k}}\sqrt{y}.\\\\
+	\end{array}
+	$$
+	Por lo que, integrando de $0$ a $t^2$. En área de $B$ es dado por:
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^{t^2}\left(\sqrt{y}-\dfrac{1}{\sqrt{k}}\right)\; dy &=& \left(1-\dfrac{1}{\sqrt{k}}\right)\displaystyle\int_0^{t^2} \sqrt{y}\; dy\\\\
+										    &=& \left(1-\dfrac{1}{\sqrt{k}}\right)\left(\dfrac{2}{3}y^{\frac{3}{2}}\bigg|_0^{t^2}\right)\\\\
+										    &=& \left(1-\dfrac{1}{\sqrt{k}}\right)\left(\dfrac{2}{3}t^{\frac{3}{2}}\right)\\\\
+										    &=& \dfrac{2t^3}{3}-\dfrac{2t^3}{3\sqrt{k}}.
+	\end{array}
+	$$
+	Ahora, igualamos las áreas de las regiones, de la siguiente manera:
+	$$
+	\begin{array}{rcl}
+	    \dfrac{t^3}{6}=\dfrac{2t^3}{3}-\dfrac{2t^3}{3\sqrt{k}} &\Rightarrow & \dfrac{1}{6}=\dfrac{2}{3}-\dfrac{2}{3\sqrt{k}}\\\\
+								   &\Rightarrow & \dfrac{2}{3\sqrt{k}}=\dfrac{1}{2}\\\\
+								   &\Rightarrow & 4=3\sqrt{k}\\\\
+								   &\Rightarrow & k=\dfrac{16}{9}.
+	\end{array}
+	$$
+	Por lo tanto, la ecuación de $C_2$ es 
+	$$y=\dfrac{16}{9}x^2,$$\\
+
 
     %-------------------- 10.
     \item Una función $f$ está definida para todo $x$ como sigue:
@@ -2461,11 +2497,35 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	%---------- a)
 	\item Demostrar que $Q(h)\to 0$ cuando $h\to 0.$\\\\
-	    Demostración.-\;
+	    Demostración.-\; Sea $\epsilon>0$. Entonces, elijamos $0<\delta=\epsilon$. Por lo que si
+	$$|h-0|<\delta\quad \Rightarrow \quad |h|<\delta$$
+	tenemos
+	$$
+	\bigg|\dfrac{Q(h)}{h}-0\bigg|=
+	\left\{
+	    \begin{array}{rcl}
+		\dfrac{h^2}{|h|}=|h| &\mbox{si}& h\in \mathbb{Q},\\
+		0 &\mbox{si}& h\in \mathbb{R}-\mathbb{Q}.
+	    \end{array}
+	\right.
+	$$
+	Así, encontramos un $\delta>0$ tal que $\bigg|\dfrac{Q(h)}{h}\bigg|<\epsilon$ cuando $|h-0|<\delta$. Por lo tanto,
+	$$\lim_{h\to 0}\dfrac{Q(h)}{h}=0.$$\\
 
 	%---------- b)
 	\item Demostrar que $f$ tiene derivada en $0$ , y calcular $f'(0)$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Para mostrar que $f$ tiene una derivada en $0$ debemos demostrar el límite:
+	    $$\lim_{h\to 0}\dfrac{f(0+h)-f(0)}{h}$$
+	    existe. Notenemos que $f(0)=0$, ya que $0^2=0$. Entonces por la parte (a),
+	    $$
+	    \begin{array}{rcl}
+		f'(0) &=& \displaystyle\lim_{h\to 0}\dfrac{f(0+h)-f(0)}{h}\\\\
+		      &=& \displaystyle\lim_{h\to 0}\dfrac{f(h)-f(0)}{h}\\\\
+		      &=& \displaystyle\lim_{h\to 0}\dfrac{f(h)}{h}\\\\
+		      &=& 0.
+	    \end{array}
+	    $$
+	    \vspace{.5cm}
 
     \end{enumerate}
 
@@ -2633,7 +2693,7 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 36.
     \item Suponiendo que $|f''(x)|\leq m$ para cada $x$ en el intervalo $[0,a]$, y que $f$ toma su mayor valor en un punto interno de este interval, demostrar que $|f'(0)|+|f'(a)|\leq am$. Puede ponerse que $f''$ sea continua en $[0,a]$.
-	Demostración.-\;
+	Demostración.-\; 
 
 \end{enumerate}
 

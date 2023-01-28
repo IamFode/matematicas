@@ -2456,8 +2456,128 @@ $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f'(\alpha_x)}{g'(\alpha_x)
 	\end{enumerate}
 
     %----------------- 62
-    \item 
+    \item Es fácil encontrar una función $f$ tal que $|f|$ sea diferenciable sin serlo $f$. Por ejemplo, podemos elegir $f(x)=1$ para $x$ racional y $f(x)=-1$ para $x$ irracional. En este ejemplo $f$ no es ni siquiera continua y esto no es una merca coincidencia. Demuestre que si $|f|$ es diferenciable en $a$ y $f$ es continua en $a$, entonces $f$ es también diferenciable en $a$. Indicación: Basta considerar solamente $a$ con $f(a)=0$. ¿Por qué? En este caso, ¿cómo debe ser $|f|'(a)$?.\\\\
+	Demostración.-\; Sea $a$ cualquier punto en el dominio de la definición de $f$. Entonces, también $f(a)=0$ o $f(a)\neq 0$. Supongamos que $f(a)\neq 0$. Entonces, por continuidad de $f$ tenemos que existe un $\delta>0$ tal que en $(a-\delta,a+\delta)$, $f$ es $|f|$ o $-|f|$. Ya que $|f|$ es diferenciable en ambos casos, $f$ tiene que ser diferenciable. Así, tenemos que $f(a)=0$.\\
+	Ahora, si $f(a)=0$, entonces $|f|(a)=0$; lo que implica que $a$ es el punto mínimo para $|f|$. Ya que $|f|$ es diferenciable tenemos
+	$$|f|'(a)=0.$$
+	Lo que implica por definición de diferenciablidad que
+	$$
+	\begin{array}{rcll}
+	    0 &=& \displaystyle\lim_{h\to 0} \dfrac{|f(a+h)|-|f(a)|}{h}&\\\\
+	      &=& \displaystyle\lim_{h\to 0} \dfrac{|f(a+h)|}{h}&\mbox{ya que }f(a)=0\\\\
+	      &=& \displaystyle\lim_{h\to 0} \dfrac{f(a+h)}{h}.
+	\end{array}
+	$$
+	Luego, $f'(a)$ existe y es igual a cero.\\\\
 
+    %----------------- 63
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $y\neq 0$ y sea $n$ par. Demuestre que $x^n+y^n=(x+y)^n$ solamente cuando $x=0$. Indicación: Si $x_0^n+y^n= (x_0+y)^n$, aplicar el Teorema de Rolle a $f(x)=x^n+y^n-(x+y)^n$ en $[0,x_0]$.\\\\
+		Demostración.-\; Notemos que
+		$$f(0)=y^n+y^n=0, \mbox{ y } f(x_0)=x_0^n+y^n-(x+y)^n=0$$
+		donde se cumple  la segunda ecuación de nuestra hipótesis. Además, $f$ es diferenciable en $[0,x_0]$ o en $[x_0.0]$. Aplicando el Teorema de Rolle para la función $f$, tenemos que existe un número $x_1\in (0,x_0)$ o en $(x_0,0)$ tal que
+		$$f'(x_1)=0.$$
+		Calculando se tiene
+		$$f'(x)=n x^{n-1}-n(x+y)^{n-1}.$$
+		Por lo tanto, para $x_1$ se tiene
+		$$f'(x_1)=n\left[x_1^{n-1}-(x_1+y)^{n-1}\right]=0$$
+		lo que equivale a
+		$$x_1^{n-1}=(x_1+y)^{n-1}.$$
+		Pero como $n$ es par, $n-1$ es impar, por lo que
+		$$x_1=x_1+y$$
+		lo que implica que $y=0$; esto contradice la hipótesis. Así, $x$ tiene que ser $0$ para que $X^n+y^n=(x+y)^n$.\\\\
+
+	    %---------- (b)
+	    \item Demuestre que si $y\neq 0$ y $n$ es impar, entonces $x^n+y^n = (x+y)^n$ sólo si $x=0$ ó $x=-y$.\\\\
+		Demostración.-\; Supongamos que $x\neq 0$ y 
+		$$x^n+y^n=(x+y)^n.$$
+		Entonces, tenemos que demostrar que $x=-y$. Consideremos la función $f$ definida en $[0,x_0]$, como sigue:
+		$$f(x)=x^n+y^n-(x+y)^n.$$
+		Por la parte (a), sabemos que $f(0)=0$, $f(x_0)=0$ y que
+		$$f(-y)=-y^n+y^n(y-y)^n=0,$$
+		donde se cumple la segunda igualdad, ya que $n$ es impar. Luego, aplicando el Teorema de Rolle para la función $f$ tenemos que existen $x_1\in (-y,0)$ y $x_2\in (0,x_0)$ tal que
+		$$f'(x_1)=f'(x_2)=0.$$
+		Calculando se tiene
+		$$f'(x)=n x^{n-1}-n(x+y)^{n-1}.$$
+		Por lo tanto, para $x_1$ y $x_2$ se tiene
+		$$f'(x_1)=n\left[x_1^{n-1}-(x_1+y)^{n-1}\right]=0$$
+		y
+		$$f'(x_2)=n\left[x_2^{n-1}-(x_2+y)^{n-1}\right]=0.$$
+		Pero como $n$ es impar, por el problema 6(d) del capítulo $1$ tenemos que $x_j=x_j+y$ o $x_j=-(x_j+y)$ con $j=1,2$. Después, por el hecho de que $y\neq 0$, $x_j\neq x_j+y$; debemos tener $x_j=-(x_j+y)$ para $j=1,2$. Así, $x_1=x_2$, lo que implica que $x_0=-y$.\\\\
+
+	\end{enumerate}
+
+    %----------------- 64
+    \item Suponga que $f(0)=0$ y que $f'$ es creciente. Demuestre que la función $g(x)=\dfrac{f(x)}{x}$ es creciente en $(0,\infty)$. Indicación: Evidentemente hay que considerar a $g'(x)$. Demuestre que es positiva aplicando el Teorema del Valor Medio a $f$ en el intervalo adecuado (será útil recordar que la hipótesis $f(0)=0$ es esencial, como la demuestra la función $f(x)=1+x^2$).\\\\
+	Demostración.-\; calculemos $g'(x)$:
+	$$g'(x)=\dfrac{xf'(x)-f(x)}{x^2}.$$
+	Ahora, para cualquier $x\in (0,\infty)$, aplicando el Teorema del Valor Medio a $f$ en el intervalo $[0,x]$ tenemos que existe un número $c_x\in (0,x)$ tal que
+	$$f(x)-f(0)=xf'(c_x).$$
+	Pero, por hipótesis tenemos que $f(0)=0$ de donde
+	$$f(x)=xf'(c_x)<xf'(x)$$
+	esto ya que $f'$ es creciente, $c_x<x$ y $x>0$. Esto demuestra que 
+	$$f(x)=xf'(c_x)<xf'(x)$$
+	lo que implica que que $g'(x)>0$. Así, demostramos que $g'(x)>0$ para todo $x\in (0,\infty)$ y $g$ es creciente es dicho intervalo.\\\\ 
+
+    %----------------- 65
+    \item Utilice derivadas para demostrar que si $n\geq 1$, entonces 
+    $$(1+x)^n>1+nx\quad \mbox{para }-1<x<0 \mbox{ y } 0<x.$$
+    (Observe que la igualdad se cumple para $x=0$).\\\\
+	Demostración.-\; Consideremos la función $g(x)=(1+x)^n-(1+nx)$. Entonces, notemos que $g(0)=0$. Además, calculando la derivada vemos que
+	$$g'(x)=n(1+x)^{n-1}-n=n\left[(1+x)^{n-1}-1\right]$$
+	Ahora, ya que $n-1\geq 0$ vemos que para $x>0$,
+	$$(1+x)^{n-1}-1>0,$$
+	esto es, $g'(x)>0$ para $x>0$. Por otro lado, si $-1<x<0$, entonces $(1+x)<1$ y por lo tanto
+	$$(1+x)^{n-1}<1$$
+	lo que muestra que $g'(x)<0$ en $-1<x<0$. Así,  tenemos que $g$ es creciente para $x>0$ y decreciente en $-1<x<0$. Pero sabemos que $g(0)=0$. Por lo que tenemos $g(x)>0$ en $(0,\infty)$ y $f(x)<0$ en $-1<x<0$. Es decir,
+	$$(1+x)^n>1+nx\quad \mbox{para }-1<x<0 \mbox{ y } 0<x.$$\\
+
+    %----------------- 66
+    \item Sea $f(x)=x^4\sen^2\dfrac{1}{2}$ para $x\neq 0$ y sea $f(0)=0$. 
+	\begin{enumerate}
+
+	    %---------- (a)
+	    \item Demuestre que $0$ es un punto mínimo local de $f$.\\\\
+		Demostración.-\; Sea $f$ un función no constante. Esto es, $f(a')=f(b')$ para algún $a'<b'$ en $[a,b]$. Para ser especifico, $f(a')<f(b')$. Por el problema 8-4(b)m existe $a'\leq c<d\leq b'$ con $f(c)=f(a')<f(b')=f(d)$ y $f(c)<f(x)<f(d)$ para todo $x\in(c,d)$. De donde  $a'$  no es un mínimo local para $f$.\\\\
+
+	    %---------- (b)
+	    \item Demuestre que $f'(x)=f''(0)=0.$\\\\
+		Demostración.-\; Calculemos $f'(x)$:
+		$$
+		\begin{array}{rcl}
+		    f'(0) &=& \displaystyle\lim_{x\to 0} \dfrac{x^4\sen^2\dfrac{1}{x}}{x}\\\\
+			  &=& \displaystyle\lim_{x\to 0}x^3\sen^2\dfrac{1}{x}\\\\
+			  &=& \displaystyle\lim_{x\to 0}x^3\lim_{x\to 0}\sen^2\dfrac{1}{x}\\\\
+			  &=& \displaystyle\lim_{x\to 0} x \lim_{x\to 0}x^2\lim_{x\to 0}\sen^2\dfrac{1}{x}\\\\
+			  &=& 0.
+		\end{array}
+		$$
+
+		Ahora, para demostrar que $f''(0)=0$, con $x\neq 0$, que
+		$$
+		\begin{array}{rcl}
+		    f'(x) &=& 4x^3\sen^2\dfrac{1}{x}-x^4\left(-\dfrac{1}{^2}\right)2\sen \dfrac{1}{x}\cos\dfrac{1}{x}\\\\
+			  &=& 4x^3\sen^2\dfrac{1}{x}+x^2\sen\dfrac{2}{x}.
+		\end{array}
+		$$
+		Por lo tanto, tenemos que
+
+		$$f'(0)=\lim_{x\to 0}\dfrac{4x^3\sen^2\dfrac{1}{x}+x^2\sen\dfrac{2}{x}}{x}=0$$
+
+		Así, $f''(0)=0.$\\
+
+	\end{enumerate}
+
+	Esta función constituye otro ejemplo demostrativo de que el Teorema 6 no puede ser mejorado.
+También ilustra una sutileza acerca de los máximos y mínimos que frecuentemente pasa desaperci­
+bida: una función puede no ser creciente en ningún intervalo a la derecha de un punto mínimo local
+ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
+
+    %-------------------- 67
+    \item 
 
 	
 \end{enumerate}
