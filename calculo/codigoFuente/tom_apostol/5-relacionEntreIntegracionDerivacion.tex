@@ -2597,19 +2597,100 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 14.
     \item $\displaystyle\int_0^1 \dfrac{2x+3}{(6x+7)^3}\; dx.$\\\\
-	Respuesta.-\;
+	Respuesta.-\; Primero, transformemos la integral de la siguiente manera:
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^1 \dfrac{2x+3}{(6x+7)^3}\; dx &=& \dfrac{1}{3}\displaystyle\int_0^1 \dfrac{6x+9}{(6x+7)^3}\; dx\\\\
+							      &=& \dfrac{1}{3}\displaystyle\int_0^1 \dfrac{6x+7}{(6x+7)^3}\;dx+\dfrac{1}{3}\int_0^1 \dfrac{2}{(6x+7)^3}\; dx\\\\
+							      &=& \dfrac{1}{18}\displaystyle\int_0^1 \dfrac{6}{(6x+7)^2}\;dx+\dfrac{1}{9}\displaystyle\int_0^1 \dfrac{6}{(6x+7)^3}\; dx\\\\
+	\end{array}
+	$$
+	Ahora, usando la integración por partes, 
+
+	$$u=6x+7\quad \Rightarrow \quad du=6'; dx.$$
+
+	Y por el teorema de sustitución para integrales tenemos
+
+	$$u(0)=7\quad \mbox{y} \quad u(1)=13.$$
+
+	Por lo tanto,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^1 \dfrac{2x+3}{(6x+7)^3}\; dx &=& \dfrac{1}{18}\displaystyle\int_7^{13} \dfrac{1}{u^2}\; du  + \dfrac{1}{9}\int_7^{13} \dfrac{1}{u^3}\; dx\\\\
+							      &=& \dfrac{1}{18}\left(-\dfrac{1}{u}\bigg|_7^{13}\right) + \dfrac{1}{9}\left(-\dfrac{1}{u^2}\bigg|_7^{13}\right)\\\\
+							      &=& \dfrac{1}{18}\left(-\dfrac{u+1}{u^2}\bigg|_7^{13}\right)\\\\
+							      &=& \dfrac{1}{18}\left(\dfrac{8}{49}-\dfrac{14}{169}\right)\\\\
+							      &=& \dfrac{37}{8281}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+	
 
     %-------------------- 15.
     \item $\displaystyle\int x^4\left(1+x^5\right)^5\; dx.$\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Utilizando la integración por partes,
+	$$u=1+x^5\quad \Rightarrow \quad du=5x^4\; dx.$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^4\left(1+x^5\right)^5\; dx &=& \dfrac{1}{5} \displaystyle\int 5 x^4\left(1+x^5\right)^5\; dx\\\\
+							   &=& \dfrac{1}{5}\displaystyle\int u^5\; du\\\\
+							   &=& \dfrac{1}{5}\left(\dfrac{1}{6}u^6\right)\\\\
+							   &=& \dfrac{1}{30}(1+x^5)^6.
+
+	\end{array}
+	$$
+	\vspace{.5cm}
 
     %-------------------- 16.
     \item $\displaystyle\int_0^1 x^4(1-x)^{20}\; dx.$\\\\
-	Respuesta.-\;
+	Respuesta.-\; Primero, sustituimos $u=1-x$ y $du=-dx$ para luego aplicar la integración por partes, de la siguiente manera:
+	$$u(0)=1\quad \mbox{y}\quad u(1)=0.$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^1 x^4(1-x)^{20}\; dx &=& \displaystyle\int_1^0 -(1-u)^4u^{20}\; du\\\\
+						     &=& \displaystyle\int_0^1 (1-u)^{4}u^{20}\; du.
+	\end{array}
+	$$
+	De donde,
+	$$(1-u)^4y^{20}=u^{20}\left(1-4u+6u^2-4u^3+u^4\right)=u^{24}-4u^{23}+6u^{22}-4u^{21}+u^{20}.$$
+
+	Por lo tanto,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^1 \left(1-u\right)^4u^{20}\; du &=& \displaystyle\int_0^1 u^{24}-4u^{23}+6u^{22}-4u^{21}+u^{20}\; du\\\\
+								&=& \left(\dfrac{u^{25}}{25}-\dfrac{u^{24}}{6}+\dfrac{6u^{23}}{23}-\dfrac{2u^{22}}{11}+\dfrac{u^{21}}{21}\right)\bigg|_0^1\\\\
+								&=& \dfrac{1}{25}-\dfrac{1}{6}+\dfrac{6}{23}-\dfrac{2}{11}+\dfrac{1}{21}\\\\
+								&=& \dfrac{1}{265650}.
+	\end{array}
+	\vspace{.5cm}
+	$$
 
     %-------------------- 17.
     \item $\displaystyle\int_1^2 x^{-2} \sen \dfrac{1}{2}\; dx.$\\\\
-	Respuesta.-\;
+	Respuesta.-\; Utilizando la integración por partes,
+
+	$$u=\dfrac{1}{x}\quad \Rightarrow \quad du=-\dfrac{1}{x^2}\;dx.$$
+
+	Y luego, utilizando el teorema de sustitución para integrales,
+
+	$$u(1)=1\quad \mbox{y}\quad u(2)=\dfrac{1}{2}.$$
+
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_1^2 \dfrac{1}{x^2}\sen\left(\dfrac{1}{x}\right)\; dx &=& -\displaystyle\int_1^{\frac{1}{2}} \sen u\; du\\\\
+										   &=& \displaystyle\int_{\frac{1}{2}}^1 \sen u\; du\\\\
+										   &=& \left(-\cos u\right)\bigg|^{\frac{1}{2}}_1\\\\
+										   &=& \cos\dfrac{1}{2}-\cos 1.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+
 
     %-------------------- 18.
     \item $\displaystyle\int x\sen x^2 \cos x^2\; dx.$\\\\
