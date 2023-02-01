@@ -135,24 +135,62 @@ Entonces por el teorema 7.1 con $a_i=1$,
 
 $$
 \begin{array}{rcl}
-  m_Y(t) &=& E\left\{e^{\left[t(X_1-X_2)\right]}\right\}\\\\
-  &=& E\left\{\dfrac{e^{t(X_1)}}{e^{t(X_2)}}\right\}\\\\
-  &=& \dfrac{E\left\{e^{t(X_1)}\right\}}{E\left\{e^{t(X_2)}\right\}}\\\\
-  &=& \dfrac{m_{X_1}(t)}{m_{X_2}(t)}\\\\
-  &=& \dfrac{e^{\lambda_1(e^x-1)}}{e^{\lambda_2(e^x-1)}}
+  m_Y(t)&=&E\left\{e^{t\left[X_1+(-X_2)\right]}\right\}\\\\
+  &=&E\left[e^{tX_1}\cdot e^{(-t)X_2}\right]\\\\
+  &=& E\left[e^{tX_1}\right]E\left[e^{(-1)X_2}\right]\\\\
+  &=& m_{X_1}(t)m_{X_2}(-t)\\\\
+  &=&e^{\lambda_1(t-1)}e^{\lambda_2(-t-1)}
 \end{array}
 $$
+
+Por lo que no es una variable aleatoria Poisson.
+
 
 ## 7.8
 Sean $X_1$ y $X_2$ dos variables aleatorias independientes binomial con parámetros $n_1$ y $p$, y $n_2$ y $p$, respectivamente. Demostrar que la suma  de $X_1$ y $X_2$ es una variable aleatoria binomial con parámetros $n_1+n_2$ y $p$.
 
-Respuesta.-
+Respuesta.- Sea la función generadora de momentos: 
+
+$$m_X(t)=\left[(1-p)+e^tp\right]^n$$
+
+Entonces, por el teorema 7.1, con a_i=1. La suma de las variables también es una variable aleatoria binomial. Es decir; sea,
+
+$$Y=X_1+X_2$$
+
+por lo que
+
+$$
+\begin{array}{rcl}
+  m_Y(t) &=& m_{X_1}(t)m_{X_2}(t)\\\\
+  &=&\left[(1-p)+e^tp\right]^{n_1} \left[(1-p)+e^tp\right]^{n_2}\\\\
+  &=& \left[(1-p)+e^tp\right]^{n_1+n_2}
+\end{array}
+$$
 
 
 ## 7.9
-Sean $X_1$ y $X_2$ dos variables aleatorias independientes distribuidas exponencialmente con el miemos parámetro $\theta$. Demostrar que la suma de $X_1$ y $X_2$ es una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes distribuidas exponencialmente con el mismo parámetro $\theta$. Demostrar que la suma de $X_1$ y $X_2$ es una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
 
-Respuesta.-
+Respuesta.- Sea la función generadora de momentos dado por:
+
+$$m_X(t)=\dfrac{\theta}{\theta-t}$$
+
+Entonces, sea 
+
+$$Y=X_1+X_2$$
+
+de donde,
+
+$$
+\begin{array}{rcl}
+  m_Y(t) &=& m_{X_1}(t)m_{X_2}(t)\\\\
+  &=& \dfrac{\theta}{\theta-t} \cdot \dfrac{\theta}{\theta-t}\\\\
+  &=&\left(\dfrac{\theta}{\theta-t}\right)^2.
+\end{array}
+$$
+
+Así, tenemos una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
+
 
 ## 7.10
 Para un determinado nivel de ingresos, el Departamento de Hacienda sabe que las cantidades declaradas por concepto de deducciones médicas $(X_1)$, contribuciones caritativas $(X_2)$ y gastos varios $(X_3)$, son variables aleatorias independientes normalmente distribuidas con media $\$ 400, \$ 800$ y $\$100$ y desviaciones estándar $\&100, \$ 250$ y $\$40$, respectivamente.

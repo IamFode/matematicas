@@ -594,17 +594,34 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
 	    %---------- (a)
 	    \item todos los $\alpha$ tal que $a_1\geq 0$;\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Sea $A=\left\{\alpha = (a_1,a_2,\ldots,a_n)\in \mathbb{R}^n | a_1\geq 0\right\}$. De donde, podemos elegir un vector $\alpha'=(1,0,\ldots,0)\in A$ tal que $a_1\geq 0$. Ahora notemos que
+		$$(-1)\alpha'=(-1)(1,0,\ldots,0)=(-1,0,\ldots,0)\notin A.$$
+		lo que contradice el la condición $a_1\geq 0$. Por lo tanto, $A$ no es cerrado con respecto a la multiplicación escalar, por lo que no es un subespacio.\\\\
 
 	    %---------- (b)
 	    \item todos los $\alpha$ tal que $a_1+3a_2=a_3$;\\\\
-		Respuesta.-\; Sea $A=\left\{\alpha = (a_1,a_2,\ldots,a_n)\in \mathbb{R}^n | a_1\geq 0\right\}$. Luego, tomemos un vector $\alpha'=(1,0,\ldots,0)\in A$ tal que $a_1\geq 0$. Ahora notemos que
-		$$(-1)\alpha'=(-1)(1,0,\ldots,0)=(-1,0,\ldots,0)\notin A.$$
-		lo que contradice el la condición $a_1\heq 0$. Por lo tanto, $A$ no es cerrado con respecto a la multiplicación escalar, por lo que no es un subespacio.\\\\
+		Respuesta.-\; Sean $\alpha=(a_1,a_2,\ldots,a_n)\in A$ y $\beta=(b_1,b_2,\ldots,b_n)\in A$. Ahora, consideremos $c\alpha+\beta$ de donde tenemos 
+
+		$$
+		\begin{array}{rcl}
+		    c\alpha+\beta & = & (ca_1,c a_2,\ldots,c a_n)+ (b_1,b_2,\ldots,b_n)\\
+		    & = & (ca_1+b_1,c a_2+b_2,\ldots,c a_n+b_n)\\
+		\end{array}
+		$$
+
+		Después, usando la condición $a_1+3a_2=a_3$ se tiene, 
+
+		$$
+		\begin{array}{rcl}
+		    (ca_1+b_1)+3(ca_2+b_2) &=& c(a_1+3a_2)+(b_1+3b_2)\\
+					   &=& ca_3+b_3 
+		\end{array}
+		$$
+		Por lo tanto, $c\alpha+\beta$ está en el subconjunto, entonces es un subconjunto por el teorema 1.\\\\
 
 	    %---------- (c)
 	    \item todos los $\alpha$ tal que $a_2=a_1$;\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Tomemos los vectores $\alpha$
 
 	    %---------- (d)
 	    \item todos los $\alpha$ tal que $a_1a_2=0$;\\\\
