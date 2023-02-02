@@ -594,7 +594,7 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
 	    %---------- (a)
 	    \item todos los $\alpha$ tal que $a_1\geq 0$;\\\\
-		Respuesta.-\; Sea $A=\left\{\alpha = (a_1,a_2,\ldots,a_n)\in \mathbb{R}^n | a_1\geq 0\right\}$. De donde, podemos elegir un vector $\alpha'=(1,0,\ldots,0)\in A$ tal que $a_1\geq 0$. Ahora notemos que
+		Respuesta.-\; Sea $A=\left\{\alpha = (a_1,a_2,\ldots,a_n)\in F^n | a_1\geq 0\right\}$. De donde, podemos elegir un vector $\alpha'=(1,0,\ldots,0)\in A$ tal que $a_1\geq 0$. Ahora notemos que
 		$$(-1)\alpha'=(-1)(1,0,\ldots,0)=(-1,0,\ldots,0)\notin A.$$
 		lo que contradice el la condición $a_1\geq 0$. Por lo tanto, $A$ no es cerrado con respecto a la multiplicación escalar, por lo que no es un subespacio.\\\\
 
@@ -620,18 +620,182 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 		Por lo tanto, $c\alpha+\beta$ está en el subconjunto, entonces es un subconjunto por el teorema 1.\\\\
 
 	    %---------- (c)
-	    \item todos los $\alpha$ tal que $a_2=a_1$;\\\\
-		Respuesta.-\; Tomemos los vectores $\alpha$
+	    \item todos los $\alpha$ tal que $a_2=a_1^2$;\\\\
+		Respuesta.-\; Tomemos los vectores $\alpha=(-1,1,0,\ldots,0)$ y $\beta=(1,1,0,\ldots,0)$. Luego,
+
+		$$\alpha+\beta=(-1,1,0,\ldots, 0)+(1,1,0,\ldots)=(0,2,0,\ldots,0)$$
+
+		Claramente $2\neq 0^2$, por lo que $\alpha+\beta$ no pertenece al subconjunto dado. Por lo tanto, no es un subespacio.\\\\
 
 	    %---------- (d)
 	    \item todos los $\alpha$ tal que $a_1a_2=0$;\\\\
-		Respuesta.-\;
+		Respuesta.-\; Sea $\alpha=(0,1,0,\ldots,0)$ y $\beta=(1,0,0,\ldots,0)$. Luego,
+
+		$$\alpha+\beta=(0,1,0,\ldots,0)+(1,0,0,\ldots,0)=(1,1,0,\ldots,0)$$
+
+		Donde, claramente $1\cdot 1 = 1\neq 0$. Por lo tanto, $\alpha+\beta$ no pertenece al subconjunto dado. Así, no es un subespacio.\\\\
 
 	    %---------- (e)
 	    \item todos los $\alpha$ tal que $a_2$ es racional.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Sea el conjunto $A=\left\{\alpha=(a_1,a_2,\ldots,a_n)\in \mathbb{R}^n | a_2\in \mathbb{Q}\right\}$. Luego sea $\beta=(0,1,,0,\ldots,0)$. Entonces para $c=\sqrt{2}\in\mathbb{R}$, tenemos
+		$$c\beta=\sqrt{2}(0,1,0,\ldots,0)=\left(0,\sqrt{2},0,\ldots,0\right)$$
+
+		Claramente $\sqrt{2}\notin \mathbb{Q}$, por lo que $c\beta$ no pertenece al subconjunto dado. Por lo tanto, no es un subespacio.\\\\
 
 	\end{enumerate}
+
+    %-------------------- 2.
+    \item Sea $V$ el espacio vectorial (real) de todas las funciones $f$ de $R$ en $R$. ¿Cuàl de los siguientes conjuntos de funciones son subespacios de $V$?.
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Todas las $f$ tales que $f\left(x^2\right)=f^2(x)$;\\\\
+		Respuesta.-\; Por el teorema 1, para que cada una de las funciones sea un subespacio, debe ser cerrado respecto a la suma y al multiplicación escalar en $V$ definida como: $f,g\in V$, con $c\in R$, tal que
+
+		$$(cf+g)(x)=f(x)+g(x).$$
+
+		Entonces, para este caso en particular. Sea $f(x)=x$ y $g(x)=x^2$, de donde ambos satisfacen la condición inicial; Es decir, 
+		$$f\left(x^2\right)=x^2=f^2(x)\qquad \mbox{y}\qquad g\left(x^2\right)=\left(x^2\right)^2=g^2(x).$$
+		Pero para algún $c\in R$,
+
+		$$(cf+g)\left(x^2\right)=cf(x)+g(x)=cx^2+x^4$$
+
+		Y 
+
+		$$\left(cf+g\right)^2(x)=\left[cf(x)+g(x)\right]^2=(cx+x^2)^2=x^4+2cx^3+(cx)^2.$$
+
+		Dado que no se cumple la igualdad de la condición $f\left(x^2\right)=f^2(x)$ para $(f+g)=f(x)+g(x)$. Entonces, el conjunto no es un subespacio de $V$.\\\\
+
+
+	    %---------- (b)
+	    \item Todas las $f$ tales que $f\left(0\right)=f(1)$;\\\\
+		Respuesta.-\; Sean $f$ y $g$  dos funciones en $V$ que satisfacen la condición inicial. Entonces, para algún $c\in R$, se tiene
+
+		$$(cf+g)(0)=cf(0)+g(0)=cf(1)+g(1)=(cf+g)(1).$$
+		
+		Por lo tanto, por el teorema 1, el conjunto dado es un subespacio de $V$.\\\\
+
+	    %---------- (c)
+	    \item Todas las $f$ tales que $f\left(3\right)=1+f(-5)$;\\\\
+		Respuesta.-\; Por hipótesis, sean $f(3)=1+f(-5)$ y $g(3)=1+g(-5)$ en $V$. Entonces, para $c=1$, se tiene
+		$$
+		\begin{array}{rcl}
+		    (cf+g)(3) &=& 1\cdot f(3)+g(3)\\
+			     &=& 1+f(-5)+1+g(-5)\\
+			     &=& 2+f(-5)+g(-5)\\
+			     &=& 2+(f+g)(-5)\\
+			     &\neq& 1+(f+g)(-5).
+
+		\end{array}
+		$$
+		Por lo tanto, el conjunto dado no es un subespacio de $V$.\\\\
+
+	    %---------- (d)
+	    \item Todas las $f$ tales que $f\left(-1\right)=0$;\\\\
+		Respuesta.-\; Sean, $f$ y $g$ dos funciones en $V$ que satisfacen la condición inicial; Es decir,
+
+		$$f(-1)=0=g(-1).$$
+
+		Entonces, para algún $c\in R$, se tiene
+
+		$$
+		\begin{array}{rcl}
+		    (cf+g)(-1) &=& cf(-1)+g(-1)\\
+			      &=& c\cdot 0+0\\
+			      &=& 0.
+		\end{array}
+		$$
+
+		Por lo tanto, el conjunto dado es un subespacio de $V$.\\\\
+
+	    %---------- (e)
+	    \item Todas las $f$ que son continuas.\\\\
+		Respuesta.-\; Sea $f$ y $g$ dos funciones continuas en $V$. Entonces, para algún $c\in R$, $cf$ es continua. Lo mismo pasa para $f+c$, ya que la suma de funciones continuas es también continua.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item ¿Pertenece el vector $(3,-1,0,-1)$ al subespacio de $R^5$ generado por los vectores $(2,-1,3,2)$, $(-1,1,1,-3)$ y $(1,1,9,-5)$?\\\\
+	Respuesta.-\; Por el teorema 3, para que un vector pertenezca a un subespacio generado por un conjunto de vectores, debe ser una combinación lineal de los mismos. Entonces, para el vector $(3,-1,0,-1)$, tenemos
+
+	$$
+	\begin{array}{rcl}
+	    (3,-1,0,-1) &=& x(2,-1,3,2)+y(-1,1,1,-3)+z(1,1,9,-5)\\\\
+		        &=& (2x,-x,3x,2x)+(-y,y,y,-3y)+(z,z,9z,-5z)\\\\
+			&=& (2x-y+z,-x+y+z,3x+y+9z,2x-3y-5z).
+	\end{array}
+	$$
+
+	Resolviendo el sistema de ecuaciones mediante matrices, tenemos
+
+	$$
+	\begin{array}{rcl}
+	    \left[
+		\begin{array}{rrr|r}
+		    2 & -1 & 1 & 3\\
+		    -1 & 1 & 1 & -1\\
+		    3 & 1 & 9 & 0\\
+		    2 & -3 & -5 & -1
+		\end{array}
+	    \right]
+	    &\dfrac{R_1}{2}\to R_1&
+	    \left[
+		\begin{array}{rrr|r}
+		    1 & -\frac{1}{2} & \frac{1}{2} & \frac{3}{2}\\
+		    -1 & 1 & 1 & -1\\
+		    3 & 1 & 9 & 0\\
+		    2 & -3 & -5 & -1
+		\end{array}
+	    \right]\\\\
+	    &
+	    \begin{array}{rcl}
+		R_2 + R_1 &\to R_2\\
+		R_3 - 3R_1 &\to R_3\\
+		R_4 - 2R_1 &\to R_4
+	    \end{array}
+	    &
+	    \left[
+		\begin{array}{rrr|r}
+		    1 & -\frac{1}{2} & \frac{1}{2} & \frac{3}{2}\\
+		    0 & \frac{1}{2} & \frac{3}{2} & \frac{1}{2}\\
+		    0 & \frac{5}{2} & \frac{15}{2} & -\frac{9}{2}\\
+		    0 & -2 & -6 & -4
+		\end{array}
+	    \right]\\\\
+	    &2R_2\to R_2&
+	    \left[
+		\begin{array}{rrr|r}
+		    1 & -\frac{1}{2} & \frac{1}{2} & \frac{3}{2}\\
+		    0 & 1 & 3 & 1\\
+		    0 & \frac{5}{2} & \frac{15}{2} & -\frac{9}{2}\\
+		    0 & -2 & -6 & -4
+		\end{array}
+	    \right]\\\\
+	    &
+	    \begin{array}{rcl}
+		R_3 - \dfrac{5}{2}R_2 &\to R_3\\\\
+		R_4 + 2R_2 &\to R_4\\\\
+		R_1 + \dfrac{1}{2}R_2 &\to R_1
+	    \end{array}
+	    &
+	    \left[
+		\begin{array}{rrr|r}
+		    1 & 0 & 2 & 2\\
+		    0 & 1 & 3 & 1\\
+		    0 & 0 & 0 & -7\\
+		    0 & 0 & 0 & -2
+		\end{array}
+	    \right]
+
+	\end{array}
+	$$
+
+	Ya que $0\neq -7$ y $0\neq -2$, el vector $(3,-1,0,-1)$ no pertenece al subespacio generado por los vectores $(2,-1,3,2)$, $(-1,1,1,-3)$ y $(1,1,9,-5)$.\\\\
+
+    %-------------------- 4.
+    \item Sea $W$
+
 
 \end{enumerate}
 

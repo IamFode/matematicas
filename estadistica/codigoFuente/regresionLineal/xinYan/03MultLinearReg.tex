@@ -1,0 +1,43 @@
+\chapter{Regresión lineal múltiple}
+La regresión múltiple permite a los investigadores examinar el efecto de más de una variable independiente en la respuesta al mismo tiempo. Para algunas preguntas de investigación, la regresión se puede utilizar para examinar en qué medida un conjunto particular de variables independientes puede explicar suficientemente el resultado.
+
+\section{Espacio vectorial y Proyección}
+
+\subsection{Espacio vectorial}
+Un espacio vectorial es un conjunto de vectores  que es cerrado bajo  la adición y la multiplicación por un escalar de vectores finitos.\\
+
+Una base hace posible expresar cada vector del espacio como una tupla única de los elementos del campo, aunque se debe tener precaución cuando un espacio vectorial no tiene una base finita. En álgebra lineal, una base es un conjunto de vectores que, en una combinación lineal, pueden representar cada vector en un espacio vectorial dado, y tales que ningún elemento del conjunto pueda representarse como una combinación lineal de los demás. En otras palabras, una base es un conjunto generador linealmente independiente. Es decir, cualquier vector $x'=(x_1,x_2,\ldots,x_n)$ en $\mathbb{R}^n$ puede ser una combinación lineal de $e_1,e_2,\ldots,e_n$. En efecto,
+
+$$x=x_1e_1+x_2e_2+x_3e_3,+\cdots+x_ne_n.$$
+
+Esta representación es única. Que quiere decir que no existe otra representación tal que
+
+$$x=x_1^*e_1+x_2^*e_2+x_3^*e_3,+\cdots+x_n^*e_n.$$
+
+Entonces, $x_i=x_i^*$ para todo $i=1,2,\cdots , n.$\\ 
+
+Dado un espacio vectorial $V$, un subconjunto no vacío $W$ de $V$ que es cerrado bajo la suma y la multiplicación escalar se llama subespacio de $V$. La intersección de todos los subespacios que contengan un conjunto dado de vectores es llamado SPAN o generador. Si no se puede eliminar ningún vector sin cambiar el SPAN (generador), se dice que los vectores en este conjunto son linealmente independientes. Un conjunto linealmente independiente cuyo intervalo es $V$ se llama base de $V$. Un vector generado (SPAN) por dos vectores $v$ y $w$ (ambas no necesariamente independientes) se pueden definir como: $x:x=av+bw,$ para todo $(a,b)\in \mathbb{R}^2$. Si un espacio vectorial $S$ está generado por un conjunto de vectores independientes $v_1,v_2,\ldots , v_p$. Es decir, $S$ es el conjunto de vectores 
+$$\left\{x:x=a_1+v_1+a_2v_2+\ldots+a_pv_p,\mbox{ para todo } (a_1,a_2,\ldots,a_p)\in \mathbb{R}^p\right\},$$
+
+Entonces la dimensión de $S$ es $p$. Los vectores $v_1, v_2, \ldots , v_p$ son la base del espacio vectorial $S$. La dimensión de un espacio vectorial $S$ es el mayor número de un conjunto de vectores independientes en $S$. Si la dimensión de un espacio lineal $S$ es $p$, se escribe $Dim(S) = p$.
+ 
+
+\subsection{Vectores linealmente independientes}
+
+Si existe un número finito de vectores distintos $v_1,v_2,\ldots,v_n$ en el espacio vectorial $V$ y los escalares $a_1,a_2,\ldots,a_n$ no todos cero, tal que
+$$a_1v_1+a_2v_2+\ldots,a_nv_n=0,$$
+entonces los vectores $v_1,v_2,\ldots,v_n$ se dice que son linealmente dependientes. Si $v_1,v_2,\ldots,v_n$ son dependientes entonces de estos $n$ vectores hay al menos un vector que puede expresarse como una combinación lineal de otros vectores. Tenga en cuenta que el cero a la derecha es el vector cero, no el número cero. Si no existen tales escalares, entonces se dice que los vectores $v_1, v_2, \ldots , v_n$ son linealmente independientes. Esta condición se puede reformular de la siguiente manera: Siempre que $a_1 , a_2 , \ldots , a_n$ sean escalares tales que
+
+$$a_1v_1+a_2v_2+\ldots,a_nv_n=0,$$
+
+tenemos $a_i=0$ para $i=1,2,\ldots,n$. Entonces, $v_1,v_2,\ldots,v_n$ son linealmente independientes.\\
+
+Una base de un espacio vectorial $V$ se define como un subconjunto de vectores en $V$ que son linealmente independientes y estos vectores abarcan el espacio $V$. En consecuencia, si $(v_1 , v_2 , \ldots , v_n)$ es una lista de vectores en $V$, entonces estos vectores forman una base si y solo si todo vector $x \in V$ puede expresarse de forma única mediante una combinación lineal de $v_1 , v_2 , \ldots , v_p$. Es decir, 
+$$x = a_1 v_1 + a_2 v_2 + \ldots + a_n v_n,$$ 
+para cualquier $x \in V$. El número de vectores base en $V$ se denomina dimensión del espacio lineal $V$. Tenga en cuenta que un espacio vectorial puede tener más de una base, pero el número de vectores que forman la base del espacio vectorial $V$ siempre es fijo. Es decir, la dimensión del espacio vectorial $V$ es fija pero habrá más de una base. De hecho, si la dimensión del espacio vectorial $V$ es $n$, entonces cualquier n vector linealmente independiente en $V$ forma su base.
+
+
+\section{Producto punto y Proyección}
+
+
+

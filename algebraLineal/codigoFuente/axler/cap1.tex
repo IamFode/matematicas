@@ -183,7 +183,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
     \item Supongase $a$ y $b$ números reales, no ambos $0$. Encuentre números reales $c$ y $d$ tales que
     $$\dfrac{1}{(a+bi)}=c+di.$$\\
 	Respuesta.-\; Supongamos $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \textbf{R}$. Entonces,
-	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
+	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)=1.$$
 	Luego, por el hecho de que dos números complejos son iguales si sus correspondientes partes reales e imaginarias son iguales, entonces
 	$$\left\{\begin{array}{rcl}
 	    ac-db & = & 1\\
@@ -201,7 +201,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	Demostración.-\; Algebraicamente queremos demostrar que,
 	$$\dfrac{-1+\sqrt{3}i}{2}=\sqrt[3]{1} \quad \mbox{o}\quad \left(\dfrac{-1+\sqrt{3}i}{2}\right)^3=1$$\\
 	Por las propiedades de números complejos, sabemos que
-	$$\dfrac{-1+\sqrt{3}i}{2}=\dfrac{-1}{2}+\dfrac{\sqrt{3}i}{2}.$$
+	$$\dfrac{-1+\sqrt{3}i}{2}=-\dfrac{1}{2}+\dfrac{\sqrt{3}i}{2}.$$
 	Luego, por el binomio al cubo podemos deducir que
 	$$\begin{array}{rcl}
 	    \left(\dfrac{-1}{2}+\dfrac{\sqrt{3}i}{2}\right)^3 &=&\left(\dfrac{-1}{2}\right)^3 + 3\cdot \left(\dfrac{-1}{2}\right)^2 \dfrac{\sqrt{3}i}{2} + 3\cdot \dfrac{-1}{2}\left(\dfrac{\sqrt{3}i}{2}\right)^2+\left(\dfrac{\sqrt{3}i}{2}\right)^3\\\\
@@ -216,9 +216,9 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	Respuesta.-\; Queremos encontrar raíces distintas de $i$ tal que
 	$$x^2=i.$$
 	Supongamos que $x=a+bi$ para $a,b\in \textbf{R}$. Resolvemos la ecuación cuadrática, se tiene 
-	$$x^2=(a+bi)^2=(a^2-b^2)+(ab+ba)i=(a^2-b^2)+2abi.$$
+	$$x^2=(a+bi)^2=(a^2-b^2)+(ab+ba)i=(a^2-b^2)+(2ab)i.$$
 	Luego, ya que $x^2=i=0+1i$, entonces
-	$$(a^2-b^2)+2abi=(0+1i)\quad \Rightarrow \quad \left\{\begin{array}{rcl}
+	$$x^2=(a^2-b^2)+(2ab)i=(0+1i)\quad \Rightarrow \quad \left\{\begin{array}{rcl}
 		a^2-b^2&=&0\\
 		2ab&=&1
 	    \end{array}\right.$$
@@ -227,7 +227,7 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 		b&=&\pm \sqrt{\dfrac{1}{2}}\\\\
 		a&=&\pm \sqrt{\dfrac{1}{2}}
 	\end{array}\right.$$
-	Ya que, $x^2=(a+bi)^2=(a^2-b^2)-2abi=i$. Entonces, 
+	Luego, ya que $x^2=(a+bi)^2=(a^2-b^2)-2abi=i$. Entonces, 
 	$$\begin{array}{rcl}
 	    \left[\left(\dfrac{1}{\sqrt{2}}\right)^2-\left(\dfrac{1}{\sqrt{2}}\right)^2\right]+2\cdot\dfrac{1}{\sqrt{2}}\cdot\dfrac{i}{\sqrt{2}}i&=&i\\\\
 	    \left[\left(-\dfrac{1}{\sqrt{2}}\right)^2-\left(-\dfrac{1}{\sqrt{2}}\right)^2\right]+2\left(-\dfrac{1}{\sqrt{2}}\right)\left(-\cdot\dfrac{i}{\sqrt{2}}\right)i&=&i\\\\
@@ -236,7 +236,6 @@ Un campo es un conjunto que contiene al menos dos elementos distintos llamados $
 	\end{array}$$
 	De las que solo satisface $x^2=i$ las dos primeras ecuaciones. Por lo tanto, las dos raíces distintas de $i$ son:
 	$$\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{2}}i\qquad \mbox{y}\qquad -\dfrac{1}{\sqrt{2}}-\dfrac{1}{\sqrt{2}}i.$$\\
-
 
 
     %-------------------- 4. --------------------
@@ -403,7 +402,9 @@ $$\begin{array}{rcl}
 	    5\cdot \dfrac{27}{11}-4\cdot \dfrac{26}{11}&=&7\\
 	    \dfrac{21}{11}=7.
 	\end{array}$$
-	Claramente, $\dfrac{21}{11}\neq7$, lo que significa que no podemos encontrar números $a$ y $b$ para satisfacer las ecuaciones del último sistema.\\\\
+	Claramente, 
+	$$\dfrac{21}{11}\neq7,$$ 
+	lo que significa que no podemos encontrar números $a$ y $b$ para satisfacer las ecuaciones del último sistema.\\\\
 
 
     %-------------------- 12. --------------------
@@ -518,14 +519,31 @@ La motivación para la definición de un espacio vectorial proviene de las propi
     \end{mydef}
 
 %-------------------- 1.21 --------------------
-    \begin{mydef}[Espacio vectorial real, espacio vectorial complejo]\hfill
-	\begin{itemize}
-	    \item Un espacio vectorial sobre $\textbf{R}$ es llamado un espacio vectorial real.
-	    \item Un espacio vectorial sobre $\textbf{C}$ es llamado un espacio vectorial complejo.
-	\end{itemize}
-    \end{mydef}
+\begin{mydef}[Espacio vectorial real, espacio vectorial complejo]\hfill
+    \begin{itemize}
+	\item Un espacio vectorial sobre $\textbf{R}$ es llamado un espacio vectorial real.
+	\item Un espacio vectorial sobre $\textbf{C}$ es llamado un espacio vectorial complejo.
+    \end{itemize}
+\end{mydef}
 
-    El espacio vectorial más simple contiene sólo un punto. En otras palabras, $\left\{0\right\}$ es un espacio vectorial.
+El espacio vectorial más simple contiene sólo un punto. En otras palabras, $\left\{0\right\}$ es un espacio vectorial.
+
+%-------------------- 1.22 --------------------
+\setcounter{ejem}{21}
+\begin{ejem}
+    $F^{\infty}$ está definido como el conjunto de todas las secuencias de elementos de $F$:
+    $$F^{\infty}=\left\{(x_1,x_2,\ldots):x_j\in \textbf{F} \mbox{ para } j=1,2,\ldots \right\}.$$\\
+
+	Demostración.-\; La adición y multiplicación escalar en $F^{\infty}$ se definen por:
+	$$
+	\begin{array}{lll}
+	    (x_1,x_2,\ldots)+(y_1,y_2,\ldots)&=&(x_1+y_1,x_2+y_2,\ldots)\\
+	    \lambda (x_1,x_2,\ldots)&=&(\lambda x_1,\lambda x_2,\ldots)
+	\end{array}
+	$$
+	Con estas definiciones, $\textbf{F}^{\infty}$ se convierte en un espacio vectorial sobre \textbf{F}, La identidad aditiva en este espacio vectorial es la secuencia de todos los ceros.\\\\
+\end{ejem}
+
 
 % -------------------- 1.23 --------------------
 \setcounter{mynot}{22}
@@ -542,7 +560,7 @@ La definición de un espacio vectorial requiere que tenga una identidad aditiva.
 
 %-------------------- 1.25 --------------------
 \setcounter{myteo}{24}
-\begin{myteo}[Identidad aditiva única]
+\begin{myteo}[Identidad aditiva única]\; \\\\
     Un espacio vectorial tiene una única identidad aditiva.\\\\
 	Demostración.-\; Supóngase $0$ y $0^{'}$ ambos identidades aditivas para algún espacio vectorial $V$ entonces,
 	$$0^{'}=0^{'}+0=0+0^{'}=0$$
@@ -553,7 +571,7 @@ La definición de un espacio vectorial requiere que tenga una identidad aditiva.
 Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento $w$ en el espacio vectorial tal que $v + w = 0$. El siguiente resultado muestra que cada elemento en un espacio vectorial tiene solo un inverso aditivo. \\
 
 % -------------------- 1.26 --------------------
-\begin{myteo}
+\begin{myteo}[Inverso aditivo único]\; \\\\
     Cada elemento en un espacio vectorial tiene un único inverso aditivo.\\\\
 	Demostración.-\; Supóngase que $V$ es un espacio vectorial. Sea $v\in V$,  $w$ y $w^{'}$ inversos aditivos de $v$. Entonces
 	$$w=w+0=w+(v+w^{'}) = (w+v)+w^{'}=0+w^{'}=w^{'}$$
@@ -575,7 +593,7 @@ Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento 
     \end{mynot}
 
 % -------------------- 1.29 --------------------
-\begin{myteo}[El número 0 por un vector]
+\begin{myteo}[El número 0 por un vector]\;\\\\
     $0v=0$ para cada $v\in V$.\\\\
 	Demostración.-\; Para $v\in V$, tenemos
 	$$0v=(0+0)v=0v+0v$$
@@ -586,7 +604,7 @@ Cada elemento $v$ en un espacio vectorial tiene un inverso aditivo, un elemento 
 Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igual al vector $0$.\\
 
 % -------------------- 1.30 --------------------
-\begin{myteo}[Un número por el vector $\textbf{0}$]
+\begin{myteo}[Un número por el vector $\boldmath \textbf{0}$]\;\\\\
     $a0=0$ para cada $a\in \textbf{F}$.\\\\
 	Demostración.-\; Para $a\in \textbf{F}$, tenemos 
 	$$a0=a(0+0)=a0+a0$$
@@ -597,7 +615,7 @@ Ahora  establecemos que el producto de cualquier escalar y el vector $0$ es igua
 Ahora mostramos que si un elemento de $V$ se multiplica por el escalar $-1$, entonces el resultado es el inverso aditivo del elemento de $V$.\\
 
 % -------------------- 1.31 --------------------
-\begin{myteo}[El número $\textbf{-1}$ por un vector]
+\begin{myteo}[El número $\boldmath \textbf{-1}$ por un vector]\;\\\\
     $(-1)v=-v$ para cada $v\in V$.\\\\
     	Demostración.-\; Para $v\in V$, tenemos
 	$$v+(-1)v=1v+(-1)v=[1+(-1)]v=0v=0.$$

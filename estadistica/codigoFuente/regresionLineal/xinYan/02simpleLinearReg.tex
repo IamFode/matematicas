@@ -627,4 +627,80 @@ con $\E(\epsilon_i)=0$.  Luego, sea un modelo de regresión lineal especificado 
 
 $$y_i=\beta_0+\beta_1\left(x_i+\overline{x}\right)+\epsilon_i^*$$
 
-Entonces, $\epsilon_i^* = \beta_2x_i^2+\epsilon_i$, el cual es desconocido.
+Entonces, $\epsilon_i^* = \beta_2x_i^2+\epsilon_i$, el cual es desconocido. Ahora, la media del error es distinto de cero y es una función de $x_i$. Del modelo cuadrático se tiene:
+
+$$\overline{y}=\dfrac{1}{n}\sum\limits_{i=1}^n y_i=\dfrac{1}{n}\sum\limits_{i=1}^n \beta_0+\dfrac{1}{n}\sum\limits_{i=1}^n\left[\beta_1(x_i-\overline{x})\right]+\dfrac{1}{n}\sum\limits_{i=1}^n\left(\beta_2 x_i^2\right)+\dfrac{1}{n}\sum\limits_{i=1}^n \epsilon_i\quad \Rightarrow \quad \overline{y}=\beta_0+\beta_2\overline{x}^2+\overline{\epsilon}$$
+
+tenemos:
+
+$$b_0=\overline{y}-b_1(x_i-\overline{x})=\overline{y}=\beta_0+\beta_2\overline{x}^2+\overline{\epsilon}$$
+
+y
+
+$$
+\begin{array}{rcl}
+    \dfrac{S_{xy}}{S_{xx}}\; =\; b_1&=&\dfrac{\sum\limits_{i=1}^n(x_i-\overline{x})\left[\beta_0+\beta_1(x_i-\overline{x})+\beta_2x_i^2+\epsilon_i\right]}{S_{xx}}\\\\
+    b_1 &=& \beta_1+\beta_2\dfrac{\sum\limits_{i=1}^n\left(x_i-\overline{x}\right)x_i^2}{S_{xx}}+\dfrac{\sum\limits_{i=1}^n\left(x_i-\overline{x}\right)\epsilon_i}{S_{xx}}
+\end{array}
+$$
+
+Luego, es fácil ver que
+
+$$\E(b_0)=\beta_0+\beta_2\overline{x}^2$$
+
+y
+
+$$E(b_1)=\beta_1+\beta_2\dfrac{\sum\limits_{i=1}^n\left(x_i-\overline{x}\right)x_i^2}{S_{xx}}.$$
+
+Por lo tanto, los estimadores $b_0$ y $b_1$ son estimaciones sesgadas de $\beta_0$ y $\beta_1$. Supongamos que ajustamos el modelo por $\hat{y}_i=b_0+b_1(x_i-\overline{x})$, el residuo de regresión esperado viene dado por
+
+$$
+\begin{array}{rcl}
+    \E(\epsilon_i) \; = \; \E(y_i-\hat{y}_i) &=& \left[\beta_0+\beta_1(x_i-\overline{x})+\beta_2x_i^2\right] - \left[\E(b_0)+E(b_1)(x_i-\overline{x})\right]\\\\
+					     &=&\left[\beta_0+\beta_1(x_i-\overline{x})+\beta_2x_i^2\right] -  \left[\beta_0+\beta_2\overline{x}^2\right]-\left[\beta_1+\beta_2 \dfrac{\sum\limits_{i=1}^n(x_i-\overline{x})x_i^2}{S_{xx}}\right](x_i-\overline{x})\\\\
+					     &=& \beta_2 \left[\left(x_i^2-\overline{x}^2\right)-\dfrac{\sum\limits_{i=1}^n(x_i-\overline{x})x_i^2}{S_{xx}}\right]
+\end{array}
+$$
+
+Si $\beta_2=0$, entonces el modelo ajustado es correcto y $\E(y_i-\hat{y}_i)=0$. De lo contrario, el valor esperado de residual toma la forma cuadrática de $x_i$. Como resultado, la gráfica de residuos contra $x_i$ debe tener una curvatura de apariencia cuadrática.\\
+
+La inferencia estadística en el modelo de regresión se basa en el supuesto de normalidad del término de error. Los estimadores de mínimos cuadrados y los MLE de los parámetros de regresión son exactamente idénticos solo bajo el supuesto de normalidad del término de error. Ahora, la pregunta es ¿cómo verificar la normalidad del término de error? Considere el residuo $y_i - \hat{y}_i$ : tenemos $\E(y_i - \hat{y}_i) = 0$ y
+
+$$
+\begin{array}{rcl}
+    \Var(y_i-\hat{y}_i) &=& \Var(y_i)+\Var(\hat{y}_i)-2\Cov(y_i,\hat{y}_i)\\\\
+			&=& \sigma^2+\sigma^2\left[\dfrac{1}{n}+\dfrac{\left(x_i-\overline{x}\right)^2}{S_{xx}}\right]-2\Cov\left[y_i,\overline{y}+b_1(x_i-\overline{x})\right]\\\\
+\end{array}
+$$
+
+Calculando $\Cov\left[y_i,\overline{y}+b_1(x_i-\overline{x})\right]$, tenemos
+
+$$
+\begin{array}{rcl}
+    \Cov\left[y_i,\overline{y}+b_1(x_i-\overline{x})\right] &=& \Cov(y_i,\overline{y}) + (x_i-\overline{x})\Cov(y_i,b_i)\\\\
+							    &=& \dfrac{\sigma^2}{n} + (x_i-\overline{x})\Cov\left(y_i,\dfrac{S_{xy}}{S_{xx}}\right)\\\\
+							    &=& \dfrac{\sigma^2}{n} + (x_i-\overline{x})\dfrac{1}{S_{xx}}\Cov\left[\displaystyle\sum_{i=1}^n\left(x_i-\overline{x}\right)(y_i-\overline{y})\right]\\\\
+							    &=& \dfrac{\sigma^2}{n} + (x_i-\overline{x})\dfrac{1}{S_{xx}}\left[\displaystyle\sum_{i=1}^n\left(x_i-\overline{x}\right)y_i\right]\\\\
+							    &=& \dfrac{\sigma^2}{n} + \dfrac{\left(x_i-\overline{x}\right)^2}{S_{xx}}\sigma^2.
+
+\end{array}
+$$
+
+Así, la varianza del residuo es
+
+\begin{tcolorbox}
+    $$\Var(\epsilon_i)=\Var(y_i-\hat{y}_i)=\sigma^2\left[1-\left(\dfrac{1}{n}+\dfrac{\left(x_i-\overline{x}\right)^2}{S_{xx}}\right)\right],$$
+\end{tcolorbox}
+
+que se puede estimar por
+
+\begin{tcolorbox}
+    $$s_{e_i}=s\left[1-\left(\dfrac{1}{n}+\dfrac{\left(x_i-\overline{x}\right)^2}{S_{xx}}\right)\right].$$
+\end{tcolorbox}
+
+Si el término de error en la regresión lineal simple se especifica correctamente, es decir, el error se distribuye normalmente, los residuos estandarizados deberían comportarse como la variable aleatoria normal estándar. Por lo tanto, el cuantil de los residuos estandarizados en la regresión lineal simple será similar al cuantil de la variable aleatoria normal estandarizada. Así, la gráfica del cuantil de los residuos estandarizados versus el cuantil normal debe seguir una línea recta en el primer cuadrante si la suposición de normalidad en el término de error es correcta. Por lo general, se denomina gráfico normal y se ha utilizado como una herramienta útil para verificar la normalidad del término de error en la regresión lineal simple. Específicamente, podemos
+
+\begin{enumerate}[(1)]
+    \item Trazar el residuo ordenado $\dfrac{y_i-\hat{y}_i}{s}$ frente al cuantil de la normal $Z\left(\dfrac{i-0,375}{n+0.25}\right)$.
+    \item Trace el residuo estandarizado ordenado $\dfrac{y_i-\hat{y}_i}{s_{e_i}}$ contra el cuantil normal $Z\left(\dfrac{i-0.375}{n+0.25}\right)$.
+\end{enumerate}

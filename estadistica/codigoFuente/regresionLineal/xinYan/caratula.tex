@@ -28,15 +28,38 @@ Y APUNTES\\
 \nbvspace[2]
 
 \begin{center}
-    \begin{tikzpicture}[scale=.55]
-	\begin{polaraxis}[
-	    xticklabels={,0,$\frac\pi6$,$\frac\pi3$,$\frac\pi2$,$\frac{2\pi}3$,$\frac{5\pi}6$,
-	    $\pi$,$\frac{7\pi}6$,$\frac{4\pi}3$,$\frac{3\pi}2$,$\frac{5\pi}3$,$\frac{11\pi}6$}
-	    ]
-	    \addplot[mark = none, domain = 0:2*pi, data cs = polarrad, samples = 600, fill = gray!30,opacity=.5]{x};
-	\end{polaraxis}
+    \begin{tikzpicture}
+	\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+	  axis x line=center, 
+	  axis y line=center,
+	  xlabel style={below right},
+	  ylabel style={above left},
+	  label style={font=\tiny},
+	  tick label style={font=\tiny},
+	  enlargelimits=upper] 
+	  \addplot[black,opacity=1,domain=0:10]{x+1};
+	  \addplot[only marks]table{
+	    5  5   
+	    4  7
+	    3  3
+	    4  3
+	    4  5
+	    3.5 6 
+	    2  5
+	    7 	8
+	    7.4 7
+	    5.5 8
+	    6  7
+	    6.5 8
+	    7.5 9
+	    8  10
+	    9 7
+	    9.5 8
+	    };
+	\end{axis}
     \end{tikzpicture}
 \end{center}
+
 
 \nbvspace[3]
 \normalsize

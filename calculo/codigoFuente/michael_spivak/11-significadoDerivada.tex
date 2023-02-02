@@ -2583,21 +2583,117 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
 	    %---------- (a)
 	    \item Demuestre que si $f'(a)>0$ y $f'$ es continua en $a$, entonces $f$ es creciente en algún intervalo que contiene a $a$.\\\\
 		El comportamiento de $f$ para $\alpha\geq 1$, que es mucho más difícil de analizar, se discute en el problema siguiente.\\\\
-		Demostración.-\;
+		Demostración.-\; Ya que $f'$ es continua y $f'(a)>0$. Entonces, existe un intervalo $(a-\epsilon,a+\epsilon)$ al rededor de $a$ tal que $f'(x)>0$ para todo $x\in(a-\epsilon,a+\epsilon)$. Luego, usando el corolario 3 del teorema de valor medio, se tiene que $f$ es creciente en $(a-\epsilon,a+\epsilon)$.\\\\
 
 	    Las dos partes siguientes de este problema demuestran que la continuidad de $f'$ es esencial.\\
 
 	    %---------- (b)
 	    \item Si $g(x)=x^2\sen 1/x$, demuestre que existen números $x$ tan próximos como se quiere a $0$ con $g'(x)=1$ y también con $g'(x)=-1$.\\\\
-		Demostración.-\;
+		Demostración.-\; Primero calculamos la derivada de $g$ para algún $x\neq 0$.
+		$$g'(x)=2x\sen \dfrac{1}{x}-\cos \dfrac{1}{x}.$$
+
+		Así, $g'(x)=1$ cuando $\cos\dfrac{1}{x}=-1$, al mismo tiempo vemos que $\sen\dfrac{1}{x}=0$. Por lo tanto, $g'(x)=-1$ cuando $\cos \dfrac{1}{x}=1$.\\\\
 
 	    %---------- (c)
 	    \item Suponga que $0<\alpha<1$. Sea $f(x)=\alpha x+x^2\sen 1/x$ para $x\neq 0$ y sea $f(0)=0$. Demuestre que $f$ no es creciente en ningún intervalo abierto que contenga a $0$, probando que cualquiera de estos intervalos existen puntos $x$ con $f'(x)>0$ y también puntos $x$ con $f'(x)<0$.\\\\
-		Demostración.-\;
+		Demostración.-\; Ya que $x\neq 0$, tenemos
+		$$f'(x)=\alpha+g'(x).$$
+
+		Por la parte (b) vemos que existe un punto $x$ cerca de $0$ tal que $g'(x)=1$ y $g'(x)=-1$. Se sigue que existe un punto cercano a $0$ tal que 
+		$$f'(x)=\alpha+1>0,$$
+
+		Ya que $0<\alpha<1$. También existe un punto $x$ cerca de $0$ tal que
+		$$f'8x)=\alpha-1<0.$$\\
+
 
 		El comportamiento de $f$ para $\alpha\geq 1$, que es mucho más difícil de analizar, se discute en el problema siguiente.\\\\
 	\end{enumerate}
 
+    %-------------------- 68
+    \item Sea $f(x) = ax + x^2 \sen 1/x$ para $x\neq 0$ y sea $f(0)=0$. Para hallar el signo de $f'(x)$ cuando $a \geq 1$ es necesario decidir si $2x \sen 1/x -\cos 1/x$ es $< -1$ para cualquier número x próximo a $0$. Resulta algo más conveniente considerar la función $g(y) = 2 (\sen y)/y -\cos y$ para $y \neq 0$; queremos saber si $g(y) < - 1$ Para valores grandes $y$. Esta cuestión es muy delicada; la parte más importante de $g(y)$ es $-\cos y$ que alcanza el valor $1$ , pero esto ocurre solamente cuando $\sen y = 0$, y no está claro en absoluto si la misma $g$ puede tener valores $< -1$. La manera evidente de abordar este problema es hallar los valores mínimos locales de $g$. Por desgracia, es imposible resolver explícitamente la ecuación $g'(y) = 0$ de manera que debe aguzarse el ingenio para encontrar otra solución.\\\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $g'(y)=0$, entonces
+	    $$\cos y = (\sen y)\left(\dfrac{2-y^2}{2y}\right),$$
+	    y deduzca que
+	    $$g(y)=(\sen y)\left(\dfrac{2+y^2}{2y}\right).$$
+
+		Demostración.-\; Sea,
+		$$g'(y)=\dfrac{2y\cos y -2\sen y}{y^2}+\sen y.$$
+
+		De donde, para $g'(y)=0$ tenemos
+		$$2y\cos y-2\sen y+y^2\sen y = 0.$$
+
+		Lo que implica,
+		$$\cos y = (\sen y)\left(\dfrac{2-y^2}{2y}\right).$$
+
+		Luego, sustituyendo la expresión $\cos y$ en $g(y)$ se tiene
+		$$
+		\begin{array}{rcl}
+		    g(y) &=& \dfrac{2\sen y}{y} - (\sen y)\left(\dfrac{2-y^2}{2y}\right)\\\\
+			 &=& (\sen y)\left(\dfrac{2}{y}-\dfrac{2-y^2}{2y}\right)\\\\
+			 &=& (\sen y)\left(\dfrac{2+y^2}{2y}\right).
+		\end{array}
+		$$
+		\vspace{0.5cm}
+
+	    %---------- (b)
+	    \item Demuestre ahora que si $g'(y)=0$, entonces
+	    $$\sen^2y=\dfrac{4y^2}{4+y^4},$$
+	    y deduzca que
+	    $$|g(y)|=\dfrac{2+y^2}{\sqrt{4+y^4}}.$$\\
+		Demostración.-\; Por la parte (a) vemos que
+		$$\cos y = (\sen y)\left(\dfrac{2-y^2}{2y}\right).$$
+
+		De donde,
+		$$\cos^2 y = 1-\cos^2y = 1-(\sen y)^2\left(\dfrac{2-y^2}{2y}\right)^2.$$
+
+		Lo que implica que
+		$$
+		\begin{array}{rcl}
+		    1 &=& \sen^2 y + (\sen y)^2 \left(\dfrac{2-y^2}{2y}\right)^2\\\\
+		      &=& \left(\sen^2 y\right)\left[1+\left(\dfrac{2-y^2}{2y}\right)^2\right]\\\\
+		      &=& \left(\sen^2 y\right)\left(\dfrac{4-y^2}{4y^2}\right)\\\\
+		\end{array}
+		$$
+
+		Se sigue,
+		$$\sen^2 y = \dfrac{4y^2}{4+y^4}\quad \Rightarrow \quad \sen y = \dfrac{2y}{\sqrt{4+y^4}}.$$
+
+		Ahora, calculemos $|g(y)|$. Por la parte (a) tenemos,
+		$$|g(y)|=|\sen y|\bigg|\dfrac{2+y^2}{2y}\bigg|.$$
+
+		Por lo tanto,
+
+		$$|g(y)|=\dfrac{|2y|}{\sqrt{4+y^4}}\dfrac{2+y^2}{|2y|}=\dfrac{2+y^2}{\sqrt{4+y^4}}.$$\\
+
+
+	    %---------- (c)
+	    \item Utilizando el hecho de que $(2+y^2)/\sqrt{4+y^4}>1$, demuestre que si $\alpha=1$, entonces $f$ no es creciente en ningún intervalo alrededor de $0$.\\\\
+		Demostración.-\;
+
+	    %---------- (d)
+	    \item Utilizando el hecho de que $\lim\limits_{y\to \infty}\left(2+y^2\right)/\sqrt{4+y^4}=1$, demuestre que si $a>1$, entonces $f$ es creciente en algún intervalo alrededor de $0$.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+
+    %-------------------- 69
+    \item Una función $f$ es creciente en $a$ si existe algún número $\delta>0$ tal que
+    $$f(x)>f(a)\mbox{ si } a<x<a+\delta$$
+    y
+    $$f(x)<f(a)\mbox{ si }a-\delta<x<a.$$
+    Observe que esto no significa que $f$ sea creciente en el intervalo $(a — \delta, a + \delta)$; por ejemplo, la función de la Figura 34 es creciente en $0$, pero no es una función creciente en cualquier intervalo¡ abierto que contenga $0$.
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item 
+
+	\end{enumerate}
 	
 \end{enumerate}
 

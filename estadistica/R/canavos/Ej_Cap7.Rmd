@@ -198,24 +198,92 @@ Para un determinado nivel de ingresos, el Departamento de Hacienda sabe que las 
 ### a)
 ¿Cuàl es la probabilidad de que la cantidad total declarada por concepto de estas tres deducciones, no sea mayor de $\$1600$?
 
-Respuesta.-
+Respuesta.- Sean,
+
+$$
+\begin{array}{rclccrcl}
+  E(X_1) &=& 400 &;& sd(X_1)&=&100\\
+  E(X_2) &=& 800 &;& sd(X_2)&=&800\\
+  E(X_3) &=& 100 &;& sd(X_3)&=&100
+\end{array}
+$$
+
+Por el teorema 7.2, con $a_i=1$, tenemos
+
+$$
+\begin{array}{rclclcr}
+  E(Y) &=& E(X_1)+E(X_2) +E(X_3) &=& 400+800+100 &=& 1300\\\\
+  \sqrt{sd(Y)} &=& \sqrt{sd^2(X_1) + sd^2(X_2) +sd^2(X_3)} &=& \sqrt{100^2+250^2+40^2} &=& \sqrt{74100}
+\end{array}
+$$
+
+Lo que implica que,
+
+$$Y\sim N\left(1300,\sqrt{74100}\right)$$
+
+Entonces, la probabilidad de que la cantidad total declarada por concepto de las deducciones dadas no se mayor a $\$ 1600$ será:
+
+$$P(Y\leq 1600)=0.864786$$
+
+```{r}
+pnorm(1600,1300,sqrt(74100))
+```
+
 
 ### b)
 Si una persona con este nivel de ingresos declara por concepto de estas deducciones un total de $\$ 2100$, ¿qué tan probable es tener una cantidad igual o mayor a este monto bajo las condiciones dadas?
 
-Respuesta.-
+Respuesta.- Sea $Y\sim N(1300,\sqrt{74100})$. Entonces,
+
+$$P(Y\geq 2100)=0.001647038$$
+
+```{r}
+pnorm(2100,1300,sqrt(74100),lower.tail = FALSE)
+```
 
 
 ## 7.11
 Una tienda de artículos eléctronicos para el hogar vende tres diferentes marcas de refrigeradores. Sean $X_1,X_2$ y $X_3$ variables aleatorias las cuales representan el volumen de ventas mensuales para cada una de las tres marcas de refrigeradores. Si $X_1,X_2$ y $X_3$ son variables aleatorias independientes normalmente distribuidas con medias $\$ 8000$, $\$15000$ y $\$12000$, y desviación estándar $\$2000$ $\$5000$ y $\$3000$, respectivamente, obtener la probabilidad de que, para un mes en particular, el volumen de venta total para los tres refrigeradores sea mayor de $\$50000$.
 
-Respuesta.-
+Respuesta.- Sean,
+
+$$
+\begin{array}{rclclcr}
+  E(Y) &=& E(X_1)+E(X_2) +E(X_3) &=& 8000+15000+12000  &=& 35000\\\\
+  \sqrt{sd(Y)} &=& \sqrt{sd^2(X_1) + sd^2(X_2) +sd^2(X_3)} &=& \sqrt{2000^2+5000^2+3000^2} &=& 6164.414
+\end{array}
+$$
+
+Lo que implica que,
+
+$$Y\sim N\left(35000,6164.414\right)$$
+
+Entonces, 
+
+$$P(Y\geq 5000)=0.007480509.$$
+```{r}
+EY = 8000+15000+12000
+sdY = sqrt(2000^2+5000^2+3000^2)
+pnorm(50000,EY,sdY,lower.tail = FALSE)
+```
 
 
 ## 7.12
-En una tienda de servicio el tiempo total del sistema consta de dos componentes (el lapso de tiempo que de esperar para que el servicio de comiento $(X_1)$ y el lapso de tiempo que este dura $(X_2)$). Si $X_1$ y $X_2$ son variables aleatorias independientes exponencialemente distribuidas con un tiempo medio de $4$ minutos cada una, ¿cuál es la probabilidad de que el tiempo total que tarda el sistema en proporcionar el servicio no sea mayor de $15$ minutos? (Sugerencia: consulte el ejercicio 7.9.)
+En una tienda de servicio el tiempo total del sistema consta de dos componentes (el lapso de tiempo que debe esperar para que el servicio de comienzo $(X_1)$ y el lapso de tiempo que este dura $(X_2)$). Si $X_1$ y $X_2$ son variables aleatorias independientes exponencialemente distribuidas con un tiempo medio de $4$ minutos cada una, ¿cuál es la probabilidad de que el tiempo total que tarda el sistema en proporcionar el servicio no sea mayor de $15$ minutos? (Sugerencia: consulte el ejercicio 7.9.)
 
-Respuesta.-
+Respuesta.- Por el ejercicio 7.9, tenemos
+$$m_Y(t) =\left(\dfrac{\theta}{\theta-t}\right)^2$$.
+
+tal que $Y=X_1+X_2$
+
+Entonces,
+
+$$m_Y(4)=\dfrac{}{-4}$$
+
+
+
+
+
 
 
 ## 7.13 
