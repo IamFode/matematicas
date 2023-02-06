@@ -794,8 +794,79 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 	Ya que $0\neq -7$ y $0\neq -2$, el vector $(3,-1,0,-1)$ no pertenece al subespacio generado por los vectores $(2,-1,3,2)$, $(-1,1,1,-3)$ y $(1,1,9,-5)$.\\\\
 
     %-------------------- 4.
-    \item Sea $W$
+    \item Sea $W$ el conjunto de todos los $(x_1,x_2,x_3,x_4,x_5)$ de $R^5$ que satisfacen
+    $$
+    \begin{array}{ccccccccccc}
+	2x_1 &-& x_2 &+& \frac{4}{3}x_3 &-& x_4 && &=& 0\\\\
+	x_1 &&  &+& \frac{2}{3}x_3 &&  &-& x_5 &=& 0\\\\
+	9x_1 &-&3x_2&+&6x_3&-&3x_4&-&3x_5&=&0 
+    \end{array}
+    $$
+    Encontrar un conjunto finito de vectores que genera $W$.\\\\
+	Respuesta.-\; Podemos escribir el sistema dado mediante la matriz y luego reducirla mediante la forma escalonada por filas, como sigue:
+	$$
+	\begin{array}{rcl}
+	    \left[
+		\begin{array}{rrrrr}
+		    2 & -1 & 4/3 & -1 & 0\\
+		    1 & 0 & 2/3 & 0 & -1\\
+		    9 & -3 & 6 & -3 & -3
+		\end{array}
+	    \right]
+	    & R_1 \leftrightarrow R_2 &
+	    \left[
+		\begin{array}{rrrrr}
+		    1 & 0 & 2/3 & 0 & -1\\
+		    2 & -1 & 4/3 & -1 & 0\\
+		    9 & -3 & 6 & -3 & -3
+		\end{array}
+	    \right]\\\\
+	    & R_2 - 2R_1 \to R_2 &
+	    \left[
+		\begin{array}{rrrrr}
+		    1 & 0 & 2/3 & 0 & -1\\
+		    0 & -1 & 0 & -1 & 2\\
+		    9 & -3 & 6 & -3 & -3
+		\end{array}
+	    \right]\\\\
+	    &R_3-9R_1 \to R_3& 
+	    \left[
+		\begin{array}{rrrrr}
+		    1 & 0 & 2/3 & 0 & -1\\
+		    0 & -1 & 0 & -1 & 2\\
+		    0 & -3 & 0 & -3 & 6
+		\end{array}
+	    \right]\\\\
+	    &-R_2\to R_2&
+	    \left[
+		\begin{array}{rrrrr}
+		    1 & 0 & 2/3 & 0 & -1\\
+		    0 & 1 & 0 & 1 & -2\\
+		    0 & -3 & 0 & -3 & 6
+		\end{array}
+	    \right]\\\\
+	    &R_3+3R_2\to R_3&
+	    \left[
+		\begin{array}{rrrrr}
+		    1 & 0 & 2/3 & 0 & -1\\
+		    0 & 1 & 0 & 1 & -2\\
+		    0 & 0 & 0 & 0 & 0 
+		\end{array}
+	    \right]
 
+	\end{array}
+	$$
+
+	Por lo tanto, 
+
+	$$
+	\begin{array}{rcl}
+	    x_1 &=& x_5-\frac{2}{3}x_3\\\\
+	    x_2&=& x_4 + 2x_5.
+	\end{array}
+	$$
+
+	Así, 
 
 \end{enumerate}
 

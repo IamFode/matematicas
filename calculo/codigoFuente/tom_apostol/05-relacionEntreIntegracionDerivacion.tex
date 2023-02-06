@@ -2797,27 +2797,84 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 								     &=& 2^5.
 	\end{array}
 	$$
-	\vspace{.5cm}
+	Donde $n=5$.\\\\
 
     %-------------------- 22.
     \item Determinar un par de números $a$ y $b$ para los cuales $\displaystyle\int_0^1(ax+b)\left(x~ 2+3x+2\right)^{-2}\; dx=\frac{3}{2}$.\\\\
 	Respuesta.-\; Aplicando la integración por partes, tenemos
 	$$u=x^2+3x+2\quad \Rightarrow \quad du=2x+3\; dx.$$
+	Para ello necesitamos que $ax+b$ en el numerador del integrando sea $2x+3$. Supongamos que hay alguna constante que podemos multiplicar por tal que $c(ax+b)=2x+3$. Entonces tenemos
+	$$
+	\begin{array}{rcl}
+	    \dfrac{1}{c}\displaystyle\int_0^1\dfrac{2x+3}{\left(x^2+3x+2\right)^2}\; dx &=& \displaystyle\int_{u(0)}^{u(1)}\dfrac{1}{u^2}\; du\\\\
+											&=&  \dfrac{1}{c}\left(-\dfrac{1}{u}\right)\bigg|_{u(0)}^{u(1)}\\\\
+											&=& \dfrac{1}{c}\left(-\dfrac{1}{x^2+3x+2}\right)\bigg|_0^1\\\\
+											&=& \dfrac{1}{c}\left(\dfrac{1}{3}\right).
+	\end{array}
+	$$
 
+	Luego, ya que la integral dada es igual a $\dfrac{3}{2}$. Entonces,
+
+	$$\dfrac{1}{3c}=\dfrac{3}{2}\quad \Rightarrow  \quad c=\dfrac{2}{9}.$$
+
+	Por lo tanto,
+
+	$$\dfrac{2}{9}(ax+b)=2x+3 \quad \Rightarrow \quad a=9;\quad b=\dfrac{27}{2}.$$\\
 
 
     %-------------------- 23.
-    \item Sea $I_n = \int_0^1 \left(1-x^2\right)^n\; dx$. Demostrar que $(2n+1)I_n=2nI_{n-1}$, y utilizar esta relación para $I_2$, $I_3$, $I_4$ e $I_5$.\\\\
-	Demostración.-\;
+    \item Sea $I_n = \displaystyle\int_0^1 \left(1-x^2\right)^n\; dx$. Demostrar que $(2n+1)I_n=2nI_{n-1}$, y utilizar esta relación para $I_2$, $I_3$, $I_4$ e $I_5$.\\\\
+	Demostración.-\; Aplicando la integración por partes, tenemos
+	$$
+	\begin{array}{rcl}
+	    u=\left(1-x^2\right)^n & \Rightarrow & du=-2xn\left(1-x^2\right)^{n-1}\; dx\\\\
+	    dv=dx & \Rightarrow & v=x.
+	\end{array}
+	$$
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    I_n = \displaystyle\int_0^1\left(1-x^2\right)^n\; dx &=& \left(uv-\displaystyle\int v\; du\right)\bigg|_0^1\\\\
+								 &=& x\left(1-x^2\right)^n\bigg|_0^1 +2n \displaystyle\int_0^1 x^2\left(1-x^2\right)^{n-1}\; dx\\\\
+								 &=& 2n\displaystyle\int_0^1 x^2\left(1-x^2\right)^{n-1}\; dx\\\\
+								 &=& 2n\displaystyle\int_0^1 \left(1-1+x^2\right)\left(1-x^2\right)^{n-1}\; dx\\\\
+								 &=& 2n\displaystyle\int_0^1 \left(4-x^2\right)^{n-1}\; dx-2n\int_0^1 \left(1-x^2\right)\left(1-x^2\right)^{n-1}\; dx\\\\
+								 &=& 2nI_{n-1} - 2nI_n.
+	\end{array}
+	$$
+	De donde,
+	$$(2n+1)I_n = 2nI_{n-1}.$$
+
+	Ahora, evaluemos $I_2$, $I_3$, $I_4$ e $I_5$. Para ello comencemos evaluando $I_1$ de la siguiente manera:
+
+	$$I_1=\displaystyle\int_0^1 \left(1-x^2\right)\; dx=\left(x-\dfrac{x^3}{3}\right)\bigg|_0^1=\dfrac{2}{3}$$
+
+	Aplicando $(2n+1)I_n = 2nI_{n-1}$, para $I_2$ tenemos
+
+	$$(2\cdot 2+1)I_2 = 2\cdot 2I_1 \quad \Rightarrow \quad 5I_2=5\cdot \dfrac{2}{3}\quad \Rightarrow \quad I_2=\dfrac{8}{15}.$$
+
+	Para $I_3$:
+
+	$$7I_3=6I_2\quad \Rightarrow \quad I_3=\dfrac{16}{35}.$$
+
+	Para $I_4$:
+
+	$$9I_4=8I_3\quad \Rightarrow \quad I_4=\dfrac{128}{315}.$$
+
+	Y finalmente para $I_5$:
+
+	$$11I_5=10I_4\quad \Rightarrow \quad I_5=\dfrac{256}{693}.$$\\
+
 
     %-------------------- 24.
-    \item Sea $F(m,n)=\int_0^x t^m(1+t)^n \; dt,$ $m>0$, $n>0$. Demostrar que
+    \item Sea $F(m,n)=\displaystyle\int_0^x t^m(1+t)^n \; dt,$ $m>0$, $n>0$. Demostrar que
     $$(m+1)F(m,n)+nF(m+1,n-1)=x^{m+1}(1+x)^n.$$
     Utilizar este resultado para calcular $F(10,2)$.\\\\
 	Demostración.-\;
 
     %-------------------- 25.
-    \item Sea $f(n)=\int_0^{\pi/4}x\; dx$ donde $n\geq 1$. Demostrar que
+    \item Sea $f(n)=\displaystyle\int_0^{\pi/4}x\; dx$ donde $n\geq 1$. Demostrar que
 
     \begin{enumerate}[(a)]
 
@@ -2826,11 +2883,11 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    Demostración.-\;
 
 	%---------- (b)
-	\item $f(n)+f(n-2)=\dfrac{1}{n-1}\quad \mbox{si} n>2$.\\\\
+	\item $f(n)+f(n-2)=\dfrac{1}{n-1}\quad \mbox{si } n>2$.\\\\
 	    Demostración.-\;
 
 	%---------- (c)
-	\item $\dfrac{1}{n+1}<2f(n)<\dfrac{1}{n-1}\quad \mbox{si} n>2$.\\\\
+	\item $\dfrac{1}{n+1}<2f(n)<\dfrac{1}{n-1}\quad \mbox{si } n>2$.\\\\
 	    Demostración.-\;
 
     \end{enumerate}

@@ -2686,14 +2686,136 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
     $$f(x)>f(a)\mbox{ si } a<x<a+\delta$$
     y
     $$f(x)<f(a)\mbox{ si }a-\delta<x<a.$$
-    Observe que esto no significa que $f$ sea creciente en el intervalo $(a — \delta, a + \delta)$; por ejemplo, la función de la Figura 34 es creciente en $0$, pero no es una función creciente en cualquier intervalo¡ abierto que contenga $0$.
+    Observe que esto no significa que $f$ sea creciente en el intervalo $(a - \delta, a + \delta)$; por ejemplo, la función de la Figura 34 es creciente en $0$, pero no es una función creciente en cualquier intervalo abierto que contenga $0$.\\
 
 	\begin{enumerate}[(a)]
 
 	    %---------- (a)
-	    \item 
+	    \item Suponga que $f$ es continua en $[0,1]$ y que $f$ es creciente en $a$ para todo $(a-\delta,a+\delta)$. (El lector debe convencerse, en primer lugar, que hay algo que se debe demostrar). Indicación: Para $0<b<1$, demuestre que el mínimo de $f$ en $[b,1]$ debe situarse en $b$.\\\\
+		Demostración.-\; Primero, sea $c\in(b,1]$ tal que $f(c)$ es el mínimo $[b,1].$ Entonces, para todo $x\in [b,1]$,
+		$$f(x)\geq f(c).$$
+		Lo que contradice el hecho de que $f$ es creciente en $c$. Por lo que, podríamos decir que $f(b)$ es el mínimo en $[b,1]$.\\
+		Ahora, sean $a,b\in [a,b]$ tal que $a<b$. Entonces, tenemos que $f$ tiene un mínimo en $a\in [a,1]$ y ya que $a<b$, $b\in [a,1]$. De lo que tenemos,
+		$$f(a)\leq f(b).$$
+
+		Además podemos decir que se tiene el mismo argumento para cualquier $a'\in(a,a+\delta)$, donde $\delta>0$ tal que
+		$$f(a)<f(x),\mbox{ para todo }x\in (a,a+\delta).$$
+		Así,
+		$$f\left(a'\right)\leq f(b).$$
+
+		También, ya que $f$ es creciente en $a$, se obtiene
+		$$f(a)<f\left(a'\right)\leq f(b).$$
+		Lo que que demuestra 
+		$$f(a)<f(b).$$\\
+
+
+	    %---------- (b)
+	    \item Demuestre la parte (a) sin suponer que $f$ sea continua, considerando para cada $b$ en $[0,1]$ el conjunto $S_b=\left\{x:f(y)\geq f(b)\mbox{ para todo } y \mbox{ de } [b,x]\right\}$. (Esta parte del problema no hace falta para las demás partes). Indicación: Demuestre que $S_b=\left\{x:b\leq x\leq 1\right\}$ considerando $\sup S_b$.\\\\
+		Demostración.-\; Sea $S_b=\left\{x:f(y)\geq f(b),\; \forall y\in [b,x]\right\}$. De donde, afirmamos que 
+		$$\sup S_b=1.$$
+
+		Está claro que $1$ es un límite superior de $S_b$. Suponga $\sup S_b=x_0<1.$ Ya que $f$ es creciente en $x_0$, entonces existe $\delta>0$ tal que, para $y\in (x_0-\delta,x_0)$,
+		$$f(y)>f(x_0).$$
+
+		Ahora, como $x_0$ es el supremo de $S_b$, existe $y\in S_b$ tal que $y\in (x_0-\delta,x_=)$. Se sigue que
+		$$f(b)\leq f(y)<f(x_0)<f(z)$$
+		para todo $z\in (x_0,x_0+\delta).$ Así, $z\in S_b$, lo que es imposible dado que $z>x_0$ y $x_0$ es el supremo de $S_b$. Por lo tanto, tiene que ser $\sup S_b = 1$.\\\\
+
+	    %---------- (c)
+	    \item Si $f$ es creciente en $a$ y $f$ es diferenciable en $a$, demuestre que $f'(a)\geq 0$ (esto es fácil).\\\\
+		Demostración.-\; Como $f$ es creciente en $a$, por definición tenemos que existe un $\delta>0$ tal que,
+		$$f(x)<f(a), \; \forall x\in (a-\delta,a)$$
+
+		y 
+
+		$$f(x)>f(a),\; \forall x\in (a,a+\delta).$$
+
+		De donde tenemos que para $h<0$,
+
+		$$\dfrac{f(a+h)-f(a)}{h}>0.$$
+
+		Luego, para $h>0$, se tiene
+
+		$$\dfrac{f(a+h)-f(a)}{h}>0$$
+
+		Lo que demuestra que
+
+		$$f\left(a^-\right)=\lim_{h\to 0^-}\dfrac{f(a+h)-f(a)}{h}>0$$
+
+		y 
+
+		$$f\left(a^+\right)=\lim_{h\to 0^+}\dfrac{f(a+h)-f(a)}{h}>0$$
+
+		Por lo tanto, ya que $f$ es diferenciable en $a$, se tiene 
+		$f'(a)f'\left(a^-\right)=f'\left(a^+\right)>0$.\\\\
+
+	    %---------- (d)
+	    \item Si $f'(a)>0$, demuestre que $f$ es creciente en $a$ (a partir de la definición de $f(a)$).\\\\
+		Demostración.-\; Ya que $f'(a)>0$, por definición de derivada tenemos,
+		$$\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}=f'(a)>0.$$
+		Luego, para $\epsilon<\dfrac{f'(a)}{2}$, existe $\delta>0$ tal que,
+		$$\bigg|\dfrac{f(a+h)-f(a)}{h}-f'(a)\bigg|<\epsilon<\dfrac{f'(a)}{2}.$$
+		Lo que implica, 
+		$$f'(a)-\dfrac{f'(a)}{2}<\dfrac{f(a+h)-f(a)}{h}<f'(a)+\dfrac{f'(a)}{2}$$
+		Así, 
+		$$\dfrac{f'(a)}{2}<\dfrac{f(a+h)-f(a)}{h}<\dfrac{2f'(a)}{2}.$$
+		Ahora, dado que $f'(a)>0$, entonces
+		$$\dfrac{f(a+h)-f(a)}{h}>.0$$
+
+		De donde, se sigue
+		\begin{center}
+		    $f(a+h)-f(a)<0$ si $h<0$, y $f(a+h)-f(a)>0$ si $h>0$.
+		\end{center}
+
+		Lo que demuestra que $f$ es creciente en $a$.\\\\
+
+
+	    %---------- (e)
+	    \item Utilice las partes (a) y (d) para demostrar, sin hacer uso del Teorema del Valor Medio, que si $f$ es continua en $[0,1]$ y $f'(a)>0$ para todo $a$ en $[0,1]$, entonces $f$ es creciente en $[0,1]$.\\\\
+		Demostración.-\; Ya que $f'(a)>0$ para todo $a$ en $[0,1]$. Entonces, por la parte (d) tenemos que $f$ es creciente para todo $a\in [0,1]$. Luego, por la parte (a) tenemos que $f$ es creciente en $[0,1]$.\\\\
+
+	    %---------- (f)
+	    \item Suponga que $f$ es continua en $[0,1]$ y $f'(a)=0$ para todo $a$ de $(0,1)$. Aplique la parte (e) a la función $g(x)=f(x)+\epsilon x$ para demostrar que $f(1)-f(0)>-\epsilon$. Análogamente, demuestre que $f(1)-f(0)<\epsilon$ considerando $h(x)=\epsilon x-f(x)$. Concluya que $f(0)=f(1)$.\\\\
+		Demostración.-\; Sea $f$ una función continua en $[0,1]$ y $f'(a)=0$ para todo $a\in (0,1)$. Sea también $g$ una función definida por
+		$$g(x)=f(x)+\epsilon x.$$
+		Entonces, 
+		$$g'(x)+f'(x)+\epsilon.$$
+
+		Ya que, $f'(x)=0$ para cualquier $x\in (0,1)$, se tiene
+		$$g'(x)=\epsilon >0.$$
+
+		Así, por la parte (e) tenemos que $g$ es creciente en $[0,1]$. Luego, 
+		$$g(1)>g(0),$$
+		lo que implica
+
+		$$f(1)+\epsilon>f(0) \qquad \Rightarrow \quad f(1)-f(0)>-\epsilon.$$
+
+		Ahora, sea $h$ una función definida por:
+
+		$$h(x)=\epsilon x- f(x).$$
+
+		Entonces, 
+
+		$$h'(x)=\epsilon-f'(x).$$
+
+		Luego, dado que $f'(x)=0$ para cualquier $x\in (0,1)$, tenemos
+
+		$$h'(x)=\epsilon>0$$
+
+		Así, por la parte (e) tenemos que $h$ es creciente en $[0,1]$. Por lo que,
+
+		$$h(1)>h(0).$$
+		
+		Que implica
+
+		$$-f(1)+\epsilon>-f(0)\quad \Rightarrow \quad f(1)-f(0)<\epsilon.$$\\
 
 	\end{enumerate}
+
+ 	Esta demostración particular de que una función con derivada nula debe ser constante coincide en muchos puntos con una demostración de H. A. Schwarz, la cual es posible que sea la primera demostración rigurosa que se haya dado de este hecho. Al menos su descubridor así parecía creerlo. Vea su exuberante carta en la referencia [54] de la bibliografía.
+
+    %-------------------- 70
+    \item 
 	
 \end{enumerate}
 
