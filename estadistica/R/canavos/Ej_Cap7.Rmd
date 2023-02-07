@@ -276,66 +276,119 @@ $$m_Y(t) =\left(\dfrac{\theta}{\theta-t}\right)^2$$.
 
 tal que $Y=X_1+X_2$
 
-Entonces,
-
-$$m_Y(4)=\dfrac{}{-4}$$
-
-
-
-
-
-
 
 ## 7.13 
 Sea $X_1,X_2,\ldots, X_n$ una muestra aleatoria de una población que tiene una distribución gama con parámetros $\alpha$ y $\theta$. Mediante el uso de la función generadora de momentos, demostrar que la distribución dela media muestral $\overline{X}$ también es de tipo gama, con parámetros de escala y de forma iguales a $n\alpha$ y $\theta/n$ respectivamente.
 
-Respuesta.-
 
 
 ## 7.14
-Miediante el emeplo de los resultados de la sección 5.9, generar números aleatorios para las distribuciones binomial y exponencial y usarlos para demostrar el teorema central del límite. De manera específica, para $n=10$ y $n=40$, generar $50$ muestras de una distribución binomial con $p=0.4$. Repetir el procedimiento anterior generando $50$ muestras de una distribución exponencial con parámetro $\theta=100$. ¿Se ha demostrado el teorema central del límite en un grado razonable?.
+Mediante el empleo de los resultados de la sección 5.9, generar números aleatorios para las distribuciones binomial y exponencial y usarlos para demostrar el teorema central del límite. De manera específica, para $n=10$ y $n=40$, generar $50$ muestras de una distribución binomial con $p=0.4$. Repetir el procedimiento anterior generando $50$ muestras de una distribución exponencial con parámetro $\theta=100$. ¿Se ha demostrado el teorema central del límite en un grado razonable?.
 
-Respuesta.-
 
 
 ## 7.15
-Para cierta prueba de aptitud se sabe con base a la experiencia que el número e aciertos es $1000$ con una desviación estándar de $126$. Si se aplica la prueba a $100$ personas seleccionadas al azar, aproximar las siguientes probabilidades que involucran a la media muestra $\overline{X}$.
+Para cierta prueba de aptitud se sabe con base a la experiencia que el número de aciertos es $1000$ con una desviación estándar de $126$. Si se aplica la prueba a $100$ personas seleccionadas al azar, aproximar las siguientes probabilidades que involucran a la media muestra $\overline{X}$.
 
 ### a)
 $P\left(985<\overline{X}<1015\right)$
 
-Respuesta.-
+Respuesta.- Sea, $Z=\dfrac{\overline{X}-\theta}{\theta/\sqrt{n}}$, $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$
+\begin{array}{rcl}
+  P(985<\overline{X}<1015)&=&P\left(985-\mu<\overline{X}-\mu<1015-\mu\right)\\\\
+  &=& P\left(\dfrac{985-\mu}{\sigma/\sqrt{n}}<\dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}<\dfrac{1015-\mu}{\sigma/\sqrt{n}}\right)\\\\
+  &=& P\left(\dfrac{985-1000}{126/\sqrt{100}}<Z<\dfrac{1015-1000}{126/\sqrt{100}}\right)\\\\
+  &=& 0.7661407. 
+\end{array}
+$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1015,mu,sd/sqrt(n)) - pnorm(985,mu,sd/sqrt(n))  
+```
+
 
 ### b)
 $P\left(960<\overline{X}<1040\right)$
 
-Respuesta.-
+Respuesta.- Sean $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$P\left(\dfrac{960-1000}{126/\sqrt{100}}<Z<\dfrac{1040-1000}{126/\sqrt{100}}\right)=0.9984996.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1040,mu,sd/sqrt(n)) - pnorm(960,mu,sd/sqrt(n))  
+```
 
 ### c)
 $P\left(\overline{X}>1020\right)$
 
-Respuesta.-
+Respuesta.- Sean $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$P\left(Z>\dfrac{1020-1000}{126/\sqrt{100}}\right)=0.05622218.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1020,mu,sd/sqrt(n),lower.tail = FALSE)
+```
 
 ### d)
 $P\left(\overline{X}<975\right)$
 
-Respuesta.-
+Respuesta.- Sean $\mu=1000$, $n=100$ y $\sigma=126$. Entonces,
+
+$$P\left(Z<\dfrac{975-1000}{126/\sqrt{100}}\right)=0.02362084.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(975,mu,sd/sqrt(n))  
+```
 
 
 ## 7.16
 Una contratista piensa comprar una gran cantidad de lámparas de alta intensidad a cierto fabricante. Este asegura al contratista que la duración promedio de las lámparas es de $1000$ horas con una desviación estándar igual a $80$ horas: El contratista decide comprar las lámparas sólo si una muestra aleatoria de $64$ de estas da como resultado una vida promedio de por lo menos $1000$ horas. ¿Cuàl es la probabilidad de que el contratista adquiera las lámparas?
 
-Respuesta.-
+Respuesta.- Sean, $\mu=1000$, $n=64$  y $\sigma=80$. Entonces,
+
+$$P\left(Z>\dfrac{1000-1000}{80/\sqrt{64}}\right)=0.5.$$
+
+```{r}
+mu = 1000
+sd = 80
+n = 64
+pnorm(1000,mu,sd/sqrt(n))  
+```
 
 
 ## 7.17
-Un inspector federal de pesos y medidas visita una planta de empacado para verificar que el peso neto de las cajas sea el indicado en estas. El genente de la planta asegura al inspector que el peso promedio de cada caja es de $750$ gr. con una desviación estándar de $5$ gr. Bajo estas condiciones, ¿què tan probable es tener un peso de $748$ o menos? ¿Qué actitud debe tomar el inspector?
+Un inspector federal de pesos y medidas visita una planta de empacado para verificar que el peso neto de las cajas sea el indicado en estas. El gerente de la planta asegura al inspector que el peso promedio de cada caja es de $750$ gr. con una desviación estándar de $5$ gr. El inspector selecciona, al azar, $100$ cajas y encuentra que el peso promedio es de $748$ gr. Bajo estas condiciones, ¿qué tan probable es tener un peso de $748$ o menos? ¿Qué actitud debe tomar el inspector?
 
-Respuesta.-\; 
+Respuesta.- Sean, $\mu=750$, $n=100$  y $\sigma=5$. Entonces,
+
+$$P\left(Z<\dfrac{748-750}{5/\sqrt{100}}\right)=0.000031671245.$$
+
+```{r}
+mu = 750
+sd = 5 
+n = 100
+pnorm(748,mu,sd/sqrt(n))  
+```
+
+El inspector confirma que el peso es el que se dio cómo hipótesis.
 
 
 ## 7.18
-En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El preceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. EL proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
+En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El proceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. EL proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
 
 Respuesta.-
 

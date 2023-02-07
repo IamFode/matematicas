@@ -866,7 +866,62 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 	\end{array}
 	$$
 
-	Así, 
+	Así, el conjunto que genera $W$ estará dada por la forma:
+
+	$$W=\left\{\left(x_5-\dfrac{2}{3}x_3,x_4+2x_5,x_3,x_4,x_5\right)\in R^5\right\}$$
+
+	De lo que, un conjunto generado para $W$ viene dado por los vectores:
+
+	$$(-2,0,3,0,0),\quad (0,-1,0,1,0)\quad y \quad (1,2,0,0,1).$$\\
+
+    %-------------------- 5.
+    \item Sean $F$ un cuerpo y $n$ un entero postivo $(n\geq 2)$. Sea $V$ el espacio vectorial de todas las matrices $n\times n$ sobre $F$. ¿Cuáles de los siguientes conjuntos de matrices $A$ de $V$ son subespacios de $V$?\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item todas las $A$ inversibles;\\\\
+		Respuesta.-\; Supongamos que $A\in W_1$ es invertible. Entonces, para $c=0\in F$ tenemos $0\cdot A = 0$, donde $0$ es la matriz y este no es invertible. Por lo tanto, $0\cdot A \notin W_1$. Es decir, $W_1$ no es cerrado respecto a la multiplicación escalar.\\\\
+
+	    %---------- (b)
+	    \item todas las $A$ no inversibles;\\\\
+		Respuesta.-\; Sean dos matrices $2\times 2$ sobre $F$, tal que no son invertibles:
+		$$
+		A=
+		\left[
+		    \begin{array}{rr}
+			1 & 0\\
+			0 & 0
+		    \end{array}
+		\right]
+		\quad y \quad B=
+		\left[
+		    \begin{array}{rr}
+			0 & 0\\
+			0 & 1
+		    \end{array}
+		\right]
+		$$
+
+		Pero la suma de estas dos matrices es la matriz identidad, es decir, $A+B=I$, es invertible. Por lo que la suma no es cerrada respecto a la adición.\\\\
+
+
+	    %---------- (c)
+	    \item todas las $A$ para las que $AB=BA,$ donde $B$ es cierta matriz dada de $V$;\\\\
+		Respuesta.-\; Sean, $A_1$ y $A_2$ dos matrices en $V$ tal que $A_1B=BA_2$ y $A_2B=BA_2$. Entonces, por el definición de subespacio y el teorema 1, para algún $c\in F$:
+		$$
+		\begin{array}{rcl}
+		    cA_1B+BA_2&=&cBA_1+BA_2\\\\
+		\end{array}
+		$$
+
+		Por lo tanto, este conjunto es un subespacio de $V$.\\\\
+
+	    %---------- (d)
+	    \item todas las $A$ para las que $A^2=A$.\\\\
+		Respuesta.-\;
+
+	\end{enumerate}
 
 \end{enumerate}
 

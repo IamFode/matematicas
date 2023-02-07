@@ -39,5 +39,50 @@ para cualquier $x \in V$. El número de vectores base en $V$ se denomina dimensi
 
 \section{Producto punto y Proyección}
 
+Si $\textbf{x}=(x_1,x_2,\ldots,x_n)$ e $\textbf{y}=(y_1,y_2,\ldots, y_n)$ dos vectores en un espacio Euclidiano vectorial $\textbf{R}^n$. El producto punto de los vectores $\textbf{x}$ e $\textbf{y}$ de define como
+
+$$\textbf{x}\cdot \textbf{y} = x_1y_1+x_2y_2+\cdots + x_ny_n.$$
+
+Dos vectores se llaman ortogonales si su  producto vectorial es $0$. Si $\theta$ es el ángulo entre dos vectores, el coseno del angulo se define por
+
+\begin{tcolorbox}
+    \begin{equation}
+	\cos(\theta)=\dfrac{\textbf{x}\cdot \textbf{y}}{|\textbf{x}||\textbf{y}|}=\dfrac{x_1y_1+x_2y_2+\ldots  +x_ny_n}{\sqrt{x_1^2+x_2^2+\ldots + x_n^2}\sqrt{y_1^2+y_2^2+\ldots + y_n^2}}.
+    \end{equation}
+\end{tcolorbox}
+
+Dos vectores ortogonales forman $90^\circ$ ;Es decir, son perpendiculares. Una aplicación importante del producto punto es la proyección. La proyección de un vector \textbf{y} sobre otro vector \textbf{x} forma un nuevo vector que tiene la misma dirección que el vector \textbf{x} y la longitud $|y|\cos(\theta)$, donde $|\textbf{y}|$ denota la longitud del vector \textbf{y} y $\theta$ es el ángulo entre los vectores. Escribimos la proyección como $P_{\textbf{x}}\textbf{y}$. La proyección vectorial puede ser expresado como
+
+$$
+\begin{array}{rcl}
+    P_{\textbf{x}}\textbf{y} &=& |\textbf{y}|\cos(\theta)\dfrac{\textbf{x}}{|\textbf{x}|}\\\\
+			     &=& |\textbf{y}|\dfrac{\textbf{x}\cdot \textbf{y}}{|\textbf{x}||\textbf{y}|}\dfrac{\textbf{x}}{|\textbf{x}|} \\\\
+			     &=& \dfrac{x_1y_1+x_2y_2+\cdots + x_ny_n}{x_1^2+x_2^2+\cdots + x_n^2}\textbf{x}\\\\
+			     &=& \lambda \textbf{x}.\\\\
+\end{array}
+$$
+
+Donde $\lambda$ es un escalar, 
+
+\begin{tcolorbox}
+    \begin{equation}
+	\lambda=\dfrac{x_1y_1+x_2y_2+\cdots x_ny_n}{x_1^2+x_2^2 + \cdots + x_n^2}=\dfrac{\textbf{x}\cdot \textbf{y}}{\textbf{x}\cdot \textbf{x}}.
+    \end{equation}
+\end{tcolorbox}
+
+Así, la proyección de \textbf{y} sobre el vector \textbf{x} es un vector \textbf{x} que multiplica un escalar $\lambda$ donde $\lambda$ es el $\cos(\theta)$ y $\theta$ es el ángulo entre los vectores \textbf{x} e \textbf{y}.\\
+
+Si \textbf{x} e \textbf{y} son dos vectores en $\mathbb{R}^n$. Consideremos la diferencia vector entre el vector \textbf{e}, $\textbf{e}=\lambda \textbf{x}-\textbf{y}$, y $\;\lambda = \textbf{x}\cdot\textbf{y}/\textbf{x}\cdot \textbf{x}.$ El vector \textbf{e} es perpendicular para el vector \textbf{x} donde $\lambda=(\textbf{x}\cdot \textbf{y})/(\textbf{x}\cdot \textbf{x})$. Para ver esto, simplemente calculamos el producto escalar de \textbf{e} y \textbf{x}:
+
+$$\textbf{e}\cdot \textbf{x} = (\lambda \textbf{x}-\textbf{y})\cdot\textbf{x}=\lambda \textbf{x}\cdot \textbf{x}-\textbf{x}\cdot \textbf{y}=\left(\dfrac{\textbf{x}\cdot \textbf{y}}{\textbf{x}\cdot \textbf{x}}\right)\textbf{x}\cdot \textbf{x}-\textbf{x}\cdot\textbf{y}=0.$$
+
+Por lo tanto, el ángulo entre \textbf{e} y \textbf{x} es $90^\circ$. Es decir, estos vectores son perpendiculares. Además, dado que \textbf{e} es perpendicular a \textbf{x}, es el vector con la distancia más corta entre todos los vectores que comienzan desde el final de \textbf{y} y terminan en cualquier punto de \textbf{x}.\\
+
+Si un espacio vectorial tiene una base y la longitud de los vectores base es una unidad, entonces esta base es una base ortonormal. Cualquier base dividida por su longitud forma una base ortonormal. Si $S$ es un subespacio p-dimensional de un espacio vectorial $V$, entonces es posible proyectar vectores en $V$ sobre $S$. Si el subespacio $S$ tiene una base ortonormal $(w_1, w_2, \ldots , w_p)$, para cualquier vector \textbf{y} en $V$, la proyección de \textbf{y} sobre el subespacio $S$ es
+
+\begin{equation}
+    P_{S}\textbf{y}=\sum_{i=1}^p (\textbf{y}\cdot w_i)w_i.
+\end{equation}
+
 
 
