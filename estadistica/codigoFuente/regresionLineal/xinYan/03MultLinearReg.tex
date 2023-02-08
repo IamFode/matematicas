@@ -76,7 +76,7 @@ Si \textbf{x} e \textbf{y} son dos vectores en $\mathbb{R}^n$. Consideremos la d
 
 $$\textbf{e}\cdot \textbf{x} = (\lambda \textbf{x}-\textbf{y})\cdot\textbf{x}=\lambda \textbf{x}\cdot \textbf{x}-\textbf{x}\cdot \textbf{y}=\left(\dfrac{\textbf{x}\cdot \textbf{y}}{\textbf{x}\cdot \textbf{x}}\right)\textbf{x}\cdot \textbf{x}-\textbf{x}\cdot\textbf{y}=0.$$
 
-Por lo tanto, el ángulo entre \textbf{e} y \textbf{x} es $90^\circ$. Es decir, estos vectores son perpendiculares. Además, dado que \textbf{e} es perpendicular a \textbf{x}, es el vector con la distancia más corta entre todos los vectores que comienzan desde el final de \textbf{y} y terminan en cualquier punto de \textbf{x}.\\
+Por lo tanto, el ángulo entre \textbf{e} y \textbf{x} es $90^\circ$. Es decir, estos vectores son perpendiculares. Además, dado que \textbf{e} es perpendicular a \textbf{x}, es el vector con la distancia más corta entre todos los vectores que comienzan desde el final de \textbf{y}, y terminan en cualquier punto de \textbf{x}.\\
 
 Si un espacio vectorial tiene una base y la longitud de los vectores base es una unidad, entonces esta base es una base ortonormal. Cualquier base dividida por su longitud forma una base ortonormal. Si $S$ es un subespacio p-dimensional de un espacio vectorial $V$, entonces es posible proyectar vectores en $V$ sobre $S$. Si el subespacio $S$ tiene una base ortonormal $(w_1, w_2, \ldots , w_p)$, para cualquier vector \textbf{y} en $V$, la proyección de \textbf{y} sobre el subespacio $S$ es
 
@@ -84,5 +84,70 @@ Si un espacio vectorial tiene una base y la longitud de los vectores base es una
     P_{S}\textbf{y}=\sum_{i=1}^p (\textbf{y}\cdot w_i)w_i.
 \end{equation}
 
+Sean dos subespacios $S$ y $T$ del espacio vectorial $V$ y la unión $S\cup T = V$. Si para cualquier vector $\textbf{x}\in S$ y cualquier $\textbf{y}\in T$, tal que el producto punto $\textbf{x}\cdot \textbf{y}=0$, entonces se dice que los dos espacios vectoriales $S$ y $T$ son ortogonales. O podemos decir que $T$ es el espacio ortogonal de $S$, denotado por 
+$$T=S^{\perp}.$$
 
+Así, para un espacio vectorial $V$, si $S$ es un subespacio vectorial en $V$, entonces $V=S\cup S^{\perp}$. Cualquier vector $\textbf{y}\in V$ puede ser escrito de manera única como $\textbf{y}_{S}+\textbf{y}_S^{\perp}$, donde $\textbf{y}_S\in S$ e $\textbf{y}_S^{\perp}$ es en $S^{\perp}$, el subespacio ortogonal de $S$.\\
+
+Una proyección de un vector sobre un espacio lineal $S$ es en realidad una transformación lineal del vector y se puede representar mediante una matriz de proyección multiplicada por el vector. Una matriz de proyección $P$ es una matriz cuadrada de $n \times n$ que da la proyección de $\mathbb{R}^n$ al subespacio $S$. Las columnas de $P$ son las proyecciones de los vectores base estándar, y $S$ es la imagen de $P$. Para la matriz de proyección tenemos los siguientes teoremas.
+
+%-------------------- Teorema 3.1 --------------------
+\begin{teo}
+    Un matriz cuadrada $P$ es una matriz de proyección si y solo si es idempotente. Es decir, $P^2=P$.
+\end{teo}
+
+%-------------------- Teorema 3.2 --------------------
+\begin{teo}
+    Sea $U=(u_1,u_2,\cdots , u_k)$ una base ortonormal para un subespacio $W$ del espacio lineal $V$. La matriz $UU'$ es una matriz proyección de $V$ sobre $W$. Es decir, para cualquier valor $v\in V$ la proyección  de $v$ sobre $W$ es $\Proj_W v=UU'v$.
+\end{teo}
+
+La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende de la elección de la base ortonormal. Si no partimos de una base ortonormal de $W$, podemos construir la matriz de proyección. Esto se puede resumir en el siguiente teorema.
+
+%-------------------- Teorema 3.3 --------------------
+\begin{teo}
+    Sea $A=(a_1,a_2,\ldots,a_k)$ cualquier base para un subespacio $W$ de $V$. La matriz $A(A'A)^{-1}A'$ es una matriz proyección de $V$ sobre $W$. Es decir, para cualquier vector $v\in V$ la proyección de $v$ sobre $W$ es
+    \begin{equation}
+	\Proj_W v=A(A'A)^{-1}A'v.
+    \end{equation}
+\end{teo}
+
+Para comprender los tres teoremas anteriores, es importante el siguiente lema.
+
+%-------------------- Lema 3.1 --------------------
+\begin{lema}
+    Suponga que $A$ es una matriz $a\times k$ donde sus columnas son linealmente independientes. Entonces, $AA'$ es invertible.\\\\
+	Demostración.-\; Considere la transformación $A:\mathbb{R}^k\to \mathbb{R}^k$ determinado por $A$. Ya que las columnas de $A$ son linealmente independientes, esta transformación es uno a uno. Además, el espacio nulo de $A'$ es ortogonal al espacio columna de $A$. Por lo tanto, $A'$ es uno a uno en el espacio columna de $A$ y como resultado, $A'A$ es una transformación uno a uno $\mathbb{R}^k\to \mathbb{R}^k$. Por el teorema de matriz invertida, $A'A$ es invertible.
+\end{lema}
+
+Derivemos ahora la matriz de proyección para el espacio de columnas de $A$. Obsérvese que cualquier elemento del espacio de columnas de $A$ es una combinación lineal de las columnas de $A$, es decir, $x_1 a_1 + x_2 a_2 + \cdots + x_k a_k$ . Si escribimos
+
+$$
+x=
+\left(
+    \begin{array}{c}
+	x_1\\
+	x_2\\
+	\vdots\\
+	x_k
+    \end{array}
+\right),
+$$
+
+entonces, tenemos
+
+$$x_1a_1+x_2a_2+\cdot + x_ka_k=A\textbf{x}.$$
+
+Ahora, para cualquier vector $v\in \mathbb{R}^n$, denotemos la proyección de $v$ sobre $W$ por $x_p$.
+
+$$\Proj_w v = Ax_p.$$
+
+La matriz de proyección se puede encontrar calculando $x_p$. La proyección del vector $v$ sobre $W$ se caracteriza por el hecho de que $v - \Proj_W v$ es ortogonal a cualquier vector $w$ en $W$. Así tenemos
+
+$$w\cdot (v-\Proj_w v)=0$$
+
+para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
+
+$$A\textbf{x}(v-Ax_p)=0$$
+
+para todo $\textbf{x}\in \mathbb{R}^n$. Escriba este producto escalar en términos de rendimientos de matrices
 

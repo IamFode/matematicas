@@ -388,15 +388,62 @@ El inspector confirma que el peso es el que se dio cómo hipótesis.
 
 
 ## 7.18
-En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El proceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. EL proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
+En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El proceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. El proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
 
-Respuesta.-
+Respuesta.- Sean $\mu=5$, $\sigma=0.005$, $n=64$ y $Z_{0.95}=1.6448$. Entonces
+
+$$P\left(\dfrac{\theta_1-\mu}{\sigma/\sqrt{n}}<Z<\dfrac{\theta_2-\mu}{\sigma/\sqrt{n}}\right)=0.95.$$
+
+Sea $Z_{0.95}=1.644854$. Igualando $Z=\dfrac{\theta-\mu}{\sigma/\sqrt{n}}=1.644854$, entonces despejando $\theta$, tenemos
+
+$$\theta=\mu\pm Z\cdot \sigma/\sqrt{n}$$
+
+Pero dado, que $Z$ se encuentra entre un límite superior e inferior entonces dividimos $Z$ por 2. Es decir,
+
+$$\theta=\mu\pm Z/2\cdot \sigma/\sqrt{n}$$
+
+Por lo tanto
+
+$$
+\begin{array}{rclcl}
+  \theta_1 &=& 5+1.6448/2\cdot 0.005/\sqrt{64} &=& 5.000514.\\\\
+  \theta_2 &=& 5-1.6448/2\cdot 0.005/\sqrt{64} &=& 4.999486.
+\end{array}
+$$
+
+
+
+
+```{r}
+Z = qnorm(0.95)
+mu = 5
+sigma = 0.005
+n = 64
+mu+Z/2*sigma/sqrt(n)
+mu-Z/2*sigma/sqrt(n)
+```
+
 
 
 ## 7.19
-En la producción de cierto material para soldar se sabe que la desviación estándar de a tensión de ruptura de este material de $25$ libras. ¿Cuál debe ser la tensión de ruptura promedio del proceso si, con base en una muestra aleatoria de $50$ especímenes, la probalidad de que la media muestral tenga un valor mayor que $250$ libras es de $0.95$?
+En la producción de cierto material para soldar se sabe que la desviación estándar de a tensión de ruptura de este material es de $25$ libras. ¿Cuál debe ser la tensión de ruptura promedio del proceso si, con base en una muestra aleatoria de $50$ especímenes, la probabilidad de que la media muestral tenga un valor mayor que $250$ libras es de $0.95$?
 
-Respuesta.-
+Respuesta.- Sean $\sigma=25$, $n=50$, $\theta=250$ y $Z_{0.95}=1.6448.$ Entonces,
+
+$$Z=\dfrac{\theta-\mu}{\sigma/\sqrt{n}}.$$
+
+Despejando $\mu$, tenemos
+
+$$\mu=\theta-Z\cdot \sigma/\sqrt{n}=250-1.6448\cdot 25/\sqrt{50}=255.8154.$$
+
+
+```{r}
+Z = qnorm(0.05)
+sigma=25
+n=50
+theta=250
+theta-Z*sigma/sqrt(n)
+```
 
 
 ## 7.20

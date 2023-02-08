@@ -2871,7 +2871,51 @@ Con el método de integración por partes calcular las integrales de los Ejercic
     \item Sea $F(m,n)=\displaystyle\int_0^x t^m(1+t)^n \; dt,$ $m>0$, $n>0$. Demostrar que
     $$(m+1)F(m,n)+nF(m+1,n-1)=x^{m+1}(1+x)^n.$$
     Utilizar este resultado para calcular $F(10,2)$.\\\\
-	Demostración.-\;
+	Demostración.-\; Aplicando la integración por partes, tenemos
+	$$
+	\begin{array}{rcl}
+	    u)(1+t)^n & \Rightarrow & du=n(1+t)^{n-1}\; dt\\\\
+	    dv = t^m \; dt & \Rightarrow & v=\dfrac{t^{m+1}}{m+1}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    F(m,n) &=& \displaystyle\int_0^x t^m(1+t)^n \; dt\\\\
+		   &=& \left(uv-\displaystyle\int v\; du\right)\bigg|_0^x\\\\
+		   &=& \dfrac{x^{m+1}}{m+1}(1+x)^n\bigg|_0^x - \dfrac{n}{m+1}\displaystyle\int_0^x t^{m+1}(1+t)^{n-1}\; dt\\\\
+		   &=& \dfrac{x^{m+1}}{m+1}(1+x)^n - \dfrac{n}{m+1} F(m+1,n-1).
+	\end{array}
+	$$
+	Multiplicando por $m+1$,
+	$$
+	\begin{array}{cl}
+	&(m+1)F(m,n)=x^{m+1}(1+x)^n - n F(m+1,n-1)\\\\
+	    \Rightarrow  & (m+1)F(m,n)+nF(m+1,n-1)=x^{m+1}(1+x)^n.
+	\end{array}
+	$$
+
+	Luego, calculamos $F(10,2)$. Para ello primero calculamos $F(11,1)$:
+
+	$$
+	\begin{array}{rcl}
+	    F(11,1) &=& \displaystyle\int_0^x t^{11}(1+t)\; dt\\\\
+		    &=& \displaystyle\int_0^x \left(t^{11}+t^{12}\right)\; dt\\
+		    &=& \dfrac{x^{12}}{12}+\dfrac{t^{13}}{13}.
+	\end{array}
+	$$
+
+	Así,
+
+	$$
+	\begin{array}{rcl}
+	    11F(11,2)+2F(11,1) = x^{11}(1+x)^2 &\Rightarrow& 11F(10,2)+2\left(\dfrac{x^{12}}{12}+\dfrac{t^{13}}{13}\right) = x^{13}+2x^{12}+x^{11}\\\\
+					       &\Rightarrow& 11F(10,2)=\dfrac{11x^{13}}{13}+\dfrac{11x^{12}}{6}+x^{11}\\\\ 
+					       &\Rightarrow& F(10,2)=\dfrac{x^{13}}{13}+\dfrac{x^{12}}{6}+\dfrac{x^{11}}{11}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
 
     %-------------------- 25.
     \item Sea $f(n)=\displaystyle\int_0^{\pi/4}x\; dx$ donde $n\geq 1$. Demostrar que
@@ -2880,15 +2924,69 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	%---------- (a)
 	\item $f(n+1)<f(n)$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Consideremos $f(n)-f(n-1)$. De donde,
+
+	    $$
+	    \begin{array}{rcl}
+		f(n)-f(n-1) &=& \displaystyle\int_0^{\frac{\pi}{4}} \tan^n x\; dx - \int_0^{\frac{\pi}{0}} \tan^{n+1}x\; dx\\\\
+			    &=& \displaystyle\int_0^{\frac{\pi}{4}}\left(\tan^nx-\tan^{n+1}x\right)\; dx\\\\
+			    &=& \displaystyle\int_0^{\frac{\pi}{4}} \tan^n x\left(1-\tan x\right)\; dx.
+	    \end{array}
+	    $$
+
+	    Notemos que este resultado es mayor que $0$, ya que $0<\tan x<1$ para $0<x<\dfrac{\pi}{4}$. Por lo tanto,
+
+	    $$f(n)-f(n+1)>0\quad \Rightarrow \quad f(n)>f(n+1).$$\\
+
 
 	%---------- (b)
 	\item $f(n)+f(n-2)=\dfrac{1}{n-1}\quad \mbox{si } n>2$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Recordemos que $\tan^2x+1=\sec^2x$ y que la derivada de $\tan x$ es $\sec^2 x$, de donde
+
+	    $$
+	    \begin{array}{rcl}
+		f(b)+f(n-2) &=& \displaystyle\int_0^{\frac{\pi}{4}} \tan^n x\; dx + \int_0^{\frac{\pi}{4}} \tan^{n-2}x\; dx\\\\
+			    &=& \displaystyle\int_0^{\frac{\pi}{4}}\left(\tan^n x+\tan^{n-2}x\right)\; dx\\\\
+			    &=& \displaystyle\int_0^{\frac{\pi}{4}}\tan^{n-2}x\left(\tan^2 x + 1\right)\; dx\\\\
+			    &=& \displaystyle\int_0^{\frac{\pi}{4}} \tan^{n-2} x\sen^2 x\; dx.
+	    \end{array}
+	    $$
+	    Aplicando la integral por partes,
+
+	    $$u=\tan x\quad \Rightarrow \quad du=\sen^2 x\; dx.$$
+
+	    Entonces,
+	    $$
+	    \begin{array}{rcl}
+		f(n)+f(n-2) &=& \displaystyle\int_0^{\frac{\pi}{4}} \tan^{n-2}x\sen^2x\; dx\\\\
+			    &=& \displaystyle\int_0^{1} u^{n-2}\; du\\\\
+			    &=& \dfrac{u^{n-1}}{n-1}\big|_0^1\\\\
+			    &=& \dfrac{1}{n-1}.
+	    \end{array}
+	    $$
+	    \vspace{.5cm}
 
 	%---------- (c)
 	\item $\dfrac{1}{n+1}<2f(n)<\dfrac{1}{n-1}\quad \mbox{si } n>2$.\\\\
-	    Demostración.-\;
+	    Demostración.-\; Por la parte (a) se tiene $f(n+1)<f(n)$, de donde $f(n)<f(n-1)<f(n-2)$. Así,
+
+	    $$f(n)+f(n-2)>2f(n).$$
+
+	    Por la parte (b) sabemos que $f(n)+f(n-2)=\dfrac{1}{n-1}$. Por lo tanto,
+
+	    $$2f(n)<\dfrac{1}{n-1}.$$
+
+	    Para la desigualdad de la derecha usamos de nuevo la desigualdad de la parte (a), $f(n+2)<f(n+1)<f(n)$ y,
+
+	    $$f(n+2)+f(n)<2f(n).$$
+
+	    Usando una vez más la parte (b) sabemos que $f(n+2)+f(n)=\dfrac{1}{(n+2)-1}=\dfrac{1}{n+1}$. De lo que,
+
+	    $$\dfrac{1}{n+1}<2f(n).$$
+
+	    Concluimos que,
+
+	    $$\dfrac{1}{n+1}<2f(n)<\dfrac{1}{n-1}.$$\\
 
     \end{enumerate}
 

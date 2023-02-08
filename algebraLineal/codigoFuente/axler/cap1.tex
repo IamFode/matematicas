@@ -793,13 +793,13 @@ La definición de suma directa requiere que cada vector de la suma tenga una rep
 \setcounter{myteo}{43}
 \begin{myteo}[Condición para una suma directa]\,\\\\
     Supóngase que $U_1,\ldots, U_m$ son subespacios de $V$. Entonces $U_1+\ldots + U_m$ es una suma directa si y sólo si la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$.\\\\
-	Demostración.-\; Supóngase que $U_1+\ldots + U_m$ es una suma directa. Entonces la definición de suma directa implica que la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$. Para mostrar que $U_1 + \ldots + U_m$ es una suma directa, sea $v \in U_1 + \ldots + U_m$. Podemos escribir:
-	$$v = u_1 + \ldots + u_m$$
+	Demostración.-\; Supóngase que $U_1+\ldots + U_m$ es una suma directa. Entonces la definición de suma directa implica que la única manera de escribir $0$ como una suma $u_1 + \ldots + u_m$, donde cada $u_j$ está en $U_j$, es tomando cada $u_j$ igual a $0$. Para mostrar que $U_1 + \ldots + U_m$ es una suma directa, sea $u \in U_1 + \ldots + U_m$. Podemos escribir:
+	$$u = u_1 + \ldots + u_m$$
 	para algún $u_1 \in U_1 , \ldots, u_m \in U_m$. Para mostrar que esta representación es única, supongamos que también tenemos
 	$$v = v_1 + \ldots + v_m$$
 	donde $v_1 \in U_1,\ldots , v_m \in U_m$. Restando estas dos ecuaciones, tenemos,
 	$$0=(u_1-v_1)+\ldots + (u_m - v_m).$$
-	Porque $u_1-v_1\in U_1,\ldots U_m$, la ecuación dada implica que cada $u_j - v_j$ es igual a $0$. Por lo tanto $u_1 = v_1, \ldots , u_m = v_m$.
+	Porque $u_1-v_1\in U_1,\ldots U_m$, la ecuación dada implica que cada $u_j - v_j$ es igual a $0$. Por lo tanto $u_1 = v_1,u_2=v_2, \ldots , u_m = v_m$.
 \end{myteo}
 \vspace{.5cm}
 
@@ -899,16 +899,40 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 		    \item Identidad aditiva.-\; Sea $(x_1,x_2,x_3,x_4)=(0,0,0,0)$. Entonces,
 			$$x_3=5x_4+0 \quad \Rightarrow \quad 0=5\cdot 0.$$
 
-		    \item Cerrado por adición.-\; Sean $u=(u_1,u_2,u_3,u_4)$ y $v=(v_1,v_2,v_3,v_4)$ donde vectores en el conjunto dado. Por la adición sabemos que $u+v\in \textbf{F}^4$, así
-			$$u+v=(u_1,u_2,u_3,u_4)+(v_1,v_2,v_3,v_4)=(u_1+v_1,u_2+v_2,u_3+v_3,u_4+v_4).$$
-			Y por lo tanto,
-			$$(u_3+v_3)=5(u_4+v_4).$$
+		    \item Cerrado por adición.-\; Sean $u=(u_1,u_2,u_3,u_4)$ y $v=(v_1,v_2,v_3,v_4)$ do vectores en el conjunto dado. Sabemos que 
+			$$
+			\begin{array}{rcl}
+			    u_3 &=& 5u_4 \\
+			    v_3 &=& 5v_4
+			\end{array}
+			$$
 
-		    \item Sea $u=(u_1,u_2,u_3,u_4)$ un vector en el conjunto dado y sea $k\in \textbf{F}$. Entonces, por multiplicación escalar en $\textbf{F}^n$ se tiene, 
-			$$ku=(ku_1,ku_2,ku_3,ku_4)$$
-			Por lo tanto, vemos que se cumple la condición de multiplicación escalar, ya que
-			$$ ku_3 = 5(ku_4).$$
-			Así el conjunto dado es un subespacio de $\textbf{F}^4$ si y sólo si $b=0$.\\\\
+			Entonces, sumando estas dos ecuaciones tenemos,
+
+			$$
+			\begin{array}{rcl}
+			    u_3+v_3 &=& 5u_4+5v_4 \\
+			    u_3+v_3 &=& 5(u_4+v_4).
+			\end{array}
+			$$
+
+			Que es exactamente la afirmación de que
+
+			$$u+v=(u_1,u_2,u_3,u_4)+(v_1,v_2,v_3,v_4)=(u_1+v_1,u_2+v_2,u_3+v_3,u_4+v_4).$$
+
+			Es un elemento del conjunto. Por lo tanto, el conjunto es cerrado bajo la suma de vectores.\\\\
+
+		    \item Cerrado por la multiplicación escalar.-\; Sea $u=(u_1,u_2,u_3,u_4)$ un vector en el conjunto dado y sea $k\in \textbf{F}$. Entonces, 
+			$$u_3=5u_4$$
+			Multiplicando por $k$ tenemos,
+			$$
+			\begin{array}{rcl}
+			    k(u_3) &=& k(5u_4)\\
+			    (ku_3) &=& 5(ku_4).
+			\end{array}
+			$$
+			Por lo tanto, vemos que se cumple la condición de multiplicación escalar.\\\\
+
 		\end{itemize}
 
 	    %---------- (b)
@@ -921,7 +945,7 @@ El siguiente resultado da una condición simple para probar qué pares de subesp
 
 		    \item Cerrado por adición.-\; Por el cálculo elemental, sabemos que la suma de dos funciones continuas es también continua. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo adición de vectores.
 
-		    \item Cerrado por multiplicación escalar.-\; Por cálculo elemental, sabemos que si $f$ es una función continua, entonces $kf$ es también una función continua para todos los números reales $k$. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo la multiplicación escalar.
+		    \item Cerrado por multiplicación escalar.-\; Por el cálculo elemental, sabemos que si $f$ es una función continua, entonces $kf$ es también una función continua para todos los números reales $k$. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo la multiplicación escalar.
 		\end{itemize}
 		Por lo tanto este conjunto es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
 

@@ -2812,10 +2812,67 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
 
 	\end{enumerate}
 
- 	Esta demostración particular de que una función con derivada nula debe ser constante coincide en muchos puntos con una demostración de H. A. Schwarz, la cual es posible que sea la primera demostración rigurosa que se haya dado de este hecho. Al menos su descubridor así parecía creerlo. Vea su exuberante carta en la referencia [54] de la bibliografía.
+ 	Esta demostración particular de que una función con derivada nula debe ser constante coincide en muchos puntos con una demostración de H. A. Schwarz, la cual es posible que sea la primera demostración rigurosa que se haya dado de este hecho. Al menos su descubridor así parecía creerlo. Vea su exuberante carta en la referencia [54] de la bibliografía.\\\\
 
     %-------------------- 70
     \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $f$ es una función constante, entonces cada punto es un máximo local de $f$. Esto puede ocurrir también aunque $f$ no sea una función constante: por ejemplo, si $f(x)=0$ para $x<0$ y $f(x)=1$ para $x\geq 0$. Demuestre, sin embargo, utilizando el Problema 8-4, que si $f$ es continua en $[a,b]$ y cada punto de $[a,b]$ es un punto máximo local, entonces $f$ es una función constante. Por supuesto, se verifica el mismo resultado si cada punto de $[a,b]$ es un punto mínimo local.\\\\
+		Demostración.-\; Supongamos que $f$ no es una función constante. Entonces, existe $x,y\in [a,b]$ con $x\neq y$ tal que $f(x)\neq f(y)$. Sin perdida de generalización, sean $x<y$ y $f(x)<f(y)$. Por el problema 8.4(b) tenemos que existe números $c,d\in [x,y]$ tal que
+		$$f(c)=f(x)<f(y)=f(d)$$
+		$$\mbox{y}$$
+		$$f(x)=f(c)<f(t)<f(d), \mbox{ para todo } t\in (c,d).$$
+
+		Lo que demuestra que $x$ no es un mínimo local.\\\\
+
+	    %---------- (b)
+	    \item Suponga ahora que cada punto es un punto máximo local o un punto mínimo local de la función continua $f$ (aunque no excluimos la posibilidad de que algunos puntos sean máximos locales y otros mínimos locales). Demuestre que $f$ es constante de la manera siguiente: suponga que $f(a_0) < f(b_0)$. Entonces se puede suponer que $f(a_0) < f(x) < f(b_0)$ para $a_0<x<b_0$. (¿Por qué?) Utilizando el Teorema 1 del Apéndice del Capítulo 8, efectúe una partición de $[a_0, b_0]$ en intervalos en los que $\sup f - \inf f < (f(b_0) - f a_0))/ 2$ ; elija también las longitudes de dichos intervalos menores que $(b_0 -a_0)/2$. Entonces existe uno de estos intervalos $[a_1, b_1]$ con $a_0 < a_1 < b_1 < b_0$ y $f(a_1) < f(b_1)$. (¿Por qué?) Continué inductivamente y utilice el Teorema de los Intervalos Encajados (Problema 8-14) para hallar un punto $x$ que no pueda ser un máximo o un mínimo local.\\\\
+		Demostración.-\; Sea $a_0$ y $b_0$ dos puntos distintos en $[a,b]$ tal que $f(a_0)\neq f(b_0)$. Sin perdida de generalización podemos suponer que $f(a_0)<f(b_0)$. Luego por el problema 8.4(b), tenemos $f(a_0)<f(x)<f(b_0)$ para todo $x\in (a_0,b_0)$. Ahora, por el teorema 1 del apéndice del capítulo 8, existe algún $k\in \mathbb{N}$ con $k\geq 2$ tal que
+
+		$$|f(x)-f(y)|<\dfrac{f(b_0)-f(a_0)}{2}\mbox{ para } |x-y|\leq \delta =\dfrac{b_0-a_0}{k}.$$
+
+		Luego, sea $c_i=a_0+i\delta$. Ya que 
+
+		$$f(c_1)-f(a_0)<\dfrac{|f(b_0)-f(a_0)|}{2}$$
+		$$\mbox{y}$$
+		$$f(b_0)-f(c_{k-1})<\dfrac{|f(b_0)-f(a_0)|}{2}$$
+
+		Entonces,
+
+		$$f(c_1)<f(c_{k-1}).$$
+
+		En consecuencia, existe algún $i$ con $1\leq i \leq k-1$ tal que $f(c_i)<f(c_{i-1})$. Después, sea $c_i=a_1$ y $c_{i+1}=b_1$. Entonces, $a_0<b_1<b_0$ y $f(a_1)<f(b_1)$. Además, podemos ver que $f(a_1)<f(x)<f(b_1)$ para todo $x\in(a_1,b_1)$, esto por el problema 8.4(b).\\
+
+		Continuando de esta manera, tenemos que encontrar intervalos $[a_n,b_n]$ con $a_n<a_{n-1}<b_{n+1}<b_n$ y $f(a_n)<x<f(b_n)$ para $x\in(a_n,b_n)$. Es más, podemos suponer que $b_n-a_n<\dfrac{1}{n}$. Ahora, sea $x\in [a_n,b_n]$. Entonces, todo intervalo que contiene $x$ también contiene algunos $[a_k,b_k]$ con $f(a_k)<f(x)<f(b_k)$, lo que demuestra que $x$ no es un máximo local.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 71.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Un punto $x$ se dice que es un punto estrictamente máximo de $f$ en $A$ si $f(x) > f(y)$ para todo $y$ de $A$ con $y\neq x$ (compare con la definición de un punto máximo ordinario). De una manera correspondiente se define un punto estrictamente máximo local. Halle todos los puntos estrictamente máximos locales de la función
+	    $$
+	    f(x)=
+	    \left\{
+		\begin{array}{ll}
+		    0, & x\mbox{ irracional}\\\\
+		    \dfrac{1}{q}, & x=\dfrac{1}{q}\mbox{ fracción irreducible}.
+		\end{array}
+	    \right.
+	    $$
+		Respuesta.-\; 
+
+	    Parece muy improbable que una función pueda tener un punto estrictamente máximo local para todo punto (aunque el ejemplo anterior podría inducir a pensar que es posible). Demuestre que no es posible de la manera siguiente:\\\\
+
+	    %---------- (b)
+	\item Suponga que todo punto es un punto estrictamente máximo local para $f$. Sea $x_1$ un número cualquiera y elija $a_1 < x_1 < b_1$ con $b_1 -a_1 < 1$ tales que $f(x_1) > f(x)$ para todo $x$ de $[a_1, b_1]$. Sea $x_2\neq x_1$ un punto cualquiera de $(a_1, b_1)$ y elija $a_1 \leq a_2 < x_2 < b_2 \leq b_1$ con $b_2-a_2<\frac{1}{2}$ tales que $f(x_2) > f(x)$ para todo $x$ de $[a_2,b_2]$. Continué de esta manera y aplique el Teorema de los Intervalos Encajados (Problema 8-14) para obtener una contradicción.\\\\
+	    Respuesta.-\; 
+	\end{enumerate}
+
 	
 \end{enumerate}
 

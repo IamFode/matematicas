@@ -908,10 +908,13 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
 	    %---------- (c)
 	    \item todas las $A$ para las que $AB=BA,$ donde $B$ es cierta matriz dada de $V$;\\\\
-		Respuesta.-\; Sean, $A_1$ y $A_2$ dos matrices en $V$ tal que $A_1B=BA_2$ y $A_2B=BA_2$. Entonces, por el definición de subespacio y el teorema 1, para algún $c\in F$:
+		Respuesta.-\; Sean, $A_1$ y $A_2$ dos matrices en $V$ tal que $A_1B=BA_2$ y $A_2B=BA_2$. Entonces, por el definición de subespacio, el lema 1 y el teorema 1, para algún $c\in F$:
 		$$
 		\begin{array}{rcl}
-		    cA_1B+BA_2&=&cBA_1+BA_2\\\\
+		    (cA_1+A_2)B &=& cA_1B+A_2B\\\\
+				&=& cBA_1+BA_2\\\\
+				&=& B(cA_1)+BA_2\\\\
+				&=& B(cA_1+A_2).
 		\end{array}
 		$$
 
@@ -919,7 +922,27 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
 	    %---------- (d)
 	    \item todas las $A$ para las que $A^2=A$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Sea, $c\in F$ tal que $c\neq 1$. Entonces,
+		$$(cA)^2=c^2A^2=c^2A\neq cA.$$
+		Ya que no es cerrado bajo la multiplicación escalar, concluimos que el conjunto dado no es un subespacio de $V$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demostrar que los únicos subespacios de $R^1$ son $R^1$ y el subespacio nulo.\\\\
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item Demostrar que un subespacio de $R^2$ es $R^2$ o el subespacio nulo o consta de todos los múltiplos escalares de algún vector fijo de $R^2$. (El último tipo de subespacio es, intuitivamente, una recta por el origen.)\\\\
+		Demostración.-\;
+
+	    %---------- (c)
+	    \item ¿Puede usted describir los subespacios de $R^3$?.\\\\
+		Demostración.-\; 
 
 	\end{enumerate}
 
