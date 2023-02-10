@@ -11,7 +11,7 @@
 \end{mynot}
 \vspace{0.5cm}
 
-\subsection*{Combinaciones lineales y Span}
+\subsection*{Combinaciones lineales y generadores}
 
 %-------------------- 2.3 Definición 
 \begin{mydef}[Combinación lineal] \;\\\\
@@ -22,8 +22,8 @@
 
 \setcounter{mydef}{1}
 %-------------------- 2.5 Definición
-\begin{mydef}[Span] \;\\\\
-    El conjunto de todas las combinaciones lineales de una lista de vectores $v_1,\ldots,v_m$ en $V$ se denomina \textbf{span} de $v_1,\ldots,v_m$. En otras palabras,
+\begin{mydef}[Generador] \;\\\\
+    El conjunto de todas las combinaciones lineales de una lista de vectores $v_1,\ldots,v_m$ en $V$ se denomina \textbf{generador} de $v_1,\ldots,v_m$, denotado por $\span(v_1,\ldots, v_m)$. En otras palabras,
     $$\span(v_1,\ldots,v_m)=\left\{a_1v_1+\cdots + a_mv_m : a_1,\ldots, a_m \in \textbf{F}\right\}.$$
     El span de la lista vacía $()$ es definida por $\left\{0\right\}.$
 \end{mydef}
@@ -31,5 +31,13 @@
 %-------------------- 2.7 Teorema 
 \begin{myteo}[Span es el subespacio más pequeño que lo contiene]
     El \textbf{span} de una lista de vectores en $V$ es el subespacio más pequeño de $V$ que contiene todos los vectores de la lista.\\\\
-	Demostración.-\; 
+	Demostración.-\; Suponga que $v_1,\ldots,v_m$ es una lista de vectores en $V$. Primero demostraremos que $\span(v_1,\ldots,v_m)$ es un subespacio de $V$. El $0$ está en $\span(v_1,\ldots,v_m)$, porque
+	$$0=0v_1+\ldots + 0v_m.$$
+	También, $\span(v_1,\ldots,v_m)$ es cerrado bajo la suma, ya que
+	$$(a_1v_1+\cdots + a_mv_m)+(c_1v_1+\codts+c_mv_m)=(a_1+c_1)v_1+\cdots + (a_m+c_m)v_m.$$
+	Además, $\span(v_1,\ldots,v_m)$ es cerrado bajo la multiplicación por un escalar, dado que
+	$$\lambda(a_1v_1+\cdots + a_mv_m)=\lambda a_1v_1+\cdots + \lambda a_mv_m.$$
+	Por lo tanto, $\span(v_1,\ldots, v_m)$ es un subespacio de $V$. Esto por 1.34.\\
+
+	Cada $v_j$ es una combinación lineal de $v_1,\ldots,v_m$  (para mostrar esto, establezca $a_j=1$ y que las otras $a'$s en la definición de combinación lineal sean iguales a $0$). Así, el $\span(v_1,\ldots,v_m)$ contiene a cada $v_j$. Por otra parte, debido a que los subespacios están cerrados bajo la multiplicación de escalares y la suma, cada subespacio de $V$ que contiene a cada $v_j$ contiene a $\span(v_1,\ldots,v_m)$. Por lo tanto, $\span(v_1,\ldots,v_m)$ es el subespacio más pequeño de $V$ que contiene todos los demás vectores $v_1,\ldots,v_m$.
 \end{myteo}
