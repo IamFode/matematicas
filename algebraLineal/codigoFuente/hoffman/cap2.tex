@@ -948,28 +948,118 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 
     %-------------------- 7.
     \item Sean $W_1$ y $W_2$, subespacios de un espacio vectorial $V$ tal que la unión conjuntista de $W_1$ y $W_2$ sea también un subespacio. Demostrar que uno de los espacios $W_i$ está contenido en el otro.\\\\
-	Demostración.-\; 
+	Demostración.-\; Sea $W_1$ y $W_2$ ninguno contenido en el otro. De donde, existe un vector $u\in W_1$ tal que $u\notin W_2$ y existe un vector $v\in W_2$ tal que $v\notin W_1$. Ya que $W_1\cup W_2$ es un subespacio, entonces $u+v\in W_1\cup W_2$. Ahora, $u+v\in W_1$ o $u+v\in W_2$. En el primer caso, como $-u\in W_1$ debemos tener
+	$$(u+v)+(-u)=v\in W_1,$$
+	lo que es una contradicción. En el segundo caso, como $-v\in W_2$ debemos tener
+	$$(u+v)+(-v)=u\in W_2,$$
+	lo que es también una contradicción. Por lo tanto, uno de los subespacios $W_i$ debe estar contenido en el otro.\\\\
 
     %-------------------- 8.
-    \item Sea $V$ el espacio vectorial de todas las funciones de $R$ en $R$; sea $V_p$ el subconjunto de las funcones pares, $f(-x)=f(x)$; sea $V_i$ el subconjunto de las funciones impares $f(-x)=-f(x)$.\\
+    \item Sea $V$ el espacio vectorial de todas las funciones de $R$ en $R$; sea $V_p$ el subconjunto de las funciones pares, $f(-x)=f(x)$; sea $V_i$ el subconjunto de las funciones impares $f(-x)=-f(x)$.\\
 	\begin{enumerate}[(a)]
 
 	    %---------- (a)
 	    \item Demostrar que $V_p$ y $V_i$ son subespacios de $V$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Sean $f$ y $g$ funciones pares. Entonces, para cualquier escalar $c$,
+
+		$$
+		\begin{array}{rcl}
+		    (cf+g)(-x)&=&cf(-x)+g(-x)\\
+			      &=&cf(x)+g(x)\\
+			      &=&(cf+g)(x).\\
+		\end{array}
+		$$
+
+		Así, $cf+g$ es también una función par y por lo tanto $V_p$ es un subespacio de $V$. Similarmente, si $f$ y $g$ funciones impares. Entonces,
+
+		$$
+		\begin{array}{rcl}
+		    (cf+g)(-x)&=&cf(-x)+g(-x)\\
+			      &=&-cf(x)-g(x)\\
+			      &=&-(cf+g)(x).\\
+		\end{array}
+		$$
+
+		Así, $V_i$ es también un subespacio de $V$.\\\\
 
 	    %---------- (b)
 	    \item Demostrar que $V_p + V_i=V$.\\\\
-		Demostración.-\; 
+		Demostración.-\; Sea $f\in V$ una función cualquiera. Sean también $g$ una función en $V$ definida por 
+		$$g(x)=\dfrac{f(x)+f(-x)}{2}$$
+		y $h$ una función en $V$ definida por
+		$$h(x)=\dfrac{f(x)-f(-x)}{2}.$$
+		Es claro que $g\in V_p$ y $h\in V_i$. Ya que, $f(x)=g(x)+h(x)$ para todo $x$, entonces $V=V_p+V_i$.\\\\
+
 
 	    %---------- (c)
 	    \item Demostrar que $V_p \cap V_i=\left\{0\right\}$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $f\in V_p\cap V_i$ y sea $x\in R$. Ya que $f$ es par, entonces $f(x)=f(-x)$. Y ya que $f$ es impar, entonces $f(-x)=-f(x)$. Por lo tanto, tenemos $f(x)=-f(x)$, el cual es posible si $f(x)=0.$ Ya que se tiene cualquier $x$, $f$ debe ser la función cero. Esto muestra que $V_p\cap V_i$ es el espacio cero.\\\\
+
 	\end{enumerate}
 
     %-------------------- 9.
     \item Sea $W_1$ y $W_2$ subespacios de un espacio vectorial $V$ tales que $W_1+W_2=V$ y $W_1\cap W_2=\left\{0\right\}.$ Demostrar que para todo vector $\alpha$ de $V$ existen únicos vectores $\alpha_1$ e $W_1$ y $\alpha_2$ en $W_2$ tales que $\alpha=\alpha_1+\alpha_2$.\\\\
-	Demostración.-\;
+	Demostración.-\; Ya que $W_1+W_2=V,$ podríamos definir $\alpha_1\in W_1$ y $\alpha_2\in W_2$ tal que $\alpha=\alpha_1+\alpha_2$. Ahora, suponga que existe también $\alpha_3\in W_1$ y $\alpha_4\in W_2$ con $\alpha=\alpha_3+\alpha_4$. Entonces,
+	$$\alpha_1+\alpha_2=\alpha_3+\alpha_4 \quad \Rightarrow \quad \alpha_1-\alpha_3=\alpha_4-\alpha_2.$$
+	Pero el vector del lado izquierdo debe pertenecer a $W_1$, y el vector del lado derecho debe pertenecer a $W_2$. Por lo tanto, $\alpha_1-\alpha_3$ pertenece a la intersección de $W_1$ y $W_2$, lo que implica que $\alpha_1-\alpha_3$ o $\alpha_1=\alpha_3$. Y $\alpha_4=\alpha_2$ también. Esto muestra que los vectores $\alpha_1$ y $\alpha_2$ son únicos.\\\\
 
 \end{enumerate}
 
+
+\section{Bases y dimensión}
+
+Pasamos, ahora a la tarea de dotar de dimensión a ciertos espacios vectoriales. Debemos encontrar una definición algebraica apropiada para la dimensión de espacio vectorial. Esto se hará mediante el concepto de base de un espacio vectorial.
+
+%-------------------- definición 1.6.
+\begin{def.}
+    Sea $V$ un espacio vectorial sobre $F$. Un subconjunto $S$ de $V$ se dice $\textbf{linealmente dependientes}$ (o simplemente, $\textbf{dependiente}$) si existen vectores distintos $\alpha_1,\alpha_2,\ldots,\alpha_n$ de $S$ y escalares $c_1,c_2,\ldots,c_n$ de $F$, no todos nulos, tales que
+    $$c_1\alpha_1+c_2\alpha_2+\cdots+c_n\alpha_n=0.$$
+    Un conjunto que no es linealmente dependiente se dice $\textbf{linealmente independiente}$. Si el conjunto $S$ tiene solo un número finito de vectores $\alpha_1,\alpha_2,\ldots,\alpha_n$ se dice, a veces, que los $\alpha_1,\alpha_2,\ldots,\alpha_n$ son dependientes (o independientes), en vez de decir que $S$ es dependiente (o independiente).
+\end{def.}
+
+Las siguientes son fáciles consecuencias de la definición.
+
+\begin{enumerate}[1.]
+
+    \item Todo conjunto que contiene un conjunto linealmente dependiente es linealmente dependiente.
+    \item Todo subconjunto de un conjunto linealmente independiente es linealmente independiente.
+    \item Todo conjunto que contiene el vector $0$ es linealmente dependiente; en efecto, $1\cdot 0=0$.
+    \item Un conjunto $S$ de vectores es linealmente independiente si, y sólo si, todo subconjunto finito de $S$ es linealmente independiente; es decir, si, y sólo si, para vectores diferentes $\alpha_1,\ldots,\alpha_n$ de $S$, arbitrariamente elegido $c_1\alpha_1+\cdots+c_n\alpha_n=0$ implica que todo $c_i=0$.
+
+\end{enumerate}
+
+%-------------------- definición 1.7.
+\begin{def.}
+    Sea $V$ un espacio vectorial. Una \textbf{base} de $V$ es un conjunto linealmente independiente de vectores de $V$ que genera el espacio $V$. El espacio $V$ es de \textbf{dimensión finita} si tiene una base finita.
+\end{def.}
+
+
+\setcounter{ejem}{12}
+%-------------------- Ejemplo 13
+\begin{ejem}
+    Sea $F$ un cuerpo, y en $F^n$ sea $S$ el subconjunto que consta de los vectores $\epsilon_1,\epsilon_2,\ldots,\epsilon_n$ definidos por
+    $$
+    \begin{array}{ccc}
+	\epsilon_1&=&(1,0,\ldots,0)\\
+	\epsilon_2&=&(0,1,\ldots,0)\\
+	\vdots&&\vdots\\
+	\epsilon_n&=&(0,0,\ldots,1).
+    \end{array}
+    $$
+    Sean $x_1,x_2,\ldots,x_n$ escalares de $F$, y hágase $\epsilon=x_1\epsilon_1+x_2\epsilon_2+\cdots+x_n\epsilon_n$. Entonces
+    $$\epsilon=(x_1,x_2,\ldots,x_n).$$
+    Esto muestra que $\epsilon_1,\cdots,\epsilon_n$ genera $F^n$. Como $\epsilon=0$ si, y sólo si, $x_1=x_2=\ldots = x_n=0$, los vectores $\epsilon_1,\ldots,\epsilon_n$ son linealmente independientes. El conjunto $S=\left\{\epsilon_1,\ldots,\epsilon_n\right\}$ es, por tanto, una base de $F^n$. Esta base particular se llamará \textbf{base canónica} de $F^n$.
+
+\end{ejem}
+
+
+%-------------------- ejemplo 14
+\begin{ejem}
+    Sea $P$ una matriz $n\times n$ inversible con elementos en el cuerpo $F$. Entonces $P_1,\ldots,P_n$, las columnas de $P$, forman una base del espacio de las matrices columnas $F^{n\times 1}$. Eso se verá como sigue. Si $X$ es una matriz columna, entonces 
+    $$PX=x_1P_1+\cdots + x_nP_n.$$
+
+    Como $PX=0$ tiene solo la solución trivial $X=0$, se sigue que $\left\{P_1,\ldots,P_n\right\}$ es un conjunto linealmente independiente. ¿Por qué generan $F^{n\times 1}$? Sea $Y$ cualquier matriz columna. Si $X=P^{-1}Y$, entonces $Y=PX$, esto es
+    $$Y=x_1P_1+\cdots + x_nP_n.$$
+
+    Así, $\left\{P_1,\ldots,P_n\right\}$ es una base de $F^{n\times 1}$.
+\end{ejem}

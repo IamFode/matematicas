@@ -2864,15 +2864,25 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
 		\end{array}
 	    \right.
 	    $$
-		Respuesta.-\; 
+
+	    Respuesta.-\; No es difícil concluir que $f(x)\leq 1$ para cada $x$ y $f(x)=1$. Sí, y sólo si $x$ es un entero. Si $x$ es un entero, podemos elegir el intervalo $(x-\frac{1}{2},x+\frac{1}{2})$ donde el valor más alto es obtenido exactamente en $x$ y este es igual a $1$.\\
+	    Para un número racional cualquiera, no entero de la forma $p/q$ podemos definir el intervalo $(n,n+1)$ tal que $p/q\in (n,n+1)$. Vemos que existen varios racionales en este intervalo tal que sus denominadores son menores o iguales a $q$, as´i elegimos $\epsilon$ que para cada $x\in \left(p/q-\epsilon,p/q+\epsilon\right)$ distintos de $p/q$ se tiene
+	    $$f(x)<f(p/q),$$
+	    Es decir, tendríamos el conjunto:
+	    $$\epsilon=\min\left\{|p/q|-k/l|:k/l\neq p/q,k/l\in [n,n+1],\mbox{ y } l\leq q\right\}.$$
+	    Usando, la definición obtenemos que cada número racional es un punto máximo estricto local.\\
 
 	    Parece muy improbable que una función pueda tener un punto estrictamente máximo local para todo punto (aunque el ejemplo anterior podría inducir a pensar que es posible). Demuestre que no es posible de la manera siguiente:\\\\
 
 	    %---------- (b)
 	\item Suponga que todo punto es un punto estrictamente máximo local para $f$. Sea $x_1$ un número cualquiera y elija $a_1 < x_1 < b_1$ con $b_1 -a_1 < 1$ tales que $f(x_1) > f(x)$ para todo $x$ de $[a_1, b_1]$. Sea $x_2\neq x_1$ un punto cualquiera de $(a_1, b_1)$ y elija $a_1 \leq a_2 < x_2 < b_2 \leq b_1$ con $b_2-a_2<\frac{1}{2}$ tales que $f(x_2) > f(x)$ para todo $x$ de $[a_2,b_2]$. Continué de esta manera y aplique el Teorema de los Intervalos Encajados (Problema 8-14) para obtener una contradicción.\\\\
-	    Respuesta.-\; 
+	    Respuesta.-\; Por un punto arbitrario $x_1$ podemos elegir el intervalo $[a_1,b_1]$ tal que $a_1<x_1<b_1$, $b_1-a_1<1$ y $f(x)<f(x_1)$ para cada $x\in [a_1,b_1]$. Además, consideremos algún punto $x_2\in (a_1,b_1)$, $x_2\neq x_1$. Ya que $x_2$ es el punto máximo estricto local, podemos elegir el intervalo $[a_2,b_2]$ tal que $a_1\leq a_2<x_2<b_2\leq b_1$, $b_2-a_2<1/2$ y $f(x)<f(x_2)$ para cada $x\in [a_2,b_2]$. Siguiendo esta secuencia podemos crear el intervalo $[a_n,b_n]$ tal que $[a_n,b_n]\subset [a_{n-1},b_{n-1}]$ y $b_n-a_n<1/2^{n-1}$. Usando el Teorema del Intervalo Anidado obtenemos que existe un único elemento  $y$ contenida en cada uno de estos intervalos.\\
+	    La suposición de esta parte implica que $y$ es un punto máximo estricto local, pero un intervalo arbitrario $y\in [a,b]$ contiene $a_n,b_n$ para algunos $n$, y luego $f(x_n)<f(y)$. Por lo tanto, $y$ no puede ser un punto máximo estricto local, por lo que tenemos una contradicción.\\\\
 	\end{enumerate}
 
 	
 \end{enumerate}
 
+
+\appendix
+\chapter{Convexidad y Concavidad}

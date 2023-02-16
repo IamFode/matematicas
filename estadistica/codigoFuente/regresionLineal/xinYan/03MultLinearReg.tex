@@ -32,9 +32,9 @@ $$a_1v_1+a_2v_2+\ldots,a_nv_n=0,$$
 
 tenemos $a_i=0$ para $i=1,2,\ldots,n$. Entonces, $v_1,v_2,\ldots,v_n$ son linealmente independientes.\\
 
-Una base de un espacio vectorial $V$ se define como un subconjunto de vectores en $V$ que son linealmente independientes y estos vectores abarcan el espacio $V$. En consecuencia, si $(v_1 , v_2 , \ldots , v_n)$ es una lista de vectores en $V$, entonces estos vectores forman una base si y solo si todo vector $x \in V$ puede expresarse de forma única mediante una combinación lineal de $v_1 , v_2 , \ldots , v_p$. Es decir, 
-$$x = a_1 v_1 + a_2 v_2 + \ldots + a_n v_n,$$ 
-para cualquier $x \in V$. El número de vectores base en $V$ se denomina dimensión del espacio lineal $V$. Tenga en cuenta que un espacio vectorial puede tener más de una base, pero el número de vectores que forman la base del espacio vectorial $V$ siempre es fijo. Es decir, la dimensión del espacio vectorial $V$ es fija pero habrá más de una base. De hecho, si la dimensión del espacio vectorial $V$ es $n$, entonces cualquier n vector linealmente independiente en $V$ forma su base.
+Una base de un espacio vectorial $V$ se define como un subconjunto de vectores en $V$ que son linealmente independientes y estos vectores generan el espacio $V$. En consecuencia, si $(v_1 , v_2 , \ldots , v_n)$ es una lista de vectores en $V$, entonces estos vectores forman una base si y solo si todo vector $x \in V$ puede expresarse de forma única mediante una combinación lineal de $v_1 , v_2 , \ldots , v_p$. Es decir, 
+$$x = a_1 v_1 + a_2 v_2 + \ldots + a_n v_n,\mbox{ para cualquier } \textbf{x}\in V.$$ 
+El número de vectores base en $V$ se denomina dimensión del espacio lineal $V$. Tenga en cuenta que un espacio vectorial puede tener más de una base, pero el número de vectores que forman la base del espacio vectorial $V$ siempre es fijo. Es decir, la dimensión del espacio vectorial $V$ es fija pero habrá más de una base. De hecho, si la dimensión del espacio vectorial $V$ es $n$, entonces cualquier n vector linealmente independiente en $V$ forma su base.
 
 
 \section{Producto punto y Proyección}
@@ -51,7 +51,7 @@ Dos vectores se llaman ortogonales si su  producto vectorial es $0$. Si $\theta$
     \end{equation}
 \end{tcolorbox}
 
-Dos vectores ortogonales forman $90^\circ$ ;Es decir, son perpendiculares. Una aplicación importante del producto punto es la proyección. La proyección de un vector \textbf{y} sobre otro vector \textbf{x} forma un nuevo vector que tiene la misma dirección que el vector \textbf{x} y la longitud $|y|\cos(\theta)$, donde $|\textbf{y}|$ denota la longitud del vector \textbf{y} y $\theta$ es el ángulo entre los vectores. Escribimos la proyección como $P_{\textbf{x}}\textbf{y}$. La proyección vectorial puede ser expresado como
+Dos vectores ortogonales forman $90^\circ$; Es decir, son perpendiculares. Una aplicación importante del producto punto es la proyección. La proyección de un vector \textbf{y} sobre otro vector \textbf{x} forma un nuevo vector que tiene la misma dirección que el vector \textbf{x} y la longitud $|y|\cos(\theta)$, donde $|\textbf{y}|$ denota la longitud del vector \textbf{y} y $\theta$ es el ángulo entre los vectores. Escribimos la proyección como $P_{\textbf{x}}\textbf{y}$. La proyección vectorial puede ser expresado como
 
 $$
 \begin{array}{rcl}
@@ -150,4 +150,79 @@ para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
 $$A\textbf{x}(v-Ax_p)=0$$
 
 para todo $\textbf{x}\in \mathbb{R}^n$. Escriba este producto escalar en términos de rendimientos de matrices
+
+$$(A\textbf{x})'(v-A\textbf{x}_p)=0$$
+
+el cual es equivalente a
+
+$$(\textbf{x}'A')(v-A\textbf{x}_p)=0.$$
+
+Convirtiendo a producto punto, tenemos
+
+$$\textbf{x}\cdot A'(v-A\textbf{x})=0.$$
+
+De donde,
+
+$$A'v=A'A\textbf{x}_p.$$
+
+Luego, ya que $A'A$ es invertible, se tiene
+
+$$(A'A)^{-1}A'v = \textbf{x}_p.$$
+
+Después, ya que $A\textbf{x}_p$ es la proyección deseada,
+
+$$A(A'A)^{-1}v=A\textbf{x}_p=\Proj_w u$$
+
+Por lo tanto, concluimos que la matriz proyección para $W$ es $A(A'A)^{-1}A'.$\\
+
+La matriz proyección es muy útil en las discusiones posteriores del modelo de regresión $Y\textbf{X}\beta+\epsilon$. Una matriz cuadrada $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}X'$, se construye utulizando la matriz de diseño. Se puede verificar fácilmente que $P$ es una matriz idempotente:
+
+$$P^2=\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'=P.$$
+
+Así, $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$ es una matriz proyección. Además, si definimos una matriz como $I-P=I-\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$. Es fácil ver que $I-P$ es también idempotente. De hecho,
+
+$$(I-P)^2=I-2P+P^2=I-2P+P=I-P.$$
+
+Por lo tanto, $I-P=I-\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$ es una matriz proyección. En las secciones siguientes veremos cómo se utilizan estas matrices de proyección para obtener el mejor estimador lineal insesgado (BLUE) para el modelo de regresión lineal y cómo se utilizan en el diagnóstico del modelo de regresión.
+
+
+\section{Forma matricial de regresión lineal múltiple}
+
+% -------------------- definición 3.1
+\begin{def.}
+    Un modelo lineal es definido como un modelo que es lineal en los parámetros de regresión, es decir, lineal en los $\beta_i'$s.
+\end{def.}
+
+
+\section{Forma cuadrática de variables aleatorias}
+
+% -------------------- definición 3.2
+\begin{def.}
+    Sea $y'=(y_1.y_2,\cdots,y_n)$ $n$ variables reales y $a_{ij}$ $n\times n$ números reales, donde $i,j=1,2,\cdots,n.$ Una forma cuadrática de $y_1,y_2,\cdots,y_n$ es definida como
+    $$f(y_1,y_2,\cdots,y_n)=\sum_{i,j=1}^n a_{ij}y_iy_j.$$
+\end{def.}
+
+Esta forma cuadrática puede ser escrita en la forma matricial: $y'Ay$, donde $A$ es un matriz $n\times n$, $A=(a_{ij})_{n\times n}$.\\
+
+En el entorno clásico, los parámetros de un modelo de regresión lineal se estiman minimizando la suma de los residuos al cuadrado:
+
+$$
+\begin{array}{rcl}
+    \textbf{b} &=& (b_0,b_1,\cdots, b_k)\\\\
+	       &=& \arg\min_{(\beta_0,\beta_1,\cdots,\beta_k)}\displaystyle\sum_{i=1}^n \left[y_i-\left(\beta_0+\beta_1x_{1i}+\beta_2x_{2i}+\cdots+\beta_{k}x_{ki}\right)\right]^2.
+\end{array}
+$$
+
+Este residuo al cuadrado es en realidad una forma cuadrática. Por lo tanto, es importante discutir algunas propiedades generales de esta forma cuadrática que se usarán en las discusiones subsiguientes.
+
+
+\section{Matrices idempotentes}
+
+% -------------------- definición 3.3
+\begin{def.}
+    Una matriz simétrica $n\times n$, $A$ es idempotente si $A^2=A.$
+\end{def.}
+
+
+
 

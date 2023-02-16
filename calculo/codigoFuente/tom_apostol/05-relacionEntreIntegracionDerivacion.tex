@@ -2991,19 +2991,112 @@ Con el método de integración por partes calcular las integrales de los Ejercic
     \end{enumerate}
 
     %-------------------- 26.
-    \item Calcular $f(0)$, sabiendo que $f(\pi)=2$ y que $\int_0^\pi \left[f(x)+f''(x)\right]\sen x\; dx = 5.$\\\\
-	Respuesta.-\;
+    \item Calcular $f(0)$, sabiendo que $f(\pi)=2$ y que $\displaystyle\int_0^\pi \left[f(x)+f''(x)\right]\sen x\; dx = 5.$\\\\
+	Respuesta.-\; Primero, usando la linealidad de la integral, tenemos que
+	$$\int_0^\pi\left[f(x)+f''(x)\right]\sen x\; dx = \int_0^\pi f(x)\sen x\; dx + \int_0^\pi f''(x)\sen x\; dx=5.$$
+	Luego, usaremos dos veces la integración por partes, para obtener una expresión para la primera integral en términos de $f''(x)$ (y resultará que las integrales con $f''(x)$ se cancelarán, lo que nos permitirá resolver este problema). Para la primera integración por partes, sea
+	$$
+	\begin{array}{rcl}
+	    u = f(x) &\Rightarrow& du = f'(x)\\\\
+	    dv=\sen x\; dx &\Rightarrow& v = -\cos x.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^\pi f(x)\sen x\; dx &=& -f(x)\cos x \bigg|_0^\pi + \displaystyle\int_0^\pi f'(x)\cos x \; dx\\\\
+						    &=& \left[f(\pi)+f(0)\right]+\displaystyle\int_0^\pi f0(x)\cos x\; dx\\\\
+						    &=&2+f(0)+\displaystyle\int_0^\pi f'(x)\cos x\; dx
+	\end{array}
+	$$
+	Después, evaluamos la integral $\int_0^\pi \cos x\; dx.$ De donde,
+	$$
+	\begin{array}{rcl}
+	    u=f'(x) &\Rightarrow& du=f''(x)\\\\
+	    dv=\cos x\; dx &\Rightarrow& v=\sin x.
+	\end{array}
+	$$
+
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    2+f(0)+\displaystyle\int_0^\pi f'(x)\cos x\; dx&=& 2+f(0)+f'(x)\sen x\bigg|_0^\pi - \displaystyle\int_0^\pi f''(x)\sen x\; dx\\\\
+							   &=& 2+f(0)+\displaystyle\int_0^\pi f''(x)\sen x\; dx.
+	\end{array}
+	$$
+
+	Finalmente, volviendo a introducir, en nuestra expresión original, concluimos que
+
+	$$
+	\begin{array}{rcl}
+	    5 &=& \displaystyle\int_0^\pi f(x)\sen x\; dx + \int_0^\pi f''(x)\sen x\; dx\\\\
+	      &=& 2+f(0)-\displaystyle\int_0^\pi f''(x)\sen x\; dx+\displaystyle\int_0^\pi f''(x)\sen x\; dx\\\\
+	      &=& 2+f(0).
+	\end{array}
+	$$
+	Por lo tanto,
+	$$f(0)=3.$$\\
+
 
     %-------------------- 27.
     \item Designar por $A$ el valor de la integral
     $$\int_0^\pi \dfrac{\cos x}{\left(x+2\right)^2}\; dx.$$
-    Y calcular la siguiente inetegral en función de $A$:
+    Y calcular la siguiente integral en función de $A$:
     $$\int_0^{\pi/2}\dfrac{\sen x\cos x}{x+1}\; dx.$$
-	Respuesta.-\;
+	Respuesta.-\; Comencemos con la expresión para $A$ integrando por partes:
+	$$
+	\begin{array}{rcl}
+	    u=\cos x &\Rightarrow& du=-\sen x\; dx\\\\
+	    dv=\dfrac{1}{(x+2)^2}\; dx &\Rightarrow& v=-\dfrac{1}{x+2}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    A = \displaystyle\int_0^\pi \dfrac{\cos x}{(x+2)^2}\; dx &=& -\dfrac{\cos x}{x+2}\bigg|_0^\pi - \displaystyle\int_0^\pi \dfrac{\sen x}{x+2}\; dx\\\\
+								     &=& \left(\dfrac{1}{\pi+2}+\dfrac{1}{2}\right)-\displaystyle\int_0^\pi \dfrac{\sen x}{x+2}\; dx\\\\
+								     &=& \left(\dfrac{1}{2}+\dfrac{1}{\pi + 2}\right)-2\displaystyle\int_0^{\frac{\pi}{2}} \dfrac{\sen(2x)}{2x+2}\; dx.
+	\end{array}
+	$$
+	Usando la propiedad de expansión y contracción de la integral (teorema 1.19), tenemos
+
+	$$
+	\begin{array}{rcl}
+	    &=& \left(\dfrac{1}{2}+\dfrac{1}{\pi+2}\right)-2\displaystyle\int_0^{\frac{\pi}{2}} \dfrac{2\sen x\cos x}{2(x+1)}\; dx\\\\
+	    &=& \left(\dfrac{1}{2}+\dfrac{1}{\pi+2}\right)-2\displaystyle\int_0^{\frac{\pi}{2}} \dfrac{\sen x\cos x}{x+1}\; dx.
+	\end{array}
+	$$
+	Resolviendo para la integral en términos de $A$, se tiene 
+
+	$$\int_0^{\frac{\pi}{2}}\dfrac{}{}=\dfrac{1}{2}\left(\dfrac{1}{2}+\dfrac{1}{\pi+2}-A\right).$$\\
 
     %-------------------- 28.
     \item $\displaystyle\int \dfrac{\sqrt{a+bx}}{x}\; dx = 2\sqrt{a+bx}+a\int \dfrac{dx}{x\sqrt{a+bx}}+C$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Multipliquemos el numerador y el denominador de la integral por $\sqrt{a+bx}$, de donde
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\sqrt{a+bx}}{x}\; dx &=& \displaystyle\int \dfrac{a+bx}{x\sqrt{a+bx}}\; dx\\\\
+							 &=& \displaystyle\int \dfrac{bx}{x\sqrt{a+bx}}\; dx + \displaystyle\int \dfrac{a}{x\sqrt{a+bx}}\; dx\\\\
+							 &=& \displaystyle\int \dfrac{b}{\sqrt{a+bx}}\; dx+a\displaystyle\int \dfrac{dx}{x\sqrt{a+bx}}.
+	\end{array}
+	$$
+
+	Usando la integral por partes, tenemos
+
+	$$u=a+bx\quad \Rightarrow\quad du=b.$$
+
+	De donde,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{b}{\sqrt{a+bx}}\; dx &=& \displaystyle\int u^{-\frac{1}{2}}\; du \\\\
+							  &=& 2\sqrt{u}+C\\\\
+							  &=& 2\sqrt{a+bx}+C.
+	\end{array}
+	$$
+	\vspace{0.5cm}
 
     %-------------------- 29.
     \item $\displaystyle\int x^n \sqrt{ax+b}\; dx = \dfrac{2}{a(2n+3)}\left[x^n(ax+b)^{3/2}-nb\int x^{n-1}\sqrt{ax+b}\; dx\right]+C\left(n\neq -\dfrac{3}{2}\right)$.\\\\
