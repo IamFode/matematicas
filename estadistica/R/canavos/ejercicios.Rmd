@@ -3412,3 +3412,1567 @@ sd(x)
 Esto también es válido para la distribución Poisson.
 
 
+
+
+# Ejercicios Capítulo 6
+
+## 6.1.
+
+Se seleccionaron, aleatoriamente, $60$ personas y se le preguntó su
+preferencia con respecto a tres marcas, $A, B$ y $C$. Estas fueron de
+$27,18$ y $15$ respectivamente. ¿Qué tan probable es este resultado si
+no existen otras marcas en el mercado y la preferencia se comparte por
+igual entre las tres?.
+
+Respuesta.- Ya que las preferencias son iguales entonces, se utilizará
+la función de distribución multinomial, comos se verá a continuación:
+
+$$p(x_1,x_2,\ldots , x_{k-1};n,p_1,p_2,\ldots , p_{k-1})= \dfrac{n!}{x_1!x_2!x_3!}p_1^{x_1} p_2^{x_2} \ldots p_k^{x_k} $$
+
+De donde
+
+$$p(27,18,15;60,1/3,1/3,1/3)=\dfrac{60!}{27!18!15!} \left( \dfrac{1}{3}\right)^{27} \left(\dfrac{1}{3}\right)^{18} \left(\dfrac{1}{3}\right)^{15}=0.002153159.$$
+
+```{r}
+factorial(60)/(factorial(27)*factorial(18)*factorial(15))*(1/3)^(27)*(1/3)^(18)*(1/3)^(15)
+dmultinom(c(27,18,15),60,c(1/3,1/3,1/3))
+```
+
+## 6.2.
+
+Supóngase que de un proceso de producción se seleccionan, de manera
+aleatoria, $25$ artículos. Este proceso de producción por lo general
+produce un $90\%$ de artículos listos para venderse y un $7\%$
+reprocesables. ¿Cuál es la probabilidad de que $22$ de los $25$
+artículos estén listos para venderse y que dos sean reprocesables?.
+
+Respuesta.- Sea la función de distribución trinomial
+$$p(x,y;n,p_i,p_2)=\dfrac{n!}{x!y!(n-x-y)!}p_1^x p_2^y(1-p_1-p_2)^{n-x-y}.$$
+
+Entonces,
+
+$$p(22,2;25,0.9,0.07) = \dfrac{25!}{22! 2! (25-22-2)!}0.9^{22} 0.07^{2}(1-0.9-0.07)^{25-22-2}=0.09988531.$$
+
+```{r}
+(factorial(25)/(factorial(22)*factorial(2)*factorial(25-22-2))*
+   0.9^(22)*0.07^(2)*(1-0.9-0.07)^(25-22-2))
+```
+
+## 6.3.
+
+Sean $X$ y $Y$ dos variables aleatoria continuas con una función de
+densidad conjunta de probabilidad dada por:
+$$f(x,y)=\left\{\begin{array}{ll}
+  \dfrac{3x-y}{5} & 1<x<2,\quad 1<y<3,\\\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+
+Obtener la función de distribución conjunta acumulativa.
+
+Respuesta.- $$\begin{array}{rcl}
+  F(x,y)&=&\displaystyle\int_1^x \int_1^y \left(\dfrac{3u-v}{5}\right)\; dvdu = \displaystyle\int_1^x \int_1^y \left(\dfrac{3u}{5}-\dfrac{v}{5}\right)\; dvdu\\\\
+  &=&\displaystyle\int_1^x\left(\dfrac{3u}{5}v-\dfrac{v^2}{10}\right)\bigg|_1^y\; du=\int_1^x \dfrac{3uy}{5}-\dfrac{3u}{5}-\dfrac{y^2}{10}+\dfrac{1}{10} \;du\\\\
+  &=&\left(\dfrac{3u^2y}{10}-\dfrac{3u^2}{10}-\dfrac{y^2u}{10} -\dfrac{u}{10}\right)\bigg|_1^x\\\\
+  &=&\dfrac{3x^2y}{10}-\dfrac{3y}{10}-\left(\dfrac{3x^2}{10}-\dfrac{3}{10}\right)-\left(\dfrac{y^2x}{10}-\dfrac{y^2}{10}\right)+\dfrac{x}{10}-\dfrac{1}{10}\\\\
+  &=&\dfrac{3x^2y-xy^2-3x^2+x-3y+y^2+2}{10}\\\\
+\end{array}$$
+
+### b)
+
+¿Cuál es la probabilidad conjunta de que $X<3/2$ e $Y<2$?.
+
+Respuesta.- Ya que
+$\displaystyle\int_1^x \int_1^y \left(\dfrac{3u-v}{5}\right)\; dvdu=\dfrac{3x^2y-xy^2-3x^2+x-3y+y^2+2}{10}$,
+entonces
+
+$$\begin{array}{rcl}
+  P(X<3/2,Y<2) &=& \displaystyle\int_1^{3/2} \int_1^2 \left(\dfrac{3u-v}{5}\right)\; dvdu\\\\
+  &=& \dfrac{3\cdot (3/2)^2 \cdot 2 -(3/2)\cdot 2^2-3(3/2)^2+3/2-3\cdot 2+2^2+2}{10}\\\\
+  &=&0.225.\\\\
+  \end{array}$$
+
+```{r}
+x=3/2
+y=2
+(3*x^2*y-3*y-3*x^2+x-3*y+y^2+2)/10
+```
+
+### c)
+
+Mediante el empleo de sus respuesta a la parte $a$, obtener las
+distribuciones acumulativas marginales de $X$ e $Y$.
+
+Respuesta.- Dado que $2$ y $3$ son los límite superior para $x$ e $y$
+respectivamente, entonces
+
+$$\begin{array}{rcl}
+  P(X\leq x) &=& F_X(x)=F(x,3)\\\\
+  &=&\dfrac{3x^2\cdot 3-x\cdot 3^2-3x^2+x-3\cdot 3+3^2+2}{10}\\\\
+  &=& \dfrac{9x^2-9x-3x^2+x-9+9+2}{10} \\\\
+  &=&\dfrac{3x^2-4x+1}{5},\quad 1<x<2.\\\\
+  \end{array}$$
+
+$$\mbox{Y}$$
+
+$$\begin{array}{rcl}
+  P(Y\leq y ) &=& F_Y(y)=F(2,y)\\\\
+  &=&\dfrac{3\cdot 2^2y-2\cdot y^2-3\cdot 2^2+2-3y+y^2+2}{10}\\\\
+  &=&\dfrac{12y-2y^2-12+2-3y+y^2+2}{10}\\\\
+  &=&\dfrac{9y-y^2-8}{10}, \qquad 1<y<3.\\\\
+\end{array}$$
+
+### d)
+
+Obtener las funciones de densidad marginales de $X$ y de $Y$.
+
+Respuesta.- Sea $F(x,3)=P(X\leq x)=\dfrac{3x^2-4x+1}{5}$, entonces
+$$f_X(x)=\dfrac{\partial F(x,3)}{\partial x}=\dfrac{(6x-4)5}{5^2} = \dfrac{6x-4}{5}.$$
+
+Y para $F(2,y)=P(Y\leq y)=\dfrac{9y-y^2-8}{10}$, se tiene
+
+$$f_Y(y)=\dfrac{\partial F(2,y)}{\partial y} = \dfrac{(9-2y)10}{10^2} = \dfrac{9-2y}{10}.$$
+
+## 6.4.
+
+Sean $X$ e $Y$ dos variables aleatorias continuas con una función de
+densidad conjunta de probabilidad dada por
+
+$$f(x,y)=\left\{\begin{array}{ll}
+  xe^{-x(y+1)} & x,y>0,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+
+Demostrar que $f(x,y)$ es una función de densidad conjunta de
+probabilidad.
+
+Respuesta.-; Ya que $x,y>0$ entonces,
+
+$$\begin{array}{rcl}
+  \displaystyle\int_0^\infty \int_0^\infty xe^{-xy-x}\;dy\;dx &=& \displaystyle\int_0^\infty xe^{-x}\int_0^\infty e^{-xy}\; dy\; dx\\\\
+  &=& \displaystyle\int_0^\infty xe^{-x}\int_0^\infty e^{-xy}\left(\dfrac{-x}{-x}\right)\; dy \; dx\\\\
+  &=&\displaystyle\int_0^\infty -e^{-x} \int_0^\infty e^{-xy} (-x)\; dy \; dx\\\\
+  &=&\displaystyle\int_0^\infty -e^{-x} \left(e^{-xy}\right)\bigg|_0^\infty \; dx\\\\
+  &=&\displaystyle\int_0^\infty -e^{-x}\left(e^{-\infty} - e^{0}\right)\; dx\\\\
+  &=&\displaystyle\int_0^\infty e^{-x}\; dx = e^{-x}\bigg|_0^\infty\\\\  
+  &=&1.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(y) {
+  sapply(y, function(y) {
+    integrate(function(x) x*exp(-x*(y+1)), 0, Inf)$value
+   })
+ }, 0, Inf)$value
+```
+
+#### b)
+
+¿Cuál es la probabilidad conjunta de que $X<2$ e $Y<1$?.
+
+Respuesta.- $$\begin{array}{rcl}
+  \displaystyle\int_0^2\int_0^1 xe^{-xy-x}\; dy\, dx &=& \displaystyle\int_0^2 xe^{-x}\int_0^1 e^{-xy}\; dy\, dx\\\\
+  &=&\displaystyle\int_0^2 -e^{-x} \left(e^{-xy}\right)\bigg|_0^1 \; dx\\\\
+  &=&\displaystyle\int_0^2 -e^{-x}\left(e^{-x}-e^0\right)\; dx\\\\
+  &=&\displaystyle\int_0^2 e^{-3x}\; dx =-\dfrac{1}{3}\displaystyle\int_0^2 e^{-3x}(-3)\; dx\\\\
+  &=&-\dfrac{1}{3}\left(e^{-3x}\right)\bigg|_0^2 =-\dfrac{1}{3}\left(e^{-6}-1\right)\\\\
+  &=&0.3738225\\\\
+\end{array}$$
+
+```{r}
+integrate(function(y) {
+  sapply(y, function(y) {
+    integrate(function(x) x*exp(-x*(y+1)), 0, 2)$value
+   })
+ }, 0, 1)$value
+```
+
+### c)
+
+Obtener las funciones de densidad marginal de $X$ y de $Y$.
+
+Respuesta.- La densidad marginal para $x$ está dada por:
+
+$$f_X(x)=\int_0^\infty xe^{-xy-x}\; dy = xe^{-x}\int_0^\infty e^{-xy}\; dy = -e^{-x}\left(e^{-xy}\right)\bigg|_0^\infty = e^{-x}$$
+
+La densidad marginal para $y$ está dada por:
+
+$$\begin{array}{rcl}
+  f_X(x)&=&\displaystyle\int_0^\infty xe^{-xy-x}\; dx\\\\
+        &=&\left(\displaystyle\dfrac{x}{-y-1}e^{-xy-x}-\dfrac{1}{-y-1}\int_0^\infty e^{-xy-x}\; dx\right)\bigg|_0^\infty \\\\
+        &=&0-\dfrac{1}{(-y-1)^2}e^{xy-x}\bigg|_0^\infty\\\\
+        &=&-\dfrac{1}{(-y-1)^2}\left(e^\infty-e^0\right)\\\\
+        &=&-\dfrac{1}{(-y-1)^2}(0-1)\\\\
+        &=&\dfrac{1}{(-y-1)^2}.\\\\
+\end{array}$$
+
+### d)
+
+¿Son $X$ e $Y$ estadísticamente independientes?.
+
+Respuesta.- por el hecho de que,
+$$xe^{-x(y-1)} \neq e^{-x}\dfrac{1}{(-y-1)^2}=\dfrac{e^{-x}}{(-y-1)^2}$$
+
+Diremos que $X$ e $Y$ no son estadísticamente independientes.
+
+# 6.5.
+
+Sean $X$ e $Y$ dos variables aleatorias discretas en donde los posibles
+valores que estas pueden tomar son $-1$, $0$ y $1.$ En la siguiente
+tabla se dan las probabilidades conjuntas para todos los posibles
+valores de $X$ e $Y$.
+
+$$\begin{array}{c|r|ccc|}
+  &&&X&\\
+  \hline
+  && -1 & 0 & 1 \\
+  \hline
+  &-1&1/16&3/16&1/16\\
+  Y&0&3/16&0&3/16\\
+  &1&1/16&3/16&1/16
+\end{array}$$
+
+### a)
+
+Obtener las funciones de probabilidad marginal $p_X(X)$ y $P_Y(y)$.
+
+Respuesta.- Para $p_X(x)$ se tiene al sumar las tres columnas de la
+tabla. Lo propio con $p_Y(y)$.
+$$p_X(x)=p_Y(y)=\dfrac{5}{16},\dfrac{6}{16},\dfrac{5}{16},\; x=y=-1,0,1.$$
+
+### b)
+
+¿Las variables aleatorias $X$ e $Y$ son estadísticamente independientes?
+
+Respuesta.- No, ya que $p_{XY}(x,y)\neq p_X(x)p_X(y)$.
+
+### c)
+
+Obtener $Cov(X,Y)$
+
+Respuesta.-
+
+```{r}
+(-1*-1*1/16+-1*1*1/16+1*-1*1/16+1/16)-(5/16*-1+6/16*0+5/16*1)*2 
+```
+
+## 6.6.
+
+Para las funciones de densidad conjuntas de probabilidad del ejercicio
+6.3., obtener $Cov(X,Y)$ y $\rho(X,Y)$.
+
+Respuesta.- Para poder hallar la covarianza y el coeficiente de
+correlación tenemos que hallar
+$E(X),E(Y),E\left(X^2\right),E\left(Y^2\right)$ y $E(XY)$.
+
+$$\begin{array}{rcl}
+  E(X)&=&\displaystyle\int_1^2\int_1^3 x\left(\dfrac{3x-y}{5}\right)\; dy\, dx = \displaystyle\int_1^2\dfrac{x}{5} \left(3xy-\dfrac{y^2}{2}\right)\bigg|_1^3 \; dx\\\\
+  &=&\dfrac{1}{5}\displaystyle\int_1^2 6x^2-4x  \; dx=\dfrac{1}{5}\left(\dfrac{6x^3}{3}-\dfrac{4x^2}{2}\right)\bigg|_1^2\\\\
+  &=&\dfrac{1}{5}\left(16-2-8+2\right)=\dfrac{8}{5}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+$$\begin{array}{rcl}
+  E(Y)&=&\displaystyle\int_1^2\int_1^3 y\left(\dfrac{3x-y}{5}\right)\; dy\, dx=\dfrac{1}{5}\displaystyle\int_1^2\int_1^3 3xy-y^2 \;dy\, dx\\\\
+  &=&\dfrac{1}{5}\displaystyle\int_1^2 \left(\dfrac{3xy^2}{2}-\dfrac{y^3}{3}\right)\bigg|_1^3 \; dx=\dfrac{1}{5}\displaystyle\int_1^212x-\dfrac{26}{3} \; dx\\\\
+  &=&\dfrac{1}{5}\left(6x^2-\dfrac{26x}{3}\right)\bigg|_1^2=\dfrac{28}{15}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) y*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+$$\begin{array}{rcl}
+  E\left(X^2\right) &=& \displaystyle\int_1^2 \int_1^3 x^2\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\displaystyle  \int_1^2 x^2 \left(3xy-\dfrac{y^2}{2}\right) \bigg|_1^3\\\\
+  &=&\dfrac{1}{5}\displaystyle \int_1^2 6x^3-8x^2\; dx=\dfrac{1}{5}\left(\dfrac{3x^4}{2}-\dfrac{8x^3}{3}\right)\bigg|_1^2\\\\
+  &=&\dfrac{79}{30}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x^2*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+$$\begin{array}{rcl}
+  E\left(Y^2\right) &=& \displaystyle\int_1^2 \int_1^3 y^2\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\int_1^2 \left(xy^3-\dfrac{y^4}{4}\right)\bigg|_1^3\; dx\\\\
+  &=&\displaystyle\dfrac{1}{5}\int_1^2 26x-20\; dx = \dfrac{1}{5}\left(13x^2-20x\right)\bigg|_1^2\\\\
+  &=&\dfrac{19}{5}.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) y^2*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+$$\begin{array}{rcl}
+  E\left(XY\right) &=& \displaystyle\int_1^2 \int_1^3 xy\left(\dfrac{3x-y}{5}\right)\; dy\,dx = \dfrac{1}{5}\int_1^2 x\left(\dfrac{xy^2}{2}-\dfrac{y^3}{3}\right)\bigg|_1^3\; dx\\\\
+  &=&\dfrac{1}{5}\displaystyle \int_1^2 12x^2-\dfrac{26x}{3}\; dx = \dfrac{1}{5}\left(4x^3-\dfrac{13x^2}{3}\right)\bigg|_1^2\\\\
+  &=&3.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(x) {
+  sapply(x, function(x) {
+    integrate(function(y) x*y*((3*x-y)/5), 1, 3)$value
+   })
+ }, 1, 2)$value
+```
+
+La covarianza viene dado por:
+
+$$Cov(X,Y) = E(XY)-E(X)E(Y) = 3-\dfrac{8}{5}\cdot \dfrac{28}{15}=\dfrac{1}{75}=0.01333333.$$
+
+Dado que:
+
+$$Var(X)=E\left(X^2\right)-E^2(X)=\dfrac{79}{30}-\left(\dfrac{8}{5}\right)^2 = \dfrac{11}{150}.$$
+
+y
+
+$$Var(Y)=E\left(Y^2\right)-E^2(Y) = \dfrac{19}{5} - \left(\dfrac{28}{15}\right)^2 = \dfrac{71}{225}.$$
+El coeficiente de correlación es:
+
+$$\rho(X,Y) = \dfrac{Cov(X,Y)}{\sigma_x\sigma_y} = \dfrac{\dfrac{1}{75}}{\sqrt{\dfrac{11}{150}\cdot \dfrac{71}{225}}} = 0.08764963.$$
+
+```{r}
+cov = 3-(8/5)*(28/15)
+cov
+varX = 79/30-(8/5)^2
+varY = 19/5 - (28/15)^2
+cov/(sqrt(varX*varY))
+```
+
+## 6.7.
+
+Un función de su prioridad, un programa para computadora espera en la
+fila de entrada cierto tiempo, después del cual lo ejecuta el procesador
+central en un lapso dado. La función de densidad conjunta para los
+tiempos de espera y ejecución se determina por
+
+$$f(t_1,t_2)=\left\{\begin{array}{ll}
+  2e^{-\left(\frac{t_1}{5}+10t^2\right)}&t_1,t_2>0,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+Dada la distribución conjunta acumulativa:
+
+$$F(t_1,t_2)=\left\{\begin{array}{ll}
+  \left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10t^2}\right] & t_1,t_2>0\\\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+
+Obtener la probabilidad conjunta de que el tiempo de espera no sea mayor
+de ocho minutos y el de ejecución no sea mayor de 12 segundos.
+
+Respuesta.- $$\begin{array}{rcl}
+  P(X\leq 8,Y\leq 0.2) = \displaystyle \int_0^8 \int_0^{0.2} 2e^{-\left(\frac{t_1}{5}+10t_2\right)} \; dt_2\, dt_1&=& 2 \displaystyle \int_0^8 \left[\dfrac{e^{-\left(\frac{t_1}{5}+10t_2\right)}}{-10}\right]\bigg|_0^{0.2} \; dt_1\\\\
+  &=&-\dfrac{1}{5}\displaystyle \int_0^8 e^{-\left(\frac{t_1}{5}+2\right)} -e^{-\frac{t_1}{5}}\;dt_1\\\\
+  &=&-\dfrac{1}{5}\left[\dfrac{e^{-\left(\frac{t_1}{5}+2\right)}}{-\frac{1}{5}}\right]\bigg|_0^8 + \dfrac{1}{5}\left(\dfrac{e^{-\frac{t_1}{5}}}{-\frac{1}{5}}\right)\bigg|_0^8 \\\\
+  &=&e^{-\left(\frac{t_1}{5}+2\right)}\bigg|_0^8-e^{-\frac{t_1}{5}}\bigg|_0^8\\\\
+  &=&e^{-\frac{18}{5}}-e^{-2}-e^{-\frac{8}{5}}+e^0\\\\
+  &=&0.6900919.\\\\
+\end{array}$$
+
+```{r}
+integrate(function(t1) {
+  sapply(t1, function(t1) {
+    integrate(function(t2) 2*exp(-(t1/5+10*t2)), 0, 0.2)$value
+   })
+ }, 0, 8)$value
+```
+
+Podemos encontrar el resultado mediante la distribución conjunta
+acumulativa:
+
+$$F(8,0.2)=\left[1-e^{-\frac{8}{5}}\right]\left[1-e^{-10\cdot 0.2}\right] = 0.6900919.$$
+
+```{r}
+t1=8
+t2=0.2
+(1-exp(-t1/5))*(1-exp(-10*t2))
+```
+
+### b)
+
+Obtener las funciones de densidad marginal y deducir que estos lapsos
+son variables aleatorias independientes.
+
+Respuesta.- Sea
+$F(x,y)=\left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10t^2}\right]$,
+entonces
+
+$$F(t_1,\infty) = \left[1-e^{\left(\frac{-t_1}{5}\right)}\right]\left[1-e^{-10\cdot \infty}\right] = 1-e^{\left(\frac{-t_1}{5}\right)}. \quad \Rightarrow \quad f_{T_1}(t_2)=\dfrac{\partial F(\infty,t_2)}{\partial y}=-\left(-\dfrac{1}{5}\right)e^{\frac{-t_1}{5}}=\dfrac{1}{5}e^{\frac{-t_1}{5}}$$
+
+$$F(\infty,t_2) = \left[1-e^{\left(\frac{-\infty}{5}\right)}\right]\left[1-e^{-10t_2}\right] = 1-e^{-10t_2}\quad \Rightarrow \quad f_{T_2}(t_1)=\dfrac{\partial F(t_1,\infty)}{\partial x}=10e^{-10t_2}.$$
+
+Por último, comprobemos la independencia. Sea $f(x,y)=f_X(x)f_Y(y)$,
+entonces en lo particular:
+
+$$f(t_1,t_2) = f_{T_1}(t_1)\cdot f_{T_2}(t_2)\quad \Rightarrow \quad 2e^{-\left(\frac{t_1}{5}+10t^2\right)}=\dfrac{1}{5}e^{\frac{-t_1}{5}}\cdot 10e^{-10t_2}.$$
+
+Por lo tanto, se comprueba que estos lapsos son variables aleatorias
+independientes.
+
+## 6.8.
+
+Las variables aleatorias $X$ e $Y$ representan las proporciones de los
+mercados correspondientes a dos productos distintos fabricados por la
+misma compañia y cuya función de densidad conjunta de probabilidad está
+dada por
+
+$$f(x,y)=\left\{\begin{array}{ll}
+  x+y & 0\leq x, y\leq 1,\\
+  0& \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+### a)
+
+Obtener las funciones de densidad marginal de $X$ e $Y$.
+
+Respuesta.- Sólo hará falta integrar la función de densidad para cada
+variable aleatoria. No está de más observar que si $x$ o $y$ no tienen
+una cota superior, entonces tomamos la cota superior de la otra variable
+.
+
+$$f_X(x)=\int_0^1 x+y\; dy = \left(xy+\dfrac{y^2}{2}\right)\bigg|_0^1 = x+\dfrac{1}{2}.$$
+
+$$f_Y(y)=\int_0^1 x+y\; dx = \left(\dfrac{x^2}{2}+xy\right)\bigg|_0^1 = \dfrac{1}{2}+y.$$
+
+### b)
+
+¿Las variables aleatorias $X$ e $Y$ son estadísticamente
+independientes?.
+
+Respuesta.- Para tal efecto necesitaremos asber si se cumple la igualdad
+$f(x,y)=f_X(x) \cdot f_Y(y).$
+
+$$x+y=\left(x+\dfrac{1}{2}\right)\cdot \left(\dfrac{1}{2}+y\right)$$
+
+Por lo tanto podemos deducir que las variables aleatorias $X$ e $Y$ no
+son estadísticamente significativas.
+
+### c)
+
+Si $X=0.2$, obtener la función de densidad de probabilidad condicional
+de $Y$.
+
+Respuesta.- Se define como:
+
+$$f(y|x)=\dfrac{f(x,y)}{f_X(x)}$$
+
+Por lo tanto,
+
+$$f(y|X=0.2)=\dfrac{x+y}{x+\frac{1}{2}}=\dfrac{\frac{1}{5}+y}{\frac{1}{5}+\frac{1}{2}}=\dfrac{10(1+y)}{7}.$$
+
+## 6.9.
+
+Las variables aleatorias $X$ e $Y$ representan el largo y ancho (en cm)
+de una hoja de acero. Si $X$ e $Y$ son independientes con funciones de
+densidad de probabilidad dadas por $$f_X(x)=\left\{\begin{array}{ll}
+  1, & 99<x<100,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right. \qquad 
+f_Y(y)=\left\{\begin{array}{ll}
+  1, & 49<y<50,\\
+  0 & \mbox{para cualquier otro valor.}
+\end{array}\right.$$
+
+Usesé la definición de varianza para obtener la varianza del área de la
+hoja de acero $XY$.
+
+Respuesta.- Ya que son variables aleatorias independientes. Es decir,
+$E(XY)=E(X)E(Y)$, entonces
+
+$$Var(XY) = E(X^2Y^2)-E^2(EX)$$
+
+Luego por las funciones de densidad de probabilidad dada, se tiene
+
+$$E(XY)=\int_{99}^{100}\int_{49}^{50} xy\; dydx = \int_{99}^{100}x\left(\dfrac{y^2}{2}\right)\bigg|_{49}^{50}\; dx=\dfrac{99}{2}\left(\dfrac{x^2}{2}\right)\bigg|_{99}^{100} = \dfrac{19701}{4}$$
+
+$$E(X^2Y^2)=\int_{99}^{100}\int_{49}^{50} x^2y^2\; dydx = \int_{99}^{100}x^2\left(\dfrac{y^3}{3}\right)\bigg|_{49}^{50}\; dx=\dfrac{7351}{3}\left(\dfrac{x^3}{3}\right)\bigg|_{99}^{100} = \dfrac{218332051}{9}$$
+Por lo tanto,
+
+$$Var(XY) = \dfrac{218332051}{9}-\left(\dfrac{19701}{4}\right)^2=1029.215.$$
+
+## 6.10.
+
+Sea $X$ una variable aleatoria continua e $Y$ discreta.
+
+### a)
+
+Si $f(x,y)=\dfrac{x^y e^{-2x}}{y!}>0$, $y=0,1,2,\ldots$ obtener la
+función de probabilidad marginal de $Y$.
+
+Respuesta.- Sea
+$\dfrac{1}{y!}\displaystyle\int_0^\infty x^y e^{-2x}\; dx$, entonces
+
+### b)
+
+Obtener la función de probabilidad condicional de $X$ para $Y=2$.
+
+Respuesta.-
+
+### c)
+
+Obtener $E(X|2)$ y $Var(X|2)$.
+
+Respuesta.-
+
+## 6.11.
+
+Sean $X$ e $Y$ dos variables aleatorias. Demostrar que
+$Var(aX-bY)=a^2 Var(x)+b^2Var(Y)-2abCov(X,Y)$, en donde $a$ y $b$ son
+constantes.
+
+Respuesta.- La demostración es análoga a la que se da en el libro de
+Canavos página 195 (6.16).
+
+$$\begin{array}{rcl}
+  Var(aX-bY)&=&E(aX-bY)^2-E^2(aX-bY)\\\\
+  &=&E\left(a^2X^2-2abXY+b^2Y^2\right)-\left[aE(X)-bE(Y)\right]^2\\\\
+  &=& a^2E(X^2)-2abE(XY)+b^2E(Y^2)-a^2E^2(X) +2abE(X)E(Y)-b^2E^2(Y)\\\\
+  &=&a^2\left[E(X^2)-E^2(X)\right] +b^2\left[E(Y^2)-E^2(Y)\right]-2ab\left[E(XY)-E(X)E(Y)\right]\\\\
+  &=&a^2Var(X)+b^2Var(Y)-2abCov(X,Y).\\\\
+\end{array}$$
+
+## 6.12.
+
+Sean $X$ e $Y$ dos variables aleatorias. Demostrar que
+$Cov(aX,bY)=abCov(X,Y)$, en donde $a$ y $b$ son constantes.
+
+Respuesta.- $$\begin{array}{rcl}
+  Cov(aX,bY) &=& E(aXbY)-E(aX)E(bY)\\\\
+  &=&abE(XY)-aE(X)bE(Y)\\\\
+  &=&ab\left[E(XY)-E(X)E(Y)\right]\\\\
+  &=&abCov(X,Y).\\\\
+\end{array}$$
+
+## 6.13.
+
+Si $X$ e $Y$ son dos variables aleatorias independientes
+$Var(X+Y)=Var(X-Y)=Var(x)+Var(Y)$. Comparar este resultado con
+$Var(X+Y)$ cuando $Var(X+Y)Cov(X,Y)>0$ o $Cov(X,Y)<0$. ¿Qué puede
+concluir?.
+
+Respuesta.- Si $Cov(X,Y)>0,$ $Var(X+Y)>Var(X)+Var(Y)$ y
+$Var(X-Y)<Var(X)+Var(Y).$
+
+Si $Cov(X,Y)<0,$ $Var(X+Y)<Var(X)+Var(Y),$ y $Var(X-Y)>Var(X)+Var(Y).$
+
+## 6.14.
+
+Supóngase que la frecuencia $\Lambda$ a la que ocurren accidentes
+automovilísticos en un lapso fijo es una variable aleatoria con una
+distribución gama y parámetros de forma y escala igual a dos. Si para
+cada valor $\lambda$ de $\Lambda$ la distribución condicional del número
+de accidentes es una distribución de Poisson, obtener la función de
+probabilidad marginal de $X$ y calcular las probabilidades para
+$X=0,1,2,\ldots, 10.$ ¿Cómo son estas probabilidades al compararlas con
+las que se obtienen bajo la suposición de una frecuencia constante
+$\lambda=4$?.
+
+Respuesta.- Dado que $\Gamma(2)=\int_0^\infty u^{2-1}e^{-2}\; du = 1.$
+La distribución gama viene dada por:
+
+$$f(x,2,2)=\left\{\begin{array}{lr}
+  \dfrac{1}{\Gamma(2)2^2}x^{2-1}e^{-\frac{x}{2}} & x>0,\\\\
+  0 & \mbox{otro valor.}
+\end{array}\right.\quad \Rightarrow \quad 
+f(x,2,2)=\left\{\begin{array}{lr}
+  \dfrac{1}{4}xe^{-\frac{x}{2}} & x>0,\\\\
+  0 & \mbox{otro valor.}
+\end{array}\right.
+$$
+
+$$f(x|y)=\dfrac{f(x,y)}{f_Y(y)}= \dfrac{e^{-\lambda}\lambda^y}{y!}$$
+
+## 6.15.
+
+Supóngase que la incidencia de cáncer pulmunar para un determinado
+número de personas adultas, sin importar sus hábitos de fumador, su
+edad, etc., es una variable aleatoria con distribución gama con
+parámetros de forma y escala iguales a dos. Para un grupo específico de
+personas, el número que presentará cáncer pulmonar es una variable
+aleatoria de Poisson en donde el valor del parámetro de ésta depende de
+la incidencia de cáncer en este grupo. Obtener la probabilidad no
+condicional de que no más de dos personas desarrollen cáncer en este
+grupo.
+
+Respuesta.-
+
+
+## 6.16.
+
+## 6.17.
+Supóngase que el gerente de una planta descubre 
+
+## 6.18
+
+## 6.19
+La función de densidad conjunta de probabilidad para la demanda mensual de dos productos es una distribución normal bivariada dada por
+$$f(x,y)=\dfrac{1}{100\pi\sqrt{3}}e^{\left\{-\dfrac{2}{3}\left[\left(\dfrac{x-50}{10}\right)^2-\left(\dfrac{x-50}{10}\right)\left(\dfrac{y-25}{10}\right)+\left(\dfrac{y-25}{10}\right)^2\right]\right\}}$$
+
+### a) ¿Cuál es el coeficiente de correlación entre X e Y?.
+
+Respuesta.-
+
+### b) ¿Cuál es la covarianza entre X e Y?.
+
+Respuesta.-
+
+### c) Obtener la función de densidad de probabilidad condicional f(x|y).
+
+Respuesta.-
+
+### d) Supóngase que la demanda de $Y$ es 30. ¿Cuál es la probabilidad condicional de que $X$ sea mejor que 65?
+
+Respuesta.-
+
+
+## 6.20.
+Supóngase que el $CI(X)$ y la calificación promedio de estudiantes no gruadados de licenciatura $Y$ son variables aleatorias que se encuentran distribuidas de manera conjunta como una distribución normal bivariada $\mu_X=100,\; \sigma_X=10, \; \mu_Y=3,\; \sigma_Y=0.3$ y $Cov(X,Y)=2.25$.
+
+### a)
+Si algún estudiante posee un CI de $120$ ¿cuáles son los valores de la media y la desviación estándar condicionales para $Y$?.
+
+Respuesta.-
+
+### b)
+Dado que el CI es $120$, obtener la probabilidad de que $Y$ sea mayor de $3.5$.
+
+Respuesta.-
+
+### c)
+Supóngase que la calificación promedio de un estudiante es $2.8$. ¿Cuál es la probabilidad de que esta persona tenga un CI mayor de $115$?.
+
+Respuesta.-
+
+
+
+# Ejercicios capitulo 7
+
+## 7.1 
+Una forma de mercadotecnia envía un cuestionario a $1000$ residentes de cierto suburbio de una ciudad para determinar sus preferencias como compradores. De los $1000$ residentes, $80$ responden el cuestionario. ¿Lo anterior constituye una muestra aleatoria? Discutir los méritos de este procedimiento para obtener una muestra aleatoria.
+
+## 7.2
+En una planta de armado automotriz se seleccionarán $50$ de los primeros $1000$ automóviles de un nuevo modelo para ser inspeccionados por el departamento de control de calidad. El gerente de la planta decide inspeccionar un automóvil cada vez que terminan de armarse $20$. ¿Este proceso dará como resultado una muestra aleatoria? Comente.
+
+Respuesta.- Dado que el experimento se repite bajo las mismas condiciones, con variables aleatorias independientes e idénticamente distribuidas. Podemos decir que este experimento podría ser sin sesgo.
+
+## 7.3
+Si $X_1,X_2,\ldots,X_n$ constituye una muestra aleatoria, obtener las funciones de verosimilitud de las siguientes distribuciones:
+
+### a)
+De Poisson, con parámetro $\lambda$;
+
+Respuesta.- Sea $p(x,\lambda)=\dfrac{e^{-\lambda}\lambda^x}{x}$ para $x=0,1,2,\ldots$, entonces la función de verosimilitud será
+$$L(x_1,x_2,\ldots x_n)=\prod_{i=1}^n \dfrac{e^{-\lambda}\lambda^{x_i}}{x_i!}=\dfrac{e^{-\lambda}\lambda^{x_1}}{x_1!}\cdot \dfrac{e^{-\lambda}\lambda^{x_2}}{x_2!}\cdots \dfrac{e^{-\lambda}\lambda^{x_n}}{x_n!}=\dfrac{e^{-n\lambda}\lambda^{\sum_{i=1}^n x_i}}{\prod\limits_{i=1}^n x_i!},\; x=1,2,\ldots$$
+
+### b)
+Hipergeométrica, con parámetro $p$;
+
+Respuesta.- Si  p = k/N, puede escribirse la función de probabilidad hipergeométrica como una función de probabilidad binomial y dado que el único parámetro es $p$ entonces,  $p(x,n,p)=\dfrac{n!}{(n-x)!x!} p^x(1-p)^{n-x},\; x=0,1,2,\ldots$
+
+
+### c)
+Uniforme en el intervalo $(a,b)$;
+
+Respuesta.- Sea $\dfrac{1}{b-a}$ para $a\leq x \leq b$ una función de densidad de probabilidad uniforme. Entonces, la función de verosimilitud será:
+
+$$L(x_1,x_2,\ldots,x_n)=\prod_{i=1}^n \dfrac{1}{b-a}=\dfrac{1}{b-a}\cdot\dfrac{1}{b-a}\cdot\cdots \dfrac{1}{b-a}=\dfrac{1}{(b-a)^n}$$
+
+### d)
+$N(\mu,\sigma)$
+
+Respuesta.- Sea $f(x;\mu,\sigma)=\dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$, la función de densidad de probabilidad. Entonces la función de verosimilitud será:
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\mu,\sigma)&=&\prod\limits_{i=1}^n \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2}\\\\
+  &=&\dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_1-\mu}{\sigma}\right)^2}\cdot \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_2-\mu}{\sigma}\right)^2} \cdots \dfrac{1}{\sqrt{2\pi}{\sigma}}e^{-\frac{1}{2}\left(\frac{x_n-\mu}{\sigma}\right)^2}\\\\
+  &=&\left(\dfrac{1}{\sqrt{2\pi}\sigma}\right)^n e^{-\sum \left[\frac{(x_i-\mu)^2}{2\sigma^2}\right]}
+\end{array}$$
+
+
+## 7.4
+Repetir el ejercicio 7.3 para las siguientes distribuciones:
+
+### a)
+Gama con parámetro $\alpha$ y $\theta$.
+
+Respuesta.- Sea, $\dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x/\theta}$ la distribución de densidad gama, entonces la función de verosimilitud será:
+
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\alpha,\theta)&=&\prod\limits_{i=1}^n \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_i/\theta}\\\\
+  &=& \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_1/\theta}\cdot  \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_2/\theta} \cdots \dfrac{1}{\Gamma(\alpha)\theta^{\alpha}}x^{\alpha-1}e^{-x_n/\theta}\\\\
+  &=& \left(\dfrac{x^{\alpha-1}}{\Gamma(\alpha)\theta^{\alpha}}\right)^n \cdot e^{\left(-\sum\limits_{i=1}^n\frac{x_i}{\theta}\right)}.
+\end{array}$$
+
+
+
+### b)
+Weibull con parámetro $\alpha$ y $\theta$.
+
+Respuesta.- Sea $f(x;\alpha,\theta)=\dfrac{\alpha}{\theta^{\alpha}}x^{\alpha-1}e^{-(x/\theta)^\alpha}$ la distribución de densidad de probabilidad Weibull, entonces la función de verosimilitud sera:
+
+$$\begin{array}{rcl}
+  L(x_1,x_2,\ldots x_n;\alpha,\theta)&=&\prod\limits_{i=1}^n \dfrac{\alpha}{\theta^{\alpha}}x_i^{\alpha-1}e^{-(x_i/\theta)^\alpha}\\\\
+  &=&\dfrac{\alpha}{\theta^{\alpha}}x_1^{\alpha-1}e^{-(x_1/\theta)^\alpha}\cdot \dfrac{\alpha}{\theta^{\alpha}}x_2^{\alpha-1}e^{-(x_2/\theta)^\alpha}\cdots \dfrac{\alpha}{\theta^{\alpha}}x_n^{\alpha-1}e^{-(x_n/\theta)^\alpha}\\\\
+  &=&\left(\dfrac{\alpha}{\theta^{\alpha}}\right)^n\cdot \prod\limits_{i=1}^n x_i^{\alpha-1}\cdot e^{\left[-\sum\limits_{i=1}^n \left(\frac{x_i}{\theta}\right)^\alpha\right]}.
+\end{array}$$
+
+## 7.5
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una población cuya distribución es normal con media $\mu$ y varianza $\sigma^2$. De las siguientes, ¿cuáles son estadísticas?
+
+### a)
+$\sum X_i-\mu$.
+
+Respuesta.- No es estadística ya que no está definida $X_i$ ni se conoce el valor de $\mu$.
+
+### b)
+$\sigma X_1 + \sigma X_2$.
+
+Respuesta.- No es estadística ya que no se conoce el valor de sigma.
+
+### c)
+$X_i,i=1,2,\ldots,n$.
+
+Respuesta.- Es estadística porque $X_i$ está definida entre $1$ y $n$.
+
+### d)
+$X_1^2+X_2^2 - e^{X_3}$.
+
+Respuesta.- Es estadística.
+
+### e)
+$\dfrac{X_i}{\sigma},\; i=1,2,\ldots, n$.
+
+Respuesta.- No es estadística porque no se conoce el valor de $\sigma$.
+
+### f)
+$\sum \left(X_i-\overline{X}\right)^2$.
+
+Respuesta.- Es estadística porque es una función completa.
+
+
+## 7.6
+Sean $X_1,X_2,\ldots,X_n$ $n$ variables aleatorias independientes de Poisson con parámetros $\lambda_1,\lambda_2,\ldots,\lambda_n$ respectivamente. Mediante el empleo de la función generadora de momentos, demostrar que la suma de estas variables también es una variable aleatoria de Poisson con parámetros $\lambda_1+\lambda_2+\cdots + \lambda_n$.
+
+Respuesta.- Sea,
+$$m_{X_i}(t)=e^{\lambda_i(e^t-1)}$$
+la función generadora de momentos de la distribución Poisson, entonces por el teorema 7.1, con $a_i=1$. La suma de las variables también es una variable aleatoria de Poisson. Es decir, sea 
+$$Y=X_1+X_2+\ldots + X_n$$
+de donde,
+$$
+\begin{array}{rcl}
+  m_{Y}(t)&=&m_{X_1}(t)m_{X_2}(t)\cdots m_{X_n}(t)\\\\
+  &=& e^{\lambda_1\left(e^t-1\right)}e^{\lambda_2\left(e^t-1\right)}\cdots e^{\lambda_n(e^t-1)}\\\\
+  &=& e^{\left[\lambda_1\left(e^t-1\right)+\lambda_2\left(e^t-1\right)+\ldots+ \lambda_n\left(e^t-1\right) \right]}\\\\
+  &=& e^{\left[\left(\lambda_1+\lambda_2+\ldots + \lambda_n\right)\left(e^t-1\right)\right]} 
+\end{array}
+$$
+
+## 7.7
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes de Poisson con parámetros $\lambda_1$ y $\lambda_2$, respectivamente. Demostrar que la diferencia entre $X_1$ y $X_2$ no es una variable aleatoria de Poisson.
+
+Respuesta.- Sea,
+$$Y=X_1-X_2$$
+Entonces por el teorema 7.1 con $a_i=1$, 
+
+$$
+\begin{array}{rcl}
+  m_Y(t)&=&E\left\{e^{t\left[X_1+(-X_2)\right]}\right\}\\\\
+  &=&E\left[e^{tX_1}\cdot e^{(-t)X_2}\right]\\\\
+  &=& E\left[e^{tX_1}\right]E\left[e^{(-1)X_2}\right]\\\\
+  &=& m_{X_1}(t)m_{X_2}(-t)\\\\
+  &=&e^{\lambda_1(t-1)}e^{\lambda_2(-t-1)}
+\end{array}
+$$
+
+Por lo que no es una variable aleatoria Poisson.
+
+
+## 7.8
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes binomial con parámetros $n_1$ y $p$, y $n_2$ y $p$, respectivamente. Demostrar que la suma  de $X_1$ y $X_2$ es una variable aleatoria binomial con parámetros $n_1+n_2$ y $p$.
+
+Respuesta.- Sea la función generadora de momentos: 
+
+$$m_X(t)=\left[(1-p)+e^tp\right]^n$$
+
+Entonces, por el teorema 7.1, con a_i=1. La suma de las variables también es una variable aleatoria binomial. Es decir; sea,
+
+$$Y=X_1+X_2$$
+
+por lo que
+
+$$
+\begin{array}{rcl}
+  m_Y(t) &=& m_{X_1}(t)m_{X_2}(t)\\\\
+  &=&\left[(1-p)+e^tp\right]^{n_1} \left[(1-p)+e^tp\right]^{n_2}\\\\
+  &=& \left[(1-p)+e^tp\right]^{n_1+n_2}
+\end{array}
+$$
+
+
+## 7.9
+Sean $X_1$ y $X_2$ dos variables aleatorias independientes distribuidas exponencialmente con el mismo parámetro $\theta$. Demostrar que la suma de $X_1$ y $X_2$ es una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
+
+Respuesta.- Sea la función generadora de momentos dado por:
+
+$$m_X(t)=\dfrac{\theta}{\theta-t}$$
+
+Entonces, sea 
+
+$$Y=X_1+X_2$$
+
+de donde,
+
+$$
+\begin{array}{rcl}
+  m_Y(t) &=& m_{X_1}(t)m_{X_2}(t)\\\\
+  &=& \dfrac{\theta}{\theta-t} \cdot \dfrac{\theta}{\theta-t}\\\\
+  &=&\left(\dfrac{\theta}{\theta-t}\right)^2.
+\end{array}
+$$
+
+Así, tenemos una variable aleatoria gama con parámetros de forma $2$ y parámetro de escala $\theta$.
+
+
+## 7.10
+Para un determinado nivel de ingresos, el Departamento de Hacienda sabe que las cantidades declaradas por concepto de deducciones médicas $(X_1)$, contribuciones caritativas $(X_2)$ y gastos varios $(X_3)$, son variables aleatorias independientes normalmente distribuidas con media $\$ 400, \$ 800$ y $\$100$ y desviaciones estándar $\&100, \$ 250$ y $\$40$, respectivamente.
+
+### a)
+¿Cuàl es la probabilidad de que la cantidad total declarada por concepto de estas tres deducciones, no sea mayor de $\$1600$?
+
+Respuesta.- Sean,
+
+$$
+\begin{array}{rclccrcl}
+  E(X_1) &=& 400 &;& sd(X_1)&=&100\\
+  E(X_2) &=& 800 &;& sd(X_2)&=&800\\
+  E(X_3) &=& 100 &;& sd(X_3)&=&100
+\end{array}
+$$
+
+Por el teorema 7.2, con $a_i=1$, tenemos
+
+$$
+\begin{array}{rclclcr}
+  E(Y) &=& E(X_1)+E(X_2) +E(X_3) &=& 400+800+100 &=& 1300\\\\
+  \sqrt{sd(Y)} &=& \sqrt{sd^2(X_1) + sd^2(X_2) +sd^2(X_3)} &=& \sqrt{100^2+250^2+40^2} &=& \sqrt{74100}
+\end{array}
+$$
+
+Lo que implica que,
+
+$$Y\sim N\left(1300,\sqrt{74100}\right)$$
+
+Entonces, la probabilidad de que la cantidad total declarada por concepto de las deducciones dadas no se mayor a $\$ 1600$ será:
+
+$$P(Y\leq 1600)=0.864786$$
+
+```{r}
+pnorm(1600,1300,sqrt(74100))
+```
+
+
+### b)
+Si una persona con este nivel de ingresos declara por concepto de estas deducciones un total de $\$ 2100$, ¿qué tan probable es tener una cantidad igual o mayor a este monto bajo las condiciones dadas?
+
+Respuesta.- Sea $Y\sim N(1300,\sqrt{74100})$. Entonces,
+
+$$P(Y\geq 2100)=0.001647038$$
+
+```{r}
+pnorm(2100,1300,sqrt(74100),lower.tail = FALSE)
+```
+
+
+## 7.11
+Una tienda de artículos eléctronicos para el hogar vende tres diferentes marcas de refrigeradores. Sean $X_1,X_2$ y $X_3$ variables aleatorias las cuales representan el volumen de ventas mensuales para cada una de las tres marcas de refrigeradores. Si $X_1,X_2$ y $X_3$ son variables aleatorias independientes normalmente distribuidas con medias $\$ 8000$, $\$15000$ y $\$12000$, y desviación estándar $\$2000$ $\$5000$ y $\$3000$, respectivamente, obtener la probabilidad de que, para un mes en particular, el volumen de venta total para los tres refrigeradores sea mayor de $\$50000$.
+
+Respuesta.- Sean,
+
+$$
+\begin{array}{rclclcr}
+  E(Y) &=& E(X_1)+E(X_2) +E(X_3) &=& 8000+15000+12000  &=& 35000\\\\
+  \sqrt{sd(Y)} &=& \sqrt{sd^2(X_1) + sd^2(X_2) +sd^2(X_3)} &=& \sqrt{2000^2+5000^2+3000^2} &=& 6164.414
+\end{array}
+$$
+
+Lo que implica que,
+
+$$Y\sim N\left(35000,6164.414\right)$$
+
+Entonces, 
+
+$$P(Y\geq 5000)=0.007480509.$$
+```{r}
+EY = 8000+15000+12000
+sdY = sqrt(2000^2+5000^2+3000^2)
+pnorm(50000,EY,sdY,lower.tail = FALSE)
+```
+
+
+## 7.12
+En una tienda de servicio el tiempo total del sistema consta de dos componentes (el lapso de tiempo que debe esperar para que el servicio de comienzo $(X_1)$ y el lapso de tiempo que este dura $(X_2)$). Si $X_1$ y $X_2$ son variables aleatorias independientes exponencialemente distribuidas con un tiempo medio de $4$ minutos cada una, ¿cuál es la probabilidad de que el tiempo total que tarda el sistema en proporcionar el servicio no sea mayor de $15$ minutos? (Sugerencia: consulte el ejercicio 7.9.)
+
+Respuesta.- Por el ejercicio 7.9, tenemos
+$$m_Y(t) =\left(\dfrac{\theta}{\theta-t}\right)^2$$.
+
+tal que $Y=X_1+X_2$
+
+
+## 7.13 
+Sea $X_1,X_2,\ldots, X_n$ una muestra aleatoria de una población que tiene una distribución gama con parámetros $\alpha$ y $\theta$. Mediante el uso de la función generadora de momentos, demostrar que la distribución dela media muestral $\overline{X}$ también es de tipo gama, con parámetros de escala y de forma iguales a $n\alpha$ y $\theta/n$ respectivamente.
+
+
+
+## 7.14
+Mediante el empleo de los resultados de la sección 5.9, generar números aleatorios para las distribuciones binomial y exponencial y usarlos para demostrar el teorema central del límite. De manera específica, para $n=10$ y $n=40$, generar $50$ muestras de una distribución binomial con $p=0.4$. Repetir el procedimiento anterior generando $50$ muestras de una distribución exponencial con parámetro $\theta=100$. ¿Se ha demostrado el teorema central del límite en un grado razonable?.
+
+Respuesta.- Sea,
+
+$$
+Y=
+\left\{
+  \begin{array}{rcl}
+    1 &si& 0\leq u \leq p\\
+    0 &si& p<u\leq 1.
+  \end{array}
+\right.
+$$
+
+cómo obtenemos números aleatorios binomiales. Entonces,
+
+```{r}
+binomr = function(n,p){
+  set.seed(1)
+  v = runif(n)
+  x=c()
+  for (u in v) {
+    if(0<=u & u<=p) {
+      x=append(x,1)
+    } else if(p<u & u<=1) {
+      x=append(x,0)
+    }
+  }
+  return(x)
+}
+```
+
+```{r}
+n10=10
+n40=40
+p = 0.4
+```
+
+```{r}
+binom10 = replicate(50,binomr(n10,p))
+mean(binom10)
+```
+
+```{r}
+binom40 = replicate(50,binomr(n40,p))
+mean(binom10)
+```
+
+
+Por otro lado sea,
+
+$$x=\theta\cdot\ln\left(\dfrac{1}{1-u}\right)$$
+
+un genedador de números aleatorios para la distribución exponencial, con $\theta=100$. Entonces,
+
+```{r}
+theta=100
+exponr=function(n,theta){
+  set.seed(1)
+  v = runif(n)
+  x=c()
+  for (u in v) {
+    x = append(x,theta*log(1/(1-u)))
+  }
+  return(x)
+}
+```
+
+```{r}
+exponr10=replicate(50,exponr(n10,theta))
+mean(exponr10)
+```
+
+```{r}
+exponr40=replicate(50,exponr(n40,theta))
+mean(exponr40)
+```
+
+
+Por lo que se demuestra de manera razonable el teorema central del límite.
+
+
+## 7.15
+Para cierta prueba de aptitud se sabe con base a la experiencia que el número de aciertos es $1000$ con una desviación estándar de $126$. Si se aplica la prueba a $100$ personas seleccionadas al azar, aproximar las siguientes probabilidades que involucran a la media muestra $\overline{X}$.
+
+### a)
+$P\left(985<\overline{X}<1015\right)$
+
+Respuesta.- Sea, $Z=\dfrac{\overline{X}-\theta}{\theta/\sqrt{n}}$, $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$
+\begin{array}{rcl}
+  P(985<\overline{X}<1015)&=&P\left(985-\mu<\overline{X}-\mu<1015-\mu\right)\\\\
+  &=& P\left(\dfrac{985-\mu}{\sigma/\sqrt{n}}<\dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}<\dfrac{1015-\mu}{\sigma/\sqrt{n}}\right)\\\\
+  &=& P\left(\dfrac{985-1000}{126/\sqrt{100}}<Z<\dfrac{1015-1000}{126/\sqrt{100}}\right)\\\\
+  &=& 0.7661407. 
+\end{array}
+$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1015,mu,sd/sqrt(n)) - pnorm(985,mu,sd/sqrt(n))  
+```
+
+
+### b)
+$P\left(960<\overline{X}<1040\right)$
+
+Respuesta.- Sean $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$P\left(\dfrac{960-1000}{126/\sqrt{100}}<Z<\dfrac{1040-1000}{126/\sqrt{100}}\right)=0.9984996.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1040,mu,sd/sqrt(n)) - pnorm(960,mu,sd/sqrt(n))  
+```
+
+### c)
+$P\left(\overline{X}>1020\right)$
+
+Respuesta.- Sean $\mu=1000$, $n=100$  y $\sigma=126$. Entonces,
+
+$$P\left(Z>\dfrac{1020-1000}{126/\sqrt{100}}\right)=0.05622218.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(1020,mu,sd/sqrt(n),lower.tail = FALSE)
+```
+
+### d)
+$P\left(\overline{X}<975\right)$
+
+Respuesta.- Sean $\mu=1000$, $n=100$ y $\sigma=126$. Entonces,
+
+$$P\left(Z<\dfrac{975-1000}{126/\sqrt{100}}\right)=0.02362084.$$
+
+```{r}
+mu = 1000
+sd = 126
+n = 100
+pnorm(975,mu,sd/sqrt(n))  
+```
+
+
+## 7.16
+Una contratista piensa comprar una gran cantidad de lámparas de alta intensidad a cierto fabricante. Este asegura al contratista que la duración promedio de las lámparas es de $1000$ horas con una desviación estándar igual a $80$ horas: El contratista decide comprar las lámparas sólo si una muestra aleatoria de $64$ de estas da como resultado una vida promedio de por lo menos $1000$ horas. ¿Cuàl es la probabilidad de que el contratista adquiera las lámparas?
+
+Respuesta.- Sean, $\mu=1000$, $n=64$  y $\sigma=80$. Entonces,
+
+$$P\left(Z>\dfrac{1000-1000}{80/\sqrt{64}}\right)=0.5.$$
+
+```{r}
+mu = 1000
+sd = 80
+n = 64
+pnorm(1000,mu,sd/sqrt(n))  
+```
+
+
+## 7.17
+Un inspector federal de pesos y medidas visita una planta de empacado para verificar que el peso neto de las cajas sea el indicado en estas. El gerente de la planta asegura al inspector que el peso promedio de cada caja es de $750$ gr. con una desviación estándar de $5$ gr. El inspector selecciona, al azar, $100$ cajas y encuentra que el peso promedio es de $748$ gr. Bajo estas condiciones, ¿qué tan probable es tener un peso de $748$ o menos? ¿Qué actitud debe tomar el inspector?
+
+Respuesta.- Sean, $\mu=750$, $n=100$  y $\sigma=5$. Entonces,
+
+$$P\left(Z<\dfrac{748-750}{5/\sqrt{100}}\right)=0.000031671245.$$
+
+```{r}
+mu = 750
+sd = 5 
+n = 100
+pnorm(748,mu,sd/sqrt(n))  
+```
+
+El inspector confirma que el peso es el que se dio cómo hipótesis.
+
+
+## 7.18
+En la fabricación de cojinetes para motores, se sabe que el diámetro es de $5$ cm. con una desviación estándar igual a $0.005$ cm. El proceso es vigilado en forma periódica mediante la selección aleatoria de $64$ cojinetes, midiendo sus correspondientes diámetros. El proceso no se detiene mientras la probabilidad de que la media muestral se encuentre entre dos límites especificados sea de $0.95$. Determinar el valor de estos límites.
+
+Respuesta.- Sean $\mu=5$, $\sigma=0.005$, $n=64$ y $Z_{0.95}=1.6448$. Entonces
+
+$$P\left(\dfrac{\theta_1-\mu}{\sigma/\sqrt{n}}<Z<\dfrac{\theta_2-\mu}{\sigma/\sqrt{n}}\right)=0.95.$$
+
+Sea $Z_{0.95}=1.644854$. Igualando $Z=\dfrac{\theta-\mu}{\sigma/\sqrt{n}}=1.644854$, entonces despejando $\theta$, tenemos
+
+$$\theta=\mu\pm Z\cdot \sigma/\sqrt{n}$$
+
+Pero dado, que $Z$ se encuentra entre un límite superior e inferior entonces dividimos $Z$ por 2. Es decir,
+
+$$\theta=\mu\pm Z/2\cdot \sigma/\sqrt{n}$$
+
+Por lo tanto
+
+$$
+\begin{array}{rclcl}
+  \theta_1 &=& 5+1.6448/2\cdot 0.005/\sqrt{64} &=& 5.000514.\\\\
+  \theta_2 &=& 5-1.6448/2\cdot 0.005/\sqrt{64} &=& 4.999486.
+\end{array}
+$$
+
+
+
+
+```{r}
+Z = qnorm(0.95)
+mu = 5
+sigma = 0.005
+n = 64
+mu+Z/2*sigma/sqrt(n)
+mu-Z/2*sigma/sqrt(n)
+```
+
+
+
+## 7.19
+En la producción de cierto material para soldar se sabe que la desviación estándar de a tensión de ruptura de este material es de $25$ libras. ¿Cuál debe ser la tensión de ruptura promedio del proceso si, con base en una muestra aleatoria de $50$ especímenes, la probabilidad de que la media muestral tenga un valor mayor que $250$ libras es de $0.95$?
+
+Respuesta.- Sean $\sigma=25$, $n=50$, $\theta=250$ y $Z_{0.95}=1.6448.$ Entonces,
+
+$$Z=\dfrac{\theta-\mu}{\sigma/\sqrt{n}}.$$
+
+Despejando $\mu$, tenemos
+
+$$\mu=\theta-Z\cdot \sigma/\sqrt{n}=250-1.6448\cdot 25/\sqrt{50}=255.8154.$$
+
+
+```{r}
+Z = qnorm(0.05)
+sigma=25
+n=50
+theta=250
+theta-Z*sigma/sqrt(n)
+```
+
+
+
+## 7.20
+Genere $50$ muestras, cada una de tamaño $25$ a partir de una distribución normal con media $60$ y desviación estándar $10$. Calcule la varianza de cada muestra mediante el empleo de (7.14).
+
+```{r}
+set.seed(4)
+samples = replicate(50,rnorm(25,60,10))
+samples[,49]
+```
+
+Si se muestra una distribución normal con media $\mu$ y varianza $\sigma^2$, la varianza muestral se define por:
+
+$$S^2=\sum_{i=1}^n\dfrac{(X_i-\overline{X})^2}{n-1}.$$
+
+```{r}
+muestra = 50
+
+normalr= function(m){
+  i=1
+  varm = c()
+  while(i<=m){
+    x0=samples[,i]
+    media = mean(x0)
+    sum = 0
+    for (s in x0) {
+      sum = sum+((s-media)^2/(length(x0)-1))
+    }
+    varm = c(varm,sum)
+    i=i+1
+  }
+  return(varm)
+}
+
+normal = normalr(muestra)
+```
+
+  
+  
+### a)
+Obtener la media y la varianza de $S^2$ mediante el empleo de los $50$ valores calculados. ¿Cómo son estos valores al compararlos con los proporcionados por las extensiones (7.17) y (7.18)?.
+
+Respuesta.- 
+
+```{r}
+mean(normal)
+sqrt(mean(normal))
+var(normal)
+```
+
+Esto valores son similares a las de las extensiones (7.17) y (7.18).
+
+
+### b)
+Agrupar los $50$ valores calculados de $S^2$ y graficar las frecuencias relativas. Coméntese sobre los resultados.
+
+Respuesta.-
+
+```{r}
+hist(normal,freq=FALSE)
+```
+
+
+## 7.21
+Repetir el ejercicio 7.20 pero generando los valores a partir de una distribución exponencial con parámetro de escala $\theta=30.$ Haga un comentario sobre sus resultados
+
+```{r}
+exponr=function(n,theta){
+  v = runif(n)
+  x=c()
+  for (u in v) {
+    x = append(x,theta*log(1/(1-u)))
+  }
+  return(x)
+}
+
+samples=replicate(50,exponr(25,30))
+
+muestra = 50
+exponr= function(m){
+  i=1
+  varm = c()
+  while(i<=m){
+    x0=samples[,i]
+    media = mean(x0)
+    sum = 0
+    for (s in x0) {
+      sum = sum+((s-media)^2/(length(x0)-1))
+    }
+    varm = c(varm,sum)
+    i=i+1
+  }
+  return(varm)
+}
+
+expr = exponr(muestra)
+```
+
+  
+### a)
+Obtener la media y la varianza de $S^2$ mediante el empleo de los $50$ valores calculados. ¿Cómo son estos valores al compararlos con los proporcionados por las extensiones (7.17) y (7.18)?.
+
+Respuesta.- 
+
+```{r}
+mean(expr)
+sqrt(mean(expr))
+var(expr)
+```
+
+Esto valores son similares a las de las extensiones (7.17) y (7.18).
+
+
+### b)
+Agrupar los $50$ valores calculados de $S^2$ y graficar las frecuencias relativas. Coméntese sobre los resultados.
+
+Respuesta.-
+
+```{r}
+hist(expr,freq = FALSE)
+```
+
+
+## 7.22
+Para un gerente de planta es muy importante controlar la variación en el espesor de un material plástico. Se sabe que la distribución del espesor del material es normal con una desviación estándar de $0.01$ cm. Una muestra aleatoria de $25$ piezas de este material da como resultado una desviación estándar muestral de $0.015$ cm. Si la varianza de la población es $(0.01)^2 cm^2$. ¿cuál es la probabilidad de que la varianza muestral sea igual o mayor que $(0.015)^2 cm^2$? Por lo tanto, ¿qué puede usted concluir con respecto a la variación de este proceso?.
+
+Respuesta.- Sean, $\sigma=0.01$ la desviación estándar  y$S=0.015$. Si la varianza de la población es $\sigma^2=0.01^2$. Entonces la probabilidad de $S^2\geq 0.015^2$, cuando el muestreo se lleva a cabo sobre $N(0,0.01)$ con $n=25$ es igual a la de 
+
+$$
+\begin{array}{rcl}
+  P\left[\displaystyle\sum_{i=1}^n \dfrac{\left(x_i-\mu\right)^2}{\sigma^2} = Y \geq S^2 = \displaystyle\sum_{i=1}^n \dfrac{\left(x_i-\mu\right)^2}{n}\right]&=&P\left[ \displaystyle\sum_{i=1}^n \left(x_i-\mu\right)^2 = \sigma^2Y \geq nS^2 = \displaystyle\sum_{i=1}^n \left(x_i-\mu\right)^2\right]\\\\
+  &=& P\left(Y\geq\dfrac{nS^2}{\sigma^2}\right)\\\\
+  &=& P\left(Y\geq \dfrac{25\cdot 0.015^2}{0.01^2}\right)\\\\
+  &=& P(Y\geq 56.25)\qquad (\mbox{Por el teorema } 7.5, Y\sim X^2_{25})\\\\
+  &=& 0.0003365632.
+\end{array}
+$$
+
+```{r}
+pchisq(56.25,df=25,lower.tail = FALSE)
+```
+
+
+Llegamos a la conclusión que la varianza muestral no es probable que sea igual o mayor que $0.015^2\; cm^2$
+
+
+## 7.23
+Si se obtiene una muestra aleatoria de $n=16$ de una distribución normal con media y varianza desconocidas, obtener $P(S^2/\sigma^2\leq 2.041)$
+
+Respuesta.- La varianza muestral cuando media $\mu$ y varianza $\sigma^2$ son desconocidas vienen dadas por: 
+
+$$S^2=\sum \dfrac{(x_i-\mu)^2}{n-1}.$$ 
+
+Y por el teorema 7.5 la distribución de la variable aleatoria 
+
+$$Y=\sum \dfrac{(x_i-\mu)^2}{\sigma^2}$$
+ 
+es del tipo chi-cuadrada con $n$ grados de libertad. De donde,
+ 
+$$
+\begin{array}{rcl}
+  P\left(\dfrac{S^2}{\sigma^2}\leq 2.041\right) &=& P\left(\dfrac{\sum \dfrac{(x_i-\mu)^2}{n-1}}{\sum \dfrac{(x_i-\mu)^2}{Y}}\leq 2.041\right)\\\\
+  &=& P\left(\dfrac{Y}{n-1}\leq 2.041\right)\\\\
+  &=& P\left[Y\leq 2.041(n-1)\right]\\\\
+  &=& P\left[Y\leq 2.041(16-1)\right]\\\\
+  &=&P(Y\leq 30.615)\\\\
+  &=& 0.9901128.
+\end{array}
+$$
+
+```{r}
+pchisq((16-1)*2.041,df=16-1)
+```
+
+
+## 7.24 
+Si se obtiene una muestra aleatoria de tamaño $n=21$ de una distribución normal con media y varianza desconocidas, obtener $P(S^2/\sigma^2\leq 1.421)$.
+
+Respuesta.- Similar al ejercicio 7.23 se tiene,
+
+$$
+\begin{array}{rcl}
+  P\left(\dfrac{S^2}{\sigma^2}\leq 1.421\right) &=& P\left(\dfrac{\sum \dfrac{(x_i-\mu)^2}{n-1}}{\sum \dfrac{(x_i-\mu)^2}{Y}}\leq 1.421\right)\\\\
+  &=& P\left(\dfrac{Y}{n-1}\leq 1.421\right)\\\\
+  &=& P\left[Y\leq 1.421(n-1)\right]\\\\
+  &=& P\left[Y\leq 1.421(21-1)\right]\\\\
+  &=& 0.9001761.
+\end{array}
+$$
+
+```{r}
+pchisq((21-1)*1.421,df=21-1)
+```
+
+
+## 7.25
+Un fabricante de cigarrillos asegura que el contenido promedio de nicotina, en una de sus marcas, es de $0.6$ mg por cigarrillo. Una organización independientes mide el contenido de nicotica de $16$ cigarrillos de esta marca y encuentra que el promedio y la desviación estándar muestral es de $0.75$ y $0.175$ mg, respectivamente, de nicotina. Si se supone que la cantidad de nicotina en estos cigarrillos es una variable aleatoria normal, ¿qué tan probable es el resultado muestral dado el dato proporcionado por el fabricante?.
+
+Respuesta.- Por el teorema 7.7, se tiene que
+
+$$T=\dfrac{\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}}{\sqrt{\dfrac{(n-1)\frac{S^2}{\sigma^2}}{n-1}}}=\dfrac{\overline{X}-\mu}{\dfrac{S}{\sqrt{n}}},$$
+
+tiene una distribución chi-cuadrada con $n-1$ grado de libertad.
+
+Es decir, la función acumulada chi cuadrada vendrá dada por
+
+$$
+\begin{array}{rcl}
+  1-P(T\leq t_{1-\alpha,v})&=&1-\displaystyle\int_{-\infty}^{t_{1-\alpha,v}}f(t;v)\; dt\\\\
+  &=&1-\displaystyle\int_{-\infty}^{t_{1-\alpha,v}}\dfrac{\Gamma\left[\dfrac{(v+1)}{2}\right]}{\sqrt{\pi v}\;\Gamma\left(\dfrac{v}{2}\right)}\left[1+\left(\dfrac{t^2}{v}\right)\right]^{-\frac{v+1}{2}}\; dt.\\\\
+\end{array}
+$$
+
+En nuestro caso particular. Sean $\mu=0.6$, $\overline{x}=0.75$, $s=0.175$ y $n=16$. Entonces,
+
+$$
+\begin{array}{rcl}
+  1-P\left(\dfrac{0.75-0.6}{175/\sqrt{16}}\right) &=& 1-P(T\leq 3.428571)\\\\
+  &=&1-\displaystyle\int_{-\infty}^{3.428571}\dfrac{\Gamma\left[\dfrac{(15+1)}{2}\right]}{\sqrt{\pi 15}\;\Gamma\left(\dfrac{15}{2}\right)}\left[1+\left(\dfrac{3.428571^2}{15}\right)\right]^{-\frac{15+1}{2}}\; dt.\\\\
+  &=& 0.001866207.
+\end{array}\\\\
+$$
+
+```{r}
+mu=0.6
+mean = 0.75
+s=0.175
+n=16
+t=(mean-mu)/(s/sqrt(n))
+t
+pt(t,n-1,lower.tail = FALSE)
+```
+
+Por lo que concluimos que es muy poco probable el resultado de la organización.
+
+## 7.26
+Durante los 12 meses pasados el volumen de ventas de un restaurante fue de $\$ 2000$. El gerente piensa que los pròximos $25$ dias serán típicos con respecto al volumen de ventas normal. Al finalizar los $25$ días, el volumen de ventas y su desviación estándar promedio fueron de $\$ 1800$ y $\$200$, respectivamente. Supóngase que el volumen de ventas diaria es una variable aleatoria normal. Si usted fuese el gerente, ¿tendría alguna razón para creer, con base en este resultado, que hubo una disminución en el volumen de ventas promedio diario?.
+
+Respuesta.- Sean $\mu=2000$, $\overline{x}=1800$, $s=200$ y $n=25$. Entonces,
+
+$$
+\begin{array}{rcl}
+  1-P\left(\dfrac{1800-2000}{200/\sqrt{25}}\right) &=& 1-P(T\leq -5)\\\\
+  &=&1-\displaystyle\int_{-\infty}^{-5}\dfrac{\Gamma\left[\dfrac{(24+1)}{2}\right]}{\sqrt{\pi 24}\;\Gamma\left(\dfrac{24}{2}\right)}\left[1+\left(\dfrac{-5^2}{24}\right)\right]^{-\frac{24+1}{2}}\; dt.\\\\
+  &=& 0.00002.
+\end{array}\\\\
+$$
+
+```{r}
+mu=2000
+mean = 1800
+s=200
+n=25
+t=(mean-mu)/(s/sqrt(n))
+pt(t,n-1)
+```
+
+No se tiene razón para creer que hubo una disminución en el volumen de ventas promedio diario.
+
+
+## 7.27
+El gerente de una refinería piensa modificar el proceso para producir gasolina a partir de petróleo crudo. El gerente hará la modificación sólo si la gasolina promedio que se obtiene por este nuevo proceso (expresada como un porcentaje del crudo) aumenta su valor con respecto al proceso en uso. Con base en un experimento de laboratorio y mediante el empleo de dos muestras aleatorias de tamaño $12$, una para cada proceso, la cantidad de gasolina promedio del proceso en uso es de $24.6$ con una desviación estándar de $2.3$, y para el proceso propuesto fue de $28.2$ con una desviación estándar de $2.7$. El gerente piensa que los resultados proporcionados por los dos procesos son variables aleatorias independientes normalmente distribuidas con varianza iguales. Con base en esta evidencia, ¿debe adoptarse el nuevo proceso?.
+
+Respuesta.- Dado que $\overline{X}$ y $\overline{Y}$ son variables aleatorias independientes normalmente distribuidas, si $a_1=1$ y $a_2=-1$ en el teorema 7.2, la distribución de $\overline{X}-\overline{Y}$ también es normal con media $\mu_X=0-0=\mu_Y$. Luego, dado que son dos varianzas iguales pero desconocidas, por el teorema 7.6, la distribución de 
+$$W=\dfrac{(n_X-1)S_X^2}{\sigma^2}+\dfrac{(n_Y-1)S_Y^2}{\sigma^2}$$
+
+es chi-cuadrada con $n_X+n_Y-2$ grados de libertad. De donde,
+
+$$
+\begin{array}{rcl}
+  T&=&\dfrac{Z}{\sqrt{X/v}}\\\\
+  &=&\dfrac{\dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{\sigma}\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}{\sqrt{\dfrac{\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{\sigma^2}}{n_X+n_Y-2}}}\\\\
+  &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{\sqrt{\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}\left(\dfrac{1}{n_X}+\dfrac{1}{n_Y}\right)}}\\\\
+  &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}
+\end{array}
+$$
+
+para
+
+$$S_p^2=\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}$$
+
+Tiene una distribución t de Student con $n_x+n_Y-2$ grados de libertad. Sabemos que $s_X=2.3$ y $s_Y=2.7$ con $n_X=n_Y=12$ y $\overline{X}=24.6$ y $\overline{Y}=28.2$. Por lo tanto,
+
+$$S_p=\sqrt{\dfrac{(12-1)(2.3)^2+(12-1)(2.7)^2}{12+12-2}}=2.507987.$$
+
+Y 
+
+$$T = \dfrac{2.3-2.7-(0-0)}{2.507987\sqrt{\dfrac{1}{12}+\dfrac{1}{12}}} = -3.516032.$$
+
+Así,
+
+$$P(T<-3.516032)=0.002787616.$$
+```{r}
+meanX=24.6
+meanY=28.2
+deX2 = 2.3^2
+deY2 = 2.7^2
+n=12
+s = sqrt(((n-1)*deX2+(n-1)*deY2)/(n+n-2))
+T = (meanX-meanY)/(s*sqrt(1/12+1/12))
+pt(T,df=12-2)
+```
+
+Por lo tanto, debe adaptarse el nuevo proceso.
+
+## 7.28
+Una organización independiente está intersada en probar la distancia de frenado a una velocidad de $50$ mph para dos marcas distintas de automóviles. Para la primera marca se selecionaron nueve automóviles y se probaron en un medio contralado. La media muestral y la desviación estándar fueron de $145$ pies y $8$ pies, respectivamente. Para la segunda marca se seleccionaron $12$ automóviles y la distancia promedio resultó ser de $132$ pies y una desviación estándar de $10$ pies. Con base en esta evidencia, ¿existe alguna razón para creer que la distancia de frenado para ambas marcas, es la misma?. Supóngase que las distancias de frenado son variables aleatorias independientes normalmente distribuidas con varianzas iguales.
+
+Respuesta.- Sean $n_X=9$, $\overline{X}=145$, $de_X=8$ y $n_Y=12$, $\overline{Y}=132$, $de_Y=10$. Entonces, 
+
+$$
+\begin{array}{rcl}
+  S_p^2&=&\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}\\\\
+      &=& \dfrac{(9-1)\cdot 8^2+(12-1)\cdot 10^2}{9+12-2}\\\\
+      &=&9.210977.
+\end{array} 
+$$
+
+
+$$
+\begin{array}{rcl}
+  T &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}} \\\\
+  &=& \dfrac{145-132-(0-0)}{9.210977\sqrt{\dfrac{1}{9}+\dfrac{1}{12}}}\\\\
+  &=& 3.200662.
+\end{array}
+$$
+
+Así, 
+
+$$P(T<3.200662)=0.9952595.$$
+```{r}
+meanX=145
+meanY=132
+deX2 = 8^2
+deY2 = 10^2
+nX=9
+nY=12
+s = sqrt(((nX-1)*deX2+(nY-1)*deY2)/(nX+nY-2))
+s
+T = (meanX-meanY)/(s*sqrt(1/nX+1/nY))
+T
+pt(T,df=12-2)
+```
+
+Por lo que no existe razón para creer que la distancia de frenado para ambas marcas es la misma.
+
+## 7.29
+La variación en el número de unidades diarias de cierto producto, el cual manejan dos operadores $A$ y $B$ debe ser la misma. Con base en muestras de tamaño $n_A=16$ días y $n_B=21$ días, el valor calculado de las desviaciones estándar muestrales es de $s_A=8.2$ unidades y $s_B=5.8$ unidades. Si el número de estas, manejadas por los dos operadores, por día, son dos variables aleatorias independientes que se encuentran aproximadas, en forma adecuada, por distribuciones normales, ¿existe alguna razón para creer que las varianzas son iguales?.
+
+Respuesta.- Sean $n_A=16$, $n_B=21$, $s_A=8.2$ y $s_B=5.8$. Entonces, por el teorema 7.8 la variable aleatoria
+
+$$F=\dfrac{\dfrac{\dfrac{(n_X-1)S_X^2}{\sigma^2_Y}}{n_X-1}}{\dfrac{\dfrac{(n_Y-1)S^2_y}{\sigma_Y^2}}{(n_Y-1)}}=\dfrac{S_X^2/\sigma^2_X}{S_Y^2/\sigma_Y^2}$$
+
+tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad. Si, suponemos que $\sigma_X^2=\sigma_Y^2$, se tiene
+
+$$F=\dfrac{S_X^2}{S_Y^2}=\dfrac{8.2^2}{5.8^2}=1.998811.$$
+
+```{r}
+nA=16
+nB=21
+sA=8.2
+sB=5.8
+f=sA^2/sB^2
+pf(f,nA-1,nB-1,lower.tail = FALSE)
+```
+
+Dado que $P(F_{15,20}>1.998811)<0.10$. Entonces, la razón para creer que las varianzas son iguales es dudosa.
+
+## 7.30
+Con base en la información proporcionada en el ejercicio 7.27, ¿existe alguna razón para creer que las varianzas de los dos procesos son iguales?
+
+Respuesta.-  Sabemos que $s_X=2.3$ y $s_Y=2.7$ con $n_X=n_Y=12$ y $\overline{X}=24.6$ y $\overline{Y}=28.2$. Supongamos que $\sigma_X^2=\sigma_Y^2$. Entonces,
+
+$$F=\dfrac{S_X^2}{S_Y^2}=\dfrac{2.3^2}{2.7^2}=0.7256516.$$
+Así, 
+
+$$P(F\geq 0.7256516)=0.6980434.$$
+
+```{r}
+nX=12
+nY=12
+sX=2.3
+sY=2.7
+f=sX^2/sY^2
+pf(f,nX-1,nY-1,lower.tail = FALSE)
+```
+
+Dado que la probabilidad de observar un valor de $F$ distinto, es grande, entonces las dos varianzas podrían ser diferentes.

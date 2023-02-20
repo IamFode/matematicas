@@ -786,18 +786,128 @@ No se tiene razón para creer que hubo una disminución en el volumen de ventas 
 ## 7.27
 El gerente de una refinería piensa modificar el proceso para producir gasolina a partir de petróleo crudo. El gerente hará la modificación sólo si la gasolina promedio que se obtiene por este nuevo proceso (expresada como un porcentaje del crudo) aumenta su valor con respecto al proceso en uso. Con base en un experimento de laboratorio y mediante el empleo de dos muestras aleatorias de tamaño $12$, una para cada proceso, la cantidad de gasolina promedio del proceso en uso es de $24.6$ con una desviación estándar de $2.3$, y para el proceso propuesto fue de $28.2$ con una desviación estándar de $2.7$. El gerente piensa que los resultados proporcionados por los dos procesos son variables aleatorias independientes normalmente distribuidas con varianza iguales. Con base en esta evidencia, ¿debe adoptarse el nuevo proceso?.
 
-Respuesta.- Dado que $\overline{X}$ y $\overline{Y}$ son variables aleatorias independientes normalmente distribuidas, si $a_1=1$ y $a_2=-1$ en el teorema 7.2, la distribución de $\overline{X}-\overline{Y}$ también es normal con media $\mu_X=24.6-28.2=\mu_Y$
+Respuesta.- Dado que $\overline{X}$ y $\overline{Y}$ son variables aleatorias independientes normalmente distribuidas, si $a_1=1$ y $a_2=-1$ en el teorema 7.2, la distribución de $\overline{X}-\overline{Y}$ también es normal con media $\mu_X=0-0=\mu_Y$. Luego, dado que son dos varianzas iguales pero desconocidas, por el teorema 7.6, la distribución de 
+$$W=\dfrac{(n_X-1)S_X^2}{\sigma^2}+\dfrac{(n_Y-1)S_Y^2}{\sigma^2}$$
 
+es chi-cuadrada con $n_X+n_Y-2$ grados de libertad. De donde,
+
+$$
+\begin{array}{rcl}
+  T&=&\dfrac{Z}{\sqrt{X/v}}\\\\
+  &=&\dfrac{\dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{\sigma}\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}{\sqrt{\dfrac{\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{\sigma^2}}{n_X+n_Y-2}}}\\\\
+  &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{\sqrt{\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}\left(\dfrac{1}{n_X}+\dfrac{1}{n_Y}\right)}}\\\\
+  &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}
+\end{array}
+$$
+
+para
+
+$$S_p^2=\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}$$
+
+Tiene una distribución t de Student con $n_x+n_Y-2$ grados de libertad. Sabemos que $s_X=2.3$ y $s_Y=2.7$ con $n_X=n_Y=12$ y $\overline{X}=24.6$ y $\overline{Y}=28.2$. Por lo tanto,
+
+$$S_p=\sqrt{\dfrac{(12-1)(2.3)^2+(12-1)(2.7)^2}{12+12-2}}=2.507987.$$
+
+Y 
+
+$$T = \dfrac{2.3-2.7-(0-0)}{2.507987\sqrt{\dfrac{1}{12}+\dfrac{1}{12}}} = -3.516032.$$
+
+Así,
+
+$$P(T<-3.516032)=0.002787616.$$
+```{r}
+meanX=24.6
+meanY=28.2
+deX2 = 2.3^2
+deY2 = 2.7^2
+n=12
+s = sqrt(((n-1)*deX2+(n-1)*deY2)/(n+n-2))
+T = (meanX-meanY)/(s*sqrt(1/12+1/12))
+pt(T,df=12-2)
+```
+
+Por lo tanto, debe adaptarse el nuevo proceso.
 
 ## 7.28
-Una organización independiente está intersada en probar la distancia de frenado a una velocidad de $50$ mph para dos marcas distintas de automóviles. Para la primera marca se selecionaron nueve automóviles y se probaron en un medio contralado. La media muestral y la desviación estándar fueron de $145$ pues y $8$ pues, respectivamente. Para la segunda marca se seleccionaron $12$ automóviles y la distancia promedio resultó ser de $132$ pues y una desviación estándar de $10$ pues. Con base en esta evidencia, ¿existe alguna razón para creer que la distancia de frenado para ambas marcas? ¿Supóngase que las distancias de frenado son variables aleatorias independientes normalmente distribuidas con varianzas iguales?.
+Una organización independiente está intersada en probar la distancia de frenado a una velocidad de $50$ mph para dos marcas distintas de automóviles. Para la primera marca se selecionaron nueve automóviles y se probaron en un medio contralado. La media muestral y la desviación estándar fueron de $145$ pies y $8$ pies, respectivamente. Para la segunda marca se seleccionaron $12$ automóviles y la distancia promedio resultó ser de $132$ pies y una desviación estándar de $10$ pies. Con base en esta evidencia, ¿existe alguna razón para creer que la distancia de frenado para ambas marcas, es la misma?. Supóngase que las distancias de frenado son variables aleatorias independientes normalmente distribuidas con varianzas iguales.
 
-Respuesta.-
+Respuesta.- Sean $n_X=9$, $\overline{X}=145$, $de_X=8$ y $n_Y=12$, $\overline{Y}=132$, $de_Y=10$. Entonces, 
+
+$$
+\begin{array}{rcl}
+  S_p^2&=&\dfrac{(n_X-1)S_X^2+(n_Y-1)S_Y^2}{n_X+n_Y-2}\\\\
+      &=& \dfrac{(9-1)\cdot 8^2+(12-1)\cdot 10^2}{9+12-2}\\\\
+      &=&9.210977.
+\end{array} 
+$$
+
+
+$$
+\begin{array}{rcl}
+  T &=& \dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}} \\\\
+  &=& \dfrac{145-132-(0-0)}{9.210977\sqrt{\dfrac{1}{9}+\dfrac{1}{12}}}\\\\
+  &=& 3.200662.
+\end{array}
+$$
+
+Así, 
+
+$$P(T<3.200662)=0.9952595.$$
+```{r}
+meanX=145
+meanY=132
+deX2 = 8^2
+deY2 = 10^2
+nX=9
+nY=12
+s = sqrt(((nX-1)*deX2+(nY-1)*deY2)/(nX+nY-2))
+s
+T = (meanX-meanY)/(s*sqrt(1/nX+1/nY))
+T
+pt(T,df=12-2)
+```
+
+Por lo que no existe razón para creer que la distancia de frenado para ambas marcas es la misma.
 
 ## 7.29
-La variaciónen el número de unidades diarias de cierto producto, el cual manejan dos operadores $A$ y $B$ debe ser la misma. Con base en muestras de tamañó $n_A=16$ días y $n_B=21$ días, el valor calculado de las desviaciones estándar muestrales es de $s_A=8.2$ unidades y $s_B=5.8$ unidades. Si el número de estas, manejadas por los dos operadores, por día, son dos variables aleatorias independientes que se encuentran aproximadas, en forma adecuada, por distribuciones normales, ¿existe alguna razón para creer que las vrianzas son iguales?.
+La variación en el número de unidades diarias de cierto producto, el cual manejan dos operadores $A$ y $B$ debe ser la misma. Con base en muestras de tamaño $n_A=16$ días y $n_B=21$ días, el valor calculado de las desviaciones estándar muestrales es de $s_A=8.2$ unidades y $s_B=5.8$ unidades. Si el número de estas, manejadas por los dos operadores, por día, son dos variables aleatorias independientes que se encuentran aproximadas, en forma adecuada, por distribuciones normales, ¿existe alguna razón para creer que las varianzas son iguales?.
 
-Respuesta.-
+Respuesta.- Sean $n_A=16$, $n_B=21$, $s_A=8.2$ y $s_B=5.8$. Entonces, por el teorema 7.8 la variable aleatoria
+
+$$F=\dfrac{\dfrac{\dfrac{(n_X-1)S_X^2}{\sigma^2_Y}}{n_X-1}}{\dfrac{\dfrac{(n_Y-1)S^2_y}{\sigma_Y^2}}{(n_Y-1)}}=\dfrac{S_X^2/\sigma^2_X}{S_Y^2/\sigma_Y^2}$$
+
+tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad. Si, suponemos que $\sigma_X^2=\sigma_Y^2$, se tiene
+
+$$F=\dfrac{S_X^2}{S_Y^2}=\dfrac{8.2^2}{5.8^2}=1.998811.$$
+
+```{r}
+nA=16
+nB=21
+sA=8.2
+sB=5.8
+f=sA^2/sB^2
+pf(f,nA-1,nB-1,lower.tail = FALSE)
+```
+
+Dado que $P(F_{15,20}>1.998811)<0.10$. Entonces, la razón para creer que las varianzas son iguales es dudosa.
 
 ## 7.30
 Con base en la información proporcionada en el ejercicio 7.27, ¿existe alguna razón para creer que las varianzas de los dos procesos son iguales?
+
+Respuesta.-  Sabemos que $s_X=2.3$ y $s_Y=2.7$ con $n_X=n_Y=12$ y $\overline{X}=24.6$ y $\overline{Y}=28.2$. Supongamos que $\sigma_X^2=\sigma_Y^2$. Entonces,
+
+$$F=\dfrac{S_X^2}{S_Y^2}=\dfrac{2.3^2}{2.7^2}=0.7256516.$$
+Así, 
+
+$$P(F\geq 0.7256516)=0.6980434.$$
+
+```{r}
+nX=12
+nY=12
+sX=2.3
+sY=2.7
+f=sX^2/sY^2
+pf(f,nX-1,nY-1,lower.tail = FALSE)
+```
+
+Dado que la probabilidad de observar un valor de $F$ distinto, es grande, entonces las dos varianzas podrían ser diferentes.

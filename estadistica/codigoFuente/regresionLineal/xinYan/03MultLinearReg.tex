@@ -4,7 +4,7 @@ La regresión múltiple permite a los investigadores examinar el efecto de más 
 \section{Espacio vectorial y Proyección}
 
 \subsection{Espacio vectorial}
-Un espacio vectorial es un conjunto de vectores  que es cerrado bajo  la adición y la multiplicación por un escalar de vectores finitos.\\
+Un espacio vectorial es un conjunto de vectores  que es cerrado bajo  la adición y la multiplicación por un escalar de vectores finitos. Suponga $V$ es cerrado bajo el vector adición en $\mathbb{R}^n$: si $u,v\in V$ entonces $u+v\in V$. Por otro lado $V$ es cerrado bajo la multiplicación escalar: Si $a\in \mathbb{R}^1$ y $v\in V$, entonces $av\in V$. Por lo que $V$ es un espacio vectorial en $\mathbb{R}^n$. \\
 
 Una base hace posible expresar cada vector del espacio como una tupla única de los elementos del campo, aunque se debe tener precaución cuando un espacio vectorial no tiene una base finita. En álgebra lineal, una base es un conjunto de vectores que, en una combinación lineal, pueden representar cada vector en un espacio vectorial dado, y tales que ningún elemento del conjunto pueda representarse como una combinación lineal de los demás. En otras palabras, una base es un conjunto generador linealmente independiente. Es decir, cualquier vector $x'=(x_1,x_2,\ldots,x_n)$ en $\mathbb{R}^n$ puede ser una combinación lineal de $e_1,e_2,\ldots,e_n$. En efecto,
 
@@ -13,6 +13,10 @@ $$x=x_1e_1+x_2e_2+x_3e_3,+\cdots+x_ne_n.$$
 Esta representación es única. Que quiere decir que no existe otra representación tal que
 
 $$x=x_1^*e_1+x_2^*e_2+x_3^*e_3,+\cdots+x_n^*e_n.$$
+
+Ya que,
+
+$$0=\textbf{x}-\textbf{x}=(x_1-x_1^*)e_1+(x_2-x_2^*)+\ldots+(x_n-x_n^*)e_n$$
 
 Entonces, $x_i=x_i^*$ para todo $i=1,2,\cdots , n.$\\ 
 

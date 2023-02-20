@@ -3245,7 +3245,7 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x} &=& \displaystyle\int \dfrac{\cos^{m+2}x}{\sen^n x}\sec^2 x\; dx\\\\
 							 &=& uv-\displaystyle\int v\; du\\\\
 							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\left[-(m+2)\dfrac{\cos^m x}{\sen^{n-2}x}-n\dfrac{\cos^{m+2}x}{\sen^n}\right]\; dx\\\\
-							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\int\dfrac{\cos^{m+2}x}{\sen^n}\right]\; dx\\\\
+							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\int\dfrac{\cos^{m+2}x}{\sen^n}\; dx\\\\
 							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\displaystyle\int\dfrac{\cos^m x(1-\sen^2 x)}{\sen^n x}\; dx\\\\
 							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\displaystyle\int\dfrac{\cos^m x}{\sen^n x}\; dx-n\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx.
 	\end{array}
@@ -3256,7 +3256,7 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 	$$
 	\begin{array}{rcl}
 	    (1-n)\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2-n)\displaystyle\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx\\\\
-	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m+1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-n+2}{n-1}\displaystyle\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx + C (n\neq 1)\\\\
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m+1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-n+2}{n-1}\displaystyle\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx + C (n\neq 1)\\\
 	\end{array}
 	$$
 	\vspace{0.5cm}
@@ -3267,11 +3267,66 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	    %---------- a)
 	    \item Encontrar un polinomio $P(x)$ tal que $P'(x)-3P(x)=4-5x+3x^2$. Demostrar que existe una sola solución.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea 
+		$$
+		\begin{array}{rcl}
+		    P(x)=\displaystyle\sum_{k=0}^n c_kx^k&\Rightarrow&P'(x)=\displaystyle\sum_{k=0}^n c_k(k)x^{k-1}=\displaystyle\sum_{k=0}^{n-1}(k+1)c_{k+1}x^k\\\\
+		\end{array}
+		$$
+		Por lo que,
+
+		$$
+		\begin{array}{rcl}
+		    P'(x)-3P(x)&=&\displaystyle\sum_{k=0}^{n-1}(k+1)c_{k+1}x^k-3\displaystyle\sum_{k=0}^n c_kx^k\\\\
+			       &=&\displaystyle\sum_{k=0}^{n-1}\left[(k+1)c_{k+1}-3c_k\right]x^k-3c_{n}x^n.\\\
+		\end{array}
+		$$
+		Luego, igualando a $4-5x+3x^2$, se tiene
+
+		$$\sum_{k=0}^{n-1}\left[(k+1)c_{k+1}-3c_k\right]x^k-3c_nx^n=4-5x+3x^2.$$
+
+		Pero, esto implica que $n=2$ y $c_2=-1$, ya que $-3c_nx^n$ es el único termino $x^n$ de la izquierda (si $n>2$ entonces no podríamos tener $x^2$ la mayor potencia de $x$ a la derecha). Por lo tanto, $P(x)$ es un polinomio de grado y con $c_2=-1$, y así
+
+		$$P(x)=c_0c_1x-x^2\quad \Rightarrow \quad P'(x)=c_1-2x.$$
+
+		De donde,
+
+		$$
+		\begin{array}{rcl}
+		    P'(x)-3P(x)=4-5x+3x^2 &\Rightarrow& c_1-2x-3c_0-3c_1x+3x^2=4-5x+3x^2\\\\
+					  &\Rightarrow& (c_1-3c_0)-(2+3c_1)x=4-5x\\\\
+		\end{array}
+		$$
+
+		De esta manera tenemos las ecuaciones
+
+		$$c_1-3c_0=4\quad \mbox{y}\quad 2+3c_1=5.$$
+
+		Lo que determina de manera única $c_0$ y $c_1$,
+
+		$$c_1=1,\quad c_0=-1.$$
+
+		De lo que concluimos que existe un único $P(x)$ que satisface la ecuación
+
+		$$P(x)=-1+x-x^2.$$\\
+
 
 	    %---------- b)
 	    \item Si $Q(x)$ es un polinomio dado, demostrar que existe uno y sólo un polinomio $P(x)$ tal que $P'(x)-3P(x)=Q(x)$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $Q(x)$ un polinomio dado y supongamos que existe dos polinomios $P_1(x)$ y $P_2(x)$ tal que
+
+		$$P'(x)-3P(x)=Q(x)\quad \mbox{y}\quad R'(x)-3R(x)=Q(x).$$
+
+		Esto implica que
+
+		$$\left[P'(x)-R'(x)\right]-3\left[P(x)-R(x)\right]=Q(x)\quad \Rightarrow \quad \left[P(x)-R(x)\right]'-3\left[P(x)-R(x)\right]=0.$$
+
+		Ahora, si $P(x)-R(x)\neq 0$, entonces es de grado $n$ para algunos $n\geq 1$. Sabemos que su derivada tiene grado $n-1$ (Apostol, pag 166). Se sigue que
+
+		$$\left[P(x)-R(x)\right]'-3\left[P(x)-R(x)\right]$$
+
+		tiene grado $n$ (dado que el coeficiente de $x^n$ en $\left[P(x)-R(x)\right]'$ es cero, ya que es de grado $n-1$ y el coeficiente de $3\left[P(x)-R(x)\right]$ es distinto de cero, ya que tiene grado $n$). Pero sabemos que esta diferencia es $0$, lo que significa que no puede tener un grado $n$ para algún $n\geq 1$. Por lo tanto, debemos tener 
+		$$P(x)-R(x)=0\quad \mbox{o}\quad P(x)=r(x).$$\\
 
 	\end{enumerate}
 
@@ -3282,24 +3337,168 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
 	    %---------- a)
 	    \item Determinar fórmulas explícitas para $P_1(x),P_2(x),\ldots , P_5(x)$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Comencemos con la condición inicial $P_0(x)=1$. El cual nos da
+
+		$$P'_1(x)=1\cdot P_0(x)=1\quad \Rightarrow \quad P_1(x)=\int \; dx = x+C_1.$$
+
+		Ahora, usando la condición para encontrar $C_1$, se tiene
+
+		$$
+		\begin{array}{rcl}
+		    \int_0^1 (x+C_1)\; dx = 0 &\Rightarrow& \left(\dfrac{1}{2}x^2+C_1x\right)\bigg|_0^1=0\\\\
+					      &\Rightarrow& c_1=-\dfrac{1}{2}.
+		\end{array}
+		$$
+
+		De donde, 
+		$$P_1(x)=x-\dfrac{1}{2}.$$\\
+
+		Luego, usando la expresión para $P_1(x)$, tenemos
+
+		$$P_2'(x)=2\left(x-\dfrac{1}{2}\right)=2x-1\quad \Rightarrow \quad P_2(x)=x^2-x+C_2.$$
+
+		Usando la condición para encontrar $C_2$, obtenemos
+
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_0^1\left(x^2-x+C_2\right)\; dx = 0  &\Rightarrow& \dfrac{1}{3}-\dfrac{1}{2}+C_2=0\\\\
+							     &\Rightarrow& C_2=\dfrac{1}{6}.
+		\end{array}
+		$$
+
+		De donde, 
+		$$P_2(x)=x^2-x+\dfrac{1}{6}.$$\\
+
+		Después, usando la expresión para $P_2(x)$, 
+
+		$$P_3'(x)=3\left(x^2-x+\dfrac{1}{6}\right)=3x^2-3x+\dfrac{1}{2}\quad \Rightarrow \quad P_3(x)=x^3-\dfrac{3}{2}x^2+\dfrac{1}{2}x+C_3.$$
+
+		Usando la condición para encontrar $C_3$, se tiene
+
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_0^1\left(x^3-\dfrac{3}{2}x^2+\dfrac{1}{2}x+C_3\right)\; dx = 0 &\Rightarrow& \dfrac{1}{4}-\dfrac{1}{2}+\dfrac{1}{4}+C_3=0\\\\
+											&\Rightarrow& C_3=0.
+		\end{array}
+		$$
+
+		Así,
+
+		$$P_3(x)=x^3-\dfrac{3}{2}x^2+\dfrac{1}{2}x.$$\\
+
+		Luego, utilizando la expresión para $P_3(x)$, tenemos
+
+		$$P_4'(x)=4\left(x^3-\dfrac{3}{2}x^2+\dfrac{1}{2}x\right)=4x^3-6x^2+2x\quad \Rightarrow \quad P_4(x)=x^4-2x^3+x^2+C_4.$$
+
+		Usando la condición para encontrar $C_4$, 
+
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_0^1\left(x^4-2x^3+x^2+C_4\right)\; dx = 0 &\Rightarrow& \dfrac{1}{5}-\dfrac{3}{2}+\dfrac{1}{3}+C_4=0\\\\
+											&\Rightarrow& C_4=\dfrac{1}{30}.
+		\end{array}
+		$$
+
+		De donde,
+
+		$$P_4(x)=x^4-2x^3+x^2-\dfrac{1}{30}.$$\\
+
+		Finalmente, usando la expresión para $P_4(x)$, tenemos
+
+		$$P_5'(x)=5\left(x^4-2x^3+x^2-\dfrac{1}{30}\right)=5x^4-10x^3+5x^2\quad \Rightarrow \quad P_5(x)=x^5-\dfrac{5}{2}x^4+\dfrac{5}{3}x^3-\dfrac{1}{6}x+C_5.$$
+
+		Usando la condición para encontrar $C_5$,
+
+		$$\int_0^1\left(x^5-\dfrac{5}{2}x^4+\dfrac{5}{3}x^3-\dfrac{1}{6}x+C_5\right)\; dx = \dfrac{1}{6}-\dfrac{1}{2}+\dfrac{5}{12}-\dfrac{1}{12}+C_5 = 0 \quad \Rightarrow \quad C_5=0.$$
+
+		Por lo tanto,
+
+		$$P_5(x)=x^5-\dfrac{5}{2}x^4+\dfrac{5}{3}x^3-\dfrac{1}{6}x.$$\\
+
 
 	    %---------- b)
 	    \item Demostrar, por inducción, que $P_n(x)$ es un polinomio en $x$ de grado $n$, siendo el término de mayor grado $x_n$.\\\\
-		Demostración.-\;
+		Demostración.-\; En la parte (a) demostramos para $n=0,1,2,3,4,5$. Supongamos que la afirmación es cierta para algún entero positivo $m$; es decir,
 
+		$$P_m(x)=x^m+\sum_{k=0}^{m-1}c_kx^k.$$
+
+		Entonces, por la definición de polinomios de Bernoulli, tenemos
+
+		$$P'_{m+1}(x)=(m+1)\left(x^m+\sum_{k=0}^{m-1}a_kx^k\right)=(m+1)x^m+\sum_{k=0}^{m-1}b_kx^k,$$
+
+		donde $b_k=(m+1)a_k$ para $k=1,\ldots,m-1$. Ahora, tomando la integral de esta expresión
+
+		$$P_{m+1}(x)=\int \left[(m+1)x^m+\sum_{k=0}^{m-1}b_kx^k\right]\; dx = x^{m+1}+\sum_{k=0}^m \dfrac{b_k}{k+1}x^{k+1}$$
+
+		Por lo tanto, la afirmación es cierta para el caso $m+1$. Así, lo será para todo entero positivo $n$.\\\\
+ 
 	    %---------- c)
 	    \item Demostrar que $P_n(0)=P_n(1)$ si $n\geq 2$.\\\\
-		Demostración.-\;
+		Demostración.-\; A partir de la propiedad integral en la definición de los polinomios de Bernoulli sabemos que para $n\geq 1$,
+
+		$$\int_0^1P_n(x)\; dx = 0\quad \Rightarrow \quad \int_0^1 (n+1)P_n(x)\; dx = 0.$$
+
+		Entonces, usando la primera parte de la definción se tiene $P'_{n+1}(x)=(n+1)P_n(x);$
+		Por lo tanto,
+
+		$$0=\int_0^1(n+1)P_n(x)\; dx = \int_0^1 P_{n+1}'(x)\; dx = P_{n+1}(1)-P_{n+1}(0).$$
+
+		Así, 
+
+		$$P_{n+1}(1)=P_{n+1}(0).$$\\
 
 	    %---------- d)
 	    \item Demostrar que $P_n(x+1)-P_n(x)=nx^{n-1}$ si $n\geq 1$.\\\\
-		Demostración.-\;
+		Demostración.-\; Demostraremos por inducción. Para $n=1$ tenemos
+		$$P_1(x)=x-\dfrac{1}{2} \quad \mbox{y} \quad P_1(x+1)=x+\dfrac{1}{2}.$$
+
+		De donde,
+
+		$$P_1(x+1)-P_1(x)=1.$$
+
+		Ya que $nx^{n-1}=1\cdot x^0=1$, la ecuación de diferencia enunciada es válida para $n=1$. Supongamos entonces que la afirmación es válida para algún número entero positivo $m$. Entonces, por el teorema fundamental del cálculo, tenemos
+
+		$$P_{m+1}(x)=\int_0^x P'_{m+1}(t)\; dt = (m+1)\int_0^x P_m(t)\; dt.$$
+
+		Así,
+
+		$$
+		\begin{array}{rcl}
+		    P_{m+1}(x+1)-P_{m+1}(x) &=& (m+1)\left[\displaystyle\int_0^{x+1}P_m(t)\;dt -\int_0^xP_m(t)\; dt\right]\\\\
+					    &=&(m+1) \left[\displaystyle\int_0^1 P_m(t)\;dt + \int_1^{x+1}P_m(t)\; dt - \int_0^x P_m(t)\; dt\right]\\\\
+					    &=&(m+1) \left[0+\displaystyle\int_0^x P_m(t+1)\;dt - \int_1^x P_m(t)\; dt\right]\\\\
+					    &=& (m+1) \left[\displaystyle\int_0^x \left(P_m(t+1)-P_m(t)\right)\;dt\right]\\\\
+					    &=&(m+1)x^m.
+		\end{array}
+		$$
+
+		Por lo tanto, la afirmación es válida para $m+1$. Así, lo será para todo entero positivo $n$.\\\\
 
 	    %---------- e)
 	    \item Demostrar que para $n\leq 2$ tenemos 
 	    $$\sum_{r=1}^{k-1}r^n = \int_0^k P_n(x)\; dx = \dfrac{P_{n+1}(k)-P_{n+1}(0)}{n+1}.$$\\
-		Demostración.-\;
+		Demostración.-\; Sea $k$ un entero positivo. Primero, usando la definición de los polinomios de Bernoulli, tenemos
+
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_0^k P_n(x)\; dx &=& \displaystyle\int_0^k \dfrac{1}{n+1}P'_{n+1}(x)\; dx\\\\
+					 &=& \dfrac{P_{n+1}(k)-P_{n+1}(0)}{n+1}.
+		\end{array}
+		$$
+
+		Ahora, queremos expresar el numerador como una suma telescópica y utilizar la parte (d),
+
+		$$
+		\begin{array}{rcl}
+		    P_{n+1}(k)-P_{n+1}(0) &=& \displaystyle\sum_{r=1}^{k-1}\left[P_{n+1}(r+1)-P_{n+1}(t)\right]\\\\
+					  &=& \displaystyle\sum_{r=1}^{k-1} \left[(n+1)r^n\right]\\\\
+					  &=& (n+1)\displaystyle\sum_{r=1}^{k-1}r^n.
+		\end{array}
+		$$
+
+		Por lo tanto, 
+
+		$$\sum_{r=1}^{k-1}=\int_0^k P_n(x)\; dx = \dfrac{P_{n+1}(k)-P_{n+1}(0)}{n+1}.$$\\
 
 	    %---------- f)
 	    \item  Demostrar que $P_n(1-x)=(-1)^n P_n(x)$ si $n\geq 1$.\\\\
@@ -3313,7 +3512,29 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 36.
     \item Suponiendo que $|f''(x)|\leq m$ para cada $x$ en el intervalo $[0,a]$, y que $f$ toma su mayor valor en un punto interno de este interval, demostrar que $|f'(0)|+|f'(a)|\leq am$. Puede ponerse que $f''$ sea continua en $[0,a]$.
-	Demostración.-\; 
+	Demostración.-\; Ya que $f(x)$ alcanza su máximo en el intervalo $(0,a)$, sabemos que hay algún $c\in(0,a)$ tal que $f'(c)=0$. De donde,
+
+    $$\int_0^a f''(x)\; dx = \int_0^c f''(x)\; dx + \int_c^a f''(x)\; dx.$$
+
+    Evaluando estas integrales por separado, se tiene, por el primer teorema fundamental del cálculo,
+
+    $$\int_0^c f''(x)\; dx = f'(0)=-f'(0)\quad \Rightarrow \quad |f'(0)|=\bigg|\int_0^c f''(x)\; dx\bigg|.$$
+
+    Ahora, utilizamos el límite $f''(x)\leq m$ para todo $x\in\left[0,a\right]$,
+
+    $$|f'(0)|=\bigg|\int_0^c f''(x)\; dx\bigg|\leq \int_0^c |f''(x)|\; dx \leq \int_0^c m\; dx = mc.$$
+
+    Luego, evaluamos la segunda integral,
+
+    $$\int_c^a f''(x)\; dx = f'(a)-f'(c)=f'(a).$$
+
+    Y así,
+
+    $$|f'(a)|=\bigg|\int_c^a f''(x)\; dx\bigg|\leq \int_c^a |f''(x)|\;dx \leq m(a-c).$$
+
+    Por lo tanto,
+
+    $$|f'(0)|+|f'(a)|\leq mc+m(a-c)=ma.$$\\
 
 \end{enumerate}
 
