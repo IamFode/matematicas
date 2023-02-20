@@ -3100,23 +3100,166 @@ Con el método de integración por partes calcular las integrales de los Ejercic
 
     %-------------------- 29.
     \item $\displaystyle\int x^n \sqrt{ax+b}\; dx = \dfrac{2}{a(2n+3)}\left[x^n(ax+b)^{3/2}-nb\int x^{n-1}\sqrt{ax+b}\; dx\right]+C\left(n\neq -\dfrac{3}{2}\right)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Usando la integral por partes, tenemos
+	$$
+	\begin{array}{rcl}
+	    u=x^n &\Rightarrow& du=nx^{n-1}\; dx\\\\
+	    dv=\sqrt{ax+b} &\Rightarrow& v=\dfrac{2}{3a}(ax+b)^{\frac{3}{2}}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^n\sqrt{ax+b}\; dx &=& uv-\displaystyle\int v\; du\\\\
+						  &=& \dfrac{2}{3a}x^n  (ax+b)^{\frac{3}{2}} - \dfrac{2n}{3a}\displaystyle\int x^{n-1}(ax+b)^{\frac{3}{2}}\; dx\\\\
+						  &=& \dfrac{2}{3a}x^n (ax+b)^{\frac{3}{2}} - \dfrac{2n}{3a} \displaystyle\int x^{n-1}(ax+b)\sqrt{ax+b}\; dx\\\\
+						  &=& \dfrac{2}{3a}x^n (ax+b)^{\frac{3}{2}} - \dfrac{2n}{3a} \displaystyle\int \left(ax^n\sqrt{ax+b}+bx^{n-1}\sqrt{ax+b}\right)\; dx\\\\
+						  &=& \dfrac{2}{3a}x^n (ax+b)^{\frac{3}{2}} - \dfrac{2n}{3} \displaystyle\int x^n\sqrt{ax+b} - \dfrac{2nb}{3a}\int x^{n-1} \sqrt{ax+b}\; dx.
+	\end{array}
+	$$
+
+	Luego, resolviendo la igualdad, se tiene
+
+	$$
+	\begin{array}{rcl}
+	    \left(1-\dfrac{2n}{3}\right)\displaystyle\int x^n \sqrt{ax+b}\; dx &=& \dfrac{2}{3a}x^n\left(ax+b\right)^{\frac{3}{2}} - \dfrac{2nb}{3a}\displaystyle\int x^{n-1}\sqrt{ax+b}\; dx\\\\
+	    \dfrac{2n+3}{3} \displaystyle\int x^n \sqrt{ax+b}\; dx  &=& \dfrac{2}{3a}x^n\left(ax+b\right)^{\frac{3}{2}} - \dfrac{2nb}{3a}\displaystyle\int x^{n-1}\sqrt{ax+b}\; dx\\\\
+	    \displaystyle\int x^n \sqrt{ax+b}\; dx &=& \dfrac{2x^n(ax+b)^{\frac{3}{2}}}{a(2n+3)}-\dfrac{2nb}{a(2n+3)}\displaystyle\int x^{n-1}\sqrt{ax+b}\; dx\\\\
+	    \displaystyle\int x^n \sqrt{ax+b}\; dx &=& \dfrac{2}{a(2n+3)}\left(x^n(ax+b)^{\frac{3}{2}}-nb\displaystyle\int x^{n-1}\sqrt{ax+b}\; dx\right).
+	\end{array}
+	$$
+	\vspace{0.5cm}
 
     %-------------------- 30.
     \item $\displaystyle\int \dfrac{x^m}{\sqrt{a+bx}}\; dx = \dfrac{2}{(2m+1)b}\left[x^m \sqrt{a+bx}-ma\int \dfrac{x^{m-1}}{\sqrt{a+bx}}\; dx\right]+C \left(m\neq -\dfrac{1}{2}\right)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Usando la integral por partes, tenemos
+	$$
+	\begin{array}{rcl}
+	    u=x^m &\Rightarrow& du=mx^{m-1}\; dx\\\\
+	    dv=\dfrac{1}{\sqrt{a+bx}}\; dx &\Rightarrow& v=\dfrac{2}{b}\sqrt{a+bx}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{x^m}{\sqrt{a+bx}}\; dx &=& uv-\displaystyle\int v\; du\\\\
+							    &=& \dfrac{2}{b}\sqrt{a+bx}x^m - \dfrac{2m}{b}\displaystyle\int x^{m-1}\sqrt{a+bx}\; dx\\\\
+							    &=& \dfrac{2x^m}{b}\sqrt{a+bx} - \dfrac{2m}{b} \displaystyle\int \dfrac{x^{m-1}(a+bx)}{\sqrt{a+bx}}\; dx\\\\
+							    &=& \dfrac{2x^m}{b}\sqrt{a+bx} - \dfrac{2ma}{b} \displaystyle\int \dfrac{x^{m-1}}{\sqrt{a+bx}}\; dx - 2m \int \dfrac{x^m}{\sqrt{a+bx}}\; dx.\\\\
+	\end{array}
+	$$
+
+	Luego, resolviendo la igualdad, se tiene
+
+	$$
+	\begin{array}{rcl}
+	    (2m+1)\displaystyle\int \dfrac{x^m}{\sqrt{a+bx}}\; dx &=& \dfrac{2x^m}{b} \sqrt{a+bx} - \dfrac{2ma}{b} \displaystyle\int \dfrac{x^{m-1}}{\sqrt{a+bx}}\; dx\\\\
+	    \displaystyle\int \dfrac{x^m}{\sqrt{a+bx}}\; dx &=& \dfrac{2}{(2m+1)b}\left(xm \sqrt{a+bx}-ma \displaystyle\int \dfrac{x^{m-1}}{\sqrt{a+bx}}\ dx\right)+C.
+	\end{array}
+	$$
+	\vspace{0.5cm}
 
     %-------------------- 31.
-    \item $\displaystyle\int \dfrac{dx}{x^n\sqrt{ax+b}}\; dx = -dfrac{\sqrt{ax+b}}{(n-1)bx^{n-1}}-\dfrac{(2n-3)a}{(2n-2)b}\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}\; dx + C(n\neq 1)$.\\\\
-	Respuesta.-\; 
+    \item $\displaystyle\int \dfrac{dx}{x^n\sqrt{ax+b}}\; dx = -\dfrac{\sqrt{ax+b}}{(n-1)bx^{n-1}}-\dfrac{(2n-3)a}{(2n-2)b}\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}\; dx + C(n\neq 1)$.\\\\
+	Respuesta.-\; Empecemos desarrollando la integral
+	$$\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}.$$
+	Integrando por partes, tenemos
+	$$
+	\begin{array}{rcl}
+	    u = \dfrac{1}{x^{n-1}} &\Rightarrow& du = -\dfrac{n-1}{x^n}\; dx\\\\
+	    dv = \dfrac{1}{\sqrt{ax+b}}\; dx &\Rightarrow& v = \dfrac{2}{b}\sqrt{ax+b}.
+	\end{array}
+	$$
+
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}} &=& uv-\displaystyle\int v\; du\\\\
+							     &=& \dfrac{2\sqrt{ax+b}}{ax^{n-1}}+\dfrac{2(n-1)}{x^n}\displaystyle\int \dfrac{\sqrt{ax+b}}{x^n}\; dx\\\\
+							     &=& \dfrac{2\sqrt{ax+b}}{ax^{n-1}}+\dfrac{2(n-1)}{a}\int \dfrac{(ax+b)}{x^n\sqrt{ax+b}}\; dx\\\\
+							     &=& \dfrac{2\sqrt{ax+b}}{ax^{n-1}}+2(n-1)\displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}+\dfrac{2b(n-1)}{a}\displaystyle\int  \dfrac{dx}{x^n\sqrt{ax+b}}.
+	 \end{array}
+	$$
+
+	Luego, resolviendo la igualdad, se tiene
+
+	$$
+	\begin{array}{rcl}
+	    \dfrac{2b(n-1)}{a}\displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}} &=& \displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}-\dfrac{2\sqrt{ax+b}}{ax^{n-1}}-2(n-1)\displaystyle\int\dfrac{dx}{x^{n-1}\sqrt{ax+b}}\\\\
+	    \dfrac{2b(n-1)}{a}\displaystyle\int\dfrac{dx}{x^n\sqrt{ax+b}} &=& - \dfrac{2\sqrt{ax+b}}{ax^{n-1}}-(2n-3) \displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}\\\\
+	    \displaystyle\int \dfrac{dx}{x^n\sqrt{ax+b}}\; dx &=& - \dfrac{\sqrt{ax+b}}{(n-1)bx^{n-1}}-\dfrac{(2n-3)a}{(2n-2)b}\displaystyle\int \dfrac{dx}{x^{n-1}\sqrt{ax+b}}.
+	\end{array}
+	$$
+	\vspace{0.5cm}
+
 
     %-------------------- 32.
     \item $\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx = \dfrac{\cos^{m-1}x}{(m-n)\sen^{n-1}x}+\dfrac{m-1}{m-n}\int \dfrac{\cos^{m-2}}{\sen^n x}\; dx + C (m\neq n)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Por el ejercicio 19 la la sección 5.10, se tiene
+
+	$$\int \dfrac{\cos^{m+1}x}{\sen^{n+1}x}\; dx = -\dfrac{1}{n}\dfrac{\cos^m x}{\sen^n x}-\dfrac{m}{n}\int \dfrac{\cos^{m-1}}{\sen^{n-1}x}\; dx.$$ 
+
+	Aplicando este resultado y reemplazando $m+1$ por $m$ y $n+1$ por $n$, obtenemos
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{1}{n-1}\cdot \dfrac{\cos^{m-1}x}{\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int\dfrac{\cos^{m-1}x}{\sen^{n-2}x}\; dx\\\\
+							      &=& -\dfrac{1}{n-1}\cdot \dfrac{\cos^{m-1}x}{\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int \dfrac{\cos^{m-2}x\sen^2 x}{\sen^n x}\; dx\\\\
+							      &=& -\dfrac{1}{n-1}\cdot \dfrac{\cos^{m-1}x}{\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int \dfrac{\cos^{m-2}x(1-\cos^2 x)}{\sen^n x}\; dx\\\\
+							      &=& -\dfrac{\cos^{m-1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int \dfrac{\cos^{m-2}x}{\sen^{n}x}\; dx + \dfrac{m-1}{n-1}\int \dfrac{\cos^m x}{\sen^n x}\; dx.
+	\end{array}
+	$$
+
+	De donde, 
+
+	$$
+	\begin{array}{rcl}
+	    \left(1-\dfrac{m-1}{n-1}\right)\displaystyle\int\dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m-1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int\dfrac{\cos^{m-2}x}{\sen^n x}\; dx\\\\
+	    \dfrac{n-m}{n-1} \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m-1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-1}{n-1}\displaystyle\int \dfrac{\cos^{m-2}x}{\sen^n x}\; dx\\\\
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m-1}x}{(n-m)\sen^{n-1}x}-\dfrac{m-n+2}{n-m}\displaystyle\int \dfrac{\cos^{m-2}x}{\sen^n x}\; dx\\\\
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& \dfrac{\cos^{m-1}x}{(m-n)\sen^{n-1}x}-\dfrac{m-n+2}{m-n}\displaystyle\int \dfrac{\cos^{m-2}x}{\sen^n x}\; dx\\\\
+	\end{array}
+	$$
+	\vspace{0.5cm}
+
 
     %-------------------- 33.
     \item $\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx = -\dfrac{\cos^{m+1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-n+2}{n-1}\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx + C (n\neq 1)$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Podemos reescribir la integral como
+	$$\int \dfrac{\cos^m x}{\sen^n x}\; dx = \int \dfrac{\cos^{m+2}x}{\sen^n x}\sec^2x\; dx.$$
+	Entonces, integrando por partes, obtenemos
+	$$
+	\begin{array}{rclcl}
+	    u=\dfrac{\cos^{m+2}x}{\sen^n x} &\Rightarrow& du&=&\dfrac{-(m+2)\cos^{m+1}x\sen^{n+1}x-n\sen^{n-1}x\cos^{m+3}}{\sen^{2n}x}\; dx\\\\
+					    &&&=&\dfrac{-(m+2)\cos^{m+1}x\sen^{2}x-x\cos^{m+3}x}{\sen^{n+1}x}\; dx\\\\
+					    &&&=& -(m+2)\dfrac{\cos^{m+1}x}{\sen^{n-1}x}-n\dfrac{\cos^{m+3}}{\sen^{n+1}x}\; dx\\\\
+	    dv=\sec^2x\; dx &\Rightarrow& v&=&\tan x\\\\
+	\end{array}
+	$$
+
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x} &=& \displaystyle\int \dfrac{\cos^{m+2}x}{\sen^n x}\sec^2 x\; dx\\\\
+							 &=& uv-\displaystyle\int v\; du\\\\
+							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\left[-(m+2)\dfrac{\cos^m x}{\sen^{n-2}x}-n\dfrac{\cos^{m+2}x}{\sen^n}\right]\; dx\\\\
+							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\int\dfrac{\cos^{m+2}x}{\sen^n}\right]\; dx\\\\
+							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\displaystyle\int\dfrac{\cos^m x(1-\sen^2 x)}{\sen^n x}\; dx\\\\
+							 &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2)\displaystyle\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx-n\displaystyle\int\dfrac{\cos^m x}{\sen^n x}\; dx-n\int\dfrac{\cos^m x}{\sen^{n-2}x}\; dx.
+	\end{array}
+	$$
+
+	De donde,
+
+	$$
+	\begin{array}{rcl}
+	    (1-n)\displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& \dfrac{\cos^{m+1}x}{\sen^{n-1}x}+(m+2-n)\displaystyle\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx\\\\
+	    \displaystyle\int \dfrac{\cos^m x}{\sen^n x}\; dx &=& -\dfrac{\cos^{m+1}x}{(n-1)\sen^{n-1}x}-\dfrac{m-n+2}{n-1}\displaystyle\int \dfrac{\cos^m x}{\sen^{n-2}x}\; dx + C (n\neq 1)\\\\
+	\end{array}
+	$$
+	\vspace{0.5cm}
 
     %-------------------- 34.
     \item 

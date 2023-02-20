@@ -2886,3 +2886,67 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
 
 \appendix
 \chapter{Convexidad y Concavidad}
+
+%-------------------- definición 1
+\begin{def.}
+    Una función $f$ es \textbf{convexa} en un intervalo, si para todo $a$ y $b$ del intervalo, el segmento rectilíneo que une $\left(a,f(a)\right)$ y $\left(b,f(b)\right)$ se sitúa por encima de la gráfica de $f.$
+\end{def.}
+
+La condición geométrica que aparece en la definición puede expresarse de forma analítica , la cual es, a veces más útil en las demostraciones. La recta entre $(a,f(a))$ y $(b,f(b))$ es la gráfica de la función $g$ definida mediante
+
+$$g(x)=\dfrac{f(b)-f(a)}{b-a}(x-a)+f(a)$$
+
+Esta recta se sitúa por encima de la gráfica de $f$ en $x$ si $g(x)>f(x)$, es decir, si
+
+$$\dfrac{f(b)-f(a)}{b-a}(x-a)+f(a)>f(x)$$
+
+o bien
+
+$$\dfrac{f(b)-f(a)}{b-a}(x-a)>f(x)-f(a)$$
+
+es decir
+
+$$\dfrac{f(b)-f(a)}{b-a}>\dfrac{f(x)-f(a)}{x-a},$$
+
+con lo cual hemos obtenido una definición equivalente de convexidad.
+
+%-------------------- definición 2
+\begin{def.}
+    Una función $f$ es \textbf{convexa} en un intervalo, si dados $a,x$ y $b$ del intervalo con $a<x<b$ se verifica que
+    $$\dfrac{f(x)-f(a)}{x-a}<\dfrac{f(b)-f(a)}{b-a}.$$
+\end{def.}
+
+Si la palabra $"$encima$"$ de la definición 1 se sustituye por $"$por debajo$"$, o equivalentemente, si la desigualdad de la definición 2 se sustituye por
+
+$$\dfrac{f(x)-f(a)}{x-a}>\dfrac{f(b)-f(a)}{b-a}.$$
+
+se obtiene la definición de una función \textbf{cóncava}. No es difícil comprobar que las funciones cóncavas son precisamente aquellas de la forma $-f$, siendo $f$ una función convexa.
+
+%-------------------- teorema 1
+\begin{teo}
+    Sea $f$ convexa. Si $f$ es diferenciable en $a$, entonces la gráfica de $f$ se sitúa por encima de la tangente a $f$ en el punto $(a.f(a))$, excepto en el mismo punto de contacto $(a,f(a))$. Si $a<b$ y $f$ es diferenciable en $a$ y en $b$, entonces $f'(a)<f'(b)$.\\\\
+	Demostración.-\; Si $0<h_1<h_2$. Entonces, como se muestra en la figura 4 (Michael Spivak, capítulo 11, Apéndice),
+	$$\dfrac{f(a+h_1)-f(a)}{h_1}<\dfrac{f(a+h_2)-f(a)}{h_2}.$$
+	A partir de la definición 2 aplicada a los puntos $a<a+h_1<a+h_2$, se obtiene una demostración de desigualdad sin basarse en ningún dibujo o esquema. Dicha desigualdad demuestra que los valores de 
+	$$\dfrac{f(a+h)-f(a)}{h}$$
+	disminuyen cuando $h\to 0^+$. Por consiguiente,
+	$$f'(a)<\dfrac{f(a+h)-f(a)}{h}\mbox{ para }h>0$$
+	(de hecho, la derivada $f'(a)$ es el ínfimo de todos estos valores). Pero esto significa que, para $h>0$ la secante que pasa por los puntos $(a,f(a))$ y $(a+h,f(a+h))$ tiene una pendiente mayor que la tangente, lo que implica que $(a+h,f(a+h))$ se sitúa por encima de la tangente (la traducción analítica de este hecho es inmediata).\\
+	En el caso de valores de $h$ negativos, la situación es similar (Figura 5, Michael Spivak, capítulo 11, Apéndice): Si $h_2<h_1<0$, entonces
+	$$\dfrac{f(a+h_1)-f(a)}{h_1}>\dfrac{f(a+h_2)-f(a)}{h_2}.$$
+	Esto demuestra que la pendiente de la tangente es mayor que
+	$$\dfrac{f(a+h)-f(a)}{h}\mbox{ para } h<0$$
+	(de hecho, $f'(a)$ es el supremo de todos estos números), esto demuestra que $f(a+h)$ se sitúa por encima de la recta si $h<0$. Queda demostrada pues la primera parte del teorema.\\
+
+	Supongamos ahora que $a<b$. Entonces, como ya hemos visto (Figura 6 Michael Spivak, capítulo 11, Apéndice),
+	$$
+	\begin{array}{rcll}
+	    f'(a)&<&\dfrac{f(a+(b-a))-f(a)}{b-a}&\mbox{ ya que }b-a>0\\\\
+		 &=&\dfrac{f(b)-f(a)}{b-a}&.\\\\
+	    f'(b)&>&\dfrac{f(b+(a-b))-f(b)}{a-b}&\mbox{ ya que } a-b<0\\\\
+		 &=&\dfrac{f(a)-f(b)}{a-b}=\dfrac{f(b)-f(a)}{b-a}&
+	\end{array}
+	$$
+
+	Combinando estas desigualdades, obtenemos $f'(a)<f'(b).$
+\end{teo}

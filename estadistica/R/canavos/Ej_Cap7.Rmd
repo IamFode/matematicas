@@ -649,4 +649,155 @@ hist(expr,freq = FALSE)
 ## 7.22
 Para un gerente de planta es muy importante controlar la variación en el espesor de un material plástico. Se sabe que la distribución del espesor del material es normal con una desviación estándar de $0.01$ cm. Una muestra aleatoria de $25$ piezas de este material da como resultado una desviación estándar muestral de $0.015$ cm. Si la varianza de la población es $(0.01)^2 cm^2$. ¿cuál es la probabilidad de que la varianza muestral sea igual o mayor que $(0.015)^2 cm^2$? Por lo tanto, ¿qué puede usted concluir con respecto a la variación de este proceso?.
 
+Respuesta.- Sean, $\sigma=0.01$ la desviación estándar  y$S=0.015$. Si la varianza de la población es $\sigma^2=0.01^2$. Entonces la probabilidad de $S^2\geq 0.015^2$, cuando el muestreo se lleva a cabo sobre $N(0,0.01)$ con $n=25$ es igual a la de 
+
+$$
+\begin{array}{rcl}
+  P\left[\displaystyle\sum_{i=1}^n \dfrac{\left(x_i-\mu\right)^2}{\sigma^2} = Y \geq S^2 = \displaystyle\sum_{i=1}^n \dfrac{\left(x_i-\mu\right)^2}{n}\right]&=&P\left[ \displaystyle\sum_{i=1}^n \left(x_i-\mu\right)^2 = \sigma^2Y \geq nS^2 = \displaystyle\sum_{i=1}^n \left(x_i-\mu\right)^2\right]\\\\
+  &=& P\left(Y\geq\dfrac{nS^2}{\sigma^2}\right)\\\\
+  &=& P\left(Y\geq \dfrac{25\cdot 0.015^2}{0.01^2}\right)\\\\
+  &=& P(Y\geq 56.25)\qquad (\mbox{Por el teorema } 7.5, Y\sim X^2_{25})\\\\
+  &=& 0.0003365632.
+\end{array}
+$$
+
+```{r}
+pchisq(56.25,df=25,lower.tail = FALSE)
+```
+
+
+Llegamos a la conclusión que la varianza muestral no es probable que sea igual o mayor que $0.015^2\; cm^2$
+
+
+## 7.23
+Si se obtiene una muestra aleatoria de $n=16$ de una distribución normal con media y varianza desconocidas, obtener $P(S^2/\sigma^2\leq 2.041)$
+
+Respuesta.- La varianza muestral cuando media $\mu$ y varianza $\sigma^2$ son desconocidas vienen dadas por: 
+
+$$S^2=\sum \dfrac{(x_i-\mu)^2}{n-1}.$$ 
+
+Y por el teorema 7.5 la distribución de la variable aleatoria 
+
+$$Y=\sum \dfrac{(x_i-\mu)^2}{\sigma^2}$$
+ 
+es del tipo chi-cuadrada con $n$ grados de libertad. De donde,
+ 
+$$
+\begin{array}{rcl}
+  P\left(\dfrac{S^2}{\sigma^2}\leq 2.041\right) &=& P\left(\dfrac{\sum \dfrac{(x_i-\mu)^2}{n-1}}{\sum \dfrac{(x_i-\mu)^2}{Y}}\leq 2.041\right)\\\\
+  &=& P\left(\dfrac{Y}{n-1}\leq 2.041\right)\\\\
+  &=& P\left[Y\leq 2.041(n-1)\right]\\\\
+  &=& P\left[Y\leq 2.041(16-1)\right]\\\\
+  &=&P(Y\leq 30.615)\\\\
+  &=& 0.9901128.
+\end{array}
+$$
+
+```{r}
+pchisq((16-1)*2.041,df=16-1)
+```
+
+
+## 7.24 
+Si se obtiene una muestra aleatoria de tamaño $n=21$ de una distribución normal con media y varianza desconocidas, obtener $P(S^2/\sigma^2\leq 1.421)$.
+
+Respuesta.- Similar al ejercicio 7.23 se tiene,
+
+$$
+\begin{array}{rcl}
+  P\left(\dfrac{S^2}{\sigma^2}\leq 1.421\right) &=& P\left(\dfrac{\sum \dfrac{(x_i-\mu)^2}{n-1}}{\sum \dfrac{(x_i-\mu)^2}{Y}}\leq 1.421\right)\\\\
+  &=& P\left(\dfrac{Y}{n-1}\leq 1.421\right)\\\\
+  &=& P\left[Y\leq 1.421(n-1)\right]\\\\
+  &=& P\left[Y\leq 1.421(21-1)\right]\\\\
+  &=& 0.9001761.
+\end{array}
+$$
+
+```{r}
+pchisq((21-1)*1.421,df=21-1)
+```
+
+
+## 7.25
+Un fabricante de cigarrillos asegura que el contenido promedio de nicotina, en una de sus marcas, es de $0.6$ mg por cigarrillo. Una organización independientes mide el contenido de nicotica de $16$ cigarrillos de esta marca y encuentra que el promedio y la desviación estándar muestral es de $0.75$ y $0.175$ mg, respectivamente, de nicotina. Si se supone que la cantidad de nicotina en estos cigarrillos es una variable aleatoria normal, ¿qué tan probable es el resultado muestral dado el dato proporcionado por el fabricante?.
+
+Respuesta.- Por el teorema 7.7, se tiene que
+
+$$T=\dfrac{\dfrac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}}{\sqrt{\dfrac{(n-1)\frac{S^2}{\sigma^2}}{n-1}}}=\dfrac{\overline{X}-\mu}{\dfrac{S}{\sqrt{n}}},$$
+
+tiene una distribución chi-cuadrada con $n-1$ grado de libertad.
+
+Es decir, la función acumulada chi cuadrada vendrá dada por
+
+$$
+\begin{array}{rcl}
+  1-P(T\leq t_{1-\alpha,v})&=&1-\displaystyle\int_{-\infty}^{t_{1-\alpha,v}}f(t;v)\; dt\\\\
+  &=&1-\displaystyle\int_{-\infty}^{t_{1-\alpha,v}}\dfrac{\Gamma\left[\dfrac{(v+1)}{2}\right]}{\sqrt{\pi v}\;\Gamma\left(\dfrac{v}{2}\right)}\left[1+\left(\dfrac{t^2}{v}\right)\right]^{-\frac{v+1}{2}}\; dt.\\\\
+\end{array}
+$$
+
+En nuestro caso particular. Sean $\mu=0.6$, $\overline{x}=0.75$, $s=0.175$ y $n=16$. Entonces,
+
+$$
+\begin{array}{rcl}
+  1-P\left(\dfrac{0.75-0.6}{175/\sqrt{16}}\right) &=& 1-P(T\leq 3.428571)\\\\
+  &=&1-\displaystyle\int_{-\infty}^{3.428571}\dfrac{\Gamma\left[\dfrac{(15+1)}{2}\right]}{\sqrt{\pi 15}\;\Gamma\left(\dfrac{15}{2}\right)}\left[1+\left(\dfrac{3.428571^2}{15}\right)\right]^{-\frac{15+1}{2}}\; dt.\\\\
+  &=& 0.001866207.
+\end{array}\\\\
+$$
+
+```{r}
+mu=0.6
+mean = 0.75
+s=0.175
+n=16
+t=(mean-mu)/(s/sqrt(n))
+t
+pt(t,n-1,lower.tail = FALSE)
+```
+
+Por lo que concluimos que es muy poco probable el resultado de la organización.
+
+## 7.26
+Durante los 12 meses pasados el volumen de ventas de un restaurante fue de $\$ 2000$. El gerente piensa que los pròximos $25$ dias serán típicos con respecto al volumen de ventas normal. Al finalizar los $25$ días, el volumen de ventas y su desviación estándar promedio fueron de $\$ 1800$ y $\$200$, respectivamente. Supóngase que el volumen de ventas diaria es una variable aleatoria normal. Si usted fuese el gerente, ¿tendría alguna razón para creer, con base en este resultado, que hubo una disminución en el volumen de ventas promedio diario?.
+
+Respuesta.- Sean $\mu=2000$, $\overline{x}=1800$, $s=200$ y $n=25$. Entonces,
+
+$$
+\begin{array}{rcl}
+  1-P\left(\dfrac{1800-2000}{200/\sqrt{25}}\right) &=& 1-P(T\leq -5)\\\\
+  &=&1-\displaystyle\int_{-\infty}^{-5}\dfrac{\Gamma\left[\dfrac{(24+1)}{2}\right]}{\sqrt{\pi 24}\;\Gamma\left(\dfrac{24}{2}\right)}\left[1+\left(\dfrac{-5^2}{24}\right)\right]^{-\frac{24+1}{2}}\; dt.\\\\
+  &=& 0.00002.
+\end{array}\\\\
+$$
+
+```{r}
+mu=2000
+mean = 1800
+s=200
+n=25
+t=(mean-mu)/(s/sqrt(n))
+pt(t,n-1)
+```
+
+No se tiene razón para creer que hubo una disminución en el volumen de ventas promedio diario.
+
+
+## 7.27
+El gerente de una refinería piensa modificar el proceso para producir gasolina a partir de petróleo crudo. El gerente hará la modificación sólo si la gasolina promedio que se obtiene por este nuevo proceso (expresada como un porcentaje del crudo) aumenta su valor con respecto al proceso en uso. Con base en un experimento de laboratorio y mediante el empleo de dos muestras aleatorias de tamaño $12$, una para cada proceso, la cantidad de gasolina promedio del proceso en uso es de $24.6$ con una desviación estándar de $2.3$, y para el proceso propuesto fue de $28.2$ con una desviación estándar de $2.7$. El gerente piensa que los resultados proporcionados por los dos procesos son variables aleatorias independientes normalmente distribuidas con varianza iguales. Con base en esta evidencia, ¿debe adoptarse el nuevo proceso?.
+
+Respuesta.- Dado que $\overline{X}$ y $\overline{Y}$ son variables aleatorias independientes normalmente distribuidas, si $a_1=1$ y $a_2=-1$ en el teorema 7.2, la distribución de $\overline{X}-\overline{Y}$ también es normal con media $\mu_X=24.6-28.2=\mu_Y$
+
+
+## 7.28
+Una organización independiente está intersada en probar la distancia de frenado a una velocidad de $50$ mph para dos marcas distintas de automóviles. Para la primera marca se selecionaron nueve automóviles y se probaron en un medio contralado. La media muestral y la desviación estándar fueron de $145$ pues y $8$ pues, respectivamente. Para la segunda marca se seleccionaron $12$ automóviles y la distancia promedio resultó ser de $132$ pues y una desviación estándar de $10$ pues. Con base en esta evidencia, ¿existe alguna razón para creer que la distancia de frenado para ambas marcas? ¿Supóngase que las distancias de frenado son variables aleatorias independientes normalmente distribuidas con varianzas iguales?.
+
 Respuesta.-
+
+## 7.29
+La variaciónen el número de unidades diarias de cierto producto, el cual manejan dos operadores $A$ y $B$ debe ser la misma. Con base en muestras de tamañó $n_A=16$ días y $n_B=21$ días, el valor calculado de las desviaciones estándar muestrales es de $s_A=8.2$ unidades y $s_B=5.8$ unidades. Si el número de estas, manejadas por los dos operadores, por día, son dos variables aleatorias independientes que se encuentran aproximadas, en forma adecuada, por distribuciones normales, ¿existe alguna razón para creer que las vrianzas son iguales?.
+
+Respuesta.-
+
+## 7.30
+Con base en la información proporcionada en el ejercicio 7.27, ¿existe alguna razón para creer que las varianzas de los dos procesos son iguales?

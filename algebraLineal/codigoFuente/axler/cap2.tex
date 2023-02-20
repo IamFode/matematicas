@@ -88,15 +88,108 @@ Verifiquemos el siguiente ejemplo, tenga en cuenta que $\mathcal{P}_m(\textbf{F}
 
 \setcounter{mydef}{14}
 %-------------------- 2.15 definición
-\begin{def.}[Espacio vectorial de dimensión infinita]\,\\\\
+\begin{mydef}[Espacio vectorial de dimensión infinita]\,\\\\
     Un espacio vectorial se llama \textbf{infinitamente-dimensional} si no es de dimensión finita.
-\end{def.}
+\end{mydef}
 
 %-------------------- 2.16 ejemplo
-\begin{ejem}
+\begin{myejem}
     Demuestre que $\mathcal{P}(\textbf{F})$ es infinitamente-dimensional.\\\\
     Demostración.-\; Considere cualquier lista de elementos de $\mathcal{P}(\textbf{F})$. Sea $m$ el grado más alto de los polinomios en esta lista. Entonces, cada polinomio en el generador (span) de esta lista tiene grado máximo $m$. Por lo tanto, $z^{m+1}$ no está en el span de nuestra lista. Así, ninguna lista genera $\mathcal{P}(\textbf{F})$. Concluimos que $\mathcal{P}(\textbf{F})$ es de dimensión infinita.
-\end{ejem}
+\end{myejem}
 \vspace{.5cm}
 
 \subsection*{Independencia lineal}
+
+Suponga $v_1,\ldots,v_m\in V$ y $v\in \span(v_1,\ldots,v_m)$. Por la definición de span, existe $a_1,\ldots,a_m\in \textbf{F}$ tal que
+$$v=a_1v_1+\cdots+a_mv_m.$$
+Considere la cuestión de si la elección de escalares en la ecuación anterior es única. Sea $c_1,\ldots,c_m$ otro conjunto de escalares tal que
+$$v=c_1v_1+\cdots+c_mv_m.$$
+Sustrayendo estas últimas ecuaciones, se tiene
+$$0=(a_1-c_1)v_1+\cdots+(a_m-c_m)v_m.$$
+Así, tenemos que escribir $0$ como una combinación lineal de $(v_1,\ldots,v_m)$. Si la única forma de hacer esto es la forma obvia (usando $0$ para todos los escalares), entonces cada $a_j-c_j$ es igual a $0$, lo que significa que cada $a_j$ es igual a $c_j$ (y por lo tanto la elección de los escalares fue realmente única). Esta situación es tan importante que le damos un nombre especial, independencia lineal, que ahora definiremos.
+
+%-------------------- 2.17 Definición
+\begin{mydef}[Linealmente independiente]\,\\
+    \begin{itemize}
+	\item Una lista $v_1,\ldots,v_m$ de vectores en $V$ se llama linealmente independiente si la única posibilidad de que  $a_1,\ldots,a_m\in \textbf{F}$ tal que $a_1v_1+\cdots+a_mv_m$ sea igual a $0$ es $a_1=\cdots=a_m=0.$
+	\item La lista vacía $()$ también se declara linealmente independiente.
+    \end{itemize}
+\end{mydef}
+
+El razonamiento anterior muestra que $v_1,\ldots,v_m$ es linealmente independiente si y sólo si cada vector en el $\span(v_1,\ldots,v_m)$ tiene sólo una representación lineal en forma de combinación lineal de $v_1,\ldots,v_m$.
+
+\setcounter{mydef}{18}
+%-------------------- 2.19 Definición
+\begin{mydef}[Linealmente dependiente]\,\\
+    \begin{itemize}
+	\item Una lista $v_1,\ldots,v_m$ de vectores en $V$ se llama linealmente dependiente si no es linealmente independiente.
+	\item En otras palabras, una lista $v_1,\ldots,v_m$ de vectores en $V$ es linealmente dependiente si existe $a_1,\ldots,a_m\in \textbf{F}$, no todos $0$, tal que $a_1v_1+\cdots+a_mv_m=0$.
+    \end{itemize}
+\end{mydef}
+
+\setcounter{mylema}{20}
+%-------------------- 2.21 Lema
+\begin{mylema}
+    Suponga $v_1,\ldots,v_m$ es una lista linealmente dependiente en $V$. Entonces, existen $j\in\left\{1,2,\ldots,m\right\}$ tal que se cumple lo siguente:
+    \begin{enumerate}[(a)]
+	\item $v_j\in \span(v_1,\ldots,v_{j-1});$
+	\item Si el $j$ésimo término se elimina de $v_1,\ldots,v_m$, el span de la lista restante es igual a $\span(v_1,\ldots,v_m)$.\\
+    \end{enumerate}
+    Demostración.-\; Ya que la lista $v_1,\ldots,v_m$ es linealmente dependiente, existe números $a_1,\ldots,a_m\in \textbf{F}$, no todos $0$, tal que
+    $$a_1v_1+\cdots + a_mv_m=0.$$
+    Sea $j$ el elemento más grande de $\left\{1,\ldots, m\right\}$ tal que $a_j\neq 0$. Entonces,
+    $$v_j=-\dfrac{a_1}{a_j}v_1-\cdots-\dfrac{a_{j-1}}{a_j}v_{j-1}\qquad (1).$$
+    Lo que prueba (a). \\
+    Para probar (b), suponga $u\in \span(v_1,\ldots,v_m)$. Entonces, existe números $c_1,\ldots,c_m\in \textbf{F}$ tal que
+    $$u=c_1v_1+\cdots+c_mv_m.$$
+    En la ecuación anterior, podemos reemplazar $v_j$ con el lado derecho de (1), lo que muestra que $u$ está en el span de la lista obtenida al eliminar el j-ésimo término de $v_1,\ldots,v_m$. Así (b) se cumple.
+\end{mylema}
+
+Si elegimos $j=1$ en el lema de dependencia lineal anterior, entonces significa que $v_1=0$, ya que si $j=1$ entonces se interpreta que la condición (a) anterior significa que $v_1\in \span()$. Recuerdo que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.
+
+\setcounter{myteo}{22}
+%-------------------- 2.23 Definición
+\begin{myteo}[Longitud de la lista linealmente independiente es  $\boldmath \leq$ a la longitud de la lista que abarca]
+    En un espacio vectorial ﬁnito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
+    Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_1$ spans $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de varios pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
+
+    \begin{enumerate}[\small\textbf{Paso} 1.]
+	\item Sea $B$ la lista $w_1,\ldots,w_n$, que abarca $V$. Por lo tanto, adjuntar cualquier vector en $V$ a esta lista produce una lista linealmente dependiente (porque el nuevo vector adjunto se puede escribir como una combinación lineal de los otros vectores). En particular, la lista
+	$$u_1,w_1m\ldots,w_n$$
+	es linealmente dependiente. Así, por el lema (2.21), podemos eliminar un de las $w$ para que la nueva lista $B$ (de longitud $n$) que consta de $u_1$ y las $w$ restantes abarquen $V$.
+	\item 
+    \end{enumerate}
+\end{myteo}
+
+
+\setcounter{mysection}{0}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1
+    \item Suponga $v_1,v_2,v_3,v_4$ se extiende por $V$. Demostrar que la lista 
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    también se extiende por $V$.\\\\
+	Demostración.-\; Sea $v\in V$, entonces existe $a_1,a_2,a_3,a_4$ tal que 
+	$$v=a_1v_1+a_2v_2+a_3v_3+a_4v_4.$$
+	Que implica,
+	$$
+	\begin{array}{rcl}
+	    v&=&a_1v_1+a_2v_2+a_3v_3+a_4v_4-a_1v_2+a_1v_2-a_1v_3+a_1v_3-a_2v_3+a_2v_3-a_1v_4+a_1v_4\\
+	     &-& a_2v_4+a_2v_4 -a_3v_4 +a_3v_4\\
+	\end{array}
+	$$
+
+	De donde,
+
+	$$v=a_1(v_1-v_2)+(a_1+a_2)(v_2-v_3)+(a_1+a_2+a_3)(v_3-v_4)+(a_1+a_2+a_3+a_4)v_4.$$
+	Por lo tanto, cualquier vector en $V$ puede ser expresado por una combinación lineal de 
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4.$$
+	Así, esta lista se extiende por $V$.\\\\
+
+    %------------------- 2
+    \item 
+
+\end{enumerate}

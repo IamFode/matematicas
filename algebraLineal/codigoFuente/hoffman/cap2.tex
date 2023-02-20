@@ -515,7 +515,7 @@ Esta definición se puede simplificar aún más.
 
 \setcounter{ejem}{6}
 %-------------------- Ejemplo 2.7
-\begin{ejem}[El espacio solución de un sistema homogéneo de ecuaciones lineales.]
+\begin{ejem}[El espacio solución de un sistema homogéneo de ecuaciones lineales]
 Sea $A$ un matriz $m\times n$ sobre $F$. Entonces el conjunto de todas las matrices (columna) $n\times 1$, $X$, sobre $F$ tal que $AX=0$ es un subespacio del espacio de todas las matrices $n\times 1$ sobre $F$. Para demostrar esto se necesita probar que $A(cX+Y)=0$ si $AX=0,$ $AY=0$ y $c$ un escalar arbitrario  de $F$. Esto se desprende inmediatamente del siguiente hecho general.
 \end{ejem}
 
@@ -543,7 +543,7 @@ En forma semejante se puede ver que $(dB+C)A=d(BA)+CA$, si la suma y el producto
 %-------------------- Teorema 2.2
 \begin{teo}
     Sea $V$ un espacio vectorial sobre el cuerpo $F$. La intersección de cualquier colección de subespacios de $V$ es un subespacio de $V$.\\\\
-	Demostración.-\; Sea $\left\{W_a\right\}$ una colección de subespacios de $V$, y sea $W=\cap W_a$ su intersección. Recuérdese que $W$ está definido como el conjunto de todos los elementos pertenecientes a cada $W_a$. Dado que todo $W_a$ es un subespacio, cada uno contiene el vector nulo. Así que el vector nulo está en la intersección $W$, y $W$ no es vacío. Sean $\alpha$ y $\beta$ vectores de $W$ y sea $c$ un escalar. Por definición de $W$ ambos. $\alpha$ y $\beta$ pertenecen a cada $W_a$, y por ser cada $W_a$ un subespacio el vector $(c\alpha+\beta)$ está en cada $W_a$. Así $(c\alpha+\beta)$ está también en $W$. Por el teorema 1, $W$ es un subespacio de $V$. 
+	Demostración.-\; Sea $\left\{W_a\right\}$ una colección de subespacios de $V$, y sea $W=\cap W_a$ su intersección. Recuérdese que $W$ está definido como el conjunto de todos los elementos pertenecientes a cada $W_a$. Dado que todo $W_a$ es un subespacio, cada uno contiene el vector nulo. Así que el vector nulo está en la intersección $W$, y $W$ no es vacío. Sean $\alpha$ y $\beta$ vectores de $W$ y sea $c$ un escalar. Por definición de $W$ ambos,  $\alpha$ y $\beta$ pertenecen a cada $W_a$, y por ser cada $W_a$ un subespacio el vector $(c\alpha+\beta)$ está en cada $W_a$. Así $(c\alpha+\beta)$ está también en $W$. Por el teorema 1, $W$ es un subespacio de $V$. 
 \end{teo}
 
 De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$, entonces existe un subespacio mínimo de $V$ que contiene a $S$; esto es, un subespacio que contiene a $S$ y que está contenido en cada uno de los otros subespacios que contienen a $S$.
@@ -557,7 +557,7 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 %-------------------- Teorema 2.3
 \begin{teo}
     El subespacio generado por un subconjunto $S$ no vacío de un espacio vectorial $V$ es el conjunto de todas las combinaciones lineales de los vectores de $S$.\\\\
-	Demostración.-\; Sea $W$ el subespacio generado por $S$. Entonces, toda combinación lineal 
+	Demostración.-\; Sea $W$ el subespacio generado por $S$. Entonces, por definición de subespacio; toda combinación lineal 
 	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_m,\alpha_m$$
 	de vectores $\alpha_1,\alpha_2,\ldots,\alpha_m$ de $S$ pertenecen evidentemente a $W$. Así que $W$ contiene el conjunto $L$ de todas las combinaciones lineales de vectores de $S$. El conjunto $L$, entonces, por otra parte, contiene a $S$ y no es, pues, vacío. Si $\alpha$ y $\beta$ pertencen a $L$, entonces $\alpha$ es una combinación lineal,
 	$$\alpha=x_1\alpha_1+x_2\alpha_2+\ldots+x_m,\alpha_m$$
@@ -566,7 +566,7 @@ De este teorema se deduce que si $S$ es cualquier colección de vectores de $V$,
 	de vectores $\beta_j$ de $S$. Para cada escalar $c$,
 	$$c\alpha+\beta=\sum_{i=1}^n (cx_i)\alpha_i+\sum_{j=1}^n y_j\beta_j.$$
 	Luego, $c\alpha+\beta$ pertence a $L$. Con lo que $L$ es un subespacio de $V$.\\
-	Se demostró que $L$ es un subespacio de $V$ que contiene a $S$, y también que todo subespacio que contiene a $S$ contiene a $L$. Se sigue que $L$ es la intersección de todos los subespacios que contienen a $S$; es decir, que $L$ es el subespacio generado por el conjunto $S$.
+	Se demostró que $L$ es un subespacio de $V$ que contiene a $S$, y también que todo subespacio que contiene a $S$ contiene a $L$ (definición de subespacio). Se sigue que $L$ es la intersección de todos los subespacios que contienen a $S$; es decir, que $L$ es el subespacio generado por el conjunto $S$.
 \end{teo}
 
 %-------------------- Definición 2.5
@@ -1062,4 +1062,9 @@ Las siguientes son fáciles consecuencias de la definición.
     $$Y=x_1P_1+\cdots + x_nP_n.$$
 
     Así, $\left\{P_1,\ldots,P_n\right\}$ es una base de $F^{n\times 1}$.
+\end{ejem}
+
+%-------------------- ejemplo 15
+\begin{ejem}
+    Sea $A$ una matriz $m\times n$ y sea $S$ el espacio solución del sistema homogéneo $AX=0$ (Ejemplo 7). Sea $R$ una matriz escalón reducida por filas que es equivalente por filas a $A$. Entonces $S$ es también el espacio solución del sistema $RX=0$. Si $R$ tiene $r$ filas no nulas, entonces el sistema de ecuaciones $RX=0$ simplemente expresa $r$ de las incógnitas $x_1,\ldots,x_n$ en términos de las $(n-r)$ incógnitas $x_j$ restantes. 
 \end{ejem}

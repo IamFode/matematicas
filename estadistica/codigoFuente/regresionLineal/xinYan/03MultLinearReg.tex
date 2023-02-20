@@ -149,7 +149,7 @@ para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
 
 $$A\textbf{x}(v-Ax_p)=0$$
 
-para todo $\textbf{x}\in \mathbb{R}^n$. Escriba este producto escalar en términos de rendimientos de matrices
+para todo $\textbf{x}\in \mathbb{R}^n$. Escribir este producto escalar en términos de matrices da como resultado
 
 $$(A\textbf{x})'(v-A\textbf{x}_p)=0$$
 
@@ -223,6 +223,29 @@ Este residuo al cuadrado es en realidad una forma cuadrática. Por lo tanto, es 
     Una matriz simétrica $n\times n$, $A$ es idempotente si $A^2=A.$
 \end{def.}
 
+La forma cuadrática con matrices idempotentes se usa ampliamente en el análisis de regresión lineal. Ahora discutimos las propiedades de la matriz idempotente.
 
+% -------------------- teorema 3.4
+\begin{teo}
+    Sea $A_{n\times n}$ una matriz idempotente de rango $p$, entonces los valores propios de $A$ son $0$ o $1$.\\\\
+	Demostración.-\; Sea $\lambda_i$ y $v_i$ el valor propio y el correspondiente vector propio normalizado de la matriz $A$, respectivamente. Entonces, tenemos $Ab_i=\lambda_iv_i$, y $v_i' Av_i=\lambda_iv_i' v_i=\lambda_i$. Por otro lado, ya que $A^2=A$, podemos escribir
+	$$\lambda_i=v_i'Av_i=v_i'A^2v_i=v_i'A'v_i=(Av_i)'Av_i=(\lambda_iv_i)(\lambda_iv_i)=\lambda_i^2.$$
+	Dado que, tenemos $\lambda_i(\lambda_i-1)=0$, se tiene $\lambda_i=1$ o $\lambda_i=0$. Esto completo la demostración.
+\end{teo}
 
+Es fácil saber que $p$ valores propios de $A$ son 1 y $n - p$ valores propios de $A$ son cero. Por lo tanto, el rango de una matriz idempotente $A$ es la suma de sus valores propios distintos de cero.
 
+% -------------------- Definição 3.4
+\begin{def.}
+    Sea $A=(a_{i,j})_{n\times n}$ una matriz $n\times n$, la traza de $A$ se define como la suma de los elementos ortogonales; es decir,
+
+    $$tr(A)=a_{11}+a_{22}+\cdots+a_{nn}.$$
+\end{def.}
+
+Si $A$ es una matriz simétrica. Entonces, la suma de todos los elementos cuadrados de $A$ puede ser expresado mediante $tr\left(A^2\right)$. Es decir, $\sum_{i,j}A_{ij}^2=tr\left(A^2\right).$ Es fácil verificar que $tr(AB)=tr(BA)$ para cualquieras dos matrices $A$ y $B$. El siguiente teorema da la relación entre el rango de la matriz $A$ y la traza de $A$ cuando $A$ es una matriz idempotente.
+
+% -------------------- teorema 3.5
+\begin{teo}
+    Si $A$ es una matriz idempotente, entonces $tr(A)=rango(A)=p.$\\\\
+	Demostración.-\;
+\end{teo}
