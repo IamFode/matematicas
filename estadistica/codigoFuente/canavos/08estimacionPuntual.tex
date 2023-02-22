@@ -1,1 +1,16 @@
 \chapter{Estimación puntual y por intervalo}
+
+\setcounter{section}{1}
+\section{Propiedades deseables de los estimadores puntuales}
+
+Se conoce la familia de distribuciones a partir de la cual se obtiene la muestra, pero no puede identificarse el miembro de interés de esta, ya que no se conoce el valor del parámetro. Este último tiene que estimarse con base en los datos de la muestra. \\
+
+El estimador de un parámetro $\theta$ debe tener una distribución de muestro concentrada alrededor de $\theta$ y la varianza del estimador debe ser la menor posible. Para ampliar las propiedades anteriores, considérese la siguiente. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de tamaño $n$ proveniente de una distribución con función de densidad $f(x,\theta)$, y sea $T=u(X_1,X_2,\ldots,X_n)$ cualquier estadística. El problema es encontrar una función $u$ que sea la que proporcione la mejor estimación de $\theta$. Al buscar el mejor estimador de $\theta$ se hará uso de una cantidad muy importante que recibe el nombre de error cuadrático medio de un estimador.
+
+%-------------------- definición 8.1
+\begin{def.}
+    Sea $T$ cualquier estimador de un parámetro desconocido $\theta$. Se define el error cuadrático medio de $T$ como el valor esperado del cuadrado de la diferencia entre $T$ y $\theta$.
+\end{def.}
+
+Para cualquier estadística $T$, se denotará el error cuadrático medio por $ECM(T)$; de esta forma
+$$ECM(T)=E(T-\theta)^2.$$
