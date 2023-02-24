@@ -14,3 +14,60 @@ El estimador de un parámetro $\theta$ debe tener una distribución de muestro c
 
 Para cualquier estadística $T$, se denotará el error cuadrático medio por $ECM(T)$; de esta forma
 $$ECM(T)=E(T-\theta)^2.$$
+
+Puede verse la razón del porque el error cuadrático medio es una cantidad importante para enjuiciar a los posibles estimadores de $\theta$ mediante el desarrollo de $ECM(T)=E(T-\theta)^2$; este es,
+
+$$
+\begin{array}{rcl}
+    ECM(T) &=& \E(T^2-2\theta T+\theta^2)\\
+	   &=& \E(T^2)-2\theta\E(T)+\theta^2\\
+	   &=& \Var(T)+E^2(T)-2\theta\E(T)+\theta^2\\
+	   &=& \Var(T)+\left[\theta-E(T)\right]^2.
+\end{array}
+$$
+
+El error cuadrático medio de cualquier estimador es la suma de dos cantidades no negativas: una es la varianza del estimador y la otra es el cuadrado del sesgo del estimador. Estas dos cantidades se encuentran relacionadas en forma directa con las propiedades deseables de un estimador. La varianza de un estimador debe ser lo más pequeña posible mientras que la distribución de muestreo debe concentrarse del valor del parámetro. Por lo que debemos seleccionar el mejor estimador de $\theta$; es decir, la estadística que tenga el error cuadrático medio más pequeño posible entre todos los estimadores factibles de $\theta$. \\
+
+\subsection{Estimadores insesgados}
+El término $\theta-E(T)$ recibe el nombre de sesgo del estimador.
+
+%-------------------- definición 8.2
+\begin{def.}
+    Se dice que la estadística $T=u(X_1,X_2,\ldots,X_n)$ es un estimador insesgado del parámetro $\theta$, si $E(T)=\theta$ para todos los posibles valores de $\theta$. De esta forma, para cualquier estimador insesgado de $\theta$, la distribución de muestreo de $T$ se encuentra centrada alrededor de $\theta$ y $ECM(T)=Var(T)$.
+\end{def.}
+
+En la sección 7.4, demostramos que sin importar la distribución de la población de interés, $E(\overline{X})=\mu$. Por lo tanto, la media muestral es un estimador insesgado de la media de la población $\mu$ para todo los valores de $\mu$. De hecho, si $X_1,X_2,\ldots,X_n$ es una muestra aleatoria de la distribución de $X$ con media $\mu$, entonces cualquier $X_i$ de la muestra es un estimador insesgado de $\mu$, dado que $E(X_i)=\mu$ para todo $i=1,2,\ldots, n$. Además si una estadística $T$ es cualquier combinación lineal de las variables aleatorias de la muestra de manera tal que
+$$T=a_iX_1+a_2X_2+\cdots+a_nX_n$$
+en donde $\sum_{i=1}^n a_i=1$, entonces $T$ es un estimador insesgado de $\mu$ dado que
+
+$$
+\begin{array}{rcl}
+    E(T) &=& \displaystyle\sum_{i=1}^n a_iE(X_i)\\\\
+	 &=& \displaystyle\sum_{i=1}^n a_i\mu\\\\
+	 &=& \mu.
+\end{array}
+$$
+
+En la sección 7.5 se demostró que si la varianza muestral $S^2$ está dada por $S^2=\sum_{i=1}^n(X_i-\overline{X})^2/(n-1)$. Entonces, cuando se muestrea una distribución normal, $E\left(S^2\right)=\sigma^2$. Lo que demostraremos que es insesgado sin importar cuál sea la distribución de la población de interés. Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de alguna distribución con una función de densidad no específica. De esta manera, $E(X_i)=\mu$ y $\Var(X_i)=\sigma^2$ para toda $i=1,2,\ldots,n.$ Entonces, 
+
+$$
+\begin{array}{rcl}
+    \E\left(S^2\right) &=& \E\left[\displaystyle\sum_{i=1}^n \dfrac{(X_i-\overline{X})^2}{n-1}\right]\\\\
+		       &=&(n-1)^{-1}\E\left\{\displaystyle\sum_{i=1}^n \left[(X_i-\mu)-(\overline{X}-\mu)\right]^2\right\}\\\\
+		       &=& (n-1)^{-1}\E\left\{\displaystyle\sum_{i=1}^n \left[(X_i-\mu)^2-n\left(\overline{X}-\mu\right)^2\right]\right\}\\\\
+		       &=& (n-1)^{-1}\left[\displaystyle\sum_{i=1}^n \E(X_i-\mu)^2-n\E\left(\overline{X}-\mu\right)^2\right]\\\\
+\end{array}
+$$
+pero por definición $\E(X_i-\mu)^2=\Var(X_i)=\sigma^2$ y $E\left(\overline{X}-\mu\right)^2=\Var(\overline{X})=\sigma^2/n$. Por lo tanto,
+$$
+\begin{array}{rcl}
+    E\left(S^2\right)&=&(n-1)^{-1}\left[\dfrac{n\sigma^2-\left(n\sigma^2\right)}{n}\right]\\\\
+		     &=& \dfrac{\sigma^2(n-1)}{n-1}\\\\
+		     &=& \sigma^2.
+\end{array}
+$$
+
+En otras palabras, $S^2$ es un estimador insesgado de $\sigma^2$ sólo cuando el divisor es igual a $n-1$. Es la razón por la que se divide por $n-1$ en lugar de $n$. $S$ no hará un estimador insesgado de $\sigma$.
+
+
+\section{Estimadores consistentes}

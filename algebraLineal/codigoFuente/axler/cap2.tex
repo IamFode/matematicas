@@ -143,23 +143,37 @@ El razonamiento anterior muestra que $v_1,\ldots,v_m$ es linealmente independien
     Lo que prueba (a). \\
     Para probar (b), suponga $u\in \span(v_1,\ldots,v_m)$. Entonces, existe números $c_1,\ldots,c_m\in \textbf{F}$ tal que
     $$u=c_1v_1+\cdots+c_mv_m.$$
-    En la ecuación anterior, podemos reemplazar $v_j$ con el lado derecho de (1), lo que muestra que $u$ está en el span de la lista obtenida al eliminar el j-ésimo término de $v_1,\ldots,v_m$. Así (b) se cumple.
+    En la ecuación de arriba, podemos reemplazar $v_j$ con el lado derecho de (1), lo que muestra que $u$ está en el span de la lista obtenida al eliminar el j-ésimo término de $v_1,\ldots,v_m$. Así (b) se cumple.
 \end{mylema}
 
-Si elegimos $j=1$ en el lema de dependencia lineal anterior, entonces significa que $v_1=0$, ya que si $j=1$ entonces se interpreta que la condición (a) anterior significa que $v_1\in \span()$. Recuerdo que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.
+Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, porque si $j=1$ entonces la condición (a) anterior se interpreta como que $v_1\in \span()$. Recuerde que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.
 
 \setcounter{myteo}{22}
 %-------------------- 2.23 Definición
-\begin{myteo}[Longitud de la lista linealmente independiente es  $\boldmath \leq$ a la longitud de la lista que abarca]
+\begin{myteo}[Longitud de la lista linealmente independiente es  $\boldmath \leq$ a la longitud de la lista que genera]\;\\\\
     En un espacio vectorial ﬁnito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
     Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_1$ spans $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de varios pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
 
     \begin{enumerate}[\small\textbf{Paso} 1.]
 	\item Sea $B$ la lista $w_1,\ldots,w_n$, que abarca $V$. Por lo tanto, adjuntar cualquier vector en $V$ a esta lista produce una lista linealmente dependiente (porque el nuevo vector adjunto se puede escribir como una combinación lineal de los otros vectores). En particular, la lista
-	$$u_1,w_1m\ldots,w_n$$
+	$$u_1,w_1,\ldots,w_n$$
 	es linealmente dependiente. Así, por el lema (2.21), podemos eliminar un de las $w$ para que la nueva lista $B$ (de longitud $n$) que consta de $u_1$ y las $w$ restantes abarquen $V$.
-	\item 
+	\item La lista $B$ (de longitud $n$) del paso $j-1$ genera $V$. Así, adjuntar cualquier vector a esta lista produce una lista linealmente dependiente. En particular, la lista de longitud $(n+1)$ obtenida al unir $u_j$ a $B$, colocándola justo después de $u_1,\ldots,u_{j-1}$, es linealmente dependiente. Por el lema de dependencia lineal (2.21)m uno de los vectores de esta lista está en el lapso de los anteriores, y porque $u_1,\ldots,u_j$ es linealmente independientes, este vector es uno de los $w's$, no uno de los $u's$. Podemos eliminar esa $w$ para la nueva lista $B$ (de longitud $n$) que consta de $u_1,\ldots,u_j$ y las $w's$ restantes generan $V$.
     \end{enumerate}
+    Después del paso $m$, hemos agregado todas las $u$ y el proceso se detiene. En cada paso, a medida que agregamos un $u$ a $B$, el lema de dependencia lineal implica que hay algo de $w$ que eliminar. Por lo tanto, hay al menos tantas $w$ como $u$.
+\end{myteo}
+
+\setcounter{myteo}{25}
+%-------------------- 2.26 Teorema
+\begin{myteo}[Subespacio de dimensión finita]\; \\\\
+    Todo subespacio de un vector de dimensión finita es de dimensión finita.\\\\
+	Demostración.-\; Suponga que $V$ es de dimensión finita y $U$ es un subespacio de $V$. Necesitamos demostrar que $U$ es de dimensión finita. Hacemos esto a través de la siguiente construcción de  pasos. 
+	\begin{enumerate}[\small\textbf{Paso} 1.]
+	    \item Si $u=\left\{0\right\}$, entonces $U$ es de dimensión finita por lo que hemos terminado. Si $U\neq \left\{0\right\}$, entonces elegimos un vector no nulo $v_1\in U$
+	    \item Si $U=\span(v_1,\ldots,v_{j-1})$, entonces $U$ es de dimensión finita por lo que hemos terminado. Si $U\neq \span(v_1,\ldots,v_{j-1})$, entonces elegimos un vector $v_j\in U$ tal que 
+	    $$v_j\in \span(v_1,\ldots,v_{j-1}).$$
+	\end{enumerate}
+	Después de cada paso, mientras continúa el proceso, hemos construido una lista de vectores tal que ningún vector en esta lista está en el generador de los vectores anteriores. Así, después de cada paso hemos construido una lista linealmente independiente, por el lema de dependencia lineal (2.21). Esta lista linealmente independiente no puede ser más grande que cualquier lista de expansión de $V$ (por 2,23). Por lo tanto, el proceso eventualmente termina, lo que significa que $U$ es de dimensión finita.
 \end{myteo}
 
 
@@ -190,6 +204,33 @@ Si elegimos $j=1$ en el lema de dependencia lineal anterior, entonces significa 
 	Así, esta lista se extiende por $V$.\\\\
 
     %------------------- 2
-    \item 
+    \item Verifique las afirmaciones del Ejemplo 2.18.\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Una lista $v$ de un vector $v\in V$ es linealmente independiente si y sólo si $v\neq 0$.\\\\
+		Demostración.-\; Demostremos que si $v$ es linealmente independiente, entonces $v\neq 0$. Supongamos que $v=0$. Sea un escalar $a\neq 0$. De donde, $av=0$ incluso cuando $a\neq 0$. Esto contradice la definición de independencia lineal. Por lo tanto, $v$ debe ser linealmente dependiente. Esto es, $v=0$ implica que $v$ es un vector linealmente dependiente. Por lo que, si $v$ es linealmente independiente, entonces $v$ es un vector distinto de cero.\\
+		Por otro lado, debemos demostrar que  $v\neq 0$ implica que $v$ es linealmente independiente. Sea  un escalar $a$ tal que $av=0$. Si $a\neq 0$, entonces $av$ no puede ser $0$. Por eso $a$ debe ser $0$. Por lo tanto, $v\neq 0$ y $av=0$ implica que $a=0$. Así, $v$ es linealmente independiente.\\\\
+
+	    %---------- (b)
+	    \item Una lista de dos vectores en $V$ es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. \\\\
+		Demostración.-\; 
+
+	    %---------- (c)
+	    \item $(1,0,0,0),(0,1,0,0),(0,0,1,0)$ es linealmente independiente en $\textbf{F}^4$.\\\\
+		Demostración.-\;
+
+	    %---------- (d)
+	    \item La lista $1,z,\ldots,z^m$ es linealmente independiente en $\mathcal{P}(\textbf{F})$ para cada entero no negativo $m$.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+    %------------------- 3.
+    \item Encuentre un número $t$ tal que
+    $$(3,1,4),(2,-3,5),(5,9,t)$$
+    no es linealmente independiente en $\textbf{R}^3$.\\\\
+	Respuesta.-\; 
 
 \end{enumerate}
