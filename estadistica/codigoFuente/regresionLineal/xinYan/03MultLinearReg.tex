@@ -107,77 +107,73 @@ Una proyección de un vector sobre un espacio lineal $S$ es en realidad una tran
 
 La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende de la elección de la base ortonormal. Si no partimos de una base ortonormal de $W$, podemos construir la matriz de proyección. Esto se puede resumir en el siguiente teorema.
 
-%-------------------- Teorema 3.3 --------------------
-\begin{teo}
-    Sea $A=(a_1,a_2,\ldots,a_k)$ cualquier base para un subespacio $W$ de $V$. La matriz $A(A'A)^{-1}A'$ es una matriz proyección de $V$ sobre $W$. Es decir, para cualquier vector $v\in V$ la proyección de $v$ sobre $W$ es
-    \begin{equation}
-	\Proj_W v=A(A'A)^{-1}A'v.
-    \end{equation}
-\end{teo}
-
-Para comprender los tres teoremas anteriores, es importante el siguiente lema.
-
 %-------------------- Lema 3.1 --------------------
 \begin{lema}
     Suponga que $A$ es una matriz $a\times k$ donde sus columnas son linealmente independientes. Entonces, $AA'$ es invertible.\\\\
 	Demostración.-\; Considere la transformación $A:\mathbb{R}^k\to \mathbb{R}^k$ determinado por $A$. Ya que las columnas de $A$ son linealmente independientes, esta transformación es uno a uno. Además, el espacio nulo de $A'$ es ortogonal al espacio columna de $A$. Por lo tanto, $A'$ es uno a uno en el espacio columna de $A$ y como resultado, $A'A$ es una transformación uno a uno $\mathbb{R}^k\to \mathbb{R}^k$. Por el teorema de matriz invertida, $A'A$ es invertible.
 \end{lema}
 
-Derivemos ahora la matriz de proyección para el espacio de columnas de $A$. Obsérvese que cualquier elemento del espacio de columnas de $A$ es una combinación lineal de las columnas de $A$, es decir, $x_1 a_1 + x_2 a_2 + \cdots + x_k a_k$ . Si escribimos
+%-------------------- Teorema 3.3 --------------------
+\begin{teo}
+    Sea $A=(a_1,a_2,\ldots,a_k)$ cualquier base para un subespacio $W$ de $V$. La matriz $A(A'A)^{-1}A'$ es una matriz proyección de $V$ sobre $W$. Es decir, para cualquier vector $v\in V$ la proyección de $v$ sobre $W$ es
+    \begin{equation}
+	\Proj_W v=A(A'A)^{-1}A'v.
+    \end{equation}
+	Demostración.-\; Derivemos ahora la matriz de proyección para el espacio de columnas de $A$. Obsérvese que cualquier elemento del espacio de columnas de $A$ es una combinación lineal de las columnas de $A$, es decir, $x_1 a_1 + x_2 a_2 + \cdots + x_k a_k$ . Si escribimos
+	$$
+	x=
+	\left(
+	    \begin{array}{c}
+		x_1\\
+		x_2\\
+		\vdots\\
+		x_k
+	    \end{array}
+	\right),
+	$$
 
-$$
-x=
-\left(
-    \begin{array}{c}
-	x_1\\
-	x_2\\
-	\vdots\\
-	x_k
-    \end{array}
-\right),
-$$
+	entonces, tenemos
 
-entonces, tenemos
+	$$x_1a_1+x_2a_2+\cdot + x_ka_k=A\textbf{x}.$$
 
-$$x_1a_1+x_2a_2+\cdot + x_ka_k=A\textbf{x}.$$
+	Ahora, para cualquier vector $v\in \mathbb{R}^n$, denotemos la proyección de $v$ sobre $W$ por $x_p$.
 
-Ahora, para cualquier vector $v\in \mathbb{R}^n$, denotemos la proyección de $v$ sobre $W$ por $x_p$.
+	$$\Proj_w v = Ax_p.$$
 
-$$\Proj_w v = Ax_p.$$
+	La matriz de proyección se puede encontrar calculando $x_p$. La proyección del vector $v$ sobre $W$ se caracteriza por el hecho de que $v - \Proj_W v$ es ortogonal a cualquier vector $w$ en $W$. Así tenemos
 
-La matriz de proyección se puede encontrar calculando $x_p$. La proyección del vector $v$ sobre $W$ se caracteriza por el hecho de que $v - \Proj_W v$ es ortogonal a cualquier vector $w$ en $W$. Así tenemos
+	$$w\cdot (v-\Proj_w v)=0$$
 
-$$w\cdot (v-\Proj_w v)=0$$
+	para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
 
-para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
+	$$A\textbf{x}(v-Ax_p)=0$$
 
-$$A\textbf{x}(v-Ax_p)=0$$
+	para todo $\textbf{x}\in \mathbb{R}^n$. Escribir este producto escalar en términos de matrices da como resultado
 
-para todo $\textbf{x}\in \mathbb{R}^n$. Escribir este producto escalar en términos de matrices da como resultado
+	$$(A\textbf{x})'(v-A\textbf{x}_p)=0$$
 
-$$(A\textbf{x})'(v-A\textbf{x}_p)=0$$
+	el cual es equivalente a
 
-el cual es equivalente a
+	$$(\textbf{x}'A')(v-A\textbf{x}_p)=0.$$
 
-$$(\textbf{x}'A')(v-A\textbf{x}_p)=0.$$
+	Convirtiendo a producto punto, tenemos
 
-Convirtiendo a producto punto, tenemos
+	$$\textbf{x}\cdot A'(v-A\textbf{x}_p)=0.$$
 
-$$\textbf{x}\cdot A'(v-A\textbf{x})=0.$$
+	De donde,
 
-De donde,
+	$$A'v=A'A\textbf{x}_p.$$
 
-$$A'v=A'A\textbf{x}_p.$$
+	Luego, ya que $A'A$ es invertible, se tiene
 
-Luego, ya que $A'A$ es invertible, se tiene
+	$$(A'A)^{-1}A'v = \textbf{x}_p.$$
 
-$$(A'A)^{-1}A'v = \textbf{x}_p.$$
+	Después, ya que $A\textbf{x}_p$ es la proyección deseada,
 
-Después, ya que $A\textbf{x}_p$ es la proyección deseada,
+	$$A(A'A)^{-1}v=A\textbf{x}_p=\Proj_w u$$
 
-$$A(A'A)^{-1}v=A\textbf{x}_p=\Proj_w u$$
-
-Por lo tanto, concluimos que la matriz proyección para $W$ es $A(A'A)^{-1}A'.$\\
+	Por lo tanto, concluimos que la matriz proyección para $W$ es $A(A'A)^{-1}A'.$
+\end{teo}
 
 La matriz proyección es muy útil en las discusiones posteriores del modelo de regresión $Y\textbf{X}\beta+\epsilon$. Una matriz cuadrada $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}X'$, se construye utulizando la matriz de diseño. Se puede verificar fácilmente que $P$ es una matriz idempotente:
 
@@ -206,7 +202,7 @@ Por lo tanto, $I-P=I-\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$ es una m
     $$f(y_1,y_2,\cdots,y_n)=\sum_{i,j=1}^n a_{ij}y_iy_j.$$
 \end{def.}
 
-Esta forma cuadrática puede ser escrita en la forma matricial: $y'Ay$, donde $A$ es un matriz $n\times n$, $A=(a_{ij})_{n\times n}$.\\
+Esta forma cuadrática puede ser escrita en la forma matricial: $\textbf{y}'A\textbf{y}$, donde $A$ es un matriz $n\times n$, $A=(a_{ij})_{n\times n}$.\\
 
 En el entorno clásico, los parámetros de un modelo de regresión lineal se estiman minimizando la suma de los residuos al cuadrado:
 
@@ -227,7 +223,7 @@ Este residuo al cuadrado es en realidad una forma cuadrática. Por lo tanto, es 
     Una matriz simétrica $n\times n$, $A$ es idempotente si $A^2=A.$
 \end{def.}
 
-La forma cuadrática con matrices idempotentes se usa ampliamente en el análisis de regresión lineal. Ahora discutimos las propiedades de la matriz idempotente.
+Sea $\alpha=(\alpha_1,\alpha_2,\ldots,\alpha_k)$ un vector k-dimensional y $A$ es un matriz $k\times k$ . $\alpha'A\alpha$ es una forma cuadrática de $\alpha_1,\alpha_2,\cdots,\alpha_k$. Cuando $A$ es una matriz indempotente, la forma cuadrática correspondiente tiene propiedades particulares. La forma cuadrática con matrices idempotentes se usa ampliamente en el análisis de regresión lineal. Ahora discutimos las propiedades de la matriz idempotente.
 
 % -------------------- teorema 3.4
 \begin{teo}
@@ -251,5 +247,36 @@ Si $A$ es una matriz simétrica. Entonces, la suma de todos los elementos cuadra
 % -------------------- teorema 3.5
 \begin{teo}
     Si $A$ es una matriz idempotente, entonces $tr(A)=rango(A)=p.$\\\\
+	Demostración.-\; Si el rango de una matriz $A$ idempotente $n\times n$ es $p$. entonces $A$ tiene $p$ valores propios de $1$ y $n-p$ valores propios de $0$. Por lo tanto, podemos escribir $rango(A)=\sum_{i=1}^n\lambda_i=p$. Ya que $A^2=A$, los valores propios de la matriz indempotente $A$ es $1$ o $0$. De la teoría de matrices existe una matriz ortogonal $V$ tal que
+	$$
+	VÀV=
+	\left(
+	    \begin{array}{cc}
+		I_p & 0 \\
+		0 & 0
+	    \end{array}
+	\right).
+	$$
+	Así, tenemos
+	$$tr(V'AV)=tr(VV'A)=tr(A)= 
+	\left(
+	    \begin{array}{cc}
+		I_p & 0 \\
+		0 & 0
+	    \end{array}
+	\right)
+	=p=rango(A).
+	$$
+	Aquí, usamos el simple hecho: $tr(AB)=tr(BA)$ para cualesquier matrices $A_{n\times n}$ y $B_{n\times n}$.
+\end{teo}
+
+Una forma cuadrática de un vector aleatorio $\textbf{y}' = (y_1 , y_2 , \cdots , y_n)$ se puede escribir en una forma matricial $\textbf{y}'A\textbf{y}$, donde $A$ es una matriz $n \times n$. Es de interés encontrar la esperanza y la varianza de $\textbf{y}'A\textbf{y}$. El siguiente teorema da  el valor esperado de $\textbf{y}'A\textbf{y}$ cuando los componentes de $\textbf{y}$ son independientes.
+
+% -------------------- teorema 3.6
+\begin{teo}
+    Sea $\textbf{y}'=(y_1,y_2,\ldots,y_n)$ un vector aleatorio $n\times 1$ con media $\mu'=(\mu_1,\mu_2,\cdots,\mu_n)$ y varianza $\sigma^2$ para cada componente. Además, se supone que $y_1,y_2,\cdots,y_n$ son independientes. Sea $A$ una matriz $n\times n$, $\textbf{y}'A\textbf{y}$ es una forma cuadrática de variables aleatorias. La esperanza de esta forma cuadrática viene dada por
+    $$\E(\textbf{y}'A\textbf{y})=\sigma^2tr(A)+\mu'A\mu.$$\\
 	Demostración.-\;
 \end{teo}
+
+

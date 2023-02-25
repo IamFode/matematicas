@@ -70,4 +70,50 @@ $$
 En otras palabras, $S^2$ es un estimador insesgado de $\sigma^2$ sólo cuando el divisor es igual a $n-1$. Es la razón por la que se divide por $n-1$ en lugar de $n$. $S$ no hará un estimador insesgado de $\sigma$.
 
 
-\section{Estimadores consistentes}
+\subsection{Estimadores consistentes}
+
+Es razonable esperar que un buen estimador de un parámetro $\theta$ sea cada vez menor conforme crece el tamaño de la muestra. Se tendrá un mejor estimador de $\theta$ si se basa en $30$ observaciones que si lo hace con sólo cinco.
+
+%-------------------- definición 8.3
+\begin{def.}
+    Sea $T$ el estimador de un parámetro $\theta$, y sea $T_1,T_2,\ldots,T_n$ una secuencia de estimadores que representan a $T$ con base en muestras de tamaño $1,2,\ldots, n$, respectivamente. Se dice que $T$ es un estimador consistente (sencillo) para $\theta$ si
+    $$\lim_{n\to \infty}P(|T_n-\theta|\leq \epsilon)=1$$
+    para todos los valores de $\theta$ y $\epsilon>0$.
+    El requisito constituye lo que se denomina convergencia en probabilidad. Es decir, si un estimador es consistente, converge en probabilidad al valor del parámetro que está intentando estimar conforme el tamaño de la muestra crece. Esto implica que la varianza de un estimador consistente $T_n$ disminuye conforme $n$ crece, y la media de $T_n$ tiende hacia donde $n$ crece. Para demostrar que $\overline{X}$ es un estimador consistente de $\mu$, primero se enuncia el teorema de desigualdad de Tchebysheff.
+\end{def.}
+
+%-------------------- teorema 8.1
+\begin{teo}
+    Sea $X$ una variable aleatoria con una función (densidad) de probabilidad $f(x)$ de manera tal que tanto $E(X)=\mi$ como $Var(X)=\sigma^2$ tienen un valor finito. Entonces
+    $$P(|X-\mu|\leq k\sigma)\geq 1-\dfrac{1}{k^2}$$
+    o
+    $$P(|X-\mu|>k\sigma)\leq \dfrac{1}{k^2}$$
+    para cualquier constante $k\geq 1$.
+\end{teo}
+
+Este teorema permite determinar los límites de las probabilidades de variables aleatorias discretas y continuas sin tener que especificar sus funciones (densidades) de probabilidad. Asegura que la probabilidad de que una variable aleatoria se aleje no más de $k$ desviaciones estándar de la media, es mayor o igual a $1/k^2$ para algún valor de $k\geq 1$. Por ejemplo
+$$P(|X-\mu|\leq 2\sigma)\geq 1-\dfrac{1}{4}$$
+y
+$$P(|X-\mu|\leq 3\sigma)\geq 1-\dfrac{1}{9}.$$
+para cualquier variable aleatoria $X$ con media $\mu$ y varianza $\sigma^2$ finitas.
+
+%-------------------- teorema 8.2
+\begin{teo}
+    Sean $X_1,X_2,\ldots,X_n$, $n$ variables aleatorias IID, tales que $\E(X_i)=\mu$ y $\Var(X_i)=\sigma^2$ tienen un valor finito para $i=1,2,\ldots,n.$ Entonces, $\overline{X}_n=\sum_{i=1}^n X_i/n$ es un estimador consistente de $\mu$.\\\\
+	Demostración.-\; Se quiere demostrar que
+	$$\lim_{n\to \infty}P(|\overline{X}_n-\mu|\leq \epsilon)=1.$$
+	Dado que $\overline{X}_n$ es una variable aleatoria tal que $\E(\overline{X}_n)=\mu$ y $\Var(\overline{X}_n)=\sigma^2/n$, se deduce del teorema de Tchebysheff que
+	$$P(|\overline{X}_n-\mu|>k\sigma/\sqrt{n})\leq 1/k^2.$$
+    Sea $k$ una constante positiva igual a $\epsilon\sqrt{n}/\sigma$, en donde $\epsilon$ es un número real positivo. Entonces,
+	$$P(|\overline{X}_n-\mu|>\epsilon)\leq \dfrac{\sigma^2}{n\epsilon^2}.$$
+	Dado que $\sigma^2$ tiene un valor finito, tomando el límite de esta expresión conforme $n$ tiende al infinito se tiene
+	$$\lim_{n\to \infty}P(|\overline{X}_n-\mu|> \epsilon)=0.$$
+	Por lo tanto, se concluye que
+	$$\lim_{n\to \infty}P(|\overline{X}_n-\mu|\leq \epsilon)=1.$$
+	y $\overline{X}_n$ es un estimador consistente de $\mu$.
+\end{teo}
+
+El teorema 8.2 también se conoce como la ley de los grandes números.\\\\
+
+
+\subsection{Estimadores insesgados de varianza mínima}

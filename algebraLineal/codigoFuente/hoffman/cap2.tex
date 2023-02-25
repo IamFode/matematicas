@@ -1068,3 +1068,42 @@ Las siguientes son fáciles consecuencias de la definición.
 \begin{ejem}
     Sea $A$ una matriz $m\times n$ y sea $S$ el espacio solución del sistema homogéneo $AX=0$ (Ejemplo 7). Sea $R$ una matriz escalón reducida por filas que es equivalente por filas a $A$. Entonces $S$ es también el espacio solución del sistema $RX=0$. Si $R$ tiene $r$ filas no nulas, entonces el sistema de ecuaciones $RX=0$ simplemente expresa $r$ de las incógnitas $x_1,\ldots,x_n$ en términos de las $(n-r)$ incógnitas $x_j$ restantes. 
 \end{ejem}
+
+%-------------------- teorema 4
+\begin{teo}
+    Sea $V$ un espacio vectorial generado por un conjunto finito de vectores $\beta_1,\beta_2,\ldots,\beta_m$. Entonces, todo conjunto independientes de vectores de $V$ es finito y no contiene más de $m$ elementos.\\\\
+    Demostración.-\; Para demostrar este teorema es suficiente ver que todo subconjunto $S$ de $V$ que contiene más de $m$ vectores es linealmente dependiente. Sea $S$ un tal conjunto. En $S$ hay vectores diferentes $\alpha_1,\alpha_2,\ldots,\alpha_n$ donde $n>m$. Como $\beta_1,\beta_2,\ldots,\beta_m$ generan $V$, existen escalares $A_{ij}$ en $F$ tales que
+    $$\alpha_j=\sum_{i=1}^m A_{ij}\beta_i.$$
+    Para cualquier $n$ escalares $x_1,x_2,\ldots,x_n$ se tiene
+    $$
+    \begin{array}{rcl}
+	x_1\alpha_1+\cdots+x_n\alpha_n &=& \displaystyle\sum_{j=1}^n x_j\alpha_j\\\\
+				       &=& \displaystyle\sum_{j=1}^n x_j\left(\sum_{i=1}^m A_{ij}\beta_i\right)\\\\
+				       &=&\displaystyle\sum_{i=1}^n\sum_{j=1}^m \left(A_{ij}x_j\right)\beta_i\\\\
+	&=&\displaystyle\sum_{i=1}^m\left(\sum_{j=1}^n A_{ij}x_j\right)\beta_i.
+    \end{array}
+    $$
+    Como $n>m$, el teorema 6 del capítulo 1 implica que existen escalares $x_1,x_2,\ldots,x_n$, no todos $0$, tales que
+    $$\sum_{j=1}^nA_{ij}x_j=0,\quad 1\leq i \leq m.$$
+    Luego $x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n=0$. Ello demuestra que $S$ es un conjunto linealmente dependiente.
+\end{teo}
+
+%-------------------- corolario 1
+\begin{cor}
+    Si $V$ es un espacio vectorial de dimensión finita, entonces dos bases cualesquiera de $V$ tiene el mismo número (finito) de elementos.\\\\
+	Demostración.-\; Como $V$ es de dimensión finita, tiene una base finita
+	$$\left\{\beta_1,\beta_2,\ldots,\beta_m\right\}.$$
+	Por el teorema 4 toda base de $V$ es finita y contiene no más de $m$ elementos. Así, si $\left\{\alpha_1,\alpha_2,\ldots,\alpha_n\right\}$ es una base, $n\leq m$. Por el mismo razonamiento, $m\leq n$. Luego $m=n$.
+\end{cor}
+
+Este corolario permite definir la dimensión de un espacio vectorial de dimensión finita como el número de elementos de una base cualquier de $V$. Se indicará la dimensión de un espacio $V$ de dimensión finita por $\dim V$. Ello nos permite volver a enunciar el Teorema 4 como sigue:
+
+%-------------------- corolario 2
+\begin{cor}
+    Sea $V$ un espacio vectorial de dimensión finita y sea $n=\dim V$. Entonces,
+    \begin{enumerate}[(a)]
+	\item cualquier subconjunto de $V$ que contenga más de $n$ vectores es linealmente dependiente;
+	\item ningún subconjunto de $V$ que contenga menos de $n$ vectores puede generar $V$.
+    \end{enumerate}
+\end{cor}
+

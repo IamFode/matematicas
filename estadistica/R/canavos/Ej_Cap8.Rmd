@@ -1,0 +1,50 @@
+---
+title: "Ejercicios capitulo 8"
+output: pdf_document
+date: "2023-02-24"
+---
+
+# Ejercicios capitulo 8
+
+## 8.1
+En un experimento binomial se observan $x$ éxitos en $n$ ensayos independientes. Se proponen las siguientes dos estadísticas como estimadores del parámetro de proporción $p$: $T_1=X/n$ y $T_2=(X+1)/(n+2)$.
+
+### a)
+Obtener y comparar los errores cuadráticos medios para $T_1$ y $T_2$.
+
+Respuesta.- Primero obtendremos el error cuadrático medio para $T_1$. Sea,
+
+$$ECM(T_1)=Var(T_1)+\left[p-E(T_1)\right]^2$$
+
+de donde, $E(X)$ para una distribución binomial viene dado por $np$,
+
+$$E(T_1)=E\left(\dfrac{X}{n}\right)=\dfrac{E(X)}{n}=\dfrac{np}{n}=p$$
+
+Luego, dado que $Var(n^{-1}X)=n^{-2}Var(X)$
+
+$$Var(T_1)=Var\left(\dfrac{X}{n}\right)=Var(n^{-1}X)=\dfrac{np(1-p)}{n^2}=\dfrac{p(1-p)}{n}$$
+
+Así,
+
+$$ECM(T_1)=\dfrac{p(1-p)}{n}.$$
+
+Para $T_2$ se tiene
+
+$$E(T_2)=E\left(\dfrac{X+1}{n+2}\right)=\dfrac{E(X+1)}{E(n+2)}=\dfrac{E(X)+1}{n+2}=\dfrac{np+1}{n+2}.$$
+
+Después, dado que 
+$$Var(X-a)=E^2(X-a)-E(X-a)^2=E^2(X)-E(X)^2=Var(X).$$
+
+Entonces,
+
+$$Var(T_2)=Var\left(\dfrac{X+1}{n+2}\right)=Var\left[(n+2)^{-1}X+(n+2)^{-1}\right]=(n+2)^{-2}Var(X)=\dfrac{np(1-p)}{(n+2)^2}$$
+
+Por lo tanto,
+
+$$ECM(T_2)=\dfrac{np(1-p)}{(n+2)^2}+\left[p-\dfrac{np+1}{n+2}\right]^2=\dfrac{np(1-p)}{(n+2)^2}+\dfrac{(2p+1)^2}{(n+2)^2}=\dfrac{np(1-p)+(2p+1)^2}{(n+2)^2}.$$
+
+
+### b)
+Hacer una gráfica del ECM de cada estadística como funciones de $p$ para $n=10$ y $n=25$. ¿Es alguno de estos estimadores uniformemente mejor que el otro?.
+
+Respuesta.-

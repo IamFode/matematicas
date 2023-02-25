@@ -13,6 +13,50 @@ Si ambos $1$ y $-1$ pertenecen al dominio de $f$ se puede tomar $x=-1$ e $y=-1$ 
 $$f(-x)=f(x).$$
 Es decir, toda solución de $f(xy)=f(x)+f(y)$ es necesariamente una función par.\\
 
-Supóngase ahora,
+Supóngase ahora, que $f$ tiene una derivada $f'(x)$ en cada $x\neq 0$. Dejando fijo en $f(xy)=f(x)+f(y)$ y derivando con respecto a $x$ (aplicando en el primer miembro la regla de la cadena) se tiene:
+$$yf'(xy)=f'(x).$$
+Si $x=1$, de esta ecuación se deduce $yf'(y)=f'(1)$. Por tanto:
+$$f'(y)=\dfrac{f(1)}{y}\mbox{ para cada }y\neq 0.$$
+
+La derivada es monótona e integrable en cada intervalo cerrado que no contenga el origen. Además, $f'$ es continua en cada uno de estos intervalo y se puede aplicar el segundo teorema fundamental del cálculo:
+$$f(x)-f(c)=\int_c^x f'(t)\; dt = f'(1)\int_c^x \dfrac{1}{t}\; dt.$$
+Si $x>0$, esta ecuación es válida para cada positivo $c>0$, y si es $x<0$ es válida para cada $c$ negativo. Puesto que $f(1)=0$, eligiendo $c=1$ se tiene
+$$f(x)=f'(1)\int_1^x \dfrac{1}{t}\; dt\quad \mbox{ si } \quad x>0.$$
+Si $x$ es negativa, $-x$ es positiva y puesto que $f(x)=f(-x)$ se tiene:
+$$f(x)=f'(1)\int_1^{-x}\dfrac{1}{t}\; dt\quad \mbox{si}\quad x<0.$$
+Estas dos formulas se puede unir en una sola:
+$$f(x)=f'(1)\int_1^{|x|}\dfrac{1}{t}\; dt\quad \mbox{si}\quad x\neq 0.$$
+En consecuencia, si existe una solución de $f(xy)=f(x)+f(y)$ que tiene una derivada en cada punto $x\neq 0$ esta solución ha de venir dada necesariamente por la fórmula integral de $f(x)=f'(1)\int_1^{|x|}\frac{1}{t}\; dt$. Si $f'(1)=0$ entonces $f(x)=0$ para cada $x\neq 0$ y esta solución coincide con la idénticamente nula. Por tanto, si $f$ no es idénticamente nula ha de ser $f'(1)\neq 0$, en cuyo caso se pueden dividir ambos miembros por $f'(1)$ obteniéndose
+$$g(x)=\int_1^{|x|}\dfrac{1}{t}\; dt\quad \mbox{si}\quad x\neq 0.$$
+donde $g(x)=f(x)/f'(1)$. La función $g$ es también una solución de $f(xy)=f(x)-f(y)$, puesto que si $f$ es solución también lo es $cf$. Esto demuestra que si tiene una solución que no es la idénticamente nula, y si esta función es derivable en todos los puntos, excepto en el origen, entonces la función $f$ es una solución, y todas las soluciones pueden obtenerse de esta multiplicando $g$ por una constante conveniente.\\
+
+Dos números distintos tendrían un mismo logaritmo, puesto que la función $g$ tendría la propiedad: $g(x) = g( - x)$. En atención a consideraciones que posteriormente se harán, es preferible definir el logaritmo de manera que dos números distintos no tengan el  mismo logaritmo, lo cual se logra definiendo el logaritmo sólo para los números positivos. Por tanto, se tomará la siguiente definición.
 
 
+\section{Definición de logaritmo. Propiedades fundamentales}
+
+%-------------------- Definición de logaritmo  6.1.
+\begin{def.}
+    Si $x$ es un número real positivo, definamos el logaritmo natural de $x$, designando provisionalmente por $L(x)$, como la integral
+    $$L(x)=\int_1^{x}\dfrac{1}{t}\; dt.$$
+    Cuando $x>1$, $L(x)$ puede interpretarse geométricamente como el área de la región sombreada.
+\end{def.}
+
+%-------------------- Teorema 6.1.
+\begin{teo}
+    La función logaritmo tiene las propiedades siguientes:
+    \begin{enumerate}[a)]
+	\item $L(1)=0.$
+	\item $L'(x)=\dfrac{1}{x}$ para todo $x>0.$
+	\item $L(ab)=L(a)+L(b)$ para todo $a>0$, $b>0.$\\
+    \end{enumerate}
+	Demostración.-\; La parte a) se deduce inmediatamente de la definición. Para demostrar b), observamos simplemente que $L$ es una integral indefinida de una función continua y apliquemos el primer teorema fundamental del Cálculo. La propiedad c) es consecuencia de la propiedad aditiva de la integral. Escribamos
+	$$L(ab)=\int_1^{ab}\dfrac{dt}{t}=\int_1^a \dfrac{dt}{t}+\int_a^{ab}\dfrac{dt}{t}=L(a)+\int_a^{ab}\dfrac{dt}{t}.$$
+	En la última integral hemos hecho la sustitución $u=t/a$, $du=dt/a$, y encontramos que la integral se deduce a $L(b)$, lo que demuestra c).
+\end{teo}
+
+
+\section{Gráfica del logaritmo natural}
+La derivada segunda es $L''(x) = - 1/x^2$ que es negativa para todo $x$, por lo que $L$ es una función cóncava.
+
+\section{Consecuencias de la ecuación funcional \boldmath$L(ab)=L(a)+L(b)$}

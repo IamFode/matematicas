@@ -151,8 +151,8 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 \setcounter{myteo}{22}
 %-------------------- 2.23 Definición
 \begin{myteo}[Longitud de la lista linealmente independiente es  $\boldmath \leq$ a la longitud de la lista que genera]\;\\\\
-    En un espacio vectorial ﬁnito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
-    Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_1$ spans $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de varios pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
+    En un espacio vectorial finito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
+    Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_n$ generan $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
 
     \begin{enumerate}[\small\textbf{Paso} 1.]
 	\item Sea $B$ la lista $w_1,\ldots,w_n$, que abarca $V$. Por lo tanto, adjuntar cualquier vector en $V$ a esta lista produce una lista linealmente dependiente (porque el nuevo vector adjunto se puede escribir como una combinación lineal de los otros vectores). En particular, la lista
@@ -215,22 +215,74 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 
 	    %---------- (b)
 	    \item Una lista de dos vectores en $V$ es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. \\\\
-		Demostración.-\; 
+		Demostración.-\; El enunciado siguiente es equivalente. Dos vectores son linealmente dependientes si y sólo si uno de los vectores es múltiplo escalar de otro. Supongamos que $v_1,v_2$ son dos vectores linealmente dependientes. Por lo que, existe escalares $a_1,a_2$ tal que 
+		$$a_1v_1+a_2v_2=0$$
+		y no ambos escalares $a_1,a_2$ son cero. Sea $a_1\neq 0$, entonces la ecuación se podría reescribir como
+		$$v_1=-\dfrac{a_2}{a_1}v_2$$
+		el cual prueba que $v_1$ es un múltiplo escalar de $v_2$. Por otro lado, si $a_2\neq 0$, entonces $v_2=-\frac{a_1}{a_2}v_1$ de aquí podemos afirmar que $v_2$ es un múltiplo escalar de $v_1$.\\
+		Ahora supongamos que que uno de los $v_1$ o $v_2$ es un múltiplo escalar del otro. Podemos decir, sin perdida de generalidad, que $v_1$ es un múltiplo escalar de $v_2$. Esto es, $v_1=cv_2$ para algún escalar $c$. Por lo tanto, la ecuación $v_1-cv_2=0$ se cumple, ya que el multiplicador de $v_1$ es distintos de cero. Esto es precisamente lo que requerimos para la definición de dependencia lineal. Así, $v_1$ y $v_2$ son linealmente dependientes.\\\\
 
 	    %---------- (c)
 	    \item $(1,0,0,0),(0,1,0,0),(0,0,1,0)$ es linealmente independiente en $\textbf{F}^4$.\\\\
-		Demostración.-\;
+		Demostración.-\; Utilizaremos la definición de independencia lineal. Sean $a,b,c$ escalares en \textbf{F} tal que
+		$$a(1,0,0,0)+b(0,1,0,0)+c(0,0,1,0)=\textbf{0}=(0,0,0,0)$$
+		Entonces,
+		$$(a,b,c,0)=(0,0,0,0)$$
+		Lo que implica,
+		$$a,b,c=0.$$
+		Esto demuestra que los tres vectores son linealmente independientes.\\\\
+
 
 	    %---------- (d)
 	    \item La lista $1,z,\ldots,z^m$ es linealmente independiente en $\mathcal{P}(\textbf{F})$ para cada entero no negativo $m$.\\\\
-		Demostración.-\;
+		Demostración.-\; Demostremos por contradicción. Supongamos que $1,z,\ldots,z^m$ es linealmente dependiente. Por lo que, existe un escalar $a_0,a_1,\ldots,a_m$ tal que
+		$$a_0+a_1z+\ldots+a_mz^m=0.$$
+		Sea $k$ el indice más grande tal que $a_k\neq 0$. Esto significa que los escalares desde $a_{k+1}$ hasta $a_m$ son cero. Entonces, se deduce que
+		$$a_0+a_1z+\ldots+a_kz^k=0.$$
+		Reescribiendo se tiene
+		$$z_k=-\dfrac{a_0}{a_k}-\dfrac{a_1}{a_k}z-\cdots-\dfrac{a_{k-1}}{a_k}z^{k-1}.$$
+		Aquí, expresamos $z^k$ como un polinomio de grado $k-1$ el cual es absurdo. Por lo que $1,z,z^2,\ldots,z^m$ es un conjunto linealmente independiente.\\\\
 
 	\end{enumerate}
+
 
     %------------------- 3.
     \item Encuentre un número $t$ tal que
     $$(3,1,4),(2,-3,5),(5,9,t)$$
     no es linealmente independiente en $\textbf{R}^3$.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Sea,
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0.$$
+	Si $c=0$. Entonces,
+	$$a(3,1,4)+b(2,-3,5)=0.$$
+	Lo que implica
+	$$
+	\begin{array}{rcl}
+	    3a+2b&=&0\\
+	    a-3b&=&0\\
+	    4a+5b&=&0
+	\end{array}
+	$$
+	De donde, resolviendo para $a$ y $b$ se tiene
+	$$a=0\quad \mbox{y}\quad b=0.$$
+	Pero, no queremos que $a,b,c$ sean cero. Así que debemos forzar que $c\neq 0$, como sigue:
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0\quad \Rightarrow \quad (5,9,t)=-\dfrac{a}{c}(3,1,4)-\dfrac{b}{c}(2,-3,5).$$
+	Es decir, estamos expresando $(5,9,t)$ como una combinación lineal de los vectores restantes. Así, sea $-\dfrac{a}{c}=x\;$,$\;-\dfrac{b}{c}=y$  por lo que,
+	$$(5,9,t)=x(3,1,4)+y(2,-3,5).$$
+	Así, tenemos que
+	$$
+	\begin{array}{rcl}
+	    3x+2y&=&5\\
+	    x-3y&=&9\\
+	    4x+5y&=&t
+	\end{array}
+	$$
+	Resolviendo para $x$ e $y$ se tiene
+	$$x=3\quad \mbox{y}\quad y=-2.$$
+	Por lo tanto,
+	$$t=2.$$\\
+
+    %------------------- 4.
+    \item Verifique la afirmación en el segundo punto del Ejemplo 2.20. Es decir, la lista $(2,3,1),(1,-1,2),(7,3,c)$ es linealmente dependientes en $\textbf{F}^3$ si y sólo si $c=8$, como debes verificar.\\\\
+	Respuesta.-\;
 
 \end{enumerate}

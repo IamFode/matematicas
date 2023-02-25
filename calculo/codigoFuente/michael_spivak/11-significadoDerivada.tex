@@ -2954,5 +2954,27 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 %-------------------- lema 1
 \begin{lema}
     Supongamos que $f$ es diferenciable y que $f'$ es creciente. Si $a<b$ y $f(a)=f(b)$, entonces $f(x)<f(a)=f(b)$ para $a<x<b$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Supongamos que $f(x)\geq f(a)=f(b)$ para algún $x$ de $(a,b)$. Entonces el máximo de $f$ en $[a,b]$ se localiza en algún punto $x_0$ de $(a,b)$ con $f(x_0)\geq f(a)$ y, por supuesto, $f'(x_0)=0$. Por otra parte, aplicando el Teorema del Valor Medio en el intervalo $[a,x_0]$, vemos que existe un $x_1$ tal que $a<x_1<x_0$ y 
+	$$f(x_1)=\dfrac{f(x_0)-f(a)}{x_0-a}\geq 0,$$
+	lo que contradice el hecho de que $f'$ sea creciente.
 \end{lema}
+
+%-------------------- teorema 2
+\begin{teo}
+    Si $f$ es diferenciable y $f'$ es creciente, entonces $f$ es convexa.\\\\
+	Demostración.-\; Sea $a<b$. Definamos $f$ mediante
+	$$g(x)=f(x)-\dfrac{f(b)-f(a)}{b-a}(x-a).$$
+	Es fácil comprobar que $g'$ también es creciente; además, $g(a)=g(b)=f(a)$. Aplicando el lema a la función $g$ deducimos que
+	$$g(x)<f(a)\quad \mbox{si}\quad a<x<b.$$
+	En otras palabras, si $a<x<b$, entonces
+	$$f(x)-\dfrac{f(b)-f(a)}{b-a}(x-a)<f(a)$$
+	o
+	$$\dfrac{f(x)-f(a)}{x-a}<\dfrac{f(b)-f(a)}{b-a}.$$
+	es decir $f$ es convexa.
+\end{teo}
+
+%-------------------- teorema 3
+\begin{teo}
+    Si $f$ es diferenciable y la gráfica de $f$ se sitúa por encima de cada recta tangente excepto en el punto de contacto, entonces $f$ es convexa.\\\\
+	Demostración.-\;
+\end{teo}
