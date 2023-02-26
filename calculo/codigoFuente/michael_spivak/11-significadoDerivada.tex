@@ -2976,5 +2976,14 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 %-------------------- teorema 3
 \begin{teo}
     Si $f$ es diferenciable y la gráfica de $f$ se sitúa por encima de cada recta tangente excepto en el punto de contacto, entonces $f$ es convexa.\\\\
-	Demostración.-\;
+	Demostración.-\; Sea $a<b$. Como se puede observar en la figura 8 (Michael Spivak, Apendice, capítulo 11), si $(b,f(b))$ se sitúa por encima de la tangente en $(a,f(a))$, y $(a,f(a))$ se sitúa por encima de la tangente en $(b,f(b))$, entonces la pendiente de la tangente en $(b,f(b))$ ha de ser mayor que la pendiente de la tangente en $(a,f(a))$. En el siguiente razonamiento se muestra analíticamente este hecho mediante ecuaciones.\\
+	Como la recta tangente en $(a,(f(a))$ queda definida por la gráfica de la función
+	$$g(x)=f'(a)(x-a)+f(a),$$
+	y como $(b,f(b))$ se sitúa por encima de la recta tangente, obtenemos
+	$$f(b)>f'(a)(b-a)+f(a).$$
+	Análogamente, como la recta tangente en $(b,f(b))$ queda definida por la gráfica de la función
+	$$h(x)=f'(b)(x-b)+f(b),$$
+	y $(a,f(a))$ se sitúa por encima de la tangente en $(v,f(b))$, obtenemos
+	$$f(a)>f'(b)(a-b)+f(b).$$
+	A partir de estas dos ecuaciones, podemos deducir que $f'(a)<f'(b)$, de manera que, según el teorema 2 $f$ es convexa.
 \end{teo}

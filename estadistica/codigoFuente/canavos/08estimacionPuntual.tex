@@ -84,7 +84,7 @@ Es razonable esperar que un buen estimador de un parámetro $\theta$ sea cada ve
 
 %-------------------- teorema 8.1
 \begin{teo}
-    Sea $X$ una variable aleatoria con una función (densidad) de probabilidad $f(x)$ de manera tal que tanto $E(X)=\mi$ como $Var(X)=\sigma^2$ tienen un valor finito. Entonces
+    Sea $X$ una variable aleatoria con una función (densidad) de probabilidad $f(x)$ de manera tal que tanto $\E(X)=\mu$ como $Var(X)=\sigma^2$ tienen un valor finito. Entonces
     $$P(|X-\mu|\leq k\sigma)\geq 1-\dfrac{1}{k^2}$$
     o
     $$P(|X-\mu|>k\sigma)\leq \dfrac{1}{k^2}$$
@@ -117,3 +117,41 @@ El teorema 8.2 también se conoce como la ley de los grandes números.\\\\
 
 
 \subsection{Estimadores insesgados de varianza mínima}
+
+Para un parámetro que posee un error cuadrático medio mínimo es difícil determinar un estimador para todo los posibles valores del parámetro. Pero podremos analizar uno que tenga un error cuadrático medio mínimo. Si se tiene una varianza mínima para todos los valores posibles de $\theta$. Este estimador recibe el nombre de estimador insesgado de varianza mínima uniforme (VMU)
+
+%-------------------- definición 8.4
+\begin{def.}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución cuya función (densidad) de probabilidad es $f(x;\theta)$. Sea la estadística $T=u(X_1,X_2,\ldots,X_n)$ un estimador de $\theta$ tal que $\E(T)=\theta$ y $Var(T)$ es menor que la varianza de cualquier otro estimador insesgado de $\theta$ para todo los posibles valores de $\theta$. Se dice entonces que $T$ es un estimador insesgado de varianza mínima de $\theta$.
+\end{def.}
+
+La varianza de un estimador insesgado es la cantidad más importante para decidir que tan bueno es el estimador para estimar un parámetro $\theta$. Por ejemplo, sean $T_1$ y $T_2$ cualesquiera dos estimadores insesgados de $\theta$. Se dice que $T_1$ es un estimador más eficiente de $\theta$ que $T_2$ si $\Var(T_1)\leq \Var(T_2)$. Es muy común utilizar el cociente $\Var(T_1)/\Var(T_2)$ para determinar la eficiencia relativa de $T_2$ respecto de $T_1$. Si los estimadores son sesgados, se emplea sus errores cuadráticos medios para determinar las eficiencias relativas.\\
+
+
+%-------------------- teorema 8.3
+\begin{teo}[Cota inferior de Cramérr-Rao]
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución con una función (densidad) de probabilidad $f(x;\theta)$. Si $T$ es un estimador insesgado de $\theta$, entonces la varianza de $T$ debe satisfacer la siguiente desigualdad
+    $$\Var(T)\geq \dfrac{1}{n\E\left[\left(\dfrac{\partial \ln f(X;\theta)}{\partial \theta}\right)^2\right]}.$$
+\end{teo}
+
+El teorema 8.3 establece un límite inferior para la varianza de un estimador de $\theta$. Para un estimador insesgado cuya varianza se apega a la cota inferior de Cramér-Rao, se tiene la siguiente definición.
+
+%-------------------- definición 8.5
+\begin{def.}
+    Si $T$ es cualquier estimador insesgado del parámetro $\theta$ tal que
+    $$Var(T)\geq \dfrac{1}{n\E\left[\left(\dfrac{\partial \ln f(X;\theta)}{\partial \theta}\right)^2\right]},$$
+    entonces se dice que $T$ es un estimador eficiente de $\theta$.
+\end{def.}
+\vspace{.5cm}
+
+\subsection{Estadísticas suficientes}
+Una estadística suficiente para un parámetro $\theta$ es aquella que utiliza toda la información contenida en la muestra aleatoria con respecto a $\theta$. La utilidad de una estadística suficiente recae en el hecho de que si un estimador insesgado de un parámetro $\theta$ es una función de una estadística suficiente, entonces tendrá la varianza más pequeña de entre todos los estimadores insesgado de $\theta$ que no se encuentren basados en una estadística suficiente. De hecho, si existe el estimador eficiente de $\theta$, se encontrará que este es una estadística suficiente. Un critero para terminar una estadística suficiente está dado por el siguiente teorema, el cual se conoce como teorema de factorización de Neyman.
+
+%-------------------- teorema 8.4
+\begin{teo}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución con una función de densidad de probabilidad $f(x;\theta)$. Se dice que la estadística $T=u(X_1,X_2,\ldots,X_n)$ es una estadística suficiente para $\theta$ si y sólo si la función de verosimilitud  puede factorizarse de la siguiente manera:
+    $$L(x_1,x_2,\ldots,x_n\; \theta)=h(t;\theta)g(x_1,x_2,\ldots,x_n)$$
+    para cualquier valor $t=u(x_1,x_2,\ldots,x_n)$ de $T$ y en donde $g(x_1,x_2,\ldots,x_n)$ no contiene al parámetro $\theta$.
+\end{teo}
+
+\section{Métodos de estimación puntual}

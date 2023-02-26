@@ -283,6 +283,86 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 
     %------------------- 4.
     \item Verifique la afirmación en el segundo punto del Ejemplo 2.20. Es decir, la lista $(2,3,1),(1,-1,2),(7,3,c)$ es linealmente dependientes en $\textbf{F}^3$ si y sólo si $c=8$, como debes verificar.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Sea los escalares $a,b,c$  no todos cero tal que
+	$$r(2,3,1)+s(1,-1,2)+t(7,3,c)=(0,0,0)$$
+	De donde, podemos escribir como ecuaciones lineales
+	$$
+	\begin{array}{rcl}
+	    2r+s+7t&=&0\\
+	    3r-s+3t&=&0\\
+	    r+2s+ct&=&0
+	\end{array}
+	$$
+	De la ecuación 1 y 2 se tiene
+	$$5r+10t=0\quad \Rightarrow \quad r=-2t.$$
+	Luego sustrayendo la ecuación 1 y 3, 
+	$$2r+(c-4)t=0.$$
+	Así, tenemos que
+	$$2(-2t)+(c-4)t=0\quad \Rightarrow \quad (c-8)t=0$$
+	Por lo que,
+	$$r=0\quad \mbox{o}\quad c-8=0.$$
+	Si $t=0$. Entonces, $r=-2t = 0$, y $s=0.$ Contradiciendo el hecho de que no todos los escalares son cero. Por lo tanto, los tres vectores son linealmente dependientes si y sólo si $c=8$.\\\\
+
+    %------------------- 5.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{R}$, entonces la lista $(1+i,1-i)$ es linealmente independiente.\\\\
+		Demostración.-\; Sean los escalares $a,b\in \textbf{R}$, tal que
+		$$a(1+i)+b(1-i)=0\quad \Rightarrow \quad (a+b)+(a-b)i=0.$$
+		Entonces,
+		$$a+b=0\quad \mbox{y}\quad a-b=0.$$
+		Igualando estas dos ecuaciones se tiene
+		$$
+		\begin{array}{rcl}
+		    a+b=a-b&\Rightarrow& 2b=0\\
+			   &\Rightarrow& b=0.
+	       \end{array}
+		$$
+		Reemplazando en $a+b=0$,
+		$$a=0.$$
+		Por lo tanto, $(1+i,1-i)$ es linealmente independiente sobre $\textbf{R}$.\\\\
+
+
+	    %---------- (b)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{C}$, entonces la lista $(1+i,1-i)$ es linealmente dependiente.\\\\
+		Demostración.-\; Sean los escalares $i,1\in \textbf{C}$, tal que
+		$$i(1+i)+1(1-i)=i+i^2+1-i=0\quad \Rightarrow \quad (i-1)+(1-i)=(i-1)-(i-1)=0.$$
+		Donde concluimos que $(1+i,1-i)$ es linealmente dependiente sobre $\textbf{C}$.\\\\
+
+	\end{enumerate}
+
+    %------------------- 6.
+    \item Supongamos que $v_1,v_2,v_3,v_4$ es linealmente independiente en $V$. Demostrar que la lista
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    es también linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a,b,c,d\in F$ tal que
+	$$a(v_1-v_2)+b(v_2-v_3)+c(v_3-v_4)+d(v_4)=0.$$
+	De donde,
+	$$av_1-av_2+bv_2-bv_3+cv_3-cv_4+dv_4=0.$$
+	Por lo que,
+	$$av_1+(b-a)v_2+(c-b)v_3+(d-c)v_4=0$$
+	Ya que $v_1,v_2,v_3,v_4$ es linealmente independiente, entonces
+	$$
+	\begin{array}{rcl}
+	    a&=& 0\\
+	    b-a&=& 0\\
+	    c-b&=& 0\\
+	    d-c&=& 0
+	\end{array}
+	$$
+	Resolviendo para $a,b,c,d$ se tiene
+	$$a=0,\quad b=0,\quad c=0,\quad d=0.$$
+	Esto implica que 
+	$$0(v_1-v_2)+0(v_2-v_3)+0(v_3-v_4)+0(v_4)=0.$$
+	Por lo tanto, la lista
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+	es linealmente independiente.\\\\
+
+    %------------------- 7.
+    \item 
+
+
 
 \end{enumerate}

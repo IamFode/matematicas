@@ -60,3 +60,34 @@ Dos números distintos tendrían un mismo logaritmo, puesto que la función $g$ 
 La derivada segunda es $L''(x) = - 1/x^2$ que es negativa para todo $x$, por lo que $L$ es una función cóncava.
 
 \section{Consecuencias de la ecuación funcional \boldmath$L(ab)=L(a)+L(b)$}
+
+La función no está acotada superiormente; esto es, para todo número positivo $M$ (por grande que sea) existen valores de $x$ tales que
+$$L(x)>M.$$
+Podemos deducirlo de la ecuación funcional. Cuando $a=b$, tenemos $L\left(a^2\right)=2L(a)$. Utilizando la ecuación funcional una vez más poniendo $b=a^2$, obtenemos $L\left(a^3\right)=3L(a)$. Por inducción encontramos la fórmula general
+$$L\left(a^n\right)=nL(a)$$
+para cualquier entero $n\geq 1$. Cuando $a=2$, se obtiene $L\left(2^n\right)=nL(2)$, y por tanto resulta
+$$L\left(2^n\right) \quad \mbox{cuando}\quad n>\dfrac{M}{L(2)}.$$
+Esto demuestra la afirmación 
+$$L(x)>M.$$
+Tomando $b=1/a$ en la ecuación funcional, encontramos $L(1/a)=-L(a)$. En particular, cuando $a=2^n$, habiendo elegido $n$ como en $L(x)>M$, se tiene
+$$L\left(\dfrac{1}{2^n}\right)=-L(2^n)<-M,$$
+lo que indica que tampoco existe cota inferior para los valores de la función.
+
+%-------------------- Teorema 6.2.
+\begin{teo}
+    Para cada número real $b$ existe exactamente un número real positivo $x$ cuyo logaritmo, $L(a)$, es igual a $b$.\\\\
+    Demostración.-\; Si $b>0$, elegimos un entero cualquiera $n>b/L(2)$. Entonces, en virtud de $L(x)>M$, $L\left(2^n\right)>b.$ Seguidamente examinamos la función $L$ en el intervalo cerrado $[1,2^n]$. Su valor en el extremo izquierdo es $L(1)=0$, y en el extremo derecho es $L(2^n)$. Puesto que $0<b<L\left(2^n\right)$, el teorema del valor intermedio para funciones continuas (teorema 3.8, sección 3.10) asegura la existencia por lo menos de un $a$ tal que $L(a)=b$. No puede existir otro valor $a'$ tal que $L\left(a'\right)=b$ porque esto significaría $L(a)=L\left(a'\right)$ para $a\neq a'$, y esto contradice la propiedad de crecimiento del logaritmo. Por consiguiente la proposición $L(a)=b$ ha sido demostrada para $b>0$. La demostración para $b$ negativo es consecuencia de esa si utilizamos la igualdad $L(1/a)=-L(a)$.
+\end{teo}
+
+En particular, existe un único número cuyo logaritmo natural es igual a $1$. Este número, al igual que $\pi$, se encuentra tan repetidamente en fórmulas matemáticas que es inevitable el adoptar para él un símbolo especial. Este número es $e$.
+
+%-------------------- Definición 6.2.
+\begin{def.}
+    Designamos por $e$ el número para el que
+    $$L(e)=1.$$
+\end{def.}
+
+Los logaritmos naturales se denomina también \textbf{logaritmos neperianos}. En honor al inventor, Juan Neper (1550-1617). Es frecuente en la práctica utilizar los símbolos $\ln x$ o $\log x$ en vez de $L(x)$ para designar el logaritmo de $x$.
+
+
+\section{Logaritmos referidos a un base positiva \boldmath $b\neq 1$}

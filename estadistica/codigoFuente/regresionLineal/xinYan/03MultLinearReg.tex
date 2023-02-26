@@ -276,7 +276,40 @@ Una forma cuadrática de un vector aleatorio $\textbf{y}' = (y_1 , y_2 , \cdots 
 \begin{teo}
     Sea $\textbf{y}'=(y_1,y_2,\ldots,y_n)$ un vector aleatorio $n\times 1$ con media $\mu'=(\mu_1,\mu_2,\cdots,\mu_n)$ y varianza $\sigma^2$ para cada componente. Además, se supone que $y_1,y_2,\cdots,y_n$ son independientes. Sea $A$ una matriz $n\times n$, $\textbf{y}'A\textbf{y}$ es una forma cuadrática de variables aleatorias. La esperanza de esta forma cuadrática viene dada por
     $$\E(\textbf{y}'A\textbf{y})=\sigma^2tr(A)+\mu'A\mu.$$\\
-	Demostración.-\;
+	Demostración.-\; Primero observemos que
+	$$\textbf{y}'A\textbf{y}=(\textbf{y}-\mu)'A(\textbf{y}-\mu)+2\mu'A(\textbf{y}-\mu)+\mu'A\mu.$$
+	De donde podemos escribir,
+	$$
+	\begin{array}{rcl}
+	    \E\left(\textbf{y}'A\textbf{y}\right) &=& \E\left[(\textbf{y}-\mu)'A(\textbf{y}-\mu)\right] + 2\E\left[\mu'A(\textbf{y}-\mu)\right]+\mu'A\mu\\\\
+						  &=& \E\left[\displaystyle\sum_{i,j=1}^n a_{ij}(y_i-\mu_i)(u_j-\mu_j)\right]+2\mu'A\E(\textbf{y}-\mu)+\mu'A\mu\\\\
+						  &=& \displaystyle\sum_{i=1}^n a_{ii}E(y_i-\mu_i)^2+\mu'A\mu\\\\
+						  &=& \sigma^2tr(A)+\mu'A\mu.
+	\end{array}
+	$$
 \end{teo}
 
+Ahora veremos la varianza de la forma cuadrática de $\textbf{y}'A\textbf{y}$.
 
+% -------------------- teorema 3.7
+\begin{teo}
+    Sea $\textbf{y}$ un vector aleatorio $n\times 1$ con media $\mu'=(\mu_1,\mu_2,\cdots,\mu_n)$ y varianza $\sigma^2$ para cada componente. Se asume que $y_1,y_2,\ldots,y_n$ son independientes. Sea $A$ una matriz simétrica $n\times n$, $\E(y_i-\mu_i)^4=u_i^{(4)}$, $\E(y_i-\mu_i)^3=u_i^{(3)}$, y $a'=(a_{11},a_{22},\cdots,x_{nn})$. La varianza de la forma cuadrática $\textbf{y}A\textbf{y}$ es dada por 
+    $$
+    \begin{array}{rcl}
+	\Var\left(\textbf{y}'A\textbf{y}\right) &=& \left(\mu^{(4)}-3\sigma^2\right)a'a+\sigma^4\left(2tr\left(A^2\right)+\left[tr(A)\right]^2\right)\\\\
+						&=& 4\sigma^2\mu'A^2\mu+4\mu^{(3)}a'A\mu.
+    \end{array}
+    $$
+    \vspace{.5cm}
+	Demostración.-\; Sea $Z=\textbf{y}-\mu,$ $A(A_1,A_2,\ldots,A_n)$ y $b=(b_1,b_2,\ldots,b_n)=\mu'(A_1,A_2,\ldots,A_n)=\mu'A$, de donde podemos escribir
+    $$
+    \begin{array}{rcl}
+	\textbf{y}'A\textbf{y} &=& (\textbf{y}-\mu)A(\textbf{y}-\mu)+2\mu'A(\textbf{y}-\mu)+\mu'A\mu\\\\
+			       &=& Z'AZ+2b'Z+\mu'A\mu\\\\
+    \end{array}
+    $$
+    Así,
+    $$\Var(\textbf{y}'A\textbf{y})=\Var\left(Z'AZ\right)+4\Var(bZ)+4\Cov\left(Z'AZ,bZ\right)$$
+    Calculando cada termino por separado, se tiene
+
+\end{teo}

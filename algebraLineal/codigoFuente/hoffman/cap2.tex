@@ -1107,3 +1107,49 @@ Este corolario permite definir la dimensión de un espacio vectorial de dimensi�
     \end{enumerate}
 \end{cor}
 
+%-------------------- Lema 2
+\begin{lema}
+    Sea $S$ un subconjunto linealmente independiente de un espacio vectorial $v$. Supóngase que $\beta$ es un vector de $V$ que no pertenece al subespacio generado por $S$. Entonces, el conjunto que se obtiene agregando $\beta$ a $S$, es linealmente independiente.\\\\
+	Demostración.-\; Supóngase que $\alpha_1,\ldots,\alpha_m$ son vectores distintos de $S$ y que 
+	$$c_1\alpha_1+\cdots+c_m\alpha_m+b\beta=0.$$
+	Entonces $b=0$; de otra manera
+	$$\beta=\left(-\dfrac{c_1}{b}\right)\alpha_1+\cdots+\left(-\dfrac{c_m}{b}\right)\alpha_m$$
+	y $\beta$ está en el subespacio generado por $S$; lo que contradice con la hipótesis. Así, $c_1\alpha_1+\cdots+c_m\alpha_m=0$, y como $S$ es un conjunto linealmente independientes, todo $c_i=0$.
+\end{lema}
+
+%-------------------- teorema 5
+\begin{teo}
+    Si $W$ es un subespacio de un espacio vectorial de dimensión finita $V$, todo subconjunto linealmente independiente de $W$ es finito y es parte de un base (finita) de $W$.\\\\
+	Demostración.-\; Supóngase que $S_0$ es un conjunto linealmente independientes de $W$. Si $S$ es un subconjunto linealmente independiente de $W$ que contiene a $S_0$, entonces $S$ también es un subconjunto linealmente independiente de $V$; como $V$ es de dimensión finita, $S$ no tiene más de $\dim V$ elementos.\\
+	Se extiende $S_0$ a una base de $W$, como sigue. Si $S_0$ genera $W$, entonces $S_0$ es una base de $S_0$ y está demostrado. Si $S_0$ no genera $W$, por el lema anterior se halla un vector $\beta_1$ en $W$ tal que el conjunto $S_1=S_0\cup \left\{\beta_1\right\}$ es independiente. Si $S_1$ genera $W$, está demostrado. Si no, se aplica el lema para obtener un vector $\beta_2$ en $W$ tal que $S_2=S_1\cup \left\{\beta\right\}$ es independiente. Si se continúa de este modo entonces (y en no más de $\dim V$ de etapas) se llega a un conjunto
+	$$S_m=S_0\cup \left\{\beta_1,\ldots,\beta_m\right\}$$
+	que es una base de $W$.
+\end{teo}
+
+%-------------------- corolario 3
+\begin{cor}
+    Si $W$ es un subespacio propio de un espacio vectorial de dimensión finita $V$, entonces $W$ es de dimensión finita y $\dim W<\dim V$.\\\\
+	Demostración.-\; Podemos suponer que $W$ contiene un vector $\alpha\neq 0$. Por el teorema 5 y su demostración existe un base de $W$ que, conteniendo a $\alpha$, no contiene más que $\dim V$ elementos. Luego $W$ es de dimensión finita y $\dimW\leq \dim V$. Como es un subespacio propio existe un vector $\beta$ en $V$ que no está en $W$. Agregando $\beta$ a cualquier base de $W$ se obtiene un subconjunto linealmente independiente de $V$. Así $\dim V < \dim V$.
+\end{cor}
+
+%-------------------- corolario 4
+\begin{cor}
+    En un espacio vectorial $V$ de dimensión finita todo conjunto linealmente independiente de vectores es parte de una base.
+\end{cor}
+
+%-------------------- corolario 5
+\begin{cor}
+    Sea $A$ una matriz $n\times n$ sobre el cuerpo $F$, y supóngase que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $F^n$. Entonces $A$ es inversible.\\\\
+	Demostración.-\; Sean $\alpha_1,\alpha_2,\ldots,\alpha_n$ vectores fila de $A$, y supóngase que $W$ es un subespacio de $F^n$ generado por $\alpha_1,\alpha_2,\ldots,\alpha_n$. Como los $\alpha_1,\alpha_2,\ldots.\alpha_n$ son linealmente independientes, la dimensión de $W$ es $n$. Por el corolario 3 se tiene que $W=F^n$. Luego existen escalares $\beta_{ij}$ tales que
+	$$\epsilon_i=\sum_{j=1}^n B_{ij}\alpha_j, \quad 1\leq i \leq n$$
+	donde $\left\{\epsilon_1,\epsilon_2,\ldots,\epsilon_n\right\}$ es la base canónica de $F^n$. Así, para la matriz $B$ de elementos $B_{ij}$ se tiene 
+	$$BA=I.$$
+\end{cor}
+
+%-------------------- teorema 6
+\begin{teo}
+    Si $W_1$ y $W_2$ son subespacios de dimensión finita de un espacio vectorial, entonces $W_1+W_2$ es de dimensión finita y
+    $$\dim W_1+\dim W = \dim (W_1\cap W_2)+\dim (W_1+W_2).$$\\
+	Demostración.-\;
+\end{teo}
+
