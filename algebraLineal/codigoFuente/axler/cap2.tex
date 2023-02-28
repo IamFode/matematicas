@@ -361,8 +361,41 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 	es linealmente independiente.\\\\
 
     %------------------- 7.
-    \item 
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$, Entonces
+    $$5v_1-4v_2,v_2,v_3,\ldots,v_m$$
+    es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\textbf{F}$ tal que 
+	$$a_1(5v_1-4v_2)+a_2v_2+a_3v_3+\ldots+a_mv_m=0$$
+	De donde,
+	$$5a_1v_1+(a_2-4a_1)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Sabemos que la independencia lineal obliga a todos los escalares de $v_i$ a ser cero. En particular , $5a_1=0$ entonces $a_1=0$ y $a_2-4a_1=0$, implica $a_2=0.$ Por lo tanto, 
+	$$0\cdot v_1+(0-0)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Dado que todos $a_i$ son cero, entonces $5v_1-4v_2,v_2,v_3,\ldots,v_m$ es linealmente independiente.\\\\
 
+    %------------------- 8.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$ y $\gamma\in \textbf{F}$ con $\gamma\neq 0$, Entonces $\gamma v_1,\gamma v_2,\ldots,\gamma v_m$ es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\in \textbf{F}$ tal que
+	$$a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$$
+	De donde,
+	$$\gamma\left(a_1 v_1+a_2 v_2+\ldots+a_m v_m\right)=0.$$
+	Lo que,
+	$$a_1 v_1+a_2 v_2+\ldots+a_m v_m=0.$$
+	Ya que, $v_1,v_2,\ldots,v_m$ es linealmente independiente. Entonces, todos los $a_i's$ deben ser cero. Por lo tanto, $a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$ es linealmente independiente.\\\\
 
+    %------------------- 9.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son listas linealmente independientes de vectores en $V$, entonces $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a_i,b_i\in \textbf{F}$ tal que
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m=0\quad \mbox{y}\quad b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	Entonces,
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m+b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	De donde,
+	$$(a_1-b_1)(v_1+w_1)+(a_2-b_2)(v_2+w_2)+\ldots+(a_m-b_m)(v_m+w_m)=0.$$
+	Supongamos $c_i=a_i+b_i\in F$. Luego,
+	$$c_1(v_1+w_1)+c_2(v_2+w_2)+\ldots+c_m(v_m+w_m)=0.$$
+	Dado que $a_i=b_i=0$, ya que $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son linealmente independientes. Concluimos que, $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+
+    %------------------- 10.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $W\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente independiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
+	Demostración.-\;
 
 \end{enumerate}

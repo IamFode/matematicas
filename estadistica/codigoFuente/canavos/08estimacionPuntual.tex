@@ -155,3 +155,14 @@ Una estadística suficiente para un parámetro $\theta$ es aquella que utiliza t
 \end{teo}
 
 \section{Métodos de estimación puntual}
+
+Se estudiará cómo obtener estimadores que, de manera general, tenga buenas propiedades. Específicamente se considerarán los métodos de máxima verosimilitud y el de momentos. 
+
+\subsection{Método por máxima verosimilitud}
+
+El método de estimación por máxima verosimilitud, selecciona como estimador a aquél valor del parámetro que tiene la propiedad de maximizar el valor de la probabilidad de la muestra aleatoria observada. En otras palabras, el método de máxima verosimilitud consiste en encontrar el valor del parámetro que maximiza la función de verosimilitud.
+
+%-------------------- definición 8.6
+\begin{def.}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución con función (densidad) de probabilidad $f(x;\theta)$, y sea $L(x_1,x_2,\ldots,x_n;\theta)$ la verosimilitud de la muestra como función de $\theta$. Si $t=u(x_1,x_2,\ldots,x_n)$ es el valor de $\theta$ para el cual el valor de la función de verosimilitud es máxima, entonces $T=u(X_1,X_2,\ldots,X_n)$ es el estimador de máxima verosimilitud de $\theta$, y $t$ es el estimador de máxima verosimilitud.
+\end{def.}

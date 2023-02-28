@@ -48,7 +48,7 @@
     \begin{equation}
 	(cA)_{ij} = cA_{ij}.
     \end{equation}
-    Obsérvece que $F^{i\times n}=F^n$.
+    Obsérvese que $F^{1\times n}=F^n$.
 \end{ejem}
 
 %------------------- ejemplo 3
@@ -1129,7 +1129,7 @@ Este corolario permite definir la dimensión de un espacio vectorial de dimensi�
 %-------------------- corolario 3
 \begin{cor}
     Si $W$ es un subespacio propio de un espacio vectorial de dimensión finita $V$, entonces $W$ es de dimensión finita y $\dim W<\dim V$.\\\\
-	Demostración.-\; Podemos suponer que $W$ contiene un vector $\alpha\neq 0$. Por el teorema 5 y su demostración existe un base de $W$ que, conteniendo a $\alpha$, no contiene más que $\dim V$ elementos. Luego $W$ es de dimensión finita y $\dimW\leq \dim V$. Como es un subespacio propio existe un vector $\beta$ en $V$ que no está en $W$. Agregando $\beta$ a cualquier base de $W$ se obtiene un subconjunto linealmente independiente de $V$. Así $\dim V < \dim V$.
+	Demostración.-\; Podemos suponer que $W$ contiene un vector $\alpha\neq 0$. Por el teorema 5 y su demostración existe una base de $W$ que, conteniendo a $\alpha$, no contiene más que $\dim V$ elementos. Luego $W$ es de dimensión finita y $\dim W\leq \dim V$. Como es un subespacio propio existe un vector $\beta$ en $V$ que no está en $W$. Agregando $\beta$ a cualquier base de $W$ se obtiene un subconjunto linealmente independiente de $V$. Así $\dim V < \dim V$.
 \end{cor}
 
 %-------------------- corolario 4
@@ -1150,6 +1150,43 @@ Este corolario permite definir la dimensión de un espacio vectorial de dimensi�
 \begin{teo}
     Si $W_1$ y $W_2$ son subespacios de dimensión finita de un espacio vectorial, entonces $W_1+W_2$ es de dimensión finita y
     $$\dim W_1+\dim W = \dim (W_1\cap W_2)+\dim (W_1+W_2).$$\\
-	Demostración.-\;
+	Demostración.-\; Por el teorema 5 y sus corolarios, $W_1\cap W_2$ tiene una base finita $\left\{\alpha_1,\ldots,\alpha_k\right\}$ qie es parte de la base
+	$$\left\{\alpha_1,\ldots,\alpha_k,\; \beta_1,\ldots,\beta_m\right\}\quad \mbox{para }W_1$$
+	y parte ed la base
+	$$\left\{\alpha_1,\ldots,\alpha_k,\; \gamma_1,\ldots,\gamma_m\right\}\quad \mbox{para }W_2.$$
+	El subespacio $W_1+W_2$ es generado por los vectores
+	$$\alpha_1,\ldots,\alpha_k,\quad \beta_1,\ldots,\beta_m,\quad \gamma_1,\ldots,\gamma_n.$$
+	y estos vectores forman un conjunto independiente. En efecto, supóngase que 
+	$$\sum x_i\alpha_i + \sum y_j\beta_j + \sum z_r\gamma_r=0.$$
+	Entonces 
+	$$-\sum z_r\gamma_r = \sum x_i\alpha_i+\sum y_j\beta_j$$
+	que muestra que $\sum z_r\gamma_r$ pertences a $W_1$. Como $\sum z_r\gamma_r$ también pertence a $W_2$ se sigue que
+	$$\sum z_r\gamma_r = \sum c_i\alpha_i$$
+	para ciertos escalares $c_1,\ldots,c_k$. Como el conjunto 
+	$$\left\{\alpha_1,\ldots,\alpha_k,\quad \gamma_1,\ldots,\gamma_n\right\}$$
+	es independiente, cada uno de los escalares $z_r=0$. Así, 
+	$$\sum x_i\alpha_i + \sum y_j\beta_j=0$$
+	y como 
+	$$\left\{\alpha_1,\ldots,\alpha_k,\quad \beta_1,\ldots,\beta_m\right\}$$
+	es también un conjunto independiente, dada $x_i=0$ y cada $y_i=0$. Así
+	$$\left\{\alpha_1,\ldots,\alpha_k,\quad \beta_1,\ldots,\beta_m,\quad \gamma_1,\ldots,\gamma_n\right\}$$
+	es una base para $W_1+W_2$. Finalmente,
+	$$
+	\begin{array}{rcl}
+	    \dim W_1+\dim W_2 &=& (k+m)+(k+n)\\
+			      &=& k+(m+k+n)\\
+			      &=& \dim(W_1\cap W_2)+\dim(W_1+W_2).
+	\end{array}
+	$$
 \end{teo}
 
+
+\section*{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Demostrar que si dos vectores son linealmente dependientes, uno de ellos es un múltiplo escalar del otro.\\\\
+	Demostración.-\;
+
+\end{enumerate}

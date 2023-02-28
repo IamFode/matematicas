@@ -1,3 +1,5 @@
+%\setcounter{chapter}{10}
+%\chapter{Significado de la derivada \\ \small Michael Spivak. Cálculo. \boldmath$3^{a}$ Edición. \\ Solución de ejercicios y apuntes.}
 \chapter{Significado de la derivada}
 
     \begin{def.}
@@ -2987,3 +2989,57 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 	$$f(a)>f'(b)(a-b)+f(b).$$
 	A partir de estas dos ecuaciones, podemos deducir que $f'(a)<f'(b)$, de manera que, según el teorema 2 $f$ es convexa.
 \end{teo}
+
+%-------------------- teorema 4
+\begin{teo}
+    Si $f$ es diferenciable en un intervalo y corta a cada una de sus rectas tangentes una sólo vez, entonces $f$ es convexa o cóncava en dicho intervalo.\\\\
+	Demostración.-\; La demostración se desglosa en dos apartados. 
+	\begin{enumerate}[a)]
+	    \item Primero veamos que ninguna recta puede cortar a la gráfica de $f$ en tres puntos diferentes. Supongamos, por el contrario, que alguna recta corta a la gráfica de $f$ en los puntos $(a,f(a))$, $(b,f(b))$ y $(c,f(c))$, con $a<b<c$ (Figura 11, Michael Spivak, capítulo 11 Apéndice). Entonces se verificaría que
+	    $$\dfrac{f(b)-f(a)}{b-a}=\dfrac{f(c)-f(a)}{c-a}.$$
+	    Consideremos la función
+	    $$g(x)=\dfrac{f(x)-f(a)}{x-a}\quad \mbox{para } x \mbox{ en }[b,c].$$
+
+	    La ecuación de igualdad de arriba demuestra que $g(b)=g(c)$. Por tanto, según el Teorema de Rolle, existe algún número $x$ en $(b,c)$ en el que $0=g'(x)$, y así
+	    $$0=(x-a)f'(x)-[f(x)-f(a)]$$
+	    o sea
+	    $$f'(x)=\dfrac{f(x)-f(a)}{x-a}.$$
+	    Pero esto significa (Figura 12, Michael Spivak, capítulo 11 Apéndice) que la recta tangente en $(x,f(x))$ corta al punto $(a,f(a))$, lo que contradice a las hipótesis.
+
+	    \item Supongamos ahora que $a_0<b_0<c_0$ y $a_1<b_1<c_1$ son puntos del intervalo. Sea
+	    $$
+	    \begin{array}{rcl}
+		x_t &=& (1-t)a_0+ta_1\\
+		y_t &=& (1-t)b_0+tb_1\\
+		z_t &=& (1-t)c_0+tc_1
+	    \end{array}
+	    \qquad 
+	    0\leq t \leq 1.
+	    $$
+	    Entonces, $x_0=a_0$ y $x_1=a_1$  y (Problema 4-2) los puntos $x_t$ se sitúan entre $a_0$ y $a_1$, con resultados análogos para $y_t$ y $z_t$. Además,
+	    \begin{center}
+		$x_t<y_t<z_t$ para $0\leq t \leq 1.$
+	    \end{center}
+	    Consideremos ahora la función
+	    $$g(t)=\dfrac{f(t_t)-f(x_t)}{y_t-x_t}-\dfrac{f(z_t)-f(x_t9}{z_t-x_t}\quad \mbox{para }0\leq t \leq 1.$$
+	    Según el apartado 1, $g(t)\neq 0$ para todo $t$ en $[0,1]$. Por lo tanto, o bien $g(t)$ para todo $t$ de $[0,1]$ o $g(t)<0$ para todo $t$ de $[0,1]$. Así, o bien $f$ es convexa o $f$ es cóncava.
+	\end{enumerate}
+\end{teo}
+
+
+\section{Problemas}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item Dibuje las funciones del Problema 11-1, indicando las regiones de convexidad y concavidad y los puntos de inflexión (considere (iv) con doble asterisco).\\\\
+	Respuesta.-\;
+
+    %------------------- 2.
+    \item La Figura 30 del capítulo $11$ muestra la gráfica de $f'$. Dibuje la gráfica de $f$.\\\\
+	Respuesta.-\;
+
+    %------------------- 3.
+    \item 
+
+\end{enumerate}
