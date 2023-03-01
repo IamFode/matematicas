@@ -41,7 +41,7 @@ $$x = a_1 v_1 + a_2 v_2 + \ldots + a_n v_n,\mbox{ para cualquier } \textbf{x}\in
 El número de vectores base en $V$ se denomina dimensión del espacio lineal $V$. Tenga en cuenta que un espacio vectorial puede tener más de una base, pero el número de vectores que forman la base del espacio vectorial $V$ siempre es fijo. Es decir, la dimensión del espacio vectorial $V$ es fija pero habrá más de una base. De hecho, si la dimensión del espacio vectorial $V$ es $n$, entonces cualquier n vector linealmente independiente en $V$ forma su base.
 
 
-\section{Producto punto y Proyección}
+\subsection{Producto punto y Proyección}
 
 Si $\textbf{x}=(x_1,x_2,\ldots,x_n)$ e $\textbf{y}=(y_1,y_2,\ldots, y_n)$ dos vectores en un espacio Euclidiano vectorial $\textbf{R}^n$. El producto punto de los vectores $\textbf{x}$ e $\textbf{y}$ de define como
 
@@ -312,4 +312,99 @@ Ahora veremos la varianza de la forma cuadrática de $\textbf{y}'A\textbf{y}$.
     $$\Var(\textbf{y}'A\textbf{y})=\Var\left(Z'AZ\right)+4\Var(bZ)+4\Cov\left(Z'AZ,bZ\right)$$
     Calculando cada termino por separado, se tiene
 
+    $$
+    \begin{array}{rcl}
+	\left(ZA'Z\right)^2 &=& \displaystyle\sum_i\sum_j a_{ij}a_{lm} Z_iZ_jZ_lZ_m\\\\
+	\E\left(ZA'Z\right)^2 &=& \displaystyle\sum_i\sum_j\sum_l\sum_m a_{ij}a_{lm} \E\left(Z_iZ_jZ_lZ_m\right)\\\\
+    \end{array}
+    $$
+
+    Notemos que
+
+    $$
+    \E\left(Z_iZ_jZ_lZ_m\right) = 
+    \left\{
+	\begin{array}{rcl}
+	    \mu^{(4)}, &\text{si} & i=j=l=m;\\\\
+	    \sigma^4, &\text{si} & i=j, l=k\; \mbox{o}\; i=l, j=k, \mbox{o}\; i=k, j=l;\\\\
+	    0, & &\mbox{los demás}.
+	\end{array}
+    \right.
+    $$
+
+    De donde se tiene
+
+    $$
+    \begin{array}{rcl}
+	\E\left(Z'AZ\right)^2 &=& \displaystyle\sum_i\sum_j\sum_l\sum_m a_{ij}a_{lm}\E\left(Z_iZ_jZ_lZ_m\right)\\\\
+			      &=& \mu^{(4)}\displaystyle\sum_{i=1}^n a_{i}^2 +\sigma^4 \left(\sum_{i\neq j}a_{ii}a_{kk}+\sum_{i\neq j}a_{ij}^2+\sum_{i\neq j}a_{ij}a_{ji}\right).
+    \end{array}
+    $$
+
+    Ya que $A$ es simétrica. $a_{ij}=a_{ji}$, tenemos
+
+    $$
+    \begin{array}{rcl}
+	\displaystyle\sum a_{ij}^2 + \sum_{i\neq j} a_{ij}a_{ji} &=& 2\displaystyle\sum_{i\neq j}a_{ij}^2\\\\
+								 &=& 2\displaystyle\sum_{i,j} a_{ij}^2 - 2\sum_{i=j}a_{ij}^2\\\\
+								 &=& 2tr\left(A^2\right)-2\displaystyle\sum_{i=1}^n a_{ii}^2\\\\
+								 &=& 2tr\left(A^2\right)-2a'a.
+    \end{array}
+    $$
+
+    Y
+
+    $$
+    \begin{array}{rcl}
+	\displaystyle\sum_{i\neq k} a_{ii}a_{kk} &=& \displaystyle\sum_{i,k}a_{ii}a_{kk} - \sum_{i=k}a_{ii}a_{kk}\\\\
+						 &=& \left[tr(A)\right]^2 - \displaystyle\sum_{i=1} a_{ii}^2\\\\
+						 &=& \left[tr(A)\right]^2 - a'a.
+    \end{array}
+    $$
+
+    Luego,
+
+    $$E\left(Z'AZ\right)^2 = \left(\mu^{(4)}-3\sigma^4\right)a'a+\sigma^4\left\{2tr\left(A^2\right)+\left[tr(A)\right]^2\right\}.$$
+
+    Para $\Var(bZ)$, entonces
+
+    $$\Var(bZ)=b\Var(Z)b' = bb'\sigma^2 = \left(\mu' A\right)\left(\mu'A\right)\sigma^2 = \mu'A^2\mu\sigma^2.$$\\
+    Para calcular $\Cov\left(Z'AZ,bZ\right)$, notemos que $\E(Z)=0$, por lo que
+
+    $$
+    \begin{array}{rcl}
+	\Cov\left(Z'AZ,bZ\right) &=& \Cov\left(\displaystyle\sum_{i,j}a_{ij}Z_iZ_j,\sum_k b_k Z_k\right)\\\\
+				 &=& \displaystyle\sum_{i,j,k} \Cov(Z_iZ_j,Z_k)\\\\
+				 &=& \displaystyle\sum_{i,j,k} a_{ij}b_k \E\left\{\left[Z_iZ_j-\E(Z_iZ_j)Z_k\right]\right\}\\\\
+				 &=& \displaystyle\sum a_{ij}b_k \left[\E\left(Z_iZ_jZ_k\right)-\E(Z_k)\right]\\\\
+				 &=& \displaystyle\sum a_{ij}b_k \left[\E\left(Z_iZ_jZ_k\right)\right]\quad \quad (\mbox{ya que }\E\left(Z_k\right)=0).
+    \end{array}
+    $$
+
+    Es fácil saber que
+
+    $$
+    E(Z_iZ_jZ_k) =
+	\begin{array}{rcl}
+	    \mu^{(3)}, &\text{si} & i=j=k;\\\\
+	    0, & &\mbox{los demás}.
+	\end{array}
+    $$
+
+    Por lo tanto,
+
+    $$
+    \begin{array}{rcl}
+	\Cov\left(Z'AZ,bZ\right) &=& \displaystyle\sum_{i=1}^n a_{ii}b_i \mu^{(3)}\\\\
+				 &=& \mu^{(4)}\displaystyle\sum_{i=1}^n a_{ii}\mu'A_i \mu^{(3)}\\\\
+				 &=& \displaystyle\sum_{i=1}^n a_{ii}A'_i\mu\mu^{(3)}\\\\
+				 &=& a'A\mu\mu^{(3)}\\\\
+    \end{array}
+    $$
+    La combinación de los resultados anteriores completa la demostración.
 \end{teo}
+
+
+\section{Distribución normal multivariante}
+
+

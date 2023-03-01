@@ -166,3 +166,62 @@ El método de estimación por máxima verosimilitud, selecciona como estimador a
 \begin{def.}
     Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución con función (densidad) de probabilidad $f(x;\theta)$, y sea $L(x_1,x_2,\ldots,x_n;\theta)$ la verosimilitud de la muestra como función de $\theta$. Si $t=u(x_1,x_2,\ldots,x_n)$ es el valor de $\theta$ para el cual el valor de la función de verosimilitud es máxima, entonces $T=u(X_1,X_2,\ldots,X_n)$ es el estimador de máxima verosimilitud de $\theta$, y $t$ es el estimador de máxima verosimilitud.
 \end{def.}
+
+Tiene la propiedad deseable de proporcionar estimadores que son funciones de estadísticas suficientes, siempre y cuando el estimador MV sea único. Además, el método MV proporciona el estimador eficiente, si es que existe. Sin, embargo los estimadores MV son generalmente sesgados. El procedimiento para obtener este tipo de estimadores es relativamente directo. Debido a la naturaleza de la función de verosimilitud se escoge, por lo común, maximizar el logaritmo natural de $L(\theta)$. Esto es, en muchas ocasiones más fácil obtener el estimador MV maximizando $\ln L(\theta)$ que $L(\theta)$.
+
+\setcounter{ejem}{5}
+%-------------------- Ejemplo 8.1
+\begin{ejem}
+    En un experimento binomial se observan $X=x$ éxitos en $n$ ensayos. Obtener el estimador de máxima verosimilitud del parámetro binomial $p$.\\\\
+	Respuesta.-\; En este caso la función de verosimilitud es idéntica a la probabilidad de que $X=x$; de esta forma
+	$$L(x;p)=\dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x},\quad 0\leq p\leq 1.$$
+	Entonces,
+	$$\ln L(x;p)=\ln(n!)-\ln\left[(n-x)!\right]-\ln(x!)+(n-x)\ln(1-p).$$
+	Para encontrar el valor de $p$, para el cual $\ln L(x;p)$ tiene un valor máximo, se toma la primera derivada con respecto a $p$ y se iguala a cero:
+	$$\dfrac{\partial \left[\ln L(x;p)\right]}{\partial p}=\dfrac{x}{p}-\dfrac{n-x}{1-p}=0.$$
+	Después de resolver para $p$, se obtiene el estimador MV de $p$ el cual recibe el nombre de proporción muestral $X/n$, y el estimador MV es $p=x/n$. Para confirmar que este valor maximiza a $\ln L(x;p)$, se toma la segunda derivada con respecto a $p$ y se evalúa en $x/n$:
+	$$\dfrac{\partial^2\left[\ln L(x;p)\right]}{\partial p^2}=-\dfrac{np(1-p)+(x-np)(1-2p)}{\left[p(1-p)\right]^2}$$
+	y
+	$$\dfrac{\partial^2\left[\ln L(x;p)\right]}{\partial p^2}\bigg|_{x/n} = -\dfrac{x}{(x/n)^2\left[1-(x/n)\right]}\qquad x/n<1,$$
+	lo que confirma el resultado, dado que la segunda derivada es negativa. Para un ejemplo específico, si se observan $x=5$ con base en $25$ ensayos independientes, el estimador MC de $p$ es $0.2.$
+\end{ejem}
+
+%-------------------- Ejemplo 8.7
+\begin{ejem}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución normal con una función de densidad de probabilidad
+    $$f(x;\mu,\sigma^2)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^2}{2\sigma^2}}.$$
+    Determinar los estimadores de $\mu$ y $\sigma^2$.\\\\
+	Respuesta.-\; Para este problema se procederá de la misma forma que en el caso de un solo parámetro. Dado que la función de verosimilitud depende tanto de $\mu$ como de $\sigma^2$, los estimadores MV de $\mu$ y $\sigma^2$ son los valores para los cuales la función de verosimilitud tiene un valor máximo. De acuerdo con lo anterior
+	$$
+	\begin{array}{rcl}
+	    L(x_1,x_2,\ldots,x_n;\mu,\sigma^2) &=& \dfrac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x_1-\mu)^2}{2\sigma^2}}\cdots e^{\frac{-(x_n-\mu)^2}{2\sigma^2}}\\\\
+					       &=& \left(2\pi \sigma^2\right)^{-\frac{n}{2}}e^{-\frac{1}{2\sigma^2}\sum\limits_{i=1}^n(x_i-\mu)^2},
+	\end{array}
+	$$
+	y
+	$$\ln \left[L\left(x_1,x_2,\ldots,x_n;\mu,\sigma^2\right)\right]=-\dfrac{n}{2}\ln (2\pi)-\dfrac{n}{2}\ln \left(\sigma^2\right)-\dfrac{1}{2\sigma^2}\sum_{i=1}^n (x_i-\mu)^2.$$
+
+	Después de obtener las primeras derivadas parciales con respecto a $\mu$ y con respecto a $\sigma^2$ e ingualándolas a cero, se tiene 
+	$$\dfrac{\partial\left[\ln L\left(\mu,\sigma^2\right)\right]}{\partial \mu}=-\dfrac{2}{2\sigma^2}\sum_{i=1}^n (x_i-\mu)=0$$
+	y
+	$$\dfrac{\partial\left[\ln L\left(\mu,\sigma^2\right)\right]}{\partial \sigma^2}=-\dfrac{n}{2\sigma^2}+\dfrac{1}{2\sigma^4}\sum_{i=1}^n (x_i-\mu)^2=0.$$
+	Resolviendo la primera ecuación para $\mu$, sustituyendo este valor en la segunda y resolviendo para $\sigma^2$, se tiene
+	$$\hat{\mu}=\sum_{i=1}^n \dfrac{x_i}{n}=\overline{x}$$
+	y
+	$$\hat{\sigma}^2 = \sum_{i=1}^n \dfrac{\left(x_i-\overline{x}\right)^2}{n}.$$
+\end{ejem}
+
+Si tomamos la segunda derivada notaremos que estos valores maximizan la función de verosimilitud, ellos son los estimadores MV de $\mu$ y $\sigma^2$.\\
+
+Notemos que se ha introducido la acostumbrada notación de sombrero, $\hat{\cdot}$ , para denotar un estimador MV. También notemos que el estimador MV de $\sigma^2$ es sesgado, confirmándose de esta manera un comentario anterior en el sentido en el que los estimadores MV no necesariamente son insesgados.\\
+
+El método de máxima verosimilitud posee otra propiedad deseable conocida como propiedad de invarianza. Sea $\hat{\theta}=u(X_1,X_2,\ldots,X_n)$ el estimador de máxima verosimilitud de $\theta$. Si $g(\theta)$ es una función univaluada de $\theta$. Por ejemplo, dado que, cuando se muestrea una distribución normal, el estimador MV de $\sigma^2$ es
+$$\hat{\sigma}^2 = \dfrac{1}{n}\sum_{i=1}^n \left(x_i-\overline{x}\right)^2,$$
+por la propiedad de invarianza, el estimador MV de la desviación estándar $\sigma$ es
+$$\hat{\sigma}=\left[\dfrac{1}{n}\sum_{i=1}^n (x_i-\overline{x})^2\right]^{\frac{1}{2}}.$$
+Como ejemplo adicional de la propiedad de invarianza, el estimador MV de la función de confiabilidad Weibull es
+$$\hat{R}(t)=e^{-\frac{t}{\hat{\theta}}^\alpha}$$
+donde $\hat{t\theta}$ es el estimador MV del parámetro de escalar $\theta$.
+
+
+\section{Método de los momentos}

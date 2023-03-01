@@ -45,7 +45,7 @@
 
 %-------------------- 2.8 Definición
 \begin{mydef}[Spans]\,\\\\
-    Si $\span(v_1,\ldots,v_m)$ es igual a $V$, decimos que $v_1,\ldots, v_m$ se extiende sobre $V$.
+    Si $\span(v_1,\ldots,v_m)$ es igual a $V$, decimos que $v_1,\ldots, v_m$ genera $V$.
 \end{mydef}
 
 \setcounter{mydef}{9}
@@ -395,7 +395,40 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 	Dado que $a_i=b_i=0$, ya que $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son linealmente independientes. Concluimos que, $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
 
     %------------------- 10.
-    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $W\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente independiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
-	Demostración.-\;
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $W\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente dependiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
+	Demostración.-\; Por definición de dependencia lineal. Existen $a_1,\ldots a_m \in \textbf{F}$, no todos $0$, tal que 
+	$$a_1(v_1+w)+a_2(v_2+w)+\ldots+a_m(v_m+w)=0.$$
+	De donde,
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m=-(a_1+a_2+\ldots+a_m)w. \qquad \qquad (1)$$
+	Dado que $v_1,\ldots,v_m$ es linealmente independiente, entonces existen escalares $t_i,\ldots,t_m\in \textbf{F}$, $\forall t_i=0$, de modo que
+	$$t_1v_1+t_2v_2+\ldots+t_mv_m=0$$
+	Pero, notemos para $a_i\neq 0$, que
+	$$a_1v_1+t_2+\ldots+a_mv_m\neq 0$$
+	En consecuencia por (1)
+	$$-(a_1+a_2+\ldots+a_m)w\neq 0.$$
+	Así,
+	$$w=-\frac{1}{a_1+a_2+\ldots+a_m}(a_1v_1+a_2v_2+\ldots+a_mv_m)\in \span(v_1,\ldots,v_m).$$\\
+
+    %------------------- 11.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que $v_1,\ldots,v_m$, $w$ es linealmente independiente si y sólo si 
+    $$w\neq \span(v_1,\ldots,v_m).$$\\
+	Demostración.-\; Supongamos que $w\in \span(v_1,\ldots,v_m)$. Entonces,
+	$$w=a_1v_1+\ldots+a_mv_m.$$
+	De donde,
+	$$a_1v_1+\ldots+a_mv_m-w=0\quad \Rightarrow \quad a_1v_1+\ldots+a_mv_m+(-1)w=0.$$
+	Por lo tanto, $v_1,\ldots,v_m,w$ es linealmente dependiente.\\
+
+	Por otro lado: $v_1,\ldots,v_m,w$ es linealmente independiente, entonces existe $a_1,\ldots,a_m,b\in \textbf{F}$, $\forall a_i=0$, tal que
+	$$a_1v_1+\ldots+a_mv_m+bw=0.$$
+	Dado que $b=0$, no se puede escribir $w$ como combinación lineal de $v_1,\ldots,v_m$. Es decir,
+	$$w=\dfrac{1}{0}(a_1v_1+\ldots+a_mv_m),$$
+	lo que es imposible. De esta manera
+	$$w\neq \span(v_1,\ldots,v_m).$$\\
+
+
+    %------------------- 12.
+    \item Explique por qué no existe una lista de seis polinomios que sea linealmente independiente en $\mathcal{P}_4(\textbf{F})$.\\\\
+	Respuesta.-\;
+
 
 \end{enumerate}
