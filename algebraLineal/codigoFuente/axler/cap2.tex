@@ -134,7 +134,7 @@ El razonamiento anterior muestra que $v_1,\ldots,v_m$ es linealmente independien
     Suponga $v_1,\ldots,v_m$ es una lista linealmente dependiente en $V$. Entonces, existen $j\in\left\{1,2,\ldots,m\right\}$ tal que se cumple lo siguente:
     \begin{enumerate}[(a)]
 	\item $v_j\in \span(v_1,\ldots,v_{j-1});$
-	\item Si el $j$ésimo término se elimina de $v_1,\ldots,v_m$, el span de la lista restante es igual a $\span(v_1,\ldots,v_m)$.\\
+	\item Si el j-ésimo término se elimina de $v_1,\ldots,v_m$, el generador de la lista restante es igual a $\span(v_1,\ldots,v_m)$.\\
     \end{enumerate}
     Demostración.-\; Ya que la lista $v_1,\ldots,v_m$ es linealmente dependiente, existe números $a_1,\ldots,a_m\in \textbf{F}$, no todos $0$, tal que
     $$a_1v_1+\cdots + a_mv_m=0.$$
@@ -146,11 +146,13 @@ El razonamiento anterior muestra que $v_1,\ldots,v_m$ es linealmente independien
     En la ecuación de arriba, podemos reemplazar $v_j$ con el lado derecho de (1), lo que muestra que $u$ está en el span de la lista obtenida al eliminar el j-ésimo término de $v_1,\ldots,v_m$. Así (b) se cumple.
 \end{mylema}
 
-Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, porque si $j=1$ entonces la condición (a) anterior se interpreta como que $v_1\in \span()$. Recuerde que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.
+Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, porque si $j=1$ entonces la condición (a) anterior se interpreta como que $v_1\in \span()$. Recuerde que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.\\
+
+Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente independiente en $V$ es más larga que una lista generadora en V.
 
 \setcounter{myteo}{22}
-%-------------------- 2.23 Definición
-\begin{myteo}[Longitud de la lista linealmente independiente es  $\boldmath \leq$ a la longitud de la lista que genera]\;\\\\
+%-------------------- 2.23 teorema
+\begin{myteo}[La longitud de la lista linealmente independiente es  $\boldmath \leq$ que  la longitud de la lista que genera]\;\\\\
     En un espacio vectorial finito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
     Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_n$ generan $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
 
@@ -402,8 +404,8 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 	$$a_1v_1+a_2v_2+\ldots+a_mv_m=-(a_1+a_2+\ldots+a_m)w. \qquad \qquad (1)$$
 	Dado que $v_1,\ldots,v_m$ es linealmente independiente, entonces existen escalares $t_i,\ldots,t_m\in \textbf{F}$, $\forall t_i=0$, de modo que
 	$$t_1v_1+t_2v_2+\ldots+t_mv_m=0$$
-	Pero, notemos para $a_i\neq 0$, que
-	$$a_1v_1+t_2+\ldots+a_mv_m\neq 0$$
+	Es único. Así pues notemos, para $a_i\neq 0$ que
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m\neq 0$$
 	En consecuencia por (1)
 	$$-(a_1+a_2+\ldots+a_m)w\neq 0.$$
 	Así,
@@ -428,7 +430,32 @@ Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, p
 
     %------------------- 12.
     \item Explique por qué no existe una lista de seis polinomios que sea linealmente independiente en $\mathcal{P}_4(\textbf{F})$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Notemos que $1,z,z^2,z^3,z^4$ genera $\mathcal{P}_4(\textbf{F})$. Pero por el teorema 1.23 [Axler, Linear Algebra], la longitud de la lista linealmente independiente es menor o igual que la longitud de la lista que genera. Es decir, cualquier lista linealmente independiente no tiene más de $5$ polinomios.\\\\
 
+    %------------------- 13.
+    \item Explique por qué ninguna lista de cuatro polinomios genera $\mathcal{P}_4 (\textbf{F})$.\\\\
+	Respuesta.-\; Sea $V$ un espacio vectorial de dimensión finita. Si $m$ vectores genera $V$ y si tenemos un conjunto de $n$ vectores linealmente independientes, entonces $n\leq m$. Es decir, el número de vectores en un conjunto linealmente independiente de $V$, no puede se mayor que el número de vectores en un conjunto generador de $V$.\\
+	Por ejemplo, si cuatro polinomios podrían generar $P_4(\textbf{F})$. Entonces, por la definición de arriba, cualquier conjunto de polinomios linealmente independientes en $P_4(\textbf{F})$ podría tener cómo máximo cuatro vectores. Sin embargo, el conjunto $1,z,z^2,z^3,z^4$ tiene cinco polinomio linealmente independientes en $P_4(\textbf{F})$. Por lo tanto, es imposible que cualquier conjunto de cuatro polinomios genere $P_4(\textbf{F})$.\\\\
+
+    %------------------- 14.
+    \item Demuestre que $V$ es de dimensión infinita, si y sólo si existe una secuencia $v_1,v_2,\ldots,$ de vectores en $V$ tal que $v_1,\ldots,v_m$ es linealmente independiente para cada entero positivo $m$.\\\\
+	Demostración.-\; Supongamos que $V$ es de dimensión infinita. Queremos producir una secuencia de vectores $v_1,v_2,\ldots,$ tal que $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Necesitamos mostrar que para cualquier $k\in \textbf{N}$ y un conjunto de vectores linealmente independientes $v_1,v_2,\ldots$ podemos definir un vector $v_{k+1}$ tal que $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente. Si podemos probar esto, entonces significará que podemos continuar sumando vectores indefinidamente a conjuntos linealmente independientes de modo que los conjuntos resultantes también sean linealmente independientes. Esto nos dará una secuencia de vectores $v_1,v_2,\ldots$, cuyo subconjunto finito es linealmente independiente.\\
+
+	Sea $v_1,v_2,\ldots,v_k$ un conjunto linealmente independiente en $V$. Ya que $V$ es de dimensión finita, no puede generado por un conjunto finito de vectores. Por lo tanto, $V\neq \span(v_1,v_2,\ldots,v_k)$. Sea $v_{k+1}$ tal que $v_{k+1}\notin \span(v_1,v_2,\ldots,v_k)$. Entonces, por el ejercicio 11 $\left[\right.$ Axler, Linear Algebra, que nos dice: Si $v:1, \ldots, v_m$ es linealmente independiente en $V$ y $w \in V$, el conjunto  $v_1,\ldots,v_m, w$ es linealmente independiente si y sólo si $w \neq \span(v_1,\ldots, v_m) \left.\right]$. El conjunto $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente.\\\\
+	Por otro lado, sea $v_1,v_2,\ldots,v_n$ un conjunto generador de $V$. Entonces, por el teorema 1.23 [Axler, Linear Algebra], cualquier conjunto de vectores linealmente independiente en $V$ pueden tener por lo más $n$ vectores. De esto modo, cualquier conjunto que tenga $n+1$ o más vectores es linealmente dependiente. Así, si $V$ es de dimensión finita, entonces no podemos tener una secuencia de vectores $v_1,v_2,\ldots$ tal que, para cada $m$, el subconjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente. Tomando su recíproca, podemos decir que si existe una secuencia de vectores $v_1,v_2,\ldots$ tal que el conjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Entonces, $V$ es de dimensión infinita. Lo que completa de demostración.\\\\
+
+    %------------------- 15.
+    \item Demostrar que $\textbf{F}^\infty$ es de dimensión infinita.\\\\
+	Demostración.-\; Sea un elemento $e_m\in \textbf{F}^\infty$ como el elemento que tiene la coordenada m-ésima igual a $1$ los demás elementos iguala a $0$. Es decir,
+	$$(0,1,0,\ldots,0)$$
+	Ahora, si varía $m$ sobre el conjunto de los números naturales, entonces tenemos una secuencia $e_1,e_2,\ldots$ en $\textbf{F}^\infty$, si y sólo si podemos probar que $e_1,e_2,\ldots,e_m$ es linealmente independiente para cada $m$. Con este fin, sea
+	$$a_1e_1+a_2e_2+\ldots+a_me_m=0$$
+	De donde,
+	$$(a-1,a_2,\ldots,a_m,0,0,\ldots,0)=(0,0,\ldots,0)$$
+	Inmediatamente implica que $a_i's=0$ y por lo tanto, $e_i's$ son linealmente independiente.\\\\
+
+    %------------------- 16.
+    \item Demostrar que el espacio vectorial real para todos las funciones de valor real continuas en el intervalo $[0,1]$ es de dimensión infinita.\\\\
+	Demostración.-\;
 
 \end{enumerate}
