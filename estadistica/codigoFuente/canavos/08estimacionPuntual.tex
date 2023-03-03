@@ -221,7 +221,17 @@ por la propiedad de invarianza, el estimador MV de la desviación estándar $\si
 $$\hat{\sigma}=\left[\dfrac{1}{n}\sum_{i=1}^n (x_i-\overline{x})^2\right]^{\frac{1}{2}}.$$
 Como ejemplo adicional de la propiedad de invarianza, el estimador MV de la función de confiabilidad Weibull es
 $$\hat{R}(t)=e^{-\frac{t}{\hat{\theta}}^\alpha}$$
-donde $\hat{t\theta}$ es el estimador MV del parámetro de escalar $\theta$.
+donde $\hat{\theta}$ es el estimador MV del parámetro de escalar $\theta$.
 
 
-\section{Método de los momentos}
+\subsection{Método de los momentos}
+
+%-------------------- Definición 8.7
+\begin{def.}
+    Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución con función (densidad) de probabilidad $f(x;\theta)$. El r-ésimo momento alrededor de cero se define como
+    $$M_r'=\dfrac{1}{n}\sum_{i=1}^n X_i^r.$$
+\end{def.}
+
+El método de los momentos proporciona una alternativa razonable cuando no se pueden determinar los estimadores de máxima verosimilitud. Recuérdese que los parámetros son, en general, funciones de los momentos teóricos. En esencia, el método se implementa igualando tantos momentos muestrales con los correspondientes momentos teóricos tantas veces como sea necesario para determinar un estimador de momentos para un parámetro desconocido.
+
+\subsection{Estimación por máxima verosimilitud para muestras censuradas}

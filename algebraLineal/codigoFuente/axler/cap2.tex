@@ -456,6 +456,38 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 
     %------------------- 16.
     \item Demostrar que el espacio vectorial real para todos las funciones de valor real continuas en el intervalo $[0,1]$ es de dimensión infinita.\\\\
-	Demostración.-\;
+	Demostración.-\; Por el ejercicio 14 (Axler, Linear Algebra, 2A), tenemos que encontrar una secuencia linealmente independiente de funciones continuas en $[0,1]$. Observe que los monomiales $1,x,x^2,\ldots,x^n,\ldots$ son funciones continuas en $[0,1]$. Ahora, debemos demostrar que $1,x,x^2,\ldots,x^m$ es linealmente independiente en cada $m$. Para ello, sea $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$, donde $0$ es el cero polinomial. Lo que significa que $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$ toma el valor cero en todo el intervalo $[0,1]$. Esto implica que cada punto en $[0,1]$ es una raíz del polinomio. Pero, ya que cada polinomio no trivial tiene como máximo un número finito de raíces, esto es imposible a menos que todos los $a_i'$s sean cero. Lo que muestra que $1,x,x^2,\ldots,x^m$ es linealmente independiente para cada $m\in \textbf{N}$. Por lo tanto, el conjunto de funciones continuas en $[0,1]$ es de dimensión infinita.\\\\
+
+    %------------------- 17.
+    \item Suponga $p_0,p_1,\ldots,p_m$ son polinomios en $\mathcal{P}_m(\textbf{F})$ tal que $p_j(2)=0$ para cada $j$. Demostrar que $p_0,p_1,\ldots,p_m$ no es linealmente independiente en $\mathcal{P}_m(\textbf{F})$.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
+
+
+\mysection{Bases}
+
+\setcounter{mydef}{26}
+%------------------- Definición 2.27
+\begin{mydef}[Base]\;\\\\
+    Una base de $V$ es una lista de vectores in $V$ que es linealmente independiente y genera $V$.
+\end{mydef}
+
+%------------------- teorema 2.29
+\begin{myteo}[Criterio de base]\;\\\\
+    Una lista $v_1,\ldots,v_n$ de vectores en $V$ es una base de $V$ si y sólo si cada $v\in V$ puede escribirse unívocamente de la forma 
+    $$v=a_1v_1+\cdots+a_nv_n.$$
+    donde $a_1,\ldots,a_n\in \textbf{F}$.\\\\
+	Demostración.-\; Primero suponga que $v_1,\ldots,v_n$ es una base de $V$. Ya que, $v_1,\ldots,v_n$ genera $V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que $v=a_1v_1+\cdots+a_nv_n$ se cumple. Para mostrar que esta representación es única, sean $c_1,\ldots,c_n$ escalares tales que, también tenemos
+	$$v=c_1v_1+\cdots+c_nv_n.$$
+	Sustrayendo la primera ecuación de la segunda, tenemos
+	$$0=(a_1-c_1)v_1+\cdots+(a_n-c_n)v_n.$$
+	Esto implica que cada $a_j-c_j$ es igual a cero. (Ya que, $v_1,\ldots,v_n$ es linealmente independiente). Por lo tanto $a_1=c_1,\ldots,a_n=c_n$. Así, tenemos la unicidad deseada.\\
+
+	Por otro lado, suponga que cada $v\in V$ puede ser escrita de manera única como la forma $v=a_1v_1+\cdots+a_nv_n$. Claramente esto implica que $v_1,\ldots,v_n$ genera $V$. Para demostrar que $v_1,\ldots,v_n$ es linealmente independiente, suponga que $a_1,\ldots,a_n\in \textbf{F}$ son tales que
+	$$0=a_1v_1+\cdots+a_nv_n.$$
+	La unicidad de la representación de $v=a_1v_1+\cdots+a_nv_n$ (tomando $v=0$) implica que $a_1=\cdots=a_n=0$. Así, $v_1,\dots,v_n$ es linealmente independiente y por tanto es una base de $V$.
+\end{myteo}
+
+
+

@@ -1187,6 +1187,42 @@ Este corolario permite definir la dimensión de un espacio vectorial de dimensi�
 
     %-------------------- 1.
     \item Demostrar que si dos vectores son linealmente dependientes, uno de ellos es un múltiplo escalar del otro.\\\\
-	Demostración.-\;
+	Demostración.-\; Sean $v_1$ and $v_2$ don vectores linealmente dependientes en $V$. Por definición, existen escalares $a_1$ y $a_2$ ambos no cero tal que
+	$$a_1v_1+a_2v_2=0.$$
+	Si $a_1\neq 0$, entonces podemos escribir la ecuación anterior como
+	$$v_1=-\frac{a_2}{a_1}v_2.$$
+	Por lo que $v_1$ es un múltiplo escalar de $v_2$.\\\\
+
+    %-------------------- 2.
+    \item ¿Son los vectores
+    $$\alpha_1=(1,1,2,4),\quad \alpha_2=(2,-1,-5,2),\quad \alpha_3=(1,-1,-4,0),\quad \alpha_4=(2,1,1,6)$$
+    linealmente independientes?\\\\
+	Respuesta.-\; Sean, los escalares $a,b,c,d\in \textbf{F}$, entonces
+	$$
+	\begin{array}{rcl}
+	    a(1,1,2,4)+b(2,-1,-5,2)+c(1,-1,-4,0)+d(2,1,1,6) &=& 0\\\\
+	    (a+2b+c+2d,a-b-c+d,2a-5b-4c+d,4a+2b+6d) &=& 0.
+	\end{array}
+	$$
+	De donde,
+	$$
+	\left\{
+	    \begin{array}{rcl}
+		a+2b+c+2d &=& 0\\\\
+		a-b-c+d &=& 0\\\\
+		2a-5b-4c+d &=& 0\\\\
+		4a+2b+6d &=& 0.
+	    \end{array}
+	\right.
+	$$
+	Resolviendo, tenemos 
+	$$a=\dfrac{c-4d}{3},\quad b=\dfrac{-2c-d}{3}.$$
+	Supongamos que $c=d=1$. Entonces, 
+	$$a=b=-1.$$
+	Dado que $a,b,c,d\in \textbf{F}$ son distintos de cero, concluimos que los vectores dados no son linealmente independientes.\\\\ 
+
+    %-------------------- 3.
+    \item Hallar una base para el subespacio de $R^4$ generado por los cuatro vectores del Ejercicio 2.\\\\
+	Respuesta.-\; 
 
 \end{enumerate}
