@@ -178,6 +178,7 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 	Después de cada paso, mientras continúa el proceso, hemos construido una lista de vectores tal que ningún vector en esta lista está en el generador de los vectores anteriores. Así, después de cada paso hemos construido una lista linealmente independiente, por el lema de dependencia lineal (2.21). Esta lista linealmente independiente no puede ser más grande que cualquier lista de expansión de $V$ (por 2,23). Por lo tanto, el proceso eventualmente termina, lo que significa que $U$ es de dimensión finita.
 \end{myteo}
 
+\vspace{.5cm}
 
 \setcounter{mysection}{0}
 \mysection{Ejercicios}
@@ -460,9 +461,16 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 
     %------------------- 17.
     \item Suponga $p_0,p_1,\ldots,p_m$ son polinomios en $\mathcal{P}_m(\textbf{F})$ tal que $p_j(2)=0$ para cada $j$. Demostrar que $p_0,p_1,\ldots,p_m$ no es linealmente independiente en $\mathcal{P}_m(\textbf{F})$.\\\\
-	Demostración.-\; 
-
+	Demostración.-\; Supondremos que $p_0,p_1,\ldots.p_m$ es linealmente independiente. Demostraremos que esto  implica que $p_0,p_1,\ldots,p_m$ genera $\mathcal{P}_m(\textbf{F})$. Y que esto a su vez conducirá a una contradicción al construir explícitamente un polinomio que no está en este generador.
+	Notemos que la lista $1,z,\ldots,z^{m+1}$ genera $\mathcal{P}_m(\textbf{F})$ y tiene longitud $m+1$. Por lo tanto, cada lista linealmente independiente debe tener una longitud $m+1$ o menos (2.23). Si $\span(p_0,p_1,\ldots,p_m)\neq \mathcal{P}_m(\textbf{F})$, existe algún $p\notin \span(p_0,p_1,\ldots,p_m)$, de donde la lista $p_0,p_1,\ldots,p_m,p$ es linealmente independiente de longitud $m+2$, lo que es una contradicción. Por lo que $\span(p_0,p_1,\ldots,p_m)=\mathcal{P}_m(\textbf{F})$.\\
+	Ahora definamos el polinomio $q=1$. Entonces $q\in \span(p_0,p_1,\ldots,p_m)$, de donde existe $a_0,\ldots,a_m\in \textbf{F}$ tal que
+	$$q=a_0p_0+a_1p_1+\cdots+a_mP_m,$$
+	lo que implica
+	$$q(2)=a_0p_0(2)+a_1p_1(2)+\cdots+a_mP_m(2).$$
+	Pero esto es absurdo, ya que $1=0$. Por lo tanto, $p_0,p_1,\ldots,p_m$ no puede ser linealmente independiente.\\\\
 \end{enumerate}
+
+\vspace{1cm}
 
 
 \mysection{Bases}
@@ -470,7 +478,7 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 \setcounter{mydef}{26}
 %------------------- Definición 2.27
 \begin{mydef}[Base]\;\\\\
-    Una base de $V$ es una lista de vectores in $V$ que es linealmente independiente y genera $V$.
+    Una base de $V$ es una lista de vectores en $V$ que es linealmente independiente y genera $V$.
 \end{mydef}
 
 %------------------- teorema 2.29
@@ -489,5 +497,73 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 	La unicidad de la representación de $v=a_1v_1+\cdots+a_nv_n$ (tomando $v=0$) implica que $a_1=\cdots=a_n=0$. Así, $v_1,\dots,v_n$ es linealmente independiente y por tanto es una base de $V$.
 \end{myteo}
 
+Una lista generadora en un espacio vectorial puede no ser una base, ya que no es linealmente independiente. Nuestro próximo resultado dice que dada cualquier lista generadora, algunos (posiblemente ninguno) de los vectores en ella pueden descartarse para que la lista restante sea linealmente independiente y aún genere el espacio vectorial.
+
+\setcounter{myteo}{30}
+%------------------- teorema 2.31
+\begin{myteo}[La lista generadora contiene un base]\,\\\\
+    Cada lista generadora en un espacio vectorial se puede reducir a una base del espacio vectorial.\\\\
+	Demostración.-\; Suponga que $v_1,\ldots,v_n$ genera $V$. Queremos eliminar algunos de los vectores de  $v_1,\ldots,v_n$ para que los vectores restantes formen una base de $V$. \\
+	Sea $B=v_1,\ldots,v_n$, de donde realizamos un bucle con las siguientes condiciones:
+	\begin{enumerate}[\textbf{Paso} 1.]
+	    \item Si $v_1=0$, eliminamos $v_1$ de $B$. Si $v_1\neq 0$ entonces no cambiamos $B$.
+	    \item Si $v_j$ esta en $\span(v_1,\ldots,v_{j-1})$, eliminamos $v_j$ de $B$. Si $v_j$ no está en $\span(v_1,\ldots,v_j)$, entonces no cambiamos $B$ (lema 2.21). 
+	\end{enumerate}
+	Paramos el proceso después del paso $n$, obteniendo una lista $B$. Esta lista $B$ genera $V$, ya que nuestra lista original generó $V$ y hemos descartado solo los vectores que ya estaban en el generador de los vectores anteriores. El proceso garantiza que ningún vector de $B$ está en el generador de los anteriores. Así pues, $B$ es linealmente independiente, por el lema de dependencia lineal (2.21). Por tanto, $B$ es una base de $V$.
+\end{myteo}
+
+Nuestro siguiente resultado, un corolario fácil del resultado anterior, nos dice que todo espacio vectorial de dimensión finita tiene una base.
+
+\setcounter{mycor}{31}
+%------------------- corolario 2.32
+\begin{mycor}[Base del espacio vectorial de dimensión finita]\,\\\\
+    Cada espacio vectorial de dimensión finita tiene una base.\\\\
+	Demostración.-\; Por definición, un espacio vectorial de dimensión finita tiene una lista generadora. El resultado anterior nos dice que cada lista generadora puede ser reducida a una base.
+\end{mycor}
+
+Nuestro siguiente resultado es en cierto sentido un derivado de 2.31, que decía que toda puede reducirse a una base. Ahora mostramos que dada cualquier lista linealmente independiente, podemos unir algunos vectores adicionales (esto incluye la posibilidad de no unir ningún vector adicional) de modo que la lista ampliada siga siendo linealmente independiente pero que también genere el espacio.
+
+\setcounter{myteo}{32}
+%------------------- teorema 2.33
+\begin{myteo}[Una lista linealmente independiente se extiende a una base]\,\\\\
+    Cada lista linealmente independiente de vectores en un espacio vectorial se puede extender a una base del espacio vectorial.\\\\
+	Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en un espacio vectorial $V$ de dimensión finita. Sea $w_1,\ldots,w_n$ una base de $V$. Por lo que la lista
+	$$u_1,\ldots,u_m,\; w_1,\ldots.w_n$$
+	genera $V$. Aplicando el procedimiento de la prueba de 2.31 para reducir esta lista a una base de $V$ se obtiene una base formada por los vectores $u_1, \ldots , u_m$ (ninguna de las $u's$ se elimina en este procedimiento porque $u_1,\ldots, u_m$ es linealmente independiente) y algunos de los $w'$.
+\end{myteo}
+
+Como aplicación del resultado anterior, mostramos ahora que cada subespacio de un espacio vectorial de dimensión finita puede emparejarse con otro subespacio para formar una suma directa de todo el espacio.
+
+%------------------- teorema 2.34
+\begin{myteo}[Cada subespacio de \boldmath$V$ forma parte de una suma directa igual a \boldmath$V$]\;\\\\
+    Suponga $V$ es de dimensión finita y $U$ es un subespacio de $V$. Entonces, existe un subespacio $W$ de $V$ tal que $U\oplus W=V$.\\\\
+	Demostración.-\; Ya que $V$ es de dimensión finita, también lo es $U$ por 2.26. Por lo que, existe una base $u_1,\ldots,u_m$ de $U$ esto por 2.32. Por su puesto $u_1,\ldots,u_m$ es una lista linealmente independiente de vectores en $V$. Por lo tanto, esta lista puede extenderse a una base $u_1,\ldots,u_n$ de $V$ esto por 2.33. Sea $W=\span(w_1,\ldots,w_n)$. Para probar que $V=U\oplus W,$ por 1.45, solo Necesitamos demostrar que
+	$$V=U+W \quad \mbox{y}\quad U\cap W=\left\{0\right\}.$$
+	Para probar la primera ecuación, suponga $v\in V$. Entonces, ya que la lista $u_1,\ldots,u_m$, $w_1,\ldots,w_n$ genera $V$, existe $a_1,\ldots,a_m$, $b_1,\ldots,b_n\in \textbf{F}$ tal que
+	$$v=a_1u_1+\cdots+a_mu_m+b_1w_1+\cdots+b_nw_n.$$
+	En otras palabras, tenemos $v=u+w$, donde $u\in U$ y $w\in W$ fueron definidas anteriormente. Así, $v\in U+W$, completando la prueba de $V=W+W$.\\
+	Para demostrar que $U\cap W=\left\{0\right\}$, suponga $v\in U\cap W$. Entonces, existe escalares $a_1,\ldots,a_m$, $b_1,\ldots,b_n\in \textbf{F}$ tal que
+	$$v=a_1u_1+\cdots+a_mu_m=b_1w_1+\cdots+b_nw_n.$$
+	Por lo tanto,
+	$$a_1u_1+\cdots+a_mu_m-b_1w_1-\cdots-b_nw_n=0.$$
+	Esto, ya que $u_1,\ldots,u_m$, $w_1,\ldots,w_n$ son linealmente independientes, esto implica que $a_1=\cdots=a_m=b_1=\cdots=b_n=0$. Así, $v=0$, de donde $U\cap W= \left\{0\right\}$.
+\end{myteo}
+
+\vspace{.5cm}
 
 
+
+\setcounter{mysection}{1}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item Halle todos los espacios vectoriales que tienen exactamente una base.\\\\ 
+	Respuesta.-\;
+
+    %------------------- 2.
+    \item Verifique todas las afirmaciones del ejemplo 2.28.\\\\
+	Respuesta.-\;
+
+\end{enumerate}
