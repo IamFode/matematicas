@@ -152,7 +152,7 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 
 \setcounter{myteo}{22}
 %-------------------- 2.23 teorema
-\begin{myteo}[La longitud de la lista linealmente independiente es  $\boldmath \leq$ que  la longitud de la lista que genera]\;\\\\
+\begin{myteo}[La longitud de la lista linealmente independiente es  $\boldmath \leq$ que  la longitud de la lista generadora]\;\\\\
     En un espacio vectorial finito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
     Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_n$ generan $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
 
@@ -552,7 +552,6 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 \vspace{.5cm}
 
 
-
 \setcounter{mysection}{1}
 \mysection{Ejercicios}
 
@@ -560,10 +559,91 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 
     %------------------- 1.
     \item Halle todos los espacios vectoriales que tienen exactamente una base.\\\\ 
-	Respuesta.-\;
+	Respuesta.-\; Afirmamos que solo el espacio vectorial trivial tiene exactamente una base. Para ello demostraremos que para espacios vectorial de dimensión finita e infinita se tiene más de una base.\\
+	Consideremos un espacio vectorial de dimensión finita. Sea $V$ un espacio vectorial no trivial con base $v_1,\ldots,v_n$. Decimos que para cualquier $c\in \textbf{F}$, la lista $cv_1,\ldots,cv_n$ es también una base. Es decir, la lista es aún linealmente independiente, y es aún generador de $V$. Luego, sea $u\in V$ ya que $v_1,\ldots,v_n$ genera $V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que
+	$$u=a_1v_1+\cdots+a_nv_n.$$
+	De donde, podemos escribir
+	$$u=\dfrac{a_1}{c}(cv_1)+\cdots+\dfrac{a_n}{c}(cv_n)$$
+	y así $cv_1,\ldots,cv_n$ genera también $V$. Por lo tanto, tendremos más de una base para todo espacio vectorial de dimensión finita.\\
+	Por otro lado. Sea $W$ un espacio vectorial de dimensión infinita con base $w_1,w_2,\ldots$. Para cualquier $c\in \textbf{F}$, la lista $cw_1,cw_2,\ldots$ es también una base. Claramente la lista es linealmente independiente, y también genera $V$. Luego, sea $u\in V$, ya que $w_1,w_2,\ldots$ genera $W$, existe $a_1,a_2,\ldots\in \textbf{F}$ tal que
+	$$u=a_1w_1+a_2w_2+\cdots$$
+	De donde, podemos escribir
+	$$u=\dfrac{a_1}{c}cw_1+\dfrac{a_2}{c}cw_2+\cdots$$
+	y así $cw_1,cw_2,\ldots$ genera también $W$. Por lo tanto, tendremos más de una base para todo espacio vectorial de dimensión infinita.\\\\
+
 
     %------------------- 2.
-    \item Verifique todas las afirmaciones del ejemplo 2.28.\\\\
-	Respuesta.-\;
+    \item Verifique todas las afirmaciones del ejemplo 2.28.\\
+	\begin{enumerate}[(a)]
+
+	    \item La lista $(1,0,\ldots,0)$, $(0,1,0,\ldots,0)$, $\ldots$, $(0,\ldots,0,1)$ es una base de $\textbf{F}^n$, llamado la base estándar de $\textbf{F}^n$.\\\\
+		Respuesta.-\; Primero demostraremos que la lista genera $\textbf{F}^n$.  Sea, los escalares $x_1,x_2,\ldots,x_n$ en $\textbf{F}$. Podemos escribir
+		$$x_1(1,0,\ldots,0)+x_2(0,1,0,\ldots,0)+\cdots+x_n(0,\ldots,0,1)=\left(x_1,x_2,\ldots,x_n\right).$$
+		Donde, $(x_1,x_2,\ldots,x_n)$ es un vector cualquier en $\textbf{F}^n$. Esta expresión es una combinación lineal de los $n$ vectores. Por definición, esta lista genera $\textbf{F}^n$.\\
+		Ahora, demostraremos que la lista es linealmente independiente. Para ello, aplicaremos la definición. Sea $a_1,a_2,\ldots,a_n\in \textbf{F}$, entonces
+		$$a_1(1,0,\ldots,0)+a_2(0,1,0,\ldots,0)+\cdots+a_n(0,\ldots,0,1)=0.$$
+		Esto implica que
+		$$(a_1,a_2,\ldots,a_n)=(0,0,\ldots,0).$$
+		Por lo que $a_1=a_2=\cdots=a_n=0$. Así, la lista es linealmente independiente.\\\\
+
+	    \item  La lista $(1,2),(2,5)$ es una base de $\textbf{F}^2$.\\\\
+		Respuesta.-\; Sea $(a,b)\in \textbf{F}^2$. Buscaremos escalares $c_1,c_2$ tal que
+		$$c_1v_1+c_2v_2=(a,b).$$
+		que implica,
+		$$c_1(1,2)+c_2(3,5)=(a,b)\quad \Rightarrow \quad (c_1+3c_2,2c_1+5c_2)=(a,b)$$
+		De donde, podemos construir un sistema de ecuaciones
+		$$
+		\begin{array}{rcl}
+		    c_1+3c_2&=&a\\
+		    2c_1+5c_2&=&b
+		\end{array}
+		$$
+		Multiplicando por dos la primera ecuación y luego restando la segunda, tenemos
+		$$c_2=2a-b$$
+		Luego, reemplazándola a la primera ecuación, se tiene
+		$$c_1=-5a+3b.$$
+		Por lo tanto, para cada vector $(a,b)\in \textbf{F}^2$ podemos encontrar $c_1,c_2$ en función de $a$ y $b$ tal que $c_1v_1+c_2v_2$ es una combinación lineal el cual genera $\textbf{F}^2$.\\
+		Después, sólo nos haría falta reemplazar en
+		$$c_2=2a-b\quad \mbox{y}\quad c_1=-5a+3b$$
+		$(a,b)=(0,0)$. De donde,
+		$$c_2=0\quad \mbox{y}\quad c_1=0.$$
+		Esto implica que $(1,2)$ y $(2,5)$ son linealmente dependientes. Por lo que concluimos que la lista dada es una base de $\textbf{F}^2$.\\\\
+
+	    \item La lista $(1,2,-4)$, $(7,-5,6)$ es linealmente independiente en $\textbf{F}^3$ pero no es una base en $\textbf{F}^3$, ya que no genera $\textbf{F}^3$.\\\\
+		Respuesta.-\; Sean los escalares  $c_1,c_2\in \textbf{F}$ tal que
+		$$c_1(1,2,-4)+c_2(7,-5,6)=0\quad \Rightarrow\quad (c_1+7c_2,2c_1-5c_2,-4c_1+6c_2)=(0,0,0)$$
+		Por lo que, podemos construir un sistema de ecuaciones
+		$$
+		\begin{array}{rcl}
+		    c_1+7c_2&=&0\\
+		    2c_1-5c_2&=&0\\
+		    -4c_1+6c_2&=&0
+		\end{array}
+		$$
+		Multiplicando la segunda ecuación y sumando la tercera tenemos
+		$$c_2=0$$
+		Luego, sustituyendo en la primera ecuación, 
+		$$c_1=0$$
+		Esto implica que los vectores dados son linealmente independientes.\\
+		Ahora, demostraremos que la lista no genera $\textbf{F}^3$, con un contraejemplo. Supongamos que $(1,2,-4),(7,-5,6)$ puede generar $(1,0,0)$ el cual está en $\textbf{F}^3$. Sea los escalares $c_1,c_2\in \textbf{F}$, entonces 
+		$$c_1(1,2,-4)+c_2(7,-5,6)=(1,0,0)\quad \Rightarrow\quad (c_1+7c_2,2c_1-5c_2,-4c_1+6c_2)=(1,0,0).$$
+		Construimos un sistema de ecuaciones, como sigue
+		$$
+		\begin{array}{rcl}
+		    c_1+7c_2&=&1\\
+		    2c_1-5c_2&=&0\\
+		    -4c_1+6c_2&=&0
+		\end{array}
+		$$
+		De las ecuaciones 2 y 3 se tiene que
+		$$c_1=0,\quad c_2=0$$
+		Reemplazando en la primera ecuación, 
+		$$0+0=1\quad \Rightarrow\quad 0=1.$$
+		Lo que es un absurdo, por lo tanto $(1,2,-4)$, $(7,-5,6)$ no genera $\textbf{F}^3$.\\\\
+
+	    \item La lista $(1,2),(3,5),(4,13)$ genera $\textbf{F}^2$ pero no es una base de $\textbf{F}^2$, ya que no es linealmente independiente.\\\\
+		Respuesta.-\; 
+
+	\end{enumerate}
 
 \end{enumerate}
