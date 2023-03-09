@@ -148,22 +148,36 @@ El razonamiento anterior muestra que $v_1,\ldots,v_m$ es linealmente independien
 
 Eligir $j=1$ en el lema de dependencia lineal anterior, significa que $v_1=0$, porque si $j=1$ entonces la condición (a) anterior se interpreta como que $v_1\in \span()$. Recuerde que $\span()=\left\{0\right\}$. Tenga en cuenta también que la demostración del inciso (b) debe modificarse de manera obvia si $v_i=0$ y $j=1$.\\
 
-Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente independiente en $V$ es más larga que una lista generadora en V.
+Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente independiente en $V$ es más extensa que una lista generadora en V.
 
 \setcounter{myteo}{22}
 %-------------------- 2.23 teorema
-\begin{myteo}[La longitud de la lista linealmente independiente es  $\boldmath \leq$ que  la longitud de la lista generadora]\;\\\\
-    En un espacio vectorial finito, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista de vectores.\\\\
+\begin{myteo}[La longitud de una lista linealmente independiente es \boldmath$\leq$ a la longitud de la lista generadora]\;\\\\
+    En un espacio vectorial de dimensión finita, la longitud de cada lista linealmente independiente de vectores es menor o igual que la longitud de cada lista generadora de vectores (longitud=n de vectores).\\\\ 
     Demostración.-\; Suponga $u_1,\ldots,u_m$ es linealmente independiente en $\textbf{V}$. Suponga también que $w_1,\ldots,w_n$ generan $V$. Necesitamos probar que $m\leq n$. Lo hacemos a través del proceso de pasos que se describe a continuación; tenga en cuenta que en cada paso agregamos una de las $u's$ y eliminamos una de las $w's$.
 
     \begin{enumerate}[\small\textbf{Paso} 1.]
-	\item Sea $B$ la lista $w_1,\ldots,w_n$, que abarca $V$. Por lo tanto, adjuntar cualquier vector en $V$ a esta lista produce una lista linealmente dependiente (porque el nuevo vector adjunto se puede escribir como una combinación lineal de los otros vectores). En particular, la lista
+	\item Sea $B$ la lista $w_1,\ldots,w_n$, que genera $V$. Por lo tanto, añadir cualquier vector en $V$ a esta lista produce una lista linealmente dependiente (porque el nuevo vector añadido se puede escribir como una combinación lineal de los otros vectores). En particular, la lista
 	$$u_1,w_1,\ldots,w_n$$
-	es linealmente dependiente. Así, por el lema (2.21), podemos eliminar un de las $w$ para que la nueva lista $B$ (de longitud $n$) que consta de $u_1$ y las $w$ restantes abarquen $V$.
-	\item La lista $B$ (de longitud $n$) del paso $j-1$ genera $V$. Así, adjuntar cualquier vector a esta lista produce una lista linealmente dependiente. En particular, la lista de longitud $(n+1)$ obtenida al unir $u_j$ a $B$, colocándola justo después de $u_1,\ldots,u_{j-1}$, es linealmente dependiente. Por el lema de dependencia lineal (2.21)m uno de los vectores de esta lista está en el lapso de los anteriores, y porque $u_1,\ldots,u_j$ es linealmente independientes, este vector es uno de los $w's$, no uno de los $u's$. Podemos eliminar esa $w$ para la nueva lista $B$ (de longitud $n$) que consta de $u_1,\ldots,u_j$ y las $w's$ restantes generan $V$.
+	es linealmente dependiente. Así, por el lema (2.21), podemos eliminar un de las $w$ para que la nueva lista $B$ (de longitud $n$) que consta de $u_1$ y las $w's$ restantes generen $V$.
+	\item[\textbf{Paso} j.] La lista $B$ (de longitud $n$) del paso $j-1$ genera $V$. Así, añadir cualquier vector a esta lista produce una lista linealmente dependiente. En particular, la lista de longitud $(n+1)$ obtenida al unir $u_j$ a $B$, colocándola justo después de $u_1,\ldots,u_{j-1}$, es linealmente dependiente. Por el lema de dependencia lineal (2.21), uno de los vectores de esta lista está en el generador de los anteriores, y ya que $u_1,\ldots,u_j$ es linealmente independientes, este vector es uno de los $w's$, no uno de los $u's$. Podemos eliminar esa $w$ para la nueva lista $B$ (de longitud $n$) que consta de $u_1,\ldots,u_j$ y las $w's$ restantes generan $V$.
     \end{enumerate}
     Después del paso $m$, hemos agregado todas las $u$ y el proceso se detiene. En cada paso, a medida que agregamos un $u$ a $B$, el lema de dependencia lineal implica que hay algo de $w$ que eliminar. Por lo tanto, hay al menos tantas $w$ como $u$.
 \end{myteo}
+
+Aclaremos esto con dos ejemplos.
+
+%-------------------- 2.24 Ejemplo
+\begin{myejem}
+    Demuestre que la lista $(1,2,3),(4,5,8),(9,6,7),(-3,2,8)$ no es linealmente independiente en $\textbf{R}^3$.\\\\
+	Demostración.-\; La lista $(1,0,0),(0,1,0),(0,0,1)$ genera $\textbf{R}^3$. Por lo tanto, ninguna lista de longitud superior a $3$ es linealmente independiente en $\textbf{R}^3$.
+\end{myejem}
+
+%-------------------- 2.25 Ejemplo
+\begin{myejem}
+    Demostrar que la lista $(1,2,3,-5),(4,5,8,3),(9,6,7,-1)$ no genera $\textbf{R}^4$.\\\\	
+	Demostración.-\; La lista $(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)$ es linealmente independiente en $\textbf{R}^4$. Por lo tanto, ninguna lista de longitud inferior a $4$  genera $\textbf{R}^4$.
+\end{myejem}
 
 \setcounter{myteo}{25}
 %-------------------- 2.26 Teorema
@@ -409,7 +423,7 @@ Ahora llegamos a un resultado importante. Dice que ninguna lista linealmente ind
 	$$a_1v_1+a_2v_2+\ldots+a_mv_m\neq 0$$
 	En consecuencia por (1)
 	$$-(a_1+a_2+\ldots+a_m)w\neq 0.$$
-	Así,
+	Por lo tanto,
 	$$w=-\frac{1}{a_1+a_2+\ldots+a_m}(a_1v_1+a_2v_2+\ldots+a_mv_m)\in \span(v_1,\ldots,v_m).$$\\
 
     %------------------- 11.
@@ -503,11 +517,10 @@ Una lista generadora en un espacio vectorial puede no ser una base, ya que no es
 %------------------- teorema 2.31
 \begin{myteo}[La lista generadora contiene un base]\,\\\\
     Cada lista generadora en un espacio vectorial se puede reducir a una base del espacio vectorial.\\\\
-	Demostración.-\; Suponga que $v_1,\ldots,v_n$ genera $V$. Queremos eliminar algunos de los vectores de  $v_1,\ldots,v_n$ para que los vectores restantes formen una base de $V$. \\
-	Sea $B=v_1,\ldots,v_n$, de donde realizamos un bucle con las siguientes condiciones:
+	Demostración.-\; Suponga que $v_1,\ldots,v_n$ genera $V$. Queremos eliminar algunos de los vectores de  $v_1,\ldots,v_n$ para que los vectores restantes formen una base de $V$. Sea $B=v_1,\ldots,v_n$, de donde realizamos un bucle con las siguientes condiciones:
 	\begin{enumerate}[\textbf{Paso} 1.]
 	    \item Si $v_1=0$, eliminamos $v_1$ de $B$. Si $v_1\neq 0$ entonces no cambiamos $B$.
-	    \item Si $v_j$ esta en $\span(v_1,\ldots,v_{j-1})$, eliminamos $v_j$ de $B$. Si $v_j$ no está en $\span(v_1,\ldots,v_j)$, entonces no cambiamos $B$ (lema 2.21). 
+	    \item[\textbf{Paso} J.] Si $v_j$ esta en $\span(v_1,\ldots,v_{j-1})$, eliminamos $v_j$ de $B$. Si $v_j$ no está en $\span(v_1,\ldots,v_j)$, entonces no cambiamos $B$ (lema 2.21). 
 	\end{enumerate}
 	Paramos el proceso después del paso $n$, obteniendo una lista $B$. Esta lista $B$ genera $V$, ya que nuestra lista original generó $V$ y hemos descartado solo los vectores que ya estaban en el generador de los vectores anteriores. El proceso garantiza que ningún vector de $B$ está en el generador de los anteriores. Así pues, $B$ es linealmente independiente, por el lema de dependencia lineal (2.21). Por tanto, $B$ es una base de $V$.
 \end{myteo}
@@ -576,6 +589,7 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
     \item Verifique todas las afirmaciones del ejemplo 2.28.\\
 	\begin{enumerate}[(a)]
 
+	    %---------- (a)
 	    \item La lista $(1,0,\ldots,0)$, $(0,1,0,\ldots,0)$, $\ldots$, $(0,\ldots,0,1)$ es una base de $\textbf{F}^n$, llamado la base estándar de $\textbf{F}^n$.\\\\
 		Respuesta.-\; Primero demostraremos que la lista genera $\textbf{F}^n$.  Sea, los escalares $x_1,x_2,\ldots,x_n$ en $\textbf{F}$. Podemos escribir
 		$$x_1(1,0,\ldots,0)+x_2(0,1,0,\ldots,0)+\cdots+x_n(0,\ldots,0,1)=\left(x_1,x_2,\ldots,x_n\right).$$
@@ -586,6 +600,7 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		$$(a_1,a_2,\ldots,a_n)=(0,0,\ldots,0).$$
 		Por lo que $a_1=a_2=\cdots=a_n=0$. Así, la lista es linealmente independiente.\\\\
 
+	    %---------- (b)
 	    \item  La lista $(1,2),(2,5)$ es una base de $\textbf{F}^2$.\\\\
 		Respuesta.-\; Sea $(a,b)\in \textbf{F}^2$. Buscaremos escalares $c_1,c_2$ tal que
 		$$c_1v_1+c_2v_2=(a,b).$$
@@ -609,6 +624,7 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		$$c_2=0\quad \mbox{y}\quad c_1=0.$$
 		Esto implica que $(1,2)$ y $(2,5)$ son linealmente dependientes. Por lo que concluimos que la lista dada es una base de $\textbf{F}^2$.\\\\
 
+	    %---------- (c)
 	    \item La lista $(1,2,-4)$, $(7,-5,6)$ es linealmente independiente en $\textbf{F}^3$ pero no es una base en $\textbf{F}^3$, ya que no genera $\textbf{F}^3$.\\\\
 		Respuesta.-\; Sean los escalares  $c_1,c_2\in \textbf{F}$ tal que
 		$$c_1(1,2,-4)+c_2(7,-5,6)=0\quad \Rightarrow\quad (c_1+7c_2,2c_1-5c_2,-4c_1+6c_2)=(0,0,0)$$
@@ -641,8 +657,118 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		$$0+0=1\quad \Rightarrow\quad 0=1.$$
 		Lo que es un absurdo, por lo tanto $(1,2,-4)$, $(7,-5,6)$ no genera $\textbf{F}^3$.\\\\
 
+	    %---------- (d)
 	    \item La lista $(1,2),(3,5),(4,13)$ genera $\textbf{F}^2$ pero no es una base de $\textbf{F}^2$, ya que no es linealmente independiente.\\\\
+		Respuesta.-\; Demostremos que la lista no es linealmente independiente. Sea $a_1,a_2,a_3\in \textbf{F}$, entonces
+		$$a_1(1,2)+a_2(3,5)+a_3(4,13)=0 \quad \Rightarrow \quad (a_1+3a_2+4a_3,2a_1+5a_2+13a_3)=(0,0).$$
+		Construimos un sistema de ecuaciones, como sigue
+		$$
+		\begin{array}{*{7}{r}}
+		    a_1&+&3a_2&+&4a_3&=&0\\
+		    2a_1&+&5a_2&+&13a_3&=&0
+		\end{array}
+		$$
+		Multiplicando por dos la primera ecuación y luego restando la segunda, tenemos
+		$$a_2=5a_3.$$
+		Remplazando en la primera ecuación,
+		$$a_1=-19a_3.$$
+		Sea, $a_3=1$, entonces
+		$$a_1=-19\quad \mbox{y}\quad a_2=5.$$
+		Por lo tanto, $(1,2),(3,5),(4,13)$ no es linealmente independiente.\\
+
+		Ahora, demostraremos que la lista $(1,2),(3,5),(4,13)$ genera $\textbf{F}^2$.  Sean $a_1,a_2,a_3\in \textbf{F}$ tal que
+		$$a_1(1,2)+a_2(3,5)+a_3(4,13)=0$$
+		Sabiendo que esta lista es linealmente dependiente, podemos reescribimos la ecuación de modo que $(1,2),(3,5)$ genera $(4,13)$:
+		$$(4,13) = \dfrac{a_1}{a_3}(1,2)-\dfrac{a_2}{a_3}(3,5)$$
+		Por el lema 2.21 (Axler, Linear Algebra), vemos que el generador de $(1,2),(3,5)$ es igual al generador de $(1,2),(3,5),(4,13)$. Sólo nos faltaría demostrar que $(1,2),(3,5)$ genera $\textbf{F}^2$. Para ello, sea $(x_1,x_2)\in\textbf{F}^2$, de modo que
+		$$a_1(1,2)+a_2(3,5)=(x_1,x_2)$$
+		Entonces,
+		$$
+		\begin{array}{rcl}
+		    a_1+3a_2&=&x_1\\
+		    2a_1+5a_2&=&x_2
+		\end{array}
+		$$
+		Multiplicando la segunda ecuación por dos y restando la primera, tenemos
+		$$a_1=2x_1-x_2.$$
+		Remplazando en la primera ecuación,
+		$$a_2=-(5x_1+3x_2).$$
+		Por lo tanto, podemos hallar $a_1$ y $a_2$ en términos de $x_1$ y $x_2$ tal que $a_1(1,2)+a_2(3,5)=(x_1,x_2)$ es una combinación lineal que genera $\textbf{F}^2$.\\
+
+		Siendo más prácticos podemos usar el teorema 2.23.  Para saber que $(1,2),(3,5),(4,13)$ no es linealmente independiente pero genera $\textbf{F}^2$. \\\\
+
+	    %---------- (e)
+	    \item La lista $(1,1,0),(0,0,1)$ es una base de $\left\{(x,x,y)\in \textbf{F}^3\; :\; x,y\in \textbf{F}\right\}$.\\\\
+		Respuesta.-\; Está claro que la lista es linealmente independiente. Ya que, la única forma de que se cumpla  
+		$$c_1(1,1,0)+c_2(0,0,1)=0$$
+		es que $c_1,c_2$ sean igual a cero.\\
+		Ahora demostraremos que la lista  dada genera $\left\{(x,x,y)\in \textbf{F}^3\; :\; x,y\in \textbf{F}\right\}$. Sea $c_1,c_2\in \textbf{F}$ tal que
+		$$c_1(1,1,0)+c_2(0,0,1)=(x,x,y).$$
+		De donde, podemos construir un sistema de ecuaciones como sigue:
+		$$
+		\begin{array}{rcl}
+		    c_1+0&=&x\\
+		    c_1+0&=&x\\
+		    0+c_2&=&y
+		\end{array}
+		$$
+		Por lo que, cualquier  $\textbf{F}^3$ puede ser expresado como una combinación lineal de los vectores $(1,1,0),(0,0,1)$ y por lo tanto generan $\textbf{F}^3$.\\\\ 
+
+	    %---------- (f)
+	    \item La lista $(1,-1,0),(1,0,-1)$ es una base de
+	    $$\left\{(x,y,z)\in\textbf{F}^3\; : \; x+y+z=0\right\}.$$\\
+		Respuesta.-\; Si $x+y+z=0$ para $x,y,z\in \textbf{F}$, entonces podemos escribir 
+		$$x=-y-z.$$ 
+		Por lo que,
+		$$
+		\begin{array}{rcl}
+		    (x,y,z)&=&(-y-z,y-z)\\
+			   &=& (-y,y-0)+(-z,0z)\\
+			   &=& -y(1,-1,0)-z(1,0,-1).
+		\end{array}
+		$$
+		Debido a que $y,z$ son escalares, implica que podemos expresar cualquier $(x,y,z)\in\textbf{F}^3$ como una combinación lineal de los vectores $(1,-1,0),(1,0,-1)$. \\
+
+		Es fácil ver que que la lista $(1,-1,0),(1,0,-1)$ es linealmente independiente. Dado que, si $c_1,c_2\in\textbf{F}^n$, entonces 
+		$$
+		\begin{array}{rcl}
+		    c_1(1,-1,0)+c_2(1,0,-1)&=&0\\
+		    (c_1+c_2,-c_1,-c_2)&=&0.
+		\end{array}
+		$$
+		De donde,
+		$$c_1=c_2=0.$$
+		Así, la lista $(1,-1,0),(1,0,-1)$ es linealmente independiente. Por lo tanto,$(1,-1,0),(1,0,-1)$ es una base de $\textbf{F}^3$\\\\
+
+	    %---------- (g)
+	    \item La lista $1,z,\ldots,z^m$ es una base de $\mathcal{P}_m(\textbf{F})$.\\\\
+		Respuesta.-\; El elemento general de $\mathcal{P}_m(\textbf{F})$ es una combinación lineal de $1,z,z^2,\ldots,z^m$ de la forma:
+		$$a_0+a_1z+a_2z^2+\cdots+a_mz^m$$
+		donde $a_i\in \textbf{F}$ para $1\leq i \leq m$. Lo que demuestra que genera $\mathcal{P}_m(\textbf{F})$.\\
+
+		Para demostrar que la lista es linealmente independiente, suponemos que la combinación lineal de estos elementos es igual a cero; es decir,
+		$$a_0+a_1z+a_2z^2+\cdots+a_mz^m=0.$$
+		Donde el $\textbf{0}$ es un polinomio. Esto implica que el polinomio del lado izquierdo toma valor cero para todo los valore de $z$. Esto es posible sólo cuando todos los $a_i's$ son cero, ya que cualquier polinomio no trivial tiene un número finito de raíces. Por lo tanto la lista $1,z,z^2,\ldots,z^m$ es base de $\mathcal{F}_m(\textbf{F})$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item 
+	\begin{enumerate}[a).]
+
+	    %---------- (a)
+	    \item Sea $U$ el subespacio de $\textbf{R}^5$ definido por
+	    $$U=\left\{(x_1,x_2,x_3,x_4,x_5)\in \textbf{F}^5\; : \; x_1=3x_2\;\mbox{y}\; x_3=7x_4\right\}.$$
+	    Encuentre una base de $U$.\\\\
 		Respuesta.-\; 
+
+	    %---------- (b)
+	    \item Extienda la base de la parte (a) a una base de $\textbf{R}^5$.\\\\
+		Respuesta.-\;
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\uplus W$.\\\\
+		Respuesta.-
 
 	\end{enumerate}
 
