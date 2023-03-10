@@ -760,15 +760,26 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 	    \item Sea $U$ el subespacio de $\textbf{R}^5$ definido por
 	    $$U=\left\{(x_1,x_2,x_3,x_4,x_5)\in \textbf{F}^5\; : \; x_1=3x_2\;\mbox{y}\; x_3=7x_4\right\}.$$
 	    Encuentre una base de $U$.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Dado que se tiene la condición $x_1=3x_2\;\mbox{y}\; x_3=7x_4$. Podemos escribir el vector general, como sigue
+		$$
+		\begin{array}{rcl}
+		    3x_2,x_2,7x_4,x_4,x_5 &=& (3x_2,x_2,0,0,0)+(0,0,7x_4,x_4,0)+(0,0,0,0,x_5)\\
+					  &=& x_2(3,1,0,0,0)+x_4(0,0,7,1,0)+x_5(0,0,0,0,1).
+		\end{array}
+		$$
+		Supongamos que $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ es una base de $\textbf{R}^5$. Podemos demostrar fácilmente que estos vectores generar $U$, ya que $U$ puede expresarse como una combinación lineal de estos tres vectores. Ahora, demostremos que son linealmente independiente. Sea $c_1,c_2,c_3\in \textbf{F}$. Entonces, 
+		$$c_1(3,1,0,0,0)+c_2(0,0,7,1,0)+c_3(0,0,0,0,1)=0$$
+		De donde,
+		$$(3c_1,c_2,7c_2,c_2+c_3)=(0,0,0,0,0).$$
+		Igualando cada componente, tenemos que $c_1=c_2=c_3=0$. Así des demuestra que estos tres vectores son linealmente independientes. Por lo tanto, $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ es una base de $U$.\\\\
 
 	    %---------- (b)
 	    \item Extienda la base de la parte (a) a una base de $\textbf{R}^5$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; 
 
 	    %---------- (c)
-	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\uplus W$.\\\\
-		Respuesta.-
+	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\oplus W$.\\\\
+		Respuesta.- 
 
 	\end{enumerate}
 

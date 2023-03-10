@@ -111,3 +111,24 @@ Obsérvese que $\log_b b = 1$. Si $b=e$ se tiene $\log_e x= \log x$, es decir, l
 
 
 \section{Fórmulas de derivación e integración en las que intervienen logaritmos}
+Una de las propiedades más notables de la función exponencial es la fórmula
+$$E'(x)=E(x),$$
+que nos dice que la función es su propia derivada. \\
+
+Supongamos $f(x)=a^x$ para $x>0$. Según la definición de $a^x$, podemos escribir
+$$f(x)=e^{x\log a}=E(x\log a);$$
+luego en virtud de la regla de cadena, encontramos
+$$f'(x)=E'(x\log a )\cdot \log a=E(x\log a)\cdot \log a=a^x\log a.$$
+Dicho de otro modo, la derivación de $a^x$ multiplica simplemente $a^x$ por el factor constante $\log a$, siendo este factor $1$ cuando $a=e$. Por ejemplo $E'(x)=E(x)$ da como resultado 
+$$\int e^x \; dx = e^x+C,$$
+en tanto que $f'(x)=a^x\log a$ conduce a la fórmula más general
+$$\int a^x \; dx = \dfrac{a^x}{\log a}+C \quad (a>0,\; a\neq 1).$$
+Sustituimos $x$ en $\int e^x \; dx = e^x+C,$ y la ecuación anterior por $u$ obteniendo
+$$\int e^u \; du = e^u+C, \quad \int a^u \; du = \dfrac{a^u}{\log a}+C (a>0,\; a\neq 1),$$
+donde $u$ representa cualquier función con derivada continua. Si escribimos $u=f(x),$ y $fu=f'(x)\; dx$, las fórmulas anteriores se convierten En
+$$\int e^{f(x)} f'(x) \; dx = e^{f(x)}+C, \quad \int a^{f(x)} f'(x) \; dx = \dfrac{a^{f(x)}}{\log a}+C (a>0,$$
+siendo la segunda integral válida para $a>0$, $a\neq 1$.
+
+
+\section{Ejercicios}
+
