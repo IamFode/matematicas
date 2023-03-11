@@ -1,0 +1,311 @@
+\begin{enumerate}[\large\bfseries 1.]
+
+    %------------------- 1
+    \item Suponga $v_1,v_2,v_3,v_4$ se extiende por $V$. Demostrar que la lista 
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    también se extiende por $V$.\\\\
+	Demostración.-\; Sea $v\in V$, entonces existe $a_1,a_2,a_3,a_4$ tal que 
+	$$v=a_1v_1+a_2v_2+a_3v_3+a_4v_4.$$
+	Que implica,
+	$$
+	\begin{array}{rcl}
+	    v&=&a_1v_1+a_2v_2+a_3v_3+a_4v_4-a_1v_2+a_1v_2-a_1v_3+a_1v_3-a_2v_3+a_2v_3-a_1v_4+a_1v_4\\
+	     &-& a_2v_4+a_2v_4 -a_3v_4 +a_3v_4\\
+	\end{array}
+	$$
+
+	De donde,
+
+	$$v=a_1(v_1-v_2)+(a_1+a_2)(v_2-v_3)+(a_1+a_2+a_3)(v_3-v_4)+(a_1+a_2+a_3+a_4)v_4.$$
+	Por lo tanto, cualquier vector en $V$ puede ser expresado por una combinación lineal de 
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4.$$
+	Así, esta lista se extiende por $V$.\\\\
+
+
+    %------------------- 2.
+    \item Encuentre un número $t$ tal que
+    $$(3,1,4),(2,-3,5),(5,9,t)$$
+    no es linealmente independiente en $\textbf{R}^3$.\\\\
+	Respuesta.-\; Sea,
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0.$$
+	Si $c=0$. Entonces,
+	$$a(3,1,4)+b(2,-3,5)=0.$$
+	Lo que implica
+	$$
+	\begin{array}{rcl}
+	    3a+2b&=&0\\
+	    a-3b&=&0\\
+	    4a+5b&=&0
+	\end{array}
+	$$
+	De donde, resolviendo para $a$ y $b$ se tiene
+	$$a=0\quad \mbox{y}\quad b=0.$$
+	Pero, no queremos que $a,b,c$ sean cero. Así que debemos forzar que $c\neq 0$, como sigue:
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0\quad \Rightarrow \quad (5,9,t)=-\dfrac{a}{c}(3,1,4)-\dfrac{b}{c}(2,-3,5).$$
+	Es decir, estamos expresando $(5,9,t)$ como una combinación lineal de los vectores restantes. Así, sea $-\dfrac{a}{c}=x\;$,$\;-\dfrac{b}{c}=y$  por lo que,
+	$$(5,9,t)=x(3,1,4)+y(2,-3,5).$$
+	Así, tenemos que
+	$$
+	\begin{array}{rcl}
+	    3x+2y&=&5\\
+	    x-3y&=&9\\
+	    4x+5y&=&t
+	\end{array}
+	$$
+	Resolviendo para $x$ e $y$ se tiene
+	$$x=3\quad \mbox{y}\quad y=-2.$$
+	Por lo tanto,
+	$$t=2.$$\\
+
+    %------------------- 3.
+    \item Demostrar que $\alpha \beta = \beta \alpha$ para todo $\alpha,\beta \in \textbf{C}$.\\\\
+	Demostración.-\; Por la definición de multiplicación de números complejos se muestra que
+	$$\alpha \beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i.$$
+	y
+	$$\beta \alpha = (c+di)(a+bi) = (ca-db)+(ad+bc)i.$$
+	Las ecuaciones anteriores, la conmutatividad para la suma y la multiplicación y propiedades de números reales muestran que $$\alpha\beta = \beta \alpha.$$\\
+
+
+    %------------------- 4.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{R}$, entonces la lista $(1+i,1-i)$ es linealmente independiente.\\\\
+		Demostración.-\; Sean los escalares $a,b\in \textbf{R}$, tal que
+		$$a(1+i)+b(1-i)=0\quad \Rightarrow \quad (a+b)+(a-b)i=0.$$
+		Entonces,
+		$$a+b=0\quad \mbox{y}\quad a-b=0.$$
+		Igualando estas dos ecuaciones se tiene
+		$$
+		\begin{array}{rcl}
+		    a+b=a-b&\Rightarrow& 2b=0\\
+			   &\Rightarrow& b=0.
+	       \end{array}
+		$$
+		Reemplazando en $a+b=0$,
+		$$a=0.$$
+		Por lo tanto, $(1+i,1-i)$ es linealmente independiente sobre $\textbf{R}$.\\\\
+
+
+	    %---------- (b)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{C}$, entonces la lista $(1+i,1-i)$ es linealmente dependiente.\\\\
+		Demostración.-\; Sean los escalares $i,1\in \textbf{C}$, tal que
+		$$i(1+i)+1(1-i)=i+i^2+1-i=0\quad \Rightarrow \quad (i-1)+(1-i)=(i-1)-(i-1)=0.$$
+		Donde concluimos que $(1+i,1-i)$ es linealmente dependiente sobre $\textbf{C}$.\\\\
+
+	\end{enumerate}
+
+    %------------------- 5.
+    \item Supongamos que $v_1,v_2,v_3,v_4$ es linealmente independiente en $V$. Demostrar que la lista
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    es también linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a,b,c,d\in F$ tal que
+	$$a(v_1-v_2)+b(v_2-v_3)+c(v_3-v_4)+d(v_4)=0.$$
+	De donde,
+	$$av_1-av_2+bv_2-bv_3+cv_3-cv_4+dv_4=0.$$
+	Por lo que,
+	$$av_1+(b-a)v_2+(c-b)v_3+(d-c)v_4=0$$
+	Ya que $v_1,v_2,v_3,v_4$ es linealmente independiente, entonces
+	$$
+	\begin{array}{rcl}
+	    a&=& 0\\
+	    b-a&=& 0\\
+	    c-b&=& 0\\
+	    d-c&=& 0
+	\end{array}
+	$$
+	Resolviendo para $a,b,c,d$ se tiene
+	$$a=0,\quad b=0,\quad c=0,\quad d=0.$$
+	Esto implica que 
+	$$0(v_1-v_2)+0(v_2-v_3)+0(v_3-v_4)+0(v_4)=0.$$
+	Por lo tanto, la lista
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+	es linealmente independiente.\\\\
+
+    %------------------- 6.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$, Entonces
+    $$5v_1-4v_2,v_2,v_3,\ldots,v_m$$
+    es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\textbf{F}$ tal que 
+	$$a_1(5v_1-4v_2)+a_2v_2+a_3v_3+\ldots+a_mv_m=0$$
+	De donde,
+	$$5a_1v_1+(a_2-4a_1)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Sabemos que la independencia lineal obliga a todos los escalares de $v_i$ a ser cero. En particular , $5a_1=0$ entonces $a_1=0$ y $a_2-4a_1=0$, implica $a_2=0.$ Por lo tanto, 
+	$$0\cdot v_1+(0-0)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Dado que todos $a_i$ son cero, entonces $5v_1-4v_2,v_2,v_3,\ldots,v_m$ es linealmente independiente.\\\\
+
+
+    %------------------- 7.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son listas linealmente independientes de vectores en $V$, entonces $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a_i,b_i\in \textbf{F}$ tal que
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m=0\quad \mbox{y}\quad b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	Entonces,
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m+b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	De donde,
+	$$(a_1-b_1)(v_1+w_1)+(a_2-b_2)(v_2+w_2)+\ldots+(a_m-b_m)(v_m+w_m)=0.$$
+	Supongamos $c_i=a_i+b_i\in F$. Luego,
+	$$c_1(v_1+w_1)+c_2(v_2+w_2)+\ldots+c_m(v_m+w_m)=0.$$
+	Dado que $a_i=b_i=0$, ya que $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son linealmente independientes. Concluimos que, $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+
+    %------------------- 8.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $W\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente dependiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
+	Demostración.-\; Por definición de dependencia lineal. Existen $a_1,\ldots a_m \in \textbf{F}$, no todos $0$, tal que 
+	$$a_1(v_1+w)+a_2(v_2+w)+\ldots+a_m(v_m+w)=0.$$
+	De donde,
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m=-(a_1+a_2+\ldots+a_m)w. \qquad \qquad (1)$$
+	Dado que $v_1,\ldots,v_m$ es linealmente independiente, entonces existen escalares $t_i,\ldots,t_m\in \textbf{F}$, $\forall t_i=0$, de modo que
+	$$t_1v_1+t_2v_2+\ldots+t_mv_m=0$$
+	Es único. Así pues notemos, para $a_i\neq 0$ que
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m\neq 0$$
+	En consecuencia por (1)
+	$$-(a_1+a_2+\ldots+a_m)w\neq 0.$$
+	Por lo tanto,
+	$$w=-\frac{1}{a_1+a_2+\ldots+a_m}(a_1v_1+a_2v_2+\ldots+a_mv_m)\in \span(v_1,\ldots,v_m).$$\\
+
+    %------------------- 9.
+    \item Explique por qué no existe una lista de seis polinomios que sea linealmente independiente en $\mathcal{P}_4(\textbf{F})$.\\\\
+	Respuesta.-\; Notemos que $1,z,z^2,z^3,z^4$ genera $\mathcal{P}_4(\textbf{F})$. Pero por el teorema 1.23 [Axler, Linear Algebra], la longitud de la lista linealmente independiente es menor o igual que la longitud de la lista que genera. Es decir, cualquier lista linealmente independiente no tiene más de $5$ polinomios.\\\\
+
+    %------------------- 10.
+    \item Explique por qué ninguna lista de cuatro polinomios genera $\mathcal{P}_4 (\textbf{F})$.\\\\
+	Respuesta.-\; Sea $V$ un espacio vectorial de dimensión finita. Si $m$ vectores genera $V$ y si tenemos un conjunto de $n$ vectores linealmente independientes, entonces $n\leq m$. Es decir, el número de vectores en un conjunto linealmente independiente de $V$, no puede se mayor que el número de vectores en un conjunto generador de $V$.\\
+	Por ejemplo, si cuatro polinomios podrían generar $P_4(\textbf{F})$. Entonces, por la definición de arriba, cualquier conjunto de polinomios linealmente independientes en $P_4(\textbf{F})$ podría tener cómo máximo cuatro vectores. Sin embargo, el conjunto $1,z,z^2,z^3,z^4$ tiene cinco polinomio linealmente independientes en $P_4(\textbf{F})$. Por lo tanto, es imposible que cualquier conjunto de cuatro polinomios genere $P_4(\textbf{F})$.\\\\
+
+    %------------------- 11.
+    \item Demuestre que $V$ es de dimensión infinita, si y sólo si existe una secuencia $v_1,v_2,\ldots,$ de vectores en $V$ tal que $v_1,\ldots,v_m$ es linealmente independiente para cada entero positivo $m$.\\\\
+	Demostración.-\; Supongamos que $V$ es de dimensión infinita. Queremos producir una secuencia de vectores $v_1,v_2,\ldots,$ tal que $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Necesitamos mostrar que para cualquier $k\in \textbf{N}$ y un conjunto de vectores linealmente independientes $v_1,v_2,\ldots$ podemos definir un vector $v_{k+1}$ tal que $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente. Si podemos probar esto, entonces significará que podemos continuar sumando vectores indefinidamente a conjuntos linealmente independientes de modo que los conjuntos resultantes también sean linealmente independientes. Esto nos dará una secuencia de vectores $v_1,v_2,\ldots$, cuyo subconjunto finito es linealmente independiente.\\
+
+	Sea $v_1,v_2,\ldots,v_k$ un conjunto linealmente independiente en $V$. Ya que $V$ es de dimensión finita, no puede generado por un conjunto finito de vectores. Por lo tanto, $V\neq \span(v_1,v_2,\ldots,v_k)$. Sea $v_{k+1}$ tal que $v_{k+1}\notin \span(v_1,v_2,\ldots,v_k)$. Entonces, por el ejercicio 11 $\left[\right.$ Axler, Linear Algebra, que nos dice: Si $v:1, \ldots, v_m$ es linealmente independiente en $V$ y $w \in V$, el conjunto  $v_1,\ldots,v_m, w$ es linealmente independiente si y sólo si $w \neq \span(v_1,\ldots, v_m) \left.\right]$. El conjunto $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente.\\\\
+	Por otro lado, sea $v_1,v_2,\ldots,v_n$ un conjunto generador de $V$. Entonces, por el teorema 1.23 [Axler, Linear Algebra], cualquier conjunto de vectores linealmente independiente en $V$ pueden tener por lo más $n$ vectores. De esto modo, cualquier conjunto que tenga $n+1$ o más vectores es linealmente dependiente. Así, si $V$ es de dimensión finita, entonces no podemos tener una secuencia de vectores $v_1,v_2,\ldots$ tal que, para cada $m$, el subconjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente. Tomando su recíproca, podemos decir que si existe una secuencia de vectores $v_1,v_2,\ldots$ tal que el conjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Entonces, $V$ es de dimensión infinita. Lo que completa de demostración.\\\\
+
+
+    %------------------- 12.
+    \item Demostrar que el espacio vectorial real para todos las funciones de valor real continuas en el intervalo $[0,1]$ es de dimensión infinita.\\\\
+	Demostración.-\; Por el ejercicio 14 (Axler, Linear Algebra, 2A), tenemos que encontrar una secuencia linealmente independiente de funciones continuas en $[0,1]$. Observe que los monomiales $1,x,x^2,\ldots,x^n,\ldots$ son funciones continuas en $[0,1]$. Ahora, debemos demostrar que $1,x,x^2,\ldots,x^m$ es linealmente independiente en cada $m$. Para ello, sea $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$, donde $0$ es el cero polinomial. Lo que significa que $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$ toma el valor cero en todo el intervalo $[0,1]$. Esto implica que cada punto en $[0,1]$ es una raíz del polinomio. Pero, ya que cada polinomio no trivial tiene como máximo un número finito de raíces, esto es imposible a menos que todos los $a_i'$s sean cero. Lo que muestra que $1,x,x^2,\ldots,x^m$ es linealmente independiente para cada $m\in \textbf{N}$. Por lo tanto, el conjunto de funciones continuas en $[0,1]$ es de dimensión infinita.\\\\
+
+    %------------------- 13.
+    \item Suponga $p_0,p_1,\ldots,p_m$ son polinomios en $\mathcal{P}_m(\textbf{F})$ tal que $p_j(2)=0$ para cada $j$. Demostrar que $p_0,p_1,\ldots,p_m$ no es linealmente independiente en $\mathcal{P}_m(\textbf{F})$.\\\\
+	Demostración.-\; Supondremos que $p_0,p_1,\ldots.p_m$ es linealmente independiente. Demostraremos que esto  implica que $p_0,p_1,\ldots,p_m$ genera $\mathcal{P}_m(\textbf{F})$. Y que esto a su vez conducirá a una contradicción al construir explícitamente un polinomio que no está en este generador.
+	Notemos que la lista $1,z,\ldots,z^{m+1}$ genera $\mathcal{P}_m(\textbf{F})$ y tiene longitud $m+1$. Por lo tanto, cada lista linealmente independiente debe tener una longitud $m+1$ o menos (2.23). Si $\span(p_0,p_1,\ldots,p_m)\neq \mathcal{P}_m(\textbf{F})$, existe algún $p\notin \span(p_0,p_1,\ldots,p_m)$, de donde la lista $p_0,p_1,\ldots,p_m,p$ es linealmente independiente de longitud $m+2$, lo que es una contradicción. Por lo que $\span(p_0,p_1,\ldots,p_m)=\mathcal{P}_m(\textbf{F})$.\\
+	Ahora definamos el polinomio $q=1$. Entonces $q\in \span(p_0,p_1,\ldots,p_m)$, de donde existe $a_0,\ldots,a_m\in \textbf{F}$ tal que
+	$$q=a_0p_0+a_1p_1+\cdots+a_mP_m,$$
+	lo que implica
+	$$q(2)=a_0p_0(2)+a_1p_1(2)+\cdots+a_mP_m(2).$$
+	Pero esto es absurdo, ya que $1=0$. Por lo tanto, $p_0,p_1,\ldots,p_m$ no puede ser linealmente independiente.\\\\
+
+
+%salto de pagina
+\newpage
+
+\end{enumerate}
+
+\begin{center}
+\textbf{\large Ejercicios restantes del libro de Álgebra Lineal de Axler}
+\end{center}
+\vspace{.5cm}
+
+\begin{enumerate}[\large\bfseries 1.]
+
+    %------------------- 2
+    \item Verifique las afirmaciones del Ejemplo 2.18.\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Una lista $v$ de un vector $v\in V$ es linealmente independiente si y sólo si $v\neq 0$.\\\\
+		Demostración.-\; Demostremos que si $v$ es linealmente independiente, entonces $v\neq 0$. Supongamos que $v=0$. Sea un escalar $a\neq 0$. De donde, $av=0$ incluso cuando $a\neq 0$. Esto contradice la definición de independencia lineal. Por lo tanto, $v$ debe ser linealmente dependiente. Esto es, $v=0$ implica que $v$ es un vector linealmente dependiente. Por lo que, si $v$ es linealmente independiente, entonces $v$ es un vector distinto de cero.\\
+		Por otro lado, debemos demostrar que  $v\neq 0$ implica que $v$ es linealmente independiente. Sea  un escalar $a$ tal que $av=0$. Si $a\neq 0$, entonces $av$ no puede ser $0$. Por eso $a$ debe ser $0$. Por lo tanto, $v\neq 0$ y $av=0$ implica que $a=0$. Así, $v$ es linealmente independiente.\\\\
+
+	    %---------- (b)
+	    \item Una lista de dos vectores en $V$ es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. \\\\
+		Demostración.-\; El enunciado siguiente es equivalente. Dos vectores son linealmente dependientes si y sólo si uno de los vectores es múltiplo escalar de otro. Supongamos que $v_1,v_2$ son dos vectores linealmente dependientes. Por lo que, existe escalares $a_1,a_2$ tal que 
+		$$a_1v_1+a_2v_2=0$$
+		y no ambos escalares $a_1,a_2$ son cero. Sea $a_1\neq 0$, entonces la ecuación se podría reescribir como
+		$$v_1=-\dfrac{a_2}{a_1}v_2$$
+		el cual prueba que $v_1$ es un múltiplo escalar de $v_2$. Por otro lado, si $a_2\neq 0$, entonces $v_2=-\frac{a_1}{a_2}v_1$ de aquí podemos afirmar que $v_2$ es un múltiplo escalar de $v_1$.\\
+		Ahora supongamos que que uno de los $v_1$ o $v_2$ es un múltiplo escalar del otro. Podemos decir, sin perdida de generalidad, que $v_1$ es un múltiplo escalar de $v_2$. Esto es, $v_1=cv_2$ para algún escalar $c$. Por lo tanto, la ecuación $v_1-cv_2=0$ se cumple, ya que el multiplicador de $v_1$ es distintos de cero. Esto es precisamente lo que requerimos para la definición de dependencia lineal. Así, $v_1$ y $v_2$ son linealmente dependientes.\\\\
+
+	    %---------- (c)
+	    \item $(1,0,0,0),(0,1,0,0),(0,0,1,0)$ es linealmente independiente en $\textbf{F}^4$.\\\\
+		Demostración.-\; Utilizaremos la definición de independencia lineal. Sean $a,b,c$ escalares en \textbf{F} tal que
+		$$a(1,0,0,0)+b(0,1,0,0)+c(0,0,1,0)=\textbf{0}=(0,0,0,0)$$
+		Entonces,
+		$$(a,b,c,0)=(0,0,0,0)$$
+		Lo que implica,
+		$$a,b,c=0.$$
+		Esto demuestra que los tres vectores son linealmente independientes.\\\\
+
+
+	    %---------- (d)
+	    \item La lista $1,z,\ldots,z^m$ es linealmente independiente en $\mathcal{P}(\textbf{F})$ para cada entero no negativo $m$.\\\\
+		Demostración.-\; Demostremos por contradicción. Supongamos que $1,z,\ldots,z^m$ es linealmente dependiente. Por lo que, existe un escalar $a_0,a_1,\ldots,a_m$ tal que
+		$$a_0+a_1z+\ldots+a_mz^m=0.$$
+		Sea $k$ el indice más grande tal que $a_k\neq 0$. Esto significa que los escalares desde $a_{k+1}$ hasta $a_m$ son cero. Entonces, se deduce que
+		$$a_0+a_1z+\ldots+a_kz^k=0.$$
+		Reescribiendo se tiene
+		$$z_k=-\dfrac{a_0}{a_k}-\dfrac{a_1}{a_k}z-\cdots-\dfrac{a_{k-1}}{a_k}z^{k-1}.$$
+		Aquí, expresamos $z^k$ como un polinomio de grado $k-1$ el cual es absurdo. Por lo que $1,z,z^2,\ldots,z^m$ es un conjunto linealmente independiente.\\\\
+
+	\end{enumerate}
+
+    %------------------- 4.
+    \item Verifique la afirmación en el segundo punto del Ejemplo 2.20. Es decir, la lista $(2,3,1),(1,-1,2),(7,3,c)$ es linealmente dependientes en $\textbf{F}^3$ si y sólo si $c=8$, como debes verificar.\\\\
+	Respuesta.-\; Sea los escalares $a,b,c$  no todos cero tal que
+	$$r(2,3,1)+s(1,-1,2)+t(7,3,c)=(0,0,0)$$
+	De donde, podemos escribir como ecuaciones lineales
+	$$
+	\begin{array}{rcl}
+	    2r+s+7t&=&0\\
+	    3r-s+3t&=&0\\
+	    r+2s+ct&=&0
+	\end{array}
+	$$
+	De la ecuación 1 y 2 se tiene
+	$$5r+10t=0\quad \Rightarrow \quad r=-2t.$$
+	Luego sustrayendo la ecuación 1 y 3, 
+	$$2r+(c-4)t=0.$$
+	Así, tenemos que
+	$$2(-2t)+(c-4)t=0\quad \Rightarrow \quad (c-8)t=0$$
+	Por lo que,
+	$$r=0\quad \mbox{o}\quad c-8=0.$$
+	Si $t=0$. Entonces, $r=-2t = 0$, y $s=0.$ Contradiciendo el hecho de que no todos los escalares son cero. Por lo tanto, los tres vectores son linealmente dependientes si y sólo si $c=8$.\\\\
+
+    %------------------- 8.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$ y $\gamma\in \textbf{F}$ con $\gamma\neq 0$, Entonces $\gamma v_1,\gamma v_2,\ldots,\gamma v_m$ es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\in \textbf{F}$ tal que
+	$$a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$$
+	De donde,
+	$$\gamma\left(a_1 v_1+a_2 v_2+\ldots+a_m v_m\right)=0.$$
+	Lo que,
+	$$a_1 v_1+a_2 v_2+\ldots+a_m v_m=0.$$
+	Ya que, $v_1,v_2,\ldots,v_m$ es linealmente independiente. Entonces, todos los $a_i's$ deben ser cero. Por lo tanto, $a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$ es linealmente independiente.\\\\
+
+    %------------------- 11.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que $v_1,\ldots,v_m$, $w$ es linealmente independiente si y sólo si 
+    $$w\neq \span(v_1,\ldots,v_m).$$\\
+	Demostración.-\; Supongamos que $w\in \span(v_1,\ldots,v_m)$. Entonces,
+	$$w=a_1v_1+\ldots+a_mv_m.$$
+	De donde,
+	$$a_1v_1+\ldots+a_mv_m-w=0\quad \Rightarrow \quad a_1v_1+\ldots+a_mv_m+(-1)w=0.$$
+	Por lo tanto, $v_1,\ldots,v_m,w$ es linealmente dependiente.\\
+
+	Por otro lado: $v_1,\ldots,v_m,w$ es linealmente independiente, entonces existe $a_1,\ldots,a_m,b\in \textbf{F}$, $\forall a_i=0$, tal que
+	$$a_1v_1+\ldots+a_mv_m+bw=0.$$
+	Dado que $b=0$, no se puede escribir $w$ como combinación lineal de $v_1,\ldots,v_m$. Es decir,
+	$$w=\dfrac{1}{0}(a_1v_1+\ldots+a_mv_m),$$
+	lo que es imposible. De esta manera
+	$$w\neq \span(v_1,\ldots,v_m).$$\\
+
+    %------------------- 15.
+    \item Demostrar que $\textbf{F}^\infty$ es de dimensión infinita.\\\\
+	Demostración.-\; Sea un elemento $e_m\in \textbf{F}^\infty$ como el elemento que tiene la coordenada m-ésima igual a $1$ los demás elementos iguala a $0$. Es decir,
+	$$(0,1,0,\ldots,0)$$
+	Ahora, si varía $m$ sobre el conjunto de los números naturales, entonces tenemos una secuencia $e_1,e_2,\ldots$ en $\textbf{F}^\infty$, si y sólo si podemos probar que $e_1,e_2,\ldots,e_m$ es linealmente independiente para cada $m$. Con este fin, sea
+	$$a_1e_1+a_2e_2+\ldots+a_me_m=0$$
+	De donde,
+	$$(a-1,a_2,\ldots,a_m,0,0,\ldots,0)=(0,0,\ldots,0)$$
+	Inmediatamente implica que $a_i's=0$ y por lo tanto, $e_i's$ son linealmente independiente.\\\\
+
+
+\end{enumerate}

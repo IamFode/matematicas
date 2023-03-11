@@ -3202,6 +3202,27 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
     \item Demuestre que $f$ es convexa en un intervalo si y sólo si para todo $x$ e $y$ del intervalo se verifica
     $$f(tx+(1-t)y)<(1-t)f(y),\quad \mbox{para}\; 0<t<1.$$
     Se trata solamente de otra expresión equivalente a la definición que hemos dado de función convexa, aunque muy útil muchos casos.\\\\
-	Demostración.-\; 
+	Demostración.-\; Sea $(x,f(x))$ y $(y,f(y))$ dos puntos de $f$. Entonces, la recta que une estos dos puntos estará dada por
+	$$\mathcal{L}_1(t)=\left[ty+(1-t)x,tf(y)\right]+(1-t)f(x),\quad \mbox{para}\; 0<t<1.$$
+	Por otro lado la linea que une $x$ e $y$ es
+	$$\mathcal{L}_2(t)=ty+(1-t)x.$$
+	Así, $f$ es convexa si y sólo si 
+	$$\mathcal{L}_1(t)>f\left[\mathcal{L}_2(t)\right],$$
+	para todo $t\in (0,1)$. Por lo tanto
+	$$f\left[ty+(1-t)x\right]<tf(y)+(1-t)f(x).$$\\
+
+    %------------------- 4.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f$ y $g$ son convexas y $f$ es creciente, entonces $f\circ g$ es convexa. (La demostración es más sencilla si se utiliza el resultado del problema 3).\\\\
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item 
+	\end{enumerate}
+
+
 
 \end{enumerate}

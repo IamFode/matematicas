@@ -235,4 +235,73 @@ donde $\hat{\theta}$ es el estimador MV del parámetro de escalar $\theta$.
 El método de los momentos proporciona una alternativa razonable cuando no se pueden determinar los estimadores de máxima verosimilitud. Recuérdese que los parámetros son, en general, funciones de los momentos teóricos. En esencia, el método se implementa igualando tantos momentos muestrales con los correspondientes momentos teóricos tantas veces como sea necesario para determinar un estimador de momentos para un parámetro desconocido.
 
 \subsection{Estimación por máxima verosimilitud para muestras censuradas}
-En algunas situaciones de muestreo, en forma especial en las pruebas de duración, el procedimiento de prueba puede terminar antes de proporcionar una muestra aleatoria completa. Una prueba típica de duración consiste en artículos iguales (tales como componentes eléctricos o mecánicos) seleccionados en forma aleatoria de un proceso y operando en un medio cuidadosamente controlado hasta que el articulo falla. Si la prueba de duración se termina sólo cuando todas las unidades de la muestra han fallado, se dice que la muestra aleatoria de tiempos está completa. Pero por varias razones la prueba termina ya sea después de un lapso de tiempo predeterminado $x_0$ o después de que falla un determinado número de unidades $m\leq n$. Las dos condiciones producen muestras censuradas.
+En algunas situaciones de muestreo, en forma especial en las pruebas de duración, el procedimiento de prueba puede terminar antes de proporcionar una muestra aleatoria completa. Una prueba típica de duración consiste en artículos iguales (tales como componentes eléctricos o mecánicos) seleccionados en forma aleatoria de un proceso y operando en un medio cuidadosamente controlado hasta que el articulo falla. Si la prueba de duración se termina sólo cuando todas las unidades de la muestra han fallado, se dice que la muestra aleatoria de tiempos está completa. Pero por varias razones la prueba termina ya sea después de un lapso de tiempo predeterminado $x_0$ o después de que falla un determinado número de unidades $m\leq n$. Las dos condiciones producen muestras censuradas. Si $X_0$ es un lapso de fijo de tiempo, el número de unidades que fallan de las $n$, desde el comienzo de la prueba hasta el tiempo $x_0$ es una variable aleatoria; esta constituye una muestra censurada de tipo $I$. Si $m$ es fijo y el tiempo de terminación $X_m$ es la variable aleatoria, se dice que la muestra es de tipo $II$. \\
+Supongamos que los tiempos de duración de las unidades son variables aleatorias $X_1,X_2,\ldots,X_n$ independientes exponencialmente distribuidas, con una función 
+$$f(x;\theta)=\dfrac{1}{\theta}e^{-\frac{x}{\theta}}.$$
+El interés recae en encontrar el estimador de máxima verosimilitud del parámetro $\theta$. La función de verosimilitud para un muestreo censurado del tipo $II$ es la probabilidad conjunta de que fallen $m$ unidades en los tiempos $x_1,x_2,\ldots,x_m$ en ese orden, y sobrevivan $n-m$ unidades con un tiempo de supervivencia igual a $x_m$. La parte de la función de verosimilitud que corresponde a las $m$ unidades que han fallado en los tiempo $x_1,x_2,\ldots,x_m$ es $f(x_1;\theta),f(x_2,\theta)\cdot f(x_m;\theta)$. Pero esta sólo una de las posibles formas en que pueden fallar $m$ unidades de un total de $n$. El número total de formas es $n!/(n-m)!$. La probabilidad de que $n-m$ unidades sobrevivan un tiempo $x_m$, está dada por la función de confiabilidad a tiempo $x_m$; de esta forma, para la distribución exponencial,
+$$P(X>x_m)=e^{-\frac{x}{\theta}}.$$
+Por lo tanto, la función de verosimilitud Es
+$$
+\begin{array}{rcl}
+    L(x_1,x_2,\ldots,x_m; \theta) &=& \dfrac{n!}{n-m)!}\left[\dfrac{1}{\theta}e^{-\frac{x_1}{\theta}}\cdots \dfrac{1}{\theta}e^{-\frac{x_1}{\theta}}e^{-\frac{x_1}{\theta}}\cdots e^{-\frac{x_1}{\theta}}\right]\\\\
+				  &=& \dfrac{n!}{(n-m)!}\left[\dfrac{1}{\theta^m}e^{-\frac{1}{\theta}\sum\limits_{i=1}^m x_i}\cdot e^{-\frac{n-m}{\theta}x_m}\right]\\\\
+				  &=& \dfrac{n!}{(n-m)!}\left(\dfrac{1}{\theta}e^{-\frac{1}{\theta}T_m}\right).
+\end{array}
+$$
+Donde
+$$T_m=\sum_{i=1}^m x_i+(n-m)x_m.$$
+
+Tomando el logaritmo natural de $L$, se tiene
+
+$$\ln L(x_1,x_2,\ldots,x_m; \theta) = \ln(n!)-\ln\left[(n-m)!\right]-m\ln\theta -\dfrac{1}{\theta}T_m.$$
+
+Entonces
+
+$$\dfrac{d\left[\ln L(x_1,x_2,\ldots,x_m; \theta)\right]}{d\theta}=-\dfrac{m}{\theta}+\dfrac{1}{\theta^2}T_M$$
+
+e igualando la derivada a cero, el estimador de máxima verosimilitud de $\theta$ es
+
+$$\hat{\theta}=\dfrac{\displaystyle\sum_{i=1}^m x_i+(n-m)x_m}{m}.$$
+
+
+\section{Estimación por intervalo}
+Una media muestral, por ejemplo $\overline{x}=200$ unidades, es un estimador puntual de un parámetro desconocido. Este estimador, ¿implica que la demanda media desconocida no sea mayor de $250$ ni menor de $150$?. En este punto es difícil saberlo, ya que no se tiene ninguna indicación del posible error en el estimador puntal. El error en el estimado puntual se mide en términos de la variación muestral del correspondiente estimador.\\
+
+Por ejemplo, supóngase que la desviación estándar de la media muestral $\overline{X}$ es $60$ unidades. De acuerdo con el teorema central del límite puede argumentarse que $\overline{X}\to N(\mu,60)$, conforme $n\to \infty$. De esta forma, la probabilidad de que $\overline{X}$ se encuentre dentro de dos desviaciones estándar alrededor de $\mu$, es de, aproximadamente, $0.95$. En otras palabras, para $n$ grande,
+$$P(|\overline{X}-\mu|<120)=0.95,$$
+otra
+$$P(-120<\overline{X}-\mu<120)=0.95.$$
+
+Restando $X$ y multiplicando por $-1$ en el interior de los paréntesis, se tiene
+$$P(\overline{X}-120<\mu<\overline{X}+120)=0.95.$$
+
+Si se sustituye el estimado para $\overline{x}=200$, se tiene
+$$P(80<\mu<320)=0.95,$$
+lo que sugiere que es enteramente posible que la demanda sea tan grande como $250$ unidades o tan pequeña como $150$ unidades, siempre que d.e.($\overline{X}$)=60. Por otro lado, supóngase que la desviación estándar de $\overline{X}$ es igual a $10$. Entonces, la expresión correspondiente a dos desviaciones estándar, es
+$$P(\overline{X}-20<\mu<\overline{X}+20)=0.95,$$
+y para $\overline{X}=200$, 
+$$P(180<\mu<220)=0.95.$$
+
+En este caso es poco probable que $\mu$ sea tan grande como $250$ o tan pequeño como $150$. En ambos casos la clave está en la desviación estándar del estimador puntual. En esencia, para la estimación del intervalo se considera, tanto el estimador puntual del parámetro $\theta$, como su distribución de muestreo.\\
+
+El intervalo $[\overline{X}-120,\overline{X}+120]$ es un intervalo aleatorio, y la probabilidad de que este intervalo contenga el valor esperado de $\mu$ es de $0.95$.  En otras palabras, si se obtuviesen muestras del mismo tamaño en forma repetida de una población, y cada vez que estas se seleccionan, se calculan los valores específicos para el intervalo aleatorio $[\overline{X}-120,\overline{X}+120]$; entonces debe esperarse que un $95\%$ de estos intervalos contengan el valor ed la media desconocida $\mu$. La probabilidad de $0.95$ para el intervalo aleatorio sugiere que la confianza en que el intervalo $(80,320)$ contenga el valor de la media desconocida $\mu$ es alta. Así, cuando se escribe
+$$P(80<\mu<320)=0.95,$$
+no se está formulando ninguna proposición probabilística en el sentido clásico, sino más bien se expresa un grado de confianza. El intervalo $(80,320)$ recibe el nombre de intervalo de confianza del $95\%$ para $\mu$.\\
+
+En términos generales, la construcción de un intervalo de confianza para un parámetro desconocido $\theta$, consiste en encontrar una estadística suficiente $T$ y relacionarla con otra variable aleatoria $X'=f(T;\theta)$, donde $X$ involucra a $\theta$ pero la distribución de $X$ no contiene a $\theta$, así como tampoco a ningún otro parámetro desconocido. Entonces se seleccionan dos valores $x_1$ y $x_2$ tales que 
+$$P(x_1<X<x_2)=1-\alpha,$$
+donde $1-\alpha$ recibe el nombre de \textbf{coeficiente de confianza}. Mediante una manipulación algebraica de las dos expresiones, se puede modificar el contenido entre paréntesis y expresarlo como
+$$P(h_(T)<\theta<h_2(T))=1-\alpha,$$
+donde $h_1(T)$ y $h_2(T)$ son funciones de la estadística $T$ y de esta forma, variables aleatorias. Al seguirse el desarrollo podemos encontrar intervalos de confianza unilaterales, de la forma
+$$P\left[g_1(T)<\theta\right]=1-\alpha$$
+o
+$$P\left[\theta<g_2(T)\right]=1-\alpha.$$\\
+
+
+\subsection{Intervalos de confianza para \boldmath $\mu$ cuando se muestrea una distribución normal con varianza conocida}
+
+
+
+
+
+

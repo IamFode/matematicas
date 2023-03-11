@@ -500,7 +500,9 @@ Aclaremos esto con dos ejemplos.
     Una lista $v_1,\ldots,v_n$ de vectores en $V$ es una base de $V$ si y sólo si cada $v\in V$ puede escribirse unívocamente de la forma 
     $$v=a_1v_1+\cdots+a_nv_n.$$
     donde $a_1,\ldots,a_n\in \textbf{F}$.\\\\
-	Demostración.-\; Primero suponga que $v_1,\ldots,v_n$ es una base de $V$. Ya que, $v_1,\ldots,v_n$ genera $V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que $v=a_1v_1+\cdots+a_nv_n$ se cumple. Para mostrar que esta representación es única, sean $c_1,\ldots,c_n$ escalares tales que, también tenemos
+	Demostración.-\; Primero suponga que $v_1,\ldots,v_n$ es una base de $V$. Ya que, $v_1,\ldots,v_n$ genera $V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que 
+	$$v=a_1v_1+\cdots+a_nv_n$$ 
+	se cumple. Para mostrar que esta representación es única, sean $c_1,\ldots,c_n$ escalares tales que, también tenemos
 	$$v=c_1v_1+\cdots+c_nv_n.$$
 	Sustrayendo la primera ecuación de la segunda, tenemos
 	$$0=(a_1-c_1)v_1+\cdots+(a_n-c_n)v_n.$$
@@ -770,12 +772,19 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		Supongamos que $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ es una base de $\textbf{R}^5$. Podemos demostrar fácilmente que estos vectores generar $U$, ya que $U$ puede expresarse como una combinación lineal de estos tres vectores. Ahora, demostremos que son linealmente independiente. Sea $c_1,c_2,c_3\in \textbf{F}$. Entonces, 
 		$$c_1(3,1,0,0,0)+c_2(0,0,7,1,0)+c_3(0,0,0,0,1)=0$$
 		De donde,
-		$$(3c_1,c_2,7c_2,c_2+c_3)=(0,0,0,0,0).$$
+		$$(3c_1,c_2,7c_2,c_2,c_3)=(0,0,0,0,0).$$
 		Igualando cada componente, tenemos que $c_1=c_2=c_3=0$. Así des demuestra que estos tres vectores son linealmente independientes. Por lo tanto, $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ es una base de $U$.\\\\
 
 	    %---------- (b)
 	    \item Extienda la base de la parte (a) a una base de $\textbf{R}^5$.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Sean $v_1=(3,1,0,0,0)$, $v_2=(0,0,7,1,0)$, $v_3=c_3(0,0,0,0,1)$. Por el ejercicio 11 del apartado 2A (Axler, Linear Algebra), se sabe que si tenemos $v_4\notin \span(v_1,v_2,v_3)$ entonces $v_1,v_2,v_3,v_4$ son linealmente independientes. Nos preguntamos, ¿que clase de vectores no pueden ser generados por $v_1,v_2,v_3$?. Observemos que las primeras dos coordenadas de $v_2$ y $v_3$ son cero. Por lo que no pueden aportar a otras dos primeras coordenadas de cualquier combinación lineal que consideremos. De hecho, estas coordenadas deben provenir de $v_1$.\\
+		Si $av_1+bv_2+cv_3$ es una combinación lineal, entonces las dos primeras coordenadas son $3a$ y $a$. Luego, si escogemos un vector donde sus primeras dos coordenada no son de la forma $3a$ y $a$ para cualquier escalar $a$, entonces no será generados por $v_1,v_2,v_3$. Por ejemplo podemos escoger el vector 
+		$$v_4=(0,1,0,0,0)$$
+		Ahora, encontremos un $v_5$ tal que $v_5\notin \span(v_1,v_2,v_3,v_4)$. Observemos que las coordenadas cuatro y cinco de los vectores $v_1.v_2,v_3$ y $v_4$ son cero. Por lo que ambas coordenadas deben provenir de $v_2$.\\
+		Si  $av_1+bv_2+cv_3+dv_4$ es una combinación lineal, entonces las coordenadas cuatro y cinco son de la forma $7b$ y $b$, para cualquier escalar $b$. Por ejemplo podemos escoger el vector,
+		$$v_5=(0,0,0,1,0).$$
+		Por último, demostremos que estos vectores son base de $\textbf{F}^5$. Por el teorema 2.23 sabemos que, si $m$ vectores generan un espacio vectorial, entonces cualquier lista linealmente independiente en $V$ no puede tener más de $m$ vectores. Así, queda demostrada la independencia lineal de $v_1,v_2,v_3,v_4,v_5$. Por otro lado, notemos que $v_3$
+
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\oplus W$.\\\\
