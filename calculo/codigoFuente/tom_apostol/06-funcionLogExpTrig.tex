@@ -137,15 +137,61 @@ siendo la segunda integral válida para $a>0$, $a\neq 1$.
 \end{ejem}
 
 
-\section{Ejercicios}
+\section{Derivación logarítmica}
+El método fue desarrollado en 1697 por Johann Bernoulli (1667-1748) y su fundamento es una hábil aplicación de la regla de la cadena.\\
 
-En los ejercicios 1 al 12, hallar la derivada $f'(x)$. En cada caso la función $f$ se la supone definida para todo $x$ real para el que la expresión que se da de $f(x)$ tenga sentido.
+Supóngase que se forma la función compuesta de $L_0$ con una función derivable cualquier $f(x)$; es decir,
+$$g(x)=L_0\left[f(x)\right] = \log|f(x)|$$
+para todo $x$ tal que $f(x)\neq 0$. La regla de la cadena aplica junto con $L'_0(x)=\dfrac{1}{x},\; x\neq 0$ conduce a la fórmula
+$$g'(x)=L'_0\left[f(x)\right]\cdot f'(x)=\dfrac{f'(x)}{f(x)}.$$
+Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtener $f'(x)=g¡(x)\cdot f(x)$.
+
+%-------------------- Ejercicio 6.2.
+\begin{ejem}
+    Calcular $f'(x)$ si $f(x)=x^2\cos x\left(1+x^4\right)^{-7}.$\\\\
+	Respuesta.-\; Se toma el logaritmo del valor absoluto de $f(x)$ y luego se deriva.\\
+	Sea pues
+	$$
+	\begin{array}{rcl}
+	    g(x)&=&\log|f(x)|\\
+		&=&\log x^2 + \log|\cos x| + \log\left(1+x^4\right)^{-7}\\
+		&=& 2\log x + \log|\cos x| - 7\log\left(1+x^4\right)
+	\end{array}
+	$$
+	Derivando $g(x)$ con respecto a $x$ se obtiene
+	$$
+	\begin{array}{rcl}
+	    g'(x) &=& \dfrac{f'(x)}{f(x)}\\\\
+		  &=& \dfrac{2}{x}-\dfrac{\sen x}{\cos x}-\dfrac{\sen x}{\cos x}-\dfrac{28x^3}{(1+x^4)}.
+	\end{array}
+	$$
+	Multiplicando ambos miembros por $f(x)$ tenemos
+	$$
+	\begin{array}{rcl}
+	    f'(x) &=& \dfrac{2x\cos x}{\left(1+x^4\right)^7}-\dfrac{x^2\sen x}{\left(1+x^4\right)^7}-\dfrac{28x^5}{\left(1+x^4\right)^7}
+	\end{array}
+	$$
+
+\end{ejem}
+
+
+\section{Ejercicios}
 
 \begin{enumerate}[1.]
 
     %-------------------- 1.
-    \item $f(x)=e^{3x-1}$.\\\\
-	Respuesta.-\; 
+    \item 
+	\begin{enumerate}[a)]
+
+	    %---------- a)
+	    \item Hallar todos los valores de $c$ tales que $\log x = c + \int_e^x t^{-1}\; dt$ para todo $x>0$.\\\\
+		Respuesta.-
+
+	    %---------- b)
+	    \item Sea $f(x)=\log\left[(1+x)/(1-x)\right]$ si $x>0$. Si $a$ y $b$ son números dados, siendo $ab\neq -1$, hallar todos los $x$ tales que $f(x)=f(a)+f(b)$.\\\\
+		Respuesta.-
+
+	\end{enumerate}
 
 \end{enumerate}
 

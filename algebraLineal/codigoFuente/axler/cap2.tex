@@ -552,7 +552,7 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 %------------------- teorema 2.34
 \begin{myteo}[Cada subespacio de \boldmath$V$ forma parte de una suma directa igual a \boldmath$V$]\;\\\\
     Suponga $V$ es de dimensión finita y $U$ es un subespacio de $V$. Entonces, existe un subespacio $W$ de $V$ tal que $U\oplus W=V$.\\\\
-	Demostración.-\; Ya que $V$ es de dimensión finita, también lo es $U$ por 2.26. Por lo que, existe una base $u_1,\ldots,u_m$ de $U$ esto por 2.32. Por su puesto $u_1,\ldots,u_m$ es una lista linealmente independiente de vectores en $V$. Por lo tanto, esta lista puede extenderse a una base $u_1,\ldots,u_n$ de $V$ esto por 2.33. Sea $W=\span(w_1,\ldots,w_n)$. Para probar que $V=U\oplus W,$ por 1.45, solo Necesitamos demostrar que
+	Demostración.-\; Ya que $V$ es de dimensión finita, también lo es $U$ por 2.26. Por lo que, existe una base $u_1,\ldots,u_m$ de $U$ esto por 2.32. Por su puesto $u_1,\ldots,u_m$ es una lista linealmente independiente de vectores en $V$. Por lo tanto, esta lista puede extenderse a una base $u_1,\ldots,u_n$ de $V$ esto por 2.33. Sea $W=\span(w_1,\ldots,w_n)$. Para probar que $V=U\oplus W,$ por 1.45, solo necesitamos demostrar que
 	$$V=U+W \quad \mbox{y}\quad U\cap W=\left\{0\right\}.$$
 	Para probar la primera ecuación, suponga $v\in V$. Entonces, ya que la lista $u_1,\ldots,u_m$, $w_1,\ldots,w_n$ genera $V$, existe $a_1,\ldots,a_m$, $b_1,\ldots,b_n\in \textbf{F}$ tal que
 	$$v=a_1u_1+\cdots+a_mu_m+b_1w_1+\cdots+b_nw_n.$$
@@ -765,7 +765,7 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		Respuesta.-\; Dado que se tiene la condición $x_1=3x_2\;\mbox{y}\; x_3=7x_4$. Podemos escribir el vector general, como sigue
 		$$
 		\begin{array}{rcl}
-		    3x_2,x_2,7x_4,x_4,x_5 &=& (3x_2,x_2,0,0,0)+(0,0,7x_4,x_4,0)+(0,0,0,0,x_5)\\
+		    (3x_2,x_2,7x_4,x_4,x_5) &=& (3x_2,x_2,0,0,0)+(0,0,7x_4,x_4,0)+(0,0,0,0,x_5)\\
 					  &=& x_2(3,1,0,0,0)+x_4(0,0,7,1,0)+x_5(0,0,0,0,1).
 		\end{array}
 		$$
@@ -783,12 +783,97 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 		Ahora, encontremos un $v_5$ tal que $v_5\notin \span(v_1,v_2,v_3,v_4)$. Observemos que las coordenadas cuatro y cinco de los vectores $v_1.v_2,v_3$ y $v_4$ son cero. Por lo que ambas coordenadas deben provenir de $v_2$.\\
 		Si  $av_1+bv_2+cv_3+dv_4$ es una combinación lineal, entonces las coordenadas cuatro y cinco son de la forma $7b$ y $b$, para cualquier escalar $b$. Por ejemplo podemos escoger el vector,
 		$$v_5=(0,0,0,1,0).$$
-		Por último, demostremos que estos vectores son base de $\textbf{F}^5$. Por el teorema 2.23 sabemos que, si $m$ vectores generan un espacio vectorial, entonces cualquier lista linealmente independiente en $V$ no puede tener más de $m$ vectores. Así, queda demostrada la independencia lineal de $v_1,v_2,v_3,v_4,v_5$. Por otro lado, notemos que $v_3$
+		Por último, demostremos que esta lista es base de $\textbf{F}^5$. Por el teorema 2.23 sabemos que, si $m$ vectores generan un espacio vectorial, entonces cualquier lista linealmente independiente en $V$ no puede tener más de $m$ vectores. Así, queda demostrada la independencia lineal de $v_1,v_2,v_3,v_4,v_5$.\\
+
+		Por otro lado, demostremos que esta lista genera $\textbf{F}^5$. Nuestro objetivo será hallar una combinación lineal que incluya a $v_1,v_2,v_3,v_4$ y $v_5$ para $a,b,c,d,e\in \textbf{F}$ tales que
+		$$a(1,0,0,0,0)+b(0,0,1,0,0)+c(0,0,0,0,1)+d(0,1,0,0,0)+e(0,0,0,1,0)=(x_1,x_2,x_3,x_4,x_5).$$
+
+		Para ello, notemos que ya se tiene $v_3=(0,0,0,0,5)$, $v_4=(0,1,0,0,0)$ y $v_5=(0,0,0,1,0)$. Ahora, generemos los restantes $(1,0,0,0,0)$ y $(0,0,1,0,0)$, de la siguiente manera 
+		$$
+		\begin{array}{rcl}
+		    \dfrac{1}{3}(v_1-v_4)&=&(1,0,0,0,0)\\\\
+		    \dfrac{1}{7}(v_2-v_5)&=&(0,0,1,0,0).
+		\end{array}
+		$$
+		Dado que se incluye a $v_1$ y $v_2$ en combinación lineal con $v_4$ y $v_5$, entonces 
+		$$
+		\begin{array}{rcl}
+		    a&=&x_1\\
+		    b&=&x_2\\
+		    c&=&x_3\\
+		    d&=&x_4\\
+		    e&=&x_5.
+		\end{array}
+		$$
+		Encontrando los respectivos escalares $a,b,c,d,e$ en términos de $x_1,x_2,x_3,x_4,x_5$. Decimos que la lista $v_1,v_2,v_3,v_4,v_5$ genera $\textbf{F}^5$. Por lo tanto es una base de $\textbf{F}^5$.\\\\
+		    
 
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\oplus W$.\\\\
-		Respuesta.- 
+		Respuesta.- Por 1.45 (Axler, Lineal Algebra), demostraremos que $\textbf{R}^5=U+W$ y que $U\cap W=\left\{0\right\}$. Sea $v\in \textbf{R}^5$, ya que $v_1,v_2,v_3,v_4,v_5$ es una base de $\textbf{F}^5$, por el criterio de base (2.28, Axler, Lineal algebra) podemos escribir 
+		$$
+		\begin{array}{rcl}
+		    v &=& c_1v_1+c_2v_2+c_3v_3+c_4v_4+c_5v_5\\
+		      &=&(c_1v_1+c_2v_2+c_3v_3)+(c_4v_4+c_5v_5).
+		\end{array}
+		$$
+		Luego, sean $u=c_1v_1+c_2v_2+c_3v_3$ y $w=c_4v_4+c_5v_5$. Entonces, $u\in U$ y $w\in W$. Está claro que $u$ y $w$ generan $U$ y $W$ respectivamente. De este modo, cada vector en $\textbf{R}^5$ puede ser expresado como una suma de vectores en $U$ y $W$. Esto prueba que $\textbf{R}^5=U+W$.\\
+
+		Ahora demostremos que $U\cap W=\left\{0\right\}$. Sea $v\in U\cap W$, ya que $v\in U$ entonces para algunos escalares $a,b,c\in \textbf{F}$ se tiene
+		$$v=av_1+bv_2+cv_3.$$
+		Lo mismo pasa con $v\in W$, para algunos escalares $d,e\in \textbf{F}$; es decir,
+		$$v=dv_4+ev_5.$$
+		Dado que queremos encontrar $U\cap W$, se tiene
+		$$av_1+bv_2+cv_3=dv_4+ev_5 \quad \Rightarrow \quad av_1+bv_2+cv_3-dv_4-ev_5=0$$
+		Por el hecho de que $U$ y $W$ son linealmente independiente, lo que implica $a=b=c=d=e=0$, entonces $v=0$, así $U\cap W = \left\{0\right\}$. Concluimos que 
+		$$\textbf{R}^5=U\oplus W.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 4.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U$ el subespacio de $\textbf{C}^5$ definida por 
+	    $$U=\left\{(z_1,z_2,z_3,z_4,z_5)\in \textbf{C}^5\; :\; 6z_1=z_2\;\; \mbox{y}\;\; z_3+2z_4+3z_5=0\right\}.$$
+	    Encuentre una base de $U$.\\\\
+		Respuesta.-\; De las condiciones dadas, podemos escribir el conjunto $U$ como
+		$$U=\left\{(6z_1,z_2,-2z_4-3z_5,z_4,z_5)\;:\;z_2,z_4,z_5\in \textbf{C}\right\}$$
+		Sea $z\in U$, que implica
+		$$
+		\begin{array}{rcl}
+		    z &=& (6z_1,z_2,-2z_4-3z_5,z_4,z_5)\\
+		      &=& z_2(6,1,0,0,0)+z_4(0,0,-2,1,0)+z_5(0,0,-3,0,1).
+		\end{array}
+		$$
+		Entonces, $z_2(6,1,0,0,0)$, $z_4(0,0,-2,1,0)$ y $z_5(0,0,-3,0,1)$ genera $U$. Ahora veamos si esta lista es linealmente independiente. Sean $a,b,c\in \textbf{F}$ tal que 
+		$$(6a,a,-2b-3c,b,c)=0.$$
+		De donde,
+		$$
+		\begin{array}{rcl}
+		    6a&=&0\\
+		    a&=&0\\
+		    -2b-3c&=&0\\
+		    b&=&0\\
+		\end{array}
+		\quad \Rightarrow \quad 
+		\begin{array}{rcl}
+		    a&=&0\\
+		    b&=&0\\
+		    c&=&0.
+		\end{array}
+		$$
+		Por lo tanto, la lista es linealmente independiente. Así, concluimos que $U$ es generado por $z_2(6,1,0,0,0)$, $z_4(0,0,-2,1,0)$ y $z_5(0,0,-3,0,1)$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) para una base de $\textbf{C}^5$.\\\\
+		Respuesta.-\;
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\textbf{C}^5$ tal que $\textbf{C}^5=U\oplus W$.\\\\
+		Respuesta.-\; 
 
 	\end{enumerate}
 

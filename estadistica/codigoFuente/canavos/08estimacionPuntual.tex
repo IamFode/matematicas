@@ -269,7 +269,7 @@ Una media muestral, por ejemplo $\overline{x}=200$ unidades, es un estimador pun
 
 Por ejemplo, supóngase que la desviación estándar de la media muestral $\overline{X}$ es $60$ unidades. De acuerdo con el teorema central del límite puede argumentarse que $\overline{X}\to N(\mu,60)$, conforme $n\to \infty$. De esta forma, la probabilidad de que $\overline{X}$ se encuentre dentro de dos desviaciones estándar alrededor de $\mu$, es de, aproximadamente, $0.95$. En otras palabras, para $n$ grande,
 $$P(|\overline{X}-\mu|<120)=0.95,$$
-otra
+o
 $$P(-120<\overline{X}-\mu<120)=0.95.$$
 
 Restando $X$ y multiplicando por $-1$ en el interior de los paréntesis, se tiene
@@ -299,6 +299,25 @@ $$P\left[\theta<g_2(T)\right]=1-\alpha.$$\\
 
 
 \subsection{Intervalos de confianza para \boldmath $\mu$ cuando se muestrea una distribución normal con varianza conocida}
+
+El interés recae en la construcción de un intervalo de confianza de un $100(1-\alpha)\%$ sobre $\mu$ y donde $\alpha$ es un número pequeño, tal que $0<\alpha<1$. La construcción de un intervalo de confianza se hace con base en el mejor estimador de $\mu$, explícitamente de la media muestral $\overline{X}$.\\
+
+Sea 
+$$P(-120<\overline{X}-\mu<120)=0.95.$$
+Sumando $\mu$, se tiene
+$$P(\mu-120<\overline{X}<\mu+120)=0.95.$$
+De esta forma, los límites $\mu-120$ y $\mu+120$ son funciones de los posibles valores de $\mu$. Por lo tanto, y en general, se puede escribir
+$$P\left[g_1(\mu)<\overline{X}<g_2(\mu)\right]=1-\alpha$$
+de manera tal que
+$$\int_{-\infty}^{g_1(\mu)}f(\overline{x};\mu)\; d\overline{x}=\dfrac{\alpha}{2}$$
+y
+$$\int^{\infty}_{g_2(\mu)}f(\overline{x};\mu)\; d\overline{x}=\dfrac{\alpha}{2},$$
+
+donde $f(\overline{x};\mu)$ es la función de densidad de la distribución de muestreo de $\overline{X}$, y $g_1(\mu)$ y $g_2(\mu)$ son funciones de $\mu$ las cuales no contiene a ningún otro parámetro desconocido.\\
+
+Determinemos $g_1(\mu)$ y $g_2(\mu)$. Dado que $\overline{X}\sim N(\mu,\sigma/\sqrt{n})$, la normal estándar $Z=\dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}$, y 
+$$P\left[\right]$$
+
 
 
 
