@@ -194,6 +194,7 @@ Aclaremos esto con dos ejemplos.
 
 \vspace{.5cm}
 
+
 \setcounter{mysection}{0}
 \mysection{Ejercicios}
 
@@ -485,6 +486,7 @@ Aclaremos esto con dos ejemplos.
 \end{enumerate}
 
 \vspace{1cm}
+
 
 
 \mysection{Bases}
@@ -879,6 +881,123 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 
     %-------------------- 5.
     \item Demostrar o refutar: existe una base $p_0,p_1,p_2,p_3$ de $\mathcal{P}_3(\textbf{F})$ tal que ninguno de los polinomios $p_0,p_1,p_2,p_3$ tiene grado $2$.\\\\
+	Demostración.-\; Consideremos la lista,
+	$$
+	\begin{array}{rcl}
+	    p_0&=&1,\\
+	    p_1&=&X,\\
+	    p_2&=&X^3+X^2,\\
+	    p_3&=&X^3.
+	\end{array}
+	$$
+	El cual no tiene ningún polinomio de grado $2$. Demostraremos que esta lista es una base. Primero veamos que $\span(p_0,P_1,p_2,p_3)=\mathcal{P}_3(\textbf{F})$. Sea $q\in \mathcal{P}_3(\textbf{F})$. Entonces existe $a_0,a_1,a_2,a_3\in F$ alguno cero, tal que
+	$$q=a_0+a_1X+a_2X^2+a_3X^3.$$
+	Notemos que
+	$$
+	\begin{array}{rcl}
+	    a_0p_0+a_1p_1+a_2(p_2-p_3)+a_3p_3 &=& a_0p_0+a_1p_1+a_2p_2+a_3p_3-a_2p_3\\\\
+					      &=& a_0p_0+a_1p_1+a_2p_2+(a_3-a_2)p_3\\\\
+					      &=& a_0+a_1X+a_2\left(X^3+X^2\right)+(a_3-a_2)X^3\\\\
+					      &=& a_0+a_1X+a_2X^3+a_2X^2+a_3X^3-a_2X^3\\\\
+					      &=& a_0+a_1X+a_2X^2+a_3X^3\\\\
+					      &=& p.
+
+	\end{array}
+	$$
+
+	Por lo que $p_0,p_1,p_2,p_3$ genera $\mathcal{P}_3(\textbf{F})$. Ahora, demostraremos que la lista es linealmente independiente. Sean $b_0,\ldots,b_3\in \textbf{F}$ tales que
+
+	$$b_0p_0+b_1p_1+b_2p_2+b_3p_3=0.$$
+
+	Se sigue que,
+
+	$$
+	\begin{array}{rcl}
+	    b_0+b_1X+b_2(X^2+X^3)+b_3X^3&=&0\\\\
+	    b_0+b_1X+b_2X^2+b_2X^3 +b_3X^3&=&0\\\\
+	    b_0+b_1X+b_2X^2+(b_2+b_3)X^3&=&0.
+	\end{array}
+	$$
+	donde $\textbf{0}$ es el cero polinomial. La lista $\left(1,X,X^2,X^3\right)$ es linealmente independiente, ya que es una base en $\mathcal{P}_3(\textbf{F})$. Por lo que 
+	$$
+	\begin{array}{rcl}
+	    b_0&=&0,\\
+	    b_1&=&0,\\
+	    b_2&=&0,\\ 
+	    b_2+b_3&=&0.
+	\end{array}
+	$$
+	Por lo tanto, existe una base $p_0,p_1,p_2,p_3$ de $\mathcal{P}_3(\textbf{F})$ tal que ninguno de los polinomios tiene grado $2$.\\\\
+
+    %-------------------- 6.
+    \item Suponga $v_1,v_2,v_3,v_4$ es una base de $V$. Demostrar que 
+    $$v_1+v_2,v_2+v_3,v_3+v_4,v_4$$
+    es también una base de $V$.\\\\
+	Demostración.-\; Demostremos la independencia lineal. Sean $a_1,a_2,a_3,a_4\in \textbf{F}$ tales que
+	$$
+	\begin{array}{rcl}
+	    a_1(v_1+v_2)+a_2(v_2+v_3)+a_3(v_3+v_4)+a_4v_4&=&0\\\\
+	    a_1v_1+a_1v_2+a_2v_2+a_2v_3+a_3v_3+a_3v_4+a_4v_4&=&0\\\\
+	    a_1v_1+(a_1+a_2)v_2+(a_2+a_3)v_3+(a_3+a_4)v_4&=&0\\\\
+	\end{array}
+	$$
+	Ya que $v_1,v_2,v_3,v_4$ es linealmente independiente, entonces $a_1=a_1+a_2=a_2+a_3=a_3+a_4=0$. Por lo que  $v_1+v_2,v_2+v_3,v_3+v_4,v_4$ es linealmente independiente.\\
+
+	Luego, demostremos que $v_1+v_2,v_2+v_3,v_3+v_4,v_4$ es una base de $V$. Por definición de generador (span), podemos expresar $v_1,v_2,v_3,v_4$ como combinaciones lineales de $v_1+v_2,v_2+v_3,v_3+v_4+v_4$, de la siguente manera 
+	$$
+	\begin{array}{rcl}
+	    v_3 &=& (v_3+v_4)-v_4\\\\
+	    v_2 &=& (v_2+v_3)-(v_3+v_4)+v_4\\\\
+	    v_1 &=& (v_1+v_2)-(v_2+v_3)+(v_3+v_4)-v_4\\\\
+	\end{array}
+	$$
+	Por tanto, todos los vectores que pueden expresarnse como combinaciones lineales de $v_1,v_2,v_3,v_4$ también se pueden expresar linealmente por $v_1,+v_2,v_2+v_3,v_3+v_4,v_4$; es decir, $v_1,+v_2,v_2+v_3,v_3+v_4,v_4$ genera $V$.\\\\
+
+    %-------------------- 7.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,v_3,v_4$ es una base de $V$ y $U$ es un subespacio de $V$ tal que $v_1,v_2\in U$ y $v_3\notin U$ y $v_4\notin U$, entonces $v_1,v_2$ es una base de $U$.\\\\
+	Demostración.-\; Sean,
+	$$
+	\begin{array}{rcl}
+	    v_1 &=& (1,0,0,0)\\
+	    v_2 &=& (0,1,0,0)\\
+	    v_3 &=& (0,0,1,0)\\
+	    v_4 &=& (0,0,0,1).
+	\end{array}
+	$$
+	Luego, definimos 
+	$$U=\left\{(x_1,x_2,x_3,x_4)\in \textbf{R}^4 \; :\; x_3=x_4\right\}$$
+
+	Notemos que $v_1,v_2\in U$ y $v_3,v_4\notin U$. Pero ninguna combinación lineal de $v_1,v_2$ produce $(0,0,1,1)$. Entonces, $v_1,v_2$ no genera $U$. Por lo tanto no puede formar una base.\\\\
+
+    %-------------------- 8.
+    \item Suponga que $U$ y $W$ son subespacio de $V$ tal que $V=U\oplus W$. Suponga también que $u_1,\ldots,u_m$ es una base de $U$ y $w_1,\ldots,w_n$ es una base de $W$. Demostrar que 
+    $$u_1,\ldots,u_m,\; w_1,\ldots,w_n$$
+    es una base de $V$.\\\\
 	Demostración.-\;
 
 \end{enumerate}
+
+
+\mysection{Dimensión}
+
+%------------------------ 2.35 teorema
+\begin{myteo}
+    Dos bases cualquier de un espacio vectorial de dimensión finita  tiene la misma longitud.\\\\
+	Demostración.-\; Suponga $V$ es de dimensión finita. Sean $B_1$ y $B_2$ dos bases de $V$. Entonces $B_1$ es linealmente independiente en $V$ y $B_2$ genera $V$. Así la longitud de la lista de $B_1$ es como máximo la longitud de la lista de $B_2$ (por 2.23). Intercambiando los roles de $B_1$ y $B_2$. tenemos también que la longitud de la lista de $B_2$ es como máximo la longitud de la lista de $B_1$. Por lo tanto la longitud de $B_1$ es igual a la longitud de $B_2$, como se desea.
+\end{myteo}
+
+Ahora que sabemos que dos bases cualesquiera de un espacio vectorial de dimensión finita tienen la misma longitud, podemos definir formalmente la dimensión de tales espacios.
+
+%------------------------ 2.36 definicion
+\begin{mydef}[Dimensión, \boldmath $\dim V$]\;\\
+    \begin{itemize}
+	\item La \textbf{dimensión} de un espacio vectorial de dimensión finita es la longitud de cualquier base del espacio vectorial.
+	\item La dimensión de $V$ (si $V$ es de dimensión finita) se denota por $\dim V$.
+    \end{itemize}
+\end{mydef}
+
+%------------------------ 2.37 teorema
+\begin{myteo}[Dimensión de un subespacio]\, \\\\
+    Si $V$ es de dimensión finita y $U$ es un subespacio de $V$, entonces $\dim U\leq \dim V$.\\\\
+	Demostración.-\; Suponga $V$ de dimensión finita y $U$ es un subespacio de $V$. Piense en una base de $U$ como una lista linealmente independiente en $V$, y piense en una base de $V$ como una lista generadora en V. Ahora use $2.23$ para concluir que $\dim U\leq \dim V$.
+\end{myteo}
