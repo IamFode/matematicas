@@ -973,7 +973,33 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
     \item Suponga que $U$ y $W$ son subespacio de $V$ tal que $V=U\oplus W$. Suponga también que $u_1,\ldots,u_m$ es una base de $U$ y $w_1,\ldots,w_n$ es una base de $W$. Demostrar que 
     $$u_1,\ldots,u_m,\; w_1,\ldots,w_n$$
     es una base de $V$.\\\\
-	Demostración.-\;
+	Demostración.-\; Demostremos la independencia lineal. Sean $a_i\in \textbf{F}$ y $c_i\in \textbf{F}$ tal que
+	$$a_1u_1+a_2u_2+\cdots+a_mu_m+c_1w_1+c_2w_2+\cdots+c_nw_n=0$$
+	Que implica,
+	$$a_1u_1+a_2u_2+\cdots+a_mu_m=-(c_1w_1+c_2w_2+\cdots+c_nw_n).$$
+	Suponga que,
+	$$v=a_1u_1+a_2u_2+\cdots+a_mu_m=-(c_1w_1+c_2w_2+\cdots+c_nw_n).$$
+	De donde, $v\in U$ y $v\in W$; esto es $v\in U\cap W.$ Dado que $V=U\oplus W$, debemos tener $U\cap W=\left\{0\right\}$. Sea $v=0$, por lo que
+	$$
+	\begin{array}{rcl}
+	    a_1u_1+a_2v_2+\cdots + a_mu_m &=& 0\\\\
+	    -(c_1w_1+c_2w_2+\cdots + c_nw_n) &=& 0.
+	\end{array}
+	$$
+	Ya que, $u_1,u_2,\ldots,u_m$ y $w_1,w_2,\ldots,w_n$ es base de $U$ y $W$, respectivamente. Entonces, ambos son linealmente independiente. Es decir, $a_i=c_i=0$. Por lo tanto, $u_1,\ldots,u_m,\; w_1,\ldots,w_n$ es linealmente independiente.\\
+	Ahora, demostremos que $u_1,\ldots,u_m,\; w_1,\ldots,w_n$ genera $V$. Sea $v\in V$, ya que $V=U\oplus W$ podemos escribir $v=u+w$ para algún $u\in U$ y $w\in W$. Luego, por el hecho de que $u_1,u_2,\ldots,u_m$ es base de $U$ y $w_1,w_2,\ldots,w_n$ es base de $W$, entonces
+	$$
+	\begin{array}{rcl}
+	    u &=& a_1u_1+a_2u_2+\cdots+a_mu_m\\\\
+	    w &=& c_1w_1+c_2w_2+\cdots+c_nw_n,
+	\end{array}
+	$$
+	respectivamente. Por lo tanto, $v=u+w=a_1u_1+a_2u_2+\cdots+a_mu_m+c_1w_1+c_2w_2+\cdots+c_nw_n$. Así, $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ genera $V$. Concluimos que  $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ es base de $V$.\\\\
+
+
+	%-------------------- 9.
+
+	
 
 \end{enumerate}
 
@@ -996,8 +1022,75 @@ Ahora que sabemos que dos bases cualesquiera de un espacio vectorial de dimensi�
     \end{itemize}
 \end{mydef}
 
+\setcounter{myteo}{37}
 %------------------------ 2.37 teorema
 \begin{myteo}[Dimensión de un subespacio]\, \\\\
     Si $V$ es de dimensión finita y $U$ es un subespacio de $V$, entonces $\dim U\leq \dim V$.\\\\
 	Demostración.-\; Suponga $V$ de dimensión finita y $U$ es un subespacio de $V$. Piense en una base de $U$ como una lista linealmente independiente en $V$, y piense en una base de $V$ como una lista generadora en V. Ahora use $2.23$ para concluir que $\dim U\leq \dim V$.
 \end{myteo}
+
+Para comprobar que una lista de vectores en $V$ es una base de $V$, debemos, según la definición, demostrar dos propiedades: debe ser linealmente independiente y debe abarcar $V$. Los siguientes dos resultados muestran que si la lista en cuestión tiene la longitud correcta, entonces solo necesitamos verificar que satisface una de las dos propiedades requeridas. Primero probamos que toda lista linealmente independiente con la longitud correcta es una base.
+
+%------------------------ 2.39 teorema
+\begin{myteo}[La lista linealmente independiente de la longitud correcta es una base]\,\\\\
+    Suponga que $V$ es de dimensión finita. Entonces, toda lista linealmente independiente de vectores en $V$ con longitud $\dim V$ es una base de $V$.\\\\
+	Demostración.-\; Suponga $\dim V=n$ y $v_1,\ldots,v_n$ es linealmente independiente en $V$. La lista $v_1,\ldots,v_n$ puede ser extenderse a una base de $V$ (por 2.33). Sin embargo, toda base de $V$ tiene una longitud $n$, por lo que en este caso la extensión es trivial, lo que significa que ningún elemento está unido a $v_1,\ldots, v_n$ En otras palabras, $v_1,\ldots, v_n$ es una base de $V$, como deseamos.
+\end{myteo}
+
+%------------------------ 2.40 ejemplo
+\begin{myejem}
+    Demostrar que la lista $(5,7),(4,3)$ es una base de $\textbf{F}^2$.\\\\
+	Demostración.-\; Esta lista de dos vectores en $\textbf{F}^2$ es obviamente linealmente independiente (poque ningún vector es un multiplo escalar del otro). Notemos que $\textbf{F}^2$ tiene dimensión $2$. Así, 2.39 implica que la lista linealmente independiente $(5,7),(4,3)$ de longitud $2$ es una base de $\textbf{F}^2$ $\left(\right.$ no necesitamos comprobar que genera $\left.\textbf{F}^2\right)$. 
+\end{myejem}
+
+%------------------------ 2.41 ejemplo
+\begin{myejem}
+    Demostrar que $1,(x-5)^2,(x-5)^3$ es una base del subespacio $U$ de $\mathcal{P}_3(\textbf{R})$ defina por
+    $$U=\left\{p\in \mathcal{P}_3(\textbf{R})\; : \; p'(5)=0\right\}.$$
+	Solución.-\; Claramente cada los polinomios $1,(x-5)^2$ y $(x-5)^3$ es en $U$. Suponga $a,b,c \in \textbf{R}$ y 
+	$$a+b(x-5)^2+c(x-5)^3=0$$
+	para cada $x\in \textbf{R}.$ Vemos que el lado izquierdo de la ecuación anterior tiene un termino $cx^3$. Como el lado derecho no tiene un término $x^3$, esto implica que $c = 0$. Como $c = 0$, vemos que el lado izquierdo tiene un término $bx^2$, lo que implica que $b = 0$. Como $b = c = 0$, podemos también concluye que $a = 0$. Así, la ecuación implica que $a=b=c=0$. Por lo que la lista dada es linealmente independiente en $U$.\\
+
+	Observemos que $\dim U\geq 3$, ya que $U$ es un subespacio de $\mathcal{P}_3(\textbf{F})$, sabemos que $\dim U \leq \dim \mathcal{P}_3(\textbf{F})=4$ (por 2.38). Sin embargo, $\dim U$ no puede ser igual a $4$, de lo contrario, cuando extendemos una base de $U$ a una base de $\mathcal{P}_3(\textbf{F})$ obtendríamos una lista con una longitud mayor que $4$. Por lo tanto, $\dim U = 3$. De esto modo, 2.39 implica que la lista linealmente independiente $1,(x-5)^2,(x-5)^3$ es una base de $U$.
+\end{myejem}
+
+Ahora probaremos que una lista generadora con longitud correcta es una base.
+
+%------------------------ 2.42 teorema
+\begin{myteo}[Lista generadora de la longitud correcta es una base]\,\\\\
+	Suponga que $V$ es de dimensión finita. Entonces, cada lista generadora de vectores en $V$ con longitud $\dim V$ es una base de $V$.\\\\
+	    Demostración.-\; Suponga $\dim V=n$ y $v_1,\ldots,v_n$ genera $V$. La lista $v_1,\ldots,v_n$ puede ser reducido a una base de $V$ (por 2.31). Sin embargo, cada base de $V$ tiene longitud $n$. En este caso la reducción es trivial, lo que significa que no se eliminan elementos de $v_1,\ldots,v_n$. En otras palabras, $v_1,\ldots,v_n$ es una base de $V$, como deseamos.
+\end{myteo}
+
+El siguiente resultado da una fórmula para la dimensión de la suma de dos subespacios de un espacio vectorial de dimensión finita.
+
+%------------------------ 2.43 teorema
+\begin{myteo}[Dimensión de una suma]\,\\\\
+    Si $U_1$ y $U_2$ son subespacios de un espacio vectorial de dimensión finita, entonces
+    $$\dim(U_1+U_2)=\dim U_1+\dim U_2 - \dim(U_1\cap U_2).$$\\
+	Demostración.-\; Sea $u_1,\ldots,u_m$ una base de $U_1\cap U_2$; por lo que $(U_1\cap U_2)=m$. Ya que, $u_1,\ldots,u_m$ es una base de $U_1\cap U_2$, es linealmente independiente en $U_1$. En consecuencia esta lista puede ser extendida a una base $u_1,\ldots,u_m,\, v_1,\ldots,v_j$ de $U_1$ (por 2.33). Así, $\dim U_1=m+j$. También extendamos $u_1,\ldots,u_m$ a una base $u_1,\ldots,u_m,\, w_1,\ldots,w_k$ de $U_2$; de donde $U_2=m+k$.\\
+	Tendremos que demostrar
+	$$u_1,\ldots,u_m,\, v_1,\ldots,v_j,\,w_1,\ldots,w_k$$
+	es una base de $U_1+U_2$. Claramente $\span(u_1,\ldots,u_m,\, v_1,\ldots,v_j,\,w_1,\ldots,w_k)$ contiene a $U_1$ y $U_2$, por lo que es igual a $U_1+U_2$. Entonces, para mostrar que la lista es una base de $U_1+U_2$, necesitamos demostrar que es linealmente independiente. Suponga
+	$$a_1u_1+\cdots+a_mu_m+b_1v_1+\cdots+b_jv_j+c_1w_1+\cdots+c_kw_k=0,$$
+	donde todos los $a's,b's$ y $c's$ son escalares. Podemos reescribir la ecuación anterior como
+	$$c_1w_1+\cdots+c_kw_k=-a_1u_1-\cdots-a_mu_m-b_1v_1-\cdots-b_jv_j$$
+	el cual demuestra que $c_1w_1+\cdots+c_kw_k\in U_1$. Luego, todos los $w's$ son en $U_2$, esto implica que $c_1w_1+\cdots+c_kw_k\in U_1\cap U_2$. Ya que, $u_1,\ldots,u_m$ es una base de $U_1\cap U_2$, podemos escribir lo siguiente
+	$$c_1w_1+\cdots+c_kw_k=d_1u_1+\cdots+d_m u_m$$
+	para algunos escalares $d_1,\ldots,d_m$. Pero $u_1,\ldots,u_m,w_1,\ldots,w_k$ es linealmente independiente, así la útlima ecuación implica que todos los $c's$ (y $d's$) son igual a cero. \\
+	
+	Por lo tanto, nuestra ecuación original que involucra las $a's, b's$ y $c's$ se convierten en 
+	$$a_1u_1+\cdots+a_mu_m+b_1v_1+\cdots+b_jv_j=0.$$
+	Porque la lista $u_1,\ldots, u_m, v_1, \ldots, v_j$ es linealmente independiente, esta ecuación implica que todas las $a's$ y $b's$ son $0$. Ahora sabemos que todas las $a's$, $b's$ y $c's$ son iguales a $0$, como deseamos.
+\end{myteo}
+\vspace{.5cm}
+
+\setcounter{mysection}{2}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------------ 1.
+    \item 
+
+\end{enumerate}

@@ -1,0 +1,79 @@
+"""
+ANALIZAR
+- Observar
+- Leer
+- Entender
+
+MODELAR
+- En papel
+- Diagrama de flujo
+
+PROGRAMAR
+- Trasladar a código
+"""
+
+"""
+Los OBJETOS del mundo real tendrán
+
+- CLASES (¿Donde se hizo?, fábrica de objetos)
+- PROPIEDADES o ATRIBUTOS (¿como es?, descripción)
+- MÉTODOS (¿que hace?, acción) funciones
+"""
+
+"""
+MODULARIZACIÓN
+
+- Reutilizable
+- Más rápido
+- Escalable
+- Mantenible
+- Legible
+- mejora constante
+- Depuración de errores
+
+¿CÓMO MODULARIZAR?
+
+Conexiones
+Interfaz de usuario
+Comunicación entre módulos
+Tareas
+
+MODELO VISTA CONTROLADOR
+- Modelo: Conexiones
+- Vista: Interfaz de usuario
+- Controlador: Comunicación entre módulos
+"""
+
+"""
+HERENCIA
+- Trasladar propiedades y métodos de una clase a otra
+- Reutilizar código
+- Simplificar el código
+
+(UML) MODELO UNIFICADO DE LENGUAJE
+- Sirve para visualizar la estructura de un programa
+
+- Tendrá:
+    Nombre de la clase
+    Propiedades o atributos
+    Métodos
+"""
+
+"""
+ENCAPSULAMIENTO
+- Ocultar cosas.
+"""
+
+"""
+POLIMORFISMO
+- Muchas formas
+- Capacidad de forma de un objeto para cambiar su comportamiento
+- Capacidad de un objeto para responder de diferentes maneras a la misma solicitud
+
+ENLAZADO DINÁMICO
+- Enlazar en tiempo de ejecución
+
+PRINCIPIO DE SUSTITUCIÓN
+- Un objeto de una clase puede ser sustituido por otro de la misma clase
+"""
+

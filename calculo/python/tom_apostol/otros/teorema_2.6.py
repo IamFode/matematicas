@@ -25,5 +25,3 @@ func = input()
 
 teo2_6(a,b,func)
 
-
-
