@@ -134,7 +134,16 @@ La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende
 
 	entonces, tenemos
 
-	$$x_1a_1+x_2a_2+\cdot + x_ka_k=A\textbf{x}.$$
+	$$w=(a_1,a_2,\ldots,a_k)
+	\left(
+	    \begin{array}{c}
+		x_1\\
+		x_2\\
+		\vdots\\
+		x_k
+	    \end{array}
+	\right)
+	=x_1a_1+x_2a_2+\cdot + x_ka_k=A\textbf{x}.$$
 
 	Ahora, para cualquier vector $v\in \mathbb{R}^n$, denotemos la proyección de $v$ sobre $W$ por $x_p$.
 
@@ -144,7 +153,7 @@ La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende
 
 	$$w\cdot (v-\Proj_w v)=0$$
 
-	para todo $w$ in $W$. Ya que $w=A\textbf{x}$, tenemos
+	para todo $w$ in $W$. Ya que $w=A\textbf{x}$ para algún $\textbf{x}$, tenemos
 
 	$$A\textbf{x}(v-Ax_p)=0$$
 
@@ -162,7 +171,7 @@ La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende
 
 	De donde,
 
-	$$A'v=A'A\textbf{x}_p.$$
+	$$\textbf{x}\cdot A'v-\textbf{x}\cdot A'A\textbf{x}_p \quad \Rightarrow \quad A'v=A'A\textbf{x}_p.$$
 
 	Luego, ya que $A'A$ es invertible, se tiene
 
@@ -170,14 +179,22 @@ La matriz $UU'$ es llamada matriz proyección  par el subespacio $W$. No depende
 
 	Después, ya que $A\textbf{x}_p$ es la proyección deseada,
 
-	$$A(A'A)^{-1}v=A\textbf{x}_p=\Proj_w u$$
+	$$A(A'A)^{-1}A'v=A\textbf{x}_p=\Proj_w v$$
 
 	Por lo tanto, concluimos que la matriz proyección para $W$ es $A(A'A)^{-1}A'.$
 \end{teo}
 
-La matriz proyección es muy útil en las discusiones posteriores del modelo de regresión $Y\textbf{X}\beta+\epsilon$. Una matriz cuadrada $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}X'$, se construye utulizando la matriz de diseño. Se puede verificar fácilmente que $P$ es una matriz idempotente:
+La matriz proyección es muy útil en las discusiones posteriores del modelo de regresión $Y=\textbf{X}\beta+\epsilon$. Una matriz cuadrada $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}X'$, se construye utulizando la matriz de diseño. Se puede verificar fácilmente que $P$ es una matriz idempotente:
 
-$$P^2=\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'=P.$$
+$$
+\begin{array}{rcl}
+    P^2&=&\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\\\\
+       &=&\textbf{X}(\textbf{X}\textbf{X}')^{-1}(\textbf{X}'\textbf{X})(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\\\\
+       &=&\textbf{X}(\textbf{X}\textbf{X}')^{-1}(\textbf{X}\textbf{X}')(\textbf{X}\textbf{X}')^{-1}\textbf{X}'\\\\
+       &=& \textbf{X}(I)(\textbf{XX}')^{-1}\textbf{X}'\\\\
+       &=&P
+\end{array}
+$$
 
 Así, $P=\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$ es una matriz proyección. Además, si definimos una matriz como $I-P=I-\textbf{X}(\textbf{X}\textbf{X}')^{-1}\textbf{X}'$. Es fácil ver que $I-P$ es también idempotente. De hecho,
 
@@ -249,7 +266,7 @@ Si $A$ es una matriz simétrica. Entonces, la suma de todos los elementos cuadra
     Si $A$ es una matriz idempotente, entonces $tr(A)=rango(A)=p.$\\\\
 	Demostración.-\; Si el rango de una matriz $A$ idempotente $n\times n$ es $p$. entonces $A$ tiene $p$ valores propios de $1$ y $n-p$ valores propios de $0$. Por lo tanto, podemos escribir $rango(A)=\sum_{i=1}^n\lambda_i=p$. Ya que $A^2=A$, los valores propios de la matriz indempotente $A$ es $1$ o $0$. De la teoría de matrices existe una matriz ortogonal $V$ tal que
 	$$
-	VÀV=
+	V' A V=
 	\left(
 	    \begin{array}{cc}
 		I_p & 0 \\

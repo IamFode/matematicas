@@ -996,18 +996,13 @@ Como aplicación del resultado anterior, mostramos ahora que cada subespacio de 
 	$$
 	respectivamente. Por lo tanto, $v=u+w=a_1u_1+a_2u_2+\cdots+a_mu_m+c_1w_1+c_2w_2+\cdots+c_nw_n$. Así, $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ genera $V$. Concluimos que  $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ es base de $V$.\\\\
 
-
-	%-------------------- 9.
-
-	
-
 \end{enumerate}
 
 
 \mysection{Dimensión}
 
 %------------------------ 2.35 teorema
-\begin{myteo}
+\begin{myteo}[La longitud de la base no depende de la base]\,\\\\
     Dos bases cualquier de un espacio vectorial de dimensión finita  tiene la misma longitud.\\\\
 	Demostración.-\; Suponga $V$ es de dimensión finita. Sean $B_1$ y $B_2$ dos bases de $V$. Entonces $B_1$ es linealmente independiente en $V$ y $B_2$ genera $V$. Así la longitud de la lista de $B_1$ es como máximo la longitud de la lista de $B_2$ (por 2.23). Intercambiando los roles de $B_1$ y $B_2$. tenemos también que la longitud de la lista de $B_2$ es como máximo la longitud de la lista de $B_1$. Por lo tanto la longitud de $B_1$ es igual a la longitud de $B_2$, como se desea.
 \end{myteo}
@@ -1091,6 +1086,25 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 \begin{enumerate}[\bfseries 1.]
 
     %------------------------ 1.
+    \item Suponga que $V$ es de dimensión finita y $U$ es un subespacio de $V$ tal que $\dim U=\dim V$. Demuestre que $U=V$.\\\\
+	Demostración.-\; Sea $n=\dim U = \dim V$, y sea $u_1,\ldots,u_n$ una base para $U$. Ya que esta lista es linealmente independiente con longitud igual a la dimensión de V, entonces por el teorema 2.39 (Axler, Linear Algebra) también debe ser una base para $V$. Claramente tenemos $U\subseteq V$.\\
+	Luego, queda demostrar que $V\subseteq U$. Para ello, sea $v\in V$, entonces existe $a_1,\ldots,a_n\in \textbf{F}$ tal que
+	$$v=a_iu_i,\ldots,a_nu_n$$
+	Pero ahora $v$ se expresa como una combinación lineal de vectores en $U$ y, por lo tanto, también está en $U$. Así $U = V$.\\\\
+
+    %------------------------ 2.
+    \item Demostrar que los subespacios de $\textbf{R}^2$ son precisamente: $\left\{0\right\}$, $\textbf{R}^2$, y todas las rectas en $\textbf{R}^2$ que pasan por el origen.\\\\
+	Demostración.-\; Si la dimensión de un subespacio es $0$. Entonces, el subespacio no contiene cualquier vector distinto de cero. En este caso, el espacio vector es $\left\{0\right\}$.\\
+	Después, sea $U$ un subespacio de $\textbf{R}^2$ de dimensión $2$. Entonces, por definición $U$ tiene una base de dos vectores $u_1$ y $u_2$. Estas bases son linealmente independientes en $U$ y por lo tanto linealmente independiente en $\textbf{R}^2$. Luego, se sabe que $\dim \textbf{R}^2=2$, esto implica que $u_1,u_2$ es un conjunto linealmente independiente en $\textbf{R}^2$ que tiene longitud igual a $\dim \textbf{R}^2$. Así, $u_1,u_2$ es también una base de $\textbf{R}^2$. Que $U$ y $\textbf{R}^2$ tengan la misma base, por el problema 1 significa que $U=\textbf{R}^2$.\\
+	Ahora, consideremos un subespacio $U$ de $\textbf{R}^2$ distinto de $\left\{0\right\}$ y $\textbf{R}^2$. Como $U$ no es el subespacio trivial, debe tener al menos un vector no nulo, y como $U$ es un subespacio, entonces no está en todo $\textbf{R}^2$. Por lo que, debe haber al menos otro vector en $\textbf{R}^2$ que no está en $U$. Estos dos vectores son linealmente independiente y forman una base para un subespacio de dimensión $2$. Pero como $U$ es un subespacio de dimensión menor que $2$, solo puede ser una recta que pasa por el origen. Por lo tanto, los subespacios de $\textbf{R}^2$ puede ser $\left\{0\right\}$, $\textbf{R}^2$ y una linea que pasa a través por el origen.\\\\
+
+    %------------------------ 3.
+    \item Demuestre que los subespacios de $\textbf{R}^3$ son precisamente $\left\{0\right\}$, $\textbf{R}^3$, todas las lineas en $\textbf{R}^3$, y todas las planos en $\textbf{R}^3$ que pasan por el origen.\\\\ 
+	Demostración.-\; 
+
+    %------------------------ 4.
     \item 
+
+	
 
 \end{enumerate}

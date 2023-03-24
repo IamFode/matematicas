@@ -291,7 +291,7 @@ no se está formulando ninguna proposición probabilística en el sentido clási
 En términos generales, la construcción de un intervalo de confianza para un parámetro desconocido $\theta$, consiste en encontrar una estadística suficiente $T$ y relacionarla con otra variable aleatoria $X'=f(T;\theta)$, donde $X$ involucra a $\theta$ pero la distribución de $X$ no contiene a $\theta$, así como tampoco a ningún otro parámetro desconocido. Entonces se seleccionan dos valores $x_1$ y $x_2$ tales que 
 $$P(x_1<X<x_2)=1-\alpha,$$
 donde $1-\alpha$ recibe el nombre de \textbf{coeficiente de confianza}. Mediante una manipulación algebraica de las dos expresiones, se puede modificar el contenido entre paréntesis y expresarlo como
-$$P(h_(T)<\theta<h_2(T))=1-\alpha,$$
+$$P(h_1(T)<\theta<h_2(T))=1-\alpha,$$
 donde $h_1(T)$ y $h_2(T)$ son funciones de la estadística $T$ y de esta forma, variables aleatorias. Al seguirse el desarrollo podemos encontrar intervalos de confianza unilaterales, de la forma
 $$P\left[g_1(T)<\theta\right]=1-\alpha$$
 o
@@ -316,10 +316,55 @@ $$\int^{\infty}_{g_2(\mu)}f(\overline{x};\mu)\; d\overline{x}=\dfrac{\alpha}{2},
 donde $f(\overline{x};\mu)$ es la función de densidad de la distribución de muestreo de $\overline{X}$, y $g_1(\mu)$ y $g_2(\mu)$ son funciones de $\mu$ las cuales no contiene a ningún otro parámetro desconocido.\\
 
 Determinemos $g_1(\mu)$ y $g_2(\mu)$. Dado que $\overline{X}\sim N(\mu,\sigma/\sqrt{n})$, la normal estándar $Z=\dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}$, y 
-$$P\left[\right]$$
+$$P\left[g_1(\mu)<\overline{X}<g_2(\mu)\right]=P\left[\dfrac{g_i(\mu)-\mu}{\sigma/\sqrt{n}}<Z<\dfrac{g_2(\mu)-\mu}{\sigma/\sqrt{n}}\right]=1-\alpha.$$
+
+Pero ya que $P\left(z_{\alpha/2}<Z<z_{1-\alpha/2}\right)=1-\alpha$, en donde los valores cuantiles $z_{\alpha/2}$ y $z_{1-\alpha/2}$ son tales que $P(Z<z_{\alpha/2})=\alpha/2$ y $P(Z<z_{1-\alpha/2})=1-\alpha/2$, respectivamente. Se sigue que
+$$\dfrac{g_i(\mu)-\mu}{\sigma/\sqrt{n}}=z_{\alpha/2}$$
+
+$$\mbox{y}$$ 
+
+$$\dfrac{g_2(\mu)-\mu}{\sigma/\sqrt{n}}=z_{1-\alpha/2}.$$
+
+Dando solución en términos de $g_1(\mu)$ y $g_2(\mu)$, respectivamente, se obtienen
+
+$$g_1(\mu)=\mu-z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$$
+$$\mbox{y}$$
+$$g_2(\mu)=\mu+z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}}.$$
+
+(Dado que para la normal estándar $z_{\alpha/2}=-z_{1-\alpha/2}$ puede sustituirse $-z_{1-\alpha/2}$ para $z_{\alpha/2}$ en la ecuación de arriba). Por lo tanto,
+$$P\left(\mu-z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}}<\overline{X}<\mu+z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)=1-\alpha.$$
+
+Al manipular las desigualdades que se encuentran dentro de los paréntesis se tiene
+
+\begin{tcolorbox}
+$$P\left(\overline{X}-z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}}<\mu<\overline{X}+z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)=1-\alpha$$
+\end{tcolorbox}
+
+Si se reemplaza la variable aleatoria $X$ por el estimador $\overline{x}$ calculando a partir de los datos de una muestra de tamaño $n$, un intervalo de confianza del $100(1-\alpha)\%$ para $\mu$, es
+$$\overline{x}\pm z_{1-\alpha/2}\dfrac{\sigma}{\sqrt{n}},$$
+en donde $\overline{x}-z_{1-\alpha/2}(\sigma/\sqrt{n})$ y $z_{1-\alpha/2}(\sigma/\sqrt{n})$ reciben el nombre de límites de confianza inferiores y superiores, respectivamente, para $\mu$.\\
+
+Vemos que mientras más grande es el tamaño de la muestra, más pequeño es el ancho del intervalo; o para un coeficiente de confianza $1-\alpha$ más grande, mayor es el ancho de intervalo. Es decir, un tamaño grande de la muestra disminuirá la varianza del estimador, y un coeficiente de confianza grande incrementa el valor cuantil dando como resultado un intervalo más amplio.
 
 
+\subsection{Intervalos de confianza para \boldmath$\mu$ cuando se muestrea una distribución normal con varianza desconocida}
 
+Recordemos que cuando se muestrea una $N(\mu,\sigma)$, donde tanto $\mu$ como $\sigma^2$ son desconocidos, la variables aleatoria
+$$T=\dfrac{\overline{X}-\mu}{S/\sqrt{n}}$$
+tiene distribución t de Student con $n-1$ grados de libertad. Por lo tanto, es posible determinar el valor cuantil $t_{1-\alpha/2,n-1}$ de $T$, para el cual
+$$P(-t_{1-\alpha/2,n-1}<T<t_{1-\alpha/2,n-1})=1-\alpha,$$
+en donde el valor cuantil es tal que $P(T<t_{1-\alpha/2,n-1})=\alpha/2$ y $P(T<t_{1-\alpha/2,n-1})=1-\alpha/2$. Al sustituir para $T$, se tiene
+$$P\left(-t_{1-\alpha/2,n-1}<\dfrac{\overline{X}-\mu}{S/\sqrt{n}}<t_{1-\alpha/2,n-1}\right)=1-\alpha.$$
+y
+\begin{tcolorbox}
+$$P\left(\overline{X}-t_{1-\alpha/2,n-1}\dfrac{S}{\sqrt{n}}<\mu<\overline{X}+t_{1-\alpha/2,n-1}\dfrac{S}{\sqrt{n}}\right)=1-\alpha.$$
+\end{tcolorbox}
+
+Por lo tanto, el intervalo $\overline{X}\pm t_{1-\alpha/2,n-1}S/\sqrt{n}$ es un intervalo aleatorio  y la probabilidad de que este contenga el valor verdadero de $\mu$, es $1-\alpha$. De esta forma. dadps ñps datps de una muestra aleatoria de tamaño $n$ a partir de las cuales se calculan los estimados $\overline{x}$ y $s^2$. Un intervalo de confianza del $100(1-\alpha)\%$ para $\mu$ es
+$$\overline{x}\pm t_{1-\alpha/2,n-1}\dfrac{s}{\sqrt{n}}.$$
+
+
+\subsection{Intervalo de confianza para la diferencia de medias cuando se muestrean dos distribuciones normales independientes}
 
 
 
