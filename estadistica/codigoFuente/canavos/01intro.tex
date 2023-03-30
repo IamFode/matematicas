@@ -4,25 +4,19 @@
 \section{Medidas numéricas descriptivas}
 
 %--------------------definición 1
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La media de las observaciones $x_1,x_2,\ldots , x_n$ es el promedio aritmético de éstas y se denota por 
-	\begin{equation}
-	    \overline{x} = \sum_{i=1}^{n} \dfrac{x_i}{n}
-	\end{equation}
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La media de las observaciones $x_1,x_2,\ldots , x_n$ es el promedio aritmético de éstas y se denota por 
+    \begin{equation}
+	\overline{x} = \sum_{i=1}^{n} \dfrac{x_i}{n}
+    \end{equation}
+\end{def.}
 
 %--------------------definición 2
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La mediana de un conjunto de observaciones es el valor para el cual, todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad mayor.
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La mediana de un conjunto de observaciones es el valor para el cual, todas las observaciones se ordenan de manera creciente, la mitad de éstas es menor que este valor y la otra mitad mayor.
+\end{def.}
 
 %--------------------definición 3
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La moda de un conjunto de observaciones es el valor de la observación que ocurre con mayor frecuencia en el conjunto.
+\end{def.}
 
     \begin{equation}
 	\overline{x} = \sum_{i=1}^{k} \dfrac{f_i x_i}{n}
@@ -33,22 +27,18 @@
     \end{equation}
 
 %--------------------definición 4
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La varianza de las observaciones $x_1,x_2,\ldots , x_n$ es, en esencia, el promedio del cuadrado de las distancias entre cada observación y la media del conjunto de observaciones. La varianza se denota por 
-	\begin{equation}
-	    s^2 = \sum_{i=1}^{n} \dfrac{(x_i - \overline{x})^2}{n-1}
-	\end{equation}
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La varianza de las observaciones $x_1,x_2,\ldots , x_n$ es, en esencia, el promedio del cuadrado de las distancias entre cada observación y la media del conjunto de observaciones. La varianza se denota por 
+    \begin{equation}
+	s^2 = \sum_{i=1}^{n} \dfrac{(x_i - \overline{x})^2}{n-1}
+    \end{equation}
+\end{def.}
 
 %--------------------definición 5
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La raíz cuadrada positiva de la varianza recibe el nombre de la desviación estándar y se denota por 
-	\begin{equation}
-	    s = \sqrt{\sum_{i=1}^{n} \dfrac{(x_i - \overline{x})^2}{n-1}}
-	\end{equation}
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La raíz cuadrada positiva de la varianza recibe el nombre de la desviación estándar y se denota por 
+    \begin{equation}
+	s = \sqrt{\sum_{i=1}^{n} \dfrac{(x_i - \overline{x})^2}{n-1}}
+    \end{equation}
+\end{def.}
 
 El uso de la ecuación (1.4) puede dar origen a errores grandes por redondeo. Con un poco de álgebra se obtiene, a partir de (1.4), una fórmula computacional más exacta para esas condiciones:
 $$s^2 = \sum_{i=1}^n \dfrac{(x_i-\overline{x})^2}{n-1} = \dfrac{\sum \left(x_i^2 - 2\overline{x} x_i + \overline{x}^2\right)}{n-1} = \dfrac{\sum x_i^2 - 2\overline{x} \sum x_i + n\overline{x}^2}{n-1} = \dfrac{\sum x_1^2 - \dfrac{2\left(\sum x_i\right)\left(\sum x_1\right)}{n} + \dfrac{n\left(\sum x_i\right)^2}{n^2}}{n-1} = $$
@@ -76,21 +66,17 @@ La fórmula para la desviación estándar es
 	s = \sqrt{\sum\limits_{i=1}^k \dfrac{f_i(x_i-\overline{x})^2}{n-1}}
     \end{equation}
 
-\begin{tcolorbox}[colframe=white]
-    \begin{def.}
-	La desviación media es el promedio de los valores absolutos de las diferencias entre cada observación y la media de las observaciones. La desviación media está dada por
-	$$D.M. = \dfrac{\sum\limits_{i=1}^n|x_i-\overline{x}|}{n}$$
-    \end{def.}
-\end{tcolorbox}
+\begin{def.}
+    La desviación media es el promedio de los valores absolutos de las diferencias entre cada observación y la media de las observaciones. La desviación media está dada por
+    $$D.M. = \dfrac{\sum\limits_{i=1}^n|x_i-\overline{x}|}{n}$$
+\end{def.}
 Para datos agrupados, el valor de la desviación media se aproxima por 
 \begin{equation}
     D.M. = \dfrac{\sum\limits_{i=1}^k f_i|x_i-\overline{x}|}{\sum\limits_{i=1}^k f_i}
 \end{equation}
 
-\begin{tcolorbox}[colframe=white]
-    \begin{def.} La desviación mediana es el promedio de los valores absolutos de las diferencias entre cada observación y la mediana de éstas. Esta dada por:
-	\begin{equation}
-	    D.M. = \dfrac{\sum\limits_{i=1}^n|x_i-D.Md|}{n}
-	\end{equation}
-    \end{def.}
-\end{tcolorbox}
+\begin{def.} La desviación mediana es el promedio de los valores absolutos de las diferencias entre cada observación y la mediana de éstas. Esta dada por:
+    \begin{equation}
+	D.M. = \dfrac{\sum\limits_{i=1}^n|x_i-D.Md|}{n}
+    \end{equation}
+\end{def.}

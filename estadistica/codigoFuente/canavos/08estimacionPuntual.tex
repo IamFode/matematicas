@@ -366,6 +366,22 @@ $$\overline{x}\pm t_{1-\alpha/2,n-1}\dfrac{s}{\sqrt{n}}.$$
 
 \subsection{Intervalo de confianza para la diferencia de medias cuando se muestrean dos distribuciones normales independientes}
 
+Sean $X_1,X_2,\ldots,X_{nX}$ e $Y_1,Y_2,\ldots,y_{nY}$ dos muestras aleatorias de dos distribuciones normales independientes, com medias $\mu_X$ y $\mu_Y$ y varianzas $\sigma_X^2$ y $\sigma_Y^2$, respectivamente. Se desea construir un intervalo de confianza para la diferencia $\mu_X-\mu_Y$. Supóngase que se conocen los valores de las varianzas. Entonces la variable aleatoria
+$$Z=\dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}}}$$
+es $N(0,1)$. De esta forma es posible encontrar el valor cuantil $z_{1-\alpha/x}$ tal que
+$$P(-z_{1-\alpha/2}<Z<<_{1-0\alpha/2})=1-\alpha.$$
+De donde se tiene
+$$P\left(\overline{X}-\overline{Y}-z_{1-\alpha/2}\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}}=1-\alpha<\mu_X-\mu_Y<\overline{X}-\overline{Y}+z_{1-\alpha/2}\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}}\right)=1-\alpha,$$
+que es un intervalo aleatorio que no contiene parámetros desconocidos. Un intervalo de confianza del $100(1-\alpha)\%$ para $\mu_X-\mu_Y$ es
+$$\overline{x}-\overline{y}\pm z_{1-\alpha/2}\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}},$$
+en donde el valor cuantil $z_{1-\alpha/2}$ es tal que $P(Z<z_{1-\alpha/2})=1-\alpha/2$.\\
+
+Si las varianzas $\sigma_X^2$ y $\sigma_Y^2$ se desconocen pero son iguales, entonces la variable aleatoria
+$$T=\dfrac{\overline{X}-\overline{Y}-(\mu_X-\mu_Y)}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}$$
+tiene una distribución t de Student con $k=n_X+n_Y-2$ grados de libertad. Al seguir el procedimiento anterior, se tiene que un intervalo de confianza del $100(1-\alpha)\%$ para $\mu_X-\mu_Y$, es 
+$$\overline{x}-\overline{y}\pm t_{1-\alpha/2}s_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}},$$
+en donde el estimado combinando de la varianza común es
+$$s_p^2 = \dfrac{(n_X-1)s_X^2+(n_Y-1)s_Y^2}{n_X+n_Y-2}.$$
 
 
 
