@@ -1299,13 +1299,65 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 
 	    %---------- (b)
 	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; La base de $U$ es $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$. Ya que, esta base es de longitud $4$, debemos extender a longitud $5$ para que sea base de $\mathcal{P}_4(\textbf{F})$.
+		Si podemos encontrar un polinomio $p(x)$ que no puede ser generado por los elementos de $U$, entonces implicará que $U\cup p(x)$ es un conjunto linealmente independiente. Entonces tendremos un conjunto linealmente independiente en $\mathcal{P}_4(\textbf{F})$ que tiene tantos vectores como la dimensión de $\mathcal{P}_4(\textbf{F})$. Así, tendríamos una base para $\mathcal{P}_4(\textbf{F})$.\\
+
+		Supongamos que este vector es $(x-6)^2$ y que 
+		$$(x-6)^2=a+b(x-6)+c(x-6)+c(x-6)^3+d(x-6)^4$$
+		para $a,b,c,d\in \textbf{F}$. De donde
+		$$
+		\begin{array}{rcl}
+		    (x-6)^2 &=& a+b(x-6)+(x-6)^2\left[c(x-6)+d(x-6)^2\right]\\\\
+		    (x-6)^2\left[1-c(x-6)-d(x-6)^2\right] &=& a+b(x-6).
+		\end{array}
+		$$
+		Claramente $\left\{1,(x-6)\right\}$ no es múltiplo de $(x-6)^2$; sin embargo, lo será si y sólo si es igual a cero. Por lo tanto, 
+		$$a,b=0.$$
+		Substituyendo tendremos
+		$$
+		\begin{array}{rcl}	
+		    (x-6)^2 &=& c(x-6)^3+d(x-6)^4\\\\
+		    (x-6)^2 &=& (x-6)^3\left[c+d(x-6)\right].
+		\end{array}
+		$$
+		Está ecuación no es cierta, ya que el lado derecho de la ecuación no es múltiplo del lado izquierdo. Así, $(x-6)^2$ con un poco de manipulación de la ecuación podemos concluir que $(x-6)^2$ no será generado por  los polinomios de $U$. Concluimos que $U\cup \left\{(x-6)^2\right\}$ es una base para $\mathcal{P}_4(\textbf{F})$.\\\\
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Sea $W=\left\{(x-6)^2\right\}$. Ya que $U\cap W$ contiene a todos los polinomios base de $\mathcal{P}_4(\textbf{F})$, entonces el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Está claro que 
+		$$U,W\subseteq \mathcal{P}_4(\textbf{F})$$
+		Así,
+		$$U+W = \mathcal{P}_4(\textbf{F}).$$
+
+		Ahora, demostremos que $U\cap W=\left\{0\right\}.$ Sea $v\in U$; es decir, existen $c_0,c_1,c_3,c_4\in \textbf{F}$ tales que
+		$$v=c_0+c_1(x-6)+c_3(x-6)^3+c_3(x-6)^4.$$
+		Luego, ya que $v\in W$, entonces existe $c_2\in \textbf{F}$ siempre que
+		$$v=c_2(x-6)^2.$$
+		Igualando estas dos últimas ecuaciones, tenemos
+		$$c_0+c_1(x-6)+c_2(x-6)^3+c_3(x-6)^4=c_2(x-6)^2,$$
+		Esto implica que
+		$$c_0+c_1(x-6)+c_2(x-6)^2+c_3(x-6)^3+c_4(x-6)^4=0,$$
+		si resolvemos está ecuación con respecto a $c_0,c_1,c_2,c_3,c_4$, e igualamos a cero, tendremos que
+		$$
+		\begin{array}{rcl}
+		    c_0&=&0\\
+		    c_1&=&0\\
+		    c_2&=&0\\
+		    c_3&=&0\\
+		    c_4&=&0.
+		\end{array}
+		$$
+		De está manera 
+		$$v=0$$
+		Por lo tanto, $U\cap W=\left\{0\right\}$. Concluimos que $W$ es el subespacio de $\mathcal{P}_4(\textbf{F})$ tal que 
+		$$\mathcal{P}_4(\textbf{F})=U\oplus W.$$\\
 
 	\end{enumerate}
+
+    %-------------------- 6.
+    \item 
 
 
 \end{enumerate}
