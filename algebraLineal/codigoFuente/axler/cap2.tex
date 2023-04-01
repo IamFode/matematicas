@@ -1128,7 +1128,7 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 		$$\left\{p\in \mathcal{P}_4(\textbf{F})\; |\; p(6)=0\right\}=\left\{(x-6)q(x)\; |\; q\in\mathcal{P}_3(\textbf{F})\right\}.$$
 		Por el problema 2(g) del apartado 2.B (Axler, Linear Algebra), se sabe que $q(x)=1,x,x^2,x^3$ es una base de $\mathcal{P}_3(\textbf{F})$. De donde, demostremos que 
 		$$(x-6),(x-6)x,(x-6)x^2,(x-6)x^3$$
-		forma una base de $U$. Si $q(x)=a+bx+c^2+dx^3\in \mathcal{P}_4(\textbf{F})$ para $a,b,c,d\in \textbf{F}$. Entonces,
+		forma una base de $U$. Si $q(x)=a+bx+cx^2+dx^3\in \mathcal{P}_4(\textbf{F})$ para $a,b,c,d\in \textbf{F}$. Entonces,
 		$$
 		\begin{array}{rcl}
 		    (x-6)q(x)&=&(x-6)(a+bx+cx^2+dx^3)\\
@@ -1271,11 +1271,31 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 		Sean los escalares $s_1=a/12$, $s_2=b/6$, $s_3=c$ y $s_4=6c+d$. Entonces,
 		$$p(x)=s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4.$$
 		Este polinomio cumple con las condiciones iniciales. Es decir, $p''(x)=12s_1(x-6)^2+6s_2(x-6)$ con $p''(6)=0.$ En otras palabras, $p(x)\in \mathcal{P}_4(\textbf{F})$ tal que $p''(6)=0$ siempre que $p(x)$ puede ser expresado como $s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4$ para algunos escalares $s_1,s_2,s_3,s_4$. Así,
-		$$\left\{p(x)\in \mathcal{P}_4(\textbf{F})\,|\, p''(6)=0\right\}=\left\{s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4\,|\, s_1,s_2,s_3,s_4\in \textbf{F}\right\}.$$
-		Observe que este conjunto es un espacio vectorial generado por $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$, el cual genera $\mathcal{P}_4(\textbf{F})$. Luego, sea
+		$$U=\left\{p(x)\in \mathcal{P}_4(\textbf{F})\,|\, p''(6)=0\right\}=\left\{s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4\,|\, s_1,s_2,s_3,s_4\in \textbf{F}\right\}.$$
+		Observe que este conjunto es un espacio vectorial generado por $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$, el cual genera $U$. Luego, sea
 		$$s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4=0$$
-
-
+		$$\Downarrow$$
+		$$s_1x^4+(s_2-24s_1)x^3+(216x_1-18x_2)x^2+(108s_2-864s_1+s_3)x+(129s_1-216s_2-6s_3+s_4)=0$$
+		de donde,
+		$$
+		\begin{array}{rcl}
+		    s_1&=&0\\
+		    s_2-24s_1&=&0\\
+		    216s_1-18s_2&=&0\\
+		    108s_2-864s_1+s_3&=&0\\
+		    129s_1-216s_2-6s_3+s_4&=&0.
+		\end{array}
+		\quad \Rightarrow \quad 
+		\begin{array}{rcl}
+		    s_1&=&0\\
+		    s_2&=&0\\
+		    s_3&=&0\\
+		    s_4&=&0.
+		\end{array}
+		$$
+		Así, $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$ es linealemente independiente. Por lo tanto, 
+		$$\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$$ 
+		es una base de $U$.\\\\
 
 	    %---------- (b)
 	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
