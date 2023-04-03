@@ -384,4 +384,20 @@ en donde el estimado combinando de la varianza común es
 $$s_p^2 = \dfrac{(n_X-1)s_X^2+(n_Y-1)s_Y^2}{n_X+n_Y-2}.$$
 
 
+\subsection{Intervalo de confianza para \boldmath $\sigma^2$ cuando se muestrean dos distribución normal con media desconocida}
+Recordemos que la distribución de muestreo de $(n-1)S^2/\sigma^2$ es chi-cuadrada con $n-1$ grados de libertad. Entonces, es posible determinar los valores cuantiles $\mathcal{X}^2_{\alpha/2,n-1}$ y $\mathcal{X}^2_{1-\alpha/2,n-1}$, tales que
+$$P\left[\mathcal{X}^2_{\alpha/2,n-1}<\dfrac{(n-1)S^2}{\sigma^2}<\mathcal{X}^2_{1-\alpha/2,n-1}\right]=1-\alpha.$$
+
+De donde 
+
+$$P\left[\dfrac{1}{\mathcal{X}^2_{\alpha/2,n-1}}>\dfrac{\sigma^2}{(n-1)S^2}>\dfrac{1}{\mathcal{X}^2_{1-\alpha/2,n-1}}\right] = 1-\alpha$$
+
+Entonces el intervalo
+
+$$\left[\dfrac{(n-1)S^2}{\mathcal{X}^2_{1-\alpha/2,n-1}},\dfrac{(n-1)S^2}{\mathcal{X}^2_{\alpha/2,n-1}}\right]$$
+
+es un intervalo aleatorio el cual contiene a $\sigma^2$ y a parámetros conocidos con una probabilidad de $1-\alpha$. 
+
+
+
 
