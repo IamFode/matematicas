@@ -1364,7 +1364,41 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; : \; p(2)=p(5)\right\}$. Encontrar una base de $U$.\\\\
 		Respuesta.-\; Sea 
 		$$p(2)=\alpha=p(5).$$
-		Definamos $q(x)=p(x)-\alpha$
+		Definamos $q(x)=p(x)-\alpha$, de donde $q(x)\in \mathcal{P}_4(\textbf{F})$; ya que si sustraemos $p(x)-p(2)$, por ejemplo, está seguirá estando en $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
+		$$
+		\begin{array}{rcccccl}
+		    q(2)&=&p(2)-\alpha&=&p(2)-p(2)&=&0\\
+		    q(5)&=&p(5)-\alpha&=&p(2)-p(2)&=&0.
+		\end{array}
+		$$
+		Esto nos dice que, $2$ y $5$ son raíces de $q(x)$. Por lo tanto,
+		$$q(x)=\left(x-2\right)\left(x-5\right)r(x),$$
+		donde $r(x)$ tiene grado dos, menor que $q(x)$. Esto es, $r(x)\in \mathcal{P}_2(\textbf{F}).$ Dicho de otra manera, si $r(x)\in \mathcal{P}_2(\textbf{F})$, entonces $(x-2)(x-5)r(x)\in \mathcal{P}_4(\textbf{F})$ ó
+		$$V=\mathcal{P}_4(\textbf{F})\left\{q\in \mathcal{P}_4(\textbf{F}) \; |\; q(2)=q(5)=0\right\}=\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}.$$
+		Dicho esto, buscaremos una base de $\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}$. Ya que (Por el apartado 2.B problema 2(g): Axler, Linear Algebra) $1,x,x^2$ es una base de $\left\{\mathcal{P}_2(\textbf{F})\right\}$, verificaremos que 
+		$$(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$$
+		forma una base de $V$.\\
+
+		Si $r(x)=a+bx+cx^2\in \mathcal{P}_2(\textbf{F})$ para algún $a,b,c\in \textbf{F}$, entonces
+		$$
+		\begin{array}{rcl}
+		    (x-2)(x-5)r(x)&=&(x-2)(x-5)\left(a+bx+cx^2\right)\\\\
+				  &=& a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2.
+		\end{array}
+		$$
+		Lo que nos muestra que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ genera $V$. Ahora, demostremos que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ es linealmente independiente. Con las condiciones dadas anteriormente, tenemos que verificar:
+		$$a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2=(x-2)(x-5)\left(a+bx+cx^2\right)=0.$$
+		Centremonos en $(a+bx+cx^2)=0$. Ya que, $1,x,x^2$ es linealmente independiente. Entonces, los escalres $a,b,c$ son ceros. Por lo tanto, la lista es linealmente independiente, (ya que $(x-2)(x-5)\left(0+0\cdot x+0\cdot x^2\right)=0$). Así,
+		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
+		es una base de $V$.\\
+
+		Si $p(x)\in U$, si y sólo si $q(x)=p(x)-p(2)\in V$.
+
+
+
+
+		con $p(2)=q(2)=0$
+
 
 	    %---------- (b)
 	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\

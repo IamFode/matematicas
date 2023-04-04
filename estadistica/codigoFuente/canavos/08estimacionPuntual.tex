@@ -396,7 +396,22 @@ Entonces el intervalo
 
 $$\left[\dfrac{(n-1)S^2}{\mathcal{X}^2_{1-\alpha/2,n-1}},\dfrac{(n-1)S^2}{\mathcal{X}^2_{\alpha/2,n-1}}\right]$$
 
-es un intervalo aleatorio el cual contiene a $\sigma^2$ y a parámetros conocidos con una probabilidad de $1-\alpha$. 
+es un intervalo aleatorio el cual contiene a $\sigma^2$ y a parámetros conocidos con una probabilidad de $1-\alpha$. De esta forma, con base en los datos de una muestra aleatoria de tamaño $n$, se calcula el estimado $s^2$ y un intervalo de confianza del $100(1-\alpha)\%$ para $\sigma^2$, es de $(n-1)s^2/\mathcal{X}_{1-\alpha/2,n-1}^2$ a $(n-1)s^2/\mathcal{X}_{\alpha/2,n-1}^2$. Es interesante notar que la variable aleatoria pivotal es $(n-1)S^2/\sgiam^2$ ya que su función de densidad, dada por
+$$
+f(y;n-1)=
+\left\{
+    \begin{array}{lc}
+	\dfrac{1}{\Gamma\left[(n-1)/2\right]2^{(n-1)/2}}y^{\left[(n-1)/2\right]-1}e^{-y/2} & y>0,\\\\
+	0&\mbox{para cualquier otro valor.}
+    \end{array}
+\right.
+$$
+no contiene ningún parámetro desconocido.\\
+
+
+\subsection{Intervalos de confianza para el cociente de dos varianzas cuando se muestrean dos distribuciones normales independientes}
+
+
 
 
 

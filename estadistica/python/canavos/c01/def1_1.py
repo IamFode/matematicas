@@ -5,7 +5,7 @@ es el promedio aritmético de estas y se denota por
 mean(x) = \sum_{i=1}^n x_i/n
 """
 
-def mean(x):
+def media(x):
     n = len(x) # suma de los elementos de la lista
     suma = 0 
     for i in range(len(x)): # iterar sobre los elementos de la lista
