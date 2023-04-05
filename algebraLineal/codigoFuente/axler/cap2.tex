@@ -1392,17 +1392,24 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
 		es una base de $V$.\\
 
-		Si $p(x)\in U$, si y sólo si $q(x)=p(x)-p(2)\in V$.
+		Por otro lado, observemos que $p(x)\in U$, si y sólo si $q(x)=p(x)-p(2)\in V$. Por lo tanto, cualquier $p\in U$ puede ser expresado como 
+		$$a+q(x)$$
+		donde $a=p(2)$ es un escalar y $q(x)\in V$. Por el hecho de que, $(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ genera $V$, entonces existe $b,c,d\in \textbf{F}$, tal que 
+		$$q(x)=b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Ya que, $p(x)\in U$ tiene la forma 
+		$$p(x)=a+q(x)=a+b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Entonces, $1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ genera $U$.\\
 
-
-
-
-		con $p(2)=q(2)=0$
+		Por último, demostremos que $1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ es linealmente independiente. Sabemos que $(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ es linealmente independiente y vemos que todos los polinomios en esta lista son múltiplos de $(x-2)(x-5)$. Por lo que no pueden generar el polinomio $1$. Es decir, 
+		$$1\notin \span\left[(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right].$$
+		Esto significa que la lista
+		$$1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$$
+		es linealmente independiente. Por lo tanto, esta lista es base de $U$.\\\\
 
 
 	    %---------- (b)
 	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Queremos extender la base $\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. 
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\

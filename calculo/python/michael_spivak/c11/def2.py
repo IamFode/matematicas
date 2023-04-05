@@ -12,17 +12,14 @@ def convexaBool(i,j,func,n):
     line = np.linspace(i,j,n)
     for a in line:
         for b in line:
-            # a < x < b
-            if a<b:
+            if a<b: # a < x < b
                 for x in line:
-                    # a < x < b
-                    if (a<x<b):
-                        # (f(x)-f(a))/(x-a) < (f(b)-f(a))/(b-a)
-                        if ((f(x)-f(a))/(x-a) < (f(b)-f(a))/(b-a)):
+                    if (a<x<b): # a < x < b
+                        if ((f(x)-f(a))/(x-a) < (f(b)-f(a))/(b-a)): # (f(x)-f(a))/(x-a) < (f(b)-f(a))/(b-a)
                             return True
                         else:
                             return False
                             break
 
-print(convexaBool(-1,0,'x**3+x',10))
+print(convexaBool(-1,0,'-x**2',10))
 

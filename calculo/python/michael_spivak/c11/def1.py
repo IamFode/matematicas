@@ -8,25 +8,26 @@ rectilíneo que une (a, f(a)) y (b, f(b)) se sitúa encima de la gráfica de f.
 import matplotlib.pyplot as plt
 import numpy as np
 
-def def1(p, q, func, n):
+
+def def1(p, q, func, n=13):
     f = lambda x: eval(func)
     x = np.linspace(p, q, 100)
     fig, ax = plt.subplots()
     ax.plot(x, f(x)) # trazar la función completa
     line = np.linspace(p, q, n) # puntos de la recta
-    for a in line:
+    last_line = None # variable para guardar la última línea trazada
+    for idx,a in enumerate(line):
         for b in line:
             if not a == b:
                 for xx in np.linspace(a, b, n):
                     gx = ((f(b)-f(a))/(b-a))*(xx-a)+f(a) 
                     if gx>f(xx) and a<xx<b:
-                        ax.plot([a, b], [f(a), f(b)], color='blue', alpha=.9)
-                        plt.pause(.1)
-
+                        if last_line: # si hay una línea trazada anteriormente, borrarla
+                            last_line.remove()
+                        current_line, = ax.plot([a, b], [f(a), f(b)], color=plt.cm.jet(idx / len(line)), alpha=.9) # guardar la línea actual
+                        last_line = current_line # guardar la línea actual como la última línea trazada
+                        plt.pause(0.001)
     return plt.show()
 
-#ax.plot([i, j], [f(i), f(j)], color=plt.cm.jet(idx / len(line)), alpha=.9)
-
-
 # Funciona sólo para una única curva.
-def1(0, 10, 'x**3+x', 10)
+def1(-10, 10, 'x**2')
