@@ -1364,7 +1364,7 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; : \; p(2)=p(5)\right\}$. Encontrar una base de $U$.\\\\
 		Respuesta.-\; Sea 
 		$$p(2)=\alpha=p(5).$$
-		Definamos $q(x)=p(x)-\alpha$, de donde $q(x)\in \mathcal{P}_4(\textbf{F})$; ya que si sustraemos $p(x)-p(2)$, por ejemplo, está seguirá estando en $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
+		Definamos $q(x)=p(x)-\alpha$, de donde $q(x)\in \mathcal{P}_4(\textbf{F})$; por ejemplo, si sustraemos $p(x)-p(2)$, esta seguirá estando en $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
 		$$
 		\begin{array}{rcccccl}
 		    q(2)&=&p(2)-\alpha&=&p(2)-p(2)&=&0\\
@@ -1374,9 +1374,9 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 		Esto nos dice que, $2$ y $5$ son raíces de $q(x)$. Por lo tanto,
 		$$q(x)=\left(x-2\right)\left(x-5\right)r(x),$$
 		donde $r(x)$ tiene grado dos, menor que $q(x)$. Esto es, $r(x)\in \mathcal{P}_2(\textbf{F}).$ Dicho de otra manera, si $r(x)\in \mathcal{P}_2(\textbf{F})$, entonces $(x-2)(x-5)r(x)\in \mathcal{P}_4(\textbf{F})$ ó
-		$$V=\mathcal{P}_4(\textbf{F})\left\{q\in \mathcal{P}_4(\textbf{F}) \; |\; q(2)=q(5)=0\right\}=\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}.$$
+		$$V=\left\{q\in \mathcal{P}_4(\textbf{F}) \; |\; q(2)=q(5)=0\right\}=\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}.$$
 		Dicho esto, buscaremos una base de $\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}$. Ya que (Por el apartado 2.B problema 2(g): Axler, Linear Algebra) $1,x,x^2$ es una base de $\left\{\mathcal{P}_2(\textbf{F})\right\}$, verificaremos que 
-		$$(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$$
+		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
 		forma una base de $V$.\\
 
 		Si $r(x)=a+bx+cx^2\in \mathcal{P}_2(\textbf{F})$ para algún $a,b,c\in \textbf{F}$, entonces
@@ -1386,9 +1386,9 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 				  &=& a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2.
 		\end{array}
 		$$
-		Lo que nos muestra que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ genera $V$. Ahora, demostremos que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ es linealmente independiente. Con las condiciones dadas anteriormente, tenemos que verificar:
+		Lo que nos muestra que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ genera $V$. Ahora, demostremos que $\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ es linealmente independiente. Con las condiciones dadas anteriormente, tenemos que verificar:
 		$$a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2=(x-2)(x-5)\left(a+bx+cx^2\right)=0.$$
-		Centremonos en $(a+bx+cx^2)=0$. Ya que, $1,x,x^2$ es linealmente independiente. Entonces, los escalres $a,b,c$ son ceros. Por lo tanto, la lista es linealmente independiente, (ya que $(x-2)(x-5)\left(0+0\cdot x+0\cdot x^2\right)=0$). Así,
+		Centremonos en $(a+bx+cx^2)=0$. Ya que, $1,x,x^2$ es linealmente independiente. Entonces, los escalares $a,b,c$ son ceros. Por lo tanto, la lista es linealmente independiente, (ya que $(x-2)(x-5)\left(0+0\cdot x+0\cdot x^2\right)=0$). Así,
 		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
 		es una base de $V$.\\
 
@@ -1409,7 +1409,47 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 
 	    %---------- (b)
 	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
-		Respuesta.-\; Queremos extender la base $\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. 
+		Respuesta.-\; Queremos extender la base $V=\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. \\
+		Si podemos encontrar un polinomio $p(x)$ que no puede ser generado por los elementos de $V$, entonces implicará que $V\cup p(x)$ es un conjunto linealmente independiente. Entonces tendremos un conjunto linealmente independiente en $\mathcal{P}_4(\textbf{F})$ que tiene tantos vectores como la dimensión de $\mathcal{P}_4(\textbf{F})$. Así, tendríamos una base para $\mathcal{P}_4(\textbf{F})$.\\
+		Agreguemos el vector $p(x)=x$ a $V$. Así, para los escalares $a,b,c,d\in \textbf{F}$, tendríamos
+		$$x=a+b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		De donde,
+		$$x-a=b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Observemos que no hay manera de que $x-a$ sea múltiplo de $(x-2)(x-5)$, por lo que $p(x)\notin \span(V)$. Esto implica que 
+		$$\left\{1,x,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
+		es una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+		Respuesta.-\; Sean $U=\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ y $W=\left\{x\right\}$. Entonces, demostraremos que $U\cup W=\mathcal{P}_4(\textbf{F})$. Ya que, $U\cup W$ contiene todas los elementos base de $\mathcal{P}_4(\textbf{F})$, el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U$ y $W$ están en $\mathcal{P}_4(\textbf{F})$, entonces $U+W\subseteq \mathcal{P}_4(\textbf{F})$. Por lo que, 
+		$$\mathcal{P}_4(\textbf{F})=U+W.$$
+		Ahora, demostremos que $U\cap W=\left\{0\right\}$. Sea $v\in U$, para los escalares $c_0,c_2,c_3,c_4\in \textbf{F}$, tal que
+		$$v=c_0+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2.$$
+		Sea también $v\in W$  con $c_2\in \textbf{F}$, tal que
+		$$v=c_2x.$$
+		Igualemos estas dos expresiones, obtenemos
+		$$c_0+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2=c_2x.$$
+		Esto implica que,
+		$$c_0-c_1x+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2=0.$$
+		Esta ecuación se cumplirá siempre que todos los escales $c_i=0$ sean cero. Por lo que, $v=0$. Así, $U\cap W=\left\{0\right\}.$ Por lo tanto, $W=\left\{x\right\}$ es un subespacio de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W.$\\\\
+
+	\end{enumerate}
+
+
+    %-------------------- 7.
+    \item 
+	\begin{enumerate}[(a)]
+	
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F}):p(2)=p(5)=p(6)\right\}$. Encontrar una base de $U$.\\\\
+		Respuesta.-\;  
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+		Respuesta.-\;
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
@@ -1417,8 +1457,8 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 
 	\end{enumerate}
 
-    %-------------------- 7.
+    %-------------------- 8.
     \item 
 
 
-\end{enumerate}
+\end{enumerate} 

@@ -31,3 +31,46 @@
     El conjunto de todas las transformaciones lineales de $V$ en $W$ se denota por $\mathcal{L}(V,W)$.
 \end{mynot}
 
+\setcounter{myteo}{3}
+%-------------------- 3.5 Teorema
+\begin{myteo}[Transformaciones lineales y bases del dominio]\,\\\\
+    Suponga que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_n\in W$. Entonces, existe una única transformación lineal $T:V\to W$ tal que 
+    $$T(v_j)=w_j$$
+    para cada $j=1,\ldots,n$.\\\\
+	Demostración.-\; Primero demostremos la existencia de una transformación lineal $T$, con la propiedad deseada. Defina $T:V\to W$ por
+	$$T(c_1v_1+\cdots+c_nv_n)=c_1w_1+\cdots+c_nw_n.$$
+	donde $c_1,\ldots,c_n$ son elementos arbitrarios de $\textbf{F}$. La lista $v_1,\ldots,v_n$ es una base de $V$, y por lo tanto, la ecuación anterior de hecho define una función $T$ para $V$ en $W$ (porque cada elemento de $V$ puede ser escrito de manera única en la forma $c_1v_1,\ldots,c_nv_n$). Para cada $j$, tomando $c_j=1$ y las otras $c's$ igual a $0$ demostramos la existencia de $T(v_j)=w_j$.\\
+	Si $u,v\in V$ con $u=a_1v_1,\ldots,a_nv_n$ y $v=c_1v_1,\ldots,c_nv_n$, entonces
+	$$
+	\begin{array}{rcl}
+	    T(v+u) &=& T\left[(a_1+c_1)v_1+\ldots+(a_n+a_n)v_n\right]\\\\
+		   &=& (a_1+c_1)w_1+\ldots+(a_n+c_n)w_n\\\\
+		   &=& (a_1w_1+\ldots+a_nw_n)+(c_1w_1+\ldots+c_nw_n)\\\\
+		   &=& T(u)+T(v).
+	\end{array}
+	$$
+	Similarmente, si $\lambda \in \textbf{F}$ y $v=c_1v_1+\cdots+c_nv_n$, entonces
+	$$
+	\begin{array}{rcl}
+	    T(\lambda v) &=& T(\lambda c_1v_1+\cdots+\lambda c_nv_n)\\\\
+			 &=&\lambda c_1w_1+\cdots+\lambda c_nw_n\\\\
+			 &=&\lambda(c_1w_1+\cdots+c_nw_n)\\\\
+			 &=&\lambda T(v).
+	\end{array}
+	$$
+	Así, $T$ es una transformación lineal para $V$ en $W$.\\
+	Para probar que es único, suponga que $T\in \mathcal{L}(V,W)$ y que $T(v_j)=w_j$ para $j=1,\ldots,n$. Sea $c_1,\ldots,c_n\in \textbf{F}$. La Homogeneidad de $T$ implica que $T(c_jv_j)=c_jw_j$ para $j=1,\ldots,n$. La Aditividad de $T$ implica que 
+	$$T(c_1v_1+\cdots+c_nv_n)=c_1w_1+\cdots+c_nw_n.$$
+	Por lo tanto, $T$ se determina de forma única en $\span(v_1,\ldots,v_n)$ para la ecuación de arriba. Porque $v_1,\ldots,v_n$ es una base de $V$, esto implica que $T$ es determinado únicamente en $V$.
+\end{myteo}
+
+\vspace{.5cm}
+
+\subsection*{Operaciones algebraicas en \boldmath $\mathcal{L}(V,W)$}
+
+%-------------------- 3.6 definición
+\begin{mydef}[Adición y multiplicación escalar en \boldmath$\mathcal{L}\left(V,W\right)$]\,\\\\
+    Suponga que $S,T\in \mathcal{L}(V,W)$ y $\lambda \in \textbf{F}$. La \textbf{suma} $S+T$ y el \textbf{producto} $\lambda T$ son transformaciones lineales para $V$ en $W$ definida por
+    $$(S+T)(v)=S(v)+T(v) \quad \mbox{y} \quad (\lambda T)(v)=\lambda(Tv)$$
+    para todo $v\in V$.
+\end{mydef}
