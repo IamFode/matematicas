@@ -1,5 +1,8 @@
 \chapter{Limites}
 
+La función $f$ se aproxima al límite $l$ cerca de $a$, si $f(x)$ se aproxima tanto como se quiera a $l$ si $x$ se aproxima suficientemente a $a$ pero es distinto de $a$. \\
+
+
 %--------------------definición de límite
     \begin{def.}
 	La función $f$ tiende hacia el límite $l$ en $a$ $\left(\lim\limits_{x \to a} f(x) = l \right)$ significa: para todo $\epsilon > 0$ existe algún $\delta > 0$ tal que, para todo $x$, si $0<|x-a|<\delta$, entonces $|f(x)-l|<\epsilon$.\\\\
@@ -59,37 +62,38 @@ Una función no puede tender hacia dos límites diferentes en $a$. En otros tér
 	\item  $\lim\limits_{x \to a} (f+g)(x) = l+m$
 	\item  $\lim\limits_{x \to a} (f\cdot g)(x) = l\cdot m$\\\\
 	Además, si $m\neq 0$, entonces
-	\item  $\lim\limits_{x \to a} (\dfrac{1}{g})(x) = \dfrac{1}{m}$
+	\item  $\lim\limits_{x \to a} \left(\dfrac{1}{g}\right)(x) = \dfrac{1}{m}$
     \end{enumerate}
-	Demostración.-\; La hipótesis significa que para todo $\epsilon > 0$ existen $\delta_1, \delta_2>0$ tales que, para todo $x$, $$si \; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\epsilon$$ 
-	$$y \quad si \; 0<|x-a|<\delta_2, \; entonces \; |g(x)-m < \epsilon|$$
+	Demostración.-\; La hipótesis significa que para todo $\epsilon > 0$ existen $\delta_1, \delta_2>0$ tales que, para todo $x$, $$si \; 0<|x-a|<\delta_1, \; \mbox{entonces} \; |f(x)-l|<\epsilon$$ 
+	$$y \quad si \; 0<|x-a|<\delta_2, \; \mbox{entonces} \; |g(x)-m < \epsilon|$$
 	Esto significa ( ya que después de todo, $\epsilon/2$ es también un número positivo) que existen $\delta_1,\delta_2>0$ tales que, para todo $x$,
-	$$si \; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\dfrac{\epsilon}{2}$$
-	$$y \quad si \; 0<|x-a|<\delta_2, \; entonces \; |g(x)-m|<\dfrac{\epsilon}{2}$$
+	$$si \; 0<|x-a|<\delta_1, \; \mbox{entonces} \; |f(x)-l|<\dfrac{\epsilon}{2}$$
+	$$y \quad si \; 0<|x-a|<\delta_2, \; \mbox{entonces} \; |g(x)-m|<\dfrac{\epsilon}{2}$$
+
 	Sea ahora $\delta = \min(\delta_1,\delta_2)$. Si $0<|x-a|<\delta$, entonces $0<|x-a|<\delta_1$ y $0<|x-a|<\delta_2$ se cumplen las dos, de modo que es a la vez $$|f(x)-l|<\dfrac{\epsilon}{2} \quad y \quad |g(x)-m|<\dfrac{\epsilon}{2}$$
 	pero según la parte $(1)$ del lema anterior esto implica que $|(f+g)(x) - (l+m)|< \epsilon$.\\\\
-	Para demostrar $(2)$ procedemos de la misma manera, después de consultar la parte $(2)$ del lema. Si $\epsilon>0$ existen $\delta_1,\delta_2>0$ tales que, para todo $x$ $$si\; 0<|x-a|<\delta_1, \; entonces \; |f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right),$$ $$y\quad si\; 0<|x-a|<\delta_2,\; entonces \; |g(x)-m|<\dfrac{\epsilon}{2(|l|)+1}$$ Pongamos de nuevo $\delta = \min(\delta_1,\delta_2)$. Si $0<|x-a|<\delta,$ entonces $$|f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right) \qquad y \qquad |g(x)-m|<\dfrac{\delta}{2(|l|+1)}$$
+	Para demostrar $(2)$ procedemos de la misma manera, después de consultar la parte $(2)$ del lema. Si $\epsilon>0$ existen $\delta_1,\delta_2>0$ tales que, para todo $x$ $$si\; 0<|x-a|<\delta_1, \; \mbox{entonces} \; |f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right),$$ $$y\quad si\; 0<|x-a|<\delta_2,\; \mbox{entonces} \; |g(x)-m|<\dfrac{\epsilon}{2(|l|)+1}$$ Pongamos de nuevo $\delta = \min(\delta_1,\delta_2)$. Si $0<|x-a|<\delta,$ \mbox{entonces} $$|f(x)-l|<\min\left(1,\dfrac{\epsilon}{2(|m|+1)}\right) \qquad y \qquad |g(x)-m|<\dfrac{\delta}{2(|l|+1)}$$
 	Así pues, según el lema, $|(f\cdot g)(x)-l\cdot m|<\epsilon$, y esto demuestra $(2)$.\\\\
-	Finalmente, si $\epsilon>0$ existe un $\delta>0$ tal que, para todo $x$, $$si\; 0<|x-a|<\delta, \; entonces \; |g(x)-m|< \min\left(\dfrac{|m|}{2},\dfrac{\epsilon|m|^2}{2}\right)$$
+	Finalmente, si $\epsilon>0$ existe un $\delta>0$ tal que, para todo $x$, $$si\; 0<|x-a|<\delta, \; \mbox{entonces} \; |g(x)-m|< \min\left(\dfrac{|m|}{2},\dfrac{\epsilon|m|^2}{2}\right)$$
 	Pero según la parte $(3)$ del lema, esto significa, en primer lugar que $g(x)\neq 0$, de modo que $(1/g)(x)$ tiene sentido, y en segundo lugar que $$\left|\left(\dfrac{1}{g}\right)(x)-\dfrac{1}{m}\right|<\epsilon$$
 	Esto demuestra $(3)$.\\\\
 \end{teo}
 
 %--------------------definición 5.2
-    \begin{def.}
-	$\lim\limits_{x \to a^+} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<x-a<\delta, \; entonces \; |f(x)-l|<\epsilon$$	
-	La condición $0<x-a<\delta$ es equivalente a $0<|x-a|<\delta$ y $x>a$
-    \end{def.}
+\begin{def.}
+    $\lim\limits_{x \to a^+} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<x-a<\delta, \; \mbox{entonces} \; |f(x)-l|<\epsilon$$	
+    La condición $0<x-a<\delta$ es equivalente a $0<|x-a|<\delta$ y $x>a$
+\end{def.}
 
 %--------------------definición 5.3
-    \begin{def.}
-	$\lim\limits_{x \to a^-} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<a-x<\delta, \; entonces \; |f(x)-l|<\epsilon$$	
-    \end{def.}
+\begin{def.}
+    $\lim\limits_{x \to a^-} f(x)=l$ significa que para todo $\epsilon>0$, existe un $\delta>0$ tal que, para todo $x$, $$si \; 0<a-x<\delta, \; \mbox{entonces} \; |f(x)-l|<\epsilon$$	
+\end{def.}
 
 %--------------------definición 5.4
-    \begin{def.}
-	$\lim\limits_{x \to \infty} f(x)=l$ significa que para todo $\epsilon>0$, existe un número $N$ grande, que, para todo $x$, $$si \; x>N, \; entonces \; |f(x)-l|<\epsilon$$	
-    \end{def.}
+\begin{def.}
+    $\lim\limits_{x \to \infty} f(x)=l$ significa que para todo $\epsilon>0$, existe un número $N$ grande, que, para todo $x$, $$si \; x>N, \; \mbox{entonces} \; |f(x)-l|<\epsilon$$	
+\end{def.}
 
 \section{Problemas}
 \begin{enumerate}[ \bfseries 1.]

@@ -162,7 +162,7 @@ Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtene
 	$$
 	\begin{array}{rcl}
 	    g'(x) &=& \dfrac{f'(x)}{f(x)}\\\\
-		  &=& \dfrac{2}{x}-\dfrac{\sen x}{\cos x}-\dfrac{\sen x}{\cos x}-\dfrac{28x^3}{(1+x^4)}.
+		  &=& \dfrac{2}{x}-\dfrac{\sen x}{\cos x}-\dfrac{28x^3}{(1+x^4)}.
 	\end{array}
 	$$
 	Multiplicando ambos miembros por $f(x)$ tenemos
@@ -177,21 +177,266 @@ Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtene
 
 \section{Ejercicios}
 
-\begin{enumerate}[1.]
+\begin{enumerate}[\bfseries 1.]
 
     %-------------------- 1.
     \item 
 	\begin{enumerate}[a)]
 
 	    %---------- a)
-	    \item Hallar todos los valores de $c$ tales que $\log x = c + \int_e^x t^{-1}\; dt$ para todo $x>0$.\\\\
-		Respuesta.-
+	    \item Hallar todos los valores de $c$ tales que $\log x = c + \displaystyle\int_e^x t^{-1}\; dt$ para todo $x>0$.\\\\
+		Respuesta.- Resolvamos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    \log(x) = c+\displaystyle\int_c^x \dfrac{1}{t}\; dt &\Rightarrow& \log(x) = c+\log(x)-\log(c)\\\\
+									&\Rightarrow& \log(x)=c+\log(x)-1\\\\ 
+									&\Rightarrow& c=1.
+		\end{array}
+		$$
 
 	    %---------- b)
 	    \item Sea $f(x)=\log\left[(1+x)/(1-x)\right]$ si $x>0$. Si $a$ y $b$ son números dados, siendo $ab\neq -1$, hallar todos los $x$ tales que $f(x)=f(a)+f(b)$.\\\\
-		Respuesta.-
+		Respuesta.- Resolvamos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    f(x)=f(a)+f(b) &\Rightarrow& \log\left(\dfrac{1+x}{1-x}\right) = \log\left(\dfrac{1+a}{1-a}\right)+\log\left(\dfrac{1+b}{1-b}\right)\\\\
+				   &\Rightarrow& \log\left(\dfrac{1+x}{1-x}\right) = \log\left[\dfrac{(1+a)(1+b)}{(1-a)(1-b)}\right]\\\\
+				   &\Rightarrow& \dfrac{1+x}{1-x} = \dfrac{(1+a)(1+b)}{(1-a)(1-b)}\\\\
+				   &\Rightarrow& x = \dfrac{a+b}{1+ab}.
+		\end{array}
+		$$
+		\vspace{.5cm}
 
 	\end{enumerate}
+
+    %-------------------- 2.
+    \item En cada caso, hallar un $x$ real que satisfaga la igualdad dada,
+
+	\begin{enumerate}[(a)]
+
+	    %---------- a)
+	    \item $\log(1+x)=\log(1-x)$.\\\\
+		Respuesta.-\; Calculemos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    \log(1+x)=\log(1-x) &\Rightarrow& 1+x=1-x\\\\
+					&\Rightarrow& x=0.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	    %---------- b)
+	    \item $\log(1+x)=1+\log(1-x)$.\\\\
+		Respuesta.-\; Calculemos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    \log(1+x)=1+\log(1-x) &\Rightarrow& \log\left(\dfrac{1+x}{1-x}\right)=1\\\\
+					  &\Rightarrow& \dfrac{1+x}{1-x}=e\\\\
+					  &\Rightarrow& x=\dfrac{e-1}{e+1}.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	    %---------- c)
+	    \item $2\log(x) = x\log(2), \; x\neq 2$.\\\\
+		Respuesta.-\; Calculemos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    2\log(x) = x\log(2), \; x\neq 2 &\Rightarrow& \log(x^2)=\log(2^x)\\\\
+						     &\Rightarrow& x^2=2^x\\\\
+						     &\Rightarrow& x=2,\; x=4.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	    %---------- d)
+	    \item $\log\left(\sqrt{x}+\sqrt{x+1}\right)=1$.\\\\
+		Respuesta.-\; Calculemos de la siguiente manera:
+		$$
+		\begin{array}{rcl}
+		    \log\left(\sqrt{x}+\sqrt{x+1}\right)=1 &\Rightarrow& \sqrt{x}+\sqrt{x+1}=e\\\\
+							   &\Rightarrow& x-(x+1)=e\left(\sqrt{x}-\sqrt{x+1}\right)\\\\
+							   &\Rightarrow& \sqrt{x+1}-\sqrt{x}=\dfrac{1}{e}\\\\
+							   &\Rightarrow& \left(\sqrt{x+1}-\sqrt{x}\right)+\left(\sqrt{x+1}-\sqrt{x}\right)=\dfrac{1}{e}+e\\\\
+							   &\Rightarrow& 2\sqrt{x+1}=e+\dfrac{1}{e}\\\\
+							   &\Rightarrow& \sqrt{x+1}=\dfrac{e}{2}+\dfrac{1}{2e}\\\\
+							   &\Rightarrow& x+1=\dfrac{e^2}{4}+\dfrac{1}{4e^2}+\dfrac{1}{2}\\\\
+							   &\Rightarrow& x=\dfrac{\left(e^2-1\right)^2}{4x^2}.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item Sea $f(x)=\frac{\log(x)}{x}$. Describir los intervalos en los que $f$ es creciente, decreciente, convexa y cóncava. Esbozar la gráfica de $f$.\\\\
+	Respuesta.-\; Tomemos primero la segunda derivada de $f$:
+	$$
+	\begin{array}{rcl}
+	    f(x) &=& \dfrac{\log(x)}{x}\\\\
+	    f'(x) &=& \dfrac{1-\log(x)}{x^2}\\\\
+	    f''(x) &=& \dfrac{2\log(x)-3}{x^3}.
+	\end{array}
+	$$
+	Se sigue que,
+	$$
+	\left\{
+	\begin{array}{rcl}
+	    f'(x)>0 &\mbox{para} & 0<x<e\\\\
+	    f'(x)<0 &\mbox{para} & x>e.
+	\end{array}
+	\right.
+	$$
+
+	Esto significa que $f$ es es creciente en $0<x<e$ y decreciente en $x>e$.\\
+	
+	Luego se tiene, 
+	$$
+	\left\{
+	\begin{array}{rcl}
+	    f''(x)<0 &\mbox{para} & 0<x<\sqrt{e^3}\\\\
+	    f''(x)>0 &\mbox{para} & x>\sqrt{e^3}.
+	\end{array}
+	\right.
+	$$
+	Lo que significa que $f$ es cóncava en $0<x<\sqrt{e^3}$ y convexa en $x>\sqrt{e^3}$.
+	\begin{center}
+	    \begin{tikzpicture}
+		\begin{axis}[scale=.5,draw opacity =.5,samples=100,smooth, 
+		  axis x line=center, 
+		  axis y line=center,
+		  ylabel = {$f(x)$},
+		  xlabel = {$x$},
+		  xlabel style={below right},
+		  ylabel style={above left},
+		  label style={font=\tiny},
+		  tick label style={font=\tiny},
+		  enlargelimits=upper] 
+		  \addplot[black,opacity=1,domain=0.7:5]{ln(x)/x};
+		\end{axis}
+	    \end{tikzpicture}
+	\end{center}
+	\vspace{.5cm}
+
+    \end{enumerate}
+
+    En los ejercicios 4 al 14, hallar la derivada $f'(x)$. En cada caso, la función $f$ se supone definida para todo $x$ real para los que la fórmula dada para $f(x)$ tiene sentido.\\
+
+    \begin{enumerate}[\bfseries 1.]
+    \setcounter{enumi}{3}
+
+    %-------------------- 4.
+    \item $f(x)=\log\left(1+x^2\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena tenemos que,
+	$$f'(x)= \dfrac{1}{1+x^2}\cdot 2x =\dfrac{2x}{1+x^2}.$$\\
+
+    %-------------------- 5.
+    \item $f(x)=\log\left(\sqrt{1+x^2}\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena tenemos que,
+	$$f'(x)= \left(\dfrac{1}{\sqrt{1+x^2}}\right)\left( \dfrac{1}{2\sqrt{1+x^2}}\right)(2x) =\dfrac{x}{1+x^2}.$$\\
+
+    %-------------------- 6.
+    \item $f(x)=\log\left(\sqrt{4-x^2}\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena tenemos que,
+	$$f'(x)= \left(\dfrac{1}{\sqrt{4-x^2}}\right)\left( \dfrac{1}{2\sqrt{4-x^2}}\right)(-2x) =\dfrac{x}{x^2-4}.$$\\
+
+    %-------------------- 7.
+    \item $f(x)=\log\left(\log(x)\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena tenemos que,
+	$$f'(x)= \dfrac{1}{\log(x)}\cdot \dfrac{1}{x} =\dfrac{1}{x\log(x)}.$$\\
+
+    %-------------------- 8.
+    \item $f(x)=\log\left(x^2 \log(x)\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena y la regla del producto tenemos que,
+	$$f'(x)= \left[\dfrac{1}{x^2\log(x)}\right]\left[2x\log(x) + x\right] =\dfrac{1}{x^2\log(x)}\cdot 2x\log(x)+\dfrac{1}{x\log(x)} =\dfrac{2}{x}+\dfrac{1}{x\log(x)}.$$\\
+
+    %-------------------- 9.
+    \item $f(x)=\dfrac{1}{4}\log\left(\dfrac{x^2-1}{x^2+1}\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena y la regla del cociente tenemos que,
+	$$
+	\begin{array}{rcl}
+	    f'(x)&=&\dfrac{1}{4}\left(\dfrac{2x}{x^2-1}-\dfrac{2x}{x^2+1}\right)\\\\
+		 &=& \dfrac{1}{4}\left[\dfrac{2x(x^2+1)-2x(x^2-1)}{(x^2-1)(x^2+1)}\right]\\\\
+		 &=& \dfrac{1}{4}\left[\dfrac{2x^3+2x-2x^3+2x}{(x^2-1)(x^2+1)}\right]\\\\
+		 &=& \dfrac{x}{x^4-1}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 10.
+    \item $f(x)=(x+\sqrt{1+x^2})^n$.\\\\
+	Respuesta.-\; Tomando el logaritmo del valor absoluto de la función dada tenemos que,
+	$$
+	\begin{array}{rcl}
+	    g(x) &=& \log|f(x)|\\\\
+		 &=& |n|\log\left| (x+\sqrt{1+x^2})\right|.
+	\end{array}
+	$$
+	Derivando $g'(x)$,
+	$$
+	\begin{array}{rcl}
+	    g'(x) &=& \dfrac{f'(x)}{f(x)}\\\\
+		  &=& n\left(\dfrac{1}{x+\sqrt{1+x^2}}\right)\left(1+\dfrac{x}{\sqrt{1+x^2}}\right)\\\\
+		  &=& \dfrac{n}{\sqrt{1+x^2}}.
+	\end{array}
+	$$
+
+	Ahora, multiplicando $g'(x)$ por $f(x)$ tenemos que,
+	$$
+	\begin{array}{rcl}
+	    f(x)\cdot \dfrac{f'(x)}{f(x)} &=& \dfrac{n}{\sqrt{1+x^2}}\cdot \left(x+\sqrt{1+x^2}\right)^n\\\\
+	    f'(x) &=& \dfrac{n\left(x+\sqrt{1+x^2}\right)^n}{\sqrt{1+x^2}}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 11.
+    \item $f(x)=\sqrt{x+1}-\log(1+\sqrt{x+1})$.\\\\
+	Respuesta.-\; Usando la regla de la cadena,
+	$$	
+	\begin{array}{rcl}
+	    f'(x) &=& \dfrac{1}{2\sqrt{x+1}}-\dfrac{1}{1+\sqrt{x+1}}\cdot \dfrac{1}{2\sqrt{x+1}}\\\\
+		  &=& \dfrac{1}{2\sqrt{x+1}}\left(1-\dfrac{1}{1+\sqrt{x+1}}\right)\\\\
+		  &=& \dfrac{1}{2\left(1+\sqrt{x+1}\right)}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+
+    %-------------------- 12.
+    \item $f(x)=x\log\left(x+\sqrt{1+x^2}\right)-\sqrt{1+x^2}$.\\\\
+	Respuesta.-\; Usnaod la regla de la cadena y la regla del producto tenemos que,
+	$$
+	\begin{array}{rcl}
+	    f'(x) &=& \log\left(x+\sqrt{1+x^2}\right)+\left(\dfrac{x}{x+\sqrt{1+x^2}}\right)\left(1+\dfrac{x}{\sqrt{1+x^2}}\right)-\dfrac{x}{\sqrt{1+x^2}}\\\\
+		  &=& \log\left(x+\sqrt{1+x^2}\right)+\dfrac{x}{\sqrt{1+x^2}}-\dfrac{x}{\sqrt{1+x^2}}\\\\
+		  &=& \log\left(x+\sqrt{1+x^2}\right).
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 13.
+    \item $f(x)=\dfrac{1}{2\sqrt{ab}}\log\left(\dfrac{\sqrt{a}+x\sqrt{b}}{\sqrt{a}-x\sqrt{b}}\right)$.\\\\
+	Respuesta.-\; Usando la regla de la cadena y la regla del cociente tenemos que,
+	$$
+	\begin{array}{rcl}
+	\end{array}
+	$$
+
+    %-------------------- 14.
+    \item $f(x)=x\left[\sen(\log x)-\cos(\log x)\right]$.\\\\
+	Respuesta.-\; Usando la regla de la cadena y la regla del producto tenemos que,
+	$$
+	\begin{array}{rcl}
+	    f'(x) &=& \left[\sen(\log x)-\cos(\log x)\right]+x\left[\dfrac{\cos(\log x)}{x}+\dfrac{\sen(\log x)}{x}\right]\\\\
+		  &=& 2\sen(\log x).
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 15.
+    \item $f(x)=\log_xe$.\\\\
+	Respuesta.-\;
 
 \end{enumerate}
 

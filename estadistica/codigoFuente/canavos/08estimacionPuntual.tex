@@ -396,7 +396,7 @@ Entonces el intervalo
 
 $$\left[\dfrac{(n-1)S^2}{\mathcal{X}^2_{1-\alpha/2,n-1}},\dfrac{(n-1)S^2}{\mathcal{X}^2_{\alpha/2,n-1}}\right]$$
 
-es un intervalo aleatorio el cual contiene a $\sigma^2$ y a parámetros conocidos con una probabilidad de $1-\alpha$. De esta forma, con base en los datos de una muestra aleatoria de tamaño $n$, se calcula el estimado $s^2$ y un intervalo de confianza del $100(1-\alpha)\%$ para $\sigma^2$, es de $(n-1)s^2/\mathcal{X}_{1-\alpha/2,n-1}^2$ a $(n-1)s^2/\mathcal{X}_{\alpha/2,n-1}^2$. Es interesante notar que la variable aleatoria pivotal es $(n-1)S^2/\sgiam^2$ ya que su función de densidad, dada por
+es un intervalo aleatorio el cual contiene a $\sigma^2$ y a parámetros conocidos con una probabilidad de $1-\alpha$. De esta forma, con base en los datos de una muestra aleatoria de tamaño $n$, se calcula el estimado $s^2$ y un intervalo de confianza del $100(1-\alpha)\%$ para $\sigma^2$, es de $(n-1)s^2/\mathcal{X}_{1-\alpha/2,n-1}^2$ a $(n-1)s^2/\mathcal{X}_{\alpha/2,n-1}^2$. Es interesante notar que la variable aleatoria pivotal es $(n-1)S^2/\sigma^2$ ya que su función de densidad, dada por
 $$
 f(y;n-1)=
 \left\{
@@ -411,6 +411,8 @@ no contiene ningún parámetro desconocido.\\
 
 \subsection{Intervalos de confianza para el cociente de dos varianzas cuando se muestrean dos distribuciones normales independientes}
 
+Supongamos que se tienen muestras aleatorias provenientes de dos distribuciones normales con medias y varianzas desconocidas. Sean $n_X$ y $n_Y$, el tamaño de las muestras y $S_X^2$ y $S_Y^2$ las varianzas muestrales. El interés se centra en construir un intervalo de confianza para el cociente $\sigma_Y^2/\sigma_X^2$ de las dos variables poblacionales. Recordemos que la variable aleatoria $(S_X^2/\sigma_X^2)(S_Y^2/\sigma_Y^2)$ tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad. Entonces puede escribirse
+$$P\left(a<\dfrac{S_X^2/\sigma_X^2}{S_Y^2/\sigma_X^2}<b\right)=1-\alpha.$$
 
 
 

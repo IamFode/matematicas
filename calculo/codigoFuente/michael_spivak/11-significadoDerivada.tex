@@ -3217,12 +3217,70 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (a)
 	    \item Demuestre que si $f$ y $g$ son convexas y $f$ es creciente, entonces $f\circ g$ es convexa. (La demostración es más sencilla si se utiliza el resultado del problema 3).\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $f$ y $g$ dos funciones convexas y $f$ es creciente. Entonces, tenemos que mostrar que $f\circ g$ es convexa. Ya que $f$ y $g$ son convexas por el anterior ejercicio 3 se tiene, para $t\in (0,1)$ que
+		$$f\left[ty+(1-t)x\right]<tf(y)+(1-t)f(x)\qquad \mbox{y}\qquad g\left[ty+(1-t)x\right]<tg(y)+(1-t)g(x),$$
+		para todo $x,y$ en el dominio de $f$ y $g$. Por lo tanto,
+		$$
+		\begin{array}{rcl}
+		    (f\circ g)\left[ty+(1-t)x\right] &<& f\circ\left[tg(y)+(1-t)g(x)\right]\\\\
+						   &<& t(f\circ g)(y)+(1-t)(f\circ g)(x),
+		\end{array}
+		$$
+		para cualquier $x,y$ de $g$ para que $g(x)$ y $g(y)$ estén en el dominio de $f\circ g$. Así, demuestra que $f\circ g$ es una función convexa, gracias al problema anterior.\\\\
+
 
 	    %---------- (b)
-	    \item 
+	    \item Dé un ejemplo de un caso en el que $g\circ f$ no sea convexa.\\\\
+		Respuesta.-\; Sea $f:\mathbb{R}^+\to \mathbb{R}^+$ definida por
+		$$f(x)=x^2+1$$
+		y $g:\mathbb{R}^+\to \mathbb{R}^+$ definida por
+		$$g(x)=\dfrac{1}{x}$$
+		De donde, $f$ es una función creciente convexa y $g$ es una función convexa. Entonces, 
+		$$(f\circ g)(x)=\dfrac{1}{f(x)}=\dfrac{1}{1+x^2}$$
+		el cual no es una función convexa. \\
+
+		Por ejemplo sea $y=1$, $x=2$ y $t=\dfrac{1}{2}$ por lo que
+		$$(f\circ g)\left[ty+(1-t)x\right]=\dfrac{1}{(1+t)^2}=\dfrac{4}{9}>\dfrac{7}{20}=t(g\circ f)(y)+(1+t)(g\circ f)(x).$$\\
+
+	    %---------- (c)
+	    \item Suponga que $f$ y $g$ son dos veces diferenciables. Dé otro demostración del resultado del apartado (a) considerando las derivadas segundas.\\\\
+		Demostración.-\; Sea $f$ y $g$ dos funciones convexas dos veces diferenciables y $f$ creciente. Entonces, tenemos que demostrar que $f\circ g$ es convexa; es decir, necesitamos demostrar que 
+		$$(f\circ g)''>0.$$
+		Notemos que 
+		$$(f\circ g)''=(f''\circ g)g'^2+(f'\circ g)g''$$
+		que es positivo siempre que $f''$, $f'$ y $g''$ son todos positivos. Pero estos son positivos desde nuestra hipótesis ya que tanto $f$ como $g$ son convexos así como $f$ es creciente.\\\\
 	\end{enumerate}
 
+    %------------------- 5.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Suponga que $f$ es diferenciable y convexa en un intervalo. Demuestre que o bien $f$ es creciente, o bien $f$ es decreciente, o sino que existe un número $c$ tal que $f$ es decreciente a la izquierda de $c$ y creciente a la derecha de $c$.\\\\
+		Demostración.-\; Supongamos primero que $f'\neq 0$. Ya que $f$ es diferenciable y convexa, por el teorema 1 tenemos que para cualquier $x,y\in[a,b]$ con $x<y$,
+		$$f'(x)<f'(y).$$
+		Esto implica que $f'$ es una función monótona en $[a,b]$. Por lo tanto, $f'>0$ o $f'<0$. Esto demuestra que $f$ es creciente o decreciente en $[a,b]$.\\
+		Luego, sea $f'(c)=0$. Entonces, por el teorema 1 tenemos que para cualquier $x\in[a,b]$ con $x<c$,
+		$$f'(x)<f'(c)=0.$$
+		Por otro lado, para $c<y$,	
+		$$0=f'(c)<f'(y).$$
+		Es decir,
+		$$f'(x)<0<f'(y).$$
+		Lo que demuestra que $f$ es decreciente a la izquierda de $c$ y creciente a la derecha de $c$.\\\\
+
+
+	    %---------- (b)
+	    \item Utilice este hecho para dar otra demostración del resultado del problema 4(a), siendo $f$ y $g$ (una vez) diferenciables. (Hay que ir con cuidado al comparar $f'[g(x)]$ y $f'[g(y)]$ para $x<y$.)\\\\
+		Demostración.-\; 
+
+	    %---------- (c)
+	    \item Demuestre el resultado del apartado (a) sin suponer que $f$ es diferenciable. Hay que tener en cuenta distintos casos, aunque no es necesario tener ideas particularmente luminosas. Comience demostrando que si $a<b$ y $f(a)<f(b)$, entonces $f$ es creciente a la derecha de $b$; y si $f(a)>f(b)$, entonces $f$ es decreciente a la izquierda de $a$.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+    %------------------- 6.
+    \item 
 
 
 \end{enumerate}

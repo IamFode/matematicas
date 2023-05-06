@@ -9,7 +9,7 @@ por L(x), como la integral
 L(x) = ∫_1^x 1/t dt
 """
 
-def log10(x):
+def log(x):
     if b>1:
         teo1_15(1,x,"x**(-1)")
 

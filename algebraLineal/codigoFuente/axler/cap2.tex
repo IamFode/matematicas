@@ -1358,7 +1358,7 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 
     %-------------------- 6.
     \item 
-	\begin{enumerate}[\bfseries (a)]
+	\begin{enumerate}[(a)]
 
 	    %---------- (a)
 	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; : \; p(2)=p(5)\right\}$. Encontrar una base de $U$.\\\\
@@ -1366,9 +1366,9 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 		$$p(2)=\alpha=p(5).$$
 		Definamos $q(x)=p(x)-\alpha$, de donde $q(x)\in \mathcal{P}_4(\textbf{F})$; por ejemplo, si sustraemos $p(x)-p(2)$, esta seguirá estando en $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
 		$$
-		\begin{array}{rcccccl}
-		    q(2)&=&p(2)-\alpha&=&p(2)-p(2)&=&0\\
-		    q(5)&=&p(5)-\alpha&=&p(2)-p(2)&=&0.
+		\begin{array}{rcl}
+		    q(2)=p(2)-\alpha=p(2)-p(2)=0&\Rightarrow&q(2)=0\\
+		    q(5)=p(5)-\alpha=p(5)-p(5)=0&\Rightarrow&q(5)=0.
 		\end{array}
 		$$
 		Esto nos dice que, $2$ y $5$ son raíces de $q(x)$. Por lo tanto,
@@ -1445,20 +1445,153 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
 	
 	    %---------- (a)
 	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F}):p(2)=p(5)=p(6)\right\}$. Encontrar una base de $U$.\\\\
-		Respuesta.-\;  
+		Respuesta.-\; Sea $p(2)=p(5)=p(6)=\alpha$, de donde $q(x)=p(x)-\alpha$. Entonces, $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
+		$$
+		\begin{array}{rcl}
+		    q(2)=p(2)-\alpha=0&\Rightarrow&q(2)=0\\\\
+		    q(5)=p(5)-\alpha=0&\Rightarrow&q(5)=0\\\\
+		    q(6)=p(6)-\alpha=0&\Rightarrow&q(6)=0.
+		\end{array}
+		$$
+
+		Esto significa que $2,5$ y $6$ son raíces de $q(x)$. Por lo que,
+
+		$$q(x)=(x-2)(x-5)(x-6)r(x).$$
+
+		Donde, $r(x)$ tiene $3$ grados menos que el grado de $q(x)$. Es decir, $r(x)\in \mathcal{P}_1(\textbf{F})$. Dado q ue, $q(2)=q(5)=q(6)=0$. Entonces,
+		$$V=\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)=0\right\}=\left\{(x-2)(x-5)(x-6)r(x)|r(x)\in \mathcal{P}_1(\textbf{F})\right\}.$$
+		Busquemos ahora una base de $\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)=0\right\}$, para luego convertirla en una base de $\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)\right\}$. Ya que, $1,x$ es una base de $\mathcal{P}_1(\textbf{F})$, verifiquemos si $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ forma una base de $V$.\\
+		Sea $r(x)=a+bx\in \mathcal{P}_2(\textbf{F})$, entonces
+		$$
+		\begin{array}{rcl}
+		    (x-2)(x-5)(x-6)r(x)&=&(x-2)(x-5)(x-6)(a+bx)\\\\
+				       &=&a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x.
+		\end{array}
+		$$
+		Esto implica que $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera de $V$. Después,
+		$$
+		\begin{array}{rcl}
+		    a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x&=&0\\\\
+		    (x-2)(x-5)(x-6)(a+bx)&=&0.
+		\end{array}
+		$$
+		Resolviendo la ecuación podemos concluir que $a,b$ son cero. Por lo tanto, 
+		$$\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$ 
+		es linealmente independiente. Así,
+		$$\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$
+		es una base de $V$.\\
+
+	    Ahora, si $p(x)\in U$, siempre que $q(x)=p(x)-p(2)\in V$, y viceversa. Sea $c=p(2)=p(5)=p(6)$ con $q(x)\in V$, por lo que podemos expresar a $p\in U$ como $c+q(x)$. \\
+
+	    Ya que, $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera $V$, entonces
+	    $$p(x)=c+a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x.$$
+	    Por lo tanto, $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera $U$. Por último, notemos que $1\notin \span\left[(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right]$. Así, 
+	    $$\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$
+	    es linealmente independiente. Por lo tanto, es una base de $U$.\\\\
 
 	    %---------- (b)
 	    \item Extienda la base en la parte (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Queremos extender la base de $U$, $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. Para ello, comprobemos si $x$ se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$. Sean $a,b,c\in \textbf{F}$,
+		$$x=a+b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Reescribiendo,
+		$$x-a=b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Esta ecuación nunca se puede cumplir, ya que, el lado izquierdo es un polinomio de grado uno, mientras que el lado derecho es un polinomio de grado tres. Por lo tanto, $x$ no se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$.\\
+
+		Lo mismo, podemos decir de $x^2$. Sea $a,b,c\in \textbf{F}$,
+		$$x^2=a+b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Reescribiendo,
+		$$x^2-a=b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Esta ecuación nunca se puede cumplir, ya que, el lado izquierdo es un polinomio de grado dos, mientras que el lado derecho es un polinomio de grado tres. Por lo tanto, $x^2$ no se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$.\\
+
+		Por lo tanto, $\left\{1,x,x^2,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x,x^2,x\right\}$ es una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
 
 	    %---------- (c)
 	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Sean $U=\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ y $W=\left\{x,x^2\right\}$. Ya que, $U\cup W$ contiene todas los elementos base de $\mathcal{P}_4(\textbf{F})$. El espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U,W\subseteq \mathcal{P}_4(\textbf{F})$. Entones, 
+		$$U+W\subseteq \mathcal{P}_4(\textbf{F}).$$
+		Así,
+		$$U+W=\mathcal{P}_4(\textbf{F}).$$
+
+		Ahora, probemos que $U\cap W=\left\{0\right\}$. Sea $v\in U\cap W$, de donde podemos escribir para $c_0,c_3,c_4\in \textbf{F}$ de la siguiente manera
+		$$v=c_0+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x$$
+		Luego, ya que $v\in W$, entonces para $c_1,c_2\in \textbf{F}$ 
+		$$v=c_1x+c_2x^2.$$
+		Igualando ambas ecuaciones, tenemos
+		$$c_0+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x=c_1x+c_2x^2.$$
+		Esto implica que 
+		$$c_0-c_1x-c_2x^2+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x=0.$$
+		Resolviendo podemos ver que $c_i'$s son cero, por lo cual $v=0$. Por lo tanto, $U\cap W=\left\{0\right\}$. Así, 
+		$$\mathcal{P}_4(\textbf{F})=U\oplus W.$$\\
 
 	\end{enumerate}
 
     %-------------------- 8.
     \item 
+	\begin{enumerate}[(a)]
 
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{R})\; : \; \int_{-1}^1 p=0\right\}$. Defina una base de $U$.\\\\
+		Respuesta.-\; Sea $p(x)=a+bx+cx^2+dx^3+cx^4\in \mathcal{P}_4(\textbf{F})$, tal que $\int_{-1}^1 p(x)\; dx = 0.$
+		Por lo tanto,
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_{-1}^1 p(x)\; dx &=& \displaystyle\int_{-1}^1 \left(a+bx+cx^2+dx^3+cx^4\right)\; dx\\\\
+						       &=& \left(ax+\dfrac{bx^2}{2}+\dfrac{cx^3}{3}+\dfrac{dx^4}{4}+\dfrac{ex^5}{5}\right)\bigg|_{-1}^1\\\\
+						       &=& a + \dfrac{b(1)^2}{2}+\dfrac{c(1)^3}{3}+\dfrac{d(1)^4}{4}+\dfrac{e(1)^5}{5} \\\\
+						       &-& \left[a(-1) + \dfrac{b(-1)^2}{2}+\dfrac{c(-1)^3}{3}+\dfrac{d(-1)^4}{4}+\dfrac{e(-1)^5}{5}\right]\\\\
+						       &=&\left(a+\dfrac{b}{2}+\dfrac{c}{3}+\dfrac{d}{4}+\dfrac{e}{5}\right)-\left(-a+\dfrac{b}{2}-\dfrac{c}{3}+\dfrac{d}{4}-\dfrac{e}{5}\right)\\\\
+						       &=& 2a+\dfrac{2c}{3}+\dfrac{2e}{5}\\\\
+		\end{array}
+		$$
+		De donde, $\int_{-1}^1 p(x)\; dx = 0$  si y sólo si $2a+\dfrac{2c}{3}+\dfrac{2e}{5}=0$ o $a=-\dfrac{c}{3}-\dfrac{e}{5}$. 
+		Así, 
+		$$
+		\begin{array}{rcl}
+		    U&=&\left\{p(x)\in  P_4(\textbf{F})\; \big| \; \displaystyle\int_{-1}^1 p(x)\; dx = 0\right\}\\\\
+		     &=&\left\{a+bx+cx^2+dx^3+cx^4\; \big|\; a=-\dfrac{c}{3}-\dfrac{e}{5},b,c,d,e\in \textbf{F}\right\}\\\\
+		     &=& \left\{-\dfrac{c}{3}-\dfrac{e}{5}+bx+cx^2+dx^3+cx^4\; \big|\; b,c,d,e\in \textbf{F}\right\}\\\\
+		     &=& \left\{bx+c\left(x^2-\dfrac{1}{3}\right)+dx^3+e\left(x^4-\dfrac{1}{5}\right)\; \big|\; b,c,d,e\in \textbf{F}\right\}.
+		\end{array}
+		$$
+		Esto demuestra que $\left\{x.x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ genera $U$. Luego, para ver que es linealmente independiente, supongamos que $c_1,c_2,c_3,c_4\in \textbf{F}$ para
+		$$c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right)=0.$$
+		por lo que
+		$$-\dfrac{c_2}{3}-\dfrac{c_4}{5}+c_1x+c_2x^2+c_3x^3+c_4x^4=0.$$
+		Resolviendo veremos que los $c_i's$ son cero. Concluimos que $\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) a una base de $\mathcal{P}_4(\textbf{R})$.\\\\
+		Respuesta.-\; Extendamos la base $B=\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ de $U$, para que sea una base de $\mathcal{P}_4(\textbf{R})$. Para ello, necesitaremos encontrar un polinomio $p(x)\notin \span(B)$, que al unir $B\cup \left\{p(x)\right\}$ serán linealmente independientes. \\
+		Observemos que $B$ tiene todos los grados menos el grado $0$, por lo que podemos elegir a $p(x)=1$. Supongamos que  $p(x)=1$ genera $B$. Entonces para algunos $a,b,c,d\in \textbf{F}$,
+		$$1=ax+b\left(x^2-\dfrac{1}{3}\right)+cx^3+d\left(x^4-\dfrac{1}{5}\right).$$
+		De donde,
+		$$\left(-\dfrac{b}{3}-\dfrac{d}{5}-1\right)+ax+bx^2+cx^3+dx^4=0.$$
+		Notemos que $\left(-\frac{b}{3}-\frac{d}{5}-1\right)\neq 0$, lo que nos lleva a una contradicción. Así, $1$ no genera $B$. Por el ejercicio 11 del apartado 2A (Axler, Linear Algebra), implica que $B\cup 1$ es linealmente independiente. Por el teorema 1.39 (Axler) concluimos que $B\cup \left\{p(x)=1\right\}$ es base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{R})$ tal que $\mathcal{P}_4(\textbf{R})=U\oplus W$.\\\\
+		Respuesta.-\; Sean $B=\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ una base de $U$ y $W=\span\left\{1\right\}$. Ya que $U\cup W$ contiene todos los elementos base de $\mathcal{P}_4(\textbf{F})$, el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U,W\subseteq \mathcal{P}_4(\textbf{F})$, entonces
+		$$U+W\subseteq \mathcal{P}_4(\textbf{F}).$$
+		Esto implica que,
+		$$U+W=\mathcal{P}_4(\textbf{F}).$$
+		Ahora, demostremos que $U\cap W=\left\{0\right\}$. Supongamos $v\in U\cap W$. Entonces $v\in U$ y $v\in W$. Esto nos dice que
+		$$v=c_0=c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right).$$
+		para todo $c_0,c_1,c_2,c_3,c_4\in \textbf{F}$. Ordenando los términos, tenemos que
+		$$-c_0+c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right)=0.$$
+		De donde,
+		$$\left(-\dfrac{c_2}{3}-\dfrac{c_4}{5}-c_0\right)+c_1x+c_2x^2+c_3x^3+c_4x^4=0.$$
+		Resolviendo el sistema de ecuaciones, tenemos que $c_0=c_1=c_2=c_3=c_4=0$. Por lo tanto, $v=0$. Así, concluimos que $U\cap W=\left\{0\right\}$. Lo que se demuestra que $W$ es un subespacio de $\mathcal{P}_4(\textbf{F})$ tal que $U\cap W=\left\{0\right\}.$\\\\
+
+	\end{enumerate}
+
+    %--------------------9.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que 
+    $$\dim(\span\left\{v_1+w,\ldots,v_m+w\right\})\geq m-1.$$\\
+	Demostración.-\; 
 
 \end{enumerate} 
