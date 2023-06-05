@@ -413,8 +413,69 @@ no contiene ningún parámetro desconocido.\\
 
 Supongamos que se tienen muestras aleatorias provenientes de dos distribuciones normales con medias y varianzas desconocidas. Sean $n_X$ y $n_Y$, el tamaño de las muestras y $S_X^2$ y $S_Y^2$ las varianzas muestrales. El interés se centra en construir un intervalo de confianza para el cociente $\sigma_Y^2/\sigma_X^2$ de las dos variables poblacionales. Recordemos que la variable aleatoria $(S_X^2/\sigma_X^2)(S_Y^2/\sigma_Y^2)$ tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad. Entonces puede escribirse
 $$P\left(a<\dfrac{S_X^2/\sigma_X^2}{S_Y^2/\sigma_X^2}<b\right)=1-\alpha.$$
+en donde $a$ y $b$ son los valores cuantiles inferiores y superiores de una distribución $F$ tal que 
+$$a=\dfrac{1}{f_{1-\alpha/2,n_Y-1,n_X-1}}\qquad \mbox{y}\qquad b=f_{1-\alpha/2,n_X-1,n_Y-1}.$$
+La proposición de probabilidad se puede expresar como
+$$P\left(a<\dfrac{S_X^2}{S_Y^2}\cdot \dfrac{\sigma_Y^2}{\sigma_X^2}<b\right)=1-\alpha$$
+
+o
+
+$$P\left(\dfrac{aS_Y^2}{S_X^2}<\dfrac{\sigma_Y^2}{\sigma_X^2}<\dfrac{bS_Y^2}{S_X^2}\right)=1-\alpha$$
+
+De esta manera, un intervalo de confianza del $100(1-\alpha)\%$ para $\sigma_Y^2/\sigma_X^2$ está dado por
+
+$$\left(\dfrac{as_Y^2}{s_X^2},\dfrac{bs_Y^2}{s_Y^2}\right).$$
+
+\subsection{Intervalos de confianza para el parámetro de proporción \boldmath $p$ cuando se muestrea una distribución binomial}
+El número de unidades defectuosas es una variable aleatoria binomial, si se supone una probabilidad constante e independiente. En una muestra aleatoria de tamaño $n$ el parámetro $p$ que representa la proporción de artículos defectuosos es desconocido. Se desea determinar un intervalo de confianza para $p$. Se demostró que el estimador de máxima verosimilitud de $p$, denotado por $\hat{P}$, es
+$$\hat{P}=\dfrac{X}{n}.$$
+
+en donde $X$ es binomial con parámetros $n$ y $p$. Nótese que $\hat{P}$ es un estimador insesgado de $p$, ya que
+
+$$E\left(\hat{P}\right)=\dfrac{1}{n} E(X)=\dfrac{np}{n}=p.$$
+
+La varianza de $\hat{P}$ se puede obtener de la siguiente forma:
+
+$$
+\begin{array}{rcl}
+    \Var\left(\hat{P}\right) &=& \Var\left(\dfrac{X}{n}\right)\\\\
+			     &=& \dfrac{1}{n^2}\left[np(1-p)\right]\\\\
+			     &=& \dfrac{p(1-p)}{n}.
+\end{array}
+$$
+
+Recuérdese que para $n$ grande, la variable aleatoria $(X-np)/\sqrt{np(1-p)}$ es aproximadamente $N(0,1)$. Entonces puede demostrarse que la distribución De
+$$\dfrac{\hat{P}-p}{\sqrt{\dfrac{\hat{P}\left(1-\hat{P}\right)}{p}}}$$
+también tiende a $N(0,1)$ para $n$ grande. De esta forma, la probabilidad de intervalo aleatorio
+
+$$\left[\hat{P}-z_{1-\alpha/2}\sqrt{\dfrac{\hat{P}\left(1-\hat{P}\right)}{n}},\hat{P}+z_{1-\alpha/2}\sqrt{\dfrac{\hat{P}\left(1-\hat{P}\right)}{n}}\right]$$
+
+es en forma aproximada, $1-\alpha$ para $n$ grande. De acuerdo con lo anterior, un intervalo de confianza aproximado del $100(1-\alpha)\%$ para el parámetro de proporción $p$, es
+
+$$\left[\hat{p}-z_{1-\alpha/2}\sqrt{\dfrac{\hat{p}\left(1-\hat{p}\right)}{n}},\hat{p}+z_{1-\alpha/2}\sqrt{\dfrac{\hat{p}\left(1-\hat{p}\right)}{n}}\right],$$
+en donde el estimador de máxima verosimilitud $\hat{p}=x/n$ se obtiene de la muestra aleatoria de tamaño $n$.\\
+
+Con respecto al muestreo de una distribución binomial, un problema que surge, en forma frecuente, es el de estimar el tamaño de la muestra necesario de manera tal que con una confiabilidad de $100(1-\alpha)\%$ aproximadamente, el estimado del parámetro de proporción se encuentre a no más de $\epsilon$ unidades de $p$. Dado el estimador de máxima verosimilitud $X/n$, puede expresarse 
+
+$$\left[\hat{P}-z_{1-\alpha/2}\sqrt{\dfrac{\hat{P}\left(1-\hat{P}\right)}{n}},\hat{P}+z_{1-\alpha/2}\sqrt{\dfrac{\hat{P}\left(1-\hat{P}\right)}{n}}\right]$$
+
+como
+
+$$P\left(\Bigg|\dfrac{X}{n}-p\Bigg|<\epsilon\right) = 1-\alpha.$$
+
+en donde
+
+$$\epsilon = z_{1-\alpha/2}\sqrt{\dfrac{p(1-p)}{n}}$$
+
+Al resolver para $n$, se obtiene
+
+$$n=\dfrac{z_{1-\alpha/2}^2p(1-p)}{\epsilon^2}.$$
+
+Uilizaremos el valor máximo de $p$, es decir $p=1/2$.  Esto será válido siempre que el tamaño de la muestra sea suficientemente grande.\\
+
+Para ilustrar el uso de la distribución t de Student sigue siendo válido para inferencias con respecto a las medias, aún a pesar de que se muestree una distribución que no es normal.
 
 
-
+\section{Estimación bayesiana}
 
 

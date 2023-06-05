@@ -21,9 +21,13 @@ Una presentación más general de un modelo de regresión sería:
 
 $$y=E(y)+\epsilon,$$
 
-Donde: $E(y)$ es la esperanza matemática de la variable respuesta.Cuando $E(y)$ es una combinación lineal  de las variables explicativas $x_1,x_2,\ldots, x_k$ la regresión es una regresión lineal. Con $E(\epsilon_i)=0$ y $Var(\epsilon_i)=\sigma^2$. Todos los $\epsilon_i$ son independientes.\\
+Donde: $E(y)$ es la esperanza matemática de la variable respuesta.Cuando $E(y)$ es una combinación lineal  de las variables explicativas $x_1,x_2,\ldots, x_k$ la regresión es una regresión lineal. \textbf{La supuestas clásicos sobre el término de error son \boldmath $\E(\epsilon)=0$ y varianza constante $\Var(\epsilon)=\sigma^2$}. El experimento típico para la regresión lineal simple es que observamos $n$ pares de datos $(x_1, y_1),(x_2, y_2), \ldots ,(x_n, y_n)$ de un experimento científico, y modelamos en términos de los $n$ pares de los datos se puede escribir como
+$$y_i=\beta_0+\beta_1x_i+\epsilon_i\qquad \mbox{para}\; i=1,2,\ldots,n,$$
+con $E(\epsilon_i)=0$ y $Var(\epsilon_i)=\sigma^2$. Todos los $\epsilon_i$ son independientes. Generalmente $\sigma^2$ no se conoce. 
+Ahora debemos hallar buenos estimadores para $\beta_0$ y $\beta_1$.\\
 
-Ahora debemos hallar buenos estimadores para $\beta_0$ y $\beta_1$.
+\textbf{Obs:}
+Se sabe que $\E(e)=0$ en un modelo de regresión lineal simple debido a la suposición de que, en promedio, los errores de regresión son igualmente positivos y negativos y se cancelan entre sí.
 
 
 \section{Estimaciones por mínimos cuadrados}
@@ -155,10 +159,12 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
 		      &=& \dfrac{1}{S_{xx}^2}\Var\left[\dfrac{1}{n}\displaystyle\sum_{i=1}^n y_i(x_i-\overline{x})\right]&\\\\
 		      &=& \dfrac{1}{S_{xx}^2}\dfrac{1}{n^2}\displaystyle\sum_{i=1}^n (x_i-\overline{x})^2\Var(y_i)&\\\\
 		      &=& \dfrac{1}{S_{xx}^2}\dfrac{1}{n^2}\displaystyle\sum_{i=1}^n (x_i-\overline{x})^2\sigma^2\\\\
-		      &=& \dfrac{\sigma^2}{nS_{xx}}.
+		      &=& \dfrac{\sigma^2}{nS_{xx}} = \dfrac{\sigma^2}{n\sum\limits_{i=1}^n \left(x_i-\overline{x}\right)^2}.
 	\end{array}
 	$$
 \end{teo}
+
+Es importante destacar que, en general, se espera que la varianza de $b_1$ sea menor a medida que aumenta el tamaño de la muestra, ya que se tienen más datos disponibles para estimar el coeficiente de regresión. Además, la varianza de $b_1$ también puede disminuir si la variabilidad de los valores de $x$ se reduce. Por lo tanto, para mejorar la precisión del estimador $b_1$, se pueden tomar medidas como aumentar el tamaño de la muestra o reducir la variabilidad de $x$.
 
 %-------------------- Teorema 2.4
 \begin{teo}[\boldmath El estimador de mínimos cuadrados $b_1$ e $\overline{y}$ no están correlacionados] Bajo el supuesto de normalidad de $y_i$ para $i = 1, 2, \ldots , n$, $b_1$ e $\overline{y}$ se distribuyen normalmente y son independientes.\\\\
@@ -183,8 +189,10 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
     $$
     Concluimos que
     $$\Cov(b_1,\overline{y})=\dfrac{1}{n^2}{S_{xx}}\sum_{i=1}^n (x_i-\overline{x})\sigma^2=0.$$
-    Recuerde que la correlación cero es equivalente a la independencia entre dos variables normales. Por lo tanto, concluimos que $b_1$ e $\overline{y}$ son independientes.
+    Recuerde que \textbf{la correlación cero es equivalente a la independencia entre dos variables normales. Por lo tanto, concluimos que \boldmath $b_1$ e $\overline{y}$ son independientes}.
 \end{teo}
+
+ si se utiliza $b_1$ para estimar la pendiente de la recta de regresión e $\overline{y}$ para estimar el valor medio de la variable dependiente $Y$, la variabilidad en los errores de estas dos estimaciones no estarán correlacionadas.
 
 %-------------------- Teorema 2.5
 \begin{teo}
@@ -200,11 +208,11 @@ Primero discutiremos las propiedades estadísticas sin el supuesto de distribuci
 	$$
 \end{teo}
 
-Las varianzas de $b_0$ y $b_1$ son importantes cuando queremos hacer inferencias estdísticas sobre la intersección y la pendiente de la regresión.\\
+Las propiedades 1-5, especialmente las varianzas de $b_0$ y $b_1$, son importantes cuando queremos hacer inferencias estadísticas sobre la intersección y la pendiente de la regresión lineal simple.\\
 
-Dado que las varianzas de los estimadores de mínimos cuadrados $b_0$ y $b_1$ involucran la varianza del término de error en el modelo de regresión simple. Esta variación de error es desconocida para nosotros. Por lo tanto, necesitamos estimarlo. Ahora discutimos cómo estimar la varianza del término de error en el modelo de regresión lineal simple. Sea $y_i$ la variable de respuesta observada y $\hat{y}_i = b_0 + b_1x_i$ , el valor ajustado de la respuesta. Tanto $y_i$ como $\hat{y}_i$ están disponibles para nosotros. El verdadero error $\sigma_i$ en el modelo no es observable y nos gustaría estimarlo. La cantidad $y_i - \hat{y}_i$ es la versión empírica del error $\epsilon_i$ . Esta diferencia es un residuo de regresión que juega un papel importante en el diagnóstico del modelo de regresión. Proponemos la siguiente estimación de la varianza del error basada en $e_i$:
+Dado que las varianzas de los estimadores de mínimos cuadrados $b_0$ y $b_1$ involucran la varianza del término de error en el modelo de regresión simple. Esta variación de error es desconocida para nosotros. Por lo tanto, necesitamos estimarlo. Ahora discutimos cómo estimar la varianza del término de error en el modelo de regresión lineal simple. Sea $y_i$ la variable de respuesta observada y $\hat{y}_i=b_0+b_1x_i$ , el valor ajustado de la respuesta. Tanto $y_i$ como $\hat{y}_i$ están disponibles para nosotros. El verdadero error $\sigma_i$ en el modelo no es observable y nos gustaría estimarlo. \textbf{La cantidad \boldmath$y_i - \hat{y}_i$ es la versión empírica del error $\epsilon_i$ . Esta diferencia es un residuo de regresión que juega un papel importante en el diagnóstico del modelo de regresión.} Proponemos la siguiente estimación de la varianza del error basada en $e_i$:
 $$s^2 = \dfrac{1}{n-2}\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2$$
-Tenga en cuenta que en el denominador es $n-2$. Esto hace que $s^2$ sea un estimador insesgado de la varianza del error $\sigma_2$. El modelo lineal tiene dos parámetros, por lo que, $n-2$ puede verse como $n-$ números de parámetros simples. En particular, en un modelo de regresión lineal múltiple con $p$ parámetros, el denominador debe ser $n - p$ para construir un estimador insesgado de la varianza del error $\sigma^2$.\\
+Tenga en cuenta que en el denominador es $n-2$. Esto hace que $s^2$ sea un estimador insesgado de la varianza del error $\sigma^2$. El modelo lineal tiene dos parámetros, por lo que, $n-2$ puede verse como $n-$ números de parámetros simples. En particular, en un modelo de regresión lineal múltiple con $p$ parámetros, el denominador debe ser $n - p$ para construir un estimador insesgado de la varianza del error $\sigma^2$.\\
 
 El estimador insesgado $s^2$ para la regresión lineal simple será  demostrado en las siguientes derivaciones.
 
@@ -353,7 +361,7 @@ Por lo tanto, la estimación de la varianza del error tiene $n - 2$ grados de li
 
 \section{Estimación de máxima verosimilitud}
 
-El estimador de màxima versimilitud de una regresiñon lineal simple puede ser desarrollado si se supone que la variable dependiente $y_i$ tiene una distribuciòn normal $y_i\sim N\left(\beta_0+\beta_1x_i,\sigma^2\right)$. La funciòn de similitud para $\left(y_1,y_2,\ldots,y_n\right)$ es dada por:
+El estimador de màxima versimilitud de una regresión lineal simple puede ser desarrollado si se supone que la variable dependiente $y_i$ tiene una distribución normal $y_i\sim N\left(\beta_0+\beta_1x_i,\sigma^2\right)$. La funciòn de similitud para $\left(y_1,y_2,\ldots,y_n\right)$ es dada por:
 
 $$L=\prod_{i=1}^n f\left(y_i\right)=\dfrac{1}{(2\pi)^{\frac{n}{2}}\sigma^n}e^{\left(-\frac{1}{2\sigma^2}\right)\sum\limits_{i=1}^n \left(y_i-\beta_0-\beta_1x_i\right)^2}$$
 

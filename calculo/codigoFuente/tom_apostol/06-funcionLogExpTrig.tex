@@ -111,6 +111,25 @@ Obsérvese que $\log_b b = 1$. Si $b=e$ se tiene $\log_e x= \log x$, es decir, l
 
 
 \section{Fórmulas de derivación e integración en las que intervienen logaritmos}
+Puesto que la derivada del logaritmo viene dada por la fórmula $D\log x = 1/x$ para $x>0$, se tiene la fórmula de integración 
+$$\int \dfrac{1}{x}\; dx = \log(x)+C.$$
+Aún más general, si $u=f(x)$, siendo $f$ una función con derivada continua, se tiene
+$$\int \dfrac{du}{u} = \log u + C \quad \mbox{o}\quad \int \dfrac{f'(x)}{f(x)}\; dx = \log f(x) + C.$$
+para $u$ o $f(x)$ positiva.\\
+
+Afortunadamente, es fácil extender el campo de validez de etas fórmulas de manera que pueden aplicarse para funciones que sean positivas o negativas, pero no cero. Se introduce simplemente una nueva función $L_0$ definida para todos los números reales $x\neq 0$ por la ecuación:
+$$L_0(x)=\log|x|=\int_1^{|x|}\dfrac{1}{t}\; dt.$$
+Puesto que $\log|xy|=\log(|x||y|)=\log|x|+\log|y|$, la función $L_0$ satisface también la ecuación funcional básica; es decir, se tiene:
+$$L_0(xy)=L_0(x)+L_0(y)$$
+para $x$ e $y$ reales cualesquiera distintos de cero. Para $x>0$ se tiene $L_0'(x)=1/x$ ya que $L_0(x)$ para $x$ positivo es lo mismo que $\log(x)$. La fórmula de la derivada vale también para $x<0$ puesto que en este caso $L_0(x)=L(-x)$ y por tanto $L_0(x)=-L'(-x)=-1/(-x)=1/x$. De aquí resulta
+$$L_0'(x)=\dfrac{1}{x}\quad \mbox{para todo valor real }\; x\neq 0.$$
+Por tanto, si en las fórmulas de integración precedentes se pone $L_0$ en vez de $L$, se puede extender su alcance a funciones que toman valores tanto negativos como positivos. Por ejemplo 
+$$\int \dfrac{du}{u} = \log u + C \quad \mbox{o}\quad \int \dfrac{f'(x)}{f(x)}\; dx = \log f(x) + C.$$
+se puede generalizar como sigue:
+$$\int \dfrac{du}{u} = \log |u| + C, \quad \int \dfrac{f'(x)}{f(x)}\; dx = \log |f(x)| + C.$$
+Evidentemente, cuando se aplique junto con el segundo teorema funda- mental del Cálculo para calcular una integral indefinida no se pueden tomar intervalos que incluyan puntos en los que $u$ o $f(x)$ sean cero.
+
+
 Una de las propiedades más notables de la función exponencial es la fórmula
 $$E'(x)=E(x),$$
 que nos dice que la función es su propia derivada. \\
@@ -129,11 +148,18 @@ donde $u$ representa cualquier función con derivada continua. Si escribimos $u=
 $$\int e^{f(x)} f'(x) \; dx = e^{f(x)}+C, \quad \int a^{f(x)} f'(x) \; dx = \dfrac{a^{f(x)}}{\log a}+C (a>0,$$
 siendo la segunda integral válida para $a>0$, $a\neq 1$.
 
-%-------------------- Ejercicio 6.1.
+%-------------------- Ejercicio 6.1
 \begin{ejem}
     Integrar $\displaystyle\int x^2e^{x^3}\;dx.$\\\\
 	Respuesta.-\; Sea $u=x^3$. Entonces, $fu=3x^2\; dx$  y se obtiene
 	$$\int x^2e^{x^3}\; dx = \dfrac{1}{3}\int e^{x^3}(3x^2\; dx)=\dfrac{1}{3}\int e^u\; dx = \dfrac{1}{3}e^{x^3}+C.$$
+\end{ejem}
+
+%-------------------- Ejercicio 6.2
+\begin{ejem}
+    Integrar $\displaystyle\int \log(x)\; dx.$\\\\
+	Respuestas.-\; Sea $u=\log(x)$, $dv=dx.$ Entonces, $du=dx/x$, $v=x$, y obtenemos
+	$$\int \log(x)\; dx = \int u\; dv = uv-\int v\; du = x\log(x)-\int x\dfrac{1}{x}\; dx = x\log(x)-x+C.$$
 \end{ejem}
 
 
@@ -322,8 +348,8 @@ Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtene
 
     En los ejercicios 4 al 14, hallar la derivada $f'(x)$. En cada caso, la función $f$ se supone definida para todo $x$ real para los que la fórmula dada para $f(x)$ tiene sentido.\\
 
-    \begin{enumerate}[\bfseries 1.]
-    \setcounter{enumi}{3}
+\begin{enumerate}[\bfseries 1.]
+\setcounter{enumi}{3}
 
     %-------------------- 4.
     \item $f(x)=\log\left(1+x^2\right)$.\\\\
@@ -420,8 +446,12 @@ Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtene
 	Respuesta.-\; Usando la regla de la cadena y la regla del cociente tenemos que,
 	$$
 	\begin{array}{rcl}
+	    f'(x) &=& \dfrac{1}{2\sqrt{ab}}\left(\dfrac{\sqrt{a}-x\sqrt{b}}{\sqrt{a}+x\sqrt{b}}\right)\left[\dfrac{\sqrt{b}\left(\sqrt{a}-x\sqrt{b}\right)+\sqrt{b}\left(\sqrt{a}+x\sqrt{b}\right)}{\left(\sqrt{a}-x\sqrt{b}\right)^2}\right]\\\\
+		  &=& \dfrac{1}{2\sqrt{ab}}\cdot \dfrac{2\sqrt{ab}}{\left(\sqrt{a}+x\sqrt{b}\right)\left(\sqrt{a}-x\sqrt{b}\right)}\\\\
+		  &=& \dfrac{1}{a^2-bx^2}.
 	\end{array}
 	$$
+	\vspace{.5cm}
 
     %-------------------- 14.
     \item $f(x)=x\left[\sen(\log x)-\cos(\log x)\right]$.\\\\
@@ -436,7 +466,192 @@ Si la derivada $f'(x)$ se puede calcular de otra forma, entonces se puede obtene
 
     %-------------------- 15.
     \item $f(x)=\log_xe$.\\\\
+	Respuesta.-\; Por definición de logaritmo en base $x$ tenemos que,
+	$$f(x)=\log_xe=\dfrac{\log e}{\log x}.$$
+	De donde, el logaritmo de $e$ es la constante $1$, por lo tanto
+	$$f(x)=\dfrac{1}{\log x}.$$
+	Luego, usando la regla del cociente tenemos que,
+	$$	
+	\begin{array}{rcl}
+	    f'(x) &=& \dfrac{-\dfrac{1}{x}}{\left(\log x\right)^2}\\\\
+		  &=& -\dfrac{1}{x\left(\log x\right)^2}.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+\end{enumerate}
+
+En los ejercicios 16 al 26, calcular las integrales.\\
+
+\begin{enumerate}[\bfseries 1.]
+\setcounter{enumi}{15}
+
+    %-------------------- 16.
+    \item $\displaystyle\int \dfrac{dx}{2+3x}$.\\\\
+	Respuesta.-\; 
+	$$\int \dfrac{1}{2+3x}\; dx = \dfrac{1}{3}\int \dfrac{3}{2+3x}\; dx=\dfrac{1}{3}\log|2+3x|+C.$$\\
+
+    %-------------------- 17.
+    \item $\displaystyle\int \log^2(x)\; dx$.\\\\
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\left(\log|x|\right)^2 &\Rightarrow& du=\dfrac{2\log(x)}{x}\; dx\\\\
+	    dv=dx &\Rightarrow& v=x.
+	\end{array}
+	$$
+	Notemos por el ejemplo 6.2 de, 
+	$$\int \log(x)\; dx = x\log|x|-x+C.$$
+	Por lo tanto,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int (\log x)^2\; dx &=& \displaystyle\int u\; dv\\\\
+					      &=& uv - \displaystyle\int v\; du\\\\
+					      &=& x(\log|x|)^2-\displaystyle\int 2\log x \; dx\\\\
+					      &=& x(\log|x|)^2 - 2(x\log|x|-x)+C\\\\
+					      &=& x(\log|x|)^2-2x\log|x|+2x+c.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 18.
+    \item $\displaystyle\int x\log(x)\; dx$.\\\\
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\log|x| &\Rightarrow& du=\dfrac{1}{x}\; dx\\\\
+	    dv=x\;dx &\Rightarrow& v=\dfrac{x^2}{2}.
+	\end{array}
+	$$
+	Por lo tanto,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x\log x \; dx &=& \displaystyle\int u\; dv\\\\
+					    &=& uv-\displaystyle v\; du\\\\
+					    &=& \dfrac{1}{2}x^2\log|x|-\dfrac{1}{2}\displaystyle\int x\; dx\\\\
+					    &=& \dfrac{1}{2}x^2\log|x|-\dfrac{1}{4}x^2+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 19.
+    \item $\displaystyle\int x\log^2(x)\; dx$.\\\\
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\log^2(x) &\Rightarrow& du=\dfrac{2\log(x)}{x}\; dx\\\\
+	    dv=x\; dx &\Rightarrow& v=\dfrac{x^2}{2}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x\log^2(x) &=& \displaystyle\int u \; dv\\\\
+					 &=& uv-\displaystyle\int v\; du\\\\
+					 &=& \dfrac{1}{2}x^2\log^2(x)-\displaystyle\int x\log(x)\; dx.
+	\end{array}
+	$$
+	Por el ejercicio anterior,
+	$$\displaystyle\int x\log(x)\; dx = \dfrac{1}{x^2}\log|x|-\dfrac{1}{4}x^2+C.$$
+	Por lo tanto,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x\log^2(x)\; dx &=&  \dfrac{1}{2}x^2\log^2(x)-\displaystyle\int x\log(x)\; dx\\\\
+					      &=& \dfrac{1}{2}x^2\log^2(x)-\left(\dfrac{1}{x^2}\log|x|-\dfrac{1}{4}x^2\right)+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+
+    %-------------------- 20.
+    \item $\displaystyle\int_0^{e^3-1} \dfrac{dt}{1+t}$.\\\\
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=1+t &\Rightarrow& du=dt.\\\\
+	\end{array}
+	$$
+
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^{e^3-1}\dfrac{1}{1+t}\; dt&=&\displaystyle\int_0^{e^3-1}\dfrac{1}{u}\; dt.\\\\
+	\end{array}
+	$$
+
+	Ahora, ajustaremos los límites integrales calculando el límite de la función en $t=0$ y $t=e^3-1$.
+
+	$$
+	\begin{array}{rcl}
+	    u &=& 1+t\\
+	      &=& 1+0\\
+	      &=&1.
+	\end{array}
+	$$
+
+	\begin{center}
+	y
+	\end{center}
+
+	$$
+	\begin{array}{rcl}
+	    u&=&1+t\\
+	    &=&1+e^3-1\\
+	    &=&e^3.
+	\end{array}
+	$$
+
+	Por lo tanto,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^{e^3-1}\dfrac{1}{1+t}\; dt&=&\displaystyle\int_1^{e^3}\dfrac{1}{u}\; du\\\\
+							  &=&\left[\log(|u|)\right]\bigg|_0^{e^3}\\\\
+							   &=&\left[\log(|1+t|)\right]\bigg|_0^{e^3}\\\\
+							   &=&\log\left(|e^3|\right)-\log\left(|1|\right)\\\\
+							   &=&3\log\left(|e|\right)\\\\
+							   &=&3.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+
+    %-------------------- 21.
+    \item $\displaystyle\int \cot(x)\; dx$.\\\\
+	Respuesta.-\; Reescribiendo la integral se tiene,
+	$$\int \cot x \; dx = \int \dfrac{\cos x}{\sen x}\; dx.$$
+	Luego, usando la sustitución $u=\sen x$ y $du=\cos x\; dx$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \cot x \; dx &=& \displaystyle\int \dfrac{\cos x}{\sen x}\; dx\\\\
+					   &=& \displaystyle\int \dfrac{1}{u}\; du\\\\
+					   &=& \log|u|+C\\\\
+					   &=& \log|\sen x|+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 22.
+    \item $\displaystyle\int x^n \log(ax)\; dx$.\\\\
+	Respuesta.-\; 
+
+    %-------------------- 23.
+    \item $\displaystyle\int x^2\log^2(x)\; dx$.\\\\
+	Respuesta.-\; 
+
+    %-------------------- 24.
+    \item $\displaystyle\int \dfrac{dx}{x\log(x)}$.\\\\
 	Respuesta.-\;
+
+    %-------------------- 25.
+    \item $\displaystyle\int_0^{1-e^{-2}} \dfrac{\log(1-t)}{1-t}$.\\\\
+	Respuesta.-\;
+
+    %-------------------- 26.
+    \item $\displaystyle\int \dfrac{\log|x|}{x\sqrt{1+\log|x|}}$.\\\\
+	Respuesta.-\;
+
 
 \end{enumerate}
 

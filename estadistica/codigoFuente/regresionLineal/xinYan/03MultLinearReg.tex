@@ -313,11 +313,11 @@ Ahora veremos la varianza de la forma cuadrática de $\textbf{y}'A\textbf{y}$.
     Sea $\textbf{y}$ un vector aleatorio $n\times 1$ con media $\mu'=(\mu_1,\mu_2,\cdots,\mu_n)$ y varianza $\sigma^2$ para cada componente. Se asume que $y_1,y_2,\ldots,y_n$ son independientes. Sea $A$ una matriz simétrica $n\times n$, $\E(y_i-\mu_i)^4=u_i^{(4)}$, $\E(y_i-\mu_i)^3=u_i^{(3)}$, y $a'=(a_{11},a_{22},\cdots,x_{nn})$. La varianza de la forma cuadrática $\textbf{y}A\textbf{y}$ es dada por 
     $$
     \begin{array}{rcl}
-	\Var\left(\textbf{y}'A\textbf{y}\right) &=& \left(\mu^{(4)}-3\sigma^2\right)a'a+\sigma^4\left(2tr\left(A^2\right)+\left[tr(A)\right]^2\right)\\\\
-						&=& 4\sigma^2\mu'A^2\mu+4\mu^{(3)}a'A\mu.
+	\Var\left(\textbf{y}'A\textbf{y}\right) &=& \left(\mu^{(4)}-3\sigma^2\right)a'a+\sigma^4\left(2tr\left(A^2\right)+\left[tr(A)\right]^2\right) + 4\sigma^2\mu'A^2\mu+4\mu^{(3)}a'A\mu.
     \end{array}
     $$
-    \vspace{.5cm}
+    \vspace{.3cm}
+
 	Demostración.-\; Sea $Z=\textbf{y}-\mu,$ $A(A_1,A_2,\ldots,A_n)$ y $b=(b_1,b_2,\ldots,b_n)=\mu'(A_1,A_2,\ldots,A_n)=\mu'A$, de donde podemos escribir
     $$
     \begin{array}{rcl}
@@ -424,4 +424,38 @@ Ahora veremos la varianza de la forma cuadrática de $\textbf{y}'A\textbf{y}$.
 
 \section{Distribución normal multivariante}
 
+Una variable aleatorio $Y$ sigue una distribución normal $N(\mu,\sigma^2)$ si y sólo si la función de densidad de probabilidad de $Y$ es
+
+\begin{tcolorbox}
+    $$f(y)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y-\mu)^2}{\sigma^2}} \quad \mbox{para}\quad -\infty<y<\infty.$$
+\end{tcolorbox}
+
+La distribución acumulada de $Y$ se define como
+
+\begin{tcolorbox}
+    $$F(y)=P(Y\leq y) = \dfrac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^y e^{-\frac{(y-\mu)^2}{\sigma^2}}dy.$$
+\end{tcolorbox}
+
+La función generadora de momentos de la variable aleatoria normal $Y\sim N(\mu,\sigma)$ es
+
+\begin{tcolorbox}
+    $$M(t)=\E\left(e^{tY}\right)=e^{\mu t+\frac{1}{2}\sigma^2t^2}.$$
+\end{tcolorbox}
+
+Un vector aleatorio $\textbf{y}'=(y_1,y_2,\ldots,y_p)$ se dice que sigue la distribución normal multivariante si y sólo si su función de densidad de probabilidad tiene la siguiente forma
+
+$$f(y_1,y_2,\ldots,y_p)=\dfrac{1}{(2\pi)^{p/2}|\sum|^{1/2}}e^{-\frac{1}{2}(y-\mu)'\sum^{-1}(y-\mu)},$$
+
+donde $\sum=(\sigma_{ij})_{p\times p}$ es la matriz de covarianza de $\textbf{y}$, y la matriz inversa $\sum^{-1}$ existe.  $\mu'=(\mu_1,\mu_2,\ldots,\mu_p)$ es el vector medio de $\textbf{y}$.
+
+Cuando $\sum$ es una matriz diagonal $\sum \mbox{diag}\left(\sigma_1^2,\sigma_2^2,\ldots,\sigma_p^2\right)$, o $\sigma_{ij}=0$ para todo $i\neq j$, entonces $y_1,y_2,\ldots,y_p$ no están correlacionados ya que es fácil saber que la función de densidad de $\textbf{y}$ puede ser escrito como un producto de $p$ funciones de densidad normal univariante:
+$$\dfrac{1}{(2\pi)^{p/2}|\sum|^{1/2}}e^{-\frac{1}{2}(\textbf{y}-\mu)'\sum^{-1}(\textbf{y}-\mu)} = \prod_{i=1}^p \dfrac{1}{\sqrt{2\pi}\sigma_i}e^{-\frac{(y_i-\mu_i)^2}{\sigma_i^2}}.$$
+
+Dado que la función de densidad del vector normal multivariante $\textbf{y}$ es un producto de las funciones de densidad de $y_1 , y_2 , \ldots , y_p$, son conjuntamente independientes. Para las variables normales multivariantes, las variables aleatorias normales no correlacionadas son conjuntamente independientes. Resumimos esto en el siguiente teorema:
+
+%--------------------- Teorema 3.8
+\begin{teo}
+    Si un vector aleatorio $\textbf{y}'=(y_1,y_2,\ldots,y_p)$ siguiendo una distribución normal multivariante $N(\mu,\sum)$ y la matriz covarianza $\sum = \left(\sigma_{ij}\right)_{p\times p}$ es una matriz diagonal $\mbox{diag}\left(\sigma_{11},\sigma_{22},\ldots,\sigma_{pp}\right)$, entonces $y_1,y_2,\ldots,y_p$ son conjuntamente independientes.\\\\
+	Demostración.-\; 
+\end{teo}
 

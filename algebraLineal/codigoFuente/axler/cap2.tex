@@ -417,7 +417,7 @@ Aclaremos esto con dos ejemplos.
 	Dado que $a_i=b_i=0$, ya que $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son linealmente independientes. Concluimos que, $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
 
     %------------------- 10.
-    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $W\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente dependiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente dependiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
 	Demostración.-\; Por definición de dependencia lineal. Existen $a_1,\ldots a_m \in \textbf{F}$, no todos $0$, tal que 
 	$$a_1(v_1+w)+a_2(v_2+w)+\ldots+a_m(v_m+w)=0.$$
 	De donde,
@@ -1592,6 +1592,125 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
     %--------------------9.
     \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que 
     $$\dim(\span\left\{v_1+w,\ldots,v_m+w\right\})\geq m-1.$$\\
+	Demostración.-\; Sea $W=\span\left(v_1+w,\ldots,v_m+w\right)$. Ya que, $v_k-v_{k-1}=(v_k+w)-(v_{k-1}+w)$ Entonces, podemos considerar la lista 
+	$$v_2-v_1,v_3-v_2,\ldots, v_m-v_{m-1}$$
+	con longitud $m-1$. Dado que la dimensión de $W$ debe ser mayor o igual (2.23)  que la longitud de cualquier lista linealmente independiente, si demostramos que esta lista es linealmente independiente, habremos demostrado que $\dim W \geq m - 1$. Supongamos que $a_1, \ldots, a_{m-1}\in \textbf{F}$ son tales que
+	$$a_1(v_2-v_1)+\cdots+a_{m-1}(v_m-v_{m-1})=0.$$
+	Reescribiendo,
+	$$(-a_1)v_1+(a_1-a_2)v_2+\cdots+(a_{m-2}-a_{m-1})v_{m-1}+a_{m-1}v_m=0.$$
+	Dado que, $v_1,\ldots,v_m$ es linealmente independiente, entones $a_1=0$, luego $a_{k-1}-a_k=0$ para $k=2,\ldots,m-1$. Por lo tanto, $a_1=\cdots=a_{m-1}=0$. Así, la lista $v_2-v_1,\ldots,v_m-v_{m-1}$ es linealmente independiente, lo que implica que $\dim W\geq m-1$.\\\\
+
+    %--------------------10.
+    \item Suponga $p_0,p_1,\ldots,p_m\in \mathcal{P}_m (\textbf{F})$ son tales que cada $p_j$ tiene grado $j$. Demostrar que $p_0,p_1,\ldots,p_m$ es una base de $\mathcal{P}_m (\textbf{F})$.\\\\
+	Demostración.-\; Sabemos que $1,z,z^2,\ldots,z^m$ es una base de $\mathcal{P}_m(\textbf{F})$. Si podemos mostrar que el conjunto $p_0,p_1,\ldots,p_m$ genera $1,z,z^2,\ldots,z^m$, entonces se seguirá que $p_0,p_1,\ldots,p_m$ puede generar $\mathcal{P}_m(\textbf{F})$. Además dado que el conjunto $p_0,p_0,\ldots,p_m$ tiene una longitud igual a la dimensión de $\mathcal{P}_m(\textbf{F})$, se seguirá que el conjunto es una base de $\mathcal{P}_m(\textbf{F})$.\\
+
+	Sea $V=\span(p_0,p_1,\ldots,p_m)$. Usarermos la inducción sobre $z^j$ para demostrar que $z^j\in V$ para todo $j$, $0\leq j \leq m.$. Por suposición, $p_0$ tiene grado $0$. Esto es, $p_0$ es un escalar distinto de cero. Por lo tanto, todo múltiplo escalar de $p_0$ existe en $V$. Así,
+	$$\left(\dfrac{1}{p_0}\right)p_0 = 1\in V.$$
+	De donde, el resultado es cierto es $j=0.$\\
+
+	Ahora, supongamos que el resultado es verdadero para todo $j\leq k.$ Esto es, $1,z,z^2,\ldots,z^k\in V$. Demostremos que $z^{k+1}\in V$. Sea, $p_{k+1}$ de grado $k+1$ tal que 
+	$$p_{k+1}=a_0+a_1z+a_2z^2+\cdots+a_{k+1}z^{k+1}$$
+	donde $a_{k+1}\neq 0.$ Dado que $1,z,z^2,\ldots,z^k\in V$, entonces cada combinación lineal se encuentra en $V$. Por lo tanto, 
+	$$a_0+a_1z+\cdots + z_kz^k \in V.$$
+	Por la propiedad de espacio vectorial
+	$$p_{k+1}-\left(a_0+a_1z+a_2z^2+\cdots+z_kz^k\right)=a_{k+1}z^{k+1}\in V.$$
+	Esto implica que todo múltiplo escalar  de $a_{k+1}z^{k+1}$ también debe estar en $V$. Ya que, 
+	$$\dfrac{1}{a_{k+1}}\left(a_{k+1}z^{k+1}\right)=z^{k+1}\in V.$$
+	Esto demuestra que el resultado es verdadera para $j=k+1$. Por el principio de inducción, el resultado es válido para $j$, con $0\leq j\leq m.$ Por lo tanto, $1,z,z^2,\ldots,z^m\in V$, lo que completa la demostración.\\\\
+
+
+    %--------------------11.
+    \item Suponga que $U$ y $W$ son subesapcios de $\textbf{R}^8$ tal que $\dim U = 3,$ $\dim W = 5$ y $U+W = \textbf{R}^8$. Demostrar que $\textbf{R}^8=U\oplus W$.\\\\
+	Demostración.-\; Por 2.43 tenemos,
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Luego, ya que $\dim U = 3,$ $\dim W = 5$ y $U+W = \textbf{R}^8$, se sigue
+	$$8=3+5-\dim(U\cap W).$$
+	Esta igualdad implica que $\dim(U\cap W)=0$. Por lo tanto, $U\cap W=\left\{0\right\}$. Así, 
+	$$\textbf{R}^8=U\oplus W.$$\\
+
+    %--------------------12.
+    \item Suponga $U$ y $W$ son ambos subespacios de dimensión cinco de $\textbf{R}^9$. Demostrar que $U\cap W\neq \left\{0\right\}$\\\\
+	Demostración.-\; Por 2.43 tenemos,
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Por hipótesis, 
+	$$9\geq \dim(U+W)=\dim U +\dim W-\dim(U\cap W)=10-\dim(U\cap W).$$
+	Por lo tanto, $\dim(U\cap W)\geq 1$. Así, $U\cap W\neq \left\{0\right\}$.\\\\
+
+    %--------------------13.
+    \item Suponga $U$ y $W$ son ambos subespacios de dimensión cuatro de $\textbf{C}^6$. Demostrar que existe dos vectores en $U\cap W$ tal que ninguno de estos vectores es múltiplo escalar del otro.\\\\
+	Demostración.-\; Por 2.43 tenemos que
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Reordenando,
+	$$\dim(U\cap W)=\dim U +\dim W-\dim(U+W).$$
+	Por hipótesis, $\dim U = \dim W = 4$. Por lo tanto, ya que $U+W\in \textbf{C}^6$ con $\dim(U+W)\leq 6$, se tiene
+	$$
+	\begin{array}{rcl}
+	    \dim(U\cap W) &=& 4+4-\dim(U+W)\\\\
+			  &\geq& 8 - 6\\\\
+			  &=& 2.
+	\end{array}
+	$$
+	Esto implica que $\dim(U\cap W)\geq 2$. Así, $U\cap W$ tiene al menos dos vectores independientes. Por 2.18(b) de la sección C (Axler) sabemos que dos vectores en V es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. Por lo tanto, existen dos vectores en $U\cap W$ ninguno de los cuales es múltiplo escalar del otro.\\\\
+
+    %--------------------14.
+    \item Suponga $U_1,\ldots,U_m$ son subespacios de dimensión finita en $V$. Demostrar que $U_1+\cdots+U_m$ son de dimensión finita y
+    $$\dim(U_1+\cdots+U_m)\leq \dim U_1+\cdots+\dim U_m.$$\\
+	Demostración.-\; Usemos la inducción para $m$. Si $m=2$, entonces por 2.43 tenemos
+	$$\dim(U_1+U_2)=\dim U_1+\dim U_2-\dim(U_1\cap U_2).$$
+	Pero $\dim(U\cap W)\geq 0$. Por lo tanto, $\dim(U_1+U_2)\leq \dim U_1+\dim U_2$. Así, se cumple para $m=2$.\\
+	Ahora, supongamos que el resultado es cierto para $m=k$. Esto es, 
+	$$\dim(U_1+\cdots+U_k)\leq \dim U_1+\cdots+\dim U_k.$$
+	Demostremos que se cumple para $m=k+1$. Sea $W=U_1+U_2+\cdots+U_k$. Entonces,
+	$$\dim(W+U_{k+1})=\dim W+\dim U_{k+1}-\dim(W\cap U_{k+1}).$$
+	Dado que $W\cap U_{k+1}\geq 0$ implica que $\dim(W+U_{k+1})\leq \dim W+\dim U_{k+1}$. 
+	Es decir,
+	$$\dim(U_1+U_2+U_k+\cdots + U_{k+1})\leq \dim U_1+\cdots+\dim U_{k+1}.$$
+	Vemos que efectivamente se cumple para $m=k+1$. Por lo tanto, por el principio de inducción el resultado es cierto para todo $m\in \mathbb{N}$.\\\\
+
+    %--------------------15.
+    \item Suponga $V$ es de dimensión finita, con $\dim(V)=n\geq 1$. Demostrar que existe  subespacios de una dimensión $U_1,\ldots,U_n$ de $V$ tal que
+    $$V=U_1\oplus\cdots\oplus U_n.$$\\
+	Demostración.-\; Usaremos el método de inducción. Si $V$ es de dimensión $1$, entonces $V=U_1$. Entonces, el resultado es cierto para $n=1$.\\
+	Ahora, sea $n=k$. Esto es, si $V$ es de dimensión $k$, entonces existe subespacios $U_1,U_2,\ldots,U_k$ de $V$ tal que
+	$$V=U_1\oplus U_2\oplus \cdots \oplus U_k.$$
+	Luego, consideremos el espacio vectorial $V$ tiene dimensión $k+1$. De donde, se tiene una base $\left\{v_i,v_2,\ldots,v_{k+1}\right\}$. Sea $U=\span(v_1,v_2,\ldots,v_k)$ y $W=\span(v_{k+1})$. Ambos, $U,W\subseteq V$, por lo que
+	$$U+W\subseteq V.$$
+	Además $U$ contiene $v_1,v_2,\ldots,v_k$ y $W$ contiene $v_{k+1}$, lo que significa que $U+W$ contiene a $v_1,v_2,\ldots,v_{k+1}$, esto es una base de $V$. Por lo tanto, $U+W$ también contiene a $V$. Es decir,
+	$$B\subseteq U+W.$$
+	Así, 
+	$$U+W=V.$$
+	Lo que implica, que
+	$$\dim(U+W)=k+1.$$
+	Recordemos que,
+	$$\dim(U+W)=\dim(U)+\dim(W)-\dim(U\cap W)$$
+	Reescribiendo
+	$$\dim(U\cap W)=\dim(U)+\dim(W)-\dim(U+W).$$
+	Que $\dim(U)=k$, $\dim(W)=1$ y $\dim(U+W)=k+1$, entonces
+	$$\dim(U\cap W)=0.$$
+	Esto último nos dice que $U\cap W=\left\{0\right\}$. Por lo tanto, 
+	$$V=U\oplus W.$$
+
+	$U$ es de dimensión $k$. Por hipótesis de inducción, $U$ puede ser reescrito como $U_1\oplus U_2\oplus \cdots \oplus U_k$. Donde, cada $U_i's$ es de dimensión uno. Por otro lado, $W$ es de dimensión uno, que podemos escribirlo como $U_{k+1}$, por lo que
+	$$V=U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}.$$
+	Esto prueba que el resultado es verdadero para $n=k+1$ para todo $n\in \textbf{N}$.\\\\
+
+
+    %--------------------16.
+    \item Suponga $U_1,\ldots,U_m$ son subespacios de dimensión finita de $V$ tal que $U_1+\cdots+U_m$ es una suma directa. Demostrar que $U_1\oplus \cdots \oplus U_m$ es de dimensión finita y
+    $$\dim (U_1\oplus \cdots \oplus U_m) = \dim U_1+\cdots+\dim U_m.$$
+    [\textit{El ejercicio anterior profundiza la analogía entre sumas directas de subespacios y uniones disjuntas de subconjuntos. Específicamente, compare este ejercicio con la siguiente declaración obvia: si un conjunto se escribe como una unión separada de subconjuntos finitos, entonces el número de elementos en el conjunto es igual a la suma de los números de elementos en los subconjuntos separados.}]\\\\
 	Demostración.-\; 
+
+    %--------------------17.
+    \item Se puede suponer, por analogía con la fórmula para el número de elementos en la unión de tres subconjuntos de un conjunto finito, que si $U_1 , U_2 , U_3$ son subespacios de un espacio vectorial de dimensión finita, entonces
+    $$
+    \begin{array}{rcl}
+	\dim(U_1+U_2+U_3) &=& \dim U_1+\dim U_2+\dim U_3\\\\
+			  &=& \dim(U_1\cap U_2)-\dim(U_1\cap U_3)-\dim(U_2\cap U_3)+\dim(U_1\cap U_2\cap U_3).
+    \end{array}
+    $$
+    Demostrar esto o dar un contraejemplo.\\\\
+	Demostración.-\;
+
 
 \end{enumerate} 

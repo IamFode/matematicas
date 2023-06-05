@@ -3271,16 +3271,150 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (b)
 	    \item Utilice este hecho para dar otra demostración del resultado del problema 4(a), siendo $f$ y $g$ (una vez) diferenciables. (Hay que ir con cuidado al comparar $f'[g(x)]$ y $f'[g(y)]$ para $x<y$.)\\\\
-		Demostración.-\; 
+		Demostración.-\; Sean $f$ y $g$ dos funciones diferenciables y convexas en $[a,b]$. Podemos suponer que $f$ es creciente. Entonces, tenemos que mostrar que $f\circ g$ es convexa. Para demostrar esto, demostraremos que $(f\circ g)'$ es creciente en $[a,b]$. Sea $x<y$ dos números en $[a,b]$, de lo que 
+		$$(f\circ g)'(x)=f'\left[g(x)\right]g'(x) < (f\circ g)'(y) = f'\left[g(y)\right]g'(y).$$
+		Como $g$ es diferenciable y convexo, por la parte (a) tenemos que o bien $g$ es creciente, o bien es decreciente, o bien existe un punto $c\in [a,b]$ tal que $g$ es decreciente a la izquierda de $c$ y es creciente a la derecha de $c$.
+		\begin{enumerate}[\text{Caso} 1.]
+		    \item $g$ es creciente.- Tenemos que $g'(x)>0$ para todo $x\in[a,b]$, por el teorema 1 se tiene $g'(x)<g'(y)$ siempre que $x<y.$ Además, ya que $f$ es creciente se tiene que $f'(x)>0$ y ya que $f$ es convexa nuevamente por el teorema 1 $f'(x)<f'(y)$ siempre que $x>y$. Así, tenemos que
+		    \begin{center}
+			$0\leq g'(x)<g'(y)$, \quad y \quad $0\leq f'(x)<f'(y)$
+		    \end{center}
+		    para todo $x<y$ en $[a,b]$. En particular,  
+		    \begin{center}
+			$0\leq g'(x)<g'(y)$, \quad y \quad $0\leq f'\left[g(x)\right]<f'\left[g(y)\right]$
+		    \end{center}
+		    donde se cumple la segunda desigualdad ya que $g(x)<g(y)$ como $g$ es creciente. Esto implica que
+		    $$f'\left[g(x)\right]g'(x)<f'\left[g(y)\right]g'(y)$$
+		    para todo $x,y\in [a,b]$ con $x<y$. Por lo tanto, $f\circ g$ es también convexa.\\
+		    
+		    \item $g$ es decreciente.- En este caso, se tiene $g'(x)<0$ para todo $x\in [a,b]$, por el teorema 1 tenemos que $g'(x)<g'(y)$ siempre que $x<y$. Además, ya que $f$ es creciente se tiene $f'(x)>0$ y ya que $f$ es convexa nuevamente por el teorema 1 $f'8x)<f'(y)$ con $x<y$. Así, se tiene
+		    \begin{center}
+			$g'(x)<g'(y)\leq 0$ y $0\leq f'(x)<f'(y)$
+		    \end{center}
+		    para todo $x<y$ en $[a,b]$. En particular,
+		    \begin{center}
+			$g'(x)<g'(y)\leq 0$ y $0\leq f'\left[g(x)\right]>f'\left[g(y)\right]$
+		    \end{center}
+		    donde se cumple la segunda desigualdad ya que $g(x)>g(y)$ como $g$ es decreciente. Esto implica que
+		    $$f'\left[g(x)\right]g'(x)<f'\left[g(y)\right]g'(y)$$
+		    para todo $x,y\in [a,b]$ con $x<y$. Por lo tanto, $f\circ g$ es también convexa.\\
+
+		    \item $g$ es creciente a la izquierda de $c$ y decreciente a la derecha de $c$.- Sea $x<y$ en $[a,b]$. Entonces se cumple que $x<y\leq c$, o $c\leq x<y$, o $x<c<y$. Ahora, observemos que los casos primero y segundo cubren la posibilidad de $x<y\leq c$ y $c\leq x<y$, respectivamente. Por lo que nos queda demostrar el caso $x<c<y$, como sigue:
+		    $$f'\left[g(x)\right]g'(x)<f'\left[g(c)\right]g'(c)<f'\left[g(y)\right]g'(y).$$
+		    donde donde la primera desigualdad ha sido probada en el caso 1 y la segunda en el caso II anterior. Así, tenemos que
+		    $$f'\left[g(x)\right]g'(x)<f'\left[g(y)\right]g'(y)$$
+		    siempre que $x<y$. 
+		\end{enumerate}
+		\vspace{.5cm}
 
 	    %---------- (c)
 	    \item Demuestre el resultado del apartado (a) sin suponer que $f$ es diferenciable. Hay que tener en cuenta distintos casos, aunque no es necesario tener ideas particularmente luminosas. Comience demostrando que si $a<b$ y $f(a)<f(b)$, entonces $f$ es creciente a la derecha de $b$; y si $f(a)>f(b)$, entonces $f$ es decreciente a la izquierda de $a$.\\\\
-		Demostración.-\;
 
 	\end{enumerate}
 
     %------------------- 6.
-    \item 
+    \item Sea $f$ una función dos veces diferenciable que posee las siguientes propiedades: $f(x)>0$ para $x>0$, $f$ es decreciente y $f'(0) = 0$. Demuestre que $f''(x)=0$ para algún $x>0$ (de manera que, en  casos razonables, $f$ tendrá un punto de inflexión en $x$; considérese por ejemplo la función $f(x)=1/(1+x^2)$). Cada hipótesis de este teorema es esencial, como lo demuestra el caso de la función $f(x)=1-x^2$, que no es positiva para todo $x$; también el caso de la función $f(x)=x^2$, que no es decreciente, y el caso de la función $f(x)=1/(x+1)$, que no satisface la condición $f'(0)=0$. Indicación: Elija $x_0>0$ con $f(x_0)<0$. No es posible que $f'(y)\leq f'(x_0)$ para todo $y>x_0$. ¿Por qué? Por tanto, $f'(x_1)>f'(x_0)$ para algún $x_1>x_0$ . Considere $f'$ en $[0, x_1]$.\\\\
+	Demostración.-\; Ya que $f$ es decreciente, se tiene para $x\geq 0$ que $f(0)\geq f(x)$. Usando el teorema de valor medio, tenemos que 
+	$$f(x)-f(0)=f'(x_0)x$$
+	para algún $0\leq x_0<x$. Esto implica que $f'(x_0)<0$ ya que $f(0)\geq f(x)$. Esto afirma que existe un número $x\geq c_0$ tal que $f'(x)>f'(x_0)$.\\
+	Ahora, supongamos que para todo $y>x_0, f'(y)\leq f'(x_0)$. Usando una vez más la teorema del valor medio, para cualquier $x>x_0$,
+	$$f(x)-f(x_0)=f'(y)(x-x_0)<f'(x_0)(x-x_0).$$
 
+	Pero esto implica que existe $x>x_0$ tal que $f(x)<0$ lo que contradice el hecho de que $f(x)>0$ para $x\geq 0$. Luego, existe un número $x_1\geq x_0$ tal que $f'(x_1)>f'(x_0)$. Entonces, vemos que $f'$ debe tener un mínimo en el intervalo $[0,x_1]$. Por lo tanto, existe un número $x\in [0,x_1]$ tal que $f''(x)=0$.\\\\
+
+
+    %------------------- 7.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si $f$ es convexa entonces $f([x + y]/2)<[f(x) + f(y )]/2$.\\\\
+		Demostración.-\; Por el ejercicio 4, tenemos que una función $f$ es convexa si y sólo si para todo $x,y$ en el dominio de $f$ y para todo $t$ se tiene que 
+		$$f(tx+(1-t)y)\leq tf(x)+(1-t)f(y).$$
+		Ya que, $f$ es convexa para $t=\frac{1}{2}$ tenemos
+		$$f\left(\dfrac{x+y}{2}\right)<\dfrac{f(x)+f(y)}{2}.$$\\
+
+	    %---------- (b)
+	    \item Suponga que $f$ satisface dicha condición. Demuestre que $f(kx + (1-k)y)<kf(x) + (1-k)f(y)$ siendo $k$ un número racional entre $0$ y $1$, de la forma $m/2^n$. Indicación: El apartado (a) constituye el caso especial $n = 1$. Utilice el principio de inducción, empleando el apartado (a) en cada caso.\\\\
+		Demostración.-\;
+
+	    %---------- (c)
+	    \item Suponga que $f$ satisface la condición del apartado (a) y que $f$ es continua. Demuestre que $/$ es convexa.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+    %------------------- 8.
+    \item Para $n>1$, sean $p_1, \ldots , p_n$ números positivos con $\displaystyle\sum_{i=1}^n p_i=1$.
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Siendo $x_1,\ldots,x_n$ números cualesquiera, demuestre que $\displaystyle\sum_{i=1}^n p_ix_i$ está situado entre el menor y el mayor de los $x_i$.\\\\
+		Demostración.-\;
+
+	    %---------- (b)
+	    \item Demuestre lo mismo para $( 1/t) \displaystyle\sum_{i=1}^{n-1}p_ix_i$, donde $t = \displaystyle\sum_{i=1}^{n-1}p_i$.\\\\
+		Demostración.-\;
+
+	    %---------- (c)
+	    \item Demuestre \textit{la desigualdad de Jensen}: si $f$ es convexa, entonces $f\left(\sum\limits_{i=1}^n p_ix_i\right)<\sum\limits_{i=1}^n p_if(x_i)$. Indicación: Utilice el Problema 3, observando que $p_n=l-t$. (Se necesita el apartado (b) para demostrar que $(1/t)\sum\limits_{i=1}^{n-1} p_ix_i$ Pertenece al dominio de $f$ si $x_1,\ldots,x_n$ son puntos del dominio de $f$.).\\\\
+		Demostración.-\;
+	\end{enumerate}
+
+    %------------------- 9.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Para cualquier función $f$, la derivada por la derecha, $\displaystyle\lím_{h\to 0^-}[f(a+h)-f(a)/h$, se representa mediante $f_+'(a)$, y la deriva­ da por la izquierda por $f_+'(a)$. La demostración del Teorema 1 muestra realmente que $f_+'(a)$ y $f_-' (a)$ siempre existen si $f$ es convexa en algún intervalo abierto que contenga al punto $a$. Compruebe dicha afirmación y demuestre que $f_+'$ y $f_-'$ son crecientes; demuestre también que $f_-'(a)<f_+¡(a)$.\\\\
+		Demostración.-\;
+
+	    %---------- (b)
+	    \item Recíprocamente,suponga que $f$ es convexa en $[a, b]$ y que $g$ es convexa en $[b, c]$, con $f(b) = g(b)$ y $f_-'(b)\leq g_+'(b)$ (Figura 13 (a)). Si definimos la función $h$ en $[a, c]$ como aquélla que es igual a $f$ en $[a,b]$, a $g$ en $[b,c]$, demuestre que $h$ es convexa en $[a, c]$. Indicación: Dados $P$ y $Q$ situados en lados opuestos de$O=(b, f(b))$, como se muestra en la Figura 13 (b), compare la pendiente de $OQ$ con la pendiente de $PO$.\\\\
+		Demostración.-\;
+	
+	    %---------- (c)
+	    \item Demuestre que si $f$ es convexa, entonces $f_+'(a)=f_-'(a)$ si y sólo si $f_+'$ es continua en $a$. (Por tanto, $f$ es diferenciable precisamente cuando $f_+'$ es continua.) Indicación: $[f(b)-f(a)]/(b-a)$ está próximo a $f_-'(a)$ para $b<a$ próximo a $a$, y $f_+'(b)$ es menor que este cociente.\\\\
+		Demostración.-\;
+
+	\end{enumerate}
+
+
+    %------------------- 10.
+    \item
+	\begin{enumerate}[a)]
+
+	    %---------- (a)
+	    \item Demuestre que una función convexa definida en $\mathbb{R}$, o en cualquier intervalo abierto, debe ser continua.\\\\
+		Demostración.-\; 
+
+	    %---------- (b)
+	    \item Dé un ejemplo de una función convexa en un intervalo cerrado que no sea continua y explique exactamente qué tipos de discontinuidades son posibles. \\\\
+		Respuesta.-\; 
+
+	\end{enumerate}
+
+    %------------------- 11.
+    \item Una función $f$ se denomina débilmente convexa en un intervalo, si para $a < b < c$ de dicho intervalo, se verifica que 
+    $$\dfrac{f(x)-f(a)}{x-a}\leq \dfrac{f(b)-f(a)}{b-a}.$$
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que una función débilmente convexa es convexa si y sólo si su gráfica no contiene segmentos rectilíneos. (A veces, una función débilmente convexa se denomina simplemente “convexa”, mientras que las funciones convexas en el sentido que las hemos definido en este libro se denominan “estrictamente convexas”.)
+
+	    %---------- (b)
+	    \item Reformule los teoremas de esta sección para el caso de funciones débilmente convexas.
+
+	\end{enumerate}
+
+    %------------------- 12.
+    \item Halle dos funciones convexas $f$ y $g$ tales que $f(x) = g(x)$ si y sólo si $x$ es un entero. Indicación: Halle primero un caso en el que $g$ sea sólo débilmente convexa y luego modifíquelo utilizando el resultado del Problema 9 como guía.\\\\
+	Respuesta.-\; 
+
+    %------------------- 13.
+    \item Un conjunto A de puntos del plano se denomina \textit{convexo} si $A$ contiene a cualquier segmento rectilíneo que une a dos puntos cualesquiera del conjunto (Figura 14). Dada una función $f$ , sea $A_f$ el conjunto de los puntos $(x,y)$ con $y> f(x)$, de manera que $A_f$ es el conjunto de los puntos situados en la gráfica o por encima de la gráfica de $f$ . Demuestre que $A_f$ es convexo si y sólo si $f$ es débilmente convexa, según la terminología introducida en el problema anterior. En la referencia [18] de las Lecturas Aconsejadas, puede encontrarse más información referente a los conjuntos convexos.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
