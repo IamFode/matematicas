@@ -1699,7 +1699,30 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
     \item Suponga $U_1,\ldots,U_m$ son subespacios de dimensión finita de $V$ tal que $U_1+\cdots+U_m$ es una suma directa. Demostrar que $U_1\oplus \cdots \oplus U_m$ es de dimensión finita y
     $$\dim (U_1\oplus \cdots \oplus U_m) = \dim U_1+\cdots+\dim U_m.$$
     [\textit{El ejercicio anterior profundiza la analogía entre sumas directas de subespacios y uniones disjuntas de subconjuntos. Específicamente, compare este ejercicio con la siguiente declaración obvia: si un conjunto se escribe como una unión separada de subconjuntos finitos, entonces el número de elementos en el conjunto es igual a la suma de los números de elementos en los subconjuntos separados.}]\\\\
-	Demostración.-\; 
+	Demostración.-\; Luego de ver que se cumple para $m=1$. Sea verdadero para $m=k$. Esto es, si $U_1,U_2,\ldots,U_k$ son subespacios de $V$ tal que $U_1+U_2+\cdots+U_k$ es una suma directa. Entonces, $U_1\oplus U_2 \oplus \cdots \oplus U_k$ es de dimensión finita y
+	$$\dim(U_1\oplus U_2 \oplus \cdots \oplus U_k)=\dim U_1+\dim U_2+\cdots+\dim U_k.$$
+	Ahora, demostremos que el resultado de cumple para $m=k+1$. Sea $U_1,U_2,\ldots,U_k,U_{k+1}$ subespacios de $V$ tal que $U_1+U_2+\cdots+U_k+U_{k+1}$ es una suma directa. Luego, definamos a $W=U_1\oplus U_2\oplus \cdots \oplus U_k$. De donde, $W+U_{k+1}$ es una suma directa. De lo que podemos concluir dos cosas:
+	\begin{enumerate}[\bfseries i)]
+	    \item $W\cap U_{k+1}=W\oplus U_{k+1}$.
+	    \item $W \cap U_{k+1}=\left\{0\right\}$. Esto implica que $\dim\left(W\cap U_{k+1}\right)=0.$
+	\end{enumerate}
+
+	Por el teorema de la dimensión, tenemos que
+	$$\dim(W+U_{k+1})=\dim(W)+\dim\left(U_{k+1}\right)-\dim(W\cap U_{k+1}).$$
+
+	Usando (i) y (ii),
+
+	$$\dim(W\oplus U_{k+1})=\dim(W)+\dim\left(U_{k+1}\right).$$
+
+	En otras palabras,
+
+	$$\dim(U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1})=\dim(U_1\oplus U_2\oplus \cdots \oplus U_k)+\dim(U_{k+1}).$$
+
+	Usando la hipótesis de inducción, tenemos que
+
+	$$\dim(U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1})=\dim(U_1)+\dim(U_2)+\cdots+\dim(U_k)+\dim(U_{k+1}).$$
+
+	Esto nos muestra que se cumple para $m=k+1$. De lo que también nos demuestra que $U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}$ es de dimensión finita ya que cada $U_ii's$ es de dimensión finita y la dimensión de $U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}$ es la suma de todas las dimensiones de $U_i's$. Por lo tanto, por el principio de inducción, resulta verdadero para todo $m\in \textbf{N}$.\\\\
 
     %--------------------17.
     \item Se puede suponer, por analogía con la fórmula para el número de elementos en la unión de tres subconjuntos de un conjunto finito, que si $U_1 , U_2 , U_3$ son subespacios de un espacio vectorial de dimensión finita, entonces
@@ -1710,7 +1733,27 @@ El siguiente resultado da una fórmula para la dimensión de la suma de dos sube
     \end{array}
     $$
     Demostrar esto o dar un contraejemplo.\\\\
-	Demostración.-\;
+	Demostración.-\; Podemos dar un contraejemplo para ver que este resultado no es verdadero en general. Sea $V=\textbf{R}^2$ y $U_1,U_2,U_3$ los subespacios de $V$ definidos por:
+	$$
+	\begin{array}{rcl}
+	    U_1 &=& \span\left\{\left(1,0\right)\right\}.\\\\
+	    U_2 &=& \span\left\{\left(0,1\right)\right\}.\\\\
+	    U_3 &=& \span\left\{\left(1,1\right)\right\}.
+	\end{array}
+	$$
+
+	Estos subespacios son $\dim(U_1)=\dim(U_2)=\dim U_3 = 1.$ Luego ya que $U_1+U_2+U_3$ contiene los vectores $(1,0)$ y $(0,1)$, que es una base de $\textbf{R}^2$. Por lo que, $U_1+U_2+U_3=\textbf{R}^2$. Lo que implica,
+	$$\dim(U_1+U_2+U_3)=2.$$
+	Por otro lado, cada $U_1,U_2,U_3$ es una recta que pasa por el origen donde el punto de intersección de dos de ellas es el origen. De este modo,
+	$$\dim(U_1\cap U_2)=\dim(U_1\cap U_3)=\dim(U_2\cap U_3)=0.$$
+	De la misma manera,
+	$$\dim(U_1\cap U_2\cap U_3)=0.$$
+
+	Así, tenemos que
+	$$\dim(U_1)+\dim(U_2)+\dim(U_3)-\dim(U_1\cap U_2) - \dim(U_1\cap U_3) - \dim(U_2\cap U_3) + \dim(U_1\cap U_2\cap U_3)=3.$$
+
+	Pero vimos que $\dim(U_1+U_2+U_3)=2.$ que es distinto a 
+	$$\dim(U_1)+\dim(U_2)+\dim(U_3)-\dim(U_1\cap U_2) - \dim(U_1\cap U_3) - \dim(U_2\cap U_3) + \dim(U_1\cap U_2\cap U_3).$$\\
 
 
 \end{enumerate} 

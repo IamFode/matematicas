@@ -478,4 +478,27 @@ Para ilustrar el uso de la distribución t de Student sigue siendo válido para 
 
 \section{Estimación bayesiana}
 
+\subsection{Estimación puntual bayesiana}
+
+\begin{def.}
+    Sea $f_{\Theta}(\theta)$ la función de densidad a priori de un parámetro $\Theta$, y $L(x_1,x_2,\ldots,x_m | \theta)$ la función de máxima verosimilitud de una muestra aleatoria de $n$ variables aleatorias IID condicionadas sobre la realización $\theta$ de $\Theta$. Además, sea $f(\theta|\underline{x})$ la función de densidad a posteriori de $\Theta$ y sea $l(t,\Theta)$ la función de pérdida. El estimador Bayes de $\theta$, $T=u(X_1,X_2,\ldots,X_n)$ es aquél para el cual el valor esperado de la función de pérdida dada por
+    $$\E\left[l(t,\Theta)\right]=\int_{\Theta}l(t,\theta)f(\theta|\underline{x})\; d\theta$$
+    es mínimo.
+\end{def.}
+
+\subsection{Estimación bayesiana por intervalo}
+
+\begin{def.}
+    Sea $f(\theta | \underline{x})$ la función de densidad a posteriori de $\Theta$ condicionada sobre el resultado muestral $\underline{x}=\left\{x_1,x_2,\ldots,x_n\right\}$ sean $a$ y $b$ límites tales que 
+    $$P(a<\Theta<b | \underline{x})=\int_a^b f(\theta | \underline{x})\; d\theta=\gamma.$$
+    En donde $a$ y $b$ son funciones del resultado muestral $\underline{x}.$ Entonces el intervalo $(a,b)$ es un intervalo bayesiano tal que la probabilidad de que $\theta$ se encuentre contenido en $(a,b)$ es $\gamma$.
+\end{def.}
+
+\section{Límites estadísticos de tolerancia}
+
+\begin{def.}
+    Si $F$ es la proporción de observaciones de la variable aleatoria que se encuentra entre los límites $L_1$ y $L_2$ que son funciones univaluadas de las observaciones de manera tal que
+    $$D=\int_{L_1}^{L_2}f(x;\theta)\; dx = F_X(L_2;\theta)-F_X(L_1;\theta),$$
+    entonces $L_1$ y $L_2$ reciben el nombre de límites estadísticos de tolerancia.
+\end{def.}
 
