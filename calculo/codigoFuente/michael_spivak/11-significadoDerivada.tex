@@ -3336,7 +3336,24 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (b)
 	    \item Suponga que $f$ satisface dicha condición. Demuestre que $f(kx + (1-k)y)<kf(x) + (1-k)f(y)$ siendo $k$ un número racional entre $0$ y $1$, de la forma $m/2^n$. Indicación: El apartado (a) constituye el caso especial $n = 1$. Utilice el principio de inducción, empleando el apartado (a) en cada caso.\\\\
-		Demostración.-\;
+		Demostración.-\; Sea $x,y$ cualquier número denotado por
+		$$p_k=\dfrac{mx}{2^k}+\left(1-\dfrac{m}{2^k}\right)y$$
+		para cualquier $m\in \mathbb{N}$ con $m<2^k$. Entonces, vemos que $p_k\in \left[x,y\right]$ para cualquier $k\in \mathbb{N}$. Además, observamos que $p_{k+1}$ es el punto medio de $p_k$ e $y$. De hecho,
+		$$
+		\begin{array}{rcl}
+		    \dfrac{}{} &=& \dfrac{\dfrac{mx}{2^k}+\left(1-\dfrac{m}{2^k}\right)y+y}{2}\\\\
+			       &=& \dfrac{mx}{2^{k+1}}+\left(1-\dfrac{m}{2^{k+1}}\right)y\\\\
+			       &=& p_ {k+1}
+		\end{array}
+		$$
+		
+		Por lo que debemos demostrar por inducción que 
+		$$f\left(p_n\right)<\dfrac{mx}{2^n}f(x)+\left(1-\dfrac{m}{2^n}\right)f(y)$$
+
+		Vemos que que se cumple para el caso de $n=1$
+
+
+
 
 	    %---------- (c)
 	    \item Suponga que $f$ satisface la condición del apartado (a) y que $f$ es continua. Demuestre que $/$ es convexa.\\\\

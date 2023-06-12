@@ -68,9 +68,190 @@
 
 \subsection*{Operaciones algebraicas en \boldmath $\mathcal{L}(V,W)$}
 
+\setcounter{mydef}{5}
 %-------------------- 3.6 definición
 \begin{mydef}[Adición y multiplicación escalar en \boldmath$\mathcal{L}\left(V,W\right)$]\,\\\\
     Suponga que $S,T\in \mathcal{L}(V,W)$ y $\lambda \in \textbf{F}$. La \textbf{suma} $S+T$ y el \textbf{producto} $\lambda T$ son transformaciones lineales para $V$ en $W$ definida por
     $$(S+T)(v)=S(v)+T(v) \quad \mbox{y} \quad (\lambda T)(v)=\lambda(Tv)$$
     para todo $v\in V$.
 \end{mydef}
+
+%-------------------- 3.7 teorema
+\begin{myteo}[\boldmath$\mathcal{L}\left(V,W\right)$ es un espacio vectorial]\,\\\\
+    Con las Operaciones de adición y multiplicación escalar como se definió, $\mathcal{L}\left(V,W\right)$ es un espacio vectorial.
+\end{myteo}
+
+Por lo general, no tiene sentido multiplicar dos elementos de un espacio vectorial, pero para algunos pares de combinaciones lineales existe un producto útil. Necesitaremos un tercer espacio vectorial, así que para el resto de esta sección supongamos que $U$ es un espacio vectorial sobre $\textbf{F}$.
+
+%-------------------- 3.8 definición
+\begin{mydef}[Producto de combinaciones lineales]\,\\\\
+    Si $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{L}(V,W)$, entonces el producto $ST\in \mathcal{L}(U,W)$ es definido por
+    $$(ST)(u)=S(Tu)$$
+    para $u\in U$.
+\end{mydef}
+
+En otras palabras, $ST$ es solo la composición habitual $S\circ T$ de dos funciones, pero cuando ambas funciones son lineales, la mayoría de los matemáticos escriben $ST$ en lugar de $S\circ T$. Debe verificar que $ST$ es de hecho una transformación lineal de $U$ a $W$ siempre que $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{L}(V,W)$. Tenga en cuenta que $ST$ se define solo cuando $T$ se transforma en el dominio de $S$.
+
+%-------------------- 3.9 teorema
+\begin{myteo}[Propiedades algebraicas de producto de transformaciones lineales]\,\\\\
+    \textbf{Asociatividad}
+    $$(T_1T_2)T_3 = T_1(T_2T_3)$$
+    siempre que $T_1$, $T_2$ y $T_3$ sean transformaciones lineales tales que los productos tengan sentido (lo que significa que $T_3$ se transforma en el dominio de $T_2$, y $T_2$ se transfora en el dominio de $T_1$).\\
+
+    \textbf{Identidad}
+    $$TI=IT=T$$
+    siempre que $T\in \mathcal{L}(V,W)$ (el primer $I$ es la transformación de indentidad en $V$, y el segundo $I$ es la transformación de identidad en $W$).\\
+
+    \textbf{Propiedades distributivas}
+    \begin{center}
+	$(S_1+S_2)T=S_1T+S_2T\quad$ y $\quad S(T_1+T_2)=ST_1+ST_2$
+    \end{center}
+    siempre que $T,T_1,T_2\in \mathcal{L}(U,V)$ y $S,S_1,S_2\in \mathcal{L}(V,W)$.
+\end{myteo}
+
+La multiplicación de aplicaciones lineales no es conmutativa. En otras palabras, no es necesariamente cierto que $ST=TS$, incluso si ambos lados de la ecuación tienen sentido.
+
+%-------------------- 3.10 Ejemplo
+\begin{myejem}
+    Suponga $D\in \mathcal{L}\left[\mathcal{P}(\textbf{R}),\mathcal{P}(\textbf{R})\right]$ es la transformación de diferenciación definido en el ejemplo 3.4 y $T\in \mathcal{L}\left[\mathcal{P}(\textbf{R}),\mathcal{P}(\textbf{R})\right]$ es la multiplicación por la transformación $x^2$ definida tempranamente en esta sección. Muestre que $TD\neq DT$.\\\\
+	Demostración.-\;  Se tiene 
+	$$\left[(TD)p\right](x)=x^2p'(x) \quad \mbox{pero}\quad \left[(DT)p\right](x)=x^2p'(x)+2xp(x).$$
+	En otras palabras, no es lo mismo derivar y luego multiplicar por  $x^2$ que multiplicar por $x^2$ y luego derivar.
+\end{myejem}
+
+%-------------------- 3.11 Teorema
+\begin{myteo}[Transformaciones lineales toman \boldmath$0$ a $0$]\,\\\\
+    Suponga $T$ es una transformación lineal para $V$ en $W$. Entonces $T(0)=0$.\\\\
+	Demostración.-\; Por la aditividad, se tiene
+	$$T(0)=T(0+0)=T(0)+T(0).$$
+	Agregue el inverso aditivo de $T(0)$ cada lado de la ecuación anterior para concluir que $T(0)=0$.
+\end{myteo}
+
+
+\section*{Ejercicios 3.A}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %--------------------1.
+    \item Suponga $b,c\in \textbf{R}$. Defina $T:\textbf{R}^3\to \textbf{R}^2$ por
+    $$T(x,y,z)=(2x-4y+3z+b,6x+cxyz).$$
+    Demuestre que $T$ es lineal si y sólo si $b=c=0$.\\\\
+	Demostración.-\; Por definición de transformación lineal, tendremos que demostrar que se cumple las propiedades de aditividad y homogeneidad.\\
+
+	\textbf{Aditividad.- } Supongamos $(x_1,y_1,z_1),(x_2,y_2,z_2)\in \textbf{R}^3$. Entonces, por la definición de $T$ se tiene
+	$$
+	\begin{array}{rcl}
+	    T\left[(x_1,y_1,z_1)+(x_2,y_2,z_2)\right] &=& T(x_1+x_2,y_1+y_2,z_1+z_2)\\\\
+						      &=& \left[2(x_1+x_2)-4(y_1+y_2)+3(z_1+z_2)+b,\right.\\
+						      && \left.6(x_1+x_2)+c(x_1+x_2)(y_1+y_2)(z_1+z_2)\right]\\\\
+						      &=& (2x_1-4y_1+3z_1+b,6x_1+cx_1y_1z_1)\\
+						      &+&(2x_2-4y_2+3z_2+b,6x_2+cx_2y_2z_2)\\\\
+						      &=& T(x_1,y_1,z_1)+T(x_2,y_2,z_2).
+	\end{array}
+	$$
+	Esto se cumplirá si $2b=b\Leftrightarrow b=0\;$ y $\;cx_1y_1z_1+cx_1y_2z_1+cx_2y_1z_1+cx_2y_2z_1+cx_1y_1z_2+cx_1y_2z_2+cx_2y_1z_2+cx_2y_2z_2 = cx_1y_1z_1+cx_2y_2z_2 \Leftrightarrow c=0$.\\
+
+	\textbf{Homogeneidad.- } Supongamos $(x,y,z)\in \textbf{R}^3$ y $\lambda \in \textbf{R}$. Entonces, por la definición de $T$ se tiene
+	$$
+	\begin{array}{rcl}
+	    T\left[\lambda(x,y,z)\right] &=& (2\lambda x - 4\lambda y+3\lambda z + \lambda b, 6\lambda x + c\lambda xyz)\\\\
+					 &=& \lambda(2x-4y+3z+b,6x+cxyz)\\\\
+					 &=& \lambda T\left[(x,y,z)\right].
+	\end{array}
+	$$
+
+	Notemos que la homogeneidad se cumplirá para todo $b,c\in \textbf{R}$. Por lo tanto, $T$ es lineal si y sólo si $b=c=0$.\\\\
+
+    %--------------------2.
+    \item Suponga $b,c\in \textbf{R}$. Defina $T:\mathcal{P}(\textbf{R})\to \textbf{R}^2$  por
+    $$Tp=\left[3p(4)+5p'(6)+bp(1)p(2),\int_{-1}^2 x^3p(x)\; dx +c\sen p(0)\right].$$
+    Demuestre que $T$ es una transformación lineal si y sólo si $b=c=0$.\\\\
+	Demostración.-\; Primero demostraremos que si $T$ es una transformación lineal, entonces $b=c=0$. Por definición para cada $\alpha\in \mathbb{R}$.
+	$$\alpha Tp = T(\alpha p)$$
+	De esta manera se tiene
+	$$
+	\begin{array}{rcl}
+	    \alpha T p &=& \alpha \left[3p(4)+5p'(6)+bp(1)p(2),\displaystyle\int_{-1}^2 x^3p(x)\; dx +c\sen p(0)\right] \\\\
+		       &=& \left[3\alpha p(4)+5\alpha p'(6)+b\alpha p(1)p(2),\alpha \displaystyle\int_{-1}^2 x^3 p(x) \; dx+c\alpha\sen p(0)\right]\quad (1)\\\\
+		       T(\alpha p)&=& \left[3(\alpha p)(4) + 5(\alpha p)'(6) + b(\alpha p)(1)(\alpha p)(2),\displaystyle\int_{-1}^2 x^3(\alpha p)(x)\; dx + c\sen (\alpha p)(0)\right].
+	\end{array}
+	$$
+
+	Es decir, si $p(x)=a_0+a_1x+a_2x^2+\cdots + a_nx^n$, entonces 
+	$$(\alpha p)(x)=\left(\alpha a_0\right)+\left(\alpha a_1\right)x+\left(\alpha a_2\right)x^2+\cdots + \left(\alpha a_n\right)x^n.$$
+
+	Por lo tanto, para cada $x$,
+
+	$$
+	\begin{array}{rcl}
+	    (\alpha p)(x) &=& \left(\alpha a_0\right)+\left(\alpha a_1\right)x+\left(\alpha a_2\right)x^2+\cdots + \left(\alpha a_n\right)x^n\\\\
+	    &=& \alpha\left(a_0+a_1x+a_2x^2+\cdots + a_nx^n\right)\\\\
+	    &=& \alpha p(x).
+	\end{array}
+	$$
+
+	Por esta deducción podemos decir que,
+	$$
+	\begin{array}{rcl}
+	    T(\alpha p) &=& \left[3\alpha p(4)+5\alpha p'(6)+b\alpha^2p(1)p(2),\displaystyle\int_{-1}^2 \alpha x^3 p(x)\; dx + c\sen\left(\alpha p(0)\right)\right]\\\\
+			&=& \left[\alpha\left(3p(4)+5p'(6)+b\alpha p(1)p(2)\right),\alpha\displaystyle\int_{-1}^2 x^3 p(x)\; dx + c\alpha \sen p(0)\right]\quad (2)\\\\
+	\end{array}
+	$$
+
+	Ahora, podemos igualar (1) y (2) si y sólo si 
+	$$b\alpha^2p(1)p(2)=b\alpha P(1) p(1) \quad \mbox{y} \quad c\sen(\alpha p(0))=c\alpha\sen p(0)$$
+	para cada $p(x)$ y cada $\alpha \in \textbf{R}.$\\
+
+	Sean $p(x)=x+\dfrac{\pi}{2}$ y $\alpha=2$. De donde,
+	$$b\alpha^2p(1)p(2)=4b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)\quad \mbox{y}\quad b\alpha p(0)p(1)=2b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    4b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)=2b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right) &\Leftrightarrow& 4b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)-2b\left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)=0\\\\
+																      &\Leftrightarrow& 2b \left(1+\dfrac{\pi}{2}\right)\left(2+\dfrac{\pi}{2}\right)=0\\\\
+																      &\Leftrightarrow& b=0.
+	\end{array}
+	$$
+
+	Por otro lado,
+
+	$$0= c\sen\left(2\cdot \dfrac{\pi}{2}\right)=c\sin\left(\alpha p(0)\right) = c\alpha \sen p(0)=2c\sen\left(\dfrac{\pi}{2}\right)=2c$$
+
+	Por lo tanto, 
+
+	$$c=0.$$
+
+	Ahora, demostremos que si $b=c=0$, entonces $T$ es lineal; es decir, que $T$ es aditiva y Homogénea. Supongamos $p,q\in \mathcal{P}(\textbf{R})$ y $\lambda \in \textbf{R}$, por lo que 
+
+	$$
+	\begin{array}{rcl}
+	    T(p+q) &=& \left[3(p+q)(4)+5(p+q)'(6),\displaystyle\int_{-1}^2 x^3(p+q)(x)\; dx\right]\\\\
+		   &=& \left[3\left(p(4)+q(4)\right)+5\left(p'(6)+q'(6)\right),\displaystyle\int_{-1}^2x^3\left(p(x)+q(x)\right)\; dx\right]\\\\
+		   &=& \left[3p(4)+5p'(6)+3q(4)+3q'(6),\displaystyle\int_{-1}^2 x^3 p(x)\; dx +\int_{-1}^2 x^3q(x)\; dx\right]\\\\
+		   &=& \left[3p(4)+5p'(6),\displaystyle\int_{-1}^2 p(x)\; dx\right]+\left[3q(4)+3q'(6),\displaystyle\int_{-1}^2 x^3q(x)\; dx\right]\\\\
+		   &=& Tp+Tq.
+	\end{array}
+	$$
+
+	\begin{center}
+	y 
+	\end{center}
+
+	$$
+	\begin{array}{rcl}
+	    T(\lambda p) &=& \left[3(\lambda p)(4)+5(\lambda p)'(6),\displaystyle\int_{-1}^2 x^3(\lambda p)(x)\; dx\right]\\\\
+			 &=& \left[3\lambda p(4)+5\lambda p'(6),\lambda\displaystyle\int_{-1}^2 x^3 p(x)\; dx\right]\\\\
+			 &=& \left[\lambda(3p(4)+5p(6)),\lambda \displaystyle\int_{-1}^2 x^3p(x)\; dx\right]\\\\
+			 &=& \lambda\left[3p(4)+5p'(6),\displaystyle\int_{-1}^2 x^3 p(x)\; dx\right]\\\\
+			 &=& \lambda Tp.
+	\end{array}
+	$$
+
+	Por lo tanto, $T$ es lineal. Así, concluimos que $T$ es lineal si y sólo si $b=c=0$.\\\\
+
+
+    %--------------------4.
+    \item 
+
+
+\end{enumerate}

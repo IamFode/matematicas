@@ -634,7 +634,38 @@ En los ejercicios 16 al 26, calcular las integrales.\\
 
     %-------------------- 22.
     \item $\displaystyle\int x^n \log(ax)\; dx$.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\log(ax) &\Rightarrow& du=\dfrac{1}{x}\; dx\\\\
+	    dv=x^n\; dx &\Rightarrow& v=\dfrac{x^{n+1}}{n+1}, \; si \; n\neq -1.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^n \log(ax)\; dx &=& \int u \; dv\\\\
+						&=& uv-\displaystyle\int v\; du\\\\
+						&=& \dfrac{x^{n-1}}{n+1}\log|ax| - \dfrac{1}{n+1}\displaystyle\int x^{n}\; dx\\\\
+						&=& \dfrac{x^{n-1}}{n+1}\log|ax| - \dfrac{x^{n+1}}{(n+1)^2}+C.
+	\end{array}
+	$$
+
+	Ahora para el caso de $n=-1$ se tiene
+
+	$$\int x^n\log(ax)\; dx = \int \dfrac{\log(ax)}{x}\; dx.$$
+
+	Ya que, $\frac{1}{x}\; dx$ es la derivada de $\log(ax)$, podemos sustituir $u=\log(ax)$ y $du=\frac{1}{x}\; dx$. Por lo que,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\log(ax)}{x}\: dx &=& \displaystyle\int u\; du\\\\
+						 &=& \dfrac{u^2}{2}+C\\\\
+						 &=& \dfrac{(\log|ax|)^2}{2}+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
 
     %-------------------- 23.
     \item $\displaystyle\int x^2\log^2(x)\; dx$.\\\\
