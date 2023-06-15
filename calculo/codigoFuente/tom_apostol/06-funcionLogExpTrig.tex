@@ -669,20 +669,136 @@ En los ejercicios 16 al 26, calcular las integrales.\\
 
     %-------------------- 23.
     \item $\displaystyle\int x^2\log^2(x)\; dx$.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Usando la integración por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\log^2(x) &\Rightarrow& du=\dfrac{2\log(x)}{x}\\\\
+	    dv=x^2\; dx &\Rightarrow& v=\dfrac{x^3}{3}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^2\log^2 x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv-\displaystyle\int v\; du\\\\
+					       &=& \dfrac{1}{3}x^3\log^2|x|-\dfrac{2}{3}\displaystyle\int x^2\log(x)\; dx\\\\
+	\end{array}
+	$$
+	Por el anterior ejercicio, sabemos que para $n\neq -1$,
+	$$\int x^n \log(ax)\; dx = \dfrac{}{}\log |ax|-\dfrac{x^{n+1}}{(n+1)^2}+C.$$
+
+	Ya que, queremos evaluar la intergal de $x^2\log x$, podemos sustituir $n=2$ y $a=1$. Por lo que,
+	$$\int x^2\log x\; dx = \dfrac{x^3}{3}\log^2|x|-\dfrac{x^3}{9}+C$$
+
+	Por lo tanto,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^2\log^2 x\; dx &=& \dfrac{1}{3}x^3\log^2-|x| - \dfrac{2}{3}\int x^2\log x\; dx\\\\\
+					       &=& \dfrac{1}{3}x^3\log |x| - \dfrac{2}{3}\left(\dfrac{x^3}{3}\log |x| - \dfrac{x^3}{9}\right)+C\\\\
+					       &=& \dfrac{1}{3}\log^2|x|-\dfrac{2x^3}{9}\log |x| -\dfrac{2x^3}{27}+C\\\\
+					       &=& \dfrac{x^3}{3}\left(\log^2|x|-\dfrac{2}{3}\log|x|+\dfrac{2}{9}\right)+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
 
     %-------------------- 24.
     \item $\displaystyle\int \dfrac{dx}{x\log(x)}$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Primero, separamos la integral en dos partes,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{1}{x\log(x)}\; dx &=& \displaystyle\int \dfrac{1+\log(x)-\log(x)}{x\log(x)}\; dx\\\\
+						       &=& \displaystyle\int \dfrac{1+\log(x)}{x\log(x)}\; dx - \int \dfrac{\log(x)}{x\log(x)}\; dx\\\\
+						       &=& \displaystyle\int \dfrac{1+\log(x)}{x\log(x)} \; dx-\int \dfrac{1}{x}\; dx\\\\
+						       &=& \displaystyle\int \dfrac{1+\log(x)}{x\log(x)}\; dx -\log|x|+C.
+	\end{array}
+	$$
+	Luego, para la primera integral, sea $u=x\log(x)$ por lo que $du=1+\log(x)$, de donde
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{1+\log(x)}{x\log(x)}\; dx &=& \displaystyle\int \dfrac{1}{u}\; du\\\\
+							     &=& \log|u|+C\\\\
+							     &=& log|x\log(x)|+C\\\\
+							     &=& \log|x|+\log|\log(x)|+C.
+	\end{array}
+	$$
+
+	Por lo tanto,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{1}{x\log(x)}\; dx &=& \displaystyle\int \dfrac{1+\log(x)}{x\log(x)}\; dx-\log|x|+C\\\\
+						       &=& \log|x|+\log|\log(x)|-\log|x|+C\\\\
+						       &=& \log|\log(x)|+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
 
     %-------------------- 25.
     \item $\displaystyle\int_0^{1-e^{-2}} \dfrac{\log(1-t)}{1-t}$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Realizamos la sustitución de $u=\log(1-t)$ y $du=-\frac{1}{1-t}\; dt$. Donde los nuevos límites de integración serán
+	$$u(0)=\log(1)=0,\qquad u\left(1-e^{-2}\right)=\log\left[1-\left(1-e^{-2}\right)\right]=-2$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int_0^{1-e^{-2}} \dfrac{\log(1-t)}{1-t}\; dt &=& -\displaystyle\int_{0}^{-2} u\; du\\\\
+								       &=& -\dfrac{1}{2} u^2 \bigg|_{0}^{-2}\\\\
+								       &=& -2.
+	\end{array}
+	$$
+	\vspace{.5cm}
 
     %-------------------- 26.
     \item $\displaystyle\int \dfrac{\log|x|}{x\sqrt{1+\log|x|}}$.\\\\
-	Respuesta.-\;
+	Respuesta.-\; Usando la sustitución por partes,
+	$$
+	\begin{array}{rcl}
+	    u=1+\log|x| &\Rightarrow& du=\dfrac{1}{x}\; dx\\\\
+	\end{array}
+	$$
 
+	Entonces,
+
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int \dfrac{\log|x|}{x\sqrt{1+\log|x|}}\; dx &=& \displaystyle\int \dfrac{u-1}{\sqrt{u}}\; du\\\\
+								      &=& \displaystyle\int \sqrt{u}\; du - \int \dfrac{1}{\sqrt{u}}\; du\\\\
+								      &=& \dfrac{2u^{\frac{3}{2}}}{3}-2\sqrt{u}+C\\\\
+								      &=& \dfrac{2}{3}(1+\log|x|)^{\frac{3}{2}}-2\left(1+\log|x|\right)^{\frac{1}{2}}+C\\\\
+								      &=& \dfrac{2}{3}(1+\log|x|)^{\frac{1}{2}} \left(1+\log|x|-3\right)+C\\\\
+								      &=& \dfrac{2}{3}\sqrt{1+\log|x|}\left(\log|x|-2\right)+C.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 27.
+    \item Deducir la fórmula recurrente
+    $$\int x^m \log^n(x)\; dx = \dfrac{x^{m+1}\log^n(x)}{m+1}-\dfrac{n}{m+1} \int x^m \log^{n-1}(x)\; dx$$
+    y utilizarla para integral $\displaystyle\int x^3 \log^3(x)\; dx$.\\\\
+	Demostración.-\; Aplicando la integral por partes,
+	$$
+	\begin{array}{rcl}
+	    u=\log^n x &=& du=\dfrac{x\log^{n-1}x}{x}\; dx\\\\
+	    dv=x^m\; dx &=& v=\dfrac{x^{m+1}}{m+1}.
+	\end{array}
+	$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\int x^n\log^n x\; dx &=& \displaystyle\int u\; dv\\\\
+					       &=& uv-\displaystyle\int v\; du\\\\
+					       &=& \dfrac{x^{m+1}}{m+1}\log^n x - \dfrac{n}{m+1}\displaystyle\int x^{m+1}\dfrac{x\log^{n-1}x}{x}\; dx\\\\
+					       &=& \dfrac{x^{m+1}}{m+1}\log^n x - \dfrac{n}{m+1}\displaystyle\int x^{m}\log^{n-1}x\; dx.
+	\end{array}
+	$$
+
+	Ahora, para la integral $\displaystyle\int x^2\log^3 x\; dx$ tenemos
+
+	$$\int x^3\log^3 x\; dx = \dfrac{x^4}{4}\log^3|x|-\dfrac{3}{4}\int x^3\log^2 x\; dx.$$\\
+
+    %-------------------- 28.
+    \item 
 
 \end{enumerate}
 

@@ -31,7 +31,7 @@
     El conjunto de todas las transformaciones lineales de $V$ en $W$ se denota por $\mathcal{L}(V,W)$.
 \end{mynot}
 
-\setcounter{myteo}{3}
+\setcounter{myteo}{4}
 %-------------------- 3.5 Teorema
 \begin{myteo}[Transformaciones lineales y bases del dominio]\,\\\\
     Suponga que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_n\in W$. Entonces, existe una única transformación lineal $T:V\to W$ tal que 
@@ -250,8 +250,132 @@ La multiplicación de aplicaciones lineales no es conmutativa. En otras palabras
 	Por lo tanto, $T$ es lineal. Así, concluimos que $T$ es lineal si y sólo si $b=c=0$.\\\\
 
 
-    %--------------------4.
-    \item 
+    %--------------------3.
+    \item Suponga $T\in \mathcal{L}\left(\textbf{F}^n,\textbf{F}^m\right)$. Demostrar que existe escalares $A_{j,k}\in \textbf{F}$ para $j=1,\ldots,m$ y $k=1,\ldots,n$ tal que
+    $$T\left(x_1,\ldots,x_n\right)\in \textbf{F}^n.$$
+    [El ejercicio demuestra que $T$ tiene la forma prometida en el úmtimo apartado del ejemplo 3.4.]\\\\
 
+    %--------------------4.
+    \item Suponga $T\in \mathcal{L}(V,W)$ y $v_1,\ldots, v_m$ una lista de vectores en $V$ tal que $Tv_1,\ldots,Tv_m$ es una lista linealmente independiente en $W$. Demostrar que $v_1,\ldots,v_m$ es linealmente independiente.\\\\
+	Demostración.-\; Sea para $c_i\in \textbf{F}$ tal que 
+	$$c_1v_1+c_2v_2+\cdots+c_nv_n=0.$$
+	Luego, multiplicamos por $T$ a ambos lados de la ecuación anterior,
+	$$T(c_1v_1+c_2v_2+\cdots+c_nv_n)=T(0).$$
+	Por la definición 1.6 y el torema 3.11 tenemos que
+	$$c_1Tv_1+c_2Tv_2+\cdots+c_nTv_n=0.$$
+	Entonces, como $Tv_1,\ldots,Tv_m$ es una lista linealmente independiente en $W$.\\\\
+
+	%--------------------5.
+	\item  Demostrar la afirmación 3.7.\\\\
+	    Demostración.-\; Verificaremos cada propiedad.
+
+	    \begin{itemize}
+
+		\item Conmutatividad.- Sean $S,T\in \mathcal{L}(V,W)$ y $v\in V$, tenemos
+		    $$(S+T)(v)=S(v)+T(v)=T(v)+S(v)=(T+S)(v).$$
+		    Por lo tanto, la adición es comunutativa.\\
+
+		\item Asociatividad.- Saen $R,S,T\in \mathcal{L}(V,W)$ y $v\in V$, tenemos
+		    $$
+		    \begin{array}{rcl}
+			\left[(R+S)+T\right](v) &=& (R+S)(v)+T(v)\\\\
+						&=& R(v)+S(v)+T(v)\\\\
+						&=& R(v)+\left[S(v)+T(v)\right]\\\\
+		    \end{array}
+		    $$
+		    Por lo que la adición es asociativa. Luego, sean $a,b\in \textbf{F}$, entonces
+		    $$\left[(ab)T\right](v)=(ab)T(v)=a\left[bT(v)\right]=\left[a(bT)\right](v).$$
+		    Por lo tanto, la multiplicación es asociativa.\\
+
+		\item Identidad aditiva.- Sea $0\in \mathcal{L}(V,W)$ denotado como transformación cero, sean también $T\in \mathcal{L}(V,W)$ y $v\in V$. Entonces,
+		    $$(T+0)(v)=T(v)+0(v)=T(v).$$
+		    Por lo tanto, la transformación cero es la identidad aditiva.\\
+
+		\item Inverso aditivo.- Sean $T\in \mathcal{L}(V,W)$ y $v\in V$, y definamos a $(-T)\in \mathcal{L}(V,W)$ por $(-T)(v)=-T(v)$, entonces
+		    $$\left[T+(-T)\right](v)=T(v)+(-T)(v)=T(v)-T(v)=0,$$
+		    Por lo que, $(-T)$ es el inverso aditivo para cada $T\in \mathcal{L}(V,W)$.\\
+
+		\item Identidad multiplicativa.- Sea $T\in \mathcal{L}(V,W)$. Entonces,
+		    $$(1T)(v)=1(T(v))=T(v).$$
+		    Así la identidad multiplicativa de $\textbf{F}$ es la identidad multiplicativa de la multiplicación escalar.\\
+
+		\item Propiedad distributiva.- Sean $S,T\in \mathcal{L}(V,W)$, $a,b\in \textbf{F}$ y $v\in V$. Entonces,
+		    $$
+		    \begin{array}{rcl}
+			\left[a(S+T)\right](v) &=& a(Sv+Tv)\\\\
+					       &=& aS(v)+aT(v)\\\\
+					       &=& (aS)(v)+(aT)(v)\\\\
+		    \end{array}
+		    $$
+		    \begin{center}
+			y
+		    \end{center}
+
+		    $$
+		    \begin{array}{rcl}
+			\left[(a+b)T\right](v) &=& (a+b)T(v)\\\\
+					       &=& aT(v)+bT(v)\\\\
+					       &=& (aT)(v)+(bT)(v).\\\\
+		    \end{array}
+		    $$
+		    
+	    \end{itemize}
+
+	    Por lo tanto, $\mathcal{L}(V,W)$ es un espacio vectorial.\\\\
+
+	%--------------------6.
+	\item  Demostrar la afirmación 3.9.\\\\
+	    Demostración.-\; 
+	    \begin{itemize}
+		\item Asociatividad.- Para $x$ en el dominio de $T_3$, tenemos
+		    $$
+		    \begin{array}{rcl}
+			\left[(T_1T_2)T_3\right](x) &=& (T_1T_2)\left[T_3(x)\right]\\\\
+						    &=& T_1\left[T_2\left[T_3(x)\right]\right]\\\\
+						    &=& T_1\left[(T_2T_3)(x)\right]\\\\
+						    &=& \left[T_1(T_2T_3)\right](x).
+		    \end{array}
+		    $$
+
+		\item Identidad.- Para $v\in V$, se tiene
+		    $$
+		    \begin{array}{rcl}
+			TI(v) &=& T\left[I(v)\right]\\\\
+					     &=& T(v)\\\\
+					     &=& I\left[T(v)\right]\\\\
+					     &=& IT(v).\\\\
+		    \end{array}
+		    $$
+		    Por lo tanto, $TI=IT=I$.\\
+
+		\item Proipedad distributiva.- Para $u\in U$, se tiene
+		    $$
+		    \begin{array}{rcl}
+			\left[(S_1+S_2)T\right](u) &=& (S_1+S_2)\left[T(u)\right]\\\\
+						   &=& S_1\left[T(u)\right]+S_2\left[T(u)\right]\\\\
+						   &=& S_1T(u)+S_2T(u)\\\\
+						   &=& (S_1T+S_2T)(u).\\\\
+		    \end{array}
+		    $$
+
+		    \begin{center}
+			y
+		    \end{center}
+
+		    $$
+		    \begin{array}{rcl}
+			\left[T(S_1+S_2)\right](u) &=& T\left[(S_1+S_2)(u)\right]\\\\
+						   &=& T\left[S_1(u)+S_2(u)\right]\\\\
+						   &=& T\left[S_1(u)\right]+T\left[S_2(u)\right]\\\\
+						   &=& (TS_1+TS_2)(u).\\\\
+		    \end{array}
+		    $$
+		    \vspace{.5cm}
+
+
+	    \end{itemize}
+
+    %--------------------7.
+    \item 
 
 \end{enumerate}

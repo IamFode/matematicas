@@ -3350,14 +3350,40 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 		Por lo que debemos demostrar por inducción que 
 		$$f\left(p_n\right)<\dfrac{mx}{2^n}f(x)+\left(1-\dfrac{m}{2^n}\right)f(y)$$
 
-		Vemos que que se cumple para el caso de $n=1$
+		Ya que $n=1$ entonces $m$ tiene que ser $1$, por lo que se requiere mostrar que 
+		$$f\left(\dfrac{x+y}{2}\right)<\dfrac{f(x)+f(y)}{2}$$
+		para todo $x,y$ el cual es nuestra hipótesis.\\
 
 
+		Ahora, supongamos que se cumple para $n-1$. Es decir,
+		$$f\left[\dfrac{mx}{2^{n-1}}+\left(1-\dfrac{m}{2^{n-1}}\right)y\right]<\dfrac{mf(x)}{2^{n-1}}+\left(1-\dfrac{m}{2^{n-1}}\right)f(y)$$
+
+		Luego, veamos que
+
+		$$
+		\begin{array}{rcl}
+		    f\left[\dfrac{mx}{2^n}+\left(1-\dfrac{m}{2^n}\right)y\right] &=& f(P_n)\\\\
+		    &=& f\left(\dfrac{p_{n-1}+y}{2}\right)\\\\
+		    &<&\dfrac{f(p_{n-1})+f(y)}{2}\\\\
+		    &<&\dfrac{\dfrac{mx}{2^{n-1}}+\left(1-\dfrac{m}{2^{n-1}}\right)f(y)+f(y)}{2}\\\\
+		    &=& \dfrac{mf(x)}{2^n}+\left(1-\dfrac{m}{2^n}\right)f(y)
+		\end{array}
+		$$
+		Lo que completa la prueba.\\\\
 
 
 	    %---------- (c)
-	    \item Suponga que $f$ satisface la condición del apartado (a) y que $f$ es continua. Demuestre que $/$ es convexa.\\\\
-		Demostración.-\;
+	    \item Suponga que $f$ satisface la condición del apartado (a) y que $f$ es continua. Demuestre que $f$ es convexa.\\\\
+		Demostración.-\; Suponga que $f$ satisface las condiciones de la parte (a) y $f$ es continua. Entonces, tenemos que demostrar que para cualquier $x,y$ y $t\in (0,1)$
+		$$f\left[tx+(1-t)y\right]<tf(x)+(1-t)f(y).$$
+		Podemos comenzar observando que el conjunto 
+		$$A=\left\{\dfrac{m}{2^n}:m,n\in \mathbb{N}\; \mbox{con}\; m<2^n\right\}$$
+		es un conjunto denso en $[0,1]$. Es decir, para cada $t\in [0,1]$ existe una secuencia $\left\{a_n\right\}_{n=1}^\infty$ con $a_n \in A$ para todo $n$ tal que $a_n\to t$ como $n\to \infty$. Tomemos tal secuencia $\left\{a_n\right\}\subset A$ y por la parte (b), tenemos que para $n\in \mathbb{N}$,
+		$$f\left[a_n x + (1-a_n)y\right]<a_nf(x)+(1-a_n)f(y)$$
+		Tomando el limite a ambos lados,
+		$$\lim_{n\to \infty}\left\{f\left[a_n x + (1-a_n)y\right]\right\}\leq \lim_{n\to \infty}\left[a_nf(x)+(1-a_n)f(y)\right]$$
+		Ya que, $\lim_{n\to \infty}a_n=t$ implica que
+		$$f(tx+(1-t)y)\leq tf(x)+(1-t)f(y).$$\\
 
 	\end{enumerate}
 
@@ -3368,15 +3394,30 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (a)
 	    \item Siendo $x_1,\ldots,x_n$ números cualesquiera, demuestre que $\displaystyle\sum_{i=1}^n p_ix_i$ está situado entre el menor y el mayor de los $x_i$.\\\\
-		Demostración.-\;
+		Demostración.-\; Sean $x_{i_1}$ el menor y $x_{i_2}$ el mayor de $x_1,\ldots,x_n$ para cualquier $i_1,i_2\in \left\{1,\ldots,n\right\}$. Donde notemos que
+		$$x_{i_1}=\left(\sum_{i=1}^n p_i\right)x_{i_1}\leq \sum_{i=1}^n p_ix_i \leq \left(\sum_{i=1}^n p_i\right)x_{i_2}=x_{i_2}.$$\\
 
 	    %---------- (b)
 	    \item Demuestre lo mismo para $( 1/t) \displaystyle\sum_{i=1}^{n-1}p_ix_i$, donde $t = \displaystyle\sum_{i=1}^{n-1}p_i$.\\\\
-		Demostración.-\;
-
+		Demostración.-\; Sean $x_{i_1}$ el menor y $x_{i_2}$ el mayor de $x_1,\ldots,x_n$ para algún $i_1,i_2\in \left\{1,\ldots,n\right\}$. Entonces, tenemos que
+		$$x_{i_1}=\dfrac{1}{\displaystyle\sum_{i=1}^{n-1}p_i}\left(\sum_{i=1}^{n-1}p_i\right)x_{i_1}\leq \dfrac{1}{t}\sum_{i=1}^{n-1}p_ix_i \leq \dfrac{1}{\displaystyle\sum_{i=1}^{n-1}p_i}\left(\sum_{i=1}^{n-1}p_i\right)x_{i_2}=x_{i_2}.$$\\
+ 
 	    %---------- (c)
 	    \item Demuestre \textit{la desigualdad de Jensen}: si $f$ es convexa, entonces $f\left(\sum\limits_{i=1}^n p_ix_i\right)<\sum\limits_{i=1}^n p_if(x_i)$. Indicación: Utilice el Problema 3, observando que $p_n=l-t$. (Se necesita el apartado (b) para demostrar que $(1/t)\sum\limits_{i=1}^{n-1} p_ix_i$ Pertenece al dominio de $f$ si $x_1,\ldots,x_n$ son puntos del dominio de $f$.).\\\\
-		Demostración.-\;
+		Demostración.-\; Demostraremos la proposición por inducción. Primero vemos que se cumple para $n=1$, ya que
+		$$f(x_1)\leq f(x_1).$$
+		Ahora, supongamos que es cierto para $n-1$. Entonces, ya que $t=\sum_{i=1}^{n-1}p_i<1$
+		$$
+		\begin{array}{rcl}
+		    \displaystyle f\left(\sum_{i=1}^{n-1}q_ix_i\right)&=&f\left(\displaystyle\sum_{i=1}^{n-1}p_ix_i+p_n x_n\right)\\\\
+								      &=&f\left(\dfrac{1}{t}t\displaystyle\sum_{i=1}^{n-1} p_ix_i+p_nx_n\right)\\\\
+								      &\leq& tf\left(\dfrac{1}{t}\displaystyle\sum_{i=1}^{n-1} p_ix_i\right)+p_nf(x_n)\\\\  
+								      &\leq& t \displaystyle\sum_{i=1}^{n-1}\dfrac{p_i}{t}f(x_i)+p_nf(x_n)\\\\
+							&=&\displaystyle\sum_{i=1}^{n}p_if(x_i)\\\\
+		\end{array}
+		$$
+	    \vspace{.5cm}
+
 	\end{enumerate}
 
     %------------------- 9.
