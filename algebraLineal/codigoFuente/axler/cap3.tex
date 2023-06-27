@@ -376,6 +376,147 @@ La multiplicación de aplicaciones lineales no es conmutativa. En otras palabras
 	    \end{itemize}
 
     %--------------------7.
-    \item 
+    \item Demostrar que toda transformación lineal de un espacio vectorial unidimensional a sí mismo es multiplicación por un escalar. Más precisamente demostrar que si $\dim V = 1$ y $T\in\mathcal{L}(V,V)$, entonces existe $\lambda \in \textbf{F}$ tal que $Tv=\lambda v$ para todo $v\in V$.\\\\
+	Demostración.-\; Supongamos que $\dim V=1$ y $T\in \mathcal{L}(V,V)$. Sea también $u\in V,u\neq 0$. Entonces, todo vector en $V$ es un multiplo escalar de $u$. En particular, $Tu=au$ para algún $a\in \textbf{F}$.\\
+	Ahora, consideremos un vector $v\in V$. Ya que, existe $b\in \textbf{F}$ tal que $v=bu$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    Tv&=&T(bu)\\
+	      &=& bT(u)\\
+	      &=&b(au)\\
+	      &=&a(bu)\\
+	      &=&av.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %--------------------8.
+    \item Dar un ejemplo de una función $\varphi:\textbf{R}^2\to \textbf{R}$ tal que
+    $$\varphi(av)=a\varphi(v)$$
+    para todo $a\in \textbf{R}$ y para todo $v\in \textbf{R}^2$ pero $\varphi$ no es lineal.\\
+    $\left[\right.$\textit{El ejercicio anterior y el siguiente ejercicio muestran que ni la homogeneidad ni la aditividad por sí solas son suficientes para implicar que una función es una transformación lineal.}$\left.\right]$\\\\
+	Respuesta.-\; Si $v=(x,y)\in \textbf{R}^2$, entonces definamos $\varphi:\textbf{R}^2\to \textbf{R}$ como,
+	$$\varphi(v)=\varphi\left[(x,y)\right]=(x^3+y^3)^{1/3}.$$
+	Calculemos ahora $\varphi(av)$;
+	$$
+	\begin{array}{rcl}
+	    \varphi(av) &=& \varphi\left[a(x,y)\right]\\\\
+			&=& \varphi\left[(ax,ay)\right]\\\\
+			&=& \left[(ax)^3+(ay)^3\right]^{1/3}\\\\
+			&=& \left[(a^3x^3)+(a^3y^3)\right]^{1/3}\\\\
+			&=& a\left(x^3+y^3\right)^{1/3}\\\\
+			&=& a\varphi\left(v\right)\\\\
+	\end{array}
+	$$
+	Ahora, verifiquemos que $\varphi$ no es lineal. Para ello, consideremos $v_1=(1,0)$ y $v_2=(0,1)$, entonces
+	$$
+	\begin{array}{rcl}
+	    \varphi(v_1)&=&\varphi\left[(1,0)\right]=1\\\\
+	    \varphi(v_2)&=&\varphi\left[(0,1)\right]=1\\\\
+	\end{array}
+	$$
+	De donde,
+	$$\varphi(v_1)+\varphi(v_2)=1+1=2.$$
+	Por otro lado,
+	$$
+	\begin{array}{rcl}
+	    \varphi\left(v_1+v_2\right) &=& \varphi\left[(1,0)+(0,1)\right]\\\\
+		    &=& \varphi\left[(1,1)\right]\\\\
+		    &=& \left[(1)^3+(1)^3\right]^{1/3}\\\\
+		    &=& 2^{1/3}.\\\\
+	\end{array}
+	$$
+	Ya que, 
+	$$\varphi\left(v_1+v_2\right)\neq \varphi\left(v_1\right)+\varphi\left(v_2\right) \qquad \mbox{(prop. de aditividad)}$$
+	entonces $\varphi$ no es lineal.\\\\
+
+
+    %--------------------9.
+    \item Dar un ejemplo de una función $\varphi:\textbf{C}\to \textbf{C}$ tal que
+    $$\varphi(w+z)=\varphi(w)+\varphi(z)$$
+    para todo $w,z\in \textbf{C}$ pero $\varphi$ no es lineal. (Aquí \textbf{C} se considera como un espacio vectorial complejo.\\
+    $\left[\right.$\textit{También existe una función} $\varphi:\textbf{R}\to \textbf{R}$  \textit{tal que} $\varphi$ \textit{satisface la condición de aditividad anterior pero} $\varphi$ \textit{no es lineal. Sin embargo, mostrar la existencia de tal función implica herramientas considerablemente más avanzadas.}$\left.\right]$\\\\
+    Respuesta.-\; Sean $x_1+y_1i,x_2+y_2i\in \textbf{C}$ definida por, $\varphi:\textbf{C}\to \textbf{C}$ tal que
+    $$\varphi\left[(x+yi)\right]=x-yi.$$
+    Entonces,
+    $$
+    \begin{array}{rcl}
+	\varphi\left[(x_1+y_1i)+(x_2+y_2i)\right] &=& \varphi\left[(x_1+x_2)+(y_1+y_2)i\right]\\\\
+						  &=& (x_1+x_2)-(y_1+y_2)i\\\\
+						  &=& (x_1-y_1i)+(x_2-y_2i)\\\\
+						  &=& \varphi\left[(x_1+y_1i)\right]+\varphi\left[(x_2+y_2i)\right].
+    \end{array}
+    $$
+
+    Esto demuestra la aditividad de $\varphi$. Sin embargo, sean $v=1+2i\in \textbf{C}$ y $a=i\in \textbf{C}$. Entonces,
+    $$\varphi(av)=\varphi\left[i(\cdot 1+2i)\right]=\varphi\left(i+2i^2\right)=\varphi(-2+1)=-(2+i)$$
+    \begin{center}
+    y
+    \end{center}
+    $$a\varphi(v)=i\cdot \varphi(1+2i)=i(1+2i)=i-2.$$
+    Esto demuestra que 
+    $$\varphi(av)\neq a\varphi(v)$$
+    no es lineal.\\\\
+
+
+    %--------------------10.
+    \item Suponga que $U$ es un subespacio de $V$ con $U\neq V$. Suponga también que $S\in \mathcal{L}(U,W)$ y $S\neq 0$ (lo que significa que $Su\neq 0$ para algún $u\in U$). Defina $T:V\to W$ por
+    $$
+    Tv = 
+    \left\{
+	\begin{array}{rcl}
+	    Sv &\mbox{si} & v\in U\\\\
+	    0 &\mbox{si} & v\in V \;\mbox{ y }\;v\notin U.
+	\end{array}
+    \right.
+    $$
+    Demostrar que $T$ no es una transformación lineal en $V$.\\\\
+	Demostración.-\; Notemos que $U\neq V$. Luego, podemos elegir $u\in U$ tales que $Su\neq 0$ y $v\in V$, entonces $u+v\in U$. De lo contrario,
+	$$v=(u+v)-u\in U$$
+	producirá una contradicción. Por eso $T(u+v)=0$ por definición. Por otro lado, $Tu+Tv=SU\neq 0$. Resulta que $T(u+v)\neq Tu+Tv$, por eso $T$ no es una transformación lineal en $V$.\\\\
+
+    %--------------------11.
+    \item Suponga que $V$ es de dimensión finita. Demostrar que cada transformación lineal en una subespacio de $V$ puede ser extendida a una transformación lineal en $V$. En otras palabras, demuestra que si $U$ es un subespacio de $V$ y $S\in \mathcal{L}(U,W)$, entonces existe $T\in \mathcal{L}(V,W)$ tal que $Tu=Su$ para todo $u\in U$.\\\\
+	Demostración.-\; Sea $v_1,\ldots,v_m$ una base de $U$, entonces por el teorema 2.33 podemos extenderlo a una base de $V$. Esto es, $v_1,\ldots,v_m,v_{m+1}.\ldots,v_n$ es una extensión base de $V$ tal que $v_{m+1},\ldots,v_n$ linealmente independiente.\\
+	Para cualquier $z\in V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que $z=\sum_{k=1}^n a_kv_k$ definida por
+
+	$$
+	\begin{array}{rcrcl}
+	    T&:&V&\to & W\\\\
+	     &&\displaystyle\sum_{k=1}^n a_kv_k &\mapsto & \displaystyle\sum_{k=1}^m a_kSv_k+\displaystyle\sum_{k=m+1}^n a_kv_k.
+	\end{array}
+	$$
+
+	Dado que cada $v\in V$ tiene una única representación como una combinación lineal de elementos de nuestra base, la transformación está definida. Primero, demostremos que $T$ existe y  es una transformación lineal. Suponga $z_1,z_2\in V$. Luego, sean $a_1,\ldots,a_n\in \textbf{F}$ y $b_{1},\ldots,b_{n}\in \textbf{F}$ tal que
+	$$z_1=a_1v_1+\cdots+a_nv_n \quad \mbox{y}\quad z_2=b_{1}v_{1}+\cdots+b_nv_{n}$$
+	se sigue que,
+	$$
+	\begin{array}{rcl}
+	    T(z_1+z_2) &=& T\left(\displaystyle\sum_{k=1}^n a_kv_k+\sum_{1}^n b_kv_k\right)\\\\
+		       &=& T\left[\displaystyle\sum_{k=1}^n (a_k+b_k)v_k\right]\\\\
+		       &=& \displaystyle\sum_{k=1}^n (a_k+b_k)Sv_k+\sum_{k=m+1}^n (a_k+b_k)v_k\\\\
+		       &=& \displaystyle\sum_{k=1}^n a_kSv_k+\sum_{k=m+1}^n a_kv_k+\sum_{k=1}^n b_kSv_k+\sum_{k=m+1}^n b_kv_k\\\\
+		       &=& T\left(\displaystyle\sum_{k=1}^n a_kv_k\right)+T\left(\displaystyle\sum_{k=1}^n b_kv_k\right)\\\\
+		       &=& T(z_1)+T(z_2).
+	\end{array}
+	$$
+	Lo que demuestra que $T$ es aditiva. Ahora, sean $\sum_{i=1}^n a_kv_k=z\in V$ y $\lambda\in \textbf{F}$, entonces para  $a_1,\ldots,a_n \in \textbf{F}$, se tiene
+	$$
+	\begin{array}{rcl}
+	    T(\lambda z) &=& T\left(\lambda\displaystyle\sum_{k=1}^n a_kv_k\right)\\\\
+			 &=& T\left[\displaystyle\sum_{k=1}^n (\lambda a_k)v_k\right]\\\\
+			 &=& S\left[\displaystyle\sum_{k=1}^m (\lambda a_k)v_k\right]+\displaystyle\sum_{k=m+1}^n (\lambda a_k)v_k\\\\
+			 &=& \lambda S\left[\displaystyle\sum_{k=1}^m a_kv_k\right]+\lambda\displaystyle\sum_{k=m+1}^n a_kv_k\\\\
+			 &=& \lambda \left[S\left(\displaystyle\sum_{k=1}^m a_kv_k\right)+\displaystyle\sum_{k=m+1}^n a_kv_k\right]\\\\
+			 &=& \lambda T\left(\displaystyle\sum_{k=1}^n a_kv_k\right)=\lambda Tz\\\\
+	\end{array}
+	$$
+	por lo que $T$ es homogénea. Por lo tanto, $T\in \mathcal{L}(V,W)$. Por último, para ver si $T=S$, sea $u\in U$ con $a_1,\ldots,a_m\in \textbf{F}$ tal que $u=\sum_{k=1}^m a_kv_k$ se tiene
+	$$Tu=T\left(\displaystyle\sum_{k=1}^m a_kv_k\right)=\displaystyle\sum_{k=1}^m a_kSv_k+\displaystyle\sum_{k=m+1}^n a_kv_k=S\left(\displaystyle\sum_{k=1}^m a_kv_k\right)=Su.$$
+	Notemos que $\sum_{k=m+1}^n a_kv_k$ es linealmente independiente. Así, completamos la demostración.\\\\
+
+    %--------------------12.
+    \item Suponga que $V$ es de dimensión finita con $\dim(V)>0$, y suponga $W$ es de dimensión infinita. Demostrar que $\mathcal{L}(V,W)$ es de dimensión infinita.\\\\
+	Demostración.-\; 
 
 \end{enumerate}

@@ -799,6 +799,95 @@ En los ejercicios 16 al 26, calcular las integrales.\\
 
     %-------------------- 28.
     \item 
+	\begin{enumerate}[a)]
+
+	    %----------a)
+	    \item  Si $x>0$, sea $f(x)=x-1-\log(x)$, $g(x)=\log(x)-1+\frac{1}{x}$. Examinar los signos de $f'$ y $g'$ para demostrar que las desigualdades
+	    $$1-\dfrac{1}{x}<\log(x)<x-1$$
+	    son válidas para $x>0$, $x\neq 1$. Cuando $x=1$, se convierten en igualdades.\\\\
+		Demostración.-\; Primero derivemos $f$ y $g$,
+		$$
+		\begin{array}{rcl}
+		    f'(x) &=& 1-\dfrac{1}{x}\\\\
+		    g'(x) &=& \dfrac{1}{x}-1+\dfrac{1}{x^2}=\dfrac{1}{x}\left(1-\dfrac{1}{x}\right).
+		\end{array}
+		$$
+
+		Luego, examinemos los signos de $f'$ y de $g'$
+
+		$$
+		\begin{array}{rcl}
+		    f'(x)>0 &\Rightarrow& x>1\\\\
+		    f'(x)<0 &\Rightarrow& 0<x<1\\\\
+		\end{array}
+		$$
+
+		Por lo tanto, la función tiene un mínimo en $x=1$. Es decir,
+		$$f(1)=1-1-0=0.$$
+		Lo que significa que $f(x)>0$ para $x>0$ y $x\neq 1$. Así, 
+		$$x-1>\log(x).$$
+
+		$$
+		\begin{array}{rcl}
+		    g'(x)>0 &\Rightarrow& x>1\\\\
+		    g'(x)<0 &\Rightarrow& 0<x<1.
+		\end{array}
+		$$
+
+		Lo que $g$ tiene un mínimo en $x=1$. Ya que,
+		$$g(1)=0-1+1=0.$$
+		Esto significa que $g(x)>0$ para $x>0$ y $x\neq 1$. Por lo tanto,
+		$$1-\dfrac{1}{x}<\log(x).$$
+		De donde conlcluimos que
+		$$1-\dfrac{1}{x}<\log(x)<x-1 \quad \mbox{para}\quad x>0 \mbox{ y } x\neq 1.$$\\
+
+
+
+	    %----------b)
+	    \item Trazar las gráficas de las funciones $A$ y $B$ definidas por las igualdades $A(x)=x-1$ y $B(x)=1-\frac{1}{x}$ para $x>0$, e interpretar geométricamente las desigualdades de la parte a).\\\\
+		Respuesta.-\; 
+
+		\begin{center}
+		    \begin{tikzpicture}
+			\begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
+			  axis x line=center, % no box around the plot, only x and y axis
+			  axis y line=center, % the * suppresses the arrow tips
+			  ylabel = {$f(x)$},
+			  xlabel = {$x$},
+			  xlabel style={below right},
+			  ylabel style={above left},
+			  xmin=0,xmax=3,ymin=-3,ymax=3,
+			  enlargelimits=upper] % extend the axes a bit to the right and top
+			  \addplot[black,opacity=1]{1-(1/x)};
+			  \node [right,scale=.6] at (axis cs: 2.5, 2.7) {$f(x)=1-\dfrac{1}{x}$};
+			  \addplot[black,opacity=1]{x-1};
+			  \node [right,scale=.6] at (axis cs: 2.5, 1) {$f(x) = x-1$};
+			\end{axis}
+		    \end{tikzpicture}
+		\end{center}
+		\vspace{.5cm}
+
+		Las desigualdades en la parte a) implican que la gráfica de $\log(x)$ debe estar estrictamente entre las gráficas de $A(x)$ y $B(x)$, con $\log(1)=0$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 29.
+    \item Demostrar que 
+	$$\lim_{x\to 0}\dfrac{\log(1+x)}{x}=1$$
+	con los dos métodos siguientes:
+	\begin{enumerate}[a)]
+
+	    %----------a)
+	    \item Utilizando la definición de la derivida $L'(1)$.\\\\
+		Respuesta.-\; 
+
+	    %----------b)
+	    \item Usando el resultado del ejercicio 28.\\\\
+		Respuesta.-\;
+
+	\end{enumerate}
+
+
 
 \end{enumerate}
 
