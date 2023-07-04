@@ -517,6 +517,151 @@ La multiplicación de aplicaciones lineales no es conmutativa. En otras palabras
 
     %--------------------12.
     \item Suponga que $V$ es de dimensión finita con $\dim(V)>0$, y suponga $W$ es de dimensión infinita. Demostrar que $\mathcal{L}(V,W)$ es de dimensión infinita.\\\\
-	Demostración.-\; 
+	Demostración.-\; Sea $v_1,v_2,\ldots,v_n\in V$. Cualquier transformación lineal en $V$ está determinado únicamente por su efecto sobre los elementos base. Por lo tanto, es suficiente definir una transformación lineal solo sobre los elementos base. Ahora, 
+	Recordemos por el ejercicio por el ejercicio 14A, Capitulo 2, que $W$ es un espacio vectorial de dimensión infinita si y sólo existe una secuencia $w_1,w_2,\ldots \in W$ tal que $w_1,w_2,\ldots,w_m$ es linealmente independiente para cada $m\geq 1.$ Sea $T_i\in \mathcal{L}(V,W)$ tal que $T_i(v_1)=w_i$ donde $v_1,v_2,\ldots,v_n$ es una base de $V$. La existencia de $T_i$ está garatizado por 3.5. Entonces,demostraremos que $T_1,\ldots,T_m$ es linealmente independiente para cada entero positivo $m$. Supongamos que existen $a_1,\ldots,a_m\in \textbf{F}$ tal que
+	$$a_1T_1,+\cdots+a_mT_m=0.$$
+	Entonces, tenemos $(a_1T_1+\cdots+a_mT_m)(v_1)=0$. Es decir,
+	$$a_1w_1+\cdots + a_mw_m=0.$$
+	Ya que $W_1,W_2,\ldots,W_m$ es linealmente independiente, se sigue que $a_1=\cdots=a_m=0$. Por lo tanto, $T_1,\ldots,T_m$ es linealmente independiente. Una vez más por el ejercicio 14A, Capitulo 2; se tiene que $\mathcal{L}(V,W)$ es de dimensión infinita.\\\\
+
+    %--------------------13.
+    \item Suponga que $v_1,\ldots,v_m$ es una lista de vectores linealmente dependiente en $V$. Suponga también que $W\neq \left\{0\right\}$. Demostrar que existe $w_1,\ldots,w_m\in W$ tal que que ningún $T\in \mathcal{L}(V,W)$ satisface $Tv_k=w_k$ para cada $k=1,\ldots,m$.\\\\
+	Demostración.-\; Ya que, $v_1,\ldots,v_m$ es linealmente dependiente, uno de ellos puede escribirse como combinación lineal de los demás. Sin perdida de generalidad, suponga que este es $v_m$. Entonces, existe $a_1,\ldots,a_{m-1}\in \textbf{F}$ tal que 
+	$$v_m=a_1v_1 + \cdots + a_{m-1}v_{m-1}$$
+    Ya que, $W\neq \left\{0\right\}$, existe algún $z\in W$, $z\neq 0$. Definimos ahora $w_1,\ldots,w_m\in W$ por
+	$$
+	w_k=\left\{
+	    \begin{array}{cl}
+		z & \text{si } k=m\\
+		0 & \text{en otro caso}
+	    \end{array}
+	\right.
+	$$
+	Ahora, supongamos que existe $T\in \mathcal{L}(V,W)$ tal que $Tv_k = w_k$ para $k=1,\ldots,m$. Se sigue que
+	$$
+	\begin{array}{rcl}
+	    T(0) &=& T\left(v_m-a_1v_1-\cdots - a_{m-1}v_{m-1}\right)\\\\	
+		 &=& Tv_m -a_1Tv_1-\cdots-a_{m-1}Tv_{m-1}\\\\
+		 &=& z.
+	\end{array}
+	$$
+	Pero como $z\neq 0$, entonces $T(0)\neq 0$, lo cual es un absurvo por (3.11). Por lo tanto, no existe tal transformación lineal.\\\\
+
+    %--------------------14.
+    \item Suponga que $V$ es de dimensión finita con $\dim V\geq 2$. Demostrar que existe $S,T\in \mathcal{L}(V,V)$ tal que $ST\neq TS$.\\\\
+	Demostración.-\; Ya que, $\dim V \geq 2$, existe una base de $V$ formada por al menos dos vectores. Fijemos una base de $V$ y $v_1,v_2$ los primeros dos vectores de esa base. Definamos $T$ y $S$ en la base de $V$ tal que 
+	\begin{center}
+	    $T(v_1)=v_2,T(v_2)=v_1$ y $S(v_1)=v_2,S(v_2)=0$. 
+	\end{center}
+	Ahora, calculemos $ST$ y $TS$ para el vector $v_1$:
+	$$
+	\begin{array}{ccccccc}
+	    ST(v_1) &=& S\left[T(v_1)\right] &=& S(v_2) &=& 0\\\\	
+	    TS(v_1) &=& T\left[S(v_1)\right] &=& T(v_2) &=& v_1.
+	\end{array}
+	$$
+	Lo que demuestra que 
+	$$ST(v_1)\neq TS(v_1).$$
+	Y por lo tanto,
+	$$ST\neq TS.$$\\
 
 \end{enumerate}
+
+
+\mysection{Espacios Nulos y Rangos}
+\;\\
+\subsection*{Espacio Nulo (kernel) e Inyectividad}
+
+
+%--------------------Definición 3.12
+\begin{mydef}[Espacio nulo, null \boldmath $T$]\,\\\\
+    Para $T\in \mathcal{L}(V,W)$, el \textbf{espacio nulo} de $T$ denotado por null $T$ es el subconjunto de $V$ formado por aquellos vectores que $T$ transforma a $0$:
+    $$\mbox{null } T = \left\{v\in V : Tv=0\right\}.$$
+\end{mydef}
+
+Algunos matemáticos usan el termino \textbf{kernel} en lugar de \textbf{espacio nulo}. La palabra "null" significa cero.\\\\
+
+El siguiente resultado demuestra que el espacio nulo o kernel de cada transformación lineal es un subespacio del dominio. En particular, $0$ está en el espacio nulo de cada transformación lineal.
+
+\setcounter{myteo}{13}
+%--------------------Teorema 3.14
+\begin{myteo}[El espacio nulo es un subespacio]\,\\\\
+    Suponga que $T\in \mathcal{L}(V,W)$. Entonces, null $T$ es un subespacio de $V$.\\\\
+	Demostración.-\; Ya que $T$ es una transformación lineal, entonces sabemos por 3.11 que $T(0)=0$. Por lo tanto, $0\in \mbox{null } T.$\\
+	Supongamos ahora que $u,v\in \mbox{null } T$. Entonces,
+	$$T(u+v)=Tu+Tv=0+0=0.$$
+	De ahí, $u+v\in \mbox{null } T$. Así null $T$ es cerrado bajo la adición.\\
+	Luego, supongamos que $u\in \mbox{null }T$ y $\lambda \in \textbf{F}$
+	$$T(\lambda u)=\lambda T u=\lambda 0 = 0.$$
+	Por lo que, $\lambda u \in \mbox{null } T$. Así, null $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, null $T$ es un subespacio de $V.$
+\end{myteo}
+
+%--------------------Definición 3.15
+\begin{mydef}[Inyectiva]\,\\\\
+    Una función $T:V\to W$ es llamada \textbf{inyectiva} si $Tu=Tv$ implica $u=v$.\\
+
+    o $T$ es inyectiva si $u\neq v$ implica que $Tu\neq Tv$.\\\\
+\end{mydef}
+
+Muchos matemáticos usan el termino \textbf{uno a uno}.\\
+
+El siguiente resultado dice que podemos comprobar si una transformación lineal es inyectivo al verificar si $0$ es el único vector que se asigna a $0$.
+
+%--------------------Teorema 3.16
+\begin{myteo}[Inyectividad es a equivalente decir que el espacio nulo es igual a \boldmath$\left\{0\right\}$]\,\\\\
+    Sea $T\in \mathcal{L}(V,W)$. Entonces, $T$ es inyectiva si y solo si null $T=\left\{0\right\}$.\\\\
+	Demostración.-\; Primero suponga que $T$ es inyectiva. Queremos demostrar que null $T$ = $\left\{0\right\}$. Sabemos por 3.11 que $\left\{0\right\}\subset \mbox{null }T$. Para probar la inclusión en la otra dirección, suponga $v\in \mbox{null }T$. Entonces,
+	$$t(v)=0=T(0).$$
+	Ya que $T$ es inyectiva, implica que $v=0$. Así, podemos concluir que null $T=\left\{0\right\}$. Como queriamos.\\
+
+	Para probar la implicación en la otra dirección. Si null $T=\left\{0\right\}$, entonces demostrarmos que $T$ es inyectiva. Para esto, suponga que $u,v\in V$ y $Tu=Tv$, de donde
+	$$0=Tu-Tv=T(u-v)$$
+	Así, $u-v$ está en null $T$, el cual es igual a $\left\{0\right\}$. Por lo tanto, $u-v=0$, implica que $u=v$. Concluimos que, $T$ es inyectiva.
+\end{myteo}
+\vspace{.5cm}
+
+\subsection*{Rango y sobreyectividad}
+
+Damos un nombre al conjunto de resultados de una función.
+
+%-------------------- Definición 3.17
+\begin{mydef}[Rango]\,\\\\
+    Para $T$ una función de $V$ en $W$, el \textbf{rango} de $T$ es el subconjunto de $W$ que consta de aquellos vectores que son de la forma $Tv$ para algún $v\in V$:
+$$\mbox{rango }T=\left\{Tv:v\in V\right\}.$$
+\end{mydef}
+
+Algunos matemáticos usan la palabra \textbf{imagen} en lugar de rango.\\
+
+EL siguiente resultado muestra que el rango de cada transformación lineal es un subespacio del espacio vectorial en el que se esta transformando.
+
+\setcounter{myteo}{18}
+%--------------------Teorema 3.19
+\begin{myteo}[El rango es un subespacio]\,\\\\
+    Si $T\in \mathcal{L}(V,W)$, entonces el rango de $T$ es un subespacio de $W$.\\\\
+	Demostración.-\; Suponga que $T\in \mathcal{L}(V,W)$. Entonces por 3.11, $T(0)=0$, lo que implica que $0\in$ rango $T$.\\
+	Si $w_1,w_2\in$ range $T$, entonces existe $v_1,v_2\in V$ tal que $Tv_1=w_1$ y $Tv_2=w_2$. Así,
+	$$T(v-1+v-2)=Tv_1+v_2=w_1+w_2.$$
+	Ya que $w_1+w_2\in$ rango $T$. Por lo tanto, rango $T$ es cerrado bajo la adición.\\
+	Si $w\in$ rango $T$ y $\lambda\in \textbf{F}$, entonces existe $v\in V$ tal que $T_v=w$.
+	Por lo que, 
+	$$T(\lambda v)=\lambda Tv=\lambda w.$$
+	Así, $\lambda w\in$ rango $T$. Por lo tanto, rango $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, el rango $T$ es un subespacio de $W$.
+\end{myteo}
+
+%--------------------Definición 3.20
+\begin{mydef}[Sobreyectiva]\,\\\\
+	Una función $T:V\to W$ es llamada \textbf{sobreyectiva} si su rango es igual a $W$.\\\\
+\end{mydef}
+
+Que una transformación lineal sea sobreyectiva depende del espacio vectorial al que se proyecte.\\\\
+
+
+\subsection*{Teorema fundamentel de las transformaciones lineales}
+
+\setcounter{myteo}{21}
+%--------------------Teorema 3.22
+\begin{myteo}[Teorema fundamental de las transformaciones lineales]\,\\\\
+	Suponga que V es de dimensión finita y $T\in \mathcal{L}(V,W)$. Entonces, $T$ es de dimensión finita y 
+	$$\dim V = \dim \mbox{ null } T + \dim \mbox{ range }T.$$
+	    Demostración.-\; Sea $u_1,\ldots,u_m$ una base de null $T$; en consecuencia $\dim$ null $T=m$. 
+\end{myteo}

@@ -2886,8 +2886,7 @@ ni tampoco decreciente en ningún intervalo a la izquierda.\\\\
 \end{enumerate}
 
 
-\appendix
-\chapter{Convexidad y Concavidad}
+\chapter*{Convexidad y Concavidad}
 
 %-------------------- definición 1
 \begin{def.}
@@ -3425,16 +3424,91 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 	\begin{enumerate}[(a)]
 
 	    %---------- (a)
-	    \item Para cualquier función $f$, la derivada por la derecha, $\displaystyle\lím_{h\to 0^-}[f(a+h)-f(a)/h$, se representa mediante $f_+'(a)$, y la deriva­ da por la izquierda por $f_+'(a)$. La demostración del Teorema 1 muestra realmente que $f_+'(a)$ y $f_-' (a)$ siempre existen si $f$ es convexa en algún intervalo abierto que contenga al punto $a$. Compruebe dicha afirmación y demuestre que $f_+'$ y $f_-'$ son crecientes; demuestre también que $f_-'(a)<f_+¡(a)$.\\\\
-		Demostración.-\;
+	    \item Para cualquier función $f$, la derivada por la derecha, $\displaystyle\lim_{h\to 0^-}[f(a+h)-f(a)]/h$, se representa mediante $f_+'(a)$, y la deriva­ da por la izquierda por $f_+'(a)$. La demostración del Teorema 1 muestra realmente que $f_+'(a)$ y $f_-' (a)$ siempre existen si $f$ es convexa en algún intervalo abierto que contenga al punto $a$. Compruebe dicha afirmación y demuestre que $f_+'$ y $f_-'$ son crecientes; demuestre también que $f_-'(a)<f_+¡(a)$.\\\\
+		Demostración.-\; Recordemos que para una función $f(x)$ convexa u un $a$ cualquiera que pertenece a algún intervalo, la función
+		$$g(h)=\dfrac{f(a+h)-f(a)}{h}$$
+		es decreciente cuando $h^+$ tiende a $0$. Por lo que,
+		$$f'_+8a)=\lim_{h\to 0}g(h)$$
+		existe, ya que $g(h)$ es decreciente y acotado con $\frac{f(a+h)-f(a)}{h}$ para cualquier $h<0$. Así deducimos que, 
+		$$f_+'(a)=\lim_{h\to 0^+}g(h)=\inf\left\{\dfrac{f(a+h)-f(a)}{h},h>0\right\}$$
+		Por otro lodo, $g(h)$ es creciente cuando $h^-$ tiende a $0$. Por lo que,
+		$$f'_-(a)=\lim_{h\to 0^-}g(h)$$
+		existe, ya que $g(h)$ es creciente y acotado con $\frac{f(a+h)-f(a)}{h}$ para cualquier $h>0$. Deducimos que
+		$$f_-'(a)=\lim_{h\to 0^-}g(h)=\sup\left\{\dfrac{f(a+h)-f(a)}{h},h<0\right\}.$$
+		Dado que $f$ es convexa, podemos afirmar que 
+		$$\dfrac{f(a+k)-f(a)}{k}<\dfrac{f(a+h)-f(a)}{h}$$
+		donde $k<0$ y $h>0$. Así, 
+		$$f_-'(a)\leq f_+'(a).$$
+		Luego,
+		$$
+		\begin{array}{rcl}
+		    f_-'(a) &\leq& f_+'(a)\\\\
+			    &<& \dfrac{f[a+(a+h)]-f(a)}{b-a}\\\\
+			    &=& \dfrac{f(b)-f(a)}{b-a}\\\\
+			    &=& \dfrac{f(a)-f(b)}{a-b}\\\\
+			    &=& \dfrac{f\left[b+(a-b)\right]}{a-b}\\\\
+			    &<& f_+'(b)\geq f_-'(b)\\\\
+		\end{array}
+		$$
+		Se sigue que $f_-'$ y $f_+'$ son funciones crecientes.\\\\
 
 	    %---------- (b)
 	    \item Recíprocamente,suponga que $f$ es convexa en $[a, b]$ y que $g$ es convexa en $[b, c]$, con $f(b) = g(b)$ y $f_-'(b)\leq g_+'(b)$ (Figura 13 (a)). Si definimos la función $h$ en $[a, c]$ como aquélla que es igual a $f$ en $[a,b]$, a $g$ en $[b,c]$, demuestre que $h$ es convexa en $[a, c]$. Indicación: Dados $P$ y $Q$ situados en lados opuestos de$O=(b, f(b))$, como se muestra en la Figura 13 (b), compare la pendiente de $OQ$ con la pendiente de $PO$.\\\\
-		Demostración.-\;
+		Demostración.-\; Para probar que la función $h$ es convexa, probemos que para cualesquiera puntos $x_1$, $x_2<x_3$ que pertenece al intervalo $[a,c]$, la inecuación 
+		$$\dfrac{f(x_2)-f(x_1)}{x_2-x_1}<\dfrac{f(x_3)-f(x_2)}{x_3-x_2}$$
+		es verdadera. En nuestro caso es suficiente elegir el punto medio para $x_2=b$. Esto ya que, la función $h$ es convexa en los intervalos $[a,b]$ y $[b,c]$. Por lo tanto, solo debemos probar la convexidad cuando un punto pertenece al intervalo $[a,b]$ y al intervalo $[b,c]$ y el punto medio es $x_2=b$. Sean $x\in [a,b]$ y $y\in [b,c]$. Luego, por (a) se tiene que
+		$$
+		\begin{array}{rcl}
+		    \dfrac{f(b)-f(x)}{b-x} &<& f_+'(b)\\\\
+		    \dfrac{g(y)-g(b)}{y-b} &>& g_-'(b).
+		\end{array}
+		$$
+
+		Por lo tanto, no es difícil deducir usando desigualdades previamente obtenidas que:
+
+		$$\dfrac{f(b)-f(x)}{b-x}<f_+'\leq g_-'(b)<\dfrac{g(y)-g(b)}{y-b}$$
+
+		En otras palabras,
+
+		$$\dfrac{f(b)-f(x)}{b-x}<\dfrac{g(y)-g(b)}{y-b}$$
+		lo que prueba que la función $h$ es convexa en el intervalo $[a,c]$.\\\\
+
+
 	
 	    %---------- (c)
 	    \item Demuestre que si $f$ es convexa, entonces $f_+'(a)=f_-'(a)$ si y sólo si $f_+'$ es continua en $a$. (Por tanto, $f$ es diferenciable precisamente cuando $f_+'$ es continua.) Indicación: $[f(b)-f(a)]/(b-a)$ está próximo a $f_-'(a)$ para $b<a$ próximo a $a$, y $f_+'(b)$ es menor que este cociente.\\\\
-		Demostración.-\;
+		Demostración.-\; Primeramente, supongamos que $f_+'(x)$ una función continua en $x=a$. Luego, sea $b$ un número real arbitrario tal que $b<a$. Se sigue de los segmentos anteriores que 
+		$$f_+'<f_-'\leq f_+'(a).$$
+		Ya que $f_+'$ es continua en $x=a$, se tiene que:
+		$$\lim_{b\to a}f_ +'(b)=f_+'(a).$$
+		Se sigue que,
+		$$f_-'(a)=f_+'(a).$$
+		Para probar la recíproca, supongamos que $f_-'(a)=f_+'(a)$. Para esto, debemos primero probar que $f_+'$ es continua por la derecha. En otras palabras, probaremos que
+		$$\lim_{b\to a^+} f_+'(b)=f_+'(a).$$
+		Sea $\epsilon>0$ un número real arbitrario. Recordemos por el segmento (a), la función $g(h)=\frac{f(a+h)-f(a)}{h}$ es decreciente cuando $h>0$ y tiende a $0$. Por lo que, podemos deducir que $\epsilon$ existirá para algún $x$ tal que $x>a$ y
+		$$\dfrac{f(x)-f(a)}{x-a}<f_+'(a)+\epsilon \qquad (1)$$
+		Ahora, sabemos que $f_+'$ existe, y $\lim\limits_{b\to a^+} f(b)=f(a)$. En otras palabras, si podemos elegir $b$ cerca de $a$, entonces $f(b)$ podría estar cerca de $f(a)$. Así, para $\epsilon$ podemos elegir algún $b$ tal que
+		$$\dfrac{f(x)-f(b)}{x-b}<\dfrac{f(x)-f(a)}{c-a}+\epsilon \qquad (2)$$
+		Por (1) y (2) se tiene,
+		$$
+		\begin{array}{rcl}
+		    f_+'(a) &<& f_+'(b)\\\\
+			 &<& \dfrac{f(x)-f(b)}{c-b}+\epsilon\\\\
+			 &<& \dfrac{f(x)-f(a)}{c-a}+\epsilon< f_+'+2\epsilon.
+		\end{array}
+		$$
+		Dado que $b$ está cerca de $a$ obtenemos que $f_+'(b)$ está cerca de $f_+'(a)$. Es decir, $f_+'$ es continua por la derecha a $a$.
+		Queda por demostrar que $f_+'$ es continua por la izquierda en $a$. Otra vez, sea $\epsilon >0$ y $y<a$ tal que
+		$$f_+'(a)-\epsilon=f_-'(a)<\dfrac{f(a)-f(y)}{a-y}.$$
+		Para un número real $b$ de manera que $c<b<a$, entonces
+		$$
+		\begin{array}{rcl}
+		    f_-'(a) - \epsilon &<& \dfrac{f(a)-f(c)}{a-c}\\\\
+				       &<& \dfrac{f(a)-f(b)}{a-b}\\\\
+				       &<& f_+'(b)<f_+'(a).
+		\end{array}
+		$$
+		Así, $\lim\limits_{b\to a^-}f_+'(b)=f_+(a)$. Por lo tanto, $f_+'$ es continua por ambos lados en $a$. Lo que significa que $f_+'$ es continua en $a$.\\\\
 
 	\end{enumerate}
 
@@ -3445,11 +3519,71 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (a)
 	    \item Demuestre que una función convexa definida en $\mathbb{R}$, o en cualquier intervalo abierto, debe ser continua.\\\\
-		Demostración.-\; 
+		Demostración.-\; Sean $c\in (a,b)$ cualquier punto y $\epsilon>0$. Entonces, tenemos que definir $\delta>0$ tal que
+		$$|f(x)-f(c)|<\epsilon,\; \mbox{siempre que } |x-c|<\delta.$$
+		Ahora, sea $x_1,c_2\in (a,b)$ con $x_1<c<x_2$. Además, tenemos la siguiente combinación convexa,
+		$$x=\dfrac{c-x_1}{x_1-x_1}x_2+\left(1-\dfrac{c-x_1}{x_2-x_1}\right)x_1,\quad 0<\dfrac{c-x_1}{x_2-x_1}<1.$$
+		Luego,
+		$$
+		\begin{array}{rcl}
+		    (x_2-x_1)f(c)&\leq& (c-x_1)f(x_2)+(x_2-c)f(x_1)\\\\
+				 &\leq& (c-x_1)f(c)+(x_2-x_1+x_1-c)f(x_1)\\\\
+				 &\leq& (c-x_1)\left[f(x_2)-f(x_1)\right]+(x_2-x_1+x_1-c)f(x_1).
+		\end{array}
+		$$
+		Esto implica que,
+		$$\dfrac{f(c)-f(x_1)}{c-x_1}\leq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}.\qquad (1)$$
+
+		Por otro lado, tenemos
+
+		$$
+		\begin{array}{rcl}
+		    (x_2-x_1)f(c)&\leq&(c-x_1)f(x_2) + (x_2-c)f(x_1)\\\\
+				 &\leq& (c-x_2+x_2-x_1)f(x_2)+(x_2-c)f(x_1)\\\\
+				 &\leq& (x_2-c)\left[f(x_1)-f(x_2)\right]+(x_2-x_1)f(x_2).
+		\end{array}
+		$$
+		De donde,
+		$$\dfrac{f(x_2)-f(x_1)}{x_2-x_1}\leq \dfrac{f(x_2)-f(c)}{x_2-c}. \qquad (2)$$
+		Así, por (1) y (2) para $x_1,x_2,c\in (a,b)$ tal que $x_1<c<x_2$, tenemos que
+		$$\dfrac{f(c)-f(x_1)}{c-x_1}\leq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}\leq \dfrac{f(x_2)-f(c)}{x_2-c}.\qquad (3)$$
+
+		Ahora, para dos puntos cualesquiera $c,d\in [x_1,x_2]$, podemos asumir sin perdida de generalidad que $d<c$. Ya que $(a,b)$ es abierto, existe $x_0,x_3\in(a,b)$ de modo que $x_0<x_1<d<c<x_2<x_3$. Entonces, por (3), para  $d<c<x_3$ y $c<x_2<x_3$ se tiene 
+		$$\dfrac{f(c)-f(d)}{c-d}\leq \dfrac{f(x_3)-f(d)}{x_3-d}\leq \dfrac{f(x_3)-f(c)}{x_3-c},$$
+		$$\mbox{y}$$
+		$$\dfrac{f(x_2)-f(c)}{x_2-c}\leq \dfrac{f(x_3)-f(c)}{x_3-c}\leq \dfrac{f(x_3)-f(x_2)}{x_3-x_2}$$
+		respectivamente.
+
+		Por lo tanto,
+		$$\dfrac{f(c)-f(d)}{c-d}\leq \dfrac{f(x_3)-f(d)}{x_3-d}\leq \dfrac{f(x_3)-f(x_2)}{x_3-x_2}.\qquad (4)$$
+
+		Similar a lo de arriba, si $x_0<x_1<d$ y $x_1<d<c$. Entonces,
+		$$\dfrac{f(c)-f(x_1)}{c-x_1}\geq \dfrac{f(c)-f(x_0)}{c-x_0}\geq \dfrac{f(x_1)-f(x_0)}{x_1-x_0},$$
+		$$\mbox{y}$$
+		$$\dfrac{f(c)-f(d)}{c-d}\geq \dfrac{f(c)-f(x_1)}{c-x_0}\geq \dfrac{f(d)-f(x_1)}{d-x_1},$$
+		respectivamente. De esta manera:
+		$$\dfrac{f(c)-f(d)}{c-d}\geq \dfrac{f(c)-f(x_1)}{c-x_1}\geq \dfrac{f(x_1)-f(x_0)}{x_1-x_0}.\qquad (5)$$
+
+		Así, por (4) y (5) para $c,d\in[x_1,x_2]$, 
+		$$\dfrac{f(c)-f(d)}{c-d}\leq M = \max\left\{\dfrac{|f(x_1)|-f(x_0)}{x_1-x_0},\dfrac{|f(x_3)-f(x_2)|}{x_3-x_2}\right\}.$$
+
+		Por último, dado $\epsilon>0$ tomemos $0<\delta<\min\left\{\dfrac{\epsilon}{M},\dfrac{x_2-x_1}{2}\right\}$. Entonces, para $x\in(c_\delta,c+\delta)$
+		$$|f(c)-f(x)|\leq |c-x|M<\dfrac{\epsilon}{M}=\epsilon.$$
+		Por lo tanto, $f$ es continua en $(a,b)$.\\\\
+
 
 	    %---------- (b)
 	    \item Dé un ejemplo de una función convexa en un intervalo cerrado que no sea continua y explique exactamente qué tipos de discontinuidades son posibles. \\\\
-		Respuesta.-\; 
+		Respuesta.-\; Si tuviéramos un intervalo cerrado en lugar de un intervalo abierto en la parte (a), la función $f$ podría no ser continua. Por ejemplo, consideremos al función $f:[0,1]\to \mathbb{R}$ definida por
+		$$
+		f(x)=\left\{
+		    \begin{array}{rcl}
+			x^2 & \mbox{si} & x\neq 1,\\
+			5 & \mbox{si} & x=1.
+		    \end{array}
+		\right.
+		$$
+		Claramente $f$ es convexa en $[0,1]$.\\\\
 
 	\end{enumerate}
 
@@ -3461,18 +3595,58 @@ se obtiene la definición de una función \textbf{cóncava}. No es difícil comp
 
 	    %---------- (a)
 	    \item Demuestre que una función débilmente convexa es convexa si y sólo si su gráfica no contiene segmentos rectilíneos. (A veces, una función débilmente convexa se denomina simplemente “convexa”, mientras que las funciones convexas en el sentido que las hemos definido en este libro se denominan “estrictamente convexas”.)
+		Demostración.-\; Claramente $f$ es débilmente convexa en un intervalo si y sólo si para todo $a$ y $b$ en el intervalo, el segmento que une $(a,,f(a))$ y $(b,f(b))$ se encuentra por encima o sobre la gráfica de $f$. Si $f$ es convexa, entonces es claro que no contiene segmentos de recta.Por otro lado, supongamos que $f$ es débilmente convexa y el gráfico no contiene segmentos de recta. Para probar que $f$ es convexa, tenemos que mostrar que el segmento de lineal que une $(a,f(a))$ y $(v,f(b))$ no puede contener ni un punto $(x,f(x))$ para $a<x<b$. Supongamos que si contiene un punto. Ya que el gráfico de $f$ no contiene todo el segmento de 
+		de $(x,f(x))$ a $(b,f(b)),$ existe por lo mucho algún $x'\in (x,b)$ tal que el punto $(x',f(x'))$ se encuentra por debajo de esta segmento de linea. Ahora, es fácil ver que $(x,f(x))$ está por encima del segmento de linea de $(a,f(a))$ a $(x',f(x'))$, contradiciendo el hecho de que $f$ es débilmente conexa.\\\\
 
 	    %---------- (b)
 	    \item Reformule los teoremas de esta sección para el caso de funciones débilmente convexas.
+		Respuesta.-\;
+		\begin{enumerate}[\textit{Teorema} 1:]
+		    \item sea $f$ una función débilmente conexa, diferenciable en algún punto $a$. Entonces, el gráfico de $f$ se encuentra por encima o sobre la recta tangente en $(a,f(a))$. Si $a<b$ y $f$ es diferenciable en $a$ y $b$, Entonces $f'(a)\leq f'(b)$.
+		    \item[\textit{Lema}:] Sea $f$ diferenciable y $f'$ no decreciente. Si $a<b$ y $f(a)=f(b)$. Entonces, $f'(x)\leq f(a)=f(b)$, para cualquier $a<x<b$.
+		    \item Sea $f$ diferenciable y $f'$ no decreciente. Entonces, $f$ es débilmente convexa.
+		    \item El gráfico de $f$ se encuentra por encima o sobre la renta tangente en cada punto. Entonces, $f$ es débilmente convexa.
+		    \item Si $f$ es diferenciable e interseca su recta tangente en cada punto de un subintervalo, entonces $f$ es débilmente convexa o débilmente cóncava en ese subintervalo.
+		\end{enumerate}
 
 	\end{enumerate}
+	\vspace{.5cm}
 
     %------------------- 12.
     \item Halle dos funciones convexas $f$ y $g$ tales que $f(x) = g(x)$ si y sólo si $x$ es un entero. Indicación: Halle primero un caso en el que $g$ sea sólo débilmente convexa y luego modifíquelo utilizando el resultado del Problema 9 como guía.\\\\
-	Respuesta.-\; 
+	Respuesta.-\; Para hacer que la función $g(x)$ sea convexa, debemos reemplazar los segmentos de línea recta por la curva adecuada. La curva debe ser tal que para cada entero $k$, la derivada de la izquierda de la curva (de $k-1$ a $k$) siempre es menor que la derivada de la derecha (de $k$ a $k+1$)\\
+	Dado que tanto $f$ como $g$ son convexas, una solución simple es sacar el promedio de estas funciones. Esto asegura que $f$ y $g$ sean iguales en puntos enteros, y ambos permanecerán convexos también.
+	$$g(x)=\dfrac{1}{2}\left[g(x)+f(x)\right].$$\\
 
     %------------------- 13.
-    \item Un conjunto A de puntos del plano se denomina \textit{convexo} si $A$ contiene a cualquier segmento rectilíneo que une a dos puntos cualesquiera del conjunto (Figura 14). Dada una función $f$ , sea $A_f$ el conjunto de los puntos $(x,y)$ con $y> f(x)$, de manera que $A_f$ es el conjunto de los puntos situados en la gráfica o por encima de la gráfica de $f$ . Demuestre que $A_f$ es convexo si y sólo si $f$ es débilmente convexa, según la terminología introducida en el problema anterior. En la referencia [18] de las Lecturas Aconsejadas, puede encontrarse más información referente a los conjuntos convexos.\\\\
-	Demostración.-\; 
+    \item Un conjunto $A$ de puntos del plano se denomina \textit{convexo} si $A$ contiene a cualquier segmento rectilíneo que une a dos puntos cualesquiera del conjunto (Figura 14). Dada una función $f$ , sea $A_f$ el conjunto de los puntos $(x,y)$ con $y> f(x)$, de manera que $A_f$ es el conjunto de los puntos situados en la gráfica o por encima de la gráfica de $f$ . Demuestre que $A_f$ es convexo si y sólo si $f$ es débilmente convexa, según la terminología introducida en el problema anterior. En la referencia [18] de las Lecturas Aconsejadas, puede encontrarse más información referente a los conjuntos convexos.\\\\
+	Demostración.-\; Sea $f$ una función y $A_f$ el conjunto definido como:
+	$$A_f=\left\{(x,y):y\geq f(x)\right\}.$$
+	Entonces, tenemos que demostrar que $f$ es débilmente convexa si y sólo si $A_f$ es un subconjunto convexo de $\mathbb{R}^2$.\\
+	Suponga que $A_f$ es un subconjunto convexo de $\mathbb{R}^2$. Entonces, por la definición de convexidad, tenemos que la recta que une cualesquiera dos puntos en $A_f$ debe estar en $A_f$. Sea $(x_i,f(x_i))$, para $i=1,2$, dos puntos en el gráfico de $f$. Entonces, por la definición de $A_f$ vemos que $(x_i,f(x_i)\in A_f)$, para $i=1,2$. Ya que $A_f$ es convexa se tiene que la recta que une $(x_1,f(x_1))$ y $(x_2,f(x_2))$ está en $A_f$. Pero esto implica que, para $t\in[0,1]$,
+	$$\left[(1-t)x_1+tx_2,(1-t)f(x_1)+tf(x_2)\right]\in A_f$$
+	de donde
+	$$(1-t)f(x_1)+tf(x_2)\geq f\left[(1-t)x_1+tx_2\right].$$
+	Ahora, para cualquier $x_1<c<c_2$, se tiene
+	$$x=\dfrac{c-x_1}{x_2-x_1}x_2+\left(1-\dfrac{c-x_1}{x_2-x_1}\right)x_1,\qquad 0<\dfrac{c-x_1}{x_2-x_1}<1.$$
+	En particular para $t=\frac{c-x_1}{x_2-x_1}$, obtenemos
+	$$f(c)\leq \dfrac{c-x_1}{x_2-x_1}f(x_2)+\left(1-\dfrac{c-x_1}{x_2-x_1}\right)f(x_1).$$
+	Reescribiendo la ecuación,
+	$$
+	\begin{array}{rcl}
+	    (x_2-x_1)f(c)&\leq& (c-x_1)f(x_2)+(x_2-c)f(x_1)\\\\
+			 &\leq& (c-x_1)f(x_2)+(x_2-x_1+x_1-c)f(x_1)\\\\
+			 &\leq& (c-x_1)\left[f(x_2)-f(x_1)\right]+(x_2-x_1)f(x_1).
+	\end{array}
+	$$
+	Esto implica que,
+	$$\dfrac{f(c)-f(x_1)}{c-x_1}\leq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}. \qquad (1)$$
+	Ya que $x_1,x_2$ y $c$ fueron elegidos arbitrariamente, tenemos que $f$ es débilmente convexa.\\
+
+	Por otro lado, supongamos que $f$ es débilmente convexa. Entonces, tenemos que mostrar que $A_f$ es convexa. Comencemos notando que, para cualesquiera puntos $(a_1,b_1)$, $(a_1,b_2)$ y $(c_1,d_1)$, $c_1,d_2$. Si $d_1\geq b_1$ y $d_2\geq b_2$. Entonces, la recta que une los puntos $(c_1,d_1)$, $c_1,d_2$ debe estar arriba o sobre la recta que une $(a_1,b_1)$, $(a_1,b_2)$. Así, para cualquier par de puntos $(x_1,y_1)$ y $(x_2,y_2)$ en $A_f$, ya que $y_i\geq f(x_i),i=1,2$ la recta que une los puntos $(x_1,y_1)$ y $(x_2,y_2)$ debe estar encima o sobre la recta que une $(x_1,f(x_1))$ y $(x_2,f(x_2))$. Es suficiente mostrar que la recta que une $(x_1,f(x_1))$ y $(x_2,f(x_2))$ está contenido en $A_f$. Pero ya que $f$ es débilmente convexa, se tiene que para cualesquiera puntos $x_1<c<x_2$,
+	$$\dfrac{f(c)-f(x_1)}{c-x_1}\leq \dfrac{f(x_2)-f(x_1)}{x_2-x_1}$$
+	Esto implica que,
+	$$(1-t)f(x_1)+tf(x_2)\geq f\left[(1-t)x_1+tx_2\right],$$
+	para cualquier $t\in[0,1]$. Se sigue que la recta que une $(x_1,f(x_1))$ y $(x_2,f(x_2))$ està contenido en $A_f$. De esta manera completamos la demostración.
 
 \end{enumerate}
