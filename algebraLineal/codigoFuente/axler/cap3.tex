@@ -77,7 +77,7 @@
 \end{mydef}
 
 %-------------------- 3.7 teorema
-\begin{myteo}[\boldmath$\mathcal{L}\left(V,W\right)$ es un espacio vectorial]\,\\\\
+\begin{myteo}[\boldmath $\mathcal{L}\left(V,W\right)$ es un espacio vectorial]\,\\\\
     Con las Operaciones de adición y multiplicación escalar como se definió, $\mathcal{L}\left(V,W\right)$ es un espacio vectorial.
 \end{myteo}
 
@@ -663,5 +663,149 @@ Que una transformación lineal sea sobreyectiva depende del espacio vectorial al
 \begin{myteo}[Teorema fundamental de las transformaciones lineales]\,\\\\
 	Suponga que V es de dimensión finita y $T\in \mathcal{L}(V,W)$. Entonces, $T$ es de dimensión finita y 
 	$$\dim V = \dim \mbox{ null } T + \dim \mbox{ range }T.$$
-	    Demostración.-\; Sea $u_1,\ldots,u_m$ una base de null $T$; en consecuencia $\dim$ null $T=m$. 
+	    Demostración.-\; Sea $u_1,\ldots,u_m$ una base de null $T$; en consecuencia $\dim$ null $T=m$. Por 2.33, la lista linealmente independiente $u_1,\ldots,u_m$ puede extenderse a una base
+	    $$u_1,\ldots,u_m,v_1,\ldots,v_n$$
+	    de $V$. Así la $\dim V=m+n$. Para completar la prueba, sólo necesitamos demostrar que rango $T$ es de dimensión finita y la dim rango $T=n$. Es decir, mostrarmos que  $Tv_1,\ldots,Tv_n$ es una base del rango de $T$.\\
+
+	    Sea $v\in V$. Ya que, $u_1,\ldots,u_m,v_1,\ldots,v_n$ genera $V$. Entonces,
+	    $$v=a_1u_1+\cdots+a_mu_m+b_1v_1+\cdots+b_nv_n.$$
+	    donde las $a's$ y $b's$ son en $\textbf{F}$. Aplicando $T$ a ambos lados de la ecuación, obtenemos
+	    $$T_v=b_1Tv_1+\ldots+b_nTv_n.$$
+	    El termino con la forma $Tu_j$ desaparece, porque cada $u_j$ esta en null $T$. De donde, la última ecuación implica que $Tv_1,\ldots,Tv_n$ genera rango $T$. En particular, rango $T$ es de dimensión finita.\\
+
+	    Ahora, demostremos que $Tv_1,\ldots,Tv_n$ es linealmente independiente. Supongamos $c_1,\ldots,c_n\in \textbf{F}$ y 
+	    $$c_1Tv_1+\cdots+c_ntv_n=0.$$
+	    Entonces,
+	    $$T\left(c_1v_1+\cdots +c_nv_n\right)=0.$$
+	    Por lo tanto,
+	    $$c_1v_1+\cdots c_nv_n \mbox{ null} T.$$
+	    Luego, ya que $u_1,\ldots,u_m$ genera null $T$, podemos escribir
+	    $$c_1v_1+\cdots + c_nv_n = d_1u_1+\cdots + d_mu_m.$$
+	    para $d's$ en $\textbf{F}$. Por el hecho de que $u_1,\ldots,u_m,v_1,\ldots,v_n$ es linealmente independiente. Entonces,  todos los $c's$ y $d's$ son $0$. Por lo tanto, $Tv_1,\ldots,Tv_n$ es linealmente independiente y por ende es una base del rango $T$, como queriamos demostrar.
+
 \end{myteo}
+
+Ahora podemos demostrar que ninguna transformación lineal desde un espacio vectorial de dimensión finita hacia un espacio vectorial "más pequeño" puede ser inyectivo, donde "más pequeño" se mide por la dimensión.
+
+%-------------------- teorema 3.23
+\begin{myteo}[Una transformación para un espacio de dimensión pequeña no es inyectivo]\,\\\\
+    Suponga que $V$ y $W$ son espacios vectoriales de dimensión finita tales que $\dim V>\dim W$. Entonces, ninguna transformación lineal de $V$ en W es inyectiva.\\\\
+	Demostración.-\; Sea $T\in \mathcal{L}(V,W)$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    \dim \mbox{ null } T &=& \dim V - \dim \mbox{ range } T\\\\
+				 &\geq & \dim V - \dim W\\\\
+				 &>& 0.
+	\end{array}
+	$$
+	Donde la ecuación de arriba viene dado por el teorema fundalmental de las transformaciones lineales (3.22). La desigualdad anterior establece que $\dim$ null $T > 0$. Esto significa que $\null T$ contiene vectores distintos a cero. Por 3.16 concluimos que $T$ es no inyectiva.
+\end{myteo}
+
+El siguiente resultado muestra que ninguna transformación lineal de un espacio vectorial de dimensión finita a un espacio vectorial "más grande" puede ser sobreyectivo, donde "más grande" se mide por dimensión.
+
+%-------------------- teorema 3.24
+\begin{myteo}[Una transformación a un espacio de mayor dimensión no es suryectiva]\,\\\\
+    Suponga que $V$ y $W$ son espacios vectoriales de dimensión finita tales que $\dim V<\dim W$. Entonces, ninguna transformación lineal de $V$ en $W$ es sobreyectiva.\\\\
+	Demostración.-\; Sea $T\in \mathcal{L}(V,W)$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    \dim \mbox{ range } T &=& \dim V - \dim \mbox{ null } T\\\\
+				  &\leq & \dim V\\\\
+				  &<& \dim W.
+	\end{array}
+	$$
+	Donde la ecuación de arriba viene dado por el teorema fundalmental de las transformaciones lineales (3.22). La desigualdad anterior establece que range $T < \dim W$. Esto significa que range $T$ no puede ser igual a $W$.  Por lo tanto, $T$ es no sobreyectiva.\\\\
+\end{myteo}
+
+Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la teoría de ecuaciones lineales. La idea aquí es expresar cuestiones sobre sistemas de ecuaciones lineales en términos de transformaciones lineales.
+
+%-------------------- ejemplo 3.25
+\begin{myejem}
+    Reformule en términos de transformaciones lineales la pregunta de si un sistema homogéneo de ecuaciones lineales tiene una solución distinta de cero.\\\\
+	Respuesta.-\; Sean los enteros $m$ y $n$ y sea $A_{j,k}\in \textbf{F}$ para $j=1,\ldots,m$ y $k=1,\ldots,n$. Considere el sistema homogéneo de ecuaciones lineales
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\sum_{k=1}^n A_{1,k}x_k &=& 0\\
+						 &\vdots&\\
+	     \displaystyle\sum_{k=1}^n A_{m,k}x_k &=& 0.
+	\end{array}
+	$$
+	Está claro que $x_1=\cdots=x_n=0$ es la solución al sistema de ecuaciones; la cuestión aquí es si existen otras soluciones.\\
+
+	Defina $T:\textbf{F}^n \to \textbf{F}^m$ por
+	$$T(x_1,\ldots,x_n)=\left(\sum_{k=1}^n A_{1,k}x_k,\ldots,\sum_{k=1}^n A_{m,k}x_k\right).$$
+	La ecuación $T(x_1,\ldots, x_n)=0$ (el $0$ aquí es la identidad aditiva en $\textbf{F}^m$, es decir, la lista de longitud $m$ de todos los $0$) es la misma que el sistema homogéneo de ecuaciones lineales anterior.\\
+	Así pues, queremos saber si null $T$ es estrictamente mayor que $\left\{0\right\}$. En otras palabras, podemos reformular nuestra pregunta sobre las soluciones no nulas de la siguiente manera (por 3.16): ¿Qué condición asegura que $T$ no es inyectiva?
+\end{myejem}
+
+%-------------------- teorema 3.26
+\begin{myteo}[Sistemas homogéneos de ecuaciones lineales]\,\\\\
+    Un sistema homogéneo de ecuaciones lineales con más variables que ecuaciones tienen soluciones distintas de cero.\\\\
+	Demostración.-\; Usemos la notación y el resultado de arriba. De donde, $T$ es una transformación lineal de $\textbf{F}^n$ en $\textbf{F}^m$, y tenemos un sistema homogéneo de $m$ ecuaciones lineales con $n$ variables $x_1,\ldots,x_n$. Por 3.23 vemos que $T$ no es inyectiva si $n>m$.
+\end{myteo}
+
+\setcounter{myteo}{28}
+%-------------------- teorema 3.29
+\begin{myteo}[Sistemas no homogéneos de ecuaciones lineales]\,\\\\
+    Un sistema no homogéneo de ecuaciones lineales con más ecuaciones que variables no tienen solución para alguna opción de los términos constantes.\\\\
+	Demostración.-\; $T$ es una transformación lineal para $\textbf{F}^n$ en $\textbf{F}^m$, y tenemos un sistema de $m$ ecuaciones con $n$ variables $x_1,\ldots,x_n$. Por 3.24 vemos que $T$ es no sobreyectiva si $n<m$.
+\end{myteo}
+
+
+\section*{Ejercicios 3.B}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %--------------------1.
+    \item Dar un ejemplo de una transformación lineal tal que $\dim$ null $T=3$ y $\dim$ range $T=2$.\\\\
+	Respuesta.-\; Sea, la transformación lineal $T:\textbf{R}^5 \to \textbf{R}^5$ tal que 
+	$$(x_1,x_2,x_3,x_5,x_5)=(0,0,0,x_4,x_5).$$
+	Primero demostraremos que es una transformación lineal. Sea $x,y\in \textbf{R}^5$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    T(x+y) &=& T\left[(x1,x_2,x_3,x_4,x_5)+(y_1,y_2,y_3,y_5,y_5)\right]\\\\
+		   &=& T(x_1+y_1,x_2+y_2,x_3+y_3,x_4+y_4,x_5+y_5)\\\\
+		   &=& (0,0,0,x_4+y_4,x_5+y_5)\\\\
+		   &=& (0,0,0,x_4,x_5)+(0,0,0,y_4,y_5)\\\\
+		   &=& T(x)+T(y).
+	\end{array}
+	$$
+	Luego, sea $\lambda \in \textbf{R}$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    T(\lambda x) &=& T(\lambda x_1,\lambda x_2,\lambda x_3,\lambda x_4,\lambda x_5)\\\\
+			 &=& (0,0,0,\lambda x_4,\lambda x_5)\\\\
+			 &=& \lambda(0,0,0,x_4,x_5)\\\\
+			 &=& \lambda T(x).
+	\end{array}
+	$$
+	Por lo tanto, $T$ es una transformación lineal. Ahora, por la definición 3.12. Se tiene que cumplir:
+	$$(x_1,x_2,x_3,x_4,x_5)=(0,0,0,0,0,0).$$
+	Así,
+	$$\mbox{null }T=\left\{(x_1,x_2,x_3,0,0)\in \textbf{R}^5 | x_1,x_2,x_3\in \textbf{R}\right\}.$$
+	Esta espacio claramente tiene como base a $e_1,e_2,e_3\in \textbf{R}^5$ de dimensión $3$, y dado que $\dim$ range $T=2$, por el teorema fundalmental de transformaciones lineales, se tiene que
+	$$\dim \textbf{R}^5=3+\dim \mbox{ range } T.$$
+	De esta manera concluimos la demostración.\\\\
+
+    %--------------------2.
+    \item Suponga que $V$ es un espacio vectorial y $S,T\in \mathcal{V,V}$ tales que
+    $$\mbox{range }S\subset \mbox{null }T.$$
+    Demostrar que $(ST)^2=0.$\\\\
+	Demostración.-\; Sea $v\in V$. Por definición 
+	$$(ST)^2(v)=S\left(T(S(T(v)))\right)$$
+
+    %--------------------3.
+    \item Suponga que $v_1,\ldots,v_m$ es una lista de vectores en $V$. Defina $T\in \mathcal{L}\left(\textbf{F}^m,V\right)$ por
+    $$T(z_1,\ldots,z_m)=z_1v_1+\cdots+z_mv_m.$$
+	
+    \begin{enumerate}[(a)]
+
+	%----------(a)
+	\item ¿Qué propiedad de $T$ corresponde a $v_1,\ldots,v_m$ que genere $V$?\\\\
+	    Respuesta.-\; La propiedad que corresponde a $v_1,\ldots,v_m$ que genere $V$ es que $T$ sea sobreyectiva.\\\\
+
+	%----------(b)
+	\item ¿Qué propiedad de $T$ corresponde a $v_1,\ldots,v_m$ que sea linealmente independiente?\\\\
+	    Respuesta.-\; La propiedad que corresponde a $v_1,\ldots,v_m$ que sea linealmente independiente es que $T$ sea inyectiva.\\\\
+    \end{enumerate}
+\end{enumerate}

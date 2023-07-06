@@ -67,3 +67,155 @@ También cabe mencionar que el error de tipo II aumenta conforme el error de tip
 
 
 \section{Tipos de regiones críticas y la función de potencia}
+
+Se desea estudiar los tipos de regiones críticas que pueden surgir. Considérese la hipótesis nula simple
+$$H_0:\theta=\theta_0$$
+con respecto al parámetro de interés $\theta$, cuando se muestrea una distribución cuya función de densidad de probabilidad es $f(x\; \theta)$ en donde $\theta_0$ es el valor propuesto de $\theta$. Si la hipótesis alternativa es de la forma
+$$H_1:\theta>\theta_0\qquad \mbox{o}\qquad H_1:\theta<\theta_0,$$
+se dice que $H_1$ es una hipótesis \textit{alternativa unilateral}. La región crítica también recibe el nombre de región de \textit{rechazo unilateral}. Vale la pena notar que la hipótesis alternativa unilateral debe formularse sólo si el valor de uno de los parámetros que se encuentre en el lado opuesto, no tiene sentido para el investigador. De otro modo, debe establacerse una \textit{hipótesis alternativa bilateral}. Esto es, si la hipótesis alternativa no proporciona una dirección con respecto al valor propuesto de $\theta_0$. Es decir,
+$$H_1:\theta\neq \theta_0.$$
+El tamaño del error de tipo II se obtiene como una función de los valores alternativos de $\theta$ ($\theta>$) bajo $H_1$. Debe notarse que $\beta(\theta)$ se conoce como la \textit{función característica de operación}, y cuando se grafica $\beta(\theta)$ para diversos valores de $\theta$ de $H_i$, se obtiene una curva característica de operación (CO).\\
+
+Dado que $\beta(\theta)$ es la probabilidad de que un valor de la estadística de prueba no se encuentre en la región crítica cuando $H_0$ es falsa, entonces $1-\beta(\theta)$ representa la probabilidad de que un valor de la estadística de prueba se encuentre dentro de la región crítica cuando $H_0$ es falsa. Esta probabilidad se conoce como la \textit{función potencia de la prueba}. En otras palabras, las funciones potencia y característica de operación son complementarias. 
+
+%-------------------- Definición 9.4
+\begin{def.}
+    La función $P(\theta)=1-\beta(\theta)$ recibe el nombre de función potencia y representa la probabilidad de rechazar la hipótesis nula cuando esta es falsa; es decir, cuando el valor del parámetro de $H_1$ es cierto.
+\end{def.}
+
+En esencia, la potencia de una prueba es la probabilidad de detectar que $H_0$ es, en forma verdadera, falsa; de aquí el uso de la palabra potencia. 
+
+
+\section{Las mejores pruebas}
+
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de tamaño $n$ de una población cuya función de densidad de probabilidad es $f(x;\theta)$, y considérese la hipótesis
+$$H_0:\theta=\theta_0$$
+contra
+$$H_1:\theta=\theta_1.$$
+en donde se especifican $\theta_0$ y $\theta_1$. Supóngase que $\alpha$ es el tamaño máximo del error de tipo I que se puede tolerar. Entonces la mejor prueba para $H_0$ contra $H_1$ es aquella que tiene el tamaño más pequeño del error de tipo II (y de esta forma la mayor potencia) de entre todas las pruebas que tengan un tamaño del error de tipo I no mayor que $\alpha$. Se puede determinar las regiones críticas para estas pruebas mediante mediante el uso del siguiente teorema, el cual se conoce como el \textbf{lema de Neyman Pearson}:
+
+%-------------------- Teorema 9.
+\begin{teo}
+    Si existe una región crítica $C$ de tamaño $\alpha$ y una constante positiva $k$ tal que
+    \begin{center}
+	$\dfrac{L_0(x_1,x_2,\ldots,x_n; \theta_0)}{L_1(x_1,x_2,\ldots,x_n;\theta_1)}\leq k\quad$ interior $C$,
+    \end{center}
+    \begin{center}
+	$\dfrac{L_0(x_1,x_2,\ldots,x_n; \theta_0)}{L_1(x_1,x_2,\ldots,x_n;\theta_1)}\geq k\quad$ exterior $C$,
+    \end{center}
+    entonces $C$ es la mejor región crítica de tamaño $\alpha$ para probar $H_0:\theta=\theta_0$ contra $H_1:\theta = \theta_1$, en donde $L_0$  y $L_1$ son la funciones de verosimilitud relativa a $H_0$ y $H_1$ respectivamente.
+\end{teo}
+
+
+\section{Principios generales para probar una \boldmath $H_0$ simple contra una $H_1$ uni o bilateral}
+
+No existen pruebas uniformes más potentes para hipótesis alterativas bilaterales a pesar de que, en forma usual, existen para hipótesis alternativas unilaterales. 
+
+\subsection{Principios generales para el caso 1}
+Considérese la prueba de la hipótesis nula
+$$H_0:\theta=\theta_0$$
+contra la alternativa
+$$H_1:\theta\neq \theta_0,$$
+donde $\theta_0$ es el valor propuesto de algún parámetro $\theta$ bajo $H_0$. Dada una muestra aleatoria de tamaño $n$ de la distribución de interés, el procedimiento general para probar $H_0$ es escoger el mejor estimador de $\theta$, $T$ y rechazar $H_0$ cuando el estimado $t$ obtenido de la muestra, es en forma suficiente, diferente del valor propuesto de $\theta_0$. Esto es, si el estimado $t$ es lo suficientemente distinto del valor propuesto $\theta_0$, entonces se ha observado un evento raro (y la hipótesis nula es correcta), o se ha observado un valor de la estadística que sugiere un valor $\theta$ diferente del propuesto $\theta_0$. Cuando el estimado $t$ es en forma suficiente distinto de $\theta_0$, se asumirá la última posibilidad y se dejará el tamaño del error de tipo II igual a la probabilidad del anterior. En particular, para un tamaño preseleccionado $\alpha$, del error de tipo I se obtiene una región crítica bilateral en los extremos de la distribución de muestreo de $T$, de esta manera tal que el área, en cualquier lado, más allá del valor crítico es igual a $\alpha/2$. Entonces e rechaza $H_0$ en favor de $H_1$ cuando el estimado $t$ se encuentra dentro de la región crítica. Cuando el estimado $t$ no se encuentra dentro de la región crítica, no puede rechazarse la hipótesis nula. De esta forma, cualquier diferencia con respecto al valor de $\theta_0$ se considera causada por fluctuaciones en el muestreo del estimador $T$.\\
+Este enfoque es muy similar a la construcción de un intervalo de confianza bilateral para $\theta$. Para cualquier valor propuesto de $\theta_0$, que se encuentre dentro de un intervalo de confianza del $100(1-\alpha)\%$ para $\theta$, $H_0$ no será rechazada. y si se encuentra fuera se rechazara la hipótesis nula. 
+
+\subsection{Principios generales para el caso 2}
+Considérese la prueba de la hipótesis nula
+$$H_0:\theta=\theta_0$$
+contra la alternativa
+$$H_1:\theta>\theta_0.$$
+Para un tamaño $\alpha$, del error tipo I, la región crítica se encuentra localizada en el extremo superior de la distribución de muestreo $T$ y $H_0$ se rechaza si el estimado $t$ no es menor que el valor crítico. 
+
+\subsection{Principios generales para el caso 3}
+Para probar la hipótesis nula
+$$H_0:\theta=\theta_0$$
+contra
+$$H_1:\theta<\theta_0,$$
+el procedimiento general es rechazar a $H_0$ cada vez que el estimado $t$ sea, e forma suficiente menor que el valor propuesto $\theta_0$.\\\\
+
+Con respecto a la prueba de hipótesis estadísticas, y debido a que se coloca un gran énfasis en el tamaño del error de tipo I generalmente se formula la la hipótesis nula tal que esta se rechace si la evidencia experimental apoya esta decisión. Es decir, lo que realmente se desea es concluir que la hipótesis alternativa es la correcta. \\
+En la práctica escogemos el tamaño del error de tipo I antes de la determinación de la muestra aleatoria. Si se obtiene como resultado que la hipótesis nula no puede rechazarse con el valor escogido de $\alpha$ debe evitarse aumentar el tamaño del error de tipo I con la idea de rechazar la hipótesis nula.\\
+
+La discusión anterior constituye el método clásico para probar hipótesis estadísticas. El cual, se dirigieron algunas críticas directas hacia este enfoque debido a que la decisión final de rechazar o no una $H_0$ dada, es demasiado cortante y seca y no proporciona una medida real de que la decisión sea correcta en términos de la probabilidad. Para esto lo que se ha sugerido es el cálculo del llamado \textbf{valor p}. El valor p es la probabilidad, dado que $H_0$ es cierta, de que la estadística de prueba tome un valor mayor o igual que el calculado con base a la muestra aleatoria. Un valor relativamente pequeña puede sugerir que si $H_0$ es realmente cierta, el valor de la estadística de prueba sea poco probable. Puede entonces optarse por rechazar $H_0$ debido a que esta decisión tendrá una alta probabilidad de ser correcta.\\
+
+Se recomienda el cálculo del valor p acoplado con el enfoque clásico de escoger un tamaño del error de tipo I antes de la determinación de la muestra aleatoria. Entonces, la decisión de rechazar o no a $H_0$ puede basarse en una región crítica de tamaño $\alpha$, con el valor p proporcionando una medida real en términos de la probabilidad de que la decisión sea correcta. De acuerdo con lo anterior, se sugiere lo siguiente regla:
+
+\begin{tcolorbox}
+    Si el valor p es menor o igual a $\alpha$, se rechaza $H_0$; de otra forma no puede rechazarse la hipótesis nula.
+\end{tcolorbox}
+
+\section{Prueba de hipótesis con respecto a las medias cuando se muestrean distribuciones normales}
+
+\subsection{Pruebas para una muestra}
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución normal con media $\mu$ desconocida. En este caso el interés recae en probar uno de los siguientes conjuntos de hipótesis con respecto a $\mu$.
+\begin{center}
+    $
+    \begin{array}{rcl}
+	H_0: \mu & = & \mu_0\\
+	H_1: \mu & \neq & \mu_0
+    \end{array}
+    $
+    \quad 
+    $
+    \begin{array}{rcl}
+	H_0: \mu & = & \mu_0\\
+	H_1: \mu & > & \mu_0
+    \end{array}
+    $
+    \quad 
+    $
+    \begin{array}{rcl}
+	H_0: \mu & = & \mu_0\\
+	H_1: \mu & < & \mu_0
+    \end{array}
+    $
+\end{center}
+
+Primero, supóngase que el valor de la varianza poblacional $\sigma^2$ es conocido. Entonces la estadística de prueba es la media muestral $\overline{X}$, misma que, bajo la hipótesis nula, tiene una distribución normal con media $\mu_0$ y desviación estándar $\sigma/\sqrt{n}$. La región crítica de tamaño $\alpha$ para la hipótesis bilateral es de la forma
+
+$$
+\mbox{Rechazar } H_0 \mbox{ si }
+\left\{
+    \begin{array}{rcl}
+	\overline{X}&\geq&\overline{x}_{1-\alpha/2}\\\\
+		    &\mbox{o}&\\\\
+	\overline{X}&\leq&\overline{x}_{1-\alpha/2}.
+    \end{array}
+\right.
+$$
+donde $\overline{x}_{1-\alpha/2}$ y $\overline{\alpha/2}$ son los valores cuantiles críticos de $\overline{X}$ de manera tal que
+$$P(\overline{X}\geq \overline{x}_{1-\alpha/2})=\alpha/2 \quad \mbox{y}\quad P(\overline{X}\leq \overline{x}_{\alpha/2})=\alpha/2.$$
+
+Dado que bajo $H_0$, $\overline{X}\sim N(\mu_0,\sigma/\sqrt{n})$, entonces en forma equivalente
+$$P\left(Z\geq \dfrac{\overline{x}_{1-\alpha/2}-\mu_0}{\sigma/\sqrt{n}}\right)=\sigma/2\quad \mbox{y}\quad P\left(Z\leq \dfrac{\overline{x}_{\alpha/2}-\mu_0}{\sigma/\sqrt{n}}\right)=\alpha/2.$$
+
+o
+
+$$z_{1-\alpha/2} = \dfrac{\overline{x}_{1-\alpha/2}-\mu_0}{\sigma/\sqrt{n}} \quad \mbox{y} \quad z_{\alpha/2}=\dfrac{\overline{x}_{\alpha/2}}{\sigma/\sqrt{n}}$$
+
+en donde $z_{1-\alpha/2}$ y $z_{\alpha/2}$ son los correspondientes valores cuantiles de $Z$. Por lo tanto, se sigue que $H_0$ debe rechazarse cuando un valor $\overline{x}$ de la media muestral $\overline{X}$ es tal que
+$$\overline{x}\geq \dfrac{\sigma z_{1-\alpha/2}}{\sqrt{n}} + \mu_0\quad \mbox{o}\quad \overline{x}\leq \dfrac{\sigma z_{\alpha/2}}{\sqrt{n}}+\mu_0.$$
+
+De manera equivalente, se rechazará $H_0$ cuando
+$$z\geq z_{1-\alpha/2}\quad \mbox{o} <\leq z_{\alpha/2},$$
+donde $z=(\overline{x}-\mu_0)/(\sigma/\sqrt{n})$ es el valor de la correspondiente normal estándar al valor $\overline{x}$ de $\overline{X}$.\\
+
+Para la hipótesis alternativa unilateral $H_1>\mu_0$ la región crítica de tamaño $\alpha$ es el extremo derecho de la distribución de muestreo $\overline{X}$; esta es de la forma 
+\begin{center}
+    Rechazar $H_0$ si $\overline{X}\geq \overline{x}_{1-\alpha}.$
+\end{center}
+en donde $\overline{x}_{1-\alpha}$ es el valor cuantil de $\overline{X}$, tal que $P\left(\overline{X}\geq \overline{x}_{1-\alpha}\right)=\alpha$. En forma similar, para la hipótesis alternativa $H_1:\mu<\mu_0$, la región crítica de la forma
+\begin{center}
+    Rechazar $H_0$ si $\overline{X}\leq \overline{x}_{\alpha}.$
+\end{center}
+en donde el valor $\overline{x}$ es tal que $P(\overline{X}\leq \overline{x}_\alpha)=\alpha.$
+
+Antes de resolver un ejemplo, se desarrollará una expresión general del error de tipo II para uno de los casos. Considérese la hipótesis nula $H_0:\mu=\mu_0$ contra la alternativa $H_1:\mu>\mu_0$. Supóngase que en realidad $\mu=\mu_1>\mu_0$. De acuerdo a 
+\begin{center}
+    Rechazar $H_0$ si $\overline{X}\geq \overline{x}_{1-\alpha},$
+\end{center}
+no puede rechazarse $H_0$ si un valor de $\overline{X}$ es menor que $(\sigma z_{1-\alpha}/\sqrt{n})+\mu_0$. Dado que la probabilidad de error de tipo II es igual a la probabilidad de no rechazar un $H_0$ falsa, es necesario determinar
+$$\beta = P\left(\overline{X}<\dfrac{\sigma z_{1-\alpha}}{\sqrt{n}}+\mu_0 \bigg| \mu=\mu_1>\mu_0\right),$$
+la que es términos de la normal estándar es
+$$\beta = P\left(Z<\dfrac{\dfrac{\sigma z_{1-\alpha}}{\sqrt{n}}+\mu_0-\mu_1}{\sqrt{n}}+\mu_0 \Bigg| \mu=\mu_1\right).$$
+Al sustituir cualquier valor $\mu_1$ de la hipótesis alternativa, se puede calcular el correspondiente valor de la probabilidad de error de tipo II y de esta forma, la potencia.

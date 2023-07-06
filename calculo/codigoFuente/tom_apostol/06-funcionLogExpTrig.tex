@@ -879,15 +879,144 @@ En los ejercicios 16 al 26, calcular las integrales.\\
 
 	    %----------a)
 	    \item Utilizando la definición de la derivida $L'(1)$.\\\\
-		Respuesta.-\; 
+		Respuesta.-\; Por el teorema 6.1b, sabemos que 
+		$$L'(x)=\dfrac{1}{x}\;\mbox{ para todo }x>0,$$
+		es $L'(1)=1$. Ahora, por la definición de la derivada, tenemos
+		$$f'(x)=\lim_{x\to 0}\dfrac{f(x+h)-f(x)}{h}.$$
+		Ya que $x>0$ se tiene $L(x)=\log x,$ de donde
+		$$
+		\begin{array}{rcl}
+		    L'(x)&=& \lim_{h\to 0}\dfrac{L(x+h)-L(x)}{h}\\\\
+			 &=& \lim_{h\to 0}\dfrac{\log(x+h)-\log(x)}{h}.
+		\end{array}
+		$$
+		Evaluando en $x=1$, obtenemos
+		$$
+		\begin{array}{rcl}
+		    1 = L'(1) &=& \lim_{h\to 0}\dfrac{\log(1+h)-\log(1)}{h}\\\\
+			      &=& \lim_{h\to 0}\dfrac{\log(1+h)}{h}\\\\
+		\end{array}
+		$$
+		De esta manera, ya que el  nombre de la variable carece de importancia,
+		$$\lim_{x\to 0}\dfrac{\log(1+x)}{x}.$$\\\\
 
 	    %----------b)
 	    \item Usando el resultado del ejercicio 28.\\\\
-		Respuesta.-\;
+		Respuesta.-\; Recordemos que,
+		$$1-\dfrac{1}{x}<\log x<x-1\quad \mbox{para todo } x>0 \mbox{ con } x\neq 1.$$
+		Podemos ver que se cumple la inecuación para $x+1$. Es decir,
+		$$1-\dfrac{1}{x+1}<\log(x+1)<x$$
+		Luego, multiplicando por $\frac{1}{x},$
+		$$\dfrac{1}{x}-\dfrac{1}{x(x+1)}<\dfrac{\log(x+1)}{x}<1.$$
+		De donde,
+		$$\dfrac{1}{x+1}<\dfrac{\log(x+1)}{x}<1.$$
+		Luego, ya que 
+		\begin{center}
+		    $\lim_{x\to 0}\dfrac{1}{1+x}=1,$ y $\lim_{x\to 0}1=1.$
+		\end{center}
+		Entonces, por el teorema 3.3 concluimos que 
+		$$\lim_{x\to 0}\dfrac{\log(1+x)}{x}=1.$$\\
+		
+	\end{enumerate}
+
+    %-------------------- 30.
+    \item Si $a>0$, hacer uso de la ecuación funcional para demostrar que $\log\left(a^r \right)=r\log(a)$ para todo número racional $r$.\\\\
+	Demostración.-\; Ya que $r\in \mathbb{Q}$, entonces $r=\dfrac{m}{n}$ para algunos $m,n\in \mathbb{Z}$. Luego, 
+	$$
+	\begin{array}{rcl}
+	    \log\left(a^r\right) &=& \log\left(a^{\frac{m}{n}}\right)\\\\
+				 &=& \log\left[\left(a^{\frac{1}{n}}\right)^m\right]\\\\
+				 &=& m\log\left(a^{\frac{1}{n}}\right)\\\\
+				 &=& \left(\dfrac{m}{n}\right)n \log\left(a^{\frac{1}{n}}\right)\\\\
+				 &=& \dfrac{m}{n}\left[\left(a^{\frac{1}{n}}\right)^n\right]\\\\
+				 &=& \dfrac{m}{n}\log(a)\\\\
+				 &=& r\log a.
+	\end{array}
+	$$
+	\vspace{.5cm}
+
+    %-------------------- 31.
+    \item Sea $P=\left\{a_0,a_1,a_2,\ldots,a_n\right\}$ una partición del intervalo $[1,x]$ donde $x>1.$
+
+	\begin{enumerate}[a)]
+
+	    %----------a)
+	    \item Integrando funciones escalonadas que son constantes en los subintervalo abiertos de $P$ deducir las siguientes desigualdades:
+	    $$\sum_{k=1}^n\left(\dfrac{a_k-a_{k-1}}{a_k}\right)<\log x<\sum_{k=1}^n \left(\dfrac{a_k-a_{k-1}}{a_{k-1}}\right).$$
+		Respuesta.-\; Definamos la función escalonada de $s$ y $t$ por
+		$$
+		\begin{array}{rclcr}
+		    s(x) &=& \dfrac{1}{a_k} & \mbox{para} & x\in [a_{k-1},a_k)\\\\
+		    t(x) &=& \dfrac{1}{a_{k-1}} & \mbox{para} & x\in [a_{k-1},a_k).
+		\end{array}
+		$$
+		Ya que $\frac{1}{x}$ es estrictamente creciente en $\mathbb{R}^+$, tenemos
+		$$s(x)<\dfrac{1}{x}<t(x)\quad \mbox{para todo }x\in \mathbb{R}^+.$$
+		Por lo tanto, usando la definición de integración de funciones escalonadas, como una suma
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_1^x s(u)\;du < \int_1^x \dfrac{1}{u}\; du < \int_1^x t(u)\; du &\Rightarrow& \displaystyle\sum_{k=1}^n s_k(a_k-a_{k-1})<\log x<\sum_{k=1}^n t_k(a_k-a_{k-1})\\\\
+														 &\Rightarrow & \displaystyle\sum_{k=1}^n \left(\dfrac{a_k-a_{k-1}}{a_k}\right) < \log x < \sum_{k=1}^n \left(\dfrac{a_k-a_{k-1}}{a_{k-1}}\right).
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	    %----------b)
+	    \item Dar una interpretación geométrica mediante áreas las desigualdades de (a).
+		Respuesta.-\; Estas inecuaciones nos dicen que el área bajo la curva $y=\frac{1}{x}$ en el intervalo $[1,x]$ se encuentra entre las funciones escalonadas que toman los valores $\frac{1}{a_k}$ y $\frac{1}{a_{k-1}}$ para cada $x\in [a_{k-1},a_k)$.\\\\
+
+	    %----------c)
+	    \item Encontrar una particular partición para demostrar que, para cada entero $n>1$ es:
+	    $$\sum_{k=2}^n<\log n<\sum_{k=1}^{n-1}\dfrac{1}{k}.$$\\
+		Demostración.-\; Para establecer estas desigualdades elegimos la partición,
+		$$P?\left\{1,2,3,\ldots,n\right\}\quad \mbox{para }n>1.$$
+		Entonces, aplicando la parte (a) tenemos
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\sum_{k=1}^n \left(\dfrac{a_k-a_{k-1}}{a_k}\right) < \log x < \sum_{k=1}^n \left(\dfrac{a_k-a_{k-1}}{a_{k-1}}\right)\\\\
+		    &\Rightarrow& \displaystyle\sum_{k=1}^n \dfrac{1}{a_k} < \log n < \sum_{k=1}^{n} \dfrac{1}{a_{k-1}}\\\\
+		    &\Rightarrow& \displaystyle\sum_{k=2}^n \dfrac{1}{k} < \log n < \sum_{k=1}^{n-1} \dfrac{1}{k}.
+		\end{array}
+		$$
+		Esta última parte se debe a que $a_0=1,a_1=2,\ldots$ por lo que la suma de la izquierda comienza con $\frac{1}{2}$ y la suma del lado derecho sólo funciona para $\frac{1}{n.1}$.\\\\
 
 	\end{enumerate}
 
+    %-------------------- 32.
+    \item Demostrar las siguientes fórmulas de cambios de base de logaritmos.
 
+	\begin{enumerate}[(a)]
+
+	    %----------(a)
+	    \item $\log_b x = \log_b a\log_a x$.\\\\
+		Respuesta.-\; Calculemos directamente.
+		$$
+		\begin{array}{rcl}
+		    \log_b x &=& \dfrac{\log x}{\log b}\\\\
+			     &=& \left(\dfrac{\log x}{\log b}\right)\left(\dfrac{\log a}{\log a}\right)\\\\
+			     &=& \dfrac{\log a}{\log b}\dfrac{\log x}{\log a}\\\\
+			     &=& \log_b a\log_a x.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	    %----------(b)
+	    \item $\log_b x = \dfrac{\log_a x}{\log_a b}$.\\\\
+		Respuesta.-\; Calculemos directamente.
+		$$
+		\begin{array}{rcl}
+		    \log_b x &=& \dfrac{\log x}{\log b}\\\\
+			     &=& \left(\dfrac{\log x}{\log b}\right)\left(\dfrac{\log b}{\log a}\right)^{-1}\\\\
+			     &=& \log_a x(\log_a b)^{-1}\\\\
+			     &=& \dfrac{\log_a x}{\log_a b}.
+		\end{array}
+		$$
+		\vspace{.5cm}
+
+	\end{enumerate}
+
+    %-------------------- 33.
+    \item 
 
 \end{enumerate}
 
