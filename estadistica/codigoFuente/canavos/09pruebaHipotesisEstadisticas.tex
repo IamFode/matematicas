@@ -219,3 +219,20 @@ $$\beta = P\left(\overline{X}<\dfrac{\sigma z_{1-\alpha}}{\sqrt{n}}+\mu_0 \bigg|
 la que es términos de la normal estándar es
 $$\beta = P\left(Z<\dfrac{\dfrac{\sigma z_{1-\alpha}}{\sqrt{n}}+\mu_0-\mu_1}{\sqrt{n}}+\mu_0 \Bigg| \mu=\mu_1\right).$$
 Al sustituir cualquier valor $\mu_1$ de la hipótesis alternativa, se puede calcular el correspondiente valor de la probabilidad de error de tipo II y de esta forma, la potencia.
+
+$$
+\begin{array}{cc}
+    \hline
+    \mbox{Hipótesis nula} & \mbox{Valor de la estadística de prueba bajo } H_0\\
+    \hline\\
+    H_0: \mu=\mu_0 & z=\dfrac{\overline{x}-\mu_0}{\sigma/\sqrt{n}}\\\\
+    \hline
+    \mbox{Hipótesis alternativa} & \mbox{Criterios de rechazo}\\
+    \hline\\
+    H_1:\mu\neq \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\leq z_{\alpha/2} \mbox{ o cuando } z\geq z_{1-\alpha/2}\\
+    H_1:\mu> \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\geq z_{1-\alpha}\\
+    H_1:\mu< \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\leq z_{\alpha}\\\\
+    \hline
+\end{array}
+
+$$
