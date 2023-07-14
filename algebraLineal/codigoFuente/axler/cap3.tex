@@ -587,13 +587,13 @@ El siguiente resultado demuestra que el espacio nulo o kernel de cada transforma
 %--------------------Teorema 3.14
 \begin{myteo}[El espacio nulo es un subespacio]\,\\\\
     Suponga que $T\in \mathcal{L}(V,W)$. Entonces, null $T$ es un subespacio de $V$.\\\\
-	Demostración.-\; Ya que $T$ es una transformación lineal, entonces sabemos por 3.11 que $T(0)=0$. Por lo tanto, $0\in \mbox{null } T.$\\
-	Supongamos ahora que $u,v\in \mbox{null } T$. Entonces,
+	Demostración.-\; Ya que $T$ es una transformación lineal, entonces sabemos por 3.11 que $T(0)=0$. Por lo tanto, $0\in \mynull T.$\\
+	Supongamos ahora que $u,v\in \mynull T$. Entonces,
 	$$T(u+v)=Tu+Tv=0+0=0.$$
 	De ahí, $u+v\in \mbox{null } T$. Así null $T$ es cerrado bajo la adición.\\
-	Luego, supongamos que $u\in \mbox{null }T$ y $\lambda \in \textbf{F}$
+	Luego, supongamos que $u\in \mynull T$ y $\lambda \in \textbf{F}$
 	$$T(\lambda u)=\lambda T u=\lambda 0 = 0.$$
-	Por lo que, $\lambda u \in \mbox{null } T$. Así, null $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, null $T$ es un subespacio de $V.$
+	Por lo que, $\lambda u \in \mynull T$. Así, null $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, null $T$ es un subespacio de $V.$
 \end{myteo}
 
 %--------------------Definición 3.15
@@ -627,7 +627,7 @@ Damos un nombre al conjunto de resultados de una función.
 %-------------------- Definición 3.17
 \begin{mydef}[Rango]\,\\\\
     Para $T$ una función de $V$ en $W$, el \textbf{rango} de $T$ es el subconjunto de $W$ que consta de aquellos vectores que son de la forma $Tv$ para algún $v\in V$:
-$$\mbox{rango }T=\left\{Tv:v\in V\right\}.$$
+$$\range T=\left\{Tv:v\in V\right\}.$$
 \end{mydef}
 
 Algunos matemáticos usan la palabra \textbf{imagen} en lugar de rango.\\
@@ -638,14 +638,14 @@ EL siguiente resultado muestra que el rango de cada transformación lineal es un
 %--------------------Teorema 3.19
 \begin{myteo}[El rango es un subespacio]\,\\\\
     Si $T\in \mathcal{L}(V,W)$, entonces el rango de $T$ es un subespacio de $W$.\\\\
-	Demostración.-\; Suponga que $T\in \mathcal{L}(V,W)$. Entonces por 3.11, $T(0)=0$, lo que implica que $0\in$ rango $T$.\\
+	Demostración.-\; Suponga que $T\in \mathcal{L}(V,W)$. Entonces por 3.11, $T(0)=0$, lo que implica que $0\in \range T$.\\
 	Si $w_1,w_2\in$ range $T$, entonces existe $v_1,v_2\in V$ tal que $Tv_1=w_1$ y $Tv_2=w_2$. Así,
 	$$T(v-1+v-2)=Tv_1+v_2=w_1+w_2.$$
 	Ya que $w_1+w_2\in$ rango $T$. Por lo tanto, rango $T$ es cerrado bajo la adición.\\
 	Si $w\in$ rango $T$ y $\lambda\in \textbf{F}$, entonces existe $v\in V$ tal que $T_v=w$.
 	Por lo que, 
 	$$T(\lambda v)=\lambda Tv=\lambda w.$$
-	Así, $\lambda w\in$ rango $T$. Por lo tanto, rango $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, el rango $T$ es un subespacio de $W$.
+	Así, $\lambda w\in \range T$. Por lo tanto, rango $T$ es cerrado bajo la multiplicación por escalares. Por 1.34, el  $\range T$ es un subespacio de $W$.
 \end{myteo}
 
 %--------------------Definición 3.20
@@ -662,7 +662,7 @@ Que una transformación lineal sea sobreyectiva depende del espacio vectorial al
 %--------------------Teorema 3.22
 \begin{myteo}[Teorema fundamental de las transformaciones lineales]\,\\\\
 	Suponga que V es de dimensión finita y $T\in \mathcal{L}(V,W)$. Entonces, $T$ es de dimensión finita y 
-	$$\dim V = \dim \mbox{ null } T + \dim \mbox{ range }T.$$
+	$$\dim V = \dim \mynull T + \dim \range T.$$
 	    Demostración.-\; Sea $u_1,\ldots,u_m$ una base de null $T$; en consecuencia $\dim$ null $T=m$. Por 2.33, la lista linealmente independiente $u_1,\ldots,u_m$ puede extenderse a una base
 	    $$u_1,\ldots,u_m,v_1,\ldots,v_n$$
 	    de $V$. Así la $\dim V=m+n$. Para completar la prueba, sólo necesitamos demostrar que rango $T$ es de dimensión finita y la dim rango $T=n$. Es decir, mostrarmos que  $Tv_1,\ldots,Tv_n$ es una base del rango de $T$.\\
@@ -678,8 +678,8 @@ Que una transformación lineal sea sobreyectiva depende del espacio vectorial al
 	    Entonces,
 	    $$T\left(c_1v_1+\cdots +c_nv_n\right)=0.$$
 	    Por lo tanto,
-	    $$c_1v_1+\cdots c_nv_n \mbox{ null} T.$$
-	    Luego, ya que $u_1,\ldots,u_m$ genera null $T$, podemos escribir
+	    $$c_1v_1+\cdots c_nv_n \mynull T.$$
+	    Luego, ya que $u_1,\ldots,u_m$ genera $\mynull T$, podemos escribir
 	    $$c_1v_1+\cdots + c_nv_n = d_1u_1+\cdots + d_mu_m.$$
 	    para $d's$ en $\textbf{F}$. Por el hecho de que $u_1,\ldots,u_m,v_1,\ldots,v_n$ es linealmente independiente. Entonces,  todos los $c's$ y $d's$ son $0$. Por lo tanto, $Tv_1,\ldots,Tv_n$ es linealmente independiente y por ende es una base del rango $T$, como queriamos demostrar.
 
@@ -693,7 +693,7 @@ Ahora podemos demostrar que ninguna transformación lineal desde un espacio vect
 	Demostración.-\; Sea $T\in \mathcal{L}(V,W)$. Entonces,
 	$$
 	\begin{array}{rcl}
-	    \dim \mbox{ null } T &=& \dim V - \dim \mbox{ range } T\\\\
+	    \dim \mynull T &=& \dim V - \dim \range T\\\\
 				 &\geq & \dim V - \dim W\\\\
 				 &>& 0.
 	\end{array}
@@ -709,7 +709,7 @@ El siguiente resultado muestra que ninguna transformación lineal de un espacio 
 	Demostración.-\; Sea $T\in \mathcal{L}(V,W)$. Entonces,
 	$$
 	\begin{array}{rcl}
-	    \dim \mbox{ range } T &=& \dim V - \dim \mbox{ null } T\\\\
+	    \dim \range T &=& \dim V - \dim \mynull T\\\\
 				  &\leq & \dim V\\\\
 				  &<& \dim W.
 	\end{array}
@@ -757,7 +757,7 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 \begin{enumerate}[\bfseries 1.]
 
     %--------------------1.
-    \item Dar un ejemplo de una transformación lineal tal que $\dim$ null $T=3$ y $\dim$ range $T=2$.\\\\
+    \item Dar un ejemplo de una transformación lineal tal que $\dim$ null $T=3$ y $\dim \range T=2$.\\\\
 	Respuesta.-\; Sea, la transformación lineal $T:\textbf{R}^5 \to \textbf{R}^5$ tal que 
 	$$(x_1,x_2,x_3,x_5,x_5)=(0,0,0,x_4,x_5).$$
 	Primero demostraremos que es una transformación lineal. Sea $x,y\in \textbf{R}^5$. Entonces,
@@ -782,14 +782,14 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 	Por lo tanto, $T$ es una transformación lineal. Ahora, por la definición 3.12. Se tiene que cumplir:
 	$$(x_1,x_2,x_3,x_4,x_5)=(0,0,0,0,0,0).$$
 	Así,
-	$$\mbox{null }T=\left\{(x_1,x_2,x_3,0,0)\in \textbf{R}^5 | x_1,x_2,x_3\in \textbf{R}\right\}.$$
+	$$\mynull T=\left\{(x_1,x_2,x_3,0,0)\in \textbf{R}^5 | x_1,x_2,x_3\in \textbf{R}\right\}.$$
 	Esta espacio claramente tiene como base a $e_1,e_2,e_3\in \textbf{R}^5$ de dimensión $3$, y dado que $\dim$ range $T=2$, por el teorema fundalmental de transformaciones lineales, se tiene que
-	$$\dim \textbf{R}^5=3+\dim \mbox{ range } T.$$
+	$$\dim \textbf{R}^5=3+\dim \range T.$$
 	De esta manera concluimos la demostración.\\\\
 
     %--------------------2.
     \item Suponga que $V$ es un espacio vectorial y $S,T\in \mathcal{V,V}$ tales que
-    $$\mbox{range }S\subset \mbox{null }T.$$
+    $$\range S\subset \mynull T.$$
     Demostrar que $(ST)^2=0.$\\\\
 	Demostración.-\; Sea $v\in V$. Por definición 
 	$$(ST)^2(v)=S\left(T(S(T(v)))\right)$$
@@ -802,10 +802,23 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 
 	%----------(a)
 	\item ¿Qué propiedad de $T$ corresponde a $v_1,\ldots,v_m$ que genere $V$?\\\\
-	    Respuesta.-\; La propiedad que corresponde a $v_1,\ldots,v_m$ que genere $V$ es que $T$ sea sobreyectiva.\\\\
+	    Respuesta.-\; El conjunto $v_1,v_2,\ldots,v_n$ es un conjunto generador de $V$ si y sólo si para cualquier $v\in V$, existe $z_1,z_2,\ldots,z_n\in \textbf{F}$ tal que 
+	    $$v=z_1v_1+z_2v_2+\cdots+z_nv_n.$$
+	    Esto es equivalente a decir que $v=T(z_1,z_2,\ldots,z_n)$ para algunos $(z_1,z_2,\ldots,z_n)\in \textbf{F}^n$. Esto es, $v_1,v_2,\ldots,v_n$ es un conjunto generador si y sólo si cada $v\in V$ se encuentra en el rango $T$. Es decir, si y sólo si $V=\range T$. Por lo tanto, $v_1,v_2,\ldots,v_n$ es un conjunto generador de $V$ si y sólo si $T$ es sobreyectiva.\\\\
 
 	%----------(b)
 	\item ¿Qué propiedad de $T$ corresponde a $v_1,\ldots,v_m$ que sea linealmente independiente?\\\\
-	    Respuesta.-\; La propiedad que corresponde a $v_1,\ldots,v_m$ que sea linealmente independiente es que $T$ sea inyectiva.\\\\
+	    Respuesta.-\; El conjunto $v_1,v_2,\ldots,v_n$ es linealmente independiente si y sólo si
+	    $$z_1v_1+\cdots+z_nv_n = 0.$$
+	    implica que $z_1,z_2,\ldots,z_n=0.$
+	    Esto es equivalente a decir que $T(z_1,z_2,\ldots,z_n)=0$ de donde $(z_1,z_2,\ldots,z_n)=(0,0,\ldots,0)$ lo que significa  que el único elemento que se encuentra en $T$ es $(0,0,\ldots,0).$ Esto es verdadero sólo cuando $T$ es inyectiva. Por lo tanto, $v_1,v_2,\ldots,v_n$ es linealmente independiente si y sólo si $T$ es inyectiva.\\\\
+
     \end{enumerate}
+
+    %--------------------4.
+    \item Demostrar que
+	$$\left\{ T\in \mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right):\dim \mynull T>2 \right\}$$
+	no es un subespacio de $\mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right)$.\\\\
+	    Demostración.-\; 
+
 \end{enumerate}
