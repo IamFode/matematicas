@@ -169,7 +169,7 @@ donde $P$ es el conjunto de todos los números positivos.
 %definición 1.5
 \begin{def.} Estas tres propiedades deben complementarse con las siguientes definiciones.
 \begin{center}
-\begin{tabular}{r c l}
+\begin{tabular}{rcl}
 $a>b$&si&$a-b$ pertenece a $P$\\
 $a<b$&si&$b>a$\\
 $a\geq b $&si&$a>b$ ó $a=b$\\
@@ -178,9 +178,7 @@ $a\leq b$&si&$a<b$ ó $a=b$\\
 \end{center}
 Nótese en particular que $a>0$ si y sólo si $a$ pertenece a $P$.
 \end{def.}
-
-%definición 1.6
-\begin{def.}
+\vspace{.2cm}
 Si $a$ y $b$ son dos números cualesquiera, entonces se cumple una y sólo una de las siguientes igualdades:
 \begin{enumerate}[\bfseries i)]
 \item $a-b=0,$
@@ -193,53 +191,63 @@ De las definiciones dadas se cumple una y sólo una de las sigueintes igualdades
 \item  $a>b,$
 \item $b>a.$
 \end{enumerate}
+
+%Lema 1.8
+\begin{lema}
+    Si $a<b$, entonces $a+c<b+c$.\\\\
+	Demostración.-\; Si $a<b$, entonces $b-a$ pertenece a $P$, esto implica que $(b+c)-(a+c)$ pertenece a $P$, por lo tanto $a+c<b+c$.
+\end{lema}
+
+%Lema 1.9
+\begin{lema}
+    Si $a<b\;$ y $\;b<c$, entonces $a<c$.\\\\
+	Demostración.-\; Supongamos que $a<b$ y $b<c$. Entonces, $b-a$ pertenece a $P$ y $c-b$ pertenece a $P$, por lo tanto $c-a=(c-b)+(b-a)$ pertence a P.
+\end{lema}
+
+%Lema 1.10
+\begin{lema}
+    Si $a<0$ y $b<0$, entonces $ab>0$.\\\\
+	Demostración.-\; El símbolo $a<0$ significa, por definición que $0<a$, lo cual quiere decir que $0-a=-a$ pertenece a P. Análogamente, $-b$ pertenece a $P$. Por consiguiente, según P12, $(-a)(-b)=ab$ pertenece a $P$. Así, $ab>0$.\\\\
+\end{lema}
+Esta hecho tiene una consecuencia especial 
+
+% Lema 1.11
+\begin{lema}
+    Si $a\neq 0$, entonces $a^2>0$. 
+\end{lema}
+
+%Definición 1.6
+\begin{def.}[Valor absoluto]
+    Para cualquier número $a,$ se define su valor absoluto de $a$ mediante:
+    $$
+    |a|=\left\{
+	\begin{array}{rl}
+	    a, & a\geq 0\\
+	    -a, & a\leq 0.
+	\end{array}
+    \right.
+    $$
 \end{def.}
 
-%teorema 1.8
-\begin{teo}
-Si $a<b$ y $b<c$ si y sólo si  $a<c$\\\\
-Demostración.- \; Si $a<b$ de modo que $b-a$ pertenece a $P$, entonces evidentemente $(b+c)+(a+c)$ pertenece a $P$; así si $a<b$ entonces $a+c<b+c$. Igualmente, supongamos $a<b$ y $b<c$. Entonces $b-a$ y $c-b$ están en $P$ así que $(c-b)+(b-a)=c-a$ está en $P$.
-\end{teo}
 
-%teorema 1.9
-\begin{teo}
-Si $a<0$ y $b<0$, entonces $ab>0$\\\\
-Demostración.- \; Por definición $0>a$ lo cual significa que $0-a=-a$ esta en $P$. Del mismo modo, $-b$ pertenece a $P$ y, en consecuencia por P12, $(-a)(-b)=ab$ está en $P$. Así pues $ab>0$. 
-\end{teo}
-
-%teorema 1.10
-\begin{teo}
-Si $a\neq0$ es $a^2>0$\\\\
-Demostración.-\; Demostraremos por casos. Si $a>0$, entonces  \; $a\cdot a >0$ \; y \; $a^2>0$. Por otro lado, si $a<0$, entonces $0-a>0$ de modo que $(-a)(-a)>0$ \; y por lo tanto \; $a^2>0$.
-\end{teo}
-
-%definición 1.7
-\begin{def.}[Valor absoluto] Se define como:
-\begin{center}
-$|a| = \left\lbrace
-\begin{array}{rr}
-a, & a\geq 0\\
--a, & a \leq 0
-\end{array}
-\right.$\\
-\end{center}
-\end{def.}
-
-%teorema 1.11
+%teorema 1.1
 \begin{teo}
 Para todos los números $a$ y $b$ se tiene $$|a+b|\leq |a| + |b|$$\\\\
-Demostración.- \; Demostración.- \; Vamos a considerar cuatro casos:
-\begin{center}
-\begin{tabular}{c r r}
-$(1)$&$a\geq 0$&$b\geq 0$\\
-$(2)$&$a\geq $&$b\leq 0$\\
-$(4)$&$a\leq $&$b \geq 0$\\
-$(5)$&$a\leq 0$&$b \leq 0$\\
-\end{tabular}
-\end{center}
+    Demostración.- \; Vamos a considerar cuatro casos:
+    $$
+    \begin{array}{crr}
+	(1)&a\geq 0,&b \geq 0\\
+	(2)&a\geq 0,&b\leq 0\\
+	(4)&a\leq 0,&b \geq 0\\
+	(5)&a\leq 0,&b \leq 0\\
+    \end{array}
+    $$
 En el caso ($1)$ tenemos también $a+b\geq 0$, esto es evidente; en efecto por definición $$|a+b|=a+b=|a|+|b|$$ de modo que en este caso se cumple la igualdad.\\
-En el caso $(4)$ se tiene $a+b\leq 0$ y de nuevo se cumple la igualdad: $$|a+b|=-(a+b)=(-a)+(-b)=|a|+|b|$$
-En el caso $(2)$, cuando $a\geq 0$ y $b\leq 0$, debemos demostrar que $$|a+b|\leq a - b$$ Este caso puede dividirse en dos subcasos. Si $a+b\geq 0$, entonces tenemos que demostrar que $$a+b \leq a-b$$ es decir, $$b\leq -b,$$  lo cual se cumple ciertamente puesto que $b$ es negativo y $-b$ positivo. Por otra parte, si $a+b\leq 0$ debemos demostrar que $$-a-b\leq a-b$$ es decir $$-a\leq a,$$ lo cual es verdad puesto que $a$ es positivo y \; $-a$ negativo.\\
+En el caso $(4)$ se tiene $a+b\leq 0$ y de nuevo se cumple la igualdad: 
+$$|a+b|=-(a+b)=(-a)+(-b)=|a|+|b|.$$
+En el caso $(2)$, cuando $a\geq 0$ y $b\leq 0$, debemos demostrar que 
+$$|a+b|\leq a - b.$$ 
+Este caso puede dividirse en dos subcasos. Si $a+b\geq 0$, entonces tenemos que demostrar que $$a+b \leq a-b$$ es decir, $$b\leq -b,$$  lo cual se cumple ciertamente puesto que $b$ es negativo y $-b$ positivo. Por otra parte, si $a+b\leq 0$ debemos demostrar que $$-a-b\leq a-b$$ es decir $$-a\leq a,$$ lo cual es verdad puesto que $a$ es positivo y \; $-a$ negativo.\\
 Nótese finalmente que el caso $(3)$ puede despacharse sin ningún trabajo adicional aplicando el caso $(2)$ con $a$ \; y \; $b$ intercambiados.\\\\ 
 Se puede dar una demostración mas corta dado que $$|a|=\sqrt{a^2} \; ó \; |a|^2=a^2$$. Sea $(|a+b|)^2=(a+b)$ Entonces 
 \begin{center}
@@ -250,10 +258,9 @@ $(|a+b|)^2$&$=$&$(a+b)^2$&$=$&$a^2+2ab+b^2$\\\\
 &&&$=$&$(|a|+|b|)^2$\\\\
 \end{tabular}
 \end{center}
-De esto podemos concluir que $|a+b|\leq |a|+|b|$ porque $x^2<y^2$ implica $x<y$\\\\
-Hay una tercera forma de probar que es utilizando el teorema anterior.\\
-Puesto que $x=|x|$ \; ó \; $x=-|x|$, se tiene $-|x|\leq x \leq |x|$. Análogamente $-|y| \leq y \leq |y|$. Sumando ambas desigualdades se tiene: $$-(|x|+|y|)\leq x+y \leq |x|+|y|$$ y por tanto en virtud del teorema 4.2 se concluye que: $|x+y|\leq |x|+|y|$.
+De esto podemos concluir que $|a+b|\leq |a|+|b|$ porque $x^2<y^2$ implica $x<y$.
 \end{teo}
+
 
 %problemas capítulo 1
 \section{Problemas}

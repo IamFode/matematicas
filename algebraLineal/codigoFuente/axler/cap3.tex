@@ -656,7 +656,7 @@ EL siguiente resultado muestra que el rango de cada transformación lineal es un
 Que una transformación lineal sea sobreyectiva depende del espacio vectorial al que se proyecte.\\\\
 
 
-\subsection*{Teorema fundamentel de las transformaciones lineales}
+\subsection*{Teorema fundamental de las transformaciones lineales}
 
 \setcounter{myteo}{21}
 %--------------------Teorema 3.22
@@ -779,11 +779,9 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 			 &=& \lambda T(x).
 	\end{array}
 	$$
-	Por lo tanto, $T$ es una transformación lineal. Ahora, por la definición 3.12. Se tiene que cumplir:
-	$$(x_1,x_2,x_3,x_4,x_5)=(0,0,0,0,0,0).$$
-	Así,
+	Por lo tanto, $T$ es una transformación lineal.  Notemos ahora que,
 	$$\mynull T=\left\{(x_1,x_2,x_3,0,0)\in \textbf{R}^5 | x_1,x_2,x_3\in \textbf{R}\right\}.$$
-	Esta espacio claramente tiene como base a $e_1,e_2,e_3\in \textbf{R}^5$ de dimensión $3$, y dado que $\dim$ range $T=2$, por el teorema fundalmental de transformaciones lineales, se tiene que
+	Esta espacio claramente tiene como base a $v_1,v_2,v_3\in \textbf{R}^5$, por ejemplo $(1,0,0,0,0),(0,1,0,0,0)$, $(0,0,1,0,0)$, por lo tanto tiene dimensión $3$, y dado que $\dim$ range $T=2$, por el teorema fundamental de transformaciones lineales, se tiene que
 	$$\dim \textbf{R}^5=3+\dim \range T.$$
 	De esta manera concluimos la demostración.\\\\
 
@@ -819,6 +817,6 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
     \item Demostrar que
 	$$\left\{ T\in \mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right):\dim \mynull T>2 \right\}$$
 	no es un subespacio de $\mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right)$.\\\\
-	    Demostración.-\; 
+	    Demostración.-\; Sea $e_1,\ldots,e_5$ una base de $\textbf{R}^5$ y sea $d_1,\ldots,d_4$ una base para $\textbf{R}^4$. 
 
 \end{enumerate}

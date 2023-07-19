@@ -24,3 +24,48 @@ $$\left(f^{-1}\right)^{-1}=f.$$
 
 Como $(a,b)$ pertenece a $f$ si y sólo si $(b,a)$ pertenece a $f^{-1}$, deducimos que
 
+\begin{center}
+    $b=f(a)$ significa lo mismo que $a=f^{-1}(b).$
+\end{center}
+
+Por lo tanto, $f^{-1}(b)$ es el \textit{único} número $a$ tal que $f(a)=b$.\\\\
+
+El hecho de que $f^{-1}(x)$ sea el número y tal que $f(y)=x$, puede ser expresado de una forma mucho más compacta:
+\begin{center}
+    $f\left[f^{-1}(x)\right]=x$ para todo $x$ del dominio de $f^{-1}$.
+\end{center}
+
+Además,
+\begin{center}
+    $f^{-1}\left[f(x)\right]=x$ para todo $x$ del dominio de $f$.
+\end{center}
+
+Estas dos importantes ecuaciones pueden escribirse como
+$$f\circ f^{-1}=I,$$
+$$f^{-1}\circ f=I.$$
+
+% ------------------- Lema 12.1
+\begin{lema}
+    Si $f$ es creciente, $f^{-1}$ también es creciente, y si $f$ es decreciente, $f^{-1}$ también es decreciente.\\\\
+	Demostración.-\; 
+\end{lema}
+
+%-------------------- Lema 12.2
+\begin{lema}
+    $f$ es creciente si y sólo si $-f$ es decreciente.\\\\
+	Demostración.-\; 
+\end{lema}
+
+%-------------------- Teorema 2
+\begin{teo}
+    Si $f$ es continua y uno-uno en un intervalo, entonces $f$ es creciente o decreciente en dicho intervalo.\\\\
+	Demostración.-\; La demostración se da en tres etapas sencillas:
+	\begin{enumerate}[(1)]
+	    \item Si $a<b<c$ son tres puntos del intervalo, entonces
+	\end{enumerate}
+	\begin{enumerate}[(i)]
+	    \item o bien $f(a)<f(b)<f(c)$
+	    \item o $f(a)>f(b)>f(c)$.
+	\end{enumerate}
+\end{teo}
+

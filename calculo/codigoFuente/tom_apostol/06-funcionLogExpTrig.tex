@@ -1096,3 +1096,124 @@ En los ejercicios 16 al 26, calcular las integrales.\\
 
 
 \section{Polinomios de aproximación para el logaritmo}
+
+Para simplificar las fórmulas resultante, primero reemplazaos $x$ por $1-x$ en la integral que define el logaritmo para obtener 
+$$\log(1-x)=\int_{1}^{1-x}\dfrac{dt}{t},$$
+válida si $x<1$. El cambio de variable $t=1-u$ transforma aquella igualdad en la siguente 
+$$-\log(1-x)=\int_0^x \dfrac{du}{1-u}, \mbox{ válida para } x<1.$$
+Seguidamente aproximamos el integrando $1/(1-u)$ para polinomios que luego integramos para obtener las correspondientes aproximaciones para el logaritmo.\\
+
+Por ejemplo mostramos una sensilla aproxición lineal para el integrando. Sea,
+$$\dfrac{1}{1-u}=1+u+\dfrac{u^2}{1-u}$$
+para $u\neq 1$. Integrando, para $x<1$,
+$$-\log(1-x)=x+\dfrac{x^2}{2}+\int_0^x \dfrac{u^2}{1-u}\; du.$$
+
+Obsérvese que para $x$ próximo a cero el polinomio $P(x)=x+\frac{1}{2}x^2$ es una buena aproximación de $-\log(1-x)$.
+
+\begin{center}
+    \begin{tikzpicture}
+	\begin{axis}[scale=.6,draw opacity =.5,samples=100,smooth, 
+	  axis x line=center,
+	  axis y line=center,
+	  ylabel = {$f(x)$},
+	  xlabel = {$x$},
+	  xlabel style={below right},
+	  ylabel style={above left},
+	  xmin=-4.2,xmax=3,ymin=-2,ymax=4,
+	  enlargelimits=upper,
+	  x tick label style={font=\tiny},
+	  y tick label style={font=\tiny}
+	  ]
+	  \addplot[gray,opacity=1] {-ln(1-x)};
+	  \addplot[black,opacity=1] {x+((x^2)/2)};
+	  
+	  % Etiquetas de las funciones
+	  \node[fill=white, anchor=north east] at (axis cs:-1,-1.4) {\tiny$f(x) = -\log(1-x)$};
+	  \node[fill=white, anchor=south] at (axis cs:-1.9,2.22) {\tiny$f(x) = x + \frac{x^2}{2}$};
+	\end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\vspace{.5cm}
+
+En el teorema siguiente, utilizaremos un polinomio de grado $n-1$ para aproximar $1/(1-u)$, y con ello obtener un polinomio de grado $n$ que aproxime $log(1-x)$.
+
+%--------------------teorema 2.2
+\begin{teo}
+    Sea $P_n$ el polinomio de grado $n$ dado por
+    $$P_n(x)=x+\dfrac{x^2}{2}+\dfrac{x^3}{3}+\cdots+\dfrac{x^n}{n}=\sum_{k=1}^n \dfrac{x^k}{k}.$$
+    Entonces, para todo $x<1$ y todo $n\geq 1$, se tiene
+    $$-\log(1-x)=P_n(x)+\int_0^x \dfrac{u^n}{1-u}\; du.$$
+	Demostración.-\; A partir de la identidad algebraica
+	$$1-u^n = (1-u)\left(1+u+u^2+\cdots + u^{n-1}\right),$$
+	obtenemos la fórmula
+	$$\dfrac{1}{1-u}=1+u+u^2+\cdots + u^{n-1}+\dfrac{u^n}{1-u}.$$
+	para $u\neq 1$. Integrándola entre $0$ y $x$, siendo $x<1$, obtenemos 
+	$$-\log(1-x)=P_n(x)+E_n(x),$$
+	siendo $E_n(x)$ la intergal,
+	$$E_n(x)=\int_0^x \dfrac{u^n}{1-u}\; du.$$
+\end{teo}
+
+El valor de $E_m(x)$ representa el error cometido al aproximar $-\log(1-x)$ con el polinomio $P_n(x)$. Para utilizar  $-\log(1-x)=P_n(x)+E_n(x),$ necesitamos conocer si el error es positivo o negativo y lo grande que puede ser.
+
+%--------------------teorema 2.4
+\begin{teo}
+    Si $0<x<1,$ tenemos las desigualdades
+    $$\dfrac{x^{n+1}}{n+1}\leq E_n(x)\leq \dfrac{1}{1-x}\dfrac{x^{n+1}}{n+1}.$$
+    Si $x<0$, el error $E_n(x)$ tiene el mismo signo que $(-1)^{n+1}$, y se tiene
+    $$0<(-1)^{n+1}E_n(x)\leq \dfrac{|x|}{n+1}.$$\\
+	Demostración.-\; Supongamos que $0<x<1$. En la integral que define $E_n(x)$ tenemos $0\leq u\leq x,$ con lo que $1-x\leq 1-u\leq 1,$ y por tanto el integrando satisface las desigualdades
+	$$u^n \leq \dfrac{u^n}{1-u}\leq \dfrac{u^n}{1-x}$$
+	Integrando estas desigualdades, obtenemos
+    $$\dfrac{x^{n+1}}{n+1}\leq E_n(x)\leq \dfrac{1}{1-x}\dfrac{x^{n+1}}{n+1}.$$
+    Para demostrar $0<(-1)^{n+1}E_n(x)\leq \dfrac{|x|}{n+1}$, supongamos $x<0$ y sea $t=-x=|x|$. De este modo $t>0$ y tenemos
+    $$E_n(x)=E_n(-t)=\int_0^{-t} \dfrac{u^n}{1-u}\; du=-\int_0^t\dfrac{-v^n}{1+v}\; dv = (-1)^{n+1}\int_0^t \dfrac{v^n}{1+v}\; dv.$$
+    Esto demuestra que $E_n(x)$ tiene el mismo signo que $(-1)^{n+1}$. Asimismo, tenemos 
+    $$(-1)^{n+1}E_n(x)=\int_0^t \dfrac{v^n}{1+v}\; dv \leq \int_0^t v"n \; dv = \dfrac{t^{n+1}}{n+1}=\dfrac{|x|^{n+1}}{n+1},$$
+    lo cual completa la demostración.
+\end{teo}
+
+El teorema que sigue nos da una fórmula muy útil para los cálculo con logaritmos 
+
+%--------------------teorema 2.5
+\begin{teo}
+    Si $0<x<1$, y si $m\geq 1$, se tiene
+    $$\log\dfrac{1+x}{1-x}=2\left(x+\dfrac{x^3}{3}+\cdots + \dfrac{x^{2m-1}}{2m-1}\right)+R_m(x),$$
+    en donde el término de error, $R_m(x)$, satisface las desigualdades
+    $$\dfrac{x^{2m+1}}{2m+1}< R_m(x)\leq \dfrac{2-x}{1-x}\dfrac{x^{2m+1}}{2m+1}.$$\\
+	Demostración.-\; La igualdad $-\log(1-x)=P_n(x)+E_n(x)$ es válida para cualquier $x$ real tal que $x<1$. Si reemplazamos $x$ por $-x$, manteniendo $x>-1$, obtenemos la fórmula
+	$$-\log(1+x)=P_n(-x)+E_n(-x)$$
+	Si $-1<x<1$, son válida $-\log(1-x)=P_n(x)+E_n(x)$ y $-\log(1+x)=P_n(-x)+E_n(-x)$. Restando estas dos igualdades, obtenemos
+	$$\log \dfrac{1+x}{1-x} = P_n(x)-P_n(-x)+E_n(x)-E_n(-x).$$
+	En la diferencia $P_n(x)-P_n(-x)$, las potencias pares de $x$ desaparecen y las potencias impares se duplican. Por consiguiente, si $n$ es par, por ejemplo $n=2m$, tenemos
+	$$P_{2m}(x)-P_{2m}(-x) = 2\left(x+\dfrac{x^3}{3}+\cdots+\dfrac{x^{2m-1}}{2m-1}\right),$$
+	y la igualdad  $\log \dfrac{1+x}{1-x} = P_n(x)-P_n(-x)+E_n(x)-E_n(-x).$ se transforma en
+	$$\log \dfrac{1+x}{1-x} = 2\left(x+\dfrac{x^3}{3}+\cdots+\dfrac{x^{2m-1}}{2m-1}\right)+R_m(x),$$
+	donde $R_m(x)=E_{2m}(x)-E_{2m}(-x)$. Esta fórmula es válida si $x$ está en el intervalo abierto $-1<x<1$. Mantengamos ahora $x$ en el intervalo $0<x<1$. Entonces la estimación del teorema 6.4 nos da
+	$$\dfrac{x^{2m+1}}{2m+1}<R_m(x)<\dfrac{1}{1-x}\dfrac{x^{2m+1}}{2m+1} \qquad \mbox{y}\qquad 0<-E_{2m}(-x)\leq \dfrac{2^{2m+1}}{2m+1},$$
+	Sumando estas desigualdades, obtenemos 
+	$$\dfrac{x^{2m+1}}{2m+1}< R_m(x)\leq \dfrac{2-x}{1-x}\dfrac{x^{2m+1}}{2m+1},$$ 
+	ya que $1+1/(1 - x) = (2 - x)/(1 - x).$
+\end{teo}
+
+\section{Ejercicios}
+\begin{enumerate}[1.]
+
+    %--------------------1.
+    \item Utilizar el teorema 6.5 poniendo $x=\frac{1}{3}$ y $m=5$ para calcular aproximaciones de $\log(2)$. Conservar nueve cifras decimales en los cálculos y obtener las desigualdades $0,6931460<\log 2 < 0.6931476.$\\\\
+	Respuesta.-\; Por el teorema 6.5, tenemos
+	$$
+	\begin{array}{rcl}
+	    \log \dfrac{1+x}{1-x} &=& 2\left(x+\dfrac{x^3}{3}+\dfrac{x^5}{5}+\dfrac{x^7}{7}+\dfrac{x^9}{9}\right)+R_5(x)\\\\
+	    \log \dfrac{1+\frac{1}{3}}{1-\frac{1}{3}} &=& 2\left[\dfrac{1}{3}+\dfrac{\left(\frac{1}{3}\right)^3}{3}+\dfrac{\left(\frac{1}{3}\right)^5}{5}+\dfrac{\left(\frac{1}{3}\right)^7}{7}+\dfrac{\left(\frac{1}{3}\right)^9}{9}\right]+R_5\left(\dfrac{1}{3}\right)\\\\
+	\end{array}
+	$$
+	De donde
+	$$\dfrac{\left(\frac{1}{3}\right)^9}{9}<R_5\left(\dfrac{1}{3}\right)\leq \left(\dfrac{2-\frac{1}{3}}{1-\frac{1}{3}}\right) \left[\dfrac{\left(\frac{1}{3}\right)^{10}}{10}\right]$$
+	Por lo tanto,
+	$$0.693146<\log < 0.6931476.$$\\
+
+    %--------------------2.
+    \item 
+
+\end{enumerate}
