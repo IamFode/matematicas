@@ -62,10 +62,17 @@ $$f^{-1}\circ f=I.$$
 	Demostración.-\; La demostración se da en tres etapas sencillas:
 	\begin{enumerate}[(1)]
 	    \item Si $a<b<c$ son tres puntos del intervalo, entonces
-	\end{enumerate}
-	\begin{enumerate}[(i)]
-	    \item o bien $f(a)<f(b)<f(c)$
-	    \item o $f(a)>f(b)>f(c)$.
+		\begin{enumerate}[(i)]
+		    \item o bien $f(a)<f(b)<f(c)$
+		    \item o $f(a)>f(b)>f(c)$.
+		\end{enumerate}
+		Supongamos, por ejemplo, que $f(a)<f(c)$. Si $f(b)<f(a)$, entonces aplicando el Teorema del valor intermedio al intervalo $[b,c]$ se obtendrá un $x$ con $b<x<c$ y $f(x)=f(a)$. Lo que contradice el hecho de que $f$ sea uno-uno en $[a,c]$. Análogamente, $f(b)>f(c)$ conduciría también a una contradicción, de manera que $f(a)<f(b)<f(c)$. Naturalmente, el mismo argumento sirve para el caso $f(a)>f(c).$
+	    \item Si $a<b<c<d$ son cuatro puntos del intervalo, entonces
+		\begin{enumerate}[(i)]
+		    \item o bien $f(a)<f(b)<f(c)<f(d),$
+		    \item o $f(a)>f(b)>f(c)>f(d)$.
+		\end{enumerate}
+		Ya que puede aplicarse (1) primero a los puntos $a<b<c$ y luego a los puntos $b<c<d.$
+	    \item Tomemos cualquier $a<b$ del intervalo y supongamos que $f(a)<f(b)$. Entonces $f$ es creciente ya que si $c$ y $d$ son dos puntos cualesquiera del intervalo, podemos aplicar (2) al conjunto $\left\{a,b,c,d\right\}$ (después de colocar a los puntos en orden creciente).
 	\end{enumerate}
 \end{teo}
-
