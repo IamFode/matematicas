@@ -76,3 +76,143 @@ $$f^{-1}\circ f=I.$$
 	    \item Tomemos cualquier $a<b$ del intervalo y supongamos que $f(a)<f(b)$. Entonces $f$ es creciente ya que si $c$ y $d$ son dos puntos cualesquiera del intervalo, podemos aplicar (2) al conjunto $\left\{a,b,c,d\right\}$ (después de colocar a los puntos en orden creciente).
 	\end{enumerate}
 \end{teo}
+
+%-------------------- Teorema 3
+\begin{teo}
+    Si $f$ es continua y uno-uno en un intervalo, entonces $f^{-1}$ es también continua.\\\\
+	Demostración.-\; Según el teorema 2 sabemos que $f$ es creciente o decreciente. Podemos suponer que $f$ es creciente ya que, entonces, el caso en que $f$ es decreciente se puede tratar de manera análoga acudiendo al recurso habitual de considerar a la función $-f$. También podríamos suponer que el intervalo en el que $f$ está definida es abierto, ya que es fácil ver que una función continua, creciente o decreciente, en cualquier intervalo, puede extenderse a otra definida en un intervalo abierto mayor.\\
+	Demostraremos que 
+	$$\lim_{x\to b}f^{-1}(x)=f^{-1}(b)$$
+	para cada $b$ del dominio de $f^{-1}$. Este número $b$ es de la forma $f(a)$ para un cierto $a$ del dominio de $f$. Para cualquier $\epsilon>0$
+	hallaremos un $\delta>0$ tal que, para todo $x$,
+	\begin{center}
+	si $f(a)-\delta<x<f(a)+\delta$, entonces $a-\epsilon < f^{-1}(x) < a+\epsilon.$
+	\end{center}
+	Estas coordenadas $f(a)+delta$, $f(a)=b$, $f(a)-\delta$, estarán en la ordenada de arriba a abajo. Esto sugiere la manera de hallar $\delta$ (recordemos que girando la figura lateralmente puede observarse la gráfica de $f^{-1}$), como:
+	$$a-\epsilon<a<a+\epsilon,$$
+	se deduce que 
+	$$f(a-\epsilon)<f(a)<f(a+\epsilon).$$
+	Sea $\delta$ de los números $f(a+\epsilon)-f(a)$ y $f(a)-f(a-\epsilon)9$. La figura que imaginamos contiene la demostración completa de que este $\delta$ es un valor adecuado, y lo que sigue a continuación es tan sólo una explicación verbal de la información contenida en la imagen. \\
+	Nuestra elección de $\delta$ garantiza que
+	$$f(a-\epsilon)\leq f(a)-\delta \quad \mbox{y}\quad f(a)+\delta \leq f(a+\epsilon).$$
+	Por lo tanto, si
+	$$f(a)-\delta <x< f(a)+\delta,$$
+	entonces
+	$$f(a-\epsilon)<x<f(a+\epsilon).$$
+	Como $f$ es creciente, $f^{-1}$ también es creciente, obteniéndose
+	$$f^{-1}\left[f(a-\epsilon)\right]<f^{-1}(x)<f^{-1}\left[f(a+\epsilon)\right],$$
+	es decir
+	$$a-\epsilon<f^{-1}(x)<a+\delta,$$
+	que es precisamente lo que se quería demostrar.
+\end{teo}
+
+%-------------------- Teorema 4
+\begin{teo}
+    Si $f$ es una función continua uno-uno definida en un intervalo y $f^{-1}\left[f^{-1}(a)\right]=0$, entonces $f^{-1}$ no es diferenciable en $a$.\\\\
+	Demostración.-\; Tenemos que
+	$$f\left[f^{-1}(x)\right]=x.$$
+	Si $f^{-1}$ fuese diferenciable en $a$, la regla de la cadena implicaría que
+	$$f'\left[f^{-1}(a)\right]\cdot\left(f^{-1}\right)'(a)=1,$$
+	por tanto
+	$$0\cdot\left(f^{-1}\right)'(a)=1,$$
+	lo cual es absurdo.
+\end{teo}
+
+Habiendo decidido en qué puntos una función inversa no puede ser diferenciable, es­tamos ya en condiciones de dar una demostración rigurosa de que, en todos los demás puntos, la derivada de la función inversa viene dada por la fórmula que ya hemos “deducido” de dos maneras diferentes. Observemos que durante el proceso de la demostración rigurosa supondremos que $f^{-1}$  es continua lo cual ya ha sido demostrado previamente.
+
+%-------------------- Teorema 5
+\begin{teo}
+    Sea $f$ una función continua uno-uno definida en un intervalo, y supongamos que $f$ es diferenciable en $f^{-1}(b)$, con derivada $f'\left[f^{-1}(b)\right]\neq 0$. Entonces, $f^{-1}$ es diferenciable en $b$, y
+    $$\left(f^{-1}\right)(b)=\dfrac{1}{f'\left[f^{-1}(b)\right]}.$$\\
+    Demostración.-\; Sea $b=f(a)$. Entonces,
+    $$\lim_{h\to 0}\dfrac{f^{-1}(b+h)-f^{-1}(b)}{h}=\lim_{h\to 0}\dfrac{f^{-1}(b+h)-a}{h}.$$
+    Cada número $b+h$ del dominio de $f^{-1}$ puede escribirse en la forma
+    $$b+h=f(a+k)$$
+    para un único $k$ (deberíamos escribir realmente $k(h)$, aunque mantendremos la notación $k$ para simplificar). Entonces,
+    $$
+    \begin{array}{rcl}
+	\displaystyle\lim_{h\to 0}\dfrac{f^{-1}(b+h)-a}{h}&=&\displaystyle\lim_{h\to 0}\dfrac{f^{-1}\left[f(a+k)\right]-a}{f(a+k)-b}\\\\
+							  &=& \displaystyle\lim_{k\to 0}\dfrac{k}{f(a+k)-f(a)}.\\\\
+    \end{array}
+    $$
+    Efectivamente, vamos por buen camino. No es difícil obtener una expresión explícita para $k$; ya que
+    $$b+h=f(a+k)$$
+    deducimos que
+    $$f^{-1}(b+h)=a+k$$
+    es decir
+    $$k=f^{-1}(b+h)--f^{-1}(b).$$
+    Según el teorema 3, la función $f^{-1}$ es continua en $b$. Esto significa que $k$ tiende a $0$ cuando $h$ tiende a $0$. Como
+    $$\lim_{k\to 0} \dfrac{f(a+k)-f(a)}{k}=f'(a)=f'\left[f^{-1}(b)\right]\neq 0.$$
+    esto implica que
+    $$\left(f^{-1}\right)(b)=\dfrac{1}{f'\left[f^{-1}(b)\right]}.$$
+\end{teo}
+\vspace{.3cm}
+Ya podemos adelantar un beneficio inmediato. Si $n$ es impart, sea
+\begin{center}
+    $f_n(x)=x^n$ para todo $x$;
+\end{center}
+si $n$ es par, sea
+\begin{center}
+    $f_x(x)=x^n$, $x\neq 0$.
+\end{center}
+
+En ambos casos, $f_n$ es una función continua uno-uno, cuya función inversa viene dada por
+$$g_n(x)=\sqrt[n]{x}=x^{1/n}.$$
+Según el teorema 5, para $x\neq 0$ se verifica
+$$
+\begin{array}{rcl}
+    g_n'(x)&=&\dfrac{1}{f_n'\left[f_n^{-1}(x)\right]}\\\\
+	   &=& \dfrac{1}{n\left[f_n^{-1}(x)\right]^{n-1}}\\\\
+	   &=& \dfrac{1}{n\left(x^{1/n}\right)^{n-1}}\\\\
+	   &=& \dfrac{1}{n} \cdot \dfrac{1}{x^{1-(1/n)}}\\\\
+	   &=& \dfrac{1}{n}\cdot x^{(1/n)-1}\\\\
+\end{array}
+$$
+
+Por tanto, si $f(x)=x^a$ y $a$ es un entero o el recíproco de un número natural, entonces $f'(x)=ax^{a-1}$. Ahora es fácil comprobar que esta fórmula se verifica para cualquier número racional $a$: sea $a=m/n$, donde $m$ es un entero y $n$ es un número natural; si
+$$f(x)=x^{m/n}=\left(x^{1/n}\right)^m,$$
+entonces, según la regla de la cadena,
+$$
+\begin{array}{rcl}
+    f'(x) &=& m\left(x^{1/n}\right)^{m-1}\cdot \dfrac{1}{n} \cdot x^{(1/n)-1}\\\\
+	  &=& \dfrac{m}{n} \cdot x^{[(m/n)-(1/n)]+[(1/n)-1]}\\\\
+	  &=& \dfrac{m}{n} \cdot x^{(m/n)-1}\\\\
+\end{array}
+$$
+
+
+\section{Problemas}
+\begin{enumerate}[\bfseries 1.]
+
+    %--------------------1.
+    \item Halle $f^{-1}$ para cada una de las siguientes funciones $f$,
+
+	\begin{enumerate}[(i)]
+
+	    %----------(i)
+	    \item $f(x)=x^3+1,$\\\\
+		Respuesta.-\;  Sea $y=f^{-1}(x)$, entonces $x=f(y)=y^3+1$. Por lo tanto,
+		$$f^{-1}(x)=\sqrt[3]{x-1}.$$\\
+
+	    %----------(ii)
+	    \item $f(x)=(x-1)^3$.\\\\
+		Respuesta.-\; sea $y=f^{-1}(x)$, entonces $x=f(y)=(y-1)^3$. Por lo tanto,
+		$$f^{-1}(x)=x^{1/3}+1.$$\\
+
+	    %----------(iii)
+	    \item $f(x)=\left\{\begin{array}{rl} x,&x\mbox{ racional.}\\ -x,& x\mbox{ irracional}.\end{array}\right.$.\\\\ 
+		Respuesta.-\; Sea $f^{-1}(x)$, entonces
+		$$f(x)=\left\{\begin{array}{rl} y,&y\mbox{ racional.}\\ -y,& y\mbox{ irracional}.\end{array}\right.$$
+		Ya que, $\pm y$ es racional o irracional si y sólo si $y$ lo es. Tenemos $x=y$, si $x$ es racional y $y=-x$ si $x$ es irracional. Así.
+		$$y=f(x).$$\\
+
+	    %----------(iv)
+	    \item 
+
+
+	\end{enumerate}
+
+\end{enumerate}
+
+
+

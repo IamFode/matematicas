@@ -815,8 +815,48 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 
     %--------------------4.
     \item Demostrar que
-	$$\left\{ T\in \mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right):\dim \mynull T>2 \right\}$$
-	no es un subespacio de $\mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right)$.\\\\
-	    Demostración.-\; Sea $e_1,\ldots,e_5$ una base de $\textbf{R}^5$ y sea $d_1,\ldots,d_4$ una base para $\textbf{R}^4$. 
+    $$\left\{ T\in \mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right):\dim \mynull T>2 \right\}$$
+    no es un subespacio de $\mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right)$.\\\\
+	Demostración.-\; Sea $e_1,\ldots,e_5$ una base de $\textbf{R}^5$ y sea $d_1,\ldots,d_4$ una base para $\textbf{R}^4$. Definamos $S_1$ y $S_2$ por
+	$$
+	\begin{array}{cccc}
+	    S_1e_i=0,&S_1e_4=d_1,&S_1e_5=d_2,&\mbox{para } i=1,2,3;\\\\
+	    S_2e_i=0,&S_2e_3=d_3,&S_2e_5=d_4,&\mbox{para } i=1,2,4.
+	\end{array}
+	$$
+	Entonces, $S_1,S_2\in \left\{T\in \mathcal{L}\left(\textbf{R},\textbf{R}^4\right):\dim \null T > 2\right\}$. Sin embargo,
+	$$(S_1+S_2)e_1=0,\quad (S_1+S_2)e_2=0$$
+	y
+	$$(S_1+S_2)e_3=d_3, \quad (S_1+S_2)e_4=d_1, \quad (S_1+S_2)e_5=d_2+d_4.$$
+	De donde, podemos verificar que $\dim \mynull(S_1+S_2)=2$. Así, $\left\{T\in \mathcal{L}\left(\textbf{R},\textbf{R}^4\right):\dim \mynull T > 2\right\}$ no es cerrada bajo la adición, esto implica que no es un subespacio de $\mathcal{L}\left(\textbf{R}^5,\textbf{R}^4\right)$.\\\\
+
+    %--------------------5.
+    \item Dar un ejemplo de una transformación lineal $T:\textbf{R}^4\to \textbf{R}^4$ tal que
+    $$\range T=\mynull T.$$\\
+	Respuesta.-\; Definimos a
+	$$
+	\begin{array}{rcl}
+	    T &:& \textbf{R}^4\to \textbf{R}^4\\\\
+	    (x_1,x_2,x_3,x_4) &\mapsto & (x_3,x_4,0,0)
+	\end{array}
+	$$
+	Claramente $T$ es una transformación lineal, y 
+	$$\mynull T = \left\{(x_1,x_2,x_3,x_4) | x_3=x_4=0 \in \textbf{R}\right\}.$$
+	Como también 
+	$$\range T = \left\{(x,y,0,0) | x,y \in \textbf{R}\right\}.$$
+	Por lo tanto, $\range T = \mynull T$.\\\\
+
+    %--------------------6.
+    \item Demostrar que no existe una transformación lineal $T:\textbf{R}^5\to \textbf{R}^5$ tal que
+    $$\range T = \mynull T.$$
+	Demostración.-\; Por el teorema fundamental de las transformaciones lineales, se tiene
+	$$\dim \range T + \dim \mynull T = 5.$$
+	Esto es imposible, ya que si $\range T \neq \mynull T$  y la dimensión debe ser entero.\\\\
+
+    %--------------------7.
+    \item Suponga que $V$ y $W$ son de dimensión finita con $2\leq \dim V \leq \dim W$ . Demostrar que 
+    $$\left\{T\in \mathcal{L}(V,W):T\mbox{ no es injectivo}\right\}$$ 
+    no es un subespacio de $\mathcal{L}(V,W)$.\\\\
+	Demostración.-\; 
 
 \end{enumerate}
