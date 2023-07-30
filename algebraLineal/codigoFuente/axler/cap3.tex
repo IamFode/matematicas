@@ -610,7 +610,7 @@ El siguiente resultado dice que podemos comprobar si una transformación lineal 
 %--------------------Teorema 3.16
 \begin{myteo}[Inyectividad es equivalente decir que el espacio nulo es igual a \boldmath$\left\{0\right\}$]\,\\\\
     Sea $T\in \mathcal{L}(V,W)$. Entonces, $T$ es inyectiva si y solo si null $T=\left\{0\right\}$.\\\\
-	Demostración.-\; Primero suponga que $T$ es inyectiva. Queremos demostrar que null $T$ = $\left\{0\right\}$. Sabemos por 3.11 que $\left\{0\right\}\subset \mbox{null }T$. Para probar la inclusión en la otra dirección, suponga $v\in \mbox{null }T$. Entonces,
+	Demostración.-\; Primero suponga que $T$ es inyectiva. Queremos demostrar que null $T$ = $\left\{0\right\}$. Sabemos por 3.11 que $\left\{0\right\}\subset \mbox{null }T$. Para probar que $\mynull T \subset \left\{0\right\}$, suponga $v\in \mbox{null }T$. Entonces,
 	$$T(v)=0=T(0).$$
 	Ya que $T$ es inyectiva, implica que $v=0$. Así, podemos concluir que null $T=\left\{0\right\}$. Como queriamos.\\
 
@@ -688,7 +688,7 @@ Que una transformación lineal sea sobreyectiva depende del espacio vectorial al
 Ahora podemos demostrar que ninguna transformación lineal desde un espacio vectorial de dimensión finita hacia un espacio vectorial "más pequeño" puede ser inyectivo, donde "más pequeño" se mide por la dimensión.
 
 %-------------------- teorema 3.23
-\begin{myteo}[Una transformación para un espacio de dimensión pequeña no es inyectivo]\,\\\\
+\begin{myteo}[Una transformación a un espacio de menor dimensión no es inyectiva]\,\\\\
     Suponga que $V$ y $W$ son espacios vectoriales de dimensión finita tales que $\dim V>\dim W$. Entonces, ninguna transformación lineal de $V$ en W es inyectiva.\\\\
 	Demostración.-\; Sea $T\in \mathcal{L}(V,W)$. Entonces,
 	$$
@@ -747,7 +747,7 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 \setcounter{myteo}{28}
 %-------------------- teorema 3.29
 \begin{myteo}[Sistemas no homogéneos de ecuaciones lineales]\,\\\\
-    Un sistema no homogéneo de ecuaciones lineales con más ecuaciones que variables no tienen solución para alguna opción de los términos constantes.\\\\
+    Un sistema no homogéneo de ecuaciones lineales con más ecuaciones que variables no tienen solución para alguna elección de los términos constantes.\\\\
 	Demostración.-\; $T$ es una transformación lineal para $\textbf{F}^n$ en $\textbf{F}^m$, y tenemos un sistema de $m$ ecuaciones con $n$ variables $x_1,\ldots,x_n$. Por 3.24 vemos que $T$ es no sobreyectiva si $n<m$.
 \end{myteo}
 
@@ -855,8 +855,315 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 
     %--------------------7.
     \item Suponga que $V$ y $W$ son de dimensión finita con $2\leq \dim V \leq \dim W$ . Demostrar que 
-    $$\left\{T\in \mathcal{L}(V,W):T\mbox{ no es injectivo}\right\}$$ 
+    $$\left\{T\in \mathcal{L}(V,W):T\mbox{ no es inyectivo}\right\}$$ 
     no es un subespacio de $\mathcal{L}(V,W)$.\\\\
-	Demostración.-\; 
+    Demostración.-\; Sea $\mathcal{Z}=\left\{T\in \mathcal{L}(V,W):T\mbox{ no es inyectivo}\right\}$.  Sea $v_1,\ldots,v_m$ una base de $V$, donde $m\geq 2$, y sea $w_1,\ldots,w_n$ una base de $W$, donde $n\geq m$. Definamos $T,S\in \left(V,W\right)$ como en la hipótesis:
+	$$
+	Tv_k = 
+	    \left\{
+		\begin{array}{rcl}
+		    w_1 &\mbox{si}& k=1\\
+		    0 &\mbox{si}& k=2,\ldots, m\\
+		\end{array}
+	    \right.
+	\qquad \mbox{y} \qquad
+	Sv_k = 
+	    \left\{
+		\begin{array}{lcl}
+		    0 &\mbox{si}& k=1\\
+		    w_m &\mbox{si}& k=2,\ldots, m\\
+		\end{array}
+	    \right.
+	$$
+	De donde, $T$ y $S$ no son inyectivas, ya que $v_2\in \mynull T$ y $v_1\mynull S$. Ahora, veamos que $T+S$ que actúa en $V$.
+	$$(T+S)v_1=Tv_1+Sv_1=w_1+0=w_1$$
+	$$\mbox{y}$$
+	$$(T+S)v_k = Tv_k+Sv_k=0+w_k=w_k,\; \mbox{ para }2\leq k \leq m.$$
+	Esto muestra que todos los $w_k's$ se encuentran en el $\range (T+S)$ para $1\leq k \leq m$. Así, $\dim\range (T+S)=m$. Por el teorema fundamental de las transformaciones lineales, se tiene
+	$$\dim\mynull(T+S)=\dim V-\dim \range(T+S)=m-m=0.$$
+	Por lo tanto, $T+S$ es inyectiva. Recordemos, que $\mathcal{Z}$ será un subespacio, si $T,S\in \mathcal{Z}$, entonces $T+S\in \mathcal{Z}$, pero dado que $T+S\notin \mathcal{Z}$, entonces concluimos que $\mathcal{Z}$ no es un subespacio de $\mathcal{L}(V,W)$.\\\\
+
+    %--------------------8.
+    \item Suponga que $V$ y $W$ son de dimensión finita con $\dim V \geq \dim W\geq 2$. Demostrar que 
+	$$\left\{T\in \mathcal{L}(V,W):T\mbox{ no es sobreyectiva}\right\}$$ 
+	no es un subespacio de $\mathcal{L}(V,W)$.\\\\
+	Demostración.-\; Sea $\mathcal{Z}= \left\{T\in \mathcal{L}(V,W):T\mbox{ no es sobreyectiva}\right\}$. Sean también $v_1,\ldots,v_m$ una base de $V$ y $w_1,\ldots,w_n$ una base de $W$, para $2\leq m \leq n$. Definamos $T,S\in \mathcal{L}(V,W)$ como en la hipótesis:
+	$$
+	Tv_k = 
+	    \left\{
+		\begin{array}{rcl}
+		    w_k &\mbox{si}& 1\leq k \leq m-1\\
+		    0 &\mbox{si}& k\geq m.
+		\end{array}
+	    \right.
+	\qquad \mbox{y} \qquad
+	Sv_k = 
+	    \left\{
+		\begin{array}{lcl}
+		    0 &\mbox{si}& 1\leq k \leq m-1\\
+		    w_k &\mbox{si}& k\geq m\\
+		\end{array}
+	    \right.
+	$$
+	Notemos que $w_m$ no se encuentra en el $\range T$. Por lo tanto, $T$ no es sobreyectiva. De manera similar, $S$ no es sobreyectiva, ya que $w_1,w_2,\ldots,w_{m-1}\notin \range S$. Ahora, veamos que $T+S$ actúa sobre $V$.
+	$$(T+S)v_k=Tv_k+Sv_k=w_k+0=w_k,\; \mbox{ para }1\leq k \leq m-1.$$
+	$$\mbox{y}$$
+	$$(T+S)v_k = Tv_k+Sv_k=0+w_m=w_m,\; \mbox{ para }k\geq m.$$
+	Esto muestra que todos los $w_k's$ se encuentran en el $\range (T+S)$ para $1\leq k \leq m$. Esto es, $T+S$ es sobreyectiva. Dado que, $\mathcal{Z}$ será un subespacio, si $T,S\in \mathcal{Z}$, entonces $T+S\in \mathcal{Z}$, pero dado que $T+S\notin \mathcal{Z}$, entonces concluimos que $\mathcal{Z}$ no es un subespacio de $\mathcal{L}(V,W)$.\\\\
+
+    %--------------------9.
+    \item Suponga que $T\in \mathcal{L}(V,W)$ es inyectiva y $v_1,\ldots,v_n$ es linealmente independiente en $V$. Demostrar que $Tv_1,\ldots,Tv_n$ es linealmente independiente en $W$.\\\\
+	Demostración.-\; Sean $a_1,\ldots, a_n\in \textbf{F}$ tales que
+	$$a_1Tv_1+\cdots+a_nTv_n=0.$$
+	Ya que, $T$ es una transformación lineal, se sigue
+	$$T(a_1v_1+\cdots+a_nv_n)=0$$
+	Por 1.16, $\mynull T=\left\{0\right\}$, esto implica que 
+	$$a_1v_1+\cdots+a_nv_n=0$$
+	Luego, debido a que $v_1,\ldots,v_n$ es linealmente independiente, 
+	$$a_1=\cdots = a_n=0.$$
+	De donde,
+	$$a_1Tv_1+\cdots+a_nTv_n=0$$
+	Concluimos que $Tv_1,\ldots,Tv_n$ es linealmente independiente.\\\\
+
+    %--------------------10.
+    \item Suponga $v_1,\ldots, v_n$ genera $V$ y $\mathcal{L}(V,W)$. Demostrar que la lista $Tv_1,\ldots,Tv_n$ genera $\range T$.\\\\
+	Demostración.-\; Suponga que $(v_1,\ldots,v_n)$ genera $V$ y $T\in \mathcal{L}(V,W)$ es sobreyectiva. Sea $w\in W$. Ya que, $T$ es sobreyectiva existe $v\in V$ tal que $Tv=w$. Luego, por el hecho de que $(v_1,\ldots,v_n)$ genera $V$, existe $a_1,\ldots,a_n\in F$ tal que
+	$$v=a_1v_1+\cdots+a_nv_n.$$
+	Multiplicando $T$ a ambos lados,
+	$$Tv=a_1Tv_1+\cdots+a_nTv_n.$$
+	Que $Tv=w$, entonces $w\in \span(Tv_1,\ldots,Tv_n)$. Sabemos que $w$ es un vector arbitrario de $W$, lo implica que $Tv_1,\ldots,Tv_n$ genera $W$.\\\\
+
+    %--------------------11.
+    \item Suponga que $S_1,\ldots,S_n$ son transformaciones lineales inyectivas tal que $S_1S_2,\cdots S_n$ toma sentido. Demostrar que $S_1S_2\cdots S_n$ es inyectiva.\\\\
+	Demostración.-\; Supongamos que $S_1,\ldots,S_n$ son transformaciones lineales inyectivas tal que $S_1,\ldots,S_n$ tenga sentido; es decir, el domino de $S_1,\cdots , S_n$ tal que $S_1S_2\cdots S_n$ esta bien definido. Suponga $v$ un vector en el dominio de $S_1S_2\cdots S_n$ tal que
+	$$(S_1S_2\cdots S_n)v=0.$$
+	Para demostrar que $S_1S_2\cdots S_n$ es inyectiva, necesitamos demostrar que $v=0$ (3.16). Ahora bien, podemos reescribir la ecuación anterior como:
+	$$S_1(S_2\cdots S_nv)=0.$$
+	Ya que $S_1$ es inyectiva por 3.12 y 3.16, se sigue que
+	$$(S_2\cdots S_n)v=0.$$
+	Si seguimos con esta lógica, obtenemos
+	$$S_n v = 0$$
+	Esto implica que $v=0$, como queríamos. Por lo tanto, $S_1S_2\cdots S_n$ es inyectiva.\\\\
+
+    %--------------------12.
+    \item Suponga que $V$ es de dimensión finita y que $T\in \mathcal{L}(V,W)$. Demostrar que existe un subespacio $U$ de $V$ tal que $U\cap \mynull T = \left\{0\right\}$ y $\range T = \left\{Tu:u\in U\right\}$.\\\\
+	Demostración.-\; Por 2.34, existe un subespacio $U$ de $V$ tal que
+	$$V=\mynull T\oplus U.$$
+	De donde, por definición de suma directa tenemos que 
+	$$U \cap \mynull T = \left\{0\right\}.$$
+	Por otro lado, observamos que $\left\{Tu:u\in U\right\}\subset \range T$. Para demostrar la inclusión en la otra dirección, supongamos que $v\in V$. Entonces, existe $w\in \mynull T$ y $u'\in U$ tal que
+	$$v=w+u'.$$
+	Aplicando $T$ a ambos lados, se tiene
+	$$Tv=Tw+Tu'=Tu'.$$
+	Ya que $v$ es un vector arbitrario de $V$ y $Tv$ es un vector arbitrario de $\range T$, 
+	$$Tv\in \left\{Tu:u\in U\right\}$$
+	Esto implica que
+	$$\range T \subset \left\{Tu:u\in U\right\}$$
+	Así, $\range T =\left\{Tu:u\in U\right\}$. Como queríamos demostrar.\\\\
+
+    %--------------------13.
+    \item Suponga que $T$ es una transformación lineal de $\textbf{F}^4$ en $\textbf{F}^2$ tal que
+    $$\mynull T = \left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4:x_1=5x_2 \mbox{ y } x_3=7x_4\right\}.$$
+    Demostrar que $T$ es sobreyectiva.\\\\
+	Demostración.-\; Supongamos que $T\in \mathcal{L}(\textbf{F}^4,\textbf{F}^2)$ es tal que $\mynull T$ definido como en la hipótesis. Entonces, (5,1,0,0),(0,0,7,1) es una base de $\mynull T$, y por lo tanto $\dim\mynull T = 2$. Por el teorema fundalmental de transformaciones lineales
+	$$
+	\begin{array}{rcl}	
+	    \dim \range T &=& \dim \textbf{F}^4 - \dim \mynull T\\ 
+			&=& 4-2\\
+			&=& 2.
+	\end{array}
+	$$
+	Ya que, $\range T$ es un subespacio de dos dimensiones, entonces $T=\textbf{R}^2$. En otras palabras, $T$ es sobreyectiva.\\\\
+
+    %--------------------14.
+    \item Suponga que $U$ es un subespacio de 3 dimensiones de $\textbf{R}^8$ y  $T$ una transformación lineal para $\textbf{R}^8$ en $\textbf{R}^5$ tal que $\mynull T=U$. Demostrar que $T$ es sobreyectiva.\\\\
+	Demostración.-\; Esta es una demostración directa. Por el teorema fundamental de transformaciones lineales,
+	$$\dim \textbf{R}^8 = \dim \mynull T + \dim \range T.$$
+	De donde,
+	$$\dim \range T = \dim \textbf{R}^8 - \dim \mynull T.$$
+	Dado que $\dim \textbf{8}$ y $\dim\mynull 3$ tienen dimensión 8 y 3, respectivamente, se sigue que
+	$$\dim \range T = 8-3=5.$$
+	Ahora, es fácil ver que $\textbf{R}^5$ tiene dimensión 5 siempre que $\range T=\textbf{R}^5$. Por lo tanto, $T$ es sobreyectiva.\\\\
+
+    %--------------------15.
+    \item Demostrar que no existe una transformación lineal para $\textbf{F}^5$ en $\textbf{F}^2$ cuyo espacio nulo es
+    $$\left\{(x_1,x_2,x_3,x_4,x_5)\in \textbf{F}^5 : x=3x_2 \mbox{ y } x_3=x_4=x_5\right\}.$$\\
+	Demostración.-\; Sea, $V=\textbf{F}^5$; de donde, $\dim V = 5$. Ya que $T\subseteq \textbf{F}^2$, entonces $\dim T \leq 2$. Por el teorema fundamental de transformaciones lineales,
+	$$
+	\begin{array}{rcl}
+	    \dim \range T &=& \dim V - \dim \mynull T\\
+			  &\geq& 5-2\\
+			  &=& 3.
+	\end{array}
+	$$
+	Esto es, $\dim \mynull T$ debe ser por lo menos $3$.\\
+	Ahora, observamos que
+	$$
+	\begin{array}{rcl}
+	    U &=& \left\{(x_1,x_2,x_3,x_4,x_5) | x_1=3x_2,\; x_3=x_4=x_5\right\}\\\\
+	      &=& \left\{(3x_2,x_2,x_3,x_3,x_3) | x_2,x_4\in \textbf{F}\right\}\\\\
+	      &=& \left\{x_2(3,1,0,0,0)+x_3(0,0,1,1,1) | x_2,x_3\in \textbf{F}\right\}.
+	\end{array}
+	$$
+
+	Esto muestra que $U=\span \left\{(3,1,0,0,0),(0,0,1,1,1)\right\}$. Que $U$ es generado por dos vectores implica que la dimensión de $U$ puede ser a lo suma $2$. Esto junto con la conclusión del paso anterior prueba que $U$ nunca puede ser el espacio nulo de ningúna Transformación lineal $T:\textbf{F}^5\to \textbf{F}^2$.\\\\
+
+
+    %--------------------16.
+    \item Suponga que existe una transformación lineal en $V$ cuyo espacio nulo y rango son ambos de dimensión finita. Demuestre que $V$ es de dimensión finita.\\\\
+	Demostración.-\; Suponga que $V$ es un espacio vectorial y $T$ es una transformación lineal definido en $V$. Si el rango y el espacio nulo de $T$ son ambos de dimensión finita, entonces el lado derecho de la ecuación 
+	$$\dim V = \dim \mynull T + \dim \range T,$$
+	es un número finito. Por lo tanto, el lado izquierdo también debe ser un número finito. En otras palabras, $V$ debe ser de dimensión finita.\\\\
+
+    %--------------------17.
+    \item Suponga que $V$ y $W$ son ambos de dimensión finita. Demostrar que existe una transformación lineal inyectiva para $V$ en $W$ si y sólo si $\dim V \leq \dim W$.\\\\
+	Demostración.-\; Por un lado, suponga que $T\in \mathcal{L}(V,W)$ es inyectiva. Si $\dim V>\dim W$, entonces por el teorema 3.23, ninguna transformación lineal es inyectiva. lo que es una contradicción. Por lo tanto $\dim V\leq \dim W$.\\
+	Por otro lado, suponga que $\dim V\leq \dim W$. Si $\dim V=\dim W$ Entonces, la conclusión de la transformación lineal 
+
+
+    %--------------------18.
+    \item Suponga que $V$ y $W$ son ambos de dimensión finita. Demostrar que existe una transformación lineal sobreyectiva para $V$ sobre $W$ si y sólo si $\dim V \geq \dim W$.\\\\
 
 \end{enumerate}
+
+\mysection{Matrices}
+
+\subsection*{Representando una transformación lineal por una matriz}
+
+Sabemos que si $v_1,\ldots,v_n$ es una base de $V$ y $T_V\to W$ es lineal, entonces los valores de $Tv_1,\ldots,Tv_n$ determina los valores de $T$ en vectores arbitrarios en $V$ (3.5). Como veremos, las matrices se usan como un método eficiente para registrar los valor de las $Tv_j's$ en términos de una base de $W$.
+
+%--------------------teorema 3.30
+\begin{mydef}[Matriz, \boldmath$A_{j,k}$]\;\\\\
+    Sea $m$ y $n$ que denota enteros positivos. Un \textbf{matriz} $A$ de $m$ por $n$ es un arreglo rectangular de elementos de $\textbf{F}$ con $m$ filas y $n$ columnas:
+    $$
+    A=
+    \begin{pmatrix}
+	A_{1,1} & \cdots & A_{1,n}\\
+	\vdots &  & \vdots\\
+	A_{m,1} & \cdots & A_{m,n}
+    \end{pmatrix}
+    $$
+    La notación $A_{j,k}$ denota la entrada en la fila $j$, columna $k$ de $A$. En otras palabras, el primer indice se refiere al número de fila y el segundo indice se refiere al número de columna.
+\end{mydef}
+
+Ahora, veamos la definición clave de esta sección
+
+\setcounter{mydef}{31}
+%--------------------definición 3.32
+\begin{mydef}[Matriz de una transformación lineal, \boldmath$\mathcal{M}\left(T\right)$]\;\\\\
+    Suponga que $T\in \mathcal{L}(V,W)$ y $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$. La matriz de $T$ con respecto a estas bases es la matriz $m$ por $n$, $\mathcal{M}(T)$, cuyas entradas $A_{j,k}$ están definidas por
+    $$Tv_k = A_{1,k}w_1+\cdots+A_{m,k}w_m.$$
+    Si las bases no están claras por el contexto, entonces la notación $\mathcal{M}\left(T,(v_1,\ldots,v_n),(w_1,\ldots,w_m)\right)$  es usada.
+\end{mydef}
+
+Para recordar cómo se construye $\mathcal{M}(T)$ a partir de $T$, puedes escribir en la parte superior de la matriz los vectores base $v_1,\ldots,v_n$ para el dominio y a la izquierda los vectores base $w_1,\ldots,w_m$ para el espacio vectorial al que transforma $T$, como sigue:
+$$
+\mathcal{M}(T)=
+    \begin{array}{cc}
+	&v_1 \quad \cdots\quad v_k \quad \cdots \quad v_n\\\\
+	\begin{array}{c}
+	    w_1\\\\
+	    \vdots\\\\
+	    w_m
+	\end{array}
+	&
+	\begin{pmatrix}
+	    \qquad\qquad\qquad&A_{1,k}&\qquad\qquad\qquad\\\\
+		  &\vdots&\\\\
+		  &A_{m,k}&
+	\end{pmatrix}
+    \end{array}
+$$
+
+La columna $k$-enésimo de $\mathcal{M}(T)$ consiste en los escalares necesarios para escribir $Tv_k$ como una combinación lineal de $w_1,\ldots,w_m$:
+$$Tv_k=\sum_{j=1}^m A_{j,k}w_j.$$
+
+Es decir, $Tv_{k}$ puede calcularse a partir de $\mathcal{M}(T)$ multiplicando cada entrada de la columna $k$ por la correspondiente $w_j$ de la columna de la izquierda, y sumando después los vectores resultantes.\\\\
+
+
+\subsection*{Adición y multiplicación escalar de matrices}
+
+Para el resto de esta sección, supongamos que V y W son de dimensión finita y que se ha elegido una base para cada uno de estos espacios vectoriales. Así, para cada transformación lineal de V a W, podemos hablar de su matriz (con respecto a las bases elegidas, por supuesto).
+
+\setcounter{mydef}{34}
+%--------------------teorema 3.35
+\begin{mydef}[Adición de matrices]\;\\\\
+    La \textbf{suma de dos matrices de un mismo tamaño} que se obtiene sumando las entradas correspondientes de las matrices:
+    $$
+    \begin{pmatrix}
+	A_{1,1}&\cdots&A_{1,n}\\
+	\vdots&&\vdots\\
+	A_{m,1}&\cdots&A_{m,n}
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+	C_{1,1}&\cdots&C_{1,n}\\
+	\vdots&&\vdots\\
+	C_{m,1}&\cdots&C_{m,n}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+	A_{1,1}+C_{1,1}&\cdots&A_{1,n}+C_{1,n}\\
+	\vdots&&\vdots\\
+	A_{m,1}+C_{m,1}&\cdots&A_{m,n}+C_{m,n}
+    \end{pmatrix}
+    $$
+    En otras palabras, $(A+C)_{j,k}=A_{j,k}+C_{j,k}$.
+\end{mydef}
+
+En el siguiente resultado, se supone que se utilizan las mismas bases para las tres transformaciones lineales $S + T, S ,$ y $T$.
+
+%--------------------teorema 3.36
+\begin{myteo}[La matriz de la suma de transformaciones lineales]\;\\\\
+    Suponga $S,T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.\\\\
+	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Por la definición 1.32, tenemos que
+	$$(S+T)v_k=\left(A_{1,k}+C_{1,k}\right)w_1+\cdots +\left(A_{m,k}+C_{m,k}\right)w_m.$$
+	De donde,
+	$$(S+T)v_k=\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(C_{1,k}w_1+\cdots +C_{m,k}w_m\right)=Sv_k + Tv_k.$$
+	por lo tanto, $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
+\end{myteo}
+
+%--------------------teorema 3.37
+\begin{mydef}[Multiplicación escalar de una matriz]\;\\\\
+    El producto de un escalar y una matriz es la matriz que se obtiene multiplicando cada entrada de la matriz por el escalar:
+    $$
+    \lambda
+	\begin{pmatrix}
+	    A_{1,1}&\cdots&A_{1,n}\\
+	    \vdots&&\vdots\\
+	    A_{m,1}&\cdots&A_{m,n}
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	    \lambda A_{1,1}&\cdots&\lambda A_{1,n}\\
+	    \vdots&&\vdots\\
+	    \lambda A_{m,1}&\cdots&\lambda A_{m,n}
+	\end{pmatrix}
+    $$
+    En otras palabras, $(\lambda A)_{j,k}=\lambda A_{j,k}$.
+\end{mydef}
+
+En el siguiente resultado, se supone que se utilizan las mismas bases para ambas transformaciones lineales $\lambda T$ y $T$.
+
+%--------------------teorema 3.38
+\begin{myteo}[La matriz de un escalar por una transformación lineal]\;\\\\
+    Suponga $\lambda \in \textbf{F}$ y $T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(\lambda T)=\lambda \mathcal{M}(T)$.\\\\
+	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Por la definición 1.32, tenemos que
+	$$(\lambda T)v_k=\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)=\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m).$$
+	De donde, 
+	$$(\lambda T)v_k=\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m)=\lambda(A_{1,k}w_1+\cdots +A_{m,k}w_m)=\lambda(Tv_k).$$
+	por lo tanto, $\mathcal{M}(\lambda T)=\lambda \mathcal{M}(T)$.
+\end{myteo}
+
+Dado que la suma y la multiplicación escalar ya se han definido para las matrices, no debería sorprenderte que esté a punto de aparecer un espacio vectorial. Sólo necesitamos un poco de notación para que este nuevo espacio vectorial tenga un nombre.
+
+%--------------------definición 3.39
+\begin{mydef}[\boldmath$\textbf{F}^{m,n}$]\;\\\\
+    Para $m$ y $n$ enteros positivos, el conjunto de todos las matrices $m\times n$ con entradas en \textbf{F} se denomina $\textbf{F}^{m,n}$.
+\end{mydef}
+
+%--------------------teorema 3.40
+\begin{myteo}[\boldmath $\textbf{F}^{m,n}=mn$]\,\\\\
+    Suponga que $m$ y $n$ son enteros positivos. Con la adición y la multiplicación escalar ya definidas, $\textbf{F}^{m,n}$ es un espacio vectorial con dimensión $mn$.\\\\
+	Demostración.-\;
+\end{myteo}
