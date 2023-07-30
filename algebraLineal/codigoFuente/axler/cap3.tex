@@ -1116,11 +1116,19 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para las t
 %--------------------teorema 3.36
 \begin{myteo}[La matriz de la suma de transformaciones lineales]\;\\\\
     Suponga $S,T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.\\\\
-	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Por la definición 1.32, tenemos que
-	$$(S+T)v_k=\left(A_{1,k}+C_{1,k}\right)w_1+\cdots +\left(A_{m,k}+C_{m,k}\right)w_m.$$
-	De donde,
-	$$(S+T)v_k=\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(C_{1,k}w_1+\cdots +C_{m,k}w_m\right)=Sv_k + Tv_k.$$
-	por lo tanto, $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
+    Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Además las entradas de $\mathcal{M}(S)$ y $\mathcal{M}(T)$ son $A_{j,k}$ y $B_{j,k}$ respectivamente definidas por,
+    $$Sv_k=A_{1,k}w_1+\cdots+A_{m,k}w_m$$
+    $$\mbox{y}$$
+    $$Tv_k=B_{1,k}w_1+\cdots+B_{m,k}w_m$$
+    Entonces,
+    $$
+    \begin{array}{rcl}
+	(S+T)v_k&=& Sv_k+Tv_k\\\\
+		&=&\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(B_{1,k}w_1+\cdots +B_{m,k}w_m\right)\\\\
+		&=&\left(A_{1,k}+B_{1,k}\right)w_1+\cdots +\left(A_{m,k}+B_{m,k}\right)w_m\\\\
+    \end{array}
+    $$
+    Se deduce que las entradas en la fila $k$, columna $k$ de $M(T+S)$ con respecto a estas bases son $A_{j,k}+B_{j,k}$. Luego, por la definidas 3.35, concluimos que $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
 \end{myteo}
 
 %--------------------teorema 3.37
@@ -1148,11 +1156,18 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para ambas
 %--------------------teorema 3.38
 \begin{myteo}[La matriz de un escalar por una transformación lineal]\;\\\\
     Suponga $\lambda \in \textbf{F}$ y $T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(\lambda T)=\lambda \mathcal{M}(T)$.\\\\
-	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Por la definición 1.32, tenemos que
-	$$(\lambda T)v_k=\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)=\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m).$$
-	De donde, 
-	$$(\lambda T)v_k=\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m)=\lambda(A_{1,k}w_1+\cdots +A_{m,k}w_m)=\lambda(Tv_k).$$
-	por lo tanto, $\mathcal{M}(\lambda T)=\lambda \mathcal{M}(T)$.
+	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $\lambda \in \textbf{F}$. Además las entradas de $\mathcal{M}(T)$ son $A_{j,k}$ definida por,
+	$$Tv_k=A_{1,k}w_1+\cdots+A_{m,k}w_m$$
+	Entonces,
+	$$
+	\begin{array}{rcl}
+	(\lambda T)v_k&=& \lambda(Tv_k)\\\\
+		&=&\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)\\\\
+		&=&\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m)\\\\
+		&=&(\lamnda A_{1,k})w_1+\cdots +(\lambda A_{m,k})w_m.
+	\end{array}
+	$$
+	Se deduce que las entradas en la fila $k$, columna $k$ de $M(T)$ con respecto a esta base y el escalar son $\lambda A_{j,k}$. Luego, por la definidas 3.38, concluimos que $\mathcal{M}(T) =  \lambda \mathcal{M}(T)$.
 \end{myteo}
 
 Dado que la suma y la multiplicación escalar ya se han definido para las matrices, no debería sorprenderte que esté a punto de aparecer un espacio vectorial. Sólo necesitamos un poco de notación para que este nuevo espacio vectorial tenga un nombre.
@@ -1163,7 +1178,11 @@ Dado que la suma y la multiplicación escalar ya se han definido para las matric
 \end{mydef}
 
 %--------------------teorema 3.40
-\begin{myteo}[\boldmath $\textbf{F}^{m,n}=mn$]\,\\\\
-    Suponga que $m$ y $n$ son enteros positivos. Con la adición y la multiplicación escalar ya definidas, $\textbf{F}^{m,n}$ es un espacio vectorial con dimensión $mn$.\\\\
-	Demostración.-\;
+\begin{myteo}[\boldmath $\dim \textbf{F}^{m,n}=mn$]\,\\\\
+    Suponga que $m$ y $n$ son enteros positivos. Con la adición y la multiplicación escalar ya definidas, $\textbf{F}^{m,n}$ es un espacio vectorial con dimensión $mn$.
 \end{myteo}
+
+\section{Multiplicación de matrices}
+
+
+

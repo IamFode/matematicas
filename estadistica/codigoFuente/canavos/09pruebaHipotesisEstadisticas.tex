@@ -237,4 +237,90 @@ $$
 $$
 
 \subsection{Pruebas para dos muestras}
-Sean $X_1,X_2,\ldots,X_{n_X}$ y $Y_1,Y_2,\ldots,Y_{n_Y}$
+Sean $X_1,X_2,\ldots,X_{n_X}$ y $Y_1,Y_2,\ldots,Y_{n_Y}$ muestras aleatorias provenientes de dos distribuciones normales independientes con medias $\mu_X$ y $\mu_Y$ y varianzas $\sigma_X^2$ y $\sigma_Y^2$, respectivamente. Supóngase que se desea probar la hipótesis nula
+$$H_0=\mu_X-\mu_Y=\delta_0$$
+contra una de las siguientes alternativas:
+$$H_1:\mu_X-\mu_Y>\delta_0,\qquad H_1:\mu_X-\mu_Y<\delta_0,\qquad H_1:\mu_X-\mu_Y\neq\delta_0,$$
+donde $\sigma_0$ es una cantidad que toma valores positivos o cero y la cual representa  la diferencia propuesta entre los valores desconocidos de las medias. Supongamos que las varianzas de la población se conocen. De las secciones 7.7, 8.4,8.4.3, es razonable concluir que la estadística de prueba apropiada es la diferencia muestral media $\overline{X}-\overline{Y}$. En particular, si un valor de $\overline{X}-\overline{Y}$ con base en la muestra aleatoria es lo suficientemente diferente, mayor o menor que $\delta_0$, se rechazará la hipótesis nula dependiendo de la hipótesis alternativa en cuestión.
+
+\begin{center}
+\textbf{Criterios de rechazo para la prueba de hipótesis con respecto a las medias de dos distribuciones normales e independientes con varianza conocidas}
+\end{center}
+$$
+\begin{array}{cc}
+    \hline
+    \mbox{Hipótesis nula} & \mbox{Valor de la estadística de prueba bajo } H_0\\
+    \hline\\
+    H_0: \mu_X-\mu_Y=\delta_0 & z=\dfrac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\dfrac{\sigma_X^2}{n_X}+\dfrac{\sigma_Y^2}{n_Y}}}\\\\
+    \hline
+    \mbox{Hipótesis alternativa} & \mbox{Criterios de rechazo}\\
+    \hline\\
+    H_1:\mu_X-\mu_Y\neq \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\leq z_{\alpha/2} \mbox{ o cuando } z\geq z_{1-\alpha/2}\\
+    H_1:\mu_X-\mu_Y> \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\geq z_{1-\alpha}\\
+    H_1:\mu_X-\mu_Y< \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } z\leq z_{\alpha}\\\\
+    \hline
+\end{array}
+$$
+
+Ahora, si se especifican los tamaños particulares $\alpha$ y $\beta$ de los errores de tipo I y de tipo II, respectivamente, obtendremos una expresión para $n$.\\
+Si $H_0$ es realmente cierta, la probabilidad de rechazarla es $\alpha$; y si $H_0$ es falsa en este caso supongamos $(\mu_X-\mu_Y=\sigma_1>\sigma_0)$, la probabilidad de no rechazar $H_0$ es $\beta$. Sea $c_0$ el valor crítico con respecto a la distribución de muestreo $\overline{X}-\overline{Y}$. Entonces, $H_0$ será rechazada cuando $\overline{x}-\overline{y}\geq c_0$, tal que
+$$P(\overline{X}-\overline{Y}\geq c_0 | \mu_X-\mu_Y=\delta_0)=\alpha,$$
+En términos de la normal estándar, esto es
+$$P\left(Z\geq \dfrac{c_0-\delta_0}{\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}}\Bigg| \mu_X-\mu_Y=\sigma_0\right)=\alpha.$$
+Dado que pueden determinarse valores cuantiles $z_{1-\alpha}$ de la normal estándar tales que
+$$P(Z\geq z_{1-\alpha})=\alpha,$$
+se tiene
+$$\dfrac{c_0-\delta_0}{\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}}=z_{1-\alpha}.$$
+
+Si $\mu_X-\mu_Y>\delta_0$, entonces la probabilidad de no rechazar a $H_0$ es $\beta$. Por lo tanto,
+$$P(\overline{X}-\overline{Y}<c_0|\mu_X-\mu_Y=\delta_1)=\beta,$$
+que en términos de la normal estándar es
+$$P\left(Z<\dfrac{c_0-\delta_1}{\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}}\Bigg|\mu_X-\mu_Y=\delta_1\right)=\beta.$$
+
+Luego, 
+$$c_0=z_{1-\alpha}\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}+\delta_0,$$
+y
+$$c_0=z_\beta\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}+\delta_1.$$
+
+Igualando,
+$$z_{1-\alpha}\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}+\delta_0=z_\beta\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}}+\delta_1,$$
+de donde
+$$\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}} \left(z_{1-\alpha}-z_\beta\right)= \delta_1-\delta_0$$
+
+Dado que para la normal estándar $-z_\beta=z_{1-\beta}$, se tiene
+$$\sqrt{\dfrac{\sigma_X^2+\sigma_Y^2}{n}} \left(z_{1-\alpha}-z_{1-\beta}\right)= \delta_1-\delta_0,$$
+y por lo tanto
+$$n=\dfrac{\left(z_{1-\alpha}-z_{1-\beta}\right)^2\left(\sigma_X^2+\sigma_Y^2\right)}{\left(\delta_1-\delta_0\right)^2}.$$
+
+Esta expresión determina el tamaño de cada una de las dos muestras aleatorias en las dos distribuciones normales independientes, asegurando probabilidades $\alpha$ y $\beta$ para los errores de tipo I y II, respectivamente, cuando se prueba
+$$H_0:\mu_X-\mu_Y=\delta_0 \mbox{ contra } H_1:\mu_X-\mu_Y=\delta_1>\delta_0.$$\\
+
+Ahora, analicemos el caso en el que el valor de la varianza no se conoce; si las varianzas $\sigma_X^2$ y $\sigma_Y^2$ no se conocen pero se supone que son iguales, entonces para la hipótesis nula
+$$H_0:\mu_X-\mu_Y=\delta_0$$
+la estadística de prueba es
+$$T=\dfrac{\overline{X}-\overline{Y}-\delta_0}{S_p\sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}},$$
+la cual tiene una distribución t de Student con $$n_X+n_Y-2$$ grados de libertad. 
+
+\begin{center}
+\textbf{Criterios de rechazo para la prueba de hipótesis con respecto a las medias de dos distribuciones normales e independientes con varianza iguales pero desconocidas}
+\end{center}
+$$
+\begin{array}{cc}
+    \hline
+    \mbox{Hipótesis nula} & \mbox{Valor de la estadística de prueba bajo } H_0\\
+    \hline\\
+    H_0: \mu_X-\mu_Y=\delta_0 & t=\dfrac{\overline{x}-\overline{y}-\delta_0}{S_p \sqrt{\dfrac{1}{n_X}+\dfrac{1}{n_Y}}}\\\\
+    \hline
+    \mbox{Hipótesis alternativa} & \mbox{Criterios de rechazo}\\
+    \hline\\
+    H_1:\mu_X-\mu_Y\neq \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } t\leq t_{\alpha/2,m} \mbox{ o cuando } z\geq z_{1-\alpha/2,m}, \mbox{ en donde } m=n_X+n_Y-2\\
+    H_1:\mu_X-\mu_Y> \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } t\geq t_{1-\alpha,m}\\
+    H_1:\mu_X-\mu_Y< \mu_0 & \mbox{Rechazar } H_0 \mbox{ cuando } t\leq t_{\alpha,m}\\\\
+    \hline
+\end{array}
+$$
+
+\subsection{Reflexiones sobre las suposiciones y sensitividad}
+Debemos observar que la distribución t es muy robusta, o insensible a las suposiciones de normalidad, y en forma especial cuando el tamaño de la muestra es mayor o igual a $15$.
+
+\subsection{Prueba sobre las medias cuando las observaciones están pareadas}
