@@ -1030,7 +1030,7 @@ Como veremos a continuación, 3.23 y 3.24 tienen importantes consecuencias en la
 
 \subsection*{Representando una transformación lineal por una matriz}
 
-Sabemos que si $v_1,\ldots,v_n$ es una base de $V$ y $T_V\to W$ es lineal, entonces los valores de $Tv_1,\ldots,Tv_n$ determina los valores de $T$ en vectores arbitrarios en $V$ (3.5). Como veremos, las matrices se usan como un método eficiente para registrar los valor de las $Tv_j's$ en términos de una base de $W$.
+Sabemos que si $v_1,\ldots,v_n$ es una base de $V$ y $T:V\to W$ es lineal, entonces los valores de $Tv_1,\ldots,Tv_n$ determina los valores de $T$ en vectores arbitrarios en $V$ (3.5). Como veremos, las matrices se usan como un método eficiente para registrar los valor de las $Tv_j's$ en términos de una base de $W$.
 
 %--------------------teorema 3.30
 \begin{mydef}[Matriz, \boldmath$A_{j,k}$]\;\\\\
@@ -1125,10 +1125,13 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para las t
     \begin{array}{rcl}
 	(S+T)v_k&=& Sv_k+Tv_k\\\\
 		&=&\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(B_{1,k}w_1+\cdots +B_{m,k}w_m\right)\\\\
-		&=&\left(A_{1,k}+B_{1,k}\right)w_1+\cdots +\left(A_{m,k}+B_{m,k}\right)w_m\\\\
+		&=&\left(A_{1,k}+B_{1,k}\right) w_1+\cdots +\left(A_{m,k}+B_{m,k}\right)w_m.
     \end{array}
     $$
-    Se deduce que las entradas en la fila $k$, columna $k$ de $M(T+S)$ con respecto a estas bases son $A_{j,k}+B_{j,k}$. Luego, por la definidas 3.35, concluimos que $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
+
+    Se deduce que las entradas en la fila $k$, columna $k$ de $M(T+S)$ con respecto a estas bases son $A_{j,k}+B_{j,k}$. Luego, por la definición 3.35, se tiene que,
+    $$A_{j,k}+B_{j,k}= (A+B)_{j,k}.$$
+    De donde, concluimos que $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
 \end{myteo}
 
 %--------------------teorema 3.37
@@ -1164,10 +1167,13 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para ambas
 	(\lambda T)v_k&=& \lambda(Tv_k)\\\\
 		&=&\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)\\\\
 		&=&\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m)\\\\
-		&=&(\lamnda A_{1,k})w_1+\cdots +(\lambda A_{m,k})w_m.
+		&=&(\lambda A_{1,k})w_1+\cdots +(\lambda A_{m,k})w_m.
 	\end{array}
 	$$
-	Se deduce que las entradas en la fila $k$, columna $k$ de $M(T)$ con respecto a esta base y el escalar son $\lambda A_{j,k}$. Luego, por la definidas 3.38, concluimos que $\mathcal{M}(T) =  \lambda \mathcal{M}(T)$.
+
+	Se deduce que las entradas en la fila $k$, columna $k$ de $M(T)$ con respecto a esta base y el escalar son $\lambda A_{j,k}$. Luego, por la definición 3.38, 
+	$$\lambda A_{j,k}=(\lambda A)_{j,k}.$$
+	De donde, concluimos que $\mathcal{M}(T) =  \lambda \mathcal{M}(T)$.
 \end{myteo}
 
 Dado que la suma y la multiplicación escalar ya se han definido para las matrices, no debería sorprenderte que esté a punto de aparecer un espacio vectorial. Sólo necesitamos un poco de notación para que este nuevo espacio vectorial tenga un nombre.
@@ -1184,5 +1190,60 @@ Dado que la suma y la multiplicación escalar ya se han definido para las matric
 
 \section{Multiplicación de matrices}
 
+%--------------------definición 3.41
+\begin{mydef}[Multiplicación de matrices]\,\\\\
+    Suponga $A$ es una matriz $m\times n$ y $C$ es una matriz $n\times p$. Entonces $AC$ es definida por la matriz $m\times p$ cuyas entradas en la fila $j$, columna $k$, están dadas por la siguiente ecuación:
+    $$(AC)_{j,k}=\sum_{r=1}^n A_{j,r}C_{r,k}.$$
+    En otras palabras, la entrada en la fila $j$, columna $k$ de $AC$ se calcula tomando la fila $j$ de $A$ y la columna $k$ de $C$, multiplicando las entradas correspondientes y luego sumando.
+\end{mydef}
 
+Tenga en cuenta que definimos el producto de dos matrices solo cuando el número de columnas de la primera matriz es igual al número de filas de la segunda matriz.\\
+
+La multiplicación de matrices no es conmutativa. En otras palabras, $AC$ no es necesariamente igual a $CA$. Pero si es distributiva y asociativa.
+
+%--------------------lema 1.1
+\begin{lema}
+    Demostrar que la propiedad distributiva es cierta para la adición y multiplicación de matrices. En otras palabras, suponga que $A,B$ y $C$ son matrices cuyas dimensiones son tal que $A(B+C)$ tengan sentido. Demostrar que $AB+AC$ tiene sentido y $A(B+C)=AB+AC$.\\\\
+	Demostración.-\; Ya que, $A(B+C)$ tiene sentido, $B$ y $C$ tienen el mismo tamaño. Además, el número de columnas $n$ de $A$ debe ser igual al número de filas de $B$ y $C$. Todo esto significa que $AB+AC$ tiene sentido.\\
+	Para demostrar que $A(B+C)=AB+AC$, sólo usaremos la definición de adición de matrices, la definición de multiplicación de matrices y la propiedad distributiva de la multiplicación escalar en $\textbf{F}$. En particular, sea $a_{j,k}$, $b_{j,k}$y $c_{j,k}$ denotado como las entrada en la fila $j$, columna $k$ de $A,B$ y $C$, respectivamente. La entrada en la fila $j$, columna $k$ de $B+C$ es $b_{j,k}+c_{j,k}$. Por lo que la entrada en la fila $j$, columna $k$ de $A(B+C)$ es 
+	$$\sum_{r=1}^n a_{j,r}(b_{r,k}+c_{r,k})=\sum_{r=1}^n a_{j,r}b_{r,k}+\sum_{r=1}^n a_{j,r}c_{r,k}.$$
+	Esto es igual a la entrada en la fila $j$, columna $k$ de $AB+AC$. Por lo tanto, $A(B+C)=AB+AC$.\\\\
+\end{lema}
+
+%-------------------- lema 1.2
+\begin{lema}
+    Demostrar que la multiplicación de matrices es asociativa. En otras palabras, suponga que $A,B$ y $C$ son matrices cuyas dimensiones son tales que $(AB)C$ tiene sentido. Demostrar que $A(BC)$ tiene sentido y $(AB)C=A(BC)$.\\\\
+    Demostración.-\; Suponga que $A$ es una matriz $m\times n$, $B$ una matriz $n\times p$ y $C$ una matriz $p\times q$, el tamaño, donde $(AB)C$ tenga sentido. Sean $R\in \mathcal{L}\left(\textbf{F}^n,\textbf{F}^m\right)$, $S\in \mathcal{L}\left(\textbf{F}^p,\textbf{F}^n\right)$ y $T\in \mathcal{L}\left(\textbf{F}^p,\textbf{F}^q\right)$, tales que $\mathcal{M}(R)=A, \mathcal{M}(S)=B,\mathcal{M}(T)=C$, existan. Ahora,
+    $$
+    \begin{array}{rcl}
+	(AB)C&=& \left[\mathcal{M}(R)\mathcal{M}(S)\right]\mathcal{M}(T)\\\\
+	     &=& \mathcal{M}(RS)\mathcal{M}(T)\\\\
+	     &=& \mathcal{M}\left[(RS)T\right]\\\\
+	     &=& \mathcal{M}(R)\mathcal{M}(ST)\\\\
+	     &=& \mathcal{M}(R)\left[\mathcal{M}(S)\mathcal{M}(T)\right]\\\\
+	     &=& A(BC).
+    \end{array}
+    $$
+\end{lema}
+
+\setcounter{myteo}{42}
+%--------------------teorema 3.43
+\begin{myteo}[La matriz del producto de transformaciones lineales]\;\\\\
+    Si $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{V,W}$, entonces $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$.\\\\
+	Demostración.-\; Suponga, que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$. Suponga también que tenemos otro espacio vectorial $U$ y que $u_1,\ldots,u_p$ es una base de $U$.\\
+Considere la transformación lineal $T: U\to V$ y $S: V\to W$. La composición $ST$ es una transformación lineal de $U$ en $W$. Es $\mathcal{M}(ST)$ igual a $\mathcal{M}(S)\mathcal{M}(T)$?. Esta pregunta no tiene sentido aún, ya que no definimos el producto de dos matrices. Ahora, suponga $\mathcal{M}(S)=A$ y $\mathcal{M}(T)=C$. Para $1\leq k\leq p$, tenemos
+$$
+\begin{array}{rcl}
+    (ST)u_k &=& \displaystyle S\left(\sum_{r=1}^n C_{r,k}v_r\right)\\\\
+	    &=& \displaystyle \sum_{r=1}^n C_{r,k}Sv_r\\\\
+	    &=& \displaystyle\sum_{r=1}^n C_{r,k}\sum_{j=1}^m A_{j,r}w_j\\\\
+	    &=& \displaystyle\sum_{j=1}^m\left(\sum_{r=1}^n A_{j,r}C_{r,k}\right)w_j.
+\end{array}
+$$	
+
+Así, $\mathcal{M}(ST)$ es la matriz $m\times n$ cuyas entradas en la fija $j$, y columna $k$, son iguales a
+$$\sum_{r=1}^n A_{j,r}C_{r,k}.$$
+
+Ahora, veamos como definimos la multiplicación de matrices para que la ecuación deseada $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$ sea cierta.
+\end{myteo}
 
