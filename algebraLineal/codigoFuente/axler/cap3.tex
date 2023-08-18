@@ -1207,31 +1207,23 @@ La multiplicación de matrices no es conmutativa. En otras palabras, $AC$ no es 
 	Demostración.-\; Ya que, $A(B+C)$ tiene sentido, $B$ y $C$ tienen el mismo tamaño. Además, el número de columnas $n$ de $A$ debe ser igual al número de filas de $B$ y $C$. Todo esto significa que $AB+AC$ tiene sentido.\\
 	Para demostrar que $A(B+C)=AB+AC$, sólo usaremos la definición de adición de matrices, la definición de multiplicación de matrices y la propiedad distributiva de la multiplicación escalar en $\textbf{F}$. En particular, sea $a_{j,k}$, $b_{j,k}$y $c_{j,k}$ denotado como las entrada en la fila $j$, columna $k$ de $A,B$ y $C$, respectivamente. La entrada en la fila $j$, columna $k$ de $B+C$ es $b_{j,k}+c_{j,k}$. Por lo que la entrada en la fila $j$, columna $k$ de $A(B+C)$ es 
 	$$\sum_{r=1}^n a_{j,r}(b_{r,k}+c_{r,k})=\sum_{r=1}^n a_{j,r}b_{r,k}+\sum_{r=1}^n a_{j,r}c_{r,k}.$$
-	Esto es igual a la entrada en la fila $j$, columna $k$ de $AB+AC$. Por lo tanto, $A(B+C)=AB+AC$.\\\\
+	Esto es igual a la entrada en la fila $j$, columna $k$ de $AB+AC$. Por lo tanto, $A(B+C)=AB+AC$.
 \end{lema}
 
 %-------------------- lema 1.2
 \begin{lema}
     Demostrar que la multiplicación de matrices es asociativa. En otras palabras, suponga que $A,B$ y $C$ son matrices cuyas dimensiones son tales que $(AB)C$ tiene sentido. Demostrar que $A(BC)$ tiene sentido y $(AB)C=A(BC)$.\\\\
-    Demostración.-\; Suponga que $A$ es una matriz $m\times n$, $B$ una matriz $n\times p$ y $C$ una matriz $p\times q$, el tamaño, donde $(AB)C$ tenga sentido. Sean $R\in \mathcal{L}\left(\textbf{F}^n,\textbf{F}^m\right)$, $S\in \mathcal{L}\left(\textbf{F}^p,\textbf{F}^n\right)$ y $T\in \mathcal{L}\left(\textbf{F}^p,\textbf{F}^q\right)$, tales que $\mathcal{M}(R)=A, \mathcal{M}(S)=B,\mathcal{M}(T)=C$, existan. Ahora,
-    $$
-    \begin{array}{rcl}
-	(AB)C&=& \left[\mathcal{M}(R)\mathcal{M}(S)\right]\mathcal{M}(T)\\\\
-	     &=& \mathcal{M}(RS)\mathcal{M}(T)\\\\
-	     &=& \mathcal{M}\left[(RS)T\right]\\\\
-	     &=& \mathcal{M}(R)\mathcal{M}(ST)\\\\
-	     &=& \mathcal{M}(R)\left[\mathcal{M}(S)\mathcal{M}(T)\right]\\\\
-	     &=& A(BC).
-    \end{array}
-    $$
+    Demostración.-\; Sean $A,B$ y $C$ matrices $m\times n$, $n\times p$ y $p\times q$ matrices respectivamente. Entonces $A(BC)$ y $(AB)C$ tienen sentido. Ahora, por definición de multiplicación de matrices (1.41), se tiene para las entradas $(i,j)$ de $A(BC)$ y $(AB)C$,
+    $$A(BC)=\sum_{r=1}^n A_{ij}\left(\sum_{k=1}^p B_{jk}C_{kl}\right) = \sum_{j=1}^n\sum_{k=1}^p A_{ij}B_{jk}C_{kl} = \displaystyle\sum_{j=1}^p\sum_{k=1}^n A_{ij}B_{jk}C_{kl}=\sum_{k=1}^p\left(\sum_{j=1}^n A_{ij}B_{jk}\right)C_{kl}=(AB)C$$
+    Por lo tanto, $A(BC)=(AB)C$.
 \end{lema}
 
 \setcounter{myteo}{42}
 %--------------------teorema 3.43
 \begin{myteo}[La matriz del producto de transformaciones lineales]\;\\\\
-    Si $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{V,W}$, entonces $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$.\\\\
-	Demostración.-\; Suponga, que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$. Suponga también que tenemos otro espacio vectorial $U$ y que $u_1,\ldots,u_p$ es una base de $U$.\\
-Considere la transformación lineal $T: U\to V$ y $S: V\to W$. La composición $ST$ es una transformación lineal de $U$ en $W$. Es $\mathcal{M}(ST)$ igual a $\mathcal{M}(S)\mathcal{M}(T)$?. Esta pregunta no tiene sentido aún, ya que no definimos el producto de dos matrices. Ahora, suponga $\mathcal{M}(S)=A$ y $\mathcal{M}(T)=C$. Para $1\leq k\leq p$, tenemos
+    Si $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{L}(V,W)$, entonces $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$.\\\\
+	Demostración.-\; Suponga, que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$ y que $u_1,\ldots,u_p$ es una base de $U$.\\
+	Considere la transformación lineal $T: U\to V$ y $S: V\to W$. La composición $ST$ es una transformación lineal de $U$ en $W$. Ahora, suponga $\mathcal{M}(S)=A$ y $\mathcal{M}(T)=C$. Para $1\leq k\leq p$, tenemos
 $$
 \begin{array}{rcl}
     (ST)u_k &=& \displaystyle S\left(\sum_{r=1}^n C_{r,k}v_r\right)\\\\
@@ -1241,9 +1233,54 @@ $$
 \end{array}
 $$	
 
-Así, $\mathcal{M}(ST)$ es la matriz $m\times n$ cuyas entradas en la fija $j$, y columna $k$, son iguales a
+Así, $\mathcal{M}(ST)$ es la matriz $m\times n$ cuyas entradas en la fila $j$, columna $k$, son iguales a
 $$\sum_{r=1}^n A_{j,r}C_{r,k}.$$
 
-Ahora, veamos como definimos la multiplicación de matrices para que la ecuación deseada $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$ sea cierta.
+Debemos tomar encuenta que $\mathcal{M}(ST)$ consiste en los escalares necesarios para escribir $(ST)u_k$ cómo una combinación lineal de $w_k$. Ahora bien, por definción de multiplicación de matraces $1.41$ para las entradas (j,k) de $\mathcal{M}(S)\mathcal{M}(T)$ definida como:
+$$\mathcal{M}(S)\mathcal{M}(T)=\sum_{r=1}^n A_{j,r}C_{r,k}.$$
+Demostramos que,
+$$\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T).$$
 \end{myteo}
+
+%--------------------Notación 3.44
+\begin{mynotacion}[\boldmath$A_{(j,\cdot)},A_{(\cdot,k)}$]\,\\\\
+    Suponga que $A$ es una matriz $m\times n$.
+    \begin{itemize}
+	\item Si $1\leq j\leq m$, entonces $A_{j,\cdot}$ denota la matriz $1\times n$ que consiste en la fila $j$ de $A$.
+	\item Si $1\leq k\leq n$, entonces $A_{\cdot,k}$ denota la matriz $m\times 1$ que consiste en la columna $k$ de $A$.
+    \end{itemize}
+\end{mynotacion}
+
+\setcounter{myteo}{46}
+%--------------------teorema 3.45
+\begin{myteo}[La entrada del producto de la matriz es igual a la fila por la columna]\,\\\\
+    Suponga que $A$ es una matriz $m\times n$ y $C$ es una matriz $n\times p$. Entonces, 
+    $$(AC)_{j,k}=A_{j,\cdot}C_{\cdot,k}$$
+    para $1\leq j\leq m$ y $1\leq k\leq p$.\\\\
+	Demostración.-\; La demostración se sigue inmediatamente de las definiciones.
+\end{myteo}
+\vspace{.5cm}
+Otra forma de pensar en las Multiplicaciones de matrices:
+
+\setcounter{myteo}{48}
+%--------------------teorema 3.46
+\begin{myteo}[La columna del producto de la matriz es igual a la matriz por la columna]\,\\\\
+    Suponga que $A$ es una matriz $m\times n$ y $C$ es una matriz $n\times p$. Entonces,
+    $$(AC)_{\cdot,k}=AC_{\cdot,k}$$
+    para $1\leq k\leq p$.\\\\
+	Demostración.-\; 
+\end{myteo}
+
+\setcounter{mydef}{51}
+%--------------------Definición 3.47
+\begin{mydef}[Combinación lineal de columnas]\,\\\\
+    Suponga que $A$ es una matriz $m\times n$ y $c=\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}$ es una matriz $n\times 1$. Entonces
+    $$Ac=c_1A_{\cdot,1}+\cdots+c_nA_{\cdot,n}.$$
+    En otras palabras, $Ac$ es una combinación lineal de las columnas de $A$, con los escalares que multiplican las columnas que viene de $c$.
+\end{mydef} 
+
+
+\mysection{Invertibilidad y espacios vectoriales isomorfos}
+\vspace{0.5cm}
+\subsection*{Transformaciones lineales invertibles}
 
