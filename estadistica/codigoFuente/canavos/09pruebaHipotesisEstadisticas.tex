@@ -328,3 +328,72 @@ Es deseable tener a las personas u objetos que producirán las observaciones den
 
 
 \section{Prueba de hipótesis con respecto a las varianzas cuando se muestrean distribuciones normales}
+La inferencia con respecto a una varianza e tan imporatnte como una con respecto a la media. 
+
+\subsection{Pruebas para una muestra}
+Sea $X_1,X_2,\ldots,X_n$ una muestra aleatoria de una distribución normal con media $\mu$ desconocida y varianza $\sigma^2$ desconocida. Considérese la prueba de la siguiente hipótesis
+$$H_0:\sigma^2=\sigma^2_0$$
+contra una de las siguientes alternativas
+$$H_1,\sigma^2\neq \sigma^2_0,\qquad H_1,\sigma^2>\sigma^2_0,\qquad H_1,\sigma^2<\sigma^2_0,$$
+donde $\sigma_0^2$ es el valor propuesto para $\sigma^2$. La estadística de interés es la varianza muestral $S^2$. \\\\
+
+\begin{center}
+    Criterios de rechazo para la prueba de hipótesis con respecto a la varianza de una distribución normal con media desconocida
+\end{center}
+$$
+\begin{array}{cc}
+    \hline
+    \mbox{Hipótesis nula} & \mbox{Valor de la estadística de prueba bajo } H_0\\
+    \hline\\
+    H_0: \sigma^2=\sigma_0^2 & \mathcal{X}^2=\dfrac{(n-1)s^2}{\sigma_0^2}\\\\
+    \hline
+    \mbox{Hipótesis alternativa} & \mbox{Criterios de rechazo}\\
+    \hline\\
+    H_1:\sigma^2\neq \sigma_0^2 & \mbox{Rechazar } H_0 \mbox{ cuando } \mathcal{X}^2\geq\mathcal{X}^2_{1-\alpha/2,n-1} \mbox{ o cuando } \mathcal{X}^2\leq \mathcal{X}^2_{\alpha/2,n-1}\\\\
+    H_1:\sigma^2>\sigma_0^2 & \mbox{Rechazar } H_0 \mbox{ cuando } \mathcal{X}^2\geq\mathcal{X}^2_{1-\alpha,n-1}\\\\
+    H_1:\sigma^2<\sigma_0^2 & \mbox{Rechazar } H_0 \mbox{ cuando } \mathcal{X}^2\leq\mathcal{X}^2_{1-\alpha,n-1}\\\\
+    \hline
+\end{array}
+$$
+
+\subsection{Pruebas para dos muestras}
+Sean $X_1,X_2,\ldots,X_{n_X},\; Y_1,Y_2,\ldots,Y_{n_Y}$ dos muestras aleatorias de dos distribuciones normales independientes con medias desconocidas $\mu_X$ y $\mu_Y$ y varianzas desconocidas $\sigma_X^2$ y $\sigma_Y^2$. Considérese la prueba de la siguiente hipótesis nula
+$$H_0:\sigma_X^2=\sigma_Y^2$$
+contra una de las siguentes alternativas
+$$H_1:\sigma_X^2\neq \sigma_Y^2,\qquad H_1:\sigma_X^2>\sigma_Y^2,\qquad H_1:\sigma_X^2<\sigma_Y^2.$$
+Las estadísticas de interés son las varianzas muestrales $S_X^2$ y $S_Y^2$. \\
+
+Recuerde que por virtud de la independencia, las cantidad $(n_X-1)S_X^2/\sigma_X^2$ y $(n_Y-1)S_Y^2/\sigma_Y^2$ son dos variables aleatorias independiente chi-cuadrada con $n_X-1$ y $n_Y-1$ grados de libertad, respectivamente. Entonces se sigue la estadística
+$$F=\dfrac{S_X^2/\sigma_X^2}{S_Y^2/\sigma_Y^2}$$
+tiene una distribución $F$ con $n_X-1$ y $n_Y-1$ grados de libertad. Pero bajo la hipótesis nula, $\sigma_X^2=\sigma_Y^2$; de esta forma la estadística se reduce a 
+$$F=S_X^2/S_Y^2.$$\\
+
+\begin{center}
+    Criterios de rechazo para la prueba de hipótesis con respecto a la varianza de una distribución normal con media desconocida
+\end{center}
+$$
+\begin{array}{cc}
+    \hline
+    \mbox{Hipótesis nula} & \mbox{Valor de la estadística de prueba bajo } H_0\\
+    \hline\\
+    H_0: \sigma_X^2=\sigma_Y^2 & f=\dfrac{S_X^2}{S_Y^2}\\\\
+    \hline
+    \mbox{Hipótesis alternativa} & \mbox{Criterios de rechazo}\\
+    \hline\\
+    H_1:\sigma_X^2\neq \sigma_Y^2 & \mbox{Rechazar } H_0 \mbox{ cuando } f\geq f_{1-\alpha/2,n_X-1,n_Y-1} \mbox{ o cuando } f\leq f_{\alpha/2,n_X-1,n_Y-1}\\\\
+    H_1:\sigma_X^2>\sigma_Y^2 & \mbox{Rechazar } H_0 \mbox{ cuando } f\geq f_{1-\alpha,n_X-1,n_Y-1}\\\\
+    H_1:\sigma_X^2<\sigma_Y^2 & \mbox{Rechazar } H_0 \mbox{ cuando } f \leq 1/f_{1-\alpha,n-1}\\\\
+    \hline
+\end{array}
+$$
+
+\section{Inferencias con respecto a las proporciones de dos distribuciones binomiales independientes}
+En valores grandes de $n_1$ y $n_2$, la distribución de la estadística $\hat{P}_1-\hat{P}_2$ es, en forma aproximada, normal con media y varianza,  
+$$E(\hat{P}_1-\hat{P}_2)=P_1-P_2,\qquad \mbox{y} \qquad V(\hat{P}_1-\hat{P}_2)=\dfrac{P_1(1-P_1)}{n_1}+\dfrac{P_2(1-P_2)}{n_2},$$
+respectivamente. En otras palabras, la distribución de
+$$Z=\dfrac{(\hat{P}_1-\hat{P}_2)-(P_1-P_2)}{\sqrt{\dfrac{\hat{P}_1(1-P_1)}{n_1}+\dfrac{\hat{P}_2(1-P_2)}{n_2}}}$$
+es aproximadamente $N(0,1)$. Se sigue que para $n_1$ y $n_2$ grande. la probabilidad del intervalo aleatorio
+$$\left[\left(\hat{P}_1-\hat{P}_2\right)-z_{1-\alpha/2} d.e\left(\hat{P}_1-\hat{P}_2\right), \qquad \left(\hat{P}_1-\hat{P}_2\right)+z_{1-\alpha/2} s.d. \left(\hat{P}_1-\hat{P_2}\right)\right]$$
+es aproximadamente $1-\alpha$, y el intervalo de confianza aproximado del $100(1-\alpha)\%$ para $P_1-P_2$ es
+$$\left(\hat{p}_1-\hat{p}_2\right)\pm z_{1-\alpha/2} \sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}.$$
+en donde $\hat{p}_1=x/n_1$ y $y/n_2$ son los estimados de máxima verosimilitud de $p_1$ y $p_2$ respectivamente.

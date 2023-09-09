@@ -1,0 +1,805 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{mysection}{0}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1. --------------------
+    \item Supongase $a$ y $b$ números reales, no ambos $0$. Encuentre números reales $c$ y $d$ tales que
+    $$\dfrac{1}{(a+bi)}=c+di.$$\\
+	Respuesta.-\; Supongamos $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \textbf{R}$. Entonces,
+	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)=1.$$
+	Luego, por el hecho de que dos números complejos son iguales si sus correspondientes partes reales e imaginarias son iguales, entonces
+	$$\left\{\begin{array}{rcl}
+	    ac-db & = & 1\\
+	    ad+bc & = & 0
+	\end{array}\right.$$
+	De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
+	$$c=\dfrac{a}{a^2+b^2}.$$
+	Luego,
+	$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$\\
+
+    %-------------------- 2. --------------------
+    \item Demostrar que 
+    $$\dfrac{-1+\sqrt{3}i}{2}$$
+    es una raíz cúbica de $1$ (significa que su cubo es igual a $1$).\\\\
+	Demostración.-\; Algebraicamente queremos demostrar que,
+	$$\dfrac{-1+\sqrt{3}i}{2}=\sqrt[3]{1} \quad \mbox{o}\quad \left(\dfrac{-1+\sqrt{3}i}{2}\right)^3=1$$\\
+	Por las propiedades de números complejos, sabemos que
+	$$\dfrac{-1+\sqrt{3}i}{2}=-\dfrac{1}{2}+\dfrac{\sqrt{3}i}{2}.$$
+	Luego, por el binomio al cubo podemos deducir que
+	$$\begin{array}{rcl}
+	    \left(\dfrac{-1}{2}+\dfrac{\sqrt{3}i}{2}\right)^3 &=&\left(\dfrac{-1}{2}\right)^3 + 3\cdot \left(\dfrac{-1}{2}\right)^2 \dfrac{\sqrt{3}i}{2} + 3\cdot \dfrac{-1}{2}\left(\dfrac{\sqrt{3}i}{2}\right)^2+\left(\dfrac{\sqrt{3}i}{2}\right)^3\\\\
+							      &=&\dfrac{-1}{8}+\dfrac{3\sqrt{3}i}{8}+\dfrac{-3(\sqrt{3})^2(\sqrt{-1})^2}{8}+\dfrac{(\sqrt{3})^2\sqrt{3}(\sqrt{-1})^2\sqrt{-1}}{8}\\\\
+							      &=&-\dfrac{1}{8}+\dfrac{3\sqrt{3}i}{8}+\dfrac{9}{8}-\dfrac{3\sqrt{3}i}{8}\\\\
+							      &=&1.
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 3. --------------------
+    \item Encuentre dos raíces cuadradas distintas de $i$.\\\\
+	Respuesta.-\; Queremos encontrar raíces distintas de $i$ tal que
+	$$x^2=i.$$
+	Supongamos que $x=a+bi$ para $a,b\in \textbf{R}$. Resolvemos la ecuación cuadrática, se tiene 
+	$$x^2=(a+bi)^2=(a^2-b^2)+(ab+ba)i=(a^2-b^2)+(2ab)i.$$
+	Luego, ya que $x^2=i=0+1i$, entonces
+	$$x^2=(a^2-b^2)+(2ab)i=(0+1i)\quad \Rightarrow \quad \left\{\begin{array}{rcl}
+		a^2-b^2&=&0\\
+		2ab&=&1
+	    \end{array}\right.$$
+	para $a$ y $b$ números reales. Resolvamos este sistema de ecuaciones, se tiene 
+	$$\left\{\begin{array}{rcl}
+		b&=&\pm \sqrt{\dfrac{1}{2}}\\\\
+		a&=&\pm \sqrt{\dfrac{1}{2}}
+	\end{array}\right.$$
+	Luego, ya que $x^2=(a+bi)^2=(a^2-b^2)-2abi=i$. Entonces, 
+	$$\begin{array}{rcl}
+	    \left[\left(\dfrac{1}{\sqrt{2}}\right)^2-\left(\dfrac{1}{\sqrt{2}}\right)^2\right]+2\cdot\dfrac{1}{\sqrt{2}}\cdot\dfrac{i}{\sqrt{2}}i&=&i\\\\
+	    \left[\left(-\dfrac{1}{\sqrt{2}}\right)^2-\left(-\dfrac{1}{\sqrt{2}}\right)^2\right]+2\left(-\dfrac{1}{\sqrt{2}}\right)\left(-\cdot\dfrac{i}{\sqrt{2}}\right)i&=&i\\\\
+	    \left[\left(-\dfrac{1}{\sqrt{2}}\right)^2-\left(\dfrac{1}{\sqrt{2}}\right)^2\right]+2\left(-\dfrac{1}{\sqrt{2}}\right)\cdot\dfrac{i}{\sqrt{2}}i&\neq&i\\\\
+	    \left[\left(\dfrac{1}{\sqrt{2}}\right)^2-\left(-\dfrac{1}{\sqrt{2}}\right)^2\right]+2\cdot \dfrac{1}{\sqrt{2}}\left(-\dfrac{i}{\sqrt{2}}\right)i&\neq&i\\\\
+	\end{array}$$
+	De las que solo satisface $x^2=i$ las dos primeras ecuaciones. Por lo tanto, las dos raíces distintas de $i$ son:
+	$$\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{2}}i\qquad \mbox{y}\qquad -\dfrac{1}{\sqrt{2}}-\dfrac{1}{\sqrt{2}}i.$$\\
+
+
+    %-------------------- 4. --------------------
+    \item Demostrar que $\alpha+\beta=\beta+\alpha$ para todo $\alpha,\beta\in \textbf{C}$.\\\\
+	Demostración.-\;  Supóngase $\alpha=a+bi$ y $\beta=c+di$, donde $a,b,c,d \in \textbf{R}$. Entonces por definición de suma de números complejos se muestra que
+	$$\alpha + \beta = (a+bi) + (c+di) = (a+c) + (b+d)i = (c+a) + (d+b)i = \beta + \alpha.$$\\
+
+
+    %-------------------- 5. --------------------
+    \item Demuestre que $(\alpha+\beta)+\lambda=\alpha+(\beta+\lambda)$ para todo $\alpha,\beta,\lambda\in \textbf{C}$.\\\\
+	Demostración.-\; Sean,
+	$$\begin{array}{rcl}
+	    \alpha & = & a+bi\\
+	    \beta & = & c+di\\
+	    \lambda & = & e+fi
+	\end{array}$$
+	para $a,b,c,d,e,f \in \textbf{R}.$ Entonces,
+	$$\begin{array}{rcl}
+	    (\alpha + \beta )+\lambda & = & \left[(a+bi)+(c+di)\right]+(e+fi)\\
+				      & = & \left[(a+c)+(b+d)i\right] + (e+fi)\\
+				      & = & \left[(a+c)+e\right]+\left[(b+d)+f\right]i\\
+				      & = & \left[a+(c+e)\right]+\left[b+(d+f)\right]i\\
+				      & = & (a+bi) + \left[(c+e)+(d+e)i\right]\\
+				      & = & (a+bi) + \left[(c+di)+(e+di)\right]\\
+				      & = & \alpha + (\beta + \lambda).
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 6. --------------------
+    \item Demostrar que $(\alpha\beta)\lambda = \alpha(\beta\lambda)$ para todo $\alpha,\beta,\lambda\in \textbf{C}$.\\\\
+	Demostración.-\; Sean,
+	$$\begin{array}{rcl}
+	    \alpha & = & a+bi\\
+	    \beta & = & c+di\\
+	    \lambda & = & e+fi
+	\end{array}$$
+	para $a,b,c,d,e,f \in \textbf{R}.$ Entonces,
+	$$\begin{array}{rcl}
+	    (\alpha\beta)\lambda &=& \left[(a+bi)(c+di)\right](e+fi)\\
+				 &=&\left[(ac-bd)+(ad+bc)i\right](e+fi)\\
+				 &=&\left[(ac-bd)e-(ad+bc)f\right]+\left[(ac-bd)f+(ad+bc)e\right]i\\
+				 &=&\left[(ac)e-(bd)e-(ad)f-(bc)f\right]+\left[(ac)f-(bd)f+(ad)e+(bc)e\right]i\\
+				 &=&\left[a(ce)-a(df)-b(cf)-b(de)\right]+\left[a(cf)+a(de)+b(ce)-b(df)\right]i\\
+				 &=&\left[a(ce-df)-b(cf+de)\right]+\left[a(cf+de)+b(ce-df)\right]i\\
+				 &=&(a+bi)\left[(ce-df)+(cf+de)i\right]\\
+				 &=&(a+bi)\left[(c+di)(e+fi)\right]\\
+				 &=&\alpha(\beta\lambda).
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 7. --------------------
+    \item Demostrar que para cada $\alpha \in \textbf{C}$, existe un único $\beta\in \textbf{C}$ tal que $\alpha+\beta=0$.\\\\
+	Demostración.-\; Sean $\alpha=(a+bi)$ y $\beta=(c+di)$ para $a,b,c,d\in \textbf{R}$. Por las propiedades de números reales, $a$ y $b$ tienen inversa, las llamaremos $c$ y $d$ respectivamente tales que $a+c=0$ y $b+d=0$. Por lo tanto,
+	$$\begin{array}{rcl}
+	    \alpha+\beta &=& (a+bi)+(c+di)\\
+			 &=& (a+c)+(b+d)i\\
+			 &=& 0 + 0i\\
+			 &=& 0
+	\end{array}$$
+
+	Ahora demostremos la unicidad. Sean $\beta$ y $\beta'$ con $c',d'\in \textbf{R}$ tales que $\alpha+\beta=0$ y $\alpha+\beta'=0$. Igualando estas ecuaciones se tiene,
+	$$\begin{array}{rcl}
+	    \alpha+\beta&=&\alpha+\beta'\\
+	    (a+bi)+(c+di)&=&(a+bi)+(c'+d'i)\\
+	    (a+c)+(b+d)i&=&(a+c')+(b+d')i\\
+	\end{array}$$
+
+	Supongamos $c=c'$ y $d=d'$. Entonces,
+	$$(b+d)i=(b+d')i$$
+	Dada que la igualdad $\alpha+\beta=\alpha+\beta'$ se cumple siempre que $c=c'$ y $d=d'$, concluimos que,
+	$$(c+di)=(c'+d'i)\quad \Rightarrow \quad \beta=\beta'.$$\\
+
+    %-------------------- 8. --------------------
+    \item Demostrar que para cada $\alpha \in \textbf{C}$ con $\alpha\neq 0$, existe un único $\beta\in \textbf{C}$ tal que $\alpha\beta=1$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$ y $\beta=c+di$ con $a,b,c,d\in \textbf{R}$. Entonces,
+	$$\alpha\beta = (a+bi)(c+di) = (ac-bd)+(ad+bc)i=(1+0i)$$
+	Supongamos que:
+	$$\left\{\begin{array}{rcl}
+	    ac-db & = & 1\\
+	    ad+bc & = & 0
+	\end{array}\right.$$
+	De la segunda ecuación tenemos, $d=-\dfrac{bc}{a}$ y reemplazando en la ecuación 1, 
+	$$c=\dfrac{a}{a^2+b^2}.$$
+	Luego,
+	$$d=-\dfrac{bc}{a}=\dfrac{b\cdot \frac{a}{a^2+b^2}}{a}=-\dfrac{b}{a^2+b^2}.$$
+	Por lo tanto, existe un $\beta$ tal que,
+	$$\beta=\dfrac{a}{a^2+b^2}-\dfrac{b}{a^2+b^2}i=\dfrac{a}{a^2+b^2}+\dfrac{-bi}{a^2+b^2}=\dfrac{a-bi}{a^2+b^2}=\dfrac{1}{a+bi}.$$\\
+	Ahora, demostremos la unicidad. Sean $\beta=c+di$ y $\beta'=c'd'i$ tales que, $(a+bi)(c+di)=1$ y $(a+bi)(c'+d'i)=1$. Entonces, por las propiedades de conmutatividad y asociatividad,
+	$$c+di=(c+di)\cdot 1 = (c+di)\cdot(a+bi)(c'+d'i)=\left[(a+bi)(c+di)\right](c'+d'i)=c'+d'i.$$
+	Por lo que queda demostrado que $\beta=\beta'.$ Y así concluimos que $\alpha$ tiene inverso multiplicativo.\\\\
+
+
+
+    %-------------------- 9. --------------------
+    \item Demostrar que $\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma$ para todo $\alpha,\beta,\gamma\in \textbf{C}$.\\\\
+	Demostración.-\; Sean $\alpha=a+bi$, $\beta=c+di$ y $\gamma=e+fi$ con $a,b,c,d,e,f\in \textbf{R}$. Entonces,
+$$\begin{array}{rcl}
+    \alpha(\beta+\gamma) & = & (a+bi)\left[(c+e)+(d+f)i\right]\\
+			 & = & \left[a(c+e)-b(d+f)\right]+\left[a(d+f)+b(c+e)\right]i\\
+			 & = & \left[ac+ae-bd-bf\right]+\left[ad+af+bc+be\right]i\\
+			 & = & ac+ae-bd-bf+adi+afi+bci+bei\\
+			 & = & \left[(ac-bd)+(ad+bc)i\right] + \left[(ae-bf)+(af+be)i\right]\\
+			 & = & (a+bi)(c+di)+(a+bi)(e+fi)\\
+			 & = & \alpha\beta + \alpha\gamma.
+\end{array}$$
+\vspace{0.5cm}
+
+    %-------------------- 10. --------------------
+    \item Encuentre $x\in \textbf{R}^4$ tal que 
+    $$(4,-3,1,7)+2x=(5,9,-6,8).$$\\
+	Respuesta.-\; Sea $x = (x_1,x_2,x_3,x_4)$ con $x_1,x_2,x_3,x_4\in \textbf{R}$. Por definición de adición y multiplicación por un escalar en $\textbf{F}$ propiedades  Entonces,
+	$$\begin{array}{rcl}
+	    (4,-3,1,7)+2(x_1,x_2,x_3,x_4)&=&(5,9,-6,8)\\
+	    (4,-3,1,7)+(2x_1,2x_2,2x_3,2x_4)&=&(5,9,-6,8)\\
+	    (4+2x_1,-3+2x_2,1+2x_3,7+2x_4)&=&(5,9,-6,8)\\
+	\end{array}$$
+
+	Por la igualdad dada, podemos formar un sistema de ecuaciones como sigue:
+	$$\left\{\begin{array}{rcccr}
+	    4&+&2x_1&=&5\\
+	    -3&+&2x_2&=&9\\
+	    1&+&2x_3&=&-6\\
+	    7&+&2x_4&=&8	
+	\end{array}\right.$$
+	Resolviendo, obtenemos
+	$$x=(x_1,x_2,x_3,x_4)=\left(\dfrac{1}{2},2,-\dfrac{7}{2},\dfrac{1}{2}\right).$$\\
+
+
+    %-------------------- 11. --------------------
+    \item Explique porque no existe $\lambda\in \textbf{C}$ tal que
+    $$\lambda(2-3i,5+4i,-6+7i)=(12-5i,7+22i,-32-9i).$$\\\\
+	Respuesta.-\; Sean $\lambda=a+bi, \; a,b\in \textbf{R}$ y $x=(12-5i,7+22i,-32-9i)$. Entonces, por definición de multiplicación por un escalar en $\textbf{C}$ y las propiedades de número complejos,
+	$$\begin{array}{rcl}
+	    \lambda(2-3i,5+4i,-6+7i) & = & x\\
+	    \left[\lambda(2-3i),\lambda(5+4i),\lambda(-6+7i)\right] & = & x\\
+	    \left[(a+bi)(2-3i),(a+bi)(5+4i),(a+bi)(-6+7i)\right] & = & x\\
+	    \left\{\left[2a-(-3)b\right]+\left(-(3)a+2b\right]i, (5a-4b)+(4a+5b)i,\left[(-6)a-7b\right]+\left[7a+(-6)b\right]i\right\}& = & x\\
+	    \left[\left(2a+3b\right)+\left(-3a+2b\right)i, (5a-4b)+(4a+5b)i,\left(-6a-7b\right)+\left(7a-6b\right)i\right]& = & x\\
+	\end{array}$$
+	Dado que,
+	    $$\left[\left(2a+3b\right)+\left(-3a+2b\right)i, (5a-4b)+(4a+5b)i,\left(-6a-7b\right)+\left(7a-6b\right)i\right] = (12-5i,7+22i,-32-9i)$$
+	Entonces, por la igualdad tenemos el sistema de ecuaciones:
+	$$\left\{\begin{array}{rcccr}
+		(2a+3b)&+&(-3a+2b)i&=&12-5i\\
+		(5a-4b)&+&(4a+5b)i&=&7+22i\\
+		(-6a-7b)&+&(7a-6b)i&=&-32-9i
+	\end{array}\right.$$
+	Que implica,
+	$$\left\{\begin{array}{rcr}
+	    2a+3b&=&12\\
+	    -3a+2b&=&-5\\
+	    5a-4b&=&7\\
+	    4a+5b&=&22\\
+	    -6a-7b&=&-32\\
+	    7a-6b&=&-9
+	\end{array}\right.$$
+	Resolviendo este último sistema,
+	$$3(2a+3b)+2(-3a+2b)=3\cdot 12 + 2(-5)\quad \Rightarrow \quad b=\dfrac{26}{11}.$$
+	De donde $b$ estará dado por:
+	$$2a+3b=12\quad \Rightarrow \quad 2a+3\cdot \dfrac{26}{11}=12 \quad \Rightarrow \quad a=\dfrac{27}{11}.$$
+	Sabemos que $a$ y $b$ debe satisfacer cada una de las ecuaciones del último sistema, Por ejemplo:
+	$$\begin{array}{rcl}
+	    5a-4b&=&7\\
+	    5\cdot \dfrac{27}{11}-4\cdot \dfrac{26}{11}&=&7\\
+	    \dfrac{21}{11}=7.
+	\end{array}$$
+	Claramente, 
+	$$\dfrac{21}{11}\neq7,$$ 
+	lo que significa que no podemos encontrar números $a$ y $b$ para satisfacer las ecuaciones del último sistema.\\\\
+
+
+    %-------------------- 12. --------------------
+    \item Demostrar que $(x+y)+z=x+(y+z)$ para todo $x,y,z\in \textbf{F}^n.$\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $z=(z_1,\ldots , z_n)$. Entonces por definición de adición en $\textbf{F}^n$ y los axiomas de números reales,
+	$$\begin{array}{rcl}
+	    (x+y)+z & = & \left[(x_1+\ldots+x_n)+(y_1+\ldots + y_n)\right]+(z_1,\ldots , z_n)\\
+		    & = & (x_1+y_1,\ldots ,x_n+y_n)+(z_1+\ldots, z_n)\\
+		    & = & \left[(x_1+y_1)+y_1,\ldots ,(x_n+y_n)+z_n\right]\\
+		    & = & \left[x_1+(y_1+y_1),\ldots ,x_n+(y_n+z_n)\right]\\
+		    & = & (x_1,\ldots,x_n)+\left[(y_1+z_1,\ldots, y_n+z_n)\right]\\
+		    & = & (x_1,\ldots,x_n)+\left[(y_1,\ldots, y_n)+(z_1,\ldots,z_n)\right]\\
+		    & = & x+(y+z).
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 13. --------------------
+    \item Demostrar que $(ab)x=a(bx)$ para todo $x\in \textbf{F}^n$ y todo $a,b\in \textbf{F}$.\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$ y $a,b\in \textbf{F}$. Entonces por definición de multiplicación escalar en $\textbf{F}^n$ y los axiomas de números reales,
+	$$\begin{array}{rcl}
+	    (ab)x&=&(ab)(x_1,\ldots,x_n)\\
+		 &=&\left[(ab)x_1,\ldots,(ab)x_n)\right]\\
+		 &=&\left[a(bx_1),\ldots,a(bx_n)\right]\\
+		 &=&a\left[(bx_1),\ldots,(bx_n)\right]\\
+		 &=&a\left[b(x_1,\ldots,x_n)\right]\\
+		 &=&a(bx)
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 14. --------------------
+    \item Demostrar que $1x=x$ para todo $x\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$. Entonces, por definición de multiplicación escalar en $\textbf{F}^n$ y por el hecho de que $1a=a$ para $a\in \textbf{F}$
+	$$\begin{array}{rcl}
+	    1x&=&1(x_1,\ldots,x_n)\\
+		 &=&\left[1x_1,\ldots,1x_n\right]\\
+		 &=&\left[x_1,\ldots,x_n\right]\\
+		 &=&x.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 15. --------------------
+    \item Demostrar que $\lambda (x+y)=\lambda x+\lambda y$ para todo $\lambda\in \textbf{F}$ y todo $x,y\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sean $x=(x_1,\ldots,x_n)$, $y=(y_1,\ldots , y_n)$ y $\lambda\in \textbf{F}$. Entonces, por definición de adición y multiplicación escalar en $\textbf{F}^n$ 
+	$$\begin{array}{rcl}
+	    \lambda (x+y)&=&\lambda\left[(x_1,\ldots,x_n)+(y_1,\ldots , y_n)\right]\\
+		 &=&\lambda\left[(x_1+y_1,\ldots ,x_n+y_n)\right]\\
+		 &=&\left[\lambda(x_1+y_1),\ldots ,\lambda(x_n+y_n)\right]\\
+		 &=&\left[\lambda x_1+\lambda y_1,\ldots ,\lambda x_n+\lambda y_n\right]\\
+		 &=&\left[\lambda x_1,\ldots ,\lambda x_n\right]+\left[\lambda y_1,\ldots ,\lambda y_n\right]\\
+		 &=&\lambda x+\lambda y.
+	\end{array}$$
+	\vspace{.5cm}
+
+    %-------------------- 16. --------------------
+    \item Demostrar que $(a+b)x=ax+bx$  para todo $a,b\in \textbf{F}$ y todo $x\in \textbf{F}^n$.\\\\
+	Demostración.-\; Sea $x=(x_1,\ldots,x_n)$ y $a,b\in \textbf{F}$. Entonces, por definición de multiplicación escalar en $\textbf{F}^n$
+	$$\begin{array}{rcl}
+	    (a+b)x&=&(a+b)(x_1,\ldots,x_n)\\
+		 &=&\left[(a+b)x_1,\ldots,(a+b)x_n\right]\\
+		 &=&\left[(ax_1+bx_1),\ldots,(ax_n+bx_n)\right]\\
+		 &=&\left[ax_1,\ldots,ax_n\right]+\left[bx_1,\ldots,bx_n\right]\\
+		 &=&ax+bx.
+	\end{array}$$
+	\vspace{.5cm}
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{mysection}{1}
+\mysection{Ejercicio}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Demostrar que $-(-v)=v$ para cada $v\in V$.\\\\
+	Demostración.-\; Ya que $(-1)v=-v$ para cada $v\in V$ (apartado 1.31, Axler, Linear algebra), $(-a)(-a)=a, \forall a \in \textbf{R}$ y la identidad multiplicativa de espacio vectorial tenemos que 
+	$$\begin{array}{rcl}
+	v &=& 1v \\
+	&=& (-1)(-1)v \\
+	&=& (-1)(-v) \\
+	&=& -(-v)
+	\end{array}$$
+	\vspace{0.5cm}
+
+    %-------------------- 2.
+    \item Supóngase $a\in \textbf{F}$, $v\in V$ y $av=0$. Demostrar que $a=0$ o $v=0$.\\\\
+	Demostración.-\; Por propiedades de lógica ($p \Rightarrow q \lor r \equiv p\land \sim q \Rightarrow r$). Entonces será suficiente demostrar que,
+	$$av=0 \land a\neq 0 \Rightarrow v=0 \qquad a\in \textbf{F}, v\in V.$$
+	Sea $av=0$. Dado que $a\neq 0$ y $a\in \textbf{F}$, podemos multiplicar ambos lados por $\dfrac{1}{a}$,
+	$$\dfrac{1}{a}(av) = 0\dfrac{1}{a}.$$
+	Luego por propiedades en $\textbf{F}$ tenemos que
+	$$\left(\dfrac{1}{a}\cdot a\right)v=0\quad \Rightarrow \quad 1v=0 \quad \Rightarrow \quad v=0.$$\\
+
+    %-------------------- 3.
+    \item Supóngase $v,w\in V$. Explique porque existe un único $x\in V$ tal que $v+3x=w$.\\\\
+	Respuesta.-\; Supongamos $x=\dfrac{1}{3}(w-v)$. Dado $v+(-w)\in V$, entonces  por la asociatividad de espacio vectorial, tenemos
+	$$\begin{array}{rcl}
+	    v+3\left[\dfrac{1}{3}(w-v)\right] &=& v + \left(3\cdot\dfrac{1}{3}\right)(w-v)\\\\
+	    &=& v+(w-v)\\\\
+	    &=& w
+	\end{array}$$
+	Por lo que demostramos su existencia. Ahora, demostremos la unicidad. Sea $x,x'\in V$ tales que $v+3x=w$ y $v+3x'=w$. Por el inverso aditivo, 
+	$$w+(-w)=0 \quad \Rightarrow w-w=0.$$
+	Reemplazando tenemos,
+	$$\begin{array}{rcl}
+	    v+3x-(v+3x') &=&0\\
+	    (v-v) + 3x-3x' &=&0\\
+	    0+3(x-x')&=&0\\
+	    x-x'&=&0
+	\end{array}$$
+	Veamos que esta última igualdad se cumplirá si y sólo si $x=x'$. Por lo tanto queda demostrado el ejercicio.\\\\
+
+
+    %-------------------- 4.
+    \item El conjunto vacío no es un espacio vectorial. El conjunto vacío deja de satisfacer solo uno de los requisitos enumerados en 1.19. ¿Cuál?.\\\\
+	Respuesta.-\; Por la identidad aditiva, existe un elemento $0\in V$ tal que $v+0=v$ para todo $v$. Lo que significa que $V$ no puede estar vacío. Por lo tanto, el conjunto vació no es un espacio vectorial.\\\\
+
+    %-------------------- 5.
+    \item Demuestre que en la definición de un espacio vectorial (1.19), la condición inversa aditiva se puede sustituir por la condición de que
+    $$0v=0\mbox{ para todo } v\in V.$$
+    Aquí, el $0$ del lado izquierdo es el número $0$, y el $0$ en el lado derecho es la identidad aditiva de $V$. (La frase $"$ una condición puede ser sustituida $"$ en una definición significa que la colección de objetos que satisfacen la definición no cambia si la condición original se sustituye con la nueva condición).\\\\
+	Demostración.-\;  El teorema 1.29 (Axler, Linear algebra, capítulo 1), nos dice que $0v=0$ para todo $v\in V$, satisface la definición 1.19. Por lo tanto, debemos demostrar que esta propiedad junto con todas las demás que componen la Definición 1.19, excepto la condición inversa aditiva, implican la condición inversa aditiva. Es decir, debemos demostrar que para todo $v\in V$, existe $w\in V$ tal que $v+w=0.$\\ 
+	Suponemos que $v$ es algún vector arbitrario en $V$. Entonces,
+	$$\begin{array}{rcl}
+	    0 &=& 0v \\
+	      &=& (-1+1)v\\
+	      &=& (-1)v + 1v\\
+	      &=& (-1)v + v\\
+	\end{array}$$
+	Pongamos $w=(-1)v$ para cualquier vector $v\in V$, donde vemos que existe un vector $w$ que satisface la ecuación $v+w=0$, demostrando nuestro resultado.\\\\
+
+
+    %-------------------- 6.
+    \item Sea $\infty$ y $-\infty$ dos objetos distintos, ninguno de los cuales está en $\textbf{R}$. Definir una suma y una multiplicación escalar en $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ como se puede adivinar la notación. Específicamente, la suma y el producto de dos números reales son los habituales, y  para $t\in \textbf{R}$ definir
+    $$
+    t\infty = \left\{\begin{array}{rcl}
+	    -\infty & \mbox{si} & t<0,\\
+	    0 & \mbox{si} & t=0,\\
+	    \infty & \mbox{si} & t>0
+    \end{array}\right.,\qquad 
+    t(-\infty) = \left\{\begin{array}{rcl}
+	    \infty & \mbox{si} & t<0,\\
+	    0 & \mbox{si} & t=0,\\
+	    -\infty & \mbox{si} & t>0
+    \end{array}\right.
+    $$
+    $$t+\infty=\infty+t=\infty,\qquad t+(-\infty)=(-\infty)+t=-\infty,\qquad \infty+\infty=\infty,$$
+    $$(-\infty)+(-\infty)=-\infty,\qquad \infty+(-\infty)=0.$$
+    Es $\textbf{R}\cup \left\{\infty\right\}\cup \left\{-\infty\right\}$ un espacio vectorial sobre $\textbf{R}$?. Explique.\\\\
+    Respuesta.-\; Para que $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ se convierta en un espacio vectorial sobre $\textbf{R}$,  debe satisfacer todas las propiedades dadas en la definición 1.19. Ahora bien, este conjunto satisface algunas de estas propiedades. Por ejemplo, la adición es conmutativa en este conjunto. Sin embargo, no las satisface todas.\\
+    Una propiedad que no se cumple es la asociatividad de la suma. Por ejemplo, observe que $1,\infty$ y $-\infty$ son todos vectores en $\textbf{R}\cup \left\{\infty\right\}\cup\left\{-\infty\right\}$ y por tanto deberíamos tener lo siguiente:
+    $$1+\left[\infty+(-\infty)\right]=(1+\infty)+(-\infty)$$
+    Sin embargo, cuando evaluamos los lados izquierdo y derecho de esta ecuación usando las definiciones dadas en el enunciado del ejercicio, encontramos que
+    $$\begin{array}{rcl}
+    1+\left[\infty+(-\infty)\right] &=& (1+\infty)+(-\infty)\\
+    1+0&=& \infty+(-\infty)\\
+    1&=&0
+    \end{array}$$
+    Pero esto es claramente falso. Así que nuestra suposición de que $1 + \left[\infty + (-\infty)\right] = (1+\infty) + (-\infty)$ también es falsa y, por tanto, este conjunto no satisface la asociatividad aditiva.\\\\
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejercicios 1.C %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{mysection}{2}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %-------------------- 1.
+    \item Para cada de los siguientes subconjuntos de $\textbf{F}^3$, determinar si es un subespacio de $\textbf{F}^3:$
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=0\right\}$.\\\\
+		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
+		\begin{itemize}
+		    \item Identidad aditiva.- \; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
+			$$x_1+2x_2+3x_3=0 \quad \Rightarrow \quad 0+2\cdot 0+3\cdot 0 = 0.$$
+
+		    \item Cerrado por adición.-\; Sean 
+		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=0\right\}.$$ 
+		    Es decir,
+		    $$a_1+2a_2+3a_3=0 \quad \Rightarrow \quad b_1+2b_2+3b_3=0.$$
+		    Para probar que la adición se cumple, pongamos $a+b$ tal que $x1+2x_2+3x_3=0$, como sigue
+		    $$a+b=(a_1+b_1)+2(a_2+b_2)+3(a_3+b_3)=0$$
+		    Si $(x_1,x_2,x_3)= \left[(a_1+b_1),(a_2+b_2),(a_3+b_3)\right]$. Entonces,
+		    $$x_1+2x_2+3x_3=0.$$
+		    Así, el conjunto dado es un subespacio de $\textbf{F}^3$.\\
+
+		    \item Cerrado por multiplicación escalar.-\; Sea $k\in \textbf{F}$. Entonces,
+			$$k\left(x_1+2x_2+3x_3\right)=k\cdot 0\quad \Rightarrow \quad k\left(x_1+2x_2+3x_3\right)=0.$$
+			Por lo tanto, el conjunto dado es un subespacio de $\textbf{F}^3$.\\\\
+		\end{itemize}
+
+	    %---------- (b)
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1+2x_2+3x_3=4\right\}$.\\\\
+		Respuesta.-\; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
+		$$x_1+2x_2+3x_3=4\quad \Rightarrow \quad 0+2\cdot 0 + 3\cdot 0 \neq 0.$$
+		Ya que no cumple la primera condición de 1.34, decimos que el conjunto dado no es un subespacio.\\\\
+
+	    %---------- (c)
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1x_2x_3=0\right\}$.\\\\
+		Respuesta.-\; Vemos que no se cumple la condición de adición. Observemos que $a=(1,1,0)$ y $b=(0,1,1)$, están en el conjunto dado. Es decir, se cumple la condición establecida:
+		$$1\cdot 1 \cdot 0 = 0 \quad \text{y} \quad 0\cdot 1 \cdot 1 = 0.$$
+		Pero no así, para $a+b=(1,1,0)+(0,1,1)=(1,2,1)$, ya que
+		$$1\cdot 2\cdot 1 \neq 0.$$\\
+
+	    %---------- (d)
+	    \item $\left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}$.\\\\
+		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
+		\begin{itemize}
+		    \item Identidad aditiva.- \; Sea $(x_1,x_2,x_3)=(0,0,0)$. Entonces,
+			$$x_1=5x_3 \quad \Rightarrow \quad 0=5\cdot 0.$$
+
+		    \item Cerrado por adición.-\; Sean 
+		    $$a=(a_1,a_2,a_3),\; b=(b_1,b_2,b_3)\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}.$$
+		    Pongamos $x_1=(a_1+b_1)$ y $x_3=(a_3+b_3)$. Por lo tanto,
+		    $$a_1+b_1=5(a_3+b_3) \quad \Rightarrow \quad x_1=5x_3.$$
+
+		    \item Cerrado por multiplicación escalar.-\; Sean $k\in \textbf{F}$ y $a\in \left\{(x_1,x_2,x_3)\in \textbf{F}^3 : x_1=5x_3\right\}$. Entonces,
+		    $$k\left(a_1\right)=k\left(5a_3\right)\quad \Rightarrow \quad ka_1=5\left(ka_3\right).$$
+		    Pongamos $x_1 = ka_1$ y $x_3=ka_3$, por lo que 
+		    $$x_1=5x_3.$$
+		    Así, el conjunto dado es un subespacio de $\textbf{F}^3$.\\\\
+		\end{itemize}
+
+	\end{enumerate}
+
+    %-------------------- 2.
+    \item Verificar todas las afirmaciones del ejemplo 1.35.\\
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Si $b\in \textbf{F}$, entonces
+	    $$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$
+	    es un subespacio de $\textbf{F}^4$ si y sólo si $b=0$.\\\\
+		Demostración.-\; Supongamos que 
+		$$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$
+		es un subespacio de $\textbf{F}^4$. Entonces por la primera condición del teorema 1.34, sabemos que $(0,0,0,0)$ es un elemento del conjunto dado, por lo tanto
+		$$0=5\cdot 0 + b$$
+		de donde,
+		$$b=0.$$
+		Ahora supongamos que $b=0$. Tendremos que verificar que se cumple las condiciones del teorema 1.34 para 
+		$$\left\{(x_1,x_2,x_3,x_4)\in \textbf{F}^4 : x_3 = 5x_4+b\right\}.$$\\
+
+		\begin{itemize}
+		    \item Identidad aditiva.-\; Sea $(x_1,x_2,x_3,x_4)=(0,0,0,0)$. Entonces,
+			$$x_3=5x_4+0 \quad \Rightarrow \quad 0=5\cdot 0.$$
+
+		    \item Cerrado por adición.-\; Sean $u=(u_1,u_2,u_3,u_4)$ y $v=(v_1,v_2,v_3,v_4)$ do vectores en el conjunto dado. Sabemos que 
+			$$
+			\begin{array}{rcl}
+			    u_3 &=& 5u_4 \\
+			    v_3 &=& 5v_4
+			\end{array}
+			$$
+
+			Entonces, sumando estas dos ecuaciones tenemos,
+
+			$$
+			\begin{array}{rcl}
+			    u_3+v_3 &=& 5u_4+5v_4 \\
+			    u_3+v_3 &=& 5(u_4+v_4).
+			\end{array}
+			$$
+
+			Que es exactamente la afirmación de que
+
+			$$u+v=(u_1,u_2,u_3,u_4)+(v_1,v_2,v_3,v_4)=(u_1+v_1,u_2+v_2,u_3+v_3,u_4+v_4).$$
+
+			Es un elemento del conjunto. Por lo tanto, el conjunto es cerrado bajo la suma de vectores.\\\\
+
+		    \item Cerrado por la multiplicación escalar.-\; Sea $u=(u_1,u_2,u_3,u_4)$ un vector en el conjunto dado y sea $k\in \textbf{F}$. Entonces, 
+			$$u_3=5u_4$$
+			Multiplicando por $k$ tenemos,
+			$$
+			\begin{array}{rcl}
+			    k(u_3) &=& k(5u_4)\\
+			    (ku_3) &=& 5(ku_4).
+			\end{array}
+			$$
+			Por lo tanto, vemos que se cumple la condición de multiplicación escalar.\\\\
+
+		\end{itemize}
+
+	    %---------- (b)
+	    \item El conjunto de funciones continuas de valor real en el intervalo $[0,1]$ es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
+		Demostración.-\; 
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{R}^{[0,1]}$ es una función que asigna cada número a cero, esto es
+			$$O(x)=0,\quad \forall x \in [0,1].$$
+			Como es una función constante y todas las funciones constantes son continuas, es un elemento del conjunto de funciones continuas de valor real en $[0,1]$.
+
+		    \item Cerrado por adición.-\; Por el cálculo elemental, sabemos que la suma de dos funciones continuas es también continua. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo adición de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Por el cálculo elemental, sabemos que si $f$ es una función continua, entonces $kf$ es también una función continua para todos los números reales $k$. Por lo tanto, el conjunto de funciones continuas de valor real en $[0,1]$ es cerrado bajo la multiplicación escalar.
+		\end{itemize}
+		Por lo tanto este conjunto es un subespacio de $\textbf{R}^{[0,1]}$.\\\\
+
+	    %---------- (c)
+	    \item El conjunto de funciones diferenciables de valor real en $\textbf{R}$ es un subespacio de $\textbf{R}^{\textbf{R}}.$\\\\
+		Demostración.-\; 
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{R}^{\textbf{R}}$ es una función que asigna cada número a cero, esto es
+		    $$O(x)=x\mbox{ para todo }x\in \textbf{R}.$$
+		    Como es una función constante y todas las funciones constantes son continuas, es un elemento del conjunto de funciones continuas de valor real en $\textbf{R}$.
+
+		    \item Cerrado por adición.-\; Por el cálculo elemental, sabemos que la suma de dos funciones diferenciables es diferenciable. Por lo tanto, el conjunto de funciones diferenciables de valor real en $\textbf{R}$ es cerrado bajo adición de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Por cálculo elemental, sabemos que si $f$ es una función diferenciable, entonces $kf$ es también una función diferenciable para todos los números reales $k$. Por lo tanto, el conjunto de funciones diferenciables de valor real en $\textbf{R}$ es cerrado bajo la multiplicación escalar.\\\\
+		\end{itemize}
+
+	    %---------- (d)
+	    \item El conjunto de funciones diferenciables de valor real $f$ en el intervalo $[0,3]$ tal que $f'(2)=b$ es un subespacio de $\textbf{R}^{(0,3)}$ si y sólo si $b=0$.\\\\
+		Demostración.-\; Si $b=0$, entonces consideremos el conjunto de todas las funciones diferenciables de valor real $f$ en el intervalo $(0,3)$ tales que $f'(2)=b=0$.\\
+		$O(x)$ es un elemento de este conjunto, ya que es diferenciable en este intervalo y su derivada es la misma, por lo tanto $O'(2)=0$. Luego suponga que $f$ y $g$ son elementos de este conjunto. Ya sabemos que la suma de dos funciones diferenciables es de nuevo diferenciables, por lo que $f+g$ es una función diferenciable. Notemos que $(f+g)'(2)=f'(2)+g'(2)=0+0=0$, así el conjunto es cerrado por adición de vectores.\\
+		Ahora, suponga que $f$ es un elemento de este conjunto y $k$ es algún número real. Sabemos que cualquier múltiplo escalar de una función diferenciable es diferenciable, por lo que $kf$ es diferenciable. Es decir, $(kf)'(2)=k\left[f'(2)\right]=k\cdot 0 = 0.$ Así el conjunto es cerrado por la multiplicación escalar. Así $b=0$, implica que el conjunto de funciones diferenciables de valor real en el intervalo $(0,3)$ tal que $f'(2)=0$ es un subespacio de $\textbf{R}^{(0,3)}$.\\
+		Por otro lado, suponga que el conjunto de funciones diferenciables de valor real $f$ en el intervalo $(0,3)$ tal que $f'(2)=b$ es un subespacio de $\textbf{R}^{(0,3)}$. Por el teorema 1.34 sabemos que este conjunto debe contener el vector cero en $\textbf{R}^{(0,3)}$. Esto es, debe contener la función $O(x)$. Pero sabemos que
+		$$O'(x)-O(x)=0$$
+		para todos los valores de $x$ en $(0,3)$. En particular $O'(2)=0$. Por tanto, $b$ debe ser igual a $0$.\\\\
+
+	    %---------- (e)
+	    \item El conjunto de todas las secuencias de número complejos con límite $0$ es un subespacio de $\textbf{C}^{\infty}$.\\\\
+		Demostración.-\;
+		\begin{itemize}
+		    \item Identidad aditiva.-\; El vector cero en $\textbf{C}^{\infty}$ es la secuencia $O_n=(0,0,\ldots,0)$. Por lo que
+			$$\lim_{n\to \infty}=0.$$
+		    Ya que $O_n$ es un elemento del conjunto de todas las secuencias de número complejos con límite $0$.
+
+		    \item Cerrado por adición.-\; Sean $a_n$ y $b_n$ dos elementos del conjunto dado. Esto es,
+			$$\lim_{n\to \infty}a_n=0\quad \mbox{y}\quad \lim_{n\to \infty}=0.$$
+		    Por el calculo elemental, sabemos que si $c_n\to L$ y $d_n\to M$ con $n\to \infty$, entonces $c_n+d_n\to L+M$. Por lo tanto,
+		    $$\lim_{n\to \infty}a_n+b_n=0+0=0$$
+		    Así, $a_n+b_n$ es un elemento del conjunto dado. Por lo que es cerrado por la suma de vectores.
+
+		    \item Cerrado por multiplicación escalar.-\; Sean $a_n$ un elemento del conjunto dado y $k\in \textbf{C}$. Lo que significa que,
+			$$\lim_{n\to \infty}a_n=0.$$
+			Por el calculo elemental, sabemos que si $c_n\to L$ con $n\to \infty$, entonces $kc_n\to kL$ para $n\to \infty$. Es decir,
+			$$\lim_{n\to \infty}ka_n = k\cdot 0 = 0.$$
+			Así, $ka_n$ es un elemento del conjunto dado. Por lo que es cerrado por la multiplicación escalar. Concluimos por el teorema 1.34, que este conjunto es un subespacio de $\textbf{C}^{\infty}$.\\\\
+		\end{itemize}
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item Demuestre que el conjunto de funciones diferenciables de valores reales $f$ en el intervalo $(-4,4)$ tal que $f'(-1)=3f(2)$ es un subespacio de $\textbf{R}^{(-4,4)}$.\\\\
+	Demostración.-\; Sea $A$ el conjunto de funciones diferenciables de valores reales $f$ en $(-4,4)$ tal que $f'(-1)=3f(2)$. Para demostrar la identidad aditiva, podemos escoger una función constante, $f=0$ tal que 
+	$$f'(-1)=3f(2)\quad \Rightarrow \quad 0=0.$$
+	Por lo tanto, $0\in A$. Para demostrar la cerradura por adición, sean $f,g\in A$. Entonces por definición 
+	$$f'(-1)=3f(2)\qquad \mbox{y}\qquad g'(-1)=3g(2).$$
+	Entonces, 
+	$$\begin{array}{rcl}
+	    f'(-1)+g'(-1) &=& 3\left[f(2)+g(2)\right]\\\\
+	    (f+g)'(-1) &=& 3(f+g)(2)
+	\end{array}$$
+	Lo que implica que,
+	$$(f+g)\in A.$$
+	Por último demostremos la cerradura por multiplicación escalar. Sean  $k\in \textbf{F}$, tal que 
+	$$kf'(-1)=k3f(2),$$
+	por lo que 
+	$$(kf)'(-1)=3(kf)(2).$$
+	Por lo tanto $(kf)\in A$. Así, $A$ es un subespacio de $\textbf{R}^{(-4,4)}$.\\\\
+
+    %-------------------- 4.
+    \item Suponga $b\in \textbf{R}$. Demuestre que el conjunto de funciones continuas de valores reales $f$ en el intervalo $[0,1]$ tal que $\int_0^1 f = b$ es un subespacio de $\textbf{R}^{[0,1]}$ si y sólo si $b=0$.\\\\
+	Demostración.-\; Primero demostremos que si el conjunto es un subespacio, entonces $b=0$. Notemos que este conjunto contiene la función cero el cual es definido por $f_0(x)=0$ para $x\in[0,1]$. Porque es un subespacio y $f_0$ es la identidad aditiva. Entonces, debe ser:
+	$$b=\int_0^1 f_0=0\quad \Rightarrow \quad b=0.$$
+	Ahora, sea $b=0$ probaremos que el conjunto dado es un subespacio. Como la primera parte del ejercicio, tenemos que $\int_0^1 f_0=0$, así $f_0$ esta en el conjunto descrito y por lo tanto queda demostrado la identidad aditiva. Luego, sean $f$ y $g$ funciones continuas de valor real en $[0,1]$, tal que 
+	$$\int_0^1 f=0\quad \mbox{y}\quad \int_0^1 g = 0.$$
+	Entonces,
+	$$\int_0^1 (f+g)=\int_0^1 f + \int_0^1 g = 0+0=0.$$
+	Así, $f+g$ se cumple para el conjunto dado y por lo tanto, queda demostrado la cerradura por adición. Por último, sea $k\in \textbf{F}$, con $f$ y $g$ definida arriba, entonces
+	$$\int_0^1 kf = k\int_0^1 f = c\cdot 0 = 0.$$
+	Así, $kf$ también está en el conjunto descrito y por lo tanto se cumple la cerradura por multiplicación escalar. Por lo que podemos concluir que el conjunto es un subespacio.\\\\
+
+    %-------------------- 5.
+    \item Es $\textbf{R}^2$ un subespacio del espacio vectorial complejo $\textbf{C}^2$.\\\\
+	Demostración.-\; Si $\textbf{R}^2$ es subespacio de $\textbf{C}$, entonces $\textbf{R}^2$ es cerrado por la multiplicación escalar. Verifiquemos esta afirmación. Sea $k$ un escalar en $\textbf{C}$. Si $k=i$ y tenemos $(1,0)\in \textbf{R}$, por lo que $i(1,0)=(i,0)$, el cual no pertenece a $\textbf{R}^2.$ De hecho se puede tomar cualquier $(x_1,x_2)\in \textbf{R}^2$ tal que $x_1\neq 0$ o $x_2\neq 0$, de donde podemos demostrar que $i(x_1,x_2)=(ix_1,ix_2)$ el cual no pertenece en $\textbf{R}^2$. Concluimos que $\textbf{R}^2$ no es un subespacio de $\textbf{C}^2.$\\\\
+
+    %-------------------- 6.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %-------------------- (a)
+	    \item ¿Es $\left\{(a,b,c) \in \textbf{R}^3 : a^3=b^3 \right\}$ un subespacio de $\textbf{R}^3$?.\\\\
+		Respuesta.-\; Por las condiciones de un subespacio 1.34 se tiene,\\
+		\begin{itemize}
+		    \item Identidad aditiva: Sea $(a,b,c)=(0,0,0)$. Entonces,
+			$$0^3=0^3\quad \Rightarrow \quad 0=0.$$\\
+			Por lo tanto, se cumple la identidad aditiva.\\\\
+		    \item Cerradura por adición: Sea $(a_1,b_1,c_1)$ y $(a_2,b_2,c_2)$ elementos del conjunto dado. Entonces,
+			$$(a_1,b_1,c_1)+(a_2,b_2,c_2)=(a_1+a_2,b_1+b_2,c_1+c_2).$$
+			Luego,
+			$$\left(a_1+a_2\right)^3=\left(b_1+b_2\right)^3.$$
+			Sean $a=a_1+b_1$ y $b=b_1+b_2$. Por la asociatividad de la suma en $\textbf{R}$,
+			$$a^3=b^3.$$
+			Por lo tanto, se cumple la cerradura por adición.\\\\
+		    \item Cerradura por multiplicación escalar: Sea $k\in \textbf{R}$ y $(a_1,b_1,c_1)\in \textbf{R}^3$. Entonces,
+			$$k(a_1,b_1,c_1)=(ka_1,kb_1,kc_1).$$
+			Luego,
+			$$\left(ka_1\right)^3=\left(kb_1\right)^3.$$
+			Sean $ka_1=a$ y $kb_1$. Por la asociatividad de la multiplicación en $\textbf{R}$,
+			$$a^3=b^3.$$
+			Por lo tanto, se cumple la cerradura por multiplicación escalar.\\
+			Así, el conjunto dado es un subespacio de $\mathbb{R}^3$.\\\\
+		\end{itemize}
+
+	    %-------------------- (b)
+	    \item ¿Es $\left\{(a,b,c)\in \textbf{C}^3 : a^3=b^3 \right\}$ un subespacio de $\textbf{C}^3$?.\\\\
+		Respuesta.-\; Sea $W$ el conjunto definido. Entonces, $W$ no es un subespacio de $\textbf{C}^3$. Consideremos $x=(1,1,0)\in \textbf{C}^3$  y $y\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i,1,0\right)\in \textbf{C}^3$. Por lo que claramente $x+y\notin W$ ya que,
+		$$\left[1+\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)\right]^3=-1\neq 2^3=(1+1)^3.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 7.
+    \item Dé un ejemplo de un subconjunto no vacío $U$ de $\textbf{R}^2$ tal que $U$ sea cerrado bajo adición y bajo la medida de inversos aditivos (es decir, $-u\in U$ siempre que $u \in U$), pero $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+	Respuesta.-\; Denote que $U=\left\{(x,y)\in \textbf{R}^2 : x,y\in \textbf{Z}\right\}$ para $U$ es un conjunto no vacío. Si $(x_1,y_1)\in A$ y $(x_2,y_2)\in A$. Entonces, $x_1,x_2,y_1,y_2\in \textbf{Z}$, ya que $x_1+x_2$ y $y_1+y_2$ son enteros. Esto significa $(x_1+x_2,y_1+y_2)=(x_1,y_1)+(x_2,y_2)$. Es decir, $U$ es cerrado por adición. Del mismo modo, ya que $(-x_1,-y_2)\in U$, resulta que $U$ es cerrado bajo inverso aditivo. Sin embargo $U$ no es cerrado bajo la multiplicación escalar, esto por el hecho de que $(1,1)\in A$ mientras que $\frac{1}{2}(1,1)\notin U.$ Por lo tanto, $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+
+    %-------------------- 8.
+    \item Dé un ejemplo de un subconjunto no vacío $U$ de $\textbf{R}^2$ tal que $U$ es cerrado bajo la multiplicación escalar, pero $U$ no es un subespacio de $\textbf{R}^2$.\\\\
+	Respuesta.-\; Denota que $U=\left\{(x,y)\in \textbf{R}^2 : x=0 \lor y=0\right\}$, luego $U$ no está vacío. Si $(x,0)\in U$, entonces para cualquier $\lambda \in \textbf{R}$, tenemos
+	$$\lambda(x,0)=(\lambda x, 0)\in U.$$
+	Similarmente, $\lambda(0,y)\in U$, por lo que $U$ es cerrada bajo la multiplicación escalar. Sin embargo,  $(1,0),(0,1)\in U$ mientras que $(1,1)=(1,0)+(0,1)\notin U.$ Esto implica que $U$ no es cerrado bajo la adición. Por lo tanto, no es subespacio de $\textbf{R}^2$.\\\\
+
+    %-------------------- 9.
+    \item Una función $f:\textbf{R}\to \textbf{R}$ es llamado \textbf{periódica} si existe un número positivo $p$ tal que $f(x)=f(x+p)$ para todo $x\in \textbf{R}$. ¿Es el conjunto de funciones periodicas $\textbf{R}$ a $\textbf{R}$ un subespacio de $\textbf{R}^{\textbf{R}}$?. Explique.\\\\
+	Respuesta.-\; No, el conjunto de las funciones periódicas $\textbf{R}$ a $\textbf{R}$ no es un espacio vectorial de $\textbf{R}^{\textbf{R}}$. Por ejemplo, la función $h(x)=\sen\left(\sqrt{2}x\right)+\cos x$ no es periódica aunque $f(x)=\sen\left(\sqrt{2}x\right)$ y $g(x)=\cos x$ lo son. Suponga que existe un número positivo $p$ tal que $h(x)=h(x+p)$ para todo $x\in \textbf{R}$, entonces $1=h(0)=h(p)=h(-p)$. Es equivalente a decir,
+	$$1=\cos p + \sen \sqrt{2}p = \cos p - \sen \sqrt{2}p,$$
+	que implica $\sen \sqrt{2}p=0$ y $\cos p=1$. De este último podemos deducir que $p=2k\pi$ para $k\in \textbf{Z}$. Sin embargo, $\sen\sqrt{2}p=0$ implica $\sqrt{2}p=l\pi$ para $l\in \textbf{Z}$. De donde,
+	$$\sqrt{2}=\dfrac{l\pi}{2k\pi}=\dfrac{l}{2k}\in \textbf{Q},$$
+	lo cual es imposible.\\\\
+
+    %-------------------- 10.
+    \item Suponga $U_1$ y $U_2$ son subespacios de $V$. Demostrar que la intersección $U_1\cap U_2$ es un subespacio de $V$.\\\\
+	Demostración.-\; Por las condiciones de un subespacio 1.34 se tiene
+	\begin{itemize}
+	    \item Identidad aditiva.-\; Por definición $0\in U_1$ y $0\in U_2$, entonces $0\in U_1\cap U_2.$
+	    \item Cerrado bajo adición.-\; Si $x\in U_1\cap U_2$ e $y\in U_1\cap U_2$, luego $x\in U_1$ e $y\in U_1$, de donde $x+y\in U_1$. Similarmente, $x+y\in U_2$. Por lo tanto $x+y\in U_1\cap U_2.$
+	    \item Cerrado bajo adición.-\; Si $x\in U_1\cap U_2$, entonces $x\in U_1$. Luego, para algún $\lambda \in \textbf{F}$, se tiene $\lambda x\in U_1$. Similarmente $\lambda x\in U_2$. Por lo tanto $\lambda x\in U_1\cap U_2$.\\\\
+	\end{itemize}
+
+    %-------------------- 11.
+    \item Demostrar que la intersección de toda colección de subespacios de $V$ es un subespacio de $V$.\\\\
+	Demostración.-\;  Sea $\left\{V_i : i\in I\right\}$ es una colección de subespcios de $V$. Queremos probar que 
+	$$\bigcap_{i\in I} V_i$$
+	es un subespacio de $V$. Primero, para todo $V_i$ subespacios de $V$, entonces $0\in V_i$. Así, 
+	$$V_i\in I \Rightarrow 0\in \bigcap_{i\in I}V_i.$$
+	Luego, sea $x,y\in \cap_{i\in I}V_i$. Entonces $x,y\in V_i, \; \forall i\in I$. Para todo $V_i$ son subespacios de $V$, donde $x+y\in V_i,\; \forall i\in I$. Por lo tanto 
+	$$x+y\in \bigcap_{i\in I} V_i.$$
+	Por último, para $x\in \cap_{i\in I}V_i$ y un escalar $\alpha$, entonces $x\in V_i,\; \forall i \in I$. Para todo $V_i$ son subespacios de $V$. Se sigue que $\alpha x\in V_i$, así 
+	$$\forall i \in I \quad \Rightarrow \quad \alpha x \in \bigcap_{i\in I} V_i.$$
+	Por lo tanto, $\cap_{i\in I} V_i$ es un subespacio de $V$.\\\\
+
+    %-------------------- 12.
+    \item Demostrar que la unión de dos subespacios de V es un subespacio de V si y sólo si uno de los subespacios está contenido en el otro.\\\\
+	Demostración.-\; Supongamos que $U_1\not\subseteq U_2$ y $U_2 \not\subseteq U_1$. Elegimos un $v\in U_1$ tal que $v\in U_2$. Ya que $v$ es un subespacio de $U_1$, entonces $(-v)$ también debe serlo, por definición. Del mismo modo $U_2\not\subseteq U_1$. Luego, elegimos un $u\in U_2$ tal que $u\in U_1$. Como $u$ está en el subespacio $U_2$, entonces (-u) también debe serlo, por definción.\\
+	Si $v+u\in U_1\cup U_2$, entonces $v+u$ está en $U_1$ o $U_2$. Pero, 
+	$$v+u\in U_1 \Rightarrow v+u+(-v)\in U_1\Rightarrow u\in U_1.$$
+	De la misma manera,
+	$$v+u\in U_2 \Rightarrow v+u+(-u)\in U_2\Rightarrow v\in U_2.$$
+	Lo que contradice el hecho de que cada elemento fue definido para no estar en estos subespacios.\\
+	Por otro lado, sea $U_1\subseteq U_2$. Lo que implica $U_1\subseteq U_2\Rightarrow U_1\cap U_2 = U_2.$ Luego, ya que $U_2$ es un susbespacio, $U_1\cap U_2$ también lo es.\\\\
+
+    %-------------------- 13.
+    \item Demostrar que la unión de tres subespacios de $V$ es un subespacio de $V$ si y sólo si uno de los subespacios contiene a los otros dos. [Este ejercicio es sorprendentemente más difícil que el anterior, posiblemente porque este ejercicio no es cierto si sustituimos F por un campo que contenga sólo dos elementos].\\\\
+	Demostración.-\; Sean $U_1,U_2,U_3$ subespacios de $V$ y $E=U_1\cup U_2 \cup U_3$ un subespacio de $V$. Primero, suponga que ningún subespacio es un subconjunto de ninguno de los otros dos. Entonces, podemos elegir $w\in U_1$, con $w\notin U_2$ y $x\in U_2$ con $x\notin U_1$. Como $x,w\in E$, sabemos que $(w+x)\in E$ y $(w-x)\in E$, es un subespacio. Si $(w+x)\in U_1$, entonces $(w+x)-w=x\in U_1$, que es una contradicción. Si $(w+x)\in U_2$, entonces $(w+x)-x=w\in U_2$, también vemos que es un contradicción. Así, debemos tener $w+x\in U_3$.\\
+	Por otro lado, si $w-x\in U_1$, entonces $(w-x)-w=-x\in U_1$, lo que es imposible. Si $w-x\in U_2$, entonces $(w-x)+x=w\in U_2$, también es imposible. Así, $(w-x)\in U_3$. Pero $(w-x)+(w+x)=2w\in U_3$, que implica $w\in I_3$ lo que es una contradicción. Por lo tanto, este caso es imposible y al menos un subespacio debe ser un subconjunto de otro.\\
+	Si $U_1\subseteq U_2$, entonces $U_1\cup U_2=U_2$ es un subespacio, esto por el ejercicio anterior y ya que $E=U_1\cup U_2\cup U_3=u_2\cup U_3$ es un subespacio, ya que $U_2,$ o $U_3\subseteq U_2$ (por el ejercicio anterior.) E el primer caso, $U_1$ y $U_2$ son un subconjunto de $U_3$ y en el segundo caso $U_1$ y $U_3$ son un subconjunto de $U_2$. \\
+	Por el contrario, suponga que  $U_1 \cup U_2 \subseteq U_3$.  Entonces $U_1 \cup U_2 \cup U_3 = U_3$, y la unión es un subespacio.\\\\
+
+    %-------------------- 14.
+    \item Verifique la afirmación del ejemplo 1.38.\\\\
+	Demostración.-\; Está claro que $U$ y $W$ son subespacios de de $\textbf{F}^4$. Luego supongamos que 
+	$$(x_1,x_1,y_1,y_i)\in U \mbox{ y }  (x_2,x_2,x_2,y_2)\in W.$$
+	Entonces,
+	$$(x_1,x_1,y_1,y_1)+(x_2,x_2,x_2,y_2)=(x_1+x_2,x_1+x_2,y_1+x_2,y_1+y_2)\in \left\{(x,x,y,z):x,y,z\in \textbf{F}\right\},$$
+	ya que $U+W\subset \left\{(x,x,y,z):x,y,z\in \textbf{F}^4\right\}$. Luego, para cualquier $x,y,z\in \textbf{F}$, tenemos $(0,0,y-x,y-x)\in U$ y $(x,x,x,z+x-y)\in W$. Sin embargo,
+	$$(x,x,y,z)=(0,0,y-x,y-x)+(x,x,x,z+x-y)\in U+W,$$
+	por lo tanto $\left\{x,x,y,z:x,y,z\in \textbf{F}^4\right\}\subset U+W$. Combinando esto con el argumento anterior, se sigue que $U+W=\left\{(x,x,y,z):x,y,z \in \textbf{F}\right\}$.\\\\
+
+    %-------------------- 15.
+    \item Supongamos que $U$ es un subespacio de $V$. ¿Qué es $U+U$?.\\\\
+	Respuesta.-\; Sea,
+	$$U+U=\left\{u+v:u,v\in U\right\}.$$
+	Esto significa que $U\subset U+U$, ya que $u\in U$ y $u$ es igual $u+0$. Luego, podríamos expresar $u$ como una suma de $2$ elementos de $U$. Por otro lado, $U+U\subset U$ ya que la suma de los dos elementos de $U$ podrían ser un elemento de $U$. Por lo tanto, $U+U=U$.\\\\
+
+    %-------------------- 16.
+    \item ¿La operación de adición en los subespacios de $V$ es conmutativa? En otras palabras, si $U$ y $W$ son subespacios de $V$, ¿es $U + W = W + U$?.\\\\
+	Respuesta.-\; Sea $x\in U$ e $y\in W$. Ya que la adición en $V$ es conmutativa, tenemos $x+y=y+e\in W+U$. Esto implica que $U+W\subset W+U$. Similarmente tenemos que $W+U\subset U+W$. Por lo tanto $U+W=W+U.$\\\\
+
+    %-------------------- 17.
+    \item ¿La operación de adición en los subespacios de $V$es asociativa? En otras palabras, si $U_1,U_2,U_3$ son subespacios de $V$, ¿eso
+    $$(U_1+U_2)+U_3 = U_1+(U_2+U_3)?.$$
+	Demostración.-\; Sea $v\in(U_1+U:2)+U_3$, entonces existe $U_1\in U_1$, $u_2\in U_2$ y $u_3\in U_3$ tal que:
+	$$v=(v_1+v_2)+v_3.$$
+	Ya que, es asociativa a la suma en $V$, tenemos:
+	$$v=u_1+(u_2+u_3)\in U_1+(U_2+U_3).$$
+	Así, $(U_1+U_2)+U_3\subset U_1+(U_2+U_3)$. Del mismo modo, podemos probar que $U_1+(U_2+U_3)\subset (U_1+U_2)+U_3$. Sea $v\in U_1+(U_2+U_3)$. Después, existe $u_1\in U_1$, $u_2\in U_2$ y $u_3\in U_3$ tal que:
+	$$v=u_1+(u_2+u_3)=(u_1+u_2)+u_3\in (U_1+U_2)+U_3,$$
+	ya que, $U_1+(U_2+U_3)\subset (U_1+U_2)+U_3.$
+	Por lo que concluimos que 
+	$$U_1+(U_2+U_3)=(U_1+U_2)+U_3.$$\\
+
+    %-------------------- 18.
+    \item ¿Tiene la operación de adición en los subespacios de $V$ una identidad aditiva? ¿Qué subespacios tienen inversos aditivos?.\\\\
+	Respuesta.-\; Si. El subespacio que buscamos es $\left\{0\right\}$. Si $U$ es un subespacio de $V$, entonces
+	$$U+\left\{0\right\}= \left\{0\right\}+U=U.$$
+	Por otro lado, si $U$ y $W$ son subespacios de $V$, tal que $U+W=\left\{0\right\}$, entonces se sigue que, ambos, $U$ y $W$ están contenidos en $U+W$, esto sólo es posible si $U=W=\left\{0\right\}$.\\\\
+
+    %-------------------- 19.
+    \item Demuestre o dé un contraejemplo: Si $U_1$, $U_2$, $W$ son subespacios de $V$ tales que 
+    $$U_1+W=U_2+W,$$
+    entonces $U_1=U_2$.\\\\
+    Demostración.-\; Daremos un contraejemplo. Sean 
+    $$\begin{array}{rcl}
+	V=U_1&=&\left\{(a,b)\in \textbf{R}^2:a,b\in \textbf{R}\right\}\\
+	U_2&=&\left\{(a,0)\in \textbf{R}^2:a\in \textbf{R}\right\}\\
+	W&=&\left\{(0,b)\in \textbf{R}^2:b\in \textbf{R}\right\}. 
+    \end{array}$$
+	Entonces, es fácil ver que $U_1+W=U_2+W$, pero $U_1\neq U_2$.\\\\
+
+    %-------------------- 20.
+    \item Suponga
+    $$U=\left\{(x,x,y,y)\in \textbf{F}^4:x,y\in \textbf{F}\right\}.$$
+    Encuentre un subespacio $W$ de $\textbf{F}^4$ tal que $\textbf{F}^4=U \oplus W.$\\\\
+	Respuesta.-\; Tome $W=\left\{(0,z,0,w)\in \textbf{R}^4:z,w\in \textbf{F}\right\}$. Para cualquier $(x,y,z,w)\in\textbf{F}^4$, de donde tenemos
+	$$(x,y,z,w)=(x,x,z,z)+(0,y-x,0,w-z)\in U+W.$$
+	De donde, obtenemos $\textbf{F}^4=U+W$. Además, si $(x,y,z,w)\in U\cap W,$ entonces debemos tener $x=y$ y $z=w$, ya que $(x,y,x,w)\in U.$ Del mismo modo, puesto que $(x,y,z,w)\in W$, tenemos $x=0$ y $z=0$. Por lo tanto, $x=y=0$ y $z=w=0,$ que implica $(x,t,z,w)=(0,0,0,0)$. Resulta por 1.45 que $U\cap W = \left\{0\right\}$. Así, $F=U\oplus W$.\\\\
+
+    %-------------------- 21.
+    \item Suponga
+    $$U=\left\{(x,y,x+y,x-y,2x)\in \textbf{F}^5: x,y\in \textbf{F}\right\}.$$
+    Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{F}^5=U\oplus W.$\\\\
+    Respuesta.-\; Sea $W=\left\{(0,0,z,w,s)\in \textbf{F}^5: x,y\in \textbf{F}\right\}$. Si $(x,y,z,w,s)\in U\cap W,$ ya que $(x,y,z,w,s)\in W$ entonces $x=y=0$. Además, tenemos $z=x+y,w=x-y,s?2x$, esto porque $(x,t,z,w,s)\in U$. Por lo tanto $z=w=s=0$, por lo que $U\cap W=\left\{0\right\}.$ Del mismo modo, para cualquier $(x,y,z,w,s)\in \textbf{F}^5$. Puesto que $(x,y,x+y,2x)\in U$ y $(0,0,z-x-y,w-x+y,s-2x)\in W$, se tiene
+    $$(x,y,z,w,s)=(x,y,x+y,x-y,2x)+(0,0,z-x-y,w-x+y,s-2x)\in U+W.$$
+    Por lo tanto, $\textbf{F}^5=U+W$. Ya que, $U\cap W = 0$ de 1.45 se sigue que $\textbf{F}^5=U\oplus W.$\\\\
+
+    %-------------------- 22.
+    \item Suponga
+    $$U=\left\{(x,y,x+y,x-y,2x)\right\}\in \textbf{F}^5: x,y \in \textbf{F}.$$
+    Encuentre tres subespacios $W_1,W_2,W_3$ de $\textbf{F}^5$, ninguno de los cuales es igual a $\left\{0\right\}$, tal que $\textbf{F}^5=U\oplus W_1\oplus W_2 \oplus W_3.$\\\\
+	Respuesta.-\; Sean $W_1=\left\{(0,0,0,z,0):x,y\in \textbf{F}\right\}$, $W_2=\left\{(0,0,0,z,0)\in \textbf{F}^5:x,y\in \textbf{F}\right\}$ y $W_3=\left\{(0,0,0,0,z)\in \textbf{F}^5:x,y\in \textbf{F}\right\}$. Por el mismo argumento del problema anterior (21), se tiene
+	$$\textbf{F}^5=U\oplus W_1 \oplus W_2 \oplus W_3.$$\\
+
+    %-------------------- 23.
+    \item Demostrar o dar un contraejemplo: Si $U_1,U_2,W$ son subespacios de $V$ tales que 
+    $$V=U_1\oplus W \quad \mbox{u} \quad V=U_2\oplus W,$$
+    Entonces, $U_1=U_2.$\\\\
+    Demostración.-\; Daremos un contraejemplo. Sean, $V=\textbf{R}^2$, $U_1=\left\{(x,0)\in \textbf{R}^2:x\in \textbf{R}\right\}$, $U_2=\left\{(0,y)\in \textbf{R}^2:y\in \textbf{R}\right\}$ y $W=\left\{(z,z)\in \textbf{R}^2:z\in \textbf{R}\right\}$. Por el mismo argumento del problema 21, se tiene 
+    $$V=U_1\oplus W\quad \mbox{y}\quad V=U_2\oplus W,$$
+    sin embargo, $U_1\neq U_2$.\\\\
+
+    %-------------------- 24.
+    \item Una función $f:\textbf{R}\to \textbf{R}$ es llamado par si
+    $$f(-x)=f(x)$$
+    para todo $x\in \textbf{R}.$ Sea $U_e$ el conjunto de funciones pares de valor real sobre $\textbf{R}$ y sea $U_o$ el conjunto de funciones impares de valor real sobre $\textbf{R}$. Demuestre que $\textbf{R}^{\textbf{R}}=U_e \oplus U_o.$\\\\
+    Demostración.-\; Para cada función de variable real $f$ sabemos que $f(x)=\dfrac{f(x)+f(-x)}{2}+\dfrac{f(x)-f(-x)}{2}$. Sea $g(x)=\dfrac{f(x)-f(-x)}{2}$ y $h(x)=\dfrac{f(x)-f(-x)}{2}$, así
+    $$f(x)=f(x)-h(x)$$. Probaremos que $g$ es par y $h$ es impar.\\
+    Para demostrar que $g$ es par, tenemos
+    $$g(-x)=\dfrac{f(-x)+f\left[-(-x)\right]}{2}=\dfrac{f(-x)+f(x)}{2}=g(x).$$
+    Luego, para demostrar que $h$ es impar, tenemos
+    $$h(-x)=\dfrac{f(-x)-f\left[-(-x)\right]}{2}=\dfrac{f(-x)-f(x)}{2}=-h(x).$$
+    Ahora, debemos demostrar que $U_e\cap U_o=\left\{0\right\}$. Sea $z\in U_e\cap U_o$, de donde $z(-x)=z(x)$. Después, si $z\in U_o$ entonces $z(-x)=-z(x)$. Concluimos que 
+    $$z(x)=-z(x)\quad \Rightarrow \quad 2z(x)=0\quad \Rightarrow \quad z(x)=0$$
+    y que 
+    $$U_e\cap U_o=\left\{0\right\}.$$
+    Por lo tanto, $\textbf{R}^{\textbf{R}}=U_e\oplus U_o$.
+
+\end{enumerate}
+
+

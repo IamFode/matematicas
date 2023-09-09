@@ -1,0 +1,47 @@
+\chapter{Pruebas de bondad de ajuste y análisis de tablas de contingencia}
+Recordemos que una hipótesis estadística es una afirmación con respecto a una característica que se desconoce de una población de interés. Se examinará en este capítulo las pruebas de hipótesis estadísticas en las que la característica que se desconoce es alguna propiedad de la forma función de la distribución que se muestrea. También se discutirá las pruebas de independencia entre dos variables aleatorias. 
+
+\section{La prueba de bondad de ajuste chi-cuadrada}
+Una prueba de bondad de ajuste se emplea para decidir cuándo un conjunto de datos se apega a una distribución de probabilidad dada. Sea una muestra aleatoria de tamaño $n$ de la distribución de una variable aleatoria $X$ dividida en $k$ clases exhaustivas y mutuamente excluyentes, y sea $N_i, i=1,2,\ldots,k$, el número de observaciones en la i-ésima clase. Considérese la verificación de la hipótesis nula
+$$H_0:F(x)=F_0(x),$$
+en donde el modelo de probabilidad propuesto $F_0(x)$ se encuentra especificado, de manera completa, con respecto a todos los parámetros. De esta manera se puede obtener la probabilidad $p_i$ de obtener una observación en la i-ésima clase bajo $H_0$, en donde necesariamente $\sum_{i=1}^k p_i=1.$\\
+Sea $n_i$ la realización de $N_i$ para $i=1,2,\ldots,k$ de manera tal que $\sum_{i=1}^k n_i=n$. La probabilidad de tener, de manera exacta, $n_i$ observaciones en la i-ésima clase es $p_i^{n_i}$ para $i=1,2,\ldots,k$. Dado que existen $k$ categorías mutuamente excluyentes con probabilidad $p_1,p_2,\ldots,p_k$, entonces bajo la hipótesis nula la probabilidad de la muestra agrupada es igual a la función de probabilidad de una distribución multinomial determinada.\\
+Para deducir una prueba estadística adecuada para $H_0$, Considérese el caso en el que $k=2$. Este es la distribución binomial con una función de probabilidad dada y en la que $x=n_1$, $p=p_1$, $n-x=n_2$ y $1-p=p_2$. Considérese la variable aleatoria estandarizada 
+$$Y=\dfrac{N_1-np_1}{\sqrt{np_1(1-p_1)}}.$$
+Recuérdese que para un valor de $n$ suficientemente grande, la distribución de $Y$ es aproximadamente igual a la normal estándar. Además, se sabe que el cuadrado de una variable aleatoria normal estándar tiene una distribución chi-cuadrada con un grado de libertad. Entonces, la estadística
+$$
+\begin{array}{rcl}
+    \dfrac{\left(N_i-np_1\right)^2}{np_1(1-p_1)} &=& \dfrac{\left(N_1-np_1\right)^2}{np_1}+\dfrac{\left(N_1-np_1\right)^2}{np_2}\\\\
+						 &=& \dfrac{\left(N_1-np_1\right)^2}{np_1}+\dfrac{\left[n-N_2-n(1-p_2)\right]^2}{np_2}\\\\
+						 &=& \dfrac{\left(N_1-np_1\right)^2}{np_1}+\dfrac{\left(N_2-np_2\right)^2}{np_2}\\\\
+						 &=& \displaystyle\sum_{i=1}^2 \dfrac{\left(N_i-np_i\right)^2}{np_i}.
+\end{array}
+$$
+tiene aproximadamente una distribución chi-cuadrada con un grado de libertad conforme $n$ va tomando valores cada vez más grandes.\\
+Si se sigue este tipo de razonamiento, puede demostrarse que para $k\geq 2$ categorías distintas, la estadística
+$$\sum_{i=1}^k \dfrac{\left(N_i-np_i\right)^2}{np_i}$$
+tiene una distribución, en forma aproximada, chi-cuadrada con $k-1$ grados de libertad, si $n$ tiene un valor suficientemente grande. Nótese que $N_i$ es la frecuencia observada en la i-ésima clase, y $np_i$ es la frecuencia correspondiente que se esperaba bajo la hipótesis nula. De acuerdo con lo anterior, la estadística es la suma sobre todas las $k$ clases de los cocientes de los cuadrados de las diferencias entre las frecuencias observa y esperada, y la frecuencia esperada. Esta estadística recibe el nombre de \textit{prueba de bondad de ajuste chi-cuadrada de Pearson}. Si existe una concordancia perfecta entre las frecuencias que se observan y las que se esperan, la estadística tendrá un valor igual a cero; por otro lado, si existe gran discrepancia entre estas frecuencias, la estadística tomará un valor muy grande. Por ello se desprende que para un tamaño dado del error de tipo I, la región crítica es el extremo superior de una distribución chi-cuadrada con $k-1$ grados de libertad. Esta prueba, es un procedimiento razonablemente  adecuado para probar suposiciones de normalidad siempre y cuando el tamaño de la muestra sea grande. Podría ser $n$ cinco veces el número de clases. Por lo que se implementa la regla de seleccionar una muestra de manera tal que toda frecuencia esperada no sea menor que cinco. La aplicabilidad de la prueba de ajustes chi-cuadrada es cuestionable cuando se tiene muestras de tamaño muy grande.
+
+\section{La prueba de Kolmogorov-Smirnov}
+Una prueba de bondad de ajuste más adecuada que la chi-cuadrada cuando $F_0(x)$ es continua, es la basada en la estadística de Kolmogorov-Smirnov. Esta no necesita que los datos estén agrupados y es aplicable a muestras de tamaño pequeño. Esta se basa en una comparación entre las funciones de distribución acumulada que se observan en la muestra ordenada y la distribución propuesta bajo la hipótesis nula. Si esta comparación revela una diferencia suficientemente grande entre las funciones de distribución muestral y propuesta, entonces la hipótesis nula de que la distribución es $F_0(x)$, se rechaza.\\
+
+Considérese la hipótesis nula de que la distribución $F_0(x)$ se especifica en forma completa. Denótese por $X_{(1)}, X_{(2)},\ldots,X_{(n)}$ a las observaciones ordenadas de una muestra aleatoria de tamaño $n$ y definase la función de distribución acunulativa muestral como
+
+$$
+S_n(x)=
+    \left\{
+	\begin{array}{ll}
+	    0, & x<x_{(1)},\\\\
+	    k/n & x_{(k)}\leq x < x_{(k+1)},\\\\
+	    1 & x\geq x_{(n)}.
+	\end{array}
+    \right.
+$$
+
+En otras palabras, para cualquier valor ordenado $x$ de la muestra aleatoria, $S_n(x)$ es la proporción del número de valores en la muestra que son iguales o menores a $x$. Ya que $F_0(x)$ se encuentra completamente especificada, es posible evaluar a $F_0(x)$ para algún valor deseado de $x$, y entonces comparar este último con el valor correspondiente de $S_n(x)$. Si la hipótesis nula es verdadera, entonces es lógico esperar que la diferencia sea relativamente pequeña. La estadística de Kolmogorov-Smirnov se define como
+$$D_n=\max_x|S_n(x)-F_0(x)|.$$
+La estadística $D_n$ tiene una distribución que es independiente del modelo propuesto bajo la hipótesis nula. \\
+
+Para un tamaño $\alpha$ del error de tipo I, la región crítica es de la forma
+$$P\left(D_n\geq \dfrac{c}{\sqrt{n}}\right)=\alpha.$$
+De acuerdo con lo anterior, la hipótesis $H_0$ se rechaza si para algún valor $x$ observado, el valor de $D_n$ se encuentra dentro de la región crítica de tamaño $\alpha$.

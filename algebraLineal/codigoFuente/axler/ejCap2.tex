@@ -1,0 +1,1400 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EJERCICIO 2.A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{mysection}{0}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1
+    \item Suponga $v_1,v_2,v_3,v_4$ se extiende por $V$. Demostrar que la lista 
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    también se extiende por $V$.\\\\
+	Demostración.-\; Sea $v\in V$, entonces existe $a_1,a_2,a_3,a_4$ tal que 
+	$$v=a_1v_1+a_2v_2+a_3v_3+a_4v_4.$$
+	Que implica,
+	$$
+	\begin{array}{rcl}
+	    v&=&a_1v_1+a_2v_2+a_3v_3+a_4v_4-a_1v_2+a_1v_2-a_1v_3+a_1v_3-a_2v_3+a_2v_3-a_1v_4+a_1v_4\\
+	     &-& a_2v_4+a_2v_4 -a_3v_4 +a_3v_4\\
+	\end{array}
+	$$
+
+	De donde,
+
+	$$v=a_1(v_1-v_2)+(a_1+a_2)(v_2-v_3)+(a_1+a_2+a_3)(v_3-v_4)+(a_1+a_2+a_3+a_4)v_4.$$
+	Por lo tanto, cualquier vector en $V$ puede ser expresado por una combinación lineal de 
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4.$$
+	Así, esta lista se extiende por $V$.\\\\
+
+    %------------------- 2
+    \item Verifique las afirmaciones del Ejemplo 2.18.\\
+
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Una lista $v$ de un vector $v\in V$ es linealmente independiente si y sólo si $v\neq 0$.\\\\
+		Demostración.-\; Demostremos que si $v$ es linealmente independiente, entonces $v\neq 0$. Supongamos que $v=0$. Sea un escalar $a\neq 0$. De donde, $av=0$ incluso cuando $a\neq 0$. Esto contradice la definición de independencia lineal. Por lo tanto, $v$ debe ser linealmente dependiente. Esto es, $v=0$ implica que $v$ es un vector linealmente dependiente. Por lo que, si $v$ es linealmente independiente, entonces $v$ es un vector distinto de cero.\\
+		Por otro lado, debemos demostrar que  $v\neq 0$ implica que $v$ es linealmente independiente. Sea  un escalar $a$ tal que $av=0$. Si $a\neq 0$, entonces $av$ no puede ser $0$. Por eso $a$ debe ser $0$. Por lo tanto, $v\neq 0$ y $av=0$ implica que $a=0$. Así, $v$ es linealmente independiente.\\\\
+
+	    %---------- (b)
+	    \item Una lista de dos vectores en $V$ es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. \\\\
+		Demostración.-\; El enunciado siguiente es equivalente. Dos vectores son linealmente dependientes si y sólo si uno de los vectores es múltiplo escalar de otro. Supongamos que $v_1,v_2$ son dos vectores linealmente dependientes. Por lo que, existe escalares $a_1,a_2$ tal que 
+		$$a_1v_1+a_2v_2=0$$
+		y no ambos escalares $a_1,a_2$ son cero. Sea $a_1\neq 0$, entonces la ecuación se podría reescribir como
+		$$v_1=-\dfrac{a_2}{a_1}v_2$$
+		el cual prueba que $v_1$ es un múltiplo escalar de $v_2$. Por otro lado, si $a_2\neq 0$, entonces $v_2=-\frac{a_1}{a_2}v_1$ de aquí podemos afirmar que $v_2$ es un múltiplo escalar de $v_1$.\\
+		Ahora supongamos que que uno de los $v_1$ o $v_2$ es un múltiplo escalar del otro. Podemos decir, sin perdida de generalidad, que $v_1$ es un múltiplo escalar de $v_2$. Esto es, $v_1=cv_2$ para algún escalar $c$. Por lo tanto, la ecuación $v_1-cv_2=0$ se cumple, ya que el multiplicador de $v_1$ es distintos de cero. Esto es precisamente lo que requerimos para la definición de dependencia lineal. Así, $v_1$ y $v_2$ son linealmente dependientes.\\\\
+
+	    %---------- (c)
+	    \item $(1,0,0,0),(0,1,0,0),(0,0,1,0)$ es linealmente independiente en $\textbf{F}^4$.\\\\
+		Demostración.-\; Utilizaremos la definición de independencia lineal. Sean $a,b,c$ escalares en \textbf{F} tal que
+		$$a(1,0,0,0)+b(0,1,0,0)+c(0,0,1,0)=\textbf{0}=(0,0,0,0)$$
+		Entonces,
+		$$(a,b,c,0)=(0,0,0,0)$$
+		Lo que implica,
+		$$a,b,c=0.$$
+		Esto demuestra que los tres vectores son linealmente independientes.\\\\
+
+
+	    %---------- (d)
+	    \item La lista $1,z,\ldots,z^m$ es linealmente independiente en $\mathcal{P}(\textbf{F})$ para cada entero no negativo $m$.\\\\
+		Demostración.-\; Demostremos por contradicción. Supongamos que $1,z,\ldots,z^m$ es linealmente dependiente. Por lo que, existe un escalar $a_0,a_1,\ldots,a_m$ tal que
+		$$a_0+a_1z+\ldots+a_mz^m=0.$$
+		Sea $k$ el indice más grande tal que $a_k\neq 0$. Esto significa que los escalares desde $a_{k+1}$ hasta $a_m$ son cero. Entonces, se deduce que
+		$$a_0+a_1z+\ldots+a_kz^k=0.$$
+		Reescribiendo se tiene
+		$$z_k=-\dfrac{a_0}{a_k}-\dfrac{a_1}{a_k}z-\cdots-\dfrac{a_{k-1}}{a_k}z^{k-1}.$$
+		Aquí, expresamos $z^k$ como un polinomio de grado $k-1$ el cual es absurdo. Por lo que $1,z,z^2,\ldots,z^m$ es un conjunto linealmente independiente.\\\\
+
+	\end{enumerate}
+
+
+    %------------------- 3.
+    \item Encuentre un número $t$ tal que
+    $$(3,1,4),(2,-3,5),(5,9,t)$$
+    no es linealmente independiente en $\textbf{R}^3$.\\\\
+	Respuesta.-\; Sea,
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0.$$
+	Si $c=0$. Entonces,
+	$$a(3,1,4)+b(2,-3,5)=0.$$
+	Lo que implica
+	$$
+	\begin{array}{rcl}
+	    3a+2b&=&0\\
+	    a-3b&=&0\\
+	    4a+5b&=&0
+	\end{array}
+	$$
+	De donde, resolviendo para $a$ y $b$ se tiene
+	$$a=0\quad \mbox{y}\quad b=0.$$
+	Pero, no queremos que $a,b,c$ sean cero. Así que debemos forzar que $c\neq 0$, como sigue:
+	$$a(3,1,4)+b(2,-3,5)+c(5,9,t)=0\quad \Rightarrow \quad (5,9,t)=-\dfrac{a}{c}(3,1,4)-\dfrac{b}{c}(2,-3,5).$$
+	Es decir, estamos expresando $(5,9,t)$ como una combinación lineal de los vectores restantes. Así, sea $-\dfrac{a}{c}=x\;$,$\;-\dfrac{b}{c}=y$  por lo que,
+	$$(5,9,t)=x(3,1,4)+y(2,-3,5).$$
+	Así, tenemos que
+	$$
+	\begin{array}{rcl}
+	    3x+2y&=&5\\
+	    x-3y&=&9\\
+	    4x+5y&=&t
+	\end{array}
+	$$
+	Resolviendo para $x$ e $y$ se tiene
+	$$x=3\quad \mbox{y}\quad y=-2.$$
+	Por lo tanto,
+	$$t=2.$$\\
+
+    %------------------- 4.
+    \item Verifique la afirmación en el segundo punto del Ejemplo 2.20. Es decir, la lista $(2,3,1),(1,-1,2),(7,3,c)$ es linealmente dependientes en $\textbf{F}^3$ si y sólo si $c=8$, como debes verificar.\\\\
+	Respuesta.-\; Sea los escalares $a,b,c$  no todos cero tal que
+	$$r(2,3,1)+s(1,-1,2)+t(7,3,c)=(0,0,0)$$
+	De donde, podemos escribir como ecuaciones lineales
+	$$
+	\begin{array}{rcl}
+	    2r+s+7t&=&0\\
+	    3r-s+3t&=&0\\
+	    r+2s+ct&=&0
+	\end{array}
+	$$
+	De la ecuación 1 y 2 se tiene
+	$$5r+10t=0\quad \Rightarrow \quad r=-2t.$$
+	Luego sustrayendo la ecuación 1 y 3, 
+	$$2r+(c-4)t=0.$$
+	Así, tenemos que
+	$$2(-2t)+(c-4)t=0\quad \Rightarrow \quad (c-8)t=0$$
+	Por lo que,
+	$$r=0\quad \mbox{o}\quad c-8=0.$$
+	Si $t=0$. Entonces, $r=-2t = 0$, y $s=0.$ Contradiciendo el hecho de que no todos los escalares son cero. Por lo tanto, los tres vectores son linealmente dependientes si y sólo si $c=8$.\\\\
+
+    %------------------- 5.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{R}$, entonces la lista $(1+i,1-i)$ es linealmente independiente.\\\\
+		Demostración.-\; Sean los escalares $a,b\in \textbf{R}$, tal que
+		$$a(1+i)+b(1-i)=0\quad \Rightarrow \quad (a+b)+(a-b)i=0.$$
+		Entonces,
+		$$a+b=0\quad \mbox{y}\quad a-b=0.$$
+		Igualando estas dos ecuaciones se tiene
+		$$
+		\begin{array}{rcl}
+		    a+b=a-b&\Rightarrow& 2b=0\\
+			   &\Rightarrow& b=0.
+	       \end{array}
+		$$
+		Reemplazando en $a+b=0$,
+		$$a=0.$$
+		Por lo tanto, $(1+i,1-i)$ es linealmente independiente sobre $\textbf{R}$.\\\\
+
+
+	    %---------- (b)
+	    \item Demuestre que si pensamos en $\textbf{C}$ como un espacio vectorial sobre $\textbf{C}$, entonces la lista $(1+i,1-i)$ es linealmente dependiente.\\\\
+		Demostración.-\; Sean los escalares $i,1\in \textbf{C}$, tal que
+		$$i(1+i)+1(1-i)=i+i^2+1-i=0\quad \Rightarrow \quad (i-1)+(1-i)=(i-1)-(i-1)=0.$$
+		Donde concluimos que $(1+i,1-i)$ es linealmente dependiente sobre $\textbf{C}$.\\\\
+
+	\end{enumerate}
+
+    %------------------- 6.
+    \item Supongamos que $v_1,v_2,v_3,v_4$ es linealmente independiente en $V$. Demostrar que la lista
+    $$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+    es también linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a,b,c,d\in F$ tal que
+	$$a(v_1-v_2)+b(v_2-v_3)+c(v_3-v_4)+d(v_4)=0.$$
+	De donde,
+	$$av_1-av_2+bv_2-bv_3+cv_3-cv_4+dv_4=0.$$
+	Por lo que,
+	$$av_1+(b-a)v_2+(c-b)v_3+(d-c)v_4=0$$
+	Ya que $v_1,v_2,v_3,v_4$ es linealmente independiente, entonces
+	$$
+	\begin{array}{rcl}
+	    a&=& 0\\
+	    b-a&=& 0\\
+	    c-b&=& 0\\
+	    d-c&=& 0
+	\end{array}
+	$$
+	Resolviendo para $a,b,c,d$ se tiene
+	$$a=0,\quad b=0,\quad c=0,\quad d=0.$$
+	Esto implica que 
+	$$0(v_1-v_2)+0(v_2-v_3)+0(v_3-v_4)+0(v_4)=0.$$
+	Por lo tanto, la lista
+	$$v_1-v_2,v_2-v_3,v_3-v_4,v_4$$
+	es linealmente independiente.\\\\
+
+    %------------------- 7.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$, Entonces
+    $$5v_1-4v_2,v_2,v_3,\ldots,v_m$$
+    es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\textbf{F}$ tal que 
+	$$a_1(5v_1-4v_2)+a_2v_2+a_3v_3+\ldots+a_mv_m=0$$
+	De donde,
+	$$5a_1v_1+(a_2-4a_1)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Sabemos que la independencia lineal obliga a todos los escalares de $v_i$ a ser cero. En particular , $5a_1=0$ entonces $a_1=0$ y $a_2-4a_1=0$, implica $a_2=0.$ Por lo tanto, 
+	$$0\cdot v_1+(0-0)v_2+a_3v_3+\ldots+a_m v_m=0$$
+	Dado que todos $a_i$ son cero, entonces $5v_1-4v_2,v_2,v_3,\ldots,v_m$ es linealmente independiente.\\\\
+
+    %------------------- 8.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ es una lista linealmente independiente  de vectores en $V$ y $\gamma\in \textbf{F}$ con $\gamma\neq 0$, Entonces $\gamma v_1,\gamma v_2,\ldots,\gamma v_m$ es linealmente independiente.\\\\
+	Demostración.-\; Por definición de independencia lineal. Sean los escalares $a_i\in \textbf{F}$ tal que
+	$$a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$$
+	De donde,
+	$$\gamma\left(a_1 v_1+a_2 v_2+\ldots+a_m v_m\right)=0.$$
+	Lo que,
+	$$a_1 v_1+a_2 v_2+\ldots+a_m v_m=0.$$
+	Ya que, $v_1,v_2,\ldots,v_m$ es linealmente independiente. Entonces, todos los $a_i's$ deben ser cero. Por lo tanto, $a_1\gamma v_1+a_2\gamma v_2+\ldots+a_m\gamma v_m=0.$ es linealmente independiente.\\\\
+
+    %------------------- 9.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son listas linealmente independientes de vectores en $V$, entonces $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+	Demostración.-\; Sean los escalares $a_i,b_i\in \textbf{F}$ tal que
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m=0\quad \mbox{y}\quad b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	Entonces,
+	$$a_1v_1+a_1v_2+\ldots+a_mv_m+b_1w_1+b_2w_2+\ldots+b_mv_m=0.$$
+	De donde,
+	$$(a_1-b_1)(v_1+w_1)+(a_2-b_2)(v_2+w_2)+\ldots+(a_m-b_m)(v_m+w_m)=0.$$
+	Supongamos $c_i=a_i+b_i\in F$. Luego,
+	$$c_1(v_1+w_1)+c_2(v_2+w_2)+\ldots+c_m(v_m+w_m)=0.$$
+	Dado que $a_i=b_i=0$, ya que $v_1,v_2,\ldots,v_m$ y $w_1,w_2,\ldots,w_m$ son linealmente independientes. Concluimos que, $v_1+w_1,\ldots,v_m+w_m$ es linealmente independiente.\\\\
+
+    %------------------- 10.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que si $v_1+w,\ldots,v_m+w$ es linealmente dependiente, entonces $w\in \span(v_1,\ldots,v_m)$.\\\\
+	Demostración.-\; Por definición de dependencia lineal. Existen $a_1,\ldots a_m \in \textbf{F}$, no todos $0$, tal que 
+	$$a_1(v_1+w)+a_2(v_2+w)+\ldots+a_m(v_m+w)=0.$$
+	De donde,
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m=-(a_1+a_2+\ldots+a_m)w. \qquad \qquad (1)$$
+	Dado que $v_1,\ldots,v_m$ es linealmente independiente, entonces existen escalares $t_i,\ldots,t_m\in \textbf{F}$, $\forall t_i=0$, de modo que
+	$$t_1v_1+t_2v_2+\ldots+t_mv_m=0$$
+	Es único. Así pues notemos, para $a_i\neq 0$ que
+	$$a_1v_1+a_2v_2+\ldots+a_mv_m\neq 0$$
+	En consecuencia por (1)
+	$$-(a_1+a_2+\ldots+a_m)w\neq 0.$$
+	Por lo tanto,
+	$$w=-\frac{1}{a_1+a_2+\ldots+a_m}(a_1v_1+a_2v_2+\ldots+a_mv_m)\in \span(v_1,\ldots,v_m).$$\\
+
+    %------------------- 11.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que $v_1,\ldots,v_m$, $w$ es linealmente independiente si y sólo si 
+    $$w\neq \span(v_1,\ldots,v_m).$$\\
+	Demostración.-\; Supongamos que $w\in \span(v_1,\ldots,v_m)$. Entonces,
+	$$w=a_1v_1+\ldots+a_mv_m.$$
+	De donde,
+	$$a_1v_1+\ldots+a_mv_m-w=0\quad \Rightarrow \quad a_1v_1+\ldots+a_mv_m+(-1)w=0.$$
+	Por lo tanto, $v_1,\ldots,v_m,w$ es linealmente dependiente.\\
+
+	Por otro lado: $v_1,\ldots,v_m,w$ es linealmente independiente, entonces existe $a_1,\ldots,a_m,b\in \textbf{F}$, $\forall a_i=0$, tal que
+	$$a_1v_1+\ldots+a_mv_m+bw=0.$$
+	Dado que $b=0$, no se puede escribir $w$ como combinación lineal de $v_1,\ldots,v_m$. Es decir,
+	$$w=\dfrac{1}{0}(a_1v_1+\ldots+a_mv_m),$$
+	lo que es imposible. De esta manera
+	$$w\neq \span(v_1,\ldots,v_m).$$\\
+
+
+    %------------------- 12.
+    \item Explique por qué no existe una lista de seis polinomios que sea linealmente independiente en $\mathcal{P}_4(\textbf{F})$.\\\\
+	Respuesta.-\; Notemos que $1,z,z^2,z^3,z^4$ genera $\mathcal{P}_4(\textbf{F})$. Pero por el teorema 1.23 [Axler, Linear Algebra], la longitud de la lista linealmente independiente es menor o igual que la longitud de la lista que genera. Es decir, cualquier lista linealmente independiente no tiene más de $5$ polinomios.\\\\
+
+    %------------------- 13.
+    \item Explique por qué ninguna lista de cuatro polinomios genera $\mathcal{P}_4 (\textbf{F})$.\\\\
+	Respuesta.-\; Sea $V$ un espacio vectorial de dimensión finita. Si $m$ vectores genera $V$ y si tenemos un conjunto de $n$ vectores linealmente independientes, entonces $n\leq m$. Es decir, el número de vectores en un conjunto linealmente independiente de $V$, no puede ser mayor que el número de vectores en un conjunto generador de $V$.\\
+	Por ejemplo, si cuatro polinomios podrían generar $P_4(\textbf{F})$. Entonces, por la definición de arriba, cualquier conjunto de polinomios linealmente independientes en $P_4(\textbf{F})$ podría tener cómo máximo cuatro vectores. Sin embargo, el conjunto $1,z,z^2,z^3,z^4$ tiene cinco polinomio linealmente independientes en $P_4(\textbf{F})$. Por lo tanto, es imposible que cualquier conjunto de cuatro polinomios genere $P_4(\textbf{F})$.\\\\
+
+    %------------------- 14.
+    \item Demuestre que $V$ es de dimensión infinita, si y sólo si existe una secuencia $v_1,v_2,\ldots,$ de vectores en $V$ tal que $v_1,\ldots,v_m$ es linealmente independiente para cada entero positivo $m$.\\\\
+	Demostración.-\; Supongamos que $V$ es de dimensión infinita. Queremos producir una secuencia de vectores $v_1,v_2,\ldots,$ tal que $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Necesitamos mostrar que para cualquier $k\in \textbf{N}$ y un conjunto de vectores linealmente independientes $v_1,v_2,\ldots$ podemos definir un vector $v_{k+1}$ tal que $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente. Si podemos probar esto, entonces significará que podemos continuar sumando vectores indefinidamente a conjuntos linealmente independientes de modo que los conjuntos resultantes también sean linealmente independientes. Esto nos dará una secuencia de vectores $v_1,v_2,\ldots$, cuyo subconjunto finito es linealmente independiente.\\
+
+	Sea $v_1,v_2,\ldots,v_k$ un conjunto linealmente independiente en $V$. Ya que $V$ es de dimensión finita, no puede generado por un conjunto finito de vectores. Por lo tanto, $V\neq \span(v_1,v_2,\ldots,v_k)$. Sea $v_{k+1}$ tal que $v_{k+1}\notin \span(v_1,v_2,\ldots,v_k)$. Entonces, por el ejercicio 11 $\left[\right.$ Axler, Linear Algebra, que nos dice: Si $v:1, \ldots, v_m$ es linealmente independiente en $V$ y $w \in V$, el conjunto  $v_1,\ldots,v_m, w$ es linealmente independiente si y sólo si $w \neq \span(v_1,\ldots, v_m) \left.\right]$. El conjunto $v_1,v_2,\ldots,v_{k+1}$ es linealmente independiente.\\\\
+	Por otro lado, sea $v_1,v_2,\ldots,v_n$ un conjunto generador de $V$. Entonces, por el teorema 1.23 [Axler, Linear Algebra], cualquier conjunto de vectores linealmente independiente en $V$ pueden tener por lo más $n$ vectores. De esto modo, cualquier conjunto que tenga $n+1$ o más vectores es linealmente dependiente. Así, si $V$ es de dimensión finita, entonces no podemos tener una secuencia de vectores $v_1,v_2,\ldots$ tal que, para cada $m$, el subconjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente. Tomando su recíproca, podemos decir que si existe una secuencia de vectores $v_1,v_2,\ldots$ tal que el conjunto $v_1,v_2,\ldots,v_m$ es linealmente independiente para cada $m$. Entonces, $V$ es de dimensión infinita. Lo que completa de demostración.\\\\
+
+    %------------------- 15.
+    \item Demostrar que $\textbf{F}^\infty$ es de dimensión infinita.\\\\
+	Demostración.-\; Sea un elemento $e_m\in \textbf{F}^\infty$ como el elemento que tiene la coordenada m-ésima igual a $1$ los demás elementos iguala a $0$. Es decir,
+	$$(0,1,0,\ldots,0)$$
+	Ahora, si varía $m$ sobre el conjunto de los números naturales, entonces tenemos una secuencia $e_1,e_2,\ldots$ en $\textbf{F}^\infty$, si y sólo si podemos probar que $e_1,e_2,\ldots,e_m$ es linealmente independiente para cada $m$. Con este fin, sea
+	$$a_1e_1+a_2e_2+\ldots+a_me_m=0$$
+	De donde,
+	$$(a-1,a_2,\ldots,a_m,0,0,\ldots,0)=(0,0,\ldots,0)$$
+	Inmediatamente implica que $a_i's=0$ y por lo tanto, $e_i's$ son linealmente independiente.\\\\
+
+    %------------------- 16.
+    \item Demostrar que el espacio vectorial real para todos las funciones de valor real continuas en el intervalo $[0,1]$ es de dimensión infinita.\\\\
+	Demostración.-\; Por el ejercicio 14 (Axler, Linear Algebra, 2A), tenemos que encontrar una secuencia linealmente independiente de funciones continuas en $[0,1]$. Observe que los monomiales $1,x,x^2,\ldots,x^n,\ldots$ son funciones continuas en $[0,1]$. Ahora, debemos demostrar que $1,x,x^2,\ldots,x^m$ es linealmente independiente en cada $m$. Para ello, sea $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$, donde $0$ es el cero polinomial. Lo que significa que $a_0+a_1x+a_2x^2+\ldots+a_mx^m=0$ toma el valor cero en todo el intervalo $[0,1]$. Esto implica que cada punto en $[0,1]$ es una raíz del polinomio. Pero, ya que cada polinomio no trivial tiene como máximo un número finito de raíces, esto es imposible a menos que todos los $a_i'$s sean cero. Lo que muestra que $1,x,x^2,\ldots,x^m$ es linealmente independiente para cada $m\in \textbf{N}$. Por lo tanto, el conjunto de funciones continuas en $[0,1]$ es de dimensión infinita.\\\\
+
+    %------------------- 17.
+    \item Suponga $p_0,p_1,\ldots,p_m$ son polinomios en $\mathcal{P}_m(\textbf{F})$ tal que $p_j(2)=0$ para cada $j$. Demostrar que $p_0,p_1,\ldots,p_m$ no es linealmente independiente en $\mathcal{P}_m(\textbf{F})$.\\\\
+	Demostración.-\; Supondremos que $p_0,p_1,\ldots.p_m$ es linealmente independiente. Demostraremos que esto  implica que $p_0,p_1,\ldots,p_m$ genera $\mathcal{P}_m(\textbf{F})$. Y que esto a su vez conducirá a una contradicción al construir explícitamente un polinomio que no está en este generador.
+	Notemos que la lista $1,z,\ldots,z^{m+1}$ genera $\mathcal{P}_m(\textbf{F})$ y tiene longitud $m+1$. Por lo tanto, cada lista linealmente independiente debe tener una longitud $m+1$ o menos (2.23). Si $\span(p_0,p_1,\ldots,p_m)\neq \mathcal{P}_m(\textbf{F})$, existe algún $p\notin \span(p_0,p_1,\ldots,p_m)$, de donde la lista $p_0,p_1,\ldots,p_m,p$ es linealmente independiente de longitud $m+2$, lo que es una contradicción. Por lo que $\span(p_0,p_1,\ldots,p_m)=\mathcal{P}_m(\textbf{F})$.\\
+	Ahora definamos el polinomio $q=1$. Entonces $q\in \span(p_0,p_1,\ldots,p_m)$, de donde existe $a_0,\ldots,a_m\in \textbf{F}$ tal que
+	$$q=a_0p_0+a_1p_1+\cdots+a_mP_m,$$
+	lo que implica
+	$$q(2)=a_0p_0(2)+a_1p_1(2)+\cdots+a_mP_m(2).$$
+	Pero esto es absurdo, ya que $1=0$. Por lo tanto, $p_0,p_1,\ldots,p_m$ no puede ser linealmente independiente.\\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EJERCICIO 2.B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{mysection}{1}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------- 1.
+    \item Halle todos los espacios vectoriales que tienen exactamente una base.\\\\ 
+	Respuesta.-\; Afirmamos que solo el espacio vectorial trivial tiene exactamente una base. Para ello demostraremos que para espacios vectorial de dimensión finita e infinita se tiene más de una base.\\
+	Consideremos un espacio vectorial de dimensión finita. Sea $V$ un espacio vectorial no trivial con base $v_1,\ldots,v_n$. Decimos que para cualquier $c\in \textbf{F}$, la lista $cv_1,\ldots,cv_n$ es también una base. Es decir, la lista es aún linealmente independiente, y es aún generador de $V$. Luego, sea $u\in V$ ya que $v_1,\ldots,v_n$ genera $V$, existe $a_1,\ldots,a_n\in \textbf{F}$ tal que
+	$$u=a_1v_1+\cdots+a_nv_n.$$
+	De donde, podemos escribir
+	$$u=\dfrac{a_1}{c}(cv_1)+\cdots+\dfrac{a_n}{c}(cv_n)$$
+	y así $cv_1,\ldots,cv_n$ genera también $V$. Por lo tanto, tendremos más de una base para todo espacio vectorial de dimensión finita.\\
+	Por otro lado. Sea $W$ un espacio vectorial de dimensión infinita con base $w_1,w_2,\ldots$. Para cualquier $c\in \textbf{F}$, la lista $cw_1,cw_2,\ldots$ es también una base. Claramente la lista es linealmente independiente, y también genera $V$. Luego, sea $u\in V$, ya que $w_1,w_2,\ldots$ genera $W$, existe $a_1,a_2,\ldots\in \textbf{F}$ tal que
+	$$u=a_1w_1+a_2w_2+\cdots$$
+	De donde, podemos escribir
+	$$u=\dfrac{a_1}{c}cw_1+\dfrac{a_2}{c}cw_2+\cdots$$
+	y así $cw_1,cw_2,\ldots$ genera también $W$. Por lo tanto, tendremos más de una base para todo espacio vectorial de dimensión infinita.\\\\
+
+
+    %------------------- 2.
+    \item Verifique todas las afirmaciones del ejemplo 2.28.\\
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item La lista $(1,0,\ldots,0)$, $(0,1,0,\ldots,0)$, $\ldots$, $(0,\ldots,0,1)$ es una base de $\textbf{F}^n$, llamado la base estándar de $\textbf{F}^n$.\\\\
+		Respuesta.-\; Primero demostraremos que la lista genera $\textbf{F}^n$.  Sea, los escalares $x_1,x_2,\ldots,x_n$ en $\textbf{F}$. Podemos escribir
+		$$x_1(1,0,\ldots,0)+x_2(0,1,0,\ldots,0)+\cdots+x_n(0,\ldots,0,1)=\left(x_1,x_2,\ldots,x_n\right).$$
+		Donde, $(x_1,x_2,\ldots,x_n)$ es un vector cualquier en $\textbf{F}^n$. Esta expresión es una combinación lineal de los $n$ vectores. Por definición, esta lista genera $\textbf{F}^n$.\\
+		Ahora, demostraremos que la lista es linealmente independiente. Para ello, aplicaremos la definición. Sea $a_1,a_2,\ldots,a_n\in \textbf{F}$, entonces
+		$$a_1(1,0,\ldots,0)+a_2(0,1,0,\ldots,0)+\cdots+a_n(0,\ldots,0,1)=0.$$
+		Esto implica que
+		$$(a_1,a_2,\ldots,a_n)=(0,0,\ldots,0).$$
+		Por lo que $a_1=a_2=\cdots=a_n=0$. Así, la lista es linealmente independiente.\\\\
+
+	    %---------- (b)
+	    \item  La lista $(1,2),(2,5)$ es una base de $\textbf{F}^2$.\\\\
+		Respuesta.-\; Sea $(x_1,x_2)\in \textbf{F}^2$. Buscaremos escalares $c_1,c_2$ tal que
+		$$c_1v_1+c_2v_2=(x_1,x_2).$$
+		que implica,
+		$$c_1(1,2)+c_2(3,5)=(x_1,x_2)\quad \Rightarrow \quad (c_1+3c_2,2c_1+5c_2)=(x_1,x_2)$$
+		De donde, podemos construir un sistema de ecuaciones
+		$$
+		\begin{array}{rcl}
+		    c_1+3c_2&=&x_1\\
+		    2c_1+5c_2&=&x_2
+		\end{array}
+		$$
+		Multiplicando por dos la primera ecuación y luego restando la segunda, tenemos
+		$$c_2=2x_1-x_2$$
+		Luego, reemplazándola a la primera ecuación, se tiene
+		$$c_1=-5x_1+3x_2.$$
+		Por lo tanto, para cada vector $(x_1,x_2)\in \textbf{F}^2$ podemos encontrar $c_1,c_2$ en función de $x_1$ y $x_2$ tal que $c_1v_1+c_2v_2$ es una combinación lineal el cual genera $\textbf{F}^2$.\\
+		Después, sólo nos haría falta reemplazar en
+		$$c_2=2x_1-x_2\quad \mbox{y}\quad c_1=-5x_1+3x_2$$
+		$(x_1,x_1)=(0,0)$. De donde,
+		$$c_2=0\quad \mbox{y}\quad c_1=0.$$
+		Esto implica que $(1,2)$ y $(2,5)$ es linealmente independiente Por lo que concluimos que la lista dada es una base de $\textbf{F}^2$.\\\\
+
+	    %---------- (c)
+	    \item La lista $(1,2,-4)$, $(7,-5,6)$ es linealmente independiente en $\textbf{F}^3$ pero no es una base en $\textbf{F}^3$, ya que no genera $\textbf{F}^3$.\\\\
+		Respuesta.-\; Sean los escalares  $c_1,c_2\in \textbf{F}$ tal que
+		$$c_1(1,2,-4)+c_2(7,-5,6)=0\quad \Rightarrow\quad (c_1+7c_2,2c_1-5c_2,-4c_1+6c_2)=(0,0,0)$$
+		Por lo que, podemos construir un sistema de ecuaciones
+		$$
+		\begin{array}{rcl}
+		    c_1+7c_2&=&0\\
+		    2c_1-5c_2&=&0\\
+		    -4c_1+6c_2&=&0
+		\end{array}
+		$$
+		Multiplicando la segunda ecuación y sumando la tercera tenemos
+		$$c_2=0$$
+		Luego, sustituyendo en la primera ecuación, 
+		$$c_1=0$$
+		Esto implica que los vectores dados son linealmente independientes.\\
+		Ahora, demostraremos que la lista no genera $\textbf{F}^3$, con un contraejemplo. Supongamos que $(1,2,-4),(7,-5,6)$ puede generar $(1,0,0)$ el cual está en $\textbf{F}^3$. Sea los escalares $c_1,c_2\in \textbf{F}$, entonces 
+		$$c_1(1,2,-4)+c_2(7,-5,6)=(1,0,0)\quad \Rightarrow\quad (c_1+7c_2,2c_1-5c_2,-4c_1+6c_2)=(1,0,0).$$
+		Construimos un sistema de ecuaciones, como sigue
+		$$
+		\begin{array}{rcl}
+		    c_1+7c_2&=&1\\
+		    2c_1-5c_2&=&0\\
+		    -4c_1+6c_2&=&0
+		\end{array}
+		$$
+		De las ecuaciones 2 y 3 se tiene que
+		$$c_1=0,\quad c_2=0$$
+		Reemplazando en la primera ecuación, 
+		$$0+0=1\quad \Rightarrow\quad 0=1.$$
+		Lo que es un absurdo, por lo tanto $(1,2,-4)$, $(7,-5,6)$ no genera $\textbf{F}^3$.\\\\
+
+	    %---------- (d)
+	    \item La lista $(1,2),(3,5),(4,13)$ genera $\textbf{F}^2$ pero no es una base de $\textbf{F}^2$, ya que no es linealmente independiente.\\\\
+		Respuesta.-\; Demostremos que la lista no es linealmente independiente. Sea $a_1,a_2,a_3\in \textbf{F}$, entonces
+		$$a_1(1,2)+a_2(3,5)+a_3(4,13)=0 \quad \Rightarrow \quad (a_1+3a_2+4a_3,2a_1+5a_2+13a_3)=(0,0).$$
+		Construimos un sistema de ecuaciones, como sigue
+		$$
+		\begin{array}{*{7}{r}}
+		    a_1&+&3a_2&+&4a_3&=&0\\
+		    2a_1&+&5a_2&+&13a_3&=&0
+		\end{array}
+		$$
+		Multiplicando por dos la primera ecuación y luego restando la segunda, tenemos
+		$$a_2=5a_3.$$
+		Remplazando en la primera ecuación,
+		$$a_1=-19a_3.$$
+		Sea, $a_3=1$, entonces
+		$$a_1=-19\quad \mbox{y}\quad a_2=5.$$
+		Por lo tanto, $(1,2),(3,5),(4,13)$ no es linealmente independiente.\\
+
+		Ahora, demostraremos que la lista $(1,2),(3,5),(4,13)$ genera $\textbf{F}^2$.  Sean $a_1,a_2,a_3\in \textbf{F}$ tal que
+		$$a_1(1,2)+a_2(3,5)+a_3(4,13)=0$$
+		Sabiendo que esta lista es linealmente dependiente, podemos reescribimos la ecuación de modo que $(1,2),(3,5)$ genera $(4,13)$:
+		$$(4,13) = \dfrac{a_1}{a_3}(1,2)-\dfrac{a_2}{a_3}(3,5)$$
+		Por el lema 2.21 (Axler, Linear Algebra), vemos que el generador de $(1,2),(3,5)$ es igual al generador de $(1,2),(3,5),(4,13)$. Sólo nos faltaría demostrar que $(1,2),(3,5)$ genera $\textbf{F}^2$. Para ello, sea $(x_1,x_2)\in\textbf{F}^2$, de modo que
+		$$a_1(1,2)+a_2(3,5)=(x_1,x_2)$$
+		Entonces,
+		$$
+		\begin{array}{rcl}
+		    a_1+3a_2&=&x_1\\
+		    2a_1+5a_2&=&x_2
+		\end{array}
+		$$
+		Multiplicando la segunda ecuación por dos y restando la primera, tenemos
+		$$a_1=2x_1-x_2.$$
+		Remplazando en la primera ecuación,
+		$$a_2=-(5x_1+3x_2).$$
+		Por lo tanto, podemos hallar $a_1$ y $a_2$ en términos de $x_1$ y $x_2$ tal que $a_1(1,2)+a_2(3,5)=(x_1,x_2)$ es una combinación lineal que genera $\textbf{F}^2$.\\
+
+		Siendo más prácticos podemos usar el teorema 2.23.  Para saber que $(1,2),(3,5),(4,13)$ no es linealmente independiente pero genera $\textbf{F}^2$. \\\\
+
+	    %---------- (e)
+	    \item La lista $(1,1,0),(0,0,1)$ es una base de $\left\{(x,x,y)\in \textbf{F}^3\; :\; x,y\in \textbf{F}\right\}$.\\\\
+		Respuesta.-\; Está claro que la lista es linealmente independiente. Ya que, la única forma de que se cumpla  
+		$$c_1(1,1,0)+c_2(0,0,1)=0$$
+		es que $c_1,c_2$ sean igual a cero.\\
+		Ahora demostraremos que la lista  dada genera $\left\{(x,x,y)\in \textbf{F}^3\; :\; x,y\in \textbf{F}\right\}$. Sea $c_1,c_2\in \textbf{F}$ tal que
+		$$c_1(1,1,0)+c_2(0,0,1)=(x,x,y).$$
+		De donde, podemos construir un sistema de ecuaciones como sigue:
+		$$
+		\begin{array}{rcl}
+		    c_1+0&=&x\\
+		    c_1+0&=&x\\
+		    0+c_2&=&y
+		\end{array}
+		$$
+		Por lo que, cualquier  $\textbf{F}^3$ puede ser expresado como una combinación lineal de los vectores $(1,1,0),(0,0,1)$ y por lo tanto generan $\textbf{F}^3$.\\\\ 
+
+	    %---------- (f)
+	    \item La lista $(1,-1,0),(1,0,-1)$ es una base de
+	    $$\left\{(x,y,z)\in\textbf{F}^3\; : \; x+y+z=0\right\}.$$\\
+		Respuesta.-\; Si $x+y+z=0$ para $x,y,z\in \textbf{F}$, entonces podemos escribir 
+		$$x=-y-z.$$ 
+		Por lo que,
+		$$
+		\begin{array}{rcl}
+		    (x,y,z)&=&(-y-z,y-z)\\
+			   &=& (-y,y-0)+(-z,0z)\\
+			   &=& -y(1,-1,0)-z(1,0,-1).
+		\end{array}
+		$$
+		Debido a que $y,z$ son escalares, implica que podemos expresar cualquier $(x,y,z)\in\textbf{F}^3$ como una combinación lineal de los vectores $(1,-1,0),(1,0,-1)$. \\
+
+		Es fácil ver que que la lista $(1,-1,0),(1,0,-1)$ es linealmente independiente. Dado que, si $c_1,c_2\in\textbf{F}^n$, entonces 
+		$$
+		\begin{array}{rcl}
+		    c_1(1,-1,0)+c_2(1,0,-1)&=&0\\
+		    (c_1+c_2,-c_1,-c_2)&=&0.
+		\end{array}
+		$$
+		De donde,
+		$$c_1=c_2=0.$$
+		Así, la lista $(1,-1,0),(1,0,-1)$ es linealmente independiente. Por lo tanto,$(1,-1,0),(1,0,-1)$ es una base de $\textbf{F}^3$\\\\
+
+	    %---------- (g)
+	    \item La lista $1,z,\ldots,z^m$ es una base de $\mathcal{P}_m(\textbf{F})$.\\\\
+		Respuesta.-\; El elemento general de $\mathcal{P}_m(\textbf{F})$ es una combinación lineal de $1,z,z^2,\ldots,z^m$ de la forma:
+		$$a_0+a_1z+a_2z^2+\cdots+a_mz^m$$
+		donde $a_i\in \textbf{F}$ para $1\leq i \leq m$. Lo que demuestra que genera $\mathcal{P}_m(\textbf{F})$.\\
+
+		Para demostrar que la lista es linealmente independiente, suponemos que la combinación lineal de estos elementos es igual a cero; es decir,
+		$$a_0+a_1z+a_2z^2+\cdots+a_mz^m=0.$$
+		Donde el $\textbf{0}$ es un polinomio. Esto implica que el polinomio del lado izquierdo toma valor cero para todo los valore de $z$. Esto es posible sólo cuando todos los $a_i's$ son cero, ya que cualquier polinomio no trivial tiene un número finito de raíces. Por lo tanto la lista $1,z,z^2,\ldots,z^m$ es base de $\mathcal{F}_m(\textbf{F})$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 3.
+    \item 
+	\begin{enumerate}[a).]
+
+	    %---------- (a)
+	    \item Sea $U$ el subespacio de $\textbf{R}^5$ definido por
+	    $$U=\left\{(x_1,x_2,x_3,x_4,x_5)\in \textbf{F}^5\; : \; x_1=3x_2\;\mbox{y}\; x_3=7x_4\right\}.$$
+	    Encuentre una base de $U$.\\\\
+		Respuesta.-\; Dado que se tiene la condición $x_1=3x_2\;\mbox{y}\; x_3=7x_4$. Podemos escribir el vector general, como sigue
+		$$
+		\begin{array}{rcl}
+		    (3x_2,x_2,7x_4,x_4,x_5) &=& (3x_2,x_2,0,0,0)+(0,0,7x_4,x_4,0)+(0,0,0,0,x_5)\\
+					  &=& x_2(3,1,0,0,0)+x_4(0,0,7,1,0)+x_5(0,0,0,0,1).
+		\end{array}
+		$$
+		Por lo que $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ forma una base de $U$. Podemos demostrar fácilmente que estos vectores generar $U$, ya que $U$ puede expresarse como una combinación lineal de estos tres vectores. Ahora, demostremos que son linealmente independiente. Sea $c_1,c_2,c_3\in \textbf{F}$. Entonces, 
+		$$c_1(3,1,0,0,0)+c_2(0,0,7,1,0)+c_3(0,0,0,0,1)=0$$
+		De donde,
+		$$(3c_1,c_2,7c_2,c_2,c_3)=(0,0,0,0,0).$$
+		Igualando cada componente, tenemos que $c_1=c_2=c_3=0$. Así se demuestra que estos tres vectores son linealmente independientes. Por lo tanto, $(3,1,0,0,0),(0,0,7,1,0),(0,0,0,0,1)$ es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base de la parte (a) a una base de $\textbf{R}^5$.\\\\
+		Respuesta.-\; Sean $v_1=(3,1,0,0,0)$, $v_2=(0,0,7,1,0)$, $v_3=c_3(0,0,0,0,1)$. Por el ejercicio 11 del apartado 2A (Axler, Linear Algebra), se sabe que si tenemos $v_4\notin \span(v_1,v_2,v_3)$ entonces $v_1,v_2,v_3,v_4$ son linealmente independientes. Nos preguntamos, ¿que clase de vectores no pueden ser generados por $v_1,v_2,v_3$?. Observemos que las primeras dos coordenadas de $v_2$ y $v_3$ son cero. Por lo que no pueden aportar a otras dos primeras coordenadas de cualquier combinación lineal que consideremos. De hecho, estas coordenadas deben provenir de $v_1$.\\
+		Si $av_1+bv_2+cv_3$ es una combinación lineal, entonces las dos primeras coordenadas son $3a$ y $a$. Luego, si escogemos un vector donde sus primeras dos coordenada no son de la forma $3a$ y $a$ para cualquier escalar $a$, entonces no será generados por $v_1,v_2,v_3$. Por ejemplo podemos escoger el vector 
+		$$v_4=(0,1,0,0,0)$$
+		Ahora, encontremos un $v_5$ tal que $v_5\notin \span(v_1,v_2,v_3,v_4)$. Observemos que las coordenadas cuatro y cinco de los vectores $v_1.v_2,v_3$ y $v_4$ son cero. Por lo que ambas coordenadas deben provenir de $v_2$.\\
+		Si  $av_1+bv_2+cv_3+dv_4$ es una combinación lineal, entonces las coordenadas cuatro y cinco son de la forma $7b$ y $b$, para cualquier escalar $b$. Por ejemplo podemos escoger el vector,
+		$$v_5=(0,0,0,1,0).$$
+		Por último, demostremos que esta lista es base de $\textbf{F}^5$. Por el teorema 2.23 sabemos que, si $m$ vectores generan un espacio vectorial, entonces cualquier lista linealmente independiente en $V$ no puede tener más de $m$ vectores. Así, queda demostrada la independencia lineal de $v_1,v_2,v_3,v_4,v_5$.\\
+
+		Por otro lado, demostremos que esta lista genera $\textbf{F}^5$. Nuestro objetivo será hallar una combinación lineal que incluya a $v_1,v_2,v_3,v_4$ y $v_5$ para $a,b,c,d,e\in \textbf{F}$ tales que
+		$$a(1,0,0,0,0)+b(0,0,1,0,0)+c(0,0,0,0,1)+d(0,1,0,0,0)+e(0,0,0,1,0)=(x_1,x_2,x_3,x_4,x_5).$$
+
+		Para ello, notemos que ya se tiene $v_3=(0,0,0,0,5)$, $v_4=(0,1,0,0,0)$ y $v_5=(0,0,0,1,0)$. Ahora, generemos los restantes $(1,0,0,0,0)$ y $(0,0,1,0,0)$, de la siguiente manera 
+		$$
+		\begin{array}{rcl}
+		    \dfrac{1}{3}(v_1-v_4)&=&(1,0,0,0,0)\\\\
+		    \dfrac{1}{7}(v_2-v_5)&=&(0,0,1,0,0).
+		\end{array}
+		$$
+		Dado que se incluye a $v_1$ y $v_2$ en combinación lineal con $v_4$ y $v_5$, entonces 
+		$$
+		\begin{array}{rcl}
+		    a&=&x_1\\
+		    b&=&x_2\\
+		    c&=&x_3\\
+		    d&=&x_4\\
+		    e&=&x_5.
+		\end{array}
+		$$
+		Encontrando los respectivos escalares $a,b,c,d,e$ en términos de $x_1,x_2,x_3,x_4,x_5$. Decimos que la lista $v_1,v_2,v_3,v_4,v_5$ genera $\textbf{F}^5$. Por lo tanto es una base de $\textbf{F}^5$.\\\\
+		    
+
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\textbf{F}^5$ tal que $\textbf{R}^5=U\oplus W$.\\\\
+		Respuesta.- Por 1.45 (Axler, Lineal Algebra), demostraremos que $\textbf{R}^5=U+W$ y que $U\cap W=\left\{0\right\}$. Sea $v\in \textbf{R}^5$, ya que $v_1,v_2,v_3,v_4,v_5$ es una base de $\textbf{F}^5$, por el criterio de base (2.28, Axler, Lineal algebra) podemos escribir 
+		$$
+		\begin{array}{rcl}
+		    v &=& c_1v_1+c_2v_2+c_3v_3+c_4v_4+c_5v_5\\
+		      &=&(c_1v_1+c_2v_2+c_3v_3)+(c_4v_4+c_5v_5).
+		\end{array}
+		$$
+		Luego, sean $u=c_1v_1+c_2v_2+c_3v_3$ y $w=c_4v_4+c_5v_5$. Entonces, $u\in U$ y $w\in W$. Está claro que $u$ y $w$ generan $U$ y $W$ respectivamente. De este modo, cada vector en $\textbf{R}^5$ puede ser expresado como una suma de vectores en $U$ y $W$. Esto prueba que $\textbf{R}^5=U+W$.\\
+
+		Ahora demostremos que $U\cap W=\left\{0\right\}$. Sea $v\in U\cap W$, ya que $v\in U$ entonces para algunos escalares $a,b,c\in \textbf{F}$ se tiene
+		$$v=av_1+bv_2+cv_3.$$
+		Lo mismo pasa con $v\in W$, para algunos escalares $d,e\in \textbf{F}$; es decir,
+		$$v=dv_4+ev_5.$$
+		Dado que queremos encontrar $U\cap W$, se tiene
+		$$av_1+bv_2+cv_3=dv_4+ev_5 \quad \Rightarrow \quad av_1+bv_2+cv_3-dv_4-ev_5=0$$
+		Por el hecho de que $U$ y $W$ son linealmente independiente, lo que implica $a=b=c=d=e=0$, entonces $v=0$, así $U\cap W = \left\{0\right\}$. Concluimos que 
+		$$\textbf{R}^5=U\oplus W.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 4.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U$ el subespacio de $\textbf{C}^5$ definida por 
+	    $$U=\left\{(z_1,z_2,z_3,z_4,z_5)\in \textbf{C}^5\; :\; 6z_1=z_2\;\; \mbox{y}\;\; z_3+2z_4+3z_5=0\right\}.$$
+	    Encuentre una base de $U$.\\\\
+		Respuesta.-\; De las condiciones dadas, podemos escribir el conjunto $U$ como
+		$$U=\left\{(6z_1,z_2,-2z_4-3z_5,z_4,z_5)\;:\;z_2,z_4,z_5\in \textbf{C}\right\}$$
+		Sea $z\in U$, que implica
+		$$
+		\begin{array}{rcl}
+		    z &=& (6z_1,z_2,-2z_4-3z_5,z_4,z_5)\\
+		      &=& z_2(6,1,0,0,0)+z_4(0,0,-2,1,0)+z_5(0,0,-3,0,1).
+		\end{array}
+		$$
+		Entonces, $z_2(6,1,0,0,0)$, $z_4(0,0,-2,1,0)$ y $z_5(0,0,-3,0,1)$ genera $U$. Ahora veamos si esta lista es linealmente independiente. Sean $a,b,c\in \textbf{F}$ tal que 
+		$$(6a,a,-2b-3c,b,c)=0.$$
+		De donde,
+		$$
+		\begin{array}{rcl}
+		    6a&=&0\\
+		    a&=&0\\
+		    -2b-3c&=&0\\
+		    b&=&0\\
+		\end{array}
+		\quad \Rightarrow \quad 
+		\begin{array}{rcl}
+		    a&=&0\\
+		    b&=&0\\
+		    c&=&0.
+		\end{array}
+		$$
+		Por lo tanto, la lista es linealmente independiente. Así, concluimos que $U$ es generado por $z_2(6,1,0,0,0)$, $z_4(0,0,-2,1,0)$ y $z_5(0,0,-3,0,1)$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) para una base de $\textbf{C}^5$.\\\\
+		Respuesta.-\;
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\textbf{C}^5$ tal que $\textbf{C}^5=U\oplus W$.\\\\
+		Respuesta.-\; 
+
+	\end{enumerate}
+
+    %-------------------- 5.
+    \item Demostrar o refutar: existe una base $p_0,p_1,p_2,p_3$ de $\mathcal{P}_3(\textbf{F})$ tal que ninguno de los polinomios $p_0,p_1,p_2,p_3$ tiene grado $2$.\\\\
+	Demostración.-\; Consideremos la lista,
+	$$
+	\begin{array}{rcl}
+	    p_0&=&1,\\
+	    p_1&=&X,\\
+	    p_2&=&X^3+X^2,\\
+	    p_3&=&X^3.
+	\end{array}
+	$$
+	El cual no tiene ningún polinomio de grado $2$. Demostraremos que esta lista es una base. Primero veamos que $\span(p_0,P_1,p_2,p_3)=\mathcal{P}_3(\textbf{F})$. Sea $q\in \mathcal{P}_3(\textbf{F})$. Entonces existe $a_0,a_1,a_2,a_3\in F$ alguno cero, tal que
+	$$q=a_0+a_1X+a_2X^2+a_3X^3.$$
+	Notemos que
+	$$
+	\begin{array}{rcl}
+	    a_0p_0+a_1p_1+a_2(p_2-p_3)+a_3p_3 &=& a_0p_0+a_1p_1+a_2p_2+a_3p_3-a_2p_3\\\\
+					      &=& a_0p_0+a_1p_1+a_2p_2+(a_3-a_2)p_3\\\\
+					      &=& a_0+a_1X+a_2\left(X^3+X^2\right)+(a_3-a_2)X^3\\\\
+					      &=& a_0+a_1X+a_2X^3+a_2X^2+a_3X^3-a_2X^3\\\\
+					      &=& a_0+a_1X+a_2X^2+a_3X^3\\\\
+					      &=& p.
+
+	\end{array}
+	$$
+
+	Por lo que $p_0,p_1,p_2,p_3$ genera $\mathcal{P}_3(\textbf{F})$. Ahora, demostraremos que la lista es linealmente independiente. Sean $b_0,\ldots,b_3\in \textbf{F}$ tales que
+
+	$$b_0p_0+b_1p_1+b_2p_2+b_3p_3=0.$$
+
+	Se sigue que,
+
+	$$
+	\begin{array}{rcl}
+	    b_0+b_1X+b_2(X^2+X^3)+b_3X^3&=&0\\\\
+	    b_0+b_1X+b_2X^2+b_2X^3 +b_3X^3&=&0\\\\
+	    b_0+b_1X+b_2X^2+(b_2+b_3)X^3&=&0.
+	\end{array}
+	$$
+	donde $\textbf{0}$ es el cero polinomial. La lista $\left(1,X,X^2,X^3\right)$ es linealmente independiente, ya que es una base en $\mathcal{P}_3(\textbf{F})$. Por lo que 
+	$$
+	\begin{array}{rcl}
+	    b_0&=&0,\\
+	    b_1&=&0,\\
+	    b_2&=&0,\\ 
+	    b_2+b_3&=&0.
+	\end{array}
+	$$
+	Por lo tanto, existe una base $p_0,p_1,p_2,p_3$ de $\mathcal{P}_3(\textbf{F})$ tal que ninguno de los polinomios tiene grado $2$.\\\\
+
+    %-------------------- 6.
+    \item Suponga $v_1,v_2,v_3,v_4$ es una base de $V$. Demostrar que 
+    $$v_1+v_2,v_2+v_3,v_3+v_4,v_4$$
+    es también una base de $V$.\\\\
+	Demostración.-\; Demostremos la independencia lineal. Sean $a_1,a_2,a_3,a_4\in \textbf{F}$ tales que
+	$$
+	\begin{array}{rcl}
+	    a_1(v_1+v_2)+a_2(v_2+v_3)+a_3(v_3+v_4)+a_4v_4&=&0\\\\
+	    a_1v_1+a_1v_2+a_2v_2+a_2v_3+a_3v_3+a_3v_4+a_4v_4&=&0\\\\
+	    a_1v_1+(a_1+a_2)v_2+(a_2+a_3)v_3+(a_3+a_4)v_4&=&0\\\\
+	\end{array}
+	$$
+	Ya que $v_1,v_2,v_3,v_4$ es linealmente independiente, entonces $a_1=a_1+a_2=a_2+a_3=a_3+a_4=0$. Por lo que  $v_1+v_2,v_2+v_3,v_3+v_4,v_4$ es linealmente independiente.\\
+
+	Luego, demostremos que $v_1+v_2,v_2+v_3,v_3+v_4,v_4$ es una base de $V$. Por definición de generador (span), podemos expresar $v_1,v_2,v_3,v_4$ como combinaciones lineales de $v_1+v_2,v_2+v_3,v_3+v_4+v_4$, de la siguente manera 
+	$$
+	\begin{array}{rcl}
+	    v_3 &=& (v_3+v_4)-v_4\\\\
+	    v_2 &=& (v_2+v_3)-(v_3+v_4)+v_4\\\\
+	    v_1 &=& (v_1+v_2)-(v_2+v_3)+(v_3+v_4)-v_4\\\\
+	\end{array}
+	$$
+	Por tanto, todos los vectores que pueden expresarnse como combinaciones lineales de $v_1,v_2,v_3,v_4$ también se pueden expresar linealmente por $v_1,+v_2,v_2+v_3,v_3+v_4,v_4$; es decir, $v_1,+v_2,v_2+v_3,v_3+v_4,v_4$ genera $V$.\\\\
+
+    %-------------------- 7.
+    \item Demostrar o dar un contraejemplo: Si $v_1,v_2,v_3,v_4$ es una base de $V$ y $U$ es un subespacio de $V$ tal que $v_1,v_2\in U$ y $v_3\notin U$ y $v_4\notin U$, entonces $v_1,v_2$ es una base de $U$.\\\\
+	Demostración.-\; Sean,
+	$$
+	\begin{array}{rcl}
+	    v_1 &=& (1,0,0,0)\\
+	    v_2 &=& (0,1,0,0)\\
+	    v_3 &=& (0,0,1,0)\\
+	    v_4 &=& (0,0,0,1).
+	\end{array}
+	$$
+	Luego, definimos 
+	$$U=\left\{(x_1,x_2,x_3,x_4)\in \textbf{R}^4 \; :\; x_3=x_4\right\}$$
+
+	Notemos que $v_1,v_2\in U$ y $v_3,v_4\notin U$. Pero ninguna combinación lineal de $v_1,v_2$ produce $(0,0,1,1)$. Entonces, $v_1,v_2$ no genera $U$. Por lo tanto no puede formar una base.\\\\
+
+    %-------------------- 8.
+    \item Suponga que $U$ y $W$ son subespacio de $V$ tal que $V=U\oplus W$. Suponga también que $u_1,\ldots,u_m$ es una base de $U$ y $w_1,\ldots,w_n$ es una base de $W$. Demostrar que 
+    $$u_1,\ldots,u_m,\; w_1,\ldots,w_n$$
+    es una base de $V$.\\\\
+	Demostración.-\; Demostremos la independencia lineal. Sean $a_i\in \textbf{F}$ y $c_i\in \textbf{F}$ tal que
+	$$a_1u_1+a_2u_2+\cdots+a_mu_m+c_1w_1+c_2w_2+\cdots+c_nw_n=0$$
+	Que implica,
+	$$a_1u_1+a_2u_2+\cdots+a_mu_m=-(c_1w_1+c_2w_2+\cdots+c_nw_n).$$
+	Suponga que,
+	$$v=a_1u_1+a_2u_2+\cdots+a_mu_m=-(c_1w_1+c_2w_2+\cdots+c_nw_n).$$
+	De donde, $v\in U$ y $v\in W$; esto es $v\in U\cap W.$ Dado que $V=U\oplus W$, debemos tener $U\cap W=\left\{0\right\}$. Sea $v=0$, por lo que
+	$$
+	\begin{array}{rcl}
+	    a_1u_1+a_2v_2+\cdots + a_mu_m &=& 0\\\\
+	    -(c_1w_1+c_2w_2+\cdots + c_nw_n) &=& 0.
+	\end{array}
+	$$
+	Ya que, $u_1,u_2,\ldots,u_m$ y $w_1,w_2,\ldots,w_n$ es base de $U$ y $W$, respectivamente. Entonces, ambos son linealmente independiente. Es decir, $a_i=c_i=0$. Por lo tanto, $u_1,\ldots,u_m,\; w_1,\ldots,w_n$ es linealmente independiente.\\
+	Ahora, demostremos que $u_1,\ldots,u_m,\; w_1,\ldots,w_n$ genera $V$. Sea $v\in V$, ya que $V=U\oplus W$ podemos escribir $v=u+w$ para algún $u\in U$ y $w\in W$. Luego, por el hecho de que $u_1,u_2,\ldots,u_m$ es base de $U$ y $w_1,w_2,\ldots,w_n$ es base de $W$, entonces
+	$$
+	\begin{array}{rcl}
+	    u &=& a_1u_1+a_2u_2+\cdots+a_mu_m\\\\
+	    w &=& c_1w_1+c_2w_2+\cdots+c_nw_n,
+	\end{array}
+	$$
+	respectivamente. Por lo tanto, $v=u+w=a_1u_1+a_2u_2+\cdots+a_mu_m+c_1w_1+c_2w_2+\cdots+c_nw_n$. Así, $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ genera $V$. Concluimos que  $u_1,u_2,\ldots,u_m,\, w_1,w_2,\ldots,w_n$ es base de $V$.\\\\
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EJERCICIO 2.C %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{mysection}{2}
+\mysection{Ejercicios}
+
+\begin{enumerate}[\bfseries 1.]
+
+    %------------------------ 1.
+    \item Suponga que $V$ es de dimensión finita y $U$ es un subespacio de $V$ tal que $\dim U=\dim V$. Demuestre que $U=V$.\\\\
+	Demostración.-\; Debemos demostrar que $U\subseteq V$ y $V\subseteq U$. Es fácil ver que $U\subseteq V$, ya que $U$ es un subespacio de $V$.\\
+	Por otro lado, sean $v\in V$ y $u_1,u_2,\ldots,u_n$ base de $U$. Entonces, este conjunto es linealmente independiente en $U$, y por lo tanto también en $V$, esto porque $U$ es un subespacio de $V$. Que sea base de $U$ significa que $\dim U =n.$ Sin embargo, $\dim U = \dim V$ implica que $\dim V = n$. Así, $u_1,u_2,\ldots,u_n$ es un conjunto linealmente independiente en $V$ con longitud igual a $\dim V$. Es decir, por 2.39 (Axler, Linear Algebra) $u_1,u_2,\ldots,u_n$ es una base de $V$, por lo que genera $V$. Esto es, por 1.28 (Criterio de base) existe escalares $c_i\in \textbf{F}$ tal que
+	$$v=c_1u_1+c_2u_2+\cdots+c_nu_n.$$
+	Notemos que $v_1u_1+\cdots+c_nu_n$ es un vector en $U$. Por lo tanto, $v\in U$. Que $V\subseteq U$ y $U\subseteq V$ implica que $U=V$, como queríamos demostrar.\\\\
+
+    %------------------------ 2.
+    \item Demostrar que los subespacios de $\textbf{R}^2$ son precisamente: $\left\{0\right\}$, $\textbf{R}^2$, y todas las rectas en $\textbf{R}^2$ que pasan por el origen.\\\\
+	Demostración.-\; Claramente $\left\{0\right\}$ es un subespacio de $\textbf{R}^2$, porque contiene el vector cero, que está cerrado bajo la adición y la multiplicación escalar. En particular, cualquier combinación lineal del vector cero sigue siendo el vector cero.\\
+
+	Ahora, supongamos que $U$ es un subespacio de $\textbf{R}^2$ con $\dim U = 1$. En otras palabras, la base de $U$ contiene solo un vector distinto de cero. Esto significa, que la lista contiene un vector distinto de cero que genera $U$. Esto implica que cada vector en $U$ es un múltiplo escalar (combinación lineal) del único vector de la base. Luego,  el conjunto de todos estos vectores en $U$ describe una recta en $\textbf{R}^2$ ; esto es, $U$ es una recta en $\textbf{R}^2$. Además, como $U$ es un subespacio, en particular contiene la identidad aditiva $(0, 0) \in \textbf{R}^2$. Por tanto, $U$ debe ser una recta en $\textbf{R}^2$ que pase por el origen.\\
+
+	Por último, sea $U$ un subespacio de $\textbf{R}^2$ de dimensión $2$. Entonces, por definición $U$ tiene una base de dos vectores, digamos $u_1$ y $u_2$. Estas bases son linealmente independientes en $U$ y por lo tanto linealmente independiente en $\textbf{R}^2$. Sabiendo que $\dim U = \dim \textbf{R}^2=2$,  por 2.39 (Axler, Linear Algebra) $u_1,u_2$ es también una base de $\textbf{R}^2$. Que $U$ y $\textbf{R}^2$ tengan la misma base, por la unicidad del criterio de base 2.28 (Axler, Linear Algebra) significa que $U=\textbf{R}^2$.\\\\
+
+    %------------------------ 3.
+    \item Demuestre que los subespacios de $\textbf{R}^3$ son precisamente $\left\{0\right\}$, $\textbf{R}^3$, todas las lineas en $\textbf{R}^3$, y todas las planos en $\textbf{R}^3$ que pasan por el origen.\\\\ 
+	Demostración.-\; Suponga
+	El conjunto $\left\{0\right\}$ es un subespacio de $\textbf{R}^3$, ya que está cerrado bajo la adición y la multiplicación escalar. Es decir, para cualquier vector $u$ y $v$ en $\left\{0\right\}$ y cualquier escalar $c$, tenemos $u+v=0+0=0$ y $c u =c(0)=0$, ambos también están en $\left\{0\right\}.$\\
+
+	Suponga $U$ un subespacio de $\textbf{R}^2$ de $\dim U = 1$. Entonces la longitud de la base de $U$ es $1$; en otras palabras, la base de $U$ contiene solo un vector no nulo. En particular, la lista contiene un vector no nulo que genera $U$; es decir, cada vector en $U$ es un múltiplo escalar (combinación lineal) del único vector de la base. Luego, el conjunto de todos estos vectores en $U$ describe una recta en $\textbf{R}^3$. Esto es, $U$ es una recta en $\textbf{R}^3$. Además, como $U$ es un subespacio, podemos asegurar que contiene la identidad aditiva $(0,0,0)\in \textbf{R}^3$. Por lo tanto, $U$ debe ser una recta en $\textbf{R}^3$ que pasa por el origen.\\
+
+	Suponga $U$ un subespacio de $\textbf{R}^3$ de $\dim U = 2$. Entonces la longitud de la base de $U$ es $2$. En particular, la base de $U$ contiene dos vectores no nulos. En particular, la lista contiene dos vectores no nulos que genera $U$. Es decir, cada vector en $U$ es una combinación lineal de los dos vectores de la base. Luego, el conjunto de todos estos vectores en $U$ describe un plano en $\textbf{R}^3$. Esto es, $U$ es un plano en $\textbf{R}^3$. Además, como $U$ es un subespacio, podemos asegurar que contiene la identidad aditiva $(0,0,0)\in \textbf{R}^3$. Por lo tanto, $U$ debe ser un plano en $\textbf{R}^3$ que pasa por el origen.\\
+	
+	Después, sea $U$ un subespacio de $\textbf{R}^3$ de dimensión $3$. Entonces, por definición $U$ tiene una base de dos vectores, digamos $u_1$ $u_2$ y $u_3$. Estas bases son linealmente independientes en $U$ y por lo tanto linealmente independiente en $\textbf{R}^3$. Sabiendo que $\dim U = \dim \textbf{R}^3=3$,  por 2.39 (Axler, Linear Algebra) $u_1,u_2,u_3$ es también una base de $\textbf{R}^3$. Que $U$ y $\textbf{R}^3$ tengan la misma base, por la unicidad del criterio de base 2.28 (Axler, Linear Algebra) significa que $U=\textbf{R}^3$.\\\\
+
+
+    %------------------------ 4.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; : \; p(6)=0\right\}.$ Encuentre una base de $U$.\\\\
+		Respuesta.-\; Sea $q(x)$ de grado $n-1$. Si $p(x)$ es un polinomio y $p(c)=0$, entonces $c$ se dice que es una raíz de $p(x)$ y $p(x)=(x-c)q(x)$, ya que 
+		$$p(6)=(6-6)q(6)=0.$$
+		En particular, $p(x)\in \mathcal{P}_4(\textbf{F})$ tal que $p(6)=0$. Que podemos reescribirlo como $p(x)=(x-6)q(x)$, donde $q(x)\in \mathcal{P}_3(\textbf{F})$. Además, que $q(x)\in \mathcal{P}_3(\textbf{F})$, implica que $(x-6)q(x)\in \mathcal{P}_4(\textbf{F})$ y $6$ como raíz de $(x-6)q(x)$. Así,
+		$$\left\{p\in \mathcal{P}_4(\textbf{F})\; |\; p(6)=0\right\}=\left\{(x-6)q(x)\; |\; q\in\mathcal{P}_3(\textbf{F})\right\}.$$
+		Por el problema 2(g) del apartado 2.B (Axler, Linear Algebra), se sabe que $q(x)=1,x,x^2,x^3$ es una base de $\mathcal{P}_3(\textbf{F})$. De donde, demostremos que 
+		$$(x-6),(x-6)x,(x-6)x^2,(x-6)x^3$$
+		forma una base de $U$. Si $q(x)=a+bx+cx^2+dx^3\in \mathcal{P}_4(\textbf{F})$ para $a,b,c,d\in \textbf{F}$. Entonces,
+		$$
+		\begin{array}{rcl}
+		    (x-6)q(x)&=&(x-6)(a+bx+cx^2+dx^3)\\
+			     &=&a(x-6)+b(x-6)+c(x-6)x^2+d(x-6)x^3.\\
+		\end{array}
+		$$
+		Esto implica que $(x-6),(x-6)x,(x-6)x^2,(x-6)x^3$ genera $U$. Por último, debemos probar que $(x-6),(x-6)x,(x-6)x^2,(x-6)x^3$ es linealmente independiente. Existe $a,b,c,d\in \textbf{F}$ tal que
+		$$a(x-6)+b(x-6)x+c(x-6)x^2+d(x-6)x^3=0.$$
+		Entonces,
+		$$-6a+(a-6b)x+(b-6c)x^2+(c-7d)x^3+dx^4=0.$$
+		Para que la lista sea linealmente independiente, cada coeficiente debe ser cero. En consecuencia,
+		$$
+		\begin{array}{rcl}
+		    -6a&=&0\\
+		    a-6b&=&0\\
+		    b-6c&=&0\\
+		    c-7d&=&0\\
+		    d&=&0.
+		\end{array}
+		$$
+		Resolviendo la ecuación, se tiene
+		$$
+		\begin{array}{rcl}
+		    a&=&0\\
+		    b&=&0\\
+		    c&=&0\\
+		    d&=&0.
+		\end{array}
+		$$
+		Así, la lista es linealmente independiente. Por lo tanto, concluimos que 
+		$$(x-6),(x-6)x,(x-6)x^2,(x-6)x^3$$
+		es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base de $U$ en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+		Respuesta.-\; La condición del inciso (a) hace que 4 polinomios generen $U$. Ahora, por el problema 13 de la sección 2B (Axler, Linear Algebra); observamos que tenemos que tener 5 polinomios para que genera $\mathcal{P}_4(\textbf{F})$. Para ello debemos extender $U$ del inciso (a). Notemos que $U$ tiene todos sus polinomios múltiplos de $(x-6)$, por lo que cualquier combinación lineal de $U$ producirá otro polinomio múltiplo de $(x-6)$. Por el contrario un polinomio el cual no es múltiplo de $(x-6)$ no podrá pertenecer al generador de $U$; así que podemos agregar $1$  a $U$. Está claro por el inciso (a) que los elementos de $U$ son linealmente independientes y por lo dicho anteriormente, ninguna combinación lineal de los elementos de $U$ pueden generar $1$ (definición de independencia). Por lo tanto, 
+		$$\left\{1\right\}\cup U = \left\{1,(x-6),(x-6)x,(x-6)x^2,(x-6)x^3\right\}$$
+		es linealmente independiente en $\mathcal{P}_4(\textbf{F})$. Observemos que esta lista contiene longitud igual a $\dim \mathcal{P}_4(\textbf{F})$: Entonces por 2.39 (Axler, Linear Algebra), concluimos que 
+		$$\left\{1,(x-6),(x-6)x,(x-6)x^2,(x-6)x^3\right\}$$ 
+		es una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+
+	    %---------- (c)
+	    \item Encuentre un subepacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+		Respuesta.-\; Supongamos $W=\left\{1\right\}$. Debemos probar que $U+W=\mathcal{P}_4(\textbf{F})$ y que $U\cap W=\left\{0\right\}$. Ya que, $U\cup W$ contiene todos los polinomios base de $\mathcal{P}_4(\textbf{F})$, el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq V+W.$$
+		Por otro lado, puesto que $U,W\subseteq \mathcal{P}_4(\textbf{F})$, entonces
+		$$U+W\subseteq \mathcal{P}_4(\textbf{F}).$$
+		Así, 
+		$$U+W=\mathcal{P}_4(\textbf{F}).$$
+
+		Ahora, demostremos que $U\cap W=\left\{0\right\}$. Sea $v\in U\cap W$. Como $v\in U$, entonces  existe $c_i\in \textbf{F}$ tal que,
+		$$v=c_1(x-6)+c_2(x-6)x+c_3(x-6)x^2+c_4(x-6)x^4.$$
+		De la misma forma, ya que $v\in W$ entonces existe $c_0\in \textbf{F}$ tal que,
+		$$v=c_0.$$
+		Luego,
+		$$c_1(x-6)+c_2(x-6)x+c_3(x-6)x^2+c_4(x-6)x^4=c_0.$$
+		Esto implica que
+		$$-c_0+c_1(x-6)+c_2(x-6)x+c_3(x-6)x^2+c_4(x-6)x^4=0.$$
+		Para que la lista linealmente independiente, cada coeficiente debe ser cero. En consecuencia,
+		$$
+		\begin{array}{rcl}
+		    -c_0&=&0\\
+		    c_1(x-6)&=&0\\
+		    c_2(x-6)&=&0\\
+		    c_3(x-6)&=&0\\
+		    c_4(x-6)&=&0.
+		\end{array}
+		\quad \Rightarrow \quad 
+		\begin{array}{rcl}
+		    c_0&=&0\\
+		    c_1&=&0\\
+		    c_2&=&0\\
+		    c_3&=&0\\
+		    c_4&=&0.
+		\end{array}
+		$$
+		Así, $v=0$. Por lo tanto, $U\cap W=\left\{0\right\}$. Otra manera de demostrar que la lista dada es linealmente independiente sería, suponer que
+		$$-c_0+c_1(x-6)+c_2(x-6)x+c_3(x-6)x^2+c_4(x-6)x^4\neq0$$
+		para todo $x$. Pero esto es absurdo, ya que si $x=6$, entonces 
+		$$-c_0+c_1(x-6)+c_2(x-6)x+c_3(x-6)x^2+c_4(x-6)x^4=0.$$
+		Concluimos que $W=\left\{1\right\}$ es un subespacio de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+
+	\end{enumerate}
+
+    %-------------------- 5.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; :\; p''(6)\right\}$. Encuentre una base de $U$.\\\\
+		Respuesta.-\; Sabemos que si $p(x)\in \mathcal{P}_4(\textbf{F})$, entonces $p''(x)\in \mathcal{P}_2(\textbf{F})$. De ahí, 
+		$$\left\{p''(x)\; |\; p(x)\in \mathcal{P}_4(\textbf{F})\right\}=\mathcal{P}_2(\textbf{F}).$$
+		Además, si $p''(6)=0$, entonces $p''(x)=(x-6)q(x)$, como se vio en el ejercicio anterior se cumple $p''(6)=(6-6)q(x)=0$, donde $q(x)$ tiene un grado menos que $p''(x)$. Esto es $q(x)\in \mathcal{P}_1(\textbf{F})$.\\
+
+		Queremos encontrar elementos que generen $\mathcal{P}_2(\textbf{F})$. Analicemos un subepacio $S$ de $\mathcal{P}_2(\textbf{F})$ tal que 
+		$$S=\left\{u(x)\in \mathcal{P}_2(\textbf{F})\; |\; (x-6)q(x),q(x)\in \mathcal{P}_1(\textbf{F})\right\}.$$ 
+		Existe $a,b\in \textbf{F}$ tal que $q(x)=a+bx\in \mathcal{P}_1(\textbf{F})$, por lo que
+		$$
+		\begin{array}{rcl}
+		    (x-6)q(x) &=& (x-6)(a+bx)\\
+			      &=& a(x-6)+bx(x-6)\\
+			      &=& a(x-6)+b(x-6+6)(x-6)\\
+			      &=& a(x-6)+b(x-6)^2+6b(x-6)\\
+			      &=& (a+6b)(x-6)+b(x-6)^2.
+		\end{array}
+		$$
+		Lo que demuestra que $(x-6),(x-6)^2$ genera $S$. Sea $c_1,c_2\in \textbf{F}$, tal que
+		$$c_1(x-6)+c_2(x-6)^2=0.$$
+		De donde,
+		$$6(4c_2-6c_1)+(c_1-12c_2)x+c_2x^2=0.$$
+		Para que la lista sea linealmente independiente, cada coeficiente debe ser cero. En consecuencia,
+		$$
+		\begin{array}{rcl}
+		    6(4c_2-6c_1)&=&0\\
+		    (c_1-12c_2)&=&0\\
+		    c_2&=&0.
+		\end{array}
+		\quad \Rightarrow \quad
+		\begin{array}{rcl}
+		    c_1&=&0\\
+		    c_2&=&0.
+		\end{array}
+		$$
+		Así, $(x-6),(x-6)^2$ es linealmente independiente. Por lo tanto, 
+		$$\left\{(x-6),(x-6)^2\right\}$$
+		es una base de $U$.\\
+
+		Ahora, encontraremos una base de $p(x)\in \mathcal{P}_4(\textbf{F})$ tal que $p''(x)\in S$. Ya que $(x-6),(x-6)^2$ genera $S$; existe $a,b\in \textbf{F}$, tal que 
+		$$p''(x)=a(x-6)^2+b(x-6).$$
+		Integando $p''(x)$ dos veces obtenemos
+		$$
+		\begin{array}{rcl}
+		    p(x)&=&\displaystyle\int\left[\int a(x-6)^2+b(x-6)\; dx\right]\; dx\\\\
+			&=& \displaystyle\int \left[a\dfrac{(x-6)^3}{3}+b\dfrac{(x-6)^2}{2}+c\right]\;dx\\\\
+			&=& a\dfrac{(x-6)^4}{12}+b\dfrac{(x-6)^3}{6}+cx+d\\\\
+			&=& a\dfrac{(x-6)^4}{12}+b\dfrac{(x-6)^3}{6}+c(x-6)+(6c+d)\\\\
+		\end{array}
+		$$
+		Sean los escalares $s_1=a/12$, $s_2=b/6$, $s_3=c$ y $s_4=6c+d$. Entonces,
+		$$p(x)=s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4.$$
+		Este polinomio cumple con las condiciones iniciales. Es decir, $p''(x)=12s_1(x-6)^2+6s_2(x-6)$ con $p''(6)=0.$ En otras palabras, $p(x)\in \mathcal{P}_4(\textbf{F})$ tal que $p''(6)=0$ siempre que $p(x)$ puede ser expresado como $s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4$ para algunos escalares $s_1,s_2,s_3,s_4$. Así,
+		$$U=\left\{p(x)\in \mathcal{P}_4(\textbf{F})\,|\, p''(6)=0\right\}=\left\{s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4\,|\, s_1,s_2,s_3,s_4\in \textbf{F}\right\}.$$
+		Observe que este conjunto es un espacio vectorial generado por $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$, el cual genera $U$. Luego, sea
+		$$s_1(x-6)^4+s_2(x-6)^3+s_3(x-6)+s_4=0$$
+		$$\Downarrow$$
+		$$s_1x^4+(s_2-24s_1)x^3+(216x_1-18x_2)x^2+(108s_2-864s_1+s_3)x+(129s_1-216s_2-6s_3+s_4)=0$$
+		de donde,
+		$$
+		\begin{array}{rcl}
+		    s_1&=&0\\
+		    s_2-24s_1&=&0\\
+		    216s_1-18s_2&=&0\\
+		    108s_2-864s_1+s_3&=&0\\
+		    129s_1-216s_2-6s_3+s_4&=&0.
+		\end{array}
+		\quad \Rightarrow \quad 
+		\begin{array}{rcl}
+		    s_1&=&0\\
+		    s_2&=&0\\
+		    s_3&=&0\\
+		    s_4&=&0.
+		\end{array}
+		$$
+		Así, $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$ es linealemente independiente. Por lo tanto, 
+		$$\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$$ 
+		es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+		Respuesta.-\; La base de $U$ es $\left\{1,(x-6),(x-6)^3,(x-6)^4\right\}$. Ya que, esta base es de longitud $4$, debemos extender a longitud $5$ para que sea base de $\mathcal{P}_4(\textbf{F})$.
+		Si podemos encontrar un polinomio $p(x)$ que no puede ser generado por los elementos de $U$, entonces implicará que $U\cup p(x)$ es un conjunto linealmente independiente. Entonces tendremos un conjunto linealmente independiente en $\mathcal{P}_4(\textbf{F})$ que tiene tantos vectores como la dimensión de $\mathcal{P}_4(\textbf{F})$. Así, tendríamos una base para $\mathcal{P}_4(\textbf{F})$.\\
+
+		Supongamos que este vector es $(x-6)^2$ y que 
+		$$(x-6)^2=a+b(x-6)+c(x-6)+c(x-6)^3+d(x-6)^4$$
+		para $a,b,c,d\in \textbf{F}$. De donde
+		$$
+		\begin{array}{rcl}
+		    (x-6)^2 &=& a+b(x-6)+(x-6)^2\left[c(x-6)+d(x-6)^2\right]\\\\
+		    (x-6)^2\left[1-c(x-6)-d(x-6)^2\right] &=& a+b(x-6).
+		\end{array}
+		$$
+		Claramente $\left\{1,(x-6)\right\}$ no es múltiplo de $(x-6)^2$; sin embargo, lo será si y sólo si es igual a cero. Por lo tanto, 
+		$$a,b=0.$$
+		Substituyendo tendremos
+		$$
+		\begin{array}{rcl}	
+		    (x-6)^2 &=& c(x-6)^3+d(x-6)^4\\\\
+		    (x-6)^2 &=& (x-6)^3\left[c+d(x-6)\right].
+		\end{array}
+		$$
+		Está ecuación no es cierta, ya que el lado derecho de la ecuación no es múltiplo del lado izquierdo. Así, $(x-6)^2$ con un poco de manipulación de la ecuación podemos concluir que $(x-6)^2$ no será generado por  los polinomios de $U$. Concluimos que $U\cup \left\{(x-6)^2\right\}$ es una base para $\mathcal{P}_4(\textbf{F})$.\\\\
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+		Respuesta.-\; Sea $W=\left\{(x-6)^2\right\}$. Ya que $U\cap W$ contiene a todos los polinomios base de $\mathcal{P}_4(\textbf{F})$, entonces el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Está claro que 
+		$$U,W\subseteq \mathcal{P}_4(\textbf{F})$$
+		Así,
+		$$U+W = \mathcal{P}_4(\textbf{F}).$$
+
+		Ahora, demostremos que $U\cap W=\left\{0\right\}.$ Sea $v\in U$; es decir, existen $c_0,c_1,c_3,c_4\in \textbf{F}$ tales que
+		$$v=c_0+c_1(x-6)+c_3(x-6)^3+c_3(x-6)^4.$$
+		Luego, ya que $v\in W$, entonces existe $c_2\in \textbf{F}$ siempre que
+		$$v=c_2(x-6)^2.$$
+		Igualando estas dos últimas ecuaciones, tenemos
+		$$c_0+c_1(x-6)+c_2(x-6)^3+c_3(x-6)^4=c_2(x-6)^2,$$
+		Esto implica que
+		$$c_0+c_1(x-6)+c_2(x-6)^2+c_3(x-6)^3+c_4(x-6)^4=0,$$
+		si resolvemos está ecuación con respecto a $c_0,c_1,c_2,c_3,c_4$, e igualamos a cero, tendremos que
+		$$
+		\begin{array}{rcl}
+		    c_0&=&0\\
+		    c_1&=&0\\
+		    c_2&=&0\\
+		    c_3&=&0\\
+		    c_4&=&0.
+		\end{array}
+		$$
+		De está manera 
+		$$v=0$$
+		Por lo tanto, $U\cap W=\left\{0\right\}$. Concluimos que $W$ es el subespacio de $\mathcal{P}_4(\textbf{F})$ tal que 
+		$$\mathcal{P}_4(\textbf{F})=U\oplus W.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 6.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F})\; : \; p(2)=p(5)\right\}$. Encontrar una base de $U$.\\\\
+		Respuesta.-\; Sea 
+		$$p(2)=\alpha=p(5).$$
+		Definamos $q(x)=p(x)-\alpha$, de donde $q(x)\in \mathcal{P}_4(\textbf{F})$; por ejemplo, si sustraemos $p(x)-p(2)$, esta seguirá estando en $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
+		$$
+		\begin{array}{rcl}
+		    q(2)=p(2)-\alpha=p(2)-p(2)=0&\Rightarrow&q(2)=0\\
+		    q(5)=p(5)-\alpha=p(5)-p(5)=0&\Rightarrow&q(5)=0.
+		\end{array}
+		$$
+		Esto nos dice que, $2$ y $5$ son raíces de $q(x)$. Por lo tanto,
+		$$q(x)=\left(x-2\right)\left(x-5\right)r(x),$$
+		donde $r(x)$ tiene grado dos, menor que $q(x)$. Esto es, $r(x)\in \mathcal{P}_2(\textbf{F}).$ Dicho de otra manera, si $r(x)\in \mathcal{P}_2(\textbf{F})$, entonces $(x-2)(x-5)r(x)\in \mathcal{P}_4(\textbf{F})$ ó
+		$$V=\left\{q\in \mathcal{P}_4(\textbf{F}) \; |\; q(2)=q(5)=0\right\}=\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}.$$
+		Dicho esto, buscaremos una base de $\left\{(x-2)(x-5)r(x)\; : \; r(x)\in \mathcal{P}_2(\textbf{F})\right\}$. Ya que (Por el apartado 2.B problema 2(g): Axler, Linear Algebra) $1,x,x^2$ es una base de $\left\{\mathcal{P}_2(\textbf{F})\right\}$, verificaremos que 
+		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
+		forma una base de $V$.\\
+
+		Si $r(x)=a+bx+cx^2\in \mathcal{P}_2(\textbf{F})$ para algún $a,b,c\in \textbf{F}$, entonces
+		$$
+		\begin{array}{rcl}
+		    (x-2)(x-5)r(x)&=&(x-2)(x-5)\left(a+bx+cx^2\right)\\\\
+				  &=& a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2.
+		\end{array}
+		$$
+		Lo que nos muestra que $(x-2)(x-5),(x-2)(x-5),(x-2)(x-5)x^2$ genera $V$. Ahora, demostremos que $\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ es linealmente independiente. Con las condiciones dadas anteriormente, tenemos que verificar:
+		$$a(x-2)(x-5)+b(x-2)(x-5)x+c(x-2)(x-5)x^2=(x-2)(x-5)\left(a+bx+cx^2\right)=0.$$
+		Centremonos en $(a+bx+cx^2)=0$. Ya que, $1,x,x^2$ es linealmente independiente. Entonces, los escalares $a,b,c$ son ceros. Por lo tanto, la lista es linealmente independiente, (ya que $(x-2)(x-5)\left(0+0\cdot x+0\cdot x^2\right)=0$). Así,
+		$$\left\{(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
+		es una base de $V$.\\
+
+		Por otro lado, observemos que $p(x)\in U$, si y sólo si $q(x)=p(x)-p(2)\in V$. Por lo tanto, cualquier $p\in U$ puede ser expresado como 
+		$$a+q(x)$$
+		donde $a=p(2)$ es un escalar y $q(x)\in V$. Por el hecho de que, $(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ genera $V$, entonces existe $b,c,d\in \textbf{F}$, tal que 
+		$$q(x)=b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Ya que, $p(x)\in U$ tiene la forma 
+		$$p(x)=a+q(x)=a+b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Entonces, $1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ genera $U$.\\
+
+		Por último, demostremos que $1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ es linealmente independiente. Sabemos que $(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$ es linealmente independiente y vemos que todos los polinomios en esta lista son múltiplos de $(x-2)(x-5)$. Por lo que no pueden generar el polinomio $1$. Es decir, 
+		$$1\notin \span\left[(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right].$$
+		Esto significa que la lista
+		$$1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2$$
+		es linealmente independiente. Por lo tanto, esta lista es base de $U$.\\\\
+
+
+	    %---------- (b)
+	    \item Extienda la base en (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+		Respuesta.-\; Queremos extender la base $V=\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. \\
+		Si podemos encontrar un polinomio $p(x)$ que no puede ser generado por los elementos de $V$, entonces implicará que $V\cup p(x)$ es un conjunto linealmente independiente. Entonces tendremos un conjunto linealmente independiente en $\mathcal{P}_4(\textbf{F})$ que tiene tantos vectores como la dimensión de $\mathcal{P}_4(\textbf{F})$. Así, tendríamos una base para $\mathcal{P}_4(\textbf{F})$.\\
+		Agreguemos el vector $p(x)=x$ a $V$. Así, para los escalares $a,b,c,d\in \textbf{F}$, tendríamos
+		$$x=a+b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		De donde,
+		$$x-a=b(x-2)(x-5)+c(x-2)(x-5)x+d(x-2)(x-5)x^2.$$
+		Observemos que no hay manera de que $x-a$ sea múltiplo de $(x-2)(x-5)$, por lo que $p(x)\notin \span(V)$. Esto implica que 
+		$$\left\{1,x,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$$
+		es una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+		Respuesta.-\; Sean $U=\left\{1,(x-2)(x-5),(x-2)(x-5)x,(x-2)(x-5)x^2\right\}$ y $W=\left\{x\right\}$. Entonces, demostraremos que $U\cup W=\mathcal{P}_4(\textbf{F})$. Ya que, $U\cup W$ contiene todas los elementos base de $\mathcal{P}_4(\textbf{F})$, el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U$ y $W$ están en $\mathcal{P}_4(\textbf{F})$, entonces $U+W\subseteq \mathcal{P}_4(\textbf{F})$. Por lo que, 
+		$$\mathcal{P}_4(\textbf{F})=U+W.$$
+		Ahora, demostremos que $U\cap W=\left\{0\right\}$. Sea $v\in U$, para los escalares $c_0,c_2,c_3,c_4\in \textbf{F}$, tal que
+		$$v=c_0+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2.$$
+		Sea también $v\in W$  con $c_2\in \textbf{F}$, tal que
+		$$v=c_2x.$$
+		Igualemos estas dos expresiones, obtenemos
+		$$c_0+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2=c_2x.$$
+		Esto implica que,
+		$$c_0-c_1x+c_2(x-2)(x-5)+c_3(x-2)(x-5)x+c_4(x-2)(x-5)x^2=0.$$
+		Esta ecuación se cumplirá siempre que todos los escales $c_i=0$ sean cero. Por lo que, $v=0$. Así, $U\cap W=\left\{0\right\}.$ Por lo tanto, $W=\left\{x\right\}$ es un subespacio de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W.$\\\\
+
+	\end{enumerate}
+
+
+    %-------------------- 7.
+    \item 
+	\begin{enumerate}[(a)]
+	
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{F}):p(2)=p(5)=p(6)\right\}$. Encontrar una base de $U$.\\\\
+		Respuesta.-\; Sea $p(2)=p(5)=p(6)=\alpha$, de donde $q(x)=p(x)-\alpha$. Entonces, $q(x)\in \mathcal{P}_4(\textbf{F})$. Luego,
+		$$
+		\begin{array}{rcl}
+		    q(2)=p(2)-\alpha=0&\Rightarrow&q(2)=0\\\\
+		    q(5)=p(5)-\alpha=0&\Rightarrow&q(5)=0\\\\
+		    q(6)=p(6)-\alpha=0&\Rightarrow&q(6)=0.
+		\end{array}
+		$$
+
+		Esto significa que $2,5$ y $6$ son raíces de $q(x)$. Por lo que,
+
+		$$q(x)=(x-2)(x-5)(x-6)r(x).$$
+
+		Donde, $r(x)$ tiene $3$ grados menos que el grado de $q(x)$. Es decir, $r(x)\in \mathcal{P}_1(\textbf{F})$. Dado q ue, $q(2)=q(5)=q(6)=0$. Entonces,
+		$$V=\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)=0\right\}=\left\{(x-2)(x-5)(x-6)r(x)|r(x)\in \mathcal{P}_1(\textbf{F})\right\}.$$
+		Busquemos ahora una base de $\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)=0\right\}$, para luego convertirla en una base de $\left\{p\in \mathcal{P}_4(\textbf{F})|p(2)=p(5)=p(6)\right\}$. Ya que, $1,x$ es una base de $\mathcal{P}_1(\textbf{F})$, verifiquemos si $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ forma una base de $V$.\\
+		Sea $r(x)=a+bx\in \mathcal{P}_2(\textbf{F})$, entonces
+		$$
+		\begin{array}{rcl}
+		    (x-2)(x-5)(x-6)r(x)&=&(x-2)(x-5)(x-6)(a+bx)\\\\
+				       &=&a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x.
+		\end{array}
+		$$
+		Esto implica que $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera de $V$. Después,
+		$$
+		\begin{array}{rcl}
+		    a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x&=&0\\\\
+		    (x-2)(x-5)(x-6)(a+bx)&=&0.
+		\end{array}
+		$$
+		Resolviendo la ecuación podemos concluir que $a,b$ son cero. Por lo tanto, 
+		$$\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$ 
+		es linealmente independiente. Así,
+		$$\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$
+		es una base de $V$.\\
+
+	    Ahora, si $p(x)\in U$, siempre que $q(x)=p(x)-p(2)\in V$, y viceversa. Sea $c=p(2)=p(5)=p(6)$ con $q(x)\in V$, por lo que podemos expresar a $p\in U$ como $c+q(x)$. \\
+
+	    Ya que, $\left\{(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera $V$, entonces
+	    $$p(x)=c+a(x-2)(x-5)(x-6)+b(x-2)(x-5)(x-6)x.$$
+	    Por lo tanto, $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ genera $U$. Por último, notemos que $1\notin \span\left[(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right]$. Así, 
+	    $$\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$$
+	    es linealmente independiente. Por lo tanto, es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) a una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+		Respuesta.-\; Queremos extender la base de $U$, $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ a una base de $\mathcal{P}_4(\textbf{F})$ de dimensión cinco. Para ello, comprobemos si $x$ se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$. Sean $a,b,c\in \textbf{F}$,
+		$$x=a+b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Reescribiendo,
+		$$x-a=b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Esta ecuación nunca se puede cumplir, ya que, el lado izquierdo es un polinomio de grado uno, mientras que el lado derecho es un polinomio de grado tres. Por lo tanto, $x$ no se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$.\\
+
+		Lo mismo, podemos decir de $x^2$. Sea $a,b,c\in \textbf{F}$,
+		$$x^2=a+b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Reescribiendo,
+		$$x^2-a=b(x-2)(x-5)(x-6)+c(x-2)(x-5)(x-6)x.$$
+		Esta ecuación nunca se puede cumplir, ya que, el lado izquierdo es un polinomio de grado dos, mientras que el lado derecho es un polinomio de grado tres. Por lo tanto, $x^2$ no se puede generar usando los elementos de $\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$.\\
+
+		Por lo tanto, $\left\{1,x,x^2,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x,x^2,x\right\}$ es una base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{F})$ tal que $\mathcal{P}_4(\textbf{F})=U\oplus W$.\\\\
+		Respuesta.-\; Sean $U=\left\{1,(x-2)(x-5)(x-6),(x-2)(x-5)(x-6)x\right\}$ y $W=\left\{x,x^2\right\}$. Ya que, $U\cup W$ contiene todas los elementos base de $\mathcal{P}_4(\textbf{F})$. El espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U,W\subseteq \mathcal{P}_4(\textbf{F})$. Entones, 
+		$$U+W\subseteq \mathcal{P}_4(\textbf{F}).$$
+		Así,
+		$$U+W=\mathcal{P}_4(\textbf{F}).$$
+
+		Ahora, probemos que $U\cap W=\left\{0\right\}$. Sea $v\in U\cap W$, de donde podemos escribir para $c_0,c_3,c_4\in \textbf{F}$ de la siguiente manera
+		$$v=c_0+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x$$
+		Luego, ya que $v\in W$, entonces para $c_1,c_2\in \textbf{F}$ 
+		$$v=c_1x+c_2x^2.$$
+		Igualando ambas ecuaciones, tenemos
+		$$c_0+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x=c_1x+c_2x^2.$$
+		Esto implica que 
+		$$c_0-c_1x-c_2x^2+c_3(x-2)(x-5)(x-6)+c_4(x-2)(x-5)(x-6)x=0.$$
+		Resolviendo podemos ver que $c_i'$s son cero, por lo cual $v=0$. Por lo tanto, $U\cap W=\left\{0\right\}$. Así, 
+		$$\mathcal{P}_4(\textbf{F})=U\oplus W.$$\\
+
+	\end{enumerate}
+
+    %-------------------- 8.
+    \item 
+	\begin{enumerate}[(a)]
+
+	    %---------- (a)
+	    \item Sea $U=\left\{p\in \mathcal{P}_4(\textbf{R})\; : \; \int_{-1}^1 p=0\right\}$. Defina una base de $U$.\\\\
+		Respuesta.-\; Sea $p(x)=a+bx+cx^2+dx^3+cx^4\in \mathcal{P}_4(\textbf{F})$, tal que $\int_{-1}^1 p(x)\; dx = 0.$
+		Por lo tanto,
+		$$
+		\begin{array}{rcl}
+		    \displaystyle\int_{-1}^1 p(x)\; dx &=& \displaystyle\int_{-1}^1 \left(a+bx+cx^2+dx^3+cx^4\right)\; dx\\\\
+						       &=& \left(ax+\dfrac{bx^2}{2}+\dfrac{cx^3}{3}+\dfrac{dx^4}{4}+\dfrac{ex^5}{5}\right)\bigg|_{-1}^1\\\\
+						       &=& a + \dfrac{b(1)^2}{2}+\dfrac{c(1)^3}{3}+\dfrac{d(1)^4}{4}+\dfrac{e(1)^5}{5} \\\\
+						       &-& \left[a(-1) + \dfrac{b(-1)^2}{2}+\dfrac{c(-1)^3}{3}+\dfrac{d(-1)^4}{4}+\dfrac{e(-1)^5}{5}\right]\\\\
+						       &=&\left(a+\dfrac{b}{2}+\dfrac{c}{3}+\dfrac{d}{4}+\dfrac{e}{5}\right)-\left(-a+\dfrac{b}{2}-\dfrac{c}{3}+\dfrac{d}{4}-\dfrac{e}{5}\right)\\\\
+						       &=& 2a+\dfrac{2c}{3}+\dfrac{2e}{5}\\\\
+		\end{array}
+		$$
+		De donde, $\int_{-1}^1 p(x)\; dx = 0$  si y sólo si $2a+\dfrac{2c}{3}+\dfrac{2e}{5}=0$ o $a=-\dfrac{c}{3}-\dfrac{e}{5}$. 
+		Así, 
+		$$
+		\begin{array}{rcl}
+		    U&=&\left\{p(x)\in  P_4(\textbf{F})\; \big| \; \displaystyle\int_{-1}^1 p(x)\; dx = 0\right\}\\\\
+		     &=&\left\{a+bx+cx^2+dx^3+cx^4\; \big|\; a=-\dfrac{c}{3}-\dfrac{e}{5},b,c,d,e\in \textbf{F}\right\}\\\\
+		     &=& \left\{-\dfrac{c}{3}-\dfrac{e}{5}+bx+cx^2+dx^3+cx^4\; \big|\; b,c,d,e\in \textbf{F}\right\}\\\\
+		     &=& \left\{bx+c\left(x^2-\dfrac{1}{3}\right)+dx^3+e\left(x^4-\dfrac{1}{5}\right)\; \big|\; b,c,d,e\in \textbf{F}\right\}.
+		\end{array}
+		$$
+		Esto demuestra que $\left\{x.x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ genera $U$. Luego, para ver que es linealmente independiente, supongamos que $c_1,c_2,c_3,c_4\in \textbf{F}$ para
+		$$c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right)=0.$$
+		por lo que
+		$$-\dfrac{c_2}{3}-\dfrac{c_4}{5}+c_1x+c_2x^2+c_3x^3+c_4x^4=0.$$
+		Resolviendo veremos que los $c_i's$ son cero. Concluimos que $\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ es una base de $U$.\\\\
+
+	    %---------- (b)
+	    \item Extienda la base en la parte (a) a una base de $\mathcal{P}_4(\textbf{R})$.\\\\
+		Respuesta.-\; Extendamos la base $B=\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ de $U$, para que sea una base de $\mathcal{P}_4(\textbf{R})$. Para ello, necesitaremos encontrar un polinomio $p(x)\notin \span(B)$, que al unir $B\cup \left\{p(x)\right\}$ serán linealmente independientes. \\
+		Observemos que $B$ tiene todos los grados menos el grado $0$, por lo que podemos elegir a $p(x)=1$. Supongamos que  $p(x)=1$ genera $B$. Entonces para algunos $a,b,c,d\in \textbf{F}$,
+		$$1=ax+b\left(x^2-\dfrac{1}{3}\right)+cx^3+d\left(x^4-\dfrac{1}{5}\right).$$
+		De donde,
+		$$\left(-\dfrac{b}{3}-\dfrac{d}{5}-1\right)+ax+bx^2+cx^3+dx^4=0.$$
+		Notemos que $\left(-\frac{b}{3}-\frac{d}{5}-1\right)\neq 0$, lo que nos lleva a una contradicción. Así, $1$ no genera $B$. Por el ejercicio 11 del apartado 2A (Axler, Linear Algebra), implica que $B\cup 1$ es linealmente independiente. Por el teorema 1.39 (Axler) concluimos que $B\cup \left\{p(x)=1\right\}$ es base de $\mathcal{P}_4(\textbf{F})$.\\\\
+
+	    %---------- (c)
+	    \item Encuentre un subespacio $W$ de $\mathcal{P}_4(\textbf{R})$ tal que $\mathcal{P}_4(\textbf{R})=U\oplus W$.\\\\
+		Respuesta.-\; Sean $B=\left\{x,x^2-\frac{1}{3},x^3,x^4-\frac{1}{5}\right\}$ una base de $U$ y $W=\span\left\{1\right\}$. Ya que $U\cup W$ contiene todos los elementos base de $\mathcal{P}_4(\textbf{F})$, el espacio vectorial $U+W$ contiene a $\mathcal{P}_4(\textbf{F})$. Esto es,
+		$$\mathcal{P}_4(\textbf{F})\subseteq U+W.$$
+		Por otro lado, ya que $U,W\subseteq \mathcal{P}_4(\textbf{F})$, entonces
+		$$U+W\subseteq \mathcal{P}_4(\textbf{F}).$$
+		Esto implica que,
+		$$U+W=\mathcal{P}_4(\textbf{F}).$$
+		Ahora, demostremos que $U\cap W=\left\{0\right\}$. Supongamos $v\in U\cap W$. Entonces $v\in U$ y $v\in W$. Esto nos dice que
+		$$v=c_0=c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right).$$
+		para todo $c_0,c_1,c_2,c_3,c_4\in \textbf{F}$. Ordenando los términos, tenemos que
+		$$-c_0+c_1x+c_2\left(x^2-\dfrac{1}{3}\right)+c_3x^3+c_4\left(x^4-\dfrac{1}{5}\right)=0.$$
+		De donde,
+		$$\left(-\dfrac{c_2}{3}-\dfrac{c_4}{5}-c_0\right)+c_1x+c_2x^2+c_3x^3+c_4x^4=0.$$
+		Resolviendo el sistema de ecuaciones, tenemos que $c_0=c_1=c_2=c_3=c_4=0$. Por lo tanto, $v=0$. Así, concluimos que $U\cap W=\left\{0\right\}$. Lo que se demuestra que $W$ es un subespacio de $\mathcal{P}_4(\textbf{F})$ tal que $U\cap W=\left\{0\right\}.$\\\\
+
+	\end{enumerate}
+
+    %--------------------9.
+    \item Suponga $v_1,\ldots,v_m$ es linealmente independiente en $V$ y $w\in V$. Demostrar que 
+    $$\dim(\span\left\{v_1+w,\ldots,v_m+w\right\})\geq m-1.$$\\
+	Demostración.-\; Sea $W=\span\left(v_1+w,\ldots,v_m+w\right)$. Ya que, $v_k-v_{k-1}=(v_k+w)-(v_{k-1}+w)$ Entonces, podemos considerar la lista 
+	$$v_2-v_1,v_3-v_2,\ldots, v_m-v_{m-1}$$
+	con longitud $m-1$. Dado que la dimensión de $W$ debe ser mayor o igual (2.23)  que la longitud de cualquier lista linealmente independiente, si demostramos que esta lista es linealmente independiente, habremos demostrado que $\dim W \geq m - 1$. Supongamos que $a_1, \ldots, a_{m-1}\in \textbf{F}$ son tales que
+	$$a_1(v_2-v_1)+\cdots+a_{m-1}(v_m-v_{m-1})=0.$$
+	Reescribiendo,
+	$$(-a_1)v_1+(a_1-a_2)v_2+\cdots+(a_{m-2}-a_{m-1})v_{m-1}+a_{m-1}v_m=0.$$
+	Dado que, $v_1,\ldots,v_m$ es linealmente independiente, entones $a_1=0$, luego $a_{k-1}-a_k=0$ para $k=2,\ldots,m-1$. Por lo tanto, $a_1=\cdots=a_{m-1}=0$. Así, la lista $v_2-v_1,\ldots,v_m-v_{m-1}$ es linealmente independiente, lo que implica que $\dim W\geq m-1$.\\\\
+
+    %--------------------10.
+    \item Suponga $p_0,p_1,\ldots,p_m\in \mathcal{P}_m (\textbf{F})$ son tales que cada $p_j$ tiene grado $j$. Demostrar que $p_0,p_1,\ldots,p_m$ es una base de $\mathcal{P}_m (\textbf{F})$.\\\\
+	Demostración.-\; Sabemos que $1,z,z^2,\ldots,z^m$ es una base de $\mathcal{P}_m(\textbf{F})$. Si podemos mostrar que el conjunto $p_0,p_1,\ldots,p_m$ genera $1,z,z^2,\ldots,z^m$, entonces se seguirá que $p_0,p_1,\ldots,p_m$ puede generar $\mathcal{P}_m(\textbf{F})$. Además dado que el conjunto $p_0,p_0,\ldots,p_m$ tiene una longitud igual a la dimensión de $\mathcal{P}_m(\textbf{F})$, se seguirá que el conjunto es una base de $\mathcal{P}_m(\textbf{F})$.\\
+
+	Sea $V=\span(p_0,p_1,\ldots,p_m)$. Usarermos la inducción sobre $z^j$ para demostrar que $z^j\in V$ para todo $j$, $0\leq j \leq m.$. Por suposición, $p_0$ tiene grado $0$. Esto es, $p_0$ es un escalar distinto de cero. Por lo tanto, todo múltiplo escalar de $p_0$ existe en $V$. Así,
+	$$\left(\dfrac{1}{p_0}\right)p_0 = 1\in V.$$
+	De donde, el resultado es cierto es $j=0.$\\
+
+	Ahora, supongamos que el resultado es verdadero para todo $j\leq k.$ Esto es, $1,z,z^2,\ldots,z^k\in V$. Demostremos que $z^{k+1}\in V$. Sea, $p_{k+1}$ de grado $k+1$ tal que 
+	$$p_{k+1}=a_0+a_1z+a_2z^2+\cdots+a_{k+1}z^{k+1}$$
+	donde $a_{k+1}\neq 0.$ Dado que $1,z,z^2,\ldots,z^k\in V$, entonces cada combinación lineal se encuentra en $V$. Por lo tanto, 
+	$$a_0+a_1z+\cdots + z_kz^k \in V.$$
+	Por la propiedad de espacio vectorial
+	$$p_{k+1}-\left(a_0+a_1z+a_2z^2+\cdots+z_kz^k\right)=a_{k+1}z^{k+1}\in V.$$
+	Esto implica que todo múltiplo escalar  de $a_{k+1}z^{k+1}$ también debe estar en $V$. Ya que, 
+	$$\dfrac{1}{a_{k+1}}\left(a_{k+1}z^{k+1}\right)=z^{k+1}\in V.$$
+	Esto demuestra que el resultado es verdadera para $j=k+1$. Por el principio de inducción, el resultado es válido para $j$, con $0\leq j\leq m.$ Por lo tanto, $1,z,z^2,\ldots,z^m\in V$, lo que completa la demostración.\\\\
+
+
+    %--------------------11.
+    \item Suponga que $U$ y $W$ son subesapcios de $\textbf{R}^8$ tal que $\dim U = 3,$ $\dim W = 5$ y $U+W = \textbf{R}^8$. Demostrar que $\textbf{R}^8=U\oplus W$.\\\\
+	Demostración.-\; Por 2.43 tenemos,
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Luego, ya que $\dim U = 3,$ $\dim W = 5$ y $U+W = \textbf{R}^8$, se sigue
+	$$8=3+5-\dim(U\cap W).$$
+	Esta igualdad implica que $\dim(U\cap W)=0$. Por lo tanto, $U\cap W=\left\{0\right\}$. Así, 
+	$$\textbf{R}^8=U\oplus W.$$\\
+
+    %--------------------12.
+    \item Suponga $U$ y $W$ son ambos subespacios de dimensión cinco de $\textbf{R}^9$. Demostrar que $U\cap W\neq \left\{0\right\}$\\\\
+	Demostración.-\; Por 2.43 tenemos,
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Por hipótesis, 
+	$$9\geq \dim(U+W)=\dim U +\dim W-\dim(U\cap W)=10-\dim(U\cap W).$$
+	Por lo tanto, $\dim(U\cap W)\geq 1$. Así, $U\cap W\neq \left\{0\right\}$.\\\\
+
+    %--------------------13.
+    \item Suponga $U$ y $W$ son ambos subespacios de dimensión cuatro de $\textbf{C}^6$. Demostrar que existe dos vectores en $U\cap W$ tal que ninguno de estos vectores es múltiplo escalar del otro.\\\\
+	Demostración.-\; Por 2.43 tenemos que
+	$$\dim(U+W)=\dim U +\dim W-\dim(U\cap W).$$
+	Reordenando,
+	$$\dim(U\cap W)=\dim U +\dim W-\dim(U+W).$$
+	Por hipótesis, $\dim U = \dim W = 4$. Por lo tanto, ya que $U+W\in \textbf{C}^6$ con $\dim(U+W)\leq 6$, se tiene
+	$$
+	\begin{array}{rcl}
+	    \dim(U\cap W) &=& 4+4-\dim(U+W)\\\\
+			  &\geq& 8 - 6\\\\
+			  &=& 2.
+	\end{array}
+	$$
+	Esto implica que $\dim(U\cap W)\geq 2$. Así, $U\cap W$ tiene al menos dos vectores independientes. Por 2.18(b) de la sección C (Axler) sabemos que dos vectores en V es linealmente independiente si y sólo si ninguno de los vectores es múltiplo escalar del otro. Por lo tanto, existen dos vectores en $U\cap W$ ninguno de los cuales es múltiplo escalar del otro.\\\\
+
+    %--------------------14.
+    \item Suponga $U_1,\ldots,U_m$ son subespacios de dimensión finita en $V$. Demostrar que $U_1+\cdots+U_m$ son de dimensión finita y
+    $$\dim(U_1+\cdots+U_m)\leq \dim U_1+\cdots+\dim U_m.$$\\
+	Demostración.-\; Usemos la inducción para $m$. Si $m=2$, entonces por 2.43 tenemos
+	$$\dim(U_1+U_2)=\dim U_1+\dim U_2-\dim(U_1\cap U_2).$$
+	Pero $\dim(U\cap W)\geq 0$. Por lo tanto, $\dim(U_1+U_2)\leq \dim U_1+\dim U_2$. Así, se cumple para $m=2$.\\
+	Ahora, supongamos que el resultado es cierto para $m=k$. Esto es, 
+	$$\dim(U_1+\cdots+U_k)\leq \dim U_1+\cdots+\dim U_k.$$
+	Demostremos que se cumple para $m=k+1$. Sea $W=U_1+U_2+\cdots+U_k$. Entonces,
+	$$\dim(W+U_{k+1})=\dim W+\dim U_{k+1}-\dim(W\cap U_{k+1}).$$
+	Dado que $W\cap U_{k+1}\geq 0$ implica que $\dim(W+U_{k+1})\leq \dim W+\dim U_{k+1}$. 
+	Es decir,
+	$$\dim(U_1+U_2+U_k+\cdots + U_{k+1})\leq \dim U_1+\cdots+\dim U_{k+1}.$$
+	Vemos que efectivamente se cumple para $m=k+1$. Por lo tanto, por el principio de inducción el resultado es cierto para todo $m\in \mathbb{N}$.\\\\
+
+    %--------------------15.
+    \item Suponga $V$ es de dimensión finita, con $\dim(V)=n\geq 1$. Demostrar que existe  subespacios de una dimensión $U_1,\ldots,U_n$ de $V$ tal que
+    $$V=U_1\oplus\cdots\oplus U_n.$$\\
+	Demostración.-\; Usaremos el método de inducción. Si $V$ es de dimensión $1$, entonces $V=U_1$. Entonces, el resultado es cierto para $n=1$.\\
+	Ahora, sea $n=k$. Esto es, si $V$ es de dimensión $k$, entonces existe subespacios $U_1,U_2,\ldots,U_k$ de $V$ tal que
+	$$V=U_1\oplus U_2\oplus \cdots \oplus U_k.$$
+	Luego, consideremos el espacio vectorial $V$ tiene dimensión $k+1$. De donde, se tiene una base $\left\{v_i,v_2,\ldots,v_{k+1}\right\}$. Sea $U=\span(v_1,v_2,\ldots,v_k)$ y $W=\span(v_{k+1})$. Ambos, $U,W\subseteq V$, por lo que
+	$$U+W\subseteq V.$$
+	Además $U$ contiene $v_1,v_2,\ldots,v_k$ y $W$ contiene $v_{k+1}$, lo que significa que $U+W$ contiene a $v_1,v_2,\ldots,v_{k+1}$, esto es una base de $V$. Por lo tanto, $U+W$ también contiene a $V$. Es decir,
+	$$B\subseteq U+W.$$
+	Así, 
+	$$U+W=V.$$
+	Lo que implica, que
+	$$\dim(U+W)=k+1.$$
+	Recordemos que,
+	$$\dim(U+W)=\dim(U)+\dim(W)-\dim(U\cap W)$$
+	Reescribiendo
+	$$\dim(U\cap W)=\dim(U)+\dim(W)-\dim(U+W).$$
+	Que $\dim(U)=k$, $\dim(W)=1$ y $\dim(U+W)=k+1$, entonces
+	$$\dim(U\cap W)=0.$$
+	Esto último nos dice que $U\cap W=\left\{0\right\}$. Por lo tanto, 
+	$$V=U\oplus W.$$
+
+	$U$ es de dimensión $k$. Por hipótesis de inducción, $U$ puede ser reescrito como $U_1\oplus U_2\oplus \cdots \oplus U_k$. Donde, cada $U_i's$ es de dimensión uno. Por otro lado, $W$ es de dimensión uno, que podemos escribirlo como $U_{k+1}$, por lo que
+	$$V=U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}.$$
+	Esto prueba que el resultado es verdadero para $n=k+1$ para todo $n\in \textbf{N}$.\\\\
+
+
+    %--------------------16.
+    \item Suponga $U_1,\ldots,U_m$ son subespacios de dimensión finita de $V$ tal que $U_1+\cdots+U_m$ es una suma directa. Demostrar que $U_1\oplus \cdots \oplus U_m$ es de dimensión finita y
+    $$\dim (U_1\oplus \cdots \oplus U_m) = \dim U_1+\cdots+\dim U_m.$$
+    [\textit{El ejercicio anterior profundiza la analogía entre sumas directas de subespacios y uniones disjuntas de subconjuntos. Específicamente, compare este ejercicio con la siguiente declaración obvia: si un conjunto se escribe como una unión separada de subconjuntos finitos, entonces el número de elementos en el conjunto es igual a la suma de los números de elementos en los subconjuntos separados.}]\\\\
+	Demostración.-\; Luego de ver que se cumple para $m=1$. Sea verdadero para $m=k$. Esto es, si $U_1,U_2,\ldots,U_k$ son subespacios de $V$ tal que $U_1+U_2+\cdots+U_k$ es una suma directa. Entonces, $U_1\oplus U_2 \oplus \cdots \oplus U_k$ es de dimensión finita y
+	$$\dim(U_1\oplus U_2 \oplus \cdots \oplus U_k)=\dim U_1+\dim U_2+\cdots+\dim U_k.$$
+	Ahora, demostremos que el resultado de cumple para $m=k+1$. Sea $U_1,U_2,\ldots,U_k,U_{k+1}$ subespacios de $V$ tal que $U_1+U_2+\cdots+U_k+U_{k+1}$ es una suma directa. Luego, definamos a $W=U_1\oplus U_2\oplus \cdots \oplus U_k$. De donde, $W+U_{k+1}$ es una suma directa. De lo que podemos concluir dos cosas:
+	\begin{enumerate}[\bfseries i)]
+	    \item $W\cap U_{k+1}=W\oplus U_{k+1}$.
+	    \item $W \cap U_{k+1}=\left\{0\right\}$. Esto implica que $\dim\left(W\cap U_{k+1}\right)=0.$
+	\end{enumerate}
+
+	Por el teorema de la dimensión, tenemos que
+	$$\dim(W+U_{k+1})=\dim(W)+\dim\left(U_{k+1}\right)-\dim(W\cap U_{k+1}).$$
+
+	Usando (i) y (ii),
+
+	$$\dim(W\oplus U_{k+1})=\dim(W)+\dim\left(U_{k+1}\right).$$
+
+	En otras palabras,
+
+	$$\dim(U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1})=\dim(U_1\oplus U_2\oplus \cdots \oplus U_k)+\dim(U_{k+1}).$$
+
+	Usando la hipótesis de inducción, tenemos que
+
+	$$\dim(U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1})=\dim(U_1)+\dim(U_2)+\cdots+\dim(U_k)+\dim(U_{k+1}).$$
+
+	Esto nos muestra que se cumple para $m=k+1$. De lo que también nos demuestra que $U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}$ es de dimensión finita ya que cada $U_ii's$ es de dimensión finita y la dimensión de $U_1\oplus U_2\oplus \cdots \oplus U_k\oplus U_{k+1}$ es la suma de todas las dimensiones de $U_i's$. Por lo tanto, por el principio de inducción, resulta verdadero para todo $m\in \textbf{N}$.\\\\
+
+    %--------------------17.
+    \item Se puede suponer, por analogía con la fórmula para el número de elementos en la unión de tres subconjuntos de un conjunto finito, que si $U_1 , U_2 , U_3$ son subespacios de un espacio vectorial de dimensión finita, entonces
+    $$
+    \begin{array}{rcl}
+	\dim(U_1+U_2+U_3) &=& \dim U_1+\dim U_2+\dim U_3\\\\
+			  &=& \dim(U_1\cap U_2)-\dim(U_1\cap U_3)-\dim(U_2\cap U_3)+\dim(U_1\cap U_2\cap U_3).
+    \end{array}
+    $$
+    Demostrar esto o dar un contraejemplo.\\\\
+	Demostración.-\; Podemos dar un contraejemplo para ver que este resultado no es verdadero en general. Sea $V=\textbf{R}^2$ y $U_1,U_2,U_3$ los subespacios de $V$ definidos por:
+	$$
+	\begin{array}{rcl}
+	    U_1 &=& \span\left\{\left(1,0\right)\right\}.\\\\
+	    U_2 &=& \span\left\{\left(0,1\right)\right\}.\\\\
+	    U_3 &=& \span\left\{\left(1,1\right)\right\}.
+	\end{array}
+	$$
+
+	Estos subespacios son $\dim(U_1)=\dim(U_2)=\dim U_3 = 1.$ Luego ya que $U_1+U_2+U_3$ contiene los vectores $(1,0)$ y $(0,1)$, que es una base de $\textbf{R}^2$. Por lo que, $U_1+U_2+U_3=\textbf{R}^2$. Lo que implica,
+	$$\dim(U_1+U_2+U_3)=2.$$
+	Por otro lado, cada $U_1,U_2,U_3$ es una recta que pasa por el origen donde el punto de intersección de dos de ellas es el origen. De este modo,
+	$$\dim(U_1\cap U_2)=\dim(U_1\cap U_3)=\dim(U_2\cap U_3)=0.$$
+	De la misma manera,
+	$$\dim(U_1\cap U_2\cap U_3)=0.$$
+
+	Así, tenemos que
+	$$\dim(U_1)+\dim(U_2)+\dim(U_3)-\dim(U_1\cap U_2) - \dim(U_1\cap U_3) - \dim(U_2\cap U_3) + \dim(U_1\cap U_2\cap U_3)=3.$$
+
+	Pero vimos que $\dim(U_1+U_2+U_3)=2.$ que es distinto a 
+	$$\dim(U_1)+\dim(U_2)+\dim(U_3)-\dim(U_1\cap U_2) - \dim(U_1\cap U_3) - \dim(U_2\cap U_3) + \dim(U_1\cap U_2\cap U_3).$$\\
+
+
+\end{enumerate} 

@@ -773,40 +773,6 @@ La palabra griega "iso" significa igual; la palabra griega "morfo" significa for
 El resultado anterior implica que cada espacio vectorial de dimensión finita $V$ es isomorfo a $\textbf{F}^n$, donde $n=\dim V$. Si $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$, entonces para cada $T\in \mathcal{L}(V,W)$, tenemos una matriz $\mathcal{M}(T)\in \textbf{F}^{m,n}$. En otras palabras, una vez que las bases fueron fijadas para $V$ y $W$, $\mathcal{M}$ se convierte en una función de $\mathcal{L}(V,W)$ para $\textbf{F}^{m,n}$. Observemos que $3.36$ y $3.38$ prueban que $\mathcal{M}$ es una transformación lineal. Esta transformación lineal en realidad es invertible, como se mostraremos ahora.
 
 %--------------------teorema 3.60
-\begin{myteo}[\boldmath$\mathcal{L}(V,W)$ y $\textbf{F}^{m,n}$ son isomorfos]\,\\\\
-    Suponga que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$. Entonces, $\mathcal{M}$ es un isomorfismo entre $\mathcal{L}(V,W)$ y $\textbf{F}^{m,n}$.\\\\
-    Demostración.-\; Notemos que $\mathcal{M}$ es lineal. Necesitamos probar que $\mathcal{M}$ es inyectiva y sobreyectiva. Si $T\in \mathcal{L}(V,W)$ y $\mathcal{M}(T)=0$. Entonces, $Tv_k=0$ para $k=1,\ldots,n$. Ya que $v_1,\ldots,v_n$ es una base de $V$, esto implica que $T=0$. Por 3.16, $\mathcal{M}$ es inyectiva.\\
-    Para probar que $\mathcal{M}$ es sobreyectiva, supongamos que $A\in \textbf{F}^{m,n}$. Sea $T$ la transformación lineal de $V$ en $W$ tal que
-    $$Tv_k=\sum_{j=1}^m A_{j,k}w_j$$
-    para $k=1,\ldots,n$. Obviamente $\mathcal{M}(T)$ es igual a $A$, y por lo tanto el rango  de $\mathcal{M}$ es igual a $\textbf{F}^{m,n}$.
+\begin{myteo}[\boldmath $\mathcal{L}\left(V,W\right)$ y $\textbf{F}^{m,n}$ son isomorfos] \,\\\\
 \end{myteo}
 
-%--------------------teorema 3.61
-\begin{myteo}[\boldmath$\dim(V,W)=(\dim V)(\dim W)$]\,\\\\
-    Suponga que $V$ y $W$ son de dimensión finita. Entonces, $\mathcal{L}(V,W)$ es de dimensión finita y
-    $$\dim\mathcal{L}(V,W)=(\dim V)(\dim W).$$\\
-    Demostración.-\; Sean $\dim V = n$ y $\dim W=m$. Dado que $\mathcal{L}(V,W)$ y $F^{m,n}$ son isomorfos (3.60) y que $\dim\textbf{F}^{m,n}=mn$ (3.40), tenemos 
-	$$\dim\mathcal{L}(V,W)=\dim\textbf{F}^{m,n}=mn.$$
-	Luego por 3.59, implica que el espacio vectorial $V$ es isomorfo a $\textbf{F}^n$, y el espacio vectorial $W$ es isomorfo a $\textbf{F}^m$; es decir,
-	$$(\dim V)(\dim W) = \dim\textbf{F}^n \dim\textbf{F}^m=nm=mn.$$
-	Por lo tanto,
-	$$\dim\mathcal{L}(V,W)=(\dim V)(\dim W).$$
-\end{myteo}
-
-\subsection{Transformación lineal como multiplicación de matrices}
-
-%--------------------Definición 3.62
-\begin{mydef}[Matriz de un vector, \boldmath$\mathcal{M}\left(v\right)$]\;\\\\
-    Suponga que $v\in V$ y $v_1,\ldots,v_n$ es una base de $V$. La \textbf{matriz de} $v$ con respecto de esta base es la matriz $n\times 1$,
-    $$\mathcal{M}(v)=
-	\begin{pmatrix}
-	    c_1\\
-	    \vdots\\
-	    c_n
-	\end{pmatrix}
-    $$
-    donde $c_1,\ldots,c_n$ son escalares tales que
-    $$v=c_1v_1+\cdots+c_nv_n.$$
-\end{mydef}
-
-La matriz $\mathcal{M}(v)$ de un vector $v\in V$ depende de la base $v_1,\ldots,v_n$ de $V$, así como de $v$. Sin embargo, la base debe quedar clara por el contexto y por tanto no se incluye en la notación.

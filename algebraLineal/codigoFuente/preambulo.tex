@@ -53,7 +53,7 @@
 \declaretheoremstyle[%
     spaceabove=0pt,spacebelow=20pt,%
     headfont=\small\bfseries,% 
-    notefont=\bfseries,%
+    notefont=\normalsize\bfseries,%
     notebraces={}{. },%
     headpunct={},%
     preheadhook={\hspace{0mm}\newline},%
@@ -83,7 +83,7 @@
 \declaretheoremstyle[%
     spaceabove=0pt,spacebelow=10pt,%
     headfont=\small\bfseries,% 
-    notefont=\bfseries,%
+    notefont=\normalsize\bfseries,%
     notebraces={}{. },%
     headpunct={},%
     preheadhook={\hspace{0mm}\newline},%
@@ -113,7 +113,7 @@
 \declaretheoremstyle[%
     spaceabove=0pt,spacebelow=20pt,%
     headfont=\small\bfseries,% 
-    notefont=\bfseries,%
+    notefont=\normalsize\bfseries,%
     notebraces={}{. },%
     headpunct={},%
     preheadhook={\hspace{0mm}\newline},%
@@ -139,12 +139,13 @@
 \declaretheorem[style=mydef, numberwithin=chapter,title=Definición]{mydef}
 \declaretheorem[style=mydef, sibling=mydef,title=Notación]{mynot}
 
+
 \declaretheoremstyle[%
     spaceabove=0pt,spacebelow=10pt,%
     headfont=\small\bfseries,% 
-    notefont=\bfseries,%
-    notebraces={}{. },%
-    headpunct={},%
+    notefont=\normalsize\bfseries,%
+    notebraces={}{},%
+    headpunct={.},%
     preheadhook={\hspace{0mm}\newline},%
     postheadhook={},%
     qed=$\blacksquare$,
@@ -163,13 +164,12 @@
 \declaretheorem[style=myteo, sibling=mydef,title=Lema]{mylema}
 \declaretheorem[style=myteo, sibling=mydef,title=Notación]{mynotacion}
 
-\newcounter{mysection}
+\newcounter{mysection}[chapter]
 \titleclass{\mysection}{straight}[\chapter]
 \titleformat{\mysection}[hang]
-  {\normalfont\bfseries}{\themysection}{1em}{}
-\titlespacing*{\mysection}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
-\renewcommand{\themysection}{\arabic{chapter}.\Alph{mysection}}
-%\counterwithin{section}{mysection}
+  {\normalfont\bfseries}{\themysection}{.5em}{}
+\titlespacing*{\mysection}{0pt}{17ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
+\renewcommand{\themysection}{\large\arabic{chapter}.\Alph{mysection}}
 
 %-------------------------------------------------------------------
 
