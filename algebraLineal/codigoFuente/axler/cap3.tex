@@ -522,22 +522,27 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para las t
 %--------------------teorema 3.36
 \begin{myteo}[La matriz de la suma de transformaciones lineales]\;\\\\
     Suponga $S,T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.\\\\
-    Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Además las entradas de $\mathcal{M}(S)$ y $\mathcal{M}(T)$ son $A_{j,k}$ y $B_{j,k}$ respectivamente definidas por,
-    $$Sv_k=A_{1,k}w_1+\cdots+A_{m,k}w_m$$
-    $$\mbox{y}$$
-    $$Tv_k=B_{1,k}w_1+\cdots+B_{m,k}w_m$$
-    Entonces,
+    Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Además las entradas de $\mathcal{M}(S)$, $\mathcal{M}(T)$ y $\mathcal{S+T}$ son $A$, $B$ y $C$ respectivamente; definidas por,
+    $$
+    \begin{array}{rcccl}
+	Sv_k&=&A_{1,k}w_1+\cdots+A_{m,k}w_m&=&\displaystyle\sum_{j=1}^m A_{j,k}w_j,\\\\
+	Tv_k&=&B_{1,k}w_1+\cdots+B_{m,k}w_m&=&\displaystyle\sum_{j=1}^m B_{j,k}w_j,\\\\
+	(S+T)v_k&=&C_{1,k}w_1+\cdots+C_{m,k}w_m&=&\displaystyle\sum_{j=1}^m C_{j,k}w_j.
+    \end{array}
+    $$
+    Por la adición de un conjunto de transformaciones lineales:
     $$
     \begin{array}{rcl}
 	(S+T)v_k&=& Sv_k+Tv_k\\\\
-		&=&\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(B_{1,k}w_1+\cdots +B_{m,k}w_m\right)\\\\
-		&=&\left(A_{1,k}+B_{1,k}\right) w_1+\cdots +\left(A_{m,k}+B_{m,k}\right)w_m.
+	C_{1,k}w_1+\cdots + C_{m,k}w_m&=&\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)+\left(B_{1,k}w_1+\cdots +B_{m,k}w_m\right).
     \end{array}
     $$
-
-    Se deduce que las entradas en la fila $k$, columna $k$ de $M(T+S)$ con respecto a estas bases son $A_{j,k}+B_{j,k}$. Luego, por la definición 3.35, se tiene que,
-    $$A_{j,k}+B_{j,k}= (A+B)_{j,k}.$$
-    De donde, concluimos que $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
+    Luego, por la definición 3.35, 
+    $$(A+B)_{j,k}=A_{j,k}+B_{j,k}$$
+    De esta manera, $C=(A+B)_{j,k}$. Por lo tanto,
+    $$\sum_{j=1}^m C_{j,k}w_j=\sum_{j=1}^m (A+B)_{j,k}w_j=\sum_{j=1}^m A_{j,k}w_j+\sum_{j=1}^m B_{j,k}w_j.$$
+    Así,
+    $$\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T).$$
 \end{myteo}
 
 %--------------------teorema 3.37
@@ -565,20 +570,18 @@ En el siguiente resultado, se supone que se utilizan las mismas bases para ambas
 %--------------------teorema 3.38
 \begin{myteo}[La matriz de un escalar por una transformación lineal]\;\\\\
     Suponga $\lambda \in \textbf{F}$ y $T\in \mathcal{L}(V,W)$. Entonces, $\mathcal{M}(\lambda T)=\lambda \mathcal{M}(T)$.\\\\
-	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $\lambda \in \textbf{F}$. Además las entradas de $\mathcal{M}(T)$ son $A_{j,k}$ definida por,
+	Demostración.-\; Sean $v_1,\ldots, v_n$ una base de $V$ y $\lambda \in \textbf{F}$. Además las entradas de $\mathcal{M}(T)$ son $A$ definida por,
 	$$Tv_k=A_{1,k}w_1+\cdots+A_{m,k}w_m$$
-	Entonces,
+	Entonces, por la multiplicación escalar de un conjunto de transformaciones lineales:
 	$$
 	\begin{array}{rcl}
 	(\lambda T)v_k&=& \lambda(Tv_k)\\\\
-		&=&\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)\\\\
-		&=&\lambda(A_{1,k}w_1)+\cdots +\lambda(A_{m,k}w_m)\\\\
-		&=&(\lambda A_{1,k})w_1+\cdots +(\lambda A_{m,k})w_m.
+	\left(\lambda A_{1,k}\right)w_1 + \cdots +\left(\lambda A_{m,k}\right) w_m &=&\lambda\left(A_{1,k}w_1+\cdots +A_{m,k}w_m\right)\\\\
 	\end{array}
 	$$
 
 	Se deduce que las entradas en la fila $k$, columna $k$ de $M(T)$ con respecto a esta base y el escalar son $\lambda A_{j,k}$. Luego, por la definición 3.38, 
-	$$\lambda A_{j,k}=(\lambda A)_{j,k}.$$
+	$$(\lambda A)_{j,k}=\lambda A_{j,k}$$
 	De donde, concluimos que $\mathcal{M}(T) =  \lambda \mathcal{M}(T)$.
 \end{myteo}
 
@@ -610,8 +613,8 @@ La multiplicación de matrices no es conmutativa. En otras palabras, $AC$ no es 
 %--------------------lema 1.1
 \begin{lema}
     Demostrar que la propiedad distributiva es cierta para la adición y multiplicación de matrices. En otras palabras, suponga que $A,B$ y $C$ son matrices cuyas dimensiones son tal que $A(B+C)$ tengan sentido. Demostrar que $AB+AC$ tiene sentido y $A(B+C)=AB+AC$.\\\\
-	Demostración.-\; Ya que, $A(B+C)$ tiene sentido, $B$ y $C$ tienen el mismo tamaño. Además, el número de columnas $n$ de $A$ debe ser igual al número de filas de $B$ y $C$. Todo esto significa que $AB+AC$ tiene sentido.\\
-	Para demostrar que $A(B+C)=AB+AC$, sólo usaremos la definición de adición de matrices, la definición de multiplicación de matrices y la propiedad distributiva de la multiplicación escalar en $\textbf{F}$. En particular, sea $a_{j,k}$, $b_{j,k}$y $c_{j,k}$ denotado como las entrada en la fila $j$, columna $k$ de $A,B$ y $C$, respectivamente. La entrada en la fila $j$, columna $k$ de $B+C$ es $b_{j,k}+c_{j,k}$. Por lo que la entrada en la fila $j$, columna $k$ de $A(B+C)$ es 
+	Demostración.-\; Ya que, $A(B+C)$ tiene sentido, por la matriz de la suma de transformaciones lineales $B$ y $C$ tienen el mismo tamaño. Además, por 1.38 el número de columnas $n$ de $A$ debe ser igual al número de filas de $B$ y $C$. Todo esto significa que $AB+AC$ tiene sentido.\\
+	Para demostrar que $A(B+C)=AB+AC$, usaremos la definición de adición de matrices, la definición de multiplicación de matrices y la propiedad distributiva de la multiplicación escalar en $\textbf{F}$. En particular, sea $a_{j,k}$, $b_{j,k}$y $c_{j,k}$ denotado como las entrada en la fila $j$, columna $k$ de $A,B$ y $C$, respectivamente. La entrada en la fila $j$, columna $k$ de $B+C$ es $b_{j,k}+c_{j,k}$. Por lo que la entrada en la fila $j$, columna $k$ de $A(B+C)$ es 
 	$$\sum_{r=1}^n a_{j,r}(b_{r,k}+c_{r,k})=\sum_{r=1}^n a_{j,r}b_{r,k}+\sum_{r=1}^n a_{j,r}c_{r,k}.$$
 	Esto es igual a la entrada en la fila $j$, columna $k$ de $AB+AC$. Por lo tanto, $A(B+C)=AB+AC$.
 \end{lema}
@@ -619,15 +622,30 @@ La multiplicación de matrices no es conmutativa. En otras palabras, $AC$ no es 
 %-------------------- lema 1.2
 \begin{lema}
     Demostrar que la multiplicación de matrices es asociativa. En otras palabras, suponga que $A,B$ y $C$ son matrices cuyas dimensiones son tales que $(AB)C$ tiene sentido. Demostrar que $A(BC)$ tiene sentido y $(AB)C=A(BC)$.\\\\
+<<<<<<< HEAD
     Demostración.-\; Sean $A,B$ y $C$ matrices $m\times n$, $n\times p$ y $p\times q$ matrices respectivamente. Entonces $A(BC)$ y $(AB)C$ tienen sentido. Ahora, por definición de multiplicación de matrices (1.41), se tiene para las entradas $(i,j)$ de $A(BC)$ y $(AB)C$,
     $$A(BC)=\sum_{r=1}^n A_{ij}\left(\sum_{k=1}^p B_{jk}C_{kl}\right) = \sum_{j=1}^n\sum_{k=1}^p A_{ij}B_{jk}C_{kl} = \displaystyle\sum_{j=1}^p\sum_{k=1}^n A_{ij}B_{jk}C_{kl}=\sum_{k=1}^p\left(\sum_{j=1}^n A_{ij}B_{jk}\right)C_{kl}=(AB)C$$
     Por lo tanto, $A(BC)=(AB)C$.
+=======
+    Demostración.-\; Suponga que $A$ es una matriz $m\times n$, $B$ una matriz $n\times p$ y $C$ una matriz $p\times q$, donde el tamaño de $(AB)C$ tenga sentido. Sean $R\in \mathcal{L}\left(\textbf{F}^m,\textbf{F}^n\right)$, $S\in \mathcal{L}\left(\textbf{F}^n,\textbf{F}^p\right)$ y $T\in \mathcal{L}\left(\textbf{F}^p,\textbf{F}^q\right)$, tales que $\mathcal{M}(R)=A, \mathcal{M}(S)=B,\mathcal{M}(T)=C$, existan. Ahora,
+    $$
+    \begin{array}{rcl}
+	(AB)C&=& \left[\mathcal{M}(R)\mathcal{M}(S)\right]\mathcal{M}(T)\\\\
+	     &=& \mathcal{M}(RS)\mathcal{M}(T)\\\\
+	     &=& \mathcal{M}\left[(RS)T\right]\\\\
+	     &=& \mathcal{M}(R)\mathcal{M}(ST)\\\\
+	     &=& \mathcal{M}(R)\left[\mathcal{M}(S)\mathcal{M}(T)\right]\\\\
+	     &=& A(BC).
+    \end{array}
+    $$
+>>>>>>> 150134c06fc1487854696f050b1ab9cb75e234dc
 \end{lema}
 
 \setcounter{myteo}{42}
 %--------------------teorema 3.43
 \begin{myteo}[La matriz del producto de transformaciones lineales]\;\\\\
     Si $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{L}(V,W)$, entonces $\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T)$.\\\\
+<<<<<<< HEAD
 	Demostración.-\; Suponga, que $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$ y que $u_1,\ldots,u_p$ es una base de $U$.\\
 	Considere la transformación lineal $T: U\to V$ y $S: V\to W$. La composición $ST$ es una transformación lineal de $U$ en $W$. Ahora, suponga $\mathcal{M}(S)=A$ y $\mathcal{M}(T)=C$. Para $1\leq k\leq p$, tenemos
 $$
@@ -646,6 +664,27 @@ Debemos tomar encuenta que $\mathcal{M}(ST)$ consiste en los escalares necesario
 $$\mathcal{M}(S)\mathcal{M}(T)=\sum_{r=1}^n A_{j,r}C_{r,k}.$$
 Demostramos que,
 $$\mathcal{M}(ST)=\mathcal{M}(S)\mathcal{M}(T).$$
+=======
+	Demostración.-\; Sean $v_1,\ldots,v_n$ base de $V$, $w_1,\ldots,w_m$ base de $W$ y $u_1,\ldots,u_p$ base de $U$. Suponga, $\mathcal{M}(S)=A$ y $\mathcal{M}(T)=C$. Para $1\leq k\leq p$, tenemos
+	$$
+	\begin{array}{rcl}
+	    (ST)u_k &=& \displaystyle S\left(\sum_{r=1}^n C_{r,k}v_r\right)\\\\
+		    &=& \displaystyle \sum_{r=1}^n C_{r,k}Sv_r\\\\
+		    &=& \displaystyle\sum_{r=1}^n C_{r,k}\sum_{j=1}^m A_{j,r}w_j\\\\
+		    &=& \displaystyle\sum_{j=1}^m\left(\sum_{r=1}^n A_{j,r}C_{r,k}\right)w_j.
+	\end{array}
+	$$	
+
+	Así, $\mathcal{M}(ST)$ es la matriz $m\times n$ cuyas entradas en la fija $j$,  columna $k$, son iguales a
+	$$\sum_{r=1}^n A_{j,r}C_{r,k}.$$
+
+	Ahora, 
+	$$
+	\begin{array}{rcl}
+	    S u_k  T u_k &=& \displaystyle\sum_{j=1}^{m} A_{j,k}w_j \sum_{r=1}^{n} C_{r,k}v_r\\\\
+	\end{array}
+	$$
+>>>>>>> 150134c06fc1487854696f050b1ab9cb75e234dc
 \end{myteo}
 
 %--------------------Notación 3.44
