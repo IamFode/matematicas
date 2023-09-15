@@ -1,0 +1,233 @@
+\chapter{Convexidad y Optimización}
+
+$$
+(P)
+\left\{
+\begin{array}{rl}
+    \min & f_0(x)\\\\
+    s.a. & f_1(x) \leq b_1\\
+	 &f_2(x) \leq b_2\\
+	 & \vdots\\
+	 & f_m(x) \leq b_m.
+\end{array}
+\right.
+\qquad
+\begin{array}{rl}
+    f_i: & \mathbb{R}^n \rightarrow \mathbb{R}\\
+    f_0 : & \mbox{Función objetivo.}\\
+    f_j : & \mbox{Función Restricción donde }j=1,\ldots,m.\\
+\end{array}
+$$
+
+\begin{itemize}
+    \item Las funciones objetivos en economía se les puede llamar función de coste.
+    \item Las desigualdades tiene un truco, si multiplicamos por $(-1)$ tenemos en la forma que decidamos.
+    \item Maximizar es lo mismo que minimizar. Por lo que minimizaremos las funciones. 
+\end{itemize}
+
+El objetivo de (P) es encontrar $x^*$ el optimo ($\arg\min$) que cumple 
+$$f_0(x^*)\leq f_0(x), \;\forall x\in \mathbb{R}^n / f_j(x)\leq b_j,\; j=1,\ldots,m.$$
+
+Será en cualquier $x$ que cumple las restricciones. Los puntos que no cumplen las condiciones no sirven para nada.\\
+
+Al valor $f_0(x^*)$ se le llama valor optimo.\\
+
+$f_i:  \mathbb{R}^n \rightarrow \mathbb{R}$ Existirá algunas funciones que su dominio sera tranposo.\\
+
+Los Puntos factibles son los $x\in \mathbb{R}^n / f_j(x)\leq b_j,\; j=1,\ldots,m.$\\
+
+\begin{itemize}
+    \item  Si los problemas son lineales se llama programación lineal.
+    \item Cuando es convexa se llama optimización convexa.
+    \item La habilidad es de identificar las restricciones y pasarlas a convexas.
+\end{itemize}
+
+\subsubsection*{Ejemplo}
+Sean $A\in \mathcal{M}_{k\times n},\; \textbf{x}\in \mathbb{R}^n,\; \textbf{b}\in \mathcal{R}^k$.
+
+$$
+\begin{pmatrix}
+    x_1\\
+    x_2\\
+    \vdots\\
+    x_n
+\end{pmatrix}
+\in \mathbb{R}^n,
+\qquad 
+\textbf{x}^T=(x_1,x_2,\ldots,x_n).
+$$
+Diremos que el un vector cualquiera sera vector columna.\\
+
+Ahora, el problema será una minimización global dada por:
+
+$$
+\left\{
+\begin{array}{rl}
+    \min: &\|A\textbf{x}-b\|^2_2\\
+    s.a. & \emptyset.
+\end{array}
+\right.
+$$
+
+El subindice $_2$ significa la normal Euclidea. Que es la distancia normal que existe en $\mathbb{R}^2.$
+
+El objetivo será encontrar la $x$ donde la operación dada será la menor posible.
+
+\textbf{Nota}
+Imaginemos que tenemos 
+
+$$
+\begin{array}{rl}
+    \left\{\min\right. & f(x)\\\\
+    \left\{ \min \right. & f_0^2(x)
+\end{array}
+$$
+
+Si las función $f_0$ es positiva las dos formas son equivalentes. El valor optimo no será el mismo porque lo estoy elevando al cuadrado, pero el punto optimo lo será. Porque las funciones son monótomas crecientes. Si el valor al cuadrado me simplifica entonces podemos utilizarla. Esto nos permite que si no tengamos una función convexa podamos convexificarla.\\
+
+
+Por diferenciabilidad:
+
+$$f_0(x)=\|Ax-n\|_2^2 = \langle Ax-b,Ax-b\rangle.$$\\
+
+
+\textbf{Notación.-} Podemos escribir $Ax$ como
+
+$$
+Ax = 
+\underset{A^1}{
+\begin{pmatrix}
+    a_{11}\\
+    a_{21}\\
+    \vdots\\
+    a_{k1}
+\end{pmatrix}}
+x_1+
+\underset{A^2}{
+\begin{pmatrix}
+	a_{12}\\
+	a_{22}\\
+	\vdots\\
+	a_{k2}
+\end{pmatrix}}
+x_2+
+\cdots +
+\underset{A^n}{
+\begin{pmatrix}
+	a_{1n}\\
+	a_{2n}\\
+	\vdots\\
+	a_{kn}
+\end{pmatrix}}
+x_n
+=
+x_1A^1+x_2A^2+\cdots+x_nA^n.
+$$
+$A^1$ = A super 1 como columna, y $A_1$ = A super 1 como fila.\\
+
+Ahora, en términos de filas. Si escribimos los vectores A en columna
+$$
+A = 
+\begin{pmatrix}
+	A^T_1\\
+	A^T_2\\
+	\vdots\\
+	A^T_k
+\end{pmatrix}
+$$
+
+Donde,
+
+$$
+Ax = 
+\begin{pmatrix}
+	A^T_1x\\
+	A^T_2x\\
+	\vdots\\
+	A^T_nx
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\langle A^T_1,x\rangle\\
+	\langle A^T_2,x\rangle\\
+	\vdots\\
+	\langle A^T_n,x\rangle
+\end{pmatrix}
+$$
+
+
+Intentaremos demostrar el punto donde las parciales de $f_0=0$. Para ello, encontraremos 
+
+$$
+\begin{array}{rcl}
+    D_if_0&=&D_i\left(\langle Ax-b, Ax-b\rangle\right)\\\\
+	  &=&\langle D_i\left(Ax-b\right),Ax-b\rangle+\langle Ax-b,D_i\left(Ax-b\right)\rangle\\\\
+	  &=& 2\langle Ax-b,D_i\left(Ax-b\right)\rangle.
+\end{array}
+$$
+
+Veamos la parcial de $D_i\left(Ax-b\right)$.
+
+$$
+\begin{array}{rcl}
+    D_i\left(Ax-b\right)&=&D_i\left(x_1A^1+x_2A^2+\cdots+x_nA^n-b\right)\\\\
+    =A^i.
+\end{array}
+$$
+
+Dado que $b$ que es constante vale cero, y donde todos los suman que no estén las $x_i$ también valen cero.\\
+
+Por lo tanto,
+
+$$D_if_0 = 2\langle Ax-b,A^i \rangle.$$
+
+Luego,
+
+$$2\langle Ax-b,A^i \rangle = 0 \quad \forall i=1,\ldots,n \quad \Rightarrow \quad \langle Ax-v,A^i\rangle=0,\quad \forall i = 1,\ldots,n.$$
+
+Observemos que,
+
+$$
+\overrightarrow{0} = 
+\begin{pmatrix}
+    \langle Ax-b,A^1\rangle\\
+    \langle Ax-b,A^2\rangle\\
+    \vdots\\
+    \langle Ax-b,A^n\rangle
+\end{pmatrix}
+=
+\begin{pmatrix}
+    (A_1)^T\\
+    (A_2)^T\\
+    \vdots\\
+    (A_n)^T
+\end{pmatrix}
+(Ax-b)
+=A^T(Ax-b).
+$$
+
+En funciones convexas el extremo local será el mínimo global.
+
+$$A^T(Ax-b)=\overrightarrow{0}\quad \Leftrightarrow\quad A^TAx=A^Tb.$$
+
+Que es una ecuación normal.
+
+\textbf{Argumentos geométricos}
+
+$$\min \|Ax-b\|^2_2 = d(b_i,Ax)^2$$
+
+Lo que necesitamos encontrar en este caso es el mínimo de la distancia, del plano si estamos en $\mathbb{R}^2$ y el punto $b$.
+
+Si $b\in \left\{Ax:x\in \mathbb{R}^n\right\}\quad \Leftrightarrow x^* \in \mathbb{R}^n : Ax^* =b.$
+
+El valor optimo $f_0(x^*)=0.$\\
+
+Si $b\notin \left\{Ax:x\in \mathbb{R}^n\right\}$, $f_0(x^*)=d(b,b_0)^2$.\\
+
+Ahora, cual es el optimo?; es decir cual es el $x^*$
+donde la solución es:
+$$x^*\in \mathbb{R}^n : Ax^*=b_0.$$ donde $b_0$ está en el plano, por así decirlo.\\
+
+
+
+
