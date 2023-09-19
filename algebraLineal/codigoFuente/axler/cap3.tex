@@ -1,12 +1,12 @@
 \chapter{Transformaciones lineales}
 
 %-------------------- 3.1 notación
-\begin{mynot}[\boldmath $F,V,W$]\,\\
+\begin{mynotacion}[\boldmath $F,V,W$]\,\\
     \begin{itemize}
 	\item $\textbf{F}$ denota $\textbf{R}$ o $\textbf{C}$.
 	\item $V$ y $W$ denota espacios vectoriales sobre $\textbf{F}$.
     \end{itemize}
-\end{mynot}
+\end{mynotacion}
 \vspace{.5cm}
 
 \mysection{El espacio vectorial de las Transformaciones lineales}
@@ -27,9 +27,9 @@
 \end{mydef}
 
 %-------------------- 3.3 notación
-\begin{mynot}[\boldmath $\mathcal{L}\left(V,W\right)$]\; \\\\
+\begin{mynotacion}[\boldmath $\mathcal{L}\left(V,W\right)$]\; \\\\
     El conjunto de todas las transformaciones lineales de $V$ en $W$ se denota por $\mathcal{L}(V,W)$.
-\end{mynot}
+\end{mynotacion}
 
 \setcounter{myteo}{4}
 %-------------------- 3.5 Teorema
@@ -597,6 +597,7 @@ Dado que la suma y la multiplicación escalar ya se han definido para las matric
     Suponga que $m$ y $n$ son enteros positivos. Con la adición y la multiplicación escalar ya definidas, $\textbf{F}^{m,n}$ es un espacio vectorial con dimensión $mn$.
 \end{myteo}
 
+
 \section{Multiplicación de matrices}
 
 %--------------------definición 3.41
@@ -763,6 +764,30 @@ Otra forma de pensar en las Multiplicaciones de matrices:
     Si $T$ es invertible, entonces el inverso de $T$ se denota por $T^{-1}$. En otras palabras, si $T\in \mathcal{L}(V,W)$ es invertible, entonces $T^{-1}$ es el único elemento de $\mathcal{L}(W,V)$ tal que $T^{-1}T=I$ y $TT^{-1}=I.$
 \end{mynotacion}
 
+%-------------------- Lema 1.5
+\begin{lema}
+    Suponga que $T\in \mathcal{L}(U,V)$ y $S\in \mathcal{L}(V,W)$ son ambos transformaciones lineales invertibles. Demostrar que $ST\in \mathcal{L}(U,W)$ es invertible y que $(ST)^{-1}=T^{-1}S^{-1}$.\\\\
+	Demostración.-\; Para todo $u\in U$ tenemos que,
+	$$
+	\begin{array}{rcl}
+	    (T^{-1}S^{-1}ST)(u) & = & T^{-1}(S^{-1}(S(T(u))))\\\\
+				&=& T^{-1}(S^{-1}S)(T(u))\\\\
+				&=& T^{-1}(T(u))\\\\
+				&=& u.
+	\end{array}
+	$$
+	Donde, $T^{-1}S^{-1}ST=I$. Por otro lado, para todo $w\in W$ tenemos que,
+	$$
+	\begin{array}{rcl}
+	    (ST)(T^{-1}S^{-1}(w)) & = & S(T(T^{-1}S^{-1}(w)))\\\\
+				  & = & S(I(S^{-1}(w)))\\\\
+				  & = & S(S^{-1}(w))\\\\
+				  & = & w.
+	\end{array}
+	$$
+	Donde, $ST(T^{-1}S^{-1})=I$. Por lo tanto, $ST$ es invertible e implica que $(ST)^{-1}=T^{-1}S^{-1}$.
+\end{lema}
+
 %--------------------teorema 3.56
 \begin{myteo}[La invertibilidad es equivalente a la inyectabilidad y a la sobreyectividad]\,\\\\
     Una transformación lineal es invertible si y sólo si es inyectiva y sobreyectiva.\\\\
@@ -924,5 +949,11 @@ El siguiente ejemplo ilustra el poder del resultado anterior. Aunque es posible 
 	Ahora, 3.69 implica que $T$ es sobreyectivo. Concluimos que existe un polinomio $p\in \mathcal{P}_m(\textbf{R})$ tal que $\left[\left(x^2+5x+7\right)p\right]''=q,$ como queríamos.
 \end{myejem}
 
+
+% -------------------- Lema 3.6
+\begin{lema}
+    Suponga que $V$ es de dimensión finita y $S,T\in \mathcal{L}(V)$. Demostrar que $ST$ es invertible , si y sólo si, ambos $S$ y $T$ son invertibles.\\\\
+	Demostración.-\; 
+\end{lema}
 
 

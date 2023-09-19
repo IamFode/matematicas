@@ -19,6 +19,4 @@
 FROM jupyter/base-notebook
 USER root
 RUN conda install --yes numpy pandas
-ENV NB_USER fode
-WORKDIR /home/fode
-USER fode
+USER jovyan
