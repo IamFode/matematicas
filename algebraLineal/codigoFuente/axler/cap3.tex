@@ -848,5 +848,81 @@ El resultado anterior implica que cada espacio vectorial de dimensión finita $V
     $$v=c_1v_1+\cdots+c_nv_n.$$
 \end{mydef}
 
-La matriz $\mathcal{M}(v)$ de un vector $v\in V$ depende de la base $v_1,\ldots,v_n$ de $V$, así como de $v$. Sin embargo, la base debe quedar clara por el contexto y por tanto no se incluye en la notación.
+La matriz $\mathcal{M}(v)$ de un vector $v\in V$ depende de la base $v_1,\ldots,v_n$ de $V$, así como de $v$. Sin embargo, la base debe quedar clara por el contexto y por tanto no se incluye en la notación.\\
+
+Ocasionalmente queremos pensar en los elementos de $V$ como si fueran matrices $n$ por $1$ reetiquetadas. Una vez elegida $v_1,\ldots,v_n$, la función $\mathcal{M}$ que lleva $v\in V$ a $\mathcal{M}(v)$ es un isomorfismo de $V$ sobre $F^{n,1}$ que implementa este reetiquetado.\\
+
+Recordemos que si $A$ es una matriz $m$ por $n$, entonces $A_{\cdot,k}$ denota la columna $k$ de $A$, pensada como una matriz $m$ por $1$. En el siguiente resultado, $\mathcal{M}(v_k)$ se calcula con respecto a la base $w_1, \ldots, w_m$ de $W$.
+
+\setcounter{myteo}{63}
+%--------------------teorema 3.63
+\begin{myteo}[\boldmath $\mathcal{M}(T)_{\cdot,k}=\mathcal{M}(v_k)$]\,\\\\
+    Suponga que $T\in \mathcal{L}(V,W)$ y $v_1,\ldots,v_n$ es una base de $V$ y $w_1,\ldots,w_m$ es una base de $W$. Sea $1\leq k\leq n$. Entonces, la columna $k$-ésima de $\mathcal{M}(T)$, denotado por $\mathcal{M}(T)_{\cdot,k}$, es igual a $\mathcal{M}(v_k)$.\\\\
+	Demostración.-\; La demostración se sigue directamene de las definiciones de $\mathcal{M}(T)$ y $\mathcal{M}(v_k)$.
+\end{myteo}
+
+%--------------------teorema 3.64
+\begin{myteo}[Las transformaciones lineales se comportan como la multiplicación de matrices]\,\\\\
+    Suponga que $T\in \mathcal{L}(V,W)$ y $v\in V$. Sean $v_1,\ldots,v_n$ una base de $V$ y $w_1,\ldots,w_m$ una base de $W$. Entonces,
+    $$\mathcal{M}(Tv)=\mathcal{M}(T)\mathcal{M}(v).$$\\
+	Demostración.-\; Suponga que $v=c_1v_1+\cdots+c_nv_n$, donde $c_1,\ldots,c_n\in \textbf{F}$. Así, 
+	$$Tv=c_1Tv_1+\cdots+c_nTv_n.$$
+	Por lo tanto,
+	$$
+	\begin{array}{rcl}
+	    \mathcal{M}(Tv)&=&c_1\mathcal{M}(Tv_1)+\cdots+c_n\mathcal{M}(Tv_n)\\\\
+			   &=& c_1\mathcal{M}(T)_{\cdot,1}+\cdots+c_n\mathcal{M}(T)_{\cdot,n}\\\\
+			   &=& \mathcal{M}(T)\mathcal{M}(v).
+	\end{array}
+	$$
+	donde la primera igualdad se deduce de 3.66 y de la linealidad de $\mathcal{M}$, la segunda igualdad se deduce de 3.64, y la última igualdad se deduce de 3.52.
+\end{myteo}
+
+si $T\in \mathcal{L}(V,W)$ e identificamos $v\in V$ con $\mathcal{M}(v)\in \textbf{F}^{n,1}$ , entonces el resultado anterior dice que podemos identificar $Tv$ con $\mathcal{M}(T)\mathcal{M}(v)$.\\
+
+Dado que el resultado anterior nos permite pensar (mediante isomorfismos) en cada mapa lineal como una multiplicación en $\textbf{F}^{n,1}$ por alguna matriz $A$, hay que tener en cuenta que la matriz $A$ específica depende no sólo del mapa lineal, sino también de la elección de las bases. 
+
+
+\subsection{Operadores}
+
+\setcounter{myteo}{66}
+%--------------------definición 3.67
+\begin{mydef}[Operador, \boldmath $\mathcal{L}(V)$]\;\\
+    \begin{itemize}
+	\item Una transformación lineal de un espacio vectorial hacia si mismo se llama un \textbf{operador}.
+	\item La notación $\mathcal{L}(V)$ denota el conjunto de todos los operadores en $V$. En otras palabras, $\mathcal{L}(V) = \mathcal{L}(V,V)$.
+    \end{itemize}
+\end{mydef}
+
+\setcounter{myteo}{68}
+%--------------------teorema 3.68
+\begin{myteo}[La inyectividad es equivalente a la subjetividad en dimensiones finitas]\;\\\\
+    Suponga que $V$ es de dimensión finita y $T\in \mathcal{L}(V)$. Entonces, los siguientes enunciados son equivalentes:
+    \begin{enumerate}[(a)]
+	\item $T$ es invertible.
+	\item $T$ es inyectiva.
+	\item $T$ es sobreyetiva.
+    \end{enumerate}
+    \vspace{.5cm}
+	Demostración.- Claramente (a) implica (b). Ahora supongamos que (b) se cumple, de modo que $T$ es inyectiva. De donde, $\mynull T=\left\{0\right\}$ por 3.16. Luego, por el teorema fundamental de transformaciones lineales (3.22) se tiene
+	$$\dim \range T = \dim V - \dim \mynull T = \dim V - 0 = \dim V.$$
+	Por lo que $\range T$ es igual a $V$. Así, $T$ es sobreyectiva. De esta manera $(b)$ implica (c).\\
+	Ahora, supongamos que (c) se cumple, de modo que $T$ es sobreyectiva. De donde, $\range T=V$. Por el teorema fundamental de transformaciones lineales (3.22) se tiene
+	$$\dim \mynull T = \dim V - \dim \range T = 0.$$
+	Por lo tanto, $\mynull T$ es igual a $\left\{0\right\}$. Lo que concluimos que $T$ es invertible (ya que sabemos que $T$ es sobreyectiva). Por último, (c) implica (a) completando la prueba.
+\end{myteo}
+
+El siguiente ejemplo ilustra el poder del resultado anterior. Aunque es posible demostrar el resultado en el siguiente ejemplo sin utilizar álgebra lineal, la demostración utilizando álgebra lineal es más clara y sencilla.
+
+%--------------------Ejemplo 3.70
+\begin{myejem}
+    Demostrar que para cada polinomio $q\in \mathcal{P}(\textbf{R})$, existe un polinomio $p\in \mathcal{P}(\textbf{R})$ con $\left[\left(x^2+5x+7\right)p\right]''=q$.\\\\
+	Solución.-\; Supongamos que $q\in \mathcal{P}_m(\textbf{R})$. Definamos $T:\mathcal{P}_m(\textbf{R})\to \mathcal{P}_m(\textbf{R})$ por
+	$$Tp=\left[\left(x^2+5x+7\right)p\right]''.$$
+	Multiplicando un polinomio distintos de cero por $\left(x^2+5x+7\right)$ aumentando el grado en 2, y luego diferenciando dos veces se reduce el grado en 2. Por lo tanto $T$ es de hecho un operador en $\mathcal{P}(\textbf{R})$.\\
+	Todo polinomio cuya segunda derivada es igual a $0$ es de la forma $ax+b$ donde $a,b\in \textbf{R}$. Por lo que, $\mynull T=\left\{0\right\}$ Así, $T$ es inyectivo.\\
+	Ahora, 3.69 implica que $T$ es sobreyectivo. Concluimos que existe un polinomio $p\in \mathcal{P}_m(\textbf{R})$ tal que $\left[\left(x^2+5x+7\right)p\right]''=q,$ como queríamos.
+\end{myejem}
+
+
 
