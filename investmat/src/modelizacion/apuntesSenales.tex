@@ -1,0 +1,80 @@
+\chapter{La transformada de Haar}
+\section{Ejemplo de la transformada de Haar}
+Las señales son $f=\left(f_1,f_2,\ldots,f_N\right)\in \mathbb{R}^N$, para $N=2^k$, $k\in \mathbb{N}$ ($k$ máximo nivel).
+
+El \textbf{soporte} de la señal es un derive. Donde las señales son no nula.
+
+Supongamos que tenemos 
+$$f=(1,7,4,3).$$
+Con $2$ cómo el máximo nivel que puedo alcanzar (ya que $2^2$). Entonces, sacamos promedios entre $1$ y el $7$ y luego entre $4$ y $3$. Así,
+$$A^1=(4,4,3.5,3.5).$$
+Esto, nos da una aproximación de $f$ a primer nivel. Para recuperar la señal original tendremos que restar $A^1$ a $f$.
+$$f-A^1=D^1=(-3,3,0.5,-0.5).$$
+Por lo tanto,
+$$f=A^1+D^1.$$
+
+En vez de el promedio podríamos realizado una un promedio ponderado de la siguiente forma:
+
+Dado $f$,
+$$
+\begin{array}{rcl}
+    \dfrac{1-7}{2} &=& -3\\\\
+    \dfrac{7-1}{2} &=& 3\\\\
+    \dfrac{4-3}{2} &=& 0.5\\\\
+    \dfrac{3-4}{2} &=& -0.5.
+\end{array}
+$$
+Con lo que nos da el mismo resultado que antes.
+
+Ahora, trataremos de encontrar una nueva aproximación con la primera aproximación $A^1$. Es decir,
+$$A^2=(3.75,3.75,3.75,3.75).$$
+Donde se suma el tercer y la primer componente de $A^1$ dividiendo este por 2. Lo mismo con el cuarto y el segundo componente.
+
+Ahora restamos $A^1$ y $A^2$,
+$$A_1-A_ 2= D^2=(0.25,0.25,-0.25,-0.25).$$
+Por lo que,
+$$A^1=A^2+D^2.$$
+
+Concluimos se puede aproximar $f$ cómo:
+$$f=A^2+D^2+D^1.$$
+
+Vamos a reformular este proceso utilizando herramientas de álgebra lineal. Más concretamente con matrices ortogonales.
+
+
+\section{Aspectos básicos de álgebra lineal}
+\begin{itemize}
+    \item Si $\left\{v_1,\ldots,v_m\right\}\subset \mathbb{R}^N$, la envoltura (span) lineal de dicho conjunto de vectores es $lin(v_1,\ldots,v_m)$.
+    \item Si $v,W\in \mathbb{R}^N$, su producto escalar es $v\cdots w=v_1w_1+\cdots+v_N W_N$.
+    \item Un sistema de vectores $\left\{v_1,\ldots,v_m\right\}$ es ortonormal si cada uno tiene norma $1$ y $v_i\cdots v_j=0$ si $i\neq j$. En ese caso, cada vector $u\in lin(v_1,\ldots,v_m)$ se expresa de forma única como $u=(u\cdot v_1)v_1+\cdots+(u\cdot v_m)v_m.$
+    \item Dos subespacios $V,W\subset \mathbb{R}^N$ son ortogonales si cada elemento de $V$ es ortogonal a cada uno de $W$, y su suma es directa (y ortogonal), la cual denotamos por $V\oplus^{\perp} W$.
+    \item si $v\in \mathbb{R}^N$ y $W$ es un subespacio de $\mathbb{R}^N$, la proyección ortogonal $w$ de $v$ sobre $W$ es el único vector $w\in W$ tal que $v-w$ es ortogonal a $W$ (y coincide con el de mínima distancia en $W$ a $v$).
+    \item Una aplicación lineal $T:\mathbb{R}^N\to \mathbb{R}^N$ es una transformación ortogonal si $Tu\cdot Tv=u\cdot v$  para $u,v\in \mathbb{R}^N$) para $u,v\in \mathbb{R}^N$ arbitrarios (equivalente a $\|Tu\|=\|u\|$ para todo $u$). Tamién, que su expresión matricial en una base ortonormal sea una matriz $A$ ortogonal ($A\cdot A^t=I$).
+\end{itemize}
+
+Al tener un sistema de vectores ortonormales, tengo la base prefijada y tengamos las coordenadas necesarias. Lo que cambiará es la base que estoy tratando. 
+
+\section{Wavelets de Haar}
+Los \textbf{scaling} son
+$$
+\begin{array}{rcl}
+    v_1^1 &=&\left(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}},0,\ldots,0\right)\\\\
+    v_2^1 &=& \left(0,0,\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}},0,\ldots,0\right)\\\\
+    &\vdots&\\\\
+    v_{N/2}^1 &=& \left(0,\ldots,0,\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}}\right).
+\end{array}
+$$
+Desplazamos dos posiciones.
+
+Los \textbf{wavelets} son
+$$
+\begin{array}{rcl}
+	w_1^1 &=&\left(\dfrac{1}{\sqrt{2}},-\dfrac{1}{\sqrt{2}},0,\ldots,0\right)\\\\
+	w_2^1 &=& \left(0,0,\dfrac{1}{\sqrt{2}},-\dfrac{1}{\sqrt{2}},0,\ldots,0\right)\\\\
+	&\vdots&\\\\
+	w_{N/2}^1 &=& \left(0,\ldots,0,\dfrac{1}{\sqrt{2}},-\dfrac{1}{\sqrt{2}}\right).
+\end{array}
+$$
+
+
+
+

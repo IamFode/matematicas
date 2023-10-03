@@ -1,0 +1,130 @@
+\documentclass{beamer}
+ 
+\usetheme{Madrid}	% Temas
+\usecolortheme{beaver}	% Color
+%\setbeamercolor{block title}{bg=red!20!yellow,fg=red} % bg fondo, fg letra
+\usefonttheme{default}	% Fuente
+
+\setbeamertemplate{enumerate item}
+{\color{red!80!white}
+\fbox{\theenumi${}^{\underline{\circ}}$}}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\title[Beamer]{Presentaciones con Beamer}
+\author[C. Paredes]{Christian Limbert Paredes Aguilera}
+\institute[U.P.V.]
+    {Universidad Politécnica de Valencia}
+\date{}
+    
+\begin{document}
+    
+    % Mostrar título
+    \begin{frame}
+	\titlepage
+    \end{frame}
+
+    % Mostrar cajas o boxes
+    \begin{frame}
+	\begin{block}{Bloque}
+	    Un {\color{red} bloque} es un entorno que permite resaltar información.
+	\end{block}
+	\rule{\textwidth}{0.4pt}
+	\begin{block}{Definición}
+	    Un {\color{orange} triángulo} tiene tres ángulos
+	\end{block}
+	\begin{alertblock}{Alerta}
+	    Un {\color{blue} cuadrado} tiene cuatro lados
+	\end{alertblock}
+    \end{frame}
+
+    \begin{frame}
+	\begin{theorem}[Christian]
+	    Para cada $a,b>0$, uno tiene $\sqrt{ab}\leq (a+b)/2$.
+	\end{theorem}
+
+	\begin{lemma}
+	    Sea $a,b>0$. Entonces ...
+	\end{lemma}
+
+	\begin{corollary}[Euler]
+	    $e^{j\pi}=-1$.
+	\end{corollary}
+
+	\pause
+
+	\begin{exampleblock}{Ejemplo}
+	    Sea $a,b>0$. Entonces ... $\Box$
+	\end{exampleblock}
+    \end{frame}
+
+    % Mostrar una columna a la vez
+    \begin{frame}
+	\begin{columns}
+	    \column{.6\textwidth}
+		\begin{block}{Pregunta}
+		    ¿Cuál es la solución de $\log x = 1$?
+		\end{block}
+		\pause %Destamar texto poco a poco
+		\column{.35\textwidth}
+		\begin{block}{Respuesta}
+		    $x=e$. \phantom{¿ ?} %Forzar el espacio
+		\end{block}
+	\end{columns}
+    \end{frame}
+
+    % Mostrar poco a poco con opacidad
+    \begin{frame}
+	\setbeamercovered{transparent}
+	    \begin{itemize}
+		\item En un lugar de ... \pause
+		\item la Mancha, de cuyo nombre ... \pause
+		\item no quiero acordarme.
+	    \end{itemize}
+	\setbeamercovered{invisible}
+    \end{frame}
+
+    % Mostrar cambiando partes de texto
+    \begin{frame}
+	Vamos a resolver la ecuación $x^2=x$ paso a paso
+	\only<1>{$$x^2={\color{green} x}$$ Pasamos esta $x$
+	al otro lado}
+	\only<2>{$$x(x-1)=0$$}
+	\only<3>{$$x=0 \quad \text{o} \quad x=1$$}
+	\only<4>{$$\begin{array}{rcl}
+			x^2&=&x\\
+			x^2-x&=&0\\
+			x(x-1)&=&0\\
+			x=0&\text{o}&x=1
+		    \end{array}$$}
+    \end{frame}
+
+    % Alertas poco a poco
+    \begin{frame}
+	\begin{itemize}
+	    \item \alert<1>{Pit\'agoras}
+	    \item \alert<2>{Euler}
+	    \item \alert<3>{Gau\ss}
+	\end{itemize}
+    \end{frame}
+
+    % Mostrar texto poco a poco
+    \begin{frame}
+	\begin{itemize}
+	    \item <1->{Pit\'agoras}
+	    \item <2->{Euler}
+	    \item <2->{Gau\ss}
+	    \item <3->{Hamilton}
+	\end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	\begin{itemize}[<+->]
+	    \item Cada transparencia debe ser autocontenida.
+	    \item 
+	\end{itemize}
+    \end{frame}
+
+\end{document}

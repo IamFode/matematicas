@@ -1,0 +1,25 @@
+ls
+nvim
+ls
+nvim
+python3
+nvim
+env | grep THIS_REDIS
+ ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+telnet -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ping
+clear
+ls
+ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+env | grep THIS_REDIS
+ping -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR PING
+ls
+ping
+curl
+curl -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR PING
+curl -c 4 $THIS_REDIS_PORT_6379_TCP_ADDR
+ping

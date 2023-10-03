@@ -1,0 +1,197 @@
+\chapter{Modelos matemáticos para el tratamiento térmico de tejidos biológicos}
+
+\section{Tratamiento térmico de tejidos biológicos}
+Consiste en una terapia ablativa. Es decir, que destruye un tejido, gracias a ampliar una energía que hace que haya un calentamiento y se altere este. Es un fin terapéutico. Por ejemplo, la ligadura de trompas, cuando sellamos y ligamos el tejido con calor, para que las trompas se liguen y sea un método conceptivo. El tratamiento será a más de $80\%$ grados.
+
+\section{Ventajas de los modelos matemáticos}
+\begin{itemize}
+    \item Agiliza los experimentos.
+    \item Reduce los costes.
+    \item Se puede hacer pruebas.
+\end{itemize}
+
+\section{El artículo científico en ingeniería biomédica}
+\begin{enumerate}
+    \item Introducción.- Interés, hipótesis, objetivo. Estado del arte (Que se haya hecho hasta ahora).
+    \item Materiales y métodos.- Formulación del modelo, mecanismos de validación, programas utilizados (Cómo lo hice). Debemos ser específicos para que cualquier pueda replicarlo.
+    \item Resultados. 
+    \item Discusión.
+    \item Conclusiones.
+\end{enumerate}
+
+\section{Planteamiento general general de un modelo}
+\begin{enumerate}
+    \item Interés, hipótesis y objetivo. Interlocución Interdisciplinar.
+	\begin{itemize}
+	    \item La hipótesis es lo que uno cree que va a pasar.
+	    \item El objetivo es lo que se va a hacer. (Realizar un modelo). La acción. 
+	    \item Interés es el por qué se hace.
+	\end{itemize}
+    \item Geometría y abstracción.
+    \item Ecuaciones de gobierno.
+    \item Condiciones iniciales y de contorno.
+    \item Características de los Materiales.
+    \item Resolución computacional.
+    \item Postprocesado.
+    \item Discusión. Comparación con resultados experimentales.
+	\begin{itemize}
+	    \item Volver al principio y ver si se cumplieron el objetivo y la hipótesis.
+	\end{itemize}
+    \item Conclusión.
+\end{enumerate}
+
+\subsection{Interés, hipótesis y objetivo}
+Revisemos el siguiente artículo: \href{https://doi.org/10.3109/02656736.2011.631076}{Relationship between roll-off occurrence and spatial distributionof dehydrated tissue during RF ablation with cooled electrodes}
+
+\begin{itemize}
+	\item Interés: Aunque muchos estudios han analizado el efecto térmico de un electrodo refrigerado y la relación exacta entre la distribución del tejido deshidratado y la ocurrencia del "roll-off", todavía no se caracterizo en detalle. Osea, nuestro interés es caracterizarlo en detalle.
+	\item Hipótesis: El episodio de "roll-off" coincide aproximadamente con el momento en que el tejido alrededor del centro del electrodo activo se deseca en gran medida (alrededor de 100 °C), es decir, cuando todo el electrodo está completamente rodeado por tejido deshidratado.
+	\item Objetivo: Demostrar esta hipótesis mediante un enfoque doble, teórico y experimental.
+\end{itemize}
+
+\subsection{Geometría y abstracción}
+Dibujos abstractos del tema a estudiar.
+
+\subsection{Ecuaciones de gobierno}
+Tenemos que traducir a ecuaciones matemáticas y ver el dominio de donde se va a trabajar. En este caso será un cilindro. Normalmente se heredan modelos de otros trabajos.
+
+Existen dos problemas:
+\begin{itemize}
+    \item Uno eléctrico.
+    \item Uno térmico.
+\end{itemize}
+
+En el caso del microondas, 
+\begin{itemize}
+	\item Uno electromagnético.
+	\item Uno térmico.
+\end{itemize}
+
+Y en el caso del laser, 
+\begin{itemize}
+	\item Uno óptico.
+	\item Uno térmico.
+\end{itemize}
+
+Veamos como se formularía:
+
+Comencemos con la ecuación de calor:
+$$\rho c\dfrac{\partial T}{\partial t}=\triangledown(k\triangledown T).$$
+Donde:
+\begin{center}
+    \begin{tabular}{rcl}
+	$\rho$ &:& Densidad.\\ 
+	$c$ &:& Calor específico.\\
+	$T$ &:& Temperatura.\\
+	$t$ &:& Tiempo.\\
+	$k$ &:& Conductividad térmica.\\
+	$\triangledown$ &:& Operador nabla.
+    \end{tabular}
+\end{center}
+
+A esta ecuación debemos agregar las siguientes variables
+
+$$\rho c\dfrac{\partial T}{\partial t}=\triangledown(k\triangledown T)+Q_b+Q_m+Q_F.$$
+
+Donde:
+\begin{center}
+    \begin{tabular}{rcl}
+	$Q_b$ &:& Calor proveniente de la sangre, llamado calor por perfusión.\\ 
+	$Q_m$ &:& Calor metabólico. (Es pequeña por lo que es despreciable, ya que el tiempo de exposición 12 min).\\
+	$Q_F$ &:& Calor de la fuente de energía. (Problema óptico o electromagnético).
+    \end{tabular}
+\end{center}
+
+Veamos el calor por perfusión ($Q_b$).
+$$Q_b=\beta \rho_b c_b \omega_b(T_b-T).$$
+
+Donde:
+\begin{center}
+	\begin{tabular}{rcl}
+	$\rho_b$ &:& Densidad de la sangre.\\
+	$c_b$ &:& Calor específico de la sangre.\\
+	$\omega_b$ &:& Coeficiente de refrigeración de la sangre.\\
+	$T_b$ &:& Temperatura de la sangre. $37^{\circ}C$.\\
+	$\beta$ &:& Coeficiente de intercambio de calor.\\ 
+	\end{tabular}
+\end{center}
+
+$$
+\beta=\left\{
+\begin{array}{ll}
+    1 & \Omega(t)<4.6\\
+    0 & \Omega(t)\geq 4.6
+\end{array}
+\right.
+\quad \Rightarrow \quad
+\Omega(t)=\int_{0}^{t_{final}} Ae^{-\frac{\delta E}{RT(x,t)}}\;dt
+$$
+
+
+Donde:
+\begin{center}
+    \begin{tabular}{rcl}
+	$\Omega$ &:& Daño térmico, en función de la temperatura y el tiempo.\\
+	$A$ &:& Factor de frecuencia.\\
+	$\triangle E$ &:& Energía de activación.\\
+	$R$ &:& Constante de los gases.\\
+	$T$ &:& Temperatura.
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item Los valores de $A$ y $\triangle E$ se obtienen experimentalmente, no es lo mismo los daños en distintos órganos. Se considere $4.6$ es el $99\%$ del tejido muerto.
+    \item Manejar una integral tan grande produce errores.
+\end{itemize}
+
+$T_b$ que es la Temperatura de la sangre se considera un refrigerante debido a que $T\geq T_b$. Es decir, la Temperatura del objeto a tratar será mayor al de la sangre en si.
+
+\subsubsection{Problema térmico: Bioheat equation}
+Ya dijimos que hay vaporización. Por lo que utilizamos un método llamado Entalpía. Lo que hace es que sustituye $pc\dfrac{\partial T}{\partial t}$ de la ecuación que estamos tratando por:
+$$
+\dfrac{\partial T}{\partial t} \cdot \left\{
+    \begin{array}{ll}
+	\partial_l c_l & 0<T\leq 99^{\circ}C\\
+	h_{fg}C & 99<T\leq 100^{\circ}C\\
+	\rho_g c_g & T>100^{\circ}C.
+    \end{array}
+\right.
+$$
+
+Donde:
+\begin{center}
+	\begin{tabular}{rcl}
+	    $l$ & : & Líquido.\\
+	    $C$ & : & Contenido de agua del tejido.\\
+	    $\partial_l c_l$ &:& Calor latente liquido. (Se produce cambio de fase).\\
+	    $h_{fg}C$ &:& Es el producto del  calor latente de vaporización del agua por la densidad del agua a $99^{\circ}$.\\
+	    $\rho_g c_g$ &:& Calor específico del vapor.
+	\end{tabular}
+\end{center}
+
+Considera al parcial de la temperatura con respecto del tiempo.
+
+\subsection{Condiciones iniciales y de contorno}
+
+Veamos las condiciones:
+\begin{itemize}
+    \item La temperatura es igual a la temperatura ambiente $T=T_a$.
+    \item El flujo es nulo. $\vec{n}\cdot(k\triangledown T)=0$. 
+    \item El proceso de calentar y enfriar algo, se llama convección natural. $\vec{n}(k\triangledown T)=h(T_r)-T$.
+	Donde:
+	\begin{center}
+	    \begin{tabular}{rcl}
+		$h$ &:& Coeficiente de refrigeración. (Acá se nota si es natural o forzada).\\
+		$T_r$ &:& Temperatura de refrigeración.
+	    \end{tabular}
+	\end{center}
+\end{itemize}
+
+GRAN PARTE DEL TRABAJO ES AVERIGUAR CADA VARIABLE. 
+
+
+\subsection{Características de los Materiales}
+Los sacamos de artículos o bien de bases de datos.
+
+
+
