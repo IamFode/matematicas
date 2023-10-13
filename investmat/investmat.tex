@@ -1,7 +1,11 @@
 
 \input{src/preambulo/preambulo.tex}
 
+% CARATULA CONVEXIDAD Y OPTIMIZACIÓN
+\input{src/convexOpt/caratula.tex}
+
 \begin{document}
+\maketitle
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\nouppercase{\truncate{0.5\headwidth}{\rightmark}}}
 \fancyhead[LO,RE]{\nouppercase{\truncate{0.5\headwidth}{\leftmark}}}
@@ -9,8 +13,9 @@
 %------------------------------------------------------------------------------------------------
 % -------------------- CONVEXIDAD Y OPTIMIZACIÓN ------------------------------------------------
 %------------------------------------------------------------------------------------------------
+\let\cleardoublepage\clearpage
 % APUNTES
-%\input{src/convexOpt/apuntes.tex}
+\input{src/convexOpt/apuntes.tex}
 
 %------------------------------------------------------------------------------------------------
 % -------------------- MODELIZACIÓN MATEMÁTICA EN LA INDUSTRIA ----------------------------------
@@ -25,6 +30,7 @@
 % -------------------- HERRAMIENTAS METODOLÓGICAS PARA LA INVESTIGACIÓN MATEMÁTICA --------------
 %------------------------------------------------------------------------------------------------
 % APUNTES HERRAMIENTAS METODOLÓGICAS
-\input{src/metodologia/apuntes.tex}
+%\input{src/metodologia/apuntes.tex}
+
 
 \end{document}

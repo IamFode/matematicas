@@ -17,30 +17,23 @@
 \renewcommand\thmt@space{}
 \makeatother
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Teorema]{teo}
-\declaretheorem[style=marginheads, numberwithin=chapter, title=Ejemplo]{ejem}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Postulado]{post}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Corolario]{cor}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Ejercicio]{ej}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Lema]{lema}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Problema]{prob}
 \declaretheorem[style=marginheads, numberwithin=chapter, title=Ejercicio]{ejer}
+\declaretheorem[style=marginheads, numberwithin=chapter, title=Proposición]{proposicion}
 
 
 \declaretheoremstyle[%
-    spaceabove=0pt,spacebelow=5pt,%
+    spaceabove=0pt,spacebelow=0pt,%
     headfont=\small\bfseries,% 
     notefont=\bfseries,%
     notebraces={}{. },%
     headpunct={},%
     preheadhook={\hspace{0mm}\newline},%
     postheadhook={},%
-    shaded = {
-	%textwidth =450pt,
-	bgcolor = black!2,
-	rulecolor=black!3,
-	rulewidth=1pt,
-	margin=3pt
-    },
     postheadspace=0pt,%
     headindent=0pt,%
     bodyfont=\normalfont,%
@@ -55,6 +48,7 @@
 \declaretheorem[style=margindef, numberwithin=chapter, title=Observación]{obs}
 \declaretheorem[style=margindef, numberwithin=part, title=Propiedad]{prop}
 \declaretheorem[style=margindef, numberwithin=chapter, title=Notación]{notacion}
+\declaretheorem[style=margindef, numberwithin=chapter, title=Ejemplo]{ejem}
 %-------------------------------------------------------------------------------------
 
 \declaretheorem[numberwithin=chapter, title=Nota]{nota}
@@ -73,6 +67,8 @@
 \def\interior{\mathop{\mbox{\normalfont int}}\nolimits}
 \def\relint{\mathop{\mbox{\normalfont relint}}\nolimits}
 \def\aff{\mathop{\mbox{\normalfont Aff}}\nolimits}
+\def\co{\mathop{\mbox{\normalfont co}}\nolimits}
+\def\con{\mathop{\mbox{\normalfont con}}\nolimits}
 %------------------------------------------------------------------------
 
 %---------------------------------

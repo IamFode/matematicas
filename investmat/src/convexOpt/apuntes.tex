@@ -20,14 +20,6 @@ $$
 \end{tcolorbox}
 
 Donde,
-$$
-\begin{array}{rl}
-    f_i: & \mathbb{R}^n \rightarrow \mathbb{R}\\
-    f_0 : & \mbox{Función objetivo.}\\
-    f_j : & \mbox{Función Restricción donde }j=1,\ldots,m.\\
-\end{array}
-$$
-
 \switchcolumn[1]*{\noindent \scriptsize
     \begin{itemize}
 	\item Las funciones objetivos en economía se les puede llamar funciones de coste.
@@ -39,23 +31,31 @@ $$
 }
 
 \switchcolumn[0]
+$$
+\begin{array}{rl}
+    f_i: & \mathbb{R}^n \rightarrow \mathbb{R}\\
+    f_0 : & \mbox{Función objetivo.}\\
+    f_j : & \mbox{Función Restricción donde }j=1,\ldots,m.\\
+\end{array}
+$$
+
 El objetivo de (P) es encontrar $x^*$ el optimo ($\arg\min$) que cumpla:
+
 	    $$f_0(x^*)\leq f_0(x), \;\forall x\in \mathbb{R}^n / f_j(x)\leq b_j,\; j=1,\ldots,m.$$
+
 Los Puntos factibles son los $x\in \mathbb{R}^n / f_j(x)\leq b_j,\; j=1,\ldots,m.$\\
 
 Cuando el problema sea de la forma convexa se llama optimización convexa. Al final, la habilidad es identificar las restricciones y convertirlas a convexas.
 
-\switchcolumn[1]{\noindent\scriptsize
+\switchcolumn[1]*{\scriptsize
 % -------------------- NOTA 1.1
-\begin{nota}
-    Imaginemos que tenemos \\
+\begin{nota} Imaginemos que tenemos
     $$
     \begin{array}{rl}
 	\left\{\min\right. & f(x)\\\\
 	\left\{ \min \right. & f_0^2(x)
     \end{array}
     $$
-
     \begin{itemize}
 	\item Si las función $f_0$ es positiva las dos formas son equivalentes. 
 	\item El valor optimo no será el mismo, pero el punto optimo lo será, ya que las funciones son monótomas crecientes. 
@@ -63,8 +63,7 @@ Cuando el problema sea de la forma convexa se llama optimización convexa. Al fi
     \end{itemize}
 \end{nota}
 }
-
-\switchcolumn[0]
+\switchcolumn[0]\noindent
 % -------------------- NOTACIÓN 1.1
 \begin{notacion}
     Podemos escribir $Ax$ como
@@ -147,21 +146,21 @@ Cuando el problema sea de la forma convexa se llama optimización convexa. Al fi
     \qquad 
     \textbf{x}^T=(x_1,x_2,\ldots,x_n).
     $$
-    El problema será una minimización global dada por:
-    $$
+    El problema será una minimización global dada por:\;
+    $
     \left\{
     \begin{array}{rl}
 	\min: &\|A\textbf{x}-b\|^2_2\\
 	s.a. & \emptyset.
     \end{array}
     \right.
-    $$
+    $
 \switchcolumn[1]*{\noindent \scriptsize
-	\begin{itemize}
-	    \item Diremos que el un vector cualquiera sera vector columna.
-	    \item El subindice $_2$ significa la normal Euclidea. Que es la distancia normal que existe en $\mathbb{R}^2.$
-	\end{itemize}
-    }
+    \begin{itemize}
+	\item Diremos que el un vector cualquiera sera vector columna.
+	\item El subindice $_2$ significa la normal Euclidea. Que es la distancia normal que existe en $\mathbb{R}^2.$
+    \end{itemize}
+}
 
 \switchcolumn[0]
     Solución.-\; Por diferenciabilidad se tiene,
@@ -175,25 +174,19 @@ Cuando el problema sea de la forma convexa se llama optimización convexa. Al fi
     \end{array}
     $$
     Veamos la parcial de $D_i\left(Ax-b\right)$.
-    $$
-    \begin{array}{rcl}
-	D_i\left(Ax-b\right)&=&D_i\left(x_1A^1+x_2A^2+\cdots+x_nA^n-b\right)\\\\
-			    &=&A^i.
-    \end{array}
-    $$
+    $$ D_i\left(Ax-b\right)=D_i\left(x_1A^1+x_2A^2+\cdots+x_nA^n-b\right)=A^i.$$
     Dado que $b$ que es constante vale cero, y donde todos los suman que no estén las $x_i$ también valen cero.
     Por lo tanto,
     $$D_if_0 = 2\langle Ax-b,A^i \rangle.$$
-    Luego,
-    $$2\langle Ax-b,A^i \rangle = 0 \quad \forall i=1,\ldots,n \quad \Rightarrow \quad \langle Ax-b,A^i\rangle=0,\quad \forall i = 1,\ldots,n.$$
+    Luego, 
+    $$2\langle Ax-b,A^i \rangle = 0 \; \forall i=1,\ldots,n \quad \Rightarrow \quad \langle Ax-b,A^i\rangle=0,\quad \forall i = 1,\ldots,n.$$
 
-\switchcolumn[1]*{\noindent \scriptsize
+\switchcolumn[1]*{\scriptsize
     \begin{itemize}
 	\item En funciones convexas el extremo local será el mínimo global.
     \end{itemize}
-    }
-
-\switchcolumn[0]
+}
+\switchcolumn[0]\noindent
 	Observemos que,
 	$$
 	\overrightarrow{0} = 
@@ -218,11 +211,10 @@ Cuando el problema sea de la forma convexa se llama optimización convexa. Al fi
 
 Por último, veamos los argumentos geométricos. Notemos que,
 $$\min \|Ax-b\|^2_2 = d(b_i,Ax)^2$$
-Donde $Ax$ tendrá la forma geométrica, de un subespacio vectorial. en el caso de $\mathbb{R}^3$ será un plano.
-
-Luego,
+Donde $Ax$ tendrá la forma geométrica de un subespacio vectorial (en el caso de $\mathbb{R}^3$ será un plano). Entonces,
+\switchcolumn[1]*{\noindent
 \begin{center}
-    \begin{tikzpicture}[scale=0.5]
+    \begin{tikzpicture}[scale=0.4]
       % Define los vértices del romboide
       \coordinate (A) at (0,0);
       \coordinate (B) at (4,0);
@@ -238,11 +230,12 @@ Luego,
       \fill (4,.6) circle (2pt);
     \end{tikzpicture}
 \end{center}
+}
+\switchcolumn[0]\noindent
     \begin{itemize}
 	\item Si $b\in \left\{Ax:x\in \mathbb{R}^n\right\}\; \Leftrightarrow \; x^* \in \mathbb{R}^n : Ax^* =b.$ El valor optimo es $f_0(x^*)=0$.
 	\item Si $b\notin \left\{Ax:x\in \mathbb{R}^n\right\}$, $f_0(x^*)=d(b,b_0)^2$.
     \end{itemize}
-
 Ahora, cual es el optimo?; es decir cual es el $x^*$. Para ello, 
 $$x^*\in \mathbb{R}^n : Ax^*=b_0.$$ Aquí, $b_0$ está en el plano, si estamos en $\mathbb{R}^3$. ¿Cómo llegamos algebraicamente?:
 $$
@@ -258,10 +251,10 @@ $$
 \end{ejem}
 
 
+
 \section{Conjuntos convexos de \boldmath $\mathbb{R}^n$}
 El dominio serán conjuntos convexos o dominio efectivo.
-
-\switchcolumn[1]*{\noindent\scriptsize
+\switchcolumn[1]*{\noindent \scriptsize
     \begin{itemize}
 	\item Cuando $\lambda$ vale $1$ será $x_1$ cuando valga cero $x_0$. 
 	\item Cuando es positivo irá a  la derecha, cuando es negativo hacia la izquierda.
@@ -269,13 +262,12 @@ El dominio serán conjuntos convexos o dominio efectivo.
 	    Es cualquier punto que este entre $x_0$ y $x_1$ del gráfico de arriba. 
     \end{itemize}
 }
-
-\switchcolumn[0]
+\switchcolumn[0]\noindent
     % -------------------- DEFINICIÓN 1 LINEAL
     \begin{def.}[Lineal]\,\\ 
     $$L(x_0,x_1) := \left\{x_0+\lambda(x_1-x_0):\lambda \in \mathbb{R}\right\}$$
     \begin{center}
-	\begin{tikzpicture}[scale=0.5]
+	\begin{tikzpicture}[scale=0.35]
 	  \coordinate (A) at (0,0);
 	  \coordinate (B) at (3,1);
 	  \coordinate (C) at (6,2);
@@ -296,11 +288,12 @@ El dominio serán conjuntos convexos o dominio efectivo.
 	\item La diferencia entre espacio vectorial y espacio afín es que el espacio afín esta desplazado; es decir, no necesariamente pasa por el cero como en un subespacio vectorial.
     \end{itemize}
 }
-\switchcolumn[0]
-    % -------------------- DEFINICIÓN DE AFÍN
+\switchcolumn[0]\noindent
+    % -------------------- DEFINICIÓN 1.2 (AFÍN)
     \begin{def.}
 	Sea $A\subseteq \mathbb{R}^n$. Se dice \textbf{Afín}, si $\forall x, y\in A$ se tiene que la $L(x,y)\subseteq A$. (Subespacios vectoriales desplazados).
     \end{def.}
+
 \begin{itemize}
     \item Un circulo no es afín ya que la linea es infinita.
     \item Un plano podría ser Afín.
@@ -316,8 +309,8 @@ El dominio serán conjuntos convexos o dominio efectivo.
 \end{itemize}
 }
 
-\switchcolumn[0]
-% -------------------- DEFINICIÓN DE combinación afín
+\switchcolumn[0]\noindent
+% -------------------- DEFINICIÓN 1.3 combinación afín
 \begin{def.}
     Una \textbf{combinación afín} de los vectores $\left\{x_1,x_2,\ldots,x_k\right\}$ es un vector de la forma 
 $$\lambda_1 x_1+\lambda_2x_2+\cdots+\lambda_kx_k.$$
@@ -330,8 +323,9 @@ $$\sum_{i=1}^k \lambda_i = 1.$$
 	\item Este conjunto es estable para combinaciones lineales, muy similar al concepto de subespacio vectorial.
     \end{itemize}
 }
-\switchcolumn[0]
-% -------------------- TEOREMA 1
+\switchcolumn[0]\noindent
+{\color{blue}
+% -------------------- TEOREMA 1.1
     \begin{teo}
     $A$ es afín sii $A$ contiene toda combinación afín de sus puntos.
 
@@ -350,14 +344,14 @@ $$\sum_{i=1}^k \lambda_i = 1.$$
 	$$z = x_1 + \lambda(x_k - x_1),$$ 
 	donde $\lambda \in \mathbb{R}$. Ahora, notemos que $\lambda + (1 - \lambda) = 1$, lo cual es la condición de combinación afín. Y dado que $A$ contiene toda combinación afín de sus puntos, esto implica que $z$ está en $A$. Por lo tanto, $A$ es afín.
     \end{teo}
-
+}
 \switchcolumn[1]*{\noindent\scriptsize
 % -------------------- NOTA 1.2	
 \begin{nota}
 La definición de subespacio se refiere a tomar dos escalares y dos vectores, realizar la combinación lineal, donde esta combinación lineal no se saldrá del conjunto dado.
 \end{nota}
 }
-\switchcolumn[0]
+\switchcolumn[0]\noindent
 % -------------------- NOTACIÓN 1.2
 \begin{notacion}
 La suma de Minkowski es la operación de conjuntos; es decir, si $A,E\subseteq \mathbb{R}^n$. Entonces,
@@ -402,22 +396,26 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
     La envolura afín de $B$, $\aff(B)$, es el menor conjunto afín que contiene a $B$. Esto implica que es el conjunto de las combinaciones afines de elementos de $B$ o es la intersección de los conjuntos afines que contienen a $B$ 
 \end{def.}
 
-% -------------------- DEFINICIÓN 1.5
-\begin{def.}
-    Si $A$ es Afín se llama "dimensión afín de $A$" a la dimensión de su espacio vectorial.
-\end{def.}
-
+\switchcolumn[1]*{\noindent\scriptsize
 \begin{itemize}
     \item Dimensión $0$ un punto.
     \item Dimensión $1$ una recta.
     \item Dimensión $2$ una plano.
 \end{itemize}
+}
 
-% -------------------- EJEMPLO 2
+\switchcolumn[0]
+
+% -------------------- DEFINICIÓN 1.5
+\begin{def.}
+    Si $A$ es Afín se llama "dimensión afín de $A$" a la dimensión de su espacio vectorial.
+\end{def.}
+
+% -------------------- EJEMPLO 1.2
 \begin{ejem}
     Dado $C\in \mathbb{R}^n$ afín. Siempre existirán una matriz $A\in \mathcal{M}_{p\times n}$ y $b\in \mathbb{R}^p$ tal que
     $$C=\left\{x\in \mathbb{R}^n:Ax=b\right\}.$$\\
-	Solución.-\; Cuál es el conjunto lineal asociado?. Será el núcleo de la aplicación lineal; es decir,
+	Solución.-\; El conjunto lineal asociado será el núcleo de la aplicación lineal. Es decir,
 	$$E=\left\{e\in \mathbb{R}^n:Ae=0\right\},$$
 	cualquier solución de $x_0\in C$ de modo que $Ax_0=b$. Tomando un punto de $C$ y otro de $E$, tenemos 
 	$$A(x_0+e)=Ax_0+Ae=b+0=b.$$
@@ -426,37 +424,39 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 	Así, el conjunto afín no es más que el traslado del espacio vectorial.
 \end{ejem}
 
-\pagebreak
 \switchcolumn[1]*{\noindent\scriptsize
 \begin{itemize}
-    \item El concepto de punto interior será importante, porque me dice que me puedo acercar al punto $a$ desde todas las direcciones, y si es relativo interior me puedo acerca por todos los lados del conjunto.
-    \item El punto de adherencia o clausura es un punto que me puedo acercar de alguna forma pero no de todas formas.
+    \item El concepto de punto interior será importante, ya que podremos acercarnos al punto $a$ desde todas las direcciones. 
+    \item Si es un punto relativo interior nos acercaremos por todos los lados del conjunto.
+    \item El punto de adherencia o clausura es un punto el cual me puedo acercar de alguna forma.
 \end{itemize}
 }
-\switchcolumn[0]
-% -------------------- Definición 1.6
+\switchcolumn[0]\noindent
+% -------------------- DEFINICIÓN 1.6
 \begin{def.}[Topología de \boldmath$\mathbb{R}^n$]\,\\\\
-    Sean $A\subseteq \mathbb{R}^n$ y $a\in \mathbb{R}^n$.
+    Sean $A\subseteq \mathbb{R}^n$ y $a\in \mathbb{R}^n$:
     \begin{enumerate}[1)]
-	\item $a\in A$ está en el interior de $A$ $\left(a\in \interior(A) \mbox{ o } \mathring{A} \right)$, cuando existe $\delta>0$ tal que $B(a,\delta)\subseteq A.$
-	$$B(a,\delta)=\left\{x\in \mathbb{R}^n:\|x-a\|\leq \delta.\right\}.$$
+	\item $a\in A$ está en el interior de $A$ $\left(a\in \interior(A) \mbox{ o } a\in \mathring{A} \right)$, cuando existe $\delta>0$ tal que $B(a,\delta)\subseteq A.$
+	$$B(a,\delta)=\left\{x\in \mathbb{R}^n:\|x-a\|_2 \leq \delta.\right\}.$$
 	Por ejemplo en $\mathbb{R}^2$ será un circulo y $\mathbb{R}^3$ será una esfera.
-	\item $A$ se dice abierto si $A=\interior(A)=\mathring{A}.$ (Los puntos frontera del conjunto $A$ serán los abiertos).
-	\item Decimos que $c\in\mathbb{R}^n$ está en el cierre (o clausura) de $A$, cuando $\exists \left\{a_n\right\}\in A | a_n\to c$.
-	\item Decimos que $A$ es cerrado cuando $A=\overline{A}$ donde $\left\{x\in \mathbb{R}^n: x \mbox{ está en el cierre de }A\right\}.$ (El cierre se divide en los puntos del interior y los puntos frontera).
-
-	\item Se llama frontera de $A$, $\partial{A}$ a la intersección $\overline{A}\cap \left( \overline{\mathbb{R}\backslash A}\right)=\overline{A} \backslash \interior(A)$.
+	\item $A$ se dice abierto si $A=\interior(A)=\mathring{A}.$ (Serán las bolas que estarán completamente dentro del conjunto). No tendrá puntos frontera.
+	\item Decimos que $c\in\mathbb{R}^n$ está en el cierre (o clausura) de $A$, cuando $\exists \left\{a_n\right\}\in A | a_n\to c$ (Será cualquier bola de $c$ que corta al conjunto o serán los puntos que contienen a todo su frontera). 
+	\item Decimos que $A$ es cerrado cuando $A=\overline{A}$ donde 
+	$$\left\{ x\in \mathbb{R}^n: x \mbox{ está en el cierre de A} \right\}.$$
+	(El cierre serán los puntos interior y los puntos frontera).
+	\item Se llama frontera de $A$, $\partial{A}$ a la intersección $\overline{A}\cap \left( \overline{\mathbb{R}\backslash A}\right)=\overline{A} \backslash \interior(A)$ (Cualquier bola estará una parte en el interior y otra en el exterior del conjunto).
 	\item $a\in \relint(A)$ si existe $\delta>0$ tal que $B(a,\delta)\cap Aff(A)\subseteq A$.\\
-	    Lo que decimos es que la bola puede ser muy grande y vivir en $\mathbb{R}^3$ e intersecar en el plano, donde se corta transversalmente para proyectar la imagen.
+	    Lo que decimos es que la bola puede ser muy grande y vivir en $\mathbb{R}^3$ e intersecar en el plano, donde se corta transversalmente para proyectar la imagen como un circulo.
     \end{enumerate}
 \end{def.}
 
 
 % -------------------- EJEMPLO 1.3
 \begin{ejem}
-    Dibujemos un plano
+    Dibujemos un plano ($\mathbb{R}^3$)
+    \begin{multicols}{2}
     \begin{center}
-      \begin{tikzpicture}[scale=0.5]
+      \begin{tikzpicture}[scale=0.4]
 	% Define los vértices del romboide
 	\coordinate (A) at (-2,0);
 	\coordinate (B) at (6,0);
@@ -479,27 +479,39 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 	\item El objetivo será encontrar el punto optimo de un esfera que está proyectada en este plano. 
 	\item El conjunto tendrá que ser convexo.
     \end{itemize}
+    \end{multicols}
     Veamos algunas propiedades de este conjunto.
     \begin{enumerate}[1)]
-	\item $A$ es cerrado.- Cualquier punto que ponga en $B$ me puedo acercar por puntos de $B$.
+	\item $A$ es cerrado | Cualquier punto que ponga en $B$ me puedo acercar por puntos de $B$.
 	\item $B$ cerrado.
-	\item $\mathring{A}=\emptyset$.- Si yo ponga una bola, se saldrá del conjunto $A$.
-	\item $\mathring{B}=\emptyset$.- Ya que no existirá en el plano ninguna esfera. 
-	\item $\relint(A)=\emptyset$.
-	\item $\relint(B)=B\backslash A.$
+	\item $\mathring{A}=\emptyset$ | Si yo ponga una bola $\mathbb{R}^3$, se saldrá del conjunto $A$.
+	\item $\mathring{B}=\emptyset$ | Ya que no existirá en el plano ninguna esfera. 
+	\item $\relint(A)=\emptyset$; $\relint(B)=B\backslash A.$
     \end{enumerate}
 \end{ejem}
 
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{itemize}
+    \item La única diferencia entre combinación convexa y afín es que la combinación convexa es positiva.
+\end{itemize}
+}
+\switchcolumn[0]\noindent
 % -------------------- DEFINICIÓN 1.7
 \begin{def.}[Combinación convexa]\,\\\\
-    Sean $x_1,x_2,\ldots,x_k\in \mathbb{R}^n$ y $\lambda_1,\lambda_2,\ldots,\lambda_k\in \mathbb{R}$ tales que $\lambda_i\geq 0$ y $\displaystyle\sum_{i=1}^{k}\lambda_i=1$. Al vector
+    Sean $x_1,x_2,\ldots,x_k\in \mathbb{R}^n$ y $\lambda_1,\lambda_2,\ldots,\lambda_k\in \mathbb{R}$ tales que 
+    $$\lambda_i\geq 0\; \text{y} \;\displaystyle\sum_{i=1}^{k}\lambda_i=1.$$ 
+    Al vector
     $$\sum_{i=1}^{k}\lambda_ix_i=\lambda_1x_1+\lambda_2x_2+\ldots+\lambda_kx_k$$
-    se le llama combinación convexa de los puntos $\left\{x_1,\ldots,x_k\right\}$.\\
-
-	La única diferencia entre combinación convexa y afín es que la combinación convexa es positiva.
+    se le llama combinación convexa de los puntos $\left\{x_1,\ldots,x_k\right\}$.
 \end{def.}
 
-% -------------------- Observación 1.1
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{itemize}
+    \item En particular, las combinaciones convexas son los segmentos.
+\end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- OBSERVACIÓN 1.1
 \begin{obs}
     La definición para 2 puntos $\left\{x_1,x_2\right\}$ nos da las combinaciones convexas,
     $$\lambda x_1+(1-\lambda)x_2,\qquad \lambda\geq 0, (1-\lambda)\geq 0 \; \Leftrightarrow \; \lambda \in \left[0,1\right].$$
@@ -508,15 +520,21 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
     Nos quedamos con el segmento que los une, eso nos permitirá utilizar las propiedades de los números reales. Por lo que podremos realizar análisis.
 \end{obs}
 
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{itemize}
+    \item Decimos que $C$ es cerrado para las combinaciones convexas. Es decir, no me salgo del conjunto.
+\end{itemize}
+}
+\switchcolumn[0]\noindent
 % -------------------- DEFINICIÓN 1.8
 \begin{def.}[Convexo]\,\\\\
-    Un conjunto $C\in \mathbb{R}^n$ se dice convexo cuando $C$ contiene las combinaciones convexas de sus puntos, (Decimos que $C$ es cerrado para las combinaciones convexas), si y sólo si
+    Un conjunto $C\in \mathbb{R}^n$ se dice convexo cuando $C$ contiene las combinaciones convexas de sus puntos, si y sólo si
     $$\forall x_1,x_2\in C \Rightarrow \left[x_1,x_2\right]\subseteq C.$$
     Un conjunto es convexo si dados dos puntos el segmento que los une se queda adentro.
 \end{def.}
 
 % -------------------- EJEMPLO 1.4
-\begin{ejem}
+\begin{ejem}\,\\
     \begin{multicols}{3}
 	\begin{center}
 	  \begin{tikzpicture}[scale=0.8]
@@ -526,7 +544,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 	    % Rellena el interior del riñón con líneas
 	    \pattern[pattern=north east lines, pattern color=gray!50] ($(Center)+(-1,.5)$) .. controls ($(Center)+(0.2,2)$) and ($(Center)+(3,-.1)$) .. ($(Center)+(1,-.4)$) .. controls ($(Center)+(0,-.5)$) and ($(Center)+(0,-1)$) .. ($(Center)+(-1,-.9)$) .. controls ($(Center)+(-1.5,-1)$) and ($(Center)+(-3,-.5)$) .. ($(Center)+(-1,.5)$);
 	    % trazar una linea que una dos puntos del contorno pero este fuere del conjunto
-	    \draw[dashed](2.6,0.1)--(4,.55);
+	    \draw[dashed,red](2,-.1)--(3.7,.45);
 	    \node at (2.7,-.4) {\small No convexo};
 	  \end{tikzpicture}
 
@@ -565,40 +583,90 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
   \end{tikzpicture}
 \end{center}
 
-% ------------------- Definición 1.10
+% ------------------- DEFINICIÓN 1.9
 \begin{def.}
-    se llama Envoltura convexa de $A$ al menor conjunto convexo que lo contiene $\Leftrightarrow$ la intersección de todos los convexos que contienen a $A$, denotado por $co(A)$.
-    Es equivalente a decir que
-    $$co(A)=\left\{\mbox{Combinación convexa de puntos de A.}\right\}$$
+    se llama \textbf{envoltura convexa} de $A$ al menor conjunto convexo que lo contiene o a la intersección de todos los convexos que contienen a $A$, denotado por $\co(A)$.
+    También es equivalente a decir que
+    $$\co(A)=\left\{\mbox{Combinación convexa de puntos de A.}\right\}$$
 \end{def.}
 
-% ------------------- Ejercicio 
+{\color{blue}
+% ------------------- EJERCICIO 1.1
 \begin{ejer}
     Demostrar que la intersección de conjuntos convexos es convexo.\\\\
-	Demostración.-\; 
+	Demostración.-\; Demostremos por contradicción. Sean $C_1$ y $C_2$ dos conjuntos convexos. Y sea 
+	$$C=C_1\cap C_2.$$
+	no convexo. Esto significa que existen $x$ e $y$ tales que 
+	$$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\not\subseteq C.$$ 
+	Supongamos ahora que $x$ e $y$ están en $C$. Cómo ambos $C_1$ y $C_2$ son convexos, el segmento definido debe estar en ambos conjuntos. Es decir,
+	$$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\subseteq C.$$ 
+	Lo que contradice nuestra suposición inicial. Por lo tanto, $C$ es convexo.
 \end{ejer}
+}
 
 
-% ------------------- Definición 1.11
+% ------------------- DEFINICIÓN 1.11
 \begin{def.}[Cono]\,\\\\
     Un conjunto $C\subseteq \mathbb{R}^n$ se llama cono si y sólo si
     $$\lambda x\in C \mbox{ si } x\in C,\; \lambda \geq 0.$$
 
     Contiene los rayos que pasan por el cero e intersecan a un punto dado.
-    \begin{itemize}
+
+% ------------------- PROPIEDADES
+\begin{prop}[Propiedades de los conos]\,\\
+    \begin{enumerate}[\bfseries a)]
 	\item Un cono siempre contiene al origen.
-	\item La envoltura cónica de un conjunto es $con(A)=\left\{\lambda : \lambda \geq 0, a\in A\right\}$ la intersección de todos los conos que contiene a $A$.
+	\item La envoltura cónica de un conjunto es $\con(A)=\left\{\lambda : \lambda \geq 0, a\in A\right\}$. La intersección de todos los conos que contiene a $A$.
 	\item Un cono $C$ es convexo si y sólo si 
 	$$\lambda_1,\lambda_2\in C \Rightarrow \lambda_1x_1+\lambda_2x_2\in C, \; \forall \lambda_1,\lambda_2 \geq 0.$$
-    \end{itemize}
+    \item $C$ es un cono convexo si 
+    $$\sum_{i=1}^m \lambda_ix_i\in C$$
+    para $\lambda_i\geq 0.$
+    \end{enumerate}
+\end{prop}
 \end{def.}
 
-El hiperplano es un caso particular del estudio convexo.
+\
 
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{itemize}
+    \item El hiperplano es un caso particular del estudio convexo.
+    \item Hiperplano:
+    \begin{center}
+	\begin{tikzpicture}[scale=0.4]
+	  % Define los vértices del romboide
+	  \coordinate (A) at (0,0);
+	  \coordinate (B) at (4,0);
+	  \coordinate (C) at (9,2);
+	  \coordinate (D) at (5,2);
+	  % Dibuja el romboide y etiqueta sus vértices
+	  \draw (A) -- (B) -- (C) -- (D) -- cycle;
+	  % Que el plano se llame P
+	  \node [below right] at (B) {$H$};
+	  % trazar una linea entrecortada perpedicular al plano y los puntos extremos que tengan un punto negro
+	  \draw[<-](4,2.5)node[above left]{$a$} -- (4,.6);
+	  \fill (4,2.5) circle (2pt);
+	  \fill (4,.6) circle (2pt);
+	\end{tikzpicture}
+    \end{center}
+    \item En $\mathbb{R^2}$ los hiperplanos son rectas.
+    \item En $\mathbb{R}^n$, los hiperplanos serán uno menos de dimensión.
+\end{itemize}
+}
+\switchcolumn[0]\noindent
 % ------------------- Definición 1.12
 \begin{def.}[Hiperplano]\,\\\\
     $H\subseteq \mathbb{R}^n$ es un \textbf{hiperplano} si existe $a\in \mathbb{R}^n \backslash\left\{0\right\}$ tal que
-    $H=\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = 0\right\} = a^\perp$
+    $$H=\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = 0\right\} = a^\perp.$$
 \end{def.}
 
 \end{paracol}
+
+{\color{blue}
+%------------------- PROPOSICIÓN 1.1
+\begin{proposicion}
+    $H\subseteq \mathbb{R}^n$ es un hiperplano si y sólo si, $H$ es un subespacio de dimensión $n-1$.\\\\
+	Demostración.-\; 
+\end{proposicion}
+}
+

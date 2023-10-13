@@ -31,6 +31,7 @@ waveinfo('haar');
     plot(D1); title('Detalle'); axis([1 ls -0.1 0.1]);
 
 
+
 % FUNCIONES CON MATLAB
 
     % cumenergy
@@ -56,7 +57,7 @@ waveinfo('haar');
     plot(y);
 
     %estudio de variabilidad de la señal y a continuacion, 
-    ...obteniendo el valor m ´ aximo de dicha variabilidad
+    ...obteniendo el valor maximo de dicha variabilidad
     ...entre todas sus subsenales de longitud 100. Tomamos 
     ...como y una senal con 4096 datos evaluados con la funcion
     vary100 = medmov(dify,100);

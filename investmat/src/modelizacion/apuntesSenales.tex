@@ -45,7 +45,7 @@ Vamos a reformular este proceso utilizando herramientas de álgebra lineal. Más
 \begin{itemize}
     \item Si $\left\{v_1,\ldots,v_m\right\}\subset \mathbb{R}^N$, la envoltura (span) lineal de dicho conjunto de vectores es $lin(v_1,\ldots,v_m)$.
     \item Si $v,W\in \mathbb{R}^N$, su producto escalar es $v\cdots w=v_1w_1+\cdots+v_N W_N$.
-    \item Un sistema de vectores $\left\{v_1,\ldots,v_m\right\}$ es ortonormal si cada uno tiene norma $1$ y $v_i\cdots v_j=0$ si $i\neq j$. En ese caso, cada vector $u\in lin(v_1,\ldots,v_m)$ se expresa de forma única como $u=(u\cdot v_1)v_1+\cdots+(u\cdot v_m)v_m.$
+    \item Un sistema de vectores $\left\{v_1,\ldots,v_m\right\}$ es ortonormal si cada uno tiene norma $1$ y $v_i\cdot v_j=0$ si $i\neq j$. En ese caso, cada vector $u\in lin(v_1,\ldots,v_m)$ se expresa de forma única como $u=(u\cdot v_1)v_1+\cdots+(u\cdot v_m)v_m.$
     \item Dos subespacios $V,W\subset \mathbb{R}^N$ son ortogonales si cada elemento de $V$ es ortogonal a cada uno de $W$, y su suma es directa (y ortogonal), la cual denotamos por $V\oplus^{\perp} W$.
     \item si $v\in \mathbb{R}^N$ y $W$ es un subespacio de $\mathbb{R}^N$, la proyección ortogonal $w$ de $v$ sobre $W$ es el único vector $w\in W$ tal que $v-w$ es ortogonal a $W$ (y coincide con el de mínima distancia en $W$ a $v$).
     \item Una aplicación lineal $T:\mathbb{R}^N\to \mathbb{R}^N$ es una transformación ortogonal si $Tu\cdot Tv=u\cdot v$  para $u,v\in \mathbb{R}^N$) para $u,v\in \mathbb{R}^N$ arbitrarios (equivalente a $\|Tu\|=\|u\|$ para todo $u$). Tamién, que su expresión matricial en una base ortonormal sea una matriz $A$ ortogonal ($A\cdot A^t=I$).
@@ -77,4 +77,12 @@ $$
 
 
 
+
+\chapter{Detección de roturas en motores de inducción eléctrica}
+
+\section{Muestreo y bandas de frecuencia}
+\begin{itemize}
+    \item Se realizan muestreos de dos segundos de duración del momento del arranque del motor.
+    \item La frecuencia de muestreo es de $5000$ muestras por segundo.
+\end{itemize}
 
