@@ -426,10 +426,18 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 
 \switchcolumn[1]*{\noindent\scriptsize
 \begin{itemize}
-    \item El concepto de punto interior será importante, ya que podremos acercarnos al punto $a$ desde todas las direcciones. 
+    \item El concepto de punto interior es importante, ya que podemos acercarnos al punto $a$ de todas las direcciones. 
     \item Si es un punto relativo interior nos acercaremos por todos los lados del conjunto.
     \item El punto de adherencia o clausura es un punto el cual me puedo acercar de alguna forma.
 \end{itemize}
+\begin{enumerate}[1)]
+    \item En $\mathbb{R}^2$ será un circulo y en $\mathbb{R}^3$ será una esfera.
+    \item Son las bolas que están completamente dentro del conjunto. Es decir, no tienen puntos frontera.
+    \item Es cualquier bola de $c$ que corta al conjunto o los puntos que contienen a toda su frontera.
+    \item El cierre son los puntos interior y los puntos frontera.
+    \item Cualquier bola está en el interior cómo en el exterior del conjunto.
+    \item Imaginamos un corte transversal para proyectar una imagen. 
+\end{enumerate}
 }
 \switchcolumn[0]\noindent
 % -------------------- DEFINICIÓN 1.6
@@ -438,15 +446,12 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
     \begin{enumerate}[1)]
 	\item $a\in A$ está en el interior de $A$ $\left(a\in \interior(A) \mbox{ o } a\in \mathring{A} \right)$, cuando existe $\delta>0$ tal que $B(a,\delta)\subseteq A.$
 	$$B(a,\delta)=\left\{x\in \mathbb{R}^n:\|x-a\|_2 \leq \delta.\right\}.$$
-	Por ejemplo en $\mathbb{R}^2$ será un circulo y $\mathbb{R}^3$ será una esfera.
-	\item $A$ se dice abierto si $A=\interior(A)=\mathring{A}.$ (Serán las bolas que estarán completamente dentro del conjunto). No tendrá puntos frontera.
-	\item Decimos que $c\in\mathbb{R}^n$ está en el cierre (o clausura) de $A$, cuando $\exists \left\{a_n\right\}\in A | a_n\to c$ (Será cualquier bola de $c$ que corta al conjunto o serán los puntos que contienen a todo su frontera). 
+	\item $A$ se dice abierto si $A=\interior(A)=\mathring{A}.$ 
+	\item Decimos que $c\in\mathbb{R}^n$ está en el cierre (o clausura) de $A$, cuando $\exists \left\{a_n\right\}\in A | a_n\to c$ . 
 	\item Decimos que $A$ es cerrado cuando $A=\overline{A}$ donde 
 	$$\left\{ x\in \mathbb{R}^n: x \mbox{ está en el cierre de A} \right\}.$$
-	(El cierre serán los puntos interior y los puntos frontera).
 	\item Se llama frontera de $A$, $\partial{A}$ a la intersección $\overline{A}\cap \left( \overline{\mathbb{R}\backslash A}\right)=\overline{A} \backslash \interior(A)$ (Cualquier bola estará una parte en el interior y otra en el exterior del conjunto).
 	\item $a\in \relint(A)$ si existe $\delta>0$ tal que $B(a,\delta)\cap Aff(A)\subseteq A$.\\
-	    Lo que decimos es que la bola puede ser muy grande y vivir en $\mathbb{R}^3$ e intersecar en el plano, donde se corta transversalmente para proyectar la imagen como un circulo.
     \end{enumerate}
 \end{def.}
 
@@ -457,17 +462,13 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
     \begin{multicols}{2}
     \begin{center}
       \begin{tikzpicture}[scale=0.4]
-	% Define los vértices del romboide
 	\coordinate (A) at (-2,0);
 	\coordinate (B) at (6,0);
 	\coordinate (C) at (11,3);
 	\coordinate (D) at (3,3);
-	% Dibuja el romboide y etiqueta sus vértices
 	\draw (A) -- (B) -- (C) -- (D) -- cycle;
-	% Dibuja el contorno del riñón
 	\coordinate (Center) at ($(A)!0.5!(C)$);
 	\draw[] ($(Center)+(-1,.5)$) .. controls ($(Center)+(0.2,2)$) and ($(Center)+(3,-.1)$) .. ($(Center)+(1,-.4)$) .. controls ($(Center)+(0,-.5)$) and ($(Center)+(0,-1)$) .. ($(Center)+(-1,-.9)$) .. controls ($(Center)+(-1.5,-1)$) and ($(Center)+(-3,-.5)$) .. ($(Center)+(-1,.5)$);
-	% Rellena el interior del riñón con líneas
 	\pattern[pattern=north east lines, pattern color=gray!50] ($(Center)+(-1,.5)$) .. controls ($(Center)+(0.2,2)$) and ($(Center)+(3,-.1)$) .. ($(Center)+(1,-.4)$) .. controls ($(Center)+(0,-.5)$) and ($(Center)+(0,-1)$) .. ($(Center)+(-1,-.9)$) .. controls ($(Center)+(-1.5,-1)$) and ($(Center)+(-3,-.5)$) .. ($(Center)+(-1,.5)$);
 	\node at ($(Center)+(-.2,.2)$) {\small$B$};
 	\node at ($(Center)+(1.9,.7)$) {\small$A$};
@@ -605,15 +606,19 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 }
 
 
-% ------------------- DEFINICIÓN 1.11
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Contiene los rayos que pasan por el cero e intersecan a un punto dado.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% ------------------- DEFINICIÓN 1.10
 \begin{def.}[Cono]\,\\\\
     Un conjunto $C\subseteq \mathbb{R}^n$ se llama cono si y sólo si
     $$\lambda x\in C \mbox{ si } x\in C,\; \lambda \geq 0.$$
 
-    Contiene los rayos que pasan por el cero e intersecan a un punto dado.
-
-% ------------------- PROPIEDADES
-\begin{prop}[Propiedades de los conos]\,\\
+% ------------------- PROPIEDAD 1
+\begin{prop}[Propiedades de los conos]\,
     \begin{enumerate}[\bfseries a)]
 	\item Un cono siempre contiene al origen.
 	\item La envoltura cónica de un conjunto es $\con(A)=\left\{\lambda : \lambda \geq 0, a\in A\right\}$. La intersección de todos los conos que contiene a $A$.
@@ -633,7 +638,7 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
     \item El hiperplano es un caso particular del estudio convexo.
     \item Hiperplano:
     \begin{center}
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.4,>=Triangle]
 	  % Define los vértices del romboide
 	  \coordinate (A) at (0,0);
 	  \coordinate (B) at (4,0);
@@ -660,13 +665,159 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
     $$H=\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = 0\right\} = a^\perp.$$
 \end{def.}
 
-\end{paracol}
-
 {\color{blue}
 %------------------- PROPOSICIÓN 1.1
 \begin{proposicion}
     $H\subseteq \mathbb{R}^n$ es un hiperplano si y sólo si, $H$ es un subespacio de dimensión $n-1$.\\\\
-	Demostración.-\; 
+	Demostración.-\; Primero, supongamos que $H$ es un hiperplano. Entonces, por definición, existe un vector $a \in \mathbb{R}^n \setminus \{0\}$ tal que 
+	$$H = \left\{x \in \mathbb{R}^n : a^T x = 0\right\}=a^{\perp}$$ 
+	Esto significa que $H$ es el conjunto de todos los vectores que son ortogonales a $a$. Recordemos que cualquier múltiplo escalar del primer vector también es ortogonal al segundo; además, si dos vectores son ortogonales a otro, entonces la suma de los dos primeros vectores también será ortogonal al tercer vector. Es decir, la ortogonalidad preserva las operaciones de suma y multiplicación por escalares. Por lo tanto, $H$ es un subespacio de $\mathbb{R}^n$. Ahora bien, como $a$ no es el vector cero, el conjunto $\{a\}$ es linealmente independiente (ya que no hay otros vectores), y por lo tanto forma una base para un subespacio de $\mathbb{R}^n$. Como este subespacio es ortogonal a $H$, la dimensión de $H$ debe ser $n - 1$.
+
+	Ahora supongamos que $H$ es un subespacio de $\mathbb{R}^n$ de dimensión $n - 1$. Entonces, existe un subespacio de $\mathbb{R}^n$ que es ortogonal a $H$ y tiene dimensión $1$. Este subespacio tiene una base formada por un único vector, digamos $a$. Entonces, para cualquier vector $x \in H$, tenemos que $a^T x = 0$, lo que significa que $x$ es ortogonal a $a$. Por lo tanto, podemos escribir $H = \{x \in \mathbb{R}^n : a^T x = 0\}$, lo que significa que $H$ es un hiperplano.
 \end{proposicion}
 }
 
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{center}
+    \begin{tikzpicture}[scale=0.4,>=Triangle]
+	\draw[rotate around={70:(0,0)}] (0,0) ellipse (2.5cm and 1.2cm);
+	\pattern[pattern=north east lines, pattern color=gray!50, rotate around={70:(0,0)}] (0,0) ellipse (2.5cm and 1.2cm);
+	\draw (1,-4) -- (3,3);
+	\draw (2,-4) -- (4,3);
+	\fill (3,-0.5) circle (4pt) node[above]{$0$};
+	\draw (3,-4) -- (5,3);
+    \end{tikzpicture}
+\end{center}
+\begin{itemize}
+    \item Un hiperplano en $\mathbb{R}^2$ será sencillamente las rectas.
+    \item Esa recta me va a definir dos semiespacios uno al lado del otro.
+    \item Nos interesará desplazar esa recta que contiene al $0$. 
+    \item La $b$ nos dará una notación de distancia entre los hiperplanos.
+\end{itemize}
+}
+\switchcolumn[0]\noindent
+Observemos que la recta que pasa por el cero estará definida por:
+    $$\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = 0\right\} = a^\perp.$$
+Y todos los hiperplanos que serán paralelos a esa recta estarán dadas por:
+$$\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = b\right\}.$$
+ Esto, nos dará dos semiespacios dados por:
+$$\left\{x\in \mathbb{R}^n : a^Tx\leq b\right\}$$
+$$\left\{x\in \mathbb{R}^n : a^Tx > b\right\}$$
+Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de análisis de datos. Por ejemplo cuando marcamos con lineas cuando existen datos por arriba y por abajo.
+
+%------------------- EJEMPLO 1.5
+\begin{ejem}\,
+    \begin{center}
+	\begin{tikzpicture}[scale=1,>=Triangle]
+	    \fill (0,3) circle (2pt);
+	    \draw[dashed] (0,5) -- (2,2)node[below]{$a^Tx=0$};
+	    \draw[->] (1,3.5) -- (2,4.2);
+	    \fill (1,3.5) circle (1.5pt) node[below left]{\small$0$};
+	    \draw (1,6) -- (3,3)node[below]{$a^Tx=b$};
+	    \fill (1.66,5) circle (1.7pt)node[left]{$x$};
+	    \fill (2.6,3.6) circle (1.7pt)node[left]{$x_0$};
+	    \draw[->,green] (2.6,3.6) -- (1.66,5);
+	    \draw[->] (2.6,3.6) -- (3.5,4.2);
+	    \draw (3.2,3.9)node[below]{\small$a$};
+	\end{tikzpicture}
+    \end{center}
+    Para decidir en que dirección estará el punto, debemos tomar en cuenta a que lado apunto $a$, que nos marcará un punto perpendicular a ese conjunto. De donde,
+    $$\langle (x-x_0), a\rangle = 0.$$
+    Si queremos en producto matricial se tiene,
+    $$
+    \begin{array}{rcl}
+	a^T(x-x_0)&=&0\\\\
+	a^Tx-a^Tx_0&=&0\\\\
+	a^Tx&=&a^Tx_0\\\\
+	a^Tx &=& b
+    \end{array}
+    $$
+\end{ejem}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Estas aplicaciones la llaman también aplicaciones del dual.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+%------------------- EJEMPLO 1.6
+\begin{ejem}\,
+    \begin{center}
+	\begin{tikzpicture}[scale=1, >=Triangle]
+	    \pattern[pattern=north east lines, pattern color=gray!35, rotate around={34:(1,6)}] (1,6) rectangle (2.5cm,2.4cm);
+	    \fill (0,3) circle (2pt);
+	    \draw[dashed] (0,5) -- (2,2);
+	    \draw[->] (1,3.5) -- (2,4.2);
+	    \fill (1,3.5) circle (1.5pt) node[below left]{\small$0$};
+	    \draw (1,6) -- (3,3)node[below]{$a^Tx=b$};
+	    \fill (2.7,5) circle (1.7pt)node[left]{$x$};
+	    \fill (2.6,3.6) circle (1.7pt)node[left]{$x_0$};
+	    \draw[->,green] (2.6,3.6) -- (2.7,5);
+	    \draw[->] (2.6,3.6) -- (3.5,4.2);
+	    \draw (3.2,3.9)node[below]{\small$a$};
+	    \draw (2,6.5)node[below]{$H^+$};
+	    \draw (.7,5.5)node[below]{$H^-$};
+	\end{tikzpicture}
+    \end{center}
+    El angulo de $(x-x_0,a)$ esta entre $-90^\circ$ y $90^\circ$. En términos de cosenos sería:
+    $$\cos\left[\text{ang}(x-x_0,a)\right]\in [0,1]$$
+    Luego, 
+    $$0\leq \cos\left[\text{ang}(x-x_0,a)\right]=\frac{\langle (x-x_0),a\rangle}{\|x-x_0\|_2\|a\|_2}$$
+    Por lo tanto,
+    $$
+    \begin{array}{rcl}
+	x\in H^+ &\Leftrightarrow& \langle (x-x_0),a\rangle = \cos\left[\text{ang}(x-x_0),a\right]\|x-x_0\|_2\|a\|_2 \geq 0\\\\
+		 &\Leftrightarrow& \langle (x-x_0),a\rangle \geq 0\\\\
+		 &\Leftrightarrow& \langle x,a\rangle \geq \langle x_0,a\rangle\\\\
+		 &\Leftrightarrow& a^Tx\geq a^Tx_0\\\\
+		 &\Leftrightarrow& a^Tx\geq b
+    \end{array}
+    $$
+    Ahora, si $x\in H^-$, entonces $a^Tx\leq b$.
+\end{ejem}
+
+
+\section{Bolas Euclideas}
+
+\switchcolumn[1]*{\scriptsize
+\begin{center}
+    \begin{tikzpicture}[scale=.6,line cap=round, line join=round, >=Triangle]
+      \clip(-2.19,-2.49) rectangle (2.66,2.58);
+      \draw(0,0) circle (2cm);
+      \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (2cm and 0.9cm);
+      \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (0.9cm and 2cm);
+      \draw[->](0,0)-- (0.70,1.07);
+      \draw [->,gray!50] (0,0) -- (0,2);
+      \draw [->,gray!50] (0,0) -- (-0.81,-0.79);
+      \draw [->,gray!50] (0,0) -- (2,0);
+      \draw [dotted] (0.7,1)-- (0.7,-0.46);
+      \draw [dotted] (0,0)-- (0.7,-0.46);
+      \draw (0.9,1.3) node[] {$a$};
+    \end{tikzpicture}
+\end{center}
+}
+\switchcolumn[0]\noindent
+Tenemos que,
+
+$$
+\begin{array}{rcl}
+    B(c,r)&=&\left\{x\in \mathbb{R}^n : \|x-c\|_2<r\right\}\\\\
+	  &=& \left\{x\in \mathbb{R}^n : (x-c)^T(x-c)<r^2\right\}.
+\end{array}
+$$
+
+{\color{blue}
+%------------------- EJERCICIO 1.2
+\begin{ejer}
+    Demostrar que $B(c,r)=\left\{x\in \mathbb{R}^n : (x-c)^T(x-c)<r^2\right\}$ es convexo.\\\\
+	Demostración.-\; 
+\end{ejer}
+}
+
+%------------------- PROPIEDAD 1
+\begin{prop}
+    $$B(c,r)=c+r$$
+\end{prop}
+
+
+\end{paracol}
