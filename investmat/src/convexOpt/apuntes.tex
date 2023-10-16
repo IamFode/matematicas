@@ -1,4 +1,4 @@
-\chapter{Convexidad y Optimización}
+\chapter{Introducción a la optimización convexa}
 
 \columnratio{0.7,0.3}
 \begin{paracol}{2}
@@ -250,7 +250,13 @@ $$
 (Las ecuaciones normales vienen dadas por la perpendicularidad.)
 \end{ejem}
 
+\end{paracol}
 
+
+
+\chapter{Conjuntos convexos}
+
+\begin{paracol}{2}
 
 \section{Conjuntos convexos de \boldmath $\mathbb{R}^n$}
 El dominio serán conjuntos convexos o dominio efectivo.
@@ -440,7 +446,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 \end{enumerate}
 }
 \switchcolumn[0]\noindent
-% -------------------- DEFINICIÓN 1.6
+% -------------------- DEFINICIÓN 2.6
 \begin{def.}[Topología de \boldmath$\mathbb{R}^n$]\,\\\\
     Sean $A\subseteq \mathbb{R}^n$ y $a\in \mathbb{R}^n$:
     \begin{enumerate}[1)]
@@ -456,7 +462,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 \end{def.}
 
 
-% -------------------- EJEMPLO 1.3
+% -------------------- EJEMPLO 2.3
 \begin{ejem}
     Dibujemos un plano ($\mathbb{R}^3$)
     \begin{multicols}{2}
@@ -639,16 +645,12 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
     \item Hiperplano:
     \begin{center}
 	\begin{tikzpicture}[scale=0.4,>=Triangle]
-	  % Define los vértices del romboide
 	  \coordinate (A) at (0,0);
 	  \coordinate (B) at (4,0);
 	  \coordinate (C) at (9,2);
 	  \coordinate (D) at (5,2);
-	  % Dibuja el romboide y etiqueta sus vértices
 	  \draw (A) -- (B) -- (C) -- (D) -- cycle;
-	  % Que el plano se llame P
 	  \node [below right] at (B) {$H$};
-	  % trazar una linea entrecortada perpedicular al plano y los puntos extremos que tengan un punto negro
 	  \draw[<-](4,2.5)node[above left]{$a$} -- (4,.6);
 	  \fill (4,2.5) circle (2pt);
 	  \fill (4,.6) circle (2pt);
@@ -659,14 +661,14 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 \end{itemize}
 }
 \switchcolumn[0]\noindent
-% ------------------- Definición 1.12
+% ------------------- DEFINICIÓN 2.11
 \begin{def.}[Hiperplano]\,\\\\
     $H\subseteq \mathbb{R}^n$ es un \textbf{hiperplano} si existe $a\in \mathbb{R}^n \backslash\left\{0\right\}$ tal que
     $$H=\left\{x\in \mathbb{R}^n : \langle a,x\rangle = a^T x = 0\right\} = a^\perp.$$
 \end{def.}
 
 {\color{blue}
-%------------------- PROPOSICIÓN 1.1
+%------------------- PROPOSICIÓN 2.1
 \begin{proposicion}
     $H\subseteq \mathbb{R}^n$ es un hiperplano si y sólo si, $H$ es un subespacio de dimensión $n-1$.\\\\
 	Demostración.-\; Primero, supongamos que $H$ es un hiperplano. Entonces, por definición, existe un vector $a \in \mathbb{R}^n \setminus \{0\}$ tal que 
@@ -781,7 +783,7 @@ Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de an
 
 \switchcolumn[1]*{\scriptsize
 \begin{center}
-    \begin{tikzpicture}[scale=.6,line cap=round, line join=round, >=Triangle]
+    \begin{tikzpicture}[scale=.55,line cap=round, line join=round, >=Triangle]
       \clip(-2.19,-2.49) rectangle (2.66,2.58);
       \draw(0,0) circle (2cm);
       \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (2cm and 0.9cm);
@@ -798,7 +800,6 @@ Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de an
 }
 \switchcolumn[0]\noindent
 Tenemos que,
-
 $$
 \begin{array}{rcl}
     B(c,r)&=&\left\{x\in \mathbb{R}^n : \|x-c\|_2<r\right\}\\\\
@@ -809,15 +810,180 @@ $$
 {\color{blue}
 %------------------- EJERCICIO 1.2
 \begin{ejer}
-    Demostrar que $B(c,r)=\left\{x\in \mathbb{R}^n : (x-c)^T(x-c)<r^2\right\}$ es convexo.\\\\
-	Demostración.-\; 
+    Demostrar que $B(c,r)$ es convexo.\\\\
+	Demostración.-\; Sean $x_0,x_1$ en $B(c,r)$ y $\lambda\in[0,1]$. Demostraremos que 
+	$$(1-t)x_0+\lambda x_1$$
+	esta también en $B(c,r)$. Primero, notemos que 
+	$$\|x_0-c\|_2<r \quad \text{y}\quad \|x_1-c\|_2<r.$$
+	Luego, por la definición de convexidad, y por la desigualdad triangular,
+	$$
+	\begin{array}{rcl}
+	    \|\left[(1-\lambda)x_0+\lambda x_1\right]-c\|_2&=&\|\lambda(x_0-c)+(1-\lambda)(x_1-c)\|_2\\\\
+					      &\leq& \lambda\|x_0-c\|_2+(1-\lambda)\|x_1-c\|_2\\\\
+					      &<& \lambda r+(1-\lambda)r.
+	\end{array}
+	$$
+	Por lo tanto,
+	$$\|(1-\lambda)x_0+\lambda x_1-c\|_2<r.$$
+	Concluimos que, $B(r,c)$ es convexo. (La demostración se basó en el libro de Boyd).
 \end{ejer}
 }
 
-%------------------- PROPIEDAD 1
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Si la bola está al rededor del cero u otro punto, la bola es la misma. Esto en distancias no tiene porque ser cierto.
+	\item Todas las bolas que podamos dibujar podremos representarlos con centro cero, ya sean grandes o pequeñas.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+%------------------- PROPIEDAD 2
 \begin{prop}
-    $$B(c,r)=c+r$$
+    Mediante la suma de Minskowsky tenemos,
+    $$B(c,r)=c+rB(0,r).$$
 \end{prop}
+
+\section{Elipsoides}
+
+\switchcolumn[1]*{\scriptsize
+    \begin{itemize}
+	\item Cómo es simétrica y tiene valores propios positivos, se puede utilizar la diagonalización y escribir la matriz $P$ cómo producto de una matriz diagonal por dos matrices de cambio que en realidad son ortonormales.
+	\item $z^TDz$, se puede hacer más grande o mas pequeña.
+	\item Los vectores de $L$ me dan los vectores que apuntan a la elipse.
+	\item $z^TDz$ es el circulo.
+	\item $D$ serán las curvaturas principales de la elipse.
+	\item La $L$ gira la elipsoide.
+	\item Los elipsiodes se manejan para manejar imagenes donde incluye un objeto.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+$$
+\begin{array}{rcllc}
+    \mathcal{E}&=&\left\{x\in \mathbb{R}^n : (x-c)^TP^{-1} (x-c)\leq 1\right\}&&(1)\\\\
+	       &=& c+\left\{y\in \mathbb{R}^n : y^r P^{-1} y \leq 1\right\} & (y=x-c)&(2)\\\\
+	       &=&c+\left\{y\in \mathbb{R}^n : y^T L D L^T y \leq 1\right\}&&(3)\\\\
+	       &=&c+\left\{Lz : z^T D z \leq 1\right\} & (z=L^Ty)&(4)\\\\
+	       &=& c+L\left\{z:z^TDz\leq 1\right\}. &&(5)
+\end{array}
+$$
+donde 
+$$P=P^T>0 \text{ (Simétrica y valores propios}>0).$$
+y
+$$P^{-1}=LDL^T,\; \text{Si } P\in \mathcal{M}_{n\times n}.$$
+donde $D$ es una matriz diagonal con valores propios de $1/P$.
+
+\begin{center}
+\begin{tikzpicture}[rotate=45, >=Triangle,scale=.6]
+    \draw (0,0)node[below]{\small$c$} ellipse (2cm and 1cm);
+    \draw[->] (0,0) -- node[above]{\tiny$L$} (2,0);
+    \draw[->] (0,0) -- node[above]{\tiny$L$} (0,1);
+    \draw(-2,-1)node[below]{\small$(1)$};
+
+    \draw (2,-2)node[above]{\small$\Rightarrow$};
+
+    \draw (4,-4)node[below left]{\small$0$} ellipse (2cm and 1cm);
+    \draw[->] (4,-4) -- node[above]{\tiny$L$} (6,-4);
+    \draw[->] (4,-4) -- node[above]{\tiny$L$} (4,-3);
+    \draw(1.5,-4)node[below]{\small$(3)$};
+
+    \draw[rotate=-45,color=green] (5.7,0) ellipse (2cm and 1cm);
+    \draw[color=green](6,-5.7)node[below]{\small$(5)$};
+    \draw[->,rotate=-45,color=green] (5.7,0) -- node[above]{\tiny$L$} (7.7,0);
+    \draw[->,rotate=-45,color=green] (5.7,0) -- node[above]{\tiny$L$} (5.5,-1);
+\end{tikzpicture}
+\end{center}
+
+
+\section{Bolas generales y conos asociados}
+%------------------- DEFINICION 2.12
+\begin{def.}[Norma] $\|\cdot\|:\mathbb{R}^n\to \mathbb{R}^+.$
+
+Algunas condiciones:
+\begin{enumerate}[\bfseries i)]
+    \item $\|x\|=0 \Leftrightarrow x=0.$
+    \item Si la norma de un vector se eleva al cuadrado, se esperara que la longitud sea el doble. 
+	$$\|\lambda x\|=|\lambda|\|x\| \quad \forall \lambda \in \mathbb{R}.$$
+    \item La desigualdad triangular.
+	$$\|x+y\|\leq \|x\|+\|y\|.$$
+\end{enumerate}
+\end{def.}
+
+Recordemos que,
+
+$$
+\begin{array}{rcl}
+    B(c,r)&=&\left\{x\in \mathbb{R}^n : \|x-c\|\leq r\right\}\\\\
+	  &=&\left\{x\in \mathbb{R}^n : d_{\|\cdot\|}(x,c)\leq r\right\}.
+\end{array}
+$$
+
+Donde $B(c,r)$ es convexa.
+
+\subsection{Cono asociado a una norma}
+
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Una vez que conoces la $B(0,1)$ se conoce todas las demás.
+	\item No se puede derivar en el origen, ya que estará en el pico del cono.
+	\item Podemos analizar todo lo que está dentro del cono,
+	\item A esto se le llama epigrafo de la función, es decir dibujar la función y pintar todo lo que hay arriba. 
+	\item La definición del cono es cerrada.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+%------------------- DEFINICION 2.13
+\begin{def.}
+    $$C_{\|\cdot\|}=\left\{(x,t)\in \mathbb{R}^n \times \mathbb{R} : \|x\|\leq t\right\}.$$
+\begin{center}
+    \begin{tikzpicture}[scale=0.8,>=Triangle]
+      \draw(-2.5,-1.5) -- (1.8,-1.5) -- (2.8,-.7);
+      \draw(3.2,-1.5)node[above]{\small$B(0,1)$};
+      \draw[dashed](2.8,-.7) -- (-1.5,-.7);
+      \draw(-1.5,-.7) -- (-2.5,-1.5);
+      \draw[opacity=.7] (0,-1.05) ellipse (.67cm and 0.2cm);
+	\draw[opacity=.5](0,0) ellipse (1.5cm and 0.3cm);
+	\draw[<-] (-1.5,0) -- (0,-2);
+	\draw[<-] (1.5,0) -- (0,-2);
+	\draw[opacity=.4] (0,-2) ellipse (.67cm and .2cm); % elipse en la base
+	\draw[opacity=.3] (-1.5,-2) -- (1.5,-2); % recta horizontal
+	\draw[opacity=.3] (-.7,-2.5) -- (.6,-1.6); % recta vertical
+    \end{tikzpicture}
+\end{center}
+
+$$\left\{(x,t):t=1\cap C_{\|\cdot\|}\right\}=\overline{B(x,t)}.$$
+\end{def.}
+
+\subsubsection{Tipos de norma}
+\begin{enumerate}[\bfseries a)]
+    \item $\|\cdot\|_1:\mathbb{R}^2\to \mathbb{R}$, $\|(x,y)\|_1=|x|+|y|.$ Si lo definimos en $\mathbb{R}^8$ las sumas serán la suma de sus componentes. Si queremos dibujar $\overline{B(0,1)}$
+    \begin{center}
+	\begin{tikzpicture}[scale=.4]
+	    \draw (-.5,0) -- (1.5,2) -- (3.5,0) -- (1.5,-2) -- cycle; % Dibuja el rombo
+	    \draw (-.5,0) -- (3.5,0)node[right]{\tiny$e_1=(1,0)$}; % Dibuja la línea horizontal
+	    \draw (1.5,2)node[above]{\tiny$e_2(0,1)$} -- (1.5,-2); % Dibuja la línea vertical
+	\end{tikzpicture}
+    \end{center}
+    Donde, $e_1$ y $e_2$ se llaman extremales.
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8,>=Triangle]
+      \draw(-2.5,-1.5) -- (1.8,-1.5) -- (2.8,-.7);
+      \draw(3.2,-1.5)node[above]{\small$B(0,1)$};
+      \draw[dashed](2.8,-.7) -- (-1.5,-.7);
+      \draw(-1.5,-.7) -- (-2.5,-1.5);
+	\draw[<-] (-1.5,0) -- (0,-2);
+	\draw[<-] (1.5,0) -- (0,-2);
+	\draw[<-] (-.3,-.5) -- (0,-2);
+	\draw[<-,dashed] (.5,.4) -- (0,-2);
+	\draw[opacity=.5](-1.5,0) -- (.5,.4) -- (1.5,0) -- (-.3,-.5) -- cycle;
+	\draw[opacity=.5](-.75,-1) -- (0.25,-.8) -- (.75,-1) -- (-.15,-1.3) -- cycle;
+	\draw[opacity=.3] (-1.5,-2) -- (1.5,-2); % recta horizontal
+	\draw[opacity=.3] (-.7,-2.5) -- (.6,-1.6); % recta vertical
+    \end{tikzpicture}
+\end{center}
+\item $\|\cdot\|_\infty: \mathbb{R}^n\to \mathbb{R}$, $\|x,y\|_\infty=\max\left\{|x|,|y|\right\}$. Compara y coge la más grande.
+\end{enumerate}
+
 
 
 \end{paracol}
