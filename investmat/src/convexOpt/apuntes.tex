@@ -981,9 +981,59 @@ $$\left\{(x,t):t=1\cap C_{\|\cdot\|}\right\}=\overline{B(x,t)}.$$
 	\draw[opacity=.3] (-.7,-2.5) -- (.6,-1.6); % recta vertical
     \end{tikzpicture}
 \end{center}
-\item $\|\cdot\|_\infty: \mathbb{R}^n\to \mathbb{R}$, $\|x,y\|_\infty=\max\left\{|x|,|y|\right\}$. Compara y coge la más grande.
+    \item $\|\cdot\|_\infty: \mathbb{R}^n\to \mathbb{R}$, $\|x,y\|_\infty=\max\left\{|x|,|y|\right\}$. Compara y coge la más grande. Veamos una vista transversal con respecto del cono:
+    \begin{center}
+	\begin{tikzpicture}[scale=.7]
+	    \draw (-2,0) -- (2,0);
+	    \draw (0,-2) -- (0,2);
+	    \draw[dashed] (1,-2) -- (1,2);
+	    \draw[dashed] (-1,-2) -- (-1,2);
+	    \draw[dashed] (-2,1) -- (2,1);
+	    \draw[dashed] (-2,-1) -- (2,-1);
+	    \pattern[pattern=north east lines, pattern color=gray!35, rotate around={0:(1,6)}] (-1,-1) rectangle (1cm,1cm);
+	\end{tikzpicture}
+    \end{center}
+
+    \item $\|\cdot\|_P \mathbb{R}^n\to \mathbb{R}$, $p\in (1,\infty).$ (Existe una especie de promedio)
+    \switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La norma infinito es cómo la madre de todas las demás normas. Representamos con un cuadrado sobre la base canónica.
+	\item La norma 1 sera el rombo que ya dibujamos.
+	\item La Euclídea será un círculo.
+	\item Cuando $p<1$ no será una función convexa. (No se cumplirá la desigualdad triangular). Ya no será una bola.
+    \end{itemize}
+}
+    \switchcolumn[0]\noindent
+	$$\|(x,y)\|=\sqrt[p]{|x|^p+|y|^p}$$
+	En particular: 
+	$$\|(x,y)\|_2=\sqrt{|x|^2+|y|^2}.$$
+    \begin{center}
+	\begin{tikzpicture}[scale=.7,>=Triangle]
+	    \draw (-2,0)node[left]{\tiny$-e_1$} -- (2,0)node[right]{\tiny$e^1$};
+	    \draw (0,-2)node[below]{\tiny$e_2$} -- (0,2)node[above]{\tiny$-e_2$};
+	    \draw (2,-2) -- (2,2);
+	    \draw (-2,-2) -- (-2,2);
+	    \draw (-2,2) -- (2,2);
+	    \draw (-2,-2) -- (2,-2);
+	    \draw[blue] (-2,0) -- (0,2) -- (2,0) -- (0,-2) -- cycle;
+	    \draw[red] (0,0) circle (2cm);
+
+	    \draw[<-,brown](1.7,1.7)--(2.2,1.7)node[right]{$p\in(2,\infty)$};
+	    \draw[<-,green](1.3,1.2)--(2.2,1.2)node[right]{$p\in(1,\infty)$};
+	    \draw[gray](1,0)node[above left]{\tiny$p<1$};
+
+	    %semilunas entre los ejes
+	    \draw[green](0,2)..controls(1.3,1.3)..(2,0)..controls(1.3,-1.3)..(0,-2)..controls(-1.3,-1.3)..(-2,0)..controls(-1.3,1.3)..(0,2);
+	    \draw[brown](0,2)..controls(1.8,1.8)..(2,0)..controls(1.8,-1.8)..(0,-2)..controls(-1.8,-1.8)..(-2,0)..controls(-1.8,1.8)..(0,2);
+	    \draw[gray](0,2)..controls(.5,.5)..(2,0)..controls(.5,-.5)..(0,-2)..controls(-.5,-.5)..(-2,0)..controls(-.5,.5)..(0,2);
+	\end{tikzpicture}
+    \end{center}
 \end{enumerate}
 
+
+\section{Polihedros}
+
+$$P=\left\{x\in \mathbb{R}^n : a_j^T x \leq b_j, j=1,\ldots,n,  c_j^T x \leq d_j, k=1,\ldots,p \right\}.$$
 
 
 \end{paracol}
