@@ -1031,9 +1031,228 @@ $$\left\{(x,t):t=1\cap C_{\|\cdot\|}\right\}=\overline{B(x,t)}.$$
 \end{enumerate}
 
 
-\section{Polihedros}
+\section{Poliedros}
 
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La idea de los semiespacios afines, de tomar un hiperplano de un lado y el otro, en realidad se puede hacer con hiperplanos o cualquier subespacio afín.
+	\item Un polihedro será prácticamente una cantidad finita de caras. Es decir, son hiperespacio de dimensión $n-1$ que determinan la frontera, tomando desigualdades $a_j^Tx\leq b_j$. El cual es un semiespacio determinado por la dirección del hiperplano $a_j$. Y el $b_j$ es una traslación.
+	\item Cuando se pide varias condiciones es la intersección de semiespacios.
+	\item $c_j^Tx=d_j$, me fija hiperplanos, que justo corte por un lugar específico.
+	\item Los poliedros son aplicados a optimización lineal.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
 $$P=\left\{x\in \mathbb{R}^n : a_j^T x \leq b_j, j=1,\ldots,n,  c_j^T x \leq d_j, k=1,\ldots,p \right\}.$$
+
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+	\draw(0,0) -- (2,2);
+	\draw[gray,opacity=.5](.1,0) -- (.5,-.1);
+	\draw[gray,opacity=.5](.3,.2) -- (.7,.105);
+	\draw[gray,opacity=.5](.5,.4) -- (.9,.29);
+	\draw[gray,opacity=.5](.7,.6) -- (1.1,.475);
+	\draw[gray,opacity=.5](.9,.8) -- (1.3,.66);
+	\draw[gray,opacity=.5](1.1,1) -- (1.5,.845);
+	\draw[gray,opacity=.5](1.3,1.2) -- (1.7,1.03);
+	\draw[gray,opacity=.5](1.5,1.4) -- (1.9,1.215);
+	\draw[gray,opacity=.5](1.7,1.6) -- (2.1,1.4);
+	\draw[gray,opacity=.5](1.9,1.8) -- (2.3,1.585);
+
+	\draw(.5,1.5) -- (4,1);
+	\draw[gray,opacity=.5](.5,1.45) -- (.5,1);
+	\draw[gray,opacity=.5](.7,1.4) -- (.7,1);
+	\draw[gray,opacity=.5](.9,1.375) -- (.9,.95);
+	\draw[gray,opacity=.5](1.1,1.35) -- (1.1,.9);
+	\draw[gray,opacity=.5](1.3,1.325) -- (1.3,.85);
+	\draw[gray,opacity=.5](1.5,1.3) -- (1.5,.8);
+	\draw[gray,opacity=.5](1.7,1.275) -- (1.7,.75);
+	\draw[gray,opacity=.5](1.9,1.25) -- (1.9,.7);
+	\draw[gray,opacity=.5](2.1,1.225) -- (2.1,.65);
+	\draw[gray,opacity=.5](2.3,1.2) -- (2.3,.6);
+	\draw[gray,opacity=.5](2.5,1.175) -- (2.5,.6);
+	\draw[gray,opacity=.5](2.7,1.15) -- (2.7,.6);
+	\draw[gray,opacity=.5](2.9,1.125) -- (2.9,.6);
+	\draw[gray,opacity=.5](3.1,1.1) -- (3.1,.6);
+	\draw[gray,opacity=.5](3.3,1.075) -- (3.3,.6);
+	\draw[gray,opacity=.5](3.5,1.05) -- (3.5,.6);
+	\draw[gray,opacity=.5](3.7,1.025) -- (3.7,.6);
+	\draw[gray,opacity=.5](3.9,1) -- (3.9,.6);
+
+    \draw(-.8,.3) -- (4,1.5)node[right]{$c^Tx = d_j$};
+    \draw[red] (.64,.62) -- (2.8,1.18);
+    \end{tikzpicture}
+\end{center}
+
+El poliedro generaliza:
+
+\begin{itemize}
+    \item Linea, 
+    \item segmento, 
+    \item semiespacio, 
+    \item subespacio afín.
+\end{itemize}
+
+Sin embargo no todo conjunto convexo se puede definir cómo un poliedro.
+
+
+\section{Operaciones que conservan la convexidad}
+
+Algunas propiedades que conservan la convexidad:
+
+    \switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Las aplicaciones afines cuando trabajamos en $\mathbb{R}^n$ y $\mathbb{R}^m$ son tan sencillas como multiplicar una matriz y sumar un número. Es una aplicación lineal y sumar una constante, es decir trasladar.
+	    \item El hecho que funcione para adelante y para atrás, nos permite que para que una función sea convexa yo puedo demostrar que su imagen de $f$ es convexa. Donde se nos simplifica las cosas.
+	    \item Si un convexo esta lejos del cero, dado que la traslación es afín, podemos trasladar a cero demostrarlo y llevarlo a su estado original. Así sin perdida de generalidad podemos asumir que el cero está en el conjunto.
+	\end{itemize}
+}
+\switchcolumn[0]\noindent
+\begin{enumerate}[\bfseries 1.]
+    \item Intersección de convexos es convexo.
+    \item Si tenemos una función $f:\mathbb{R}^n\to \mathbb{R}^m$, $f$ afín. Es decir, 
+    $$\left(f(x)=Ax+b, A\in \mathcal{M}_{m\times n} \text{ y } b\in \mathbb{R}^m\right).$$
+\item Si tengo un conjunto $C\subseteq \mathbb{R}^n$ convexo. Entonces, $f(c)$ es convexo. Si $B\subseteq \mathbb{R}^n$ convexo, entonces ($f^{A}(B)$) la anti-imagen de $B$ es también convexo. 
+\end{enumerate}
+
+Algunos ejemplos particulares de afín:
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Si 2., entonces se cumple 3. Lo que se puede ver es que los primeros tres ejemplos son estables, la imagen por una homotecia o la anti-imagen, etc.
+	\item La suma de dos cosas convexas es convexa.
+	\item El producto cartesiano de dos cosas convexas es convexa.
+	\item Estas dos últimas son un poco más difíciles de demostrar porque hay que pensar que funciones afines nos da la suma de Minskowsky y que función afín nos da el producto de dos conjuntos. En realidad, se utiliza la pre-imagen.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+\begin{itemize}
+    \item  Homotecias: Multiplicar por un escalar.
+    \item Translaciones.
+    \item Proyecciones: Aplicaciones lineales importantes.
+    \item Suma de Minskowsky.
+	Empezamos con dos conjuntos y definimos la suma de Minkowski como el conjunto de los $A$, $B$ tal que la $A$ está en $A$ y la $A$ en $B$, lo podemos ver como la imagen aplicación afín de un conjunto convexo.
+    \item Producto de dos conjuntos.
+\end{itemize}
+
+
+\section{Desigualdad generalizadas}
+
+¿Cual de los dos puntos es más importante?. Es los puntos donde están pintados, dependiendo si es máximo o mínimo.
+
+\begin{center}
+    \begin{tikzpicture}[scale=.7]
+	\draw[] (-.5,0) -- (4,0);
+	\draw[] (0,-.5) -- (0,4);
+	%Dibujar dos puntos en el primer cuadrante
+	\draw[fill=black] (1.5,1.5) circle (2pt);
+	\draw[fill=black] (3,3) circle (2pt);
+	\pattern[pattern=north east lines, pattern color=gray!35, rotate around={0:(0,0)}] (4,4) rectangle (1.4cm,1.35cm);
+	\draw[fill=black] (.8,2.5) circle (2pt);
+	\pattern[pattern=north east lines, pattern color=blue!20, rotate around={0:(0,0)}] (4,4) rectangle (.7,2.35);
+    \end{tikzpicture}
+\end{center}
+
+Ahora, cual es mejor de estos dos conjuntos.
+
+Esto se define como:
+$$
+\begin{array}{rcl}
+    x,y\in \mathbb{R}^n, x\leq y &\Leftrightarrow& x_i\leq y_i, \quad i=1,\ldots,n\\\\
+				 &\Leftrightarrow& 0\leq y_i-x_i, \quad i=1,\ldots,n\\\\
+				 &\Leftrightarrow& y-x\in \mathbb{R}^n_+\\\\
+				 &\Leftrightarrow& y\in x+\mathbb{R}^n_+. \quad (\text{Minkowski})
+\end{array}
+$$
+
+Ahora, en vez de utilizar $\mathbb{R}^n_+$ puede utilizarse otro conjunto $K$. Ahora, ¿Qué propiedades debería tener $K$, para tener un conjunto con orden?. Necesito asignar  una serie de propiedades que tiene $\mathbb{R}^n$.
+
+Por lo que definimos de cono propios
+
+% ------------------- DEFINICION
+\begin{def.}\,\\
+    $K\subseteq \mathbb{R}^n$ es cono propio si es un cono:
+    \begin{enumerate}[i)]
+	\item Convexo: Cualquier parte de puntos el segmento estará en el mismo conjunto. Buen comportamientos de las SUMAS.
+	\item Cerrado: Vamos a definir con el menor o igual.
+	\item Sólido ($\interior(K)\neq \emptyset$): Que pueda decidir en todo $\mathbb{R}^n$. Para ello, debo tener al menos un punto interior.
+	\item Apuntado ($x\in K,  -x\in K\Rightarrow x=0$): No me deja que contenga una recta entera.
+    \end{enumerate}
+\end{def.}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Está claro que es convexo.
+	\item Ya que no se tiene dos $++$, en $\mathbb{R}^n_+$. Entonces es cerrado.
+	\item Sólido, ya que existe cualquier punto interior. Los bordes no son puntos interiores.
+	\item Apuntado, ya que, cuando tengo un punto tiene opuesto. Básicamente tiene que pasar siempre en cero.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+\begin{center}
+    \begin{tikzpicture}[scale=.5]
+	\draw[] (-2,0) -- (4,0);
+	\draw[] (0,-2) -- (0,4);
+	\pattern[pattern=north east lines, pattern color=blue!20, rotate around={0:(0,0)}] (0,0) rectangle (4,4);
+	\draw[](4,4)node[]{$\mathbb{R}^n_+$};
+	\draw[](-4,-4)node[]{$\mathbb{R}^n_-$};
+	\pattern[pattern=north east lines, pattern color=black!20, rotate around={0:(0,0)}] (0,0) rectangle (-4,-4);
+    \end{tikzpicture}
+\end{center}
+
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Cada $K$ que fijemos será una lección de multicriterio.
+	\item Si estoy en $\mathbb{R}^n$ por ejemplo, entonces tengo cinco conos para elegir, y según un criterio de esas 5 variables definiremos cual es mejor o cual es peor. 
+	\item Estos criterios lo puedo definir mediante conos.
+	\item Me asegura un sistema sistemático de orden.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+Dado un cono propio $K\subseteq \mathbb{R}^n$ se define $\leq_K$ un orden en $\mathbb{R}^n$ como:
+$$
+\begin{array}{rlc}
+    x\leq_K y &\Leftrightarrow& y-x\in K\\\\
+	      &\Leftrightarrow& y\in x+K.
+\end{array}
+$$
+
+Ejemplo: Si tomamos  dos puntos. Entonces,
+\begin{center}
+    \begin{tikzpicture}
+	\draw(-1,0) -- (2,0);
+	\draw(0,-1) -- (0,2);
+	\draw[pattern=north east lines,pattern color=gray!30, rotate around={-45:(0,0)}] (-.7,2) -- (0,0) -- (.7,2);
+	\draw(-1,0) -- (2,0);
+	\draw(0,-1) -- (0,2);
+	\draw[pattern=north east lines,pattern color=gray!30, rotate around={-45:(3.5,-5)}] (-.7,2) -- (0,0) -- (.7,2);
+	\draw(3.5,0) -- (6.5,0);
+	\draw(4,-1) -- (4,2);
+
+	%dibujar dos puntos
+	\draw[fill=black] (4.55,1.02) circle (1.5pt);
+	\draw[fill=black] (6,.8) circle (1.5pt);
+
+    \end{tikzpicture}
+\end{center}
+
+Aquí no puedo asegurar que $x\not\leq_K y.$
+
+% -------------------- EJERCICIO 2.5
+{\color{blue}
+\begin{ejer}
+    Demuestra que $\leq_K$ es un orden.
+    \begin{enumerate}[i)]
+	\item Reflexiva, $x\leq_K x \; \forall x.$
+	\item Transitiva, $x\leq_K y, y\leq_K z \Rightarrow x \leq_K z$.
+	\item Antisimétrica, $x\leq_Ky, t\leq_k x \Rightarrow x=y$..
+	\item Estable para sumas: $x\leq_K y, z\leq_K w \Rightarrow y\pm w$.
+	\item Estable para productos positivos: $x\leq_K y \Rightarrow \lambda x\leq_K \lambda y, \lambda >0$.
+	\item Estable para límites: $x_n\leq_K y, x_n\to x \Rightarrow x\leq_K y$.
+    \end{enumerate}
+	    Demostración.-\; Para demostrar debemos utilizar las propiedades de cono propio. Lo que le pido que al orden se comporte bien con las sumas, con los productos por escalares positivos y que se comporte bien con los límites por lo que pido que el cono sea cerrado.
+\end{ejer}
+}
 
 
 \end{paracol}
