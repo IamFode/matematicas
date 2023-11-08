@@ -1,0 +1,86 @@
+\chapter{Deep Learning}
+No podemos usar algoritmos de inteligencia artificial para la sostenibilidad  si los modelos no son interpretables. 
+
+Debemos primero intentar modelos simples.
+
+
+\section{Tipos de aprendizaje}
+
+\subsection{Aprendizaje supervisado}
+A estos modelos les damos etiquetas de entrada,
+
+\subsection{Aprendizaje no supervisado}
+No se da etiquetas, simplemente datos para que el modelo aprenda a encontrar patrones, mediante tareas de clustering.
+
+\subsection{Aprendizaje por refuerzo}
+En base de ensayo error se va aprendiendo. Por ejemplo si le pedimos que avance de un punto $A$ a un punto $B$, la distancia será su recompensa pero también tendremos que darle penalizaciones para que nuestro fin sea el correcto.
+
+\section{¿Cómo predecir secuencias temporales?}
+
+\subsection{Multi-layer perceptron (MLP)}
+Por ejemplo, si queremos predecir el valor del tiempo: La salida sería la temperatura de mañana, la entrada sería la entrada de hoy y los días anteriores, pero la red neuronal no la entenderá debido a que las entradas están ordenadas como una lista atemporal, por lo que el MLP es una arquitectura para establecer un punto de partida.
+
+\subsection{Resumen de una neurona}
+Al final de todo tenemos valores de los nodos anteriores. En cada capa tenemos lo que es la matriz de pesos y el vector de sesgos. En la práctica es una secuencia de multiplicaciones matriz por el vector anterior más un vector de sesgos actual. Donde se aplica una función de activación no lineal. 
+$$\zeta = g\left(W_i\zeta_{i-1} + b_i\right), \quad g(a)=\frac{1}{1+e^{-a}}.$$
+\begin{itemize}
+    \item $W_i$ es la matriz de pesos.
+    \item $b_i$ es el vector de sesgos.
+    \item $g$ es la función de activación.
+    \item $\zeta_{i-1}$ es el vector de entrada.
+\end{itemize}
+Lo que lo hace interesante a las redes neuronales, es la unión de funciones no lineales, donde estas podrán aproximar a cualquier función y me permitirá la capacidad predictiva.
+
+Entrenar una red neuronal es utilizar un algoritmo llamado \textit{Back-propogation}, lo que hace es ajustar los pesos $W_i$. Es decir, se calcula la derivada parcial del error respecto de los pesos de la red neuronal y lo vamos haciendo hacia atrás. Y utilizando el descenso del gradiente estocástica uno puede entrenar de forma efectiva los parámetros de la red neuronal.
+
+\subsection{Entrenamiento de redes neuronales}
+Para predecir el modelo, debemos separar los datos en entrenamiento ($80\%$) y validación ($20\%$). Esto para ajustar los parámetros de la red neuronal, donde los datos de validación no son vistos por la red y se utilizan para ver cómo funciona en datos que no se vieron aún. Luego el lost function o la función de coste o error, suele medirse en función de mínimos cuadrados. Así, si el valor es alto podemos decir que la predicción no es tan creíble y viceversa.
+
+Para ello creamos un axis de épocas, donde la recta vertical es la perdida o curva de error, y la recta horizontal será el número de épocas. Donde una época es un paso por todos los datos de entrenamiento. Es decir, cómo el entrenamiento se hace de manera estocástica (descenso de gradiente estocástico) tu no les das los datos de golpe, si no les das pequeños paquetes de datos. Por ejemplo, damos 1000 datos y ajusta los parámetros, otros mil datos y ajusta los parámetros.
+
+Cuando se pasa por esos datos, el error debería bajar. Así mientras le pasas más datos el ajuste debería mejorar.
+
+A esto se tiene una linea azul que se llama linea de entrenamiento. 
+
+Ahora, al final de cada época evaluamos la red en datos de la validación (linea roja). 
+
+El error de validación será más alto que el error de entrenamiento, pero si el error de validación empieza a subir, es que el modelo está sobreajustando. Es decir, el modelo está aprendiendo cosas que no son generales, sino que está aprendiendo cosas que son específicas de los datos de entrenamiento o que tu red neuronal es demasiado grande. Si los valores del error ranto de entrenamiento como de validación son similares y relativamente altos se le llama subajuste.
+
+Cuando el error de validación empieza a subir es cuando debemos parar de entrar, se le llama earling-stopping.
+
+La limpieza de los datos y los ordenes de los datos serán importantes en algunos casos. El $95\%$ del éxito del modelo serán los datos.
+
+\subsection{Redes neuronales recurrentes (RNN)}
+Aprovecha la información de la secuencia temporal. Esta diseñada de manera que los ouputs de ayer están concetados con los inputs del siguiente día.
+
+Estas redes tienen un problema, que los descensos gradientes se desvanecen. Cómo vas tomando el cuenta los datos pasados, mientras más avanza el tiempo esos gradientes se hacen más pequeños. Por lo que tenemos el siguiente modelo
+
+\subsubsection{Long short-term memory (LSTM)}
+Tiene un mecanismo de fuerzas para de alguna forma ponderar la importancia de los datos en el tiempo. Tiene tres veces más parámetros que un (MPL), donde la información más reciente tiene más peso.
+
+Estos modelos se podrían optimizar combinando días cercanos y a largo plazo.
+
+Todo lo anterior esta basado en estadísticas medias. Pero también se podría realizar con coeficientes instantaneas. Puede ser que seas sus errores similares, pero una pequeña variación podría producir un efecto mariposa (sistemas caóticos). Para ello podemos utilizar el mapa de Poincaré que representa en un plano la densidad de probabilidad de los valores de esos coeficientes en un espacio n-dimensional. Donde nos dará la correlación dentro del sistema.
+
+Si en el sistema original yo meto la misma perturbación ¿desviaré mi trayectoria igualmente?. Si la red neuronal se está yendo a otra trayectoria es porque tiene un pequeño error. Para analizar estos problemas tenemos una herramienta llamada los exponentes de Lyapunov.
+
+Estos exponentes son técnicas de análisis de sistemas caóticos, donde se representa en el eje vertical la desviación es escala logarítmica con respecto a la trayectoria inicial y el eje horizontal el tiempo. La idea es que si meto una perturbación en $t$, lo que sucederá es que de forma exponencial el error va a aumentar hasta que acabe en un lugar diferente. Por lo que veremos que tiene un error muy pequeño. Entonces, la historia es que si se que mi red neuronal tiene un error pequeño y meto manualmente en los sistemas de ecuaciones diferenciales ordinarias y mido la desviación respecto a la trayectoria inicial, es que el crecimiento exponencial viene dado por el exponente de Lyapunov al cavo de una trayectoria diferente y el error de la red neuronal da presente la misma desviación respecto a la trayectoria original. En otras palabras, si yo meto ese primer error manualmente obtengo los mismo resultados con la red neuronal. Es decir, la red neuronal a aprendido la dinámica del sistema original super bien con un pequeño error. El problema de las redes neuronales es que es un sistema caótico.
+
+¿Qué pasa si se tiene multi-escala?. Es decir, algunas actúan más rápido y otras mas lento. Por lo que no podremos modelar todas las frecuencias. Así que cuando utilizamos LSTM, es separar la física de un sistema en física rápida, media y lenta, y utilizar diferentes redes neuronales LSTM para modelizar todos estos rangos de frecuencias. Es básicamente el problema de las redes recurrentes que fuerzan a una estructura en la que el input de un paso temporal está conectado con el output del paso siguiente.
+
+Las ventajas de este sistema es que puedes explorar y explotar las secuencias temporales y las inconvenientes es que las secuencias no siempre tiene que ser tan rígidas como los sistemas que estamos explicando.
+
+\subsection{Transformers}
+Si se tiene una frase larga donde el sujeto este al principio o el objeto esta al final de la frase, pero no siempre puede estar al lado. La rede neuronal recurrente asume que las importancias están secuencialmente, el transformer utiliza un mecanismo de atención el cual clasifica a las palabras importantes.
+
+\subsection{Redes neuronales informadas por física (PINNs)}
+Estamos utilizando redes neuronales para resolver ecuaciones de derivadas parciales para fenómenos físicos.
+
+
+\section{Predicciones espaciales}
+Básicamente veremos como podemos hacer medidas de flujos.
+
+\subsection{Convoluciones}
+Identifica patrones espaciales en los datos.
+
+
