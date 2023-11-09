@@ -1,76 +1,136 @@
 \center \textbf{CONVEXIDAD Y OPTIMIZACIÓN}
 \center \textbf{\Large ENTREGA 1}
 \center \textbf{ \textbf{Christian Limbert Paredes Aguilera}}
+\center Latex Source: \url{}
 
 \line(1,0){400}
 
-\footnote{
-    Se llama \textbf{envoltura convexa} de $A$ al menor conjunto convexo que lo contiene o a la intersección de todos los convexos que contienen a $A$, denotado por $\co(A)$.
-    También es equivalente a decir que
-    $$\co(A)=\left\{\mbox{Combinación convexa de puntos de A.}\right\}$$
-\label{uno}}
 
-\footnote{
-    Un conjunto $C\in \mathbb{R}^n$ se dice convexo cuando $C$ contiene las combinaciones convexas de sus puntos, si y sólo si
-    $$\forall x_1,x_2\in C \Rightarrow \left[x_1,x_2\right]\subseteq C.$$
-    Un conjunto es convexo si dados dos puntos el segmento que los une se queda adentro.
-\label{dos}}
-
-\footnote{
-    Demostrar que la intersección de conjuntos convexos es convexo.\\\\
-	Demostración.-\; Demostremos por contradicción. Sean $C_1$ y $C_2$ dos conjuntos convexos. Y sea 
-	$$C=C_1\cap C_2.$$
-	no convexo. Esto significa que existen $x$ e $y$ tales que 
-	$$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\not\subseteq C.$$ 
-	Supongamos ahora que $x$ e $y$ están en $C$. Cómo ambos $C_1$ y $C_2$ son convexos, el segmento definido debe estar en ambos conjuntos. Es decir,
-	$$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\subseteq C.$$ 
-	Lo que contradice nuestra suposición inicial. Por lo tanto, $C$ es convexo.
-\label{tres}}
 
 \begin{enumerate}[\bfseries \text{Ejercicio} 1.]
 
+    % ------------------- EJERCICIOS 1 ------------------
     \item \textbf{\boldmath Demuestra que la envoltura convexa de un conjunto $S\subset \mathbb{R}^n$ es la intersección de todos los conjuntos convexos de $\mathbb{R}^n$ que contienen a $S$.}
 
-	\textbf{Demostración.-}\; Demostremos por contradicción. Supongamos que la envoltura convexa de un conjunto $S$, $\co(S)$ \footref{uno}, no es la intersección de todos los conjuntos convexos que contienen a $S$. Entonces, existe al menos un conjunto convexo, llámese $C$, que contiene a $S$ pero no contiene a $\co(S)$\footref{uno}. Es decir, existe un punto $p\in \co(S)$ tal que $p\notin C$.\\
-	Por definición, $\co(S)$ es el conjunto de todas las combinaciones convexas de puntos en $S$. Por lo que el punto $p$ puede ser escrito como una combinación convexa de puntos en $S$. En otras palabras,
-	$$p=\sum_{i=1}^k t_is_i\qquad s_i\in S,\; t_i\geq 0,\; \sum_{i=1}^k t_i=1.$$
-	Dado que cada $s_i\in S$ y $S\subseteq C$. Entonces cada $s_1\in C$. Como $C$ es convexo y cada $s_i\in C$, la combinación convexa de los puntos $s_i$; es decir, el punto $p$, también debe estar en $C$. Lo que contradice nuestra suposición de que $p\notin C$. Por lo tanto, $\co(S)$ debe ser la intersección de todos los conjuntos convexos que contienen a $S$.
+	\textbf{Demostración.-}\; Sean $\co(S)$\footnote{
+	Se llama \textbf{envoltura convexa} de $S$ al menor conjunto convexo que contienen a $S$, denotado por $\co(S)$.
+	También es equivalente a decir que:
+	$\co(S)=\left\{\mbox{Combinación convexa de puntos de} S\right\}.$\\
+	\label{envoltura}}
+	la envoltura convexa del conjunto $S$ e $I$ como la intersección de todos los conjuntos convexos que contienen a $S$. En si lo que vamos a querer demostrar es:
+	$$\co(S)=I.$$
+	En otras palabras, queremos demostrar que
+	$$\co(S)\subseteq I \quad \land \quad I\subseteq \co(S).$$
+	Notemos que $\co(S)$\footref{envoltura} es un conjunto convexo que contiene a $S$. Esto significa que cualquier otro conjunto convexo que contenga a $S$ debe ser al menos tan grande como $\co(S)$, y debe contener a $\co(S)$. Por lo que cualquier conjunto convexo que contenga a $S$ debe contener también a $\co(S)$. De esta manera, $I$ debe contener al menos a $\co(S)$. Es decir,
+	$$\co(S)\subseteq I.$$
+	Para demostrar la otra inclusión, supondremos que 
+	$$\co(S)\not\subseteq I.$$
+	De lo que notamos que existe al menos un punto $x\in C$ tal que $x\notin \co(S)$. Por definición de envoltura\footref{envoltura}, esta $x$ no puede ser escrito como una combinación convexa\footnote{
+	Sean $x_1,x_2,\ldots,x_k\in \mathbb{R}^n$ y $\lambda_1,\lambda_2,\ldots,\lambda_k\in \mathbb{R}$ tales que 
+	$\lambda_i\geq 0\; \text{y} \;\sum_{i=1}^{k}\lambda_i=1.$ 
+	Al vector
+	$\sum_{i=1}^{k}\lambda_ix_i=\lambda_1x_1+\lambda_2x_2+\ldots+\lambda_kx_k$
+	se le llama \textbf{combinación convexa} de los puntos $\left\{x_1,\ldots,x_k\right\}$.\\\\
+	} de puntos en $S$.
+
+	Luego, $x$ esta en $I$ e $I$ es la intersección de todos los conjuntos convexos que contienen a $S$. Por lo que, $x$ debe estar en cada conjunto convexo que contiene a $S$. Y dado que $I$ es la intersección de todos los conjuntos convexos que contiene a $S$, se sigue que $I$ es un conjunto convexo
+	\footnote{
+	    \textbf{Demostrar que la intersección de conjuntos convexos es convexo.}\;
+		Demostremos por contradicción. Sean $C_1$ y $C_2$ dos conjuntos convexos. Y sea 
+		$C=C_1\cap C_2.$
+		no convexo. Esto significa que existen $x$ e $y$ tales que 
+		$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\not\subseteq C.$ 
+		Supongamos ahora que $x$ e $y$ están en $C$. Cómo ambos $C_1$ y $C_2$ son convexos, el segmento definido debe estar en ambos conjuntos. Es decir,
+		$\left\{\lambda x + (1-\lambda)y:\lambda\in \mathbb{R}\right\}\subseteq C.$ 
+		Lo que contradice nuestra suposición inicial. Por lo tanto, $C$ es convexo.\\\\
+	\label{dos}} que contiene a $S$. 
+
+	Por el hecho de que $x\in I$, $x$ debe ser una combinación convexa de puntos en $S$. Pero esto contradice el hecho de que $x$ no puede ser escrito como una combinación convexa de puntos en $S$. Así concluimos que $I\subseteq \co(S)$. Y por lo tanto,
+	$$\co(S)=I.\;\blacksquare$$
 	\vspace{.5cm}
 
+    % ----------------------- EJERCICIO 2 -------------------------
     \item \textbf{\boldmath La descripción de semiespacios de Voronoi: Sean $a$ y $b$ dos puntos distintos de $\mathbb{R}^n$. Demuestra que el conjunto de todos los puntos que están más cerca de $a$ (en la distancia Euclídea) que de $b$, i.e., $\left\{x\in \mathbb{R}^n : \|x-a\|_2 \leq \|x-b\|_2\right\}$, es un semiespacio. Descríbelo explícitamente como una desigualdad de la forma $c^T\cdot x \leq d$ (donde $c$ es un vector columna de $\mathbb{R}^n$). Haz una representación gráfica de la situación.}
 
-	\textbf{Demostración.-}\; Podríamos 
-\begin{tikzpicture}
-    % Define los puntos a y b
-    \coordinate (a) at (0,0);
-    \coordinate (b) at (2,2);
-    
-    % Dibuja los puntos a y b
-    \fill[red] (a) circle (2pt) node[below left] {$a$};
-    \fill[blue] (b) circle (2pt) node[above right] {$b$};
-    
-    % Dibuja la línea que separa el semiespacio
-    \draw (a)--(b);
-    
-    % Dibuja el semiespacio
-    \fill[green, opacity=0.3] (a)--(b)--(2,0)--cycle;
-\end{tikzpicture}
+	\textbf{Demostración.-}\; Primero, representemos gráficamente la situación.
+	\begin{center}
+	    \begin{tikzpicture}[scale=.75,>=Triangle,rotate=40]
+		\pattern[pattern=north east lines, pattern color=orange!50, rotate around={0:(0,0)}] (0,-2) rectangle (2cm,2cm)node[above left,rotate=40,orange]{$c^Tx<b$};
+		\draw [fill=black] (0,0) circle (2pt) node[below] {$a$};
+		\draw [fill=black] (4,0) circle (2pt) node[below] {$b$};
+		\draw [very thick,blue] (2,-2)node[below, rotate=40]{$c^Tx=b$} -- (2,2);
+		\draw [->, thick,green] (2,0) -- (3.5,0);
+	    \end{tikzpicture}
+	\end{center}
 
+	Ahora, con algunas manipulaciones algebraicas llegaremos a la desigualdad
+	$$c^T\cdot x \leq d.$$
+	Que es la forma estándar de un semiespacio\footnote{
+	    Todo \textbf{hiperplano} $H=\left\{x:a^Tx=0, a\neq 0\right\}$, define dos semiespacios 
+	    $\left\{x\in\mathbb{R}^n:a^T x \leq 0\right\},\; \left\{x\in \mathbb{R}^n:a^T x\geq 0\right\}.$
+	    Más generalmente, 
+	    $\left\{x\in\mathbb{R}^n:a^T x \leq b\right\},\; \left\{x\in \mathbb{R}^n:a^T x\geq b\right\}.$
+	    son las soluciones de dos sistemas lineales de desigualdades.\\
 
+	}.
+
+	(Por convención diremos que los vectores $x$, $a$ y $b$ son vectores columna en $\mathbb{R}^n$). Dado que tenemos la desigualdad en término de normas (términos no negativos). Podemos elevar al cuadrado sin cambiar el orden de los elementos. Es decir, 
+	$$\|x-a\|_2 \leq \|x-b\|_2\quad \Rightarrow \quad \|x-a\|_2^2 \leq \|x-b\|_2^2.$$
+	Luego, por la definición de norma Euclídea\footnote{
+	    \textbf{\boldmath$\|x\|_2^2=x^Tx.$}
+	}
+	y la propiedad conmutativa de producto interno, tenemos 
+	$$
+	\begin{array}{rcl}
+	    (x-a)^T(x-a) &\leq&(x-b)^T(x-b)\\\\
+	    &\Downarrow&\\\\
+	    x^Tx-2a^Tx+a^Ta &\leq& x^Tx-2b^Tx+b^Tb.
+	\end{array}
+	$$
+	Después, por la sustracción de vectores podemos simplificar la desigualdad como:
+	$$2b^Tx-2a^Tx\leq b^Tb-a^Ta.$$
+	Que es equivalente a,
+	$$(b-a)^Tx\leq \dfrac{1}{2}\left(b^Tb-a^Ta\right).$$
+	Podemos definir $c=b-a$ y $d=\dfrac{1}{2}\left(b^Tb-a^Ta\right)$, para obtener la desigualdad
+	$$c^Tx\leq d.$$
+	Por lo tanto, el conjunto de todos los puntos que están más cerca de $a$ que de $b$ en la distancia euclídea es un semiespacio.$\;\blacksquare$
+	\vspace{1cm}
+
+    % -------------------------- EJERCICIO 3 -------------------------
     \item \textbf{\boldmath Demuestra que si $A$ y $B$ son conjuntos convexos de $\mathbb{R}^n$ entonces su intersección $A\cap B$ y su suma de Minkowsky $A+B$ son conjuntos convexos de $\mathbb{R}^n$.}
 
-	\textbf{Demostración.-}\; Supongamos que $A$ y $B$ son conjuntos convexos en $\mathbb{R}^n$. Demostraremos que la intersección $A\cap B$ es convexa. Para ello, tomemos dos puntos cualesquiera $x,y\in A\cap B$. Dado que $x,y\in A$. Entonces, para todo $\lambda\in [0,1]$, se tiene:
-	$$\lambda x+(1-\lambda)y\in A.$$
-	De manera similar, dado que $x,y\in B$. Entonces, para todo $\lambda \in [0,1]$, también tenemos:
-	$$\lambda x+(1-\lambda)y\in B.$$
+	\textbf{Demostración.-}\; Primero, demostraremos que la intersección $A\cap B$ es convexa. Sabemos por hipótesis que $A$ y $B$ son conjuntos convexos en $\mathbb{R}^n$. Tomemos ahora, dos puntos cualesquiera $x,y\in A\cap B$. Dado que $x,y\in A$. Entonces, para todo $\lambda\in [0,1]$, se tiene:
+	$$\lambda x+(1-\lambda)y\in A.\footnote{
+	    Un conjunto $C$ en un espacio vectorial es \textbf{convexo}, si para cada par de puntos $x,y\in C$ y para cada número real $\lambda$ en el intervalo $[0,1]$, se cumple que:
+	    $\lambda x+(1-\lambda)y\in C.$\\
+	\label{convex}}$$
+	De manera similar, dado que $x,y\in B$. Entonces, por definición de convexidad para todo $\lambda \in [0,1]$, también tenemos:
+	$$\lambda x+(1-\lambda)y\in B \footref{convex}.$$
 	Por lo tanto, 
 	$$\lambda x+(1-\lambda)y\in A\cap B,$$
-	lo que implica que la intersección de conjuntos convexos es convexa.
+	lo que implica que la intersección de conjuntos convexos es convexa. Esto también se puede demostrar con (\footref{dos}).
 
-	Para demostrar la suma de Minkowski. Sean $A$ y $B$ dos conjuntos convexos. Luego, consideremos dos puntos arbitrarios $x_1+x_2,y_1+y_2\in A+B$, donde $x_1,y_1\in A$ y $x_1,y_2\in B$. Como $A$ y $B$ son convexos, entonces para cualquier $\lambda$ tal que $0\leq \lambda \leq 1$, tenemos que 
-	$$\lambda x_1+(1-\lambda)y_1\in A \quad \text{y}\quad \lambda x_2+(1-\lambda)y_2\in B.$$
+	Ahora, demostraremos que si $A$ y $B$ son conjuntos convexos. Entonces, $A+B$ es convexo. Sean dos puntos cualesquiera $\alpha,\beta\in A+B$, por la suma de Minkowsky,\footnote{
+	    La \textbf{suma de Minkowski} es la operación de conjuntos; es decir, si $A,E\subseteq \mathbb{R}^n$. Entonces,
+	    $A=x_0+E=\left\{x_0+e:e\in E \right\} \quad \mbox{o}\quad E=A-x_0=\left\{a-x_0:a\in A\right\}.$
+	},   
+	existen $a_1,a_2\in A$ y $b_1,b_2\in B$ tales que 
+	$$\alpha=a_1+a_1 \quad \mbox{y}\quad \beta=a_2+b_2.$$
+	La idea es mostrar que para cualquier $\lambda\in[0,1]$, 
+	$$\lambda\alpha+(1-\lambda)\beta\in A+B.$$
+	Tenemos que
+	$$
+	\begin{array}{rcl}
+	    \lambda\alpha+(1-\lambda)\beta&=&\lambda(a_1+b_1)+(1-\lambda)(a_2+b_2)\\\\
+					  &=&\left[\lambda a_1+(1-\lambda)a_2\right]+\left[\lambda b_1+(1-\lambda)b_2\right].
+	\end{array}
+	$$
+	Como $A$ y $B$ son conjuntos convexos\footref{convex}, sabemos que 
+	$$\lambda a_1+(1-\lambda)a_2\in A$$
+	$$\text{y}$$
+	$$\lambda b_1+(1-\lambda)b_2\in B.$$
 	Por lo tanto,
-	$$\lambda x_1+(1-\lambda)y_2+\lambda x_2+(1-\lambda)y_2= \lambda(x_1+x_2)+(1-\lambda)(y_1+y_2).$$
-	está en $A+B$. Así, la suma de Minkowski de conjuntos convexos es convexa.
+	$$\lambda\alpha+(1-\lambda)\beta\in A+B.$$
+	Así, $A+B$ es convexo, como se quería demostrar. Esto completa la demostración.$\;\blacksquare$
 	
 \end{enumerate}

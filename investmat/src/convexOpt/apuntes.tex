@@ -529,7 +529,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 
 \switchcolumn[1]*{\noindent\scriptsize
 \begin{itemize}
-    \item Decimos que $C$ es cerrado para las combinaciones convexas. Es decir, no me salgo del conjunto.
+    \item Que $C$ sea cerrado para las combinaciones convexas, quiere decir que no me salgo del conjunto.
 \end{itemize}
 }
 \switchcolumn[0]\noindent
@@ -541,7 +541,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 \end{def.}
 
 % -------------------- EJEMPLO 1.4
-\begin{ejem}\,\\
+\begin{ejem}\,
     \begin{multicols}{3}
 	\begin{center}
 	  \begin{tikzpicture}[scale=0.8]
@@ -555,7 +555,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 	    \node at (2.7,-.4) {\small No convexo};
 	  \end{tikzpicture}
 
-	  \begin{tikzpicture}[scale=0.7]
+	  \begin{tikzpicture}[scale=0.6]
 	    % Dibuja un óvalo
 		\draw (0,0) ellipse (2.5cm and 1.2cm);
 		% Agrega un patrón de líneas diagonales al óvalo
@@ -580,7 +580,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 
 Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 \begin{center}
-  \begin{tikzpicture}[scale=0.8]
+  \begin{tikzpicture}[scale=0.7]
     % Dibuja el contorno del riñón
     \coordinate (Center) at ($(A)!0.5!(C)$);
     \draw[red] ($(Center)+(-1,.8)$) .. controls ($(Center)+(0.2,2)$) and ($(Center)+(3,-.1)$) .. ($(Center)+(1,-.5)$) .. controls ($(Center)+(0,-.8)$) and ($(Center)+(0,-1)$) .. ($(Center)+(-1,-.9)$) .. controls ($(Center)+(-1.5,-1)$) and ($(Center)+(-3,-.5)$) .. ($(Center)+(-1,.8)$);
@@ -592,7 +592,7 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 
 % ------------------- DEFINICIÓN 1.9
 \begin{def.}
-    se llama \textbf{envoltura convexa} de $A$ al menor conjunto convexo que lo contiene o a la intersección de todos los convexos que contienen a $A$, denotado por $\co(A)$.
+    Se llama \textbf{envoltura convexa} de $A$ al menor conjunto convexo que lo contiene o a la intersección de todos los convexos que contienen a $A$, denotado por $\co(A)$.
     También es equivalente a decir que
     $$\co(A)=\left\{\mbox{Combinación convexa de puntos de A.}\right\}$$
 \end{def.}
@@ -611,17 +611,16 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 \end{ejer}
 }
 
+\begin{tcolorbox}[colframe=white]
+El concepto de cono será importante, de hecho existe un tipo de optimización basado en conos convexos. Uniremos la propiedad de ser cono y convexos, pero aunque no sean convexos son importantes.
+\end{tcolorbox}
 
-\switchcolumn[1]*{\noindent\scriptsize
-    \begin{itemize}
-	\item Contiene los rayos que pasan por el cero e intersecan a un punto dado.
-    \end{itemize}
-}
-\switchcolumn[0]\noindent
 % ------------------- DEFINICIÓN 1.10
 \begin{def.}[Cono]\,\\\\
     Un conjunto $C\subseteq \mathbb{R}^n$ se llama cono si y sólo si
     $$\lambda x\in C \mbox{ si } x\in C,\; \lambda \geq 0.$$
+\end{def.}
+Contiene los rayos que pasan por el cero e intersecan a un punto dado.
 
 % ------------------- PROPIEDAD 1
 \begin{prop}[Propiedades de los conos]\,
@@ -635,13 +634,13 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
     para $\lambda_i\geq 0.$
     \end{enumerate}
 \end{prop}
-\end{def.}
 
-\
+\begin{tcolorbox}[colframe=white]
+Cuando uno estudia convexos la principal herramienta es el hiperplano. Es un caso particular de convexo.
+\end{tcolorbox}
 
-\switchcolumn[1]*{\noindent\scriptsize
+\switchcolumn[1]*{\scriptsize
 \begin{itemize}
-    \item El hiperplano es un caso particular del estudio convexo.
     \item Hiperplano:
     \begin{center}
 	\begin{tikzpicture}[scale=0.4,>=Triangle]
@@ -707,10 +706,10 @@ $$\left\{x\in \mathbb{R}^n : a^Tx\leq b\right\}$$
 $$\left\{x\in \mathbb{R}^n : a^Tx > b\right\}$$
 Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de análisis de datos. Por ejemplo cuando marcamos con lineas cuando existen datos por arriba y por abajo.
 
-%------------------- EJEMPLO 1.5
+%------------------- EJEMPLO 2.4
 \begin{ejem}\,
     \begin{center}
-	\begin{tikzpicture}[scale=1,>=Triangle]
+	\begin{tikzpicture}[scale=.75,>=Triangle]
 	    \fill (0,3) circle (2pt);
 	    \draw[dashed] (0,5) -- (2,2)node[below]{$a^Tx=0$};
 	    \draw[->] (1,3.5) -- (2,4.2);
@@ -742,10 +741,10 @@ Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de an
     \end{itemize}
 }
 \switchcolumn[0]\noindent
-%------------------- EJEMPLO 1.6
+%------------------- EJEMPLO 2.5
 \begin{ejem}\,
     \begin{center}
-	\begin{tikzpicture}[scale=1, >=Triangle]
+	\begin{tikzpicture}[scale=.75, >=Triangle]
 	    \pattern[pattern=north east lines, pattern color=gray!35, rotate around={34:(1,6)}] (1,6) rectangle (2.5cm,2.4cm);
 	    \fill (0,3) circle (2pt);
 	    \draw[dashed] (0,5) -- (2,2);
@@ -778,6 +777,9 @@ Esto nos divide el espacio en dos trozos. Que es la estrategia fundamental de an
     Ahora, si $x\in H^-$, entonces $a^Tx\leq b$.
 \end{ejem}
 
+\begin{tcolorbox}[colframe=white]
+    Esto es el canon de una aplicación lineal. Para poder separar cosas con hiperplanos, lo único que tengo que hacer es aplicar una aplicación lineal y una desigualdad.
+\end{tcolorbox}
 
 \section{Bolas Euclideas}
 
@@ -842,6 +844,7 @@ $$
     $$B(c,r)=c+rB(0,r).$$
 \end{prop}
 
+
 \section{Elipsoides}
 
 \switchcolumn[1]*{\scriptsize
@@ -872,7 +875,7 @@ $$P^{-1}=LDL^T,\; \text{Si } P\in \mathcal{M}_{n\times n}.$$
 donde $D$ es una matriz diagonal con valores propios de $1/P$.
 
 \begin{center}
-\begin{tikzpicture}[rotate=45, >=Triangle,scale=.6]
+\begin{tikzpicture}[rotate=45, >=Triangle,scale=1]
     \draw (0,0)node[below]{\small$c$} ellipse (2cm and 1cm);
     \draw[->] (0,0) -- node[above]{\tiny$L$} (2,0);
     \draw[->] (0,0) -- node[above]{\tiny$L$} (0,1);
@@ -1257,17 +1260,8 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 
 \section{Teorema de separación y extensión}
 \switchcolumn[1]*{\noindent\scriptsize
-    \begin{itemize}
-	\item La idea fundamental es que un conjunto convexo siempre se puede aproximar por tangentes.
-	\item Los hiperplanos nos ayudaran a cortar el espacio, donde a un lado nos dejaran al conjunto y al otro nada.
-	\item Moviendo esos hiperplanos, alrededor del conjunto podemos recuperar toda la forma del conjunto.
-	\item Esto nos dan pie a unos teoremas que nos dice que si tenemos un conjunto y un punto que está fuera, yo siempre puedo encontrar una linea recta que los separa.
-	\item Si el conjunto no es convexo y el punto a separar está en la región "no convexa". Entonces, no podemos separarlas con hiperplanos o semiespacios.
-    \end{itemize}
-}
-\switchcolumn[0]\noindent
 \begin{center}
-    \begin{tikzpicture}[rotate=45, >=Triangle,scale=.6]
+    \begin{tikzpicture}[rotate=45, >=Triangle,scale=.5]
 	\draw (0,0) ellipse (2cm and 1cm);
 	\draw(-1,2)node[right]{$A$};
 	\draw[red](-1,-3)--(3,0);
@@ -1276,7 +1270,7 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 \end{center}
 
     \begin{center}
-      \begin{tikzpicture}[rotate=45,scale=0.7]
+      \begin{tikzpicture}[rotate=45,scale=0.6]
 	\coordinate (A) at (-2,0);
 	\coordinate (B) at (6,0);
 	\coordinate (C) at (11,3);
@@ -1288,12 +1282,23 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 	\draw(3.5,3.5)node[right]{$A$};
       \end{tikzpicture}
     \end{center}
+}
+\switchcolumn[0]\noindent
+\begin{tcolorbox}[colframe=white]
+    \begin{itemize}
+	\item La idea fundamental es que un conjunto convexo siempre se puede aproximar por tangentes.
+	\item Los hiperplanos nos ayudaran a cortar el espacio, donde a un lado nos dejaran al conjunto y al otro nada.
+	\item Moviendo esos hiperplanos, alrededor del conjunto podemos recuperar toda la forma del conjunto.
+	\item Esto nos dan pie a unos teoremas que nos dice que si tenemos un conjunto y un punto que está fuera, yo siempre puedo encontrar una linea recta que los separa.
+	\item Si el conjunto no es convexo y el punto a separar está en la región "no convexa". Entonces, no podemos separarlas con hiperplanos o semiespacios.
+    \end{itemize}
+\end{tcolorbox}
 
 \switchcolumn[1]*{\noindent\scriptsize
 \begin{itemize}
-    \item El conjunto $\mathscr{A}$ es no vacío.
-    \item Se toma un conjunto $\mathscr{A}$ parcialmente ordenado, dentro un conjunto $\mathscr{C}$ todos en fila y este conjunto $\mathscr{A}$ tiene la propiedad de que cualquier conjunto de esa forma $\mathscr{C}$ que tome, siempre va a estar acotado superiormente. 
-    \item Maximal significa que no tiene un elemento por encima. Si hay otro por encima entonces es el mismo.
+    \item Este lema nos encuentra elementos maximales. 
+    \item Maximal significa que no tiene un elemento por encima, si hay otro, entonces es el mismo.
+    \item Sea un conjunto $\mathscr{A}$ parcialmente ordenado, con elementos en fila dentro un conjunto $\mathscr{C}$. Si $\mathscr{A}$ toma la forma de $\mathscr{C}$, siempre estará acotado superiormente. 
 \end{itemize}
 }
 \switchcolumn[0]\noindent
@@ -1301,7 +1306,6 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 \begin{lema}[Lema de Zorn] Si tengo un conjunto $\left(\mathscr{A},\leq\right)$ parcialmente ordenado, tal que si $\mathscr{C} \subseteq \mathscr{A}$ totalmente ordenado $\left(x,y \in \mathscr{C} \Rightarrow x\leq y \text{ ó } y\leq x\right)$, tiene una cota superior en $\mathscr{A}$ $\left(\exists a\in \mathscr{A}:x\leq a \;\forall x\in \mathscr{C}\right)$. Entonces, $\mathscr{A}$ tiene un maximal ($\exists a \in \mathscr{A}: b \in \mathscr{A},\; b\leq a \Rightarrow b=a$). $\left[\mathscr{A}\notin \emptyset\right]$.
 \end{lema}
 
-Este lema nos permite encontrar elementos maximales.
 
 \switchcolumn[1]*{\noindent\scriptsize
     \begin{itemize}
@@ -1366,10 +1370,11 @@ Este lema nos permite encontrar elementos maximales.
     \item Yo tengo una distancia en todo mi espacio, una aplicación lineal definida abajo y puedo extenderla.
 \end{itemize}
 }
+
 \switchcolumn[0]\noindent
-% -------------------- TEOREMA 
-\begin{teo}[Teorema de Hahn-Banach (Extensión o separación)]\,
-    Sea $E$ un espacio vectorial y $p:E\to \mathbb{R}^+$ sublineal. Sea $E_0\subseteq E$ y $g:E_0\to \mathbb{R}$ lineal y $g(x)\leq p(x)\,\forall x\in E_0$. Entonces existe $\overline{g}:E\to \mathbb{R}$ lineal, tal que $\overline{g}(x)=g(x)\,\forall x\in E_0$ ($\overline{g}$ extiende a $g$) y $\overline{g}(x)\leq p(x),\, \forall x\in E$.
+% -------------------- TEOREMA  2.3
+\begin{teo}[Teorema de Hahn-Banach (Extensión)]\,
+    Sea $E$ un espacio vectorial y una función $p:E\to \mathbb{R}^+$ sublineal. Sea también $E_0\subseteq E$, $g:E_0\to \mathbb{R}$ lineal y $g(x)\leq p(x)\,\forall x\in E_0$. Entonces existe $\overline{g}:E\to \mathbb{R}$ lineal, tal que $\overline{g}(x)=g(x)\,\forall x\in E_0$ ($\overline{g}$ extiende a $g$) y $\overline{g}(x)\leq p(x),\, \forall x\in E$.
 
 	Demostración.-\; Si yo quiero comenzar por una función $g$, en un espacio pequeño y quiero extenderlo a un espacio grande, debo comenzar por tomar todas las distribuciones.
 
@@ -1421,7 +1426,7 @@ Este lema nos permite encontrar elementos maximales.
 	Y además,
 	$$\left(E_{\mathscr{C}},g_{\mathscr{C}}\right)\geq \left(E_i,g_i\right)\; \forall i\in I.$$
 \switchcolumn[1]*{\noindent\scriptsize
-	Ahora, ¿qué haremos con ese elemento maximal?. Lo ideal sería que $\overline{E}$ sea todo el $E$, pero podría ser que no. ¿Qué pasa si $\overline{E}$ se encuentra por debajo de $E$?. En otras palabras, no llegue a extender a todo el espacio vectorial.
+	¿Qué haremos con ese elemento maximal?. Lo ideal es que $\overline{E}$ sea todo el $E$, pero podría ser que no. ¿Qué pasa si $\overline{E}$ se encuentra por debajo de $E$?. En otras palabras, no llegue a extender a todo el espacio vectorial.
 }
 \switchcolumn[0]
 	Donde $\left(E_{\mathscr{C},g_{\mathscr{C}}}\right)$ es una cota superior de $\mathscr{C}.$
@@ -1439,7 +1444,115 @@ Este lema nos permite encontrar elementos maximales.
 	Por lo que es imposible pues $\left(\overline{E},\overline{g}\right)$ es un elemento maximal. Luego, $\overline{E}=E$  y $\left(\overline{E},\overline{g}\right)$ es la extensión buscada.
 \end{teo}
 
+\begin{tcolorbox}[colframe=white]
+    Ahora el objetivo es establecer los resultados de separación y ver la conexión con el teorema de extensión. 
+\end{tcolorbox}
+
+En principio será importante ver un punto interior y separar un punto del conjunto. Tal como lo veremos a continuación:
+
+\begin{center}
+    \begin{tikzpicture}[rotate=45, >=Triangle,scale=.7]
+	\draw (0,0) ellipse (2cm and 1cm);
+	\draw(-1,2)node[right]{$A$};
+	\draw[blue](-2.4,.95)--(3.2,-1.65);
+	\fill(2.2,-1.2)node[below right]{$x_0$}circle(2pt);
+	\fill(-.4,0)node[below right]{$0$}circle(2pt);
+	\fill(1.7,-.98)node[below right]{}circle(2pt);
+	\draw[red,dashed](1.7,2.95)--(1.7,-3.65)node[below]{$p$};
+	\draw[red](-1,-3)--(3,0)node[above]{$p$};
+    \end{tikzpicture}
+\end{center}
+
+Nos olvidamos del plano y nos fijamos en la linea. Esta linea es una aplicación lineal. Y por el teorema de Hahn-Banach extiendo. Pero debemos aseguramos que la extensión no se meta en el conjunto, que es precisamente de lo que se encarga $p$. Esta $p$ a escoger dependerá del conjunto $A$ y la elección de $p$ me permitirá, que cuando yo tome la extensión se extienda fuera de $A$. Ahora, ¿cuál es la $p$ que se definirá a partir del conjunto $A$?. Esta $p$ se llama funcional me Minskowsky, y nos hará falta definir el concepto de interior. En dimensión infinita el concepto que mencionaremos a continuación es diferente y en $\mathbb{R}^n$ son lo mismo.
 
 
+%-------------------- DEFINICION 2.15
+\begin{def.}
+    Si $S\subseteq E$,
+    \begin{enumerate}[1)]
+	\item $x_0\in S$ es un punto interior algebraico. Es decir, si $\forall x\in E$, existe un $\epsilon>0$ tal que $\left]x_0-\epsilon,x_0+\epsilon\right[\subseteq S$. (Quiere decir que dependiendo de la dirección existirá un $\epsilon$).
+	\begin{center}
+	    \begin{tikzpicture}[rotate=45, >=Triangle,scale=.7]
+		\draw[opacity=.7] (0,0) ellipse (2cm and 1cm);
+		\draw(-1,2)node[right]{$A$};
+		\draw[blue](-2.4,.95)--(3.2,-1.65);
+		\fill(-.4,0)node[below]{\tiny$0$}circle(2pt);
+		\node[above, red] at (1,-.5) {\tiny$x_0+\epsilon$};
+		\node[above, red] at (.3,-.2) {\tiny$x_0-\epsilon$};
+		\draw[red] (1,-.6) node {$[$};
+		\draw[red] (.3,-.3) node {$]$};
+	    \end{tikzpicture}
+	\end{center}
+
+	\item $S^i=  \left\{x\in S: x\text{ es interior algebraico a } S\right\}$.
+	\item $x_0$ es un punto de clausura algebraica de $S$, si existe $x\in E$ tal que el intervalo $\left[x,x_0\right)\in S$.
+	\begin{center}
+	    \begin{tikzpicture}[rotate=45, >=Triangle,scale=.7]
+		\draw[opacity=.7] (0,0) ellipse (2cm and 1cm);
+		\draw(-1,2)node[right]{$A$};
+		\draw[blue](1.4,-.7)--(.27,-.3);
+		\fill(-.4,0)node[above left]{\tiny$0$}circle(2pt);
+		\node[above, red] at (1.35,-.5) {\tiny$x$};
+		\node[above, red] at (.3,-.15) {\tiny$x_0$};
+		\draw[red] (1.4,-.7) node {$)$};
+		\draw[red] (.3,-.3) node {$[$};
+	    \end{tikzpicture}
+	\end{center}
+	\item $S^c$ son los puntos de clausura algebraica de $S$.
+	    $$S^i = \interior(S)\in \mathbb{R}^n$$
+	    $$S^c = \text{ al cierra de } S \text{ en } \mathbb{R}^n \text{ si } S \text{ es convexo.}$$
+    \end{enumerate}
+\end{def.}
+
+Lo que necesitamos es definir un punto interior
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item $0\in S^i$ significa que el cero pertenece al interior algebraico de $S$.
+	\item La idea de esta definición, es que en vez de tomar la recta, tomaremos una semirecta, que empieza en el cero y se va a más infinito. Cómo el elipsoide es convexo, los bordes serán mi forma de medir (será la $p$ del teorema 2.3), donde hasta el margen valdrá $1$, la mitad $1/2$ y el doble $2$.
+	\item Debemos hacer que se cumple 1) de la definición 2.15. Es decir, que exista un valor $\epsilon$ que se quede dentro del conjunto.
+	\item Básicamente lo que nos dice el funcional de Minkowski que está dentro o fuera de un conjunto.
+    \end{itemize}
+}
+\switchcolumn[0]
+%-------------------- DEFINICIÓN 2.16
+\begin{def.}
+    Sea $S\subseteq E$, $0\in S^i$. Se define el funcional de Minkowski asociado a $S$ cómo:
+    $$P_S(x) = \inf\left\{\lambda>0: x\in \lambda S\right\}.$$
+\end{def.}
+
+%-------------------- PROPIEDAD 2.3
+\begin{prop}
+    $S$ convexo, $0\in S^i$.
+    \begin{enumerate}[1)]
+	\item $S^i=\left\{x\in E: p(x) < 1 \right\}\subseteq S \subseteq \left\{x\in E:p_S(x)\leq 1\right\}=S^c$.
+	\item $p_S=p_{S^i}=p_{S^c}$
+	\item $p_S\geq 0$ es sublineal, sii los puntos de $p$ son menores iguales a $1$. Y si consigo que sean mayores que uno, las cosas están fuera. En otras palabras, nos permite decidir si estoy fuera o estoy dentro.
+	\switchcolumn[1]*{\noindent\scriptsize
+	    \begin{itemize}
+		\item Los funcionales lineales no negativos están en correspondencia univoca con los conjuntos. Es decir, dame un sublineal encuentro un conjunto y viceversa.) 
+		\item Si estamos trabajando con normas, dame una norma y te doy una bola unidad. La bola unidad es el conjunto que define la norma y la norma se define a partir de la bola unidad.
+	    \end{itemize}
+	}
+	\switchcolumn[0]\noindent
+	\item[4)] Reciprocamente, si $p$ es un sublineal y no negativo. Entonces, 
+	    $$\left\{x\in E: p(x)\leq 1\right\}$$
+	    es convexo y $0\in S^i$. Además $p=p_S$. 
+    \end{enumerate}
+\end{prop}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    Asumimos que el conjunto no tiene borde.
+}
+\switchcolumn[0]\noindent
+\begin{tcolorbox}[colframe=white]
+    Esto es el lazo unión entre lo que sería extender funcionales y la separación. Realizaremos ahora cuatro demostraciones utilizando el teorema de Hahn-Banach y el funcional de Minkowski.
+\end{tcolorbox}
+
+%-------------------- TEOREMA 2.4
+\begin{teo}[Teorema de separación] Sean $A=A^i\neq \emptyset$,$x_0\in E$,$x_0\notin A$ y $A$ convexo. Entonces, $\exists f:E\to \mathbb{R}$ lineal, tal que $f(a)\leq f(x_0)\; \forall a\in A$.
+
+    Demostración.-\; 
+\end{teo}
 
 \end{paracol}
