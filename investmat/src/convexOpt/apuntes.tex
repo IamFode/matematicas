@@ -417,7 +417,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
     Si $A$ es Afín se llama "dimensión afín de $A$" a la dimensión de su espacio vectorial.
 \end{def.}
 
-% -------------------- EJEMPLO 1.2
+% -------------------- EJEMPLO 2.1
 \begin{ejem}
     Dado $C\in \mathbb{R}^n$ afín. Siempre existirán una matriz $A\in \mathcal{M}_{p\times n}$ y $b\in \mathbb{R}^p$ tal que
     $$C=\left\{x\in \mathbb{R}^n:Ax=b\right\}.$$\\
@@ -462,7 +462,7 @@ Es sencillamente trasladar los puntos del plano y desplazarlos o moverlos.
 \end{def.}
 
 
-% -------------------- EJEMPLO 2.3
+% -------------------- EJEMPLO 2.2
 \begin{ejem}
     Dibujemos un plano ($\mathbb{R}^3$)
     \begin{multicols}{2}
@@ -1379,7 +1379,7 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 	Demostración.-\; Si yo quiero comenzar por una función $g$, en un espacio pequeño y quiero extenderlo a un espacio grande, debo comenzar por tomar todas las distribuciones.
 
 	Empezamos definiendo de objetos, en este caso extensiones como,
-	$$\mathscr{F}=\left\{(E_1,g_1):
+	$$f=\left\{(E_1,g_1):
 	    \begin{array}{l}
 		g_1:E_1\to \mathbb{R} \text{ lineal}\\
 		g_1(x)=g(x)\; \forall x\in E_0\\
@@ -1389,13 +1389,13 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 	\right\}$$
 \switchcolumn[1]*{\noindent\scriptsize
     \begin{itemize}
-	\item $\mathscr{F}$ es no vacío porque la función inicial $g$ y el subespacio $E_0$ están ahí.
-	\item La idea de este teorema se basa en que tengo una $g$ que la extiendo por muchas ramas, donde cada extensión las puedo extender de nuevo por más ramas. Pero cuando tomo la cadena totalmente ordenado solo me estaré yendo por una rama. Donde las $g$ van coincidiendo a través de las ramas. Básicamente la $\mathscr{F}$ es un árbol y la $g$ es una rama bien ordenada.
+	\item $f$ es no vacío porque la función inicial $g$ y el subespacio $E_0$ están ahí.
+	\item La idea de este teorema se basa en que tengo una $g$ que la extiendo por muchas ramas, donde cada extensión las puedo extender de nuevo por más ramas. Pero cuando tomo la cadena totalmente ordenado solo me estaré yendo por una rama. Donde las $g$ van coincidiendo a través de las ramas. Básicamente la $f$ es un árbol y la $g$ es una rama bien ordenada.
     \end{itemize}
 }
 \switchcolumn[0]\noindent
 	Lo primero que justifico es el vacío. Es decir, 
-	$$\mathscr{F}\notin \emptyset,\text{ ya que } (E_0,g)\in \mathscr{F}.$$
+	$$f \notin \emptyset,\text{ ya que } (E_0,g)\in f.$$
 	Ahora, introducimos un orden en esta familia, de forma que una de estas extensiones sea mejor que otra. Dos los dos elementos definidos, 
 	$$(E_1,g_1)\leq (E_2,g_2).$$
 	Al definir esto, no decimos que todos los elementos se puedan comparar. Lo que decimos es que si yo tomo estos elementos se cumplirán siempre que se cumpla las siguientes condiciones:
@@ -1404,12 +1404,12 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 	    \item $g_1(x)=g_2(x)\; \forall x\in E_1.$
 	\end{itemize}
 	El conjunto 
-	$$\left(\mathscr{F},\leq\right)$$
+	$$\left(f,\leq\right)$$
 	se llama parcialmente ordenado.
 
 	Ahora demostraremos que que este conjunto parcialmente ordenado, toda cadena $\mathscr{C}\subseteq \mathscr{A}$ tiene una cota superior, y por el lema de Zorm tiene un elemento maximal.
 
-	Si $\mathscr{C}\subseteq \mathscr{F}$ es una cadena totalmente ordenado. Lo que queremos encontrar un elemento no necesariamente en $\mathscr{C}$ pero si en $\mathscr{F}$ que sea una cota superior. Para ello,
+	Si $\mathscr{C}\subseteq f$ es una cadena totalmente ordenado. Lo que queremos encontrar un elemento no necesariamente en $\mathscr{C}$ pero si en $f$ que sea una cota superior. Para ello,
 	$$\mathscr{C}=\left\{\left(E_i,g_i\right)\right\}_{i\in I}$$
 	Ahora, definimos 
 	$$E_{\mathscr{C}}=\bigcup_{i\in I} E_i.$$
@@ -1422,7 +1422,7 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 	Dado que $g_i$ cumplen  $g_1(x)\leq p(x)\; \forall x\in E_1$. Entonces, en lo particular 
 	$$g_{\mathscr{C}}(x)\leq p(x)\; \forall x\in E_{\mathscr{C}}.$$
 	Así,
-	$$\left(E_{\mathscr{C},g_{\mathscr{C}}}\right)\in \mathscr{F}.$$
+	$$\left(E_{\mathscr{C},g_{\mathscr{C}}}\right)\in f.$$
 	Y además,
 	$$\left(E_{\mathscr{C}},g_{\mathscr{C}}\right)\geq \left(E_i,g_i\right)\; \forall i\in I.$$
 \switchcolumn[1]*{\noindent\scriptsize
@@ -1431,16 +1431,16 @@ Aquí no puedo asegurar que $x\not\leq_K y.$
 \switchcolumn[0]
 	Donde $\left(E_{\mathscr{C},g_{\mathscr{C}}}\right)$ es una cota superior de $\mathscr{C}.$
 
-	Por lo tanto, por el lema de Zorm existe $\left(\overline{E},\overline{g}\right)\in \mathscr{F}$ que es un elemento maximal de $\mathscr{F}$.
+	Por lo tanto, por el lema de Zorm existe $\left(\overline{E},\overline{g}\right)\in f$ que es un elemento maximal de $f$.
 \switchcolumn[1]*{\noindent\scriptsize
     Cuando tomamos $[x_0]$ quiere decir que tomo la linea generada por $x_0$ (span).
 } 
 \switchcolumn[0]
-	Ahora, demostraremos que $\overline{E}$ es efectivamente la $E$. Para ello, utilizaremos una reducción al absurdo. Supongamos que $\overline{E}\subsetneq E$. Entonces existe un $x_0\in \overline{E} \backslash E$. Por lo que puedo ampliar $\overline{E}$ de la siguente forma:
+	Ahora, demostraremos que $\overline{E}$ es efectivamente la $E$. Para ello, utilizaremos una reducción al absurdo. Supongamos que $\overline{E}\subsetneq E$. Entonces existe un $x_0\in \overline{E} \backslash E$. Por lo que puedo ampliar $\overline{E}$ de la siguiente forma:
 	$$\overline{E} \subsetneq \overline{E}+[x_0]\subseteq E.$$
 	Lo que intentaremos probar por contradicción es que si $\overline{E}$ no fuese $E$. $\overline{E}$ no puede ser un elemento maximal. Por el lema 2.2, aplicado a $H=\overline{E}$ y a $\overline{g}:E\to \mathbb{R}$. Existe una extensión $\overline{g}:E+[x_0]\to \mathbb{R}$ tal que 
 	$$\overline{g}(x)\leq p(x)\; \forall x\in \mathbb{E}+[x_0].$$
-	Ahora, $$\left(\overline{E}+[x_0],\overline{g}\right)\in \mathscr{F}\lneq \overline{E},\overline{g}.$$ 
+	Ahora, $$\left(\overline{E}+[x_0],\overline{g}\right)\in f\lneq \overline{E},\overline{g}.$$ 
 	Por lo que es imposible pues $\left(\overline{E},\overline{g}\right)$ es un elemento maximal. Luego, $\overline{E}=E$  y $\left(\overline{E},\overline{g}\right)$ es la extensión buscada.
 \end{teo}
 
@@ -1549,10 +1549,563 @@ Lo que necesitamos es definir un punto interior
     Esto es el lazo unión entre lo que sería extender funcionales y la separación. Realizaremos ahora cuatro demostraciones utilizando el teorema de Hahn-Banach y el funcional de Minkowski.
 \end{tcolorbox}
 
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{center}
+	\begin{tikzpicture}[rotate=45, >=Triangle,scale=.5]
+	    \draw (0,0) ellipse (2cm and 1cm);
+	    \draw(-1,2)node[right]{$A$};
+	    \draw[blue](-2.4,.95)--(3.2,-1.65);
+	    \fill(2.2,-1.2)node[below right]{$x_0$}circle(2pt);
+	    \fill(-.4,0)node[below right]{$a_0$}circle(2pt);
+	    \draw[red](1,-3)--(3,0)node[above]{};
+	\end{tikzpicture}
+	$^(1)$
+	\begin{tikzpicture}[rotate=45, >=Triangle,scale=.5]
+	    \draw (0,0) ellipse (2cm and 1cm);
+	    \draw(-1,2)node[right]{$A_0$};
+	    \draw[blue,->](-2.4,.95)--(3.2,-1.65);
+	    \fill(2.2,-1.2)node[below right]{$x_1=x_0-a_0$}circle(2pt);
+	    \fill(-.4,0)node[below right]{$0$}circle(2pt);
+	    \draw[red](1,-3)--(3,0)node[above]{$H=\left\{x\in E:f(x)=f(x_0)\right\}$};
+	\end{tikzpicture}
+    \end{center}
+    \begin{itemize}
+	\item Dual algebraico: $E^\#=$ aplicaciones $f:E\to \mathbb{R}$ lineales.
+	\item Nos imaginamos un conjunto sin el borde.
+	\item Lo que haremos es buscar una función $f$.
+	\item Si tomo el hiperplano $H$ que son los puntos del espacio vectorial donde $f(x)=f(x_0)$ e (valor fijo), que pasa justo por el $x_0$.
+	\item Lo que me asegura la función $f$ es que ningún punto de los que están en $A$ están en el hiperplano, de hecho todos están a un lado del hiperplano.
+	\item Los puntos que están en $A$ valen estrictamente menor.
+	\item La funcional de Minkowski, cuando voy a la izquierda del cero y multiplico por $\lambda$ negativos puede ser mucho más estrecha o más grande que a la derecha del cero y en el conjunto. Lo gracioso que siempre $\lambda$ será positivo.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
 %-------------------- TEOREMA 2.4
-\begin{teo}[Teorema de separación] Sean $A=A^i\neq \emptyset$,$x_0\in E$,$x_0\notin A$ y $A$ convexo. Entonces, $\exists f:E\to \mathbb{R}$ lineal, tal que $f(a)\leq f(x_0)\; \forall a\in A$.
+\begin{teo}[Teorema de separación] Sean $A=A^i\neq \emptyset$,$\;x_0\in E$,$\;x_0\notin A$ y $A$ convexo. Entonces, $\exists f:E\to \mathbb{R}$ lineal, tal que $f(a)\leq f(x_0)\; \forall a\in A$.
 
-    Demostración.-\; 
+    Escrito de otra forma, $A=A^i\neq \emptyset$, convexo, $x_0\in E\backslash A \Rightarrow \exists f\in E^\#$ con $f(x_0)<f(a), \; \forall a\in A$.
+
+    Demostración.-\; Tomemos un $a_0\in A^i$, luego sea un nuevo conjunto $A_0=A-a_0$. Es decir, tomo el conjunto que tengo convexo y lo traslado. Ahora como $a_0\in A^i$, lo que tengo es $0\in A_0^i$ $^{(1)}$ y $x_1=x_0-a_0$.
+
+    Definamos el funcional de Minkowski de la siguiente manera: 
+    $$p(x)=p_{A_0}(x)$$
+    Según el rayo del gráfico, de $0$ al borde del conjunto valdrá $1$ y por fuera será mayor que $1$ (es lo que consigue $p$ para el $x_0$ fijo).
+    Luego, definamos una función en el span o en el rayo del gráfico de abajo:
+    $$f[x_1]\to \mathbb{R}$$
+    de forma que 
+    $f(\land x_1)=\lambda p(x_1)$
+    ($\land$ múltiplo de $x_1$). El objetivo de definir esto último es que cuando evalúe esa función en el $x_1$ me salga un número más grande que $1$. Pero los puntos por detrás de $0$ nos dará problema, así que lo que quiero demostrar es si $f\leq p$. Y así podemos extender. 
+
+    Ahora, si $\lambda\geq 0$. Entonces, 
+    $$f(\lambda x_1)=\lambda p(x_1).$$ 
+    Gracias a que $p$ es sublineal,
+    $$f(\lambda x_1) \leq p(\lambda x_1).$$
+
+    Luego, si $\lambda<0$. Entonces, 
+    $$f(\lambda x_1)=\lambda f(x_1)=\lambda p(x_1)\leq 0\leq p(\lambda x_1).$$
+    Es decir,
+    $$f(\lambda x_1)\leq p(\lambda x_1).$$
+    Y la $p$ está definida en todo el espacio $E$.
 \end{teo}
 
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La función $f$ vista de en la linea que pasa por el cero y $x_1$ del gráfico de abajo, lo que hace es darle los valores $0$ al borde del conjunto valor $1$ y todo lo demás.
+	\item Ahora, Hahn-Banach lo extiende cómo sea, con la garantía que tengo de que esa $f$ que extendí, está controlada por $p$. 
+	\item El $a-a_0$ está en el interior relativo 
+	\item Recordemos que el funcional de Minkowski de un conjunto es  menor que $1$ en el interior algebraico. Interior relativo si estamos en $\mathbb{R}$.
+	\item La $p$ controla lo que está adentro y afuera del conjunto.
+	\item Al final la idea es: Tengo un punto fuera ya sea en $A$ o $A_0$. Elijo un función que es representada por la linea azul del gráfico, Extiendo con Hahn-Banach con el control de la $p$, evita que si estoy fuera no vaya adentro y contrariamente.
+	\item En otras palabras, separamos un punto de un conjunto.
+    \begin{center}
+	\begin{tikzpicture}[rotate=45, >=Triangle,scale=.5]
+	    \draw (0,0) ellipse (2cm and 1cm);
+	    \draw(-1,2)node[right]{$A$};
+	    \draw[blue](-2.4,.95)--(3.2,-1.65);
+	    \fill(2.2,-1.2)node[below right]{$x_0$}circle(2pt);
+	    \fill(-.4,0)node[below right]{$a_0$}circle(2pt);
+	    \draw[red](1,-3)--(3,0)node[above]{};
+	    \fill(.5,.5)node[right]{$a$}circle(2pt);
+	\end{tikzpicture}
+
+	\begin{tikzpicture}[rotate=45, >=Triangle,scale=.5]
+	    \draw[opacity=.5] (0,0) ellipse (2cm and 1cm);
+	    \draw(-1,2)node[right]{$A_0$};
+	    \draw[blue,->](-2.4,.95)--(3.2,-1.65);
+	    \fill(2.2,-1.2)node[below right]{$x_1=x_0-a_0$}circle(2pt);
+	    \fill(-.4,0)node[below right]{$0$}circle(2pt);
+	    \draw[red](1,-3)--(3,0)node[above]{$H=\left\{x\in E:f(x)=f(x_0)\right\}$};
+	    \fill(1.3,-.75)node[below right]{$1$}circle(2pt);
+	    \fill(.5,.5)node[right]{$a-a_0$}circle(2pt);
+	\end{tikzpicture}
+    \end{center}
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+%-------------------- TEOREMA 2.5
+\begin{teo}
+    Aplicando el teorema de Hahn-Banach a $f[x_1]\to \mathbb{R}$ obtenemos  $f:E\to \mathbb{R}$ lineal con $f(x)\leq p(x),\; \forall x\in E$.
+
+	Demostración.-\; Tomemos un punto en $a\in A$ inicial ($A^i$) donde
+	$$a-a_0\in A_0=A_0^i=\left\{x\in E:p(x)<1 \right\}.$$
+	En particular, quiere decir, 
+	$$p(a-a_0)<1.$$
+	Por tanto, 
+	$$p(x_1)=p(x_0+a_0)\geq 1.$$ 
+	(La igualdad de esta última ecuación podría ser porque $x_0$ está justo en el borde puede estar en la clausura algebraica).
+
+	Ahora, veamos que la $f$ separa, por lo que calculamos 
+	$$f(a-a_0)\leq p(a_0) < 1 \leq p(x_1)=f(x_1)=f(x_0-a_0).$$
+	(Realizamos, el calculo en $a-a_0$, porque se hacer la prueba en en el conjunto $A_0$, luego de conocer el resultado lo podremos trasladar al conjunto $A$ de interés). Por lo tanto, aplicando linealidad 
+	$$
+	\begin{array}{rcl}
+	    f(a-a_0)&<&f(x_0-a_0)\\\\
+	    f(a)-f(a_0) &<& f(x_0)-f(a_0)\\\\
+	    f(a) &<& f(x_0) \quad a\in A.
+	\end{array}
+	$$
+\end{teo}
+
+\begin{tcolorbox}[colframe=white]
+    Separar un punto de un conjunto parece poca cosa, así que separaremos dos conjuntos.
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \draw[rotate=45,opacity=.7](-3,3) arc (230:300:6cm);
+	    \draw(-3.5,.7)node[]{$A$};
+	    \draw[rotate=40,opacity=.7](0,0) ellipse (2cm and 1cm);
+	    \draw(1.7,1.7)node[]{$B$};
+	    \draw[red](2.6,3.7)--(-3.2,-1.5)node[below]{\tiny$H=\left\{x\in E:f(x)=\inf f(b),b\in B\right\}$};
+	    \fill(-2,3)node[above]{$a$}circle(2pt);
+	\end{tikzpicture}
+    \end{center}
+    \begin{itemize}
+	\item El teorema nos dice que tenemos una separación estricta, si encontramos una función $f$ de forma que si lo evalúo en todos los puntos de $b$ y calculo el ínfimo, siempre será menor que la imagen de las $f$ en $a^i$ del interior de $A^i$.
+	\item Pedimos que al menos uno de los conjuntos tenga un punto interior.
+	\item Si uno de los conjuntos tiene un punto interior, entonces puedo separarlo al igual que separaba un punto de un conjunto.
+	\item El ínfimo, es decir el valor más cercano a $B$ de todos los valores de $b$, nunca tocará el interior de $A$.
+	\item Podría coincidir el supremo con el ínfimo. En otras palabras, puede tocar el borde de cada uno pero no al interior.
+	\item Tomamos el hiperplano que cumple exactamente que son todos los puntos que valen $\inf f(b)$.
+	\item Si hacemos $H$ con $\inf f(a)$ saldrá pegado a $A$.
+	\item Mi objetivo es convertir los dos conjuntos en uno, por lo que los resto.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+
+%-------------------- TEOREMA 2.6
+\begin{teo} Sean $A$ y $B$ conjuntos convexos con $A\cap B=\emptyset$ y $A^i\neq \emptyset$ . Entonces, existe $f\in E^\#$ lineal, tal que 
+    $$f(a^i)<\inf \left\{f(b),\; b\in B\right\}$$ 
+    para todo $a\in A^i$.\\\\
+	Demostración.-\; La idea es definir un nuevo conjunto, $O=A^i-B-d$, para cierto $d\in A^i-B$ (observamos que $A^i-B$ es abierto $\Rightarrow$, $o\in \mathring{O}$.) Además, $-d\notin O$. Ya que, si $-d\in O\Rightarrow a^i \in A^i, b\in B$ tal que $$-d=a^i-b-d\Leftrightarrow a^i=b=0 \Leftrightarrow a^i=b \Rightarrow A^i\cap B\neq \emptyset.$$
+	Lo que es una contradicción.
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.3]
+	    \draw[rotate=40,opacity=.7](-2,2) ellipse (2cm and 1cm);
+	    \draw(-.8,1.7)node[]{\scriptsize$A$};
+	    \draw[rotate=40,opacity=.7](0,0) ellipse (2cm and 1cm);
+	    \draw(1.7,1.7)node[]{\scriptsize$B$};
+	    \draw(3,0)node[]{$\Rightarrow$};
+	    \draw[rotate=40,opacity=.7](5,-4) ellipse (3cm and 1.5cm);
+	    \draw(9,2.7)node[]{\scriptsize$O$};
+	    \fill(6,0)node[above]{\scriptsize$0$}circle(2pt);
+	    \fill(9,-2)node[above]{\scriptsize$-d$}circle(2pt);
+	\end{tikzpicture}
+    \end{center}
+    Como $A$ y $B$ son disjuntos. En particular, $A^i$ y $B$ también son disjuntos. Ahora, podemos aplicar el teorema de separación 2.4 al conjunto convexo $O$ y al punto $-d\notin O$, encontrando $f\in E^\#$ tal que 
+    $$f(-d)>f(a^i-b-d),\quad \forall a^i\in A,\forall b\in B.$$
+    Cuando realicemos apliaciones lineales con sumas o diferencias de Minkowski (unión de conjuntos), y realizar traslaciones, siempre se podrán deshacer por que la función es lineal. Por lo que las sumas y las restas se separan por las propiedades de la función de la linealidad. Por lo tanto,
+    $$f(a^i)<f(b),\quad \forall a^i\in A^i, \forall b\in B.$$
+    Podemos tomar supremos e ínfimos de las funciones de la desigualdad, y obtener una desigualdad no estricta. Así nos queda,
+    $$f(a^i)\leq \inf \left\{f(b):b\in B\right\}=m,\quad \forall a^i\in A^i.$$
+    Pero el teorema nos dice que existe un desigualdad estricta, por lo cual probaremos que la desigualdad anterior es estricta.
+
+    Supongamos que existe un $a^i\in A^i$ tal que 
+    $$f(a^i)=m$$
+    Como $a^i$ esta en el interior de $A^i$, podemos construir al rededor de $a^i$ un segmento que estará en el interior de $A^i$. Es decir, $\exists \lambda > 0$ tal que
+    $$\left[a^i-\lambda y,a^i+\lambda y\right]\subseteq A^i, \text{ donde } f(y)>0.$$
+    que es la definición de interior algebraico (la $y$ podría ser cualquier $y$ interior)..
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.4]
+	    \draw[rotate=40,opacity=.7](-2,2) ellipse (2cm and 1cm);
+	    \draw(-.8,1.7)node[]{\scriptsize$A$};
+	    \draw[rotate=40,opacity=.7](0,0) ellipse (2cm and 1cm);
+	    \draw(1.7,1.7)node[]{\scriptsize$B$};
+	    \draw(3,0)node[]{$\Rightarrow$};
+	    \draw[rotate=40,opacity=.7](5,-4) ellipse (3cm and 1.5cm);
+	    \draw(9,2.7)node[]{\scriptsize$O$};
+	    \fill(6,0)node[above]{\scriptsize$0$}circle(2pt);
+	    \fill(9,-2)node[above]{\scriptsize$-d$}circle(2pt);
+	    \fill(-3,.1)node[above]{\scriptsize$a^i$}circle(2.5pt);
+	    \draw[dashed](-4.2,-.2)--(-1.5,0.5);
+	    \draw(-3.7,-.1)node[]{$[$};
+	    \draw(-2,0.5)node[]{$]$};
+	\end{tikzpicture}
+    \end{center}
+    Luego, 
+    $$\left(a^i+\lambda y\right)\leq m \Leftrightarrow f\left(a^i\right)+\lambda f(y)\leq m.$$
+    Pero, $f(a^i)$ + $f(y) > m$ dado que $f(a^i)=m$ y $f(y)>0.$. De donde, es una contradicción.
+\end{teo}
+
+Hasta ahora, demostramos que podemos separar un punto y un conjunto y dos conjuntos, que pedimos que tenga un punto interior. Esto, es importante por que no podremos separar o hacer funciones de Minkowski. Pero tenemos un teorema propio a $\mathbb{R}^n$, que dice lo siguiente:
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item En $\mathbb{R}^n$ omitimos que haya puntos interiores. Por lo que la clave de este teorema es como funciona la cosa.
+	\item Cuando $r$ es única, quiere decir que no puedo separar estrictamente los dos conjuntos. De lo contrario se tiene una separación; es decir, un salto entre los dos. Con lo que podemos trabajar.
+    \end{itemize}
+}
+\switchcolumn[0]
+%-------------------- TEOREMA 2.
+\begin{teo} Sean $A$ y $B$ convexos no vacíos, de forma que ellos no se corta. Es decir, $A\cap B=\emptyset$. Entonces, $\exists r\in \mathbb{R}$, $f\in \left(\mathbb{R}^n\right)^\#$, tal que $f(a)\leq r \leq f(b)\; \forall a\in A$ y $b\in B$.
+
+    Demostración.-\; Sea $C\subseteq \mathbb{R}$ convexo y $x_o\notin C$. Análogamente realizaremos la construcción de un punto y conjunto y luego de dos conjuntos. Es decir, puede ocurrir dos cosas:
+    \begin{enumerate}[1.]
+	\item Que la envoltura afín $\aff(C)=\mathbb{R}^n$. Entonces, $C$ tiene un punto interior, por lo que por el teorema de separación 2.4, encuentro 
+	    $$f\in (\mathbb{R}^n)^\#: f(b)<f(x_0) \forall c\in C^i.$$
+	    Dado que el conjunto $C$ al ser convexo, va a estar siempre entre el interior y el cierre. Entonces, cualquier punto que este en $C$ que no este en $C^i$ es un punto del cierre de $C^i$. Como el cierre en estos casos,$\mathbb{R}^n$ y convexos, coincide con el cierre algebraico o incluso por continuidad. Como me puedo acercar a todos los puntos del cierre algebraico de $f(c)$ con elementos que están en el interior de $C^i$ y evaluar con la $f$ utilizando la continuidad y la propiedad. Es decir,
+	    $$f(c)\leq f(x_0),\; \forall c\in C.$$
+	\item Que la envoltura afín $\aff(C)\subsetneq \mathbb{R}^n$. Sea $c_1\in C$ y $C-c_i$. Esto último, se trata de tomar la envoltura afín, me sale un subesapcio vectorial que lo traslado al origen. En otras palabras, 
+	    $$\aff(c)-c_1=E_0\subsetneq \mathbb{R}^n.$$
+	    Ahora tenemos, un conjunto $C-c_1\in E_0$, tengo un punto que en principio es $x_0-c_1\notin C-c$. De donde puede pasar dos cosas problemáticas: El $x_0$ puede vivir en $E_0$ en o que no. Para ello tomemos dos casos:
+	    \begin{enumerate}[A)]
+	    \item  Si  $x_0-c_1\in E_0$. Entonces, por el teorema de separación 2.4 $\exists f\in \left(\mathbb{R}^n\right)^\#$ cumple $f(c-c_1)<f(x_0-c),\; \forall c\in C^i$. Utilizando linealidad es equivalente a 
+		    $$f(c)<f(x_0),\; \forall c\in C^i$$
+		    Esto implica que,
+		    $$f(c)\leq f(x_0),\; \forall c\in C.$$
+		    Utilizando el cierre y que las funciones son continuas. Ahora esta $f$ no está definida en todo $\mathbb{R}^n$. En realidad, está definida sólo en el plano, por lo que podemos extenderla $f$ a $\mathbb{R}^n$ y obtenemos $\overline{f}\in \left(\mathbb{R}^n\right)^\#$ tal que 
+		    $$\overline{f}(c)\leq \overline{f}(x_0),\; \forall c\in C.$$
+		    La extensión me da igual, porque todas las condiciones viven en cero, lo que la función valga fuera de cero, no me interesa. Por la extensión la estoy consiguiente en el espacio de cero.
+		    \begin{center}
+		      \begin{tikzpicture}[scale=0.4]
+			\coordinate (A) at (-2,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (11,3);
+			\coordinate (D) at (3,3);
+			\draw (A) -- (B)node[below right]{$E_0$} -- (C) -- (D) -- cycle;
+			\draw[rotate=15,opacity=.7](4,.5) ellipse (2cm and 1cm);
+			\draw(0.8,.5)node[]{\scriptsize$C-c_1$};
+			\fill(8.5,2.1)node[above]{\scriptsize$x_0-c_1$}circle(2pt);
+			\draw(7,3)--(8,1.1);
+		      \end{tikzpicture}
+		    \end{center}
+		\item  Si  $x_0-c_1\notin E_0$. No puedo usar el teorema de Hahn-Banach, porque el conjunto que quiero que separar del punto no tiene un punto interior, así que no tengo el funcional de Minkowski para separar. Pero no nos hará falta, ya que es un subespacio vectorial, yo defino una función que en el subesapcio valga cero y en el punto valga uno; Ya que, los puntos son linealmente independientes. 
+ 
+		    Tomemos, $f:E_0+[x_0-c_1]\to \mathbb{R}$ tal que $f$ es lineal, $f_{|E_0}=0$ y $f(x_0+c_1)=1$. Entonces, 
+		    $$f(c-c_1)=0<f(x_0-c_1)=1\quad \forall c\in C^i.$$
+		    Esto implica que,
+		    $$f(c)<f(x_0),\quad \forall c\in C^i.$$
+		    No hace falta que usemos los puntos interiores, ya que el cierre de $c$ quedará en el hiperplano y ya quedará separada. De modo que, 
+		    $$f(c)\leq f(x_0),\quad \forall c\in C.$$
+		    Lo que extendemos a $\mathbb{R}^n$.
+		    \begin{center}
+		      \begin{tikzpicture}[scale=0.4]
+			\coordinate (A) at (-2,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (11,3);
+			\coordinate (D) at (3,3);
+			\draw (A) -- (B)node[below right]{$E_0$} -- (C) -- (D) -- cycle;
+			\draw[rotate=15,opacity=.7](4,.5) ellipse (2cm and 1cm);
+			\draw(0.8,.5)node[]{\scriptsize$C-c_1$};
+			\fill(4.5,4.1)node[above]{\scriptsize$x_0-c_1$}circle(2pt);
+		      \end{tikzpicture}
+		    \end{center}
+	    \end{enumerate}
+    \end{enumerate}
+    Es decir, si $C$ convexo no vacío, $C\in \mathbb{R}^n$ y $x_0\notin C$, entonces $\exists f\in \left(\mathbb{R}^n\right)^\#$ tal que $f(c)\leq f(x_0),\; \forall c\in C$.
+
+    Ahora, el objetivo es demostrar el teorema para una separación, y como no se tiene que jugar con puntos interiores, ni con ceros. Sea $C=A-B$, como son disjuntos $0\notin C\subseteq \mathbb{R}^n$. Por lo tanto, 
+    $$\exists f\in \left(\mathbb{R}\right)^\#:f(c)\leq f(0)=,\quad \forall c\in C.$$
+    Lo que equivale a:
+    $$f(a-b)\leq 0 \quad \forall a\in A, \forall b\in B.$$
+    Utilizando la linealidad de nuevo,
+    $$f(a)\leq f(b)\quad \forall a\in A, \forall b\in B.$$
+    Lo que podemos tomar supremos e ínfimos quedándonos
+    $$f(a)\leq \sup\left\{f(a):a\in A\right\}=r=\inf\left\{f(b):b\in B\right\}\leq f(b).$$
+    Esto será verdad siempre que un conjunto este acotado. 
+\end{teo}
+
+\begin{tcolorbox}[colframe=white]
+En $\mathbb{R}^n$ no hace falta encontrar puntos interiores porque la convexidad nos da puntos interiores. Si trabajamos en dimensión infinita los conjuntos convexos no tienen puntos interiores.
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item El siguiente corolario, no es un teorema sobre $\mathbb{R}^n$, es sobre el espacio en general.
+	\item La idea gráficamente sería:
+	\begin{center}
+	    \begin{tikzpicture}[scale=0.4,>=Triangle]
+		\draw[rotate around={70:(0,0)},dashed] (0,0) ellipse (1.5cm and 1.2cm);
+		\pattern[pattern=north east lines, pattern color=gray!50, rotate around={70:(0,0)}] (0,0) ellipse (1.5cm and 1.2cm);
+		\draw(0,0)node[]{$C$};
+		\fill (1.2,0.5) circle (4pt) node[right]{};
+		\draw (.8,2.5) -- (1.6,-1.5); 
+	    \end{tikzpicture}
+	\end{center}
+	\item Nuestro interés será encontrar una tangente que pase por el punto.
+	\item Y al tomar la tangente, no me salgo del hiperplano, y el semiespacio donde queda el conjunto $C$.
+	\item La tangente se ajusta al punto.
+    \end{itemize}
+}
+\switchcolumn[0]
+% ------------------- TEOREMA 2,8
+\begin{teo}[Teorema del hiperplano soporte]
+    Sea $C$ convexo con $\mathring{C}\neq \emptyset$ y $x_0\in \partial C$. Entonces, $\exists f\in E^\#: f(x_0)=\sup \left\{f(c):c\in C\right\}\geq f(c),\; \forall c\in \overline{C}$.
+
+	Demostración.-\; Sea $x_0\in \mathring{C}$. Por el teorema de separación $\exists f\in E^\#$ tal que
+	$$f(c)\leq f(x_0),\quad \forall c\in \mathring{C}.$$
+	Lo que implica,
+	$$f(c)\leq f(x_0)\quad \forall c\in \overline{C}.$$
+	Por lo tanto,
+	$$\sup \left\{f(c):c\in C\right\}\leq f(x_0).$$
+	Como $x_0\in \overline{C}.$. Entonces,
+	$$f(x_0)=\sup\left\{f(c):c\in C\right\}.$$
+	Esto justifica el anterior teorema, donde el supremo o ínfimo tocarán a cualquiera de los dos conjuntos ajustándolos. 
+\end{teo}
+
+El hiperplano del gráfico de la derecha. Tiene un nombre especial, se llama \textbf{hiperplano soporte} que es lo que se definirá.
+
+% ------------------- DEFINICIÓN 2.17
+\begin{def.}
+    Dado un conjunto no vacío $C\subseteq E$,  y $f\in E^\#$ al conjunto
+    $$H_{c,f}=\left\{x\in E:f(x)=\sup f(c) \text{ y } c\in C\right\}$$ 
+    se le llama \textbf{hiperplano soporte} a $C$ en la dirección de $f$.
+\end{def.}
+\begin{multicols}{2}
+\begin{center}
+    \begin{tikzpicture}[scale=0.4,>=Triangle]
+	\draw[rotate around={70:(0,0)}] (0,0) ellipse (2cm and 1cm);
+	\draw(-.5,2)node[]{$C$};
+	\fill (1.05,1.4) circle (4pt) node[right]{};
+	\draw[dashed,red] (.4,4) -- (1.8,-1.5)node[below]{$H_{c,f}$}; 
+	\fill (-1.05,-1.4) circle (4pt) node[right]{};
+	\draw[dashed,red] (-.4,-4) -- (-1.8,1.5)node[]{}; 
+	\draw (1.4,5) -- (3.3,-2); 
+    \end{tikzpicture}
+\end{center}
+
+Si existe $x_0\in C\cap H$, decimos que $x_0$ es un punto soporte.
+\end{multicols}
+
+\begin{tcolorbox}[colframe=white]
+    Existe un saldo de la programación lineal a la programación convexa que en la programación lineal son importantes los puntos extremales, eso es porque los conjuntos son polígonos, donde puedo recuperar el polígono haciendo la envoltura convexa de los extremales. En optimización convexa, los sistemas son complejos por lo que el concepto extremal es menos importante y recobra más importancia el concepto de hiperplanos y los puntos soporte que serán el correspondiente a extremal, pero no tiene porque siempre tiene que ser extremal. 
+\end{tcolorbox}
+
+% ------------------- EJEMPLO 2.6
+\begin{ejem}
+    Veamos un conjunto convexo cerrado pero que no tenga punto soporte. Si tomamos 
+    $$C=\left\{(x,y):y\geq e^x\right\}, \qquad f(x,y)=-y.$$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	    \draw{(-5,0) -- (1,0)node[right]{$f$}};
+	    % function e^x
+	    \draw[domain=-5:1,smooth,variable=\x,blue] plot ({\x},{exp(\x)})node[right]{$e^x$};
+	    \fill[pattern=north east lines, pattern color=gray!50] plot[domain=-5:1] (\x,{exp(\x)});
+	    \fill (0,.95) circle (3pt) node[right]{};
+	    \draw[dashed,red] (-.8,.1) -- (1,2)node[]{}; 
+	\end{tikzpicture}
+    \end{center}
+    No hay puntos soporte. Pero lo interesante que por el teorema anterior siempre podremos construir un punto soporte. Ese soporte no tiene por que ser único.
+\end{ejem}
+
+% ------------------- EJEMPLO 2.7
+\begin{ejem}
+    Veamos un conjunto convexo que tenga varios puntos soporte (simultaneamente).
+    \begin{center}
+	\begin{tikzpicture}[scale=0.45]
+	    % draw square
+	    \draw[thick] (0,0) -- (0,4) -- (4,4) -- (4,0) -- cycle;
+	    % dibujar lineas dashed x e y en el origen
+	    \draw[dashed] (-1,2) -- (5,2);
+	    \draw[dashed] (2,-1) -- (2,5);
+	    \draw[dashed,red] (4,-1)node[below]{$H$} -- (4,5);
+	    \draw (6,-2) -- (6,6)node[below right]{$f=2$};
+	    \fill (0,0) circle (3pt) node[right]{};
+	    \fill (0,4) circle (3pt) node[right]{};
+	    \fill (4,4) circle (3pt) node[right]{$x_1$};
+	    \fill (4,0) circle (3pt) node[right]{$x_2$};
+	\end{tikzpicture}
+    \end{center}
+    $$C=\left\{(x,y):\max\left\{x,y\right\}\leq 1\right\}$$
+    Si un hiperplano soporte $H$ de un conjunto $C$ tiene dos puntos soporte $x_1,x_2$. Entonces, todos los puntos del $[x_1,x_2]$ son puntos soporte de $H$.
+\end{ejem}
+
+\switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Si tenemos conjuntos cerrados, disjuntos y al menos uno de ellos es compacto. Entonces, puedo hacer separación fuerte.
+	\end{itemize}
+}
+\switchcolumn[0]
+% ------------------- TEOREMA 2.9
+\begin{teo}[Hiperplano soporte para \boldmath $\mathbb{R}^n$] Sea $C\in\mathbb{R}^n$ no vacío y convexo. Sea $x_0\in \partial C$. Entonces, existe un hiperplano soporte a $C$ de forma que $x_0$ es un punto soporte.
+\end{teo}
+
+{\color{blue}
+% ------------------- EJERCICIO 2.4
+\begin{ejer} Sea $C\in \mathbb{R}^n$ Sea $C\in \mathbb{R}$ cerrado y convexo. Demuestra que $C$ es la intersección de todos los semiespacios que lo contienen.
+
+    Demostración.- Sea un semiespacio, es un conjunto de la forma 
+    $$H=\left\{x\in E:f(x)\leq \alpha\right\}, f\in E^\#, \alpha \in \mathbb{R}$$
+    \begin{center}
+	\begin{tikzpicture}[scale=0.4,>=Triangle]
+	    \draw[rotate around={70:(0,0)}] (0,0) ellipse (2cm and 1cm);
+	    \draw(-.5,2)node[]{$C$};
+	    \fill (1.05,1.4) circle (4pt) node[right]{};
+	    \draw[dashed,red] (.4,4) -- (1.8,-1.5)node[below]{$H_{c,f}$}; 
+	    \fill (-1.05,-1.4) circle (4pt) node[right]{};
+	    \draw[dashed,red] (-.4,-4) -- (-1.8,1.5)node[]{}; 
+	    \draw (1.4,5) -- (3.3,-2); 
+	\end{tikzpicture}
+    \end{center}
+    Nos da un espacio que contiene al conjunto.
+\end{ejer}
+}
+
+% ------------------- TEOREMA 2.10
+\begin{teo}
+    Sean $A$ convexo y compacto, $B$ convexo y cerrado (con ejemplo de la exp que los dos sean cerrados no es suficiente), no vacíos. Tales que $A\cap B=\emptyset$. Entonces, existe $f\in \left(\mathbb{R}^n\right)^\#.$ Tal que,
+    $$\sup f(a),a\in A < \inf f(b),b\in B.$$
+	Demostración.-\; Calculamos 
+	$$d(A,B)=\in\left\{d(a,b):a\in A, b\in B\right\}.$$
+	Es decir, tomo la distancia de un punto de uno y un punto del otro y tomamos el ínfimo. Pero si no hay compacidad, no están cerrados, esos puntos no existirán. De lo contrario se alanzarán. 
+	\begin{center}
+	    \begin{tikzpicture}[>=Triangle,scale=.5]
+		\draw[rotate=-30,opacity=.7](0,0) ellipse (1cm and 2cm);
+		\draw[rotate=20,opacity=.7](4,-1.5) ellipse (1cm and 2cm);
+		\fill (-.3,-.7) circle (3pt) node[below]{$a$};
+		\fill (4.3,-.3) circle (3pt) node[below]{$b$};
+		\draw[dashed](-.3,-.7)--(4.3,-.3);
+		\fill (1.3,1) circle (3pt);
+		\fill (3.12,1) circle (3pt);
+		\draw[dashed](1.3,1)--(3.12,1);
+	    \end{tikzpicture}
+	\end{center}
+	Lo que probaremos es que la $d(A,B)\neq 0$. Y al ser positiva nos permitirá encontrar un punto interior, por le cual utilizaremos el teorema de Hahn-Banach.
+
+	La distancia lo calcularemos con la Euclideana, porque estamos en $\mathbb{R}^n$; pero podríamos calcular para cualquier norma. Es decir,
+	$$d=d(A,B)=\inf\left\{\|a-b\|_2:a\in A, b\in B\right\}.$$
+	(Ese ínfimo existirá, ya que está acotado por el cero inferiormente). Ahora, pueden pasar dos cosas: 
+    \begin{itemize}
+	\item Si $d=0$, tomamos una sucesión $\left\{a_n\right\}_n\subseteq A$ y $\left\{b_n\right\}_n \subseteq B$. De forma que,
+	    $$\|a_n-b_n\|\to  d.$$
+	    El hecho de que las distancias entre los puntos se acerquen a algo, no quiere decir que los puntos se acerquen a nada. Pero como $A$ es compacto, 
+	    $$\left\{a_n\right\}_n\subseteq A$$
+	    tiene un sucesión convergente. Y ese límite de la sucesión, como el compacto es cerrado, también está en el compacto (cerrado por lo bordes y acotado que se puede dibujar),
+	    $$\left\{a_{n_k}\right\}\to a\in A. \qquad (1)$$
+	    Ya que,
+	    $$\|a_n-b_n\|\to 0.$$
+	    Por $(1)$,  
+	    \switchcolumn[1]*{\noindent\scriptsize
+		La demostración de $\left\{b_{n_k}\right\}\to a$ es: Si,
+
+		$
+		\begin{array}{rcl}
+		    \|b_{n_k}-a\|&\leq& \|b_{n_k}-a_{n_k}+a_{n_k}-a\|\\\\
+				 &\leq& \|b_{n_k}-a_{n_k}\|+\|a_{n_k}-a\|\\\\
+				 &\to& 0+0=0.
+		\end{array}
+		$
+	    }
+	    \switchcolumn[0]
+	    $$\left\{b_{n_k}\right\}\to a.$$
+	    Ahora, ya que $B$ es cerrado, cualquier límite de cosas $b$ están en $B$. Es decir,
+	    $$a\in A\cap B.$$
+	    Lo que es una contradicción, ya que $A\cap B=\emptyset$. Por lo tanto, $d\neq 0$.
+
+	\item $d>0$. Tomamos $A'=A+\dfrac{d}{2}B_{\mathbb{R}^n}$ 
+	\begin{center}
+	    \begin{tikzpicture}[>=Triangle,scale=.5]
+		\draw[rotate=-30,opacity=.7](0,0) ellipse (1cm and 2cm);
+		\draw[rotate=20,opacity=.7](4,-1.5) ellipse (1cm and 2cm);
+		\fill (-.3,-.7) circle (3pt) node[below]{$a$};
+		\fill (4.3,-.3) circle (3pt) node[below]{$b$};
+		\draw[dashed](-.3,-.7)--(4.3,-.3);
+		\fill (1.3,1) circle (3pt);
+		\fill (3.12,1) circle (3pt);
+		\draw[dashed](1.3,1)--(3.12,1);
+		\draw(2.2,1)node[below]{$d$};
+		\draw[rotate=-30,opacity=.7,dashed](0,0) ellipse (1.9cm and 2.9cm);
+		\pattern[pattern=north east lines, pattern color=gray!50, rotate around={-27:(0,0)}] (0,0) ellipse (1.9cm and 2.9cm);
+	    \end{tikzpicture}
+	\end{center}
+	En particular, si $a\in A$. Entonces, 
+	$$a+\dfrac{d}{2}B_{\mathbb{R}^n}\subseteq A'.$$
+	Esto implica que, $a$ es un punto interior de $A'$. Luego, aplicamos el teorema de separación de los conjuntos, $\exists f:\mathbb{R}^n\to \mathbb{R}$ lineal, $f(a)<\inf f(b), b\in B,\; \forall a\in \interior A'$. De donde, 
+	$$f(a)<\inf f(b), b\in B, \;\forall a\in A.$$
+	\begin{center}
+	    \begin{tikzpicture}[>=Triangle,scale=.5]
+		\draw[rotate=-30,opacity=.7](0,0) ellipse (1cm and 2cm);
+		\draw[rotate=20,opacity=.7](4,-1.5) ellipse (1cm and 2cm);
+		\fill (-.3,-.7) circle (3pt) node[below]{$a$};
+		\fill (4.3,-.3) circle (3pt) node[below]{$b$};
+		\draw[dashed](-.3,-.7)--(4.3,-.3);
+		\fill (1.3,1) circle (3pt);
+		\fill (3.12,1) circle (3pt);
+		\draw[dashed](1.3,1)--(3.12,1);
+		\draw(2.2,1)node[below right]{$d$};
+		\draw[rotate=-30,opacity=.7,dashed](0,0) ellipse (1.9cm and 2.9cm);
+		\draw(-2.2,2)node[below right]{$B$};
+		\pattern[pattern=north east lines, pattern color=gray!50, rotate around={-27:(0,0)}] (0,0) ellipse (1.9cm and 2.9cm);
+		\draw[red](2.15,-3)--(2.25,4);
+	    \end{tikzpicture}
+	\end{center}
+	Como $A$ es compacto, existe 
+	$$a_0\in A:f(a_0)=\sup f(a),a\in A.$$ 
+	Entonces,
+	$$f(a)\geq f(a_0)<\inf \left\{f(b)\right\},b\in B.$$
+    \end{itemize}
+\end{teo}
+
+\section{Conos duales }
+\begin{tcolorbox}[colframe=white]
+    Los conos se establecen para ordenes en $\mathbb{R}^n$ que son multicriterio. Donde hablaremos de conos duales, que es importante ya que cuando hagamos optimización y nuestro dominio sea un cono, lo dualizaremos, cuando hagamos el dual del problema, el cono que nos saldrá es el cono dual. Entonces necesitamos saber como es el cono dual para poder trabajar con el cono dual.
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5]
+	\draw[pattern=north east lines, pattern color=gray!40, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,-1.1) -- (-1,4.5cm) -- cycle;
+	\draw[dashed](0,0)--(-1,4.5);
+	\draw[dashed](0,0)--(5,-1);
+	\draw(-1,2)node[below left]{$K$};
+	\draw[pattern=north west lines, pattern color=red!20, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[red](0,0)--(1,4.5);
+	\draw[red](0,0)--(5,1);
+	\draw[red](3.5,3.5)node[below left]{$K^*$};
+	\draw[blue!50](-.1,.43)--(.4,.56)--(.53,.1);
+	\draw[green](.1,.5)--(.6,.43)--(.49,-.12);
+    \end{tikzpicture}
+\end{center}
+}
+\switchcolumn[0]
+Partimos de 
+$$K\in \mathbb{R}^n$$
+que es un cono. Y a partir de aquí se define su cono dual como:
+$$
+\begin{array}{rcl}
+    K^*&=&\left\{y\in \mathbb{R}^n: y^T x\geq 0,\forall x\in K\right\}\\\\
+       &=&\left\{y\in \mathbb{R}^n: \langle y,x\rangle\geq 0,\forall x\in K\right\}.
+\end{array}
+$$
+
+Lo que tenemos que hacer es tomar lineas perperdiculares a las dos lineas que forman el cono, dando nos da un cono dual. 
+
+% -------------------- EJEMPLO 2.8
+\begin{ejem}
+    Si $\|\cdot\|$ es una norma en $\mathbb{R}^n$. Entonces,
+    $$K=\left\{(x,t)\in \mathbb{R}^n:\|x\|\leq t\right\}.$$
+\end{ejem}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    Tenemos una norma en espacio de Banach, en espacio normado. Cuando hacemos el dual, cuando vemos a $\mathbb{R}^n$ como aplicaciones lineales y continuas, entonces nos sale una norma nueva, esa norma se llama norma dual.
+}
+\switchcolumn[0]\noindent
+% --------------------- DEFINICIÓN 2.18
+\begin{def.}
+    La norma dual de $\left(\mathbb{R}^n,\|\cdot\|\right)$. Y si define como:
+    $$\|y\| = \sup\left\{\langle y,x\rangle: x\in B_{\|\cdot\|}\right\}.$$
+\end{def.}
+
 \end{paracol}
+
