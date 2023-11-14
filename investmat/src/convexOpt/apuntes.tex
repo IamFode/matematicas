@@ -1945,7 +1945,9 @@ Si existe $x_0\in C\cap H$, decimos que $x_0$ es un punto soporte.
 % ------------------- EJERCICIO 2.4
 \begin{ejer} Sea $C\in \mathbb{R}^n$ Sea $C\in \mathbb{R}$ cerrado y convexo. Demuestra que $C$ es la intersección de todos los semiespacios que lo contienen.
 
-    Demostración.- Sea un semiespacio, es un conjunto de la forma 
+    Demostración.- Primeramente notemos que, si cualquier semiespacio $H$ tal que $C$ está completamente dentro de $H$, entonces cada punto en $C$ también pertenece a $H$. Ahora, si consideramos todos los posibles semiespacios que contienen a $C$, y tomamos su intersección, estamos buscando los puntos que son comunes a todos estos semiespacios. Dado que cada punto en $C$ pertenece a cada uno de estos semiespacios (porque cada semiespacio contiene a $C$), cada punto en $C$ también estará en la intersección de todos estos semiespacios. Por lo tanto, decimos que $C$ está contenido en la intersección de todos los semiespacios que lo contienen.
+
+    Luego, sea un semiespacio un conjunto de la forma 
     $$H=\left\{x\in E:f(x)\leq \alpha\right\}, f\in E^\#, \alpha \in \mathbb{R}$$
     \begin{center}
 	\begin{tikzpicture}[scale=0.4,>=Triangle]
@@ -1958,7 +1960,11 @@ Si existe $x_0\in C\cap H$, decimos que $x_0$ es un punto soporte.
 	    \draw (1.4,5) -- (3.3,-2); 
 	\end{tikzpicture}
     \end{center}
-    Nos da un espacio que contiene al conjunto.
+    y sea un punto $x$ en la intersección de todos los semiespacios que contienen a $C$ pero $x\notin C$. Como $C$ es cerrado y convexo, y $x\notin C$, por el teorema de separación de Hahn-Banach, existe una función lineal $f$ y un número real $\alpha$ tal que $f(x)>\alpha$ y $f(c)\leq \alpha$ para todo $c\in C$. Esto significa que $x$ no está en el semiespacio 
+    $$H=\left\{y\in \mathbb{R}^n:f(y)\leq \alpha\right\},$$ 
+    lo cual es una contradicción porque asumimos que $x$ está en la intersección de todos los semiespacios que contienen a $C$. Por lo tanto, la intersección de todos los semiespacios que contienen a $C$ debe estar contenida en $C$.
+
+    Así, demostramos que un conjunto cerrado y convexo $C$ en $\mathbb{R}^n$ es la intersección de todos los semiespacios que lo contienen.
 \end{ejer}
 }
 
@@ -2094,18 +2100,98 @@ Lo que tenemos que hacer es tomar lineas perperdiculares a las dos lineas que fo
 % -------------------- EJEMPLO 2.8
 \begin{ejem}
     Si $\|\cdot\|$ es una norma en $\mathbb{R}^n$. Entonces,
-    $$K=\left\{(x,t)\in \mathbb{R}^n:\|x\|\leq t\right\}.$$
+    $$K=\left\{(x,t)\in \mathbb{R}^n:\|x\|\leq t\right\}\subseteq \mathbb{R}^{n+1}$$
+    (En realidad es cómo representar la gráfica de la función de la norma, y tomar el cono que se forma; es decir, una dimensión más).
 \end{ejem}
 
 \switchcolumn[1]*{\noindent\scriptsize
-    Tenemos una norma en espacio de Banach, en espacio normado. Cuando hacemos el dual, cuando vemos a $\mathbb{R}^n$ como aplicaciones lineales y continuas, entonces nos sale una norma nueva, esa norma se llama norma dual.
+    Tenemos una norma en espacio de Banach, en espacio normado. Cuando hacemos el dual, cuando vemos a $\mathbb{R}^n$ como aplicaciones lineales y continuas, entonces nos sale una norma nueva, esa norma se llama norma dual, que es importante.
 }
 \switchcolumn[0]\noindent
 % --------------------- DEFINICIÓN 2.18
 \begin{def.}
-    La norma dual de $\left(\mathbb{R}^n,\|\cdot\|\right)$. Y si define como:
+    La \textbf{norma dual} de $\left(\mathbb{R}^n,\|\cdot\|\right)$. Y si define como:
     $$\|y\| = \sup\left\{\langle y,x\rangle: x\in B_{\|\cdot\|}\right\}.$$
 \end{def.}
 
+\begin{tcolorbox}[colframe=white]
+La definición de cono dual se lleva bien con la definición de arriba y el resultado sería esta proposición: 
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    Si utilizamos el cono $K=\left\{(x,t)\in \mathbb{R}^n:\|x\|\leq t\right\}\subseteq \mathbb{R}^{n+1}$, que \textbf{se usa mucho en optimización} y dualizamos lo que tendremos es el cono dual de la proposición 2.2 que no es más la que define a norma dual. Es decir, tomaríamos la norma, la dibujaríamos y aplicaríamos todo lo que está por encima.  
+}
+\switchcolumn[0]\noindent
+% --------------------- PROPOSICIÓN 2.2
+\begin{proposicion}
+    Si tomamos $\left\{(x,t):\|x\|\leq t\right\}^*=\left\{(y,s):\|y\|^*\leq s\right\}.$
+
+	Demostración.-\; Tomemos un punto de uno de los lados y demostraremos que ese punto ahí, si y sólo si está en el otro. Para ello, sea 
+	$$(y,s)\in \left\{(y,s):\|y\|^*\leq s\right\}.$$
+	De donde,
+	$$\|y\|^*\leq s.$$
+	Utilizando la definición 2.18 de norma dual se tiene,
+	$$\sup\left\{\langle y,x\rangle: x\in B_{\|\cdot\|}\right\}\leq s.$$
+	Luego, por el producto escalar,
+	$$y^Tx\leq s,\;\forall x\in B_{\|\cdot\|}.$$
+	El hecho de que $x$ esté en la bola, me permitirá tomar los múltiplos de $x$. En otras palabras si yo multiplico $x$ por algún número. Entonces,
+	\switchcolumn[1]*{\noindent\scriptsize
+	    Demostremos que $ y^Tx\leq s,\;\forall x\in B_{\|\cdot\|}$ es equivalente a $y^Tx\leq s,\;\forall x\in \mathbb{R}^n$. Dado $x\in \mathbb{R}^n, t\geq \|x\|$. Entonces, $\dfrac{x}{t}\in B_{\mathbb{R}^n}$
+	}
+	\switchcolumn[0]\noindent
+	$$y^Tx\leq st,\;\forall x\in \mathbb{R}^n,\;\forall t\geq \|x\|.$$
+	Ahora, vemos que el espacio en $\mathbb{R}^n$ es simétrico. Es decir, para cualquier $y$, tenemos  $-y$. Por lo que,
+	$$-y^Tx\leq st,\;\forall x\in \mathbb{R}^n,\;\forall t\geq \|x\|.$$
+	Lo que es equivalente a decir que,
+	$$
+	\begin{array}{rcll}
+	    st+y* Tx&\geq& 0,&\forall x\in \mathbb{R}^n,\;\forall t\geq \|x\|\\\\
+	    \langle (y,s),(x,t)\rangle&\geq& 0,& \forall (x,t)\in K.
+	\end{array}
+	$$
+	Por lo tanto por definición,
+	$$(y,s)\in K^*.$$
+\end{proposicion}
+
+\begin{tcolorbox}[colframe=white]
+Estos conos duales tiene una serie de propiedades interesantes ya que nos permitirá hacer order.
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Apuntado significa que no puede tener un vector y su opuesto. El único vector opuesto es el cero. Si $y,-y\in K^* \Rightarrow y=0$.
+	\item Tener punto interior y ser apuntado, son propiedades duales.
+	\item La 5) nos dice que si realizo la operación dos veces lo que consigo es cerrar.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- PROPIEDAD 2.4
+\begin{prop}
+    Sea $K$ un cono en $\mathbb{R}^n$.
+    \begin{enumerate}[1)]
+	\item $K^*$ es un cono convexo y cerrado.
+	\item $K_1\subseteq K_2\Rightarrow K_2^*\subseteq K_1^*$.
+	\item $\mathring{R}\neq\emptyset \Rightarrow K^*$ apuntado o punteagudo.
+	\item $\overline{K}$ y es apuntado $\Rightarrow K^*$ tiene interior  no vacío.
+	\item $K^{**}=\overline{\co{K}}$.
+    \end{enumerate}
+\end{prop}
+
+\switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Por propio, se refiere a que podemos tener un orden. En otras palabras, que sea apuntado, que tuviese un punto interior, que sea convexo, etc.
+	\end{itemize}
+}
+%-------------------- COROLARIO 2.1
+\begin{cor}
+    Si $K$ es propio. Entonces, $K^*$ es propio.
+\end{cor}
+
 \end{paracol}
+
+
+
+
+
+\chapter{Funciones convexas}
 
