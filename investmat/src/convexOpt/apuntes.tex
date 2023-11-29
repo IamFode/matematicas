@@ -2308,45 +2308,41 @@ Muchas veces veremos que la función no es estrictamente convexo.
     Es conveniente considerar que nuestras funciones están definidas en todo el espacio. Así, cuando tengamos una función $f$ cuyo dominio es un subconjunto de $\mathbb{R}^n$, identificaremos $f$ con su extension.
 \end{tcolorbox}
 
-\switchcolumn[1]*{\noindent\scriptsize
-	\begin{itemize}
-	    \item Si ahora, tomo el punto de conjuntos por encima de la gráfica, ese conjunto es convexo. Por lo que, todo lo que sabemos sobre conjuntos convexos, lo podemos aplicar a funciones convexas trasladando el concepto conjuntista al concepto funcional.
-	\end{itemize}
-}
-\switchcolumn[0]\noindent
-\begin{center}
-    \begin{tikzpicture}[>=Triangle,scale=.5]
-	\draw[dashed,gray!50](0,-1)--(0,5);
-	\draw[dashed,gray!50](6,-1)--(6,5);
-	\draw[dashed,gray!50](4,-1)--(4,1);
-	\draw[dashed,gray!50](4,1)--(6,1);
-	\fill[pattern=north east lines, pattern color=gray!50] (0,5) -- plot[domain=0:6] (\x,{1/16*\x*\x}) -- (6,5) -- cycle;
-	\node at (3,3) {$E$};
-	\draw(6,1)node[right]{\scriptsize$f(x)$};
-	\draw[domain=0:6,smooth,variable=\x,blue] plot ({\x},{\x*\x/16});
-	\fill[blue](4,1) circle (3pt);
-	\node[above,rotate=20,blue] at (4,1) {\scriptsize$(x,f(x))$};
-	\draw[](0,-1)--(6,-1)node[below]{};
-	\foreach \x/\xtext/\y in {0/a/-.1,4/x/-.1,6/b/-.1}
-	{
-	\draw (\x,-1.2) -- (\x,-.8) node[below,yshift=-.2 cm] {\scriptsize$\xtext$};
-	}
-    \end{tikzpicture}
-\end{center}
 
-Este gráfico, básicamente será lo que llamaremos \textbf{Epígrafo}. Es decir, si la gráfica de la función es:
+Sea $f:\mathbb{R}^n\rightarrow\mathbb{R}$, se define una gráfica como:
 $$G(f)=\left\{(x,f(x)):x\in\text{Dom}(f)\right\}\subseteq \mathbb{R}^n\times \mathbb{R}.$$
-Entonces,
+Por lo que definimos lo siguiente:
+
 
 \switchcolumn[1]*{\noindent\scriptsize
 	\begin{itemize}
 	    \item Básicamente el epígrafo será los puntos que están por encima de la función.
+	    \item Si ahora, tomo el punto de conjuntos por encima de la gráfica, ese conjunto es convexo. Por lo que, todo lo que sabemos sobre conjuntos convexos, lo podemos aplicar a funciones convexas trasladando el concepto conjuntista al concepto funcional.
 	\end{itemize}
 }
 \switchcolumn[0]\noindent
 %------------------- DEFINICIÓN 3.5
 \begin{def.}[Epígrafo]
-    $$\text{Epi}(f)=\left\{(x,t):x\in \text{Dom}(f),t\geq f(x)\right\}\subseteq \mathbb{R}* n\times \mathbb{R}.$$
+    $$\text{Epi}(f)=\left\{(x,t):x\in \text{Dom}(f),t\geq f(x)\right\}\subseteq \mathbb{R}^n\times \mathbb{R}.$$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \draw[dashed,gray!50](0,-1)--(0,5);
+	    \draw[dashed,gray!50](6,-1)--(6,5);
+	    \draw[dashed,gray!50](4,-1)--(4,1);
+	    \draw[dashed,gray!50](4,1)--(6,1);
+	    \fill[pattern=north east lines, pattern color=gray!50] (0,5) -- plot[domain=0:6] (\x,{1/16*\x*\x}) -- (6,5) -- cycle;
+	    \node at (3,3) {$E$};
+	    \draw(6,1)node[right]{\scriptsize$f(x)$};
+	    \draw[domain=0:6,smooth,variable=\x,blue] plot ({\x},{\x*\x/16});
+	    \fill[blue](4,1) circle (3pt);
+	    \node[above,rotate=20,blue] at (4,1) {\scriptsize$(x,f(x))$};
+	    \draw[](0,-1)--(6,-1)node[below]{};
+	    \foreach \x/\xtext/\y in {0/a/-.1,4/x/-.1,6/b/-.1}
+	    {
+	    \draw (\x,-1.2) -- (\x,-.8) node[below,yshift=-.2 cm] {\scriptsize$\xtext$};
+	    }
+	\end{tikzpicture}
+    \end{center}
 \end{def.}
 
 \switchcolumn[1]*{\noindent\scriptsize
@@ -2372,13 +2368,13 @@ Entonces,
 	    \draw[](-3.5,-1)--(4.2,-1)node[below]{};
 	    \draw[domain=-3.5:4.2,smooth,variable=\x,blue] plot ({\x},{\x*\x/3});
 	    \fill[pattern=north east lines, pattern color=gray!20] (-3.5,4.1) -- plot[domain=-3.5:4.2] (\x,{1/3*\x*\x});
-	    \fill[draw](-2.1,3.5)node[above left]{\scriptsize$(x,t)$} circle (2pt) -- (0,3.915) circle (2pt)node[above,rotate=10]{\tiny$\lambda t+(1-\lambda) s$} -- (2.74,4.5)node[above]{\scriptsize$(y,s)$} circle (2pt);
-	    \fill[draw](-2.1,1.5) circle (2pt) -- (0,1.915) circle (2pt) -- (2.74,2.5) circle (2pt);
+	    \fill[draw](-2.1,3.5)node[above left]{\scriptsize$(x,t)$} circle (2pt) -- (0,3.915) circle (2pt)node[above,rotate=10]{\scriptsize$\lambda t+(1-\lambda) s$} -- (2.74,4.5)node[above]{\scriptsize$(y,s)$} circle (2pt);
+	    \fill[draw](-2.1,1.5)node[left]{\scriptsize$a$} circle (2pt) -- (0,1.915)node[below left]{\scriptsize$c$} circle (2pt) -- (2.74,2.5)node[right]{\scriptsize$b$} circle (2pt);
 	    \draw[dashed,gray](-2.1,3.5)--(-2.1,-1);
 	    \draw[dashed,gray](2.74,4.5)--(2.74,-1);
 	    \draw[dashed,red](0,3.915)--(0,-1);
 	    \fill[draw](0,0) circle (2pt)node[below right]{\scriptsize$d$};
-	    \foreach \x/\xtext/\y in {-2.1/\scriptsize x/-.1,0/\tiny \lambda x (1-\lambda)y/-.1,2.74/\scriptsize y/-.1}
+	    \foreach \x/\xtext/\y in {-2.1/ x/-.1,0/\lambda x +(1-\lambda)y/-.1,2.74/ y/-.1}
 	    {
 	    \draw (\x,-1.2) -- (\x,-.8) node[below,yshift=-.2 cm] {\scriptsize$\xtext$};
 	    }
@@ -2391,7 +2387,7 @@ Entonces,
     Escribiendo en términos de punto, se tiene
     $$\lambda t + (1-\lambda)s\geq f\left(\lambda x + (1-\lambda)y\right).$$
     Probemos ahora que esta desigualdad es cierta. Por lo tanto por convexidad:
-    $$f\left[\lambda x + (1-\lambda) y\right]\leq \lambda f(x) + (1\lambda)f(y)\leq \lambda t+(1-\lambda)s.$$
+    $$f\left[\lambda x + (1-\lambda) y\right]\leq \lambda f(x) + (1-\lambda)f(y)\leq \lambda t+(1-\lambda)s.$$
     La segunda desigualdad es dado porque $(x,t)$ está en el epígrafo; Y por definición, $f(x)\leq t$ y $f(y)\leq s$. 
     \switchcolumn[1]*{\noindent\scriptsize
 	\begin{itemize}
@@ -2400,7 +2396,7 @@ Entonces,
 	\end{itemize}
 	}
     \switchcolumn[0]\noindent
-    $\left[\Leftarrow\right.$ $\text{Epi}(f)$ es convexo. Sean $x,y\in \text{Dom}(f).$ (es convexo por ser la proyección a la primera coordenada de un convexo). Luego sea $\lambda \in (0,1)$, nos preguntamos si:
+    $\left.\Leftarrow\right]$ $\text{Epi}(f)$ es convexo. Sean $x,y\in \text{Dom}(f)$. Lo primero que tenemos que demostrar es que el dominio es convexo, debido a que es convexo por ser la proyección a la primera coordenada de un convexo. Luego, sea $\lambda \in (0,1)$, nos preguntamos si:
     $$f\left[\left(\lambda x + (1-\lambda)y\right)\leq \lambda f(x) + (1-\lambda)f(y)\right].$$
     Ahora, lo que quiero probar es si el conjunto es convexo. Entonces, la función es convexa. Por lo que aplicaremos la definición de convexidad del conjunto pero solo a los puntos de la recta del medio del gráfico de arriba que se intesectan con la función. Es decir, 
     $$x\in \text{Dom}(f) \Rightarrow (x,f(x))\in \text{Epi}(f).$$
@@ -2412,18 +2408,57 @@ Entonces,
     $$\left[\lambda x + (1-\lambda)y,\lambda f(x) + (1-\lambda)f(y)\right]\in \text{Epi}(f).$$
     Por lo tanto,
     $$\lambda f(x) + (1-\lambda)f(y)\geq f\left[\lambda x + (1-\lambda)y\right].$$
-    Así, queda demostrado el teorema.
+    De esta manera queda demostrado el teorema.
+\end{teo}
+
+% -------------------- TEOREMA 3.2
+\begin{teo} $f$ es cóncava sii $hipo(f)$ es convexo.
+
 \end{teo}
 
 \begin{tcolorbox}[colframe=white]
-    El siguiente teorema es importante en optimización práctica. Ya que, al querer encontrar un mínimo muchas veces damos vueltas, cuando hay un argumento muy sencillo si sabemos que la función es convexa. Entonces, hay funciones de forma natural son convexas y que cuando encontramos un extremo local (aplicando Fermat, Lagrange, Gradiente=0); encontramos un extremo global que no hace falta que sea mínimo, por lo tanto la función es convexas es el mínimo global. 
+    El siguiente teorema es importante en optimización práctica. Ya que, al querer encontrar un sólo mínimo muchas veces damos vueltas, cuando hay un argumento muy sencillo si sabemos que la función es convexa. Entonces, hay funciones de forma natural son convexas y que cuando encontramos un extremo local (aplicando Fermat, Lagrange, Gradiente=0); encontramos un extremo global que no hace falta que sea mínimo, por lo tanto la función es convexas es el mínimo global. 
 \end{tcolorbox}
 
-% -------------------- TEOREMA 3.2
+% -------------------- TEOREMA 3.3
 \begin{teo} Sea $f$ convexa, $x_0$ un mínimo local de $f$. Entonces, $x_0$ es un mínimo global.
 
-    Demostración.-\; 
+    Demostración.-\; Sea $\delta>0$ tal que $f(z)\geq f(x_0),\; \forall z\in B(x_0,\delta)\cap Dom$. Lo que quiero demostrar es que la desigualdad dada, no sólo es cierta para todos los puntos de la bola si no para todos los puntos cualquiera. Así, que tomamos un $y\in Dom$; la idea será:
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.6]
+	    \draw[rotate=-60,opacity=.7](0,0) ellipse (1.5cm and 3cm);
+	    \draw[opacity=.7](-1,-.5) circle (25pt);
+	    \fill (-1,-.5) circle (2pt); 
+	    \draw[->] (-1,-.5)node[below]{\scriptsize$x_0$} -- (-1.5,.25)node[yshift=-10]{\scriptsize$\delta$};
+	    \fill (2,1.2) circle (2pt)node[below right]{\scriptsize$y$};
+	    \draw (-1,-.5) -- (2,1.2);
+	    \fill (-.24,-.08) circle (1.5pt)node[below right]{\scriptsize$z$};
+	\end{tikzpicture}
+    \end{center}
+    ¿Cuál es la idea para demostrar que la $f(y)$ es necesariamente mayor o igual que cero $f(x_0)$?. Si lo pensamos en una dimensión tendríamos:
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw[](-2,0)--(6,0)node[below]{};
+	    \draw[domain=-1:1,smooth,variable=\x,blue] plot ({\x},{\x*\x+2});
+	    \draw[dashed](0,0)--(0,2)circle (2pt);
+	    \draw[dashed](0,2)--(5,2);
+	    \fill (4,1.5) circle (3pt);
+	    \draw[dashed](1,3)--(4,1.5);
+	    %crear flecha curva
+	    \draw[->] (2,2.5) to [out=0,in=188] (4,3);
+	    \foreach \x/\xtext/\y in {0/ x_0/0,4/ y/0}
+	    {
+	    \draw (\x,.1) -- (\x,-.1) node[below] {$\xtext$};
+	    }
+	    \draw[>={Bracket[width=3mm,line width=.5pt,length=.5mm]},<->] (-.5, 0) -- (.5, 0);
+	\end{tikzpicture}
+    \end{center}
+
 \end{teo}
+
+
+
 
 
 \end{paracol}
