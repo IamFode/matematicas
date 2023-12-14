@@ -2194,9 +2194,14 @@ Estos conos duales tiene una serie de propiedades interesantes ya que nos permit
 
 
 
+
 \chapter{Funciones convexas}
 
 \begin{paracol}{2}
+
+\section{Propiedades básicas}
+
+\subsection{Definición}
 
 Por defecto el dominio será $\mathbb{R}^n$, con la peculiaridad que tomaremos el valor más infinito.
 Y llamaremos dominio efectivo, al conjunto donde esa función toma valores finitos.
@@ -2265,8 +2270,12 @@ Y llamaremos dominio efectivo, al conjunto donde esa función toma valores finit
 \begin{tcolorbox}[colframe=white]
     La convexidad es un concepto muy fuerte, que es una propiedad de todo un conjunto, ya que lo cumplen todos los pares de puntos, pero a la larga es un concepto uno-dimensional. Es decir, hay dos puntos, tomamos la linea que une los dos puntos y estudiamos conexidad en una variable en esa recta. 
 \end{tcolorbox}
-\vspace{.5cm}
+
+
+\subsection{Definiciones más fuertes}
+
 Muchas veces veremos que la función no es estrictamente convexo.
+
 
 \switchcolumn[1]*{\noindent\scriptsize
 	\begin{itemize}
@@ -2307,6 +2316,10 @@ Muchas veces veremos que la función no es estrictamente convexo.
 \begin{tcolorbox}[colframe=white]
     Es conveniente considerar que nuestras funciones están definidas en todo el espacio. Así, cuando tengamos una función $f$ cuyo dominio es un subconjunto de $\mathbb{R}^n$, identificaremos $f$ con su extension.
 \end{tcolorbox}
+
+
+
+\subsection{Propiedades clave: Epígrafo}
 
 
 Sea $f:\mathbb{R}^n\rightarrow\mathbb{R}$, se define una gráfica como:
@@ -2423,7 +2436,7 @@ Por lo que definimos lo siguiente:
 % -------------------- TEOREMA 3.3
 \begin{teo} Sea $f$ convexa, $x_0$ un mínimo local de $f$. Entonces, $x_0$ es un mínimo global.
 
-    Demostración.-\; Sea $\delta>0$ tal que $f(z)\geq f(x_0),\; \forall z\in B(x_0,\delta)\cap Dom$. Lo que quiero demostrar es que la desigualdad dada, no sólo es cierta para todos los puntos de la bola si no para todos los puntos cualquiera. Así, que tomamos un $y\in Dom$; la idea será:
+    Demostración.-\; Sea $\delta>0$ tal que $f(z)\geq f(x_0),\; \forall z\in B(x_0,\delta)\cap Dom$. Lo que quiero demostrar es que la desigualdad dada, no sólo es cierta para todos los puntos de la bola si no para todos los puntos cualquiera. Así, que tomamos un $y\in Dom\backslash B(x_0,\delta)$; la idea será:
     \begin{center}
 	\begin{tikzpicture}[>=Triangle,scale=.6]
 	    \draw[rotate=-60,opacity=.7](0,0) ellipse (1.5cm and 3cm);
@@ -2432,7 +2445,7 @@ Por lo que definimos lo siguiente:
 	    \draw[->] (-1,-.5)node[below]{\scriptsize$x_0$} -- (-1.5,.25)node[yshift=-10]{\scriptsize$\delta$};
 	    \fill (2,1.2) circle (2pt)node[below right]{\scriptsize$y$};
 	    \draw (-1,-.5) -- (2,1.2);
-	    \fill (-.24,-.08) circle (1.5pt)node[below right]{\scriptsize$z$};
+	    \fill (-.24,-.08) circle (2pt)node[below right]{\scriptsize$z$};
 	\end{tikzpicture}
     \end{center}
     ¿Cuál es la idea para demostrar que la $f(y)$ es necesariamente mayor o igual que cero $f(x_0)$?. Si lo pensamos en una dimensión tendríamos:
@@ -2441,24 +2454,946 @@ Por lo que definimos lo siguiente:
 	    \tikzstyle{every node}=[font=\scriptsize]
 	    \draw[](-2,0)--(6,0)node[below]{};
 	    \draw[domain=-1:1,smooth,variable=\x,blue] plot ({\x},{\x*\x+2});
-	    \draw[dashed](0,0)--(0,2)circle (2pt);
+	    \draw[dashed,fill](0,0)--(0,2)circle (2pt);
 	    \draw[dashed](0,2)--(5,2);
 	    \fill (4,1.5) circle (3pt);
-	    \draw[dashed](1,3)--(4,1.5);
+	    \draw[red](0,2)--(4,1.5);
+	    \draw[dashed,fill](1,0)--(1,3)circle (2pt);
 	    %crear flecha curva
-	    \draw[->] (2,2.5) to [out=0,in=188] (4,3);
-	    \foreach \x/\xtext/\y in {0/ x_0/0,4/ y/0}
+	    \draw[->,opacity=.3] (2,1.8) to [out=0,in=220] (4,3)node[above,rotate=-30]{Violará la definción de convexidad};
+	    \foreach \x/\xtext/\y in {0/x_0/0, 1/z/0 ,4/y/0}
 	    {
-	    \draw (\x,.1) -- (\x,-.1) node[below] {$\xtext$};
+	    \draw (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
 	    }
-	    \draw[>={Bracket[width=3mm,line width=.5pt,length=.5mm]},<->] (-.5, 0) -- (.5, 0);
+	    \draw[>={Bracket[width=3mm,line width=.5pt,length=.5mm]},<->] (-1, 0) -- (1, 0);
 	\end{tikzpicture}
     \end{center}
 
+    \switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item $x_0$ se que está en la bola, ya que si calculamos la distancia de $\frac{\delta}{\|x_0-y\|}$ a $x_0$ nos saldrá $\delta$ ($B(x_0,\delta)$) y además está en el Dominio $Dom$ por que es convexo. Cómo $x_0$ e $y$ están $z$ está.
+	    \item Para no cometer ningún un error estricto de las desigualdades será $y\in Dom\backslash B(x_0,\delta)$. Porque ya se lo que pasa con los puntos de la bola, tomo un punto que no este en la bola, si el punto no está en la bola su distancia es más grande que $\delta$, entonces $\frac{\|y-x_0\|-\delta}{\|y-x_0\|}x_0\geq 0$, suman $1$. Es decir, es una combinación convexa.
+	\end{itemize}
+    }
+    \switchcolumn[0]\noindent
+    Definimos $z$ como:
+    $$z=x_0+\dfrac{\delta}{\|x_0-y\|}(y-x_0)\in Dom(f)\cap B(x_0,\delta).$$
+    Dado que $z$ está en un segmento se puede escribir como la combinación convexa de $x_0$ e $y$. Es decir,
+    $$z=\dfrac{\|y-x_0\|-\delta}{\|y-x_0\|}x_0+\dfrac{\delta}{\|y-x_0\|}y.$$
+    Luego, Utilizamos la definición de convexidad de una función y veamos que la propiedad de la conexidad me permite trasladar una propiedad local; es decir, me permite llevar una propiedad que pasa cerca al punto tan lejos como quiera. 
+    $$f(x_0)\leq f(z)\leq \dfrac{\|y-x_0\|-\delta}{\|y-x_0\|}f(x_0)+\dfrac{\delta}{\|y-x_0\|}f(y).$$
+    Ahora, dejo aislada $f(y)$ de forma que
+    $$\dfrac{\delta}{\|y-x_0\|}f(y)\geq \dfrac{\delta}{\|y-x_0\|}f(x_0) \quad \Rightarrow \quad f(y)\geq f(x_0).$$
+    En resumen, si tengo un extremo local, entonces la imagen de los puntos que están lejos no pueden estar por debajo de ese extremo local, ya que nos llevaría una contradicción en el punto $z$.
 \end{teo}
 
 
+\subsection{Condición de primer orden}
+
+\begin{tcolorbox}[colframe=white]
+    El siguiente teorema es la generalización para la funciones diferenciables y toda la parte teórica de funciones convexas y la parte de dualidad nos hará convencer de que ser convexa aunque no tenga diferenciabilidad será del siguiente estilo:
+    $$f(y)\geq f(x_0)+\nabla f(x_0)^T(y-x_0).$$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw[](-4,0)--(4,0)node[below]{};
+	    \draw[domain=-2.5:2.5,smooth,variable=\x,blue] plot ({\x},{1/2*\x*\x+2});
+	    \draw[dashed,fill](1.5,0)--(1.5,3.1)circle (2pt);
+	    \foreach \x/\xtext/\y in {1.5/x_0/0}
+	    {
+	    \draw (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
+	    }
+	    \draw[domain=-1:3,smooth,variable=\x,red] plot ({\x},{1.5*(\x-1.5)+3.1})node[right]{$f(x)+f'(x_0)(x-x_0)=y$};
+	    \draw[dashed,fill](-0.566,0)--(-0.566,2.16)circle (2pt) -- (-3,2.16)node[left]{$f(y)$};
+	\end{tikzpicture}
+    \end{center}
+    $G(f)$ queda por encima de las rectas tangentes.
+\end{tcolorbox}
+\;\\
+Empecemos demostrando el siguiente lema que nos asegurará que estará definida para algo pequeño.
+
+% -------------------- Lema 3.1
+\begin{lema} Para todo $x\in \mathbb{R}^n$, la función $h_x(t)=\dfrac{f(x_0+tx)+f(x_0}{t}$, es monótona no decreciente para $t>0$.
+
+    Demostración.-\; Fijamos $0<t<s,\; x\in \mathbb{R}^n$. Lo que quiero probar es que la función pendiente $h(t)$ cuando la evalúe en $t$ saldrá menor o igual cuando la evalúo en $s$. De manera geométrica se ve de la siguiente manera:
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.45]
+	    \tikzstyle{every node}=[font=\scriptsize]
+
+	    \draw[](-4,0)--(5,0);
+	    \draw[domain=-3:3,smooth,variable=\x,blue] plot ({\x},{1/4*\x*\x+2});
+
+	    \foreach \x/\xtext/\y in {-2/x_0/0,-.5/x_0+tx/0,1.8/x_0+sx/0}
+	    {
+	    \draw (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
+	    }
+
+	    \draw[dashed,fill](-2,0)--(-2,3)circle (2pt);
+	    \draw[dashed,fill](-0.5,0)--(-0.5,2.05) circle (2pt);
+	    \draw[dashed,fill](1.8,0)--(1.8,2.8) circle (2pt);
+
+	    \draw[red](-0.5,2.05)--(-2,3)--(1.8,2.8);
+	\end{tikzpicture}
+    \end{center}
+
+    En sí, lo que vamos a demostrar es que $x_0+tx$ es una combinación convexa de $x_0$ y $x_0+tx$. Por lo que,
+    $$x_0+tx=\dfrac{t}{s}(x_0+sx)+\dfrac{s-t}{s}x_0.$$
+    De donde, por definición de convexidad
+    $$f(x_0+tx)\leq \dfrac{t}{s}f(x_0+sx)+\dfrac{s-t}{s}f(x_0).$$
+    Ahora, compararemos $h_x(t)$ y $h_x(s)$, de manera que
+    $$
+    \begin{array}{rcl}
+	h_x(t)&=&\dfrac{f(x_0+tx)-f(x_0)}{t}\\\\
+	   &\leq& \dfrac{\dfrac{t}{s}f(x_0+sx)-\dfrac{t}{s}f(x_0)}{s}\\\\
+	   &=&\dfrac{1}{s}\left[f(x_0+sx)-f(x_0)\right]\\\\
+	   &=&h_x(s).
+    \end{array}
+    $$
+    Luego, $h_x(t)\leq h_x(s).$
+\end{lema}
 
 
+% -------------------- Teorema 3.4
+\begin{teo} si $f$ es diferenciable. Entonces, $f$ es convexa si y sólo si, $dom(f)$ es convexo, y
+$$f(y)\geq f(x_0)+\nabla f(x_0)^T(y-x_0).$$
+para todo $x,y\in D(f)$.
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La ecuación nos dirá que $f(y)$ está controlada por debajo por una ecuación afín, se le llama también subestimador afín.
+	\item Que la función sea convexa nos dice que el dominio es convexo.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+    Demostración.-\; $\left.\Rightarrow\right]$. Sabemos que $f$ es convexa y diferenciables.  En la definición de diferenciable, para poder decir que es diferenciable en un punto, necesito que ese punto sea interior, observemos también que $D$ es abierto, por lo que empezamos suponiendo que $x_0\in \mathring{D}$. 
+
+    Por el lema 3.1,  $x_0\in\mathring{D}$ en $h_x$ está bien definida al menos en $[0,\delta)$ para cierto $\delta_x>0$, que depende de $x$.
+
+    Ahora, como $f$ es diferenciable, podemos calcular las derivadas direccionales,
+    $$D_{(y-x_0)}f(x_0)=\nabla f(x_0)^T\cdot (y-x_0).$$
+    Pero al mismo tiempo tengo la definición de derivada direccional,
+    $$D_{y-x_0}f(x_0)=\lim_{t\to 0* +}h_{(y-x_0)}(t).$$
+    (Dado que es diferenciable, el límite existe por la derecha e izquierda, por lo que me puedo permitir ir sólo por la derecha). 
+
+    \switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Cómo $h_{(y-x_0)}(t)\leq h_{(y-x_0)}(1)$ son menores o iguales que el que es mayor, todos los $t$ cuando se acercan a $0$ son menores que $1$, luego $h_{(y-x_0)}(t)$ son menores o iguales que que la imagen de $1$, y el límite también.
+	    \item En este caso, si $y$ está en el dominio, vemos que la función está definida hasta el $1$ y el $\delta$ es este caso es más grande. Por lo tanto, puedo trabajar con ese $1$.
+	\end{itemize}
+    }
+    \switchcolumn[0]\noindent
+    Después, utilicemos la monotonía, del lema 3.1,
+    $$
+    \begin{array}{rcl}
+	\displaystyle\lim_{t\to 0^+}h_{(y-x_0)}(t) &\leq& h_{(y-x_0)}(1)\\\\
+						   &=& \dfrac{f(x_0+(y-x_0))-f(x_0)}{1}\\\\
+						   &=& f(y)-f(x_0).
+    \end{array}
+    $$
+    
+    De donde tenemos,
+    $$f(y)\geq f(x_0) \nabla f(x_0)^T(y-x_0) \quad \forall y\in D,\; \forall x_0\in D.$$
+
+    $\left.\Leftarrow\right]$. Supongamos que $D$ es convexo y que
+    $$f(y)\geq f(x)+\nabla f(x)^T(y-x), \quad \forall x,y\in D.$$
+
+    \switchcolumn[1]*{\noindent\scriptsize
+	\begin{center}
+	    \begin{tikzpicture}[>=Triangle,scale=.5]
+		\tikzstyle{every node}=[font=\scriptsize]
+
+		\draw[dashed,gray!50](-2,-1)--(-2,5);
+		\draw[dashed,gray!50](6,-1)--(6,5);
+
+		\def\funcA{2+cos(deg(\x+2))}
+		\def\funcB{-\x/3+1.3}
+		\def\funcC{\x/2+.28}
+
+		\draw[domain=-2:6,smooth,variable=\x,red] plot ({\x},{\funcA});
+
+		\fill[pattern=north east lines, pattern color=gray!35] (-2,5) -- plot[domain=-2:6] (\x,{\funcB}) -- (6,5) -- cycle;
+		\draw[domain=-2:6,smooth,variable=\x,blue] plot ({\x},{\funcB});
+
+		\draw[domain=-2:6,smooth,variable=\x,blue!50] plot ({\x},{\funcC});
+
+		\fill[blue](.8,1.05) circle (2.5pt);
+		\draw[dashed,gray!50](.8,-1)--(.8,1.05);
+
+		\fill[blue](1.7,1.12) circle (2.5pt);
+		\draw[dashed,gray!50](1.7,-1)--(1.7,1.12);
+
+		\draw[](-2,-1)--(6,-1)node[below]{};
+		\foreach \x/\xtext/\y in {.8/u/-1,1.7/u/1.12}
+		{
+		\draw (\x,-1.2) -- (\x,-.8) node[below,yshift=-.2 cm] {\scriptsize$\xtext$};
+		}
+
+		\fill[red](.5,4)node[right]{$(x,t)$} circle (2.5pt);
+		\draw[red,dashed](.5,4)--(.5,1.05);
+	    \end{tikzpicture}
+	\end{center}
+    }
+    \switchcolumn[0]\noindent
+
+    Sea, $S_u=\left\{(x,t)_{x\in D}: t\geq f(u)+\nabla f(u)^T(x-u)\right\}$, para $u\in D$. 
+
+    Notemos que,
+    $$S_u \supset Epi(f).$$
+
+    Para mostrar que el epígrafo es convexo debemos demostrar que es la intersección de todos esos epígrafos correspondientes a las $u's$. Es decir,
+    $$Epi(f)=\bigcap_{u\in D}S_u.$$
+
+    (Recordemos que la intersección de conjuntos convexos es convexa).
+
+    $\left.\subseteq\right]$ Sabemos que,
+    $$Epi(f)\subseteq S_u, \forall u\in D.$$
+    Entonces, 
+    $$Epi(f)\subseteq \bigcap_{u\in D}S_u.$$
+
+    $\left.\supseteq\right]$ Sea un punto 
+    $$(x,t)\in \bigcap_{u\in D}S_u.$$
+    La idea es bajar hasta la "frontera" de la función del hipígrafo, como esta función es diferenciable tiene una tangente que funcionará bien. Por lo tanto, para $(x,t)\in S_x$
+    $$t\geq f(x)+\nabla f(x)^T(x-x), \quad \forall u\in D.$$
+    De donde,
+    $$t\geq f(x).$$
+    Que es la definición de epígrafo. Es decir, $(x,t)\in Epi(f)$. 
+
+    Así, el epígrafo $f$ es intersección de convexos, esto implica que $Epi(f)$ es convexo, y $f$ es convexa.
+\end{teo}
+
+El \textbf{sub-estimador} 
+$$L(x)=f(x)+\nabla f(x)^T(y-x)$$
+nos será útil para encontrar el mínimo subestimando. Es decir, realizaremos estimaciones por debajo, encontraremos cotas inferiores que nos permiten al menos que no habrá otro mínimo por debajo.
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Este teorema encontrará puntos críticos que será un mínimo global.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% ----------------------------- TEOREMA 3.5
+\begin{teo} si $f$ es diferenciable y conexa, entonces
+    \begin{center}
+	$\nabla f(x)=0 \quad \Leftrightarrow \quad x$ minimiza globalmente $f$.
+    \end{center}
+    Demostración.-\; $\left. \Rightarrow \right]$ Si $\nabla f(x_0)=0$. Entonces, cómo la función es diferenciable y es convexa cumple la condición de primer orden:
+	$$f(y)\geq f(x_0)+\nabla f(x_0)^T(y-x_0), \quad \forall y\in D.$$
+    Por lo tanto,
+    $$f(y)\geq f(x_0), \quad \forall y\in D.$$
+    Así, $f(x_0)$ es mínimo global.
+
+    $\left.\Leftarrow\right]$ (Teorema de Fermat). Dado que $f$ es diferenciable y $x_0\in D$ es un mínimo global. En particular, $f$ en $x_0$ tiene un mínimo local y sabemos que una función diferencial en un mínimo local la tangente es horizontal. Es decir, 
+    $$\nabla f(x_0)=0.$$
+\end{teo}
+
+\subsubsection{Interpretación geométrica de la condición de primer orden}
+
+$f$ diferenciable, convexa $\Leftrightarrow \; \forall x,\forall y\in D$
+$$f(y)\geq f(x)+\nabla f(x)^T(y-x).$$
+
+Sea $(y,t)\in Epi(f)$, por definición ese punto del epígrafo cumple que 
+$$t\geq f(y).$$
+De forma que:
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5]
+	\tikzstyle{every node}=[font=\scriptsize]
+	\draw[](-4,0)--(4,0)node[below]{};
+	\draw[domain=-2.5:2.5,smooth,variable=\x] plot ({\x},{1/2*\x*\x+2});
+	\draw[dashed,fill](1.5,0)--(1.5,3.1)circle (2pt);
+	\foreach \x/\xtext/\y in {-1.5/y/0,1.5/x/0}
+	{
+	\draw (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
+	}
+	\draw[domain=-1:3,smooth,variable=\x] plot ({\x},{1.5*(\x-1.5)+3.1});
+	\draw[dashed,fill](-1.5,0)--(-1.5,4.5)circle (2pt)node[above]{$(y,t)$};
+	\draw[->,blue](1.5,3.1)--(-1.5,4.5);
+	\draw[->,red](1.5,3.1)node[right]{$(x,f(x))$}--(3.5,1.6);
+    \end{tikzpicture}
+\end{center}
+
+Por lo que,
+$$f(y)\geq f(x)+\nabla f(x)^T(y-x).$$
+Igualando a cero,
+$$0\geq \nabla f(x)^T(y-x)-t+f(x)$$
+Así,
+$$\Big\langle{\color{red}\left(\nabla f(x),-1\right)},{\color{blue}\left(y-x,t-f(x)\right)}\Big\rangle\leq 0.$$
+
+Lo que nos dice es que cualquier punto que tomemos del epígrafo, si tomamos el vector posición respecto el punto de tangencia $(y-x),t-f(x)$. Entonces, si realizamos el producto escalar con el vector normal $\nabla f(x),-1$ el producto será menor o igual que cero. Mueva como lo mueva los dos vectores estarán separados por el hiperplano.
+
+
+\subsection{Condiciones de segundo orden}
+
+\begin{tcolorbox}[colframe=white]
+    Cuando hablamos de convexidad lo que usualmente se hace es usar el criterio de la segunda derivada. En varias variables nos lleva a lo que es la matriz Hessiana. 
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Si la función es sensata esta matriz $\nabla^2 f(x)\geq 0$, es simétrica. Con lo que podemos sacar la diagonal, valores propios.
+	\item Si $\nabla^2 f(x)\geq 0$ sii los valores propios son no negativos.
+	\item $y^T\nabla f(x))\geq 0$ para todo $y\in \mathbb{R}^n$. Esto cuando tenemos problemas de normalización y otro.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+{\color{blue}
+% ----------------------------- TEOREMA 3.6
+\begin{teo} Si $f$ es diferenciable dos veces. Entonces, $f$ es convexa si y sólo si $Dom(f)$ es convexo, y
+    $$\nabla^2 f(x)\geq 0$$
+    para todo $x\in Dom(f)$.
+
+    Demostración.-\; $\left.\Rightarrow\right]$ Supongamos que $f$ es convexa. Entonces, por definición, $Dom(f)$ es convexo. Ahora, necesitamos demostrar que 
+    $$\nabla^2 f(x) \geq 0$$ 
+    para todo $x \in Dom(f)$.
+
+    Para ello, fijamos $y \in \mathbb{R}^n$ y consideramos la función $g_y(t) = f(x+ty)$, que es convexa porque $f$ es convexa. De donde, la segunda derivada de es:
+    $$g_y''(t) = y^T \nabla^2 f(x+ty) y$$
+
+    Dado que $g_y$ es convexa, tenemos que $g_y''(t) \geq 0$. Esto implica que 
+    $$y^T \nabla^2 f(x+ty) y \geq 0$$
+    para todo $y \in \mathbb{R}^n$ y para todo $t \in [0,1]$. En particular, si tomamos $t=0$, obtenemos que $y^T \nabla^2 f(x) y \geq 0$ para todo $y \in \mathbb{R}^n$, lo que significa que 
+    $$\nabla^2 f(x) \geq 0.$$
+
+    $\left.\Leftarrow\right]$ Ahora, supongamos que $Dom(f)$ es convexo y que $\nabla^2 f(x) \geq 0$ para todo $x \in Dom(f)$. Necesitamos demostrar que $f$ es convexa.
+
+    Consideramos $g_y(t) = f(x+ty)$. Por lo que la segunda derivada de $g_y$ es:
+    $$g_y''(t) = y^T \nabla^2 f(x+ty) y$$
+
+    Dado que $\nabla^2 f(x+ty) \geq 0$, tenemos que 
+    $$g_y''(t) \geq 0$$. 
+    Esto implica que $g_y$ es convexa. Pero entonces, por la definición de convexidad, tenemos que:
+    $$g_y(t) = f((1-t)x + ty) \leq (1-t)f(x) + tf(y)$$
+
+    para todo $t \in [0,1]$. Esto es precisamente la definición de convexidad para $f$, por lo que concluimos que $f$ es convexa.
+
+    Por lo tanto, hemos demostrado que si $f$ es dos veces diferenciable, entonces $f$ es convexa si y sólo si $Dom(f)$ es convexo y $\nabla^2 f(x) \geq 0$ para todo $x \in Dom(f)$.
+\end{teo}
+}
+
+\begin{tcolorbox}[colframe=white]
+    Un truco del calculo es aproximar funciones por polinomios de Taylor. Por lo que aproximaremos por orden 1 que serán lineales y por orden 2 serán convexas. Para ello se utilizará bastante lo siguente:
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Decir que es estrictamente convexo será que tendrá un punto. Y fuertemente convexo que está en todas las direcciones y ocurrirá de la misma forma (paraboloide donde los cortes son conocidos) osea estaría controlado las distintas curvaturas.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- EJEMPLO 3.1
+\begin{ejem}[Formas cuadráticas] Si $f:\mathbb{R}^n\to \mathbb{R}$ es
+    $$f(x)=\dfrac{1}{2}x^T Px + q^T x +r$$
+    con $P\in S^n$, $q\in \mathbb{R}^n$ y $r\in \mathbb{R}$. Como $\nabla^2f(x)=P$ para todo $x\in \mathbb{R}^n$, $f$ es convexa si y sólo si, $P$ es semidefinida positiva.
+\end{ejem}
+
+% -------------------- EJEMPLO 3.2
+\begin{ejem}
+    \begin{itemize}
+	\item Funciones de una variables:
+	    \begin{itemize}
+		\item Función Exponencial: $e^x$ para $a\in \mathbb{R}$.
+		\item Función Potencia: $x^a$ para $a\geq 1$ en $\mathbb{R}$.
+		\item Función Potencia: En $a\in [0,1]$, es cóncava.
+		\item Función Logaritmo: $-\log(x)$ en $\mathbb{R}_{++}$.
+		\item Función Logaritmo: $\log(x)$ en $\mathbb{R}_{+}$.
+		\item Entropía Negativa $x\log(x)$ en $\mathbb{R}_{+}$.
+	    \end{itemize}
+	\item Función Afím: $a^Tx+b$ es cóncava y convexa.
+	\item Forma Cuadrática: $\dfrac{1}{2}x^TQx+b^Tx+c$, si $Q\in S^n_+$.
+	\item Pérdida Cuadrada: $|y-Ax|^2_2\; (A^TA\in S^n_{++})$.
+	\item Log-Sum-Exp: $f(x)=\log\left(e^{x_1}+\cdots + e^{x_n}\right)$ en $\mathbb{R}^n$.
+	\item Media Geométrica: $f(x)=\left(\displaystyle\prod_{i=1}^n x_i\right)^{1/n}$ es cóncava en $\mathbb{R}^n_{++}$.
+    \end{itemize}
+\end{ejem}
+
+% -------------------- EJEMPLO 3.3
+\begin{ejem}[Norma] Por definición toda norma es convexa. Está definida en $\|\cdot\|:\mathbb{R}^n \to \mathbb{R}$. Y cumple las siguientes propiedades:
+    \begin{itemize}
+	\item $\|x\|=0 \Leftrightarrow x=0$.
+	\item $\|x+y\|\leq \|x\|+\|y\|$.
+	\item $\|\lambda x\|=|\lambda|\|x\|$.
+    \end{itemize}
+    Demostremos que es convexa. Sean $x,y\in \mathbb{R}^n$ y $\lambda\in (0,1)$. Mostraremos que la imagen de la combinación convexa es menor o igual que la combinación convexa de las imágenes. Por la desigualdad triangular de arriba:
+    $$
+    \begin{array}{rcl}
+	\|\lambda x+(1-\lambda)y\|&\leq& \|\lambda  x\|+\|(1-\lambda)y\|\\\\
+				  &=&\lambda\|x\|+(1-\lambda)\|y\|.
+    \end{array}
+    $$
+    Cuando la norma es estricta convexa, se le llama rotunda.
+\end{ejem}
+
+
+
+\subsection{Conjuntos de subnivel}
+
+Existe los conjuntos de nivel, cuya imagen es constante. Y los conjuntos de subnivel se definen de manera similar.
+
+\switchcolumn[1]*{\noindent\scriptsize
+    El conjunto de nivel serán los dos puntos del dominio donde su imagen intersecta a una recta horizontal.
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+
+	    \tikzstyle{every node}=[font=\scriptsize]
+
+	    \draw[](-4,0)--(4,0)node[below]{};
+	    \draw[](0,-1)--(0,5)node[below]{};
+
+	    \draw[domain=-2.5:2.5,smooth,variable=\x] plot ({\x},{1/2*\x*\x+2});
+
+	    \draw[dashed,fill](2,0)--(2,4)circle (2pt);
+	    \draw[dashed,fill](-2,0)--(-2,4)circle (2pt);
+
+	    \foreach \x/\xtext/\y in {-2//0,2//0}
+	    {
+		\draw[red] (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
+	    }
+	    \draw[red,domain=-2:2,smooth,variable=\x] plot ({\x},{4})node[above,xshift=-9mm]{$\alpha$};
+	\end{tikzpicture}
+    \end{center}
+\scriptsize
+El conjunto de sub-nivel, serán todos los puntos del dominio cuya imagen es menor o igual que un valor dado.
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+
+	    \tikzstyle{every node}=[font=\scriptsize]
+
+	    \draw[](-4,0)--(4,0)node[below]{};
+	    \draw[](0,-1)--(0,5)node[below]{};
+
+	    \draw[domain=-2.5:2.5,smooth,variable=\x] plot ({\x},{1/2*\x*\x+2});
+
+	    \draw[dashed,fill](2,0)--(2,4)circle (2pt);
+	    \draw[dashed,fill](-2,0)--(-2,4)circle (2pt);
+
+	    \foreach \x/\xtext/\y in {-2//0,2//0}
+	    {
+	    \draw (\x,.1) -- (\x,-.1) node[below,yshift=-1mm] {$\xtext$};
+	    }
+	    \draw[red,domain=-2:2,smooth,variable=\x] plot ({\x},{4})node[above,xshift=-9mm]{$\alpha$};
+	    \draw[red,domain=-2:2,smooth,variable=\x] plot ({\x},{0})node[below,xshift=-6mm]{$S_f(\alpha)$};
+	\end{tikzpicture}
+    \end{center}
+}
+\switchcolumn[0]\noindent
+% -------------------- DEFINICIÓN 3.7
+\begin{def.}[Conjuntos de nivel] Sea $f:\mathbb{R}^n\to \mathbb{R}$, $\alpha\in \mathbb{R}$. El conjunto de nivel de $f$ asociado a $\alpha$ es:
+	$$N_f(\alpha)=\left\{x\in \mathbb{R}^n\;|\; f(x)=\alpha\right\}.$$
+\end{def.}
+
+% -------------------- DEFINICIÓN 3.8
+\begin{def.}[Conjuntos de sub-nivel] Sea $f:\mathbb{R}^n\to \mathbb{R}$, $\alpha\in \mathbb{R}$. El conjunto de nivel de $f$ asociado a $\alpha$ es:
+	$$S_f(\alpha)=\left\{x\in \mathbb{R}^n\;|\; f(x)\leq\alpha\right\}.$$
+\end{def.}
+
+
+% -------------------- LEMA 3.9
+\begin{lema} $f$ convexa $\Rightarrow$ $S_f(\alpha)$ es convexo\\\\
+    Demostración.-\; Existe dos casos:
+    \begin{itemize}
+	\item Si $S_f(x)=\emptyset$. Entonces, por vacuidad cumple los axiomas de convexidad.
+	\item Si $S_f(\alpha)\neq \emptyset$. Tomamos dos puntos cualesquiera $x,y\in S_f(\alpha)$ del conjunto de subnivel y tomo $\alpha\in (0,1)$. Probaremos que la combinación convexa correspondiente sigue estando en el conjunto de subnivel. Donde calculamos su imagen y sabiendo que la combinación es convexa y aprovechando que la combinación es convexa:
+	$$f\left(\lambda x + (1-\lambda)y\right)\leq \lambda f(x)+(1-\lambda)f(y)$$
+	Luego, por definición de conjunto de subnivel,
+	$$f\left(\lambda x + (1-\lambda)y\right)\leq \lambda \alpha+(1-\lambda)\alpha=\alpha$$
+    \end{itemize}
+\end{lema}
+
+\begin{tcolorbox}[colframe=white]
+    En si este lema será muy importante ya que a la hora de que la función objetivo de una optimización sea una función convexa, si no veremos que sus conjuntos de nivel sean convexos. Entonces, aunque la función no sea convexa, si sus conjuntos de nivel son convexos va a funcionar.
+\end{tcolorbox}
+
+\textbf{\textit{¿Si $S_f(\alpha)$ es convexo, entonces $f$ es convexa?}}
+
+% -------------------- EJEMPLO 3.10
+\begin{ejem} $f:\mathbb{R}\to \mathbb{R}$
+    $$f(x)=x^3.$$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+
+	    \draw[](-3,0)--(3,0)node[below]{};
+	    \draw[](0,-2)--(0,4)node[below]{};
+
+	    \draw[domain=-1.5:1.5,smooth,variable=\x] plot ({\x},{\x*\x*\x});
+
+	    \draw[red,domain=-3:3,smooth,variable=\x] plot ({\x},{-1})node[above,xshift=-9mm]{$\alpha$};
+
+	    \draw[red,dashed](-1,-1)--(-1,0);
+	    \draw[red,domain=-3:-1,smooth,variable=\x] plot ({\x},{0});
+	\end{tikzpicture}
+    \end{center}
+    Dado que los conjuntos convexos en $\mathbb{R}$ están dados por los intervalos. Entonces, el ejemplo de arriba es tenemos un intervalo convexo. Debemos un ejemplo más estricto:
+\end{ejem}
+
+
+% -------------------- EJEMPLO 3.11
+\begin{ejem} $f:\mathbb{R}\to \mathbb{R}$
+    $$f(x)=\log(x)$$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+
+	    \draw[](-1,0)--(3,0)node[below]{};
+	    \draw[](0,-2)--(0,2)node[below]{};
+
+	    \draw[domain=0.1:3,smooth,variable=\x] plot ({\x},{ln(\x)});
+
+	    \draw[red,domain=-1:3,smooth,variable=\x] plot ({\x},{.5})node[above,xshift=-9mm]{$\alpha$};
+
+	    \draw[red,dashed](1.6,.5)--(1.6,0);
+	    \draw[red,domain=1.6:3,smooth,variable=\x] plot ({\x},{0});
+	\end{tikzpicture}
+    \end{center}
+    Esta función siempre será cóncava, pero si cortamos por una linea horizontal, tendremos que es convexo.
+\end{ejem}
+
+\begin{tcolorbox}[colframe=white]
+    Se llama pseudo-convexa a una función que no es convexa pero sus conjuntos de nivel son convexos. Es decir, si $\forall \alpha \in \mathbb{R}, S_f(\alpha)$ es convexo a $f$ se le llama pseudo-convexo. En si lo que nos interesará son la convexidad de los conjuntos de subnivel.
+\end{tcolorbox}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La media geométrica estará definida para el cono positivo.
+	\item La media aritmética estará definida para todo $\mathbb{R}^n$. Pero para temas prácticos estará definida en el cono positivo.
+	\item $G$ es cóncava.
+	\item $A$ es afín.
+	\item $G(x)\leq A(x)$.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- EJEMPLO 3.11
+\begin{ejem} $G:\mathbb{R}^n\to \mathbb{R}$
+    Media geométrica:
+    $$
+    \begin{array}{rcl}
+	G(x)&=&\left(\prod_{i=1}^n x_i\right)^{\frac{1}{n}},\quad x_i\geq 0\\\\
+	    &=&-\infty.
+    \end{array}
+    $$
+    $A:\mathbb{R}^n\to \mathbb{R}$
+    Media aritmética:
+    $$A(x)=\frac{1}{n}\sum_{i=1}^n x_i.$$
+\end{ejem}
+
+Ahora,definamos lo siguiente:
+$$C_\alpha = \left\{x\in \mathbb{R}^n: G(x)\geq \alpha A(x),\; 0<\alpha<1\right\}.$$
+¿Es este conjunto convexo?. Reorganizando la desigualdad:
+$$C_\alpha = \left\{x\in \mathbb{R}^n:  \alpha A(x)-G(x)\leq 0\right\}=S_f(0),\quad f=\alpha A+G.$$
+Tenemos que $\alpha A(x)$ es afín, al ser afín es convexa y le sumamos una función cóncava negativa. Pero, menos una cóncava es una convexa. Por lo tanto,  
+$$\alpha A(x)-G(x)$$
+Es convexa. 
+
+\switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Si se habla en dimensión infinita, este teorema es falso.
+	    \item La continuidad es un concepto puntual, por lo que podemos tomar un punto y demostrar que la función es continua en ese punto.
+	    \item $B_1$ es un rombo, ya que es una norma uno.
+	    \item La afirmación nos dice que si tenemos una función convexa en un entorno pequeño, donde la función está definida en todo ese entorno. Entonces, la función estará acotada.
+	\end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- TEOREMA 3.12
+\begin{teo} Toda función convexa: $f:\mathbb{R}^n\to \mathbb{R}$ es continua en el interior de $D$.
+
+    Demostración.-\; Fijemos un $x_0\in \interior(D)$. Intentaremos probar que la función en la bola que fijaremos es localmente Lipschitz. Sea $r>0$ tal que $B_1(x_0,r)\in \dom(f)$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.7]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw[rotate=40,opacity=.7] (0,0) ellipse (1.5cm and 2cm);
+	    \draw[rotate=45] (-.5,0) rectangle (.5,1);
+	    \fill(-.35,.35)node[below]{$x_0$}circle(2pt);
+	    \fill(1.5,1.5)node[]{$D$};
+	    \draw[dashed](-1,.35)--(.5,.35)node[above left,xshift=-2.5mm]{$r$};
+	    \draw[dashed](-.35,-.35)--(-.35,1.1);
+	\end{tikzpicture}
+    \end{center}
+    \textit{Afirmación:} $\exists M\geq 0:|f(x)|\leq M\; \forall e\in B_1(x_o,r)$. 
+
+	Para demostrar está afirmación podemos hacer las siguientes observaciones:
+	\switchcolumn[1]*{\noindent\scriptsize
+	    \begin{itemize}
+		\item b) es una expresión vectorial en términos de la base. Si escribimos el vector en sus componentes, lo que hacemos es elegir los vectores de la base canónica. 
+		\begin{center}
+		    \begin{tikzpicture}[>=Triangle,scale=1]
+			\tikzstyle{every node}=[font=\scriptsize]
+			\draw[rotate=45] (-.5,0) rectangle (.5,1);
+			\fill(-.35,.35)circle(2pt);
+			\draw[dashed](-1,.35)--(.5,.35)node[above left,xshift=-4mm,yshift=-.5mm]{$e_1$};
+			\draw[dashed](-.35,-.35)--(-.35,1.1)node[left,yshift=-4.5mm,xshift=.8mm]{$e_2$};
+			\fill[below,xshift=4mm,yshift=.5mm](-1,.35)node[]{$-e_1$};
+			\fill[below,xshift=-1.5mm](0,.35)node[]{$-e_2$};
+		    \end{tikzpicture}
+		\end{center}
+
+	    \item $\epsilon$ me dirá si es $e_1$ o $-e_1$.
+
+	    \item Lo de $\lambda_0$ es el truco para hacer la combinación convexa completa. Donde normalizo con $0\lambda_0$ lo que falta.
+	    \end{itemize}
+	}
+	\switchcolumn[0]\noindent
+	\begin{enumerate}[a)]
+	    \item $\|x-x_0\|_1\leq r \Leftrightarrow \left\|\dfrac{x-x_0}{r}\right\|_1\leq 1$.
+		Cómo sabemos la norma 1 sera:
+		$$\sum_{i=1}^n \left|\dfrac{x_i-x_{o_i}}{r}\right|\leq r.$$
+		Sea $\left|\dfrac{x_i-x_{o_i}}{r}\right|=y_i$, entonces:
+		$$\sum_{i=1}^n y_i\leq 1.$$
+		Luego,
+		$$y_0=1-\sum_{i=1}^n \left|\dfrac{x_i-x_{o_i}}{r}\right|\geq 0.$$
+		Donde, construimos 
+		$$\sum_{i=0}^n y_i=1,\; y_i\geq 0 \forall i.$$
+	    \item[b)] $\displaystyle x-x_0 =\sum_{i=1}^n (x_i-x_{o_i})e_i=\sum_{i=1}^n \lambda_i\left(r \epsilon_i e_i \right)$ donde $\epsilon_i$ es el signo de $x_i-x_{0_i}$.
+
+		Lo que queremos ahora es comprobar que la $f(x)$ está acotada a $M$. Por lo que utilizamos la convexidad. Es decir, vamos a escribir la $x$ cómo una combinación convexa.
+		$$x=\sum_{i=1}^n \lambda_i\left(r \epsilon_i e_i \right) + 0\lambda_0-x_0.$$
+		Ahora, necesitamos que esta $x$ sea una combinación convexa de la bola para que este en el dominio. Para ello, utilizamos 
+		$$x_0=1x_0=\left(\sum_{i=1}^n \lambda_i\right) x_0.$$
+		Por lo que,
+		$$x=\sum_{i=1}^n \lambda_i\left(x_0 + r \epsilon_i e_i \right) + \lambda_0x_0.$$
+		Dado que $e_1$ es la base canónica, $\epsilon_1$ el signo y $r$ la distancia del punto $x_0$ a los vertices de la bola, entonces $x_0+e\epsilon_i e_i\in B_1(x_0,r)$ y $\lambda_0x_0\in B_1(x_0,r)$. 
+
+		Ahora, sea 
+		$$k=\max\left\{ \left|f(x_0+r\epsilon_ie_i)\left|,\right|f(x_0)\right|\right\}.$$
+		Veremos que $f(x)\leq K$. Por loa convexidad
+		$$
+		\begin{array}{rcl}
+		    f(x) &\leq& \displaystyle\sum_{i=1}^n \lambda_i f(x_0+r\epsilon_ie_i)+\lambda_0f(x_0)\\\\
+			 &\leq&\displaystyle \left(\sum_{i=0}^n \lambda_i\right) K\\\\
+			 &=&K.
+		\end{array}
+		 $$
+		 \switchcolumn[1]*{\noindent\scriptsize
+		}
+		\switchcolumn[0]\noindent
+		 Para poder utilizar $f(x)$, debo también acotar por debajo. Cómo las bolas son simétricas podemos tomar:
+		 $$x\in B_1(x_0,r).$$
+		 Donde, su simétrico estará dado por
+		 $$x_0+(x_0-x)=2x_0-x.$$
+		 \begin{center}
+		    \begin{tikzpicture}[>=Triangle]
+			\tikzstyle{every node}=[font=\scriptsize]
+			\draw[rotate=45] (-.5,0) rectangle (.5,1);
+			\fill(-.35,.35)node[below right]{$x_0$}circle(2pt);
+			\draw[dashed](-1,.35)--(.5,.35);
+			\draw[dashed](-.35,-.35)--(-.35,1.1);
+			\fill[draw](-.2,.7)circle(1pt)node[below right]{$x$}--(-.5,0)circle(1pt);
+		    \end{tikzpicture}
+		\end{center}
+		Así,
+		$$f(x)=f\left[\dfrac{x+(2x_0-x)}{2}\right]\leq \dfrac{1}{2}\left[f(x)+f(2x_0-x)\right]$$
+		Reordenando,
+		$$f(x)\geq 2f(x_0)-f(2x_0-x)\geq 2f(x_0)-2K.$$
+		Por lo tanto,
+		$$M=\max\left\{K,2f(x_0)-2K\right\}.$$
+		Esto implica que,
+		$$-M\leq f(x)\leq M \quad \Leftrightarrow\quad |f(x)|\leq M.$$
+		Lo que demostramos hasta ahora, es que aunque no sabemos que la función es continua sabemos que está acotada en la bola.
+	\end{enumerate}
+
+	\switchcolumn[1]*{\noindent\scriptsize
+	     \begin{center}
+		\begin{tikzpicture}[>=Triangle]
+		    \tikzstyle{every node}=[font=\scriptsize]
+		    \draw[rotate=45,dashed,opacity=.4] (-.5,0) rectangle (.5,1);
+		    \draw[rotate=45] (-1,-.5) rectangle (1,1.5);
+
+		    \fill(-.35,.35)node[blue,below right,xshift=1mm]{$\delta$}circle(1pt);
+		    \draw[](-.35,.35)--(1,.35)node[below left,xshift=-2.5mm]{$r$};
+		    \fill[red,draw](-.7,.4)circle(1pt)node[below]{$x$}--(-.4,.7)circle(1pt)node[below]{$y$}--(0,1.1)circle(1pt)node[below right]{$z$};
+		    \fill[blue](-.1,1)node[left]{$\delta$};
+		\end{tikzpicture}
+	    \end{center}
+	}
+	\switchcolumn[0]\noindent
+	Volviendo a la prueba del teorema. Sean $x,y\in B_1(x_1,\delta),\; \delta=r/2.$
+	Intentaremos probar que $f(x)\leq f(y)$ está controlada por la distancia entre $x$ e $y$. Para esto, calcularemos la distancia de $x$ a $y$:
+	$$\alpha=\|x-y\|$$
+	Luego, definamos $z$:  
+	$$z=y+\dfrac{\delta}{\alpha}(x-y).$$
+	Para estar seguros que $z$ no se saldrá de la $B_1$, se tiene
+	$$
+	\begin{array}{rcl}
+	    |z-x_0\|_1 &\leq& |z-y\|+|y-x_0\|\\\\
+		       &\leq& \left\|\dfrac{\delta}{\alpha}(y-x)\right\|+\delta\\\\
+		       &=& \delta +\delta\\\\
+		       &=& r
+	\end{array}
+	$$ 
+	Dado que $y$ podemos escribirlo como una combinación convexa de $x$ y $z$. Despejamos $y$ de $z$:
+	$$y=\dfrac{\alpha}{\alpha+\delta}x+\dfrac{\delta}{\alpha+\delta}z.$$
+	Esto nos da que:
+	$$f(y)\leq \dfrac{\alpha}{\alpha+\delta}f(z)+\dfrac{\delta}{\alpha+\delta}f(x).$$
+	Restando la $f(x)$,
+	$$f(y)-f(x)\leq \dfrac{\alpha}{\alpha+\delta}f(z) - \dfrac{\alpha}{\alpha+\delta}f(x).$$
+	Sacamos factor común 
+	$$
+	\begin{array}{rcl}
+	    f(y)-f(x) &\leq& \dfrac{\alpha}{\alpha+\delta}\left[f(z) - f(x)\right]\\\\
+		      &\leq& \dfrac{\alpha}{\delta} 2M\\\\
+		      &=& \dfrac{2M}{\delta}\|x-y\|.
+	\end{array}
+	$$
+	\switchcolumn[1]*{\noindent\scriptsize
+	    $f$ es continua en $x_0$ si 
+	    $$\lim_{x\to x_0}f(x)=f(x_0)$$ 
+	    $$\Updownarrow$$
+	    $$\left[\left\{x_n\right\}_n\to x_0 \Rightarrow \left\{f(x_n)\right\}\to f(x_0)\right]$$
+	    Es decir, si en el dominio me puedo acercar con una sucesión a un punto las imágenes se acercan a su respectivo punto.
+	}
+	\switchcolumn[0]\noindent
+	Por lo tanto, $\forall x,y\in B_1(x_0,r/2)$,
+	$$f(y)-f(x)\leq \dfrac{4M}{r}\|x-y\|.$$
+	Cómo la $x$ e $y$ son intercambiables. Es decir,
+	$$f(x)-f(y)\leq \dfrac{4M}{r}\|x-y\|.$$
+	Entonces,
+	$$|f(x)-f(y)|\leq \dfrac{4M}{r}\|x-y\|.$$
+	Ahora, fijamos 
+	$$\left\{x_n\right\}_n\to x_0.$$
+	Lo que intentaremos evaluar que es lo que le pasa a:
+	$$|f(x_n)-f(x_0)|.$$
+	Utilizamos que es Lipschitz:
+
+	$$0\leq |f(x_n)-f(x_9)\leq \dfrac{4M}{r}\|x_n-x_0\|\to 0$$
+	Por el teorema del sandwich,
+	$$f(x_n)\to f(x_0).$$
+\end{teo}
+
+{\color{blue}
+% -------------------- TEOREMA 3.8
+\begin{teo} Demuestra que si $f:\mathbb{R}^n\to \mathbb{R}$ es convexa y $K$ es compacto incluido en el interior del dominio de $f$, entonces $f$ es Lipschitz en $K$.
+
+    Demostración.-\; Como $K$ es compacto y está incluido en el interior del dominio de $f$, podemos fijar un punto $x_0 \in K$. Luego, dado que $f$ es convexa, es continua en el interior de su dominio. Por lo tanto, existe un $r > 0$ tal que para todo $x, y \in B(x_0, r)$ (la bola de radio $r$ centrada en $x_0$), se tiene que 
+    $$|f(x) - f(y)| \leq M \|x - y\|$$ 
+    para alguna constante $M > 0$. Cabe mencionar que, $B(x_0, r)$ es un subconjunto de $K$ debido a la elección de $x_0$ y $r$.
+
+    Ahora, para todo $x, y \in K$, queremos mostrar que 
+    $$|f(x) - f(y)| \leq L \|x - y\|$$ 
+    para alguna constante $L > 0$. Para hacer esto, podemos usar la propiedad de las funciones convexas y la continuidad de $f$ en el interior de su dominio. En particular, para todo $t \in [0, 1]$, tenemos que 
+    $$f(tx + (1 - t)y) \leq t f(x) + (1 - t) f(y).$$ 
+    Esto implica que 
+    $$f(y) - f(x) \leq (f(y) - f(tx + (1 - t)y))/t$$ 
+    para todo $x, y \in K$ y todo $t \in (0, 1]$. Tomando el límite cuando $t$ tiende a $0$, obtenemos que 
+    $$f(y) - f(x) \leq \nabla f(x) \cdot (y - x)$$ 
+    para todo $x, y \in K$, donde $\nabla f(x)$ es el gradiente de $f$ en $x$. Dado que $K$ es compacto, el gradiente de $f$ está acotado en $K$, es decir, existe una constante $L > 0$ tal que 
+    $$\|\nabla f(x)\| \leq L$$ 
+    para todo $x \in K$. Por lo tanto, obtenemos que 
+    $$|f(x) - f(y)| \leq L \|x - y\|$$ 
+    para todo $x, y \in K$.
+
+    De esta manera, si $f$ es convexa y $K$ es compacto incluido en el interior del dominio de $f$, entonces $f$ es globalmente Lipschitz en $K$ con constante de Lipschitz $L$. Esto completa la demostración.
+\end{teo}
+}
+
+\subsubsection{Desigualdad de Jensen}
+
+La definición mas simple sería sería la propia definición de función convexa.
+
+% -------------------- DEFINICIÓN 3.9
+\begin{def.}
+    $$f\left[\alpha x + (1-\alpha)y\right]\leq \alpha f(x) + (1-\alpha)f(y), \quad x,y,\alpha\in[0,1].$$	
+\end{def.}
+
+Pero se extiende a:
+
+% -------------------- DEFINICIÓN 3.10
+\begin{def.}
+    $$f\left(\sum_{i=1}^n\alpha_i x_i\right)\leq \sum_{i=1}^n\alpha_i f(x_i), \quad x_i,\alpha_i\in[0,1],\;\; x_i\in \dom(f), \sum_{i=1}^n\alpha_i=1, \alpha_1\geq 0$$
+\end{def.}
+
+Podemos generalizarlo como:
+
+% -------------------- DEFINICIÓN 3.11
+\begin{def.}
+    $$f\left(\int_\Omega g\; d\mu\right)\leq \int_\Omega (f\circ g)\; d\mu,\quad (\Omega,\mathscr{A},\mu) \text{ probabilidad}.$$
+\end{def.}
+
+{\color{blue}
+% -------------------- EJERCICIO 3.1
+\begin{ejer} Sea $(\Omega,\mathscr{A},\mu)$ un espacio de probabilidad, $g:\Omega\to \mathbb{R}$ $\mu-integrable$, $f$ convexa (no necesariamente diferenciable) con dominio $\mathbb{R}$. Demuestra que
+$$f\left(\int_\Omega g\; d\mu\right)\leq \int_\Omega (f\circ g)\; d\mu$$
+En este caso, hemos supuesto que el dominio de $f$ es todo $\mathbb{R}$, ¿Qué debemos pedirle como mínimo al dominio de $f$ para que el resultado siga siendo cierto?
+
+    Demostración.-\; Primero, recordemos que una función $f$ es convexa si y solo si para todo $x, y \in \mathbb{R}$ y todo $t \in [0,1]$ se cumple que:
+$$f(tx + (1-t)y) \leq tf(x) + (1-t)f(y)$$
+
+Ahora, dado que $g$ es $\mu$-integrable, podemos encontrar una secuencia de funciones simples $\{g_n\}$ tal que $g_n \to g$ casi en todas partes y $|g_n| \leq |g|$ para todo $n$. Por lo tanto, por el Teorema de la Convergencia Dominada, tenemos que:
+$$\int_\Omega g_n d\mu \to \int_\Omega g d\mu$$
+
+Ahora, dado que cada $g_n$ es una función simple, podemos escribirla como:
+$$g_n = \sum_{i=1}^{k_n} a_{n,i} \chi_{A_{n,i}}$$
+
+donde cada $A_{n,i}$ es un conjunto medible y $\chi_{A_{n,i}}$ es la función característica del conjunto $A_{n,i}$. Entonces, para cada $n$, tenemos:
+$$f\left(\int_\Omega g_n d\mu\right) = f\left(\sum_{i=1}^{k_n} a_{n,i} \mu(A_{n,i})\right)$$
+
+Por la convexidad de $f$, esto es menor o igual que:
+$$\sum_{i=1}^{k_n} f(a_{n,i}) \mu(A_{n,i}) = \int_\Omega f(g_n) d\mu$$
+
+Tomando el límite cuando $n \to \infty$, obtenemos la desigualdad deseada:
+$$f\left(\int_\Omega g d\mu\right) \leq \int_\Omega f(g) d\mu$$
+
+En cuanto a la pregunta, para que la desigualdad de Jensen siga siendo cierta, necesitamos que el dominio de $f$ contenga al rango de $g$. Es decir, $$f: \text{Rango}(g) \to \mathbb{R}.$$
+\end{ejer}
+}
+
+\subsection{Aplicaciones de la desigualdad de Jensen}
+
+La desigualdad de Jensen es responsable de muchas de la desigualdades famosas. Vamos a ver dos casos de aplicación de la función $f(x) = --\log(x)$ que es convexa:
+
+% -------------------- PROPOSICIÓN 3.1
+\begin{proposicion} Demostrar que la media geométrica es menor o igual que la media aritmética:
+    $$G(x)=\left(\displaystyle\prod_{i=1}^n x_i\right)^{1/n}\leq \dfrac{1}{n} \sum_{i=1}^n x_i=A(x).$$
+
+    Demostración.-\; Sea $f=-\log(x)$. Ya que, la suma de los coeficientes es mayor igual que cero y su suma vale $1$. Entonces,
+    $$A(x)=\sum_{i=1}^n \dfrac{1}{n}x_i=\dfrac{1}{n}\sum_{i=1}^n x_i$$ 
+    es una función convexa. Ahora, tratemos que encontrar $G(x)$ de la siguiente manera: Al tomar la $f$ lo que estamos haciendo es tomar $-\log(x)$. Cómo la exponencial es monótona creciente las desigualdades se mantiene, y utilizando las propiedades de la potencias,
+    $$
+    \begin{array}{rcl}
+	\dfrac{1}{A(x)}&=&e^{-\log(A(x))}\\\\
+		       &=&e^{1/n\sum\limits_{i=1}^n f(x_i)}\\\\
+		       &\leq&\left(e^{\sum\limits_{i=1}^n f(x_i)}\right)^{1/n}\\\\
+		       &=& \left(\prod\limits_{i=1}^n e^{f(x_i)}\right)^{1/n}\\\\
+		       &=&\left(\prod\limits_{i=1}^n \dfrac{1}{x_i}\right)^{1/n}\\\\
+		       &=& \left(\dfrac{1}{\prod\limits_{i=1}^n x_i}\right)^{1/n}\\\\
+		       &=& \dfrac{1}{G(x)}.
+    \end{array}
+    $$
+    Por lo tanto,
+    $$G(x)\leq A(x).$$
+
+    Un caso particular: 
+    $$G(a,b)\leq A(a,b) \Leftrightarrow \sqrt{ab}\leq \dfrac{a+b}{2}.$$
+\end{proposicion}
+
+\subsubsection{Desigualdad de Hölder}
+
+Recordemos que:
+
+$$\|x\|_p=\left(\sum_{i=1}^n |x_i|^p\right)^{1/p},$$
+
+para $1\leq p\leq \infty$.
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La gracia en el $p$ y $q$, es que si se cumple:
+	    $$\dfrac{1}{p}+\dfrac{1}{q}=1.$$
+	Entonces, cuando hago su dual 
+	$$\left(\mathbb{R}^n,\|\cdot\|_q\right)^*=\left(\mathbb{R}^n,\|\cdot\|_p\right).$$
+	\item Básicamente la desigualdad de Hölder es la relación entre la norma que teníamos en un espacio $p$ y su dual de norma $q$.
+	\item Vemos que $f$ para $-f\left[\alpha a + (1-\alpha)b\right]$ se cumple la definción de convexidad si pongo $-f$ estaríamos del logaritmo que es cóncavo y la desigualdad es contraria. Por lo que es mayor o igual que $ \alpha \left[-f(a)\right]+(1-\alpha)\left[-f(b)\right]$.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- PROPOSICIÓN 3.2
+\begin{proposicion} Vamos a probar que
+    $$\sum_{i=1}^n |x_iy_i|\leq \|x\|_p\|y\|_q, \text{ para} \dfrac{1}{p}+\dfrac{1}{q}=1.$$
+
+    Demostración.-\; Sea, $f=-\log(x)$ y $\alpha\in [0,1]$. Tomamos,
+    $$-f\left[\alpha a + (1-\alpha)b\right]\geq \alpha \left[-f(a)\right]+(1-\alpha)\left[-f(b)\right],$$
+    para $a,b>0$.
+    Dado que son monótonas y tomando exponenciales:
+    $$\alpha a +(1-\alpha)b\geq e^{-\alpha\left[f(a)\right]}\cdot e^{-(1-\alpha)f(b)}=a^\alpha\cdot b^{1-\alpha}.$$
+    Que es la generalización de 
+    $$\sqrt{ab}\leq \dfrac{a+b}{2}.$$
+    Ahora, realizaremos para un valor concreto y un $\alpha$ concreto. 
+
+    Sean $x\in \mathbb{R}^n$, $y\in \mathbb{R}^n$. Es decir, $x=(x_1,x_2,\ldots,x_n)$ e $y=(y_1,y_2,\ldots,y_n)$. De donde tomamos, 
+    $$a=\dfrac{|x_i|^p}{\displaystyle\sum_{j=1}^{n}|x_j|^p}=\dfrac{|x_i|^p}{\|x\|_p^p};\qquad b=\dfrac{|y_i|^q}{\displaystyle\sum_{j=1}^{n}|y_j|^q}=\dfrac{|y_i|^q}{\|y\|_q^q}.$$
+    Y,
+    $$\alpha=\dfrac{1}{p};\qquad 1-\alpha=\dfrac{1}{q}.$$
+    Aplicando la desigualdad anterior:
+    $$
+    \begin{array}{rcl}
+	\dfrac{1}{p}\dfrac{|x_i|^p}{\|x\|_p^p}+\dfrac{1}{q}\dfrac{|y_i|^q}{\|y\|_q^q} &\geq & \left(\dfrac{|x_i|^p}{\|x\|_p^p}\right)^{1/p}\left(\dfrac{|y_i|^q}{\|y\|_q^q}\right)^{1/q}\\\\
+											      &=&\dfrac{|x_i|}{\|x\|_p}\cdot \dfrac{|y_i|}{\|y\|_q}\\\\
+													      &=&\dfrac{|x_iy_i|}{\|x\|_p\cdot \|y\|_q}.
+    \end{array}
+    $$
+    Sumando en $i\in \left\{1,\ldots,n\right\}$:
+    $$\dfrac{1}{p}\dfrac{\displaystyle\sum_{i=1}^n|x_i|^p}{\|x\|_p^p}+\dfrac{1}{q}\dfrac{\displaystyle\sum_{i=1}^n|y_i|^q}{\|y\|_q^q}\geq \dfrac{\displaystyle\sum_{i=1}^n|x_iy_i|}{\|x\|_p\cdot \|y\|_q}.$$
+    Simplificando,
+    $$1=\dfrac{1}{p}+\dfrac{1}{q}\geq \dfrac{\displaystyle\sum_{i=1}^n|x_iy_i|}{\|x\|_p\cdot \|y\|_q}.$$
+    Por lo tanto,
+    $$
+    \begin{array}{rcl}
+	\|x\|_p\cdot \|y\|_q&\geq & \displaystyle\sum_{i=1}^n|x_iy_i|\\\\
+			    &\geq & \left|\displaystyle\sum_{i=1}^nx_iy_i\right|\\\\
+			    &\geq & \displaystyle\sum_{i=1}^n x_iy_i.
+    \end{array}
+    $$
+\end{proposicion}
+
+
+\section{Operaciones que preservan la convexidad}
+
+\subsection{Sumas ponderadas no negativas}
+
+% -------------------- TEOREMA 3.9
+\begin{teo} Si $f_1,f_2,\ldots,f_m$ son funciones convexas. Entonces,
+$$f=a_1f_1+a_2f_2+\cdots+a_mf_m$$
+es convexa para cualquier $a_1,a_2,\ldots,a_m\geq 0$.
+
+Podemos demostrar por inducción.
+\end{teo}
+
+\begin{tcolorbox}[colframe=white]
+Esto nos dice que si mezclo funciones convexas sumando 
+con escalares positivas siguen siendo convexas.
+\end{tcolorbox}
+
+Generalizando las sumas tenemos:
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La función peso $w(y)$ puede ser arbitraria. 
+	\item Necesito que las $y$`s se muevan en un espacio de medida y mi conjunto pueda integrar.
+	\item Hacer un ajuste con pesos de cosas convexas me dará otra cosa convexa.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- TEOREMA 3.10
+\begin{teo} Si $\left\{f(x,y)\right\}_{y\in A}$ son funciones convexas en $y$ y $w(y)\geq 0$ en todo punto $y\in A$. Entonces,
+    $$g(x)=\int_A w(y) f(x,y)\;dy$$
+    es convexa (cuando la integral existe).
+
+    Demostración.-\; Sean 
+    $$x,z\in \bigcap_{y\in A}\dom\left[f(\cdot,y)\right].$$ 
+    Para cualquier $\alpha\in [0,1]$, se tiene $\lambda\in (0,1)$. Por lo que 
+    $$g(\alpha x+(1-\alpha)z)=\int_A w(y)f(\lambda x+(1-\lambda)z\;dy.$$
+    Como $w$ son positivas, utilizando la desigualdad de Jensen,
+    $$
+    \begin{array}{rcl}
+	\displaystyle\int_A w(y)f(\lambda x+(1-\lambda)y\;dy&\leq & \displaystyle\int_A w(y)\left[\lambda f(x)+(1-\lambda)f(z)\right]\;dy\\\\
+					       &=& \lambda \displaystyle\int_A w(y)f(x)\; dy + (1-\lambda)\int_Aw(y)f(z)\; dy\\\\
+					       &=& g(x)+(1+\lambda)g(z).
+    \end{array}
+    $$
+\end{teo}
+
+\begin{tcolorbox}[colframe=white]
+Nos dice que si tenemos una familia de funciones que están parametrizadas por un $y$. Lo que tengo es que para cada $y$ las funciones son convexas. 
+\end{tcolorbox}
+
+
+\subsection{Máximos y supremo puntual}
+
+% -------------------- TEOREMA 3.11
+\begin{teo} Si $f_1,f_2,\ldots,f_m$ son funciones convexas. Entonces,
+    $$f=\max\left\{f_1,f_2,\ldots,f_m\right\}$$ 
+    es convexa.
+\end{teo}
+
+\switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item EL conjunto de indices no necesita ninguna estructura.
+	\end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- TEOREMA 3.12
+\begin{teo} Si $\left\{f(x,y)\right\}_{y\in A}$ son funciones en $x$. Entonces,
+    $$g(x)=\sup_{y\in A}f(x,y)$$
+    es convexa y 
+    $$\dom(f)=\left\{x:(x,y)\in \dom\left[f(\cdot,y)\right]\;\forall y\in A,\; g(x)<\infty\right\}.$$
+
+    Demostración.-\; 
+
+\end{teo}
 
 \end{paracol}
