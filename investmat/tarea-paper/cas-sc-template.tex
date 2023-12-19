@@ -1,0 +1,286 @@
+%% 
+%% Copyright 2019-2021 Elsevier Ltd
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-sc documentclass for 
+%% single column output.
+
+\documentclass[a4paper,fleqn]{cas-sc}
+
+% If the frontmatter runs over more than one page
+% use the longmktitle option.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-sc}
+
+%\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+% Uncomment and use as if needed
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newdefinition{rmk}{Remark}
+%\newproof{pf}{Proof}
+%\newproof{pot}{Proof of Theorem \ref{thm}}
+
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% Short title
+%\shorttitle{<short title of the paper for running head>}    
+
+% Short author
+%\shortauthors{<short author list for running head>}  
+
+% Main title of the paper
+\title [mode = title]{Money growth and inflation in China: New evidence from a wavelet analysis}  
+
+% Title footnote mark
+% eg: \tnotemark[1]
+%\tnotemark[<tnote number>] 
+
+% Title footnote 1.
+% eg: \tnotetext[1]{Title footnote text}
+%\tnotetext[<tnote number>]{<tnote text>} 
+
+
+% First author
+%
+% Options: Use if required
+\author[1]{Christian Paredes Aguilera}
+%[type=editor,
+       %style=chinese,
+       %auid=000,
+       %bioid=1,
+       %orcid=0000-0000-0000-0000,
+       %facebook=<facebook id>,
+       %twitter=<twitter id>,
+       %linkedin=<linkedin id>,
+%       gplus=<gplus id>]
+
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[]
+
+% Email id of the first author
+\ead{clparagu@posgrado.upv.es}
+
+% URL of the first author
+%\ead[url]{<URL>}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+%\credit{<Credit authorship details>}
+
+% Address/affiliation
+\affiliation[1]{organization={Department of applied mathematics},
+	    university={Universitat Polit\`ecnica de Val\`encia},
+            addressline={Camino de Vera s/n}, 
+            city={Val\`encia},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+            postcode={}, 
+            country={Spain}}
+
+\author[2]{Gabriel Rosario Roselló}%[<options>]
+
+% Footnote of the second author
+%\fnmark[2]
+
+% Email id of the second author
+\ead{garoro4@alumni.uv.es}
+
+% URL of the second author
+%\ead[url]{}
+
+% Credit authorship
+%\credit{}
+
+% Address/affiliation
+\affiliation[2]{organization={Departament de Matem\`atiques},
+	    university={Universitat de Val\`encia},
+            addressline={Camino de Vera s/n}, 
+            city={Val\`encia},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+            postcode={}, 
+            country={Spain}}
+
+% Corresponding author text
+\cortext[1]{Corresponding author}
+
+% Footnote text
+%\fntext[1]{}
+
+% For a title note without a number/mark
+%\nonumnote{}
+
+
+\author[3]{Jorge Valero Mira}%[<options>]
+\ead{garoro4@alumni.uv.es}
+\affiliation[3]{organization={Departamento de Matem´aticas},
+	    university={Universidad de Alicante},
+            addressline={Camino de Vera s/n}, 
+            city={Alicante},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+            postcode={}, 
+            country={Spain}}
+
+% Here goes the abstract
+\begin{abstract}
+    This paper provides a fresh new insight into the dynamic relationship between money growth and inflation in China by applying a novel wavelet analysis. From a time-domain view, our findings show strong but not homogenous links between money growth and inflation in the mid-1990s and the period since the early 2000s. Especially since the early 2000s, China\'s monetary policy has achieved much better performance in terms of inflation management compared to previous years. From a frequency-domain view, we find that money growth and inflation are positively related in one-to-one fashion in the medium or long run whereas they deviates from such a positive relation in the short run due to temporary shocks and significant lag effects. We can also conclude for China that the long-run relationship between $M_0$ growth and inflation supports the modern quantity theory of money (QTM), while the medium-run relationship between $M_1$ growth and inflation as well as $M_2$ growth and inflation supports the modern QTM. In general, however, our results fit well with the fact that China has experienced economic transitions and structural adjustments in monetary policy over the past two decades. Based on the above analysis, this paper provides an overall view of monetary policy operations and some beneficial implications for China.
+\end{abstract}
+
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+
+% Research highlights
+%\begin{highlights}
+%\item 
+%\item 
+%\item 
+%\end{highlights}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+    \sep Money growth
+    \sep Inflation
+    \sep Wavelet analysis
+    \sep Time domain
+    \sep Frequency domain 
+\end{keywords}
+
+\maketitle
+
+% Main text
+\section{Introduction}
+China has experienced striking money growth over the past several decades. Statistics from China's central bank, the People's Bank of China ($PBoC$), show that China's broad money ($M_2$) reached up to $118.2$ trillion Yuan by the end of May 2014. This means that China's $M_2$ has increased by four times over the last 10 years, with an average year-on-year growth rate of $40.3\%$ during the past decade. On a global scale, China's $M_2$ has also been $1.7$ times as much as that in the U.S. and even $1.5$ times as much as that in the Euro area.1 Moreover, the ratio of $M_2$ to gross domestic product ($GDP$) is as high as $194.5\%$ in China at the end of 2013. However, the ratio is just $97.9\%$ in the Euro area and $65.8\%$ in the U.S., although the two economies have implemented several rounds of Quantitative Easing ($QE$) in the aftermath of the global financial crisis. As a consequence, many are concerned with such striking money growth coupled with such a high ratio of $M_2$ to $GDP$ would bring substantial inflationary pressures to the Chinese economy. In addition, a long-run unity relationship between money growth and inflation established by the quantity theory of money ($QTM$) increases this concern. If the $QTM$ holds true in China, then high money growth would ultimately threaten future price stability and hence the economic growth. Therefore, we are greatly motivated to re-assess the relationship between money growth and inflation in China by using a novel method and the most recent data and with special attention paid to whether such a relationship in China supports the $QTM$. In addition, as we well know, the money supply has been the intermediate target of monetary policy, while inflation management has been the ultimate target since the mid-1990s in China. As a result, the relationship between money growth and inflation can reflect the effectiveness of monetary policy implementation to a large degree. In this sense, it is worthwhile to explore such a relationship to shed light on what has happened to China's monetary policy over the past several decades.
+This paper proposes a novel wavelet analysis to revisit the relationship between money growth and inflation in China. Wavelet analysis is greatly distinctive from most conventional mathematical methods such as time-domain methods (correlation analysis and Granger causality, etc.), which cannot identify short-run and long-run relationships between time series, and frequency-domain methods (Fourier analysis, etc.), which cannot reveal how such relationships change over time. It allows us to expand time series into a time-frequency space in which the local correlation and the lead-lag relationship can be read off in a highly intuitive way. Therefore, it is very suitable for assessing simultaneously whether the relationship varies across frequencies and evolves over time. In addition, a wavelet analysis has a significant advantage over the well-known Fourier analysis, especially when the time series under study are non-stationary or locally stationary \cite{ROUEFF2011813}.
+Wavelet analysis was introduced into economics by \cite{Goffe1994}, Ramsey and Lampart (1998a,b) in the mid-1990s. However, its extensive applications in economics did not emerge until recent years. A strand of literature uses wavelet coherency and phase differences based on the continuous wavelet transform (CWT) to assess co-movements between stock markets as well as between energy commodities and macroeconomy (Rua \& Nunes, 2009; Graham \& Nikkinen, 2011; Aguiar-Conraria \& Soares, 2011; McCarthy \& Orlov, 2012; Vacha \& Barunik, 2012; Su \& Chen, 2012; etc.). Another strand of literature applies multi-resolution analysis based on the maximal overlap discrete wavelet transform (MODWT) to reexamine some of the most investigated relationships in empirical economics (Gallegati, Gallegati, Ramsey, \& Semmler, 2011; Hacker, Karlsson, \& Månsson, 2014; Reboredo \& Rivera-Castro, 2014; Wu \& Cui, 2010; Xu, 2011). For example, Gallegati et al. (2011) test for the stability of the wage Phillips curve relationship across frequencies and over time. Reboredo and Rivera-Castro (2014) provide new evidence of the effects of oil prices on stock returns for the U.S. and Europe. Hacker et al. (2014) revisit the causal relationship between spot exchange rates and nominal interest rate differentials. Wavelet studies that attempt to discuss problems regarding monetary policy and inflation have also been undertaken in recent years. AguiarConraria, Azevedo, and Soares (2008) reveal the time-frequency effects of the U.S. monetary policy on its macroeconomy. Dowd, Cotter, and Loh (2011) presents a wavelet-based method to estimate the U.S.'s core inflation. Aguiar-Conraria, Martins, and Soares (2012) explore the time- and frequency-varying relationship between the yield curve shape and macroeconomy for the U.S. Rua (2012) examines the dynamic relationship between money growth and inflation for the Euro area.3 To date, no work has utilized wavelet analysis to examine the dynamic relationship between money growth and inflation in China, which is another large motivator for us to make an attempt.
+This study differs from those in the existing literature in several important ways. First, wavelet analysis devotes special and full attention to the time-frequency relationship between money growth and inflation in China. Second, this paper employs the most recent monthly data of inflation and money growth, ranging from January 1991 to June 2014. Third, through estimating wavelet power spectrums, wavelet coherencies and phase differences among growth rates of M0, M1, and M2 and inflation rates, respectively, we unravel the extent to which money growth and inflation comprehensively relate to each other, how such a relationship evolves with time, which rate is the leader and whether short-run and (or) long-run relations exist between them in China. Finally, our empirical results show high but not homogenous links between money growth and inflation over time and across frequencies that fit with the fact that China has experienced economic transitions and structural adjustments over the past two decades. In general, this paper provides additional and useful implications for China's monetary policy.
+The rest of the paper proceeds as follows. Section 2 briefly reviews the literature on the relationship between money growth and inflation. Section 3 provides an overview of wavelet theory and methods. Section 4 introduces data and plots wavelet power spectrums. Section 5 presents the empirical results and policy implications. Section 6 concludes.
+
+\section{Related literature}
+As mentioned above, it is well known that the relationship between money growth and inflation is historically associated with the QTM. The traditional QTM suggests a unitary relationship between money growth and inflation (Fisher \& Brown, 1911). However, the modern QTM argues that money growth impacts both output and inflation in the short run but would be completely reflected on inflation in the long run (Friedman, 1956). Despite the remaining dispute about the short-run relationship, both the traditional and modern QTM, however, reach an agreement with the unitary relationship between money growth and inflation in the long run.
+Entering the 1990s, a large number of empirical studies emerged to investigate the relationship between money growth and inflation for different countries. While some studies find a unidirectional or bidirectional causal relationship between money growth and inflation (Assenmacher-Wesche, Gerlach, \& Sekine, 2008; Hall, Hondroyiannis, Swamy, \& Tavlas, 2009; Hossain, 2005; Liu, 2002), additional studies that follow the research patterns of the QTM suggest a positive relationship between them from a shortrun and (or) long-run view. Xie (2004), Roffia and Zaghini (2007), Zhang (2012) and Zhang, Zhang, and Wang (2012) claim that money growth has a positive impact on inflation in the short run, whereas Mccandless and Weber (1995), Crowder (1998), Christensen (2001), Grauwe and Polan (2005), and Zhang (2008, 2012) argue that money growth has a positive impact on inflation in the long run. Mccandless and Weber (1995) as well as Grauwe and Polan (2005) reach almost the same conclusion that money growth and inflation are related one-for-one in the long run, which provides strong support for the QTM, particularly for modern QTM. There is also limited work that presents a negative relationship between money growth and inflation. For example, Shuai (2002) and Wu (2002) find that China's money growth has an unusually negative impact on inflation in the 1993–2001 period. 
+For a further consideration, Lucas (1980) presents for the first time that the frequency level should not be ignored when examining the relationship between money growth and inflation. More recent work has paid special and extensive attention to how money growth and inflation relate at different frequencies (Assenmacher-Wesche \& Gerlach, 2008a,b; Benati, 2009; Bruggeman, CambaMendez, Fischer, \& Sousa, 2005; Haug \& Dewald, 2004; Zhang \& Su, 2010). While some researchers focus on the frequency-varying relationship between money growth and inflation, there has been another strand of literature that examines whether such a relationship evolves over time (Basco, D'Amato, \& Garegnani, 2009; Christiano \& Fitzgerald, 2003; Liu \& Chen, 2012; Milas, 2007; Rolnick \& Weber, 1997; Sargent \& Surico, 2008; Wang, 2010; Zhang, 2009). For example, Zhang (2009) demonstrates that inflation persistence in China has been significantly weakened since 1997 as a consequence of systematic improvements in monetary policy. Wang (2010) reveals that China's money growth drives its inflation change as a hump shape. Liu and Chen (2012) find that their link has become weaker over the past decade in China.
+Limited work performs a simultaneous assessment of how money growth and inflation relate at different frequencies and how such a relationship evolves over time, with the exception of Rua (2012), who achieves this using wavelet analysis. Using wavelet coherency and phase difference tools, he finds that the relationship between money growth and inflation is stronger at low frequencies and that money growth in the Euro area seemed to lose its leading properties with respect to inflation in the past decade. In this paper, we have also proposed to apply the wavelet analysis to investigate the dynamic relations between money growth and inflation in both the time and frequency domains. However, despite using a similar method, this paper employs the distinctive monthly data for China spanning from January 1991 to June 2014, which implies that we devote special attention to the world's biggest developing country to the effects of high money growth on inflation, and the ensuing findings would provide some additional and helpful implications for China's monetary policy implementation.
+
+\section{Wavelet theory and methods}
+Wavelet analysis originated in the mid-1980s as an alternative to the well-known Fourier analysis. Although Fourier analysis can uncover the relations across different frequencies by means of spectral techniques, the time-localized information is completely discarded under the Fourier transform. Moreover, Fourier analysis is only suitable for stationary time series. In contrast, wavelet analysis allows us to estimate the spectral characteristics of a time series as a function of time and then extracts localized information in both time and frequency domains (Aguiar-Conraria et al., 2008). In addition, wavelet analysis has significant superiority over the Fourier analysis when the time series under study are non-stationary or locally stationary \cite{ROUEFF2011813}.
+
+\subsection{The continuous wavelet transform}
+As the beginning of the wavelet analysis, wavelet transform decomposes a time series into stretched and translated versions of a given “mother wavelet” that is well-localized in time and frequency domains. In this way, the series can be expanded into a timefrequency space where its time- and (or) frequency-varying oscillations are observed in a highly intuitive way. Often, two classes of wavelet transforms exist: discrete wavelet transforms (DWT) and continuous wavelet transforms (CWT). The DWT is useful for noise reduction and data compression, while the CWT is more helpful for feature extraction and data self-similarity detection (Grinsted, Moore, \& Jevrejeva, 2004; Loh, 2013). As such, the CWT is widely used in economics and finance (Aguiar-Conraria et al., 2008; Caraiani, 2012; Rua, 2012).
+Given a time series $x(t)\in L^2(\mathbb{R})$, its CWT in regard to the mother wavelet $\psi(t)$ is defined as an inner product of $x(t)$ with the family $\psi_{\tau,s}(t)$ of "wavelet daughters";
+
+\begin{equation}
+    W_{x,\psi}(\tau,s)=\int_{-\infty}^{\infty}x(t)\psi_{\tau,s}^*(t)dt,
+\end{equation}
+
+where the asterisk (*) denotes complex conjugation, i.e., $\psi_{\tau,s}*(t)$ are complex conjugate functions of the daughter wavelet functions $\psi_{\tau,s}(t)$. As mentioned above, $\psi_{\tau,s}(t)$ are derived from the mother wavelet $\psi(t)$ during the decomposition in the sense that ψτ,s(t)=|s| −1/2ψ((t − τ)/s), τ, s ∈ ℝ, s ≠ 0. Varying the wavelet scale parameter s implies compressing (if |s| ≺ 1) or stretching (if |s| ≻ 1) the mother wavelet ψ(t) across frequencies, while translating along the localized time index τ implies shifting the position of the wavelet ψ(t) in time. In doing so, one can construct a picture that shows both the amplitude of any features present in x(t) versus the scale and how this amplitude evolves over time (Torrence & Compo, 1998). In addition, because both s and τ are real values that vary continuously (with the constraint s ≠ 0), Wx;ψ(τ, s) is then named as continuous wavelet transform.
+
+
+% Numbered list
+% Use the style of numbering in square brackets.
+% If nothing is used, default style will be taken.
+%\begin{enumerate}[a)]
+%\item 
+%\item 
+%\item 
+%\end{enumerate}  
+
+% Unnumbered list
+%\begin{itemize}
+%\item 
+%\item 
+%\item 
+%\end{itemize}  
+
+% Description list
+%\begin{description}
+%\item[]
+%\item[] 
+%\item[] 
+%\end{description}  
+
+% Figure
+%\begin{figure}[<options>]
+%	\centering
+%		\includegraphics[<options>]{}
+%	  \caption{}\label{fig1}
+%\end{figure}
+
+
+%\begin{table}[<options>]
+%\caption{}\label{tbl1}
+%\begin{tabular*}{\tblwidth}{@{}LL@{}}
+%\toprule
+%  &  \\ % Table header row
+%\midrule
+% & \\
+% & \\
+% & \\
+% & \\
+%\bottomrule
+%\end{tabular*}
+%\end{table}
+
+% Uncomment and use as the case may be
+%\begin{theorem} 
+%\end{theorem}
+
+% Uncomment and use as the case may be
+%\begin{lemma} 
+%\end{lemma}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+
+% To print the credit authorship contribution details
+\printcredits
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\bibliographystyle{cas-model2-names}
+
+% Loading bibliography database
+\bibliography{cas-refs}
+
+% Biography
+\bio{}
+% Here goes the biography details.
+\endbio
+
+%\bio{pic1}
+% Here goes the biography details.
+\endbio
+
+\end{document}
+

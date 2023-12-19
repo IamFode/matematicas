@@ -1,0 +1,72 @@
+%-------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+%-------------------------------------------------------------------------------
+\usepackage{amscd}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{xspace}
+%-------------------------------------------------------------------------------
+\hoffset-1cm
+\voffset-0cm
+\textwidth6.5in
+\textheight8.5in
+\oddsidemargin0.45in
+
+%-------------------------------------------------------------------------------
+\newcommand{\header}{\vspace*{-4cm} \hspace*{-1cm} \includegraphics[scale=0.16]{uv.jpg}   \hspace*{0.15cm} 
+\begin{minipage}{11.3cm} \vspace{-1cm} \vskip4truept \centerline \textsc{XI Congreso del Máster en Investigación Matemática y del Doctorado en Matemáticas }
+\vskip-4truept \centerline{\textbf{\small{Facultat de Ciències Matemàtiques, Universitat de València}}} 
+\vskip-5truept \centerline{\textrm{\small 8 - 10 de Enero de 2024}} \vskip4truept\hrule \vspace{1cm}
+\end{minipage}\hspace*{0.25cm} \includegraphics[scale=0.12]{upv.png} }
+
+\date{ }
+%-------------------------------------------------------------------------------
+\title{\header \textbf{Coherencia wavelet, una herramienta para el análisis dinámico entre series temporales.}}
+
+%-------------------------------------------------------------------------------
+\author{
+%
+\textbf{Christian L. Paredes Aguilera}%
+\thanks{e-mail: \texttt{clparagu@posgrado.upv.es}}\\%
+Departamento de Matemática Aplicada, Universidad Politéctica de Valencia\\ Valencia, España.
+}
+%-------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+%-------------------------------------------------------------------------------
+\renewcommand\abstractname{Resumen}
+
+\begin{abstract}
+%\noindent En un intento por entender mejor la relación dinámica entre el crecimiento del dinero y la inflación, tema que es de extremada vigencia a nivel global, proponemos un estudio en el contexto de la Unión Europea, mediante el uso del análisis de wavelets. Esta charla, se tratará el aspecto teórico de las wavelets, por ello se hará una introducción a la notación básica y se verá cómo pueden ser estas útiles para descomponer una serie temporal en un espacio de tiempo-frecuencia, y de esta forma identificar la relación a corto y largo plazo entre dos series, y cómo cambian con el tiempo. En concreto se profundizará en la transformada wavelet continua, que será la que utilizaremos en este caso.
+
+%\noindent Continuando con el esfuerzo de entender mejor la relación dinámica entre el crecimiento del dinero y la inflación, en el contexto de la Unión Europea mediante el uso del análisis de wavelets. Nos centraremos en el estudio de la teoría y los métodos para la extracción de las características en wavelets. Nos basaremos en el uso del espectro de potencia wavelet de una serie temporal, concepto generalmente conocido por su interpretación en el ámbito de la física, que se puede intuir como una medida de la varianza local de la serie (o covarianza entre series) para cada frecuencia. A partir de esta introduciremos la herramienta principal, presentada en \cite{MGI2015} y \cite{PGWA}, denominada, coherencia de wavelet, definida a través del espectro de potencia wavelet. Este indicador tomará valores entre 0 y 1 en un espacio de tiempo-frecuencia, lo que nos dará una medida natural para la correlación entre las series temporales.\\
+
+\noindent Para entender mejor la relación dinámica entre el crecimiento del dinero y la inflación, tema que es de extremada vigencia a nivel global, proponemos un estudio en el contexto de la Unión Europea, mediante el uso del análisis de wavelets. Esta charla se centra en la diferencia de fase wavelet, una herramienta matemática que permite identificar correlaciones en series temporales; que es esencial cuando la coherencia wavelet, por su naturaleza cuadrada, no puede distinguir entre correlaciones de distinto signo. Además, la diferencia de fase wavelet puede sugerir causalidad entre las series, lo que es de gran relevancia para entender las relaciones económicas subyacentes. Por último, se realizará un análisis integral de su aplicación, que abarcará tanto la diferencia de fase wavelet como la coherencia wavelet, entre dos indicadores económicos: el agregado monetario M1 y el Índice Armonizado de Precios al Consumidor (HICP).  
+
+\end{abstract}
+%-------------------------------------------------------------------------------
+\noindent Trabajo conjunto con: \\
+\textbf{Gabriel Rosario Roselló}\footnote{e-mail: \texttt{garoro4@alumni.uv.es}},
+Departament de Matemàtiques, Universitat de València, València, Spain\\
+% If more authors, please copy the following instructions for each. Otherwise, remove to "City, Country."
+\textbf{Jorge Valero Mira}\footnote{e-mail: \texttt{jvm62@gcloud.ua.esl}},Departamento de Matemáticas, Universidad de Alicante, Alicante, España.\\
+
+%-------------------------------------------------------------------------------
+%You write the most important bibliography to obtain this work.
+\renewcommand\refname{Bibliograf\'ia}
+\begin{thebibliography}{99}
+
+\bibitem{MGI2015} 
+\textsc{Jiang, C., Chang, T., Li XL.}, \textit{Money growth and inflation in China: New evidence from a wavelet analysis}, International Review of Economics \& Finance {\bf 35}, (2015), pp. 249-261. 
+
+\bibitem{PGWA} 
+\textsc{Torrence C. \& Compo, G.}, \textit{A Practical Guide to wavelet analysis}, Bulletin of the American Meteorological Society {\bf 79}  (1998), pp., 61-78.  
+
+
+
+\end{thebibliography}
+\thispagestyle{empty}
+%-------------------------------------------------------------------------------
+\end{document}
