@@ -144,28 +144,181 @@
 
 
 \section{Construcción}
-    \subsection{Definición de diferencia de fase}
+
+    %PAGINA 9
+    \begin{frame}{Construcción}{Transformada Wavelet Cruzada}
+
+    La \textbf{transformada de wavelet cruzada} de dos series de tiempo $x(t)$ y $y(t)$ se define como:
+
+    \begin{definicion}
+    \begin{equation}
+    W_{xy;\psi}(\tau, s) = W_{x;\psi}(\tau, s)W_{y;\psi^*}(\tau, s)
+    \end{equation}
+    \end{definicion}
+
+    \end{frame}
+
+    %PAGINA 10
+    \begin{frame}{Construcción}{Diferencia de Fase}
+
+    La \textbf{diferencia de fase} entre $x(t)$ y $y(t)$ se define como:
+
+    \begin{definicion}
+    \begin{equation}
+	\phi_{xy}=\tan^{-1} \left(\frac{\mathfrak{J}\left\{S\left(s^{-1}W_{xy;\psi}(\tau,s)\right)\right\}}{\mathfrak{R} \left\{S\left(s^{-1}W_{xy;\psi}(\tau,s)\right)\right\}}\right),\quad \mbox{con}\quad \varphi_{xy}\in[-\pi,\pi].
+    \end{equation}
+    \end{definicion}
+
+    Donde $\mathfrak{J}$ y $\mathfrak{R}$ son las partes imaginarias y reales de la transformada de wavelet cruzada suavizada, respectivamente.
+
+    \end{frame}
+
+    %PAGINA 11
+    \begin{frame}{Construcción}{Retraso de Tiempo Instantáneo}
+
+    Podemos convertir la diferencia de fase en el \textbf{retraso de tiempo instantáneo} entre $x(t)$ y $y(t)$ de la siguiente manera:
+
+    \begin{equation}
+	(\Delta t)_{xy}=\frac{\phi_{xy}}{2\pi f},
+    \end{equation}
+
+    Donde $2\pi f$ es la frecuencia angular con respecto a la escala de tiempo $s$, y la frecuencia de Fourier usual $f$ se da por:
+
+    \begin{equation}
+	f = \frac{\omega_\psi}{2\pi s},
+    \end{equation}
+
+    Por lo tanto, el retraso de tiempo $(\Delta t)_{xy}$ se da finalmente por:
+
+    \begin{equation}
+	(\Delta t)_{xy}=\frac{\varphi_{xy}\cdot s}{2\pi},
+    \end{equation}
+
+    \end{frame}
+
+    %PAGINA 12
+    \begin{frame}{Construcción}{Interpretación de las Flechas}
+
+    Las diferencias de fase se representan como flechas en los gráficos de coherencia de wavelet. La dirección de las flechas tiene los siguientes significados:
+
+    \begin{itemize}
+	\item \textbf{Flechas apuntando a la derecha:} $x(t)$ y $y(t)$ están en fase (o relacionadas positivamente).
+	\item \textbf{Flechas apuntando a la izquierda:} $x(t)$ y $y(t)$ están fuera de fase (o relacionadas negativamente).
+	\item \textbf{Flechas apuntando hacia arriba:} $x(t)$ adelanta a $y(t)$ en un cuarto de la escala correspondiente o se retrasa detrás de $y(t)$ en tres cuartos de la escala correspondiente.
+	\item \textbf{Flechas apuntando en otras direcciones:} indican retrasos o adelantos entre $x(t)$ y $y(t)$.
+    \end{itemize}
+
+    Las diferencias de fase también pueden sugerir causalidad entre $x(t)$ y $y(t)$.
+
+    \end{frame}
+
+    %PAGINA 13
+    \begin{frame}{Construcción}{Ejemplo}
+	     \begin{figure}
+		 \includegraphics[scale=0.18]{ejemPasos.jpeg}
+	     \end{figure}
+    \end{frame}
+
     
-	%PAGINA 10
-	\begin{frame}
-	    \begin{definicion}
 
-	    \end{definicion}
-	 \end{frame}
+\section{Resultados de datos empíricos}
+
+    %PAGINA 13
+    \begin{frame}{Resultados de datos empíricos}{Descripción de datos}
+	Utilizamos datos mensuales de la Unión Europea a partir de enero de 1997 hasta octubre de 2023. Extraídos del Banco Central de Europa, de las variables:
+	\begin{multicols}{2}
+	     \begin{figure}
+		 \includegraphics[scale=0.18]{euroZona.jpg}
+		 %\caption{Morlet Wavelet $\psi=e^{-t^2/2}cos(5t)$}
+		 %\label{fig:enter-label}
+	     \end{figure}
+	\begin{itemize}
+	    \item \textbf{Crecimiento de dinero (HIPC)}.
+	\item \textbf{Inflación (M1)}.
+	\end{itemize}
+	\end{multicols}
+    \end{frame}
+
+     %PAGINA 14
+    \begin{frame}{Resultados de datos empíricos}{Gráficos de series de tiempo}
+	\begin{multicols}{2}
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.32]{M1s.jpg}
+		\caption{\tiny Señal relativa al agregado monetario M1. Elaboración propia.}
+		\label{fig:M1}
+	    \end{figure}
+
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.32]{infs.jpg}
+		\caption{\tiny Señal relativa al HICP (Harmonised Index of Consumer Prices). Elaboración propia.}
+		\label{fig:inf}
+	    \end{figure}
+	\end{multicols}
+    \end{frame}
+
+    %PAGINA 15
+    \begin{frame}{Resultados de datos empíricos}{Series de Fourier}
+	\begin{multicols}{2}
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.32]{fourierInflacion.jpg}
+		\caption{\tiny Transformada de Fourier de agregado monetario M1. Elaboración propia.}
+		\label{fig:M1}
+	    \end{figure}
+
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.32]{fourierDinero.jpg}
+		\caption{\tiny Transformada de Fourier de HICP (Harmonised Index of Consumer Prices). Elaboración propia.}
+		\label{fig:inf}
+	    \end{figure}
+	\end{multicols}
+    \end{frame}
+
+    %PAGINA 16
+    \begin{frame}{Resultados de datos empíricos}{Causalidad de Granger}
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{|l|l|l|}
+		\hline
+		H0 & Decision & Distribution \\ \hline
+		Exclude lagged Y1 in Y2 equation & Cannot reject H0 & Chi2(10) \\ \hline
+	    \end{tabular}
+
+	    \begin{tabular}{|l|l|}
+		\hline
+		Statistic & PValue \\ \hline
+		14.14 & 0.16671 \\ \hline
+	    \end{tabular}
+
+	    \begin{tabular}{|l|}
+		\hline
+		CriticalValue \\ \hline
+		18.307 \\ \hline
+	    \end{tabular}
+	    \caption{\tiny Resultados de la prueba de causalidad de Granger. Elaboración propia.}
+	    \label{tab:granger}
+	\end{table}
+
+    \end{frame}
+
+    %PAGINA 17
+    \begin{frame}{Resultados de datos empíricos}{Coherencia Wavelet y diferencia de fase}
+	    \begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.175]{coherenciaFase.jpg}
+		\caption{\tiny Transformada de Fourier de HICP (Harmonised Index of Consumer Prices). Elaboración propia.}
+		\label{fig:inf}
+	    \end{figure}
+    \end{frame}
 
 
-
-    \section{Conlusión}
+    \section{Conclusión}
+    %PAGINA 18
     \begin{frame}{Conclusión}
-        Así pues, como ya conocemos la \textbf{correlación}, sabemos que esta relación nos da un indicadador, en este caso, entre la distribución de las potencias entre dos series temporales a cada tiempo.
-        
-        \vspace{3mm}
-        Este indicador pero, tiene un inconveniente, ya que esta definido como un cuadrado, y {\color{red} no podemos distinguir entre correlacion positiva y negativa}.
-
-        \vspace{3mm}
-        \begin{center}
-        {\large \textbf{¿Cómo podemos solucionarlo?}}
-        \end{center}
+	La \textbf{Coherencia Wavelet} y su complemento la Diferencia de Fase son técnicas poderosas para el análisis de series de tiempo. Permiten analizar la correlación en tiempo y frecuencia, así como la relación causal entre dos variables. A diferencia de otras técnicas como la correlación de Pearson, la transformada de Fourier y la causalidad de Granger, estas proporcionan una visión más dinámica de las relaciones entre las series de tiempo. Son especialmente útiles para manejar datos no estacionarios y proporcionar una visión detallada de cómo las relaciones entre las variables cambian con el tiempo y a diferentes frecuencias.
     \end{frame}
 
     \begin{frame}{Fin}
