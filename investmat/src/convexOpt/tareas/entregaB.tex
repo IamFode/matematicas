@@ -65,7 +65,7 @@
     \end{array}
     $$
     con variables $x$ e $y$, y dominio $D=\left\{(x,y):y>0\right\}$.}
-    \begin{enumerate}[(a)]
+    \begin{enumerate}[\bfseries (a)]
 
 	% ---------- (a)
 	\item \textbf{\boldmath Comprueba que es un problema de optimización convexa. Encuentra el valor óptimo}\\
@@ -105,66 +105,87 @@
 	    \footnote{
 		La función objetivo en este problema de optimización es $f(x) = e^{-x}$. Esta es una función exponencial decreciente para $x \geq 0$, lo que significa que a medida que $x$ aumenta, $f(x)$ disminuye.\\
 	    }
-	    para $x \geq 0$ y la restricción implica que $x = 0$. Por lo tanto, el valor mínimo de $f(x)$ en el dominio dado es $f(0) = e^0 = 1$.
+	    para $x \geq 0$ y la restricción implica que $x = 0$. Por lo tanto, el valor mínimo de $f(x)$, llamémoslo $p^*$ en el dominio dado es 
+	    $$p^*=f(0) = e^0 = 1.$$\\
+
 
 	% ---------- (b)
 	\item \textbf{\boldmath Establece el problema dual y encuentra la solución óptima dual $\lambda^*$ y el valor óptimo $d^*$. ¿Cuál es el salto de dualidad $p^*-d^*$? Representa el conjunto $G\subseteq \mathbb{R}^2$.}\\
 
-	    \textbf{Solución:} El problema de optimización primal que nos has dado es el siguiente:
+	    \textbf{Solución:} Veamos que el problema de optimización primal es:
+	    $$
+	    \left\{
+		\begin{array}{ll}
+			\text{minimiza} & e^{-x}\\
+			\text{sujeto a} & x^2/y\leq 0,\\
+		\end{array}
+	    \right.
+	    $$
 
-$$
-\begin{array}{ll}
-	\text{minimiza} & e^{-x}\\
-	\text{sujeto a} & x^2/y\leq 0,\\
-\end{array}
-$$
+	    con variables $x$ e $y$, y dominio $D=\left\{(x,y):y>0\right\}$.\\
 
-con variables $x$ e $y$, y dominio $D=\left\{(x,y):y>0\right\}$.
+	    Para formular el problema dual, primero expresamos el problema primal en su forma estándar. Sean la función objetivo $f_0(x) = e^{-x}$ y la restricción $f_1(x,y) = x^2/y \leq 0$. Entonces, el problema primal podemos escribir como:
+	    $$
+	    \left\{
+		\begin{array}{ll}
+			\text{minimiza} & f_0(x)\\
+			\text{sujeto a} & f_1(x,y) \leq 0,\\
+		\end{array}
+	    \right.
+	    $$
 
-Para formular el problema dual, primero expresamos el problema primal en su forma estándar. La función objetivo es $f_0(x) = e^{-x}$ y la restricción es $f_1(x,y) = x^2/y \leq 0$. Entonces, el problema primal se puede escribir como:
+	    Luego, procedamos a formular el problema dual. Para ello, necesitamos definir la función Lagrangiana, que incorpora las restricciones del problema primal en la función objetivo a través de las variables duales. En este caso, la función Lagrangiana se define como:
+	    $$
+	    L(x,y,\lambda) = f_0(x) + \lambda f_1(x,y) = e^{-x} + \lambda \left(\frac{x^2}{y}\right)
+	    $$
 
-$$
-\begin{array}{ll}
-	\text{minimiza} & f_0(x)\\
-	\text{sujeto a} & f_1(x,y)\leq 0,\\
-\end{array}
-$$
+	    donde $\lambda$ es la variable dual asociada a la restricción $f_1(x,y) \leq 0$.\\
 
-El problema dual asociado es:
+	    La función dual de Lagrange, que es la función objetivo del problema dual, se obtiene al minimizar la función Lagrangiana con respecto a las variables primales. Es decir, buscamos el valor mínimo de la función Lagrangiana sobre todas las posibles elecciones de las variables primales $x$ e $y$. En decir, por el método de los multiplicadores de Lagrange, tenemos:
+	    $$
+	     \inf_{x,y} L(x,y,\lambda) = \inf_{x,y} \left[e^{-x} + \lambda \left(\frac{x^2}{y}\right)\right]=g(\lambda).
+	    $$
 
-$$
-\begin{array}{ll}
-	\text{maximiza} & -\inf_x (e^{-x} + \lambda x^2/y)\\
-	\text{sujeto a} & \lambda \geq 0,\\
-\end{array}
-$$
+	    Para resolverlo, tomamos las derivadas parciales de $L$ con respecto a $x$ e $y$, 
+	    $$
+	    \left\{
+		\begin{array}{rcl}
+		    \dfrac{\partial L}{\partial x} &=& -e^{-x} + 2\lambda \dfrac{x}{y}\\\\
+		    \dfrac{\partial L}{\partial y} &=& -\lambda \dfrac{x^2}{y^2}.
+		\end{array}
+	    \right.
+	    $$
 
-donde $\lambda$ es la variable dual.
+	    Igualando estas derivadas a cero,
+	    $$
+	    \left\{
+		\begin{array}{rcl}
+		    -e^{-x} + 2\lambda \frac{x}{y} &=& 0\\\\
+		    -\lambda \frac{x^2}{y^2} &=& 0,
+		\end{array}
+	    \right.
+	    $$
+	    Y sabiendo que $y > 0$, obtenemos, 
+	    $$x = 0.$$
+	    Por lo tanto, la función dual de Lagrange es:
+	    $$
+	    g(\lambda) = \inf_{x,y} L(x,y,\lambda) = \inf_{x,y} \left[e^{-x} + \lambda \left(\frac{x^2}{y}\right)\right] = e^{-0} + \lambda \left(\frac{0^2}{y}\right) = 1.
+	    $$
+	    para $\lambda \geq 0$.\\
 
-Dado que la restricción primal implica que $x = 0$, la función objetivo dual se simplifica a $-\inf_x e^{-x} = -1$. Por lo tanto, el problema dual se reduce a:
+	    Así, dado que $g(\lambda)$ es constante e igual a $1$ para todo $\lambda \geq 0$, la solución óptima dual $\lambda^*$ puede ser cualquier número real no negativo y el valor óptimo dual 
+	    $$d^* = g(\lambda^*) = 1.$$
 
-$$
-\begin{array}{ll}
-	\text{maximiza} & -1\\
-	\text{sujeto a} & \lambda \geq 0,\\
-\end{array}
-$$
-
-La solución óptima dual es $\lambda^* = 0$ y el valor óptimo dual es $d^* = -1$.
-
-El salto de dualidad es $p^* - d^* = 1 - (-1) = 2$, donde $p^* = 1$ es el valor óptimo primal.
-
-El conjunto $G$ es el conjunto de todos los $(x,y)$ que satisfacen la restricción $x^2/y \leq 0$ con $y > 0$. Dado que la restricción implica que $x = 0$, el conjunto $G$ es simplemente el eje $y$ para $y > 0$, es decir, $G = \{(0,y) : y > 0\}$.
-
+	    Finalmente, puedes calcular la brecha de dualidad $p^*-d^*$, donde $p^*$ es el valor óptimo del problema primal. Dado que $p^* = d^* = 1$, la brecha de dualidad es $0$.\\\\
 
 	% ---------- (c)
 	\item \textbf{\boldmath ¿Se cumple la condición de Slater para este problema?.}\\
 
-	    \textbf{Solución:} La condición de Slater es una condición de calificación de restricciones que garantiza la dualidad fuerte en problemas de optimización convexa. La condición de Slater requiere que exista al menos un punto estrictamente factible, es decir, un punto que satisface todas las restricciones de desigualdad de manera estricta.
+	    \textbf{Solución:} La condición de Slater es una regla que se utiliza en optimización convexa. Esta regla dice que si hay un punto que cumple todas las restricciones del problema de optimización de manera estricta, entonces podemos estar seguros de que la solución óptima del problema original (llamado problema primal) y la solución óptima del problema asociado (llamado problema dual) serán iguales. Esto se conoce como dualidad fuerte.\\
 
-En este problema de optimización, la restricción es $g(x,y) = x^2/y \leq 0$ con $y > 0$. Dado que $y > 0$, la restricción implica que $x = 0$. Por lo tanto, el conjunto factible es el conjunto de puntos $(0, y)$ para $y > 0$.
+	    En este caso, el problema de optimización tiene una restricción que dice que $x^2/y\leq 0$ y que $y>0$. Esto significa que $x=0$ para cualquier par $(x,y)$ que cumpla $y>0$. Por lo tanto, el punto $(0,1)$ cumple la restricción de manera estricta, ya que $0^2/1=0$ es estrictamente menor que 0.\\
 
-Dado que no hay ningún punto que satisfaga la restricción de manera estricta (es decir, con $x^2/y < 0$), la condición de Slater no se cumple para este problema de optimización.
+	    Por lo tanto, la condición de Slater se cumple para este problema de optimización. Esto significa que la solución óptima del problema original y la solución óptima del problema dual son iguales, lo cual es consistente con los cálculos anteriores donde encontramos que ambas soluciones óptimas son 1. Es decir, no hay diferencia o brecha entre las soluciones óptimas del problema original y del problema dual.\\\\
 
 
     \end{enumerate}
@@ -178,10 +199,11 @@ Dado que no hay ningún punto que satisfaga la restricción de manera estricta (
     \end{array}
     $$
     donde las funciones $f_i:\mathbb{R}^n\to \mathbb{R}$ son diferenciables y convexas. Muestra que la función
-    $$\phi(x)f_0(x)+\alpha \sum_{i=1}^m \max\left\{0,f_i(x)\right\}^2,$$
+    $$\phi(x) = f_0(x)+\alpha \sum_{i=1}^m \max\left\{0,f_i(x)\right\}^2,$$
     es convexa (cuando $\alpha>0)$. Si $\tilde{x}$ minimiza $\phi$, muestra cómo obtener, a partir de $\tilde{x}$, un punto accesible para el problema dual. Encuentra la cota inferior correspondiente al problema primal.}\\
 
-	\textbf{Solución:}
+	\textbf{Solución:} 
+
 
     % -------------------- Ejercicio 5 -------------------- %
     \item \textbf{\boldmath Minimizando una función cuadrática. Considera el problema de minimizar una función cuadrática:
@@ -205,7 +227,7 @@ Dado que no hay ningún punto que satisfaga la restricción de manera estricta (
     % -------------------- Ejercicio 6 -------------------- %
     \item \textbf{\boldmath Considera el problema siguiente:
     $$\text{minimiza} \; f(x)=(1/2)\left(x_1^2+\gamma x^2_2\right),\; \gamma >0.$$} 
-    \begin{enumerate}[(a)]
+    \begin{enumerate}[\bfseries (a)]
 
 	% ---------- (a)
 	\item \textbf{\boldmath Fija $(a,b)\in \mathbb{R}^2$. Calcula el valor de $t$ que minimiza la función $f\left((a,b)-t\nabla f(a,b)\right)$ en términos de $a$ y $b$, claro.}\\ 
