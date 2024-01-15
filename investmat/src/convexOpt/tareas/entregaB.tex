@@ -11,11 +11,11 @@
 
 \line(1,0){400}
 
-
-\section*{CAPÍTULO 2}
-
 \begin{enumerate}[\bfseries \text{Ejercicio} 1.]
 
+\setcounter{enumi}{2}
+
+\begin{comment}
     % -------------------- Ejercicio 1 -------------------- %
     \item \textbf{\boldmath Se considera el problemas
     $$
@@ -31,11 +31,89 @@
 	\item \textbf{\boldmath Describe el conjunto accesible, el valor óptimo y las solución optima.}\\
 	
 
-	    \textbf{Solución:}
-	%  ---------- (b)
-	\item \textbf{\boldmath Escribe la función Lagrangiana $L(x,\lambda)$ y dibuja las funciones $x\mapsto L(x,\lambda)$ para algunos valores positivos de $\lambda$. Verifica que $p^*\geq \inf_xL(x,\lambda)$ para $\lambda\leq 0$. Obtén y dibuja la gráfica de la función dual de Lagrange $g$.}\\
+	    \textbf{solución:} El conjunto accesible, esta formado por todos los valores de $x$ que satisfacen
+	    $$ (x-2)(x-4)\leq 0.$$
+	    Esto significa que $x$ deber estar en el intervalo $[2,4]$. Ya que, si $x<2$ o $x>4$, entonces $(x-2)(x-4)>0$.\\
+	    
+	    Para calcular el valor óptimo del problema de optimización dado, necesitamos encontrar el valor mínimo de la función objetivo $x^2+1$ sujeto a la restricción $(x-2)(x-4)\leq 0$.\\
 
-	    \textbf{Solución:}
+	    La función objetivo $x^2+1$ es una función cuadrática que es siempre creciente en el intervalo $[2,4]$. Por lo tanto, el valor mínimo de la función objetivo en este intervalo se alcanza en el extremo inferior del intervalo. Es decir, la solución optima es 
+	    $$x=2.$$
+
+	    Sustituyendo $x=2$ en la función objetivo obtenemos el valor óptimo:
+	    $$x^2+1 = 2^2+1 = 5.$$
+
+	    Por lo tanto, el valor óptimo del problema de optimización dado es $5$.\\\\
+
+
+	%  ---------- (b)
+	\item \textbf{\boldmath Escribe la función lagrangiana $\mathcal{L}(x,\lambda)$ y dibuja las funciones $x\mapsto \mathcal{L}(x,\lambda)$ para algunos valores positivos de $\lambda$. Verifica que $p^*\geq \inf_x\mathcal{L}(x,\lambda)$ para $\lambda\geq 0$. Obtén y dibuja la gráfica de la función dual de lagrange $g$.}\\
+
+	    \textbf{Solución:} Sean, la función objetivo  $f(x) = x^2 + 1$ y la restricción $g(x) = (x-2)(x-4) \leq 0$. Ahora, la función Lagrangiana se define como:
+	    $$\mathcal{L}(x,\lambda) = f(x)-\lambda g(x).$$
+
+	    Sustituyendo $f(x)$ y $g(x)$ en la ecuación anterior, obtenemos la función Lagrangiana para este problema:
+	    $$\mathcal{L}(x,\lambda) = \left(x^2+1\right) - \lambda[(x-2)(x-4)].$$
+
+	    El dibujo de la función $x \mapsto \mathcal{L}(x,\lambda)$ para algunos valores positivos de $\lambda$ es:
+	    \begin{center}
+		\begin{tikzpicture}
+		    \begin{axis}[scale=.7,draw opacity =.5,samples=100,smooth, 
+		      axis x line=center, 
+		      axis y line=center,
+		      ylabel = {$\mathcal{L}(x,\lambda)$},
+		      xlabel = {$x$},
+		      xlabel style={below right},
+		      ylabel style={above left},
+		      label style={font=\tiny},
+		      tick label style={font=\tiny},
+		      enlargelimits=upper,
+		      legend pos=outer north east] 
+		      \addplot[yellow,opacity=1,domain=2:4]{x^2 + 1 - .1*(x-2)*(x-4)};
+		      \addlegendentry{$\lambda=0.1$}
+		      \addplot[red,opacity=1,domain=2:4]{x^2 + 1 - .5*(x-2)*(x-4)};
+		      \addlegendentry{$\lambda=0.5$}
+		      \addplot[green,opacity=1,domain=2:4]{x^2 + 1 - 1*(x-2)*(x-4)};
+		      \addlegendentry{$\lambda=1$}
+		      \addplot[gray,opacity=1,domain=2:4]{x^2 + 1 - 1.5*(x-2)*(x-4)};
+		      \addlegendentry{$\lambda=1.5$}
+		      \addplot[blue,opacity=1,domain=2:4]{x^2 + 1 - 2*(x-2)*(x-4)};
+		      \addlegendentry{$\lambda=2$}
+		    \end{axis}
+		\end{tikzpicture}
+	    \end{center}
+	    \vspace{.5cm}
+
+	    Ahora, para encontrar el mínimo de $\mathcal{L}(x,\lambda)$ con respecto a $x$, tomamos la derivada de $\mathcal{L}$ con respecto a $x$ e igualamos a cero, obteniendo 
+	    $$x = \frac{3\lambda}{\lambda - 2}.$$ 
+
+	    Sin embargo, debido a la restricción $(x-2)(x-4) \leq 0$, $x$ debe estar en el intervalo $[2,4]$. Por lo tanto, el mínimo de $\mathcal{L}(x,\lambda)$ en el intervalo $[2,4]$ se alcanza en uno de los extremos del intervalo, es decir, en 
+	    $$x=2\quad \text{o}\quad x=4.$$
+
+	    Sustituyendo $x=2$ y $x=4$ en $\mathcal{L}(x,\lambda)$ obtenemos 
+	    $$\mathcal{L}(2,\lambda) = 5\quad \text{y}\quad \mathcal{L}(4,\lambda) = 17.$$ 
+	    Por lo tanto, el valor mínimo de $\mathcal{L}(x,\lambda)$ para $\lambda \leq 0$ y $x \in [2,4]$ es 5, que se alcanza en $x=2$.\\
+
+	    Finalmente, el valor óptimo del problema de optimización original, $p^*$, es el valor mínimo de la función objetivo $x^2 + 1$ sujeto a la restricción $(x-2)(x-4) \leq 0$, que también es 5. Por lo tanto, podemos verificar que 
+	    $$p^* = 5 \geq \inf_x \mathcal{L}(x,\lambda) = 5$$ 
+
+	    para $\lambda \leq 0$, lo que verifica la desigualdad. Esto es consistente con la teoría de la optimización, que establece que el valor óptimo de un problema de optimización siempre es mayor o igual que el valor mínimo de su función Lagrangiana correspondiente para cualquier $\lambda \leq 0$.\\
+
+
+
+
+	    La función dual de Lagrange, también conocida como función dual, se obtiene al minimizar la función Lagrangiana con respecto a las variables primales (en este caso, $x$) y luego maximizar con respecto a las variables duales (en este caso, $\lambda$). En otras palabras, la función dual $g(\lambda)$ se define como:
+	    $$g(\lambda) = \inf_x \mathcal{L}(x,\lambda)$$
+
+	    donde $\mathcal{L}(x,\lambda)$ es la función Lagrangiana. Para este problema, la función Lagrangiana es:
+	    $$\mathcal{L}(x,\lambda) = x^2 + 1 - \lambda[(x-2)(x-4)]$$
+
+	    Para encontrar $g(\lambda)$, primero minimizamos $\mathcal{L}(x,\lambda)$ con respecto a $x$. Como hemos resuelto anteriormente, el mínimo de $\mathcal{L}(x,\lambda)$ en el intervalo $[2,4]$ se alcanza en $x=2$ y su valor es 5. Por lo tanto, la función dual de Lagrange para este problema es una constante:
+	    $$g(\lambda) = 5$$
+
+	    para $\lambda \leq 0$. Esto significa que el valor óptimo del problema dual es $5$, que es igual al valor óptimo del problema primal. Esto es consistente con la teoría de la optimización, que establece que bajo ciertas condiciones (llamadas condiciones de Slater), el valor óptimo del problema primal es igual al valor óptimo del problema dual. Esto se conoce como dualidad fuerte.
+
+
 
 	% ---------- (c)
 	\item \textbf{\boldmath Describe el problema dual y comprueba que se trata de un problema de maximización cóncavo. Encuentra el valor dual óptimo $d^+$ y la solución dual óptima $\lambda^*$ ¿Se verifica la dualidad fuerte? Representa el conjunto $G\subset \mathbb{R}^2$}.\\
@@ -55,6 +133,9 @@
     Se sabe que las condiciones de Slater implican que se verifica la dualidad fuerte. Describe esta situación para el problema lineal planteado. ¿Es posible aplicar las condiciones de Slater al problema 1?}\\
 
 	\textbf{Solución:}
+
+\end{comment}
+
 
     % -------------------- Ejercicio 3 -------------------- %
     \item \textbf{\boldmath Considera el problema de optimización
@@ -202,7 +283,29 @@
     $$\phi(x) = f_0(x)+\alpha \sum_{i=1}^m \max\left\{0,f_i(x)\right\}^2,$$
     es convexa (cuando $\alpha>0)$. Si $\tilde{x}$ minimiza $\phi$, muestra cómo obtener, a partir de $\tilde{x}$, un punto accesible para el problema dual. Encuentra la cota inferior correspondiente al problema primal.}\\
 
-	\textbf{Solución:} 
+	\textbf{Solución:} Para demostrar que la función $$\phi(x) = f_0(x)+\alpha \sum_{i=1}^m \max\left\{0,f_i(x)\right\}^2$$ es convexa cuando $\alpha>0$, necesitamos mostrar que para cualquier $x, y \in \mathbb{R}^n$ y cualquier $t \in [0,1]$, se cumple que:
+$$\phi(tx + (1-t)y) \leq t\phi(x) + (1-t)\phi(y).$$
+
+Sea $f_0(x)$  convexa. Entonces, sabemos que:
+$$f_0(tx + (1-t)y) \leq tf_0(x) + (1-t)f_0(y).$$
+
+Además, la función $\max\{0, f_i(x)\}^2$ es convexa porque es la composición de una función convexa no decreciente $\left(x^2\right)$ y una función convexa $\left(\max\{0, f_i(x)\}\right)$. Por lo tanto, para cada $i$:
+$$\max\{0, f_i(tx + (1-t)y)\}^2 \leq t\max\{0, f_i(x)\}^2 + (1-t)\max\{0, f_i(y)\}^2.$$
+
+Sumando estas desigualdades para todos los $i$ y multiplicando por $\alpha$, obtenemos:
+$$\alpha \sum_{i=1}^m \max\{0, f_i(tx + (1-t)y)\}^2 \leq \alpha \sum_{i=1}^m \left[ t\max\{0, f_i(x)\}^2 + (1-t)\max\{0, f_i(y)\}^2 \right].$$
+
+Finalmente, sumando las dos desigualdades anteriores, obtenemos la desigualdad deseada:
+$$
+\begin{array}{rcl}
+    \phi(tx + (1-t)y) &=& \displaystyle f_0(tx + (1-t)y) + \alpha \sum_{i=1}^m \max\{0, f_i(tx + (1-t)y)\}^2\\\\
+		      &\leq& \displaystyle f_0(x) + (1-t)f_0(y) + \alpha \sum_{i=1}^m \left[ t\max\{0, f_i(x)\}^2 + (1-t)\max\{0, f_i(y)\}^2 \right]\\\\
+		      &=& \displaystyle t\left[ f_0(x) + \alpha \sum_{i=1}^m \max\{0, f_i(x)\}^2 \right] + (1-t)\left[ f_0(y) + \alpha \sum_{i=1}^m \max\{0, f_i(y)\}^2 \right]\\\\
+		      &=& t\phi(x) + (1-t)\phi(y).
+\end{array}
+$$
+
+Por lo tanto, $\phi(x)$ es convexa cuando $\alpha > 0$.\\\\
 
 
     % -------------------- Ejercicio 5 -------------------- %
@@ -215,12 +318,46 @@
 	% ---------- (a)
 	\item \textbf{\boldmath Muestra que si $P \nsucceq 0$ (es decir, la función no es convexa) entonces el problema no está acotado inferiormente.}\\
 
-	    \textbf{Solución:}
+	    \textbf{Solución:} Vamos a demostrar que si la matriz $P$ de una función cuadrática no es semidefinida positiva (es decir, $P\nsucceq0$), entonces la función no está acotada inferiormente. Para ello, vamos a utilizar un argumento de reducción al absurdo.\\
+
+	    Supongamos que la función cuadrática 
+	    $$f(x) = \frac{1}{2}x^TPx + q^Tx + r$$
+	    está acotada inferiormente con $P \nsucceq 0$. Esto implicaría que existe un número real $M$ tal que 
+	    $$f(x) \geq M$$ 
+	    para todo $x$. Sin embargo, debido a que $P \nsucceq 0$, lo cual significa que $P$ no es una matriz semidefinida positiva, sabemos por definición que existe un vector $x$ tal que 
+	    $$x^TPx < 0.$$
+
+	    Si escalamos este vector por un escalar grande $\alpha$, la expresión $\alpha^2 x^TPx$ se vuelve arbitrariamente negativa. Esto se debe a que si $x^TPx < 0$, entonces $\alpha^2 x^TPx$ será aún más negativo a medida que $\alpha$ se haga más grande.\\
+
+	    Elijamos $\alpha$ de manera que la función $f(\alpha x)$ sea menor que cualquier cota inferior dada. Sea, $f(\alpha x)$ 
+	    $$f(\alpha x) = \frac{1}{2}\alpha^2 x^TPx + \alpha q^Tx + r.$$ 
+
+	    Luego, hacemos que esta función sea menor que $-M$. Es decir, 
+	    $$\frac{1}{2}\alpha^2 x^TPx + \alpha q^Tx + r < -M.$$ 
+
+	    Multiplicamos ambos lados de la desigualdad por 2,
+	    $$\alpha^2 x^TPx + 2\alpha q^Tx + 2r < -2M.$$ 
+
+	    Reorganizando los términos,  
+	    $$\alpha^2 x^TPx < -2M - 2\alpha q^Tx - 2r.$$ 
+
+	    Esto garantiza que el término cuadrático en $f(\alpha x)$ sea suficientemente negativo para compensar los otros términos en $f(\alpha x)$ y hacer que toda la función sea menor que $-M$.
+
+	    Por lo tanto, encontramos que 
+	    $$f(\alpha x) = \frac{1}{2}\alpha^2 x^TPx + \alpha q^Tx + r < -M,$$
+
+	    lo cual contradice nuestra suposición inicial de que $f(x)$ está acotada inferiormente. Por lo tanto, si $P \nsucceq 0$, la función cuadrática $f(x)$ no puede estar acotada inferiormente. \\\\
 
 	% ---------- (b)
-	\item \textbf{\boldmath Si suponemos que $P \nsucceq 0$, pero que la condición de optimalidad $Px^* = -q$ no tiene solución. Muestra que el problema vuelve a no estar acotado inferiormente.}\\
+	\item \textbf{\boldmath Si suponemos que $P \succeq 0$, pero que la condición de optimalidad $Px^* = -q$ no tiene solución. Muestra que el problema vuelve a no estar acotado inferiormente.}\\
 
-	    \textbf{Solución:}
+	    \textbf{Solución:} Si suponemos que $P \succeq 0$ (es decir, $P$ es semidefinida positiva), pero la condición de optimalidad $Px^* = -q$ no tiene solución, entonces podemos demostrar que el problema de minimización no está acotado inferiormente.\\
+
+	    La condición de optimalidad $Px^* = -q$ proviene de tomar el gradiente de la función cuadrática $f(x)$ y establecerlo igual a cero. Si esta ecuación no tiene solución, significa que no existe un punto $x^*$ en el cual el gradiente de $f(x)$ sea cero. En otras palabras, no existe un mínimo local para la función.\\
+
+	    Dado que $P \succeq 0$, la función cuadrática $f(x)$ es convexa. Para una función convexa, cualquier mínimo local es también un mínimo global. Entonces, si no existe un mínimo local para la función (es decir, no existe un punto en el que el gradiente de la función sea cero), la función no tiene un mínimo global. Esto se debe a que un mínimo global para una función es un punto para el cual la función no toma valores menores. En otras palabras, no existe ningún otro punto en el dominio de la función donde el valor de la función sea menor. Si no existe tal punto, entonces la función no tiene un mínimo global. Esto significa que la función no está acotada inferiormente, ya que una función está acotada inferiormente si existe un número real tal que para todo valor en el dominio, el valor de la función es mayor o igual a ese número. Si no existe tal número, entonces la función no está acotada inferiormente.\\
+
+	    Por lo tanto, si suponemos que $P \succeq 0$, pero que la condición de optimalidad $Px^* = -q$ no tiene solución, entonces el problema de minimización no está acotado inferiormente. Esto concluye la demostración.\\\\
 
     \end{enumerate}
 
