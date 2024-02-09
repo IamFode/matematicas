@@ -590,7 +590,7 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
   \end{tikzpicture}
 \end{center}
 
-% ------------------- DEFINICIÓN 1.9
+% ------------------- DEFINICIÓN 2.9
 \begin{def.}
     Se llama \textbf{envoltura convexa} de $A$ al menor conjunto convexo que lo contiene o a la intersección de todos los convexos que contienen a $A$, denotado por $\co(A)$.
     También es equivalente a decir que
@@ -615,7 +615,7 @@ Del gráfico 1) ¿Cuál es el menor conjunto convexo que lo contiene?
 El concepto de cono será importante, de hecho existe un tipo de optimización basado en conos convexos. Uniremos la propiedad de ser cono y convexos, pero aunque no sean convexos son importantes.
 \end{tcolorbox}
 
-% ------------------- DEFINICIÓN 1.10
+% ------------------- DEFINICIÓN 2.10
 \begin{def.}[Cono]\,\\\\
     Un conjunto $C\subseteq \mathbb{R}^n$ se llama cono si y sólo si
     $$\lambda x\in C \mbox{ si } x\in C,\; \lambda \geq 0.$$
@@ -3382,7 +3382,9 @@ Nos dice que si tenemos una familia de funciones que están parametrizadas por u
 
 \switchcolumn[1]*{\noindent\scriptsize
 	\begin{itemize}
+	    \item Este teorema es muy importante para construir funciones convexas y también para reconocerlas
 	    \item El conjunto de indices no necesita ninguna estructura.
+	    \item La combinación convexa  esta en el dominio por que $g(\lambda x+(1-\lambda)z)$ es finito. 
 	\end{itemize}
 }
 \switchcolumn[0]\noindent
@@ -3392,8 +3394,235 @@ Nos dice que si tenemos una familia de funciones que están parametrizadas por u
     es convexa y 
     $$\dom(f)=\left\{x:(x,y)\in \dom\left[f(\cdot,y)\right]\;\forall y\in A,\; g(x)<\infty\right\}.$$
 
-    Demostración.-\; 
-
+    Demostración.-\; Sean $x,z \displaystyle\bigcap \in \underset{y\in A}{\dom}\left[f(\cdot,y)\right]$. Supongamos que sus supremos $g(x), g(z)<\infty$. Ahora tomamos, $\lambda\in (0,1)$. Dado que
+    $$g(\lambda x + (1-\lambda)z)=\sup_{y\in A}f(\lambda x + (1-\lambda)z,y).$$
+     para todo $y\in A$. Entonces,
+    $$
+    \begin{array}{rcl}
+	f\left[\lambda x + (1-\lambda)z,y\right] &\leq& f(x,y) + (1-\lambda)f(z,y)\\\\
+	&\leq& \lambda g(x)+(1-\lambda)g(z)\\\\
+	\underset{y\in A}{\sup}f\left[\lambda x + (1-\lambda)z,y\right] &\leq& \lambda g(x)+(1-\lambda)g(z)\\\\
+	g(\lambda x + (1-\lambda)z) &\leq& \lambda g(x)+(1-\lambda)g(z).
+    \end{array}
+    $$
 \end{teo}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item $x$ representa una función lineal.
+	\item Queremos evaluar $x$ en todos los puntos de $c$, por lo que queremos encontrar el valor máximo del conjunto. Es decir, $x^Ty$.
+	\item La función soporte es una forma de describir los conjuntos de una forma dual, utilizando hiperplanos, aplicaciones lineales y continuas.
+	\item Todo conjuntos convexos se obtienen como la intersección de semiespacios de la forma $x^T(\cdot)$.
+	\item En Banach y en dualidad, se recupera hablando de normas duales.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- EJEMPLO 3.7
+\begin{ejem}
+    \begin{enumerate}[\bfseries A)]
+	\item \textbf{Función soporte} de un conjunto $C\subseteq \mathbb{R}^n$ no vacío.
+
+	    Sea $S_c:\mathbb{R}^n\to \mathbb{R}$, de donde
+	    $$S_c(x)=\sup\left\{x^Ty:y\in C\right\}=\sup_{y\in C}\left\{f(\cdot,y)=\langle y,\cdot\rangle\right\}$$
+	    Vemos que es un supremo de funciones convexas, ya que es supremo puntual de funciones convexas.
+	    \begin{center}
+		\begin{tikzpicture}[>=Triangle,scale=.5]
+		    \draw[rotate=-30,opacity=.7](0,0) ellipse (1.9cm and 2.9cm);
+		    \draw(-2.2,2.2)node[below right]{$c$};
+		    \pattern[pattern=north east lines, pattern color=gray!50, rotate around={-27:(0,0)}] (0,0) ellipse (1.9cm and 2.9cm);
+		    \draw[red](3.5,-3)node[below]{$x^T(\cdot)$}--(1.1,5);
+		    \draw[red](5,-2.3)node[below]{$x$}--(2.6,5.5);
+		\end{tikzpicture}
+	    \end{center}
+	    Ahora si tomamos los puntos donde la función vale exactamente $S_c(x)$. Es decir,
+	    $$\left\{y:f(y)=S_c(x)\right\}.$$
+	    Tenemos la tangente $x^T(\cdot)$.\\
+
+	\item Distancia al punto más alejado
+	    $$f(x)=F(x,C)=\sup_{y\in C}\|x-y\|.$$
+	\begin{center}
+	  \begin{tikzpicture}[scale=0.7]
+	    % Dibuja el contorno del riñón
+	    \coordinate (Center) at ($(A)!0.5!(C)$);
+	    \draw[blue] ($(Center)+(-1,.8)$) .. controls ($(Center)+(0.2,2)$) and ($(Center)+(3,-.1)$) .. ($(Center)+(1,-.5)$) .. controls ($(Center)+(0,-.8)$) and ($(Center)+(0,-1)$) .. ($(Center)+(-1,-.9)$) .. controls ($(Center)+(-1.5,-1)$) and ($(Center)+(-3,-.5)$) .. ($(Center)+(-1,.8)$);
+	    \draw[blue](0,1)node[above right]{$C$};
+	    \draw[black,fill,dashed](.6,.3) circle (2pt) -- (6,3)node[below]{$x$} circle (2pt) -- (3.5,1)node[below]{$y$} circle (2pt);
+	  \end{tikzpicture}
+	\end{center}
+	Por lo que,
+	$$f(\cdot,y)=\|x-y\|.$$
+	$f$ es supremo de funciones convexas, por lo que es convexa. Ahora, lo único que debemos justificar es que $\|x-y\|$ es convexa. Sean $x,y\in \mathbb{R}^n$, $\lambda \in (0,1)$ e $y\in C$. Entonces,
+	$$
+	\begin{array}{rcl}
+	    f\left[\lambda x + (1-\lambda)z, y\right] &=& \|\lambda x + (1-\lambda)z - y\|\\\\
+						      &=& \|\lambda x + (1-\lambda)z - \left[\lambda y - (1-\lambda)y\right] \|\\\\
+						      &\leq & \|\lambda y-\lambda x\| + \|(1-\lambda)y-(1-\lambda)z\|\\\\
+						      &=& \lambda \|y-x\| + (1-\lambda)\|y-z\|\\\\
+						      &=& f(x,y) + (1-\lambda)f(z,y)\\\\
+	\end{array}
+	$$
+    \end{enumerate}
+\end{ejem}
+
+\begin{tcolorbox}[colframe=white]
+    Una pregunta clave es: ¿Qué relación existe entre las funciones convexas y las funciones afines?, ¿Puedo representar todas las funciones convexas cómo supremos de funciones afines?.
+\end{tcolorbox}
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La idea es tener puntos interiores.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- PROPOSICIÓN 3.3
+\begin{proposicion} Si $f:\mathbb{R}^n\to \mathbb{R}$ es convexa, tal que $\dom(f)=\mathbb{R}^n$. Entonces, la función $f(x)=\sup\left\{g(x):g:\mathbb{R}^n\to \mathbb{R}\text{ afín},\; g\leq f\right\}.$
+
+    Demostración.-\; 
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw[domain=-2.5:2.5,smooth,variable=\x] plot ({\x},{(1/2)*\x*\x+2})node[below left]{$f$};
+	    \draw[blue,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(1.5,1.5)circle(2pt)node[below right]{$x_0$};
+	    \draw[blue,dashed,fill] (1.5,1.5)--(1.5,3.1)circle(2pt)node[below right]{$x$};
+	    \draw[domain=-2:5,smooth,variable=\x] plot ({\x},{.5*\x+1.2});
+	    \fill[black] (1.5,1.95)circle(3pt);
+	    \draw[domain=-1:4,smooth,variable=\x,red] plot ({\x},{(3/2)*\x+(7/8)})node[above right]{$f(x_o)+\nabla f(x_o)^T(y-x_o)$};
+	\end{tikzpicture}
+    \end{center}
+    Mi función $f$ en ese punto $x$ es sencillamente el supremo de las evaluaciones de las funciones afines (hiperplanos) que quedan por debajo. En pocas palabras, decimos que podré mover esa recta afín de forma que la $g(x)$ se hará más grande, hasta que llegue a dar exactamente la $f$. La recta tangente será la que me de exactamente.
+
+    La gracia de este resultado es que podré realizar a pesar de que la función no sea diferenciable. 
+
+    Definimos $h(x)=\sup\left\{g(x): g\text{ afín},\; g\leq f\right\}$. Lo que veremos es que haya alguna función que toque. Por lo que veremos que este conjunto no es vacío. Si $\left\{g(x): g\text{ afín},\; g\leq f\right\}\neq 0$. Entonces, si tomo el supremo de las $g$'s, entonces $h(x)\leq f(x)\; \forall x\in \mathbb{R}^n$, que serán finitos.
+
+    En la otra dirección, fijamos $x_0\in \mathbb{R}^n \left(x_0\in \interior(\dom f)\right)$. Se tiene que $\left(x_o,f(x_o)\right)\in \text{Epi}(f)$. De hecho, $(x_o,f(x_o))$ está en la frontera de $\text{Epi}(f)$.
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw[domain=-2.5:1.5,smooth,variable=\x] plot ({\x},{(1/3)*\x*\x+2.36});
+	    \draw[](1.5,3.1)--(2,5);
+	    \draw[](0,4)node[]{$\text{Epi}(f)$};
+	    \draw[blue,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(1.5,1.5)circle(2pt)node[below right]{$x_0$};
+	    \draw[blue,dashed,fill] (1.5,1.5)--(1.5,3.1)circle(2pt)node[right]{$(x_0.f(x_0))$};
+	    \draw[domain=-.5:3,smooth,variable=\x,red] plot ({\x},{(3/2)*\x+(7/8)});
+	\end{tikzpicture}
+    \end{center}
+    Si tenemos un conjunto convexo en $\mathbb{R}^n$ y  un punto en la frontera, por los teoremas de separación podemos encontrar un hiperplano soporte. Es decir, existe $F:\mathbb{R}^{n+1}\to \mathbb{R} (F\neq 0)$ lineal, tal que:
+    $$F(x_0,f(x_0))\leq F(x,t)\; \forall (x,t)\in \text{Epi}(f).$$
+    Por último, tenemos que demostrar que $F$ no es vertical. Una aplicación lineal de $n+1$, podemos escribir como:
+    $$F(x,t)= a^T x + b\cdot t.$$
+    La condición de arriba si la escribo en terminos de $a$ y $b$:
+    $$F\left((x_0-x),f(x_0)-t\right)\leq 0\quad \forall (x,t)\in \text{Epi}(f).$$
+    Y si escribimos en términos de las $a$'s:
+    $$a^T(x_0-x)+b(f(x_0)-t)\leq 0\quad \forall (x,t)\in \text{Epi}(f).$$
+    Para ver que no es vertical, tendremos que probar que $b\neq 0$.
+    \switchcolumn[1]*{\noindent\scriptsize
+	\begin{itemize}
+	    \item Si estamos en $\interior$, entonces, nos ubicamos en una bola al rededor de $x_0$.
+	\end{itemize}
+    }
+    \switchcolumn[0]\noindent
+    \begin{enumerate}[\text{Caso} 1.]
+	\item Si $b=0$. Entonces, 
+	    $$a^T(x_0-x)\leq 0\quad \forall (x,t)\in \text{Epi}(f)\Rightarrow a^T(x_0-x)\leq 0 \quad \forall x\in \mathbb{R}^n.$$ 
+	    ¿Qué me dice esto sobre el $a$?. Sabemos que $a$ es un vector que si lo multiplicamos por $x_0-x$ nos da un número no positivo. Es decir,
+	    $$f(x_0-x)\leq 0 \quad \Leftrightarrow \quad f(x)\geq f(x_0)\quad \forall x\in \mathbb{R}^n.$$
+	    Cómo la $x$ es lineal, podemos ponerle múltiplos tan grande o pequeña como quisiéramos. Por lo tanto, la única forma que funcione  es que $f(x_0)=0$. Otra forma de verlo sería:
+	    $$x=x_0-a, \quad a^T(x_0-x)=a^T\cdot a= \|a\|^2=0.$$
+	    (Cuando no estemos en todo $\mathbb{R}^n$. Tomamos, $x=x_0-a$, $a=\epsilon$ (algo pequeño)).
+
+	    Todo esto implica que si $a=0\Rightarrow F=0.$
+
+	\item Si $b<0$, fijado $x$, podemos escribir los puntos $(x,t)\in \text{Ep}(f)$ como $(x,f(x)+S)$ donde $S\geq 0$.
+	\begin{center}
+	    \begin{tikzpicture}[>=Triangle,scale=.5]
+		\tikzstyle{every node}=[font=\scriptsize]
+		\draw[domain=-2.5:1.5,smooth,variable=\x] plot ({\x},{(1/3)*\x*\x+2.36});
+		\draw[](1.5,3.1)--(2,5);
+		\draw[](0,4)node[]{$\text{Epi}(f)$};
+		\draw[blue,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(1.5,1.5)circle(2pt)node[below right]{$x_0$};
+		\draw[blue,dashed,fill] (1.5,1.5)--(1.5,3.1)circle(2pt)node[right]{$(x_0.f(x_0))$};
+		\draw[domain=-.5:3,smooth,variable=\x,red] plot ({\x},{(3/2)*\x+(7/8)});
+		\draw[green,fill,dashed](-1,1.5)circle(2pt)node[below]{$x$}--(-1,2.7)circle(2pt);
+		\draw[green](-1,2.7)--(-1,5);
+	    \end{tikzpicture}
+	\end{center}
+	Nos dice que para cualquier punto que yo tome $x$, los puntos con los que trabajaremos son los puntos que estan en el epígrafo por encima de ese punto. Es decir, podemos hacer que $f(x_o)$ sea más un $S$ positivo. En otras, palabras:
+	$$a^T(x_0-x)+b(f(x_0)+S)\leq 0, \quad \forall x\in \mathbb{R}^n, S\geq 0.$$
+	Tomando $S>0$, $x=x_0$, tendríamos $-bS>0$, que es una contradicción. Luego, $b>0$ y
+	$$a^T(x_0-x)+b(f(x_0)-f(x)-S)\leq 0, \quad \forall S\geq 0.$$
+	Esto implica que dado $S=0$,
+	$$a^T(x_0-x)+b(f(x_0)-f(x))\leq 0$$
+	De donde,
+	$$\dfrac{a^T}{b}(x_0-x)+f(x_0)-f(x)\leq 0 \Rightarrow f(x)\geq f(x_0)+\left(\dfrac{a^T}{b}\right)(x_0-x).$$
+	Demostramos que $f(x_0)+\left(\dfrac{a^T}{b}\right)(x_0-x)=g(x)$ esta definida en todo $\mathbb{R}^n$. Luego, vemos que el conjunto es no vacío, ya que tiene un elemento. Además la función $g$ cumple que si la evalúo justo en $g(x_0)$ me da $f(x_0)$. Entonces, $h(x_0)\geq g(x_0)=f(x_0)$. En particular, $h(x)\geq f(x), \; \forall x$, que es lo que faltaba por probar.
+    \end{enumerate}
+\end{proposicion}
+
+{\color{blue}
+% -------------------- TEOREMA 3.13
+\begin{teo} 
+    \begin{enumerate}[\bfseries a)]
+	\item Demuestra que $h(x)=f(x)$, si $x\in \interior(\dom(f))$.
+	\item Demuestra que $h=f$ globalmente, si $\text{Epi}(f)$ es cerrado.
+    \end{enumerate}
+\end{teo}
+}
+
+Este teorema nos da paso a:
+
+\section{Subgradiente}
+si vemos que hay diferenciabilidad de una función, sabemos que tenemos un punto, donde podemos encontrar el gradiente, que nos da la recta tangente, que no es más que un subestimador afin ajustado. 
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5]
+	\tikzstyle{every node}=[font=\scriptsize]
+	\draw[domain=-2.5:2.5,smooth,variable=\x] plot ({\x},{(1/2)*\x*\x+2});
+	\draw[blue,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(1.5,1.5)circle(2pt)node[below right]{$x_0$};
+	\draw[blue,dashed,fill] (1.5,1.5)--(1.5,3.1)circle(2pt)node[below right]{$x$};
+	\draw[domain=-1:4,smooth,variable=\x,red] plot ({\x},{(3/2)*\x+(7/8)})node[above right]{$f(x_o)+\nabla f(x_o)^T(x-x_o)$};
+    \end{tikzpicture}
+\end{center}
+Aunque la función no sea diferenciable, por la proposicion 3.3, demostramos que encontramos un subestimador afín que está ajustado.
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5]
+	\tikzstyle{every node}=[font=\scriptsize]
+	\draw[blue,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(0,1.5)circle(2pt)node[below right]{$x_0$};
+	\draw[blue,dashed,fill] (0,1.5)--(0,3.1)circle(2pt)node[below right]{$x$};
+	\draw[](-2,5)--(0,3.1)--(2,5);
+	\draw[domain=-2:2,smooth,variable=\x,red] plot ({\x},{-.2*\x+3.1});
+    \end{tikzpicture}
+\end{center}
+Todas estas funciones lineales están determinadas en $\mathbb{R}^n$ por hiperplanos, por lo que tomamos el vector perpendicular y a las direcciones que permiten hacer las funciones lineales lo llamamos \textbf{subgradientes}.
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item En espacios de Banach, viven en el dual.
+	\item Geoemtricamente, son todos los $y$'s que están por debajo de la función.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- DEFINICION 3.14
+\begin{def.} Sea $f:\mathbb{R}^n\to \mathbb{R}$, tomamos $x_0\in \dom(f)$ y un vector $y\in \mathbb{R}^n$. Se dice que $y$ es un subgradiente de $f$ en $x_o$, si la función 
+    $$f(x)\geq f(x_o)+y^T(x-x_o), \quad \forall x\in \dom(f).$$
+    Al conjunto de todos los subgradientes de $f$ en $x_o$ se le llaman \textbf{subdiferencial} de $f$ en $x_o$ y se denota por:
+    $$\partial f(x_o)=\left\{y\in \mathbb{R}^n: f(x)\geq f(x_o)+y^T(x-x_o), \quad \forall x\in \dom(f)\right\}.$$
+\end{def.}
+
+{\color{blue}
+% -------------------- TOEREMA 3.15
+\begin{teo} Sea $f:\mathbb{R}^n\to \mathbb{R}$ convexa, $x_o\in \dom(f)$. Entonces, $\partial f(x_o)\neq \emptyset$.
+
+    Demostración.-\; Utilizar las ideas de la proposición 3.3.
+\end{teo}
+}
+
+% -------------------- PROPIEDAD
+\begin{prop} $f$ convexa, $x_o\in \interior(\dom(f))$.
+    \begin{enumerate}[\bfseries 1.]
+	\item $\partial f(x_o)$ es un conjunto convexo.
+	\item Si $f$ es diferenciable en $x_o$, entonces $\partial f(x_o)=\{\nabla f(x_o)\}$.
+	\item Si $\partial f(x_o)$ tiene un sólo elemento, entonces $f$ es diferenciable en $x_o$.
+	\item Si $x_0$ es un minimizador global de la función $f$, entonces $0\in \partial f(x_o)$.
+    \end{enumerate}
+\end{prop}
 
 \end{paracol}

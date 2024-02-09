@@ -1,0 +1,65 @@
+\chapter{Espacios de Hilbert}
+
+\section{Espacios de dimensión infinita}
+
+\begin{def.}[Espacio vectorial]\;\\\\
+    Dado $X\neq \empty$, un \textbf{espacio vectorial} sobre un cuerpo $\mathbb{K}$ es una terna $(X,+,\cdot)$ siendo:
+    \begin{multicols}{2}
+    $$
+    \begin{array}{rrcl}
+	+:&X\times X&\to&X\\
+	  &(x,y)&\mapsto&x+y
+    \end{array}
+    $$
+    $$
+    \begin{array}{rrcl}
+	\cdot:&\mathbb{K}\times X&\to&X\\
+	  &(\lambda,x)&\mapsto&\lambda x
+    \end{array}
+    $$
+    \end{multicols}
+
+    donde se verifican las siguientes propiedades:
+    \begin{enumerate}
+	    \item $(X,+)$ es un grupo abeliano.
+	    \item $+/\cdot$ son distributivas.
+	    \item $\exists 1\in \mathbb{K}$ tal que $1\cdot x=x$ $\forall x\in X$.
+    \end{enumerate}
+\end{def.}
+
+
+\begin{def.}[Base de un espacio vectorial]\;\\\\
+    Un conjunto $\mathbb{B}=\left\{x_1,x_2,\ldots,x_d\right\}$ se llama base de $(X,+,\cdot)$ si:
+	\begin{enumerate}
+	    \item $\mathbb{B}$ es linealmente independiente. Es decir,
+		Si podemos expresar:
+		$$0=\lambda_1x_1+\ldots+\lambda_dx_d\Rightarrow \lambda_1=\ldots=\lambda_d$$
+		con $\lambda_1,\lambda_2,\ldots,\lambda_d\in \mathbb{K}$. Entonces la única opción posible es que:
+		$$\lambda_1=\lambda_2=\ldots=\lambda_d=0$$
+	    \item $\mathbb{B}$ es un sistema de generadores de $X$. Es decir,
+		$$\forall x\in X\;\exists \lambda_1,\ldots,\lambda_d\in \mathbb{K}\;\text{tal que}\; x=\lambda_1x_1+\ldots+\lambda_dx_d$$
+	\end{enumerate}
+\end{def.}
+
+Además llamamos \textbf{dimensión del espacio vectorial} $X$ como: $\dim(X)=\text{card}(\mathbb{B})=d$.
+
+\paragraph{Nota:} Hasta ahora tan solo nos hemos centrado en el estudio de espacios vectoriales de dimensión FINITA.
+
+\begin{ejem}
+    Consideremos el conjunto $\mathbb{R}^{\mathbb{N}}=\left\{f:\mathbb{N}\to \mathbb{R}: f \text{aplicación}\right\}$. Podemos reescribir un elemento $f\in \mathbb{R}^{\mathbb{N}}$ del siguiente modo:
+    $$
+    \begin{array}{rccc}
+	f:&\mathbb{N}&\to&\mathbb{R}\\
+	  &n & \mapsto & f(n)
+    \end{array}
+    \Longrightarrow
+    \begin{array}{rrcl}
+	\left\{x_n\right\}_n:&\mathbb{N}&\to&\mathbb{R}\\
+	 &n & \mapsto & x_n
+    \end{array}
+    $$
+    De este modo:
+    $$\mathbb{R}^{\mathbb{N}}=\left\{\left\{x_n\right\}_{n\in \mathbb{N}}:x_n\in \mathbb{R}\; \forall n \in \mathbb{N}\right\}.$$
+\end{ejem}
+
+
