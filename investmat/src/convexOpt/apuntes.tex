@@ -2903,7 +2903,7 @@ El conjunto de sub-nivel, serán todos los puntos del dominio cuya imagen es men
 
 \textbf{\textit{¿Si $S_f(\alpha)$ es convexo, entonces $f$ es convexa?}}
 
-% -------------------- EJEMPLO 3.10
+% -------------------- EJEMPLO 3.4
 \begin{ejem} $f:\mathbb{R}\to \mathbb{R}$
     $$f(x)=x^3.$$
     \begin{center}
@@ -2925,7 +2925,7 @@ El conjunto de sub-nivel, serán todos los puntos del dominio cuya imagen es men
 \end{ejem}
 
 
-% -------------------- EJEMPLO 3.11
+% -------------------- EJEMPLO 3.5
 \begin{ejem} $f:\mathbb{R}\to \mathbb{R}$
     $$f(x)=\log(x)$$
     \begin{center}
@@ -2960,7 +2960,7 @@ El conjunto de sub-nivel, serán todos los puntos del dominio cuya imagen es men
     \end{itemize}
 }
 \switchcolumn[0]\noindent
-% -------------------- EJEMPLO 3.11
+% -------------------- EJEMPLO 3.6
 \begin{ejem} $G:\mathbb{R}^n\to \mathbb{R}$
     Media geométrica:
     $$
@@ -3596,7 +3596,7 @@ Todas estas funciones lineales están determinadas en $\mathbb{R}^n$ por hiperpl
 \switchcolumn[1]*{\noindent\scriptsize
     \begin{itemize}
 	\item En espacios de Banach, viven en el dual.
-	\item Geoemtricamente, son todos los $y$'s que están por debajo de la función.
+	\item Geométricamente, son todos los $y$'s que están por debajo de la función.
     \end{itemize}
 }
 \switchcolumn[0]\noindent
@@ -3624,5 +3624,278 @@ Todas estas funciones lineales están determinadas en $\mathbb{R}^n$ por hiperpl
 	\item Si $x_0$ es un minimizador global de la función $f$, entonces $0\in \partial f(x_o)$.
     \end{enumerate}
 \end{prop}
+
+¿Por qué el cero está ($\in$) y no es?. Respondamos con el siguiente ejemplo:
+
+% -------------------- EJEMPLO 3.8
+\begin{ejem} $f(x)=|x|$
+    \begin{center}
+	\begin{tikzpicture}[>=Triangle,scale=.5]
+	    \tikzstyle{every node}=[font=\scriptsize]
+	    \draw(0,0)--(0,5);
+	    \draw(-4,1.5)--(4,1.5);
+	    \draw[blue!70,domain=-3:3,smooth,variable=\x,fill] plot ({\x},{1.5})--(0,1.5)circle(3pt);
+	    \draw[](-3,4.5)--(0,1.5)--(3,4.5);
+	\end{tikzpicture}
+    \end{center}
+    Cómo es un mínimo la recta horizontal estará por debajo y eso quiere decir que el cero está en ese mínimo y esa recta horizontal pertenece al subdiferencial, pues el punto cero es un mínimo global; gracias a que la función esta por encima y que es convexa.
+    \begin{itemize}
+	\item Si $x\neq 0,\quad  \partial f(x)=\left\{f'(x)\right\}$.
+	\item Si $x=0, \quad \partial f(0)=[-1,1]$. Todos los puntos en este intervalo me dan rectas tangentes. Osea,
+	$g(x)=0+\alpha(x-0)=\alpha x$ es un subestimador afín $\forall \alpha \in [-1,1]$.
+    \end{itemize}
+\end{ejem}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La función indicador es el análogo a la función característica.
+	\item ¿Cómo sería el epígrafo de esa función?. Por ejemplo, si lo vemos en $\mathbb{R}^2$, será un circulo y su epígrafo sería todos los puntos que están por encima del este círculo (medio circulo).
+	\item ¿Qué se hace con los puntos que no están el el circulo?, cómo se mando al infinito, no hay ningún punto. Es decir, es el vacío. 
+	\item En resumen, el epígrafo es tomar los puntos y lanzarlos para arriba, mediante rayos.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- EJEMPLO 3.9
+\begin{ejem}[Función indicador]\,
+    $f(x)=I_C(x)$ con $f$ convexo.
+    $$
+    I_C=\left\{
+	\begin{array}{rcl}
+	    0 &\text{si} & x\in C\\\\
+	    \infty & \text{si} & x\notin C
+	\end{array}
+    \right.
+    $$
+    Si $x\notin C$ ignórala y si $x\in C$, está en $C$ pero no es más importante que ningún otro punto. Es decir, todo los  puntos son igual de importantes y no alteraré ninguno de ellos. Además,
+    $$I_C \text{ convexa } \iff C \text{ convexa}.$$
+    Cómo también,
+    $$\text{Epi}(I_C) \text{ es cerrado} \iff C \text{ es cerrado.}$$
+    En el fondo,
+    $$\text{Epi}(I_C)=C \times [0,\infty].$$
+    $C$ multiplicado por $[0,\infty]$.
+
+    Cómo todo es convexo, el epígrafo es convexa y la función es convexa.
+\end{ejem}
+
+\begin{tcolorbox}[colframe=white]
+Algunas formas que estudiamos en convexidad son poliedros o polígonos.
+\end{tcolorbox}
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5,rotate=130]
+	\draw[pattern=north west lines, pattern color=blue!20, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[blue](0,0)--(1,4.5);
+	\draw[blue](0,0)--(5,1);
+	\draw[red](2,1)node[below left]{$C$};
+    \end{tikzpicture}
+\end{center}
+Dado el conjunto $C$, me planteo calcular el subdiferencial de los distintos puntos. Sean $x_0\in \interior(C)$ y un punto en la frontera $x_0\in \partial C$. Sabemos que el epígrafo será $C$ en el plano, lanzando rayos hacia arriba.
+
+Ahora, si tomamos un punto interior de $C$, su subdiferencial es $0$, dado a que no la única aplicación afín que puede tocar y quedarse por abajo es el plano horizontal. Otra forma de demostrar, es porque ese punto interior es el mínimo global de la función.
+
+Para un punto en la frontera, 
+$$\partial I_C(x_0)=\left\{y:I_C(x)\geq I_C(x_0)+y^T(x-x_0),\; \forall x\in \dom(I_C)\right\}.$$
+Si los puntos están en el dominio de la función indicador, si y sólo si puntos de $C$. Entonces,
+$$
+\begin{array}{rcl}
+    \partial I_C(x_0)&=&\left\{y:0\geq 0+y^T(x-x_0),\; \forall x\in C\right\}\\\\
+		     &=&\left\{y\in \mathbb{R}^n: y^T(x-x_0)\in 0, \; \forall x\in C\right\}. \quad (1)\\\\
+		     &=&\mathcal{N}_C(x_0).
+\end{array}
+$$
+En sí lo que buscamos son vectores, que con todos los puntos de $C$ me marque una dirección. Geométricamente,
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5,rotate=130]
+	\draw[pattern=north west lines, pattern color=blue!20, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[blue](0,0)--(1,4.5);
+	\draw[blue](0,0)--(5,1);
+	\draw[red](3,.5)node[below left]{$C$};
+	\draw[red,fill](0,0)circle(2pt)node[right]{$x_0$}--(2,2.5)circle(2pt)node[left]{$x$}node[above,xshift=7mm]{\tiny$(x-x_0)$};
+	\draw[red,->](0,0)--(2,2.5);
+    \end{tikzpicture}
+\end{center}
+Lo que digo es que si multiplico $(x-x_0)$ por $y$ me saldrá negativo para todos los puntos de $C$. Luego, dado que dos rectas se cortan en un punto, tomamos la perpendicular y podemos formar la desigualdad (1).
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5,rotate=130]
+	\draw[pattern=north west lines, pattern color=blue!20, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[pattern=north west lines, pattern color=red!20, draw=white,rotate around={180:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[blue](-1,-4.5)--(1,4.5);
+	\draw[blue](-5,-1)--(5,1);
+	\draw[red](3,.5)node[below left]{$C$};
+	\draw[red](-4.5,-5.5)node[below left]{$\mathcal{N}_C(x_0)$};
+	\draw[red,fill](0,0)circle(3pt)node[above]{$x_0$}--(2,2.5)circle(3pt)node[left]{$x$}node[above,xshift=7mm]{\tiny$(x-x_0)$};
+	\draw[red,->](0,0)--(2,2.5);
+    \end{tikzpicture}
+\end{center}
+A $\mathcal{N}_C$ Se llama la norma a $C$. Notemos que las únicas condiciones que estoy utilizando es que el conjunto $C$ sea convexo, cerrado y el punto este en cero.
+
+
+
+% -------------------- PROPIEDAD 3.2
+\begin{prop}[Propiedades operacionales del subdiferencial]\; Sean $f_1,f_2$ convexas.
+    \begin{enumerate}[1.]
+	\item $\partial (af) = a\partial f,\; \forall a>0$.
+	\item $\partial(f_1+f_2)(x) = \partial f_1(x) + \partial f_2(x)$.
+	\item $g(x):=f(Ax+b),\quad A \text{ Matriz}, b\in \mathbb{R}^n$. Entonces, $\partial g = A^T(Ax+b)$ (Regla de la cadena siempre que la función sea lineal). 
+	\item $g(x_0)=\sup \left\{f(x,y)\right\}_{y\in A}$.
+
+	$\partial g(x_0)$ es la envoltura convexa de $\displaystyle\bigcup_{y\in A | f(x,y)=g(x_0)}\partial f(x,y)$.
+    \end{enumerate}
+\end{prop}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Este teorema nos dará un resultado óptima que nos caracteriza cualquier problema de optimización convexa.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- TEOREMA 3.3
+\begin{teo} Si una función $f$ es convexa y diferenciable. Tomamos $x_0\in \dom(f)$. Entonces, $x_0$ es solución óptima del problema
+    $$
+    (P)
+    \left\{
+    \begin{array}{rl}
+	\min & f(x)\\
+	\text{s.a} & x\in C.
+    \end{array}
+    \right.
+    $$
+    para $C\in \mathbb{R}^n$ convexo y no vacío, si y sólo si 
+    $$\nabla f(x_0)^T(x-x_0)\geq 0,\quad \forall x\in C.$$
+	Demostración.-\; $x_0$ es solución óptima de $(P)$ $\iff$ $x_0$ es solución óptima de 
+	$$\left(P'\right)\left\{\min f(x)=I_C(x)\right.$$
+	Cómo $f$ es convexa si $I_C$ es convexa, porque $C$ es convexa pues la función $f=I_C$ es convexa. Dado $x_0$ es solución óptima y a pesar de que la función $f=I_C$ no sea diferenciable, se tiene que
+	$$\left(P'\right) \left\{\min f(x)=I_C(x)\right\} \iff 0\in \partial(f+I_C)(x_0).$$
+	Es decir, si el hiperplano horizontal es uno de los subestimadores afines. Ahora, con las propiedades de 3.2, el subdiferencial de la suma $f+I_C$ es:
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item La suma $\partial f + \partial I_C$ es una suma de Minkowski, ya que son conjunto de vectores.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+	$$0\in \partial(f+I_C)(x_0) = 0\in \partial f(x_0) + \partial I_C(x_0)$$
+	Utilizando la hipótesis de diferenciablidad, que nos dice que el primer subdiferencial es el gradiente (es un punto). De esta manera,
+	$$
+	\begin{array}{rcl}
+	    0\in \partial f(x_0) + \partial I_C(x_0) &\iff& 0\in \nabla f(x_0) + \partial I_C(x_0)\\\\
+						     &\iff& \exists y \in \mathcal{N}_C(x_0): 0=\nabla f(x_0) + y\\\\
+						     &\Longrightarrow& -\nabla f(x_0)=y \in \mathcal{N}_C(x_0)\\\\
+						     &\iff& \nabla f(x_0)^T(x-x_0)\geq 0,\quad \forall x\in C.
+	\end{array}
+	$$
+\end{teo}
+
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item El teorema y esta observación generaliza el teorema de Lagrange. Que se quiere buscar las curvas de nivel de la función $f$, y cual de estas toca al conjunto donde es tangente.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+% -------------------- OBSERVACIÓN 3.1
+\begin{obs} $x_0$ es solución óptima de $(P)$, cuando $f$ no es necesariamente diferenciable, si y sólo si $-\partial f(x_0)\cap \mathcal{N}_C(x_0)\neq \emptyset$.
+    $$
+    \begin{array}{rcl}
+	\begin{array}{l}
+	\exists w \in \partial f(x_0)\\\\
+	\exists v \in \mathcal{N}_C(x_0)
+	\end{array}
+	: w+v=0 &\iff&
+	\begin{array}{l}
+	    \exists w\in \partial f(x_0) \text{ tal que}\\\\
+	    -w=v\in \mathcal{N}_C(x_0).
+	\end{array}\\\\
+	&\iff& -\partial f(x_0)\cap \mathcal{N}_C(x_0)\neq \emptyset.
+    \end{array}
+    $$
+    Lo que estoy diciendo es si intersecto el conjunto $f(x_0)$ y $\mathcal{N}_C(x_0)$, sale distinto del vacío.
+\switchcolumn[1]*{\noindent\scriptsize
+    \begin{itemize}
+	\item Recordemos que el plano tangente viene dado por el gradiente. Y este gradiente es un vector perpendicular a la curva de nivel.
+	\item Este gradiente tiene que estar en el cono normal $\mathcal{N}_C$.
+    \end{itemize}
+}
+\switchcolumn[0]\noindent
+\end{obs}
+
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=.5,rotate=130]
+	\draw[pattern=north west lines, pattern color=blue!20, draw=white,rotate around={0:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[pattern=north west lines, pattern color=yellow!30, draw=white,rotate around={180:(0,0)}] (0,0) -- (5cm,1.1) -- (1,4.5cm) -- cycle;
+	\draw[blue](-1,-4.5)--(1,4.5);
+	\draw[blue](-5,-1)--(5,1);
+	\draw[red](3,.5)node[below left]{$C$};
+	\draw[red](-4.5,-5.5)node[below left]{$\mathcal{N}_C(x_0)$};
+	\draw[domain=-4.5:4,smooth,variable=\x,rotate=-20] plot ({\x},{-.1*\x*\x});
+	\draw[domain=-3.5:3.5,smooth,variable=\x,rotate=-20] plot ({\x},{-.1*\x*\x-1.5});
+	\draw[red,domain=-4:4,smooth,variable=\x,rotate=-10] plot ({\x},{-.2*\x});
+	\fill[] (0,0) circle (4pt);
+	\draw[->,red] (0,0) -- (-1,-3);
+    \end{tikzpicture}
+\end{center}
+
+
+
+\section{Mínimos de funciones}
+% -------------------- TEOREMA 3.16
+\begin{teo} Sean $\left\{f(x,y)\right\}_{y\in C}$ funciones convexas en $(x,y)$. Y que $C$ es convexo no vacío de la segunda coordenada. Entonces,
+    $$g(x)=\inf_{y\in C}f(x,y).$$
+    es convexa siempre que $g(x)>-\infty \; \forall x$, y 
+    $$\dom(g)=\left\{x: \exists y\in C \text{ tal que } (x,y)\in \dom(f)\right\}.$$
+
+	Demostración.-\; Es sencillo que $\dom(g)$ es convexo cuando $g(x)>-\infty \; \forall x$. Es decir, si interpretamos el dominio de $g$ cómo una proyección del conjunto convexo, el cual son convexos, entonces es convexo.
+
+	Sean $x_1,x_2\in \dom(g)$. Por definición, y fijando $\epsilon$, existen $y_1,y_2\in C$ tales que 
+	$$g(x_1)+\epsilon \geq f(x_1,y_1) \quad \text{y} \quad g(x_2)+\epsilon \geq f(x_2,y_2).$$
+	Ya que $g$ me da el ínfimo, donde $x,y$ se acercaran tanto como quiera y siempre serán mayor e iguales. Luego, pro definición
+	$$g(\lambda x_1+(1-\lambda)x_2) = \inf_{y\in C}f(\lambda x_1+(1-\lambda)x_2,y).$$
+	Dado que yo tengo $g(x_1$ y $g(x_2)$ en $C$ y $g$ es convexo. Entonces, cualquier combinación convexa de estos dos estará en $C$, y cuando yo tenga esa combinación convexa; cómo la función $f$ es globalmente convexa podré separarlo. En otras palabras,
+	$$
+	\begin{array}{rcl}
+	    \displaystyle\inf_{y\in C}f(\lambda x_1+(1-\lambda)x_2,y)&\leq& f(\lambda x_1+(1-\lambda)x_2,\lambda y_1+(1-\lambda)y_2)\\\\
+							&=& f(\lambda (x_1,y_1)+(1-\lambda)(x_2,y_2))\\\\
+							&\leq& \lambda f(x_1,y_1)+(1-\lambda)f(x_2,y_2)\\\\
+							&\leq&\lambda\left(\epsilon+g(x_1)\right)+(1-\lambda)\left(\epsilon+g(x_2)\right)\\\\
+							&=&\lambda \epsilon+(1-\lambda)\epsilon+\lambda g(x_1)+(1-\lambda)g(x_2)\\\\
+							&=&\lambda g(x_1)+(1-\lambda)g(x_2)+\epsilon.
+	\end{array}
+	$$
+	Cómo la desigualdad es cierta para todo $\epsilon>0$, tomando ínfimos en $\epsilon$, tenemos,
+	$$g(\lambda x_1+(1-\lambda)x_2)\leq \lambda g(x_1)+(1-\lambda)g(x_2).$$
+\end{teo}
+
+
+
+\section{La función conjugada (Conjugada de Fenchel)}
+
+% -------------------- DEFINICIÓN 3.13
+\begin{def.}
+    Sea $f:\mathbb{R}^n\to \mathbb{R}$ una función, se define su conjugada de Fenchel $f^*:\mathbb{R}^n \to \mathbb{R}$ dada por:
+    $$
+    \begin{array}{rcl}
+	f^*(y)&=&\sup\left\{y^Tx-f(x): x\in \dom(f)\right\}\\\\
+	      &=&\sup\left\{\langle y,x\rangle-f(x): x\in \dom(f)\right\}\\\\
+	      &=&\sup\left\{\langle y,x\rangle-f(x): x\in \mathbb{R}^n\right\}.
+    \end{array}
+    $$
+    Esto, si $x\notin \dom(f)$. Entonces, $y^Tx-f(x)=-\infty$.
+\end{def.}
+
+Entendamos geométricamente:
+
+\begin{center}
+    \begin{tikzpicture}[>=Triangle,scale=1.2]
+	\tikzstyle{every node}=[font=\scriptsize]
+
+	\draw[opacity=.5](-2,0)--(1.5,0)node[below]{};
+	\draw[opacity=.5](0,-1)--(0,1.5)node[below]{};
+
+	\draw[domain=-1.5:1,smooth,variable=\x] plot ({\x},{1.5*\x*\x*\x*\x+\x*\x*\x-1.5*\x*\x+.4}); 
+	\draw[blue](-1.7,-.9)--(1.2,1.2)node[right]{$y^Tx=0$};
+	\draw[red](-1.3,-1.1)--(1.4,.85);
+	\fill[red](.62,.29) circle (1pt);
+	\fill[red](0,-.165) circle (1pt)node[right]{$-f^*(y)$};
+
+    \end{tikzpicture}
+\end{center}
+
 
 \end{paracol}

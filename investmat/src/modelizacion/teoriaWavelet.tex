@@ -1,0 +1,549 @@
+\begin{multicols}{2}
+
+\chapter{Preliminares}
+
+\section{Espacio vectorial}
+
+Un \textbf{espacio vectorial} sobre un campo $k$ es un conjunto $X$ junto con dos operaciones binarias 
+    $$
+    \begin{array}{rccl}
+	+: &X \times X &\to& X \\
+	\cdot:& k \times X &\to& X
+    \end{array}
+    $$
+    que satisfacen los siguientes axiomas:
+    \begin{enumerate}[\bfseries (i)]
+	    \item Asociatividad de la suma: $x+(y+z) = (x+y)+z$ para todo $x,y,z \in X$.
+	    \item Conmutatividad de la suma: $x+y = y+x$ para todo $x,y \in X$.
+	    \item Elemento neutro de la suma: existe un elemento $0 \in X$ tal que $x+0 = x$ para todo $x \in X$.
+	    \item Elemento opuesto de la suma: para todo $x \in X$ existe un elemento $-x \in X$ tal que $x+(-x) = 0$.
+	    \item Asociatividad del producto por escalares: $(\alpha \beta)x = \alpha(\beta x)$ para todo $\alpha,\beta \in k$ y $x \in X$.
+	    \item Distributividad del producto por escalares respecto de la suma de vectores: $\alpha(x+y) = \alpha x + \alpha y$ para todo $\alpha \in k$ y $x,y \in X$.
+	    \item Distributividad del producto por escalares respecto de la suma de escalares: $(\alpha + \beta)x = \alpha x + \beta x$ para todo $\alpha,\beta \in k$ y $x \in X$.
+	    \item Elemento neutro del producto por escalares: $1x = x$ para todo $x \in X$.
+    \end{enumerate}
+
+Luego, una \textbf{base} $B$ de un espacio vectorial $X$ sobre un campo $k$ es un subconjunto linealmente independiente de $X$ que genera $X$, tal que
+    \begin{enumerate}[\bfseries (i)]
+	\item  Si $c_1v_1 +\ldots + c_nv_n = 0$, entonces necesariamente $c_1 =\ldots= c_n = 0$ (es decir, $\left\{v_i : i = 1, 2,..., n\right\}$ es un conjunto linealmente independiente). 
+	\item Para cada $x \in X$, $x = c_1v_1 +\ldots+ c_nv_n$. Los números $c_i$ se denominan coordenadas del vector $x$ con respecto a la base $B$ (es decir, $x = \text{span}\left\{v_i : i = 1, 2,..., n\right\})$.
+    \end{enumerate}
+
+Ahora, El número de elementos de una base se llama dimensión del espacio, donde pueden ser de dimensión finita o infinita.
+
+\section{Espacio normado}
+
+Un espacio normado $X$ es un espacio vectorial con una norma (es decir, para medir el tamaño del elemento del espacio vectorial) definida en él. La función norma $\|\ldots\| : X \to \mathbb{R}$ satisface los siguientes axiomas:
+    \begin{enumerate}[\bfseries (i)]
+	\item $\|x\|\geq 0$, $\|x\| = 0 \Leftrightarrow x = 0$.
+	\item $\|\alpha x\| = |\alpha|\|x\|$ 
+	\item $\|x+y\| \leq \|x\| + \|y\|$
+    \end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+    El espacio vectorial $L^p(\mathbb{R})$, donde $1 \leq p < \infty$, es el conjunto de todas las funciones medibles tales que 
+    $$\int_{\mathbb{R}} |f(x)|^p dx < \infty.$$ 
+
+    La norma se define por 
+    $$\|f\|_p = \left(\int_{\mathbb{R}} |f(x)|^p dx\right)^{1/p}.$$ 
+
+    Esta norma (definida en (1.2)) también satisfará todos los axiomas mencionados anteriormente.
+\label{ejemplo:1.1}
+\end{ejemplo}
+
+Las propiedades principales de las normas $\mathcal{L}_P(\mathbb{R}^n)$ son la \textbf{desigualdad de Minkowski}, 
+\begin{equation}
+    \|f+g\|_p \leq \|f\|_p + \|g\|_p.
+\label{eq:Minkowski}
+\end{equation}
+
+Y la \textbf{desigualdad de Hölder},
+\begin{equation}
+    \|fg\|_1 \leq \|f\|_p\|g\|_q, \text{ donde } q=\dfrac{p}{p-1}.
+\label{eq:Holder}
+\end{equation}
+
+El caso especial $p = q = 2$ da una forma de \textit{desigualdad de Cauchy-Schwarz}. Esto, dará lugar a un espacio normado completo llamado \textbf{espacio de Banach}.
+
+
+\section{Espacio del producto interior}
+
+Un \textbf{espacio del producto interno} $X$ es un espacio vectorial con un producto interno definido en él. Un producto interno es una función $\langle \cdot , \cdot \rangle : X \times X \to \mathbb{K}$ (donde $\mathbb{K} = \mathbb{R}$ o $\mathbb{C}$) que satisface los siguientes axiomas:
+\begin{enumerate}[\bfseries (i)]
+	\item $\langle x, x \rangle \geq 0$, $\langle x, x \rangle = 0 \Leftrightarrow x = 0$.
+	\item $\langle  \alpha x, y \rangle = \alpha\langle x,y\rangle$.
+	\item $\langle x,y \rangle = \overline{\langle y,x \rangle}$.
+	\item $\langle x+y, z\rangle = \langle x,z \rangle + \langle y,z \rangle$.
+\end{enumerate}
+
+Un producto interno en $X$ define una norma en $X$ dada por $x = \sqrt{\langle x,x\rangle}$. Además, la norma introducida por el espacio del producto interno satisface la importante \textbf{ley del paralelogramo}
+\begin{equation}
+	\|x+y\|^2 + \|x-y\|^2 = 2\|x\|^2 + 2\|y\|^2.
+\label{eq:paralelogramo}
+\end{equation}
+
+si una norma no satisface esta ecuación, no se puede obtener a partir de un producto interno. Por tanto, no todos los espacios normados son espacios de producto internos. La \textbf{desigualdad de Cauchy-Schwarz} (con respecto a los espacios $\mathcal{L}_2(\mathbb{R})$ establece que para todos los vectores $x$ e $y$ de un espacio producto interno
+\begin{equation}
+    |\langle x,y \rangle| \leq \|x\|\|y\|.
+\label{eq:Cauchy-Schwarz}
+\end{equation}
+Además, se dice que dos vectores $x, y \in X$ son \textbf{ortogonales} si 
+\begin{equation}
+	\langle x, y\rangle = 0.
+\label{eq:ortogonal}
+\end{equation}
+
+
+\section{Espacio de Hilbert}
+Un espacio de producto interno completo se llama espacio de Hilbert. Podemos representar un elemento en espacio de Hilbert en términos de base como sigue: Dada una \textbf{base} $\{v_k : k \in I\}$ (secuencia de vectores) o $\{v_k (x) : k \in I\}$ (secuencia de funciones) en un espacio de Hilbert $\mathcal{H}$, cada vector o función $f \in \mathcal{H}$ puede ser representado de manera única como
+\begin{equation}
+    f = \sum_{k \in I} c_k (f) v_k, \quad f(x) = \sum_{k \in I} c_k (f) v_k (x),
+\label{eq:baseHilbert}
+\end{equation}
+
+donde el conjunto de índices $I$ puede ser finito o infinitamente contable. Supongamos que los elementos del espacio de Hilbert son funciones, entonces un \textbf{marco} también es un conjunto $\{v_k (x) : k \in I\}$ en $\mathcal{H}$ que permite que cada $f$ se escriba como en la ecuación de arriba, pero será linealmente dependiente. Por lo tanto, los coeficientes $c_k (f)$ no son necesariamente únicos y se puede obtener una representación redundante. Más precisamente, una familia $\{v_k (x) : k \in I\}$ en un espacio de Hilbert $\mathcal{H}$ es un \textbf{marco} para $\mathcal{H}$ si existen dos constantes $m, M$ que satisfacen $0 < m \leq M < \infty$ tal que
+\begin{equation}
+    m \|f\|^2 \leq \sum_{k \in I} | \langle f, v_k \rangle |^2 \leq M \|f\|^2, \;\; \forall f \in \mathcal{H}
+\label{eq:marco}
+\end{equation}
+
+También, para cada marco existe un \textbf{marco dual} $\{\tilde{v}_k : k \in I\}$ tal que
+\begin{equation}
+	f = \sum_{k \in I} \langle f, \tilde{v}_k \rangle v_k, \quad \forall f \in \mathcal{H}.
+\label{eq:marco_dual}
+\end{equation}
+
+Si el marco es un conjunto linealmente independiente para $\mathcal{H}$, entonces el marco proporciona una \textbf{base de Riesz} para $\mathcal{H}$. Por lo tanto, la base de Riesz es una base que satisface \ref{eq:baseHilbert}, y la desigualdad del marco \ref{eq:marco}. En el caso de la base de Riesz, el marco dual también será una base de Riesz y \textbf{biortogonal}. Es decir,
+\begin{equation}
+	\langle v_k, \tilde{v}_k\rangle = \delta_{k,k'}.
+\label{eq:biortogonal}
+\end{equation}
+
+\textbf{Observación}\; En el caso de una base ortonormal, se satisface la desigualdad del marco para $m = M = 1$. Por lo tanto, también es una base de Riesz. De hecho, una base ortonormal es biortogonal a sí misma.
+\begin{equation}
+     \|f\|^2 = \sum_{k \in I} | \langle f, v_k \rangle |^2, \;\; \forall f \in \mathcal{H}
+\label{eq:marco11}
+\end{equation}
+
+
+
+
+\section{Proyección}
+Se dice que un espacio vectorial $X$ es la suma directa ($X = Y \oplus Z$) de dos subespacios $Y$ y $Z$ de $X$, si cada $x \in X$ tiene una representación única
+\begin{equation}
+	x = y + z, \quad y \in Y \quad \text{y} \quad z \in Z.
+\label{eq:suma_directa}
+\end{equation}
+
+Además, $Z$ se llama \textbf{complemento algebraico} de $Y$ en $X$ y viceversa. 
+
+Si $X$ es un espacio de Hilbert. Una \textbf{proyección} ($P$) (generaliza la idea de proyección gráfica) es una transformación lineal ($P : X \rightarrow Y$) que tiene las siguientes propiedades básicas:
+\begin{itemize}
+    \item  $P$ es el \textbf{operador de identidad} $I$ en $Y$: $\forall y \in Y: Py = y$ ($P$ transforma $Y$ en $Y$).
+    \item  $P$ es \textbf{idempotente} (es decir, $P^2 = P$).
+    \item  Tenemos una suma directa $X = Y \oplus Z$. Cada vector $x$ en $X$ puede descomponerse de manera única como $x = y + z$ con $y = Px$ y $z = x - Px = (I - P)x$, ($Pz = P(x - Px) = 0$, significa que $P$ transforma $Z$ en $\{0\}$).
+\end{itemize}
+
+
+\section{Series de funciones}
+En cálculo, una serie de funciones es una serie, donde los sumandos no son solo números reales o complejos sino funciones. Ejemplos de series de funciones incluyen series de potencias, series de Laurent, series de Fourier, etc. En cuanto a las secuencias de funciones, y a diferencia de las series de números, existen muchos tipos de convergencia para una serie de funciones. Mencionamos algunos de ellos a continuación:
+
+\begin{enumerate}[\bfseries (i)]
+    \item  La serie infinita $\sum_{n=1}^{\infty} f_n(x)$ converge a $f(x)$ en $a < x < b$ en el sentido de media cuadrática (o sentido $\mathcal{L}_2$. Es decir, en la norma $\mathcal{L}_2(a, b)$), si
+    $$\int_a^b |f(x) - s_N(x)|^2 dx \rightarrow 0, \quad \text{cuando} \quad N \rightarrow \infty,$$
+    donde $s_N(x) = \sum_{n=1}^{N} f_n(x)$.
+
+    \item  La serie infinita $\sum_{n=1}^{\infty} f_n(x)$ converge a $f(x)$ puntualmente en $(a, b)$ si converge a $f(x)$ para cada $x \in (a, b)$. Es decir,
+    $$|f(x) - s_N(x)| \rightarrow 0, \quad \text{cuando} \quad N \rightarrow \infty.$$
+
+    \item  La serie infinita converge uniformemente a $f(x)$ en $a \leq x \leq b$, si
+    $$\max_{a \leq x \leq b} |f(x) - s_N(x)| \rightarrow 0, \quad \text{cuando} \quad N \rightarrow \infty.$$
+
+\end{enumerate}
+
+
+
+
+
+\chapter{Análisis de Fourier}
+El análisis de Fourier contiene dos componentes: \textbf{series de Fourier} y \textbf{transformada de Fourier}. La serie de Fourier es más universal que la serie de Taylor porque muchas funciones periódicas discontinuas de interés práctico pueden desarrollarse en forma de series de Fourier.
+
+Sin embargo, muchos problemas prácticos también involucran funciones no periódicas. En ese caso, la serie de Fourier se convierte en integral de Fourier y la forma compleja de la integral de Fourier se denomina transformada de Fourier.
+
+\section{Series de Fourier}
+Una serie de Fourier es una expansión de una función periódica $f(x)$ en términos de las funciones del conjunto ortonormal $\{e^{\frac{in\pi x}{l}}\}_{n\in\mathbb{Z}}$. La serie de Fourier es útil como una forma de descomponer una función periódica arbitraria en un conjunto de funciones simples (es decir, polinomios trigonométricos). Estas funciones simples pueden ser insertadas, resueltas individualmente y luego recombinadas para obtener la solución al problema original o una aproximación a ella con cualquier precisión deseada.
+
+Para cualquier $n \in \mathbb{Z}$, $e^{\frac{in\pi x}{l}}$ tiene período $2l$, por lo que la serie de Fourier tiene período $2l$. Ahora, la pregunta importante a responder es si todas las funciones con período $2l$ tienen una expansión en serie de Fourier. Para este propósito, consideramos el espacio $\mathcal{L}_2(0, 2l)$ de funciones cuadrado integrables, $2l$-periódicas.
+
+Una función $f(x) \in \mathcal{L}_2(0, 2l)$ si 
+$$f(x + 2l) = f(x)\;\; \forall x \in \mathbb{R}, \text{ y}$$
+$$\displaystyle\int_0^{2l} |f(x)|^2 dx < \infty.$$
+
+El espacio $\mathcal{L}_2(0, 2l)$ es un espacio de Hilbert con el producto interno
+$$\langle f, g \rangle = \frac{1}{2l} \int_0^{2l} f(x)\overline{g(x)}\;dx,$$
+
+y la norma correspondiente
+$$||f||_2^2 = \frac{1}{2l} \int_0^{2l} |f(x)|^2 dx.$$
+
+Resulta que la familia de funciones $\{e^{\frac{in\pi x}{l}}\}_{n\in\mathbb{Z}}$ es una base ortonormal del espacio $\mathcal{L}_2(0, 2l)$ y, por lo tanto, cualquier $f(x) \in \mathcal{L}_2(0, 2l)$ tiene la siguiente representación de serie de Fourier:
+\begin{equation}
+f(x) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos\left(\frac{in\pi x}{l}\right) + b_n \sin\left(\frac{in\pi x}{l}\right) \right)
+\label{eq:serieFourier}
+\end{equation}
+
+donde las constantes $a_0$, $a_n$ y $b_n$ se llaman los coeficientes de Fourier de $f(x)$, definidos por
+\begin{equation}
+    \left.
+	\begin{array}{rcl}
+	    a_0 &=&\displaystyle \frac{1}{2l} \int_0^{2l} f(x)dx\\\\
+	    a_n &=&\displaystyle \frac{1}{l} \int_0^{2l} f(x)\cos\left(\frac{in\pi x}{l}\right)dx\\\\ 
+	    b_n &=&\displaystyle \frac{1}{l} \int_0^{2l} f(x)\sin\left(\frac{in\pi x}{l}\right)dx.
+	\end{array}
+    \right\}
+\end{equation}
+
+La forma compleja de \ref{eq:serieFourier} es
+\begin{equation}
+    f(x) = \sum_{n=-\infty}^{\infty} c_n e^{\frac{in\pi x}{l}},
+\end{equation}
+
+donde las constantes $c_n$ se llaman los coeficientes de Fourier de $f(x)$, definidos por
+\begin{equation}
+    c_n = \frac{1}{2l} \int_0^{2l} f(x)e^{-\frac{in\pi x}{l}} dx.
+\end{equation}
+
+Ahora, la \textbf{convergencia de la serie} \ref{eq:serieFourier} en $\mathcal{L}_2(0, 2l)$ significa
+$$\lim_{N\rightarrow\infty} \int_0^{2l} |f(x) - s_N(x)|^2 dx \rightarrow 0,$$
+
+donde $s_N(x)\sum_{n=-N}^{N}c_ne^{\frac{in\pi x}{l}}$ es la \textbf{suma parcial de la serie} hasta el término $N$.
+
+Observamos que a partir de la serie \ref{eq:serieFourier}, la función $f(x)$ (una función periódica con periodo $l = \pi, 2\pi$) se descompone en una suma de infinitos componentes mutuamente ortogonales, $w_n(x) = e^{inx}$, $n \in \mathbb{N}$. Esta base ortonormal se genera por dilataciones enteras ($w_n(x) = w(nx)$, $\forall n \in \mathbb{N}$) de una única función $w(x) = e^{ix}$. Esto significa que $e^{ix}$ (onda sinusoidal) es la única función requerida para generar el espacio $\mathcal{L}_2(0, 2\pi)$. Esta onda sinusoidal tiene alta frecuencia para grandes $|n|$ y baja frecuencia para pequeños $|n|$. Por lo tanto, cada función en el espacio $\mathcal{L}_2(0, 2\pi)$ está compuesta de ondas con diversas frecuencias. Además, la serie de Fourier definida en \ref{eq:serieFourier} satisface la \textbf{identidad de Parseval} dada por
+\begin{equation}
+\int_0^{2l} |f(x)|^2 dx = 2l \sum_{n=-\infty}^{\infty} |c_n|^2.
+\label{eq:identidadParseval}
+\end{equation}
+
+Ahora, escribimos resultados para la convergencia de series de Fourier en diferentes modos de convergencia.
+
+\begin{teorema}
+Si $f(x)$ y $f'(x)$ son funciones continuas a trozos en $(0, 2l)$, entonces la serie de Fourier converge en cada punto $x$. Además,
+$$
+\sum_{n=-\infty}^{\infty} c_n e^{in\pi x / l} = \frac{1}{2} \left( f_{\text{ext}}(x+) + f_{\text{ext}}(x-) \right),
+$$
+para todo $-\infty < x < \infty$, donde $f_{\text{ext}}(x)$, $-\infty < x < \infty$ es la extensión periódica de $f(x)$ definida en $(0, 2l)$.
+\end{teorema}
+
+\begin{teorema}
+    Si $f(x) \in \mathcal{L}_2(0, 2l)$, entonces la serie de Fourier converge a $f(x)$, $x \in (0, 2l)$ en el sentido $\mathcal{L}_2$.
+\end{teorema}
+
+\begin{teorema}
+    Si $f(x)$ y $f'(x)$ son continuas en $[0, 2l]$ y el valor de la serie de Fourier coincide con $f(x)$ en los extremos (0 y 2l), entonces la serie de Fourier converge a $f(x)$, $x \in [0, 2l]$ de manera uniforme.
+\end{teorema}
+
+
+\section{Transformada de Fourier}
+La transformada de Fourier de una función $f(x) \in \mathcal{L}_1(\mathbb{R})$ (espacio de funciones integrables como $p = 1$ en el ejemplo \ref{ejemplo:1.1}) se define como
+\begin{equation}
+\hat{f}(\omega) = F(f(x)) = \int_{-\infty}^{\infty} e^{-i\omega x} f(x) dx, \quad \omega \in \mathbb{R}.
+\label{eq:transformadaFourier}
+\end{equation}
+
+Debe notarse que $|\hat{f}(\omega)| \leq \int_{-\infty}^{\infty} |f(x)| dx < \infty$, y por lo tanto, podemos garantizar la existencia de la transformada de Fourier definida en \ref{eq:transformadaFourier}. Algunas de las \textbf{propiedades} de $\hat{f}(\omega)$, para cada $f(x) \in \textbf{L}_1(\mathbb{R})$ son las siguientes:
+\begin{enumerate}[(1)]
+    \item  $\hat{f}(\omega) \in \mathcal{L}_\infty(\mathbb{R})$ y $||\hat{f}||_\infty \leq ||f||_1$.
+    \item  Si la derivada $f'(x)$ de $f(x)$ existe y $f'(x) \in \mathcal{L}_1(\mathbb{R})$, entonces $\hat{f'}(\omega) = i\omega \hat{f}(\omega)$.
+    \item $\hat{f}(\omega) \rightarrow 0$, cuando $\omega \rightarrow -\infty$ o $\infty$.
+\end{enumerate}
+
+Debe notarse que, $f \in \mathcal{L}_1(\mathbb{R})$ no implica que $\hat{f} \in \mathcal{L}_1(\mathbb{R})$, lo cual puede ilustrarse con el siguiente ejemplo:
+$$
+f(x) = 
+\begin{cases} 
+e^{-x} & \text{si } x \geq 0, \\
+0 & \text{si } x < 0.
+\end{cases}
+$$
+
+La función anterior $f(x)$ está en el espacio $\mathcal{L}_1(\mathbb{R})$ pero su transformada de Fourier $\hat{f}(\omega) = (1 - i\omega)^{-1}$ no está en $\mathcal{L}_1(\mathbb{R})$.
+
+Si $\hat{f} \in L^1(\mathbb{R})$ es la transformada de Fourier de $f \in \mathcal{L}_1(\mathbb{R})$, entonces la \textbf{transformada inversa de Fourier} de $\hat{f}$ se define como
+\begin{equation}
+(F^{-1}\hat{f})(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{i\omega x} \hat{f}(\omega) d\omega.
+\label{eq:transformadaInversaFourier}
+\end{equation}
+
+\textbf{Observación:}\;  La transformada de Fourier definida en \ref{eq:transformadaFourier}, descompone las funciones (señales) en la suma de un número (potencialmente infinito) de componentes de onda sinusoidal y cosinusoidal de frecuencia. El dominio de frecuencia es un término utilizado para describir el dominio para el análisis de funciones matemáticas (señales) con respecto a la frecuencia. Por lo tanto, la transformada de Fourier de una función también se llama el \textbf{espectro de Fourier de esa función}. La transformada inversa de Fourier convierte la transformada de Fourier del dominio de frecuencia a la función original bajo ciertas suposiciones. Si la función original es una señal, entonces la representación física del dominio será el dominio del tiempo.
+
+\begin{tcolorbox}[colframe=white]
+Debe notarse que los dos componentes del análisis de Fourier, a saber, la serie de Fourier y la transformada de Fourier son básicamente no relacionados. Veremos más adelante que este no es el caso con el análisis de wavelet.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\begin{ejemplo}
+    Evalúa la transformada de Fourier de la función gaussiana $f(x) = e^{-ax^2}$, $a > 0$.
+
+    \textbf{Solución.-}\; La transformada de Fourier de $f$ se define como
+    \begin{equation}
+	\hat{f}(\omega) = \int_{-\infty}^{\infty} e^{-i\omega x} e^{-ax^2} dx,
+	\label{eq:transformadaFourierGaussiana}
+    \end{equation}
+
+    que se puede reescribir como
+    \begin{align*}
+	\hat{f}(\omega) &= \int_{-\infty}^{\infty} e^{-a(x+ i\omega/2a)^2 - \omega^2/4a} dx, \\
+	&= e^{-\frac{\omega^2}{4a}} \sqrt{a} \int_{-\infty}^{\infty} e^{-x^2} dx, \\
+	&= \sqrt{\frac{\pi}{a}} e^{-\omega^2/4a}.
+    \end{align*}
+
+    Otro método para evaluar la transformada de Fourier de la función gaussiana usando la regla de leibnitz para la integral impropia y la integración por partes ya que  $f(x) \in \mathcal{L}_1(\mathbb{R})$  es diferenciar ambos lados de \ref{eq:transformadaFourierGaussiana} con respecto a $\omega$:
+    \begin{align*}
+	\hat{f}'(\omega) &= -i \int_{-\infty}^{\infty} e^{-i\omega x} (x e^{-ax^2}) dx \\
+	&= \frac{\omega}{2a} \int_{-\infty}^{\infty} e^{-i\omega x} e^{-ax^2} dx \\
+	&= \frac{\omega}{2a} \hat{f}(\omega).
+    \end{align*}
+
+    Por lo tanto, 
+    $$\hat{f}(\omega) = \hat{f}(0) e^{-\frac{\omega^2}{4a}}.$$ 
+    Ahora, 
+    $$\hat{f}(0) = \int_{-\infty}^{\infty} e^{-ax^2} dx = \sqrt{\pi/a},$$ 
+    Así, $\hat{f}(\omega) = \sqrt{\pi/a} e^{-\frac{\omega^2}{4a}}.$
+    \label{ejemplo:1.2}
+\end{ejemplo}
+
+Veamos la transformada inversa de Fourier definida en \ref{eq:transformadaInversaFourier} donde devuelve la función original $f(x)$. Para probar esta afirmación, introducimos primero la convolución.
+
+La convolución es una operación matemática en dos funciones $f$ y $g$, que implica la multiplicación de una función por una versión retrasada o desplazada de otra función, integrando o promediando el producto y repitiendo el proceso para diferentes retrasos. Tiene aplicaciones en el área de procesamiento de imágenes y señales, ingeniería eléctrica, probabilidad, estadística, visión por computadora y ecuaciones diferenciales. Más precisamente, \textbf{la convolución de dos funciones} se define por
+\begin{equation}
+(f * g)(x) = \int_{-\infty}^{\infty} f(\tau) g(x - \tau) d\tau,
+\label{eq:convolucion}
+\end{equation}
+
+garantizamos la existencia de la convolución si $f, g \in \mathcal{L}_1(\mathbb{R})$. Se puede observar que $f * g \in \mathcal{L}_1(\mathbb{R})$ ya que
+\begin{align*}
+\int_{-\infty}^{\infty} |(f * g)(x)| dx &\leq \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} |f(\tau)||g(x - \tau)| dx d\tau, \\
+&= \int_{-\infty}^{\infty} |f(\tau)| \int_{-\infty}^{\infty} |g(x - \tau)| dx d\tau, \\
+&= \int_{-\infty}^{\infty} |f(\tau)| \int_{-\infty}^{\infty} |g(x)| dx d\tau, \\
+&= \int_{-\infty}^{\infty} |f(\tau)| d\tau \int_{-\infty}^{\infty} |g(x)| dx.
+\end{align*}
+
+Esto implica que $\|f * g\|_1 \leq \|f\|_1 \|g\|_1$ y por lo tanto $f * g \in \mathcal{L}_1(\mathbb{R})$. Un cambio de variable de integración en \ref{eq:convolucion} nos dirá que $f * g = g * f$, $\forall f, g \in L^1(\mathbb{R})$. Es decir, la convolución es conmutativa. 
+
+Luego, dado que $f * g \in \mathcal{L}_1(\mathbb{R})$, podemos definir $(f * g) * h$ y una simple manipulación te dirá que $(f * g) * h = f * (g * h)$, $\forall f, g, h \in \mathcal{L}_1(\mathbb{R})$, es decir, la convolución es asociativa. Sin embargo, ninguna función actúa como una identidad para la convolución excepto en el caso de un concepto modificado de función (función generalizada). 
+
+Para probar que no existe una función de identidad para la convolución, necesitamos el siguiente teorema que establece que la transformada de Fourier de una convolución es el producto puntual de las transformadas de Fourier.\\
+
+\begin{teorema}[Teorema de la convolución]
+    Si $f, g \in L^1(\mathbb{R})$, entonces $\hat{(f * g)}(\omega) = \hat{f}(\omega) \hat{g}(\omega)$.
+
+    \textbf{Demosración:}
+    \begin{align*}
+    \hat{(f * g)}(\omega) &= \int_{-\infty}^{\infty} e^{-i\omega x} (f * g)(x) dx, \\
+    &= \int_{-\infty}^{\infty} e^{-i\omega x} \int_{-\infty}^{\infty} f(\tau) g(x - \tau) d\tau dx, \\
+    &= \int_{-\infty}^{\infty} f(\tau) \int_{-\infty}^{\infty} e^{-i\omega x} g(x - \tau) dx d\tau, \\
+    &= \int_{-\infty}^{\infty} f(\tau) \int_{-\infty}^{\infty} e^{-i\omega (\tau + y)} g(y) dy d\tau, \\
+    &= \int_{-\infty}^{\infty} f(\tau) e^{-i\omega \tau} \int_{-\infty}^{\infty} e^{-i\omega y} g(y) dy d\tau, \\
+    &= \hat{f}(\omega) \hat{g}(\omega).
+    \end{align*}
+\label{teorema2.4}
+\end{teorema}
+
+Este teorema es extremadamente importante, especialmente útil para implementar una convolución numérica en una computadora.
+
+
+\textbf{Observación:} \; El algoritmo de convolución estándar tiene una complejidad computacional cuadrática. Con la ayuda del teorema de convolución y la transformada rápida de Fourier, la complejidad de la convolución se puede reducir a O($n \log n$). Esto se puede explotar para construir algoritmos de multiplicación rápidos.
+
+Ahora supongamos que existe una función $e \in \mathcal{L}_1(\mathbb{R})$, que actúa como una \textbf{identidad para el operador de convolución}. Es decir, 
+\begin{equation}
+	f * e = f,\; \forall f \in \mathcal{L}_1(\mathbb{R}).
+\label{eq:identidadConvolucion}
+\end{equation}
+Ahora aplicando el Teorema \ref{teorema2.4} en \ref{eq:identidadConvolucion}, 
+$$\hat{f}(\omega) \hat{e}(\omega) = \hat{f}(\omega), \;\forall f \in L^1(\mathbb{R})$$ 
+
+lo que significa que 
+\begin{equation}
+	\hat{e}(\omega) = 1,
+\label{eq:identidadConvolucion2}
+\end{equation}
+lo cual no es cierto (como sabemos que $\hat{e}(\omega) \rightarrow 0$, cuando $\omega \rightarrow -\infty$ o $\infty$).
+
+
+Definamos la \textbf{delta de Dirac} ($\delta$), que es una función generalizada (distribución) en la línea de números reales tal que es distinta de cero solo en cero y cero en todas partes, con una integral igual a uno en toda la línea real. Es decir,
+\begin{equation}
+	\delta(x) = 0 \quad \forall x \neq 0
+\label{eq:deltaDirac}
+\end{equation}
+y
+\begin{equation}
+	\int_{-\infty}^{\infty} \delta(x) dx = 1.
+\label{eq:deltaDiracIntegral}
+\end{equation}
+
+En el contexto del procesamiento de señales, a menudo se refiere como la función de \textbf{impulso unitario}. Es un análogo continuo de la función delta de Kronecker que generalmente se define en un dominio finito y toma valores $0$ y $1$. La distribución delta de Dirac (distribución $\delta$ para $x_0 = 0$) puede actuar como identidad de convolución porque
+\begin{equation}
+	f * \delta = f, \quad \forall f \in L^1(\mathbb{R}).
+\label{eq:deltadirecdistribution}
+\end{equation}
+
+siempre que $\hat{\delta}(\omega) = 1$.
+
+Ya hemos visto que no podemos obtener una función de identidad en $\mathcal{L}_1(\mathbb{R})$ para la convolución. Sin embargo, todavía deseamos encontrar una aproximación a la función $\delta$ en \ref{eq:deltadirecdistribution}. Es decir, una aproximación de la identidad de convolución.
+
+Consideremos las \textbf{funciones gaussianas} de la forma $ae^{-(x-b)^2/c^2}$ para algunas constantes reales $a$, $b$, $c$. El parámetro $a$ es la altura del pico de la curva, $b$ es la posición del centro del pico y $c$ controla el ancho del pico de la curva. Luego, tomamos una función gaussiana particular con $c = 2/\sqrt{\alpha}$, $a = 1/c\sqrt{\pi}$ y $b = 0$
+\begin{equation}
+	e_{\alpha}(x) = \frac{1}{2}\sqrt{\frac{\pi}{\alpha}} e^{-x^2/4\alpha}, \quad \alpha > 0,
+\label{eq:gaussianfunction}
+\end{equation}
+
+cuya transformada de Fourier se da por
+\begin{equation}	
+	\hat{e}_{\alpha}(\omega) = e^{-\alpha \omega^2}.
+\label{eq:gaussianfunctionFourier}
+\end{equation}
+
+Está claro que la función $e_{\alpha}$ satisface \ref{eq:identidadConvolucion2} cuando $\alpha \rightarrow 0^+$. Ahora, enunciamos el siguiente teorema
+
+\begin{teorema}
+    Si $f \in L^1(\mathbb{R})$, entonces $\lim_{\alpha \rightarrow 0^+} (f * e_{\alpha})(x) = f(x)$ en cada punto $x$ donde $f$ es continua.
+\end{teorema}
+Este teorema nos dice que $e_{\alpha} \rightarrow \delta$ en $C$ (colección de funciones continuas en $\mathcal{L}_1(\mathbb{R})$) cuando $\alpha \rightarrow 0^+$. Ahora $\{e_{\alpha}\}$ es una \textbf{aproximación de la identidad de convolución}. Se puede usar para probar el siguiente teorema.
+
+\begin{teorema}
+    Si $f \in \mathcal{L}_1(\mathbb{R})$ tal que su transformada de Fourier también está en $\hat{f} \in \mathcal{L}_1(\mathbb{R})$, entonces
+    $$f(x) = (F^{-1}\hat{f})(x),$$
+    en cada punto $x$ donde $f$ es continua.
+\end{teorema}
+
+Hemos definido la transformada de Fourier de las funciones en el espacio $\mathcal{L}_1(\mathbb{R})$, y en este espacio no hay garantía de que exista la transformada inversa de Fourier. Una herramienta no es práctica si no puedes revertir su efecto, por lo que necesitamos movernos a un espacio donde al menos exista la transformada inversa de Fourier. El espacio $\mathcal{L}_2(\mathbb{R})$ (conjunto de funciones cuadrado integrables) es mucho más elegante para definir la transformada de Fourier ya que para $f \in \mathcal{L}_2(\mathbb{R})$ su transformada de Fourier $\hat{f} \in \mathcal{L}_2(\mathbb{R})$, que se puede formular en forma de teorema de la siguiente manera.
+\begin{teorema}
+    La transformada de Fourier $F$ es un mapa uno a uno de $\mathcal{L}_2(\mathbb{R})$ sobre sí mismo. Es decir, para cada $g \in \mathcal{L}_2(\mathbb{R})$, corresponde una y solo una $f \in \mathcal{L}_2(\mathbb{R})$ tal que $\hat{f} = g$
+    $$f(x) = (F^{-1}g)(x),$$
+\end{teorema}
+
+Para $f \in \mathcal{L}_2(\mathbb{R})$, se satisface un resultado similar a \ref{eq:identidadParseval} de la siguiente manera:
+\begin{equation}
+	\|f\|_2^2 = \frac{1}{2\pi} \|\hat{f}\|_2^2 \quad \text{(identidad de Parseval)}.
+\label{eq:identidadParseval2}
+\end{equation}
+
+La teoría detallada de la transformada de Fourier de funciones en $\mathcal{L}_2(\mathbb{R})$ (discutida anteriormente)  también se conoce como la \textbf{teoría de Plancherel}.
+
+
+
+\section{Análisis tiempo-frecuencia}
+El análisis de tiempo-frecuencia es un tema de análisis de señales donde estudiamos la señal tanto en los dominios de tiempo como de frecuencia juntos con un par de ventajas sobre la transformada de Fourier como sigue.
+
+\begin{itemize}
+    \item Para estudiar una señal en el dominio de la frecuencia a través de su transformada de Fourier, necesitamos una descripción completa del comportamiento de la señal durante todo el tiempo, lo que puede incluir un comportamiento futuro indeterminado de la señal. No podemos predecir la transformada de Fourier basándonos solo en la observación local de la señal.
+    \item  Si la señal cambia en un pequeño vecindario de algún tiempo particular, entonces todo el espectro de Fourier se ve afectado.
+    \item El análisis de Fourier clásico asume que las señales son infinitas en el tiempo (en el caso de la transformada de Fourier) o periódicas (en el caso de la serie de Fourier). Sin embargo, muchas señales en la práctica son de corta duración (es decir, no están definidas para un tiempo infinito) y no son periódicas. Por ejemplo, los instrumentos musicales tradicionales no producen sinusoides de duración infinita, sino que comienzan con un ataque y luego decaen gradualmente.  
+\end{itemize}
+
+El análisis de tiempo-frecuencia es una generalización del análisis de Fourier para aquellas señales cuya frecuencia (estadísticas) varía con el tiempo. Muchas señales de interés, como el habla, la música, las imágenes y las señales médicas, tienen una frecuencia cambiante, lo que nuevamente motiva el análisis de tiempo-frecuencia.
+
+La desventaja de la transformada de Fourier en el análisis de tiempo-frecuencia fue observada inicialmente por D. Gabor. Utilizó el concepto de función de ventana para definir otra transformada. Una función no trivial $w \in \mathcal{L}_2(\mathbb{R})$ se llama función de ventana si $xw(x)$ también está en $\mathcal{L}_2(\mathbb{R})$. Significa que la función decae a cero rápidamente. El centro $t^*$ y el radio $w$ de la función de ventana se definen por
+\begin{equation}
+    \begin{array}{rcl}
+	t^* &=& \displaystyle\frac{1}{||w||_2^2} \int_{-\infty}^{\infty} x|w(x)|^2 dx,\\\\
+	w &=& \displaystyle\frac{1}{||w||_2} \left( \int_{-\infty}^{\infty} (x - t^*)^2 |w(x)|^2 dx \right)^{1/2}.
+    \end{array}
+    \label{eq:ventana}
+\end{equation}
+
+por lo tanto, el ancho de la función de ventana será $2w$.
+
+Gabor utilizó esta función gaussiana para definir la transformada de Gabor para $\alpha > 0$, $f \in \mathcal{L}_2(\mathbb{R})$
+\begin{equation}
+(G_{b,\alpha} f)(\omega) = \int_{-\infty}^{\infty} (e^{-i\omega x} f(x)) e^{\alpha(x - b)} dx. 
+\label{eq:2.19}
+\end{equation}
+
+En \ref{eq:2.19}, la transformada de Gabor está localizando la transformada de Fourier de $f$ alrededor del punto $x = b$. Además,
+\begin{equation}
+    \int_{-\infty}^{\infty} e^{\alpha(x - b)} db = \int_{-\infty}^{\infty} e^{\alpha t} dt = 1,
+\label{eq:propiedadGabor}
+\end{equation}
+
+como $\hat{e}_{\alpha}(0) = 1$ de \ref{eq:gaussianfunctionFourier}. Por lo tanto,
+\begin{equation}
+\int_{-\infty}^{\infty} (G_{b,\alpha} f)(\omega) db = \hat{f}(\omega), \quad \omega \in \mathbb{R}. 
+\end{equation}
+
+Se puede demostrar fácilmente que la función gaussiana discutida en \ref{eq:gaussianfunction} es una función de ventana. Dado que $e_{\alpha}$ es una función par, el centro $t^*$ definido en \ref{eq:ventana} es $0$, y por lo tanto, el radio de la ventana gaussiana será dado por
+$$\triangle_{e_{\alpha}} = \frac{1}{||e_{\alpha}||_2} \left( \int_{-\infty}^{\infty} x^2 e^{2\alpha(x)} dx \right)^{1/2} = \sqrt{\alpha}.$$
+
+Podemos reescribir \ref{eq:2.19} de la siguiente manera:
+$$(G_{b,\alpha} f)(\omega) = \int_{-\infty}^{\infty} f(x) \overline{(e^{i\omega x} e^{\alpha(x - b)})} dx.$$
+
+Significa que estamos ventaneando la función $f$ utilizando la función de ventana $w(x) = (e^{i\omega x} e^{\alpha(x - b)})$. Por lo tanto
+\begin{equation}
+(G_{b,\alpha} f)(\omega) = \langle f,w \rangle = \frac{1}{2\pi} \langle \hat{f}, w \rangle,
+\label{eq:2.22}
+\end{equation}
+donde 
+$$w(\hat{\eta}) = e^{-ib(\eta-\omega)} e^{-\alpha(\eta-\omega)^2} = e^{ib\omega} e^{-ib\eta} \left( \sqrt{\frac{\pi}{\alpha}} e^{\frac{1}{4\alpha}(\eta - \omega)} \right).$$ 
+Por lo tanto
+\begin{equation}
+    \begin{array}{rcl}
+	(G_{b,\alpha} f)(\omega) &=& \displaystyle\frac{1}{2\pi} \int_{-\infty}^{\infty} \hat{f}(\eta) w(\hat{\eta}) d\eta\\\\
+			     &=&\displaystyle e^{-ib\omega} \frac{2}{\sqrt{\pi \alpha}} \int_{-\infty}^{\infty} \hat{f}(\eta) e^{ib\eta} e^{\frac{1}{4\alpha}(\eta - \omega)} d\eta.
+    \end{array}
+\label{eq:2.23}
+\end{equation}
+
+Ahora reescribimos la \ref{eq:2.22} de la siguiente manera:
+\begin{equation}
+	(G_{b,\alpha} f)(\omega) = \langle f,w \rangle = \langle \hat{f}, h \rangle,
+\label{eq:2.24}
+\end{equation}
+donde  
+$$h = \frac{1}{2\pi} \hat{w} = e^{ib\omega} e^{-ib\eta} \left( \frac{1}{2} \sqrt{\frac{\pi}{\alpha}} e^{\frac{1}{4\alpha}(\eta - \omega)} \right).$$
+
+Por lo tanto, la información de la $f(x)$ alrededor de $x = b$ utilizando la función de ventana $w$ también se puede obtener observando el espectro $\hat{f}(\eta)$ en el vecindario de $\eta = \omega$ utilizando la función de ventana $h$ definida en \ref{eq:2.24}. La ventana correspondiente a la función de ventana $w$ en \ref{eq:2.24} soportada en $[b - \sqrt{\alpha}, b + \sqrt{\alpha}]$ se llama \textbf{ventana de tiempo}. La ventana correspondiente a la función de ventana $h$ soportada en $[\omega - \frac{1}{2}\sqrt{\alpha}, \omega + \frac{1}{2}\sqrt{\alpha}]$ en \ref{eq:2.24} se llama \textbf{ventana de frecuencia} y el producto cartesiano de estas ventanas se llama \textbf{ventana de tiempo-frecuencia}. Esta ventana de tiempo-frecuencia tiene un área constante $= (2w)(2h) = (2\triangle{e_{\alpha}})(2\triangle_{e_{\frac{1}{\alpha}}}) = 2$.
+
+
+
+Por varias razones, como la eficiencia computacional o la conveniencia en la implementación, se pueden usar funciones distintas a la función gaussiana como funciones de ventana. En otras palabras, la transformada de Gabor se puede generalizar a cualquier otra \textbf{transformada de Fourier de ventana (transformada de Fourier de tiempo corto)} utilizando cualquier función de ventana $w_1$ tal que $\hat{w}_1$ también sea una función de ventana. Para $f \in \mathcal{L}_2(\mathbb{R})$, la transformada de Fourier de ventana con $w_1$ como la función de ventana se define como
+\begin{equation}
+    (W_b f)(\omega) = \int_{-\infty}^{\infty} (e^{-i\omega x} f(x))\overline{w_1(x - b)} dx.
+\label{eq:2.25}
+\end{equation}
+
+Para $w_1(x) = e^{\alpha(x)}$, la transformada de Fourier de ventana \ref{eq:2.25} se reducirá a la transformada de Gabor \ref{eq:2.19}. Significa que estamos ventaneando la función $f$ utilizando la función de ventana $w(x) = (e^{i\omega x}w_1(x - b))$. Por lo tanto
+\begin{equation}\label{eq:2.26}
+(W_b f)(\omega) = \langle f,w \rangle = \frac{1}{2\pi} \langle \hat{f}, \hat{w} \rangle = \langle \hat{f}, h \rangle,
+\end{equation}
+
+donde $w(\hat{\eta}) = e^{-ib(\eta-\omega)} \hat{w}_1(\eta - \omega)$ y $h = \frac{1}{2\pi}\hat{w}$. La ventana de tiempo correspondiente a la función de ventana $w$ estará soportada en $[x^* + b - w_1 , x^* + b + w_1]$, donde $x^*$ y $w_1$ son el centro y el radio de la función de ventana $w_1$. La ventana de frecuencia correspondiente a la función de ventana $h$ estará soportada en $[\omega^* + \omega - \hat{w}_1 , \omega^* + \omega + \hat{w}_1]$, donde $\omega^*$ y $\hat{w}_1$ son el centro y el radio de la función de ventana $\hat{w}_1$. El área de la ventana es $4w_1\hat{w}_1$, que es nuevamente constante.
+
+\textbf{Observación:}\; El principio de incertidumbre nos dice que no podemos encontrar una ventana más pequeña que la ventana gaussiana.
+
+Ahora la pregunta es cómo recuperar $f$ de su transformada de Fourier de ventana, lo cual se puede hacer usando el siguiente teorema.
+
+\begin{teorema}
+    Sea $w_1 \in \mathcal{L}_2(\mathbb{R})$ tal que $||w_1||_2 = 1$ y tanto $w_1$ como $\hat{w}_1$ son funciones de ventana
+    $$\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \langle f,w \rangle \langle g,w \rangle db d\omega = 2\pi \langle f, g \rangle,$$
+    para cualquier $f, g \in \mathcal{L}_2(\mathbb{R})$ (note que $w = e^{i\omega x}w_1(x - b)$).
+\end{teorema}
+
+Usando el teorema anterior, podemos recuperar una función de su transformada de Fourier de ventana.
+
+
+
+\chapter{Wavelet en geometrías planas}
+
+Una wavelet (inventada por Morlet) es una función matemática utilizada para dividir una función dada o señal de tiempo continuo en diferentes componentes de escala. Las wavelets han alcanzado el crecimiento actual debido al análisis matemático de wavelets realizado por Stromberg [1], Grossmann y Morlet [2], Meyer [3] y Daubechies [4]. Por lo tanto, específicamente las wavelets unidimensionales ($\psi(x)$, $x \in \mathbb{R}$) son aquellas funciones que deben cumplir los siguientes requisitos:
+
+• La función y su transformada de Fourier deben estar bien localizadas (es decir, se supone que la función tiene la mayor parte de su energía contenida en una región muy estrecha del dominio).
+
+• $\int_{-\infty}^{\infty} \psi(x) dx = 0$ (oscilando por encima y por debajo del eje x).
+
+Otros requisitos son deseables/técnicos y se necesitan principalmente para algunas aplicaciones específicas y para reducir la complejidad de los algoritmos numéricos para su implementación.
+
+
+
+\end{multicols}
