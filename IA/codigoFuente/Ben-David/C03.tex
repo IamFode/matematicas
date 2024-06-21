@@ -1,0 +1,200 @@
+\chapter{Un modelo de aprendizaje formal}
+
+\section{Aprendizaje PAC}
+En el capítulo anterior hemos demostrado que para una clase de hipótesis finita, si la regla ERM con respecto a esa clase se aplica en una muestra de entrenamiento suficientemente grande (cuyo tamaño es independiente de la distribución subyacente o la función de etiquetado), entonces la hipótesis de salida será probablemente aproximadamente correcto. De manera más general, definamos aprendizaje probablemente aproximadamente correcto (PAC).\\
+
+\begin{def.}[Capacidad de aprendizaje PAC] Una clase de hipótesis $\mathcal{H}$ es PAC aprendizable si existe una función $m_{\mathcal{H}} : (0, 1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: Para cada , $\delta \in (0, 1)$, para cada distribución $\mathcal{D}$ sobre $\mathcal{X}$, y para cada función de etiquetado $f: \mathcal{X} \to \left\{0, 1\right\}$, si el supuesto realizable se cumple con respecto a $\mathcal{H}, \mathcal{D}, f$, entonces cuando se ejecuta el algoritmo de aprendizaje en $m \geq m_{\mathcal{H}}(\epsilon, \delta)$ i.i.d. En los ejemplos generados por $\mathcal{D}$ y etiquetados por $f$, el algoritmo devuelve una hipótesis $h$ tal que, con una probabilidad de al menos $1 -\delta$ (sobre la elección de los ejemplos), $L_{(\mathcal{D},f)}(h) \leq \epsilon$.
+\end{def.}
+
+
+\begin{itemize}
+    \item Clase de Hipótesis ($\mathcal{H}$): Es un conjunto de modelos.
+    \item Función ( $m_\mathcal{H}$): Determinaría cuantos ejemplos necesita revisar el algoritmo para poder identificar con confianza un modelo que prediga
+    \item Distribución ($\mathcal{D}$) sobre ( $\mathcal{X}$ ): Representaría la distribución de probabilidad de las instancias.
+    \item Función de Etiquetado ( $f$ ): Es la “verdad de fondo” que etiqueta correctamente. (Las etiquetas en el conjunto de datos de entrenamiento son ejemplos de la función).
+    \item Suposición Realizable: Esta suposición implicaría que existe al menos un modelo en ( $\mathcal{H}$ ) que puede modelar con precisión perfecta, según ($f$).
+    \item Hipótesis ($h$): Después de entrenar con suficientes datos, el algoritmo seleccionaría un modelo específico ($h$) que predice con precisión.
+    \item $L_{(\mathcal{D},f)}(h)$: La pérdida empírica indica qué tan bien el modelo seleccionado ( $h$ ) está prediciendo con la función de etiquetado verdadera ($f$).
+    \item $\epsilon$ (Epsilon): Es el margen de error que estamos dispuestos a tolerar en las predicciones de nuestro algoritmo de aprendizaje. En otras palabras, es una medida de cuánto error es aceptable en la hipótesis que el algoritmo produce. Un $\epsilon$ pequeño significa que queremos que nuestra hipótesis sea muy precisa, mientras que un $\epsilon$ más grande indica que estamos dispuestos a aceptar más errores. \\
+	Nos permitirá perdonar al clasificador por cometer errores menores. Nos dice que tan lejos puede estar el clasificador de salida del óptimo.
+    \item $\delta$ (Delta): Es la probabilidad de que nuestro algoritmo de aprendizaje falle en encontrar una hipótesis con un error menor o igual a $\epsilon$. Es una medida de confianza en el rendimiento del algoritmo. Un $\delta$ pequeño significa que queremos estar muy seguros de que nuestro algoritmo encontrará una hipótesis buena, mientras que un $\delta$ más grande significa que estamos dispuestos a aceptar un mayor riesgo de fallar.\\
+	Indica la probabilidad de que el clasificador cumpla con ese requisito de precisión $\epsilon$.
+
+    En la práctica, cuando establecemos valores para  $\epsilon$  y  $\delta$, estamos definiendo nuestras expectativas y limitaciones para el algoritmo de aprendizaje. Por ejemplo, si establecemos $\epsilon = 0.05$ y $\delta = 0.01$, estamos diciendo que queremos que el algoritmo encuentre una hipótesis que tenga un $5\%$ de error o menos, y queremos estar $99\%$ seguros de que lo logrará.
+\end{itemize}
+
+\subsection{Complejidad de muestra}
+$m_{\mathcal{H}}$ es una función que determina cuántos ejemplos necesitará el algoritmo para encontrar una hipótesis con un error menor o igual a $\epsilon$ y con una probabilidad de al menos $1 - \delta$. Definiremos la complejidad muestral del aprendizaje $\mathcal{H}$ como la \textit{función mínima} en el sentido de que para cualquier, $\delta$, $m_{\mathcal{H}}(\epsilon, \delta)$ es el entero mínimo que satisface los requisitos del aprendizaje PAC, con precisión $\epsilon$ y confianza $\delta$.\\
+
+\begin{cor} Cada clase de hipótesis finita es PAC aprendizable con complejidad muestral
+    $$m_{\mathcal{H}}(\epsilon, \delta) \leq \left[\dfrac{\log(|\mathcal{H}|/\delta)}{\epsilon}\right].$$
+\end{cor}
+
+\section{Un modelo de aprendizaje más general: Liberación del supuesto de realizabilidad: aprendizaje PAC agnóstico}
+El modelo que acabamos de describir puede generalizarse fácilmente, de modo que pueda resultar relevante para un ámbito más amplio de tareas de aprendizaje. Consideramos generalizaciones en dos aspectos:
+\begin{itemize}
+    \item Eliminación del supuesto de realizabilidad.
+    \item Problemas de aprendizaje más allá de la clasificación binaria.
+\end{itemize}
+
+\subsubsection{Un modelo más realista para la distribución generadora de datos}
+Recordemos que el supuesto de realizabilidad requiera que:
+$$\mathbb{P}_{x\sim \mathcal{D}} \left[h^*(x)=f(x)\right]=1.$$
+A continuación suavizaremos el supuesto de realizabilidad reemplazando la función de etiquetado objetivo con una noción más flexible, una distribución generadora de etiquetas de datos.\\
+
+Formalmente, sea $\mathcal{D}$ una distribución de probabilidad sobre $\mathcal{X}\times \mathcal{Y}$, donde, cómo antes, $\mathcal{X}$ es nuestro conjunto de instancias e $\mathcal{Y}$ es un conjunto de etiquetas ($\left\{0,1\right\}$). Es decir, $\mathcal{D}$ es una distribución conjunta entre puntos y etiquetas de instancias. Se puede ver dicha distribución como compuesta de dos partes:
+\begin{itemize}
+    \item Una distribución $\mathcal{D}_x$a sobre putos de instancias no etiquetas (distribución marginal) y
+    \item una probabilidad condicional sobre etiquetas para cada punto del dominio, $\mathcal{D}\left((x,y)|x\right)$.
+\end{itemize}
+
+En el ejemplo de la papaya, $\mathcal{D}_x$ determina la probabilidad de encontrar una papaya cuyo color y dureza se encuentren en algún dominio de valores de color-dureza, y la probabilidad condicional es la probabilidad de que una papaya con color y dureza representados por $x$ sea sabrosa. De hecho, tal modelado permite que dos papayas que comparten el mismo color y dureza pertenezcan a diferentes categorías de sabor.
+
+\subsubsection{El error empírico y el verdadero revisado}
+Para una distribución de probabilidad, $\mathcal{D}$, sobre $\mathcal{X} \times \mathcal{Y}$, se puede medir la probabilidad de que h cometa un error cuando los puntos etiquetados se extraen aleatoriamente de acuerdo con D. Redefinimos el error (o riesgo) verdadero de una regla de predicción $h$ como:
+\begin{equation}
+    L_{\mathcal{D}}(h) = \mathbb{P}_{(x,y)\sim \mathcal{D}}\left[h(x)\neq y\right]=\mathcal{D}\left(\left\{\left(x,y\right):h(x)\neq y\right\}\right).
+\end{equation}
+
+Nos gustaría minimizar este error, pero no conocemos los datos que generan $\mathcal{D}$. Pero si tenemos conocimiento de los datos de entrenamiento, $S$. De donde la definición de riesgo empírico sigue siendo:
+$$L_S(h) = \dfrac{|\left\{i\in [m]:h(x_i)\neq y_i\right\}|}{m}.$$
+Dado $S$, podemos calcular $L_S(h)$, para cualquier función $h: \mathcal{X} \to \left\{0,1\right\}$. Tenga en cuenta que $L_S(h)=L_{\mathcal{D} (uniforme\; sobre\; S)}(h)$.
+
+\subsubsection{El objetivo}
+El objetivo es encontrar alguna hipótesis, $h:\mathcal{X}\to \mathcal{Y}$ que probablemente minimice el riesgo real, $L_{\mathcal{D}}(h)$. 
+
+\subsubsection{El predictor óptimo de Bayes} 
+Dada cualquier distribución de probabilidad $\mathcal{D}$ sobre $\mathcal{X} \times \left\{0,1\right\}$, la mejor función de predicción de etiquetas de $\mathcal{X}$ a $\left\{0,1\right\}$ será:
+$$
+f_{\mathcal{D}(x)} = \left\{
+    \begin{array}{rcl}
+	1 & si & \mathbb{P}[y=1 | x] \geq 1/2\\
+	0 && \text{en \;otro \;caso}
+    \end{array}
+\right.
+$$
+
+\begin{teo}[El predictor optimo de Bayes] Demostrar que para cada distribución de probabilidad $\mathcal{D}$, el predictor óptimo de Bayes $f_{\mathcal{D}}$ es óptimo, en el sentido de que para cada clasificador $g$  de $\mathcal{X}$ a $\left\{0,1\right\}$, $L_{\mathcal{D}}(f_{\mathcal{D}}) \leq L_{\mathcal{D}}(g)$.
+	Demostración.-\; Sean, 
+$$
+f_{\mathcal{D}(x)} = \left\{
+    \begin{array}{rcl}
+	1 & si & \mathbb{P}[y=1 | x] \geq 1/2\\
+	0 && \text{en \;otro \;caso}
+    \end{array}
+\right.
+$$
+la función de predicción de etiquetas y 
+$$L_S(h) = \dfrac{|\left\{i\in [m]:h(x_i)\neq y_i\right\}|}{m}.$$
+El riesgo verdadero de $f_{\mathcal{D}}$. \\
+
+Consideramos dos casos para cada punto $x$ en el dominio de $\mathcal{X}$:
+\begin{enumerate}[1.]
+    \item Si $\mathbb{P}[y=1 | x] \geq 1/2$, entonces $f_{\mathcal{D}}(x)=1$. Si $g(x)\neq f_{\mathcal{D}}(x)$, entonces $g(x)=0$. Por lo tanto, $g$ comete un error siempre que $y=1$, lo cual ocurre con probabilidad de al menos $1/2$.
+    \item Si $\mathbb{P}[y=1 | x] < 1/2$, entonces $f_{\mathcal{D}}(x)=0$. Si $g(x)\neq f_{\mathcal{D}}(x)$, entonces $g(x)=1$. Por lo tanto, $g$ comete un error siempre que $y=0$, lo cual ocurre con probabilidad mayor a $1/2$.
+\end{enumerate}
+En ambos casos, el clasificador $g$ tiene un riesgo mayor o igual al de $f_{\mathcal{D}}$. Dado que esto es cierto para cada punto $x$, se sigue que el riesgo total de $g$ es al menos tan grande cómo el de $f_{\mathcal{D}}$, lo que muestra que $f_{\mathcal{D}}\leq L_{\mathcal{D}}(g)$.
+\end{teo}
+
+Lo que nos dice el teorema es que ningún clasificador, $g$ tal que $\mathcal{X} \to \left\{0,1\right\}$, tiene un error menor. Desafortunadamente cómo no conocemos $\mathcal{D}$, no podemos calcular $f_{\mathcal{D}}$.\\
+
+Ahora podemos presentar la definición formal de capacidad de aprendizaje PAC agnóstico (más realista). \\
+
+Más adelante requeriremos que el algoritmo de aprendizaje encuentre un predictor cuyo error nos sea mucho mayor que el mejor error posible de un predictor en alguna clase de hipótesis de referencia determinada, por su puesto la fuerza de tal requisito depende de la elección de esa clase de hipótesis.
+
+
+\begin{def.}[Capacidad de aprendizaje PAC agnóstico] Una clase de hipótesis $\mathcal{H}$ es PAC agnóstica, si existe una función $m_\mathcal{H} : (0, 1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: Para cada, $\delta \in (0, 1)$ y para cada distribución $\mathcal{D}$ sobre $\mathcal{X} \times \mathcal{Y}$, cuando se ejecuta el algoritmo de aprendizaje en $m \geq m_\mathcal{H}(\epsilon, \delta)$ i.i.d. ejemplos generados por $\mathcal{D}$, el algoritmo devuelve una hipótesis $h$ tal que, con una probabilidad de al menos $1 - \delta$ (sobre la elección de los $m$ ejemplos de entrenamiento),
+    $$\L_{\mathcal{D}}(h) \leq \min_{h'\in \mathcal{H}} L_{\mathcal{D}}(h') + \epsilon.$$
+\end{def.}
+
+El aprendizaje PAC agnóstico generaliza la definición de aprendizaje PAC, independiente de que si el supuesto de realizable se cumple o no. Según esta generalización podemos declarar éxito si su error no es mucho mayor que el mejor error alcanzable de un predictor de la clase $\mathcal{H}$.
+
+\subsection{El alcance de los problemas de aprendizaje modelados}
+A continuación ampliamos nuestro modelo para que pueda aplicarse a una amplia variedad de tareas de aprendizaje. Consideremos algunos ejemplos de diferentes tareas de aprendizaje.
+
+\begin{itemize}
+    \item Clasificación multiclase.
+    \item Regresión.- La medida de acierto en este caso es diferente. Podemos evaluar la calidad de una función de hipótesis, $h:\mathcal{X}\to \mathcal{Y}$, mediante \textit{la diferencia cuadrática esperada} entre las etiquetas verdaderas y sus valores predichos. Es decir,
+\begin{equation}
+    L_{\mathcal{D}}(h) = \mathbb{E}_{(x,y)\sim \mathcal{D}}\left[(h(x)-y)^2\right].
+\end{equation}
+
+Ahora, generalizamos nuestro formalismo de la medida de éxisto o acierto de la siguiente manera:
+\end{itemize}
+
+\subsubsection{Funciones de pérdida generalizada}
+Dado cualquier conjunto $\mathcal{H}$ (que desempeña el papel de nuestras hipótesis o modelos) y algún dominio $Z$. Sea $\ell$ cualquier función desde $\mathcal{H} \times Z$ hasta el conjunto de números reales no negativo, 
+$$\ell:\mathcal{H}\times Z \to \mathbb{R}^+.$$ 
+A estas funciones las llamamos funciones de pérdida. $Z$ se generaliza para problemas de predicción, dominio de instancias o de etiquetas, etc.\\
+
+Ahora, \textit{definamos la función de riesgo cómo la pérdida esperada de un clasificador}, $h\in \mathcal{H}$, con respecto a una distribución de probabilidad $\mathcal{D}$ sobre $Z$. Es decir,
+\begin{equation}
+    L_{\mathcal{D}}(h) = \mathbb{E}_{z\sim \mathcal{D}}\left[\ell(h, z)\right].
+\end{equation}
+
+Esto es, consideramos la expectativa de pérdida de $h$ sobre los objetos de $z$ elegidos aleatoriamente según $\mathcal{D}$. De manera similar, definimos \textit{el riesgo empírico cómo la pérdida esperada sobre una muestra dada} $S=\left(z_1,\ldots,z_m\right)\in Z^m$. Es decir,
+\begin{equation}
+	L_S(h) = \dfrac{1}{m}\sum_{i=1}^m \ell(h, z_i).
+\end{equation}
+
+Las funciones de pérdida utilizadas en los ejemplos anteriores de tareas de clasificación y regresión son las siguientes:
+
+\begin{itemize}
+    \item \textbf{Pérdida 0-1}: Aquí, nuestra variable aleatoria $z$ abarca el conjunto de pares $\mathcal{X}\times \mathcal{Y}$ y la función de pérdida es:
+	$$
+	\mathit{l}_{0-1} \left(h, (x,y)\right) = \left\{
+	    \begin{array}{rcl}
+		0 & si & h(x)=y\\
+		1 & si & h(x)\neq y
+	    \end{array}
+	\right.
+	$$
+    Esta función de pérdida se utiliza en problemas de clasificación binaria o en multiclase. Cabe señalar que, para una variable aleatoria, $\alpha$ tomando los valores $\left\{0,1\right\}$. $\mathbb{E}_{\alpha\sim \mathcal{D}}[\alpha]=\mathbb{P}_{\alpha\sim \mathcal{D}}[\alpha=1]$. En consecuencia, para la función de pérdida, las definiciones de $L_{\mathcal{D}}(h)$ dadas en la ecuación (3.3) y (3.1) coincidan.
+    \item \textbf{Pérdida cuadrática}: Aquí, nuestra variable aleatoria $z$ abarca el conjunto de pares $\mathcal{X}\times \mathcal{Y}$ y la función de pérdida es:
+	$$\ell\left(h,(x,y)\right) = \left(h(x)-y\right)^2.$$
+    Esta función de pérdida se utiliza en problemas de regresión.
+\end{itemize}
+
+Definimos la capacidad de aprendizaje PAC agnóstico para funciones de pérdida generalizadas.\\
+
+\begin{def.}[Capacidad de aprendizaje de PAC agnóstico para funciones de pérdida general] Una clase de hipótesis $\mathcal{H}$ es aprendible de PAC agnóstico con respecto a un conjunto $Z$ y una función de pérdida $\ell: \mathcal{H}\times  Z \to \mathbb{R}^+$, si existe una función $m_{\mathcal{H}}: (0, 1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: Para cada , $\delta \in (0, 1)$ y para cada distribución $\mathcal{D}$ sobre $Z$, cuando se ejecuta el algoritmo de aprendizaje en $m \geq m_{\mathcal{H}}(\epsilon, \delta)$ ejempleos i.i.d. generados por $\mathcal{D}$, el algoritmo devuelve $h \in \mathcal{H}$ tal que, con una probabilidad de al menos $1 - \delta$ (sobre la elección de los $m$ ejemplos de entrenamiento), 
+    $$L_{\mathcal{D}}(h) \leq \min_{h'\in \mathcal{H}} L_{\mathcal{D}}(h') + \epsilon,$$
+    donde $L_{\mathcal{D}}(h) = \mathbb{E}_{z\sim \mathcal{D}}[\ell(h, z)]$.
+\end{def.}
+
+\paragraph{Nota sobre Medibilidad:}
+
+En la definición mencionada, para cada $h \in \mathcal{H}$, consideramos la función $\ell(h, \cdot) : Z \rightarrow \mathbb{R}^+$ como una variable aleatoria y definimos $L_{\mathcal{D}(h)}$ para ser el valor esperado de esta variable aleatoria. Para eso, necesitamos requerir que la función $\ell(h, \cdot)$ sea medible. Formalmente, asumimos que hay una $\sigma$-álgebra de subconjuntos de $Z$, sobre la cual se define la probabilidad $\mathcal{D}$, y que la preimagen de cada segmento inicial en $\mathbb{R}^+$ está en esta $\sigma$-álgebra. En el caso específico de la clasificación binaria con la pérdida $0-1$, la $\sigma$-álgebra está sobre $\mathcal{X} \times \{0, 1\}$ y nuestra suposición sobre $\ell$ es equivalente a la suposición de que para cada $h$, el conjunto $\{(x, h(x)) : x \in \mathbb{X} \}$ está en la $\sigma$-álgebra.\\
+
+
+La medibilidad garantiza que todas las operaciones que realizamos con variables aleatorias son consistentes con la estructura de probabilidad del espacio subyacente, permitiendo así que se definan y calculen las probabilidades y expectativas de manera adecuada. Esto es crucial en el aprendizaje automático y la clasificación binaria, donde queremos asegurarnos de que las predicciones y evaluaciones de los modelos sean compatibles con la teoría de la probabilidad.
+
+
+\paragraph{NOTA: Explicación detallada de la definición de capacidad de aprendizaje PAC agnóstico para funciones de pérdida generalizadas.}
+Explicaremos la definición de aprendizaje PAC agnóstico con funciones de pérdida generales, detallando cada elemento que aparece en ella.
+
+La Definición 3.4 establece que una clase de hipótesis $\H$ es agnósticamente PAC aprendible con respecto a un conjunto $Z$ y una función de pérdida $\ell : \H \times Z \rightarrow \mathbb{R}_+$ si existen ciertos componentes que cumplen con propiedades específicas:
+
+\begin{enumerate}[1.]
+    \item \textbf{Conjunto \boldmath $Z$}: Es el espacio de todas las posibles instancias o ejemplos sobre los que queremos hacer predicciones. Cada elemento de $Z$ es un dato que puede ser evaluado por las hipótesis en $\H$.
+
+    \item \textbf{Función de pérdida \boldmath$\ell$}: Es una función que toma una hipótesis $h$ y un ejemplo $z$, y devuelve un número real no negativo que representa el "costo" de predecir $z$ usando $h$. La función de pérdida mide qué tan bien la hipótesis se desempeña en el ejemplo dado.
+
+    \item \textbf{Clase de hipótesis \boldmath$\H$}: Es el conjunto de todas las hipótesis que el algoritmo de aprendizaje puede seleccionar. Una hipótesis es una función específica que intenta predecir o clasificar los ejemplos en $Z$.
+
+    \item \textbf{Función \boldmath$m_H$}: Es una función que determina el tamaño mínimo de muestra necesario para aprender de manera efectiva. Depende de dos parámetros, $\epsilon$ y $\delta$, y asigna a estos parámetros un número natural $\N$. La función $m_H(\epsilon, \delta)$ nos dice cuántos ejemplos i.i.d. necesitamos para que el algoritmo de aprendizaje funcione con una confianza y precisión deseadas.
+
+    \item \textbf{Parámetros \boldmath$ \epsilon $ (epsilon) y $ \delta $ (delta)}: Son umbrales que definimos para el aprendizaje. $ \epsilon $ es el margen de error que estamos dispuestos a tolerar en la predicción, y $ \delta $ es la probabilidad máxima de que el algoritmo de aprendizaje exceda este margen de error.
+
+    \item \textbf{Distribución \boldmath$ D $ sobre $ Z $}: Es la distribución de probabilidad según la cual se generan los ejemplos. Representa cómo se espera que los datos se distribuyan en el mundo real.
+
+    \item \textbf{Riesgo esperado \boldmath$ L_D(h)$}: Es el riesgo promedio o esperado de una hipótesis $ h $ cuando se evalúa con la función de pérdida $ \ell $ sobre la distribución $ D $. Se calcula como la expectativa de la función de pérdida $ \ell(h, z) $ para un ejemplo $ z $ tomado de la distribución $ D $.
+\end{enumerate}
+
+
+Imagina que tienes un conjunto de herramientas, que son tus hipótesis en $ \H $. Entre todas ellas, hay una que es la mejor, es decir, la que comete menos errores al predecir o clasificar los datos. Ahora bien, cuando usas un algoritmo de aprendizaje automático, estás tratando de encontrar una herramienta (hipótesis) que sea casi tan buena como la mejor que tienes, pero sin necesidad de probarlas todas.
+
+La definición dice que si eliges suficientes ejemplos (datos) de acuerdo con la función $ m_{\H}(\epsilon, \delta) $, entonces el algoritmo de aprendizaje te dará una hipótesis $ h $ que no será mucho peor que la mejor de tu conjunto. En términos más precisos, el "peor" se cuantifica con $ \epsilon $, que es una pequeña cantidad de error adicional que estás dispuesto a aceptar. Y la "confianza" se refiere a la probabilidad de que esto sea cierto, que queremos que sea muy alta, al menos $ 1 - \delta $.
+
+Por lo tanto, la definición asegura que, con una alta probabilidad, el algoritmo encontrará una hipótesis cuyo rendimiento (en términos de error) no exceda el de la mejor hipótesis por más de un pequeño margen $ \epsilon $, siempre y cuando haya suficientes datos para aprender de ellos. Esto es lo que significa ser agnósticamente PAC aprendible con funciones de pérdida generales. Es una forma de decir que podemos aprender bien, incluso si no podemos ser perfectos.
+

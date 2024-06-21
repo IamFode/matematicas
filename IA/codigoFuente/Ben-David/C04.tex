@@ -1,0 +1,194 @@
+\chapter{Aprendizaje a través de la convergencia uniforme}
+En este capítulo desarrollaremos una herramienta general, la convergencia uniforme, y la aplicaremos para demostrar que cualquier clase finita se puede aprender en el modelo PAC agnóstico con funciones de pérdida generales, siempre que la función de pérdida de rango esté acotada.
+
+\section{La convergencia uniforme es suficiente para la capacidad de aprendizaje}
+La idea detrás de la condición de aprendizaje analizada en este capítulo es muy simple. Recuerde que, dada una clase de hipótesis, $\H$, el paradigma de aprendizaje ERM funciona de la siguiente manera: al recibir una muestra de entrenamiento, $S$, el alumno evalúa el riesgo (o error) de cada $h$ en $\H$ en la muestra dada y genera un miembro de $\H$ que minimiza este riesgo empírico. La esperanza es que una $h$ que minimiza el riesgo empírico con respecto a $S$ sea un minimizador de riesgo (o tenga un riesgo cercano al mínimo) con respecto a la distribución de probabilidad de los datos verdaderos también. Para ello, basta con asegurar que los riesgos empíricos de todos los miembros de $\H$ sean buenas aproximaciones de su riesgo real. Dicho de otra manera, necesitamos que, de manera uniforme, en todas las hipótesis de la clase de hipótesis, el riesgo empírico sea cercano al riesgo verdadero, como se formaliza a continuación.
+
+\begin{def.}[$\epsilon$-muestras representativas] Un conjunto de entrenamiento $S$ se llama $\epsilon$-representativo (con respecto a el dominio $Z$, la clase de hipótesis $\H$, la función de pérdida $\ell$ y la distribución $\D$) si
+    $$\forall h \in \H, |L_S(h) - L_D(h)| \leq \epsilon.$$
+\end{def.}
+
+El siguiente lema simple establece que siempre que la muestra sea $(\epsilon/2)$-representativa, se garantiza que la regla de aprendizaje de ERM devolverá una buena hipótesis.
+
+\begin{lema}
+    Supongamos que un conjunto de entrenamiento $S$ es $\frac{\epsilon}{2}$-representativo (con respecto a el dominio $Z$, clase de hipótesis $\H$, función de pérdida $\ell$ y distribución $\D$). Entonces, cualquier salida de ERM$_{\H}(S)$. Es decir, cualquier $h_S \in \text{argmin}_{h\in \H} L_S(h)$, satisface
+    $$L_D(h_S) \leq \min_{h \in \H} L_D(h) + \epsilon.$$
+    Demostración.-\; Para cada $h \in \H$, 
+    $$L_D(h_S) \leq L_S(h_S) + \frac{\epsilon}{2} \leq L_S(h)+\frac{\epsilon}{2} \leq L_D(h) + \frac{\epsilon}{2} + \frac{\epsilon}{2} = L_D(h) + \epsilon.$$
+    Donde la primera y tercera desigualdad se deben al supuesto de que $S$ es $\frac{\epsilon}{2}$-representativo (Definición 4.1) y la segunda desigualdad se cumple ya que $h_S$ es un predictor del ERM.
+\end{lema}
+
+El lema anterior implica que para garantizar que la regla ERM sea un aprendizaje PAC agnóstico, basta con demostrar que con una probabilidad de al menos $1 -\delta$ sobre la elección aleatoria de un conjunto de entrenamiento, será un conjunto de entrenamiento representativo. La condición de convergencia uniforme formaliza este requisito.
+
+\begin{def.}[Convergencia uniforme] Decimos que una clase de hipótesis $\H$ tiene la propiedad de convergencia uniforme (con respecto a el dominio de $Z$, y una función de pérdida $\ell$) si existe una función $m_{\H}^{UC}:(0,1)^2 \to\N$ tal que para cada $\delta \in (0,1)$ y para cada distribución de probabilidad $\D$ sobre $Z$, si $S$ es una muestra $m \geq m_{\H}^{UC}(\epsilon,\delta)$ ejemplos i.i.d. según $\D$. Entonces, con una probabilidad de al menos $1-\delta$, $S$ es representativo.
+\end{def.}
+
+La función $m_{\H}^{UC}$ mode la complejidad mínima de la muestra para obtener la propiedad de convergencia uniforme. Es decir, cuántos ejemplos necesitamos para asegurarnos de que con una probabilidad de al menos $1-\delta$ la muestra es $\epsilon$-representativa. El término uniforme aquí se refiere a tener un tamaño de muestra fijo que funcione para todos los miembros de $\H$ y para todas las distribuciones de probabilidad posibles en el dominio. El siguiente corolario se deriva directamente del Lema 4.2 y de la definición de convergencia uniforme.
+
+\begin{cor}
+    Si una clase $\H$ tiene la propiedad de convergencia uniforme con un función $m_{\H}^{UC}$. Entonces, la clase es PAC agnóstico aprendible con la complejidad de muestra $m_{\H}^{UC}(\epsilon/2,\delta)$. Además en ese caso, el paradigma ERM$_{\H}$ es un aprendizaje exitoso de PAC agnóstico para $\H$.
+\end{cor}
+
+\section{Las clases finitas son agnósticas y se pueden aprender en PAC}
+En vista del corolario 4.1, la afirmación de que cada clase de hipótesis finita es agnóstica y se puede aprender en PAC se seguirá una vez que establezcamos que la convergencia uniforme es válida para una clase de hipótesis finita. \\
+
+Para demostrar que se cumple la convergencia uniforme, seguimos un argumento de dos pasos, similar a la derivación del Capítulo 2. El primer paso aplica la cota de unión mientras que el segundo emplea una medida de desigualdad de concentración. Ahora explicamos estos dos pasos en detalle. Arreglar algunos, $\delta$. Necesitamos encontrar un tamaño de muestra $m$ que garantice que para cualquier $\D$, con una probabilidad de al menos $1 -\delta$ de la elección de $S = (z_1, \ldots , z_m)$ i.d.d. muestreados de $\D$, tenemos que para todo $h\in \H$, $|L_S(h) - L_D(h)| \leq \epsilon$. Esto es,
+$$D^m\left(\left\{S:\forall h \in \H, |L_S(h)-L_D(h)|\leq \epsilon\right\}\right)\geq 1-\delta.$$
+Equivalentemente, necesitamos mostrar que
+$$D^m\left(\left\{S:\exists h \in \H, |L_S(h)-L_D(h)| > \epsilon\right\}\right) < \delta.$$
+Esto es,
+$$\left\{S: \exists h\in \H, |L_S(h)-L_D(h)| > \epsilon\right\} = \bigcup_{h\in \H}\left\{S: |L_S(h)-L_D(h)| > \epsilon\right\}.$$
+Y aplicando la cota de unión (Lema 2.1), obtenemos
+\begin{equation}
+    D^m\left(S:\exists h \in \H, |L_S(h)-L_D(h)| > \epsilon\right) \leq \sum_{h\in \H}D^m\left(S:|L_S(h)-L_D(h)| > \epsilon\right).
+\end{equation}
+Nuestro segundo paso será argumentar que cada suma del lado derecho de esta desigualdad es lo suficientemente pequeña (para una m suficientemente grande). Es decir, mostraremos que para cualquier hipótesis fija, $h$, (que se elige de antemano antes del muestreo del conjunto de entrenamiento), la brecha entre los riesgos verdaderos y empíricos, $|L_S(h) - L_D(h)|$, es probable que sea pequeño.
+
+Recuerde que $L_D(h) = \E_{z\sim D}[\ell(h, z)]$ y que $L_S(h) = \frac{1}{m} \sum_{i=1}^m \ell(h, z_i)$. Dado que cada $z_i$ se muestrea i.i.d. de $D$, el valor esperado de la variable aleatoria `$(h, z_i)$ es $L_D(h)$. Por la linealidad de la expectativa, se deduce que $L_D(h)$ es también el valor esperado de $L_S(h)$. Por tanto, la cantidad $|L_D(h)-L_S(h)|$ es la desviación de la variable aleatoria $L_S(h)$ de su expectativa. Por lo tanto, necesitamos demostrar que la medida de $L_S(h)$ se concentra alrededor de su valor esperado. Un hecho estadístico básico, la ley de los grandes números, establece que cuando $m$ llega al infinito, los promedios empíricos convergen a su verdadera expectativa. Esto es cierto para $L_S(h)$, ya que es el promedio empírico de variables aleatorias $m$ i.i.d. Sin embargo, dado que la ley de los grandes números es sólo un resultado asintótico, no proporciona información sobre la brecha entre el error estimado empíricamente y su valor verdadero para cualquier tamaño de muestra finito dado. En su lugar, utilizaremos una medida de desigualdad de concentración debida a Hoeffding, que cuantifica la brecha entre los promedios empíricos y su valor esperado.\\
+
+\paragraph{Nota: Explicación de clase finita agnósticamente PAC aprendible}
+Para comprender la afirmación de que cada clase de hipótesis finita es agnósticamente PAC aprendible, necesitamos establecer que la convergencia uniforme se mantiene para una clase de hipótesis finita. Esto se hace siguiendo un argumento de dos pasos que involucra la aplicación de la cota de unión y el uso de una desigualdad de concentración de medida.\\
+
+Comenzamos fijando dos valores, $ \epsilon $ y $ \delta $. Estos valores representan, respectivamente, el margen de error que estamos dispuestos a tolerar y la probabilidad máxima de que este margen sea superado. Nuestro objetivo es encontrar un tamaño de muestra $ m $ que garantice que, para cualquier distribución $ D $, con una probabilidad de al menos $ 1 - \delta $, el conjunto de muestras $S = (z_1, ..., z_m) $ tomadas de manera i.i.d. de $D$ cumpla que para todas las hipótesis $ h$ en nuestra clase de hipótesis $ \H$, la diferencia entre el riesgo empírico $ L_S(h) $ y el riesgo verdadero $ L_D(h) $ sea menor o igual a $ \epsilon $.
+
+Matemáticamente, queremos que:
+$$
+D^m(\{S : \forall h \in H, |L_S(h) - L_D(h)| \leq \epsilon\}) \geq 1 - \delta.
+$$
+
+De manera equivalente, necesitamos demostrar que la probabilidad de que la diferencia entre el riesgo empírico y el verdadero sea mayor que $\epsilon$ para alguna hipótesis $h $ es menor que $ \delta $:
+$$
+D^m(\{S : \exists h \in H, |L_S(h) - L_D(h)| > \epsilon\}) < \delta.
+$$
+
+Para abordar esta probabilidad sobre todas las hipótesis posibles, aplicamos la cota de unión, que nos permite sumar las probabilidades individuales de eventos para cada hipótesis. Esto se representa como la unión de todos los conjuntos de muestras para los cuales la diferencia de riesgo es mayor que $\epsilon$ para alguna hipótesis:
+$$
+\{S : \exists h \in H, |L_S(h) - L_D(h)| > \epsilon\} = \bigcup_{h \in H} \{S : |L_S(h) - L_D(h)| > \epsilon\},
+$$
+y aplicando la cota de unión obtenemos:
+$$
+D^m(\{S : \exists h \in H, |L_S(h) - L_D(h)| > \epsilon\}) \leq \sum_{h \in H} D^m(\{S : |L_S(h) - L_D(h)| > \epsilon\}).
+$$
+
+El segundo paso es argumentar que cada sumando del lado derecho de esta desigualdad es lo suficientemente pequeño para un $m$ suficientemente grande. Esto significa que para cualquier hipótesis fija $h$, la diferencia entre el riesgo verdadero y el empírico, $|L_S(h) - L_D(h)|$, probablemente será pequeña.\\
+
+Recordamos que el riesgo verdadero $ L_D(h) $ es el valor esperado de la pérdida sobre la distribución $ D $, y el riesgo empírico $ L_S(h) $ es el promedio de la pérdida sobre las muestras. Dado que cada muestra $ z_i $ se toma i.i.d. de $D$, el valor esperado de la pérdida para una muestra individual es igual al riesgo verdadero. Por lo tanto, la cantidad $|L_D(h) - L_S(h)|$ es la desviación de la variable aleatoria $L_S(h)$ de su expectativa.\\
+
+Para demostrar que la medida de $ L_S(h) $ está concentrada alrededor de su valor esperado, utilizamos la desigualdad de Hoeffding, que cuantifica la brecha entre los promedios empíricos y su valor esperado. Aunque la ley de los grandes números nos dice que los promedios empíricos convergen a su verdadera expectativa cuando el número de muestras tiende a infinito, la desigualdad de Hoeffding nos proporciona una garantía cuantitativa para tamaños de muestra finitos.\\
+
+En resumen, estos dos pasos demuestran que para clases de hipótesis finitas, podemos garantizar que con una muestra suficientemente grande, la diferencia entre el riesgo empírico y el verdadero será pequeña con alta probabilidad, lo que satisface la condición de convergencia uniforme y, por lo tanto, la clase de hipótesis es agnósticamente PAC aprendible. Esto es fundamental para la teoría del aprendizaje automático, ya que proporciona una base para comprender y confiar en los algoritmos de aprendizaje automático que se utilizan en la práctica.\\
+
+
+Para entender la desigualdad de Hoeffding, comencemos con una desigualdad que se llama la desigualdad de Markov. Sea $Z$ una variable aleatoria no negativa. La esperanza de $Z$ se puede escribir de la siguiente manera:
+$$
+E[Z] = \int_{0}^{\infty} P[Z \geq x] \, dx \quad (B.1)
+$$
+Dado que $$ P[Z \geq x] $$ es monótonamente no creciente, obtenemos
+$$
+\forall a \geq 0, \, E[Z] \geq \int_{0}^{a} P[Z \geq x] \, dx \geq \int_{0}^{a} P[Z \geq a] \, dx = a P[Z \geq a]. \quad (B.2)
+$$
+Reorganizando la desigualdad obtenemos la desigualdad de Markov:
+$$
+\forall a \geq 0, \, P[Z \geq a] \leq \frac{E[Z]}{a} \quad (B.3)
+$$
+Para variables aleatorias que toman valores en $[0, 1]$, podemos derivar de la desigualdad de Markov lo siguiente.
+
+\begin{teo}
+Sea $Z$ una variable aleatoria que toma valores en $[0, 1]$. Supongamos que
+$ E[Z] = \mu $. Entonces, para cualquier $ a \in (0, 1) $,
+$$
+P[Z > 1 - a] \geq \frac{\mu - (1 - a)}{a}
+$$
+Esto también implica que para cada $ a \in (0, 1) $,
+$$
+P[Z > a] \geq \frac{\mu - a}{1 - a} \geq \mu - a.
+$$
+
+Demostración.-\; Sea $$ Y = 1 - Z.$$ Entonces, $Y$ es una variable aleatoria no negativa con 
+$$ E[Y] = 1 - E[Z] = 1 - \mu. $$ 
+Aplicando la desigualdad de Markov en $ Y $ obtenemos
+$$
+P[Z \leq 1 - a] = P[1 - Z \geq a] = P[Y \geq a] \leq \frac{E[Y]}{a} = \frac{1 - \mu}{a}
+$$
+Por lo tanto,
+$$
+P[Z > 1 - a] \geq 1 - \frac{1 - \mu}{a} = \frac{a + \mu - 1}{a}
+$$
+\end{teo}
+
+\begin{teo}[Teorema de Hoeffding]
+Sea $ X $ una variable aleatoria que toma valores en el intervalo $ [a, b] $ y tal que $ E[X] = 0 $. Entonces, para todo $ \lambda > 0 $,
+$$
+E[e^{\lambda X}] \leq e^{\frac{\lambda^2 (b-a)^2}{8}}.
+$$
+Demostración.-\; Dado que $ f(x) = e^{\lambda x} $ es una función convexa, tenemos que para todo $ \alpha \in (0, 1) $, y $ x \in [a, b] $,
+$$
+f(x) \leq \alpha f(a) + (1 - \alpha) f(b).
+$$
+Estableciendo $ \alpha = \frac{b-x}{b-a} \in [0, 1] $ obtenemos
+$$
+e^{\lambda x} \leq \frac{b - x}{b - a} e^{\lambda a} + \frac{x - a}{b - a} e^{\lambda b}.
+$$
+Tomando la esperanza, obtenemos que
+$$
+E[e^{\lambda X}] \leq \frac{b - E[X]}{b - a} e^{\lambda a} + \frac{E[x] - a}{b - a} e^{\lambda b} = \frac{b}{b - a} e^{\lambda a} - \frac{a}{b - a} e^{\lambda b},
+$$
+donde usamos el hecho de que $ E[X] = 0 $. Denotemos $ h = \lambda (b - a) $, $ p = \frac{-a}{b-a} $, y
+$$
+L(h) = -hp + \log(1 - p + pe^{h}).
+$$
+Entonces, la expresión en el lado derecho de lo anterior se puede reescribir como $ e^{L(h)} $. Por lo tanto, para concluir nuestra prueba basta con mostrar que $ L(h) \leq \frac{h^2}{8} $. Esto se sigue del teorema de Taylor utilizando los hechos:
+$$
+L(0) = L'(0) = 0 \quad \text{y} \quad L''(h) \leq \frac{1}{4} \quad \text{para todo} \quad h.
+$$
+\end{teo}
+
+\begin{lema}[Desigualdad de Hoeffding]
+    Sea $\theta_1,\ldots, \theta_m$ una secuencia de variables eleatorias i.i.d. y suponiendo que para todo $i, \E[\theta_i]=\mu$ y $\P[a\leq \theta_i\leq b] = 1$. Entonces, para cualquier $\epsilon > 0$,
+    $$\P\left[\left|\frac{1}{m}\sum_{i=1}^m \theta_i - \mu\right| > \epsilon\right] \leq 2 e^{-\frac{2m\epsilon^2}{(b-a)^2}}.$$
+    Demostración.-\: Denotemos a $X_i=Z_i-\E[Z_i]$, y $\overline{X}=\frac{1}{n} \sum_i X_i$. Usando la monotocidad de la función exponente y la desigualdad de Markov, se tiene que para cada $\lambda > 0$ y $\epsilon>0$,
+    $$\P\left[\overline{X}\geq \epsilon\right] = \P\left[e^{\lambda \overline{X}}\geq e^{\lambda \epsilon}\right] \leq e^{-\lambda \epsilon} \E[e^{\lambda \overline{X}}].$$
+    Usando el supuesto de independencia también tenemos
+    $$\E[e^{\lambda \overline{X}}] = \E\left[\prod_i e^{\lambda X_i/m}\right] = \prod_i \E[e^{\lambda X_i/m}].$$
+    Según el teorema de Hoeffding , por cada $i$ tenemos
+    $$\E[e^{\lambda X_i/m}] \leq e^{\frac{\lambda^2(b-a)^2}{8m^2}}.$$
+    Por lo tanto,
+    $$\P\left[\overline{X}\geq \epsilon\right] \leq e^{-\lambda \epsilon} \prod_i e^{\frac{\lambda^2(b-a)^2}{8m^2}} = e^{-\lambda \epsilon + \frac{\lambda^2(b-a)^2}{8m^2}}.$$
+    Haciendo $\lambda = 4m\epsilon/(b-a)^2$ se obtiene
+    $$\P\left[\overline{X}\geq \epsilon\right] \leq e^{\frac{-2m\epsilon^2}{(b-a)^2}}.$$
+    Aplicando los mismos argumentos a la variable $-\overline{X}$ obtenemos que $\P[\overline{X}\leq -\epsilon] \leq e^{-\frac{2ms^2}{(b-a)^2}}$. El teorema se sigue aplicando la unión ligada en los dos casos.
+\end{lema}
+
+
+Volviendo a nuestro problema, sea $ \theta_i $ la variable aleatoria $(h, z_i)$. Dado que $ h $ es fijo y $ z_1, \ldots, z_m $ son muestreados de manera i.i.d., se sigue que $ \theta_1, \ldots, \theta_m $ también son variables aleatorias i.i.d. Además, $LS(h) = \frac{1}{m} \sum_{i=1}^{m} \theta_i$ y $LD(h) = \mu$. Supongamos además que el rango de $\ell$ es $[0, 1]$ y por lo tanto $\theta_i \in [0, 1]$. Por lo tanto, obtenemos que
+\begin{equation}
+\mathbb{D}_m(\{S : |LS(h) - LD(h)| > \epsilon\}) = \mathbb{P}\left(\left|\frac{1}{m} \sum_{i=1}^{m} \theta_i - \mu\right| > \epsilon\right) \leq 2 \exp\left(-2 m \epsilon^2\right).
+\end{equation}
+Combinando esto con la Ecuación (4.1) se obtiene
+$$
+\mathbb{D}_m(\{S : \exists h \in H, |LS(h) - LD(h)| > \epsilon\}) \leq \sum_{h \in H} 2 \exp\left(-2 m \epsilon^2\right) = 2 |H| \exp\left(-2 m \epsilon^2\right).
+$$
+Finalmente, si elegimos
+$$
+m \geq \frac{\log(2|H|/\delta)}{2\epsilon^2}
+$$
+entonces
+$$
+\mathbb{D}_m(\{S : \exists h \in H, |LS(h) - LD(h)| > \epsilon\}) \leq \delta.
+$$
+
+\begin{cor}
+Sea $ \H $ una clase de hipótesis finita, sea $Z$ un dominio, y sea $\ell: \H \times Z \rightarrow [0, 1] $ una función de pérdida. Entonces, $ \H $ disfruta de la propiedad de convergencia uniforme con complejidad de muestra
+$$
+m_{UC}^H (\epsilon, \delta) \leq \left\lceil \frac{\log(2|H|/\delta)}{2\epsilon^2} \right\rceil.
+$$
+Además, la clase es agnósticamente PAC aprendible usando el algoritmo ERM con complejidad de muestra
+$$
+m^H(\epsilon, \delta) \leq m_{UC}^H (\epsilon/2, \delta) \leq \left\lceil \frac{2 \log(2|H|/\delta)}{\epsilon^2} \right\rceil.
+$$
+\end{cor}
+
+\paragraph{NOTA: El "Truco de Discretización"} Mientras que el corolario precedente solo se aplica a clases de hipótesis finitas, hay un truco simple que nos permite obtener una muy buena estimación de la complejidad de muestra práctica de clases de hipótesis infinitas. Considere una clase de hipótesis que está parametrizada por $ d $ parámetros. Por ejemplo, sea $ X = \R$, $ Y = \{\pm 1\}$, y la clase de hipótesis, $ \H $, sea todas las funciones de la forma $$ h_\theta(x) = \text{sign}(x - \theta) $$. Es decir, cada hipótesis está parametrizada por un parámetro, $\theta \in \R $, y la hipótesis da como resultado $1$ para todas las instancias mayores que $ \theta $ y da como resultado $ -1 $ para instancias menores que $ \theta $. Esta es una clase de hipótesis de tamaño infinito. Sin embargo, si vamos a aprender esta clase de hipótesis en la práctica, usando una computadora, probablemente mantendremos números reales usando la representación de punto flotante, digamos, de $64$ bits. Se sigue que en la práctica, nuestra clase de hipótesis está parametrizada por el conjunto de escalares que pueden ser representados usando un número de punto flotante de $64$ bits. Hay a lo sumo $ 2^{64} $ tales números; por lo tanto, el tamaño real de nuestra clase de hipótesis es a lo sumo $ 2^{64} $. Más generalmente, si nuestra clase de hipótesis está parametrizada por $ d $ números, en la práctica aprendemos una clase de hipótesis de tamaño a lo sumo $ 2^{64d} $. Aplicando el Corolario 4.2 obtenemos que la complejidad de muestra de $s$ clases está acotada por 
+$$ \frac{128d + 2 \log(2/\delta)}{\epsilon^2}. $$ 
+Este límite superior en la complejidad de muestra tiene la deficiencia de depender de la representación específica de números reales utilizada por nuestra máquina. En el Capítulo 6 introduciremos una manera rigurosa de analizar la complejidad de muestra de clases de hipótesis de tamaño infinito. No obstante, el truco de discretización puede ser utilizado para obtener una estimación aproximada de la complejidad de muestra en muchas situaciones prácticas.
+

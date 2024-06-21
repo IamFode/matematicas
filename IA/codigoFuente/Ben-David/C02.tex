@@ -1,0 +1,166 @@
+\chapter{Un comienzo tranquilo}
+
+\section{El marco de aprendizaje estadístico}
+
+\begin{itemize}
+    \item \textbf{Conjunto de dominio:} Los puntos del dominio son \textit{instancias} y a $\mathcal{X}$ cómo \textit{espacios de instancias}.
+    \item \textbf{Conjunto de etiquetas:} Sea $\mathcal{Y}$ el conjunto de etiquetas, donde $\left\{0,1\right\}.$
+    \item \textbf{Datos de entrenamiento:} Sea $\mathcal{X}\times \mathcal{Y},$ una secuencia finita de pares, se llama un conjunto de entrenamiento a
+	$$S=\left((x_1,y_1),\ldots,(x_m,y_m)\right).$$
+    \item \textbf{Salida del aprendizaje:} Sea $h:\mathcal{X}\to \mathcal{Y}$ un predictor, hipótesis o clasificador. Se utiliza para predecir nuevos puntos del dominio. $A(S)$ se denota cómo el predictor de que un algoritmo de aprendizaje, $A$, regresa al recibir la secuencia de entrenamiento $S$.
+    \item \textbf{Modelo simple de generación de datos:} Denotamos a $\mathcal{D}$ la probabilidad sobre $\mathcal{X}$. Luego, tenemos 
+	$$f:\mathcal{X}\to \mathcal{Y}$$ 
+	una función de etiquetas \textit{correctas}. \\
+	En resumen, cada par en los datos de entrenamiento $S$ se genera muestreando primero un punto $x_i$ de acuerdo con $\mathcal{D}$ y luego etiquetándolo con $f$.
+    \item \textbf{Medidas de éxito:} Definimos el error de un clasificador o predictor cómo la probabilidad de que no prediga la etiqueta correcta en un punto. Es decir, el error de $h$ es la probabilidad de extraer una instancia aleatoria $x$, según la distribución $\mathcal{D}$, tal que $h(x)$ no sea igual a $f(x)$.\\
+	formalmente, dado un subconjunto del dominio $A\subset \mathcal{X}$, la distribución de probabilidad, $\mathcal{D}$, asigna un número, $\mathcal{D}(A)$, que determina la probabilidad de observar un punto $x\in A$. $A$ nos referimos a un evento y lo expresamos con la función $\pi: \mathcal{X}\to \left\{0,1\right\}$. Es decir, 
+	$$A=\left\{x\in \mathcal{X}: \pi(x)=1\right\}.$$
+	También podemos utilizar la notación:
+	$$\mathbb{P}_{x\sim\mathcal{D}} \left[\pi(x)\right],$$
+	para expresar $\mathcal{D}(A).$\\
+
+	Definimos el error de una regla de predicción, $h:\mathcal{X}\to \mathcal{Y}$, como
+	\begin{equation}
+	    L_{\mathcal{D}.f}(h) = \mathbb{P}_{x\sim \mathcal{D}} \left[h(x)\neq f(x)\right] = \mathcal{D}\left(\left\{x:h(x)\neq f(x)\right\}\right).
+	\end{equation}
+	\begin{itemize}
+	    \item $(\mathcal{D},f)$ indica que el error se mide con respecto a la distribución de probabilidad $\mathcal{D}$ y la función de etiquetado correcta $f$.
+	    \item $L_{(\mathcal{D},f)}(h)$ es el error de generalización, riesgo o error verdadero de $h$. $L$ es el error que consideramos cómo la pérdida del aprendizaje. 
+	\end{itemize}
+\end{itemize}
+
+\section{Minimización empírica del riesgo}
+
+Una noción útil de error que el aprendizaje puede calcular es el error de entrenamiento, dado por:
+\begin{equation}
+    L_S(h) = \dfrac{|\left\{i\in [m]: h(x_i)\neq y_i\right\}|}{m}
+\end{equation}
+donde $[m]= \left\{1,\ldots,m\right\}.$
+Este paradigma de aprendizaje (proponer un predictor $h$ que minimice $L_S(h)$) se denomina \textit{Minimización Empírica del Riesgo o ERM}, para abreviar.
+
+\subsection{Sobreajuste}
+El sobre ajuste se produce cuando encontramos un predictor cuyo desempeño en el conjunto de entrenamiento es excelente, pero en el mundo real es muy pobre. \\
+
+Se tiene un cuadrado $C$ con área $2$ que contiene varias instancias. Dentro de $C$ existe otro cuadrado con área $1$. Consideremos el siguiente predictor:
+\begin{equation}
+    h_S(x) = \left\{\begin{array}{rcl}
+	y_i & \text{si} & \exists i \in [m]\; x_i=x\\\\
+	0 & & \text{En otro caso}
+    \end{array}\right.
+\end{equation}
+
+Si, utilizamos un algoritmo ERM, se tiene que ningún clasificador puede tener un error menor a $L_S(h_S)=0$. Por otro lado, el error verdadero de cualquier clasificador que predice la etiqueta $1$, sólo en un número finito de instancias es, en este caso $1/2$, de donde $L_{\mathcal{D}}(h_S)=1/2$.\\
+
+El sobreajuste del emparejamiento polinomial: El objetivo de este ejercicio es mostrar que puede describirse como un polinomio con umbral. Es decir, demostrar que dado un conjunto de entrenamiento $S = \left\{(x_i, f(x_i))\right\}^{m}_{i=1}  \subseteq (\mathbb{R}^d \times \left\{0, 1\right\})^m$, existe un polinomio $p_S$ tal que $h_S(x) = 1$ si y sólo si $p_S(x) \geq 0$, donde $h_S$ es como se define en la Ecuación (2.3). De ello se deduce que aprender la clase de todos los polinomios con umbral utilizando la regla ERM puede conducir a un sobreajuste.
+
+\section{Minimización empírica del riesgo con sesgo inductivo}
+
+Acabamos de ver que ERM podría conducir a un sobreajuste. En lugar de renunciar al paradigma de ERM, buscaremos condiciones bajo las cuales exista una garantía de no sobreajuste. Es decir, condiciones bajo las cuales el predictor de ERM tiene un buen desempeño con respecto a los datos de entrenamiento.\\
+
+Formalmente se debe elegir a priori un conjunto de predictores. Este conjunto se llama clase de hipótesis y se denota por $\mathcal{H}$. Cada $h\in \mathcal{H}$ es una función que se asigna de $\mathcal{X}$ a $\mathcal{Y}$. Para una clase $\mathcal{H}$ dada y una muestra de entrenamiento, $S$, el $\text{ERM}_{\mathcal{H}}$, usa la regla ERM para elegir un predictor, $h\in \mathcal{H}$. Con el menor error posible sobre $S$. Formalmente:
+$$\text{ERM}_{\mathcal{H}}(S) \in \text{argmin}_{h\in \mathcal{H}} L_S(h),$$
+
+donde armin representa el conjunto de hipótesis en $H$ que alcanzan el valor mínimo de $L_S(h)$ sobre $\mathcal{H}$. Al restringir a elegir un predictor de $\mathcal{H}$, lo sesgamos hacia un conjunto particular de predictores. Esta restricción suelen denominarse \textit{sesgo inductivo}, dado que la elección de dicha restricción se determina antes de que el alumno vea los datos de entrenamiento, idealmente debería basarse en algún conocimiento previo sobre el problema que se va a aprender.\\
+
+Elegir una clase de hipótesis más restringida nos protege mejor contra el sobreajuste, pero al mismo tiempo podría causarnos un sesgo inductivo más fuerte.
+
+
+\subsection{Clases de hipótesis finitas}
+El tipo de restricción más simple a una clase es imponer un límite superior a su Tamaño al número de predictores $h$ en $\mathcal{H}$. Demostraremos que si $\mathcal{H}$ es una clase finita, entonces ERM$_\mathcal{H}$ no se sobreajustará, siempre que se base en una muestra de entrenamiento suficientemente grande, que dependerá del Tamaño de $\mathcal{H}$.\\
+
+Analicemos el desempeño de la regla de aprendizaje ERM$_\mathcal{H}$ suponiendo que $\mathcal{H}$ es una clase finita. Para una muestra de entrenamiento, $S$, etiquetada de acuerdo con alguna $f:\mathcal{X}\to \mathcal{Y}$, sea $h_S$ el resultado de aplicar ERM$_\mathcal{H}$ a $S$. Es decir,
+\begin{equation}
+    h_S \in \text{argmin}_{h\in \mathcal{H}} L_S(h).
+\end{equation}
+
+% ---------------------- Definición 2.1 --------------------------------
+\begin{def.}[El supuesto de realizabilidad] Existe $h^*\in \mathcal{H}$ tal que $L_{\mathcal{D},f}(h^*) = 0$. Este supuesto implica que con probabilidad $1$ sobre muestras aleatorias, $S$, donde las instancias de $S$ se muestrean de acuerdo a $\mathcal{D}$ y están etiquetadas por $f$, tenemos $L_S(h^*)=0$. En otras palabras, significa que hay una función perfecta que puede predecir sin errores todos los ejemplos en la distribución de los datos.
+\end{def.}
+
+La suposición más común en ML estadístico es que la muestra de entrenamiento $S$ se genera mediante puntos de muestreo de la distribución $\mathcal{D}$ independientemente unos de otros. Formalmente:\\
+
+El \textit{i.i.d. Supuesto:} Cada $x_i$ en $S$ se muestrea recientemente de acuerdo con $\mathcal{D}$ y luego se etiqueta de acuerdo con la función de etiquetado, $f$. Denotamos esta suposición como $S \sim \mathcal{D}^m$ donde $m$ es el tamaño de $S$, y $\mathcal{D}^m$ denota la probabilidad sobre m-tuplas inducida al aplicar $\mathcal{D}$ para seleccionar cada elemento de la tupla independientemente de los otros miembros de la tupla. Intuitivamente, el conjunto de entrenamiento $S$ es una ventana a través de la cual se obtiene información parcial sobre la distribución $\mathcal{D}$ en el mundo y la función de etiquetado, $f$. Cuanto más grande sea la muestra, más probable será que refleje con mayor precisión la distribución y el etiquetado utilizados para generarla.\\
+
+
+
+En el marco de aprendizaje estadístico, la selección aleatoria del conjunto de entrenamiento $S$ introduce una variabilidad en la elección del predictor $h_S$ y, por ende, en el riesgo empírico $L_{\mathcal{D},f}(h_S)$. Este riesgo empírico es una medida de qué tan bien el predictor seleccionado se ajusta a los datos de entrenamiento. Sin embargo, debido a la aleatoriedad en la selección de $S$, existe la posibilidad de que este conjunto no sea representativo de la distribución de datos subyacente $\mathcal{D}$. Para cuantificar esta incertidumbre, introducimos la probabilidad $\delta$ de obtener una muestra no representativa, y su complemento $(1-\delta)$, que representa el nivel de confianza en nuestra predicción.\\
+
+El *parámetro de precisión* $\epsilon$ es crucial para evaluar la calidad del aprendizaje. Si el riesgo verdadero $L_{(\mathcal{D},f)}(h_S)$ excede $\epsilon$, interpretamos que el aprendizaje ha fallado, ya que el predictor no es suficientemente preciso. En contraste, si $L_{(\mathcal{D},f)}(h_S) \leq \epsilon$, consideramos que el predictor es aproximadamente correcto.
+
+El objetivo es limitar la probabilidad de seleccionar muestras de entrenamiento que conduzcan a un predictor con un riesgo excesivo. Formalmente, buscamos un límite superior para la probabilidad:
+
+$$
+\mathcal{D}^m \left(\left\{S|_x: L_{(\mathcal{D},f)}(h_S) > \epsilon\right\}\right).
+$$
+
+El conjunto $\mathcal{H}_B$ contiene las hipótesis 'malas', aquellas cuyo riesgo supera $\epsilon$. Estas son las hipótesis que deseamos evitar, ya que no cumplen con nuestro criterio de precisión.
+
+El conjunto $M$ se define como las muestras engañosas, donde para cada $S|_x \in M$, existe al menos una hipótesis mala en $\mathcal{H}_B=\left\{h\in \mathcal{H}: L_{(\mathcal{D},f)}(h)>\epsilon\right\}$ que parece buena en $S|_x$, es decir, tiene un riesgo empírico de cero:
+
+$$
+M = \left\{S|_x : \exists h \in \mathcal{H}_B, L_{S}(h) = 0\right\}.
+$$
+
+Bajo el supuesto de realizabilidad, que asume que $L_S(h_S) = 0$ para la hipótesis seleccionada por el algoritmo, el evento $L_{(\mathcal{D},f)}(h_S) > \epsilon$ solo puede ocurrir si $S|_x$ pertenece a $M$. Esto significa que:
+
+$$
+\left\{S|_x : L_{(\mathcal{D},f)}(h_S) > \epsilon\right\} \subseteq M.
+$$
+
+Podemos expresar $M$ como la unión de los conjuntos de muestras de entrenamiento que hacen que cualquier hipótesis mala parezca buena:
+
+\begin{equation}
+M = \bigcup_{h \in \mathcal{H}_B}\left\{S|_x : L_S(h) = 0\right\}.
+\end{equation}
+
+Por lo tanto, la probabilidad de que el riesgo del predictor seleccionado sea mayor que $\epsilon$, está acotada por la probabilidad de que la muestra de entrenamiento pertenezca a $M$:
+
+\begin{equation}
+\mathcal{D}^m \left(\left\{S|_x: L_{(\mathcal{D},f)}(h_S) > \epsilon\right\}\right) \leq \mathcal{D}^m(M) = \mathcal{D}^m \left(\bigcup_{h \in \mathcal{H}_B}\left\{S|_x : L_S(h)=0\right\}\right).
+\end{equation}
+
+Esta relación es fundamental para comprender cómo la calidad de los datos de entrenamiento afecta la selección de un predictor y, en última instancia, la generalización del modelo. Si los datos de entrenamiento son de mala calidad, es decir, no representativos o engañosos, aumenta la probabilidad de seleccionar un predictor que no generalice bien, lo que se traduce en un riesgo verdadero que supera el umbral de precisión $\epsilon$. Por lo tanto, es esencial asegurarse de que los datos de entrenamiento sean de alta calidad y representativos de la distribución real de los datos para desarrollar modelos robustos y confiables.
+
+
+Ahora, acotamos superiormente el lado derecho de la Ecuación anterior usando el límite de unión, una propiedad básica de probabilidades.
+
+\begin{lema}[Límite de unión] Para cualesquera dos conjuntos $A,B$ y una distribución $\mathcal{D}$ tenemos
+    $$\mathcal{D}(A\cup B) \leq \mathcal{D}(A) + \mathcal{D}(B).$$
+\end{lema}
+
+
+En el contexto del aprendizaje automático, el análisis de la probabilidad de que un algoritmo seleccione un predictor inadecuado es fundamental. Este predictor, denotado $h_S$, es evaluado por su riesgo verdadero $L_{(\mathcal{D},f)}(h_S)$, que mide cuán bien las predicciones coinciden con los resultados reales. Un riesgo que supera el umbral $\epsilon$ es indicativo de un fallo en el aprendizaje, señalando que el predictor no generaliza adecuadamente a datos no vistos.
+
+Para establecer una cota superior en la probabilidad de seleccionar tal predictor, aplicamos el lema del límite de unión, que nos dice que la probabilidad de la unión de dos eventos no puede ser mayor que la suma de sus probabilidades individuales. En nuestro análisis, consideramos la unión de eventos donde cada hipótesis mala en $\mathcal{H}_B$—aquellas cuyo riesgo verdadero excede $\epsilon$—parece ajustarse perfectamente al conjunto de entrenamiento. Matemáticamente, esto se expresa como:
+
+\begin{equation}
+\mathcal{D}^m \left(\left\{S|_x : L_{(\mathcal{D},f)}(h_S) > \epsilon\right\}\right) \leq \sum_{h\in \mathcal{H}_B} \mathcal{D}^m \left(\left\{S|_x : L_S(h)=0\right\}\right).
+\end{equation}
+
+Para cada hipótesis mala $h$ en $\mathcal{H}_B$, la probabilidad de que $h$ clasifique correctamente todos los ejemplos en el conjunto de entrenamiento $S $ es el producto de las probabilidades individuales de que $h$ clasifique correctamente cada ejemplo. Dado que los ejemplos se asumen independientes e idénticamente distribuidos (i.i.d.), esta probabilidad se calcula como:
+
+\begin{equation}
+    \mathcal{D}^m\left(\left\{S|_x : L_S(h)=0\right\}\right) = \mathcal{D}^m\left(\left\{S|_x  : \forall i, h(x_i)=f(x_i)\right\}\right) =\prod_{i=1}^{m}\mathcal{D}\left(\left\{x:h(x)=f(x)\right\}\right).
+\end{equation}
+
+La probabilidad de que $h$ clasifique correctamente un único ejemplo es $1 - L_{(\mathcal{D},f)}(h)$, que es menor o igual a $1-\epsilon$ debido a que $h$ es una hipótesis mala. Utilizando la desigualdad exponencial $1-\epsilon\leq e^{-\epsilon}$, obtenemos una cota más estricta para la probabilidad de que $h$ se ajuste perfectamente a $S$:
+
+\begin{equation}
+\mathcal{D}^m\left(\left\{S|_x : L_S(h)=0\right\}\right) \leq (1-\epsilon)^m\leq e^{-m\epsilon}.
+\end{equation}
+
+Al combinar esta cota con la cantidad de hipótesis malas, concluimos que la probabilidad de que el riesgo del predictor seleccionado supere $\epsilon$ está acotada por $|\mathcal{H}_B|e^{-m\epsilon}$, y dado que  $|\mathcal{H}_B|$ es a lo sumo igual al tamaño total de la clase de hipótesis $|\mathcal{H}|$, la cota final es:
+
+$$\mathcal{D}^m\left(\left\{S|_x : L_{(\mathcal{D},f)}(h_S) > \epsilon\right\}\right) \leq |\mathcal{H}_B|e^{-\epsilon m} \leq |\mathcal{H}| e^{-\epsilon m}.
+$$
+
+Este resultado es significativo porque relaciona la complejidad de la clase de hipótesis y el tamaño del conjunto de entrenamiento con la confianza en la selección de un predictor adecuado. Cuanto mayor sea el conjunto de entrenamiento y más pequeña la clase de hipótesis, menor será la probabilidad de seleccionar un predictor con un riesgo alto, lo que favorece la generalización del modelo a nuevos datos.
+
+Cada punto en el círculo grande representa una posible m-tupla de instancias. Cada óvalo coloreado representa el conjunto de m-tuplas “engañosas” de instancias para algún predictor “malo” $h \in \mathcal{H}_B$. El ERM puede potencialmente sobreajustarse siempre que obtenga un conjunto de entrenamiento $S$ engañoso. Es decir, para algunos $h \in \mathcal{H}_B$ tenemos $L_S(h) = 0$. La ecuación (2.9) garantiza que para cada mala hipótesis individual, $h \in \mathcal{H}_B$, como máximo $( 1 - \epsilon)^m$ la fracción $m$ de los conjuntos de entrenamiento sería engañosa. En particular, \textbf{cuanto mayor es \boldmath$m$, más pequeño se vuelve cada uno de estos óvalos coloreados}. La unión formaliza el hecho de que el área que representa los conjuntos de entrenamiento que son engañosos con respecto a algunos $h \in \mathcal{H}_B$ (es decir, los conjuntos de entrenamiento en $M$) es como máximo la suma de las áreas de los óvalos coloreados. Por lo tanto, está acotado por $|\mathcal{H}_B|$ veces el tamaño máximo de un óvalo de color. Cualquier muestra $S$ fuera de los óvalos coloreados no puede hacer que la regla ERM se ajuste demasiado.
+
+\begin{cor} Sea $\mathcal{H}$ una clase de hipótesis finita y sean $\delta \in (0,1)$ y $\epsilon>0$, y sea $m$ un número entero que satisfaga
+    $$m\geq \dfrac{\log(|\mathcal{H}|/\delta)}{\epsilon}.$$
+    Entonces, para cualquier función de etiquetado, $f$, y para cualquier distribución, $\mathcal{D}$, para la cual se cumple el supuesto de realizabilidad (es decir, para alguna $h \in \mathcal{H}, L_{(\mathcal{D},f)}(h) = 0)$, con probabilidad de al menos $1 - \delta$ sobre la elección de un i.i.d. muestra $S$ de tamaño $m$, tenemos que para cada hipótesis de ERM, $h_S$, se cumple que
+    $$L_{(\mathcal{D},f)}(h_S) \leq \epsilon.$$
+\end{cor}
+El corolario nos dice que para una $m$ suficientemente grande, la regla ERM$_\mathcal{H}$ sobre una clase de hipótesis finita será probablemente (con confianza $1-\delta$) aproximadamente (hasta un error de $\epsilon$) correcta. En el siguiente capítulo definimos formalmente el modelo de aprendizaje probablemente aproximadamente correcto (PAC).
