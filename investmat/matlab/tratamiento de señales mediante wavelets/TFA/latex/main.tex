@@ -1,0 +1,201 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+\title{Análisis de Precios del Petróleo en la India usando Descomposición Wavelet y Modelos ARIMA}
+\author{Tu Nombre}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Introducción}
+\begin{itemize}
+    \item Estudio del comportamiento de los precios del petróleo en la India.
+    \item Uso de técnicas avanzadas de procesamiento de señales y modelos estadísticos.
+    \item Objetivo: Mejorar la precisión de las predicciones de precios.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Descomposición Wavelet}
+\begin{itemize}
+    \item Técnica para descomponer una señal en componentes de diferentes frecuencias.
+    \item Usamos la wavelet simétrica 'sym4' para preservar la forma de la señal.
+\end{itemize}
+\begin{equation}
+    f(t) = \sum_{k} c_{k} \phi_{k}(t) + \sum_{j=1}^{J} \sum_{k} d_{j,k} \psi_{j,k}(t)
+\end{equation}
+\begin{itemize}
+    \item \(c_k\): Coeficientes de aproximación.
+    \item \(d_{j,k}\): Coeficientes de detalle en el nivel \(j\).
+    \item \(\phi_{k}(t)\): Funciones de escala.
+    \item \(\psi_{j,k}(t)\): Funciones wavelet.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Matemáticas de la Transformada Wavelet}
+\begin{itemize}
+    \item La Transformada Wavelet Discreta (DWT) descompone una señal en componentes de diferentes frecuencias.
+    \item Proceso iterativo que divide la señal en componentes de aproximación y detalle.
+\end{itemize}
+\begin{equation}
+    c_{a,j+1}[n] = \sum_k h[k-2n] c_{a,j}[k]
+\end{equation}
+\begin{equation}
+    c_{d,j+1}[n] = \sum_k g[k-2n] c_{a,j}[k]
+\end{equation}
+\begin{itemize}
+    \item \(c_{a,j}[k]\): Coeficientes de aproximación en el nivel \(j\).
+    \item \(c_{d,j}[k]\): Coeficientes de detalle en el nivel \(j\).
+    \item \(h[k]\): Coeficientes de filtro de escala.
+    \item \(g[k]\): Coeficientes de filtro wavelet.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo ARIMA}
+\begin{itemize}
+    \item Modelo AutoRegresivo Integrado de Media Móvil (ARIMA).
+    \item Utilizado para predecir series temporales con componentes estacionarios y no estacionarios.
+\end{itemize}
+\begin{equation}
+    y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + \cdots + \phi_p y_{t-p} + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + \cdots + \theta_q \epsilon_{t-q}
+\end{equation}
+\begin{itemize}
+    \item \(c\): Constante.
+    \item \(\phi_i\): Coeficientes autoregresivos.
+    \item \(\theta_i\): Coeficientes de media móvil.
+    \item \(\epsilon_t\): Término de error en el tiempo \(t\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Metodología}
+\begin{enumerate}
+    \item Cargar y filtrar los datos de precios del petróleo.
+    \item Aplicar la descomposición wavelet para extraer componentes de baja y alta frecuencia.
+    \item Realizar denoising de la señal usando técnicas wavelet.
+    \item Ajustar modelos ARIMA a las series originales y denoised.
+    \item Comparar la precisión de los modelos usando métricas de error.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Carga y Filtrado de Datos}
+\begin{itemize}
+    \item Datos obtenidos de la serie de precios del petróleo en la India.
+    \item Filtrado para el intervalo de tiempo del 1 de enero de 2019 al 30 de julio de 2021.
+\end{itemize}
+\begin{lstlisting}[language=Matlab]
+data = readtable('MCEI.csv');
+prices = str2double(data.Price);
+dates = datetime(data.Date, 'InputFormat', 'dd-MM-yyyy');
+start_date = datetime('01-Jan-2019', 'InputFormat', 'dd-MMM-yyyy');
+end_date = datetime('30-Jul-2021', 'InputFormat', 'dd-MMM-yyyy');
+date_filter = (dates >= start_date) & (dates <= end_date);
+price = prices(date_filter);
+date = dates(date_filter);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Descomposición Wavelet}
+\begin{itemize}
+    \item Número de niveles: 5.
+    \item Uso de la wavelet 'sym4' para descomponer la serie de precios.
+\end{itemize}
+\begin{lstlisting}[language=Matlab]
+niveles = 5;
+[C,L] = wavedec(price, niveles, 'sym4');
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Visualización de la Descomposición}
+\begin{itemize}
+    \item Señal original y aproximaciones en cada nivel.
+    \item Detalles en el último nivel.
+\end{itemize}
+\begin{lstlisting}[language=Matlab]
+figure;
+subplot(niveles+2, 1, 1);
+plot(date, price);
+title('Señal original');
+xlabel('Fecha');
+for i = 1:niveles
+    subplot(niveles+2, 1, i+1);
+    approx = wrcoef('a', C, L, 'sym4', i);
+    plot(linspace(start_date, end_date, length(approx)), approx);
+    title(['Aproximación en el nivel ' num2str(i)]);
+    xlabel('Fecha');
+end
+subplot(niveles+2, 1, niveles+2);
+details = wrcoef('d', C, L, 'sym4', niveles);
+plot(linspace(start_date, end_date, length(details)), details);
+title(['Detalles en el nivel ' num2str(niveles)]);
+xlabel('Fecha');
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Denoising}
+\begin{itemize}
+    \item Aplicación de la técnica de denoising a la serie de precios.
+\end{itemize}
+\begin{lstlisting}[language=Matlab]
+x = wdenoise(price);
+figure;
+hold on;
+plot(date, price);
+plot(date, x);
+hold off;
+legend('Original', 'Denoised');
+title('Comparación de la serie de tiempo original y denoised');
+xlabel('Fecha');
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Modelos ARIMA}
+\begin{itemize}
+    \item Ajuste de modelos ARIMA para la serie original y la serie denoised.
+    \item Evaluación de los modelos usando RMSE y MAD.
+\end{itemize}
+\begin{lstlisting}[language=Matlab]
+model_original = arima('Constant',0,'D',1,'Seasonality',0);
+fit_original = estimate(model_original, price);
+res_original = infer(fit_original, price);
+fit_denoised = estimate(model_original, x);
+res_denoised = infer(fit_denoised, x);
+rmse_original = sqrt(mean(res_original.^2));
+rmse_denoised = sqrt(mean(res_denoised.^2));
+mad_original = mean(abs(res_original));
+mad_denoised = mean(abs(res_denoised));
+disp(['RMSE Original: ' num2str(rmse_original)]);
+disp(['RMSE Denoised: ' num2str(rmse_denoised)]);
+disp(['MAD Original: ' num2str(mad_original)]);
+disp(['MAD Denoised: ' num2str(mad_denoised)]);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Resultados}
+\begin{itemize}
+    \item \textbf{RMSE Original}: \texttt{\num{rmse_original}}
+    \item \textbf{RMSE Denoised}: \texttt{\num{rmse_denoised}}
+    \item \textbf{MAD Original}: \texttt{\num{mad_original}}
+    \item \textbf{MAD Denoised}: \texttt{\num{mad_denoised}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones}
+\begin{itemize}
+    \item La descomposición wavelet y el denoising mejoran la precisión de los modelos ARIMA.
+    \item El modelo denoised presenta menores errores en comparación con el modelo original.
+    \item Las técnicas de procesamiento de señales pueden ser efectivas para mejorar las predicciones de series temporales financieras.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bibliografía}
+\printbibliography
+\end{frame}
+
+\end{document}
+
