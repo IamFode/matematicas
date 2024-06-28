@@ -31,10 +31,10 @@
     f(t) = \sum_{k} c_{k} \phi_{k}(t) + \sum_{j=1}^{J} \sum_{k} d_{j,k} \psi_{j,k}(t)
 \end{equation}
 \begin{itemize}
-    \item \(c_k\): Coeficientes de aproximación.
-    \item \(d_{j,k}\): Coeficientes de detalle en el nivel \(j\).
-    \item \(\phi_{k}(t)\): Funciones de escala.
-    \item \(\psi_{j,k}(t)\): Funciones wavelet.
+    \item $c_k$: Coeficientes de aproximación.
+    \item $d_{j,k}$: Coeficientes de detalle en el nivel \(j\).
+    \item $\phi_{k}(t)$: Funciones de escala.
+    \item $\psi_{j,k}(t)$: Funciones wavelet.
 \end{itemize}
 \end{frame}
 
@@ -50,10 +50,10 @@
     c_{d,j+1}[n] = \sum_k g[k-2n] c_{a,j}[k]
 \end{equation}
 \begin{itemize}
-    \item \(c_{a,j}[k]\): Coeficientes de aproximación en el nivel \(j\).
-    \item \(c_{d,j}[k]\): Coeficientes de detalle en el nivel \(j\).
-    \item \(h[k]\): Coeficientes de filtro de escala.
-    \item \(g[k]\): Coeficientes de filtro wavelet.
+    \item $c_{a,j}[k]$: Coeficientes de aproximación en el nivel \(j\).
+    \item $c_{d,j}[k]$: Coeficientes de detalle en el nivel \(j\).
+    \item $h[k]$: Coeficientes de filtro de escala.
+    \item $g[k]$: Coeficientes de filtro wavelet.
 \end{itemize}
 \end{frame}
 
@@ -66,10 +66,10 @@
     y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + \cdots + \phi_p y_{t-p} + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + \cdots + \theta_q \epsilon_{t-q}
 \end{equation}
 \begin{itemize}
-    \item \(c\): Constante.
-    \item \(\phi_i\): Coeficientes autoregresivos.
-    \item \(\theta_i\): Coeficientes de media móvil.
-    \item \(\epsilon_t\): Término de error en el tiempo \(t\).
+    \item $c$: Constante.
+    \item $\phi_i$: Coeficientes autoregresivos.
+    \item $\theta_i$: Coeficientes de media móvil.
+    \item $\epsilon_t$: Término de error en el tiempo \(t\).
 \end{itemize}
 \end{frame}
 
@@ -88,7 +88,7 @@
     \item Datos obtenidos de la serie de precios del petróleo en la India.
     \item Filtrado para el intervalo de tiempo del 1 de enero de 2019 al 30 de julio de 2021.
 \end{itemize}
-\begin{lstlisting}[language=Matlab]
+\begin{verbatim}
 data = readtable('MCEI.csv');
 prices = str2double(data.Price);
 dates = datetime(data.Date, 'InputFormat', 'dd-MM-yyyy');
@@ -97,18 +97,19 @@ end_date = datetime('30-Jul-2021', 'InputFormat', 'dd-MMM-yyyy');
 date_filter = (dates >= start_date) & (dates <= end_date);
 price = prices(date_filter);
 date = dates(date_filter);
-\end{lstlisting}
+\end{verbatim}
 \end{frame}
 
 \begin{frame}{Descomposición Wavelet}
 \begin{itemize}
     \item Número de niveles: 5.
-    \item Uso de la wavelet 'sym4' para descomponer la serie de precios.
+    \item Uso de la wavelet $'$sym4$'$ para descomponer la serie de precios.
 \end{itemize}
-\begin{lstlisting}[language=Matlab]
+\begin{verbatim}
 niveles = 5;
 [C,L] = wavedec(price, niveles, 'sym4');
-\end{lstlisting}
+\end{verbatim}
+
 \end{frame}
 
 \begin{frame}{Visualización de la Descomposición}
@@ -116,7 +117,7 @@ niveles = 5;
     \item Señal original y aproximaciones en cada nivel.
     \item Detalles en el último nivel.
 \end{itemize}
-\begin{lstlisting}[language=Matlab]
+\begin{verbatim}
 figure;
 subplot(niveles+2, 1, 1);
 plot(date, price);
@@ -134,14 +135,14 @@ details = wrcoef('d', C, L, 'sym4', niveles);
 plot(linspace(start_date, end_date, length(details)), details);
 title(['Detalles en el nivel ' num2str(niveles)]);
 xlabel('Fecha');
-\end{lstlisting}
+\end{verbatim}
 \end{frame}
 
 \begin{frame}{Denoising}
 \begin{itemize}
     \item Aplicación de la técnica de denoising a la serie de precios.
 \end{itemize}
-\begin{lstlisting}[language=Matlab]
+\begin{verbatim}
 x = wdenoise(price);
 figure;
 hold on;
@@ -151,7 +152,7 @@ hold off;
 legend('Original', 'Denoised');
 title('Comparación de la serie de tiempo original y denoised');
 xlabel('Fecha');
-\end{lstlisting}
+\end{verbatim}
 \end{frame}
 
 \begin{frame}{Modelos ARIMA}
@@ -159,7 +160,7 @@ xlabel('Fecha');
     \item Ajuste de modelos ARIMA para la serie original y la serie denoised.
     \item Evaluación de los modelos usando RMSE y MAD.
 \end{itemize}
-\begin{lstlisting}[language=Matlab]
+\begin{verbatim}
 model_original = arima('Constant',0,'D',1,'Seasonality',0);
 fit_original = estimate(model_original, price);
 res_original = infer(fit_original, price);
@@ -173,7 +174,7 @@ disp(['RMSE Original: ' num2str(rmse_original)]);
 disp(['RMSE Denoised: ' num2str(rmse_denoised)]);
 disp(['MAD Original: ' num2str(mad_original)]);
 disp(['MAD Denoised: ' num2str(mad_denoised)]);
-\end{lstlisting}
+\end{verbatim}
 \end{frame}
 
 \begin{frame}{Resultados}
