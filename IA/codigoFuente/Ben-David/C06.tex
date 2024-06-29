@@ -1,0 +1,52 @@
+\chapter{La dimensión VC}
+En el capítulo anterior, descompusimos el error de la regla ERM$_{\H}$ en error de aproximación y error de estimación. El error de aproximación depende del ajuste de nuestro conocimiento previo (reflejado por la elección de la clase de hipótesis $\H$) a la distribución desconocida subyacente. En contraste, la definición de aprendizaje PAC requiere que el error de estimación esté acotado uniformemente sobre todas las distribuciones.\\
+
+\textbf{Nuestro objetivo actual es averiguar qué clases $H$ son aprendibles PAC, y caracterizar exactamente la complejidad de muestra para aprender una clase de hipótesis dada}. \textit{Hasta ahora hemos visto que las clases finitas son aprendibles, pero que la clase de todas las funciones (sobre un dominio de tamaño infinito) no lo es}. ¿Qué hace que una clase sea aprendible y la otra no? ¿Pueden las clases de tamaño infinito ser aprendibles y, si es así, qué determina su complejidad de muestra?\\
+
+\textbf{Comenzamos el capítulo mostrando que las clases infinitas pueden ser efectivamente aprendibles, y por lo tanto, la finitud de la clase de hipótesis no es una condición necesaria para el aprendizaje}. Luego presentamos una caracterización notablemente nítida de la familia de clases aprendibles en la configuración de clasificación binaria con la pérdida de cero-uno. Esta caracterización fue descubierta por primera vez por Vladimir Vapnik y Alexey Chervonenkis en 1970 y se basa en una noción combinatoria llamada dimensión Vapnik-Chervonenkis (dimensión VC). Definimos formalmente la dimensión VC, proporcionamos varios ejemplos y luego enunciamos el teorema fundamental de la teoría del aprendizaje estadístico, que integra los conceptos de aprendizaje, dimensión VC, la regla ERM y convergencia uniforme.
+
+\section{Las clases de tamaño infinito pueden ser aprendibles}
+En el Capítulo 4 vimos que las clases finitas son aprendibles, y de hecho la complejidad de muestra de una clase de hipótesis está acotada superiormente por el logaritmo de su tamaño. Para demostrar que el tamaño de la clase de hipótesis no es la caracterización correcta de su complejidad de muestra, primero presentamos un ejemplo simple de una clase de hipótesis de tamaño infinito que es aprendible.
+
+\begin{ejem}
+    Sea $\H$ el conjunto de funciones de umbral sobre la línea real, es decir, $\H = \{h_a : a \in \mathbb{R}\}$, donde $h_a : \mathbb{R} \rightarrow \{0, 1\}$ es una función tal que $h_a(x) = \mathbb{1}_{[x<a]}$. Para recordar al lector, $\mathbb{1}[x<a]$ es $1$ si $x < a$ y $0$ en caso contrario. 
+\end{ejem}
+    Claramente, $\H$ es de tamaño infinito. Sin embargo, el siguiente lema muestra que $\H$ es aprendible en el modelo PAC utilizando el algoritmo ERM.
+
+\begin{lema}
+    Sea $H$ la clase de umbrales como se definió anteriormente. Entonces, $H$ es PAC aprendible, utilizando la regla ERM, con complejidad de muestra de $m_H(\varepsilon, \delta) \leq \lceil \log(2/\delta)/\varepsilon \rceil$.\\
+
+    Demostración.-\; Sea $a^*$ un umbral tal que la hipótesis $h^*(x) = 1[x<a^*]$ logra $L_{\D}(h^*) = 0$. Sea $\D_x$ la distribución marginal sobre el dominio $X$ y sea $a_0 < a^* < a_1$ tal que 
+    $$\underset{{x \sim \D_x}}{\mathbb{P}}[x \in (a_0, a^*)] = \underset{{x \sim \D_x}}{\mathbb{P}}[x \in (a^*, a_1)] = \varepsilon.$$ 
+    (Si $\D_x(-\infty, a^*) \leq \varepsilon$ establecemos $a_0 = -\infty$ y de manera similar para $a_1$). Dado un conjunto de entrenamiento $S$, sea $b_0 = \max\{x : (x, 1) \in S\}$ y $b_1 = \min\{x : (x, 0) \in S\}$ (si no hay ejemplo en $S$ es positivo establecemos $b_0 = -\infty$ y si no hay ejemplo en $S$ es negativo establecemos $b_1 = \infty$). Sea $b_S$ un umbral correspondiente a una hipótesis ERM, $h_S$, lo que implica que $b_S \in (b_0, b_1)$. Por lo tanto, una condición suficiente para $L_D(h_S) \leq \varepsilon$ es que tanto $b_0 \geq a_0$ como $b_1 \leq a_1$. En otras palabras, 
+    $$\underset{S \sim \D_m}{\P}[L_D(h_S) > \varepsilon] \leq \underset{S \sim D_m}{\P}[b_0 < a_0 \lor b_1 > a_1],$$ 
+    y usando la cota de la unión podemos acotar lo anterior por 
+    \begin{equation}
+	\underset{S \sim D_m}{\P}[L_D(h_S) > \varepsilon] \leq \underset{S \sim D_m}{\P}[b_0 < a_0] + \underset{S \sim D_m}{\P}[b_1 > a_1]. 
+    \end{equation}
+    El evento $b_0 < a_0$ ocurre si y solo si todos los ejemplos en $S$ no están en el intervalo $(a_0, a^*)$, cuya masa de probabilidad se define como $\varepsilon$, es decir, 
+    $$\underset{S \sim D_m}{\P}[b_0 < a_0] = \underset{S \sim D_m}{\P}[\forall (x, y) \in S, x \notin (a_0, a^*)] = (1 - \varepsilon)^m \leq e^{-\varepsilon m}.$$ 
+    Dado que asumimos $m > \log(2/\delta)/\varepsilon$ se sigue que la ecuación es como máximo $\delta/2$. De la misma manera, es fácil ver que $P_{S \sim D_m}[b_1 > a_1] \leq \delta/2$. Combinando con la Ecuación (6.1) concluimos nuestra prueba.
+\end{lema}
+
+\section{La dimensión VC}
+Por lo tanto, vemos que mientras que la finitud de $H$ es una condición suficiente para la capacidad de aprendizaje, no es una condición necesaria. Como mostraremos, una propiedad llamada la dimensión VC de una clase de hipótesis da la caracterización correcta de su capacidad de aprendizaje. Para motivar la definición de la dimensión VC, recordemos el teorema No-Free-Lunch (Teorema 5.1) y su prueba. Allí, hemos demostrado que sin restringir la clase de hipótesis, para cualquier algoritmo de aprendizaje, un adversario puede construir una distribución para la cual el algoritmo de aprendizaje se desempeñará mal, mientras que existe otro algoritmo de aprendizaje que tendrá éxito en la misma distribución. Para hacerlo, el adversario utilizó un conjunto finito $C \subset X$ y consideró una familia de distribuciones que están concentradas en elementos de $C$. Cada distribución se derivó de una función objetivo "verdadera" de $C$ a $\{0, 1\}$. Para hacer que cualquier algoritmo falle, el adversario utilizó el poder de elegir una función objetivo del conjunto de todas las posibles funciones de $C$ a $\{0, 1\}$.
+Cuando se considera la capacidad de aprendizaje PAC de una clase de hipótesis $H$, el adversario está restringido a construir distribuciones para las cuales alguna hipótesis $h \in H$ logra un riesgo cero. Dado que estamos considerando distribuciones que están concentradas en elementos de $C$, debemos estudiar cómo se comporta $H$ en $C$, lo que nos lleva a la siguiente definición.
+Definición 6.2 (Restricción de $H$ a $C$) Sea $H$ una clase de funciones de $X$ a $\{0, 1\}$ y sea $C = \{c_1, \ldots, c_m\} \subset X$. La restricción de $H$ a $C$ es el conjunto de funciones de $C$ a $\{0, 1\}$ que pueden derivarse de $H$. Es decir,
+$H_C = \{(h(c_1), \ldots, h(c_m)) : h \in H\}$,
+donde representamos cada función de $C$ a $\{0, 1\}$ como un vector en $\{0, 1\}^{|C|}$.
+Si la restricción de $H$ a $C$ es el conjunto de todas las funciones de $C$ a $\{0, 1\}$, entonces decimos que $H$ destroza el conjunto $C$. Formalmente:
+Definición 6.3 (Destrucción) Una clase de hipótesis $H$ destroza un conjunto finito $C \subset X$ si la restricción de $H$ a $C$ es el conjunto de todas las funciones de $C$ a $\{0, 1\}$. Es decir,
+$|H_C| = 2^{|C|}$.
+Ejemplo 6.2 Sea $H$ la clase de funciones de umbral sobre $\mathbb{R}$. Tome un conjunto $C = \{c_1\}$. Ahora, si tomamos $a = c_1 + 1$, entonces tenemos $h_a(c_1) = 1$, y si tomamos $a = c_1 - 1$, entonces tenemos $h_a(c_1) = 0$. Por lo tanto, $H_C$ es el conjunto de todas las funciones de $C$ a $\{0, 1\}$, y $H$ destroza $C$. Ahora tome un conjunto $C = \{c_1, c_2\}$, donde $c_1 \leq c_2$. Ningún $h \in H$ puede dar cuenta de la etiquetación $(0, 1)$, porque cualquier umbral que asigne la etiqueta $0$ a $c_1$ también debe asignar la etiqueta $0$ a $c_2$. Por lo tanto, no todas las funciones de $C$ a $\{0, 1\}$ están incluidas en $H_C$; por lo tanto, $C$ no es destrozado por $H$.
+Volviendo a la construcción de una distribución adversaria como en la prueba del teorema No-Free-Lunch (Teorema 5.1), vemos que siempre que algún conjunto $C$ es destrozado por $H$, el adversario no está restringido por $H$, ya que puede construir una distribución sobre $C$ basada en cualquier función objetivo de $C$ a $\{0, 1\}$, mientras aún mantiene la suposición de realizabilidad. Esto produce inmediatamente:
+Corolario 6.4 Sea $H$ una clase de hipótesis de funciones de $X$ a $\{0, 1\}$. Sea $m$ un tamaño de conjunto de entrenamiento. Suponga que existe un conjunto $C \subset X$ de tamaño $2m$ que es destrozado por $H$. Entonces, para cualquier algoritmo de aprendizaje, $A$, existen una distribución $D$ sobre $X \times \{0, 1\}$ y un predictor $h \in H$ tal que $L_D(h) = 0$ pero con probabilidad de al menos $1/7$ sobre la elección de $S \sim D_m$ tenemos que $L_D(A(S)) \geq 1/8$.
+El Corolario 6.4 nos dice que si $H$ destroza algún conjunto $C$ de tamaño $2m$ entonces no podemos aprender $H$ usando $m$ ejemplos. Intuitivamente, si un conjunto $C$ es destrozado por $H$, y recibimos una muestra que contiene la mitad de las instancias de $C$, las etiquetas de estas instancias no nos dan ninguna información sobre las etiquetas del resto de las instancias en $C$ - cada posible etiquetación del resto de las instancias puede ser explicada por alguna hipótesis en $H$. Filosóficamente,
+Si alguien puede explicar todo fenómeno, sus explicaciones no valen nada.
+Esto nos lleva directamente a la definición de la dimensión VC.
+Definición 6.5 (Dimensión VC) La dimensión VC de una clase de hipótesis $H$, denotada $VCdim(H)$, es el tamaño máximo de un conjunto $C \subset X$ que puede ser destrozado por $H$. Si $H$ puede destrozar conjuntos de tamaño arbitrariamente grande decimos que $H$ tiene dimensión VC infinita.
+Una consecuencia directa del Corolario 6.4 es por lo tanto:
+Teorema 6.6 Sea $H$ una clase de dimensión VC infinita. Entonces, $H$ no es PAC aprendible.
+Prueba Dado que $H$ tiene una dimensión VC infinita, para cualquier tamaño de conjunto de entrenamiento $m$, existe un conjunto destrozado de tamaño $2m$, y la afirmación sigue por el Corolario 6.4.
+Veremos más adelante en este capítulo que la afirmación inversa también es cierta: Una dimensión VC finita garantiza la capacidad de aprendizaje. Por lo tanto, la dimensión VC caracteriza la capacidad de aprendizaje PAC. Pero antes de profundizar en más teoría, primero mostramos varios ejemplos.
+

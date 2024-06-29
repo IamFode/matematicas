@@ -1,15 +1,15 @@
 \chapter{El intercambio entre sesgo y complejidad}
-En el Capítulo 2 vimos que a menos que se tenga cuidado, los datos de entrenamiento pueden engañar al aprendiz y resultar en sobreajuste. Para superar este problema, restringimos el espacio de búsqueda a alguna clase de hipótesis $\mathcal{H}$. Tal clase de hipótesis puede verse como reflejo de algún conocimiento previo que el aprendiz tiene sobre la tarea: una creencia de que uno de los miembros de la clase $\mathcal{H}$ es un modelo de bajo error para la tarea. Por ejemplo, en nuestro problema del sabor de las papayas, basándonos en nuestra experiencia previa con otras frutas, podríamos asumir que algún rectángulo en el plano color-dureza predice (al menos aproximadamente) la deliciosidad de la papaya.\\
+En el Capítulo 2 vimos que a menos que se tenga cuidado, los datos de entrenamiento pueden engañar al aprendiz y resultar en \textbf{sobreajuste}. Para superar este problema, restringimos el espacio de búsqueda a alguna clase de hipótesis $\mathcal{H}$. Tal clase de hipótesis puede verse como reflejo de algún conocimiento previo que el aprendiz tiene sobre la tarea: una creencia de que uno de los miembros de la clase $\mathcal{H}$ es un modelo de bajo error para la tarea. Por ejemplo, en nuestro problema del sabor de las papayas, basándonos en nuestra experiencia previa con otras frutas, podríamos asumir que algún rectángulo en el plano color-dureza predice (al menos aproximadamente) la deliciosidad de la papaya.\\
 
 ¿Es realmente necesario tal conocimiento previo para el éxito del aprendizaje? Quizás exista algún tipo de aprendiz universal, es decir, un aprendiz que no tiene conocimiento previo sobre una tarea determinada y está listo para ser desafiado por cualquier tarea. Profundicemos en este punto. Una tarea de aprendizaje específica está definida por una distribución desconocida $D$ sobre $\X \times \Y$, donde el objetivo del aprendiz es encontrar un predictor $h: \X \rightarrow \Y$, cuyo riesgo, $L_D(h)$, sea lo suficientemente pequeño. La pregunta es, por lo tanto, si existe un algoritmo de aprendizaje $A$ y un tamaño de conjunto de entrenamiento $m$, tal que para cada distribución $D$, si $A$ recibe $m$ ejemplos i.i.d. de $D$, hay una alta probabilidad de que produzca un predictor $h$ que tenga un bajo riesgo.
 
-La primera parte de este capítulo aborda esta pregunta formalmente. El teorema de No-Free-Lunch afirma que no existe tal aprendiz universal. Para ser más precisos, el teorema establece que para tareas de predicción de clasificación binaria, para cada aprendiz existe una distribución en la que falla. Decimos que el aprendiz falla si, al recibir ejemplos i.i.d. de esa distribución, su hipótesis de salida probablemente tenga un gran riesgo, digamos, $\geq 0.3$, mientras que para la misma distribución, existe otro aprendiz que producirá una hipótesis con un pequeño riesgo. En otras palabras, el teorema afirma que ningún aprendiz puede tener éxito en todas las tareas aprendibles: cada aprendiz tiene tareas en las que falla mientras otros aprendices tienen éxito.
+La primera parte de este capítulo aborda esta pregunta formalmente. El teorema de No-Free-Lunch afirma que no existe tal aprendiz universal. Para ser más precisos, \textit{el teorema establece que para tareas de predicción de clasificación binaria, para cada aprendiz existe una distribución en la que falla}. Decimos que el aprendiz falla si, al recibir ejemplos i.i.d. de esa distribución, su hipótesis de salida probablemente tenga un gran riesgo, digamos, $\geq 0.3$, mientras que para la misma distribución, existe otro aprendiz que producirá una hipótesis con un pequeño riesgo. En otras palabras, \textbf{el teorema afirma que ningún aprendiz puede tener éxito en todas las tareas aprendibles: cada aprendiz tiene tareas en las que falla mientras otros aprendices tienen éxito.}
 
-Por lo tanto, al abordar un problema de aprendizaje particular, definido por alguna distribución $D$, deberíamos tener algún conocimiento previo sobre $D$. Un tipo de tal conocimiento previo es que $D$ proviene de alguna familia paramétrica específica de distribuciones. Estudiaremos el aprendizaje bajo tales suposiciones más adelante en el Capítulo 24. Otro tipo de conocimiento previo sobre $D$, que asumimos al definir el modelo de aprendizaje PAC, es que existe $h$ en alguna clase de hipótesis predefinida $\mathcal{H}$, tal que $L_D(h) = 0$. Un tipo más suave de conocimiento previo sobre $D$ es asumir que $\min_{h \in \mathcal{H}} L_D(h)$ es pequeño. En cierto sentido, esta suposición más débil sobre $D$ es un prerrequisito para usar el modelo PAC agnóstico, en el cual requerimos que el riesgo de la hipótesis de salida no sea mucho mayor que $\min_{h \in \mathcal{H}} L_D(h)$.
+Por lo tanto, \textbf{al abordar un problema de aprendizaje particular, definido por alguna distribución $D$, deberíamos tener algún conocimiento previo sobre $D$. Un tipo de tal conocimiento previo es que $D$ proviene de alguna familia paramétrica específica de distribuciones}. Estudiaremos el aprendizaje bajo tales suposiciones más adelante en el Capítulo 24. \textbf{Otro tipo de conocimiento previo sobre $D$, que asumimos al definir el modelo de aprendizaje PAC, es que existe $h$ en alguna clase de hipótesis predefinida $\mathcal{H}$, tal que $L_D(h) = 0$. Un tipo más suave de conocimiento previo sobre $D$ es asumir que $\min_{h \in \mathcal{H}} L_D(h)$ es pequeño. En cierto sentido, esta suposición más débil sobre $D$ es un prerrequisito para usar el modelo PAC agnóstico, en el cual requerimos que el riesgo de la hipótesis de salida no sea mucho mayor que $\min_{h \in \mathcal{H}} L_D(h)$.}
 
-En la segunda parte de este capítulo estudiamos los beneficios y las trampas de usar una clase de hipótesis como medio para formalizar el conocimiento previo. Descomponemos el error de un algoritmo ERM sobre una clase $\mathcal{H}$ en dos componentes. El primer componente refleja la calidad de nuestro conocimiento previo, medido por el riesgo mínimo de una hipótesis en nuestra clase de hipótesis, $\min_{h \in \mathcal{H}} L_D(h)$. Este componente también se llama el error de aproximación, o el sesgo del algoritmo hacia la elección de una hipótesis de $\mathcal{H}$. El segundo componente es el error debido al sobreajuste, que depende del tamaño o la complejidad de la clase $\mathcal{H}$ y se llama el error de estimación. Estos dos términos implican un equilibrio entre elegir una $\mathcal{H}$ más compleja (que puede disminuir el sesgo pero aumenta el riesgo de sobreajuste) o una $\mathcal{H}$ menos compleja (que podría aumentar el sesgo pero disminuye el potencial de sobreajuste).
+En la segunda parte de este capítulo estudiamos los beneficios y las trampas de usar una clase de hipótesis como medio para formalizar el conocimiento previo. Descomponemos el error de un algoritmo ERM sobre una clase $\mathcal{H}$ en dos componentes. El primer componente refleja la calidad de nuestro conocimiento previo, medido por el riesgo mínimo de una hipótesis en nuestra clase de hipótesis, $\min_{h \in \mathcal{H}} L_D(h)$. Este componente también se llama el \textbf{error de aproximación, o el sesgo del algoritmo hacia la elección de una hipótesis de $\mathcal{H}$}. El segundo componente es el \textbf{error debido al sobreajuste, que depende del tamaño o la complejidad de la clase $\mathcal{H}$ y se llama el error de estimación}. Estos dos términos \textbf{implican un equilibrio entre elegir una $\mathcal{H}$ más compleja (que puede disminuir el sesgo pero aumenta el riesgo de sobreajuste) o una $\mathcal{H}$ menos compleja (que podría aumentar el sesgo pero disminuye el potencial de sobreajuste).}
 
-\subsection{Teorema de No-Free-Lunch}
+\section{Teorema de No-Free-Lunch}
 En esta parte demostramos que no existe un aprendiz universal. Lo hacemos mostrando que ningún aprendiz puede tener éxito en todas las tareas de aprendizaje, como se formaliza en el siguiente teorema:
 
 \begin{teo}[No-Free-Lunch]
@@ -18,7 +18,7 @@ Sea $A$ cualquier algoritmo de aprendizaje para la tarea de clasificación binar
     \item Existe una función $f: \X \rightarrow \{0, 1\}$ con $L_D(f) = 0$.
     \item Con probabilidad de al menos $1/7$ sobre la elección de $S \sim D^m$ tenemos que $L_D(A(S)) \geq 1/8$.
 \end{enumerate}
-Este teorema afirma que para cada aprendiz, existe una tarea en la que falla, aunque esa tarea pueda ser aprendida con éxito por otro aprendiz. De hecho, un aprendiz trivialmente exitoso en este caso sería un aprendiz ERM con la clase de hipótesis $\mathcal{H} = \{f\}$, o más generalmente, ERM con respecto a cualquier clase de hipótesis finita que contenga $f$ y cuyo tamaño satisfaga la ecuación $m \geq 8 \log(7|\mathcal{H}|/6)$ (ver Corolario 2.3).
+Este teorema afirma que para cada aprendiz, existe una tarea en la que falla, aunque esa tarea pueda ser aprendida con éxito por otro aprendiz. De hecho, un aprendiz trivialmente exitoso en este caso sería un aprendiz ERM con la clase de hipótesis $\mathcal{H} = \{f\}$, o más generalmente, ERM con respecto a cualquier clase de hipótesis finita que contenga $f$ y cuyo tamaño satisfaga la ecuación $m \geq 8 \log(7|\mathcal{H}|/6)$ (ver Corolario 2.3).\\
 
 \textbf{Prueba} Sea $C$ un subconjunto de $X$ de tamaño $2m$. La intuición de la prueba es que cualquier algoritmo de aprendizaje que solo observe la mitad de las instancias en $C$ no tiene información sobre cuáles deberían ser las etiquetas del resto de las instancias en $C$. Por lo tanto, existe una "realidad", es decir, alguna función objetivo $f$, que contradiría las etiquetas que $A(S)$ predice sobre las instancias no observadas en $C$.
 
@@ -33,31 +33,44 @@ $$
 Es decir, la probabilidad de elegir un par $(x, y)$ es $\frac{1}{|C|}$ si la etiqueta $y$ es efectivamente la etiqueta verdadera según $f_i$, y la probabilidad es $0$ si $y \neq f_i(x)$. Claramente, $L_{D_i}(f_i) = 0$.
 
 Mostraremos que para cada algoritmo $A$, que recibe un conjunto de entrenamiento de $m$ ejemplos de $C \times \{0, 1\}$ y devuelve una función $A(S) : C \rightarrow \{0, 1\}$, se cumple que
-$$
-\max_{i \in [T]} \mathbb{E}_{S \sim D_i^m}[L_{D_i}(A(S))] \geq \frac{1}{4}. \quad (5.1)
-$$
+\begin{equation}
+    \max_{i \in [T]} \underset{S \sim D_i^m}{\mathbb{E}}[L_{D_i}(A(S))] \geq \frac{1}{4}. 
+\end{equation}
 Claramente, esto significa que para cada algoritmo $A'$, que recibe un conjunto de entrenamiento de $m$ ejemplos de $X \times \{0, 1\}$ existe una función $f : X \rightarrow \{0, 1\}$ y una distribución $D$ sobre $X \times \{0, 1\}$, tal que $L_D(f) = 0$ y
-$$
-\mathbb{E}_{S \sim D^m}[L_D(A'(S))] \geq \frac{1}{4}. \quad (5.2)
-$$
+\begin{equation}
+    \underset{S \sim D^m}{\mathbb{E}}[L_D(A'(S))] \geq \frac{1}{4}. 
+\end{equation}
 Es fácil verificar que lo anterior es suficiente para mostrar que $\mathbb{P}[L_D(A'(S)) \geq \frac{1}{8}] \geq \frac{1}{7}$, que es lo que necesitamos probar (ver Ejercicio 1).
 
-Ahora pasamos a demostrar que la Ecuación (5.1) se cumple. Hay $k = \binom{2m}{m}$ secuencias posibles de $m$ ejemplos de $C$. Denotemos estas secuencias por $S_1, \ldots, S_k$. Además, si $S_j = (x_1, \ldots, x_m)$ denotamos por $S_i^j$ la secuencia que contiene las instancias en $S_j$ etiquetadas por la función $f_i$, es decir, $S_i^j = ((x_1, f_i(x_1)), \ldots ,(x_m, f_i(x_m)))$. Si la distribución es $D_i$ entonces los posibles conjuntos de entrenamiento que $A$ puede recibir son $S_i^1, \ldots, S_i^k$, y todos estos conjuntos de entrenamiento tienen la misma probabilidad de ser muestreados. Por lo tanto,
-$$
-\mathbb{E}_{S \sim D_i^m}[L_{D_i}(A(S))] = \frac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j)). \quad (5.3)
-$$
+Ahora pasamos a demostrar que la Ecuación (5.1) se cumple. Hay $k = (2m)^m$ secuencias posibles de $m$ ejemplos de $C$. Denotemos estas secuencias por $S_1, \ldots, S_k$. Además, si $S_j = (x_1, \ldots, x_m)$ denotamos por $S_i^j$ la secuencia que contiene las instancias en $S_j$ etiquetadas por la función $f_i$, es decir, $S_i^j = ((x_1, f_i(x_1)), \ldots ,(x_m, f_i(x_m)))$. Si la distribución es $D_i$ entonces los posibles conjuntos de entrenamiento que $A$ puede recibir son $S_i^1, \ldots, S_i^k$, y todos estos conjuntos de entrenamiento tienen la misma probabilidad de ser muestreados. Por lo tanto,
+\begin{equation}
+    \underset{S \sim D_i^m}{\mathbb{E}}[L_{D_i}(A(S))] = \dfrac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j)).
+\end{equation}
 Usando los hechos de que "máximo" es mayor que "promedio" y que "promedio" es mayor que "mínimo", tenemos
-$$
-\max_{i \in [T]} \frac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j)) \geq \frac{1}{T} \sum_{i=1}^{T} \frac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j)) = \frac{1}{k} \sum_{j=1}^{k} \frac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j)) \geq \min_{j \in [k]} \frac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j)). \quad (5.4)
-$$
+\begin{equation}
+    \begin{array}{rcl}
+	\displaystyle\max_{i \in [T]} \frac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j)) & \geq & \displaystyle\dfrac{1}{T} \sum_{i=1}^{T} \dfrac{1}{k} \sum_{j=1}^{k} L_{D_i}(A(S_i^j))\\\\
+										   &=& \displaystyle\dfrac{1}{k} \sum_{j=1}^{k} \dfrac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j))\\\\
+										   &\geq& \displaystyle\min_{j \in [k]} \frac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j)).
+    \end{array}
+\end{equation}
 A continuación, fijamos algún $j \in [k]$. Denotemos $S_j = (x_1, \ldots, x_m)$ y dejemos que $v_1, \ldots, v_p$ sean los ejemplos en $C$ que no aparecen en $S_j$. Claramente, $p \geq m$. Por lo tanto, para cada función $h : C \rightarrow \{0, 1\}$ y cada $i$ tenemos
-$$
-L_{D_i}(h) = \frac{1}{2m} \sum_{x \in C} 1[h(x) \neq f_i(x)] \geq \frac{1}{2m} \sum_{r=1}^{p} 1[h(v_r) \neq f_i(v_r)] \geq \frac{1}{2p} \sum_{r=1}^{p} 1[h(v_r) \neq f_i(v_r)]. \quad (5.5)
-$$
+\begin{equation}
+    \begin{array}{rcl}
+	L_{D_i}(h) &=& \displaystyle\dfrac{1}{2m} \sum_{x \in C} 1[h(x) \neq f_i(x)]\\\\
+		   &\geq & \frac{1}{2m} \sum_{r=1}^{p} 1[h(v_r) \neq f_i(v_r)]\\\\
+		   &\geq & \frac{1}{2p} \sum_{r=1}^{p} 1[h(v_r) \neq f_i(v_r)]. 
+    \end{array}
+\end{equation}
 Por lo tanto,
-$$
-\frac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j)) \geq \frac{1}{T} \sum_{i=1}^{T} \frac{1}{2p} \sum_{r=1}^{p} 1[A(S_i^j)(v_r) \neq f_i(v_r)] = \frac{1}{2p} \sum_{r=1}^{p} \frac{1}{T} \sum_{i=1}^{T} 1[A(S_i^j)(v_r) \neq f_i(v_r)] \geq \frac{1}{2} \cdot \min_{r \in [p]} \frac{1}{T} \sum_{i=1}^{T} 1[A(S_i^j)(v_r) \neq f_i(v_r)]. \quad (5.6)
-$$
+\begin{equation}
+    \begin{array}{rcl}
+	\frac{1}{T} \sum_{i=1}^{T} L_{D_i}(A(S_i^j)) &\geq & \displaystyle\dfrac{1}{T} \sum_{i=1}^{T} \frac{1}{2p} \sum_{r=1}^{p} 1[A(S_i^j)(v_r) \neq f_i(v_r)]\\\\
+						     &=&\displaystyle\dfrac{1}{2p} \sum_{r=1}^{p} \dfrac{1}{T} \sum_{i=1}^{T} 1[A(S_i^j)(v_r) \neq f_i(v_r)]\\\\
+						     &\geq & \displaystyle\dfrac{1}{2} \cdot \min_{r \in [p]} \dfrac{1}{T} \sum_{i=1}^{T} 1[A(S_i^j)(v_r) \neq f_i(v_r)].
+     \end{array}
+\end{equation}
+
 A continuación, fijamos algún $r \in [p]$. Podemos particionar todas las funciones en $f_1, \ldots, f_T$ en $\frac{T}{2}$ pares disjuntos, donde para un par $(f_i, f_{i'})$ tenemos que para cada $c \in C$, $f_i(c) \neq f_{i'}(c)$ si y solo si $c = v_r$. Dado que para tal par debemos tener $S_i^j = S_{i'}^j$, se sigue que
 $$
 1[A(S_i^j)(v_r) \neq f_i(v_r)] + 1[A(S_{i'}^j)(v_r) \neq f_{i'}(v_r)] = 1,
@@ -67,42 +80,48 @@ $$
 \frac{1}{T} \sum_{i=1}^{T} 1[A(S_i^j)(v_r) \neq f_i(v_r)] = \frac{1}{2}.
 $$
 Combinando esto con la Ecuación (5.6), la Ecuación (5.4) y la Ecuación (5.3), obtenemos que la Ecuación (5.1) se cumple, lo que concluye nuestra prueba.
+\end{teo}
 
 
 
-\section*{No-Hay-Almuerzo-Gratis y Conocimiento Previo}
-¿Cómo se relaciona el resultado de No-Hay-Almuerzo-Gratis con la necesidad de conocimiento previo? Consideremos un predictor ERM sobre la clase de hipótesis $\H$ de todas las funciones $f$ de $\X$ a $\{0, 1\}$. Esta clase representa la falta de conocimiento previo: cada función posible del dominio al conjunto de etiquetas es considerada un buen candidato. Según el teorema de No-Hay-Almuerzo-Gratis, cualquier algoritmo que elija su salida de hipótesis en $\H$, y en particular el predictor ERM, fallará en alguna tarea de aprendizaje.
+\subsection{No-Free-Lunch y Conocimiento Previo}
+¿Cómo se relaciona el resultado de No-Free-Lunch con la necesidad de conocimiento previo? Consideremos un predictor ERM sobre la clase de hipótesis $\H$ de todas las funciones $f$ de $\X$ a $\{0, 1\}$. Esta clase representa la falta de conocimiento previo: cada función posible del dominio al conjunto de etiquetas es considerada un buen candidato. Según el teorema de No-Free-Lunch, cualquier algoritmo que elija su salida de hipótesis en $\H$, y en particular el predictor ERM, fallará en alguna tarea de aprendizaje.
 Por lo tanto, esta clase no es PAC aprendible, como se formaliza en el siguiente corolario:
 
-\textbf{Corolario 5.2}
-Sea $\X$ un conjunto de dominio infinito y sea $\H$ el conjunto de todas las funciones de $\X$ a $\{0, 1\}$. Entonces, $\H$ no es PAC aprendible.
+\begin{cor}
+Sea $\X$ un conjunto de dominio infinito y sea $\H$ el conjunto de todas las funciones de $\X$ a $\{0, 1\}$. Entonces, $\H$ no es PAC aprendible.\\
 
 \textbf{Prueba}
 Supongamos, por contradicción, que la clase es aprendible. Elija algún $\epsilon < 1/8$ y $\delta < 1/7$. Por la definición de PAC aprendibilidad, debe existir algún algoritmo de aprendizaje $A$ y un entero $m = m(\epsilon, \delta)$, tal que para cualquier distribución generadora de datos sobre $\X \times \{0, 1\}$, si para alguna función $f : \X \rightarrow \{0, 1\}$, $LD(f) = 0$, entonces con probabilidad mayor que $1 - \delta$ cuando $A$ se aplica a muestras $S$ de tamaño $m$, generadas i.i.d. por $D$, $LD(A(S)) \leq \epsilon$. Sin embargo, aplicando el teorema de No-Hay-Almuerzo-Gratis, ya que $|\X| > 2^m$, para cada algoritmo de aprendizaje (y en particular para el algoritmo $A$), existe una distribución $D$ tal que con probabilidad mayor que $1/7 > \delta$, $LD(A(S)) > 1/8 > \epsilon$, lo que lleva a la contradicción deseada.
-¿Cómo podemos prevenir tales fallos? Podemos escapar de los peligros previstos por el teorema de No-Hay-Almuerzo-Gratis utilizando nuestro conocimiento previo sobre una tarea de aprendizaje específica, para evitar las distribuciones que nos causarán fallar al aprender esa tarea.
-Dicho conocimiento previo puede ser expresado restringiendo nuestra clase de hipótesis.
-Pero, ¿cómo deberíamos elegir una buena clase de hipótesis? Por un lado, queremos creer que esta clase incluye la hipótesis que no tiene error en absoluto (en el entorno PAC), o al menos que el error más pequeño alcanzable por una hipótesis de esta clase es de hecho bastante pequeño (en el entorno agnóstico). Por otro lado, acabamos de ver que no podemos simplemente elegir la clase más rica – la clase de todas las funciones sobre el dominio dado. Este compromiso se discute en la siguiente sección.
+\end{cor}
+¿Cómo podemos prevenir tales fallos? Podemos escapar de los peligros previstos por el teorema de No-Free-Lunch utilizando nuestro conocimiento previo sobre una tarea de aprendizaje específica, para evitar las distribuciones que nos causarán fallar al aprender esa tarea.
+Dicho conocimiento previo puede ser expresado restringiendo nuestra clase de hipótesis.\\
 
-\subsection*{Descomposición del Error}
-Para responder a esta pregunta descomponemos el error de un predictor ERM$\H$ en dos componentes de la siguiente manera. Sea $h_S$ una hipótesis ERM$\H$. Entonces, podemos escribir
-$$ LD(h_S) = \epsilon_{\text{app}} + \epsilon_{\text{est}} $$
+Pero, ¿cómo deberíamos elegir una buena clase de hipótesis? Por un lado, queremos creer que esta clase incluye la hipótesis que no tiene error en absoluto (en el entorno PAC), o al menos que el error más pequeño alcanzable por una hipótesis de esta clase es de hecho bastante pequeño (en el entorno agnóstico). Por otro lado, acabamos de ver que no podemos simplemente elegir la clase más rica - la clase de todas las funciones sobre el dominio dado. Este compromiso se discute en la siguiente sección.
+
+\section{Descomposición del Error}
+Para responder a esta pregunta descomponemos el error de un predictor ERM $_{\H}$ en dos componentes de la siguiente manera. Sea $h_S$ una hipótesis ERM $_{\H}$. Entonces, podemos escribir
+$$ L_{\D}(h_S) = \epsilon_{\text{app}} + \epsilon_{\text{est}} $$
 donde:
-$$ \epsilon_{\text{app}} = \min_{h \in \H} LD(h), $$
-$$ \epsilon_{\text{est}} = LD(h_S) - \epsilon_{\text{app}}. $$
+$$ \epsilon_{\text{app}} = \min_{h \in \H} L_{\D}(h), $$
+$$ \epsilon_{\text{est}} = L_{\D}(h_S) - \epsilon_{\text{app}}. $$
 \begin{itemize}
-  \item El Error de Aproximación – el riesgo mínimo alcanzable por un predictor en la clase de hipótesis. Este término mide cuánto riesgo tenemos porque nos restringimos a una clase específica, es decir, cuánto sesgo inductivo tenemos. El error de aproximación no depende del tamaño de la muestra y está determinado por la clase de hipótesis elegida. Ampliar la clase de hipótesis puede disminuir el error de aproximación.
+    \item \textbf{El Error de Aproximación} – el riesgo mínimo alcanzable por un predictor en la clase de hipótesis. Este término mide cuánto riesgo tenemos porque nos restringimos a una clase específica, es decir, cuánto sesgo inductivo tenemos. \textbf{El error de aproximación no depende del tamaño de la muestra y está determinado por la clase de hipótesis elegida. Ampliar la clase de hipótesis puede disminuir el error de aproximación.}\\
+
   Bajo la suposición de realizabilidad, el error de aproximación es cero. En el caso agnóstico, sin embargo, el error de aproximación puede ser grande.
   De hecho, siempre incluye el error del predictor óptimo de Bayes (ver Capítulo 3), el error mínimo pero inevitable, debido al posible no determinismo del mundo en este modelo. A veces en la literatura el término error de aproximación se refiere no a $\min_{h \in \H} LD(h)$, sino más bien al exceso de error sobre el del predictor óptimo de Bayes,
   es decir, $\min_{h \in \H} LD(h) - \epsilon_{\text{Bayes}}$.
   
-  \item El Error de Estimación – la diferencia entre el error de aproximación y el error alcanzado por el predictor ERM. El error de estimación resulta porque el riesgo empírico (es decir, error de entrenamiento) es solo una estimación del riesgo verdadero, y por lo tanto el predictor que minimiza el riesgo empírico es solo una estimación del predictor que minimiza el riesgo verdadero.
-  La calidad de esta estimación depende del tamaño del conjunto de entrenamiento y del tamaño, o complejidad, de la clase de hipótesis. Como hemos mostrado, para una clase de hipótesis finita, $\epsilon_{\text{est}}$ aumenta (logarítmicamente) con $|\H|$ y disminuye con $m$. Podemos pensar en el tamaño de $\H$ como una medida de su complejidad.
-  En capítulos futuros definiremos otras medidas de complejidad de clases de hipótesis.
+    \item \textbf{El Error de Estimación} – la diferencia entre el error de aproximación y el error alcanzado por el predictor ERM. El error de estimación resulta porque el riesgo empírico (es decir, error de entrenamiento) es solo una estimación del riesgo verdadero, y por lo tanto el predictor que minimiza el riesgo empírico es solo una estimación del predictor que minimiza el riesgo verdadero.
+	La calidad de esta estimación depende del tamaño del conjunto de entrenamiento y del tamaño, o complejidad, de la clase de hipótesis. \textbf{Como hemos mostrado, para una clase de hipótesis finita, $\epsilon_{\text{est}}$ aumenta (logarítmicamente) con $|\H|$ y disminuye con $m$}. Podemos pensar en el tamaño de $\H$ como una medida de su complejidad.
+      En capítulos futuros definiremos otras medidas de complejidad de clases de hipótesis.
 \end{itemize}
-Dado que nuestro objetivo es minimizar el riesgo total, enfrentamos un compromiso, llamado el compromiso sesgo-complejidad. Por un lado, elegir $\H$ para ser una clase muy rica disminuye el error de aproximación pero al mismo tiempo podría aumentar el error de estimación, ya que un $\H$ rico podría llevar a un sobreajuste. Por otro lado, elegir $\H$ para ser un conjunto muy pequeño reduce el error de estimación pero podría aumentar el error de aproximación o, en otras palabras, podría llevar a un subajuste. Por supuesto, una gran elección para $\H$ es la clase que contiene solo un clasificador – el clasificador óptimo de Bayes. Pero el clasificador óptimo de Bayes depende de la distribución subyacente $D$, que no conocemos (de hecho, el aprendizaje habría sido innecesario si hubiéramos conocido $D$).
-La teoría del aprendizaje estudia cuán rica podemos hacer $\H$ mientras todavía mantenemos un error de estimación razonable. En muchos casos, la investigación empírica se centra en diseñar buenas clases de hipótesis para un cierto dominio. Aquí, "bueno" significa clases para las cuales el error de aproximación no sería excesivamente alto. La idea es que aunque no somos expertos y no sabemos cómo construir el clasificador óptimo, todavía tenemos algún conocimiento previo del problema específico en cuestión, lo que nos permite diseñar clases de hipótesis para las cuales tanto el error de aproximación como el error de estimación no son demasiado grandes. Volviendo a nuestro ejemplo de las papayas, no sabemos exactamente cómo el color y la dureza de una papaya predicen su sabor, pero sabemos que la papaya es una fruta y basándonos en experiencias previas con otras frutas conjeturamos que un rectángulo en el espacio de color-dureza puede ser un buen predictor.
+
+\textbf{Dado que nuestro objetivo es minimizar el riesgo total, enfrentamos un compromiso, llamado el compromiso sesgo-complejidad}. Por un lado, elegir $\H$ para ser una clase muy rica disminuye el error de aproximación pero al mismo tiempo podría aumentar el error de estimación, ya que un $\H$ rico podría llevar a un sobreajuste. Por otro lado, elegir $\H$ para ser un conjunto muy pequeño reduce el error de estimación pero podría aumentar el error de aproximación o, en otras palabras, podría llevar a un \textbf{subajuste}. Por supuesto, una gran elección para $\H$ es la clase que contiene solo un clasificador – el clasificador óptimo de Bayes. Pero el clasificador óptimo de Bayes depende de la distribución subyacente $D$, que no conocemos (de hecho, el aprendizaje habría sido innecesario si hubiéramos conocido $D$).\\
+
+\textbf{La teoría del aprendizaje estudia cuán rica podemos hacer $\H$ mientras todavía mantenemos un error de estimación razonable}. En muchos casos, la investigación empírica se centra en diseñar buenas clases de hipótesis para un cierto dominio. Aquí, "bueno" significa clases para las cuales el error de aproximación no sería excesivamente alto. La idea es que aunque no somos expertos y no sabemos cómo construir el clasificador óptimo, todavía tenemos algún conocimiento previo del problema específico en cuestión, lo que nos permite diseñar clases de hipótesis para las cuales tanto el error de aproximación como el error de estimación no son demasiado grandes. Volviendo a nuestro ejemplo de las papayas, no sabemos exactamente cómo el color y la dureza de una papaya predicen su sabor, pero sabemos que la papaya es una fruta y basándonos en experiencias previas con otras frutas conjeturamos que un rectángulo en el espacio de color-dureza puede ser un buen predictor.
 
 \subsection*{Resumen}
-El teorema de No-Hay-Almuerzo-Gratis afirma que no hay un aprendiz universal. Cada aprendiz tiene que ser especificado para alguna tarea, y usar algún conocimiento previo sobre esa tarea, para tener éxito. Hasta ahora hemos modelado nuestro conocimiento previo restringiendo nuestra salida de hipótesis a ser miembro de una clase de hipótesis elegida.
-Al elegir esta clase de hipótesis, enfrentamos un compromiso, entre una clase más grande, o más compleja, que es más probable que tenga un pequeño error de aproximación, y una clase más restringida que garantizaría que el error de estimación será
+El teorema de No-Free-Lunch afirma que no hay un aprendiz universal. \textbf{Cada aprendiz tiene que ser especificado para alguna tarea, y usar algún conocimiento previo sobre esa tarea, para tener éxito}. Hasta ahora hemos modelado nuestro conocimiento previo restringiendo nuestra salida de hipótesis a ser miembro de una clase de hipótesis elegida.
+Al elegir esta clase de hipótesis, enfrentamos un compromiso, entre una clase más grande, o más compleja, que es más probable que tenga un pequeño error de aproximación, y una clase más restringida que garantizaría que el error de estimación será pequeña. En el próximo capítulo estudiaremos con más detalle el comportamiento del error de estimación. En el Capítulo 7 discutiremos formas alternativas de expresar conocimientos previos.
 
